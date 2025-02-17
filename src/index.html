@@ -1,92 +1,610 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>현대해상 다이렉트 - Mobile</title>
+    <style>
+      .p-c1 {
+        color: #cca700 !important;
+        letter-spacing: 2px;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>markup-with-vite</title>
-  <style lang="scss">
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: rgb(26, 26, 26);
-      color: #fff;
-    }
+      .p-c2 {
+        color: #89d185 !important;
+        letter-spacing: 2px;
+      }
+      html,
+      body {
+        background-color: #333;
+        color: #fff;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-size: 12px;
+      }
 
-    .index-table {
+      header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        box-sizing: border-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px;
+        background: #000;
+        color: #fff;
+        z-index: 1;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 20px;
+        line-height: 26px;
+      }
+
+      header .control_list {
+        font-size: 0;
+        margin-left: 10px;
+      }
+
+      header .control_list button {
+        display: inline-block;
+        position: relative;
+        width: 20px;
+        height: 20px;
+        margin-left: 5px;
+        background: #ddd;
+        color: #000;
+        border: 0;
+        border-radius: 3px;
+        text-align: center;
+      }
+
+      header .control_list button::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 20%;
+        top: 9px;
+        height: 2px;
+        background: #000;
+        width: 60%;
+      }
+
+      header .control_list .open_all::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 20%;
+        top: 9px;
+        height: 2px;
+        background: #000;
+        width: 60%;
+        transform: rotateZ(90deg);
+      }
+
+      .main {
+        margin: 60px 10px 10px;
+      }
+
+      .main h2 {
+        font-size: 18px;
+        line-height: 22px;
+        cursor: pointer;
+      }
+
+      .main h2::before {
+        content: "-";
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        width: 16px;
+        height: 16px;
+        line-height: 14px;
+        border-radius: 8px;
+        background-color: #000;
+        color: #fff;
+        margin: 4px 5px 0 0;
+      }
+
+      .main h2.on::before {
+        content: "+";
+      }
+
+      .main h2.on + table {
+        display: none;
+      }
+
       table {
         width: 100%;
         border-collapse: collapse;
+        table-layout: fixed;
+        word-break: break-all;
+      }
+
+      table a {
+        position: relative;
+        color: #fff;
+      }
+
+      .note + td {
+        text-align: center;
+      }
+
+      tr {
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+      }
+
+      th,
+      td {
+        padding: 5px 10px;
+        border-left: 1px solid #000;
+        border-right: 1px solid #000;
+        font-size: 12px;
       }
 
       th {
-        border: 1px solid gray;
+        color: #fff;
+        background: #666;
       }
 
-      td {
-        background-color: gray;
-        border: 1px solid rgb(26, 26, 26);
+      th:first-child {
+        border-left: 1px solid #000;
       }
-    }
-  </style>
-</head>
 
-<body>
-  index.html
-  <div class="index-table">
-    <table>
-      <colgroup>
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
-      </colgroup>
-      <thead>
-        <tr>
-          <th>1</th>
-          <th>2</th>
-          <th>3</th>
-          <th>4</th>
-          <th>link</th>
-          <th>memo</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>
-            <a href="html/phone/sub/sub1_1.html" target="_blank">sub1_1.html</a>
-          </td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>
-            <a href="html/guide/guide/popup.html" target="_blank">popup1.html</a>
-          </td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>
-            <a href="html/phone/sub/sub2_2.html" target="_blank">sub2_2.html</a>
-          </td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</body>
+      th:last-child {
+        border-right: 1px solid #000;
+      }
 
+      .delete {
+        text-decoration: line-through;
+        color: #ff0000;
+      }
+      .delete a {
+        text-decoration: line-through;
+        color: #ff0000;
+      }
+
+      .complete {
+        text-align: center;
+      }
+
+      tbody tr:nth-child(2n) {
+        background: #444;
+      }
+
+      tbody tr:hover td {
+        color: #fff;
+        background-color: #68b95e;
+      }
+      tbody tr:hover td a {
+        color: #fff;
+      }
+
+      tbody tr.red td {
+        background-color: red;
+      }
+      tbody tr.red td a {
+        color: #fff;
+      }
+
+      .title {
+        display: table-row !important;
+        cursor: pointer;
+      }
+
+      .title th {
+        text-align: left;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: 1px;
+        background: #000;
+        text-decoration: underline;
+        padding: 8px 10px;
+        border-top: 3px solid #888;
+      }
+
+      .title .count {
+        display: block;
+        float: right;
+        text-align: right;
+      }
+      .title .count :first-child {
+        color: yellow;
+        margin-right: 10px;
+      }
+      .title .count :last-child {
+        margin-left: 10px;
+      }
+
+      colgroup + thead .title th {
+        border-top: 0;
+      }
+
+      .title th::before {
+        content: "";
+        display: inline-block;
+        vertical-align: top;
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 0;
+        border-bottom: 8px solid #fff;
+        margin: 7px 10px 0 0;
+      }
+
+      .mini tr,
+      .mini + tbody {
+        display: none;
+      }
+
+      .mini .title th::before {
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 8px solid #fff;
+        border-bottom: 0;
+      }
+      .m-list {
+        position: relative;
+        margin: 0;
+        padding: 25px 0 0 0;
+      }
+      .m-list::before {
+        content: '수정일자';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-weight: bold;
+        line-height: 20px;
+        text-align: center;
+        background-color: #fff;
+        color: #ff0000;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;        
+      }
+      .m-list li {
+        position: relative;
+        list-style: none;
+        margin: 0;
+        padding: 0 0 0 10px;
+        color: #fff;
+        line-height: 20px;
+      }
+      .m-list li::before {
+        content: '';
+        position: absolute;
+        top: 9px;
+        left: 0;
+        width: 4px;
+        border-bottom: 4px solid #fff;
+        border-radius: 50%;
+      }
+      .m-list li + li {
+        margin-top: 5px;
+      }
+
+      #mode_toggle {
+        display: none;
+      }
+      #mode_toggle + label {
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        display: block;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        border-radius: 3px;
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        z-index: 1;
+      }
+      #mode_toggle + label::before {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 60%;
+        background: #fff;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #mode_toggle + label::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 60%;
+        background: #fff;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #mode_toggle:checked + label::after {
+        transform: translate(-50%, -50%) rotateZ(90deg);
+      }
+      #mode_toggle:checked ~ .main .mini tr,
+      #mode_toggle:checked ~ .main .mini + tbody {
+        display: none;
+      }
+      #mode_toggle:checked ~ .main colgroup {
+        display: none;
+      }
+      #mode_toggle:checked ~ .main table, #mode_toggle:checked ~ .main tbody, #mode_toggle:checked ~ .main thead, #mode_toggle:checked ~ .main tr {
+        display: block;
+        width: 100%;
+      }
+      #mode_toggle:checked ~ .main thead tr {
+        display: none;
+      }
+      #mode_toggle:checked ~ .main thead th {
+        display: block;
+      }
+      #mode_toggle:checked ~ .main thead tr.title {
+        display: block !important;
+      }
+      #mode_toggle:checked ~ .main tbody tr {
+        display: flex;
+        flex-wrap: wrap;
+        border-top: 0;
+        border-bottom: 1px solid white;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 0;
+      }
+      #mode_toggle:checked ~ .main tbody td {
+        display: inline-block;
+        vertical-align: top;
+        border: 0;
+      }
+      #mode_toggle:checked ~ .main tbody .link {
+        display: block;
+        width: 100%;
+        border-top: 2px dotted black;
+      }
+      #mode_toggle:checked ~ .main tbody .complete {
+        display: block;
+        width: 100%;
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      #mode_toggle:checked ~ .main tbody td:empty {
+        display: none;
+      }
+      #mode_toggle:checked ~ .main tbody .complete.ok {
+        border-top: 1px dashed yellow;
+      }
+      #mode_toggle:checked ~ .main tbody .complete ~ td {
+        display: none;
+        width: 100%;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border: 0;
+        text-align: left;
+      }
+      #mode_toggle:checked ~ .main tbody tr:nth-child(2n) {
+        background: transparent;
+      }
+      @media (max-width: 600px) {
+      }
+
+
+
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <!-- header -->
+      <header>
+        <h1>index</h1>
+        <div class="control_list">
+          <button class="close_all"></button>
+          <button class="open_all"></button>
+        </div>
+      </header>
+      <!-- // header -->
+
+      <input type="checkbox" id="mode_toggle"><label for="mode_toggle"></label>
+      <div class="main">
+        <!-- table -->
+        <table>
+          <colgroup>
+            <col class="level" />
+            <col class="level" />
+            <col class="level" />
+            <col class="level" />
+            <col class="level" />
+            <col class="level" />
+            <col class="level" />
+            <col class="link" />
+            <!-- <col class="complete" /> -->
+            <col class="complete" style="width: 60px;" />
+            <col class="note" />
+            <col class="comp-date" style="width: 110px;" />
+            <col class="modify-history" />
+          </colgroup>
+
+          <!-- Guide -->
+          <thead>
+            <tr class="title">
+              <th colspan="12">Guide</th>
+            </tr>
+            <tr>
+              <th colspan="9">disc.</th>
+              <th>link</th>
+              <th>완료</th>
+              <th>비고</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="9">input</td>
+              <td class="link"><a href="page/guide/input.html" target="_blank">input</a></td>
+              <td class="complete"></td>
+              <td class="note"></td>
+            </tr>
+          </tbody>
+          <!-- // Guide -->
+
+          <!-- common -->
+          <thead>
+            <tr class="title">
+              <th colspan="12">Common</th>
+            </tr>
+            <tr>
+              <th>lv[1]</th>
+              <th>lv[2]</th>
+              <th>lv[3]</th>
+              <th>lv[4]</th>
+              <th>lv[5]</th>
+              <th>lv[6]</th>
+              <th>lv[7]</th>
+              <th>link</th>
+              <th>완료</th>
+              <th>비고</th>
+              <th>완료일자</th>
+              <th>변동내역</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>loading</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="link"><a href="page/layout/loading.html" target="_blank">loading</a></td>
+              <td class="complete">O</td>
+              <td class="note"></td>
+            </tr>
+            <tr>
+              <td>앱 소개 페이지</td>
+              <td colspan="3"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="link"><a href="page/etc/index.html" target="_blank">index</a></td>
+              <td class="complete">O</td>
+              <td class="note"></td>
+            </tr>
+          </tbody>
+          <!-- // common -->
+
+          <!-- layout -->
+          <thead>
+            <tr class="title">
+              <th colspan="12">layout</th>
+            </tr>
+            <tr>
+              <th colspan="9">disc.</th>
+              <th>link</th>
+              <th>완료</th>
+              <th>비고</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="9">default</td>
+              <td class="link"><a href="page/layout/default.html" target="_blank">01</a></td>
+              <td class="complete"></td>
+              <td class="note"></td>
+            </tr>
+          </tbody>
+          <!-- // layout -->
+
+          <!-- 메인 -->
+          <thead>
+            <tr class="title">
+              <th colspan="12">공통 / 메인</th>
+            </tr>
+            <tr>
+              <th>lv[1]</th>
+              <th>lv[2]</th>
+              <th>lv[3]</th>
+              <th>lv[4]</th>
+              <th>lv[5]</th>
+              <th>lv[6]</th>
+              <th>lv[7]</th>
+              <th>link</th>
+              <th>완료</th>
+              <th>비고</th>
+              <th>완료일자</th>
+              <th>변동내역</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>메인</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="link">
+                <a href="page/ma/PAMAM1031M01.html" target="_blank">PAMAM1031M01</a>
+              </td>
+              <td class="complete">O</td>
+              <td class="note"></td>
+              <td>2022-10-13</td>
+              <td></td>
+            </tr>
+          </tbody>
+          <!-- 메인 -->
+
+
+        </table>
+        <!-- // table -->
+      </div>
+    </div>
+    <script src="js/lib/jquery-3.5.1.min.js"></script>
+    <script>
+      document.querySelector(".control_list .close_all").onclick = function () {
+        var el = document.querySelectorAll(".title");
+        var len = el.length;
+        if (len > 0) {
+          for (var i = 0; i < len; i++) el[i].parentElement.classList.add("mini");
+        }
+      };
+
+      document.querySelector(".control_list .open_all").onclick = function () {
+        var el = document.querySelectorAll(".mini");
+        var len = el.length;
+        if (len > 0) {
+          for (var i = 0; i < len; i++) el[i].classList.remove("mini");
+        }
+      };
+
+      document.querySelectorAll(".main .title").forEach(el => {
+        el.addEventListener("click", () => {
+          console.log('click')
+          el.parentElement.classList.toggle("mini");
+        });
+      });
+
+
+
+    </script>
+  </body>
 </html>
