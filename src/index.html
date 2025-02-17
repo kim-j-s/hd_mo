@@ -215,7 +215,7 @@
         border-top: 3px solid #888;
       }
 
-      .title .count {
+      /* .title .count {
         display: block;
         float: right;
         text-align: right;
@@ -226,13 +226,33 @@
       }
       .title .count :last-child {
         margin-left: 10px;
-      }
+      } */
+
+      
 
       colgroup + thead .title th {
         border-top: 0;
       }
 
-      .title th::before {
+      /* .title th::before {
+        content: "";
+        display: inline-block;
+        vertical-align: top;
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 0;
+        border-bottom: 8px solid #fff;
+        margin: 7px 10px 0 0;
+      } */
+
+      .title .inner {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .title .inner::before {
         content: "";
         display: inline-block;
         vertical-align: top;
@@ -256,46 +276,7 @@
         border-top: 8px solid #fff;
         border-bottom: 0;
       }
-      .m-list {
-        position: relative;
-        margin: 0;
-        padding: 25px 0 0 0;
-      }
-      .m-list::before {
-        content: '수정일자';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        font-weight: bold;
-        line-height: 20px;
-        text-align: center;
-        background-color: #fff;
-        color: #ff0000;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;        
-      }
-      .m-list li {
-        position: relative;
-        list-style: none;
-        margin: 0;
-        padding: 0 0 0 10px;
-        color: #fff;
-        line-height: 20px;
-      }
-      .m-list li::before {
-        content: '';
-        position: absolute;
-        top: 9px;
-        left: 0;
-        width: 4px;
-        border-bottom: 4px solid #fff;
-        border-radius: 50%;
-      }
-      .m-list li + li {
-        margin-top: 5px;
-      }
+      
 
       #mode_toggle {
         display: none;
@@ -402,6 +383,67 @@
       #mode_toggle:checked ~ .main tbody tr:nth-child(2n) {
         background: transparent;
       }
+
+      .m-list {
+        position: relative;
+        margin: 0;
+        padding: 25px 0 0 0;
+      }
+      .m-list::before {
+        content: '수정일자';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-weight: bold;
+        line-height: 20px;
+        text-align: center;
+        background-color: #fff;
+        color: #ff0000;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;        
+      }
+      .m-list li {
+        position: relative;
+        list-style: none;
+        margin: 0;
+        padding: 0 0 0 10px;
+        color: #fff;
+        line-height: 20px;
+      }
+      .m-list li::before {
+        content: '';
+        position: absolute;
+        top: 9px;
+        left: 0;
+        width: 4px;
+        border-bottom: 4px solid #fff;
+        border-radius: 50%;
+      }
+      .m-list li + li {
+        margin-top: 5px;
+      }
+
+      .rate {
+        margin-left: auto;        
+      }
+      .rate .rate_total::before {
+        content: '전체 : ';
+      }
+      .rate .rate_late::before {
+        content: '지연 : ';
+      }
+      .rate .rate_complete::before {
+        content: '완료 : ';
+      }
+      .rate .rate_per::before {
+        content: '진행률 : ';
+      }
+      .rate .rate_per::after {
+        content: '%';
+      }
+
       @media (max-width: 600px) {
       }
 
@@ -467,7 +509,17 @@
           <!-- common -->
           <thead>
             <tr class="title">
-              <th colspan="13">Common</th>
+              <th colspan="13">
+                <div class="inner">
+                  Common
+                  <span class="rate">
+                    <span class="rate_total"></span>
+                    <span class="rate_complete"></span>
+                    <span class="rate_late"></span>
+                    <span class="rate_per"></span>
+                  </span>
+                </div>
+              </th>
             </tr>
             <tr>
               <th>lv[1]</th>
@@ -486,6 +538,23 @@
             </tr>
           </thead>
           <tbody>
+            <tr class="no_count">
+              <td class="idx_dept1">no_count</td>
+              <td class="idx_dept2"></td>
+              <td class="idx_dept3"></td>
+              <td class="idx_dept4"></td>
+              <td class="idx_dept5"></td>
+              <td class="idx_dept6"></td>
+              <td class="idx_dept7"></td>
+              <td class="end_date"></td>
+              <td class="link">
+                <a href="page/layout/loading.html" target="_blank" title="worker1">loading1</a>
+              </td>
+              <td class="complete"></td>
+              <td class="bigo"></td>
+              <td class="bigo2"></td>
+              <td class="note"></td>
+            </tr>
             <tr>
               <td class="idx_dept1">loading</td>
               <td class="idx_dept2"></td>
@@ -494,7 +563,7 @@
               <td class="idx_dept5"></td>
               <td class="idx_dept6"></td>
               <td class="idx_dept7"></td>
-              <td class="end_day">25-02-14</td>
+              <td class="end_date">25-02-14</td>
               <td class="link">
                 <a href="page/layout/loading.html" target="_blank" title="worker1">loading1</a>
               </td>
@@ -518,7 +587,7 @@
               <td class="idx_dept5"></td>
               <td class="idx_dept6"></td>
               <td class="idx_dept7"></td>
-              <td class="end_day">25-02-17</td>
+              <td class="end_date">25-02-17</td>
               <td class="link">
                 <a href="page/layout/loading.html" target="_blank" title="worker2">loading2</a>
               </td>
@@ -539,7 +608,7 @@
               <td class="idx_dept5"></td>
               <td class="idx_dept6"></td>
               <td class="idx_dept7"></td>
-              <td class="end_day">25-02-17</td>
+              <td class="end_date">25-02-17</td>
               <td class="link">
                 <a href="page/layout/loading.html" target="_blank" title="worker3">loading3</a>
               </td>
@@ -561,7 +630,7 @@
               <td class="idx_dept5"></td>
               <td class="idx_dept6"></td>
               <td class="idx_dept7"></td>
-              <td class="end_day">25-02-14</td>
+              <td class="end_date">25-02-14</td>
               <td class="link">
                 <a href="page/layout/loading.html" target="_blank" title="worker3">loading32</a>
               </td>
@@ -583,7 +652,7 @@
               <td class="idx_dept5"></td>
               <td class="idx_dept6"></td>
               <td class="idx_dept7"></td>
-              <td class="end_day">25-02-18</td>
+              <td class="end_date">25-02-18</td>
               <td class="link">
                 <a href="page/layout/loading.html" target="_blank" title="worker3">loading4</a>
               </td>
@@ -605,7 +674,7 @@
               <td class="idx_dept5"></td>
               <td class="idx_dept6"></td>
               <td class="idx_dept7"></td>
-              <td class="end_day">25-02-17</td>
+              <td class="end_date">25-02-17</td>
               <td class="link">
                 <a href="page/layout/loading.html" target="_blank" title="worker4">loading5</a>
               </td>
@@ -614,9 +683,69 @@
               <td class="bigo2"></td>
               <td class="note">
                 <ul class="m-list">
-                  <li>25-02-14</li>
-                  <li>25-02-15</li>
-                  <li>25-02-16</li>
+                  <li>25-02-17</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="idx_dept1">loading</td>
+              <td class="idx_dept2"></td>
+              <td class="idx_dept3"></td>
+              <td class="idx_dept4"></td>
+              <td class="idx_dept5"></td>
+              <td class="idx_dept6"></td>
+              <td class="idx_dept7"></td>
+              <td class="end_date">25-02-17</td>
+              <td class="link">
+                <a href="page/layout/loading.html" target="_blank" title="worker4">loading5</a>
+              </td>
+              <td class="complete ok"></td>
+              <td class="bigo"></td>
+              <td class="bigo2"></td>
+              <td class="note">
+                <ul class="m-list">
+                  <li>25-02-17</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="idx_dept1">loading</td>
+              <td class="idx_dept2"></td>
+              <td class="idx_dept3"></td>
+              <td class="idx_dept4"></td>
+              <td class="idx_dept5"></td>
+              <td class="idx_dept6"></td>
+              <td class="idx_dept7"></td>
+              <td class="end_date">25-02-17</td>
+              <td class="link">
+                <a href="page/layout/loading.html" target="_blank" title="worker4">loading5</a>
+              </td>
+              <td class="complete"></td>
+              <td class="bigo"></td>
+              <td class="bigo2"></td>
+              <td class="note">
+                <ul class="m-list">
+                  <li>25-02-17</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="idx_dept1">loading</td>
+              <td class="idx_dept2"></td>
+              <td class="idx_dept3"></td>
+              <td class="idx_dept4"></td>
+              <td class="idx_dept5"></td>
+              <td class="idx_dept6"></td>
+              <td class="idx_dept7"></td>
+              <td class="end_date">25-02-17</td>
+              <td class="link">
+                <a href="page/layout/loading.html" target="_blank" title="worker4">loading5</a>
+              </td>
+              <td class="complete"></td>
+              <td class="bigo"></td>
+              <td class="bigo2"></td>
+              <td class="note">
+                <ul class="m-list">
                   <li>25-02-17</li>
                 </ul>
               </td>
@@ -654,7 +783,7 @@
               <td class="idx_dept5"></td>
               <td class="idx_dept6"></td>
               <td class="idx_dept7"></td>
-              <td class="end_day"></td>
+              <td class="end_date"></td>
               <td class="link">
                 <a href="page/layout/loading.html" target="_blank">loading</a>
               </td>
@@ -696,7 +825,7 @@
               <td class="idx_dept5"></td>
               <td class="idx_dept6"></td>
               <td class="idx_dept7"></td>
-              <td class="end_day"></td>
+              <td class="end_date"></td>
               <td class="link">
                 <a href="page/layout/loading.html" target="_blank">loading</a>
               </td>
@@ -738,7 +867,7 @@
               <td class="idx_dept5"></td>
               <td class="idx_dept6"></td>
               <td class="idx_dept7"></td>
-              <td class="end_day"></td>
+              <td class="end_date"></td>
               <td class="link">
                 <a href="page/layout/loading.html" target="_blank">loading</a>
               </td>
@@ -780,7 +909,7 @@
               <td class="idx_dept5"></td>
               <td class="idx_dept6"></td>
               <td class="idx_dept7"></td>
-              <td class="end_day"></td>
+              <td class="end_date"></td>
               <td class="link">
                 <a href="page/layout/loading.html" target="_blank">loading</a>
               </td>
@@ -822,7 +951,7 @@
               <td class="idx_dept5"></td>
               <td class="idx_dept6"></td>
               <td class="idx_dept7"></td>
-              <td class="end_day"></td>
+              <td class="end_date"></td>
               <td class="link">
                 <a href="page/layout/loading.html" target="_blank">loading</a>
               </td>
@@ -864,7 +993,7 @@
               <td class="idx_dept5"></td>
               <td class="idx_dept6"></td>
               <td class="idx_dept7"></td>
-              <td class="end_day"></td>
+              <td class="end_date"></td>
               <td class="link">
                 <a href="page/layout/loading.html" target="_blank">loading</a>
               </td>
@@ -927,6 +1056,7 @@
           $(this).children('li').each(function () {
             if($(this).text().trim() === getValDate) {
               const title = $(this).closest('tr').find('.link > a').attr('title');
+              $('.m-list > li').removeAttr('style');
               $(this).css('background','blue');
               worker.push(title);
             }
@@ -970,7 +1100,38 @@
 
       // 출력 
       // log('25-02-14');
-      log(dateString);
+      // log(dateString);
+
+
+      // 퍼블 지연 체크
+      function endDate(dateString) {
+        const [year, month, day] = dateString.split('-');
+        const formattedDateString = `20${year}-${month}-${day}`;
+        const today = new Date(formattedDateString);
+
+        if (isNaN(today)) {
+          console.error('Invalid Date:', formattedDateString);
+          return;
+        }
+
+        const endDates = document.querySelectorAll('.end_date');
+
+        endDates.forEach(td => {
+          const endDateText = td.textContent.trim();
+          const endDate = new Date('20' + endDateText.replace(/-/g, '/'));
+          const tr = td.closest('tr');
+          const completeTd = tr.querySelector('.complete');
+
+          if (endDate < today && !completeTd.classList.contains('ok')) {
+            td.style.backgroundColor = 'red';
+          } else if (endDate.getTime() === today.getTime()) {
+            td.style.backgroundColor = '';
+          }
+        });
+      }
+
+      // 현재 날짜를 기준으로 endDate 함수 호출
+      endDate(dateString);
 
     </script>
   </body>
