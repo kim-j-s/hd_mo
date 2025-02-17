@@ -18,8 +18,33 @@
     content: ' */';
     color: green;
   }
-  .guide_el {
+  
+  .guide_h4 {
+    position: relative;
     margin: 20px 0;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+  }
+  .guide_h4::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 50%;
+    border-left: 2px solid #000;
+    transform: translateY(-50%);
+  }
+  .guide_h4::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 50%;
+    border-left: 2px solid #000;
+    transform: translateY(-50%);
   }
 
   .guide_dark_wrap {
