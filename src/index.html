@@ -176,6 +176,9 @@
       .complete {
         text-align: center;
       }
+      .complete.ok::after {
+        content: 'O';        
+      }
 
       tbody tr:nth-child(2n) {
         background: #444;
@@ -491,7 +494,7 @@
               <td class="idx_dept5"></td>
               <td class="idx_dept6"></td>
               <td class="idx_dept7"></td>
-              <td class="end_day"></td>
+              <td class="end_day">25-02-14</td>
               <td class="link">
                 <a href="page/layout/loading.html" target="_blank" title="worker1">loading1</a>
               </td>
@@ -515,11 +518,11 @@
               <td class="idx_dept5"></td>
               <td class="idx_dept6"></td>
               <td class="idx_dept7"></td>
-              <td class="end_day"></td>
+              <td class="end_day">25-02-17</td>
               <td class="link">
                 <a href="page/layout/loading.html" target="_blank" title="worker2">loading2</a>
               </td>
-              <td class="complete"></td>
+              <td class="complete ok"></td>
               <td class="bigo"></td>
               <td class="bigo2"></td>
               <td class="note">
@@ -536,7 +539,7 @@
               <td class="idx_dept5"></td>
               <td class="idx_dept6"></td>
               <td class="idx_dept7"></td>
-              <td class="end_day"></td>
+              <td class="end_day">25-02-17</td>
               <td class="link">
                 <a href="page/layout/loading.html" target="_blank" title="worker3">loading3</a>
               </td>
@@ -558,7 +561,7 @@
               <td class="idx_dept5"></td>
               <td class="idx_dept6"></td>
               <td class="idx_dept7"></td>
-              <td class="end_day"></td>
+              <td class="end_day">25-02-14</td>
               <td class="link">
                 <a href="page/layout/loading.html" target="_blank" title="worker3">loading32</a>
               </td>
@@ -580,7 +583,7 @@
               <td class="idx_dept5"></td>
               <td class="idx_dept6"></td>
               <td class="idx_dept7"></td>
-              <td class="end_day"></td>
+              <td class="end_day">25-02-18</td>
               <td class="link">
                 <a href="page/layout/loading.html" target="_blank" title="worker3">loading4</a>
               </td>
@@ -602,11 +605,11 @@
               <td class="idx_dept5"></td>
               <td class="idx_dept6"></td>
               <td class="idx_dept7"></td>
-              <td class="end_day"></td>
+              <td class="end_day">25-02-17</td>
               <td class="link">
                 <a href="page/layout/loading.html" target="_blank" title="worker4">loading5</a>
               </td>
-              <td class="complete"></td>
+              <td class="complete ok"></td>
               <td class="bigo"></td>
               <td class="bigo2"></td>
               <td class="note">
@@ -915,7 +918,7 @@
       let dateString = year + '-' + month + '-' + date;
       // console.log(dateString);
 
-      function modifyLog(dateString) {
+      function log(dateString) {
         const getValDate = dateString;
 
         // 페이지 작업자 확인 배열 생성
@@ -929,7 +932,7 @@
             }
           });
         });
-        console.log(worker);
+        // console.log(worker);
 
 
         // 작업자 배열 확인
@@ -966,8 +969,8 @@
       }
 
       // 출력 
-      // modifyLog('25-02-14');
-      modifyLog(dateString);
+      // log('25-02-14');
+      log(dateString);
 
     </script>
   </body>
