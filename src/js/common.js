@@ -40,21 +40,23 @@
     $(this).closePop();
   });
 
-
+  
   /* Accordian */
-  $DOM.on('click', '.acd_wrap .acd_head', function(){
+  $DOM.on('click', '.acd_item .acd_head', function(){
     const $this = $(this),
-          $acd_bottom = $this.next('.acd_cont'),
-          $click_item = $this.closest('.acd_item');
+          $acd_inner = $this.next('.acd_cont').children('.inner'),
+          $click_item = $this.parent('.acd_item');
 
-    $click_item.children('.acd_head').attr('aria-expanded', 'false');
-    $click_item.children('.acd_cont').stop(true,true).slideUp();
-
-    if($acd_bottom.css('display') == 'none'){
-      $this.attr('aria-expanded', 'true');
-      $acd_bottom.stop(true, true).slideDown();
+    if($acd_inner.css('display') == 'none'){
+      $click_item.children('.acd_head').removeClass('active');
+      $this.addClass('active').attr('aria-expanded', 'true');
+      $click_item.children('.acd_cont').children('.inner').hide();
+      $acd_inner.slideDown();
+    }else {
+      $this.removeClass('active').attr('aria-expanded', 'false');
+      $acd_inner.slideUp();
     }
-  })
+  });
 
 
   /* Tooltip */

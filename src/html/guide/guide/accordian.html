@@ -2,32 +2,35 @@
 	<div class="guide_h1">accordian</div>
 
 	<div class="guide_h4">1st type - 각각 열리는 Type</div>
-	<div class="acd_wrap ty1">
-		{{#> components/accordian ac-title="타이틀 테스트" active=true}}
-			1Depth
-			{{#> components/accordian-dp sub-title="다른 타이틀" active=false }}
-			2Depth
+	<div class="acd_item">
+		{{#> components/accordian ac-title="아코디언 타이틀" active=true}}
+			아코디언 내용
+			{{#> components/accordian-dp sub-title="서브 타이틀" active=false }}
+				서브내용
 			{{/ components/accordian-dp }}
-			{{#> components/accordian-dp sub-title="다른 타이틀" active=false }}
-			2Depth
+			{{#> components/accordian-dp sub-title="서브 타이틀" active=false }}
+				서브내용
 			{{/ components/accordian-dp }}
 		{{/ components/accordian }}
-
-		{{#> components/accordian ac-title="타이틀 테스트"}}
-			1Depth
-			{{#> components/accordian-dp sub-title="다른 타이틀" }}
-			2Depth
+	</div>
+	<div class="acd_item">
+		{{#> components/accordian ac-title="아코디언 테스트"}}
+		아코디언 내용
+			{{#> components/accordian-dp sub-title="서브 타이틀" }}
+				서브내용
 			{{/ components/accordian-dp }}
 		{{/ components/accordian }}
 	</div>
 
 	<div class="guide_h4">2nd type - 하나만 열리는 Type</div>
-	
-	<div class="acd_wrap">
-		{{#> components/accordian ac-title="타이틀 테스트"}}
-			1Depth
-			{{#> components/accordian-dp sub-title="다른 타이틀" }}
-			2Depth
+	<div class="acd_item">
+		{{#> components/accordian ac-title="아코디언 테스트"}}
+		아코디언 내용
+		{{/ components/accordian }}
+		{{#> components/accordian ac-title="아코디언 테스트"}}
+		아코디언 내용
+			{{#> components/accordian-dp sub-title="서브 타이틀" }}
+				서브내용
 			{{/ components/accordian-dp }}
 		{{/ components/accordian }}
 	</div>

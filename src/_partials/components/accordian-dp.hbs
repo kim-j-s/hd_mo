@@ -1,10 +1,8 @@
-<div class="acd_item ty2">
-  <div class="acd_head{{#if active}} active{{/if}}" {{#if active}}aria-expanded="true"{{else}}aria-expanded="false"{{/if}}>
-    <button type="button"><span>{{{sub-title}}}</span></button>
-  </div>
-  <div class="acd_cont">
-    <div class="inner"{{#if active}} style="display:inline-block;"{{/if}}>
-      {{> @partial-block }}
-    </div>
+<div class="acd_head{{#if active}} active{{/if}}" {{#if active}}aria-expanded="true"{{else}}aria-expanded="false"{{/if}}>
+  <button type="button" class="acd_btn"><span>{{{sub-title}}}</span></button>
+</div>
+<div class="acd_cont">
+  <div class="inner"{{#if active}} style="display:block;"{{/if}}>
+    {{> @partial-block }}
   </div>
 </div>
