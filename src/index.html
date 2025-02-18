@@ -625,7 +625,7 @@
               <td class="link">
                 <a href="page/layout/loading.html" target="_blank" title="worker2">loading2</a>
               </td>
-              <td class="complete ok"></td>
+              <td class="complete"></td>
               <td class="bigo"></td>
               <td class="bigo2"></td>
               <td class="note">
@@ -1107,8 +1107,7 @@
         <!-- // table -->
       </div>
     </div>
-    <script src="js/libs/jquery-1.8.3.min.js.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-1.8.3.min.js.js"></script> -->
+    <script src="js/libs/jquery-1.8.3.min.js"></script>
     <script>
       document.querySelector(".control_list .close_all").onclick = function () {
         var el = document.querySelectorAll(".title");
@@ -1154,7 +1153,7 @@
             if($(this).text().trim() === getValDate) {
               const title = $(this).closest('tr').find('.link > a').attr('title');
               $('.m-list > li').removeAttr('style');
-              $(this).css('background','blue');
+              $(this).css('background','magenta');
               worker.push(title);
             }
           });
@@ -1273,7 +1272,8 @@
         const todayEnd = $tbody.find('.end_date').filter('.ing').length;
         // console.log('오늘까지 작업해야 하는 페이지 총 갯수 : ' + todayEnd);
 
-        const ratePer = Math.round((completeCount / trCount) * 100);
+        const ratePer = Math.round((completeCount / todayEnd) * 100);
+        // console.log(completeCount, todayEnd);
         // console.log('진행률 : ' + ratePer + '%');
         $tbody.prev('thead').find('.rate_per').text(ratePer);
       });
