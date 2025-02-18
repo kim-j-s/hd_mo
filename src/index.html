@@ -210,7 +210,7 @@
         line-height: 22px;
         letter-spacing: 1px;
         background: #000;
-        text-decoration: underline;
+        /* text-decoration: underline; */
         padding: 8px 10px;
         border-top: 3px solid #888;
       }
@@ -425,8 +425,33 @@
       }
 
       .rate {
+        display: inline-flex;
         margin-left: auto;
       }
+      .rate > span {
+        position: relative;
+        margin-right: 17px;
+      }
+      .rate > span::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -8px;
+        height: 12px;
+        border-left: 1px solid #fff;
+        transform: translateY(-50%);
+      }
+      .rate > span:last-child {
+        margin-right: 0;
+      }
+      .rate > span:last-child:after {
+        content: '%';
+        position: relative;
+        top: auto;
+        right: auto;
+        border-left: none;
+      }
+      
       .rate .rate_total::before {
         content: '전체 : ';
       }
@@ -499,7 +524,7 @@
               <th>비고</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="none">
             <tr>
               <td colspan="10">input</td>
               <td class="link"><a href="html/guide/guide/input.html" target="_blank">input</a></td>
@@ -507,7 +532,7 @@
               <td class="note"></td>
             </tr>
             <tr>
-              <td colspan="10">input</td>
+              <td colspan="10">accordian</td>
               <td class="link"><a href="html/guide/guide/accordian.html" target="_blank">accordian</a></td>
               <td class="complete"></td>
               <td class="note"></td>
@@ -520,7 +545,7 @@
             <tr class="title">
               <th colspan="13">
                 <div class="inner">
-                  Common
+                  <span class="title_text">Common</span>
                   <span class="rate">
                     <span class="rate_total"></span>
                     <span class="rate_complete"></span>
@@ -628,6 +653,7 @@
                 <ul class="m-list">
                   <li>25-02-14</li>
                   <li>25-02-17</li>
+                  <li>25-02-18</li>
                 </ul>
               </td>
             </tr>
@@ -746,7 +772,7 @@
               <td class="idx_dept5"></td>
               <td class="idx_dept6"></td>
               <td class="idx_dept7"></td>
-              <td class="end_date">25-02-17</td>
+              <td class="end_date">25-02-19</td>
               <td class="link">
                 <a href="page/layout/loading.html" target="_blank" title="worker4">loading5</a>
               </td>
@@ -765,7 +791,17 @@
           <!-- 메인 -->
           <thead>
             <tr class="title">
-              <th colspan="13">메인</th>
+              <th colspan="13">
+                <div class="inner">
+                  <span class="title_text">메인</span>
+                  <span class="rate">
+                    <span class="rate_total"></span>
+                    <span class="rate_complete"></span>
+                    <span class="rate_late"></span>
+                    <span class="rate_per"></span>
+                  </span>
+                </div>
+              </th>
             </tr>
             <tr>
               <th>lv[1]</th>
@@ -807,7 +843,17 @@
           <!-- 상품 -->
           <thead>
             <tr class="title">
-              <th colspan="13">상품</th>
+              <th colspan="13">
+                <div class="inner">
+                  상품
+                  <span class="rate">
+                    <span class="rate_total"></span>
+                    <span class="rate_complete"></span>
+                    <span class="rate_late"></span>
+                    <span class="rate_per"></span>
+                  </span>
+                </div>
+              </th>
             </tr>
             <tr>
               <th>lv[1]</th>
@@ -849,7 +895,17 @@
           <!-- MY -->
           <thead>
             <tr class="title">
-              <th colspan="13">MY</th>
+              <th colspan="13">
+                <div class="inner">
+                  MY
+                  <span class="rate">
+                    <span class="rate_total"></span>
+                    <span class="rate_complete"></span>
+                    <span class="rate_late"></span>
+                    <span class="rate_per"></span>
+                  </span>
+                </div>
+              </th>
             </tr>
             <tr>
               <th>lv[1]</th>
@@ -891,7 +947,17 @@
           <!-- 혜택 -->
           <thead>
             <tr class="title">
-              <th colspan="13">혜택</th>
+              <th colspan="13">
+                <div class="inner">
+                  혜택
+                  <span class="rate">
+                    <span class="rate_total"></span>
+                    <span class="rate_complete"></span>
+                    <span class="rate_late"></span>
+                    <span class="rate_per"></span>
+                  </span>
+                </div>
+              </th>
             </tr>
             <tr>
               <th>lv[1]</th>
@@ -933,7 +999,17 @@
           <!-- 이용안내 -->
           <thead>
             <tr class="title">
-              <th colspan="13">이용안내</th>
+              <th colspan="13">
+                <div class="inner">
+                  이용안내
+                  <span class="rate">
+                    <span class="rate_total"></span>
+                    <span class="rate_complete"></span>
+                    <span class="rate_late"></span>
+                    <span class="rate_per"></span>
+                  </span>
+                </div>
+              </th>
             </tr>
             <tr>
               <th>lv[1]</th>
@@ -975,7 +1051,17 @@
           <!-- 공통 -->
           <thead>
             <tr class="title">
-              <th colspan="13">공통</th>
+              <th colspan="13">
+                <div class="inner">
+                  공통
+                  <span class="rate">
+                    <span class="rate_total"></span>
+                    <span class="rate_complete"></span>
+                    <span class="rate_late"></span>
+                    <span class="rate_per"></span>
+                  </span>
+                </div>
+              </th>
             </tr>
             <tr>
               <th>lv[1]</th>
@@ -1021,8 +1107,8 @@
         <!-- // table -->
       </div>
     </div>
-    <!-- <script src="js/lib/jquery-3.5.1.min.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/libs/jquery-1.8.3.min.js.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-1.8.3.min.js.js"></script> -->
     <script>
       document.querySelector(".control_list .close_all").onclick = function () {
         var el = document.querySelectorAll(".title");
@@ -1046,6 +1132,8 @@
           el.parentElement.classList.toggle("mini");
         });
       });
+
+      
 
 
       // 수정내역 확인 목록
@@ -1109,7 +1197,7 @@
 
       // 출력 
       // log('25-02-14');
-      // log(dateString);
+      log(dateString);
 
 
       // 퍼블 지연 체크
@@ -1118,29 +1206,77 @@
         const formattedDateString = `20${year}-${month}-${day}`;
         const today = new Date(formattedDateString);
 
-        if (isNaN(today)) {
-          console.error('Invalid Date:', formattedDateString);
-          return;
-        }
+        // if (isNaN(today)) {
+        //   console.error('Invalid Date:', formattedDateString);
+        //   return;
+        // }
 
-        const endDates = document.querySelectorAll('.end_date');
+        // console.log('기준 날짜:', today);
 
-        endDates.forEach(td => {
-          const endDateText = td.textContent.trim();
+        $('.end_date').each(function() {
+          const endDateText = $(this).text().trim();
+          // console.log('마감 날짜:', endDateText);
           const endDate = new Date('20' + endDateText.replace(/-/g, '/'));
-          const tr = td.closest('tr');
-          const completeTd = tr.querySelector('.complete');
+          const $tr = $(this).closest('tr');
+          const $completeTd = $tr.find('.complete');
 
-          if (endDate < today && !completeTd.classList.contains('ok')) {
-            td.style.backgroundColor = 'red';
-          } else if (endDate.getTime() === today.getTime()) {
-            td.style.backgroundColor = '';
+          // console.log('비교 날짜:', endDate);
+
+          // 날짜 부분만 추출하여 비교
+          const todayDateOnly = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+          const endDateOnly = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate());
+
+          if (todayDateOnly > endDateOnly || endDateOnly.getTime() === todayDateOnly.getTime()) {
+            $(this).addClass('ing');
           }
+
+          // 날짜 비교 및 배경색 변경
+          if (endDateOnly < todayDateOnly && !$completeTd.hasClass('ok')) {
+            // console.log('지연');
+            $(this).css('background-color', 'red').addClass('late');
+          } else if (endDateOnly.getTime() === todayDateOnly.getTime()) {
+            // console.log('오늘 마감');
+            $(this).css('background-color', 'blue');
+          } else if ($completeTd.hasClass('ok')) {
+            // console.log('완료');
+            $(this).css('background-color', '');
+          }          
         });
       }
 
       // 현재 날짜를 기준으로 endDate 함수 호출
       endDate(dateString);
+
+      $('tbody').each(function() {
+        const $tbody = $(this);
+
+        // 'none' 클래스를 가진 tbody는 제외
+        if ($tbody.hasClass('none')) {
+          return;
+        }
+
+        // 'no_count' 클래스를 가진 tr을 제외하고 tr의 갯수를 계산
+        const trCount = $tbody.find('tr').not('.no_count').length;
+
+        // 이전 thead 안의 rate_total에 trCount를 텍스트로 설정
+        $tbody.prev('thead').find('.rate_total').text(trCount);
+
+        // 완료된 tr의 갯수를 계산
+        const completeCount = $tbody.find('.complete.ok').length;
+        $tbody.prev('thead').find('.rate_complete').text(completeCount);
+
+        // 지연된 tr의 갯수를 계산
+        const lateCount = $tbody.find('.end_date').filter('.late').length;
+        $tbody.prev('thead').find('.rate_late').text(lateCount);
+
+        // 오늘까지 작업해야 하는 페이지 총 갯수
+        const todayEnd = $tbody.find('.end_date').filter('.ing').length;
+        // console.log('오늘까지 작업해야 하는 페이지 총 갯수 : ' + todayEnd);
+
+        const ratePer = Math.round((completeCount / trCount) * 100);
+        // console.log('진행률 : ' + ratePer + '%');
+        $tbody.prev('thead').find('.rate_per').text(ratePer);
+      });
 
     </script>
   </body>
