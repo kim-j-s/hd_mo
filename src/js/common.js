@@ -33,11 +33,12 @@
   }
 
   $('.popup_open').on('click', function(){
-    const $this = $(this).data('popup-id');
-    $('#' + $this).openPop();
+    const $target = $(this).data('popup-id');
+    $('#' + $target).openPop();
   });
   $('.popup_close').on('click', function(){
-    $(this).closePop();
+    const $this = $(this);
+    $this.closePop();
   });
 
 
@@ -73,51 +74,40 @@
 
 
   /* Input */
-  $DOM.on('focus', '.inp > input', function(){
-    const $this = $(this),
-          $wrap = $this.closest('.inp');
-
-    if(this.value){
-      $wrap.addClass('active');
-    }
-    
-    if($this.attr('readonly')){
-      console.log('a');
-    }
-  }).on('blur', '.inp > input', function(){
-    const $this = $(this),
-          $wrap = $this.closest('.inp');
-
-    // $wrap.removeClass('active');
-  });
-  
-  $DOM.on('input', '.inp > input', function(){
+  $DOM.on('focus input', '.input_text .inp > input', function(){
     const $this = $(this),
           $wrap = $this.closest('.inp'),
-          $val = $this.val;
+          $val = $this.val(),
+          $del = $this.siblings('.del');
+      
+    if($del.length) {
+      $del.attr('tabindex', '0');
+    }
+
+    $('.input_text .inp').removeClass('active').children('.del').hide();
+    $wrap.addClass('active');
+    $del.show();
 
     if($val){
-      $wrap.addClass('active');
+      $del.show();
+    }else {
+      $wrap.removeClass('active');
+      $del.hide();
     }
+    // (this.value) ? $wrap.addClass('active'):$wrap.removeClass('active');
+    
   }).on('blur', '.inp > input', function(){
     const $this = $(this),
-          $wrap = $this.closest('.inp');
+          $wrap = $this.closest('.inp'),
+          $val = $this.val(),
+          $del = $this.siblings('.del');
+    $wrap.removeClass('active');
 
-    // $wrap.removeClass('active');
+  }).on('click', '.inp > .del', function(){
+    const $this = $(this);
+    $this.siblings('input').val('').focus();
+    $this.parent('.inp').removeClass('active');
   });
-
-  $DOM.on('click', '.inp > .del', function(){
-    const $this = $(this),
-          $wrap = $this.closest('.inp');
-    let $val = $wrap.children('input').val;
-    console.log('a');
-
-    
-
-    $wrap.children('input').each(function(){
-      $wrap.children('input').val();
-    })
-  })
 
 
   /* Textarea */

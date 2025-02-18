@@ -3,31 +3,63 @@
   position: relative;
 
   &.active {
+    input {
+      padding-right: 50px;
+    }
+  
     .del {
-      display: block;
+      // display: block;
     }
   }
 
   > input {
+    position: relative;
     display: block;
     width: 100%;
     height: 48px;
     border: 1px solid #ddd;
     appearance: none;
+    box-sizing: border-box;
   }
-  .del {
-    display: none;
+  
+  .del,
+  .cal {
     position: absolute;
     top: 50%;
     right: 10px;
     transform: translateY(-50%);
   }
+  .del {
+    display: none;
+  }
+  input[type="date"] {
+    position:relative; 
+    padding:14px; 
+    width:150px; 
+    height:30px; 
+    font-size:14px; 
+    color:#999; 
+    border:none; 
+    border-bottom:1px solid #e0e0e0;
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0); //숨긴다
+    opacity: 1;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-width: thin;
+  }
+  input[type="date"].active::before {
+    content:attr(data-placeholder);
+    width:100%;
 }
-.error {
-  &.success {
-    color: blue;
-  }
-  &.fail {
-    color: red;
-  }
+}
+
+// Error 문구
+.msg_success {
+  color: blue;
+}
+.msg_fail {
+  color: red;
 }
