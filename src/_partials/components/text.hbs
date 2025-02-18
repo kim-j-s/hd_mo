@@ -1,13 +1,20 @@
 <div class="input_text">
-  <div class="inp">
-    <input type="text">
+  <div class="inp{{#if class}} {{class}}{{/if}}{{#if no_del}} no_del{{/if}}">
+    <input 
+      {{#if type}}type="{{type}}"{{else}}type="text"{{/if}}
+      {{#if placeholder}}placeholder="{{placeholder}}"{{/if}}
+      {{#if disabled}}disabled{{/if}}
+      {{#if readonly}}readonly{{/if}}
+    >
     {{!-- 초기화 버튼 --}}
+    {{#unless no_del}}<button type="button" class="del">텍스트삭제</button>{{/unless}}
     {{!-- 달력 호출 버튼 --}}
+    {{#if no_cal}}<span class="caleandar">달력 호출</span>{{/if}}
   </div>
   {{!-- validation --}}
-  {{!-- 안내문구 노출 위치
-  <p class="test">에러</p>
-  <p class="test">성공</p>
-  <p class="test">기본문구</p> --}}
+  {{!-- 안내문구 노출 위치 --}}
+  {{#if error}}
+    <p class="error{{#if success}} success{{/if}}{{#if fail}} fail{{/if}}">{{error_text}}</p>
+  {{/if}}
   {{!-- validation --}}
 </div>

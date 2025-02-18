@@ -40,7 +40,7 @@
     $(this).closePop();
   });
 
-  
+
   /* Accordian */
   $DOM.on('click', '.acd_item .acd_head', function(){
     const $this = $(this),
@@ -71,6 +71,56 @@
     }
   })
 
+
+  /* Input */
+  $DOM.on('focus', '.inp > input', function(){
+    const $this = $(this),
+          $wrap = $this.closest('.inp');
+
+    if(this.value){
+      $wrap.addClass('active');
+    }
+    
+    if($this.attr('readonly')){
+      console.log('a');
+    }
+  }).on('blur', '.inp > input', function(){
+    const $this = $(this),
+          $wrap = $this.closest('.inp');
+
+    // $wrap.removeClass('active');
+  });
+  
+  $DOM.on('input', '.inp > input', function(){
+    const $this = $(this),
+          $wrap = $this.closest('.inp'),
+          $val = $this.val;
+
+    if($val){
+      $wrap.addClass('active');
+    }
+  }).on('blur', '.inp > input', function(){
+    const $this = $(this),
+          $wrap = $this.closest('.inp');
+
+    // $wrap.removeClass('active');
+  });
+
+  $DOM.on('click', '.inp > .del', function(){
+    const $this = $(this),
+          $wrap = $this.closest('.inp');
+    let $val = $wrap.children('input').val;
+    console.log('a');
+
+    
+
+    $wrap.children('input').each(function(){
+      $wrap.children('input').val();
+    })
+  })
+
+
+  /* Textarea */
   $DOM.on('blur keyup', '.byte_check > textarea', function(){
     const str = $(this).val(),
           strLng = str.length,

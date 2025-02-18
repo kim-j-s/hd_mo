@@ -1,0 +1,33 @@
+/* Input */
+.inp {
+  position: relative;
+
+  &.active {
+    .del {
+      display: block;
+    }
+  }
+
+  > input {
+    display: block;
+    width: 100%;
+    height: 48px;
+    border: 1px solid #ddd;
+    appearance: none;
+  }
+  .del {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+}
+.error {
+  &.success {
+    color: blue;
+  }
+  &.fail {
+    color: red;
+  }
+}

@@ -1,15 +1,40 @@
 {{#> layout/guide }}
     <div class="guide_h1">Input</div>
+    <div class="guide_h4">Type - text</div>
+    <!-- Attribute -->
+    <div class="guide_discription">Default</div>
+    {{#> components/text placeholder="플레이스홀더" }}
+        텍스트
+    {{/ components/text }}
 
-    <div class="guide_discription">
-        guide_discription
-    </div>
+    <div class="guide_discription">disabled</div>
+    {{#> components/text placeholder="플레이스홀더" disabled=true }}
+        텍스트
+    {{/ components/text }}
 
-    <div class="guide_h4">
-        guide_discription
-    </div>
+    <div class="guide_discription">Readonly</div>
+    {{#> components/text placeholder="플레이스홀더" readonly=true }}
+        텍스트
+    {{/ components/text }}
 
-    <div class="guide_dark_wrap">guide_dark_wrap</div>
+    <!-- Error -->
+    <div class="guide_discription">Error Default</div>
+    {{#> components/text error=true error_text="에러문구"}}
+        텍스트
+    {{/ components/text }}
+    <div class="guide_discription">Error success</div>
+    {{#> components/text error=true success=true error_text="에러문구"}}
+        텍스트
+    {{/ components/text }}
+    <div class="guide_discription">Error fail</div>
+    {{#> components/text error=true fail=true error_text="에러문구"}}
+        텍스트
+    {{/ components/text }}
 
+
+    <div class="guide_h4">Type - caleandar</div>
+    {{#> components/text no_cal=true }}
+        텍스트
+    {{/ components/text }}
 
 {{/ layout/guide }}
