@@ -1,78 +1,47 @@
-@import url(../variable.scss);
-@import url(../mixin.scss);
 
 @mixin list-style(
-  $ul-padding: 0, 
-  $ul-margin: 0, 
+  // $ul-padding: 0,
+  // $ul-margin: 0,
   $li-padding: 0, 
   $li-margin: 0, 
-  $li-font-size: 16px, 
-  $li-line-height: 1.5,
-  $ul-bg-color: transparent,   // ul의 배경색
-  $ul-border: none,             // ul의 테두리
-  $li-font-family: Arial,       // li의 폰트 패밀리
-  $li-color: inherit            // li의 글자 색상
+  $li-font-size: 16px,
+	$li-line-height: 20px,
+  $li-color: inherit
 ) {
-  ul {
-    padding: $ul-padding;
-    margin: $ul-margin;
-  }
+  // margin: $ul-margin;
+  // padding: $ul-padding;
 
-  li {
-    padding: $li-padding;
+  > li {
+		position: relative;
     margin: $li-margin;
+    padding: $li-padding;
     font-size: $li-font-size;
     line-height: $li-line-height;
-    font-family: $li-font-family;  // 폰트 패밀리
-    color: $li-color;             // 글자 색상
+    color: $li-color;
   }
-
-  // @content를 사용하여, 외부에서 추가적인 스타일을 삽입할 수 있게 합니다.
   @content;
 }
 
 .list_ty1 {
   @include list-style(
-    $ul-padding: 10px, 
-    $ul-margin: 20px, 
-    $li-padding: 5px, 
-    $li-margin: 10px, 
-    $li-font-size: 14px, 
-    $li-line-height: 1.6,
-    $ul-bg-color: lightgray,      // 배경색
-    $ul-border: 1px solid #ccc,   // 테두리
-    $li-font-family: 'Courier New', // 폰트 패밀리
-    $li-color: #333               // li 텍스트 색상
-  ) {
-    // ul.list-1에 대한 추가적인 스타일
-    & {
-			background-color: blue;
-    }
-
-    li {
-      background-color: red;    // li 항목에 배경색 추가
-      &:hover {
-        background-color: #f0f0f0; // hover 시 배경색 변경
-      }
-    }
-  }
-}
-
-.list_ty2 {
-  @include list-style(
-    $li-margin: 10px 0 0 10px,
+    $li-padding: 0 0 0 10px,
     $li-font-size: 14px,
+    $li-color: #333
   ) {
     // ul.list-1에 대한 추가적인 스타일
-    & {
-			background-color: green;
-    }
-
-    li {
-      background-color: magenta;    // li 항목에 배경색 추가
-      &:hover {
-        background-color: #ddd; // hover 시 배경색 변경
-      }
+		// background-color: var(--color-primary);
+    > li {
+			&::before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 0;
+				width: 4px;
+				height: 4px;
+				border-radius: 50%;
+				background-color: #333;
+				transform: translateY(-50%);
+			}
     }
   }
 }

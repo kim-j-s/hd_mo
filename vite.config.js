@@ -5,7 +5,7 @@ import fs from 'fs';
 import path, { resolve } from 'path';
 // import helpers from './src/_helpers/index';
 
-import helpers from './src/_helpers/index';
+// import helpers from './src/_helpers/index';
 import pxtorem from 'postcss-pxtorem'; // pxtorem 플러그인 가져오기
 
 // src 내 빌드 파일 엔트리(html, js, css) 만들기
@@ -14,12 +14,13 @@ import pxtorem from 'postcss-pxtorem'; // pxtorem 플러그인 가져오기
 // const helperPath = 'src/_helpers';  // helpers 경로 (엔트리 예외처리)
 
 const partialPath = 'src/_partials';
-const helperPath = 'src/_helpers';
+// const helperPath = 'src/_helpers';
 
 const getEntries = dir => {
   const htmlEntries = {};
 
-  if(dir.length === dir.replace(partialPath, '').length && dir.length === dir.replace(helperPath, '').length ) {
+  // if(dir.length === dir.replace(partialPath, '').length && dir.length === dir.replace(helperPath, '').length ) {
+  if(dir.length === dir.replace(partialPath, '').length && dir.length ) {
     fs.readdirSync(dir).forEach(item => {
       const itemPath = path.join(dir, item);
   
@@ -104,7 +105,7 @@ export default defineConfig({
         console.log(pagePath);
         return pageData[pagePath];
       },
-      helpers, // helpers 등록
+      // helpers, // helpers 등록
     }),
     {
       name: 'html-transform', // 플러그인 이름
