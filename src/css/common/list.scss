@@ -1,0 +1,77 @@
+@import url(../variable.scss);
+@import url(../mixin.scss);
+
+// @mixin list($ul-padding, $ul-margin, $li-padding, $li-margin, $plus-margin) {
+//   ul {
+//     padding: $ul-padding;
+//     margin: $ul-margin;
+//   }
+//   li {
+//     padding: $li-padding;
+//     margin: $li-margin;
+//     + li {
+//       margin-top: $plus-margin;
+//     }
+//   }
+//   @content;
+// }
+
+@mixin list-style(
+  $ul-padding: 0, 
+  $ul-margin: 0, 
+  $li-padding: 0, 
+  $li-margin: 0, 
+  $li-font-size: 16px, 
+  $li-line-height: 1.5,
+  $ul-bg-color: transparent,   // ul의 배경색
+  $ul-border: none,             // ul의 테두리
+  $li-font-family: Arial,       // li의 폰트 패밀리
+  $li-color: inherit            // li의 글자 색상
+) {
+  ul {
+    padding: $ul-padding;
+    margin: $ul-margin;
+    list-style-type: none; // 기본 리스트 스타일 제거
+    background-color: $ul-bg-color; // 배경색
+    border: $ul-border; // 테두리
+  }
+
+  li {
+    padding: $li-padding;
+    margin: $li-margin;
+    font-size: $li-font-size;
+    line-height: $li-line-height;
+    font-family: $li-font-family;  // 폰트 패밀리
+    color: $li-color;             // 글자 색상
+  }
+
+  // @content를 사용하여, 외부에서 추가적인 스타일을 삽입할 수 있게 합니다.
+  @content;
+}
+
+.list_ty1 {
+  @include list-style(
+    $ul-padding: 10px, 
+    $ul-margin: 20px, 
+    $li-padding: 5px, 
+    $li-margin: 10px, 
+    $li-font-size: 14px, 
+    $li-line-height: 1.6,
+    $ul-bg-color: lightgray,      // 배경색
+    $ul-border: 1px solid #ccc,   // 테두리
+    $li-font-family: 'Courier New', // 폰트 패밀리
+    $li-color: #333               // li 텍스트 색상
+  ) {
+    // ul.list-1에 대한 추가적인 스타일
+    ul {
+      border-radius: 5px;         // 테두리 둥글게
+    }
+
+    li {
+      background-color: #fff;    // li 항목에 배경색 추가
+      &:hover {
+        background-color: #f0f0f0; // hover 시 배경색 변경
+      }
+    }
+  }
+}
