@@ -126,6 +126,10 @@ export default defineConfig({
           .replace(
             /crossorigin href="\/css\/popup\.css"/g,
             'href="../../../css/popup.css"'
+          )
+          .replace(
+            /crossorigin href="\/html\/guide\/guide\/guide\.css"/g,
+            'href="guide.css"'
           );
       }
     }
@@ -147,7 +151,7 @@ export default defineConfig({
         ...(process.env.NODE_ENV === 'production'
           ? [
               pxtorem({
-                rootValue: 16, // 기준 root 폰트 크기
+                rootValue: 10, // 기준 root 폰트 크기
                 propList: ['*'], // 변환할 속성 목록
                 selectorBlackList: [], // 변환하지 않을 선택자 목록
                 minPixelValue: 2, // 변환할 최소 픽셀 값
