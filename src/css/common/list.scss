@@ -1,21 +1,6 @@
 @import url(../variable.scss);
 @import url(../mixin.scss);
 
-// @mixin list($ul-padding, $ul-margin, $li-padding, $li-margin, $plus-margin) {
-//   ul {
-//     padding: $ul-padding;
-//     margin: $ul-margin;
-//   }
-//   li {
-//     padding: $li-padding;
-//     margin: $li-margin;
-//     + li {
-//       margin-top: $plus-margin;
-//     }
-//   }
-//   @content;
-// }
-
 @mixin list-style(
   $ul-padding: 0, 
   $ul-margin: 0, 
@@ -31,9 +16,6 @@
   ul {
     padding: $ul-padding;
     margin: $ul-margin;
-    list-style-type: none; // 기본 리스트 스타일 제거
-    background-color: $ul-bg-color; // 배경색
-    border: $ul-border; // 테두리
   }
 
   li {
@@ -64,7 +46,6 @@
   ) {
     // ul.list-1에 대한 추가적인 스타일
     & {
-      border-radius: 5px;         // 테두리 둥글게
 			background-color: blue;
     }
 
@@ -72,6 +53,25 @@
       background-color: red;    // li 항목에 배경색 추가
       &:hover {
         background-color: #f0f0f0; // hover 시 배경색 변경
+      }
+    }
+  }
+}
+
+.list_ty2 {
+  @include list-style(
+    $li-margin: 10px 0 0 10px,
+    $li-font-size: 14px,
+  ) {
+    // ul.list-1에 대한 추가적인 스타일
+    & {
+			background-color: green;
+    }
+
+    li {
+      background-color: magenta;    // li 항목에 배경색 추가
+      &:hover {
+        background-color: #ddd; // hover 시 배경색 변경
       }
     }
   }
