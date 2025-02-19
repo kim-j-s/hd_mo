@@ -1,18 +1,14 @@
 /* Input */
-.inp {
+.input_text {
   position: relative;
 
   &.active {
-    input {
+    input[type='text'] {
       padding-right: 50px;
-    }
-  
-    .del {
-      // display: block;
     }
   }
 
-  > input {
+  input[type='text'] {
     position: relative;
     display: block;
     width: 100%;
@@ -32,6 +28,7 @@
   .del {
     display: none;
   }
+	
   input[type="date"] {
     position:relative; 
     padding:14px; 
@@ -53,7 +50,7 @@
   input[type="date"].active::before {
     content:attr(data-placeholder);
     width:100%;
-}
+	}
 }
 
 // Error 문구

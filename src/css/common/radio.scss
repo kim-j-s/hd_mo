@@ -1,0 +1,57 @@
+/* Radio */
+	.inp_radio {
+		input[type='radio']{
+			overflow: hidden;
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			clip: rect(0,0,0,0);
+			
+			& + label {
+				position: relative;
+				display: block;
+				padding-left: 20px;
+				font-size: 14px;
+				line-height: 20px;
+				font-weight: bold;
+				cursor: pointer;
+	
+				&::before {
+					content:'';
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 16px;
+					height: 16px;
+					border:1px solid #000;
+					border-radius: 100%;
+				}
+			}
+	
+			&:focus {
+				+ label {
+					outline: 1px dashed gray;
+				}
+			}
+	
+			&:checked {
+				& + label {
+					&::before {
+						background-color: black;
+					}
+				}
+			}
+	
+	
+		}
+	}
+
+.radio_group_wrap {
+	display: inline-flex;
+	gap: 20px;
+
+	&.column {
+		flex-direction: column;
+		gap: 10px;
+	}
+}
