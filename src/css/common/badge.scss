@@ -1,3 +1,9 @@
+@mixin badge($font-color, $bg-colors, $border-color){
+	color: $font-color;
+	background-color: $bg-colors;
+	border-color: $border-color;
+}
+
 .badge_wrap {
 	display: flex;
 	gap: 8px;
@@ -5,5 +11,24 @@
 
 .badge_item {
 	.text {
+		padding: 6px;
+		font-size: 12px;
+		font-weight: bold;
+		border-width: 1px;
+		border-style: solid;
+		border-radius: 8px;
+
+		&.c_1 {
+			@include badge(white, red, black);
+		}
+		&.c_2 {
+			@include badge(black, skyblue, blue);
+		}
+		&.c_3 {
+			@include badge(pink, gray, green);
+		}
+		&.c_4 {
+			@include badge(blue, yellow, orange);
+		}
 	}
 }
