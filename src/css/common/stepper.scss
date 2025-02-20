@@ -1,0 +1,26 @@
+.stepper_list {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	.list_item {
+		position: relative;
+		font-size: 14px;
+
+		& ~ .list_item {
+			padding-left: 18px;
+
+			&::after {
+				content:'>';
+				position: absolute;
+				left: 0;
+			}
+		}
+
+		&.active {
+			.text {
+				color: red;
+			}
+		}
+	}
+}
