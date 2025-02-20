@@ -139,7 +139,21 @@
     }else {
       $(this).next().find('em').html(rbyte);
     }
-  })
+  });
+
+
+	// tab
+	$DOM.on('click', '.tab_btn', function(){
+		const idx = $(this).index();
+		$(this).closest('.tab_wrap_list').children('.tab_btn').removeClass('active').attr('aria-selected', 'false');
+		$(this).addClass('active').attr('aria-selected', 'true');
+		$(this).closest('.tab_wrap').children('.tab_wrap_content').removeClass('active');
+		$(this).closest('.tab_wrap').children('.tab_wrap_content').eq(idx).addClass('active');
+	});
+
+
+
+
 })();
 
 $(function(){
