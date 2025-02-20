@@ -11,15 +11,18 @@
 				position: relative;
 				display: block;
 				padding-left: 20px;
-				font-size: 14px;
-				line-height: 20px;
-				font-weight: bold;
+
+				> span {
+					font-size: 14px;
+					line-height: 20px;
+					font-weight: bold;
+				}
 				cursor: pointer;
 	
 				&::before {
 					content:'';
 					position: absolute;
-					top: 0;
+					top: 2px;
 					left: 0;
 					width: 16px;
 					height: 16px;
@@ -33,11 +36,32 @@
 					outline: 1px dashed gray;
 				}
 			}
+
+			&:disabled {
+				& + label {
+					&::before {
+						background-color: #f0f0f0;
+						border-color: gray;
+					}
+
+					> span {
+						color: gray;
+					} 
+				}
+			}
 	
 			&:checked {
 				& + label {
 					&::before {
 						background-color: black;
+					}
+				}
+
+				&:disabled {
+					& + label {
+						&::before {
+							background-color: #999;
+						}
 					}
 				}
 			}
