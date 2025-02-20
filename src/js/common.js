@@ -23,20 +23,20 @@
   /* Popup 관련 */
   // 팝업 열기
   $.fn.openPop = function(){
-    $(this).addClass('active');
+    $(this).addClass('active').attr('aria-hidden', 'false');
   }
   // 팝업 닫기
-  $.fn.openPop = function(){
-    $(this).removeClass('active');
-    $(this).closest('.popup_wrap').removeClass('active');
+  $.fn.closePop = function(){
+		$(this).closest('.popup_wrap').removeClass('active');
+		$(this).closest('.popup_wrap').attr('aria-hidden', 'true');
     $(this).focus();
   }
 
-  $('.popup_open').on('click', function(){
+  $DOM.on('click', '.popup_open', function(){
     const $target = $(this).data('popup-id');
     $('#' + $target).openPop();
   });
-  $('.popup_close').on('click', function(){
+  $DOM.on('click', '.popup_close', function(){
     const $this = $(this);
     $this.closePop();
   });

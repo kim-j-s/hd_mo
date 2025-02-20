@@ -1,0 +1,17 @@
+<div class="popup_wrap bottom"{{#if popup-id}} id="{{popup-id}}"{{/if}}{{#if close-btn}}{{/if}}{{#if no-header}}{{/if}} aria-hidden="true">
+	<div class="popup_container">
+		<div class="popup_inner">
+			{{#unless no-header}}
+			<div class="popup_head">
+				{{{popup-title}}}
+			</div>
+			{{/unless}}
+
+			{{> @partial-block}}
+
+			{{#if close-btn}}
+				<button type="button" class="popup_close"><span class="blind">팝업 닫기</span></button>
+			{{/if}}
+		</div>
+	</div>
+</div>
