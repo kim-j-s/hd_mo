@@ -1,15 +1,19 @@
 {{#> layout/guide }}
     <div class="guide_h1">Popup</div>
 
-    <div class="guide_discription">
-        guide_discription
-    </div>
+		<button type="button" class="pop_open" data-pop-id="pop_type01"><span>Full 팝업열기</span></button>
+		<button type="button" class="pop_open" data-pop-id="pop_type02"><span>Layer 팝업열기</span></button>
+		<button type="button" class="pop_open" data-pop-id="pop_type03"><span>Bottom 팝업열기</span></button>
 
-    <div class="guide_h4">
-        guide_discription
-    </div>
-
-    <div class="guide_dark_wrap">guide_dark_wrap</div>
-
+    <!-- Full 팝업 -->
+		 {{#> popup/popup_full pop-id="popup_type01" pop-title="팝업 타이틀" }}
+			<div class="popup_cont">
+				팝업내용입니다<br>
+				내용
+			</div>
+			<div class="popup_bottom">
+				<button type="button" class="popup_close"><span>확인</span></button>
+			</div>
+		{{/ popup/popup_full}}
 
 {{/ layout/guide }}
