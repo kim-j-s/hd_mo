@@ -1,23 +1,21 @@
 {{#> layout/guide }}
     <div class="guide_h1">Swiper</div>
 
-		<div id="swiper1">
-			<div class="swiper-container">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">Slide 1</div>
-					<div class="swiper-slide">Slide 2</div>
-					<div class="swiper-slide">Slide 3</div>
-					<div class="swiper-slide">Slide 4</div>
-					<div class="swiper-slide">Slide 5</div>
-					<div class="swiper-slide">Slide 6</div>
-					<div class="swiper-slide">Slide 7</div>
-					<div class="swiper-slide">Slide 8</div>
-					<div class="swiper-slide">Slide 9</div>
-				</div>
-				<div class="swiper-button-next"></div>
-    		<div class="swiper-button-prev"></div>
-				<div class="swiper-pagination"></div>
+		<div id="swiper1" class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">Slide 1</div>
+				<div class="swiper-slide">Slide 2</div>
+				<div class="swiper-slide">Slide 3</div>
+				<div class="swiper-slide">Slide 4</div>
+				<div class="swiper-slide">Slide 5</div>
+				<div class="swiper-slide">Slide 6</div>
+				<div class="swiper-slide">Slide 7</div>
+				<div class="swiper-slide">Slide 8</div>
+				<div class="swiper-slide">Slide 9</div>
 			</div>
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-pagination"></div>
 		</div>
 
     
@@ -25,7 +23,7 @@
 
 		<script>
 			$(document).ready(function(){
-				var swiper = new Swiper('.swiper-container', {
+				var swiper = new Swiper('#swiper1', {
 					slidesPerView: 3,
 					navigation: {
 						nextEl: ".swiper-button-next",
@@ -41,7 +39,8 @@
 						clickable: true,
 						type: 'bullets',
 						renderBullet: function (index, className) {
-							return `<span class="${className}" aria-label="Go to slide ${index + 1}">${index + 1}</span>`;
+							// return `<span class="${className}" aria-label="Go to slidesss ${index + 1}">${index + 1}</span>`;
+							return `<span class="${className}">${index + 1}</span>`;
 						},
 					},
 				});
