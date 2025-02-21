@@ -23,12 +23,12 @@
   /* Popup 관련 */
   // 팝업 열기
   $.fn.openPop = function(){
-		$('body').addClass('sr_none').attr('aria-hidden', 'true');
+		$('body').addClass('body_lock').attr('aria-hidden', 'true');
     $(this).addClass('active').attr('aria-hidden', 'false');
   }
   // 팝업 닫기
   $.fn.closePop = function(){
-		$('body').removeClass('sr_none').attr('aria-hidden', 'hidden');
+		$('body').removeClass('body_lock').attr('aria-hidden', 'hidden');
 		$(this).closest('.popup_wrap').removeClass('active');
 		$(this).closest('.popup_wrap').attr('aria-hidden', 'true');
     $(this).focus();
@@ -37,8 +37,7 @@
   $DOM.on('click', '.popup_open', function(){
     const $target = $(this).data('popup-id');
     $('#' + $target).openPop();
-  });
-  $DOM.on('click', '.popup_close', function(){
+  }).on('click', '.popup_close', function(){
     const $this = $(this);
     $this.closePop();
   });
@@ -105,8 +104,9 @@
           $del = $this.siblings('.del');
     $wrap.removeClass('active');
 
-  }).on('click', '.inp > .del', function(){
+  }).on('click', '.inp > .del', function(e){
     const $this = $(this);
+    e.preventDefault();
     $this.siblings('input').val('').focus();
     $this.parent('.inp').removeClass('active');
   });
@@ -115,8 +115,9 @@
 	$DOM.on("keyup", ".price .inp input", function()	{
 		const $this = $(this),
 					$val = $this.val();
-		$this.val($val.replace(/\,/g, '').replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'));
+		$this.val($val.replace(/[^0-9]/gi, '').replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'));
 	});
+
 
   /* Textarea */
   $DOM.on('blur keyup', '.byte_check > textarea', function(){
