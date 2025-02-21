@@ -111,6 +111,12 @@
     $this.parent('.inp').removeClass('active');
   });
 
+	// comma
+	$DOM.on("keyup", ".price .inp input", function()	{
+		const $this = $(this),
+					$val = $this.val();
+		$this.val($val.replace(/\,/g, '').replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'));
+	});
 
   /* Textarea */
   $DOM.on('blur keyup', '.byte_check > textarea', function(){
