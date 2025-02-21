@@ -1,16 +1,20 @@
-<div class="input_text">
+<div class="input_text {{#if class}}{{class}}{{/if}}">
   <div class="inp">
-    <input type="text"
+    <input 
+      {{#if type}}type="{{type}}"
+			{{else}}
+				type="text"
+			{{/if}}
       {{#if id}}id="{{id}}"{{/if}}
       {{#if value}}value="{{value}}"{{/if}}
       {{#if placeholder}}placeholder="{{placeholder}}"{{/if}}
+      {{#if minlength}}minlength="{{minlength}}"{{/if}}
+      {{#if maxlength}}maxlength="{{maxlength}}"{{/if}}
       {{#if disabled}}disabled{{/if}}
       {{#if readonly}}readonly{{/if}}
     >
-    {{!-- 초기화 버튼 --}}
-    {{#unless no_del}}<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>{{/unless}}
-    {{!-- 달력 호출 버튼 --}}
-    {{#if no_cal}}<button type="button" class="cal"><span class="blind">달력 호출</span></button>{{/if}}
+    {{!-- 버튼 (초기화 삭제, 달력 호출) --}}
+    {{#unless no_del}}<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>{{/unless}}{{#if no_cal}}<button type="button" class="cal"><span class="blind">달력 호출</span></button>{{/if}}
   </div>
   {{!-- validation --}}
   {{!-- 안내문구 노출 위치 --}}
