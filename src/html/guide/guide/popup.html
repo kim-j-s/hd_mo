@@ -1,19 +1,41 @@
 {{#> layout/guide }}
-    <div class="guide_h1">Popup</div>
+	<div class="guide_h1">Popup</div>
 
-		<button type="button" class="pop_open" data-pop-id="pop_type01"><span>Full 팝업열기</span></button>
-		<button type="button" class="pop_open" data-pop-id="pop_type02"><span>Layer 팝업열기</span></button>
-		<button type="button" class="pop_open" data-pop-id="pop_type03"><span>Bottom 팝업열기</span></button>
-
-    <!-- Full 팝업 -->
-		 {{#> popup/popup_full pop-id="popup_type01" pop-title="팝업 타이틀" }}
-			<div class="popup_cont">
-				팝업내용입니다<br>
-				내용
-			</div>
-			<div class="popup_bottom">
-				<button type="button" class="popup_close"><span>확인</span></button>
-			</div>
-		{{/ popup/popup_full}}
+	<button type="button" class="popup_open" data-popup-id="pop_type01"><span>Full 팝업열기</span></button>
+	<button type="button" class="popup_open" data-popup-id="pop_type02"><span>Layer 팝업열기</span></button>
+	<button type="button" class="popup_open" data-popup-id="pop_type03"><span>Bottom 팝업열기</span></button>
 
 {{/ layout/guide }}
+
+<!-- Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-title="팝업 타이틀" close-btn=true }}
+	<div class="popup_cont">
+		팝업내용입니다<br>
+		내용
+	</div>
+	<div class="popup_bottom">
+		<button type="button" class="popup_close"><span>확인</span></button>
+	</div>
+{{/ popup/popup_full}}
+
+<!-- Layer 팝업 -->
+{{#> popup/popup_layer popup-id="pop_type02" popup-title="팝업 타이틀" close-btn=true }}
+	<div class="popup_cont">
+		팝업내용입니다<br>
+		내용
+	</div>
+	<div class="popup_bottom">
+		<button type="button" class="popup_close"><span>확인</span></button>
+	</div>
+{{/ popup/popup_layer}}
+
+<!-- Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type03" popup-title="팝업 타이틀" close-btn=true }}
+	<div class="popup_cont">
+		팝업내용입니다<br>
+		내용
+	</div>
+	<div class="popup_bottom">
+		<button type="button" class="popup_close"><span>확인</span></button>
+	</div>
+{{/ popup/popup_bottom}}
