@@ -65,13 +65,13 @@
   $DOM.on('click', '.tooltip_wrap button', function(){
     const $click = $(this).closest('.tooltip_wrap'),
           $t_text = $click.find('.tooltip_text');
-    
-    if($t_text.css('display' == 'none')){
-      $t_text.show();
-    }else{
-      $t_text.hide();
-    }
-  })
+
+			if($t_text.is(':visible')){
+				$t_text.hide();
+			}else {
+				$t_text.show();
+			}
+  });
 
 
   /* Input */
