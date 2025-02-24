@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div class="wrap">
+
+		<div class="mapping">
+			<div class="map_inner">
+				<p class="map_title">dept 1</p>
+				<textarea name="" id=""></textarea>
+			</div>
+			<div class="map_inner">
+				<p class="map_title">dept 2</p>
+				<textarea name="" id=""></textarea>
+			</div>
+			<div class="map_inner">
+				<p class="map_title">dept 3</p>
+				<textarea name="" id=""></textarea>
+			</div>
+			<div class="map_inner">
+				<p class="map_title">dept 4</p>
+				<textarea name="" id=""></textarea>
+			</div>
+			<div class="map_inner">
+				<p class="map_title">dept 5</p>
+				<textarea name="" id=""></textarea>
+			</div>
+			<div class="map_inner">
+				<p class="map_title">dept 6</p>
+				<textarea name="" id=""></textarea>
+			</div>
+			<div class="map_inner">
+				<p class="map_title">dept 7</p>
+				<textarea name="" id=""></textarea>
+			</div>
+			<div class="map_inner">
+				<p class="map_title">마감일</p>
+				<textarea name="" id=""class="enddate"></textarea>
+			</div>
+			<div class="map_inner">
+				<p class="map_title">페이지명</p>
+				<textarea name="" id=""class="pagename"></textarea>
+			</div>
+			<div class="map_inner">
+				<p class="map_title">작업자</p>
+				<textarea name="" id="" class="worker"></textarea>
+			</div>
+			<div class="map_inner dmp">
+				<p class="map_title">dmp</p>
+				<textarea name="" id="" class="complete"></textarea>
+			</div>
+			<div class="map_inner dmp">
+				<p class="map_title">dmp</p>
+				<textarea name="" id="" class="bigo"></textarea>
+			</div>
+			<div class="map_inner dmp">
+				<p class="map_title">dmp</p>
+				<textarea name="" id="" class="bigo2"></textarea>
+			</div>
+			<div class="map_inner dmp">
+				<p class="map_title">dmp</p>
+				<textarea name="" id="" class="note"></textarea>
+			</div>
+		</div>
+
+		<div class="maping_btn">
+			<button type="button">생성</button>
+		</div>
+
+		<div class="map_rst">
+			<div class="tbl">
+				<table>
+					<tbody></tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script src="jquery-1.8.3.min.js"></script>	
+	<script>
+		$(function(){
+			$('.maping_btn button').on('click', function() {
+				const $result = $('.map_rst tbody');
+				$result.empty();
+
+				var maxLines = 0;
+				// 작업자 등록 textarea index
+				const exceptionWorker = $('.mapping').find('.worker').closest('.map_inner').index();
+
+				// 화면 id, 페이지 명 등록 정보 a tag로 감싸야함
+				const exceptionPage = $('.mapping').find('.pagename').closest('.map_inner').index();
+
+				// 종료일
+				const exceptionEnddate = $('.mapping').find('.enddate').closest('.map_inner').index();
+
+				// 완료여부
+				const exceptionEnd1 = $('.mapping').find('.complete').closest('.map_inner').index();
+
+				// 비고
+				const exceptionEnd2 = $('.mapping').find('.bigo').closest('.map_inner').index();
+
+				// 비고2
+				const exceptionEnd3 = $('.mapping').find('.bigo2').closest('.map_inner').index();
+
+				// 메모
+				const exceptionEnd4 = $('.mapping').find('.note').closest('.map_inner').index();
+
+				// console.log(exceptionWorker);
+				var nameLines = [];
+
+				$('textarea').each(function(idx) {
+					var lines = $(this).val().split('\n');
+
+					// 작업자는 별도 배열로 생성
+					if (idx === exceptionWorker) {
+						nameLines = lines;
+					}
+
+					// for를 돌리기 위한 최대 횟수 구하기
+					maxLines = Math.max(maxLines, lines.length);
+
+				});
+
+				// console.log('최대 줄 수 : ' + maxLines);
+
+				for (var i = 0; i < maxLines; i++) {
+					var lineContent = [];
+
+					$('textarea').each(function(x) {
+						var lines = $(this).val().split('\n');
+						const content = lines[i] || '';
+						name = nameLines[i] || '';
+						// lineContent.push(line);
+
+						// console.log(content);
+
+						let lineData;
+
+						// 작업자는 제외
+						if (x == exceptionWorker) {
+							return;
+						} else if (x == exceptionPage) {
+							const line = lines[i] || '';
+							const lines1 = line.slice(0, 2);
+							const lines2 = line.slice(2, 4);
+							lineData = `<td class="link"><a href="html/${lines1}/${lines2}/${content}.html" target="_blank" title="${name}">${content}</a></td>`;
+						} else if (x == exceptionEnddate) {
+							lineData = `<td class="end_date">${content}</td>`;
+						} else if (x == exceptionEnd1) {
+							lineData = `<td class="complete">${content}</td>`;
+						} else if (x == exceptionEnd2) {
+							lineData = `<td class="bigo">${content}</td>`;
+						} else if (x == exceptionEnd3) {
+							lineData = `<td class="bigo2">${content}</td>`;
+						} else if (x == exceptionEnd4) {
+							lineData = `<td class="note">${content}</td>`;
+						} else {
+							lineData = `<td class="idx_dept${x + 1}">${content}</td>`;
+						}
+						lineContent.push(lineData);
+					});
+
+					$result.append(`<tr>${lineContent.join('')}</tr>`);
+					
+				}
+			})
+		})
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style lang="scss" scoped>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	.wrap {
+		padding: 20px;
+	}
+
+	.mapping {
+		display: flex;
+		gap: 0 8px;
+		.map_inner {
+			flex: 1 1 0;
+			&.dmp {
+				display: none;
+			}
+			.map_title {
+				padding-bottom: 10px;
+				font-weight: bold;
+			}
+			textarea {
+				display: block;
+				width: 100%;
+				height: 200px;
+				resize: none;
+			}
+		}
+
+	}
+	.maping_btn {
+		margin: 20px 0;
+		button {
+			display: block;
+			width: 100%;
+			height: 40px;
+		}
+	}
+		
+	.tbl {
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			table-layout: fixed;
+			th,
+			td {
+				border: 1px solid #000;
+			}
+		}
+	}
+</style>
+	
+</body>
+</html>
