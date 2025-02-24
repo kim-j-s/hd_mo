@@ -4,8 +4,12 @@
 	</div>
 	<div class="tooltip_text" role="tooltip">
 		<div class="inner">
-			{{> @partial-block }}
+			{{#if text}}
+				{{{text}}}
+			{{else}}
+				{{> @partial-block }}
+			{{/if}}
+			<button type="button" class="close"><span class="blind">툴팁 닫기</span></button>
 		</div>
-		<button type="button" class="close"><span class="blind">툴팁 닫기</span></button>
 	</div>
 </div>

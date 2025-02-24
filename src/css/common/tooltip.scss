@@ -1,71 +1,11 @@
 /* Tooltip */
-// .tooltip_wrap {
-// 	position: relative;
-
-// 	.tooltip_head {
-// 		position: relative;
-
-// 		&.active {
-// 			&::after {
-// 				content:'';
-// 				position: absolute;
-// 				left: calc(100% - 28px);
-// 				bottom: -13px;
-// 				width: 8px;
-// 				height: 8px;
-// 				border: 8px solid gray;
-// 				border-left-color: transparent;
-// 				border-right-color: transparent;
-// 				border-top-color: transparent;
-// 			}
-// 		}
-
-// 		&.top {
-// 			&::after {
-// 				top: -12px;
-// 				bottom: auto;
-// 				border-top-color: gray;
-// 				border-bottom-color: transparent;
-// 			}
-
-// 			&.active {
-// 				& + .tooltip_text {
-// 					bottom: 200%;
-// 				}
-// 			}
-// 		}
-// 	}
-
-// 	.tooltip_text {
-// 		display: none;
-// 		position: absolute;
-// 		width:calc(100vw - 40px);
-// 		margin-top: 10px;
-// 		z-index: 10;
-
-// 		.inner {
-// 			display: block;
-// 			overflow-y: auto;
-// 			max-height: 100px;
-// 			padding: 10px;
-// 			background-color: gray;
-// 			border-radius:10px;
-// 		}
-		
-// 		.close {
-// 			position: absolute;
-// 			top: 4px;
-// 			right: 6px;
-// 		}
-// 	}
-// }
-
 .tooltip_wrap {
 	position: relative;
-	display: inline-block;
+	display: inline;
 
 	.tooltip_head {
 		position: relative;
+		display: inline-block;
 
 		&.active {
 			&::after {
@@ -93,19 +33,19 @@
 			&.active {
 				& + .tooltip_text {
 					margin-top: 0;
-					bottom: 0;
+					bottom: 24px;
+					top: auto;
 				}
 			}
 		}
 	}
 
 	.tooltip_text {
-		display: inline-block;
+		display: block;
 		position: absolute;
-		left: 0;
 		width:calc(100vw - 40px);
-		// margin: 10px 20px 0;
 		z-index: 10;
+		top: calc(100% + 13px);
 
 		.inner {
 			display: none;
