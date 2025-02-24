@@ -4,6 +4,14 @@
 	{{> layout/head}}
 	</head>
   <body>
-    {{> @partial-block }}
+		<div id="wrap" class="wrap">
+			{{#unless no-skip}}
+			<ul class="skipNavi">
+				<li><a href="#contents">본문바로가기</a></li>
+				<li><a href="#gnb">주메뉴바로가기</a></li>    
+			</ul>
+			{{/unless}}
+			{{> @partial-block }}
+		</div>
   </body>
 </html>
