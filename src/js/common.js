@@ -66,10 +66,10 @@
     const $click = $(this).closest('.tooltip_wrap'),
           $t_text = $click.find('.tooltip_text');
 
-			if($t_text.is(':visible')){
-				$t_text.hide();
+			if($(this).attr('class') == 'open'){
+				$t_text.css('display', 'block');
 			}else {
-				$t_text.show();
+				$t_text.css('display', 'none');
 			}
   });
 
