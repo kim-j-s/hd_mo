@@ -1,1210 +1,1216 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>현대해상 다이렉트 - Mobile</title>
-    <style>
-      .p-c1 {
-        color: #cca700 !important;
-        letter-spacing: 2px;
-      }
 
-      .p-c2 {
-        color: #89d185 !important;
-        letter-spacing: 2px;
-      }
-      html,
-      body {
-        background-color: #333;
-        color: #fff;
-      }
-      body {
-        margin: 0;
-        padding: 0;
-        font-size: 12px;
-      }
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>현대해상 다이렉트 - Mobile</title>
+	<style>
+		.p-c1 {
+			color: #cca700 !important;
+			letter-spacing: 2px;
+		}
 
-      header {
-        position: fixed;
-        left: 0;
-        top: 0;
-        box-sizing: border-box;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-align-items: center;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        padding: 10px;
-        background: #000;
-        color: #fff;
-        z-index: 1;
-      }
+		.p-c2 {
+			color: #89d185 !important;
+			letter-spacing: 2px;
+		}
 
-      header h1 {
-        margin: 0;
-        font-size: 20px;
-        line-height: 26px;
-      }
+		html,
+		body {
+			background-color: #333;
+			color: #fff;
+		}
 
-      header .control_list {
-        font-size: 0;
-        margin-left: 10px;
-      }
+		body {
+			margin: 0;
+			padding: 0;
+			font-size: 12px;
+		}
 
-      header .control_list button {
-        display: inline-block;
-        position: relative;
-        width: 20px;
-        height: 20px;
-        margin-left: 5px;
-        background: #ddd;
-        color: #000;
-        border: 0;
-        border-radius: 3px;
-        text-align: center;
-      }
+		header {
+			position: fixed;
+			left: 0;
+			top: 0;
+			box-sizing: border-box;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-align-items: center;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			padding: 10px;
+			background: #000;
+			color: #fff;
+			z-index: 1;
+		}
 
-      header .control_list button::before {
-        content: "";
-        display: block;
-        position: absolute;
-        left: 20%;
-        top: 9px;
-        height: 2px;
-        background: #000;
-        width: 60%;
-      }
+		header h1 {
+			margin: 0;
+			font-size: 20px;
+			line-height: 26px;
+		}
 
-      header .control_list .open_all::after {
-        content: "";
-        display: block;
-        position: absolute;
-        left: 20%;
-        top: 9px;
-        height: 2px;
-        background: #000;
-        width: 60%;
-        transform: rotateZ(90deg);
-      }
+		header .control_list {
+			font-size: 0;
+			margin-left: 10px;
+		}
 
-      .main {
-        margin: 60px 10px 10px;
-      }
+		header .control_list button {
+			display: inline-block;
+			position: relative;
+			width: 20px;
+			height: 20px;
+			margin-left: 5px;
+			background: #ddd;
+			color: #000;
+			border: 0;
+			border-radius: 3px;
+			text-align: center;
+		}
 
-      .main h2 {
-        font-size: 18px;
-        line-height: 22px;
-        cursor: pointer;
-      }
+		header .control_list button::before {
+			content: "";
+			display: block;
+			position: absolute;
+			left: 20%;
+			top: 9px;
+			height: 2px;
+			background: #000;
+			width: 60%;
+		}
 
-      .main h2::before {
-        content: "-";
-        display: inline-block;
-        vertical-align: top;
-        text-align: center;
-        width: 16px;
-        height: 16px;
-        line-height: 14px;
-        border-radius: 8px;
-        background-color: #000;
-        color: #fff;
-        margin: 4px 5px 0 0;
-      }
+		header .control_list .open_all::after {
+			content: "";
+			display: block;
+			position: absolute;
+			left: 20%;
+			top: 9px;
+			height: 2px;
+			background: #000;
+			width: 60%;
+			transform: rotateZ(90deg);
+		}
 
-      .main h2.on::before {
-        content: "+";
-      }
+		.main {
+			margin: 60px 10px 10px;
+		}
 
-      .main h2.on + table {
-        display: none;
-      }
+		.main h2 {
+			font-size: 18px;
+			line-height: 22px;
+			cursor: pointer;
+		}
 
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        table-layout: fixed;
-        word-break: break-all;
-      }
+		.main h2::before {
+			content: "-";
+			display: inline-block;
+			vertical-align: top;
+			text-align: center;
+			width: 16px;
+			height: 16px;
+			line-height: 14px;
+			border-radius: 8px;
+			background-color: #000;
+			color: #fff;
+			margin: 4px 5px 0 0;
+		}
 
-      table a {
-        position: relative;
-        color: #fff;
-      }
+		.main h2.on::before {
+			content: "+";
+		}
 
-      .note + td {
-        text-align: center;
-      }
+		.main h2.on+table {
+			display: none;
+		}
 
-      tr {
-        border-top: 1px solid #000;
-        border-bottom: 1px solid #000;
-      }
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			table-layout: fixed;
+			word-break: break-all;
+		}
 
-      th,
-      td {
-        padding: 5px 10px;
-        border-left: 1px solid #000;
-        border-right: 1px solid #000;
-        font-size: 12px;
-      }
+		table a {
+			position: relative;
+			color: #fff;
+		}
 
-      th {
-        color: #fff;
-        background: #666;
-      }
+		.note+td {
+			text-align: center;
+		}
 
-      th:first-child {
-        border-left: 1px solid #000;
-      }
+		tr {
+			border-top: 1px solid #000;
+			border-bottom: 1px solid #000;
+		}
 
-      th:last-child {
-        border-right: 1px solid #000;
-      }
+		th,
+		td {
+			padding: 5px 10px;
+			border-left: 1px solid #000;
+			border-right: 1px solid #000;
+			font-size: 12px;
+		}
 
-      .delete {
-        text-decoration: line-through;
-        color: #ff0000;
-      }
-      .delete a {
-        text-decoration: line-through;
-        color: #ff0000;
-      }
+		th {
+			color: #fff;
+			background: #666;
+		}
 
-      .complete {
-        text-align: center;
-      }
-      .complete.ok::after {
-        content: 'O';        
-      }
+		th:first-child {
+			border-left: 1px solid #000;
+		}
 
-      tbody tr:nth-child(2n) {
-        background: #444;
-      }
+		th:last-child {
+			border-right: 1px solid #000;
+		}
 
-      tbody tr:hover td {
-        color: #fff;
-        background-color: #68b95e;
-      }
-      tbody tr:hover td a {
-        color: #fff;
-      }
+		.delete {
+			text-decoration: line-through;
+			color: #ff0000;
+		}
 
-      tbody tr.red td {
-        background-color: red;
-      }
-      tbody tr.red td a {
-        color: #fff;
-      }
+		.delete a {
+			text-decoration: line-through;
+			color: #ff0000;
+		}
 
-      .title {
-        display: table-row !important;
-        cursor: pointer;
-      }
+		.complete {
+			text-align: center;
+		}
 
-      .title th {
-        text-align: left;
-        font-size: 14px;
-        line-height: 22px;
-        letter-spacing: 1px;
-        background: #000;
-        /* text-decoration: underline; */
-        padding: 8px 10px;
-        border-top: 3px solid #888;
-      }
+		.complete.ok::after {
+			content: 'O';
+		}
 
-      /* .title .count {
-        display: block;
-        float: right;
-        text-align: right;
-      }
-      .title .count :first-child {
-        color: yellow;
-        margin-right: 10px;
-      }
-      .title .count :last-child {
-        margin-left: 10px;
-      } */
+		tbody tr:nth-child(2n) {
+			background: #444;
+		}
 
-      
+		tbody tr:hover td {
+			color: #fff;
+			background-color: #68b95e;
+		}
 
-      colgroup + thead .title th {
-        border-top: 0;
-      }
+		tbody tr:hover td a {
+			color: #fff;
+		}
 
-      /* .title th::before {
-        content: "";
-        display: inline-block;
-        vertical-align: top;
-        width: 0;
-        height: 0;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-top: 0;
-        border-bottom: 8px solid #fff;
-        margin: 7px 10px 0 0;
-      } */
+		tbody tr.red td {
+			background-color: red;
+		}
 
-      .title .inner {
-        display: flex;
-      }
+		tbody tr.red td a {
+			color: #fff;
+		}
 
-      .title .inner::before {
-        content: "";
-        display: inline-block;
-        vertical-align: top;
-        width: 0;
-        height: 0;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-top: 0;
-        border-bottom: 8px solid #fff;
-        margin: 7px 10px 0 0;
-      }
+		.title {
+			display: table-row !important;
+			cursor: pointer;
+		}
 
-      .mini tr,
-      .mini + tbody {
-        display: none;
-      }
+		.title th {
+			text-align: left;
+			font-size: 14px;
+			line-height: 22px;
+			letter-spacing: 1px;
+			background: #000;
+			padding: 8px 10px;
+			border-top: 3px solid #888;
+		}
 
-      .mini .title th::before {
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-top: 8px solid #fff;
-        border-bottom: 0;
-      }
-      
+		colgroup+thead .title th {
+			border-top: 0;
+		}
 
-      #mode_toggle {
-        display: none;
-      }
-      #mode_toggle + label {
-        position: fixed;
-        right: 10px;
-        bottom: 10px;
-        display: block;
-        width: 24px;
-        height: 24px;
-        line-height: 24px;
-        border-radius: 3px;
-        background-color: #000;
-        color: #fff;
-        text-align: center;
-        z-index: 1;
-      }
-      #mode_toggle + label::before {
-        content: '';
-        display: block;
-        position: absolute;
-        height: 2px;
-        width: 60%;
-        background: #fff;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-      }
-      #mode_toggle + label::after {
-        content: '';
-        display: block;
-        position: absolute;
-        height: 2px;
-        width: 60%;
-        background: #fff;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-      }
-      #mode_toggle:checked + label::after {
-        transform: translate(-50%, -50%) rotateZ(90deg);
-      }
-      #mode_toggle:checked ~ .main .mini tr,
-      #mode_toggle:checked ~ .main .mini + tbody {
-        display: none;
-      }
-      #mode_toggle:checked ~ .main colgroup {
-        display: none;
-      }
-      #mode_toggle:checked ~ .main table, #mode_toggle:checked ~ .main tbody, #mode_toggle:checked ~ .main thead, #mode_toggle:checked ~ .main tr {
-        display: block;
-        width: 100%;
-      }
-      #mode_toggle:checked ~ .main thead tr {
-        display: none;
-      }
-      #mode_toggle:checked ~ .main thead th {
-        display: block;
-      }
-      #mode_toggle:checked ~ .main thead tr.title {
-        display: block !important;
-      }
-      #mode_toggle:checked ~ .main tbody tr {
-        display: flex;
-        flex-wrap: wrap;
-        border-top: 0;
-        border-bottom: 1px solid white;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        font-size: 0;
-      }
-      #mode_toggle:checked ~ .main tbody td {
-        display: inline-block;
-        vertical-align: top;
-        border: 0;
-      }
-      #mode_toggle:checked ~ .main tbody .link {
-        display: block;
-        width: 100%;
-        border-top: 2px dotted black;
-      }
-      #mode_toggle:checked ~ .main tbody .complete {
-        display: block;
-        width: 100%;
-        height: 0;
-        padding: 0;
-        overflow: hidden;
-      }
-      #mode_toggle:checked ~ .main tbody td:empty {
-        display: none;
-      }
-      #mode_toggle:checked ~ .main tbody .complete.ok {
-        border-top: 1px dashed yellow;
-      }
-      #mode_toggle:checked ~ .main tbody .complete ~ td {
-        display: none;
-        width: 100%;
-        padding-top: 2px;
-        padding-bottom: 2px;
-        border: 0;
-        text-align: left;
-      }
-      #mode_toggle:checked ~ .main tbody tr:nth-child(2n) {
-        background: transparent;
-      }
+		.title .inner {
+			display: flex;
+		}
 
-      .m-list {
-        position: relative;
-        margin: 0;
-        padding: 25px 0 0 0;
-      }
-      .m-list::before {
-        content: '수정일자';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        font-weight: bold;
-        line-height: 20px;
-        text-align: center;
-        background-color: #fff;
-        color: #ff0000;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;        
-      }
-      .m-list li {
-        position: relative;
-        list-style: none;
-        margin: 0;
-        padding: 0 0 0 10px;
-        color: #fff;
-        line-height: 20px;
-      }
-      .m-list li::before {
-        content: '';
-        position: absolute;
-        top: 9px;
-        left: 0;
-        width: 4px;
-        border-bottom: 4px solid #fff;
-        border-radius: 50%;
-      }
-      .m-list li + li {
-        margin-top: 5px;
-      }
+		.title .inner::before {
+			content: "";
+			display: inline-block;
+			vertical-align: top;
+			width: 0;
+			height: 0;
+			border-left: 5px solid transparent;
+			border-right: 5px solid transparent;
+			border-top: 0;
+			border-bottom: 8px solid #fff;
+			margin: 7px 10px 0 0;
+		}
 
-      .rate {
-        display: inline-flex;
-        margin-left: auto;
-      }
-      .rate > span {
-        position: relative;
-        margin-right: 17px;
-      }
-      .rate > span::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        right: -8px;
-        height: 12px;
-        border-left: 1px solid #fff;
-        transform: translateY(-50%);
-      }
-      .rate > span:last-child {
-        margin-right: 0;
-      }
-      .rate > span:last-child:after {
-        content: '%';
-        position: relative;
-        top: auto;
-        right: auto;
-        border-left: none;
-      }
-      
-      .rate .rate_total::before {
-        content: '전체 : ';
-      }
-      .rate .rate_late::before {
-        content: '지연 : ';
-      }
-      .rate .rate_complete::before {
-        content: '완료 : ';
-      }
-      .rate .rate_per::before {
-        content: '진행률 : ';
-      }
-      .rate .rate_per::after {
-        content: '%';
-      }
+		.mini tr,
+		.mini+tbody {
+			display: none;
+		}
 
-      @media (max-width: 600px) {
-      }
+		.mini .title th::before {
+			border-left: 5px solid transparent;
+			border-right: 5px solid transparent;
+			border-top: 8px solid #fff;
+			border-bottom: 0;
+		}
 
 
+		#mode_toggle {
+			display: none;
+		}
 
-    </style>
-  </head>
+		#mode_toggle+label {
+			position: fixed;
+			right: 10px;
+			bottom: 10px;
+			display: block;
+			width: 24px;
+			height: 24px;
+			line-height: 24px;
+			border-radius: 3px;
+			background-color: #000;
+			color: #fff;
+			text-align: center;
+			z-index: 1;
+		}
 
-  <body>
-    <div class="wrap">
-      <!-- header -->
-      <header>
-        <h1>index</h1>
-        <div class="control_list">
-          <button class="close_all"></button>
-          <button class="open_all"></button>
-        </div>
-      </header>
-      <!-- // header -->
+		#mode_toggle+label::before {
+			content: '';
+			display: block;
+			position: absolute;
+			height: 2px;
+			width: 60%;
+			background: #fff;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
 
-      <input type="checkbox" id="mode_toggle"><label for="mode_toggle"></label>
-      <div class="main">
-        <!-- table -->
-        <table>
-          <colgroup>
-            <col class="level" />
-            <col class="level" />
-            <col class="level" />
-            <col class="level" />
-            <col class="level" />
-            <col class="level" />
-            <col class="level" />
-            <col class="end_day" />
-            <col class="link" />
-            <col class="complete" style="width: 60px;" />
-            <col class="note" />
-            <col class="comp-date" style="width: 110px;" />
-            <col class="modify-history" />
-          </colgroup>
+		#mode_toggle+label::after {
+			content: '';
+			display: block;
+			position: absolute;
+			height: 2px;
+			width: 60%;
+			background: #fff;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
 
-          <!-- Guide -->
-          <thead>
-            <tr class="title">
-              <th colspan="13">
-                <div class="inner">
-                  Guide
-                </div>
-              </th>
-            </tr>
-            <tr>
-              <th colspan="10">disc.</th>
-              <th>link</th>
-              <th>완료</th>
-              <th>비고</th>
-            </tr>
-          </thead>
-          <tbody class="none">
-            <tr>
-              <td colspan="10">accordian</td>
-              <td class="link"><a href="html/guide/guide/accordian.html" target="_blank">accordian</a></td>
-              <td class="complete"></td>
-              <td class="note"></td>
-            </tr>
-            <tr>
-              <td colspan="10">button</td>
-              <td class="link"><a href="html/guide/guide/button.html" target="_blank">button</a></td>
-              <td class="complete"></td>
-              <td class="note"></td>
-            </tr>
-            <tr>
-              <td colspan="10">badge</td>
-              <td class="link"><a href="html/guide/guide/badge.html" target="_blank">badge</a></td>
-              <td class="complete"></td>
-              <td class="note"></td>
-            </tr>
-            <tr>
-              <td colspan="10">checkbox</td>
-              <td class="link"><a href="html/guide/guide/checkbox.html" target="_blank">checkbox</a></td>
-              <td class="complete"></td>
-              <td class="note"></td>
-            </tr>
-            <tr>
-              <td colspan="10">divider</td>
-              <td class="link"><a href="html/guide/guide/divider.html" target="_blank">divider</a></td>
-              <td class="complete"></td>
-              <td class="note"></td>
-            </tr>
-            <tr>
-              <td colspan="10">input</td>
-              <td class="link"><a href="html/guide/guide/input.html" target="_blank">input</a></td>
-              <td class="complete"></td>
-              <td class="note"></td>
-            </tr>
-            <tr>
-              <td colspan="10">list</td>
-              <td class="link"><a href="html/guide/guide/list.html" target="_blank">list</a></td>
-              <td class="complete"></td>
-              <td class="note"></td>
-            </tr>
-            <tr>
-              <td colspan="10">popup</td>
-              <td class="link"><a href="html/guide/guide/popup.html" target="_blank">popup</a></td>
-              <td class="complete"></td>
-              <td class="note"></td>
-            </tr>
-            <tr>
-              <td colspan="10">radio</td>
-              <td class="link"><a href="html/guide/guide/radio.html" target="_blank">radio</a></td>
-              <td class="complete"></td>
-              <td class="note"></td>
-            </tr>
-            <!-- <tr>
+		#mode_toggle:checked+label::after {
+			transform: translate(-50%, -50%) rotateZ(90deg);
+		}
+
+		#mode_toggle:checked~.main .mini tr,
+		#mode_toggle:checked~.main .mini+tbody {
+			display: none;
+		}
+
+		#mode_toggle:checked~.main colgroup {
+			display: none;
+		}
+
+		#mode_toggle:checked~.main table,
+		#mode_toggle:checked~.main tbody,
+		#mode_toggle:checked~.main thead,
+		#mode_toggle:checked~.main tr {
+			display: block;
+			width: 100%;
+		}
+
+		#mode_toggle:checked~.main thead tr {
+			display: none;
+		}
+
+		#mode_toggle:checked~.main thead th {
+			display: block;
+		}
+
+		#mode_toggle:checked~.main thead tr.title {
+			display: block !important;
+		}
+
+		#mode_toggle:checked~.main tbody tr {
+			display: flex;
+			flex-wrap: wrap;
+			border-top: 0;
+			border-bottom: 1px solid white;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			font-size: 0;
+		}
+
+		#mode_toggle:checked~.main tbody td {
+			display: inline-block;
+			vertical-align: top;
+			border: 0;
+		}
+
+		#mode_toggle:checked~.main tbody .link {
+			display: block;
+			width: 100%;
+			border-top: 2px dotted black;
+		}
+
+		#mode_toggle:checked~.main tbody .complete {
+			display: block;
+			width: 100%;
+			height: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+
+		#mode_toggle:checked~.main tbody td:empty {
+			display: none;
+		}
+
+		#mode_toggle:checked~.main tbody .complete.ok {
+			border-top: 1px dashed yellow;
+		}
+
+		#mode_toggle:checked~.main tbody .complete~td {
+			display: none;
+			width: 100%;
+			padding-top: 2px;
+			padding-bottom: 2px;
+			border: 0;
+			text-align: left;
+		}
+
+		#mode_toggle:checked~.main tbody tr:nth-child(2n) {
+			background: transparent;
+		}
+
+		.m-list {
+			position: relative;
+			margin: 0;
+			padding: 25px 0 0 0;
+		}
+
+		.m-list::before {
+			content: '수정일자';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			font-weight: bold;
+			line-height: 20px;
+			text-align: center;
+			background-color: #fff;
+			color: #ff0000;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+
+		.m-list li {
+			position: relative;
+			list-style: none;
+			margin: 0;
+			padding: 0 0 0 10px;
+			color: #fff;
+			line-height: 20px;
+		}
+
+		.m-list li::before {
+			content: '';
+			position: absolute;
+			top: 9px;
+			left: 0;
+			width: 4px;
+			border-bottom: 4px solid #fff;
+			border-radius: 50%;
+		}
+
+		.m-list li+li {
+			margin-top: 5px;
+		}
+
+		.rate {
+			display: inline-flex;
+			margin-left: auto;
+		}
+
+		.rate>span {
+			position: relative;
+			margin-right: 17px;
+		}
+
+		.rate>span::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			right: -8px;
+			height: 12px;
+			border-left: 1px solid #fff;
+			transform: translateY(-50%);
+		}
+
+		.rate>span:last-child {
+			margin-right: 0;
+		}
+
+		.rate>span:last-child:after {
+			content: '%';
+			position: relative;
+			top: auto;
+			right: auto;
+			border-left: none;
+		}
+
+		.rate .rate_total::before {
+			content: '전체 : ';
+		}
+
+		.rate .rate_late::before {
+			content: '지연 : ';
+		}
+
+		.rate .rate_complete::before {
+			content: '완료 : ';
+		}
+
+		.rate .rate_per::before {
+			content: '진행률 : ';
+		}
+
+		.rate .rate_per::after {
+			content: '%';
+		}
+
+		@media (max-width: 600px) {}
+	</style>
+</head>
+
+<body>
+	<div class="wrap">
+		<!-- header -->
+		<header>
+			<h1>index</h1>
+			<div class="control_list">
+				<button class="close_all"></button>
+				<button class="open_all"></button>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<input type="checkbox" id="mode_toggle"><label for="mode_toggle"></label>
+		<div class="main">
+			<!-- table -->
+			<table>
+				<colgroup>
+					<col class="level" />
+					<col class="level" />
+					<col class="level" />
+					<col class="level" />
+					<col class="level" />
+					<col class="level" />
+					<col class="level" />
+					<col class="end_day" />
+					<col class="link" />
+					<col class="complete" style="width: 60px;" />
+					<col class="note" />
+					<col class="comp-date" style="width: 110px;" />
+					<col class="modify-history" />
+				</colgroup>
+
+				<!-- Guide -->
+				<thead>
+					<tr class="title">
+						<th colspan="13">
+							<div class="inner">
+								Guide
+							</div>
+						</th>
+					</tr>
+					<tr>
+						<th colspan="10">disc.</th>
+						<th>link</th>
+						<th>완료</th>
+						<th>비고</th>
+					</tr>
+				</thead>
+				<tbody class="none">
+					<tr>
+						<td colspan="10">accordian</td>
+						<td class="link"><a href="html/guide/guide/accordian.html" target="_blank">accordian</a></td>
+						<td class="complete"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td colspan="10">button</td>
+						<td class="link"><a href="html/guide/guide/button.html" target="_blank">button</a></td>
+						<td class="complete"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td colspan="10">badge</td>
+						<td class="link"><a href="html/guide/guide/badge.html" target="_blank">badge</a></td>
+						<td class="complete"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td colspan="10">checkbox</td>
+						<td class="link"><a href="html/guide/guide/checkbox.html" target="_blank">checkbox</a></td>
+						<td class="complete"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td colspan="10">divider</td>
+						<td class="link"><a href="html/guide/guide/divider.html" target="_blank">divider</a></td>
+						<td class="complete"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td colspan="10">input</td>
+						<td class="link"><a href="html/guide/guide/input.html" target="_blank">input</a></td>
+						<td class="complete"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td colspan="10">list</td>
+						<td class="link"><a href="html/guide/guide/list.html" target="_blank">list</a></td>
+						<td class="complete"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td colspan="10">popup</td>
+						<td class="link"><a href="html/guide/guide/popup.html" target="_blank">popup</a></td>
+						<td class="complete"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td colspan="10">radio</td>
+						<td class="link"><a href="html/guide/guide/radio.html" target="_blank">radio</a></td>
+						<td class="complete"></td>
+						<td class="note"></td>
+					</tr>
+					<!-- <tr>
               <td colspan="10">radiobutton</td>
               <td class="link"><a href="html/guide/guide/radiobutton.html" target="_blank">radiobutton</a></td>
               <td class="complete"></td>
               <td class="note"></td>
             </tr> -->
-            <tr>
-              <td colspan="10">stepper</td>
-              <td class="link"><a href="html/guide/guide/stepper.html" target="_blank">stepper</a></td>
-              <td class="complete"></td>
-              <td class="note"></td>
-            </tr>
-            <tr>
-              <td colspan="10">swiper</td>
-              <td class="link"><a href="html/guide/guide/swiper.html" target="_blank">swiper</a></td>
-              <td class="complete"></td>
-              <td class="note"></td>
-            </tr>
-            <tr>
-              <td colspan="10">tab</td>
-              <td class="link"><a href="html/guide/guide/tab.html" target="_blank">tab</a></td>
-              <td class="complete"></td>
-              <td class="note"></td>
-            </tr>
-            <tr>
-              <td colspan="10">table</td>
-              <td class="link"><a href="html/guide/guide/table.html" target="_blank">table</a></td>
-              <td class="complete"></td>
-              <td class="note"></td>
-            </tr>
-            <tr>
-              <td colspan="10">tooltip</td>
-              <td class="link"><a href="html/guide/guide/tooltip.html" target="_blank">tooltip</a></td>
-              <td class="complete"></td>
-              <td class="note"></td>
-            </tr>
-            <tr>
-              <td colspan="10">breadcrumb</td>
-              <td class="link"><a href="html/guide/guide/breadcrumb.html" target="_blank">breadcrumb</a></td>
-              <td class="complete"></td>
-              <td class="note">PC에서만 사용<br> Mobile에서는 추후 삭제</td>
-            </tr>
-            <tr>
-              <td colspan="2">라이브러리</td>
-              <td colspan="8">적용 버젼 : swiperjs 9.2.4</td>
-              <td class="link"><a href="https://swiperjs.com/" target="_blank">swiperjs</a></td>
-              <td class="complete"></td>
-              <td class="note">외부 링크</td>
-            </tr>
-            <tr>
-              <td colspan="2">라이브러리</td>
-              <td colspan="8">panejs</td>
-              <td class="link"><a href="https://panejs.com/" target="_blank">panejs</a></td>
-              <td class="complete"></td>
-              <td class="note">외부 링크</td>
-            </tr>
-						
-          </tbody>
-          <!-- // Guide -->
+					<tr>
+						<td colspan="10">stepper</td>
+						<td class="link"><a href="html/guide/guide/stepper.html" target="_blank">stepper</a></td>
+						<td class="complete"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td colspan="10">swiper</td>
+						<td class="link"><a href="html/guide/guide/swiper.html" target="_blank">swiper</a></td>
+						<td class="complete"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td colspan="10">tab</td>
+						<td class="link"><a href="html/guide/guide/tab.html" target="_blank">tab</a></td>
+						<td class="complete"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td colspan="10">table</td>
+						<td class="link"><a href="html/guide/guide/table.html" target="_blank">table</a></td>
+						<td class="complete"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td colspan="10">tooltip</td>
+						<td class="link"><a href="html/guide/guide/tooltip.html" target="_blank">tooltip</a></td>
+						<td class="complete"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td colspan="10">breadcrumb</td>
+						<td class="link"><a href="html/guide/guide/breadcrumb.html" target="_blank">breadcrumb</a></td>
+						<td class="complete"></td>
+						<td class="note">PC에서만 사용<br> Mobile에서는 추후 삭제</td>
+					</tr>
+					<tr>
+						<td colspan="2">라이브러리</td>
+						<td colspan="8">적용 버젼 : swiperjs 9.2.4</td>
+						<td class="link"><a href="https://swiperjs.com/" target="_blank">swiperjs</a></td>
+						<td class="complete"></td>
+						<td class="note">외부 링크</td>
+					</tr>
+					<tr>
+						<td colspan="2">라이브러리</td>
+						<td colspan="8">panejs</td>
+						<td class="link"><a href="https://panejs.com/" target="_blank">panejs</a></td>
+						<td class="complete"></td>
+						<td class="note">외부 링크</td>
+					</tr>
 
-          <!-- common -->
-          <thead>
-            <tr class="title">
-              <th colspan="13">
-                <div class="inner">
-                  <span class="title_text">Common</span>
-                  <span class="rate">
-                    <span class="rate_total"></span>
-                    <span class="rate_complete"></span>
-                    <span class="rate_late"></span>
-                    <span class="rate_per"></span>
-                  </span>
-                </div>
-              </th>
-            </tr>
-            <tr>
-              <th>lv[1]</th>
-              <th>lv[2]</th>
-              <th>lv[3]</th>
-              <th>lv[4]</th>
-              <th>lv[5]</th>
-              <th>lv[6]</th>
-              <th>lv[7]</th>
-              <th>마감일</th>
-              <th>link</th>
-              <th>완료</th>
-              <th>비고</th>
-              <th>이미지 누락</th>
-              <th>변동내역</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="no_count">
-              <td class="idx_dept1"></td>
-              <td class="idx_dept2"></td>
-              <td class="idx_dept3"></td>
-              <td class="idx_dept4"></td>
-              <td class="idx_dept5"></td>
-              <td class="idx_dept6"></td>
-              <td class="idx_dept7"></td>
-              <td class="end_date"></td>
-              <td class="link">
-                <a href="page/guide/guide/loading.html" target="_blank" title="worker1">loading1</a>
-              </td>
-              <td class="complete"></td>
-              <td class="bigo"></td>
-              <td class="bigo2"></td>
-              <td class="note"></td>
-            </tr>
-            
-            <tr class="no_count">
-              <td class="idx_dept1">layout</td>
-              <td class="idx_dept2"></td>
-              <td class="idx_dept3"></td>
-              <td class="idx_dept4"></td>
-              <td class="idx_dept5"></td>
-              <td class="idx_dept6"></td>
-              <td class="idx_dept7"></td>
-              <td class="end_date"></td>
-              <td class="link">
-                <a href="page/layout/loading.html" target="_blank" title="worker4">loading5</a>
-              </td>
-              <td class="complete"></td>
-              <td class="bigo"></td>
-              <td class="bigo2"></td>
-              <td class="note">
-                
-              </td>
-            </tr>
-          </tbody>
-          <!-- // common -->
+				</tbody>
+				<!-- // Guide -->
 
-          <!-- 메인 -->
-          <thead>
-            <tr class="title">
-              <th colspan="13">
-                <div class="inner">
-                  <span class="title_text">메인</span>
-                  <span class="rate">
-                    <span class="rate_total"></span>
-                    <span class="rate_complete"></span>
-                    <span class="rate_late"></span>
-                    <span class="rate_per"></span>
-                  </span>
-                </div>
-              </th>
-            </tr>
-            <tr>
-              <th>lv[1]</th>
-              <th>lv[2]</th>
-              <th>lv[3]</th>
-              <th>lv[4]</th>
-              <th>lv[5]</th>
-              <th>lv[6]</th>
-              <th>lv[7]</th>
-              <th>마감일</th>
-              <th>link</th>
-              <th>완료</th>
-              <th>비고</th>
-              <th>이미지 누락</th>
-              <th>변동내역</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="idx_dept1">loading</td>
-              <td class="idx_dept2"></td>
-              <td class="idx_dept3"></td>
-              <td class="idx_dept4"></td>
-              <td class="idx_dept5"></td>
-              <td class="idx_dept6"></td>
-              <td class="idx_dept7"></td>
-              <td class="end_date"></td>
-              <td class="link">
-                <a href="page/layout/loading.html" target="_blank">loading</a>
-              </td>
-              <td class="complete"></td>
-              <td class="bigo"></td>
-              <td class="bigo2"></td>
-              <td class="note">
-                <ul class="m-list">
-                  <li>25-01-01</li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-          <!-- // 메인 -->
+				<!-- common -->
+				<thead>
+					<tr class="title">
+						<th colspan="13">
+							<div class="inner">
+								<span class="title_text">Common</span>
+								<span class="rate">
+									<span class="rate_total"></span>
+									<span class="rate_complete"></span>
+									<span class="rate_late"></span>
+									<span class="rate_per"></span>
+								</span>
+							</div>
+						</th>
+					</tr>
+					<tr>
+						<th>lv[1]</th>
+						<th>lv[2]</th>
+						<th>lv[3]</th>
+						<th>lv[4]</th>
+						<th>lv[5]</th>
+						<th>lv[6]</th>
+						<th>lv[7]</th>
+						<th>마감일</th>
+						<th>link</th>
+						<th>완료</th>
+						<th>비고</th>
+						<th>이미지 누락</th>
+						<th>변동내역</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="no_count">
+						<td class="idx_dept1"></td>
+						<td class="idx_dept2"></td>
+						<td class="idx_dept3"></td>
+						<td class="idx_dept4"></td>
+						<td class="idx_dept5"></td>
+						<td class="idx_dept6"></td>
+						<td class="idx_dept7"></td>
+						<td class="end_date"></td>
+						<td class="link">
+							<a href="page/guide/guide/loading.html" target="_blank" title="worker1">loading1</a>
+						</td>
+						<td class="complete"></td>
+						<td class="bigo"></td>
+						<td class="bigo2"></td>
+						<td class="note"></td>
+					</tr>
 
-          <!-- 상품 -->
-          <thead>
-            <tr class="title">
-              <th colspan="13">
-                <div class="inner">
-                  상품
-                  <span class="rate">
-                    <span class="rate_total"></span>
-                    <span class="rate_complete"></span>
-                    <span class="rate_late"></span>
-                    <span class="rate_per"></span>
-                  </span>
-                </div>
-              </th>
-            </tr>
-            <tr>
-              <th>lv[1]</th>
-              <th>lv[2]</th>
-              <th>lv[3]</th>
-              <th>lv[4]</th>
-              <th>lv[5]</th>
-              <th>lv[6]</th>
-              <th>lv[7]</th>
-              <th>마감일</th>
-              <th>link</th>
-              <th>완료</th>
-              <th>비고</th>
-              <th>이미지 누락</th>
-              <th>변동내역</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="idx_dept1">loading</td>
-              <td class="idx_dept2"></td>
-              <td class="idx_dept3"></td>
-              <td class="idx_dept4"></td>
-              <td class="idx_dept5"></td>
-              <td class="idx_dept6"></td>
-              <td class="idx_dept7"></td>
-              <td class="end_date"></td>
-              <td class="link">
-                <a href="page/layout/loading.html" target="_blank">loading</a>
-              </td>
-              <td class="complete"></td>
-              <td class="bigo"></td>
-              <td class="bigo2"></td>
-              <td class="note"></td>
-            </tr>
-          </tbody>
-          <!-- // 상품 -->
+					<tr class="no_count">
+						<td class="idx_dept1">layout</td>
+						<td class="idx_dept2"></td>
+						<td class="idx_dept3"></td>
+						<td class="idx_dept4"></td>
+						<td class="idx_dept5"></td>
+						<td class="idx_dept6"></td>
+						<td class="idx_dept7"></td>
+						<td class="end_date"></td>
+						<td class="link">
+							<a href="page/layout/loading.html" target="_blank" title="worker4">loading5</a>
+						</td>
+						<td class="complete"></td>
+						<td class="bigo"></td>
+						<td class="bigo2"></td>
+						<td class="note"></td>
+					</tr>
+				</tbody>
+				<!-- // common -->
 
-          <!-- MY -->
-          <thead>
-            <tr class="title">
-              <th colspan="13">
-                <div class="inner">
-                  MY
-                  <span class="rate">
-                    <span class="rate_total"></span>
-                    <span class="rate_complete"></span>
-                    <span class="rate_late"></span>
-                    <span class="rate_per"></span>
-                  </span>
-                </div>
-              </th>
-            </tr>
-            <tr>
-              <th>lv[1]</th>
-              <th>lv[2]</th>
-              <th>lv[3]</th>
-              <th>lv[4]</th>
-              <th>lv[5]</th>
-              <th>lv[6]</th>
-              <th>lv[7]</th>
-              <th>마감일</th>
-              <th>link</th>
-              <th>완료</th>
-              <th>비고</th>
-              <th>이미지 누락</th>
-              <th>변동내역</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="idx_dept1">loading</td>
-              <td class="idx_dept2"></td>
-              <td class="idx_dept3"></td>
-              <td class="idx_dept4"></td>
-              <td class="idx_dept5"></td>
-              <td class="idx_dept6"></td>
-              <td class="idx_dept7"></td>
-              <td class="end_date"></td>
-              <td class="link">
-                <a href="page/layout/loading.html" target="_blank">loading</a>
-              </td>
-              <td class="complete"></td>
-              <td class="bigo"></td>
-              <td class="bigo2"></td>
-              <td class="note"></td>
-            </tr>
-          </tbody>
-          <!-- // MY -->
+				<!-- 메인 -->
+				<thead>
+					<tr class="title">
+						<th colspan="13">
+							<div class="inner">
+								<span class="title_text">메인</span>
+								<span class="rate">
+									<span class="rate_total"></span>
+									<span class="rate_complete"></span>
+									<span class="rate_late"></span>
+									<span class="rate_per"></span>
+								</span>
+							</div>
+						</th>
+					</tr>
+					<tr>
+						<th>lv[1]</th>
+						<th>lv[2]</th>
+						<th>lv[3]</th>
+						<th>lv[4]</th>
+						<th>lv[5]</th>
+						<th>lv[6]</th>
+						<th>lv[7]</th>
+						<th>마감일</th>
+						<th>link</th>
+						<th>완료</th>
+						<th>비고</th>
+						<th>이미지 누락</th>
+						<th>변동내역</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="idx_dept1">loading</td>
+						<td class="idx_dept2"></td>
+						<td class="idx_dept3"></td>
+						<td class="idx_dept4"></td>
+						<td class="idx_dept5"></td>
+						<td class="idx_dept6"></td>
+						<td class="idx_dept7"></td>
+						<td class="end_date"></td>
+						<td class="link">
+							<a href="page/layout/loading.html" target="_blank">loading</a>
+						</td>
+						<td class="complete"></td>
+						<td class="bigo"></td>
+						<td class="bigo2"></td>
+						<td class="note">
+							<ul class="m-list">
+								<li>25-01-01</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+				<!-- // 메인 -->
 
-          <!-- 혜택 -->
-          <thead>
-            <tr class="title">
-              <th colspan="13">
-                <div class="inner">
-                  혜택
-                  <span class="rate">
-                    <span class="rate_total"></span>
-                    <span class="rate_complete"></span>
-                    <span class="rate_late"></span>
-                    <span class="rate_per"></span>
-                  </span>
-                </div>
-              </th>
-            </tr>
-            <tr>
-              <th>lv[1]</th>
-              <th>lv[2]</th>
-              <th>lv[3]</th>
-              <th>lv[4]</th>
-              <th>lv[5]</th>
-              <th>lv[6]</th>
-              <th>lv[7]</th>
-              <th>마감일</th>
-              <th>link</th>
-              <th>완료</th>
-              <th>비고</th>
-              <th>이미지 누락</th>
-              <th>변동내역</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="idx_dept1">loading</td>
-              <td class="idx_dept2"></td>
-              <td class="idx_dept3"></td>
-              <td class="idx_dept4"></td>
-              <td class="idx_dept5"></td>
-              <td class="idx_dept6"></td>
-              <td class="idx_dept7"></td>
-              <td class="end_date"></td>
-              <td class="link">
-                <a href="page/layout/loading.html" target="_blank">loading</a>
-              </td>
-              <td class="complete"></td>
-              <td class="bigo"></td>
-              <td class="bigo2"></td>
-              <td class="note"></td>
-            </tr>
-          </tbody>
-          <!-- // 혜택 -->
+				<!-- 상품 -->
+				<thead>
+					<tr class="title">
+						<th colspan="13">
+							<div class="inner">
+								상품
+								<span class="rate">
+									<span class="rate_total"></span>
+									<span class="rate_complete"></span>
+									<span class="rate_late"></span>
+									<span class="rate_per"></span>
+								</span>
+							</div>
+						</th>
+					</tr>
+					<tr>
+						<th>lv[1]</th>
+						<th>lv[2]</th>
+						<th>lv[3]</th>
+						<th>lv[4]</th>
+						<th>lv[5]</th>
+						<th>lv[6]</th>
+						<th>lv[7]</th>
+						<th>마감일</th>
+						<th>link</th>
+						<th>완료</th>
+						<th>비고</th>
+						<th>이미지 누락</th>
+						<th>변동내역</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="idx_dept1">loading</td>
+						<td class="idx_dept2"></td>
+						<td class="idx_dept3"></td>
+						<td class="idx_dept4"></td>
+						<td class="idx_dept5"></td>
+						<td class="idx_dept6"></td>
+						<td class="idx_dept7"></td>
+						<td class="end_date"></td>
+						<td class="link">
+							<a href="page/layout/loading.html" target="_blank">loading</a>
+						</td>
+						<td class="complete"></td>
+						<td class="bigo"></td>
+						<td class="bigo2"></td>
+						<td class="note"></td>
+					</tr>
+				</tbody>
+				<!-- // 상품 -->
 
-          <!-- 이용안내 -->
-          <thead>
-            <tr class="title">
-              <th colspan="13">
-                <div class="inner">
-                  이용안내
-                  <span class="rate">
-                    <span class="rate_total"></span>
-                    <span class="rate_complete"></span>
-                    <span class="rate_late"></span>
-                    <span class="rate_per"></span>
-                  </span>
-                </div>
-              </th>
-            </tr>
-            <tr>
-              <th>lv[1]</th>
-              <th>lv[2]</th>
-              <th>lv[3]</th>
-              <th>lv[4]</th>
-              <th>lv[5]</th>
-              <th>lv[6]</th>
-              <th>lv[7]</th>
-              <th>마감일</th>
-              <th>link</th>
-              <th>완료</th>
-              <th>비고</th>
-              <th>이미지 누락</th>
-              <th>변동내역</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="idx_dept1">loading</td>
-              <td class="idx_dept2"></td>
-              <td class="idx_dept3"></td>
-              <td class="idx_dept4"></td>
-              <td class="idx_dept5"></td>
-              <td class="idx_dept6"></td>
-              <td class="idx_dept7"></td>
-              <td class="end_date"></td>
-              <td class="link">
-                <a href="page/layout/loading.html" target="_blank">loading</a>
-              </td>
-              <td class="complete"></td>
-              <td class="bigo"></td>
-              <td class="bigo2"></td>
-              <td class="note"></td>
-            </tr>
-          </tbody>
-          <!-- // 이용안내 -->
+				<!-- MY -->
+				<thead>
+					<tr class="title">
+						<th colspan="13">
+							<div class="inner">
+								MY
+								<span class="rate">
+									<span class="rate_total"></span>
+									<span class="rate_complete"></span>
+									<span class="rate_late"></span>
+									<span class="rate_per"></span>
+								</span>
+							</div>
+						</th>
+					</tr>
+					<tr>
+						<th>lv[1]</th>
+						<th>lv[2]</th>
+						<th>lv[3]</th>
+						<th>lv[4]</th>
+						<th>lv[5]</th>
+						<th>lv[6]</th>
+						<th>lv[7]</th>
+						<th>마감일</th>
+						<th>link</th>
+						<th>완료</th>
+						<th>비고</th>
+						<th>이미지 누락</th>
+						<th>변동내역</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="idx_dept1">loading</td>
+						<td class="idx_dept2"></td>
+						<td class="idx_dept3"></td>
+						<td class="idx_dept4"></td>
+						<td class="idx_dept5"></td>
+						<td class="idx_dept6"></td>
+						<td class="idx_dept7"></td>
+						<td class="end_date"></td>
+						<td class="link">
+							<a href="page/layout/loading.html" target="_blank">loading</a>
+						</td>
+						<td class="complete"></td>
+						<td class="bigo"></td>
+						<td class="bigo2"></td>
+						<td class="note"></td>
+					</tr>
+				</tbody>
+				<!-- // MY -->
 
-          <!-- 공통 -->
-          <thead>
-            <tr class="title">
-              <th colspan="13">
-                <div class="inner">
-                  공통
-                  <span class="rate">
-                    <span class="rate_total"></span>
-                    <span class="rate_complete"></span>
-                    <span class="rate_late"></span>
-                    <span class="rate_per"></span>
-                  </span>
-                </div>
-              </th>
-            </tr>
-            <tr>
-              <th>lv[1]</th>
-              <th>lv[2]</th>
-              <th>lv[3]</th>
-              <th>lv[4]</th>
-              <th>lv[5]</th>
-              <th>lv[6]</th>
-              <th>lv[7]</th>
-              <th>마감일</th>
-              <th>link</th>
-              <th>완료</th>
-              <th>비고</th>
-              <th>이미지 누락</th>
-              <th>변동내역</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="idx_dept1">loading</td>
-              <td class="idx_dept2"></td>
-              <td class="idx_dept3"></td>
-              <td class="idx_dept4"></td>
-              <td class="idx_dept5"></td>
-              <td class="idx_dept6"></td>
-              <td class="idx_dept7"></td>
-              <td class="end_date"></td>
-              <td class="link">
-                <a href="page/layout/loading.html" target="_blank">loading</a>
-              </td>
-              <td class="complete"></td>
-              <td class="bigo"></td>
-              <td class="bigo2"></td>
-              <td class="note"></td>
-            </tr>
-          </tbody>
-          <!-- // 공통 -->
+				<!-- 혜택 -->
+				<thead>
+					<tr class="title">
+						<th colspan="13">
+							<div class="inner">
+								혜택
+								<span class="rate">
+									<span class="rate_total"></span>
+									<span class="rate_complete"></span>
+									<span class="rate_late"></span>
+									<span class="rate_per"></span>
+								</span>
+							</div>
+						</th>
+					</tr>
+					<tr>
+						<th>lv[1]</th>
+						<th>lv[2]</th>
+						<th>lv[3]</th>
+						<th>lv[4]</th>
+						<th>lv[5]</th>
+						<th>lv[6]</th>
+						<th>lv[7]</th>
+						<th>마감일</th>
+						<th>link</th>
+						<th>완료</th>
+						<th>비고</th>
+						<th>이미지 누락</th>
+						<th>변동내역</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="idx_dept1">loading</td>
+						<td class="idx_dept2"></td>
+						<td class="idx_dept3"></td>
+						<td class="idx_dept4"></td>
+						<td class="idx_dept5"></td>
+						<td class="idx_dept6"></td>
+						<td class="idx_dept7"></td>
+						<td class="end_date"></td>
+						<td class="link">
+							<a href="page/layout/loading.html" target="_blank">loading</a>
+						</td>
+						<td class="complete"></td>
+						<td class="bigo"></td>
+						<td class="bigo2"></td>
+						<td class="note"></td>
+					</tr>
+				</tbody>
+				<!-- // 혜택 -->
 
-          
+				<!-- 이용안내 -->
+				<thead>
+					<tr class="title">
+						<th colspan="13">
+							<div class="inner">
+								이용안내
+								<span class="rate">
+									<span class="rate_total"></span>
+									<span class="rate_complete"></span>
+									<span class="rate_late"></span>
+									<span class="rate_per"></span>
+								</span>
+							</div>
+						</th>
+					</tr>
+					<tr>
+						<th>lv[1]</th>
+						<th>lv[2]</th>
+						<th>lv[3]</th>
+						<th>lv[4]</th>
+						<th>lv[5]</th>
+						<th>lv[6]</th>
+						<th>lv[7]</th>
+						<th>마감일</th>
+						<th>link</th>
+						<th>완료</th>
+						<th>비고</th>
+						<th>이미지 누락</th>
+						<th>변동내역</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="idx_dept1">loading</td>
+						<td class="idx_dept2"></td>
+						<td class="idx_dept3"></td>
+						<td class="idx_dept4"></td>
+						<td class="idx_dept5"></td>
+						<td class="idx_dept6"></td>
+						<td class="idx_dept7"></td>
+						<td class="end_date"></td>
+						<td class="link">
+							<a href="page/layout/loading.html" target="_blank">loading</a>
+						</td>
+						<td class="complete"></td>
+						<td class="bigo"></td>
+						<td class="bigo2"></td>
+						<td class="note"></td>
+					</tr>
+				</tbody>
+				<!-- // 이용안내 -->
+
+				<!-- 공통 -->
+				<thead>
+					<tr class="title">
+						<th colspan="13">
+							<div class="inner">
+								공통
+								<span class="rate">
+									<span class="rate_total"></span>
+									<span class="rate_complete"></span>
+									<span class="rate_late"></span>
+									<span class="rate_per"></span>
+								</span>
+							</div>
+						</th>
+					</tr>
+					<tr>
+						<th>lv[1]</th>
+						<th>lv[2]</th>
+						<th>lv[3]</th>
+						<th>lv[4]</th>
+						<th>lv[5]</th>
+						<th>lv[6]</th>
+						<th>lv[7]</th>
+						<th>마감일</th>
+						<th>link</th>
+						<th>완료</th>
+						<th>비고</th>
+						<th>이미지 누락</th>
+						<th>변동내역</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="idx_dept1">loading</td>
+						<td class="idx_dept2"></td>
+						<td class="idx_dept3"></td>
+						<td class="idx_dept4"></td>
+						<td class="idx_dept5"></td>
+						<td class="idx_dept6"></td>
+						<td class="idx_dept7"></td>
+						<td class="end_date"></td>
+						<td class="link">
+							<a href="page/layout/loading.html" target="_blank">loading</a>
+						</td>
+						<td class="complete"></td>
+						<td class="bigo"></td>
+						<td class="bigo2"></td>
+						<td class="note"></td>
+					</tr>
+				</tbody>
+				<!-- // 공통 -->
 
 
-        </table>
-        <!-- // table -->
-      </div>
-    </div>
-    <script src="js/libs/jquery-1.8.3.min.js"></script>
-    <script>
-      document.querySelector(".control_list .close_all").onclick = function () {
-        var el = document.querySelectorAll(".title");
-        var len = el.length;
-        if (len > 0) {
-          for (var i = 0; i < len; i++) el[i].parentElement.classList.add("mini");
-        }
-      };
-
-      document.querySelector(".control_list .open_all").onclick = function () {
-        var el = document.querySelectorAll(".mini");
-        var len = el.length;
-        if (len > 0) {
-          for (var i = 0; i < len; i++) el[i].classList.remove("mini");
-        }
-      };
-
-      document.querySelectorAll(".main .title").forEach(el => {
-        el.addEventListener("click", () => {
-          console.log('click')
-          el.parentElement.classList.toggle("mini");
-        });
-      });
-
-      
 
 
-      // 수정내역 확인 목록
-      let today = new Date();
-      let year = today.getFullYear().toString().slice(-2);
-      let month = ('0' + (today.getMonth() + 1)).slice(-2);
-      let date = ('0' + today.getDate()).slice(-2);
-      let dateString = year + '-' + month + '-' + date;
-      // console.log(dateString);
+			</table>
+			<!-- // table -->
+		</div>
+	</div>
+	<script src="js/libs/jquery-1.8.3.min.js"></script>
+	<script>
+		document.querySelector(".control_list .close_all").onclick = function () {
+			var el = document.querySelectorAll(".title");
+			var len = el.length;
+			if (len > 0) {
+				for (var i = 0; i < len; i++) el[i].parentElement.classList.add("mini");
+			}
+		};
 
-      function log(dateString) {
-        const getValDate = dateString;
+		document.querySelector(".control_list .open_all").onclick = function () {
+			var el = document.querySelectorAll(".mini");
+			var len = el.length;
+			if (len > 0) {
+				for (var i = 0; i < len; i++) el[i].classList.remove("mini");
+			}
+		};
 
-        // 페이지 작업자 확인 배열 생성
-        const worker = [];
-        $('.m-list').each(function () {
-          $(this).children('li').each(function () {
-            if($(this).text().trim() === getValDate) {
-              const title = $(this).closest('tr').find('.link > a').attr('title');
-              $('.m-list > li').removeAttr('style');
-              $(this).css('background','magenta');
-              worker.push(title);
-            }
-          });
-        });
-        // console.log(worker);
-
-
-        // 작업자 배열 확인
-        const workers = [...new Set(worker)];
-
-        let modifyListValue = [];
-        for (var i = 0; i < workers.length; i++) {
-          let modifyList = [];
-          modifyList.push(workers[i]);
-          $('.m-list').each(function () {
-            $(this).children('li').each(function () {
-              if($(this).text().trim() === getValDate) {
-                const title = $(this).closest('tr').find('.link > a').attr('title');
-                const pageName = $(this).closest('tr').find('.link > a').text();
-                if(title === workers[i]) {
-                  let modify_page = '페이지명 : ' + pageName;
-                  modifyList.push(modify_page);
-                }                
-              }
-            });
-          });
-          modifyListValue.push(modifyList);
-        }
-
-        let output = '';
-        for (let item of modifyListValue) {
-          output += item.join('\n') + '\n\n';
-        }
-        let printInfo = 
-        '[ ' + dateString + ' ] 모바일 퍼블리싱 수정내역 공유드립니다.\n\n' + output;
-
-        console.log(printInfo);
-
-      }
-
-      // 출력 
-      // log('25-02-14');
-      log(dateString);
+		document.querySelectorAll(".main .title").forEach(el => {
+			el.addEventListener("click", () => {
+				console.log('click')
+				el.parentElement.classList.toggle("mini");
+			});
+		});
 
 
-      // 퍼블 지연 체크
-      function endDate(dateString) {
-        const [year, month, day] = dateString.split('-');
-        const formattedDateString = `20${year}-${month}-${day}`;
-        const today = new Date(formattedDateString);
 
-        // if (isNaN(today)) {
-        //   console.error('Invalid Date:', formattedDateString);
-        //   return;
-        // }
 
-        // console.log('기준 날짜:', today);
+		// 수정내역 확인 목록
+		let today = new Date();
+		let year = today.getFullYear().toString().slice(-2);
+		let month = ('0' + (today.getMonth() + 1)).slice(-2);
+		let date = ('0' + today.getDate()).slice(-2);
+		let dateString = year + '-' + month + '-' + date;
+		// console.log(dateString);
 
-        $('.end_date').each(function() {
-          const endDateText = $(this).text().trim();
-          // console.log('마감 날짜:', endDateText);
-          const endDate = new Date('20' + endDateText.replace(/-/g, '/'));
-          const $tr = $(this).closest('tr');
-          const $completeTd = $tr.find('.complete');
+		function log(dateString) {
+			const getValDate = dateString;
 
-          // console.log('비교 날짜:', endDate);
+			// 페이지 작업자 확인 배열 생성
+			const worker = [];
+			$('.m-list').each(function () {
+				$(this).children('li').each(function () {
+					if ($(this).text().trim() === getValDate) {
+						const title = $(this).closest('tr').find('.link > a').attr('title');
+						$('.m-list > li').removeAttr('style');
+						$(this).css('background', 'magenta');
+						worker.push(title);
+					}
+				});
+			});
+			// console.log(worker);
 
-          // 날짜 부분만 추출하여 비교
-          const todayDateOnly = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-          const endDateOnly = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate());
 
-          if (todayDateOnly > endDateOnly || endDateOnly.getTime() === todayDateOnly.getTime()) {
-            $(this).addClass('ing');
-          }
+			// 작업자 배열 확인
+			const workers = [...new Set(worker)];
 
-          // 날짜 비교 및 배경색 변경
-          if (endDateOnly < todayDateOnly && !$completeTd.hasClass('ok')) {
-            // console.log('지연');
-            $(this).css('background-color', 'red').addClass('late');
-          } else if (endDateOnly.getTime() === todayDateOnly.getTime()) {
-            // console.log('오늘 마감');
-            $(this).css('background-color', 'blue');
-          } else if ($completeTd.hasClass('ok')) {
-            // console.log('완료');
-            $(this).css('background-color', '');
-          }          
-        });
-      }
+			let modifyListValue = [];
+			for (var i = 0; i < workers.length; i++) {
+				let modifyList = [];
+				modifyList.push(workers[i]);
+				$('.m-list').each(function () {
+					$(this).children('li').each(function () {
+						if ($(this).text().trim() === getValDate) {
+							const title = $(this).closest('tr').find('.link > a').attr('title');
+							const pageName = $(this).closest('tr').find('.link > a').text();
+							if (title === workers[i]) {
+								let modify_page = '페이지명 : ' + pageName;
+								modifyList.push(modify_page);
+							}
+						}
+					});
+				});
+				modifyListValue.push(modifyList);
+			}
 
-      // 현재 날짜를 기준으로 endDate 함수 호출
-      endDate(dateString);
+			let output = '';
+			for (let item of modifyListValue) {
+				output += item.join('\n') + '\n\n';
+			}
+			let printInfo =
+				'[ ' + dateString + ' ] 모바일 퍼블리싱 수정내역 공유드립니다.\n\n' + output;
 
-      $('tbody').each(function() {
-        const $tbody = $(this);
+			console.log(printInfo);
 
-        // 'none' 클래스를 가진 tbody는 제외
-        if ($tbody.hasClass('none')) {
-          return;
-        }
+		}
 
-        // 'no_count' 클래스를 가진 tr을 제외하고 tr의 갯수를 계산
-        const trCount = $tbody.find('tr').not('.no_count').length;
+		// 출력 
+		// log('25-02-14');
+		log(dateString);
 
-        // 이전 thead 안의 rate_total에 trCount를 텍스트로 설정
-        $tbody.prev('thead').find('.rate_total').text(trCount);
 
-        // 완료된 tr의 갯수를 계산
-        const completeCount = $tbody.find('.complete.ok').length;
-        $tbody.prev('thead').find('.rate_complete').text(completeCount);
+		// 퍼블 지연 체크
+		function endDate(dateString) {
+			const [year, month, day] = dateString.split('-');
+			const formattedDateString = `20${year}-${month}-${day}`;
+			const today = new Date(formattedDateString);
 
-        // 지연된 tr의 갯수를 계산
-        const lateCount = $tbody.find('.end_date').filter('.late').length;
-        $tbody.prev('thead').find('.rate_late').text(lateCount);
+			// if (isNaN(today)) {
+			//   console.error('Invalid Date:', formattedDateString);
+			//   return;
+			// }
 
-        // 오늘까지 작업해야 하는 페이지 총 갯수
-        const todayEnd = $tbody.find('.end_date').filter('.ing').length;
-        // console.log('오늘까지 작업해야 하는 페이지 총 갯수 : ' + todayEnd);
+			// console.log('기준 날짜:', today);
 
-        const ratePer = Math.round((completeCount / todayEnd) * 100);
-        // console.log(completeCount, todayEnd);
-        // console.log('진행률 : ' + ratePer + '%');
-        $tbody.prev('thead').find('.rate_per').text(ratePer);
-      });
+			$('.end_date').each(function () {
+				const endDateText = $(this).text().trim();
+				// console.log('마감 날짜:', endDateText);
+				const endDate = new Date('20' + endDateText.replace(/-/g, '/'));
+				const $tr = $(this).closest('tr');
+				const $completeTd = $tr.find('.complete');
 
-    </script>
-  </body>
+				// console.log('비교 날짜:', endDate);
+
+				// 날짜 부분만 추출하여 비교
+				const todayDateOnly = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+				const endDateOnly = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate());
+
+				if (todayDateOnly > endDateOnly || endDateOnly.getTime() === todayDateOnly.getTime()) {
+					$(this).addClass('ing');
+				}
+
+				// 날짜 비교 및 배경색 변경
+				if (endDateOnly < todayDateOnly && !$completeTd.hasClass('ok')) {
+					// console.log('지연');
+					$(this).css('background-color', 'red').addClass('late');
+				} else if (endDateOnly.getTime() === todayDateOnly.getTime()) {
+					// console.log('오늘 마감');
+					$(this).css('background-color', 'blue');
+				} else if ($completeTd.hasClass('ok')) {
+					// console.log('완료');
+					$(this).css('background-color', '');
+				}
+			});
+		}
+
+		// 현재 날짜를 기준으로 endDate 함수 호출
+		endDate(dateString);
+
+		$('tbody').each(function () {
+			const $tbody = $(this);
+
+			// 'none' 클래스를 가진 tbody는 제외
+			if ($tbody.hasClass('none')) {
+				return;
+			}
+
+			// 'no_count' 클래스를 가진 tr을 제외하고 tr의 갯수를 계산
+			const trCount = $tbody.find('tr').not('.no_count').length;
+
+			// 이전 thead 안의 rate_total에 trCount를 텍스트로 설정
+			$tbody.prev('thead').find('.rate_total').text(trCount);
+
+			// 완료된 tr의 갯수를 계산
+			const completeCount = $tbody.find('.complete.ok').length;
+			$tbody.prev('thead').find('.rate_complete').text(completeCount);
+
+			// 지연된 tr의 갯수를 계산
+			const lateCount = $tbody.find('.end_date').filter('.late').length;
+			$tbody.prev('thead').find('.rate_late').text(lateCount);
+
+			// 오늘까지 작업해야 하는 페이지 총 갯수
+			const todayEnd = $tbody.find('.end_date').filter('.ing').length;
+			// console.log('오늘까지 작업해야 하는 페이지 총 갯수 : ' + todayEnd);
+
+			const ratePer = Math.round((completeCount / todayEnd) * 100);
+			// console.log(completeCount, todayEnd);
+			// console.log('진행률 : ' + ratePer + '%');
+			$tbody.prev('thead').find('.rate_per').text(ratePer);
+		});
+
+	</script>
+</body>
+
 </html>
