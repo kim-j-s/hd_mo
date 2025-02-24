@@ -1,10 +1,7 @@
 (function() {  
-  console.log('common.js');
-
   const $DOM = $(document),
         $WIN = $(window),
         wHeight = $WIN.height();
-
 
   /* 전체메뉴 */
   $DOM.on('click', '.header .right [class^=allmenu]', function(){
@@ -164,7 +161,3 @@
 
 
 })();
-
-$(function(){
-  console.log('jquery ready');
-});
