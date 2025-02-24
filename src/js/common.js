@@ -65,16 +65,16 @@
   $DOM.on('click', '.tooltip_wrap button', function(){
     const $click = $(this).closest('.tooltip_wrap'),
 					$t_head = $click.children('.tooltip_head'),
-					$t_text = $click.find('.tooltip_text');
+					$t_text = $click.find('.tooltip_text').children('.inner');
 
 			if($(this).attr('class') == 'open'){
 				$('.tooltip_wrap .tooltip_head').removeClass('active');
 				$t_head.addClass('active');
-				$('.tooltip_wrap .tooltip_text').hide();
+				$('.tooltip_wrap .tooltip_text .inner').hide();
 				$t_text.css('display', 'block');
 			}else {
 				$('.tooltip_wrap .tooltip_head').removeClass('active');
-				$('.tooltip_wrap .tooltip_text').hide();
+				$('.tooltip_wrap .tooltip_text .inner').hide();
 				// $t_text.css('display', 'none');
 			}
   });
