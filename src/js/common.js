@@ -44,19 +44,22 @@
 
 
   /* Accordian */
-  $DOM.on('click', '.acd_item .acd_head', function(){
+  $DOM.on('click', '.acd_item .acd_head .acd_btn', function(){
     const $this = $(this),
-          $acd_inner = $this.next('.acd_cont').children('.inner'),
-          $click_item = $this.parent('.acd_item');
+					$head = $this.parent('.acd_head'),
+          $inner = $head.next('.acd_cont').children('.inner'),
+          $click_item = $head.parent('.acd_item');
 
-    if($acd_inner.css('display') == 'none'){
+    if($inner.css('display') == 'none'){
+			$this.attr('aria-expanded', 'true');
       $click_item.children('.acd_head').removeClass('active');
-      $this.addClass('active').attr('aria-expanded', 'true');
       $click_item.children('.acd_cont').children('.inner').hide();
-      $acd_inner.slideDown();
+      $head.addClass('active');
+      $inner.slideDown();
     }else {
-      $this.removeClass('active').attr('aria-expanded', 'false');
-      $acd_inner.slideUp();
+			$this.attr('aria-expanded', 'false');
+      $head.removeClass('active');
+      $inner.slideUp();
     }
   });
 
@@ -64,12 +67,18 @@
   /* Tooltip */
   $DOM.on('click', '.tooltip_wrap button', function(){
     const $click = $(this).closest('.tooltip_wrap'),
-          $t_text = $click.find('.tooltip_text');
+					$t_head = $click.children('.tooltip_head'),
+					$t_text = $click.find('.tooltip_text');
 
 			if($(this).attr('class') == 'open'){
+				$('.tooltip_wrap .tooltip_head').removeClass('active');
+				$t_head.addClass('active');
+				$('.tooltip_wrap .tooltip_text').hide();
 				$t_text.css('display', 'block');
 			}else {
-				$t_text.css('display', 'none');
+				$('.tooltip_wrap .tooltip_head').removeClass('active');
+				$('.tooltip_wrap .tooltip_text').hide();
+				// $t_text.css('display', 'none');
 			}
   });
 
