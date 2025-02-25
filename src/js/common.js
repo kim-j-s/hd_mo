@@ -68,14 +68,13 @@
 					$t_text = $click.find('.tooltip_text').children('.inner');
 
 			if($(this).attr('class') == 'open'){
-				$('.tooltip_wrap .tooltip_head').removeClass('active');
-				$t_head.addClass('active');
+				$('.tooltip_wrap .tooltip_head').removeClass('active').find('.open').attr('aria-expanded', 'false');
+				$t_head.addClass('active').find('.open').attr('aria-expanded', 'true');
 				$('.tooltip_wrap .tooltip_text .inner').hide();
 				$t_text.css('display', 'block');
 			}else {
-				$('.tooltip_wrap .tooltip_head').removeClass('active');
+				$('.tooltip_wrap .tooltip_head').removeClass('active').find('.open').attr('aria-expanded', 'false');
 				$('.tooltip_wrap .tooltip_text .inner').hide();
-				// $t_text.css('display', 'none');
 			}
   });
 
