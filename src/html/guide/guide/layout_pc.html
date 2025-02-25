@@ -6,12 +6,14 @@
 
 		<div style="height: 300px; background-color: #ddd;"></div>
 		<div style="height: 300px; background-color: #f8f8f8;"></div>
+		<button type="button" style="display: block; width: 100%; height: 50px;">버튼</button>
 		<div style="height: 300px; background-color: #ddd;"></div>
+		<button type="button" style="display: block; width: 100%; height: 50px;">버튼</button>
 		<div style="height: 300px; background-color: #f8f8f8;"></div>
 		<div style="height: 300px; background-color: #ddd;"></div>
 
 		<div class="pageTop">
-			<button type="button" class="pageTop_btn">페이지 최상단으로 이동</button>
+			<a href="#skipNavi" class="pageTop_btn">페이지 최상단으로 이동</a>
 		</div>
 	</div>
 	
@@ -21,7 +23,7 @@
 	</footer>
 
 
-	<style>
+	<style lang="scss">
 		.guide_wrap {
 			padding: 20px 20px 0 20px;
 		}
@@ -37,19 +39,15 @@
 		}
 
 
-		/*skipNavi*/
+		/* skipNavi */
 		.skipNavi {
 			position: relative;
 			z-index: 500;
 		}
-
-		.skipNavi li {}
-
 		.skipNavi a {
 			position: absolute;
 			font-size: 0;
 		}
-
 		.skipNavi a:focus {
 			top: 0;
 			left: 0;
@@ -62,8 +60,37 @@
 			line-height: 30px;
 			background: #555555;
 		}
+		/* skipNavi */
+
+		.pageTop {
+			position: fixed;
+			right: 20px;
+			bottom: 20px;
+			&.active {
+				position: absolute;
+			}
+
+			.pageTop_btn {
+				display: block;
+				width: 40px;
+				height: 40px;
+				font-size: 0;
+				border-radius: 50px;
+				background-color: blue;
+			}
+
+		}
 
 	</style>
+
+
+<script>
+	$(function(){
+		$('.pageTop_btn').on('click', function(){
+			$('html, body').animate({scrollTop: 0}, 300);
+		});
+	})
+</script>
 
 
 {{/ layout/default_pc }}
