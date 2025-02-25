@@ -1,97 +1,72 @@
 {{#> layout/guide }}
 	<div class="guide_h1">Tooltip</div>
 
-	<div class="guide_h4">
-			guide_discription
-	</div>
-
-	<div class="guide_discription">
-			guide_discription
-	</div>
-
-	<span>
-		텍스트
-		{{#> components/tooltip}}
-		내용입니다.
-		{{/ components/tooltip}}
-	</span>
-
-	<br><br><br>
-
+	<div class="guide_h4">Defalut (Bottom)</div>
+	<div class="guide_discription">툴팁내용 한줄일 때 (예시)</div>
 	<div>
-		<span>텍스트 텍스트 텍스트 텍스트텍스트 텍스트 텍스트 스트 스트 텍스트 텍스트텍스트텍스트 텍스트 텍스트 텍스트텍스트 텍스트 텍스트 텍스트 텍스트텍스트</span>
-		{{#> components/tooltip}}
-		내용입니다.
-		{{/ components/tooltip}}
+		<span>
+			텍스트 텍스트 텍스트 텍스트텍스트<br>
+			텍스트텍스트텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트
+		</span>
+		{{> components/tooltip text="<strong>내용</strong> 내용 샘플 <b>샘풀</b>"}}
 	</div>
 
-	<br><br><br>
-
-	<p>
-		텍스트 텍스트 텍스트 텍스트텍스트<br>
-		텍스트텍스트텍스트텍스트 텍스트텍스트 텍스트텍스트 <br>
-		텍스트텍스트텍스트 텍스트 텍스트 텍스트텍스트<br>
-		텍스트텍스트텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트<br>
-		텍스트텍스트텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트<br>
-		텍스트텍스트텍스트텍스트 텍스트텍스트 텍스트텍스트 <br>
-		텍스트텍스트텍스트 텍스트 텍스트 텍스트텍스트
-	</p>
+	<div class="guide_discription">툴팁내용 여러 줄일 때 (예시)</div>
+	<div>
+		{{#> components/tooltip}}
+			내용입니다.<br>
+			내용입니다.<br>
+			내용입니다.<br>
+			내용입니다.<br>
+			내용입니다.<br>
+			내용입니다.
+		{{/ components/tooltip}}
+		텍스트텍스트텍스트
+	</div>
 
 	<br><br><br>
 
 	<div>
 		<span>
 			텍스트 텍스트 텍스트 텍스트텍스트<br>
-			텍스트텍스트텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트
+			텍스트텍스트텍스트텍스트 텍스트텍스트
+			{{#> components/tooltip }}
+				테스트입니다.<br>
+				내용입니다.<br>내용입니다.<br>내용입니다.
+			{{/ components/tooltip}}
+			텍스트텍스트 텍스트텍스트 텍스트텍스트
+			텍스트텍스트텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트
 		</span>
-		{{#> components/tooltip top=true}}
-		내용입니다.<br>
-		내용입니다.<br>내용입니다.<br>내용입니다.
-		{{/ components/tooltip}}
 	</div>
 
 	<br><br><br>
 
+
+	<div class="guide_h4">Top</div>
 	<div>
 		<span>
 			텍스트 텍스트 텍스트 텍스트텍스트<br>
 			텍스트텍스트텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트
 		</span>
 		{{> components/tooltip top=true text="<strong>내용</strong> 내용 샘플 <b>샘풀</b>"}}
-		
 	</div>
 
 	<br><br><br>
-	
-	
 
-		<div>
-			<span>
-				텍스트 텍스트 텍스트 텍스트텍스트<br>
-				텍스트텍스트텍스트텍스트 텍스트텍스트
-				{{#> components/tooltip }}
+	<div>
+		<span>
+			텍스트 텍스트 텍스트 텍스트텍스트<br>
+			텍스트텍스트텍스트텍스트 텍스트텍스트
+			{{#> components/tooltip top=true }}
 				테스트입니다.<br>
 				내용입니다.<br>내용입니다.<br>내용입니다.
-				{{/ components/tooltip}}
-				텍스트텍스트 텍스트텍스트 텍스트텍스트
-				텍스트텍스트텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트
-			</span>
-			{{#> components/tooltip top=true}}
+			{{/ components/tooltip}}
+			텍스트텍스트 텍스트텍스트 텍스트텍스트
+			텍스트텍스트텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트
+		</span>
+		{{#> components/tooltip top=true}}
 			내용입니다.<br>
-			{{/ components/tooltip}}
-		</div>
-
-		<br><br><br>
-
-		<div>
-			<span>
-				텍스트 텍스트 텍스트 텍스트텍스트<br>
-				텍스트텍스트텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트
-			</span>
-			{{#> components/tooltip}}
-			내용입니다.
-			{{/ components/tooltip}}
-		</div>
-		
+		{{/ components/tooltip}}
+	</div>
 		
 {{/ layout/guide }}
