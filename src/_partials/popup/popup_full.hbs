@@ -1,16 +1,6 @@
-
-
-
 {{!-- 
-popup-id : id 배정
-in-class : 내부 클래스
+	popup-id : id 배정
 --}}
-
-
-
-
-
-
 <div class="popup_wrap full{{#if popup-class}} {{popup-class}}{{/if}}"{{#if popup-id}} id="{{popup-id}}"{{/if}}{{#if close-btn}}{{/if}}{{#if no-header}}{{/if}} aria-hidden="true">
 	<div class="popup_container">
 		<div class="popup_inner{{#if in-class}} {{in-class}}{{/if}}">
@@ -21,9 +11,9 @@ in-class : 내부 클래스
 			{{/unless}}
 			{{> @partial-block}}
 
-			{{#if close-btn}}
+			{{#unless close-btn}}
 				<button type="button" class="popup_close"><span class="blind">팝업 닫기</span></button>
-			{{/if}}
+			{{/unless}}
 		</div>
 	</div>
 </div>
