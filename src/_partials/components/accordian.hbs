@@ -1,7 +1,7 @@
-<div class="acd_head{{#if active}} active{{/if}}">
+<div class="acd_head{{#if active}} active{{/if}}{{#if head-class}} {{head-class}}{{/if}}">
   <button type="button" class="acd_btn" {{#if active}}aria-expanded="true"{{else}}aria-expanded="false"{{/if}}><span>{{{ac-title}}}</span></button>
 </div>
-<div class="acd_cont">
+<div class="acd_cont{{#if cont-class}} {{cont-class}}{{/if}}">
   <div class="inner"{{#if active}} style="display:block;"{{/if}}>
     {{> @partial-block }}
   </div>

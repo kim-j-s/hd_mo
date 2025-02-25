@@ -1,12 +1,11 @@
-<div class="popup_wrap layer"{{#if popup-id}} id="{{popup-id}}"{{/if}}{{#if close-btn}}{{/if}}{{#if no-header}}{{/if}} aria-hidden="true">
+<div class="popup_wrap layer{{#if popup-class}} {{popup-class}}{{/if}}" {{#if popup-id}} id="{{popup-id}}"{{/if}}{{#if close-btn}}{{/if}}{{#if no-header}}{{/if}} aria-hidden="true">
 	<div class="popup_container">
-		<div class="popup_inner">
+		<div class="popup_inner{{#if in-class}} {{in-class}}{{/if}}">
 			{{#unless no-header}}
 			<div class="popup_head">
 				{{{popup-title}}}
 			</div>
 			{{/unless}}
-
 			{{> @partial-block}}
 
 			{{#if close-btn}}
