@@ -17,29 +17,6 @@
   });
 
 
-  /* Popup 관련 */
-  // 팝업 열기
-  $.fn.openPop = function(){
-		$('body').addClass('body_lock').attr('aria-hidden', 'true');
-    $(this).addClass('active').attr('aria-hidden', 'false');
-  }
-  // 팝업 닫기
-  $.fn.closePop = function(){
-		$('body').removeClass('body_lock').attr('aria-hidden', 'hidden');
-		$(this).closest('.popup_wrap').removeClass('active');
-		$(this).closest('.popup_wrap').attr('aria-hidden', 'true');
-    $(this).focus();
-  }
-
-  $DOM.on('click', '.popup_open', function(){
-    const $target = $(this).data('popup-id');
-    $('#' + $target).openPop();
-  }).on('click', '.popup_close', function(){
-    const $this = $(this);
-    $this.closePop();
-  });
-
-
   /* Accordian */
   $DOM.on('click', '.acd_item .acd_head .acd_btn', function(){
     const $this = $(this),
@@ -165,7 +142,29 @@
 		$(this).closest('.tab_wrap').children('.tab_wrap_content').eq(idx).addClass('active');
 	});
 
-
-
-
 })();
+
+
+/* Popup 관련 */
+// Popup 열기
+function openPop(target){
+	const $target = $('#' + target),
+				$head_chk = $target.find('.popup_head');
+
+	if($target.length){
+		$('#wrap').addClass('scroll_lock').attr('aria-hidden', 'true');
+		$target.addClass('active').attr('aria-hidden', 'false');
+
+		if($head_chk.length){
+			$target.attr('tabindex', '0').focus();
+		}
+	}
+}
+
+// Popup 닫기
+function closePop(target) {
+	const $target = $('#' + target);
+
+	$('#wrap').removeClass('scroll_lock').attr('aria-hidden', 'false');
+	$target.removeClass('active').attr('aria-hidden', 'true').removeAttr('tabindex').focus();
+}
