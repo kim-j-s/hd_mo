@@ -42,7 +42,8 @@
   $DOM.on('click', '.tooltip_wrap button', function(){
     const $click = $(this).closest('.tooltip_wrap'),
 					$t_head = $click.children('.tooltip_head'),
-					$t_text = $click.find('.tooltip_text').children('.inner');
+					$t_text = $click.find('.tooltip_text').children('.inner'),
+					$focus_btn = $click.find('.open');
 
 			if($(this).attr('class') == 'open'){
 				$('.tooltip_wrap .tooltip_head').removeClass('active').find('.open').attr('aria-expanded', 'false');
@@ -52,6 +53,7 @@
 			}else {
 				$('.tooltip_wrap .tooltip_head').removeClass('active').find('.open').attr('aria-expanded', 'false');
 				$('.tooltip_wrap .tooltip_text .inner').hide();
+				$focus_btn.focus();
 			}
   });
 
