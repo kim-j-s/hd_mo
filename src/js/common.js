@@ -148,16 +148,12 @@
 /* Popup 관련 */
 // Popup 열기
 function openPop(target){
-	const $target = $('#' + target),
-				$head_chk = $target.find('.popup_head');
+	const $target = $('#' + target);
 
 	if($target.length){
 		$('#wrap').addClass('scroll_lock').attr('aria-hidden', 'true');
 		$target.addClass('active').attr('aria-hidden', 'false');
-
-		if($head_chk.length){
-			$target.attr('tabindex', '0').focus();
-		}
+		$target.find('.popup_inner').attr('tabindex', '0').focus();
 	}
 }
 
@@ -166,5 +162,6 @@ function closePop(target) {
 	const $target = $('#' + target);
 
 	$('#wrap').removeClass('scroll_lock').attr('aria-hidden', 'false');
-	$target.removeClass('active').attr('aria-hidden', 'true').removeAttr('tabindex').focus();
+	$target.removeClass('active').attr('aria-hidden', 'true');
+	$target.find('.popup_inner').removeAttr('tabindex');
 }
