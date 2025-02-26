@@ -1,7 +1,6 @@
 // Header
 .header {
-	height: 60px;
-	background-color: #fff;
+	height: 48px;
 
 	.header_inner {
 		position: relative;
@@ -9,7 +8,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: 15px;
+		padding: 12px;
 
 		.header_connect {
 			flex: 1;
@@ -18,9 +17,10 @@
 
 			.header_title {
 				overflow: hidden;
+				font-size: min(5vw, 24px);
 				white-space: nowrap;
 				text-overflow: ellipsis;
-				font-size: min(5vw, 24px);
+				text-align: center;
 			}
 		}
 		
@@ -36,35 +36,5 @@
 			display: flex;
 			align-items: center;
 		}
-	}
-}
-
-
-// 전체메뉴
-.nav_menu_wrap {
-	position: fixed;
-	top:0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 100;
-	background: rgba(0,0,0,.5);
-	visibility: hidden;
-
-	&.active {
-		visibility: visible;
-
-		.nav_menu_inner {
-			transform: translateX(0);
-			transition-duration: .4s;
-		}
-	}
-
-	.nav_menu_inner {
-		height: 100%;
-		padding: 10px;
-		background-color: #fff;
-		transform: translateX(100%);
-		transition-duration: .4s;
 	}
 }

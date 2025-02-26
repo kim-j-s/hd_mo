@@ -1,29 +1,18 @@
 <div id="header" class="header">
 	<div class="header_inner">
-			{{title}}
-			{{#if main}}
-			{{!-- 메인 Case --}}
+		{{#if main}}
+		{{!-- 메인 Case --}}
 			<h1 class="headeer_logo">
 				<a href="#"><img src="" alt="현대해상 다이렉트"></a>
 			</h1>
 			
 			<div class="right">
-				{{#if hall}}
-				<button type="button" class="allmenu"><span class="blind">전체메뉴 열기</span></button>
-				<div class="nav_menu_wrap" tabindex="0" aria-hidden="true">
-					<div class="nav_menu_inner">
-						<div class="nav_top">
-							<button type="button"><span class="blind">홈으로 이동</span></button>
-							<button type="button" class="allmenu_close"><span class="blind">전체메뉴 닫기</span></button>
-						</div>
-						<div class="nav_bottom">
-							<div class="content">전체메뉴 내용</div>
-							<div class="link">기타 링크</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			{{/if}}
+				{{#unless hall}}
+					<button type="button" class="allmenu"><span class="blind">전체메뉴 열기</span></button>
+					{{> layout/nav }}
+				{{else}}
+					{{> @partial-block}}
+				{{/unless}}
 			</div>
 
 			{{!-- 서브 Case --}}
@@ -44,9 +33,10 @@
 				</div>
 
 				<div class="right">
-					{{#if h-home}}
-					<button type="button" class="allmenu"><span class="blind">전체메뉴 열기</span></button>
-					{{/if}}
+					{{#unless hall}}
+						<button type="button" class="allmenu"><span class="blind">전체메뉴 열기</span></button>
+						{{> layout/nav }}
+					{{/unless}}
 				</div>
 			{{/if}}
 	</div>    
