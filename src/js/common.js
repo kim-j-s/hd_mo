@@ -186,6 +186,6 @@ $(window).on('click', function(e) {
 	if (!$target.closest($close_popup).length) {
 		console.log('this : ', $target);
 		$('#wrap').removeClass('scroll_lock').attr('aria-hidden', 'false');
-		$target.removeClass('active').attr('aria-hidden', 'true').find('.popup_inner').removeAttr('tabindex');
+		$target.closest('.popup_wrap').removeClass('active').attr('aria-hidden', 'true').find('.popup_inner').removeAttr('tabindex');
 	}
 });
