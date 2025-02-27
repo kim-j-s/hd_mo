@@ -8,6 +8,7 @@
 
 - tooltip : 10
 - nav : 100
-- popup : 1000
+- popup(bottom, layer, full 공통) : 1000
 - loading : 미정
 - pageTop : 미정
+- toast : 미정
