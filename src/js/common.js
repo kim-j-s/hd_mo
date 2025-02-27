@@ -171,3 +171,21 @@ function closePop(target) {
 	$target.removeClass('active').attr('aria-hidden', 'true');
 	$target.find('.popup_inner').removeAttr('tabindex');
 }
+
+$(window).on('click', function(e) {
+	var $target = $(e.target);
+	// console.log($target);
+	// 범용
+	var $test_item = $('.test_item, .test_item2');
+	if (!$target.closest($test_item).length) {
+		$test_item.removeClass('active');
+	}
+	
+	// 팝업 영역 외 클릭 시 팝업 닫기
+	var $close_popup = $('.popup_inner');
+	if (!$target.closest($close_popup).length) {
+		console.log('this : ', $target);
+		$('#wrap').removeClass('scroll_lock').attr('aria-hidden', 'false');
+		$target.removeClass('active').attr('aria-hidden', 'true').find('.popup_inner').removeAttr('tabindex');
+	}
+});

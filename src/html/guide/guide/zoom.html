@@ -34,17 +34,17 @@
 	$(function() {
     // 확대 버튼 클릭 이벤트
     $('.z_up').on('click', function() {
-      var currentFontSize = parseInt($('.zoom_content').css('font-size'));
-      var newFontSize = currentFontSize + 2;
-      $('.zoom_content').css('font-size', newFontSize);
+      var currentFontSize = parseFloat($('.zoom_content').css('zoom'));
+      var newFontSize = currentFontSize + 0.1;
+			$('.zoom_content').css('zoom', newFontSize);
     });
 
     // 축소 버튼 클릭 이벤트
     $('.z_down').on('click', function() {
-      var currentFontSize = parseInt($('.zoom_content').css('font-size'));
-      var newFontSize = currentFontSize - 2;
-      if (newFontSize >= 10) { // 10px 이하로 줄일 수 없도록 조건 추가
-        $('.zoom_content').css('font-size', newFontSize);
+			var currentFontSize = parseFloat($('.zoom_content').css('zoom'));
+			var newFontSize = currentFontSize - 0.1;
+      if (newFontSize >= 1) {
+        $('.zoom_content').css('zoom', newFontSize);
       }
     });
   });
