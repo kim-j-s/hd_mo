@@ -155,7 +155,11 @@ function openPop(target){
 	if($target.length){
 		$('#wrap').addClass('scroll_lock').attr('aria-hidden', 'true');
 		$target.addClass('active').attr('aria-hidden', 'false');
-		$target.find('.popup_inner').attr('tabindex', '0').focus();
+		
+		//렌더링 후, focus 이동
+		setTimeout(function(){
+			$target.find('.popup_inner').attr('tabindex', '0').focus();
+		},100)
 	}
 }
 
