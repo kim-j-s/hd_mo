@@ -160,26 +160,6 @@ function openPop(target){
 		setTimeout(function(){
 			$target.find('.popup_inner').attr('tabindex', '0').focus();
 		},100);
-
-		$target.find('.popup_inner').on('keydown', function(e) {
-			if (e.key === 'Tab') {
-				const focusableEle = $target.find('button, input, select, textarea, a, .popup_inner').filter(':not([disabled])'); // 포커스 가능한 요소들만
-				const firstEle = focusableEle.first();
-				const lastEle = focusableEle.last();
-				
-				if (e.shiftKey) {
-					if (document.activeElement === firstEle[0]) {
-						lastEle.focus();
-						e.preventDefault();
-					}
-				} else {
-					if (document.activeElement === lastEle[0]) {
-						firstEle.focus();
-						e.preventDefault();
-					}
-				}
-			}
-		});
 	}
 }
 
