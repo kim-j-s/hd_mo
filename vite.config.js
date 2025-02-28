@@ -133,7 +133,31 @@ export default defineConfig({
             'href="guide.css"'
           );
       }
-    }
+    },
+		{
+      name: 'delete-svn-folder-recursively',
+      closeBundle() {
+        const deleteSVNFolderRecursively = (dir) => {
+          const files = fs.readdirSync(dir);
+          files.forEach(file => {
+            const currentPath = path.join(dir, file);
+            const stat = fs.statSync(currentPath);
+
+            if (stat.isDirectory()) {
+              if (file === '.svn') {
+                fs.rmSync(currentPath, { recursive: true, force: true });
+                console.log(`Deleted ${currentPath}`);
+              } else {
+                deleteSVNFolderRecursively(currentPath);
+              }
+            }
+          });
+        };
+
+        // 'dist' 디렉토리 내 모든 서브디렉토리를 탐색하여 .svn 폴더 삭제
+        deleteSVNFolderRecursively(path.resolve(__dirname, 'dist'));
+      },
+    },
   ],
   css: {
     devSourcemap: true,
