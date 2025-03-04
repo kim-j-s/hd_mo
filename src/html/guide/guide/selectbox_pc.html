@@ -52,8 +52,27 @@
 	</div>
 
 
+	<div class="guide_h4">plugin - slim select - 복수 사용시 별도 처리 필요</div>
+	<div>
+		<script src="https://cdn.jsdelivr.net/npm/slim-select@2.10.0/dist/slimselect.umd.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/slim-select@2.10.0/dist/slimselect.min.css" rel="stylesheet">
+		<div class="slim-select">
+			<select id="single1">
+				<option value="value 1" disabled>Value 1</option>
+				<option value="value 2">Value 2</option>
+				<option value="value 3">Value 3</option>
+			</select>
+
+			<select id="single2">
+				<option value="value 1">Value 1</option>
+				<option value="value 2">Value 2</option>
+				<option value="value 3">Value 3</option>
+			</select>
+		</div>
+	</div>
 
 	<style lang="scss">
+		.chosen-select,
 		.selectbox_cont {
 			select {
 				display: block;
@@ -71,6 +90,16 @@
 			$('.selectbox2').select2();
 
 			$(".selectboxit").selectBoxIt();
+
+			$('.slim-select select').each(function() {
+				new SlimSelect({
+					select: this,        // 현재 select 요소
+					settings: {
+						showSearch : false,
+						placeholderText: 'Select Value',
+					}
+				});
+			});
 		});
 	</script>
 
