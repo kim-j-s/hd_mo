@@ -92,3 +92,32 @@
 .msg_fail {
   color: red;
 }
+
+
+// file
+.inp_file {
+
+	input[type=file]{
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0,0,0,0);
+		border: none;
+
+		& + label {
+			display: flex;
+			font-size: 14px;
+			line-height: 20px;
+	
+			.file_name {
+				flex: 1;
+			}
+	
+			.file_btn {
+				background-color: #999;
+				color: #FFF;
+			}
+		}
+	}
+}
