@@ -1,0 +1,18 @@
+{{!-- 
+	name : name 배정
+ --}}
+<div class="textarea_wrap {{#if class}}{{class}}{{/if}}">
+	<textarea 
+		{{#if name}}name="{{name}}"{{/if}}
+		{{#if rows}}rows="{{rows}}"{{/if}}
+		{{#if cols}}cols="{{cols}}"{{/if}}
+		{{#if placeholder}}placeholder="{{placeholder}}"{{/if}}
+		{{#if disabled}}disabled{{/if}}
+		{{#if readonly}}readonly{{/if}}
+		{{#if minlength}}minlength="{{minlength}}"{{/if}}
+		{{#if maxlength}}maxlength="{{maxlength}}"{{/if}}
+	></textarea>
+	{{#if class}}
+		{{> @partial-block }}
+	{{/if}}
+</div>

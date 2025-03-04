@@ -17,7 +17,7 @@
   });
 
 
-  /* Accordian */
+  /* Accordian */   
   $DOM.on('click', '.acd_item .acd_head .acd_btn', function(){
     const $this = $(this),
 					$head = $this.parent('.acd_head'),
@@ -96,27 +96,35 @@
   });
 
 	// comma
-	$DOM.on("keyup", ".price .inp input", function()	{
+	$DOM.on('keyup', '.price .inp input', function()	{
 		const $this = $(this),
 					$val = $this.val();
 		$this.val($val.replace(/[^0-9]/gi, '').replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'));
 	});
 
+	// file
+	$DOM.on('change', '.inp_file input[type=file]', function() {
+		const fileName = $(this).val().split("\\").pop();
+		$(this).closest('.inp_file').find(".file_name").text(fileName);
+	});
+
 
   /* Textarea */
+	// byte check
   $DOM.on('blur keyup', '.byte_check > textarea', function(){
     const str = $(this).val(),
-          strLng = str.length,
-          rbyte = 0,
-          rlen = 0,
-          one_char = '',
           str2 = '',
           maxByte = 500;
 
-    for(const i=0; i<strLng; i++){
+		let rlen = 0,
+				one_char = '',
+				strLng = str.length,
+				rbyte = 0;
+
+    for(let i=0; i<strLng; i++){
       one_char = str.charAt(i);
       if(escape(one_char).length > 4){
-        rbtye += 2;
+        rbyte += 2;
       }else {
         rbyte++;
       }
@@ -134,8 +142,24 @@
     }
   });
 
+	// length check
+	$DOM.on('keyup', '.length_check > textarea', function (e){
+    const str = $(this).val(),
+					$count = $(this).next('.counter').find('em');
 
-	// tab
+    if(str.length == 0 || str == ""){
+      $count.text('0');
+    }else{
+			$count.text(str.length);
+    }
+
+    if (str.length > 500) {
+    	$(this).val($(this).val().substring(0, 500));
+		}
+  });
+
+
+	/* Tab */
 	$DOM.on('click', '.tab_btn', function(){
 		const idx = $(this).index();
 		$(this).closest('.tab_wrap_list').children('.tab_btn').removeClass('active').attr('aria-selected', 'false');
@@ -188,4 +212,51 @@ $(window).on('click', function(e) {
 		$('#wrap').removeClass('scroll_lock').attr('aria-hidden', 'false');
 		$target.closest('.popup_wrap').removeClass('active').attr('aria-hidden', 'true').find('.popup_inner').removeAttr('tabindex');
 	}
+});
+
+
+// 파일
+function fileCus() {
+}
+
+
+$(function(){
+	let startY = 0, moveY = 0;
+	const $popCont = $('.popup_wrap.bottom .popup_inner');
+	let popHeight = $popCont.outerHeight();
+
+	$('.draggable').on('touchstart mousedown', function(e){
+		startY = e.touches?e.touches[0].clientY:e.clientY;
+
+		$(document).on('touchmove mousemove', function(e){
+			if(!startY) return;
+			moveY = (e.touches?e.touches[0].clientY:e.clientY)-startY;
+			console.log(moveY, popHeight/2);
+
+			if(moveY > 0){
+				if(moveY > 20){
+					$popCont.css({
+						'transform' : `translateY(100%)`,
+						'transition-duration':'3s'
+					});
+				}
+				else {
+					$popCont.css({
+						'transform': `translateY(${moveY}px)`
+					})
+				}
+			}
+		})
+	});
+
+	$(document).on('touched mouseup', function(e){
+		if(!startY) return;
+
+		if(moveY > popHeight * 0.3){
+			$popCont.css('transform', 'translateY(100%)');
+		}else {
+			$popCont.css('transform', 'translateY(0)');
+		}
+	})
+
 });
