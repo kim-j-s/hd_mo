@@ -1,0 +1,77 @@
+{{#> layout/guide }}
+	<div class="guide_h4">plugin - select2 - 복수 사용시 별도 처리 필요</div>
+	<div class="guide_discription">
+		<div class="selectbox_cont">
+			<select class="selectbox2" id="selectbox">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+		</div>
+
+		<div class="selectbox_cont">
+			<select class="selectbox2" id="selectbox">
+				<option value="a1">a1</option>
+				<option value="a2">a2</option>
+				<option value="a3">a3</option>
+				<option value="a4">a4</option>
+			</select>
+		</div>
+
+		<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+		<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+	</div>
+
+	<div class="guide_h4">plugin - selectBoxIt - 사용 시 jquery 1.8.3 이상, jqueryui 필요, 복수 사용 시 기본 제공</div>
+	<div class="guide_discription">
+		<div class="selectbox_cont">
+			<select class="selectboxit" id="selectbox">
+				<option value="selectboxit1">selectboxit1</option>
+				<option value="selectboxit2">selectboxit2</option>
+				<option value="selectboxit3">selectboxit3</option>
+				<option value="selectboxit4">selectboxit4</option>
+				<option value="selectboxit5">selectboxit5</option>
+			</select>
+		</div>
+		<div class="selectbox_cont">
+			<select class="selectboxit" id="selectbox">
+				<option value="selectboxita1">selectboxita1</option>
+				<option value="selectboxita2">selectboxita2</option>
+				<option value="selectboxita3">selectboxita3</option>
+				<option value="selectboxita4">selectboxita4</option>
+				<option value="selectboxita5">selectboxita5</option>
+			</select>
+		</div>
+
+		<link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css" />
+		<link type="text/css" rel="stylesheet" href="http://gregfranko.com/jquery.selectBoxIt.js/css/jquery.selectBoxIt.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+		<script src="http://gregfranko.com/jquery.selectBoxIt.js/js/jquery.selectBoxIt.min.js"></script>
+	</div>
+
+
+
+	<style lang="scss">
+		.selectbox_cont {
+			select {
+				display: block;
+				width: 100%;
+			}
+			+ .selectbox_cont {
+				margin-top: 10px;
+			}
+		}
+
+	</style>
+
+	<script>
+		$(document).ready(function() {
+			$('.selectbox2').select2();
+
+			$(".selectboxit").selectBoxIt();
+		});
+	</script>
+
+{{/ layout/guide }}
