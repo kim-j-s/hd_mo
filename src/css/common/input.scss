@@ -48,6 +48,43 @@
 	}
 }
 
+
+.www {
+	display: flex;
+	align-items: center;
+	gap: 0 8px;
+	border: 1px solid #000;
+	border-radius: 8px;
+	overflow: hidden;
+	.input_text {
+		flex: 1 1 0;
+		input {
+			border: none;
+			&:disabled {
+				background-color: #fff;
+				+ i {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background-color: red;
+				}
+			}
+		}
+		+ .input_text {
+			&::before {
+				content: '-';
+				position: absolute;
+				top: 50%;
+				left: -5px;
+				transform: translateY(-50%);
+			}
+		}
+	}
+}
+
+
 // Error 문구
 .msg_success {
   color: blue;
