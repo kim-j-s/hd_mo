@@ -1,0 +1,67 @@
+html {
+	font-size: 10px;
+}
+
+.guide_body {
+	overflow: initial !important;
+}
+
+.guide_wrap {
+	padding: 20px;
+}
+
+.guide_h1 {
+	margin-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: 700;
+	font-size: 24px;
+	border-top: 4px dashed green;
+}
+.guide_h1 ~ .guide_h1 {
+	margin-top: 80px;
+}
+.guide_h1::before {
+	content: "/* ";
+	color: green;
+}
+.guide_h1::after {
+	content: " */";
+	color: green;
+}
+
+.guide_h4 {
+	position: relative;
+	margin: 20px 0;
+	padding: 10px;
+	font-weight: bold;
+	font-size: 18px;
+	border-top: 1px solid #000;
+	border-bottom: 3px solid #000;
+}
+.guide_h4 ~ .guide_h4 {
+	margin-top: 60px;
+}
+
+.guide_dark_wrap {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 12px;
+	padding: 24px;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.guide_discription {
+	margin-bottom: 5px;
+	font-size: 15px;
+}
+.guide_discription ~ .guide_discription {
+	margin-top: 20px;
+}
+.guide_discription::before {
+	content: "·";
+	display: inline-block;
+	padding: 0 2px;
+	font-size: 16px;
+	font-weight: bold;
+}
