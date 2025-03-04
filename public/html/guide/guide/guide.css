@@ -17,6 +17,7 @@ html {
   font-weight: 700;
   font-size: 24px;
   border-top: 4px dashed green;
+  border-bottom: 4px dashed green;
 }
 .guide_h1 ~ .guide_h1 {
   margin-top: 80px;
@@ -52,16 +53,31 @@ html {
 }
 
 .guide_discription {
-  margin-bottom: 5px;
-	font-size: 15px;
+	font-size: 16px;
 }
 .guide_discription ~ .guide_discription {
   margin-top: 20px;
 }
-.guide_discription::before {
-  content:'·';
-  display: inline-block;
-  padding: 0 2px;
-  font-size: 16px;
-  font-weight: bold;
+
+.guide_discription dl {
+	position: relative;
+	padding-left: 20px;	
+}
+.guide_discription dl::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 10px;
+	height: 100%;
+	background-color: green;
+}
+.guide_discription dl ~ dl {
+	margin-top: 20px;
+}
+.guide_discription dl dt {
+	border-bottom: 1px solid #000;
+}
+.guide_discription dl dd {
+	margin-top: 10px;
 }
