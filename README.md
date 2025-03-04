@@ -1,5 +1,8 @@
 # 현대해상 다이렉트 - 모바일
 
+## dist url
+https://kim-j-s.github.io/hd_mo/dist/index.html
+
 ## git ssl 오류 시 - openssl로 변경
 
 - git config --global http.sslBackend openssl
