@@ -1,0 +1,27 @@
+.container {
+	position: relative;
+}
+
+.toast_wrap {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 10px;
+	visibility: hidden;
+	opacity:0;
+	transition: all .4s ease-in;
+
+	&.active {
+		visibility: visible;
+		opacity:1;
+	}
+
+	.toast_msg {
+		padding: 16px;
+		background: rgba(0,0,0, .6);
+		font-size: 12px;
+		line-height: 16px;
+		color: #FFF;
+		border-radius: 14px;
+	}
+}

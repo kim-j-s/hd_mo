@@ -6,12 +6,12 @@
   /* 전체메뉴 */
   $DOM.on('click', '.header .right [class^=allmenu]', function(){
     const $this = $(this),
-          nav = $this.closest('.header_inner').find('.nav_menu_wrap');
+          $nav = $this.closest('.header_inner').find('.nav_menu_wrap');
 
-    if(nav.css('visibility') == 'hidden'){
-      nav.addClass('active').attr('aria-hidden', 'false');
+    if($nav.css('visibility') == 'hidden'){
+      $nav.addClass('active').attr('aria-hidden', 'false');
     }else {
-      nav.removeClass('active').attr('aria-hidden', 'true');
+      $nav.removeClass('active').attr('aria-hidden', 'true');
       $('.header .allmenu').focus();
     }
   });
@@ -62,7 +62,7 @@
   $DOM.on('focus input', '.input_text .inp > input', function(){
     const $this = $(this),
           $wrap = $this.closest('.inp'),
-          $val = $this.val(),
+          val = $this.val(),
           $del = $this.siblings('.del');
       
     if($del.length) {
@@ -73,7 +73,7 @@
     $wrap.addClass('active');
     $del.show();
 
-    if($val){
+    if(val){
       $del.show();
     }else {
       $wrap.removeClass('active');
@@ -83,9 +83,7 @@
     
   }).on('blur', '.inp > input', function(){
     const $this = $(this),
-          $wrap = $this.closest('.inp'),
-          $val = $this.val(),
-          $del = $this.siblings('.del');
+          $wrap = $this.closest('.inp');
     $wrap.removeClass('active');
 
   }).on('click', '.inp > .del', function(e){
@@ -196,6 +194,32 @@ function closePop(target) {
 	$target.find('.popup_inner').removeAttr('tabindex');
 }
 
+// Toast 팝업
+function toastAction(click){
+	const $toast = $('.toast_wrap'),
+				msg = $(click).data('msg');
+	let isShow = $toast.hasClass('active');
+
+	if (isShow) return;
+	$toast.find('.toast_msg').text('');
+	
+	setTimeout(function(){
+		toastMsg(msg);
+		$toast.addClass('active');
+	},300);
+
+	setTimeout(function(){
+		$toast.removeClass('active');
+	}, 1500);
+}
+
+function toastMsg(msg){
+	// const text = $('<div class="toast_msg"></div>').text(msg);
+	$('.toast_msg').text(msg).closest('.toast_wrap').addClass('active');
+}
+
+
+
 $(window).on('click', function(e) {
 	var $target = $(e.target);
 	// console.log($target);
@@ -208,16 +232,12 @@ $(window).on('click', function(e) {
 	// 팝업 영역 외 클릭 시 팝업 닫기
 	var $close_popup = $('.popup_inner');
 	if (!$target.closest($close_popup).length) {
-		console.log('this : ', $target);
+		// console.log('this : ', $target);
 		$('#wrap').removeClass('scroll_lock').attr('aria-hidden', 'false');
 		$target.closest('.popup_wrap').removeClass('active').attr('aria-hidden', 'true').find('.popup_inner').removeAttr('tabindex');
 	}
 });
 
-
-// 파일
-function fileCus() {
-}
 
 
 $(function(){

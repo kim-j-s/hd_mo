@@ -52,7 +52,7 @@
 	</div>
 
 
-	<div class="guide_h4">plugin - slim select - 복수 사용시 별도 처리 필요</div>
+	<div class="guide_h4">plugin - Slim select - 복수 사용시 별도 처리 필요</div>
 	<div>
 		<script src="https://cdn.jsdelivr.net/npm/slim-select@2.10.0/dist/slimselect.umd.min.js"></script>
 		<link href="https://cdn.jsdelivr.net/npm/slim-select@2.10.0/dist/slimselect.min.css" rel="stylesheet">
@@ -68,6 +68,32 @@
 				<option value="value 2">Value 2</option>
 				<option value="value 3">Value 3</option>
 			</select>
+
+			<select id="single3" disabled>
+				<option value="value 1">Value 1</option>
+				<option value="value 2">Value 2</option>
+				<option value="value 3">Value 3</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="guide_h4">plugin - Selectize</div>
+	<div>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.min.css" rel="stylesheet">
+		<script	script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"></script>
+
+		<div class="selectize-ex">
+			<select id="select1">
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+
+			<select id="select2">
+				<option value="1" disabled>Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
 		</div>
 	</div>
 
@@ -81,6 +107,11 @@
 			+ .selectbox_cont {
 				margin-top: 10px;
 			}
+		}
+
+		.selectize-ex .selectize-input input,
+		.selectize-ex .selectize-input.focus input {
+			width: 0 !important;
 		}
 
 	</style>
@@ -100,6 +131,8 @@
 					}
 				});
 			});
+
+			$('.selectize-ex select').selectize();
 		});
 	</script>
 
