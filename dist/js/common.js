@@ -1,67 +1,271 @@
 (function () {
-	const n = $(document);
-	$(window).height(),
-		n.on("click", ".header .right [class^=allmenu]", function () {
-			const t = $(this),
-				e = t.closest(".header_inner").find(".nav_menu_wrap");
-			e.css("visibility") == "hidden" ? e.addClass("active").attr("aria-hidden", "false") : (e.removeClass("active").attr("aria-hidden", "true"), $(".header .allmenu").focus());
-		}),
-		n.on("click", ".acd_item .acd_head .acd_btn", function () {
-			const t = $(this),
-				e = t.parent(".acd_head"),
-				a = e.next(".acd_cont").children(".inner"),
-				i = e.parent(".acd_item");
-			a.css("display") == "none" ? (t.attr("aria-expanded", "true"), i.children(".acd_head").removeClass("active"), i.children(".acd_cont").children(".inner").hide(), e.addClass("active"), a.slideDown()) : (t.attr("aria-expanded", "false"), e.removeClass("active"), a.slideUp());
-		}),
-		n.on("click", ".tooltip_wrap button", function () {
-			const t = $(this).closest(".tooltip_wrap"),
-				e = t.children(".tooltip_head"),
-				a = t.find(".tooltip_text").children(".inner"),
-				i = t.find(".open");
-			$(this).attr("class") == "open" ? ($(".tooltip_wrap .tooltip_head").removeClass("active").find(".open").attr("aria-expanded", "false"), e.addClass("active").find(".open").attr("aria-expanded", "true"), $(".tooltip_wrap .tooltip_text .inner").hide(), a.css("display", "block")) : ($(".tooltip_wrap .tooltip_head").removeClass("active").find(".open").attr("aria-expanded", "false"), $(".tooltip_wrap .tooltip_text .inner").hide(), i.focus());
-		}),
-		n
-			.on("focus input", ".input_text .inp > input", function () {
-				const t = $(this),
-					e = t.closest(".inp"),
-					a = t.val(),
-					i = t.siblings(".del");
-				i.length && i.attr("tabindex", "0"), $(".input_text .inp").removeClass("active").children(".del").hide(), e.addClass("active"), i.show(), a ? i.show() : (e.removeClass("active"), i.hide());
-			})
-			.on("blur", ".inp > input", function () {
-				const t = $(this),
-					e = t.closest(".inp");
-				t.val(), t.siblings(".del"), e.removeClass("active");
-			})
-			.on("click", ".inp > .del", function (t) {
-				const e = $(this);
-				t.preventDefault(), e.siblings("input").val("").focus(), e.parent(".inp").removeClass("active");
-			}),
-		n.on("keyup", ".price .inp input", function () {
-			const t = $(this),
-				e = t.val();
-			t.val(e.replace(/[^0-9]/gi, "").replace(/(\d)(?=(?:\d{3})+(?!\d))/g, "$1,"));
-		}),
-		n.on("blur keyup", ".byte_check > textarea", function () {
-			const t = $(this).val(),
-				e = t.length,
-				a = 0,
-				i = 0,
-				o = "",
-				c = "",
-				r = 500;
-			for (const l = 0; l < e; l++) (o = t.charAt(l)), escape(o).length > 4 ? (rbtye += 2) : a++, a <= r && (i = l + 1);
-			a > r ? ((c = t.substr(0, i)), $(this).val(c)) : $(this).next().find("em").html(a);
-		}),
-		n.on("click", ".tab_btn", function () {
-			const t = $(this).index();
-			$(this).closest(".tab_wrap_list").children(".tab_btn").removeClass("active").attr("aria-selected", "false"), $(this).addClass("active").attr("aria-selected", "true"), $(this).closest(".tab_wrap").children(".tab_wrap_content").removeClass("active"), $(this).closest(".tab_wrap").children(".tab_wrap_content").eq(t).addClass("active");
+	const $DOM = $(document),
+		$WIN = $(window),
+		wHeight = $WIN.height();
+
+	/* 전체메뉴 */
+	$DOM.on("click", ".header .right [class^=allmenu]", function () {
+		const $this = $(this),
+			$nav = $this.closest(".header_inner").find(".nav_menu_wrap");
+
+		if ($nav.css("visibility") == "hidden") {
+			$nav.addClass("active").attr("aria-hidden", "false");
+		} else {
+			$nav.removeClass("active").attr("aria-hidden", "true");
+			$(".header .allmenu").focus();
+		}
+	});
+
+	/* Accordian */
+	$DOM.on("click", ".acd_item .acd_head .acd_btn", function () {
+		const $this = $(this),
+			$head = $this.parent(".acd_head"),
+			$inner = $head.next(".acd_cont").children(".inner"),
+			$click_item = $head.parent(".acd_item");
+
+		if ($inner.css("display") == "none") {
+			$this.attr("aria-expanded", "true");
+			$click_item.children(".acd_head").removeClass("active");
+			$click_item.children(".acd_cont").children(".inner").hide();
+			$head.addClass("active");
+			$inner.slideDown();
+		} else {
+			$this.attr("aria-expanded", "false");
+			$head.removeClass("active");
+			$inner.slideUp();
+		}
+	});
+
+	/* Tooltip */
+	$DOM.on("click", ".tooltip_wrap button", function () {
+		const $click = $(this).closest(".tooltip_wrap"),
+			$t_head = $click.children(".tooltip_head"),
+			$t_text = $click.find(".tooltip_text").children(".inner"),
+			$focus_btn = $click.find(".open");
+
+		if ($(this).attr("class") == "open") {
+			$(".tooltip_wrap .tooltip_head").removeClass("active").find(".open").attr("aria-expanded", "false");
+			$t_head.addClass("active").find(".open").attr("aria-expanded", "true");
+			$(".tooltip_wrap .tooltip_text .inner").hide();
+			$t_text.css("display", "block");
+		} else {
+			$(".tooltip_wrap .tooltip_head").removeClass("active").find(".open").attr("aria-expanded", "false");
+			$(".tooltip_wrap .tooltip_text .inner").hide();
+			$focus_btn.focus();
+		}
+	});
+
+	/* Input */
+	$DOM
+		.on("focus input", ".input_text .inp > input", function () {
+			const $this = $(this),
+				$wrap = $this.closest(".inp"),
+				val = $this.val(),
+				$del = $this.siblings(".del");
+
+			if ($del.length) {
+				$del.attr("tabindex", "0");
+			}
+
+			$(".input_text .inp").removeClass("active").children(".del").hide();
+			$wrap.addClass("active");
+			$del.show();
+
+			if (val) {
+				$del.show();
+			} else {
+				$wrap.removeClass("active");
+				$del.hide();
+			}
+			// (this.value) ? $wrap.addClass('active'):$wrap.removeClass('active');
+		})
+		.on("blur", ".inp > input", function () {
+			const $this = $(this),
+				$wrap = $this.closest(".inp");
+			$wrap.removeClass("active");
+		})
+		.on("click", ".inp > .del", function (e) {
+			const $this = $(this);
+			e.preventDefault();
+			$this.siblings("input").val("").focus();
+			$this.parent(".inp").removeClass("active");
 		});
+
+	// comma
+	$DOM.on("keyup", ".price .inp input", function () {
+		const $this = $(this),
+			$val = $this.val();
+		$this.val($val.replace(/[^0-9]/gi, "").replace(/(\d)(?=(?:\d{3})+(?!\d))/g, "$1,"));
+	});
+
+	// file
+	$DOM.on("change", ".inp_file input[type=file]", function () {
+		const fileName = $(this).val().split("\\").pop();
+		$(this).closest(".inp_file").find(".file_name").text(fileName);
+	});
+
+	/* Textarea */
+	// byte check
+	$DOM.on("blur keyup", ".byte_check > textarea", function () {
+		const str = $(this).val(),
+			str2 = "",
+			maxByte = 500;
+
+		let rlen = 0,
+			one_char = "",
+			strLng = str.length,
+			rbyte = 0;
+
+		for (let i = 0; i < strLng; i++) {
+			one_char = str.charAt(i);
+			if (escape(one_char).length > 4) {
+				rbyte += 2;
+			} else {
+				rbyte++;
+			}
+
+			if (rbyte <= maxByte) {
+				rlen = i + 1;
+			}
+		}
+
+		if (rbyte > maxByte) {
+			str2 = str.substr(0, rlen);
+			$(this).val(str2);
+		} else {
+			$(this).next().find("em").html(rbyte);
+		}
+	});
+
+	// length check
+	$DOM.on("keyup", ".length_check > textarea", function (e) {
+		const str = $(this).val(),
+			$count = $(this).next(".counter").find("em");
+
+		if (str.length == 0 || str == "") {
+			$count.text("0");
+		} else {
+			$count.text(str.length);
+		}
+
+		if (str.length > 500) {
+			$(this).val($(this).val().substring(0, 500));
+		}
+	});
+
+	/* Tab */
+	$DOM.on("click", ".tab_btn", function () {
+		const idx = $(this).index();
+		$(this).closest(".tab_wrap_list").children(".tab_btn").removeClass("active").attr("aria-selected", "false");
+		$(this).addClass("active").attr("aria-selected", "true");
+		$(this).closest(".tab_wrap").children(".tab_wrap_content").removeClass("active");
+		$(this).closest(".tab_wrap").children(".tab_wrap_content").eq(idx).addClass("active");
+	});
 })();
-$(window).on("click", function (n) {
-	var s = $(n.target),
-		t = $(".test_item, .test_item2");
-	s.closest(t).length || t.removeClass("active");
-	var e = $(".popup_inner");
-	s.closest(e).length || (console.log("this : ", s), $("#wrap").removeClass("scroll_lock").attr("aria-hidden", "false"), s.closest(".popup_wrap").removeClass("active").attr("aria-hidden", "true").find(".popup_inner").removeAttr("tabindex"));
+
+/* Popup 관련 */
+// Popup 열기
+function openPop(target) {
+	const $target = $("#" + target);
+
+	if ($target.length) {
+		$("#wrap").addClass("scroll_lock").attr("aria-hidden", "true");
+		$target.addClass("active").attr("aria-hidden", "false");
+
+		//렌더링 후, focus 이동
+		setTimeout(function () {
+			$target.find(".popup_inner").attr("tabindex", "0").focus();
+		}, 100);
+	}
+}
+
+// Popup 닫기
+function closePop(target) {
+	const $target = $("#" + target);
+
+	$("#wrap").removeClass("scroll_lock").attr("aria-hidden", "false");
+	$target.removeClass("active").attr("aria-hidden", "true");
+	$target.find(".popup_inner").removeAttr("tabindex");
+}
+
+// Toast 팝업
+function toastAction(click) {
+	const $toast = $(".toast_wrap"),
+		msg = $(click).data("msg");
+	let isShow = $toast.hasClass("active");
+
+	if (isShow) return;
+	$toast.find(".toast_msg").text("");
+
+	setTimeout(function () {
+		toastMsg(msg);
+		$toast.addClass("active");
+	}, 300);
+
+	setTimeout(function () {
+		$toast.removeClass("active");
+	}, 1500);
+}
+
+function toastMsg(msg) {
+	// const text = $('<div class="toast_msg"></div>').text(msg);
+	$(".toast_msg").text(msg).closest(".toast_wrap").addClass("active");
+}
+
+$(window).on("click", function (e) {
+	var $target = $(e.target);
+	// console.log($target);
+	// 범용
+	var $test_item = $(".test_item, .test_item2");
+	if (!$target.closest($test_item).length) {
+		$test_item.removeClass("active");
+	}
+
+	// 팝업 영역 외 클릭 시 팝업 닫기
+	var $close_popup = $(".popup_inner");
+	if (!$target.closest($close_popup).length) {
+		// console.log('this : ', $target);
+		$("#wrap").removeClass("scroll_lock").attr("aria-hidden", "false");
+		$target.closest(".popup_wrap").removeClass("active").attr("aria-hidden", "true").find(".popup_inner").removeAttr("tabindex");
+	}
+});
+
+$(function () {
+	let startY = 0,
+		moveY = 0;
+	const $popCont = $(".popup_wrap.bottom .popup_inner");
+	let popHeight = $popCont.outerHeight();
+
+	$(".draggable").on("touchstart mousedown", function (e) {
+		startY = e.touches ? e.touches[0].clientY : e.clientY;
+
+		$(document).on("touchmove mousemove", function (e) {
+			if (!startY) return;
+			moveY = (e.touches ? e.touches[0].clientY : e.clientY) - startY;
+			console.log(moveY, popHeight / 2);
+
+			if (moveY > 0) {
+				if (moveY > 20) {
+					$popCont.css({
+						transform: `translateY(100%)`,
+						"transition-duration": "3s",
+					});
+				} else {
+					$popCont.css({
+						transform: `translateY(${moveY}px)`,
+					});
+				}
+			}
+		});
+	});
+
+	$(document).on("touched mouseup", function (e) {
+		if (!startY) return;
+
+		if (moveY > popHeight * 0.3) {
+			$popCont.css("transform", "translateY(100%)");
+		} else {
+			$popCont.css("transform", "translateY(0)");
+		}
+	});
 });
