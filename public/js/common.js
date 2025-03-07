@@ -102,8 +102,8 @@
 
 	// file
 	$DOM.on('change', '.inp_file input[type=file]', function() {
-		const fileName = $(this).val().split("\\").pop();
-		$(this).closest('.inp_file').find(".file_name").text(fileName);
+		const fileName = $(this).val().split('\\').pop();
+		$(this).closest('.inp_file').find('.file_name').text(fileName);
 	});
 
 
@@ -145,7 +145,7 @@
     const str = $(this).val(),
 					$count = $(this).next('.counter').find('em');
 
-    if(str.length == 0 || str == ""){
+    if(str.length == 0 || str == ''){
       $count.text('0');
     }else{
 			$count.text(str.length);
@@ -214,7 +214,7 @@ function toastAction(click){
 }
 
 function toastMsg(msg){
-	// const text = $('<div class="toast_msg"></div>').text(msg);
+	// const text = $('<div class='toast_msg'></div>').text(msg);
 	$('.toast_msg').text(msg).closest('.toast_wrap').addClass('active');
 }
 
@@ -238,45 +238,3 @@ $(window).on('click', function(e) {
 	}
 });
 
-
-
-$(function(){
-	let startY = 0, moveY = 0;
-	const $popCont = $('.popup_wrap.bottom .popup_inner');
-	let popHeight = $popCont.outerHeight();
-
-	$('.draggable').on('touchstart mousedown', function(e){
-		startY = e.touches?e.touches[0].clientY:e.clientY;
-
-		$(document).on('touchmove mousemove', function(e){
-			if(!startY) return;
-			moveY = (e.touches?e.touches[0].clientY:e.clientY)-startY;
-			console.log(moveY, popHeight/2);
-
-			if(moveY > 0){
-				if(moveY > 20){
-					$popCont.css({
-						'transform' : `translateY(100%)`,
-						'transition-duration':'3s'
-					});
-				}
-				else {
-					$popCont.css({
-						'transform': `translateY(${moveY}px)`
-					})
-				}
-			}
-		})
-	});
-
-	$(document).on('touched mouseup', function(e){
-		if(!startY) return;
-
-		if(moveY > popHeight * 0.3){
-			$popCont.css('transform', 'translateY(100%)');
-		}else {
-			$popCont.css('transform', 'translateY(0)');
-		}
-	})
-
-});
