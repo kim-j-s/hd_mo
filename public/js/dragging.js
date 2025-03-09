@@ -4,35 +4,21 @@ $(function(){
 	const $sheetContent = $bottomSheet.find('.popup_container');
 	const $dragIcon = $bottomSheet.find('.draggable');
 	let isDragging = false, startY, startHeight, delta, newstartHeight;
-	const initialY = 0;
-	let initOpacity = 0.6;
+	let moveValue = 0;
 
 	const showBottomSheet = function() {
 		$bottomSheet.addClass('active');
 		$('body').css('overflowY', 'hidden');
-		// updateSheetHeight(newstartHeight);
 	}
 
-	const updateSheetHeight = (data) => {
-		$sheetContent.css('height', `${data}vh`);
+	const updateSheetValue = (data) => {
+		$sheetContent.css('margin-top', `${data}px`);
 	}
-
-	const newOpacity = function(){
-		const backgroundColor = $bottomSheet.css('background-color');
-		if (backgroundColor.includes('rgba')) {
-			var rgba = backgroundColor.match(/rgba?\((\d+), (\d+), (\d+), (\d(\.\d+)?)\)/);
-			if (rgba) {
-				opacity = rgba[4]; // 알파값(투명도) 추출
-			}
-		}
-	} 
 
 	const hideBottomSheet = (e) => {
 		$bottomSheet.removeClass('active');
 		$('body').css('overflowY', 'auto');
-		setTimeout(function(){
-			updateSheetHeight(newstartHeight);
-		}, 300);
+		updateSheetValue(0);
 	}
 
 	const dragStart = (e) => {
@@ -40,11 +26,11 @@ $(function(){
 		startY = e.pageY || e.originalEvent.touches?.[0].pageY;
 		startHeight = parseInt($sheetContent.css('height'));
 		newstartHeight = startHeight / window.innerHeight * 100;
+
+		console.log('시작위치 : '+ startY)
 		
 		$bottomSheet.addClass('dragging');
 		$('.draggable').attr('aria-grabbed', 'true');
-
-		initOpacity = parseFloat($bottomSheet.css('opacity'));
 	}
 
 	const dragging = (e) => {
@@ -52,19 +38,11 @@ $(function(){
 		delta = startY - (e.pageY || e.touches?.[0].pageY);
 		const newHeight = (startHeight + delta) / window.innerHeight * 100;
 		const newDelta = Math.abs(newHeight);
-		const deltaY = e.pageY - initialY;
 
-		console.log(initialY, initOpacity);
-
-		
-
-		if (delta <= 0 ){
-			updateSheetHeight(newDelta);
+		moveValue = Math.abs(delta);
+		if(delta < 0) {
+			updateSheetValue(moveValue);
 		}
-		// console.log('drag한 값 : ' + newDelta);
-
-		var newVal = Math.max(0, initOpacity - deltaY / 500);
-		$bottomSheet.css('background-color', newVal);
 	}
 	
 	const dragStop = () => {
@@ -74,10 +52,14 @@ $(function(){
 					winH = $(window).height(),
 					sheetHeight = parseInt((contentH/winH) * 100);
 
-		if (delta <= -50){
+					console.log('dalta :'+ delta, 'moveValue : ' + moveValue)
+
+		if(delta <= -50){
 			hideBottomSheet();
-		}else {
-			updateSheetHeight(newstartHeight);
+		}else if(delta > -50){
+			updateSheetValue(0);
+		}else{
+			updateSheetValue(moveValue);
 		}
 		$('.draggble').attr('aria-grabbed', 'false');
 	}
