@@ -2,6 +2,7 @@
 .popup_wrap {
 	&.bottom {
 		&.active {
+			padding-top: 40px;
 			.popup_container {
 				transform: translateY(0);
 			}
@@ -10,12 +11,16 @@
 		.popup_container {
 			align-items: flex-end;
 			transform: translateY(100%);
-			transition-duration: .4s;
+			transition-duration: margin-top .4s;
 
 			.popup_inner {
+				position: absolute;
+				bottom: 0;
+				max-height: 100%;
 				height: auto;
-				min-height: 300px;
-				max-height: calc(100% - 20px);
+				// height: auto;
+				// // min-height: 300px;
+				// max-height: calc(100% - 20px);
 				border-radius:30px 30px 0 0;
 			}
 		}
