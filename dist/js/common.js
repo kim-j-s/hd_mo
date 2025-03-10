@@ -208,7 +208,7 @@ function toastAction(click) {
 }
 
 function toastMsg(msg) {
-	// const text = $('<div class="toast_msg"></div>').text(msg);
+	// const text = $('<div class='toast_msg'></div>').text(msg);
 	$(".toast_msg").text(msg).closest(".toast_wrap").addClass("active");
 }
 
@@ -228,44 +228,4 @@ $(window).on("click", function (e) {
 		$("#wrap").removeClass("scroll_lock").attr("aria-hidden", "false");
 		$target.closest(".popup_wrap").removeClass("active").attr("aria-hidden", "true").find(".popup_inner").removeAttr("tabindex");
 	}
-});
-
-$(function () {
-	let startY = 0,
-		moveY = 0;
-	const $popCont = $(".popup_wrap.bottom .popup_inner");
-	let popHeight = $popCont.outerHeight();
-
-	$(".draggable").on("touchstart mousedown", function (e) {
-		startY = e.touches ? e.touches[0].clientY : e.clientY;
-
-		$(document).on("touchmove mousemove", function (e) {
-			if (!startY) return;
-			moveY = (e.touches ? e.touches[0].clientY : e.clientY) - startY;
-			console.log(moveY, popHeight / 2);
-
-			if (moveY > 0) {
-				if (moveY > 20) {
-					$popCont.css({
-						transform: `translateY(100%)`,
-						"transition-duration": "3s",
-					});
-				} else {
-					$popCont.css({
-						transform: `translateY(${moveY}px)`,
-					});
-				}
-			}
-		});
-	});
-
-	$(document).on("touched mouseup", function (e) {
-		if (!startY) return;
-
-		if (moveY > popHeight * 0.3) {
-			$popCont.css("transform", "translateY(100%)");
-		} else {
-			$popCont.css("transform", "translateY(0)");
-		}
-	});
 });
