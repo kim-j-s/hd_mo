@@ -182,7 +182,10 @@ function openPop(target){
 		setTimeout(function(){
 			$target.find('.popup_inner').attr('tabindex', '0').focus();
 		},100);
-		
+	}
+
+	// bottom 팝업 - drag
+	if($target.hasClass('bottom')){
 		draggable($target);
 	}
 }

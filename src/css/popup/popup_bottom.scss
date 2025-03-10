@@ -2,9 +2,16 @@
 .popup_wrap {
 	&.bottom {
 		&.active {
-			padding-top: 40px;
+			// padding-top: 40px;
 			.popup_container {
 				transform: translateY(0);
+				transition-duration: .4s;
+			}
+		}
+
+		&.dragging {
+			.popup_container {
+				transition-duration: initial;
 			}
 		}
 
@@ -14,8 +21,6 @@
 			transition-duration: .4s;
 
 			.popup_inner {
-				position: absolute;
-				bottom: 0;
 				max-height: 100%;
 				height: auto;
 				// height: auto;
