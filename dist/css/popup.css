@@ -15,10 +15,12 @@
 	opacity: 0;
 	-webkit-transition: all 0.4s ease;
 	transition: all 0.4s ease;
+	pointer-events: none;
 }
 .popup_wrap.active {
 	visibility: visible;
 	opacity: 1;
+	pointer-events: auto;
 }
 .popup_wrap .popup_container {
 	display: -webkit-box;
@@ -61,6 +63,8 @@
 	flex: 1;
 	padding-top: 5rem;
 	font-size: 1.4rem;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
 }
 .popup_wrap .popup_container .popup_inner .popup_cont + .popup_bototm {
 	padding-top: 2rem;
@@ -70,7 +74,7 @@
 	top: 2rem;
 	right: 2rem;
 }
-.popup_wrap #draggableArea {
+.popup_wrap .draggable {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -84,10 +88,10 @@
 	margin: 0 -2rem;
 	background-color: #ddd;
 }
-.popup_wrap #draggableArea .move {
+.popup_wrap .draggable .move {
 	width: 5rem;
 	height: 0.5rem;
-	margin: 1px auto;
+	margin: 1rem auto;
 	background-color: #aaa;
 	font-size: 0;
 	clip: rect(0, 0, 0, 0);
@@ -124,6 +128,9 @@
 	max-height: 100%;
 }
 /* popup_bottom */
+.popup_wrap.bottom.active {
+	padding-top: 4rem;
+}
 .popup_wrap.bottom.active .popup_container {
 	-webkit-transform: translateY(0);
 	transform: translateY(0);
@@ -134,12 +141,13 @@
 	align-items: flex-end;
 	-webkit-transform: translateY(100%);
 	transform: translateY(100%);
-	-webkit-transition-duration: 0.4s;
-	transition-duration: 0.4s;
+	-webkit-transition-duration: margin-top 0.4s;
+	transition-duration: margin-top 0.4s;
 }
 .popup_wrap.bottom .popup_container .popup_inner {
+	position: absolute;
+	bottom: 0;
+	max-height: 100%;
 	height: auto;
-	min-height: 30rem;
-	max-height: calc(100% - 2rem);
 	border-radius: 3rem 3rem 0 0;
 }
