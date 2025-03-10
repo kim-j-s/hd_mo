@@ -18,7 +18,7 @@ function draggable(click){
 		// updateSheetValue(0);
 		$sheetContent.removeProp('style');
 		//드래그한 값 초기화
-		// delta = 0;
+		delta = 0;
 
 		// 팝업의 id를 target으로 전달
 		const targetId = $bottomSheet.attr('id'); 
@@ -52,7 +52,7 @@ function draggable(click){
 			updateSheetValue(moveValue);
 		}
 
-		console.log(moveValue);
+		// console.log(moveValue);
 	}
 	
 	function dragStop(e){
@@ -77,9 +77,9 @@ function draggable(click){
 	$dragIcon.on('mousedown', dragStart);
 	$(document).on('mousemove', dragging);
 	$(document).on('mouseup', dragStop);
-	$(document).on('touchend', dragStop);
 	$dragIcon.on('touchstart', dragStart);
 	// $(document).on('touchmove', dragging);
 	document.addEventListener('touchmove', dragging);
+	$(document).on('touchend', dragStop);
 	// openBottomSheet();
 }
