@@ -1,44 +1,89 @@
 {{#> layout/guide }}
 
-		<div class="vt">
-			<div class="swiper mySwiper">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<button type="button">Slide 1</button>
-					</div>
-					<div class="swiper-slide nt">
-						<button type="button">Slide 2</button>
-					</div>
-					<div class="swiper-slide">
-						<button type="button">Slide 3</button>
-					</div>
-					<div class="swiper-slide nt">
-						<button type="button">Slide 4</button>
-					</div>
-					<div class="swiper-slide">
-						<button type="button">Slide 5</button>
-					</div>
-					<div class="swiper-slide nt">
-						<button type="button">Slide 6</button>
-					</div>
-					<div class="swiper-slide">
-						<button type="button">Slide 7</button>
-					</div>
-					<div class="swiper-slide nt">
-						<button type="button">Slide 8</button>
+<div class="vt">
+	<div id="mySwiper" class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<div class="card">
+					<div class="dmp_img"></div>
+					<div class="card__body">
+						<h3>Lorem ipsum 1 - 1</h3>
+						<span>Web Designer</span>
 					</div>
 				</div>
-				<div class="swiper-pagination"></div>
+			</div>
+			<div class="swiper-slide n2">
+				<div class="card">
+					<div class="dmp_img"></div>
+					<div class="card__body">
+						<h3>Lorem ipsum 1 - 2</h3>
+						<span>Web Designer</span>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="card">
+					<div class="dmp_img"></div>
+					<div class="card__body">
+						<h3>Lorem ipsum 2 - 1</h3>
+						<span>Web Designer</span>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide n2">
+				<div class="card">
+					<div class="dmp_img"></div>
+					<div class="card__body">
+						<h3>Lorem ipsum 2 - 2</h3>
+						<span>Web Designer</span>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="card">
+					<div class="dmp_img"></div>
+					<div class="card__body">
+						<h3>Lorem ipsum 3 - 1</h3>
+						<span>Web Designer</span>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide n2">
+				<div class="card">
+					<div class="dmp_img"></div>
+					<div class="card__body">
+						<h3>Lorem ipsum 3 - 2</h3>
+						<span>Web Designer</span>
+					</div>
+				</div>
 			</div>
 		</div>
+	</div>
+</div>
 
-	<script>
-		$(function(){
-			var swiper = new Swiper(".mySwiper", {
-				direction: "vertical",
-				loop: true,
-			});
-		})
-	</script>
+<script>
+	$(function () {
+		const mySwiper = new Swiper('.swiper-container', {
+			direction: "vertical",
+			loop: true,
+			effect: 'coverflow',
+			grabCursor: true,
+			slidesPerView: 'auto',
+			centeredSlides: true,
+			coverflowEffect: {
+				slideShadows: false,
+				rotate: 1,
+				stretch: 10,
+				depth: 1500,
+				modifier: 1,
+			},
+			speed: 500,
+			autoplay: {
+				delay: 500,
+				// reverseDirection: true,
+			}
+		});
+	})
+</script>
 
 {{/ layout/guide }}
