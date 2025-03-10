@@ -1,0 +1,45 @@
+{{#> layout/guide }}
+
+<div class="smp2">
+	<div class="swiper swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<button type="button">item1</button>
+			</div>
+			<div class="swiper-slide">
+				<button type="button">item2</button>
+			</div>
+			<div class="swiper-slide">
+				<button type="button">item3</button>
+			</div>
+			<div class="swiper-slide">
+				<button type="button">item4</button>
+			</div>
+			<div class="swiper-slide">
+				<button type="button">item5</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(function () {
+		var swiper = new Swiper('.swiper-container', {
+			direction: 'vertical',  // 세로 방향으로 설정
+			slidesPerView: 3,      // 한 번에 3개의 슬라이드 표시
+			spaceBetween: 20,      // 슬라이드 간의 간격을 설정
+			loop: true,            // 무한 반복
+			centeredSlides: true,  // 중앙 정렬
+			slideToClickedSlide: true, // 클릭한 슬라이드로 이동
+
+			// 선택적: 네비게이션 버튼 설정
+			// navigation: {
+			// 	nextEl: '.swiper-button-next',
+			// 	prevEl: '.swiper-button-prev'
+			// },
+		});
+
+	})
+</script>
+
+{{/ layout/guide }}
