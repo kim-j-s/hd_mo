@@ -182,11 +182,12 @@ function tabScroll(){
 					$scrollBox = $this.closest('.tab_scroll_box')
 					$scrollList = $scrollBox.children('.tab_wrap_list');
 
-		const btn_offset = $this.offset().left,
+		const btn_offset = $this.offset().left - 20,
 					scrollBox_offset = $scrollBox.offset().left,
 					scrollBox_w = $scrollList.width();
 		let scrollMove = btn_offset + scrollPosition - ($scrollBox.width() / 2) + ($this.outerWidth() / 2);
 
+		// console.log('move : ' + scrollMove);
 		// console.log('버튼 위치 : ' + btn_offset, '스크롤 위치 : ' + scrollPosition);
 		$scrollBox.animate({
 			scrollLeft: scrollMove
