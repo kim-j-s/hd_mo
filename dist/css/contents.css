@@ -1,40 +1,57 @@
 /* smp1 */
 .vt {
+	--hoheight: 50rem;
+	--slideHeight: 30rem;
+	position: relative;
+	height: var(--hoheight);
 	border: 1px solid #000;
 	padding: 2rem;
-}
-.vt .swiper {
-	height: 30rem;
-}
-.vt .swiper-container {
-	height: 100%;
 	overflow: hidden;
 }
-.vt .swiper-wrapper {
-	height: 100%;
+.vt .swiper-container {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	-webkit-transform: translateY(calc(-50% + var(--hoheight) / 2 - var(--slideHeight) / 2));
+	transform: translateY(calc(-50% + var(--hoheight) / 2 - var(--slideHeight) / 2));
 }
 .vt .swiper-slide {
-	height: 100%;
+	height: var(--slideHeight);
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
 	background-color: #ddd;
 }
-.vt .swiper-slide button {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	width: 80%;
-	height: 80%;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
+.vt .swiper-slide .card {
+	border-radius: 0.8rem;
+	background: white;
+	overflow: hidden;
 }
-.vt .swiper-slide.nt {
-	background-color: #f8f8f8;
+.vt .swiper-slide .card .dmp_img {
+	height: 20rem;
+	background-color: green;
 }
-.vt .swiper-slide.nt button {
-	pointer-events: none;
-	background-color: red;
+.vt .swiper-slide.n2 {
+	background-color: blue;
+}
+.vt .swiper-slide.n2 .card .dmp_img {
+	background-color: yellow;
+}
+.vt .card__body {
+	padding: 1.5rem 2rem;
+	font-weight: 600;
+	text-align: center;
+}
+.vt .card__body > h3 {
+	font-size: 1.25rem;
+	line-height: 1.5;
+}
+.vt .card__body > span {
+	display: block;
+	font-size: 1rem;
+	color: #f44336;
+}
+.vt.s2 {
+	overflow: visible;
 }
 /* cont1 */

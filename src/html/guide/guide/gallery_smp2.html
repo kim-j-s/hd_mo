@@ -1,44 +1,111 @@
-{{#> layout/guide }}
+{{#> layout/guide ns=true}}
 
-<div class="smp2">
-	<div class="swiper swiper-container">
+<div class="vt s2">
+	<div id="mySwiper" class="swiper-container">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide">
-				<button type="button">item1</button>
+				<div class="inner">
+					<div class="card">
+						<div class="dmp_img"></div>
+						<div class="card__body">
+							<h3>Lorem ipsum 1 - 1</h3>
+							<span>Web Designer</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide n2">
+				<div class="inner">
+					<div class="card">
+						<div class="dmp_img"></div>
+						<div class="card__body">
+							<h3>Lorem ipsum 1 - 2</h3>
+							<span>Web Designer</span>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="swiper-slide">
-				<button type="button">item2</button>
+				<div class="inner">
+					<div class="card">
+						<div class="dmp_img"></div>
+						<div class="card__body">
+							<h3>Lorem ipsum 2 - 1</h3>
+							<span>Web Designer</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide n2">
+				<div class="inner">
+					<div class="card">
+						<div class="dmp_img"></div>
+						<div class="card__body">
+							<h3>Lorem ipsum 2 - 2</h3>
+							<span>Web Designer</span>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="swiper-slide">
-				<button type="button">item3</button>
+				<div class="inner">
+					<div class="card">
+						<div class="dmp_img"></div>
+						<div class="card__body">
+							<h3>Lorem ipsum 3 - 1</h3>
+							<span>Web Designer</span>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="swiper-slide">
-				<button type="button">item4</button>
-			</div>
-			<div class="swiper-slide">
-				<button type="button">item5</button>
+			<div class="swiper-slide n2">
+				<div class="inner">
+					<div class="card">
+						<div class="dmp_img"></div>
+						<div class="card__body">
+							<h3>Lorem ipsum 3 - 2</h3>
+							<span>Web Designer</span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css" /> -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 <script>
 	$(function () {
-		var swiper = new Swiper('.swiper-container', {
-			direction: 'vertical',  // 세로 방향으로 설정
-			slidesPerView: 3,      // 한 번에 3개의 슬라이드 표시
-			spaceBetween: 20,      // 슬라이드 간의 간격을 설정
-			loop: true,            // 무한 반복
-			centeredSlides: true,  // 중앙 정렬
-			slideToClickedSlide: true, // 클릭한 슬라이드로 이동
-
-			// 선택적: 네비게이션 버튼 설정
-			// navigation: {
-			// 	nextEl: '.swiper-button-next',
-			// 	prevEl: '.swiper-button-prev'
+		const mySwiper = new Swiper('.swiper-container', {
+			direction: "vertical",
+			loop: true,
+			// ltr: true,
+			effect: 'coverflow',
+			grabCursor: true,
+			slidesPerView: 'auto',
+			centeredSlides: true,
+			// slideToClickedSlide: true,
+			coverflowEffect: {
+				slideShadows: false,
+				rotate: 1,
+				stretch: 10,
+				depth: 1500,
+				modifier: 1,
+			},
+			speed: 500,
+			// on: {
+			// 	click() {
+			// 			console.log('index', this.clickedIndex);
+			// 			mySwiper.slideTo(this.clickedIndex);    
+			// 	},
 			// },
 		});
-
 	})
 </script>
 
