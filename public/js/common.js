@@ -168,6 +168,31 @@
 
 })();
 
+/* Tab Scroll */
+function tabScroll(){
+	let scrollPosition = 0;
+
+	$('.tab_scroll_box').on('scroll', function() {
+		scrollPosition = $(this).scrollLeft();
+		// $('#scroll_position span').text(scrollPosition);
+	});
+
+	$('.tab_scroll_box .tab_btn').on('click', function(){
+		const $this = $(this),
+					$scrollBox = $this.closest('.tab_scroll_box')
+					$scrollList = $scrollBox.children('.tab_wrap_list');
+
+		const btn_offset = $this.offset().left,
+					scrollBox_offset = $scrollBox.offset().left,
+					scrollBox_w = $scrollList.width();
+		let scrollMove = btn_offset + scrollPosition - ($scrollBox.width() / 2) + ($this.outerWidth() / 2);
+
+		// console.log('버튼 위치 : ' + btn_offset, '스크롤 위치 : ' + scrollPosition);
+		$scrollBox.animate({
+			scrollLeft: scrollMove
+		}, 200);
+	})
+}
 
 /* Popup 관련 */
 // Popup 열기
@@ -203,7 +228,8 @@ function closePop(target) {
 	// console.log(popup_count);
 }
 
-// Toast 팝업
+
+/* Toast 팝업 */
 function toastAction(click){
 	const $toast = $('.toast_wrap'),
 				msg = $(click).data('msg');
@@ -250,4 +276,7 @@ $(function(){
 	if($('.popup_wrap.bottom').length){
 		$('body').css('overscroll-behavior','contain');
 	}
+	
+	// tab Scroll
+	tabScroll();
 })
