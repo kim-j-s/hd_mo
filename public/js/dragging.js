@@ -8,10 +8,6 @@ function draggable(click){
 	function updateSheetValue(data){
 		$sheetContent.css('margin-top', `${data}px`);
 	}
-	
-	// function openBottomSheet() {
-	// 	$(document).on('touchend', dragStop);
-	// }
 
 	function hideBottomSheet(){
 		//팝업 초기화
@@ -23,16 +19,12 @@ function draggable(click){
 		// 팝업의 id를 target으로 전달
 		const targetId = $bottomSheet.attr('id'); 
 		closePop(targetId);
-		// $(document).off('touchend', dragStop);
-		console.log('1')
 	}
 
 	function dragStart(e){
 		isDragging = true;
 		// 드래그 시작 위치
 		startY = e.pageY || e.originalEvent.touches?.[0].pageY;
-		// startHeight = parseInt($sheetContent.css('height'));
-		// newstartHeight = startHeight / window.innerHeight * 100;
 		// console.log('시작위치 : '+ startY)
 		
 		$bottomSheet.addClass('dragging');
@@ -44,14 +36,11 @@ function draggable(click){
 		//드래그한 시작 위치와 현재위치 차이
 		delta = startY - (e.pageY || e.touches?.[0].pageY);
 		moveValue = Math.abs(delta);
-		// const newHeight = (startHeight + delta) / window.innerHeight * 100;
-		// const newDelta = Math.abs(newHeight);
 		
 		// 드래그한 값만큼 움직이기
 		if(delta < 0) {
 			updateSheetValue(moveValue);
 		}
-
 		// console.log(moveValue);
 	}
 	
@@ -74,12 +63,15 @@ function draggable(click){
 		// console.log(delta);
 	}
 
-	$dragIcon.on('mousedown', dragStart);
-	$(document).on('mousemove', dragging);
-	$(document).on('mouseup', dragStop);
-	$dragIcon.on('touchstart', dragStart);
-	// $(document).on('touchmove', dragging);
 	document.addEventListener('touchmove', dragging);
-	$(document).on('touchend', dragStop);
-	// openBottomSheet();
+	$dragIcon.on({
+		'mousedown' : dragStart,
+		'touchstart' : dragStart
+	});
+	$(document).on({
+		'mousemove' : dragging,
+		// 'touchmove' : dragging,
+		'mouseup' : dragStop,
+		'touchend' : dragStop
+	});
 }
