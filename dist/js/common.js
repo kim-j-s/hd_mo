@@ -177,15 +177,24 @@ function openPop(target) {
 			$target.find(".popup_inner").attr("tabindex", "0").focus();
 		}, 100);
 	}
+
+	// bottom 팝업 - drag
+	if ($target.hasClass("bottom")) {
+		draggable($target);
+	}
 }
 
 // Popup 닫기
 function closePop(target) {
 	const $target = $("#" + target);
-
-	$("#wrap").removeClass("scroll_lock").attr("aria-hidden", "false");
 	$target.removeClass("active").attr("aria-hidden", "true");
 	$target.find(".popup_inner").removeAttr("tabindex");
+
+	const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
+	if (popup_count <= 0) {
+		$("#wrap").removeClass("scroll_lock").attr("aria-hidden", "false");
+	}
+	// console.log(popup_count);
 }
 
 // Toast 팝업
@@ -225,7 +234,12 @@ $(window).on("click", function (e) {
 	var $close_popup = $(".popup_inner");
 	if (!$target.closest($close_popup).length) {
 		// console.log('this : ', $target);
-		$("#wrap").removeClass("scroll_lock").attr("aria-hidden", "false");
 		$target.closest(".popup_wrap").removeClass("active").attr("aria-hidden", "true").find(".popup_inner").removeAttr("tabindex");
+	}
+});
+
+$(function () {
+	if ($(".popup_wrap.bottom").length) {
+		$("body").css("overscroll-behavior", "contain");
 	}
 });
