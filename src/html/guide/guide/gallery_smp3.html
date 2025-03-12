@@ -1,0 +1,92 @@
+{{#> layout/guide ns=true}}
+
+<div class="vt s3">
+	<div class="swiper mySwiper" dir="rtl">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide n1">Slide 1</div>
+      <div class="swiper-slide n2">Slide 2</div>
+      <div class="swiper-slide n3">Slide 3</div>
+      <div class="swiper-slide n4">Slide 4</div>
+      <div class="swiper-slide n5">Slide 5</div>
+      <!-- <div class="swiper-slide n6">Slide 6</div> -->
+      <!-- <div class="swiper-slide n7">Slide 7</div> -->
+      <!-- <div class="swiper-slide n8">Slide 8</div> -->
+      <!-- <div class="swiper-slide n9">Slide 9</div> -->
+    </div>
+  </div>
+</div>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+	$(function () {
+		var swiper = new Swiper(".mySwiper", {
+			// direction: 'vertical',
+			loop: true,
+      effect: "cards",
+      // effect: "creative",			
+      grabCursor: true,
+			cardsEffect: {
+				perSlideOffset: 20, // Space between cards in px
+				perSlideRotate: 1, // Rotation of cards in degrees
+				centerInsufficientSlides: true,
+			},
+			// creativeEffect: {
+			// 	prev: {
+			// 		// will set `translateZ(-400px)` on previous slides
+			// 		translate: [0, -30, -150],
+			// 	},
+			// 	next: {
+			// 		// will set `translateX(100%)` on next slides
+			// 		// translate: ['100%', 0, 0],
+			// 		translate: [0, 0, 0],
+			// 	},
+  		// },
+
+			on: {
+        init: function () {
+          // Swiper 초기화 시 각 슬라이드의 인덱스를 기반으로 creativeEffect 설정 업데이트
+          // this.slides.forEach((slide, index) => {
+          //   if (index < this.activeIndex) {
+          //     slide.style.transform = `translate3d(0, ${-30 * (index + 1)}px, -150px)`;
+          //   } else if (index > this.activeIndex) {
+          //     slide.style.transform = `translate3d(0, 0, 0)`;
+          //   }
+          // });
+          console.log('Swiper initialized');
+        },
+        // slideChange: function () {
+        //   var activeIndex = this.realIndex; // 실제 슬라이드 인덱스를 사용
+        //   // this.params.creativeEffect.prev.translate = [0, -30 * (activeIndex + 1), -150];
+        //   console.log('Current slide index:', activeIndex);
+				// 	$('.swiper-slide').each(function(i){
+				// 		const sli = $(this).data('swiper-slide-index');
+				// 		// console.log(sli);
+				// 		// $(this).css({'transform' : 'translate(' + left +', ' + top + ')'});
+				// 		// $(this).css('transform', 'translate3d(' + xValue + 'px, ' + yValue + 'px, ' + zValue + 'px)');
+				// 		// $(this).css('transform', 'translate3d(calc(-408px), ' + 'calc(' + (-30 * sli) + 'px), ' + 'calc(-150px)) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1)');
+
+				// 		// width: 408px; z-index: 4; transform: translate3d(calc(-408px), calc(-30px), calc(-150px)) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); opacity: 1; transition-duration: 0ms;
+
+				// 		// width: 408px; z-index: 3; transform: translate3d(-408px, -60px, -150px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); opacity: 1; transition-duration: 0ms;
+
+				// 		// $(this).html(i);
+				// 		// css 로 각각 translate값을 계산해서 삽입.
+				// 	});
+        // }
+				// slideChange: function () {
+        //   var activeIndex = this.realIndex; // 실제 슬라이드 인덱스를 사용
+        //   console.log('Current slide index:', activeIndex);
+        //   this.slides.forEach((slide) => {
+        //     const slideIndex = slide.getAttribute('data-swiper-slide-index');
+        //     slide.style.transform = `translate3d(0, ${-30 * slideIndex}px, -150px)`;
+        //   });
+        // }
+      }
+    });
+	});
+</script>
+
+{{/ layout/guide }}
