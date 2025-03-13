@@ -25,10 +25,10 @@
           $click_item = $head.parent('.acd_item');
 
     if($inner.css('display') == 'none'){
-			$this.attr('aria-expanded', 'true');
-      $click_item.find('.acd_head').removeClass('active');
+      $click_item.children('.acd_head').removeClass('active').children('.acd_btn').attr('aria-expanded', 'false');
       $click_item.children('.acd_cont').children('.inner').hide();
       $head.addClass('active');
+			$this.attr('aria-expanded', 'true');
       $inner.slideDown();
     }else {
 			$this.attr('aria-expanded', 'false');
