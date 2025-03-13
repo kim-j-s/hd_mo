@@ -26,7 +26,7 @@
 
     if($inner.css('display') == 'none'){
 			$this.attr('aria-expanded', 'true');
-      $click_item.children('.acd_head').removeClass('active');
+      $click_item.find('.acd_head').removeClass('active');
       $click_item.children('.acd_cont').children('.inner').hide();
       $head.addClass('active');
       $inner.slideDown();
