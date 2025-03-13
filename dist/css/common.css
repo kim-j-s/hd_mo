@@ -332,6 +332,28 @@
 	border-top: 1px solid #000;
 }
 /* graph */
+/* icon */
+.updown {
+	--trangle-width: 2rem;
+	--trangle-height: 1.2rem;
+	--increase: #ff0000;
+	--decrease: #0000ff;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	line-height: 0;
+	width: var(--trangle-width);
+	font-size: 0;
+	border-bottom: var(--trangle-height) solid;
+	border-left: calc(var(--trangle-width) / 2) solid transparent;
+	border-right: calc(var(--trangle-width) / 2) solid transparent;
+}
+.updown.increase {
+	border-bottom-color: var(--increase);
+}
+.updown.decrease {
+	border-bottom-color: var(--decrease);
+}
 /* input */
 .input_text {
 	position: relative;
