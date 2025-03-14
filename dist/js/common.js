@@ -47,7 +47,7 @@
 			$(".tooltip_wrap .tooltip_head").removeClass("active").find(".open").attr("aria-expanded", "false");
 			$t_head.addClass("active").find(".open").attr("aria-expanded", "true");
 			$(".tooltip_wrap .tooltip_text .inner").hide();
-			$t_text.css("display", "block");
+			$t_text.css("display", "block").focus();
 		} else {
 			$(".tooltip_wrap .tooltip_head").removeClass("active").find(".open").attr("aria-expanded", "false");
 			$(".tooltip_wrap .tooltip_text .inner").hide();
@@ -206,6 +206,26 @@ function openPop(target) {
 		setTimeout(function () {
 			$target.find(".popup_inner").attr("tabindex", "0").focus();
 		}, 100);
+
+		$target.find(".popup_inner").on("keydown", function (e) {
+			if (e.key === "Tab") {
+				const focusableEle = $target.find("button, input, select, textarea, a, .popup_inner").filter(":not([disabled])"); // 포커스 가능한 요소들만
+				const firstEle = focusableEle.first();
+				const lastEle = focusableEle.last();
+
+				if (e.shiftKey) {
+					if (document.activeElement === firstEle[0]) {
+						lastEle.focus();
+						e.preventDefault();
+					}
+				} else {
+					if (document.activeElement === lastEle[0]) {
+						firstEle.focus();
+						e.preventDefault();
+					}
+				}
+			}
+		});
 	}
 
 	// bottom 팝업 - drag
