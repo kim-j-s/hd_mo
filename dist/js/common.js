@@ -199,6 +199,7 @@ function openPop(target) {
 	const $target = $("#" + target);
 
 	if ($target.length) {
+		$("body").css("overscroll-behavior", "contain");
 		$("#wrap").addClass("scroll_lock").attr("aria-hidden", "true");
 		$target.addClass("active").attr("aria-hidden", "false");
 
@@ -239,6 +240,8 @@ function closePop(target) {
 	const $target = $("#" + target);
 	$target.removeClass("active").attr("aria-hidden", "true");
 	$target.find(".popup_inner").removeAttr("tabindex");
+	// $('body').css('overscroll-behavior','contain');
+	$("body").removeAttr("style");
 
 	const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
 	if (popup_count <= 0) {
@@ -290,9 +293,11 @@ $(window).on("click", function (e) {
 });
 
 $(function () {
-	if ($(".popup_wrap.bottom").length) {
-		$("body").css("overscroll-behavior", "contain");
+	/*
+	if($('.popup_wrap.bottom').length){
+		$('body').css('overscroll-behavior','contain');
 	}
+	*/
 
 	// tab Scroll
 	tabScroll();
