@@ -202,40 +202,33 @@ function openPop(target){
 
 	if($target.length){
 		$('body').css('overscroll-behavior','contain');
-		// $('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
-		// $('.wrap').addClass('scroll_lock').attr({'aria-hidden': true, 'tabindex': '-1'});
-		// $('.wrap').addClass('scroll_lock');
 		$target.addClass('active').attr('aria-hidden', false);
 
 		//렌더링 후, focus 이동
 		setTimeout(function(){
 			$target.find('.popup_inner').attr('tabindex', '0').focus();
-			// $target.find('.popup_head').attr('tabindex', '0').focus();
-			// $('.header').attr('aria-hidden', true);
-			// $('.container').attr('aria-hidden', true);
-			// $('.nav_footer').attr('aria-hidden', true);
 			$('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
 		}, 200);
 	
-		// $target.find('.popup_inner').on('keydown', function(e) {
-		// 	if (e.key === 'Tab') {
-		// 		const focusableEle = $target.find('button, input, select, textarea, a, .popup_inner').filter(':not([disabled])'); // 포커스 가능한 요소들만
-		// 		const firstEle = focusableEle.first();
-		// 		const lastEle = focusableEle.last();
+		$target.find('.popup_inner').on('keydown', function(e) {
+			if (e.key === 'Tab') {
+				const focusableEle = $target.find('button, input, select, textarea, a, .popup_inner').filter(':not([disabled])'); // 포커스 가능한 요소들만
+				const firstEle = focusableEle.first();
+				const lastEle = focusableEle.last();
 				
-		// 		if (e.shiftKey) {
-		// 			if (document.activeElement === firstEle[0]) {
-		// 				lastEle.focus();
-		// 				e.preventDefault();
-		// 			}
-		// 		} else {
-		// 			if (document.activeElement === lastEle[0]) {
-		// 				firstEle.focus();
-		// 				e.preventDefault();
-		// 			}
-		// 		}
-		// 	}
-		// });
+				if (e.shiftKey) {
+					if (document.activeElement === firstEle[0]) {
+						lastEle.focus();
+						e.preventDefault();
+					}
+				} else {
+					if (document.activeElement === lastEle[0]) {
+						firstEle.focus();
+						e.preventDefault();
+					}
+				}
+			}
+		});
 	}
 
 	// bottom 팝업 - drag
@@ -253,13 +246,7 @@ function closePop(target) {
 	
 	const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
 	if(popup_count <= 0){
-		// console.log('????');
 		$('.wrap').removeClass('scroll_lock').attr('aria-hidden', false);
-		// $('.wrap').removeClass('scroll_lock').attr('aria-hidden', false).removeAttr('tabindex');
-		// $('.wrap').removeClass('scroll_lock');
-		// $('.header').attr('aria-hidden', false);
-		// $('.container').attr('aria-hidden', false);
-		// $('.nav_footer').attr('aria-hidden', false);
 	}
 }
 
