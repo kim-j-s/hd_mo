@@ -2,10 +2,36 @@
 
 
 .wrap {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	height: 100%;
 	overflow: hidden;
+
+	&[aria-hidden="true"] {
+		&::after {
+			content: "";
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+			z-index: 999;
+		}
+	}
+	&[aria-hidden="false"] {
+		&::after {
+			content: "";
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			z-index: 999;
+		}
+	}
 
 	.container {
 		overflow-y: auto;
