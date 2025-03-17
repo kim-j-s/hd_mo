@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<script type="text/javascript" src="../../../js/libs/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="../../../js/common.js"></script>
+		<style>
+			.guide_h1 {
+				font-size: 1.5rem;
+				font-weight: 700;
+				margin-bottom: 1.25rem;
+				padding-bottom: 0.625rem;
+				padding-top: 0.625rem;
+				border-top: 0.25rem dashed green;
+			}
+			.guide_h1 ~ .guide_h1 {
+				margin-top: 5rem;
+			}
+			.guide_h1::before {
+				content: "/* ";
+				color: green;
+			}
+			.guide_h1::after {
+				content: " */";
+				color: green;
+			}
+
+			.guide_h4 {
+				position: relative;
+				margin: 1.25rem 0;
+				padding: 0.625rem;
+				font-weight: bold;
+				font-size: 1.125rem;
+				border-top: 0.125rem solid #000;
+				border-bottom: 0.125rem solid #000;
+			}
+			.guide_h4 ~ .guide_h4 {
+				margin-top: 3.75rem;
+			}
+			.guide_h4::before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 0;
+				height: 50%;
+				border-left: 0.125rem solid #000;
+				-webkit-transform: translateY(-50%);
+				transform: translateY(-50%);
+			}
+			.guide_h4::after {
+				content: "";
+				position: absolute;
+				top: 50%;
+				right: 0;
+				height: 50%;
+				border-left: 0.125rem solid #000;
+				-webkit-transform: translateY(-50%);
+				transform: translateY(-50%);
+			}
+
+			.guide_dark_wrap {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-orient: horizontal;
+				-webkit-box-direction: normal;
+				-ms-flex-flow: row wrap;
+				flex-flow: row wrap;
+				gap: 0.75rem;
+				padding: 1.5rem;
+				background-color: rgba(0, 0, 0, 0.3);
+			}
+
+			.guide_discription {
+				margin-bottom: 0.3125rem;
+			}
+			.guide_discription ~ .guide_discription {
+				margin-top: 1.25rem;
+			}
+			.guide_discription::before {
+				content: "·";
+				display: inline-block;
+				padding: 0 0.125rem;
+				font-size: 1rem;
+				font-weight: bold;
+			}
+		</style>
+		<link rel="stylesheet" href="../../../css/reset.css" />
+		<link rel="stylesheet" href="../../../css/common.css" />
+		<link rel="stylesheet" href="../../../css/contents.css" />
+		<link rel="stylesheet" href="../../../css/popup.css" />
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="guide_h1">Table</div>
+
+			<div class="guide_discription">guide_discription</div>
+
+			<div class="guide_h4">guide_discription</div>
+
+			<div class="guide_dark_wrap">guide_dark_wrap</div>
+		</div>
+	</body>
+	<script></script>
+</html>
