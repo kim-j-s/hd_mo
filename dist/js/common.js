@@ -201,14 +201,16 @@ function openPop(target) {
 	if ($target.length) {
 		$("body").css("overscroll-behavior", "contain");
 		// $('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
-		$(".wrap").addClass("scroll_lock").attr({ "aria-hidden": true, tabindex: "-1" });
+		// $('.wrap').addClass('scroll_lock').attr({'aria-hidden': true, 'tabindex': '-1'});
 		$(".header").addClass("scroll_lock").attr("aria-hidden", true);
+		$(".container").addClass("scroll_lock").attr("aria-hidden", true);
+		$(".nav_footer").addClass("scroll_lock").attr("aria-hidden", true);
 		$target.addClass("active").attr("aria-hidden", false);
 
 		//렌더링 후, focus 이동
 		setTimeout(function () {
-			// $target.find('.popup_inner').attr('tabindex', '0').focus();
-			$target.find(".popup_head").attr("tabindex", "0").focus();
+			$target.find(".popup_inner").attr("tabindex", "0").focus();
+			// $target.find('.popup_head').attr('tabindex', '0').focus();
 		}, 200);
 
 		// $target.find('.popup_inner').on('keydown', function(e) {
@@ -247,10 +249,12 @@ function closePop(target) {
 
 	const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
 	if (popup_count <= 0) {
-		console.log("????");
+		// console.log('????');
 		// $('.wrap').removeClass('scroll_lock').attr('aria-hidden', false);
-		$(".wrap").removeClass("scroll_lock").attr("aria-hidden", false).removeAttr("tabindex");
+		// $('.wrap').removeClass('scroll_lock').attr('aria-hidden', false).removeAttr('tabindex');
 		$(".header").addClass("scroll_lock").attr("aria-hidden", false);
+		$(".container").addClass("scroll_lock").attr("aria-hidden", false);
+		$(".nav_footer").addClass("scroll_lock").attr("aria-hidden", false);
 	}
 }
 
