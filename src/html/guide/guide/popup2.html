@@ -1,11 +1,15 @@
 {{#> layout/default page-title="dept1 > dept2 > dept3 >"}}
-<div id="wrap" class="wrap" aria-hidden="true">
+<div id="wrap" class="wrap">
 	{{> layout/header h-title="타이틀" h-back=true }}
 	<div id="container" class="container">
 		<button type="button" class="btn popup_open" onclick="openPop('pop_type01');"><span>t2 Full 팝업열기</span></button>
 		<button type="button" class="btn popup_open" onclick="openPop('pop_type02');"><span>t2 Layer 팝업열기</span></button>
 		<button type="button" class="btn popup_open" onclick="openPop('pop_type03');"><span>t2 Bottom 팝업열기</span></button>
 		<button type="button" class="btn popup_open" onclick="openPop('pop_type05');"><span>t2 Bottom 선택 팝업열기</span></button>
+
+		<div style="height: 300px; background-color: #ddd;"></div>
+		<div style="height: 300px; background-color: red;"></div>
+		<div style="height: 300px; background-color: #ddd;"></div>
 	</div>
 	{{> layout/footer }}
 </div>
@@ -132,7 +136,7 @@
 		</div>
 	{{/ popup/popup_bottom}}
 
-	{{#> popup/popup_bottom popup-id="pop_type05" popup-title="팝업 타이틀" popup-class="active" hidden=true }}
+	{{#> popup/popup_bottom popup-id="pop_type05" popup-title="팝업 타이틀" }}
 		<div class="popup_cont">
 			<div class="bottom_select_opt">
 				<div role="button" class="option active" title="선택됨"><span>선택 옵션 1</span></div>
