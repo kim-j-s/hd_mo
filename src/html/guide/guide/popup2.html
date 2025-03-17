@@ -1,5 +1,5 @@
 {{#> layout/default page-title="dept1 > dept2 > dept3 >"}}
-<div id="wrap" class="wrap">
+<div id="wrap" class="wrap" aria-hidden="true">
 	{{> layout/header h-title="타이틀" h-back=true }}
 	<div id="container" class="container">
 		<button type="button" class="btn popup_open" onclick="openPop('pop_type01');"><span>Full 팝업열기</span></button>
@@ -132,7 +132,7 @@
 		</div>
 	{{/ popup/popup_bottom}}
 
-	{{#> popup/popup_bottom popup-id="pop_type05" popup-title="팝업 타이틀" popup-class="active" }}
+	{{#> popup/popup_bottom popup-id="pop_type05" popup-title="팝업 타이틀" popup-class="active" hidden=true }}
 		<div class="popup_cont">
 			<div class="bottom_select_opt">
 				<div role="button" class="option active" title="선택됨"><span>선택 옵션 1</span></div>
