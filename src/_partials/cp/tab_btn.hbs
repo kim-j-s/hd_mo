@@ -1,7 +1,1 @@
-{{!-- <button type="button" class="tab_btn active" role="tab" aria-selected="true" aria-controls="tabPanel01" id="tab01">1번 탭</button> --}}
-<button type="button" class="tab_btn active" role="tab" aria-selected="true" aria-controls="tabPanel01" id="tab01">1번 탭</button>
-
-
-{{!-- active --}}
-{{!-- true --}}
-{{!-- tab01 --}}
+<button type="button" class="tab_btn{{#if tb_active}} active{{/if}}" role="tab" aria-selected="{{#if tb_active}}true{{else}}false{{/if}}" aria-controls="tabPanel{{#if tb_id}}{{tb_id}}{{/if}}" id="tab{{#if tb_id}}{{tb_id}}{{/if}}">{{#if tb_text}}{{{tb_text}}}{{/if}}</button>
