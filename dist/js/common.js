@@ -207,26 +207,6 @@ function openPop(target) {
 			$target.find(".popup_inner").attr("tabindex", "0").focus();
 			$(".wrap").addClass("scroll_lock").attr("aria-hidden", true);
 		}, 200);
-
-		$target.find(".popup_inner").on("keydown", function (e) {
-			if (e.key === "Tab") {
-				const focusableEle = $target.find("button, input, select, textarea, a, .popup_inner").filter(":not([disabled])"); // 포커스 가능한 요소들만
-				const firstEle = focusableEle.first();
-				const lastEle = focusableEle.last();
-
-				if (e.shiftKey) {
-					if (document.activeElement === firstEle[0]) {
-						lastEle.focus();
-						e.preventDefault();
-					}
-				} else {
-					if (document.activeElement === lastEle[0]) {
-						firstEle.focus();
-						e.preventDefault();
-					}
-				}
-			}
-		});
 	}
 
 	// bottom 팝업 - drag
@@ -273,7 +253,7 @@ function toastMsg(msg) {
 }
 
 $(window).on("click", function (e) {
-	var $target = $(e.target);
+	const $target = $(e.target);
 	// console.log($target);
 	// 범용
 	var $test_item = $(".test_item, .test_item2");
@@ -282,20 +262,14 @@ $(window).on("click", function (e) {
 	}
 
 	// 팝업 영역 외 클릭 시 팝업 닫기
-	var $close_popup = $(".popup_inner");
+	const $close_popup = $(".popup_inner");
 	if (!$target.closest($close_popup).length) {
-		// console.log('this : ', $target);
-		$target.closest(".popup_wrap").removeClass("active").attr("aria-hidden", true).find(".popup_inner").removeAttr("tabindex");
+		const $targetId = $target.closest(".popup_wrap").attr("id");
+		closePop($targetId);
 	}
 });
 
 $(function () {
-	/*
-	if($('.popup_wrap.bottom').length){
-		$('body').css('overscroll-behavior','contain');
-	}
-	*/
-
 	// tab Scroll
 	tabScroll();
 });
