@@ -200,13 +200,17 @@ function openPop(target) {
 
 	if ($target.length) {
 		$("body").css("overscroll-behavior", "contain");
-		$(".popup_wrap.active").attr("aria-hidden", true).find(".popup_inner").removeAttr("tabindex");
 
 		//렌더링 후, focus 이동
 		setTimeout(function () {
-			$target.addClass("active").attr("aria-hidden", false);
+			$(".popup_wrap.active").attr("aria-hidden", true).find(".popup_inner").removeAttr("tabindex");
 			$target.find(".popup_inner").attr("tabindex", "0").focus();
+			$target.addClass("active").attr("aria-hidden", false);
 			$(".wrap").addClass("scroll_lock").attr("aria-hidden", true);
+
+			// const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
+			// if(popup_count > 0){
+			// }
 		}, 200);
 	}
 
@@ -223,15 +227,14 @@ function closePop(target) {
 	$target.find(".popup_inner").removeAttr("tabindex");
 	$("body").removeAttr("style");
 
+	const $lastPopup = $(".popup_wrap.active:last");
+	if ($lastPopup.length) {
+		$lastPopup.attr("aria-hidden", false).find(".popup_inner").attr("tabindex", "0").focus();
+	}
+
 	const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
 	if (popup_count <= 0) {
 		$(".wrap").removeClass("scroll_lock").attr("aria-hidden", false);
-	}
-
-	const $lastPopup = $(".popup_wrap.active").last();
-	console.log($lastPopup);
-	if ($lastPopup.length) {
-		$lastPopup.attr("aria-hidden", false).find(".popup_inner").attr("tabindex", "0").focus();
 	}
 }
 
