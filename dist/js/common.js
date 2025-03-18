@@ -200,6 +200,7 @@ function openPop(target) {
 
 	if ($target.length) {
 		$("body").css("overscroll-behavior", "contain");
+		$(".popup_wrap.active").attr("aria-hidden", true);
 		$target.addClass("active").attr("aria-hidden", false);
 
 		//렌더링 후, focus 이동
@@ -225,6 +226,11 @@ function closePop(target) {
 	const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
 	if (popup_count <= 0) {
 		$(".wrap").removeClass("scroll_lock").attr("aria-hidden", false);
+	}
+
+	const $lastPopup = $(".popup_wrap.active").last();
+	if ($lastPopup.length) {
+		$lastPopup.attr("aria-hidden", false);
 	}
 }
 
