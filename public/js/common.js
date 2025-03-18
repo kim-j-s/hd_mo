@@ -202,11 +202,11 @@ function openPop(target){
 
 	if($target.length){
 		$('body').css('overscroll-behavior','contain');
-		$('.popup_wrap.active').attr('aria-hidden', true);
-		$target.addClass('active').attr('aria-hidden', false);
+		$('.popup_wrap.active').attr('aria-hidden', true).find('.popup_inner').removeAttr('tabindex');
 
 		//렌더링 후, focus 이동
 		setTimeout(function(){
+			$target.addClass('active').attr('aria-hidden', false);
 			$target.find('.popup_inner').attr('tabindex', '0').focus();
 			$('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
 		}, 200);
@@ -231,8 +231,9 @@ function closePop(target) {
 	}
 
 	const $lastPopup = $('.popup_wrap.active').last();
+	console.log($lastPopup)
 	if($lastPopup.length){
-		$lastPopup.attr('aria-hidden', false);
+		$lastPopup.attr('aria-hidden', false).find('.popup_inner').attr('tabindex', '0').focus();
 	}
 }
 
