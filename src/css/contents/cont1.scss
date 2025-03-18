@@ -1,0 +1,48 @@
+.guide_wrap {
+	display: flex;
+	flex-direction: column;
+	padding: 0 !important;
+	height: 100%;
+}
+
+.smp {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	font-size: 16px;
+	&__header {
+		flex: none;
+		.ds1 {
+			height: 100px;
+			background-color: blue;
+		}
+		.ds2 {
+			height: 100px;
+			background-color: green;
+		}
+		.ds3 {
+			height: 100px;
+			background-color: red;
+		}
+	}
+	&__content {
+		flex: 1;
+		display: flex;
+		overflow: auto;
+		.i {
+			display: inline-flex;
+			justify-content: flex-end;
+			flex-flow: row wrap;
+			margin-top: auto;
+			width: 100%;
+			gap: 10px;
+			button {
+				flex: none;
+				width: calc(50% - 5px);
+				height: 100px;
+				background-color: yellow;
+			}
+		}
+	}
+
+}
