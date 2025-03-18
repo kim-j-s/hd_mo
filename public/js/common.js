@@ -205,14 +205,14 @@ function openPop(target){
 
 		//렌더링 후, focus 이동
 		setTimeout(function(){
-			$target.find('.popup_inner').attr('tabindex', '0').focus();
 			$('.popup_wrap.active').attr('aria-hidden', true).find('.popup_inner').removeAttr('tabindex');
+			$target.find('.popup_inner').attr('tabindex', '0').focus();
 			$target.addClass('active').attr('aria-hidden', false);
+			$('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
 
-			const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
-			if(popup_count >= 0){
-				$('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
-			}
+			// const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
+			// if(popup_count > 0){
+			// }
 		}, 200);
 	}
 
