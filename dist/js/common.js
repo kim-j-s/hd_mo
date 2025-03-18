@@ -205,7 +205,7 @@ function openPop(target) {
 
 		//렌더링 후, focus 이동
 		setTimeout(function () {
-			$target.find(".popup_inner").attr("tabindex", "0");
+			$target.find(".popup_inner").attr("tabindex", "0").focus();
 			$(".wrap").addClass("scroll_lock").attr("aria-hidden", true);
 		}, 200);
 	}
