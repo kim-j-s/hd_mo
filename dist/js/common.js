@@ -237,7 +237,8 @@ function closePop(target) {
 	$target.find(".popup_inner").removeAttr("tabindex");
 	$("body").removeAttr("style");
 
-	const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
+	// const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
+	const popup_count = $(".popup_wrap.active").length;
 	if (popup_count <= 0) {
 		$(".wrap").removeClass("scroll_lock").attr("aria-hidden", false);
 	}
