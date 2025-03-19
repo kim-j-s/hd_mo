@@ -224,10 +224,10 @@ function closePop(target) {
 	$target.find(".popup_inner").removeAttr("tabindex");
 	$("body").removeAttr("style");
 
-	const $lastPopup = $(".popup_wrap.active:last");
-	if ($lastPopup.length) {
-		$lastPopup.attr("aria-hidden", false).find(".popup_inner").attr("tabindex", "0").focus();
-	}
+	// const $lastPopup = $('.popup_wrap.active:last');
+	// if($lastPopup.length){
+	// 	$lastPopup.attr('aria-hidden', false).find('.popup_inner').attr('tabindex', '0').focus();
+	// }
 
 	const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
 	if (popup_count <= 0) {
