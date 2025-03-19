@@ -227,10 +227,9 @@ function closePop(target) {
 	const $lastPopup = $(".popup_wrap.active:last");
 	if ($lastPopup.length) {
 		// $lastPopup.attr('aria-hidden', false).find('.popup_inner').attr('tabindex', '0').focus();
-		$lastPopup.attr("aria-hidden", false);
+		// $lastPopup.attr('aria-hidden', false);
 		const $nextFocusEl = $lastPopup.find(".popup_inner");
-		console.log("$nextFocusEl", $nextFocusEl);
-		setFocus($nextFocusEl);
+		setFocus($lastPopup, $nextFocusEl);
 	}
 
 	const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
@@ -240,9 +239,10 @@ function closePop(target) {
 }
 
 //focus 이동
-function setFocus(target) {
+function setFocus(lastPopup, target) {
 	setTimeout(() => {
 		target.focus();
+		lastPopup.attr("aria-hidden", false);
 	}, 200);
 }
 
