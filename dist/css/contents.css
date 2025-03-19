@@ -183,35 +183,45 @@
 	height: 10rem;
 	background-color: red;
 }
+.smp__header .ds4 {
+	height: 10rem;
+	background-color: #ddd;
+}
 .smp__content {
 	-webkit-box-flex: 1;
-	-ms-flex: 1;
-	flex: 1;
+	-ms-flex: 1 1 0px;
+	flex: 1 1 0;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	overflow: auto;
-}
-.smp__content .i {
-	display: -webkit-inline-box;
-	display: -ms-inline-flexbox;
-	display: inline-flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
 	-webkit-box-pack: end;
 	-ms-flex-pack: end;
 	justify-content: flex-end;
+	height: 100%;
+	overflow: auto;
+	background-color: magenta;
+}
+.smp__content .opts_area {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-ms-flex-flow: row wrap;
 	flex-flow: row wrap;
-	margin-top: auto;
-	width: 100%;
-	gap: 1rem;
+	max-height: 100%;
+	overflow: auto;
+	gap: 1.2rem;
 }
-.smp__content .i button {
-	-webkit-box-flex: 0;
-	-ms-flex: none;
-	flex: none;
-	width: calc(50% - 0.5rem);
+.smp__content .opts_area .inp_radio {
+	width: calc(50% - 0.6rem);
+	background-color: blue;
 	height: 10rem;
+}
+.smp__content .opts_area .inp_radio:nth-child(even) {
 	background-color: yellow;
 }
