@@ -222,18 +222,18 @@ function closePop(target) {
 	const $target = $("#" + target);
 	$target.removeClass("active");
 
-	const $lastPopup = $(".popup_wrap.active").last();
-	if ($lastPopup.length > 0) {
-		$lastPopup.attr("aria-hidden", false).find(".popup_inner").attr("tabindex", "0").focus();
-	}
-
 	setTimeout(function () {
+		const $lastPopup = $(".popup_wrap.active").last();
+		if ($lastPopup.length > 0) {
+			$lastPopup.attr("aria-hidden", false).find(".popup_inner").attr("tabindex", "0").focus();
+		}
 		$target.attr("aria-hidden", true);
 		$target.find(".popup_inner").removeAttr("tabindex");
 		$("body").removeAttr("style");
 	}, 200);
 
-	const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
+	const popup_count = $(".popup_wrap.active").length;
+	console.log("pop" + popup_count);
 	if (popup_count <= 0) {
 		$(".wrap").removeClass("scroll_lock").attr("aria-hidden", false);
 	}
