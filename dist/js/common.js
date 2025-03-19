@@ -196,6 +196,7 @@ function tabScroll() {
 /* Popup 관련 */
 // Popup 열기
 function openPop(target) {
+	console.log("openPop");
 	const $target = $("#" + target);
 
 	if ($target.length) {
@@ -213,12 +214,14 @@ function openPop(target) {
 
 	// bottom 팝업 - drag
 	if ($target.hasClass("bottom")) {
-		draggable($target);
+		// draggable($target);
 	}
 }
 
 // Popup 닫기
 function closePop(target) {
+	console.log("closePop");
+
 	const $target = $("#" + target);
 
 	$target.removeClass("active");
@@ -228,7 +231,7 @@ function closePop(target) {
 		// $lastPopup.attr('aria-hidden', false).find('.popup_inner').attr('tabindex', '0').focus();
 		$lastPopup.attr("aria-hidden", false);
 		setTimeout(function () {
-			$lastPopup.find(".popup_inner").attr("tabindex", "0").focus();
+			$lastPopup.find(".popup_inner").attr("tabindex", "0").focus().css("background", "red");
 		}, 100);
 	}
 
@@ -278,11 +281,11 @@ $(window).on("click", function (e) {
 	}
 
 	// 팝업 영역 외 클릭 시 팝업 닫기
-	const $close_popup = $(".popup_inner");
-	if (!$target.closest($close_popup).length) {
-		const $targetId = $target.closest(".popup_wrap").attr("id");
-		closePop($targetId);
-	}
+	// const $close_popup = $('.popup_inner');
+	// if (!$target.closest($close_popup).length) {
+	// 	const $targetId = $target.closest('.popup_wrap').attr('id');
+	// 	closePop($targetId);
+	// }
 });
 
 $(function () {
