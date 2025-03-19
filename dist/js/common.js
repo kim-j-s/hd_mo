@@ -221,7 +221,7 @@ function openPop(target) {
 function closePop(target) {
 	const $target = $("#" + target);
 	$target.removeClass("active").attr("aria-hidden", true);
-	$target.find(".popup_inner").removeAttr("tabindex");
+	// $target.find('.popup_inner').removeAttr('tabindex');
 	$("body").removeAttr("style");
 
 	// const $lastPopup = $('.popup_wrap.active:last');
