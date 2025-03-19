@@ -223,7 +223,7 @@ function closePop(target) {
 	$target.removeClass("active");
 
 	const $lastPopup = $(".popup_wrap.active").last();
-	if ($lastPopup.length) {
+	if ($lastPopup.length > 0) {
 		$lastPopup.attr("aria-hidden", false).find(".popup_inner").attr("tabindex", "0").focus();
 	}
 
