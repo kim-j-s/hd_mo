@@ -1,14 +1,17 @@
 .guide_wrap {
-	display: flex;
-	flex-direction: column;
-	padding: 0 !important;
-	height: 100%;
+	&.guide_test {
+		display: flex;
+		flex-direction: column;
+		padding: 0 !important;
+		height: 100%;
+	}
 }
 
 .smp {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+	padding: 0 20px;
 	font-size: 16px;
 	&__header {
 		flex: none;
@@ -25,8 +28,50 @@
 			background-color: red;
 		}
 		.ds4 {
-			height: 100px;
-			background-color: #ddd;
+			position: relative;
+			margin: 16px 0;
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: -20px;
+				width: 20px;
+				height: 100%;
+				pointer-events: none;
+				background: rgb(255,255,255);
+				background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(254,254,254,0) 100%);
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: -20px;
+				width: 20px;
+				height: 100%;
+				pointer-events: none;
+				background: rgb(255,255,255);
+				background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(254,254,254,0) 100%);
+			}
+
+			
+
+			.ds4_inner {
+				display: flex;
+				gap: 10px;
+				margin: 0 -20px;
+				padding: 0 20px;
+				overflow-x: scroll;
+				button {
+					flex: none;
+					padding: 9px 10px;
+					border-radius: 10px;
+					border: 1px solid #F5F5F5;
+					background-color: #F5F5F5;
+					// overflow: auto;
+					
+				}
+
+			}
 		}
 	}
 	&__content {
@@ -36,23 +81,84 @@
 		justify-content: flex-end;
 		height: 100%;
 		overflow: auto;
-		background-color: magenta;
 		.opts_area {
 			display: flex;
 			flex-flow: row wrap;
 			max-height: 100%;
+			padding-bottom: 32px;
 			overflow: auto;
 			gap: 12px;
 			.inp_radio {
 				width: calc(50% - 6px);
-				background-color: blue;
-				height: 100px;
-				&:nth-child(even) {
-					background-color: yellow;
+				input {
+					position: absolute;
+					top: 0;
+					left: 0;
+					// opacity: 0.8;
+					opacity: 0;
+					&:checked {
+						+ label {
+							padding: 11px;
+							border: 2px solid #F8633C;
+						}
+					}
+					&:focus {
+						+ label {
+							outline: none;
+						}
+					}
+				}
+				label {
+					display: flex;
+					align-items: center;
+					height: 100%;
+					padding: 12px;
+					border-radius: 16px;
+					border: 1px solid #E1E3EA;
+					transition: border-color 0.3s;
+					&::before {
+						content: none;
+					}
+					.label_i {
+						display: flex;
+						width: 100%;
+						min-height: 44px;
+						align-items: center;
+						font-size: 16px;
+						line-height: 22px;
+						color: #1E2124;
+						word-break: break-all;
+					}
 				}
 			}
 		}
 		
 	}
 
+}
+
+
+.selected_case {
+	> .text {
+		position: relative;
+		padding-left: 24px;
+		background-repeat: no-repeat;
+		background-position: left center;
+		background-size: 20px auto;
+	}
+	&.person {
+		.text {
+			background-image: url(../../../images/smp/ico_stepper_person.svg);
+		}
+	}
+	&.car {
+		.text {
+			background-image: url(../../../images/smp/ico_stepper_car.svg);
+		}
+	}
+	&.date {
+		.text {
+			background-image: url(../../../images/smp/ico_stepper_date.svg);
+		}
+	}
 }

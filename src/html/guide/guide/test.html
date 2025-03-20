@@ -1,4 +1,4 @@
-{{#> layout/guide }}
+{{#> layout/guide gw_class="guide_test"}}
 <div class="smp">
 	<div class="smp__header">
 		<h1 class="smp__title">테스트</h1>
@@ -8,23 +8,30 @@
 			
 		</div>
 		<div class="ds4">
-			<div class="ds4_inner">
-					<a href=""></a>
+			<div class="ds4_inner" aria-label="선택된 항목">
+				<button type="button" class="selected_case person"><span class="text">본인</span></button>
+				<button type="button" class="selected_case car"><span class="text">자가용</span></button>
+				<button type="button" class="selected_case date"><span class="text">19960610</span></button>
+				<button type="button" class="selected_case date"><span class="text">19960610</span></button>
+				<button type="button" class="selected_case date"><span class="text">19960610</span></button>
+				<button type="button" class="selected_case date"><span class="text">19960610</span></button>
+				<button type="button" class="selected_case date"><span class="text">19960610</span></button>
+				<button type="button" class="selected_case date"><span class="text">19960610</span></button>
 			</div>
 		</div>
 	</div>
 	<div class="smp__content">
-		<div class="opts_area" role="radiogroup">
-			{{> cp/radio labelname="옵션1" name="radio1" id="radio1" checked=true }}
-			{{> cp/radio labelname="옵션2" name="radio1" id="radio2" checked=true }}
-			{{> cp/radio labelname="옵션3" name="radio1" id="radio3" checked=true }}
-			<!-- {{> cp/radio labelname="옵션4" name="radio1" id="radio4" checked=true }} -->
-			<!-- {{> cp/radio labelname="옵션5" name="radio1" id="radio5" checked=true }} -->
-			<!-- {{> cp/radio labelname="옵션6" name="radio1" id="radio6" checked=true }} -->
-			<!-- {{> cp/radio labelname="옵션7" name="radio1" id="radio7" checked=true }} -->
-			<!-- {{> cp/radio labelname="옵션8" name="radio1" id="radio8" checked=true }} -->
-			<!-- {{> cp/radio labelname="옵션9" name="radio1" id="radio9" checked=true }} -->
-			<!-- {{> cp/radio labelname="옵션10" name="radio1" id="radio10" checked=true }} -->
+		<div class="opts_area" role="radiogroup" aria-label="선택 시 다음단계로 이동합니다.">
+			{{> cp/radio labelname="본인" name="radio1" id="radio1" checked=true }}
+			{{> cp/radio labelname="부모님" name="radio1" id="radio2" }}
+			{{> cp/radio labelname="배우자" name="radio1" id="radio3" }}
+			{{> cp/radio labelname="자녀" name="radio1" id="radio4" }}
+			<!-- {{> cp/radio labelname="옵션5" name="radio1" id="radio5" }} -->
+			<!-- {{> cp/radio labelname="옵션6" name="radio1" id="radio6" }} -->
+			<!-- {{> cp/radio labelname="옵션7" name="radio1" id="radio7" }} -->
+			<!-- {{> cp/radio labelname="옵션8" name="radio1" id="radio8" }} -->
+			<!-- {{> cp/radio labelname="옵션9" name="radio1" id="radio9" }} -->
+			<!-- {{> cp/radio labelname="옵션10" name="radio1" id="radio10" }} -->
 		</div>
 	</div>
 </div>
