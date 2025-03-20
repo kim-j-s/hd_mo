@@ -207,7 +207,7 @@ function openPop(target){
 
 		//렌더링 후, focus 이동
 		setTimeout(function(){
-			$target.find('.popup_inner').attr('tabindex', '0').focus();
+			$target.find('.popup_inner').attr('tabindex', '0').trigger('focus');
 			$('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
 			$('.popup_wrap.active').attr('aria-hidden', true);
 			$target.attr('aria-hidden', false);
@@ -216,40 +216,53 @@ function openPop(target){
 
 	// bottom 팝업 - drag
 	if($target.hasClass('bottom')){
-		// draggable($target);
+		draggable($target);
 	}
 }
 
 // Popup 닫기
 function closePop(target) {
-
-	console.log('closePop');
-
-
 	const $target = $('#' + target);
 
-	$target.removeClass('active');
+	if($target.hasClass('active')){
+		$target.removeClass('active');
 
-	const $lastPopup = $('.popup_wrap.active:last');
-	if($lastPopup.length){
-		// $lastPopup.attr('aria-hidden', false).find('.popup_inner').attr('tabindex', '0').focus();
-		$lastPopup.attr('aria-hidden', false);
-		setTimeout(function(){
-			$lastPopup.find('.popup_inner').attr('tabindex', '0').focus().css('background', 'red');
-		}, 100);
+		console.log('closePop')
+	
+		const $lastPopup = $('.popup_wrap.active:last');
+		if($lastPopup.length){
+			// $lastPopup.attr('aria-hidden', false).find('.popup_inner').attr('tabindex', '0').focus();
+			$lastPopup.attr('aria-hidden', false);
+			setTimeout(function(){
+				$lastPopup.find('.popup_inner').attr('tabindex', '0').trigger('focus').css('background', 'red');
+			}, 100);
+		}
+	
+		// $target.removeClass('active').attr('aria-hidden', true);
+		$target.attr('aria-hidden', true);
+		$target.find('.popup_inner').removeAttr('tabindex');
+		$('body').removeAttr('style');
+	
+	
+		// const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
+		const popup_count = $('.popup_wrap.active').length;
+		if(popup_count <= 0){
+			$('.wrap').removeClass('scroll_lock').attr('aria-hidden', false);
+		}
 	}
+}
 
-	// $target.removeClass('active').attr('aria-hidden', true);
-	$target.attr('aria-hidden', true);
-	$target.find('.popup_inner').removeAttr('tabindex');
-	$('body').removeAttr('style');
-
-
-	// const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
-	const popup_count = $('.popup_wrap.active').length;
-	if(popup_count <= 0){
-		$('.wrap').removeClass('scroll_lock').attr('aria-hidden', false);
-	}
+// 팝업 영역 외 클릭 시 팝업 닫기
+function dimClick(){
+	$(document).on('click', '.popup_wrap', function(e) {
+		const $target = $(e.target);
+		const $close_popup = $('.popup_wrap.active[aria-hidden="false"] .popup_inner');
+		
+		if (!$target.closest($close_popup).length) {
+			const $targetId = $target.closest('.popup_wrap').attr('id');
+			closePop($targetId);
+		}
+	});
 }
 
 
@@ -277,8 +290,6 @@ function toastMsg(msg){
 	$('.toast_msg').text(msg).closest('.toast_wrap').addClass('active');
 }
 
-
-
 $(window).on('click', function(e) {
 	const $target = $(e.target);
 	// console.log($target);
@@ -301,4 +312,6 @@ $(window).on('click', function(e) {
 $(function(){
 	// tab Scroll
 	tabScroll();
+
+	dimClick();
 })
