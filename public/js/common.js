@@ -267,22 +267,37 @@ function dimClick(){
 
 
 /* Toast 팝업 */
+let toastTimer = null;
 function toastAction(click){
 	const $toast = $('.toast_wrap'),
 				msg = $(click).data('msg');
 	let isShow = $toast.hasClass('active');
 
-	if (isShow) return;
-	$toast.find('.toast_msg').text('');
-	
-	setTimeout(function(){
-		toastMsg(msg);
-		$toast.addClass('active');
-	}, 300);
+	if(isShow) return;
 
-	setTimeout(function(){
+	console.log(toastTimer);
+	
+	$toast.find('.toast_msg').text('');
+	toastMsg(msg);
+	$toast.addClass('active');
+
+	clearTimeout(toastTimer);
+
+	toastTimer = setTimeout(function(){
 		$toast.removeClass('active');
-	}, 1500);
+	}, 1200);
+
+	// if (isShow) return;
+	// $toast.find('.toast_msg').text('');
+	
+	// setTimeout(function(){
+	// 	toastMsg(msg);
+	// 	$toast.addClass('active');
+	// }, 300);
+
+	// setTimeout(function(){
+	// 	$toast.removeClass('active');
+	// }, 1500);
 }
 
 function toastMsg(msg){
