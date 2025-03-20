@@ -1447,6 +1447,23 @@
 				// console.log('진행률 : ' + ratePer + '%');
 				$tbody.prev("thead").find(".rate_per").text(ratePer);
 			});
+
+			function detectDevice() {
+				const userAgent = navigator.userAgent.toLowerCase();
+
+				// 모바일 기기 체크
+				const isMobile = /iphone|ipad|ipod|android|blackberry|windows phone|opera mini|iemobile|mobile/i.test(userAgent);
+
+				if (isMobile) {
+					// console.log("모바일 기기입니다.");
+					$("#mode_toggle").attr("checked", true);
+					return "mobile";
+				} else {
+					// console.log("PC입니다.");
+					return "pc";
+				}
+			}
+			const deviceType = detectDevice();
 		</script>
 	</body>
 </html>
