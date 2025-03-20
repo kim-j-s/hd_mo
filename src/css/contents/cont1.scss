@@ -13,7 +13,7 @@
 	height: 100%;
 	padding: 0 20px;
 	font-size: 16px;
-	&__header {
+	&_header {
 		flex: none;
 		h1 {
 			display: flex;
@@ -22,85 +22,111 @@
 			height: 55px;
 			margin: 0 -20px;
 			background-color: #ddd;
-		}
-		.ds1 {
-			position: relative;
-			height: 72px;
-			padding: 0 40px;
+		}		
+	}
+	&_stepper {
+		flex: 1 1 0;
+		display: flex;
+		flex-direction: column;
+	}
+	.stepper_wrap {
+		position: relative;
+		height: 72px;
+		padding: 0 40px;
 
-			.stepper {
-				padding-top: 48px;
-				.pgs {
-					position: relative;
-					height: 4px;
-					border-radius: 4px;
-					background-color: #E6E8EA;
-					.pgs_per {
-						position: absolute;
-						top: 0;
-						left: 0;
-						height: 100%;
-						border-radius: 4px;
-						background-color: #273884;
-						&::before {
-							content: '';
+		.stepper {
+			padding-top: 48px;
+			.pgs {
+				position: relative;
+				height: 4px;
+				border-radius: 8px;
+				background-color: #E6E8EA;
+				.pgs_per {
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 100%;
+					border-radius: 8px;
+					background-color: #273884;
+					transition: width 0.3s;
+					.motion {
+						&.car {
 							position: absolute;
 							right: -20px;
 							bottom: 8px;
 							width: 40px;
 							height: 32px;
 							background: url(../images/smp/car.svg) no-repeat center center;
-						}
-						&.end {
+							transition: right 0.3s;
+							animation: carBounce 0.8s linear infinite;
 							&::after {
 								content: '';
 								position: absolute;
-								bottom: 24px;
-								right: -28px;
+								top: 0;
+								right: -8px;
 								width: 16px;
 								height: 16px;
 								background: url(../images/smp/car_star.svg) no-repeat center center;
+								opacity: 0;
+								transition: all 0.3s;
+							}
+						}
+					}
+					&.start {
+						.motion {
+							&.car {
+								right: -40px;
+							}
+						}
+					}
+					&.end {
+						.motion {
+							&.car {
+								right: 0;
+								&::after {
+									opacity: 1;
+								}
 							}
 						}
 					}
 				}
 			}
-			
+		}
 
-
-			.stm_btn {
-				position: absolute;
-				top: 50%;
-				width: 32px;
-				height: 32px;
-				font-size: 0;
-				border-radius: 50%;
-				border: 1px solid #B1B8BE;
-				background-repeat: no-repeat;
-				background-position: center center;
-				background-color: #fff;
-				transform: translateY(-50%);
+		.stm_btn {
+			position: absolute;
+			top: 50%;
+			width: 32px;
+			height: 32px;
+			font-size: 0;
+			border-radius: 50%;
+			border: 1px solid #B1B8BE;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-color: #fff;
+			transform: translateY(-50%);
+			&.stm_l {
+				left: 0;
+				background-image: url(../images/smp/ico_stm_l.svg);
+			}
+			&.stm_r {
+				right: 0;
+				background-image: url(../images/smp/ico_stm_r.svg);
+			}
+			&:disabled {
+				border: 1px solid #F5F5F5;
+				background-color: #F5F5F5;
 				&.stm_l {
-					left: 0;
-					background-image: url(../images/smp/ico_stm_l.svg);
+					background-image: url(../images/smp/ico_stm_l_disabled.svg);
 				}
 				&.stm_r {
-					right: 0;
-					background-image: url(../images/smp/ico_stm_r.svg);
-				}
-				&:disabled {
-					border: 1px solid #F5F5F5;
-					background-color: #F5F5F5;
-					&.stm_l {
-						background-image: url(../images/smp/ico_stm_l_disabled.svg);
-					}
-					&.stm_r {
-						background-image: url(../images/smp/ico_stm_r_disabled.svg);
-					}
+					background-image: url(../images/smp/ico_stm_r_disabled.svg);
 				}
 			}
 		}
-		.ds2 {
+	}
+	&_top {
+		.ds1 {
 			height: 110px;
 			padding-top: 16px;
 			&_inner {
@@ -135,11 +161,7 @@
 				}
 			}
 		}
-		.ds3 {
-			height: 100px;
-			background-color: red;
-		}
-		.ds4 {
+		.ds2 {
 			position: relative;
 			margin: 16px 0;
 			&::before {
@@ -164,29 +186,16 @@
 				background: rgb(255,255,255);
 				background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(254,254,254,0) 100%);
 			}
-
-			
-
-			.ds4_inner {
+			.ds2_inner {
 				display: flex;
 				gap: 10px;
 				margin: 0 -20px;
 				padding: 0 20px;
 				overflow-x: scroll;
-				button {
-					flex: none;
-					padding: 9px 10px;
-					border-radius: 10px;
-					border: 1px solid #F5F5F5;
-					background-color: #F5F5F5;
-					// overflow: auto;
-					
-				}
-
 			}
 		}
 	}
-	&__content {
+	&_content {
 		flex: 1 1 0;
 		display: flex;
 		flex-direction: column;
@@ -206,7 +215,6 @@
 					position: absolute;
 					top: 0;
 					left: 0;
-					// opacity: 0.8;
 					opacity: 0;
 					&:checked {
 						+ label {
@@ -246,31 +254,46 @@
 		}
 		
 	}
-
+}
+button {
+	
+	
+	
+}
+.selected_case {
+	flex: none;
+	position: relative;
+	padding: 9px 10px 9px 34px;
+	color: #666D7D;
+	border-radius: 10px;
+	border: 1px solid #F5F5F5;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	background-size: 20px auto;
+	background-color: #F5F5F5;
+	&.person {
+		background-image: url(../images/smp/ico_stepper_person.svg);
+	}
+	&.car {
+		background-image: url(../images/smp/ico_stepper_car.svg);
+	}
+	&.date {
+		background-image: url(../images/smp/ico_stepper_date.svg);
+	}
+	&:empty {
+		display: none;
+	}
 }
 
 
-.selected_case {
-	> .text {
-		position: relative;
-		padding-left: 24px;
-		background-repeat: no-repeat;
-		background-position: left center;
-		background-size: 20px auto;
+@keyframes carBounce {
+	0% {
+		bottom: 8px;
 	}
-	&.person {
-		.text {
-			background-image: url(../images/smp/ico_stepper_person.svg);
-		}
+	50%{
+		bottom: 6px;
 	}
-	&.car {
-		.text {
-			background-image: url(../images/smp/ico_stepper_car.svg);
-		}
-	}
-	&.date {
-		.text {
-			background-image: url(../images/smp/ico_stepper_date.svg);
-		}
+	100%{
+		bottom: 8px;
 	}
 }

@@ -32,6 +32,7 @@
 		<script type="text/javascript" src="../../../js/libs/swiper-bundle.min.js"></script>
 		<script type="text/javascript" src="../../../js/common.js"></script>
 		<script type="text/javascript" src="../../../js/dragging.js"></script>
+		<script type="text/javascript" src="../../../js/stepper.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<title>현대해상 다이렉트</title>
 
@@ -45,69 +46,69 @@
 		<div class="guide_wrap guide_test">
 			<div class="wrap">
 				<div class="smp">
-					<div class="smp__header">
-						<h1 class="smp__title">HEADER</h1>
-
-						<div class="ds1">
-							<div class="stepper" role="img" aria-label="5단계 중 1단계">
-								<div class="pgs">
-									<span class="pgs_per" style="width: 20%"></span>
-									<!-- <span class="pgs_per end" style="width: 100%;"></span> -->
+					<div class="smp_header">
+						<h1 class="smp_title">HEADER</h1>
+					</div>
+					<div class="stepper_wrap">
+						<div class="stepper" role="img" aria-label="5단계 중 1단계">
+							<div class="pgs">
+								<span class="pgs_per start" style="width: 0%"><span class="motion car"></span></span>
+							</div>
+						</div>
+						<button type="button" class="stm_btn stm_l" disabled>이전 단계</button>
+						<button type="button" class="stm_btn stm_r">다음 단계</button>
+					</div>
+					<div class="smp_stepper">
+						<div class="smp_top">
+							<div class="ds1">
+								<div class="ds1_inner">
+									<p class="ds1_inner_text">
+										<strong>누구를 위한</strong>
+										보험인가요?
+									</p>
+									<span class="sub_text">가입이 어려운 경우</span>
 								</div>
 							</div>
-							<button type="button" class="stm_btn stm_l" disabled>이전 단계</button>
-							<button type="button" class="stm_btn stm_r">다음 단계</button>
-						</div>
-						<div class="ds2">
-							<div class="ds2_inner">
-								<p class="ds2_inner_text">
-									<strong>누구를 위한</strong>
-									보험인가요?
-								</p>
-								<span class="sub_text">가입이 어려운 경우</span>
+							<div class="ds2">
+								<div class="ds2_inner" aria-label="선택된 항목입니다.">
+									<button type="button" class="selected_case date" aria-label="수정"></button>
+									<button type="button" class="selected_case person" aria-label="대상 수정">본인</button>
+									<button type="button" class="selected_case car" aria-label="용도 수정">자가용</button>
+									<button type="button" class="selected_case date" aria-label="생년월일 수정">19960610</button>
+									<button type="button" class="selected_case gender" aria-label="성별 수정">남성</button>
+									<!-- <button type="button" class="selected_case date" aria-label="수정">19960610</button> -->
+									<!-- <button type="button" class="selected_case date" aria-label="수정">19960610</button> -->
+									<!-- <button type="button" class="selected_case date" aria-label="수정">19960610</button> -->
+								</div>
 							</div>
 						</div>
-						<!-- <div class="ds3"></div> -->
-						<div class="ds4">
-							<div class="ds4_inner" aria-label="선택된 항목입니다.">
-								<button type="button" class="selected_case person" aria-label="수정"><span class="text">본인</span></button>
-								<button type="button" class="selected_case car" aria-label="수정"><span class="text">자가용</span></button>
-								<button type="button" class="selected_case date" aria-label="수정"><span class="text">19960610</span></button>
-								<!-- <button type="button" class="selected_case date" aria-label="수정"><span class="text">19960610</span></button> -->
-								<!-- <button type="button" class="selected_case date" aria-label="수정"><span class="text">19960610</span></button> -->
-								<!-- <button type="button" class="selected_case date" aria-label="수정"><span class="text">19960610</span></button> -->
-								<!-- <button type="button" class="selected_case date" aria-label="수정"><span class="text">19960610</span></button> -->
-								<!-- <button type="button" class="selected_case date" aria-label="수정"><span class="text">19960610</span></button> -->
-							</div>
-						</div>
-					</div>
-					<div class="smp__content">
-						<div class="opts_area" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다.">
-							<div class="inp_radio">
-								<input type="radio" id="radio1" name="radio1" checked />
-								<label for="radio1">
-									<span class="label_i">본인</span>
-								</label>
-							</div>
-							<div class="inp_radio">
-								<input type="radio" id="radio2" name="radio1" />
-								<label for="radio2">
-									<span class="label_i">부모님</span>
-								</label>
-							</div>
-							<div class="inp_radio">
-								<input type="radio" id="radio3" name="radio1" />
-								<label for="radio3">
-									<span class="label_i">배우자</span>
-								</label>
-							</div>
-							<div class="inp_radio">
-								<input type="radio" id="radio4" name="radio1" />
-								<label for="radio4">
-									<span class="label_i">자녀</span>
-								</label>
-							</div>
-							<!-- <div class="inp_radio">
+						<div class="smp_content">
+							<div class="opts_area" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다.">
+								<div class="inp_radio">
+									<input type="radio" id="radio1" name="radio1" checked />
+									<label for="radio1">
+										<span class="label_i">본인</span>
+									</label>
+								</div>
+								<div class="inp_radio">
+									<input type="radio" id="radio2" name="radio1" />
+									<label for="radio2">
+										<span class="label_i">부모님</span>
+									</label>
+								</div>
+								<div class="inp_radio">
+									<input type="radio" id="radio3" name="radio1" />
+									<label for="radio3">
+										<span class="label_i">배우자</span>
+									</label>
+								</div>
+								<div class="inp_radio">
+									<input type="radio" id="radio4" name="radio1" />
+									<label for="radio4">
+										<span class="label_i">자녀</span>
+									</label>
+								</div>
+								<!-- <div class="inp_radio">
         	<input type="radio"
         		id="radio5"
         		name="radio1"
@@ -118,7 +119,7 @@
         		<span class="label_i">옵션5</span>
         	</label>
         </div> -->
-							<!-- <div class="inp_radio">
+								<!-- <div class="inp_radio">
         	<input type="radio"
         		id="radio6"
         		name="radio1"
@@ -129,7 +130,7 @@
         		<span class="label_i">옵션6</span>
         	</label>
         </div> -->
-							<!-- <div class="inp_radio">
+								<!-- <div class="inp_radio">
         	<input type="radio"
         		id="radio7"
         		name="radio1"
@@ -140,7 +141,7 @@
         		<span class="label_i">옵션7</span>
         	</label>
         </div> -->
-							<!-- <div class="inp_radio">
+								<!-- <div class="inp_radio">
         	<input type="radio"
         		id="radio8"
         		name="radio1"
@@ -151,7 +152,7 @@
         		<span class="label_i">옵션8</span>
         	</label>
         </div> -->
-							<!-- <div class="inp_radio">
+								<!-- <div class="inp_radio">
         	<input type="radio"
         		id="radio9"
         		name="radio1"
@@ -162,7 +163,7 @@
         		<span class="label_i">옵션9</span>
         	</label>
         </div> -->
-							<!-- <div class="inp_radio">
+								<!-- <div class="inp_radio">
         	<input type="radio"
         		id="radio10"
         		name="radio1"
@@ -173,6 +174,7 @@
         		<span class="label_i">옵션10</span>
         	</label>
         </div> -->
+							</div>
 						</div>
 					</div>
 				</div>
