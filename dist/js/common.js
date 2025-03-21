@@ -233,7 +233,7 @@ function closePop(target) {
 			$lastPopup.attr("aria-hidden", false);
 			setTimeout(function () {
 				$lastPopup.find(".popup_inner").attr("tabindex", "0").trigger("focus").css("background", "red");
-			}, 500);
+			}, 100);
 		}
 
 		// $target.removeClass('active').attr('aria-hidden', true);
@@ -269,26 +269,19 @@ function toastAction(click) {
 		msg = $(click).data("msg");
 	let isShow = $toast.hasClass("active");
 
-	console.log(click);
-
-	// if(isShow) return;
+	if (isShow) return;
 
 	// console.log(toastTimer);
 
-	// $toast.find('.toast_msg').text('');
+	$toast.find(".toast_msg").text("");
+	toastMsg(msg);
+	$toast.addClass("active");
 
-	if (!isShow) {
-		toastMsg(msg);
-		$toast.addClass("active");
+	clearTimeout(toastTimer);
 
-		console.log("count");
-
-		clearTimeout(toastTimer);
-
-		toastTimer = setTimeout(function () {
-			$toast.removeClass("active");
-		}, 1200);
-	}
+	toastTimer = setTimeout(function () {
+		$toast.removeClass("active");
+	}, 1200);
 }
 
 function toastMsg(msg) {
