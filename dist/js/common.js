@@ -195,17 +195,27 @@ function tabScroll() {
 
 /* Popup 관련 */
 // Popup 열기
-function openPop(target) {
-	console.log("openPop");
+function openPop($triggerEl, target) {
 	const $target = $("#" + target);
 
 	if ($target.length) {
+		const getOpenerId = $($triggerEl).attr("triggerId");
+		let openerId;
+
+		if (!getOpenerId) {
+			openerId = generateUUID();
+			$($triggerEl).attr("triggerId", openerId);
+		} else {
+			openerId = getOpenerId;
+		}
+
+		$target.attr("opner", openerId);
 		$("body").css("overscroll-behavior", "contain");
 		$target.addClass("active");
 
 		//렌더링 후, focus 이동
 		setTimeout(function () {
-			$target.find(".popup_inner").attr("tabindex", "0").trigger("focus");
+			$target.find(".popup_inner").attr("tabindex", "0").focus();
 			$(".wrap").addClass("scroll_lock").attr("aria-hidden", true);
 			$(".popup_wrap.active").attr("aria-hidden", true);
 			$target.attr("aria-hidden", false);
@@ -221,19 +231,19 @@ function openPop(target) {
 // Popup 닫기
 function closePop(target) {
 	const $target = $("#" + target);
+	const $opener = $('[triggerId="' + $target.attr("opner") + '"]');
 
 	if ($target.hasClass("active")) {
-		$target.removeClass("active");
+		$target.removeClass("active").attr("opner", null);
 
 		console.log("closePop");
 
 		const $lastPopup = $(".popup_wrap.active:last");
 		if ($lastPopup.length) {
-			// $lastPopup.attr('aria-hidden', false).find('.popup_inner').attr('tabindex', '0').focus();
 			$lastPopup.attr("aria-hidden", false);
 			setTimeout(function () {
-				$lastPopup.find(".popup_inner").attr("tabindex", "0").trigger("focus").css("background", "red");
-			}, 500);
+				$lastPopup.find(".popup_inner").attr("tabindex", "0").focus();
+			}, 400);
 		}
 
 		// $target.removeClass('active').attr('aria-hidden', true);
@@ -245,6 +255,9 @@ function closePop(target) {
 		const popup_count = $(".popup_wrap.active").length;
 		if (popup_count <= 0) {
 			$(".wrap").removeClass("scroll_lock").attr("aria-hidden", false);
+			setTimeout(() => {
+				$opener.focus();
+			}, 400);
 		}
 	}
 }
@@ -269,30 +282,24 @@ function toastAction(click) {
 		msg = $(click).data("msg");
 	let isShow = $toast.hasClass("active");
 
-	// if(isShow) return;
+	if (isShow) return;
 
-	console.log(msg);
-	// $toast.find('.toast_msg').text('');
+	// console.log(toastTimer);
 
-	if (!isShow) {
-		toastMsg(msg);
-		// $toast.addClass('active');
-		console.log("count");
+	$toast.find(".toast_msg").text("");
+	toastMsg(msg);
+	$toast.addClass("active");
 
-		clearTimeout(toastTimer);
+	clearTimeout(toastTimer);
 
-		toastTimer = setTimeout(function () {
-			$toast.removeClass("active").attr("aria-live", "off");
-		}, 1200);
-
-		$toast.attr("aria-live", "assertive");
-	}
+	toastTimer = setTimeout(function () {
+		$toast.removeClass("active");
+	}, 1200);
 }
 
 function toastMsg(msg) {
 	// const text = $('<div class='toast_msg'></div>').text(msg);
-	$(".toast_msg").text(msg);
-	$(".toast_wrap").addClass("active");
+	$(".toast_msg").text(msg).closest(".toast_wrap").addClass("active");
 }
 
 $(window).on("click", function (e) {
@@ -318,3 +325,14 @@ $(function () {
 
 	dimClick();
 });
+
+// UUID생성
+function generateUUID() {
+	var d = new Date().getTime();
+	var uuid = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+		var r = (d + Math.random() * 16) % 16 | 0;
+		d = Math.floor(d / 16);
+		return (c == "x" ? r : (r & 0x3) | 0x8).toString(16);
+	});
+	return uuid;
+}

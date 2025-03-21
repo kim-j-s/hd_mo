@@ -31,7 +31,6 @@
 		<script type="text/javascript" src="../../../js/libs/jquery-1.8.3.min.js"></script>
 		<script type="text/javascript" src="../../../js/libs/swiper-bundle.min.js"></script>
 		<script type="text/javascript" src="../../../js/common.js"></script>
-		<script type="text/javascript" src="../../../js/pop-test.js"></script>
 		<script type="text/javascript" src="../../../js/dragging.js"></script>
 		<script type="text/javascript" src="../../../js/stepper.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
@@ -72,10 +71,11 @@
 				</div>
 			</div>
 			<div id="container" class="container">
-				<button type="button" class="btn popup_open" onclick="openPop('pop_type01');"><span>Full 팝업열기</span></button>
-				<button type="button" class="btn popup_open" onclick="openPop('pop_type02');"><span>Layer 팝업열기</span></button>
-				<button type="button" class="btn popup_open" onclick="openPop('pop_type03');"><span>Bottom 팝업열기</span></button>
-				<button type="button" class="btn popup_open" onclick="openPop('pop_type05');" title="Bottom 선택 팝업열기"><span>value</span></button>
+				<button type="button" class="btn popup_open" onclick="openPop(this,'pop_type01');"><span>Full 팝업열기</span></button>
+				<button type="button" class="btn popup_open" onclick="openPop(this,'pop_type02');"><span>Layer 팝업열기</span></button>
+				<button type="button" class="btn popup_open" onclick="openPop(this,'pop_type03');"><span>Bottom 팝업열기1</span></button>
+				<button type="button" class="btn popup_open" onclick="openPop(this,'pop_type03');"><span>Bottom 팝업열기2</span></button>
+				<button type="button" class="btn popup_open" onclick="openPop(this,'pop_type05');" title="Bottom 선택 팝업열기"><span>value</span></button>
 				<div class="btn popup_open" role="button" aria-label="Bottom 선택 팝업열기">
 					<span>value</span>
 				</div>
@@ -220,7 +220,7 @@
 					<div class="popup_bottom">
 						<div class="btn_area">
 							<button type="button" class="btn"><span>확인</span></button>
-							<button type="button" class="btn popup_open" onclick="openPop('pop_type04');"><span>Bottom 팝업열기</span></button>
+							<button type="button" class="btn popup_open" onclick="openPop(this,'pop_type04');"><span>Bottom 팝업열기</span></button>
 						</div>
 					</div>
 
@@ -253,7 +253,7 @@
 					<div class="popup_bottom">
 						<div class="btn_area">
 							<button type="button" class="btn"><span>확인</span></button>
-							<button type="button" class="btn popup_open" onclick="openPop('pop_type05');"><span>Bottom 팝업열기</span></button>
+							<button type="button" class="btn popup_open" onclick="openPop(this,'pop_type05');"><span>Bottom 팝업열기</span></button>
 						</div>
 					</div>
 
