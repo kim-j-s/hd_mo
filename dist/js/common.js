@@ -271,24 +271,29 @@ function toastAction(click) {
 
 	console.log(click);
 
-	if (isShow) return;
+	// if(isShow) return;
 
 	// console.log(toastTimer);
 
 	// $toast.find('.toast_msg').text('');
-	toastMsg(msg);
-	$toast.addClass("active");
 
-	clearTimeout(toastTimer);
+	if (!isShow) {
+		toastMsg(msg);
+		$toast.addClass("active");
 
-	toastTimer = setTimeout(function () {
-		$toast.removeClass("active");
-	}, 1200);
+		console.log("count");
+
+		clearTimeout(toastTimer);
+
+		toastTimer = setTimeout(function () {
+			$toast.removeClass("active");
+		}, 1200);
+	}
 }
 
 function toastMsg(msg) {
 	// const text = $('<div class='toast_msg'></div>').text(msg);
-	$(".toast_msg").text(msg);
+	$(".toast_msg").text(msg).closest(".toast_wrap").addClass("active");
 }
 
 $(window).on("click", function (e) {
