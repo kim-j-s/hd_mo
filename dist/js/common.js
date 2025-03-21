@@ -288,7 +288,7 @@ function toastAction(click) {
 
 function toastMsg(msg) {
 	// const text = $('<div class='toast_msg'></div>').text(msg);
-	$(".toast_msg").text(msg).closest(".toast_wrap").addClass("active");
+	$(".toast_msg").text(msg);
 }
 
 $(window).on("click", function (e) {
