@@ -56,6 +56,33 @@
 			.tsf {
 				font-size: 2rem;
 			}
+
+			.toast_box {
+				display: none;
+				background-color: skyblue;
+			}
+
+			.toast_box.active {
+				display: block;
+				background: red;
+			}
 		</style>
+
+		<button class="btn_toast" type="button">이름</button>
+		333
+		<div class="toast_box" aria-live="assertive">
+			<div class="toast_message">김미나</div>
+		</div>
+
+		<script>
+			$(function () {
+				const btn = $(".btn_toast");
+				const toast = $(".toast_box");
+				let timeoutId = null;
+				btn.on("click", function () {
+					toast.addClass("active");
+				});
+			});
+		</script>
 	</body>
 </html>
