@@ -274,13 +274,11 @@ function toastAction(click) {
 	// if(isShow) return;
 
 	// console.log(toastTimer);
-
 	// $toast.find('.toast_msg').text('');
 
 	if (!isShow) {
 		toastMsg(msg);
-		$toast.addClass("active");
-
+		// $toast.addClass('active');
 		console.log("count");
 
 		clearTimeout(toastTimer);
