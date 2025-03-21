@@ -271,7 +271,11 @@ function toastAction(click) {
 
 	if (isShow) return;
 
+<<<<<<< HEAD
 	// console.log(toastTimer);
+=======
+	console.log(toastTimer);
+>>>>>>> fa7acdcce286aef4a2d29569baabb6cd9ce9c9cb
 
 	$toast.find(".toast_msg").text("");
 	toastMsg(msg);
@@ -282,6 +286,21 @@ function toastAction(click) {
 	toastTimer = setTimeout(function () {
 		$toast.removeClass("active");
 	}, 1200);
+<<<<<<< HEAD
+=======
+
+	// if (isShow) return;
+	// $toast.find('.toast_msg').text('');
+
+	// setTimeout(function(){
+	// 	toastMsg(msg);
+	// 	$toast.addClass('active');
+	// }, 300);
+
+	// setTimeout(function(){
+	// 	$toast.removeClass('active');
+	// }, 1500);
+>>>>>>> fa7acdcce286aef4a2d29569baabb6cd9ce9c9cb
 }
 
 function toastMsg(msg) {
