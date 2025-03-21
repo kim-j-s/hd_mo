@@ -269,11 +269,13 @@ function toastAction(click) {
 		msg = $(click).data("msg");
 	let isShow = $toast.hasClass("active");
 
+	console.log(click);
+
 	if (isShow) return;
 
 	// console.log(toastTimer);
 
-	$toast.find(".toast_msg").text("");
+	// $toast.find('.toast_msg').text('');
 	toastMsg(msg);
 	$toast.addClass("active");
 
