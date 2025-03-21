@@ -284,15 +284,17 @@ function toastAction(click) {
 		clearTimeout(toastTimer);
 
 		toastTimer = setTimeout(function () {
-			$toast.removeClass("active").removeAttr("role");
+			$toast.removeClass("active").attr("aria-live", "off");
 		}, 1200);
+
+		$toast.attr("aria-live", "assertive");
 	}
 }
 
 function toastMsg(msg) {
 	// const text = $('<div class='toast_msg'></div>').text(msg);
 	$(".toast_msg").text(msg);
-	$(".toast_wrap").addClass("active").attr("role", "alert");
+	$(".toast_wrap").addClass("active");
 }
 
 $(window).on("click", function (e) {
