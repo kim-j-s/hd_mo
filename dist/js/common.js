@@ -205,8 +205,7 @@ function openPop(target) {
 
 		//렌더링 후, focus 이동
 		setTimeout(function () {
-			// $target.find('.popup_inner').attr('tabindex', '0').trigger('focus');
-			$target.find(".popup_inner").attr("tabindex", "0").focus();
+			$target.find(".popup_inner").attr("tabindex", "0").trigger("focus");
 			$(".wrap").addClass("scroll_lock").attr("aria-hidden", true);
 			$(".popup_wrap.active").attr("aria-hidden", true);
 			$target.attr("aria-hidden", false);
@@ -224,29 +223,29 @@ function closePop(target) {
 	const $target = $("#" + target);
 
 	if ($target.hasClass("active")) {
-		// $target.removeClass('active');
+		$target.removeClass("active");
 
 		console.log("closePop");
 
-		// const $lastPopup = $('.popup_wrap.active:last');
-		const $lastPopup = $("#pop_type04");
-		// if($lastPopup.length){}
-		// $lastPopup.attr('aria-hidden', false).find('.popup_inner').attr('tabindex', '0').focus();
-		// $lastPopup.find('.popup_inner').attr('tabindex', '0').trigger('focus').css('background', 'red');
-		$lastPopup.find(".popup_inner").attr("tabindex", "0").focus().css("background", "red");
-		$lastPopup.attr("aria-hidden", false);
-		// setTimeout(function(){}, 100);
+		const $lastPopup = $(".popup_wrap.active:last");
+		if ($lastPopup.length) {
+			// $lastPopup.attr('aria-hidden', false).find('.popup_inner').attr('tabindex', '0').focus();
+			$lastPopup.attr("aria-hidden", false);
+			setTimeout(function () {
+				$lastPopup.find(".popup_inner").attr("tabindex", "0").trigger("focus").css("background", "red");
+			}, 100);
+		}
 
 		// $target.removeClass('active').attr('aria-hidden', true);
-		$target.removeClass("active").attr("aria-hidden", true);
+		$target.attr("aria-hidden", true);
 		$target.find(".popup_inner").removeAttr("tabindex");
-		// $('body').removeAttr('style');
+		$("body").removeAttr("style");
 
 		// const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
-		// const popup_count = $('.popup_wrap.active').length;
-		// if(popup_count <= 0){
-		// 	$('.wrap').removeClass('scroll_lock').attr('aria-hidden', false);
-		// }
+		const popup_count = $(".popup_wrap.active").length;
+		if (popup_count <= 0) {
+			$(".wrap").removeClass("scroll_lock").attr("aria-hidden", false);
+		}
 	}
 }
 
@@ -264,32 +263,30 @@ function dimClick() {
 }
 
 /* Toast 팝업 */
+let toastTimer = null;
 function toastAction(click) {
 	const $toast = $(".toast_wrap"),
 		msg = $(click).data("msg");
 	let isShow = $toast.hasClass("active");
 
-	console.log(isShow, msg);
+	if (isShow) return;
 
-	if (isShow) {
-		return;
-	}
+	// console.log(toastTimer);
 
-	// if (!isShow) {
 	$toast.find(".toast_msg").text("");
 	toastMsg(msg);
 	$toast.addClass("active");
 
-	// clearTimeout(toastTimer);
+	clearTimeout(toastTimer);
+
 	toastTimer = setTimeout(function () {
 		$toast.removeClass("active");
 	}, 1200);
-	// }
 }
 
 function toastMsg(msg) {
 	// const text = $('<div class='toast_msg'></div>').text(msg);
-	$(".toast_msg").text(msg);
+	$(".toast_msg").text(msg).closest(".toast_wrap").addClass("active");
 }
 
 $(window).on("click", function (e) {

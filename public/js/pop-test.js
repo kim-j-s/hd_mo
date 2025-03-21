@@ -12,7 +12,8 @@ function openPop2(target){
 
 		//렌더링 후, focus 이동
 		setTimeout(function(){
-			$target.find('.popup_inner').attr('tabindex', '0').trigger('focus');
+			// $target.find('.popup_inner').attr('tabindex', '0').trigger('focus');
+			$target.find('.popup_inner').attr('tabindex', '0').focus();
 			$('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
 			$('.popup_wrap2.active').attr('aria-hidden', true);
 			$target.attr('aria-hidden', false);
@@ -39,7 +40,7 @@ function closePop2(target) {
 			// $lastPopup.attr('aria-hidden', false).find('.popup_inner').attr('tabindex', '0').focus();
 			$lastPopup.attr('aria-hidden', false);
 			setTimeout(function(){
-				$lastPopup.find('.popup_inner .popup_head').attr('tabindex', '0').trigger('focus');
+				$lastPopup.find('.popup_inner .popup_head').attr('tabindex', '0').focus();
 			}, 500);
 		}
 	
