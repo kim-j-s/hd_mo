@@ -271,7 +271,7 @@ function toastAction(click) {
 
 	if (isShow) return;
 
-	console.log(toastTimer);
+	// console.log(toastTimer);
 
 	$toast.find(".toast_msg").text("");
 	toastMsg(msg);

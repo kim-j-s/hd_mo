@@ -12,9 +12,10 @@ function openPop2(target){
 
 		//렌더링 후, focus 이동
 		setTimeout(function(){
-			$target.find('.popup_inner').attr('tabindex', '0').trigger('focus');
+			// $target.find('.popup_inner').attr('tabindex', '0').trigger('focus');
+			$target.find('.popup_inner').attr('tabindex', '0').focus();
 			$('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
-			$('.popup_wrap.active').attr('aria-hidden', true);
+			$('.popup_wrap2.active').attr('aria-hidden', true);
 			$target.attr('aria-hidden', false);
 		}, 200);
 	}
@@ -32,27 +33,40 @@ function closePop2(target) {
 	if($target.hasClass('active')){
 		$target.removeClass('active');
 
-		console.log('closePop')
+		console.log('closePop2')
 	
-		const $lastPopup = $('.popup_wrap.active:last');
+		const $lastPopup = $('.popup_wrap2.active:last');
 		if($lastPopup.length){
 			// $lastPopup.attr('aria-hidden', false).find('.popup_inner').attr('tabindex', '0').focus();
 			$lastPopup.attr('aria-hidden', false);
 			setTimeout(function(){
-				$lastPopup.find('.popup_inner').attr('tabindex', '0').trigger('focus').css('background', 'red');
-			}, 100);
+				$lastPopup.find('.popup_inner .popup_head').attr('tabindex', '0').focus();
+			}, 500);
 		}
 	
 		// $target.removeClass('active').attr('aria-hidden', true);
 		$target.attr('aria-hidden', true);
-		$target.find('.popup_inner').removeAttr('tabindex');
+		$target.find('.popup_inner .popup_head').removeAttr('tabindex');
 		$('body').removeAttr('style');
 	
 	
 		// const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
-		const popup_count = $('.popup_wrap.active').length;
+		const popup_count = $('.popup_wrap2.active').length;
 		if(popup_count <= 0){
 			$('.wrap').removeClass('scroll_lock').attr('aria-hidden', false);
 		}
 	}
 }
+
+
+
+// 팝업 영역 외 클릭 시 팝업 닫기
+	$(document).on('click', '.popup_wrap2', function(e) {
+		const $target = $(e.target);
+		const $close_popup = $('.popup_wrap2.active[aria-hidden="false"] .popup_inner');
+		
+		if (!$target.closest($close_popup).length) {
+			const $targetId = $target.closest('.popup_wrap2').attr('id');
+			closePop2($targetId);
+		}
+	});
