@@ -275,7 +275,7 @@ function toastAction(click){
 
 	if(isShow) return;
 
-	console.log(toastTimer);
+	// console.log(toastTimer);
 	
 	$toast.find('.toast_msg').text('');
 	toastMsg(msg);
@@ -286,18 +286,6 @@ function toastAction(click){
 	toastTimer = setTimeout(function(){
 		$toast.removeClass('active');
 	}, 1200);
-
-	// if (isShow) return;
-	// $toast.find('.toast_msg').text('');
-	
-	// setTimeout(function(){
-	// 	toastMsg(msg);
-	// 	$toast.addClass('active');
-	// }, 300);
-
-	// setTimeout(function(){
-	// 	$toast.removeClass('active');
-	// }, 1500);
 }
 
 function toastMsg(msg){

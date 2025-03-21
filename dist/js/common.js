@@ -263,22 +263,25 @@ function dimClick() {
 }
 
 /* Toast 팝업 */
+let toastTimer = null;
 function toastAction(click) {
 	const $toast = $(".toast_wrap"),
 		msg = $(click).data("msg");
 	let isShow = $toast.hasClass("active");
 
 	if (isShow) return;
+
+	// console.log(toastTimer);
+
 	$toast.find(".toast_msg").text("");
+	toastMsg(msg);
+	$toast.addClass("active");
 
-	setTimeout(function () {
-		toastMsg(msg);
-		$toast.addClass("active");
-	}, 300);
+	clearTimeout(toastTimer);
 
-	setTimeout(function () {
+	toastTimer = setTimeout(function () {
 		$toast.removeClass("active");
-	}, 1500);
+	}, 1200);
 }
 
 function toastMsg(msg) {
