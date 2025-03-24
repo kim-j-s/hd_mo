@@ -13,13 +13,13 @@
 			// $('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
 
 			setTimeout(function(){
-				$nav.find('.nav_menu_top').focus();
-				$nav.find('.nav_menu_inner').attr('tabindex', '0');
+				$nav.find('.nav_menu_inner').attr('tabindex', '0').focus();
+				$nav.find('.nav_menu_inner').css('background','red');
+				$('.right .allmenu').attr('aria-hidden', 'true');
 				$nav.addClass('active').attr('aria-hidden', 'false');
 				$('.header_inner').find('*').not('.nav_menu_wrap, .right, .right *').attr('aria-hidden', 'true');
-				$('.right .allmenu').attr('aria-hidden', 'true');
 				$('.wrap').children().not('.header').attr('aria-hidden', 'true');
-			}, 200);
+			}, 400);
 			// const at = document.activeElement;
 			// const name = at.className;
 			// $('.nav_menu_bottom').text(name);
