@@ -16,7 +16,7 @@
 			setTimeout(function () {
 				$nav.find(".nav_menu_top").focus();
 				$nav.addClass("active").attr("aria-hidden", "false");
-				$(".header_inner").find("*").not(".nav_menu_wrap, .right, .right *").attr("aria-hidden", "true");
+				$(".header_inner").find("*").not(".nav_menu_wrap, .right").attr("aria-hidden", "true");
 				$(".wrap").children().not(".header").attr("aria-hidden", "true");
 			}, 200);
 			// const at = document.activeElement;
@@ -24,7 +24,7 @@
 			// $('.nav_menu_bottom').text(name);
 		} else {
 			$nav.find(".nav_menu_inner").removeAttr("tabindex");
-			$(".header_inner").find("*").not(".nav_menu_wrap, .right, .right *").attr("aria-hidden", "false");
+			$(".header_inner").find("*").not(".nav_menu_wrap, .right").attr("aria-hidden", "false");
 			$(".wrap").children().not(".header").attr("aria-hidden", "false");
 			$nav.removeClass("active").attr("aria-hidden", "true");
 			$(".header .allmenu").focus();
