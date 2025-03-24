@@ -4,7 +4,7 @@
         wHeight = $WIN.height();
 
   /* 전체메뉴 */
-  $DOM.on('click', '[class^=allmenu]', function(){
+  $DOM.on('click', '.header .right [class^=allmenu]', function(){
     const $this = $(this),
           $nav = $this.closest('.header_inner').find('.nav_menu_wrap'),
 					$nav_wrap = $('.nav_menu_wrap');
