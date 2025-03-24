@@ -15,7 +15,8 @@
 			$nav_wrap.addClass('active').attr('aria-hidden', 'false');
 
 			setTimeout(function(){
-				$nav_wrap.find('.nav_menu_top button:first-child').css('background','blue').attr('tabindex', '0').focus();
+				$nav_wrap.find('.nav_menu_inner').css('background','blue').attr('tabindex', '0');
+				$nav_wrap.find('.nav_menu_top button:first-child').focus();
 			}, 400);
 			// const at = document.activeElement;
 			// const name = at.className;
