@@ -6,26 +6,25 @@
 	/* 전체메뉴 */
 	$DOM.on("click", ".header .right [class^=allmenu]", function () {
 		const $this = $(this),
-			$nav = $this.closest(".header_inner").find(".nav_menu_wrap"),
-			$nav_wrap = $(".nav_menu_wrap");
+			$nav = $this.closest(".header_inner").find(".nav_menu_wrap");
 
 		// if($nav.css('visibility') == 'hidden'){
-		if (!$nav_wrap.hasClass("active")) {
-			$(".wrap").addClass("scroll_lock").attr("aria-hidden", true);
-			$("#header").find("*").not(".nav_menu_wrap, .nav_menu_wrap *").attr("aria-hidden", "true");
-			$nav_wrap.attr("tabindex", "0");
+		if (!$nav.hasClass("active")) {
+			// $('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
 
 			setTimeout(function () {
-				$nav_wrap.find(".nav_menu_top").focus();
-				$nav_wrap.addClass("active").attr("aria-hidden", "false");
-			}, 400);
+				$nav.find(".nav_menu_top").focus();
+				$nav.addClass("active").attr("aria-hidden", "false");
+				$(".header .right").find("*").not(".nav_menu_wrap, .nav_menu_wrap *").attr("aria-hidden", "true");
+				$nav.find(".nav_menu_inner").attr("tabindex", "0");
+			}, 200);
 			// const at = document.activeElement;
 			// const name = at.className;
 			// $('.nav_menu_bottom').text(name);
 		} else {
-			$nav_wrap.attr("tabindex", "-1");
-			$("#header").find("*").not(".nav_menu_wrap, .nav_menu_wrap *").attr("aria-hidden", "false");
-			$nav_wrap.removeClass("active").attr("aria-hidden", "true");
+			$nav.find(".nav_menu_inner").removeAttr("tabindex");
+			$(".header .right").find("*").not(".nav_menu_wrap, .nav_menu_wrap *").attr("aria-hidden", "false");
+			$nav.removeClass("active").attr("aria-hidden", "true");
 			$(".header .allmenu").focus();
 			$(".wrap").removeClass("scroll_lock").removeAttr("aria-hidden");
 		}
