@@ -4,7 +4,7 @@
         wHeight = $WIN.height();
 
   /* 전체메뉴 */
-  $DOM.on('click', '.header .right [class^=allmenu]', function(){
+  $DOM.on('click', '[class^=allmenu]', function(){
     const $this = $(this),
           $nav = $this.closest('.header_inner').find('.nav_menu_wrap'),
 					$nav_wrap = $('.nav_menu_wrap');
@@ -15,7 +15,7 @@
 			$nav_wrap.addClass('active').attr('aria-hidden', 'false');
 
 			setTimeout(function(){
-				$nav_wrap.find('.nav_menu_inner').css('background','blue').attr('tabindex', '0').focus();
+				$nav_wrap.find('.nav_menu_top button:first-child').css('background','blue').attr('tabindex', '0').focus();
 			}, 400);
 			// const at = document.activeElement;
 			// const name = at.className;
