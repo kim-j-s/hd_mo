@@ -15,7 +15,6 @@
 			setTimeout(function(){
 				$nav.find('.nav_menu_top').focus();
 				$nav.addClass('active').attr('aria-hidden', 'false');
-				$('.header .right').find('*').not('.nav_menu_wrap, .nav_menu_wrap *').attr('aria-hidden', 'true');
 				$nav.find('.nav_menu_inner').attr('tabindex', '0');
 			}, 200);
 			// const at = document.activeElement;
@@ -23,7 +22,6 @@
 			// $('.nav_menu_bottom').text(name);
     }else {
 			$nav.find('.nav_menu_inner').removeAttr('tabindex');
-			$('.header .right').find('*').not('.nav_menu_wrap, .nav_menu_wrap *').attr('aria-hidden', 'false');
       $nav.removeClass('active').attr('aria-hidden', 'true');
       $('.header .allmenu').focus();
 			$('.wrap').removeClass('scroll_lock').removeAttr('aria-hidden');
