@@ -13,7 +13,7 @@
 			setTimeout(function(){
 				$nav.find('.nav_menu_inner').attr('tabindex', '0').focus();
 				$nav.addClass('active').attr('aria-hidden', 'false');
-				$('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
+				// $('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
 			}, 100);
     }else {
 			$nav.find('.nav_menu_inner').removeAttr('tabindex');
