@@ -15,8 +15,7 @@
 			$nav.addClass("active").attr("aria-hidden", "false");
 
 			setTimeout(function () {
-				// $nav.find('.nav_menu_top > button:first-child')
-				$nav_next.css("background", "blue").attr("tabindex", "0").focus();
+				$nav.find(".nav_menu_top > button:first-child").css("background", "blue").attr("tabindex", "0").focus();
 			}, 400);
 			// const at = document.activeElement;
 			// const name = at.className;
