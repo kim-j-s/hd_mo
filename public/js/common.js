@@ -9,9 +9,11 @@
           $nav = $this.closest('.header_inner').find('.nav_menu_wrap');
 
     if($nav.css('visibility') == 'hidden'){
-			$nav.find('.nav_menu_inner').attr('tabindex', '0').focus();
-      $nav.addClass('active').attr('aria-hidden', 'false');
+			$nav.addClass('active').attr('aria-hidden', 'false');
 			$('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
+			setTimeout(function(){
+				$nav.find('.nav_menu_inner').attr('tabindex', '0').focus();
+			});
     }else {
 			$nav.find('.nav_menu_inner').removeAttr('tabindex');
       $nav.removeClass('active').attr('aria-hidden', 'true');
