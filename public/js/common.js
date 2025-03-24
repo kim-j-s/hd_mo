@@ -282,26 +282,25 @@ let toastTimer = null;
 function toastAction(click){
 	const $toast = $('.toast_wrap'),
 				msg = $(click).data('msg');
-	let isShow = $toast.hasClass('active');
 
-	if(isShow) return;
+	if(toastTimer != undefined) return;
+	console.log(toastTimer);
 
-	// console.log(toastTimer);
-	
 	$toast.find('.toast_msg').text('');
 	toastMsg(msg);
 	$toast.addClass('active');
 
-	clearTimeout(toastTimer);
+	// clearTimeout(toastTimer);
 
 	toastTimer = setTimeout(function(){
 		$toast.removeClass('active');
+		toastTimer = undefined;
 	}, 1200);
 }
 
 function toastMsg(msg){
 	// const text = $('<div class='toast_msg'></div>').text(msg);
-	$('.toast_msg').text(msg).closest('.toast_wrap').addClass('active');
+	$('.toast_msg').text(msg);
 }
 
 $(window).on('click', function(e) {
