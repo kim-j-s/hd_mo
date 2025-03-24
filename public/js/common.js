@@ -10,13 +10,17 @@
 
     // if($nav.css('visibility') == 'hidden'){
 		if(!$nav.hasClass('active')){
+			$('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
+			// $nav.addClass('active').attr('aria-hidden', 'false');
+			$nav.addClass('active').css('visibility', 'visible');
+			$nav.find('.nav_menu_top').focus().attr('aria-hidden', 'false');
 			setTimeout(function(){
-				$nav.find('.nav_menu_inner').attr('tabindex', '0').focus();
-				$nav.addClass('active').attr('aria-hidden', 'false');
-				// $('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
-			}, 100);
+				// $nav.find('.nav_menu_top').attr('tabindex', '0').css('background', 'red').focus(function(){
+				// 	console.log('a');
+				// });
+			},100);
     }else {
-			$nav.find('.nav_menu_inner').removeAttr('tabindex');
+			// $nav.find('.nav_menu_inner').removeAttr('tabindex');
       $nav.removeClass('active').attr('aria-hidden', 'true');
       $('.header .allmenu').focus();
 			$('.wrap').removeClass('scroll_lock').removeAttr('aria-hidden');
