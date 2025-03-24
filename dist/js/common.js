@@ -11,7 +11,7 @@
 
 		// if($nav.css('visibility') == 'hidden'){
 		if (!$nav_wrap.hasClass("active")) {
-			$(".wrap").addClass("scroll_lock").attr("aria-hidden", true);
+			// $('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
 			$nav_wrap.addClass("active").attr("aria-hidden", "false");
 
 			setTimeout(function () {
