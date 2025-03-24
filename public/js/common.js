@@ -14,7 +14,7 @@
 			$nav.addClass('active').attr('aria-hidden', 'false');
 
 			setTimeout(function(){
-				$nav.find('.nav_menu_inner').css('background','blue').attr('tabindex', '0').focus();
+				$nav.find('.nav_menu_top').css('background','blue').attr('tabindex', '0').focus();
 			}, 200);
     }else {
 			$nav.find('.nav_menu_inner').removeAttr('tabindex');
