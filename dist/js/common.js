@@ -9,10 +9,14 @@
 			$nav = $this.closest(".header_inner").find(".nav_menu_wrap");
 
 		if ($nav.css("visibility") == "hidden") {
+			$nav.find(".nav_menu_inner").attr("tabindex", "0").focus();
 			$nav.addClass("active").attr("aria-hidden", "false");
+			$(".wrap").addClass("scroll_lock").attr("aria-hidden", true);
 		} else {
+			$nav.find(".nav_menu_inner").removeAttr("tabindex");
 			$nav.removeClass("active").attr("aria-hidden", "true");
 			$(".header .allmenu").focus();
+			$(".wrap").removeClass("scroll_lock").removeAttr("aria-hidden");
 		}
 	});
 
@@ -236,7 +240,7 @@ function closePop(target) {
 	if ($target.hasClass("active")) {
 		$target.removeClass("active").attr("opner", null);
 
-		console.log("closePop");
+		// console.log('closePop')
 
 		const $lastPopup = $(".popup_wrap.active:last");
 		if ($lastPopup.length) {
@@ -282,7 +286,7 @@ function toastAction(click) {
 		msg = $(click).data("msg");
 
 	if (toastTimer != undefined) return;
-	console.log(toastTimer);
+	// console.log(toastTimer);
 
 	$toast.find(".toast_msg").text("");
 	toastMsg(msg);
