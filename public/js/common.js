@@ -8,11 +8,12 @@
     const $this = $(this),
           $nav = $this.closest('.header_inner').find('.nav_menu_wrap');
 
-    if($nav.css('visibility') == 'hidden'){
-			$nav.addClass('active').attr('aria-hidden', 'false');
-			$('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
+    // if($nav.css('visibility') == 'hidden'){
+		if(!$nav.hasClass('active')){
 			setTimeout(function(){
 				$nav.find('.nav_menu_inner').attr('tabindex', '0').focus();
+				$nav.addClass('active').attr('aria-hidden', 'false');
+				$('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
 			}, 100);
     }else {
 			$nav.find('.nav_menu_inner').removeAttr('tabindex');
