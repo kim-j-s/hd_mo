@@ -4,25 +4,25 @@
 		wHeight = $WIN.height();
 
 	/* 전체메뉴 */
-	$DOM.on("click", ".header .right [class^=allmenu]", function () {
+	$DOM.on("click", "button[class^=allmenu]", function () {
 		const $this = $(this),
 			$nav = $this.closest(".header_inner").find(".nav_menu_wrap"),
-			$nav_next = $nav.children("*:first-child");
+			$nav_wrap = $(".nav_menu_wrap");
 
 		// if($nav.css('visibility') == 'hidden'){
-		if (!$nav.hasClass("active")) {
+		if (!$nav_wrap.hasClass("active")) {
 			$(".wrap").addClass("scroll_lock").attr("aria-hidden", true);
-			$nav.addClass("active").attr("aria-hidden", "false");
+			$nav_wrap.addClass("active").attr("aria-hidden", "false");
 
 			setTimeout(function () {
-				$nav.find(".nav_menu_top > button:first-child").css("background", "blue").attr("tabindex", "0").focus();
+				$nav_wrap.find(".nav_menu_inner").css("background", "blue").attr("tabindex", "0").focus();
 			}, 400);
 			// const at = document.activeElement;
 			// const name = at.className;
 			// $('.nav_menu_bottom').text(name);
 		} else {
-			$nav.find(".nav_menu_inner").removeAttr("tabindex");
-			$nav.removeClass("active").attr("aria-hidden", "true");
+			$nav_wrap.find(".nav_menu_inner").removeAttr("tabindex");
+			$nav_wrap.removeClass("active").attr("aria-hidden", "true");
 			$(".header .allmenu").focus();
 			$(".wrap").removeClass("scroll_lock").removeAttr("aria-hidden");
 		}
