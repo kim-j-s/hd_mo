@@ -6,7 +6,8 @@
   /* 전체메뉴 */
   $DOM.on('click', '.header .right [class^=allmenu]', function(){
     const $this = $(this),
-          $nav = $this.closest('.header_inner').find('.nav_menu_wrap');
+          $nav = $this.closest('.header_inner').find('.nav_menu_wrap'),
+					$nav_next = $nav.children('*:first-child');
 
     // if($nav.css('visibility') == 'hidden'){
 		if(!$nav.hasClass('active')){
@@ -14,8 +15,12 @@
 			$nav.addClass('active').attr('aria-hidden', 'false');
 
 			setTimeout(function(){
-				$nav.find('.nav_menu_top').css('background','blue').attr('tabindex', '0').focus();
-			}, 200);
+				// $nav.find('.nav_menu_top > button:first-child')
+				$nav_next.css('background','blue').attr('tabindex', '0').focus();
+			}, 400);
+			// const at = document.activeElement;
+			// const name = at.className;
+			// $('.nav_menu_bottom').text(name);
     }else {
 			$nav.find('.nav_menu_inner').removeAttr('tabindex');
       $nav.removeClass('active').attr('aria-hidden', 'true');
