@@ -11,23 +11,25 @@
 		// if($nav.css('visibility') == 'hidden'){
 		if (!$nav.hasClass("active")) {
 			// $('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
-			$nav.find(".nav_menu_inner").attr("tabindex", "0");
 
 			setTimeout(function () {
 				$nav.find(".nav_menu_top").focus();
+				$nav.find(".nav_menu_inner").attr("tabindex", "0");
 				$nav.addClass("active").attr("aria-hidden", "false");
 				$(".header_inner").find("*").not(".nav_menu_wrap, .right, .right *").attr("aria-hidden", "true");
+				$(".right .allmenu").attr("aria-hidden", "true");
 				$(".wrap").children().not(".header").attr("aria-hidden", "true");
 			}, 200);
 			// const at = document.activeElement;
 			// const name = at.className;
 			// $('.nav_menu_bottom').text(name);
 		} else {
+			$(".header .allmenu").focus();
 			$nav.find(".nav_menu_inner").removeAttr("tabindex");
 			$(".header_inner").find("*").not(".nav_menu_wrap, .right, .right *").attr("aria-hidden", "false");
+			$(".right .allmenu").attr("aria-hidden", "false");
 			$(".wrap").children().not(".header").attr("aria-hidden", "false");
 			$nav.removeClass("active").attr("aria-hidden", "true");
-			$(".header .allmenu").focus();
 			$(".wrap").removeClass("scroll_lock").removeAttr("aria-hidden");
 		}
 	});
