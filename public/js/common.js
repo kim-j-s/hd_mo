@@ -11,18 +11,20 @@
 
     // if($nav.css('visibility') == 'hidden'){
 		if(!$nav_wrap.hasClass('active')){
-			// $('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
-			$nav_wrap.addClass('active').attr('aria-hidden', 'false');
+			$('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
+			$('#header').find('*').not('.nav_menu_wrap, .nav_menu_wrap *').attr('aria-hidden', 'true');
 
 			setTimeout(function(){
-				$nav_wrap.find('.nav_menu_inner').css('background','blue').attr('tabindex', '0');
-				$nav_wrap.find('.nav_menu_top button:first-child').focus();
+				$nav_wrap.find('.nav_menu_top').focus();
+				$nav_wrap.addClass('active').attr('aria-hidden', 'false');
+				$nav_wrap.attr('tabindex', '0');
 			}, 400);
 			// const at = document.activeElement;
 			// const name = at.className;
 			// $('.nav_menu_bottom').text(name);
     }else {
-			$nav_wrap.find('.nav_menu_inner').removeAttr('tabindex');
+			$nav_wrap.attr('tabindex', '-1');
+			$('#header').find('*').not('.nav_menu_wrap, .nav_menu_wrap *').attr('aria-hidden', 'false');
       $nav_wrap.removeClass('active').attr('aria-hidden', 'true');
       $('.header .allmenu').focus();
 			$('.wrap').removeClass('scroll_lock').removeAttr('aria-hidden');
