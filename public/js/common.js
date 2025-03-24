@@ -286,8 +286,9 @@ function toastAction(click){
 	if(toastTimer != undefined) return;
 	console.log(toastTimer);
 
-	$toast.find('.toast_msg').text('');
-	toastMsg(msg);
+	// $toast.find('.toast_msg').text('');
+	// toastMsg(msg);
+	$toast.find('.toast_msg').text('실행되었다!');
 	$toast.addClass('active');
 
 	// clearTimeout(toastTimer);
