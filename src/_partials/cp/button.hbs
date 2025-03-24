@@ -1,52 +1,28 @@
-{{!-- 
-	title : 버튼명
---}}
-{{!-- <button type="button" class="btn" {{#if disabled}}disabled{{/if}}><span>{{title}}</span></button> --}}
-
 {{!-- /**
  * @name : 버튼
  * @description : 버튼 컴포넌트
- * @markup : src/_partials/cp/button.hbs
+ * @property
+ *  - title : 버튼명
+ *  - type : 버튼타입[1(default), 2(secondary), 3(tertiary)]
+ *  - size : 버튼사이즈[1(CTA&primary), 2(lg), 3(md), 4(sm), 5(xs)]
+ *  - leftIcon : 왼쪽 아이콘 경로(svg)
+ *  - rightIcon : 오른쪽 아이콘 경로(svg)
+ *  - disabled : 비활성화 여부
  */
-  --}}
-{{!-- type="1" size="1" --}}
+ --}}
+
+
+{{!-- 기존코드 :<button type="button" class="btn" {{#if disabled}}disabled{{/if}}><span>{{title}}</span></button> --}}
+
 
 <button type="button" 
 	class="btn_sample 
 		{{#if type}}btn_ty_{{type}}{{/if}}
 		{{#if size}}btn_s_{{size}}{{/if}}
-		{{#if icon}}btn_icon{{/if}}		
 		" 
-	{{#if disabled}}disabled{{/if}}>
-	
-	{{!-- {{#if leftIcon}}<span>dd<img src="{{leftIcon}}" alt="" /></span>{{/if}} --}}
-	{{!-- {{#if leftIcon}}<span class="icon" style="--iconSrc:url('../../../images/icon/outlined/24/download.svg')"></span>{{/if}} --}}
+	{{#if disabled}}disabled{{/if}}
+	>	
 	{{#if leftIcon}}{{> cp/icon src=leftIcon size=size }}{{/if}}
 	{{> @partial-block }}
-	{{#if rightIcon}}{{> cp/icon src=rightIcon}}{{/if}}
-	
+	{{#if rightIcon}}{{> cp/icon src=rightIcon}}{{/if}}	
 </button>
-
-
-
-{{!-- 
-// type별로 status구분
-status에서 색상을 설정함
-
-
-size속성은 따로
-
-
-각 컴포넌트 별로 hd_button 이런식으로 네이밍
-그 네이밍 클래스 안에서 모든 css속성 관리
-
-클래스 선언
-btn  컴포넌트명
-type(주색상) + status(보조색상)
-size
-
-세가지로 지정
-
-추가적으로 아이콘 여부
-
- --}}
