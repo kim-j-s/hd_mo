@@ -13,11 +13,11 @@
 		if (!$nav_wrap.hasClass("active")) {
 			$(".wrap").addClass("scroll_lock").attr("aria-hidden", true);
 			$("#header").find("*").not(".nav_menu_wrap, .nav_menu_wrap *").attr("aria-hidden", "true");
+			$nav_wrap.attr("tabindex", "0");
 
 			setTimeout(function () {
 				$nav_wrap.find(".nav_menu_top").focus();
 				$nav_wrap.addClass("active").attr("aria-hidden", "false");
-				$nav_wrap.attr("tabindex", "0");
 			}, 400);
 			// const at = document.activeElement;
 			// const name = at.className;
