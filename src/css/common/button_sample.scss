@@ -216,42 +216,6 @@ svg {
 }
 
 
-
-.btn_area {
-	display: flex;
+.btn_area:has(.btn_sample, .btn_link) {
 	justify-content: start;
-	gap: 10px;
-	flex-wrap: wrap;
-
-	> .btn {
-		flex: 1;
-
-		&.full {
-			flex-basis: 100%;
-		}
-	}
-
-	&.column {
-		flex-direction: column;
-	}
-
-	&.ty1 {
-		> .btn {
-			flex-basis: calc(50% - 10px);
-
-			&.full {
-				flex-basis: 100%;
-			}
-		}
-	}
-
-	&.ty2 {
-		> .btn {
-			flex-basis: calc(33.3% - 10px);
-
-			&.full {
-				flex-basis: 100%;
-			}
-		}
-	}
 }
