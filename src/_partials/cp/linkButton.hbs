@@ -1,0 +1,12 @@
+{{!-- /**
+ * @name : 링크버튼
+ * @description : 링크 버튼 컴포넌트
+ * @property
+ * 	- title : 버튼설명
+ *  - size : 버튼사이즈[1, 2, 3, 4,]
+ *  - disabled : 비활성화 여부
+ */
+ --}}
+<a role="button" {{#if title}}aria-label={{title}}{{/if}} class="btn_link {{#if size}}s_{{size}}{{/if}} {{#if disabled}}disabled{{/if}}">
+<span class="text" role="text">{{> @partial-block }}</span>
+</a>
