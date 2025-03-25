@@ -10,12 +10,11 @@
 
 		// if($nav.css('visibility') == 'hidden'){
 		if (!$nav.hasClass("active")) {
-			// $('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
+			$(".wrap").addClass("scroll_lock");
 			$nav.addClass("active");
 
 			setTimeout(function () {
 				$nav.find(".nav_menu_inner").attr("tabindex", "0").focus();
-				$nav.find(".nav_menu_inner").css("background", "skyblue");
 				$(".right .allmenu").attr("aria-hidden", "true");
 				$nav.attr("aria-hidden", "false");
 				$(".header_inner").find("*").not(".nav_menu_wrap, .right, .right *").attr("aria-hidden", "true");

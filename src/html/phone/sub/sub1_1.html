@@ -1,47 +1,17 @@
-{{#> layout/default }}
+{{#> layout/default page-title="dept1 > dept2 > dept3 >"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="타이틀" h-back=true }}
+		<div id="container" class="container">
+			<div style="height:400px; background-color: #ddd;"></div>
+			<div style="height:400px; background-color: #f8f8f8;"></div>
+			<div style="height:400px; background-color: #ddd;"></div>
+		</div>
+		{{> layout/footer }}
+	</div>
 
-<div class="tsf" style="font-family: 'Pretendard'; font-weight: 100;">폰트 테스트</div>
-<div class="tsf" style="font-family: 'Pretendard'; font-weight: 200;">폰트 테스트</div>
-<div class="tsf" style="font-family: 'Pretendard'; font-weight: 300;">폰트 테스트</div>
-<div class="tsf" style="font-family: 'Pretendard'; font-weight: 400;">폰트 테스트</div>
-<div class="tsf" style="font-family: 'Pretendard'; font-weight: 500;">폰트 테스트</div>
-<div class="tsf" style="font-family: 'Pretendard'; font-weight: 600;">폰트 테스트</div>
-<div class="tsf" style="font-family: 'Pretendard'; font-weight: 700;">폰트 테스트</div>
-<div class="tsf" style="font-family: 'Pretendard'; font-weight: 800;">폰트 테스트</div>
-<div class="tsf" style="font-family: 'Pretendard'; font-weight: 900;">폰트 테스트</div>
-
-<style>
-  .tsf {
-    font-size: 20px;
-  }
-
-	.toast_box {
-		display: none;
-		background-color: skyblue;
-	}
-
-	.toast_box.active {
-		display: block;
-		background:red;
-	}
-</style>
+	<!-- s: popup -->
 
 
-<button class="btn_toast" type="button">이름</button>
-333
-<div class="toast_box" aria-live="assertive">
-  <div class="toast_message">김미나</div>
-</div>
-
-<script>
-	$(function(){
-		const btn = $('.btn_toast');
-		const toast = $('.toast_box');
-		let timeoutId = null;
-		btn.on('click', function(){
-			toast.addClass('active');
-		})
-	})
-</script>
+	<!-- e: popup -->
 
 {{/ layout/default }}
