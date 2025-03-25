@@ -10,17 +10,6 @@ svg {
 	justify-content: center;
 	align-items: center;
 	gap:4px;
-
-	// .hd_icon {
-		// display: inline-block;
-		// color: #fff;
-		// mask-size: cover;
-		// background-color: var(--iconColor);
-		// mask-image: var(--iconSrc);
-		// width:24px;
-		// height:24px;
-		// border : 1px solid red;
-	// }
 }
 
 
@@ -33,7 +22,6 @@ svg {
 		background-color: #EA7404;
 		color: #fff;
 		border: 0;
-		--iconColor: #fff;
 
 		&:hover {
 			background-color: #E66202;
@@ -96,7 +84,6 @@ svg {
   * Button Size - s_1(CTA&primary) s_2(lg) s_3(md), s_4(sm), s_5(xs)
   */
 
-  
   .btn {
 	&_s_1 { //CTA&primary
 		min-width: 98px;
@@ -106,6 +93,11 @@ svg {
 		font-size: 18px;
 		// line-height: 150%;
 		font-weight: 700;
+
+		.hd_icon {
+			width: 24px;
+			height: 24px;
+		}
 	}
 	&_s_2 { //lg
 		min-width: 90px;
@@ -115,6 +107,11 @@ svg {
 		font-size: 16px;
 		line-height: 150%;
 		font-weight: 400;
+
+		.hd_icon {
+			width: 24px;
+			height: 24px;
+		}
 	}
 	&_s_3 { //md
 		min-width: 78px;
@@ -124,6 +121,11 @@ svg {
 		font-size: 14px;
 		line-height: 150%;
 		font-weight: 400;
+
+		.hd_icon {
+			width:16px;
+			height:16px;
+		}
 	}
 	&_s_4 { //sm
 		min-width: 64px;
@@ -133,6 +135,11 @@ svg {
 		font-size: 12px;
 		line-height: 150%;
 		font-weight: 400;
+
+		.hd_icon {
+			width:16px;
+			height:16px;
+		}
 	}
 	&_s_5 { //xs
 		min-width: 60px;
@@ -142,12 +149,72 @@ svg {
 		font-size: 12px;
 		line-height: 150%;
 		font-weight: 400;
+
+		.hd_icon {
+			width:16px;
+			height:16px;
+		}
 	}
 
 	//예외
 	&_ty_3.btn_s_1 { font-weight: 400 !important;}
   }
   
+
+
+ /**
+  * Link Button(링크버튼)
+  */
+.btn_link {
+	background-color: #ffffff;
+	color: #1E2124;
+	border: 0;
+
+	span.text { 
+		cursor: pointer;
+		position:relative;
+	}
+
+	&:not(.disabled):hover {
+		background-color: #EEF2F7;
+	}
+	&:not(.disabled):active {
+		color: #1E2124;
+		background-color: #D6E0EB;
+	}
+	&.disabled {
+		span.text {cursor: not-allowed;}
+		color: #8A949E;
+		background-color: #ffffff;
+	}
+
+
+	&.s_1 {
+		border-radius: 6px;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 150%;
+	}
+	&.s_2 {
+		border-radius: 4px;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 150%;
+	}
+	&.s_3 {
+		border-radius: 4px;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 150%;
+	}
+	&.s_4 {
+		border-radius: 4px;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 150%;
+	}
+}
+
 
 
 .btn_area {

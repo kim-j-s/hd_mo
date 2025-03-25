@@ -21,21 +21,43 @@
 }
 
 
-	.hd_icon {
-		display: inline-block;
-		mask-size: cover;
-		background-color: var(--iconColor);
-		mask-image: var(--iconSrc);
-		border : 1px solid red;
 
-		//(임시)버튼 사이즈를 상속받아 icon 사이즈를 조절
-		&.s_1, &.s_2 {
-			width:24px;
-			height: 24px;			
-		}
-		&.s_3, &.s_4, &.s_5 {
-			width:16px;
-			height:16px;			
-		}
+//SVG아이콘 컴포넌트
+.hd_icon {
+	display: inline-block;		
+	background-size: contain;
+}	
+
+
+/**
+* 아이콘 에셋
+*/	
+
+//아이콘 에셋 불러오기
+@mixin getSvg($fileName){
+	background-image: url(../images/#{$fileName}.svg);
+}
+
+.btn {
+	&_ty_1 {
+		.downloadSvg {@include getSvg('icon/outlined/24/download');}		
+		.arrowRightSvg {@include getSvg('icon/outlined/24/arrowRight');}
 	}
-	
+	&_ty_2 {
+		.downloadSvg { @include getSvg('icon/outlined/24/download_ty2');}
+		.arrowRightSvg {@include getSvg('icon/outlined/24/arrowRight_ty2');}
+	}
+	&_ty_3 { 
+		.downloadSvg { @include getSvg('icon/outlined/24/download_ty3');}
+		.arrowRightSvg {@include getSvg('icon/outlined/24/arrowRight_ty3');}
+	}
+}
+
+//추후 btn_sample클래스명 변경시 위의 .btn그룹으로 편입 예정
+.btn_sample {
+	&:disabled {
+		.downloadSvg { @include getSvg('icon/outlined/24/download_disabled')}
+		.arrowRightSvg {@include getSvg('icon/outlined/24/arrowRight_disabled');}
+
+	}
+}
