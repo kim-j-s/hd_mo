@@ -9,7 +9,7 @@
  *  - disabled : 비활성화 여부
  */
  --}}
-<button type="button" class="btn_sample {{#if type}}btn_ty_{{type}}{{/if}} {{#if size}}btn_s_{{size}}{{/if}}" {{#if disabled}}disabled{{/if}}>
+<button type="button" class="btn_sample{{#if type}} btn_ty_{{type}}{{/if}}{{#if size}} btn_s_{{size}}{{/if}}"{{#if disabled}} disabled{{/if}}>
 {{#if leftIcon}}{{> cp/icon iconClass=leftIcon}}{{/if}}
 <span class="text">{{> @partial-block }}</span>
 {{#if rightIcon}}{{> cp/icon iconClass=rightIcon}}{{/if}}
