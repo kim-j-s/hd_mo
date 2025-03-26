@@ -142,4 +142,13 @@ function generateUUID() {
 
 $(function () {
 	dimClick();
+
+	document.addEventListener("focusin", function () {
+		// 현재 포커스된 요소를 가져오기
+		const focusedElement = document.activeElement;
+
+		// 포커스된 요소의 class명을 class 'a'를 가진 div에 텍스트로 표시
+		const classNameDiv = document.querySelector(".focus_name");
+		classNameDiv.textContent = focusedElement.className; // class명을 텍스트로 설정
+	});
 });
