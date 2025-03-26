@@ -2,7 +2,10 @@
  * @name : icon
  * @description : icon 컴포넌트
  * @property
- *  - iconClass : 이미지 설정 class
+ *  - id : 아이콘 id
+ *  - class : 아이콘 class
+ *  - iconClass : 이미지를 url로 불러오도록 설정해주는 class이름
+ *  예시) .downloadSvg {@include getSvg('icon/outlined/24/download');}
  */
  --}}
-<span class="hd_icon {{#if iconClass}}{{iconClass}}{{/if}}"></span>
+<span {{#if id}}id={{id}}{{/if}} class="hd_icon {{#if iconClass}}{{iconClass}}{{/if}} {{#if class}}{{class}}{{/if}}"></span>
