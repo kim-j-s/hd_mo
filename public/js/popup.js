@@ -28,7 +28,8 @@ function openPop($triggerEl,target){
 			}else {
 				$pop_cont.attr('tabindex', '0').focus();
 			}
-			$('.wrap').addClass('scroll_lock').attr('aria-hidden', true);
+			$('body').addClass('scroll_lock');
+			$('.wrap').attr('aria-hidden', true);
 			$('.popup_wrap.active').attr('aria-hidden', true);
 			$target.attr('aria-hidden', false);
 		}, 200);
@@ -47,6 +48,7 @@ function closePop(target) {
 
 	if($target.hasClass('active')){
 		$target.removeClass('active').attr('opner',null);
+		$('body').removeAttr('style');
 
 		// console.log('closePop')
 	
@@ -61,13 +63,12 @@ function closePop(target) {
 				}else {
 					$lastPop_cont.attr('tabindex', '0').focus();
 				}
+	
+				// $target.removeClass('active').attr('aria-hidden', true);
+				$target.attr('aria-hidden', true);
+				// $target.find('.popup_inner').removeAttr('tabindex');
 			}, 200);
 		}
-	
-		// $target.removeClass('active').attr('aria-hidden', true);
-		$target.attr('aria-hidden', true);
-		$target.find('.popup_inner').removeAttr('tabindex');
-		$('body').removeAttr('style');
 	
 	
 		// const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
