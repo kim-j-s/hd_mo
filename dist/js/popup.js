@@ -32,7 +32,7 @@ function openPop($triggerEl, target) {
 			// .attr('aria-hidden', true);
 			$(".popup_wrap.active").attr("aria-hidden", true);
 			$target.attr("aria-hidden", false);
-		}, 400);
+		}, 200);
 	}
 
 	// bottom 팝업 - drag
@@ -45,6 +45,8 @@ function openPop($triggerEl, target) {
 function closePop(target) {
 	const $target = $("#" + target);
 	const $opener = $('[triggerId="' + $target.attr("opner") + '"]');
+	const $pop_header = $target.find(".popup_inner").children(".popup_head"),
+		$pop_cont = $target.find(".popup_inner").children(".popup_cont");
 
 	if ($target.hasClass("active")) {
 		$target.removeClass("active").attr("opner", null);
@@ -67,7 +69,13 @@ function closePop(target) {
 
 		// $target.removeClass('active').attr('aria-hidden', true);
 		$target.attr("aria-hidden", true);
-		$target.find(".popup_inner").removeAttr("tabindex");
+
+		// $target.find('.popup_inner').removeAttr('tabindex');
+		if ($pop_header.length) {
+			$pop_header.removeAttr("tabindex");
+		} else {
+			$pop_cont.removeAttr("tabindex");
+		}
 		$("body").removeAttr("style");
 
 		// const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
