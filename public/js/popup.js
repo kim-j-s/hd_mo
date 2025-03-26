@@ -28,7 +28,7 @@ function openPop($triggerEl,target){
 			}else {
 				$pop_cont.attr('tabindex', '0').focus();
 			}
-			$('body').addClass('scroll_lock')
+			$('body').addClass('scroll_lock');
 			// .attr('aria-hidden', true);
 			$('.popup_wrap.active').attr('aria-hidden', true);
 			$target.attr('aria-hidden', false);
