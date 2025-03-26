@@ -6,8 +6,8 @@
 	<div class="guide_h4">Button variation(타입별)</div>
 	<div class="guide_discription">
 		<p>> cp/button</p>
-		<p>- type : 버튼타입[1(default), 2(secondary), 3(tertiary)]</p>
-		<p>- size : 버튼사이즈[1(CTA&primary), 2(lg), 3(md), 4(sm), 5(xs)]</p>
+		<p>- type : 버튼타입[1(default)-기본적용, 2(secondary), 3(tertiary)]</p>
+		<p>- size : 버튼사이즈[1(CTA&primary)-기본적용, 2(lg), 3(md), 4(sm), 5(xs)]</p>
 		<p>- leftIcon : 왼쪽 아이콘 설정 class</p>
 		<p>- rightIcon : 오른쪽 아이콘 설정 class</p>
 		<p>- disabled : 비활성화 여부</p>
@@ -16,7 +16,7 @@
 	<!-- [Type(1) - default] -->
 	<div class="guide_discription">[Type(1) default] type="1"</div>
 	<div class="btn_area">
-	{{#> cp/button type="1" size="1"}}size="1"{{/ cp/button}}
+	{{#> cp/button}}size="1"{{/ cp/button}}
 	{{#> cp/button type="1" size="2"}}size="2"{{/ cp/button}}
 	{{#> cp/button type="1" size="3"}}size="3"{{/ cp/button}}
 	{{#> cp/button type="1" size="4"}}size="4"{{/ cp/button}}
@@ -194,15 +194,19 @@
 	<div class="guide_h4">Link Button</div>
 	<div class="guide_discription">
 		<p>> cp/linkButton</p>
-		<p>- title : 버튼설명(aria-label)</p>
-		<p>- size : 버튼사이즈[1,2,3,4]</p>
-		<p>- disabled : 비활성화 여부</p>
+		<p>- href : 링크주소(지정하지 않을 경우 '#'적용)</p>
+		<p>- id : 링크버튼 id </p>
+		<p>- class : 링크버튼 class</p>
+		<p>- title : 버튼설명(표시될 링크 툴팁)</p>
+		<p>- size : 버튼사이즈[1(기본적용),2,3,4]</p>
+		<p>- target : target속성(_blank의 경우 title='새창에서 열기'로 적용됨)</p>
+		<p>- blank : 새창에서 열기 여부(true일 경우 title='새창에서 열기'로 적용됨)</p>
 	</div>
 
 	<!-- [Type - Icon] -->
 	<div class="guide_discription">[linkButton size=1]</div>
 	<div class="btn_area">
-	{{#> cp/linkButton size="1" title="바로가기" target="_self"}}링크{{/ cp/linkButton}}
+	{{#> cp/linkButton title="바로가기" target="_self"}}링크{{/ cp/linkButton}}
 	{{#> cp/linkButton size="1" target="_blank" blank="true"}}링크(새창에서열기){{/ cp/linkButton}}
 	</div>
 	<div class="guide_discription">[linkButton size=2]</div>
