@@ -1,6 +1,6 @@
 {{#> layout/default page-title="dept1 > dept2 > dept3 >"}}
 <div id="wrap" class="wrap">
-	{{> layout/header h-title="타이틀 t3" h-back=true }}
+	{{> layout/header h-title="타이틀 t1" h-back=true }}
 	<div id="container" class="container">
 		<button type="button" class="btn popup_open" onclick="openPop(this,'pop_type01');"><span>Full 팝업열기</span></button>
 		<button type="button" class="btn popup_open" onclick="openPop(this,'pop_type02');"><span>Layer 팝업열기</span></button>
@@ -10,49 +10,13 @@
 		<div class="btn popup_open" role="button" title="Bottom 선택 팝업열기">
 			<span>value</span>
 		</div>
-
-		<style>
-			.t {
-				margin: 10px 0;				
-			}
-			.btn_select[aria-disabled="true"] {
-				background-color: red;
-			}
-			.btn_select.active > span:after {
-				content: '선택됨';
-				position: absolute;
-				width: 0;
-				height: 0;
-				font-size: 0;
-			}
-		</style>
-
-		<div class="t">선택 전</div>
-		<div class="btn popup_open btn_select" role="button" title="Bottom 선택 팝업열기">
-			<span>value</span>
-		</div>
-		<div class="t">선택 후</div>
-		<div class="btn popup_open btn_select active" role="button" title="Bottom 선택 팝업열기">
-			<span>value</span>
-		</div>
-		<div class="t">선택 불가능</div>
-		<div class="btn popup_open btn_select" role="button" title="Bottom 선택 팝업열기" aria-disabled="true">
-			<span>value</span>
-		</div>
-		<div class="t">선택된 값이 있는 상태로 선택 불가능</div>
-		<div class="btn popup_open btn_select active" role="button" title="Bottom 선택 팝업열기" aria-disabled="true">
-			<span>value</span>
-		</div>
 	</div>
-
 
 	<!-- 추후 적용 문구
 	선택목록 :
 	호출 버튼 : 이용구분 시 : 이용구분 선택목록 보기
 	호출 버튼 : 선택된 요소가 존재하는 경우 : 이용구분 선택목록 보기 : 선택된 요소명 선택됨 -> 선택됨은 sr_only로 처리
 	추후 적용 문구 -->
-
-
 	{{> layout/footer }}
 </div>
 	

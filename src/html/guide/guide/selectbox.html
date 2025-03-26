@@ -1,0 +1,63 @@
+{{#> layout/default page-title="dept1 > dept2 > dept3 >"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="타이틀 t3" h-back=true }}
+	<div id="container" class="container">
+		<style>
+			.guide_t{
+				margin: 10px 0;
+				font-size: 14px;
+				font-weight: bold;		
+			}
+		</style>
+
+		<div class="guide_t">- 선택 전</div>
+		<div class="btn popup_open btn_select" role="button" title="Bottom 선택 팝업열기" onclick="openPop(this, 'select_option_ty1');">
+			<span>옵션 value</span>
+		</div>
+
+		<div class="guide_t">- 선택 후</div>
+		<div class="btn popup_open btn_select active" role="button" title="Bottom 선택 팝업열기" onclick="openPop(this, 'select_option_ty1');">
+			<span>옵션 value</span>
+		</div>
+
+		<div class="guide_t">- 선택 불가능</div>
+		<div class="btn popup_open btn_select" role="button" title="Bottom 선택 팝업열기" aria-disabled="true" onclick="openPop(this, 'select_option_ty1');">
+			<span>옵션 value</span>
+		</div>
+
+		<div class="guide_t">- 선택 불가능(선택된 값이 있는 상태)</div>
+		<div class="btn popup_open btn_select active" role="button" title="Bottom 선택 팝업열기" aria-disabled="true" onclick="openPop(this, 'select_option_ty1');">
+			<span>옵션 value</span>
+		</div>
+	</div>
+
+
+	<!-- 추후 적용 문구
+	선택목록 :
+	호출 버튼 : 이용구분 시 : 이용구분 선택목록 보기
+	호출 버튼 : 선택된 요소가 존재하는 경우 : 이용구분 선택목록 보기 : 선택된 요소명 선택됨 -> 선택됨은 sr_only로 처리
+	추후 적용 문구 -->
+
+
+	{{> layout/footer }}
+</div>
+	<!-- s: Bottom 팝업 -->
+	{{#> popup/popup_bottom popup-id="select_option_ty1" popup-title="selectbox 타이틀" }}
+		<div class="popup_cont">
+			<div class="bottom_select_opt">
+				<div role="button" class="option active" title="선택됨"><span>value 1</span></div>
+				<div role="button" class="option"><span>value 22</span></div>
+				<div role="button" class="option"><span>value 333</span></div>
+				<div role="button" class="option"><span>value 4444</span></div>
+				<div role="button" class="option" aria-disabled="true"><span>value 4444</span></div>
+			</div>
+		</div>
+		<div class="popup_bottom">
+			<div class="btn_area">
+				<button type="button" class="btn"><span>확인</span></button>
+			</div>
+		</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: Bottom 팝업 -->
+
+{{/ layout/default }}

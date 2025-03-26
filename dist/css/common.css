@@ -1,6 +1,9 @@
 @charset "UTF-8";
 /* common */
 /* Common */
+body {
+	overflow: hidden;
+}
 .wrap {
 	position: relative;
 	display: -webkit-box;
@@ -11,7 +14,6 @@
 	-ms-flex-direction: column;
 	flex-direction: column;
 	height: 100%;
-	overflow: hidden;
 }
 .wrap .container {
 	overflow-y: auto;
@@ -230,6 +232,22 @@
 .btn_area.ty2 > .btn.full {
 	-ms-flex-preferred-size: 100%;
 	flex-basis: 100%;
+}
+.btn_select {
+	background-color: #fff;
+	font-weight: bold;
+	border: 1px solid #000;
+}
+.btn_select[aria-disabled="true"] {
+	background-color: gray;
+	color: #fff;
+}
+.btn_select.active > span:after {
+	content: "선택됨";
+	position: absolute;
+	width: 0;
+	height: 0;
+	font-size: 0;
 }
 /* Button */
 svg {

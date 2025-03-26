@@ -5,7 +5,9 @@
 	font-size: 12px;
 	text-align: center;
 
-	&:focus-within {border: 2px solid red !important;}
+	&:focus-within {
+		border: 2px solid red !important;
+	}
 }
 
 
@@ -45,6 +47,31 @@
 
 			&.full {
 				flex-basis: 100%;
+			}
+		}
+	}
+}
+
+
+// selectbox btn
+.btn_select {
+	background-color: #fff;
+	font-weight: bold;
+	border: 1px solid #000;
+
+	&[aria-disabled="true"] {
+		background-color: gray;
+		color: #fff;
+	}
+
+	&.active {
+		> span {
+			&:after {
+				content: '선택됨';
+				position: absolute;
+				width: 0;
+				height: 0;
+				font-size: 0;
 			}
 		}
 	}
