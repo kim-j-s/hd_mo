@@ -28,11 +28,10 @@ function openPop($triggerEl, target) {
 			} else {
 				$pop_cont.attr("tabindex", "0").focus();
 			}
-			$("body").addClass("scroll_lock");
-			// .attr('aria-hidden', true);
+			$(".wrap").addClass("scroll_lock").attr("aria-hidden", true);
 			$(".popup_wrap.active").attr("aria-hidden", true);
 			$target.attr("aria-hidden", false);
-		}, 200);
+		}, 0);
 	}
 
 	// bottom 팝업 - drag
@@ -62,22 +61,21 @@ function closePop(target) {
 				} else {
 					$lastPop_cont.attr("tabindex", "0").focus();
 				}
-			}, 400);
+			}, 0);
 		}
 
 		// $target.removeClass('active').attr('aria-hidden', true);
 		$target.attr("aria-hidden", true);
-		$target.find(".popup_head, .popup_cont").removeAttr("tabindex");
+		$target.find(".popup_inner").removeAttr("tabindex");
 		$("body").removeAttr("style");
 
 		// const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
 		const popup_count = $(".popup_wrap.active").length;
 		if (popup_count <= 0) {
-			$("body").removeClass("scroll_lock");
-			// .attr('aria-hidden', false);
+			$(".wrap").removeClass("scroll_lock").attr("aria-hidden", false);
 			setTimeout(() => {
 				$opener.focus();
-			}, 400);
+			}, 0);
 		}
 	}
 }
