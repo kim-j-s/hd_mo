@@ -75,7 +75,7 @@ function closePop(target) {
 		const popup_count = $('.popup_wrap.active').length;
 		if(popup_count <= 0){
 			$('.wrap').removeClass('scroll_lock').attr('aria-hidden', false);
-			setTimeout(()=>{$opener.focus();},200);
+			setTimeout(()=>{$opener.focus();},400);
 		}
 	}
 }

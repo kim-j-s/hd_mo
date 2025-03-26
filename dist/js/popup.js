@@ -76,7 +76,7 @@ function closePop(target) {
 			$(".wrap").removeClass("scroll_lock").attr("aria-hidden", false);
 			setTimeout(() => {
 				$opener.focus();
-			}, 200);
+			}, 400);
 		}
 	}
 }
