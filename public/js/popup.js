@@ -32,7 +32,7 @@ function openPop($triggerEl,target){
 			$('.wrap').attr('aria-hidden', true);
 			$('.popup_wrap.active').attr('aria-hidden', true);
 			$target.attr('aria-hidden', false);
-		}, 4000);
+		}, 400);
 	}
 
 	// bottom 팝업 - drag
@@ -62,7 +62,7 @@ function closePop(target) {
 				}else {
 					$lastPop_cont.attr('tabindex', '0').focus();
 				}
-			}, 4000);
+			}, 400);
 		}
 	
 		// $target.removeClass('active').attr('aria-hidden', true);
