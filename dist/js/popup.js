@@ -20,7 +20,14 @@ function openPop($triggerEl, target) {
 
 		//렌더링 후, focus 이동
 		setTimeout(function () {
-			$target.find(".popup_inner").attr("tabindex", "0").focus();
+			const $pop_header = $target.find(".popup_inner").children(".popup_head"),
+				$pop_cont = $target.find(".popup_inner").children(".popup_cont");
+
+			if ($pop_header) {
+				$pop_header.attr("tabindex", "0").focus();
+			} else {
+				$pop_cont.attr("tabindex", "0").focus();
+			}
 			$(".wrap").addClass("scroll_lock").attr("aria-hidden", true);
 			$(".popup_wrap.active").attr("aria-hidden", true);
 			$target.attr("aria-hidden", false);

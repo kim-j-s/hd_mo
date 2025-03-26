@@ -77,7 +77,7 @@
 				<button type="button" class="btn popup_open" onclick="openPop(this,'pop_type03');"><span>Bottom 팝업열기1</span></button>
 				<button type="button" class="btn popup_open" onclick="openPop(this,'pop_type03');"><span>Bottom 팝업열기2</span></button>
 				<button type="button" class="btn popup_open" onclick="openPop(this,'pop_type05');" title="Bottom 선택 팝업열기"><span>value</span></button>
-				<div class="btn popup_open" role="button" aria-label="Bottom 선택 팝업열기">
+				<div class="btn popup_open" role="button" title="Bottom 선택 팝업열기">
 					<span>value</span>
 				</div>
 
@@ -85,10 +85,10 @@
 					.t {
 						margin: 1rem 0;
 					}
-					.cc[aria-disabled="true"] {
+					.btn_select[aria-disabled="true"] {
 						background-color: red;
 					}
-					.cc.active > span:after {
+					.btn_select.active > span:after {
 						content: "선택됨";
 						position: absolute;
 						width: 0;
@@ -98,19 +98,19 @@
 				</style>
 
 				<div class="t">선택 전</div>
-				<div class="btn popup_open cc" role="button" title="Bottom 선택 팝업열기">
+				<div class="btn popup_open btn_select" role="button" title="Bottom 선택 팝업열기">
 					<span>value</span>
 				</div>
 				<div class="t">선택 후</div>
-				<div class="btn popup_open cc active" role="button" title="Bottom 선택 팝업열기">
+				<div class="btn popup_open btn_select active" role="button" title="Bottom 선택 팝업열기">
 					<span>value</span>
 				</div>
 				<div class="t">선택 불가능</div>
-				<div class="btn popup_open cc" role="button" title="Bottom 선택 팝업열기" aria-disabled="true">
+				<div class="btn popup_open btn_select" role="button" title="Bottom 선택 팝업열기" aria-disabled="true">
 					<span>value</span>
 				</div>
 				<div class="t">선택된 값이 있는 상태로 선택 불가능</div>
-				<div class="btn popup_open cc active" role="button" title="Bottom 선택 팝업열기" aria-disabled="true">
+				<div class="btn popup_open btn_select active" role="button" title="Bottom 선택 팝업열기" aria-disabled="true">
 					<span>value</span>
 				</div>
 			</div>
@@ -266,7 +266,6 @@
 					<div class="draggable" aria-hidden="true">
 						<div class="move"></div>
 					</div>
-					<div class="popup_head">팝업 타이틀</div>
 					<div class="popup_cont">
 						팝업내용입니다
 						<br />
