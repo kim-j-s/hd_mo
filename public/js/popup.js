@@ -28,6 +28,7 @@ function openPop($triggerEl,target){
 			}else {
 				$pop_cont.attr('tabindex', '0').focus();
 			}
+			$('.focus_name').text('focus : ' + document.activeElement.className);
 			$('body').addClass('scroll_lock');
 			$('.wrap').attr('aria-hidden', true);
 			$('.popup_wrap.active').attr('aria-hidden', true);
