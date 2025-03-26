@@ -61,7 +61,7 @@ function closePop(target) {
 				} else {
 					$lastPop_cont.attr("tabindex", "0").focus();
 				}
-			}, 400);
+			}, 200);
 		}
 
 		// $target.removeClass('active').attr('aria-hidden', true);
