@@ -23,7 +23,7 @@ function openPop($triggerEl,target){
 			const $pop_header = $target.find('.popup_inner').children('.popup_head'),
 						$pop_cont = $target.find('.popup_inner').children('.popup_cont');
 
-			if($pop_header){
+			if($pop_header.length){
 				$pop_header.attr('tabindex', '0').focus();
 			}else {
 				$pop_cont.attr('tabindex', '0').focus();
