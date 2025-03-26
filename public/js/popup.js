@@ -15,7 +15,8 @@ function openPop($triggerEl,target){
 		}
 		
 		$target.attr('opner', openerId);
-		$('body').css('overscroll-behavior','contain');
+		$('body').css('overscroll-behavior','contain').addClass('scroll_lock');
+		$('.wrap').attr('aria-hidden', true);
 		$target.addClass('active');
 
 		//렌더링 후, focus 이동
@@ -28,11 +29,9 @@ function openPop($triggerEl,target){
 			}else {
 				$pop_cont.attr('tabindex', '0').focus();
 			}
-			$('body').addClass('scroll_lock');
-			$('.wrap').attr('aria-hidden', true);
 			$('.popup_wrap.active').attr('aria-hidden', true);
 			$target.attr('aria-hidden', false);
-		}, 400);
+		}, 200);
 	}
 
 	// bottom 팝업 - drag
@@ -84,6 +83,7 @@ function closePop(target) {
 		const popup_count = $('.popup_wrap.active').length;
 		if(popup_count <= 0){
 			$('body').removeClass('scroll_lock');
+			$('.wrap').attr('aria-hidden', false);
 			// .attr('aria-hidden', false);
 			setTimeout(()=>{$opener.focus();},400);
 		}
@@ -152,6 +152,6 @@ document.addEventListener('focusin', function() {
 	const focusedElement = document.activeElement;
 
 	// 포커스된 요소의 class명을 class 'a'를 가진 div에 텍스트로 표시
-	const classNameDiv = document.querySelector('.focus_name');
+	const classNameDiv = document.querySelector('.header_title');
 	classNameDiv.textContent = focusedElement.className; // class명을 텍스트로 설정
 });
