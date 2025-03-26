@@ -48,7 +48,6 @@ function closePop(target) {
 
 	if($target.hasClass('active')){
 		$target.removeClass('active').attr('opner',null);
-		$('body').removeAttr('style');
 
 		// console.log('closePop')
 	
@@ -63,18 +62,20 @@ function closePop(target) {
 				}else {
 					$lastPop_cont.attr('tabindex', '0').focus();
 				}
-	
-				// $target.removeClass('active').attr('aria-hidden', true);
-				$target.attr('aria-hidden', true);
-				// $target.find('.popup_inner').removeAttr('tabindex');
 			}, 400);
 		}
+	
+		// $target.removeClass('active').attr('aria-hidden', true);
+		$target.attr('aria-hidden', true);
+		$target.find('.popup_head, .popup_cont').removeAttr('tabindex');
+		$('body').removeAttr('style');
 	
 	
 		// const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
 		const popup_count = $('.popup_wrap.active').length;
 		if(popup_count <= 0){
-			$('.wrap').removeClass('scroll_lock').attr('aria-hidden', false);
+			$('body').removeClass('scroll_lock');
+			$('.wrap').attr('aria-hidden', false);
 			setTimeout(()=>{$opener.focus();},400);
 		}
 	}
