@@ -67,7 +67,7 @@ function closePop(target) {
 				// $target.removeClass('active').attr('aria-hidden', true);
 				$target.attr('aria-hidden', true);
 				// $target.find('.popup_inner').removeAttr('tabindex');
-			}, 200);
+			}, 400);
 		}
 	
 	
