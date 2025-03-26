@@ -15,8 +15,7 @@ function openPop($triggerEl, target) {
 		}
 
 		$target.attr("opner", openerId);
-		$("body").css("overscroll-behavior", "contain").addClass("scroll_lock");
-		$(".wrap").attr("aria-hidden", true);
+		$("body").css("overscroll-behavior", "contain");
 		$target.addClass("active");
 
 		//렌더링 후, focus 이동
@@ -29,6 +28,8 @@ function openPop($triggerEl, target) {
 			} else {
 				$pop_cont.attr("tabindex", "0").focus();
 			}
+			$("body").addClass("scroll_lock");
+			// .attr('aria-hidden', true);
 			$(".popup_wrap.active").attr("aria-hidden", true);
 			$target.attr("aria-hidden", false);
 		}, 200);
@@ -44,8 +45,6 @@ function openPop($triggerEl, target) {
 function closePop(target) {
 	const $target = $("#" + target);
 	const $opener = $('[triggerId="' + $target.attr("opner") + '"]');
-	const $pop_header = $target.find(".popup_inner").children(".popup_head"),
-		$pop_cont = $target.find(".popup_inner").children(".popup_cont");
 
 	if ($target.hasClass("active")) {
 		$target.removeClass("active").attr("opner", null);
@@ -68,20 +67,13 @@ function closePop(target) {
 
 		// $target.removeClass('active').attr('aria-hidden', true);
 		$target.attr("aria-hidden", true);
-
-		// $target.find('.popup_inner').removeAttr('tabindex');
-		if ($pop_header.length) {
-			$pop_header.removeAttr("tabindex");
-		} else {
-			$pop_cont.removeAttr("tabindex");
-		}
+		$target.find(".popup_head, .popup_cont").removeAttr("tabindex");
 		$("body").removeAttr("style");
 
 		// const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
 		const popup_count = $(".popup_wrap.active").length;
 		if (popup_count <= 0) {
 			$("body").removeClass("scroll_lock");
-			$(".wrap").attr("aria-hidden", false);
 			// .attr('aria-hidden', false);
 			setTimeout(() => {
 				$opener.focus();
@@ -142,13 +134,4 @@ function generateUUID() {
 
 $(function () {
 	dimClick();
-});
-
-document.addEventListener("focusin", function () {
-	// 현재 포커스된 요소를 가져오기
-	const focusedElement = document.activeElement;
-
-	// 포커스된 요소의 class명을 class 'a'를 가진 div에 텍스트로 표시
-	const classNameDiv = document.querySelector(".header_title");
-	classNameDiv.textContent = focusedElement.className; // class명을 텍스트로 설정
 });
