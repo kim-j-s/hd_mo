@@ -55,7 +55,7 @@ class HD_Popup {
 			this.$openerId = getOpenerId;
 		}
 
-		this.$target.attr("openerId", this.$openerId);
+		this.$target.attr("opener", this.$openerId);
 
 		return new Promise((resolve, reject) => {
 			setTimeout(() => {
@@ -94,19 +94,29 @@ class HD_Popup {
 
 			const $lastPopup = $(".popup_wrap2.active:last");
 			console.log("$lastPopup", $lastPopup);
-			this.$target.attr("aria-hidden", true);
+			console.log("$lastPopup[0]", $lastPopup[0]);
 
 			if ($lastPopup.length) {
-				$lastPopup.attr("aria-hidden", false);
-				setTimeout(() => {
-					const $lastPop_header = $lastPopup.find(".popup_head");
-					const $lastPop_cont = $lastPopup.find(".popup_cont");
+				const $lastPop_header = $lastPopup.find(".popup_head")[0];
+				const $lastPop_cont = $lastPopup.find(".popup_cont")[0];
 
-					if ($lastPop_header.length) {
-						$lastPop_header.attr("tabindex", "0").focus();
+				setTimeout(() => {
+					$lastPopup.attr("aria-hidden", false);
+					this.$target.attr("aria-hidden", true);
+
+					console.log("닫기이벤트 : focus move-start");
+					console.log("document.activeElement", document.activeElement);
+					if ($lastPop_header) {
+						// $lastPop_header.attr('tabindex', '0').focus();
+						$lastPop_header.setAttribute("tabindex", "0");
+						$lastPop_header.focus();
 					} else {
-						$lastPop_cont.attr("tabindex", "0").focus();
+						// $lastPop_cont.attr('tabindex', '0').focus();
+						$lastPop_cont.setAttribute("tabindex", "0");
+						$lastPop_cont.focus();
 					}
+					console.log("document.activeElement", document.activeElement);
+					console.log("닫기이벤트 : focus move-end");
 				}, 400);
 			}
 
@@ -126,9 +136,11 @@ class HD_Popup {
 			if (popup_count <= 0) {
 				console.log("여기");
 				$("body").removeClass("scroll_lock");
-				// .attr('aria-hidden', false);
+				$(".wrap").attr("aria-hidden", false);
 				setTimeout(() => {
+					this.$target.attr("aria-hidden", true);
 					$(this.$triggerEl).focus();
+					console.log(document.activeElement);
 				}, 400);
 			}
 		}
