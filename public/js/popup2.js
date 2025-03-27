@@ -33,7 +33,7 @@ class HD_Popup {
 
 		console.log('this.$popup_dim',this.$popup_dim)
 		//dim 클릭 시 팝업 닫기
-		this.$popup_dim.on('click',()=>{this.dimClick()});
+		this.$popup_dim.on('click',()=>{this.close()});
 
 		this.createOpenerId().then(()=>{
 			this.focusMove();
@@ -146,18 +146,7 @@ class HD_Popup {
 			}
 		}
 
-	}
-
-	//dim 클릭 시 팝업 닫기
-	dimClick(){
-
-		console.log('dim click');
-		this.close();
-	
-	}
-
-
-	
+	}	
 }
 
 
@@ -272,9 +261,9 @@ function openPop2($triggerEl,target){
 // }
 
 // 팝업 영역 외 클릭 시 팝업 닫기
-function dimClick2(){
+// function dimClick2(){
 
-	console.log('dim클릭')
+// 	console.log('dim클릭')
 
 
 
@@ -298,7 +287,7 @@ function dimClick2(){
 	// 		// closePop($targetId);
 	// 	}
 	// });
-}
+// }
 
 // UUID생성
 // function generateUUID() {
