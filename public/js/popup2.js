@@ -150,7 +150,7 @@ class HD_Popup {
 			setTimeout(()=>{this.$triggerEl.focus();},400);
 		}
 		
-
+		console.log('document.activeElement',document.activeElement);
 		
 
 		// if($lastPopup.length){			
