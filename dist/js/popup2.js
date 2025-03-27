@@ -15,7 +15,7 @@ class HD_Popup {
 		this.$target = $("#" + target);
 		this.$openerId = null;
 		this.$popup_dim = this.$target.find(".popup_dim");
-		this.$triggerEl = $($triggerEl).closest(".popup_wrap2") || $triggerEl;
+		this.$triggerEl = $($triggerEl).closest(".popup_wrap2").length > 0 ? $($triggerEl).closest(".popup_wrap2") : $triggerEl;
 		this.$closeBtn = this.$target.find(".popup_close");
 	}
 
@@ -32,14 +32,13 @@ class HD_Popup {
 		}
 
 		//닫기버튼 이벤트리스너 추가
-		this.$target.find(".popup_close").on("click", () => {
-			this.close();
+		this.$target.find(".popup_close").on("click", e => {
+			this.close(e);
 		});
 
-		console.log("this.$popup_dim", this.$popup_dim);
 		//dim 클릭 시 팝업 닫기
-		this.$popup_dim.on("click", () => {
-			this.close();
+		this.$popup_dim.on("click", e => {
+			this.close(e);
 		});
 
 		this.createOpenerId().then(() => {
@@ -96,8 +95,6 @@ class HD_Popup {
 
 	//렌더링 후, focus 이동
 	focusMove($getFocusTarget, $lossFocusTarget) {
-		console.log("this", this);
-		console.log("$getFocusTarget", $getFocusTarget);
 		console.log("focusMove - start");
 		console.log("document.activeElement", document.activeElement);
 
@@ -105,8 +102,6 @@ class HD_Popup {
 		// const $content = $getFocusTarget.find('.popup_inner').children('.popup_cont');
 		const $header = $getFocusTarget.find(".popup_head");
 		const $content = $getFocusTarget.find(".popup_cont");
-		console.log("$header", $header);
-		console.log("$content", $content);
 
 		$lossFocusTarget.attr("aria-hidden", true);
 		$getFocusTarget.attr("aria-hidden", false);
@@ -114,12 +109,12 @@ class HD_Popup {
 		if ($lossFocusTarget.find(".popup_head")) $lossFocusTarget.find(".popup_head").removeAttr("tabindex");
 
 		if ($header.length) {
-			console.log("$header2", $header);
 			$header.attr("tabindex", "0");
 			setTimeout(() => {
 				this.$closeBtn.blur();
 				$header.focus();
 				console.log("$header2-document.activeElement", document.activeElement);
+				$header.focus();
 			}, 400);
 		} else {
 			console.log("$content2", $content);
@@ -140,13 +135,16 @@ class HD_Popup {
 	}
 
 	//close popup
-	close() {
+	close(event) {
 		console.log("close실행");
 		this.isOpen = false;
 
 		this.$target.removeClass("active").attr("opener", null);
 
-		console.log("this.$triggerEl", this.$triggerEl);
+		event.currentTarget.blur();
+		event.target.blur();
+
+		this.$triggerEl.focus();
 
 		if ($(this.$triggerEl[0]).hasClass("popup_wrap2")) {
 			this.focusMove(this.$triggerEl, this.$target);
@@ -159,7 +157,7 @@ class HD_Popup {
 			}, 400);
 		}
 
-		console.log("document.activeElement", document.activeElement);
+		console.log("마지막-document.activeElement", document.activeElement);
 
 		// if($lastPopup.length){
 		// 	const $lastPop_header = $lastPopup.find('.popup_head')[0];
