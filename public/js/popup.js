@@ -2,26 +2,32 @@
 function popInit() {
 	const $pop_all = $('.popup_wrap');
 
-	$pop_all.each(function(idx){
-		const $pop = $pop_all.eq(idx);
-		const $pop_inner = $pop.find('.popup_inner');
+	// $pop_all.each(function(idx){
+	// 	const $pop = $pop_all.eq(idx);
+	// 	const $pop_inner = $pop.find('.popup_inner');
 
-		// if (!$pop_inner.attr('tabindex')) {
-		// 	$pop_inner.attr('tabindex', '0');
-		// }
+	// 	// if (!$pop_inner.attr('tabindex')) {
+	// 	// 	$pop_inner.attr('tabindex', '0');
+	// 	// }
 
-		if($pop.find('.popup_head').length){
-			$pop.find('.popup_head').attr('tabindex','0');
-		}else if($pop.find('.popup_cont').length) {
-			$pop.find('.popup_cont').attr('tabindex','0');
-		}
-	});
+	// 	if($pop.find('.popup_head').length){
+	// 		$pop.find('.popup_head').attr('tabindex','0');
+	// 	}else if($pop.find('.popup_cont').length) {
+	// 		$pop.find('.popup_cont').attr('tabindex','0');
+	// 	}
+	// });
 
 	$('body').addClass('scroll_lock');
 	$('.wrap').attr('aria-hidden', true);
 	$('.popup_wrap.active').attr('aria-hidden', true);
-	$('.popup_wrap.active:last-of-type').attr('aria-hidden','false');
+	const $last = $('.popup_wrap.active:last-of-type');
+	$last.attr('aria-hidden','false');
 
+	if($last.find('.popup_head').length){
+		$last.find('.popup_head').attr('tabindex','0');
+	}else if($last.find('.popup_cont').length) {
+		$last.find('.popup_cont').attr('tabindex','0');
+	}
 }
 
 // Popup 열기
@@ -52,9 +58,9 @@ function openPop($triggerEl,target){
 						$pop_cont = $target.find('.popup_inner').children('.popup_cont');
 
 			if($pop_header.length){
-				$pop_header.focus();
+				$pop_header.attr('tabindex','0').focus();
 			}else {
-				$pop_cont.focus();
+				$pop_cont.attr('tabindex','0').focus();
 			}
 			// $target.find('.popup_inner').attr('tabindex', '0').focus();
 			$target.attr('aria-hidden', false);
@@ -79,12 +85,13 @@ function closePop(target) {
 		console.log('현재팝업 close');
 		// $('body').removeAttr('style');
 		$('body').removeClass('scroll_lock');
+		$('.popup_wrap').find('.popup_inner').removeAttr('tabindex');
 	
 		const $lastPopup = $('.popup_wrap.active:last');
 		if($lastPopup.length){
 			$lastPopup.attr('aria-hidden', false);
 			setTimeout(function(){
-				$lastPopup.find('.popup_inner').focus();
+				$lastPopup.find('.popup_inner').attr('tabindex','0').focus();
 				// const $lastPop_header = $lastPopup.find('.popup_head'),
 				// 			$lastPop_cont = $lastPopup.find('.popup_cont');
 				// if($lastPop_header.length){
