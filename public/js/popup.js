@@ -14,8 +14,10 @@ function openPop($triggerEl,target){
 			openerId=getOpenerId;
 		}
 		
+		console.log('현재팝업 open');
 		$target.attr('opner', openerId);
-		$('body').css('overscroll-behavior','contain').addClass('scroll_lock');
+		// $('body').css('overscroll-behavior','contain').addClass('scroll_lock');
+		$('body').addClass('scroll_lock');
 		$target.addClass('active');
 		$('.popup_wrap.active').attr('aria-hidden', true);
 
@@ -32,7 +34,8 @@ function openPop($triggerEl,target){
 			// $target.find('.popup_inner').attr('tabindex', '0').focus();
 			$('.wrap').attr('aria-hidden', true);
 			$target.attr('aria-hidden', false);
-		}, 500);
+			console.log('현재팝업 focus');
+		}, 400);
 	}
 
 	// bottom 팝업 - drag
@@ -51,8 +54,10 @@ function closePop(target) {
 
 		// console.log('closePop')
 	
+		console.log('현재팝업 close');
 		$target.removeClass('active').attr('aria-hidden', true);
-		$('body').removeAttr('style');
+		// $('body').removeAttr('style');
+		$('body').removeClass('scroll_lock');
 	
 		const $lastPopup = $('.popup_wrap.active:last');
 		if($lastPopup.length){
@@ -68,7 +73,8 @@ function closePop(target) {
 				// }
 				$target.find('.popup_head, .popup_cont').removeAttr('tabindex');
 				$target.attr('aria-hidden', true);
-			}, 500);
+				console.log('이전팝업에 focus');
+			}, 400);
 		}
 	
 		// const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
@@ -76,7 +82,10 @@ function closePop(target) {
 		if(popup_count <= 0){
 			$('body').removeClass('scroll_lock');
 			$('.wrap').attr('aria-hidden', false);
-			setTimeout(()=>{$opener.focus();},500);
+			setTimeout(()=>{
+				$opener.focus();
+				console.log('클릭한 버튼으로 다시 focus');
+			},400);
 		}
 	}
 }
@@ -138,16 +147,16 @@ function focusTest () {
 	$(document).on('focus', '*', function() {
 		var element = this;
 
-			if (element.tagName === 'a' || element.tagName === 'button' || element.className === 'popup_head' || element.className === 'popup_cont' || element.className === 'popup_inner' || element.className === 'btn' ) {
-				console.log('포커스된 입력 값:', element);
-			}
-		});
+		if (element.tagName === 'a' || element.tagName === 'button' || element.className === 'popup_head' || element.className === 'popup_cont' || element.className === 'popup_inner' || element.className === 'btn' ) {
+			console.log('포커스된 입력 값:', element);
+		}
+	});
 
-		document.addEventListener('focusin', function() {
-			const focusedElement = document.activeElement.className;
-			const classNameDiv = document.querySelector('.header_title');
-			// classNameDiv.textContent = focusedElement; // class명을 텍스트로 설정
-		});
+	document.addEventListener('focusin', function() {
+		const focusedElement = document.activeElement.className;
+		const classNameDiv = document.querySelector('.header_title');
+		// classNameDiv.textContent = focusedElement; // class명을 텍스트로 설정
+	});
 }
 
 
