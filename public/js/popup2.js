@@ -9,14 +9,17 @@ class HD_Popup {
 	$content; //본문
 	$popup_dim
 	isOpen;// trigger 할 상태
+	
 
 	constructor($triggerEl,target){
-		this.isOpen = false;
-		this.$triggerEl = $triggerEl;
+		this.isOpen = false;		
 		this.$target = $('#' + target);
 		this.$openerId = null;
 		this.$popup_dim = this.$target.find('.popup_dim');
+		this.$triggerEl = $($triggerEl).closest('.popup_wrap2') || $triggerEl;
 	};
+
+
 
 	init(){
 		//popup active
@@ -144,11 +147,10 @@ class HD_Popup {
 
 		this.$target.removeClass('active').attr('opener',null);
 
-		const $lastPopup = $('.popup_wrap2.active:last');
-
-
-		if($lastPopup.length){
-			this.focusMove($lastPopup, this.$target);
+		console.log('this.$triggerEl',this.$triggerEl);
+		
+		if($(this.$triggerEl[0]).hasClass('popup_wrap2')){
+			this.focusMove(this.$triggerEl, this.$target);
 			
 		}else{
 			$('.wrap').attr('aria-hidden', false);
