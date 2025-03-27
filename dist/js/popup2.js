@@ -33,7 +33,7 @@ class HD_Popup {
 		console.log("this.$popup_dim", this.$popup_dim);
 		//dim 클릭 시 팝업 닫기
 		this.$popup_dim.on("click", () => {
-			this.dimClick();
+			this.close();
 		});
 
 		this.createOpenerId().then(() => {
@@ -144,12 +144,6 @@ class HD_Popup {
 			}
 		}
 	}
-
-	//dim 클릭 시 팝업 닫기
-	dimClick() {
-		console.log("dim click");
-		this.close();
-	}
 }
 
 function openPop2($triggerEl, target) {
@@ -257,47 +251,50 @@ function openPop2($triggerEl, target) {
 // }
 
 // 팝업 영역 외 클릭 시 팝업 닫기
-function dimClick2() {
-	console.log("dim클릭");
+// function dimClick2(){
 
-	// $(document).on('click', '.popup_wrap2', function(e) {
-	// 	e.stopPropagation();
-	// 	const $target = $(e.target);
-	// 	const $close_popup = $('.popup_wrap2.active[aria-hidden="false"] .popup_inner');
+// 	console.log('dim클릭')
 
-	// 	if (!$target.closest($close_popup).length) {
-	// 		const $targetId = '#'+$target.closest('.popup_wrap2').attr('id');
-	// 		console.log('$targetId',$targetId);
+// $(document).on('click', '.popup_wrap2', function(e) {
+// 	e.stopPropagation();
+// 	const $target = $(e.target);
+// 	const $close_popup = $('.popup_wrap2.active[aria-hidden="false"] .popup_inner');
 
-	// 		const $closeBtn = $($targetId).find('.popup_close')
+// 	if (!$target.closest($close_popup).length) {
+// 		const $targetId = '#'+$target.closest('.popup_wrap2').attr('id');
+// 		console.log('$targetId',$targetId);
 
-	// 		console.log('$closeBtn',$closeBtn);
-	// 		$closeBtn.trigger('click');
+// 		const $closeBtn = $($targetId).find('.popup_close')
 
-	// 		// closePop($targetId);
-	// 	}
-	// });
-}
+// 		console.log('$closeBtn',$closeBtn);
+// 		$closeBtn.trigger('click');
+
+// 		// closePop($targetId);
+// 	}
+// });
+// }
 
 // UUID생성
-function generateUUID() {
-	var d = new Date().getTime();
-	var uuid = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
-		var r = (d + Math.random() * 16) % 16 | 0;
-		d = Math.floor(d / 16);
-		return (c == "x" ? r : (r & 0x3) | 0x8).toString(16);
-	});
-	return uuid;
-}
+// function generateUUID() {
+//     var d = new Date().getTime();
+//     var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+//         var r = (d + Math.random()*16)%16 | 0;
+//         d = Math.floor(d/16);
+//         return (c=='x' ? r : (r&0x3|0x8)).toString(16);
+//     });
+//     return uuid;
+// };
 
-$(function () {
-	// document.addEventListener('focusin', function() {
-	// 	setTimeout(()=>{
-	// 	// 현재 포커스된 요소를 가져오기
-	// 	const focusedElement = document.activeElement;
-	// 	// 포커스된 요소의 class명을 class 'a'를 가진 div에 텍스트로 표시
-	// 	const classNameDiv = document.querySelector('.focus_name');
-	// 	classNameDiv.textContent = focusedElement.className; // class명을 텍스트로 설정
-	// 	},500)
-	// });
-});
+// $(function(){
+// document.addEventListener('focusin', function() {
+// 	setTimeout(()=>{
+// 	// 현재 포커스된 요소를 가져오기
+// 	const focusedElement = document.activeElement;
+
+// 	// 포커스된 요소의 class명을 class 'a'를 가진 div에 텍스트로 표시
+// 	const classNameDiv = document.querySelector('.focus_name');
+// 	classNameDiv.textContent = focusedElement.className; // class명을 텍스트로 설정
+// 	},500)
+
+// });
+// });

@@ -133,9 +133,7 @@ function generateUUID() {
 	return uuid;
 }
 
-$(function () {
-	// dimClick();
-
+function focusTest() {
 	$(document).on("focus", "*", function () {
 		var element = this;
 
@@ -143,10 +141,10 @@ $(function () {
 			console.log("포커스된 입력 값:", element);
 		}
 	});
-});
 
-document.addEventListener("focusin", function () {
-	const focusedElement = document.activeElement.className;
-	const classNameDiv = document.querySelector(".header_title");
-	// classNameDiv.textContent = focusedElement; // class명을 텍스트로 설정
-});
+	document.addEventListener("focusin", function () {
+		const focusedElement = document.activeElement.className;
+		const classNameDiv = document.querySelector(".header_title");
+		// classNameDiv.textContent = focusedElement; // class명을 텍스트로 설정
+	});
+}
