@@ -13,11 +13,14 @@ class HD_Popup {
 	
 
 	constructor($triggerEl,target){
+
+		console.log('$triggerEl',$triggerEl)
+
 		this.isOpen = false;		
 		this.$target = $('#' + target);
 		this.$openerId = null;
 		this.$popup_dim = this.$target.find('.popup_dim');
-		this.$triggerEl = $($triggerEl).closest('.popup_wrap2') || $triggerEl;
+		this.$triggerEl = $($triggerEl).closest('.popup_wrap2').length > 0 ? $($triggerEl).closest('.popup_wrap2') : $triggerEl;
 		this.$closeBtn = this.$target.find('.popup_close');
 	};
 
