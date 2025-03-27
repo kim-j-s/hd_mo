@@ -20,14 +20,15 @@ function openPop($triggerEl, target) {
 
 		//렌더링 후, focus 이동
 		setTimeout(function () {
-			const $pop_header = $target.find(".popup_inner").children(".popup_head"),
-				$pop_cont = $target.find(".popup_inner").children(".popup_cont");
+			// const $pop_header = $target.find('.popup_inner').children('.popup_head'),
+			// 			$pop_cont = $target.find('.popup_inner').children('.popup_cont');
 
-			if ($pop_header.length) {
-				$pop_header.attr("tabindex", "0").focus();
-			} else {
-				$pop_cont.attr("tabindex", "0").focus();
-			}
+			// if($pop_header.length){
+			// 	$pop_header.attr('tabindex', '0').focus();
+			// }else {
+			// 	$pop_cont.attr('tabindex', '0').focus();
+			// }
+			$target.find(".popup_inner").attr("tabindex", "0").focus();
 			$("body").addClass("scroll_lock");
 			$(".wrap").attr("aria-hidden", true);
 			$(".popup_wrap.active").attr("aria-hidden", true);
