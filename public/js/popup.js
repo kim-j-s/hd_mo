@@ -83,8 +83,8 @@ function closePop(target) {
 			$('body').removeClass('scroll_lock');
 			$('.wrap').attr('aria-hidden', false);
 			setTimeout(()=>{
-				$opener.focus();
-				console.log('클릭한 버튼으로 다시 focus');
+				// $opener.focus();
+				// console.log('클릭한 버튼으로 다시 focus');
 			},400);
 		}
 	}
