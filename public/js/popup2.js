@@ -114,16 +114,16 @@ class HD_Popup {
 			$header.attr('tabindex', '0');
 			setTimeout(()=>{
 				this.$closeBtn.blur();
-				$header.focus(); 
+				$header.trigger('focus'); 
+
 				console.log('$header2-document.activeElement',document.activeElement);
-				$header.focus();
 			},400);			
 			
 		}else {
 			console.log('$content2',$content)
 			setTimeout(()=>{
 				this.$closeBtn.blur();
-				$content.attr('tabindex', '0').focus();
+				$content.attr('tabindex', '0').trigger('focus');
 				console.log('$header2-document.activeElement',document.activeElement);
 			},400);	
 		}		
@@ -148,7 +148,7 @@ class HD_Popup {
 		event.currentTarget.blur();
 		event.target.blur();
 
-		this.$triggerEl.focus();
+		this.$triggerEl.trigger('focus');
 		
 		if($(this.$triggerEl[0]).hasClass('popup_wrap2')){
 			this.focusMove(this.$triggerEl, this.$target);
@@ -157,7 +157,7 @@ class HD_Popup {
 			$('.wrap').attr('aria-hidden', false);
 			$('body').removeClass('scroll_lock')
 			
-			setTimeout(()=>{this.$triggerEl.focus();},400);
+			setTimeout(()=>{this.$triggerEl.trigger('focus');},400);
 		}
 		
 		console.log('마지막-document.activeElement',document.activeElement);
