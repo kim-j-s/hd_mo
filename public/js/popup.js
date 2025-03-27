@@ -136,5 +136,5 @@ function generateUUID() {
 
 
 $(function(){
-	dimClick();
+	// dimClick();
 });
