@@ -27,9 +27,13 @@ function popInit() {
 		$last.attr('aria-hidden',false);
 	
 		if($last.find('.popup_head').length){
-			$last.find('.popup_head').attr('tabindex','0').focus();
+			setTimeout(function(){
+				$last.find('.popup_head').attr('tabindex','0').focus();
+			}, 400);
 		}else if($last.find('.popup_cont').length) {
+			setTimeout(function(){
 			$last.find('.popup_cont').attr('tabindex','0').focus();
+		}, 400);
 		}
 	}
 }
