@@ -1,0 +1,18 @@
+{{!-- 
+	popup-id : id 배정
+--}}
+<div class="popup_wrap2 full{{#if popup-class}} {{popup-class}}{{/if}}"{{#if popup-id}} id="{{popup-id}}"{{/if}}{{#if close-btn}}{{/if}}{{#if no-header}}{{/if}} role="dialog" aria-hidden="true">
+	<div class="popup_container">
+		<div class="popup_inner{{#if in-class}} {{in-class}}{{/if}}">
+			{{#unless no-header}}
+			<div class="popup_head">
+				{{{popup-title}}}
+			</div>
+			{{/unless}}
+			{{> @partial-block}}
+			{{#unless close-btn}}
+				<button type="button" class="popup_close" onclick="closePop2('{{popup-id}}');"><span class="blind">팝업 닫기</span></button>
+			{{/unless}}
+		</div>
+	</div>
+</div>
