@@ -16,7 +16,7 @@ function openPop2($triggerEl, target) {
 			openerId = getOpenerId;
 		}
 
-		$target.attr("opner", openerId);
+		$target.attr("opener", openerId);
 		$("body").css("overscroll-behavior", "contain");
 		$target.addClass("active");
 
@@ -25,6 +25,9 @@ function openPop2($triggerEl, target) {
 			const $pop_header = $target.find(".popup_inner").children(".popup_head"),
 				$pop_cont = $target.find(".popup_inner").children(".popup_cont");
 
+			console.log("$pop_header", $pop_header);
+			console.log("$pop_cont", $pop_cont);
+
 			if ($pop_header.length) {
 				$pop_header.attr("tabindex", "0").focus();
 			} else {
@@ -32,9 +35,9 @@ function openPop2($triggerEl, target) {
 			}
 			$("body").addClass("scroll_lock");
 			$(".wrap").attr("aria-hidden", true);
-			$(".popup_wrap.active").attr("aria-hidden", true);
+			$(".popup_wrap2.active").attr("aria-hidden", true);
 			$target.attr("aria-hidden", false);
-		}, 0);
+		}, 400);
 	}
 
 	// bottom 팝업 - drag
@@ -46,16 +49,17 @@ function openPop2($triggerEl, target) {
 // Popup 닫기
 function closePop2(target) {
 	const $target = $("#" + target);
-	const $opener = $('[triggerId="' + $target.attr("opner") + '"]');
+	const $opener = $('[triggerId="' + $target.attr("opener") + '"]');
 	const $pop_header = $target.find(".popup_inner").children(".popup_head"),
 		$pop_cont = $target.find(".popup_inner").children(".popup_cont");
 
 	if ($target.hasClass("active")) {
-		$target.removeClass("active").attr("opner", null);
+		$target.removeClass("active").attr("opener", null);
 
 		// console.log('closePop')
 
-		const $lastPopup = $(".popup_wrap.active:last");
+		const $lastPopup = $(".popup_wrap2.active:last");
+		console.log("$lastPopup", $lastPopup);
 		if ($lastPopup.length) {
 			$lastPopup.attr("aria-hidden", false);
 			setTimeout(function () {
@@ -66,12 +70,13 @@ function closePop2(target) {
 				} else {
 					$lastPop_cont.attr("tabindex", "0").focus();
 				}
-			}, 0);
+			}, 400);
 		}
 
 		// $target.removeClass('active').attr('aria-hidden', true);
 		$target.attr("aria-hidden", true);
 
+		console.log("document.activeElement", document.activeElement);
 		// $target.find('.popup_inner').removeAttr('tabindex');
 		if ($pop_header.length) {
 			$pop_header.removeAttr("tabindex");
@@ -81,8 +86,10 @@ function closePop2(target) {
 		$("body").removeAttr("style");
 
 		// const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
-		const popup_count = $(".popup_wrap.active").length;
+		const popup_count = $(".popup_wrap2.active").length;
+		console.log("active된 팝업", $(".popup_wrap2.active:last").attr("opener"));
 		if (popup_count <= 0) {
+			console.log("여기");
 			$("body").removeClass("scroll_lock");
 			// .attr('aria-hidden', false);
 			setTimeout(() => {
