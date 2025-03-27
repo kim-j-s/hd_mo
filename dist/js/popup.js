@@ -32,7 +32,7 @@ function openPop($triggerEl, target) {
 			$(".wrap").attr("aria-hidden", true);
 			$(".popup_wrap.active").attr("aria-hidden", true);
 			$target.attr("aria-hidden", false);
-		}, 200);
+		}, 400);
 	}
 
 	// bottom 팝업 - drag
@@ -55,14 +55,14 @@ function closePop(target) {
 		if ($lastPopup.length) {
 			$lastPopup.attr("aria-hidden", false);
 			setTimeout(function () {
-				// $lastPopup.find('.popup_inner').attr('tabindex', '0').focus();
-				const $lastPop_header = $lastPopup.find(".popup_head"),
-					$lastPop_cont = $lastPopup.find(".popup_cont");
-				if ($lastPop_header.length) {
-					$lastPop_header.attr("tabindex", "0").focus();
-				} else {
-					$lastPop_cont.attr("tabindex", "0").focus();
-				}
+				$lastPopup.find(".popup_inner").attr("tabindex", "0").focus();
+				// const $lastPop_header = $lastPopup.find('.popup_head'),
+				// 			$lastPop_cont = $lastPopup.find('.popup_cont');
+				// if($lastPop_header.length){
+				// 	$lastPop_header.attr('tabindex', '0').focus();
+				// }else {
+				// 	$lastPop_cont.attr('tabindex', '0').focus();
+				// }
 			}, 400);
 		}
 
@@ -80,6 +80,8 @@ function closePop(target) {
 				$opener.focus();
 			}, 400);
 		}
+
+		$(".header_title");
 	}
 }
 
@@ -135,4 +137,12 @@ function generateUUID() {
 
 $(function () {
 	// dimClick();
+	document.addEventListener("focusin", function () {
+		// 현재 포커스된 요소를 가져오기
+		const focusedElement = document.activeElement;
+
+		// 포커스된 요소의 class명을 class 'a'를 가진 div에 텍스트로 표시
+		const classNameDiv = document.querySelector(".header_title");
+		classNameDiv.textContent = focusedElement.className; // class명을 텍스트로 설정
+	});
 });
