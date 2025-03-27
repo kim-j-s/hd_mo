@@ -9,6 +9,7 @@ class HD_Popup {
 	$content; //본문
 	$popup_dim
 	isOpen;// trigger 할 상태
+	$closeBtn;
 	
 
 	constructor($triggerEl,target){
@@ -17,6 +18,7 @@ class HD_Popup {
 		this.$openerId = null;
 		this.$popup_dim = this.$target.find('.popup_dim');
 		this.$triggerEl = $($triggerEl).closest('.popup_wrap2') || $triggerEl;
+		this.$closeBtn = this.$target.find('.popup_close');
 	};
 
 
@@ -116,6 +118,7 @@ class HD_Popup {
 			console.log('$header2',$header);
 			$header.attr('tabindex', '0')
 			setTimeout(()=>{
+				this.$closeBtn.blur();
 				$header.focus(); 
 				console.log('$header2-document.activeElement',document.activeElement);
 			},400);			
@@ -123,6 +126,7 @@ class HD_Popup {
 		}else {
 			console.log('$content2',$content)
 			setTimeout(()=>{
+				this.$closeBtn.blur();
 				$content.attr('tabindex', '0').focus();
 				console.log('$header2-document.activeElement',document.activeElement);
 			},400);	
