@@ -28,11 +28,12 @@ function openPop($triggerEl, target) {
 			} else {
 				$pop_cont.attr("tabindex", "0").focus();
 			}
+			// $target.find('.popup_inner').attr('tabindex', '0').focus();
 			$("body").addClass("scroll_lock");
 			$(".wrap").attr("aria-hidden", true);
 			$(".popup_wrap.active").attr("aria-hidden", true);
 			$target.attr("aria-hidden", false);
-		}, 200);
+		}, 500);
 	}
 
 	// bottom 팝업 - drag
@@ -63,7 +64,7 @@ function closePop(target) {
 				// }else {
 				// 	$lastPop_cont.attr('tabindex', '0').focus();
 				// }
-			}, 400);
+			}, 500);
 		}
 
 		// $target.removeClass('active').attr('aria-hidden', true);
@@ -76,9 +77,7 @@ function closePop(target) {
 		if (popup_count <= 0) {
 			$("body").removeClass("scroll_lock");
 			$(".wrap").attr("aria-hidden", false);
-			setTimeout(() => {
-				$opener.focus();
-			}, 400);
+			// setTimeout(()=>{$opener.focus();},500);
 		}
 	}
 }
@@ -135,4 +134,13 @@ function generateUUID() {
 
 $(function () {
 	// dimClick();
+});
+
+document.addEventListener("focusin", function () {
+	// 현재 포커스된 요소를 가져오기
+	const focusedElement = document.activeElement.className;
+
+	// 포커스된 요소의 class명을 class 'a'를 가진 div에 텍스트로 표시
+	const classNameDiv = document.querySelector(".header_title");
+	classNameDiv.textContent = focusedElement; // class명을 텍스트로 설정
 });
