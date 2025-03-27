@@ -93,7 +93,8 @@ class HD_Popup {
 	
 			const $lastPopup = $('.popup_wrap2.active:last');
 			console.log('$lastPopup',$lastPopup);
-
+			this.$target.attr('aria-hidden', true);
+			
 			if($lastPopup.length){
 				$lastPopup.attr('aria-hidden', false);
 				setTimeout(()=>{
@@ -108,7 +109,7 @@ class HD_Popup {
 				}, 400);
 			}
 		
-			this.$target.attr('aria-hidden', true);
+			
 			
 			console.log('document.activeElement',document.activeElement);
 
