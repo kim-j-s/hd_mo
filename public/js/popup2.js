@@ -111,15 +111,19 @@ class HD_Popup {
 
 		if($header.length){
 			console.log('$header2',$header);
-			$header.attr('tabindex', '0').focus();
-			console.log('$header2-document.activeElement',document.activeElement);
+			$header.attr('tabindex', '0')
+			setTimeout(()=>{
+				$header.focus(); 
+				console.log('$header2-document.activeElement',document.activeElement);
+			},400);			
+			
 		}else {
 			console.log('$content2',$content)
-			$content.attr('tabindex', '0').focus();
-			console.log('$header2-document.activeElement',document.activeElement);
-		}
-
-		
+			setTimeout(()=>{
+				$content.attr('tabindex', '0').focus();
+				console.log('$header2-document.activeElement',document.activeElement);
+			},400);	
+		}		
 		
 		if(this.isOpen){
 			$('body').addClass('scroll_lock');
@@ -144,7 +148,7 @@ class HD_Popup {
 
 
 		if($lastPopup.length){
-			setTimeout(()=>{this.focusMove($lastPopup, this.$target);},400);
+			this.focusMove($lastPopup, this.$target);
 			
 		}else{
 			$('.wrap').attr('aria-hidden', false);
