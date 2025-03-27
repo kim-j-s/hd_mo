@@ -55,14 +55,14 @@ function closePop(target) {
 		if($lastPopup.length){
 			$lastPopup.attr('aria-hidden', false);
 			setTimeout(function(){
-				$lastPopup.find('.popup_inner').attr('tabindex', '0').focus();
-				// const $lastPop_header = $lastPopup.find('.popup_head'),
-				// 			$lastPop_cont = $lastPopup.find('.popup_cont');
-				// if($lastPop_header.length){
-				// 	$lastPop_header.attr('tabindex', '0').focus();
-				// }else {
-				// 	$lastPop_cont.attr('tabindex', '0').focus();
-				// }
+				// $lastPopup.find('.popup_inner').attr('tabindex', '0').focus();
+				const $lastPop_header = $lastPopup.find('.popup_head'),
+							$lastPop_cont = $lastPopup.find('.popup_cont');
+				if($lastPop_header.length){
+					$lastPop_header.attr('tabindex', '0').focus();
+				}else {
+					$lastPop_cont.attr('tabindex', '0').focus();
+				}
 			}, 400);
 		}
 	
