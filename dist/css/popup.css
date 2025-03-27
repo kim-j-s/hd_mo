@@ -13,14 +13,10 @@
 	z-index: 1000;
 	background-color: rgba(0, 0, 0, 0.7);
 	opacity: 0;
-	-webkit-transition: all 0.4s;
-	transition: all 0.4s;
-	pointer-events: none;
 }
 .popup_wrap.active {
 	visibility: visible;
 	opacity: 1;
-	pointer-events: auto;
 }
 .popup_wrap .popup_container {
 	display: -webkit-box;
@@ -126,22 +122,10 @@
 	max-height: 100%;
 }
 /* popup_bottom */
-.popup_wrap.bottom.active .popup_container {
-	-webkit-transform: translateY(0);
-	transform: translateY(0);
-}
-.popup_wrap.bottom.dragging .popup_container {
-	-webkit-transition-duration: initial;
-	transition-duration: initial;
-}
 .popup_wrap.bottom .popup_container {
 	-webkit-box-align: end;
 	-ms-flex-align: end;
 	align-items: flex-end;
-	-webkit-transform: translateY(100%);
-	transform: translateY(100%);
-	-webkit-transition-duration: 0.4s;
-	transition-duration: 0.4s;
 }
 .popup_wrap.bottom .popup_container .popup_inner {
 	max-height: 90%;

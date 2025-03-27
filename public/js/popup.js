@@ -15,8 +15,9 @@ function openPop($triggerEl,target){
 		}
 		
 		$target.attr('opner', openerId);
-		$('body').css('overscroll-behavior','contain');
+		$('body').css('overscroll-behavior','contain').addClass('scroll_lock');
 		$target.addClass('active');
+		$('.popup_wrap.active').attr('aria-hidden', true);
 
 		//렌더링 후, focus 이동
 		setTimeout(function(){
@@ -29,9 +30,7 @@ function openPop($triggerEl,target){
 				$pop_cont.attr('tabindex', '0').focus();
 			}
 			// $target.find('.popup_inner').attr('tabindex', '0').focus();
-			$('body').addClass('scroll_lock');
 			$('.wrap').attr('aria-hidden', true);
-			$('.popup_wrap.active').attr('aria-hidden', true);
 			$target.attr('aria-hidden', false);
 		}, 500);
 	}
@@ -52,6 +51,9 @@ function closePop(target) {
 
 		// console.log('closePop')
 	
+		$target.removeClass('active').attr('aria-hidden', true);
+		$('body').removeAttr('style');
+	
 		const $lastPopup = $('.popup_wrap.active:last');
 		if($lastPopup.length){
 			$lastPopup.attr('aria-hidden', false);
@@ -64,21 +66,17 @@ function closePop(target) {
 				// }else {
 				// 	$lastPop_cont.attr('tabindex', '0').focus();
 				// }
+				$target.find('.popup_head, .popup_cont').removeAttr('tabindex');
+				$target.attr('aria-hidden', true);
 			}, 500);
 		}
-	
-		// $target.removeClass('active').attr('aria-hidden', true);
-		$target.attr('aria-hidden', true);
-		$target.find('.popup_head, .popup_cont').removeAttr('tabindex');
-		$('body').removeAttr('style');
-	
 	
 		// const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
 		const popup_count = $('.popup_wrap.active').length;
 		if(popup_count <= 0){
 			$('body').removeClass('scroll_lock');
 			$('.wrap').attr('aria-hidden', false);
-			// setTimeout(()=>{$opener.focus();},500);
+			setTimeout(()=>{$opener.focus();},500);
 		}
 	}
 }
@@ -138,14 +136,19 @@ function generateUUID() {
 
 $(function(){
 	// dimClick();
+
+	$(document).on('focus', '*', function() {
+    var element = this;
+
+		if (element.tagName === 'a' || element.tagName === 'button' || element.className === 'popup_head' || element.className === 'popup_cont' || element.className === 'popup_inner' || element.className === 'btn' ) {
+			console.log('포커스된 입력 값:', element);
+		}
+	});
 	
 });
 
 document.addEventListener('focusin', function() {
-	// 현재 포커스된 요소를 가져오기
 	const focusedElement = document.activeElement.className;
-
-	// 포커스된 요소의 class명을 class 'a'를 가진 div에 텍스트로 표시
 	const classNameDiv = document.querySelector('.header_title');
-	classNameDiv.textContent = focusedElement; // class명을 텍스트로 설정
+	// classNameDiv.textContent = focusedElement; // class명을 텍스트로 설정
 });
