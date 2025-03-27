@@ -99,11 +99,10 @@ class HD_Popup {
 			if ($lastPopup.length) {
 				const $lastPop_header = $lastPopup.find(".popup_head")[0];
 				const $lastPop_cont = $lastPopup.find(".popup_cont")[0];
+				$lastPopup.attr("aria-hidden", false);
+				this.$target.attr("aria-hidden", true);
 
 				setTimeout(() => {
-					$lastPopup.attr("aria-hidden", false);
-					this.$target.attr("aria-hidden", true);
-
 					console.log("닫기이벤트 : focus move-start");
 					console.log("document.activeElement", document.activeElement);
 					if ($lastPop_header) {

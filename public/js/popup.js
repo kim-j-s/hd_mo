@@ -134,21 +134,20 @@ function generateUUID() {
 };
 
 
-$(function(){
-	// dimClick();
-
+function focusTest () {
 	$(document).on('focus', '*', function() {
-    var element = this;
+		var element = this;
 
-		if (element.tagName === 'a' || element.tagName === 'button' || element.className === 'popup_head' || element.className === 'popup_cont' || element.className === 'popup_inner' || element.className === 'btn' ) {
-			console.log('포커스된 입력 값:', element);
-		}
-	});
-	
-});
+			if (element.tagName === 'a' || element.tagName === 'button' || element.className === 'popup_head' || element.className === 'popup_cont' || element.className === 'popup_inner' || element.className === 'btn' ) {
+				console.log('포커스된 입력 값:', element);
+			}
+		});
 
-document.addEventListener('focusin', function() {
-	const focusedElement = document.activeElement.className;
-	const classNameDiv = document.querySelector('.header_title');
-	// classNameDiv.textContent = focusedElement; // class명을 텍스트로 설정
-});
+		document.addEventListener('focusin', function() {
+			const focusedElement = document.activeElement.className;
+			const classNameDiv = document.querySelector('.header_title');
+			// classNameDiv.textContent = focusedElement; // class명을 텍스트로 설정
+		});
+}
+
+

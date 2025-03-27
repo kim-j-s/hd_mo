@@ -98,12 +98,10 @@ class HD_Popup {
 				
 				const $lastPop_header = $lastPopup.find('.popup_head')[0];
 				const $lastPop_cont = $lastPopup.find('.popup_cont')[0];
-				
+				$lastPopup.attr('aria-hidden', false);
+				this.$target.attr('aria-hidden', true);
 
 				setTimeout(()=>{
-					$lastPopup.attr('aria-hidden', false);
-					this.$target.attr('aria-hidden', true);
-					
 					console.log('닫기이벤트 : focus move-start')
 					console.log('document.activeElement',document.activeElement);
 					if($lastPop_header){
@@ -144,7 +142,6 @@ class HD_Popup {
 					()=>{this.$target.attr('aria-hidden', true); 
 						$(this.$triggerEl).focus();
 						console.log(document.activeElement)
-
 					},400);
 			}
 		}
@@ -304,18 +301,18 @@ function dimClick2(){
 }
 
 // UUID생성
-function generateUUID() {
-    var d = new Date().getTime();
-    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        var r = (d + Math.random()*16)%16 | 0;
-        d = Math.floor(d/16);
-        return (c=='x' ? r : (r&0x3|0x8)).toString(16);
-    });
-    return uuid;
-};
+// function generateUUID() {
+//     var d = new Date().getTime();
+//     var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+//         var r = (d + Math.random()*16)%16 | 0;
+//         d = Math.floor(d/16);
+//         return (c=='x' ? r : (r&0x3|0x8)).toString(16);
+//     });
+//     return uuid;
+// };
 
 
-$(function(){
+// $(function(){
 	// document.addEventListener('focusin', function() {
 	// 	setTimeout(()=>{
 	// 	// 현재 포커스된 요소를 가져오기
@@ -327,4 +324,4 @@ $(function(){
 	// 	},500)
 		
 	// });
-});
+// });
