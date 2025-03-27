@@ -6,6 +6,7 @@ function popInit() {
 	// 	const $pop = $pop_all.eq(idx);
 	// 	const $pop_inner = $pop.find('.popup_inner');
 
+
 	// 	// if (!$pop_inner.attr('tabindex')) {
 	// 	// 	$pop_inner.attr('tabindex', '0');
 	// 	// }
@@ -17,16 +18,19 @@ function popInit() {
 	// 	}
 	// });
 
-	$('body').addClass('scroll_lock');
-	$('.wrap').attr('aria-hidden', true);
-	$('.popup_wrap.active').attr('aria-hidden', true);
-	const $last = $('.popup_wrap.active:last-of-type');
-	$last.attr('aria-hidden','false');
-
-	if($last.find('.popup_head').length){
-		$last.find('.popup_head').attr('tabindex','0');
-	}else if($last.find('.popup_cont').length) {
-		$last.find('.popup_cont').attr('tabindex','0');
+	if($('.popup_wrap.active').length){
+		console.log('열린 팝업 존재')
+		$('body').addClass('scroll_lock');
+		$('.wrap').attr('aria-hidden', true);
+		$('.popup_wrap.active').attr('aria-hidden', true);
+		const $last = $('.popup_wrap.active:last-of-type');
+		$last.attr('aria-hidden','false');
+	
+		if($last.find('.popup_head').length){
+			$last.find('.popup_head').attr('tabindex','0');
+		}else if($last.find('.popup_cont').length) {
+			$last.find('.popup_cont').attr('tabindex','0');
+		}
 	}
 }
 

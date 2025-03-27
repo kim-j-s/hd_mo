@@ -17,16 +17,19 @@ function popInit() {
 	// 	}
 	// });
 
-	$("body").addClass("scroll_lock");
-	$(".wrap").attr("aria-hidden", true);
-	$(".popup_wrap.active").attr("aria-hidden", true);
-	const $last = $(".popup_wrap.active:last-of-type");
-	$last.attr("aria-hidden", "false");
+	if ($(".popup_wrap.active").length) {
+		console.log("열린 팝업 존재");
+		$("body").addClass("scroll_lock");
+		$(".wrap").attr("aria-hidden", true);
+		$(".popup_wrap.active").attr("aria-hidden", true);
+		const $last = $(".popup_wrap.active:last-of-type");
+		$last.attr("aria-hidden", "false");
 
-	if ($last.find(".popup_head").length) {
-		$last.find(".popup_head").attr("tabindex", "0");
-	} else if ($last.find(".popup_cont").length) {
-		$last.find(".popup_cont").attr("tabindex", "0");
+		if ($last.find(".popup_head").length) {
+			$last.find(".popup_head").attr("tabindex", "0");
+		} else if ($last.find(".popup_cont").length) {
+			$last.find(".popup_cont").attr("tabindex", "0");
+		}
 	}
 }
 
