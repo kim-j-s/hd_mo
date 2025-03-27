@@ -26,9 +26,9 @@ function popInit() {
 		$last.attr("aria-hidden", false);
 
 		if ($last.find(".popup_head").length) {
-			$last.find(".popup_head").attr("tabindex", "0");
+			$last.find(".popup_head").attr("tabindex", "0").focus();
 		} else if ($last.find(".popup_cont").length) {
-			$last.find(".popup_cont").attr("tabindex", "0");
+			$last.find(".popup_cont").attr("tabindex", "0").focus();
 		}
 	}
 }
@@ -94,14 +94,14 @@ function closePop(target) {
 			$lastPopup.attr("aria-hidden", false);
 			$("body").removeClass("scroll_lock");
 			setTimeout(function () {
-				// $lastPopup.find('.popup_inner').attr('tabindex','0').focus();
-				const $lastPop_header = $lastPopup.find(".popup_head"),
-					$lastPop_cont = $lastPopup.find(".popup_cont");
-				if ($lastPop_header.length) {
-					$lastPop_header.attr("tabindex", "0").focus();
-				} else {
-					$lastPop_cont.attr("tabindex", "0").focus();
-				}
+				$lastPopup.find(".popup_inner").attr("tabindex", "0").focus();
+				// const $lastPop_header = $lastPopup.find('.popup_head'),
+				// 			$lastPop_cont = $lastPopup.find('.popup_cont');
+				// if($lastPop_header.length){
+				// 	$lastPop_header.attr('tabindex', '0').focus();
+				// }else {
+				// 	$lastPop_cont.attr('tabindex', '0').focus();
+				// }
 				$(".popup_wrap").find(".popup_inner").removeAttr("tabindex");
 				$target.find(".popup_head, .popup_cont").removeAttr("tabindex");
 				$target.attr("aria-hidden", true);
