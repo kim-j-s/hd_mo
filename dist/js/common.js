@@ -10,7 +10,7 @@
 
 		// if($nav.css('visibility') == 'hidden'){
 		if (!$nav.hasClass("active")) {
-			$(".wrap").addClass("scroll_lock");
+			$("body").addClass("scroll_lock");
 			$nav.addClass("active");
 
 			setTimeout(function () {
@@ -30,7 +30,8 @@
 			$(".right .allmenu").attr("aria-hidden", "false");
 			$(".wrap").children().not(".header").attr("aria-hidden", "false");
 			$nav.removeClass("active").attr("aria-hidden", "true");
-			$(".wrap").removeClass("scroll_lock").removeAttr("aria-hidden");
+			$("body").removeClass("scroll_lock");
+			$(".wrap").removeAttr("aria-hidden");
 		}
 	});
 
