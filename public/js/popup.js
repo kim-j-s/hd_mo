@@ -6,9 +6,9 @@ function popInit() {
 		const $pop = $pop_all.eq(idx);
 		const $pop_inner = $pop.find('.popup_inner');
 
-		if (!$pop_inner.attr('tabindex')) {
-			$pop_inner.attr('tabindex', '0');
-		}
+		// if (!$pop_inner.attr('tabindex')) {
+		// 	$pop_inner.attr('tabindex', '0');
+		// }
 
 		if($pop.find('.popup_head').length){
 			$pop.find('.popup_head').attr('tabindex','0');
@@ -102,7 +102,7 @@ function closePop(target) {
 			$('body').removeClass('scroll_lock');
 			$('.wrap').attr('aria-hidden', false);
 			setTimeout(()=>{
-				// $opener.focus();
+				$opener.focus();
 				// console.log('클릭한 버튼으로 다시 focus');
 			},400);
 		}
