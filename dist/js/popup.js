@@ -1,4 +1,23 @@
 /* Popup 관련 */
+function popInit() {
+	const $pop_all = $(".popup_wrap");
+
+	$pop_all.each(function (idx) {
+		const $pop = $pop_all.eq(idx);
+		const $pop_inner = $pop.find(".popup_inner");
+
+		if (!$pop_inner.attr("tabindex")) {
+			$pop_inner.attr("tabindex", "0");
+		}
+
+		if ($pop.find(".popup_head").length) {
+			$pop.find(".popup_head").attr("tabindex", "0");
+		} else if ($pop.find(".popup_cont").length) {
+			$pop.find(".popup_cont").attr("tabindex", "0");
+		}
+	});
+}
+
 // Popup 열기
 function openPop($triggerEl, target) {
 	const $target = $("#" + target);
@@ -27,9 +46,9 @@ function openPop($triggerEl, target) {
 				$pop_cont = $target.find(".popup_inner").children(".popup_cont");
 
 			if ($pop_header.length) {
-				$pop_header.attr("tabindex", "0").focus();
+				$pop_header.focus();
 			} else {
-				$pop_cont.attr("tabindex", "0").focus();
+				$pop_cont.focus();
 			}
 			// $target.find('.popup_inner').attr('tabindex', '0').focus();
 			$(".wrap").attr("aria-hidden", true);
@@ -63,7 +82,7 @@ function closePop(target) {
 		if ($lastPopup.length) {
 			$lastPopup.attr("aria-hidden", false);
 			setTimeout(function () {
-				$lastPopup.find(".popup_inner").attr("tabindex", "0").focus();
+				$lastPopup.find(".popup_inner").focus();
 				// const $lastPop_header = $lastPopup.find('.popup_head'),
 				// 			$lastPop_cont = $lastPopup.find('.popup_cont');
 				// if($lastPop_header.length){

@@ -53,7 +53,7 @@
 	<!-- e: Layer 팝업 -->
 	
 	<!-- s: Bottom 팝업 -->
-	{{#> popup/popup_bottom popup-id="pop_type03" popup-title="팝업 타이틀" }}
+	{{#> popup/popup_bottom popup-id="pop_type03" popup-title="팝업 타이틀"  popup-class="active" hidden=true }}
 		<div class="popup_cont">
 			팝업내용입니다<br>
 			내용
@@ -163,6 +163,7 @@
 	{{/ popup/popup_bottom}}
 	<!-- e: Bottom 팝업 -->
 <script>
+	popInit();
 	focusTest();
 	document.querySelector('body').style.overscrollBehavior = 'contain';
 	document.querySelector('.rap').setAttribute('aria-hidden', 'true');
