@@ -11,10 +11,10 @@ class HD_Popup {
 
 	constructor($triggerEl, target) {
 		this.isOpen = false;
-		this.$triggerEl = $triggerEl;
 		this.$target = $("#" + target);
 		this.$openerId = null;
 		this.$popup_dim = this.$target.find(".popup_dim");
+		this.$triggerEl = $($triggerEl).closest(".popup_wrap2") || $triggerEl;
 	}
 
 	init() {
@@ -142,10 +142,10 @@ class HD_Popup {
 
 		this.$target.removeClass("active").attr("opener", null);
 
-		const $lastPopup = $(".popup_wrap2.active:last");
+		console.log("this.$triggerEl", this.$triggerEl);
 
-		if ($lastPopup.length) {
-			this.focusMove($lastPopup, this.$target);
+		if ($(this.$triggerEl[0]).hasClass("popup_wrap2")) {
+			this.focusMove(this.$triggerEl, this.$target);
 		} else {
 			$(".wrap").attr("aria-hidden", false);
 			$("body").removeClass("scroll_lock");
