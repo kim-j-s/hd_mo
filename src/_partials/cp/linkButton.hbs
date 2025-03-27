@@ -11,6 +11,9 @@
  *  - blank : 새창에서 열기 여부(true일 경우 title='새창에서 열기'로 적용됨)
  */
  --}}
-<a href="{{#if href}}{{href}}{{else}}#{{/if}}"{{#if id}} id="{{id}}"{{/if}} class="btn_link{{#if size}} btn_link_s_{{size}}{{else}} btn_link_s_1{{/if}}{{#if class}} {{class}}{{/if}}"{{#if blank}} title="새창에서 열기"{{else}}{{#if title}} title="{{title}}"{{/if}}{{/if}}{{#if target}} target="{{target}}"{{/if}}>
+<a href="{{#if href}}{{href}}{{else}}#{{/if}}"{{#if bl_id}} id="{{bl_id}}"{{/if}} class="btn_link{{#if size}} btn_link_s_{{size}}{{/if}}{{#if bl_class}} {{bl_class}}{{/if}}"{{#if blank}} target="_blank" title="새창에서 열기"{{/if}}{{#if bl_title}} title="{{bl_title}}"{{/if}}>
+{{#if bl_text}}<span class="sss">{{{bl_text}}}</span>{{/if}}
+{{#unless bl_text}}
 <span class="text">{{> @partial-block }}</span>
+{{/unless}}
 </a>
