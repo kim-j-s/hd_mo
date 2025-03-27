@@ -114,9 +114,11 @@ class HD_Popup {
 		if ($header.length) {
 			console.log("$header2", $header);
 			$header.attr("tabindex", "0").focus();
+			console.log("$header2-document.activeElement", document.activeElement);
 		} else {
 			console.log("$content2", $content);
 			$content.attr("tabindex", "0").focus();
+			console.log("$header2-document.activeElement", document.activeElement);
 		}
 
 		if (this.isOpen) {
@@ -138,14 +140,19 @@ class HD_Popup {
 		const $lastPopup = $(".popup_wrap2.active:last");
 
 		if ($lastPopup.length) {
-			this.focusMove($lastPopup, this.$target);
+			setTimeout(() => {
+				this.focusMove($lastPopup, this.$target);
+			}, 400);
 		} else {
 			$(".wrap").attr("aria-hidden", false);
 			$("body").removeClass("scroll_lock");
+
 			setTimeout(() => {
 				this.$triggerEl.focus();
 			}, 400);
 		}
+
+		console.log("document.activeElement", document.activeElement);
 
 		// if($lastPopup.length){
 		// 	const $lastPop_header = $lastPopup.find('.popup_head')[0];

@@ -112,10 +112,11 @@ class HD_Popup {
 		if($header.length){
 			console.log('$header2',$header);
 			$header.attr('tabindex', '0').focus();
-			
+			console.log('$header2-document.activeElement',document.activeElement);
 		}else {
 			console.log('$content2',$content)
 			$content.attr('tabindex', '0').focus();
+			console.log('$header2-document.activeElement',document.activeElement);
 		}
 
 		
@@ -143,10 +144,12 @@ class HD_Popup {
 
 
 		if($lastPopup.length){
-			this.focusMove($lastPopup, this.$target);
+			setTimeout(()=>{this.focusMove($lastPopup, this.$target);},400);
+			
 		}else{
 			$('.wrap').attr('aria-hidden', false);
 			$('body').removeClass('scroll_lock')
+			
 			setTimeout(()=>{this.$triggerEl.focus();},400);
 		}
 		
