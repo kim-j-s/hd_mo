@@ -17,9 +17,9 @@ function openPop($triggerEl, target) {
 
 		console.log("현재팝업 open");
 		$target.attr("opner", openerId);
-		// $('body').css('overscroll-behavior','contain').addClass('scroll_lock');
+		$("body").css("overscroll-behavior", "contain").addClass("scroll_lock");
 		$target.addClass("active");
-		$("body").addClass("scroll_lock");
+		// $('body').addClass('scroll_lock');
 
 		//렌더링 후, focus 이동
 		setTimeout(function () {
@@ -36,7 +36,7 @@ function openPop($triggerEl, target) {
 			$(".wrap").attr("aria-hidden", true);
 			$target.attr("aria-hidden", false);
 			console.log("현재팝업 focus");
-		}, 400);
+		}, 200);
 	}
 
 	// bottom 팝업 - drag
@@ -59,7 +59,7 @@ function closePop(target) {
 		const $lastPopup = $(".popup_wrap.active:last");
 		if ($lastPopup.length) {
 			$lastPopup.attr("aria-hidden", false);
-			$("body").removeClass("scroll_lock");
+
 			setTimeout(function () {
 				$lastPopup.find(".popup_inner").attr("tabindex", "0").focus();
 				// const $lastPop_header = $lastPopup.find('.popup_head'),
@@ -83,6 +83,7 @@ function closePop(target) {
 			setTimeout(() => {
 				$opener.focus();
 				// console.log('클릭한 버튼으로 다시 focus');
+				$("body").removeClass("scroll_lock");
 				$(".wrap").attr("aria-hidden", false);
 				$(".popup_wrap").attr("aria-hidden", true);
 			}, 400);
