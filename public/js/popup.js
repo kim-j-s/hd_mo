@@ -73,7 +73,9 @@ function closePop(element, close_target) {
 		// 남겨진 흔적 역추적
 		const beforeId = $close_target.attr('data-popmark');
 
-		$(element).blur();
+		$(element).css('display', 'none');
+		$(element).removeAttr('style');
+
 
 		const $beforeTarget = $('#' + beforeId);
 		$beforeTarget.attr("aria-hidden", false);
