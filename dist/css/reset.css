@@ -1,0 +1,280 @@
+@charset "UTF-8";
+/* root */
+:root {
+	--color-primary: #007bff;
+	--color-secondary: #6c757d;
+}
+/* fonts */
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 900;
+	font-display: swap;
+	src:
+		local("Pretendard Black"),
+		url("fonts/Pretendard-Black.woff2") format("woff2"),
+		url("fonts/Pretendard-Black.woff") format("woff");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 800;
+	font-display: swap;
+	src:
+		local("Pretendard ExtraBold"),
+		url("fonts/Pretendard-ExtraBold.woff2") format("woff2"),
+		url("fonts/Pretendard-ExtraBold.woff") format("woff");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 700;
+	font-display: swap;
+	src:
+		local("Pretendard Bold"),
+		url("fonts/Pretendard-Bold.woff2") format("woff2"),
+		url("fonts/Pretendard-Bold.woff") format("woff");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 600;
+	font-display: swap;
+	src:
+		local("Pretendard SemiBold"),
+		url("fonts/Pretendard-SemiBold.woff2") format("woff2"),
+		url("fonts/Pretendard-SemiBold.woff") format("woff");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 500;
+	font-display: swap;
+	src:
+		local("Pretendard Medium"),
+		url("fonts/Pretendard-Medium.woff2") format("woff2"),
+		url("fonts/Pretendard-Medium.woff") format("woff");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 400;
+	font-display: swap;
+	src:
+		local("Pretendard Regular"),
+		url("fonts/Pretendard-Regular.woff2") format("woff2"),
+		url("fonts/Pretendard-Regular.woff") format("woff");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 300;
+	font-display: swap;
+	src:
+		local("Pretendard Light"),
+		url("fonts/Pretendard-Light.woff2") format("woff2"),
+		url("fonts/Pretendard-Light.woff") format("woff");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 200;
+	font-display: swap;
+	src:
+		local("Pretendard ExtraLight"),
+		url("fonts/Pretendard-ExtraLight.woff2") format("woff2"),
+		url("fonts/Pretendard-ExtraLight.woff") format("woff");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 100;
+	font-display: swap;
+	src:
+		local("Pretendard Thin"),
+		url("fonts/Pretendard-Thin.woff2") format("woff2"),
+		url("fonts/Pretendard-Thin.woff") format("woff");
+}
+/* reset */
+:root {
+	--color-primary: #007bff;
+	--color-secondary: #6c757d;
+}
+html {
+	font-size: 62.5%;
+	-webkit-text-size-adjust: 100%;
+}
+body {
+	position: relative;
+	font-family: "Pretendard", Dotum, Helvetica, "Apple SD Gothic Neo", sans-serif;
+}
+html,
+body {
+	height: 100%;
+}
+*,
+::before,
+::after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td,
+.divider {
+	margin: 0;
+	padding: 0;
+}
+fieldset,
+img {
+	border: 0;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+	font-style: normal;
+	font-weight: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+ul,
+ol,
+li {
+	list-style: none;
+}
+q:before,
+q:after {
+	content: "";
+}
+abbr,
+acronym {
+	border: 0;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+	background-color: transparent;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+input,
+textarea,
+button,
+label {
+	-webkit-tap-highlight-color: transparent;
+}
+button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	cursor: pointer;
+}
+/* 모바일 삭제 예정 */
+a:focus,
+button:focus {
+	color: #fff;
+	background-color: #000;
+}
+/* 모바일 삭제 예정 */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+	border-style: none;
+}
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+[type="checkbox"],
+[type="radio"] {
+	padding: 0;
+}
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+[type="search"] {
+	-webkit-appearance: textfield;
+}
+[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+::-webkit-file-upload-button {
+	font: inherit;
+	-webkit-appearance: button;
+}
+img {
+	max-width: 100%;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+caption {
+	position: absolute;
+	visibility: hidden;
+	clip: rect(0 0 0 0);
+}
+::-ms-clear {
+	display: none;
+}
+::-ms-reveal {
+	display: none;
+}
+/* 모바일 디바이스 분기 */
+@media screen and (max-width: 375px) {
+	html {
+		font-size: 2.6666666667vw !important;
+	}
+}
+/* 모바일 디바이스 분기 */
+.sr_only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border-width: 0;
+	white-space: nowrap;
+	clip: rect(0, 0, 0, 0);
+	overflow: hidden;
+}
