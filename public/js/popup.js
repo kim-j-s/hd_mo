@@ -60,15 +60,17 @@ function closePop(element, close_target) {
 		$("body").removeClass("scroll_lock").removeAttr("style");
 		$(".wrap").attr("aria-hidden", false);
 		// pop_start로 돌아간다.
-		$(pop_start).focus();
+		// $(pop_start).focus();
 
-		setTimeout(function(){
-			$close_target.removeAttr('data-popmark');
-			$close_target.removeClass('active');
-			$close_target.attr("aria-hidden", true);
-		}, 2000);
+		// setTimeout(function(){
+		// 	$close_target.removeAttr('data-popmark');
+		// 	$close_target.removeClass('active');
+		// 	$close_target.attr("aria-hidden", true);
+		// }, 2000);
 
 	} else {
+		// 
+		console.log('팝업에서 팝업으로');
 		
 		// 남겨진 흔적 역추적
 		const beforeId = $close_target.attr('data-popmark');
