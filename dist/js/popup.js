@@ -78,13 +78,13 @@ function closePop(close_target) {
 
 		console.log("닫는중 target : " + close_target + " : 닫을 대상 ID : " + beforeId);
 
-		setTimeout(function () {
-			if ($beforeTarget.find(".popup_head").length) {
-				$beforeTarget.find(".popup_head").attr("tabindex", "0").css("outline", "none").focus();
-			} else {
-				$beforeTarget.find(".popup_cont").attr("tabindex", "0").css("outline", "none").focus();
-			}
+		if ($beforeTarget.find(".popup_head").length) {
+			$beforeTarget.find(".popup_head").attr("tabindex", "0").css("outline", "none").focus();
+		} else {
+			$beforeTarget.find(".popup_cont").attr("tabindex", "0").css("outline", "none").focus();
+		}
 
+		setTimeout(function () {
 			$close_target.removeAttr("data-popmark");
 			$close_target.removeClass("active");
 			$close_target.attr("aria-hidden", true);
