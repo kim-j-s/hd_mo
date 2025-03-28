@@ -35,7 +35,7 @@ function openPop($triggerEl,target){
 			$('.wrap').attr('aria-hidden', true);
 			$target.attr('aria-hidden', false);
 			console.log('현재팝업 focus');
-		}, 200);
+		}, 600);
 	}
 
 	// bottom 팝업 - drag
@@ -64,7 +64,7 @@ function closePop(target) {
 				$target.attr('aria-hidden', true);
 				$target.find('.popup_inner').removeAttr('tabindex');
 				// console.log('이전팝업에 focus');
-			}, 400);
+			}, 600);
 		}
 	
 		const popup_count = $('.popup_wrap.active').length;
@@ -76,7 +76,7 @@ function closePop(target) {
 				$('body').removeClass('scroll_lock');
 				$('.wrap').attr('aria-hidden', false);
 				$('.popup_wrap').attr('aria-hidden', true);
-			},400);
+			},600);
 		}
 	}
 }
