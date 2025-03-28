@@ -18,12 +18,10 @@ function openPop(element, target) { // `element`를 첫 번째 매개변수로 �
 		let pid = $(element).closest('.popup_wrap').attr('id');
 		// 팝업에서 팝업이 활성화 된 경우 추척표시		
 		$target.attr('data-popmark', pid);
-		// 활성화 되는 팝업에 active class 부여
-		$target.addClass('active');
 	}
 
 	// 팝업 활성화
-	// $target.addClass('active');
+	$target.addClass('active');
 
 	setTimeout(function(){
 		if ( $target.find('.popup_head').length ) {
