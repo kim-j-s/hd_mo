@@ -19,7 +19,6 @@ function openPop($triggerEl, target) {
 		$target.attr("opner", openerId);
 		$("body").css("overscroll-behavior", "contain").addClass("scroll_lock");
 		$target.addClass("active");
-		// $('body').addClass('scroll_lock');
 
 		//렌더링 후, focus 이동
 		setTimeout(function () {
@@ -62,26 +61,17 @@ function closePop(target) {
 
 			setTimeout(function () {
 				$lastPopup.find(".popup_inner").attr("tabindex", "0").focus();
-				// const $lastPop_header = $lastPopup.find('.popup_head'),
-				// 			$lastPop_cont = $lastPopup.find('.popup_cont');
-				// if($lastPop_header.length){
-				// 	$lastPop_header.attr('tabindex', '0').focus();
-				// }else {
-				// 	$lastPop_cont.attr('tabindex', '0').focus();
-				// }
 				$target.attr("aria-hidden", true);
 				$target.find(".popup_inner").removeAttr("tabindex");
-				// $target.find('.popup_head, .popup_cont').removeAttr('tabindex');
 				// console.log('이전팝업에 focus');
 			}, 400);
 		}
 
-		// const popup_count = $('.popup_wrap[aria-hidden="false"]').length;
 		const popup_count = $(".popup_wrap.active").length;
 		if (popup_count <= 0) {
 			$("body").removeClass("scroll_lock");
 			setTimeout(() => {
-				$opener.focus();
+				// $opener.focus();
 				// console.log('클릭한 버튼으로 다시 focus');
 				$("body").removeClass("scroll_lock");
 				$(".wrap").attr("aria-hidden", false);
