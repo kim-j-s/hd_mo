@@ -76,7 +76,7 @@ function closePop(element, close_target) {
 		const beforeId = $close_target.attr("data-popmark");
 
 		$(element).css("display", "none");
-		$(element).removeAttr("style");
+		// $(element).removeAttr('style');
 
 		const $beforeTarget = $("#" + beforeId);
 		$beforeTarget.attr("aria-hidden", false);
