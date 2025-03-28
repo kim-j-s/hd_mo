@@ -53,7 +53,7 @@ function openPop(element, target) {
 }
 
 // Popup 닫기
-function closePop(close_target) {
+function closePop(element, close_target) {
 	const $close_target = $("#" + close_target);
 
 	// $close_target.removeClass('active');
@@ -74,6 +74,8 @@ function closePop(close_target) {
 	} else {
 		// 남겨진 흔적 역추적
 		const beforeId = $close_target.attr("data-popmark");
+
+		$(element).blur();
 
 		const $beforeTarget = $("#" + beforeId);
 		$beforeTarget.attr("aria-hidden", false);
