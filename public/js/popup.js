@@ -61,8 +61,9 @@ function closePop(element, close_target) {
 		$(".wrap").attr("aria-hidden", false);
 
 		// body 갔다가 pop_start로 돌아간다.
-		$beforeTarget.attr('tabindex', '0').focus();
+		$('body').attr('tabindex', '0').focus();
 		$(pop_start).focus();
+		$('body').removeAttr('tabindex');
 
 		setTimeout(function(){
 			$close_target.removeAttr('data-popmark');
