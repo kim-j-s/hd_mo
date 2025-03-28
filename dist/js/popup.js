@@ -35,7 +35,7 @@ function openPop($triggerEl, target) {
 			$(".wrap").attr("aria-hidden", true);
 			$target.attr("aria-hidden", false);
 			console.log("현재팝업 focus");
-		}, 400);
+		}, 200);
 	}
 
 	// bottom 팝업 - drag
