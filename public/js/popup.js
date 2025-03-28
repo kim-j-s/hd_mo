@@ -56,7 +56,7 @@ function closePop(element, close_target) {
 
 	// 마지막 닫히는 팝업인지 확인하기 위한 절차
 	if (!$close_target.attr('data-popmark')) {
-		console.log('???');
+		console.log('바닥으로 진입');
 		$("body").removeClass("scroll_lock").removeAttr("style");
 		$(".wrap").attr("aria-hidden", false);
 
