@@ -88,7 +88,7 @@ function closePop(close_target) {
 			$close_target.removeAttr("data-popmark");
 			$close_target.removeClass("active");
 			$close_target.attr("aria-hidden", true);
-		}, 200);
+		}, 1000);
 	}
 }
 
