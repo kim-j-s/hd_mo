@@ -25,17 +25,17 @@ function openPop($triggerEl, target) {
 			const $pop_header = $target.find(".popup_inner").children(".popup_head"),
 				$pop_cont = $target.find(".popup_inner").children(".popup_cont");
 
-			if ($pop_header.length) {
-				$pop_header.attr("tabindex", "0").focus();
-			} else {
-				$pop_cont.attr("tabindex", "0").focus();
-			}
-			// $target.find('.popup_inner').attr('tabindex', '0').focus();
+			// if($pop_header.length){
+			// 	$pop_header.attr('tabindex','0').focus();
+			// }else {
+			// 	$pop_cont.attr('tabindex','0').focus();
+			// }
+			$target.find(".popup_inner").attr("tabindex", "0").focus();
 			$(".popup_wrap.active").attr("aria-hidden", true);
 			$(".wrap").attr("aria-hidden", true);
 			$target.attr("aria-hidden", false);
 			console.log("현재팝업 focus");
-		}, 200);
+		}, 400);
 	}
 
 	// bottom 팝업 - drag
@@ -71,7 +71,7 @@ function closePop(target) {
 		if (popup_count <= 0) {
 			$("body").removeClass("scroll_lock");
 			setTimeout(() => {
-				// $opener.focus();
+				$opener.focus();
 				// console.log('클릭한 버튼으로 다시 focus');
 				$("body").removeClass("scroll_lock");
 				$(".wrap").attr("aria-hidden", false);
