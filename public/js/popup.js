@@ -69,10 +69,10 @@ function closePop(target) {
 				// }else {
 				// 	$lastPop_cont.attr('tabindex', '0').focus();
 				// }
-				$('.popup_wrap').find('.popup_inner').removeAttr('tabindex');
-				$target.find('.popup_head, .popup_cont').removeAttr('tabindex');
 				$target.attr('aria-hidden', true);
-				console.log('이전팝업에 focus');
+				$target.find('.popup_inner').removeAttr('tabindex');
+				// $target.find('.popup_head, .popup_cont').removeAttr('tabindex');
+				// console.log('이전팝업에 focus');
 			}, 400);
 		}
 	
