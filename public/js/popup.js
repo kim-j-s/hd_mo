@@ -1,13 +1,53 @@
 /* Popup 관련 */
 
 // Popup 열기
-function openPop(target){
+
+let pop_start = null;
+
+
+function openPop(element, target) { // `element`를 첫 번째 매개변수로 변경
 	const $target = $('#' + target);
+	console.log('target : ', target);
+
+	// 팝업이 아닌 경우 출발자를 지정 - 고유
+	if (!$(element).closest('.popup_wrap').length) {
+			$(element).css('background', 'red'); // 클릭한 버튼의 배경색 변경
+			// 접근성에 맞추어 body에 속성 추가
+			$("body").css("overscroll-behavior", "contain").addClass("scroll_lock");
+	} else {
+		let pid = $(element).closest('.popup_wrap').attr('id');
+		// 팝업에서 팝업이 활성화 된 경우 추척표시		
+		$target.attr('data-popmark', pid);
+		// 활성화 되는 팝업에 active class 부여
+		$target.addClass('active');
+	}
+
+	// 팝업 활성화
+	// $target.addClass('active');
+
+	setTimeout(function(){
+		if ( $target.find('.popup_head').length ) {
+			$target.find('.popup_head').attr("tabindex", "-1").focus();
+		} else {
+			$target.find('.popup_cont').attr("tabindex", "-1").focus();
+		}
+		// aria-hidden
+		if (!$(element).closest('.popup_wrap').length) {
+			$(".wrap").attr("aria-hidden", true);
+		} else {
+			$(element).attr("aria-hidden", true);
+		}
+	}, 500);
 }
 
+
+
+
 // Popup 닫기
-function closePop(target) {
-	const $target = $('#' + target);
+function closePop(close_target) {
+	const $close_target = $('#' + close_target);
+
+	$close_target.removeClass('active');
 }
 
 // 팝업 영역 외 클릭 시 팝업 닫기
@@ -52,12 +92,14 @@ function toastMsg(msg){
 
 
 // UUID생성
+/* 추후
 function generateUUID() {
-    var d = new Date().getTime();
-    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        var r = (d + Math.random()*16)%16 | 0;
-        d = Math.floor(d/16);
-        return (c=='x' ? r : (r&0x3|0x8)).toString(16);
-    });
-    return uuid;
+	var d = new Date().getTime();
+	var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+		var r = (d + Math.random()*16)%16 | 0;
+		d = Math.floor(d/16);
+		return (c=='x' ? r : (r&0x3|0x8)).toString(16);
+	});
+	return uuid;
 };
+*/
