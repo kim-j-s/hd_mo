@@ -25,12 +25,12 @@ function openPop($triggerEl, target) {
 			const $pop_header = $target.find(".popup_inner").children(".popup_head"),
 				$pop_cont = $target.find(".popup_inner").children(".popup_cont");
 
-			// if($pop_header.length){
-			// 	$pop_header.attr('tabindex','0').focus();
-			// }else {
-			// 	$pop_cont.attr('tabindex','0').focus();
-			// }
-			$target.find(".popup_inner").attr("tabindex", "0").focus();
+			if ($pop_header.length) {
+				$pop_header.attr("tabindex", "0").focus();
+			} else {
+				$pop_cont.attr("tabindex", "0").focus();
+			}
+			// $target.find('.popup_inner').attr('tabindex', '0').focus();
 			$(".popup_wrap.active").attr("aria-hidden", true);
 			$(".wrap").attr("aria-hidden", true);
 			$target.attr("aria-hidden", false);
