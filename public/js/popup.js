@@ -22,6 +22,7 @@ function openPop(element, target) { // `element`를 첫 번째 매개변수로 �
 
 	// 팝업 활성화
 	$target.addClass('active');
+	$target.attr("aria-hidden", false);
 
 	setTimeout(function(){
 		if ( $target.find('.popup_head').length ) {
