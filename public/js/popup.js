@@ -26,9 +26,9 @@ function openPop(element, target) { // `element`를 첫 번째 매개변수로 �
 
 	setTimeout(function(){
 		if ( $target.find('.popup_head').length ) {
-			$target.find('.popup_head').attr("tabindex", "-1").focus();
+			$target.find('.popup_head').attr("tabindex", "0").css('outline', 'none').focus();
 		} else {
-			$target.find('.popup_cont').attr("tabindex", "-1").focus();
+			$target.find('.popup_cont').attr("tabindex", "0").css('outline', 'none').focus();
 		}
 		// aria-hidden
 		if (!$(element).closest('.popup_wrap').length) {
@@ -38,7 +38,7 @@ function openPop(element, target) { // `element`를 첫 번째 매개변수로 �
 			$('#' + beforeId).attr("aria-hidden", true);
 			// $(element).attr("aria-hidden", true);
 		}
-	}, 500);
+	}, 1000);
 }
 
 
