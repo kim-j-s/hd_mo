@@ -75,12 +75,12 @@ function closePop(element, close_target) {
 			$(pop_start).next().remove();
 		}, 1000);
 
-		// setTimeout(function(){
-		// 	$close_target.removeAttr('data-popmark');
-		// 	$close_target.removeAttr('tabindex');
-		// 	$close_target.removeClass('active');
-		// 	$close_target.attr("aria-hidden", true);
-		// }, 300);
+		setTimeout(function () {
+			// $close_target.removeAttr('data-popmark');
+			// $close_target.removeAttr('tabindex');
+			// $close_target.removeClass('active');
+			$close_target.attr("aria-hidden", true);
+		}, 300);
 	} else {
 		//
 		console.log("팝업에서 팝업으로");
