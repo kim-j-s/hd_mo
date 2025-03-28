@@ -60,7 +60,8 @@ function closePop(element, close_target) {
 		$("body").removeClass("scroll_lock").removeAttr("style");
 		$(".wrap").attr("aria-hidden", false);
 
-		// pop_start로 돌아간다.
+		// body 갔다가 pop_start로 돌아간다.
+		$beforeTarget.attr('tabindex', '0').focus();
 		$(pop_start).focus();
 
 		setTimeout(function(){
