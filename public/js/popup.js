@@ -73,12 +73,10 @@ function closePop(element, close_target) {
 		// 남겨진 흔적 역추적
 		const beforeId = $close_target.attr('data-popmark');
 
-		$(element).css('display', 'none');
-		// $(element).removeAttr('style');
-
-
 		const $beforeTarget = $('#' + beforeId);
 		$beforeTarget.attr("aria-hidden", false);
+
+		$close_target.attr("aria-hidden", true);
 
 		console.log('닫는중 target : ' + close_target + ' : 닫을 대상 ID : ' + beforeId);
 
@@ -93,7 +91,7 @@ function closePop(element, close_target) {
 		setTimeout(function(){
 			$close_target.removeAttr('data-popmark');
 			$close_target.removeClass('active');
-			$close_target.attr("aria-hidden", true);
+			// $close_target.attr("aria-hidden", true);
 		}, 2000);
 		
 	}
