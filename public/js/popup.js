@@ -76,24 +76,25 @@ function closePop(element, close_target) {
 		const $beforeTarget = $('#' + beforeId);
 		$beforeTarget.attr("aria-hidden", false);
 
-		$close_target.attr("aria-hidden", true);
+		// $close_target.attr("aria-hidden", true);
 
-		console.log('닫는중 target : ' + close_target + ' : 닫을 대상 ID : ' + beforeId);
+		console.log('닫는중 target : ' + close_target + ' : 이동 대상 ID : ' + beforeId);
 
 		setTimeout(function(){
 			if ( $beforeTarget.find('.popup_head').length ) {
 				$beforeTarget.find('.popup_head').attr("tabindex", "0").css('outline', 'none').focus();
+				$beforeTarget.find('.popup_head').css('background', 'blue');
 			} else {
 				$beforeTarget.find('.popup_cont').attr("tabindex", "0").css('outline', 'none').focus();
+				$beforeTarget.find('.popup_cont').css('background', 'green');
 			}
 		}, 200);
 
-		setTimeout(function(){
-			$close_target.removeAttr('data-popmark');
-			$close_target.removeClass('active');
-			// $close_target.attr("aria-hidden", true);
-		}, 2000);
-		
+		// setTimeout(function(){
+		// 	$close_target.removeAttr('data-popmark');
+		// 	$close_target.removeClass('active');
+		// 	$close_target.attr("aria-hidden", true);
+		// }, 2000);
 	}
 		
 }
