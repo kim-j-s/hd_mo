@@ -34,7 +34,9 @@ function openPop(element, target) { // `element`를 첫 번째 매개변수로 �
 		if (!$(element).closest('.popup_wrap').length) {
 			$(".wrap").attr("aria-hidden", true);
 		} else {
-			$(element).attr("aria-hidden", true);
+			const beforeId = $target.attr('data-popmark');
+			$('#' + beforeId).attr("aria-hidden", true);
+			// $(element).attr("aria-hidden", true);
 		}
 	}, 500);
 }

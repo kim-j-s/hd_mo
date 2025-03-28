@@ -34,7 +34,9 @@ function openPop(element, target) {
 		if (!$(element).closest(".popup_wrap").length) {
 			$(".wrap").attr("aria-hidden", true);
 		} else {
-			$(element).attr("aria-hidden", true);
+			const beforeId = $target.attr("data-popmark");
+			$("#" + beforeId).attr("aria-hidden", true);
+			// $(element).attr("aria-hidden", true);
 		}
 	}, 500);
 }
