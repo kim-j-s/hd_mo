@@ -59,7 +59,7 @@ function closePop(element, close_target) {
 		console.log('???');
 		$("body").removeClass("scroll_lock").removeAttr("style");
 		$(".wrap").attr("aria-hidden", false);
-		
+
 		// pop_start로 돌아간다.
 		$(pop_start).focus();
 
@@ -84,9 +84,7 @@ function closePop(element, close_target) {
 
 		console.log('닫는중 target : ' + close_target + ' : 이동 대상 ID : ' + beforeId);
 
-		$beforeTarget.attr('tabindex', '0').focus();
-
-		
+		$beforeTarget.attr('tabindex', '0').focus();		
 
 		if ( $beforeTarget.find('.popup_head').length ) {
 			$beforeTarget.find('.popup_head').attr("tabindex", "0").css('outline', 'none').focus();
