@@ -1,5 +1,28 @@
 {{#> layout/guide }}
     <div class="guide_h1">Input</div>
+
+		<!-- 휴대폰번호 -->
+		<div class="guide_h4">Type - 휴대폰번호</div>
+		<div class="comp_wrap phone">
+			<div class="code_first">010</div>
+			{{> cp/text type="tel" id="phone01" maxlength="11" placeholder="연락처를 - 없이 입력하세요" }}
+		</div>
+
+		<!-- 주민등록번호 -->
+		<div class="guide_h4">Type - 주민등록번호</div>
+		<div class="comp_wrap">
+			{{> cp/text type="tel" maxlength="6" maxlength="6" placeholder="앞자리" }}
+			<span class="dash">-</span>
+			{{> cp/text type="tel" maxlength="1" maxlength="1" placeholder="뒷자리" }}
+		</div>
+		<br><br>
+    <div class="guide_discription">Disabled</div>
+		<div class="comp_wrap">
+			{{> cp/text type="tel" placeholder="앞자리" value="990101" }}
+			<span class="dash">-</span>
+			{{> cp/text type="tel" placeholder="뒷자리" maxlength="1" }}
+		</div>
+
     <div class="guide_h4">Type - text</div>
 
     <!-- Attribute -->

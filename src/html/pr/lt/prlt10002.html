@@ -1,0 +1,35 @@
+{{#> layout/default page-title="dept1 > dept2 > dept3 >"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-class="active" no-header=true }}
+<div class="popup_cont">
+	<h2 class="title_h2">
+		고객정보 관리 및 가입 설계<br>
+		<span class="fw_b">저장을 위해 동의</span>가 필요합니다
+	</h2>
+
+	<h3 class="title_sub">
+		선택하신 보장내용을 저장하고 겹치는 보장이 있는지 확인을 확인하기 위해 본인인증이 진행됩니다.
+	</h3>
+
+	<div class="form_group_wrap">
+		<div class="label_tit">성명</div>
+		{{> cp/text placeholder="입력하세요" }}
+		<div class="label_tit">주민등록번호</div>
+		<div class="comp_wrap">
+			{{> cp/text type="tel" maxlength="6" maxlength="6" placeholder="앞자리" }}
+			<span class="dash">-</span>
+			{{> cp/text type="tel" maxlength="1" maxlength="1" placeholder="뒷자리" }}
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{#> cp/button type="1" size="2"}}정보를 입력했습니다{{/ cp/button}}
+		<!-- {{#> cp/button type="1" size="2" disabled=true }}동의를 위해 정보를 입력합니다{{/ cp/button}} -->
+	</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+ 
+{{/ layout/default }}

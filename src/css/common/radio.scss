@@ -1,83 +1,83 @@
 /* Radio */
-	.inp_radio {
-		position: relative;
-		input[type='radio']{
-			// overflow: hidden;
-			position: absolute;
-			width: 16px;
-			height: 16px;
-			// clip: rect(0,0,0,0);
-			opacity: 0;
-			
+.inp_radio {
+	position: relative;
+
+
+	input[type='radio']{
+		// overflow: hidden;
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		// clip: rect(0,0,0,0);
+		opacity: 0;
+		
+		& + label {
+			position: relative;
+			display: block;
+			padding-left: 20px;
+
+			> span {
+				font-size: 14px;
+				line-height: 20px;
+				font-weight: bold;
+			}
+			cursor: pointer;
+
+			&::before {
+				content:'';
+				position: absolute;
+				top: 2px;
+				left: 0;
+				width: 16px;
+				height: 16px;
+				border:1px solid #000;
+				border-radius: 100%;
+			}
+		}
+
+		&:disabled {
 			& + label {
-				position: relative;
-				display: block;
-				padding-left: 20px;
+				&::before {
+					background-color: #f0f0f0;
+					border-color: gray;
+				}
 
 				> span {
-					font-size: 14px;
-					line-height: 20px;
-					font-weight: bold;
-				}
-				cursor: pointer;
-	
+					color: gray;
+				} 
+			}
+		}
+
+		&:checked {
+			& + label {
 				&::before {
-					content:'';
-					position: absolute;
-					top: 2px;
-					left: 0;
-					width: 16px;
-					height: 16px;
-					border:1px solid #000;
-					border-radius: 100%;
+					background-color: black;
 				}
 			}
-	
-			// &:focus {
-			// 	+ label {
-			// 		outline: 1px dashed gray;
-			// 	}
-			// }
 
 			&:disabled {
 				& + label {
 					&::before {
-						background-color: #f0f0f0;
-						border-color: gray;
-					}
-
-					> span {
-						color: gray;
-					} 
-				}
-			}
-	
-			&:checked {
-				& + label {
-					&::before {
-						background-color: black;
-					}
-				}
-
-				&:disabled {
-					& + label {
-						&::before {
-							background-color: #999;
-						}
+						background-color: #999;
 					}
 				}
 			}
-	
-	
 		}
+
+
 	}
+}
 
 .radio_group_wrap {
-	display: inline-flex;
-	gap: 20px;
+	display: flex;
+	gap: 12px;
 
 	&.column {
 		flex-direction: column;
 		gap: 10px;
+	}
+	
+	.inp_radio {
+		flex: 1;
 	}
 }

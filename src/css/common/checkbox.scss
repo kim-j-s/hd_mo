@@ -11,24 +11,24 @@
 		& + label {
 			position: relative;
 			display: block;
-			padding-left: 20px;
+			padding-left: 32px;
 
 			> span {
 				font-size: 14px;
-				line-height: 20px;
-				font-weight: bold;
+				line-height: 24px;
+				color: #3E4A58;
 			}
 			cursor: pointer;
 
 			&::before {
 				content:'';
 				position: absolute;
-				top: 2px;
+				top: 0;
 				left: 0;
-				width: 16px;
-				height: 16px;
-				border:1px solid #000;
-				border-radius: 2px;
+				width: 24px;
+				height: 24px;
+				border: 1px solid #869099;
+				border-radius: 8px;
 			}
 		}
 
@@ -41,8 +41,8 @@
 		&:disabled {
 			& + label {
 				&::before {
-					background-color: #f0f0f0;
-					border-color: gray;
+					background-color: #F5F5F5;
+					border-color: #F5F5F5;
 				}
 
 				> span {
@@ -54,14 +54,17 @@
 		&:checked {
 			& + label {
 				&::before {
-					background-color: black;
+					background: #F8633C url(../../images/icon/icon_check_w.svg) no-repeat center/ 12px auto;
+					border-color: #F8633C;
 				}
 			}
 
 			&:disabled {
 				& + label {
 					&::before {
-						background-color: #999;
+						background-color: #F5F5F5;
+						background-image: url(../../images/icon/icon_check_g.svg);
+						border-color: #F5F5F5;
 					}
 				}
 			}
