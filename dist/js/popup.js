@@ -63,14 +63,16 @@ function closePop(element, close_target) {
 		console.log("???");
 		$("body").removeClass("scroll_lock").removeAttr("style");
 		$(".wrap").attr("aria-hidden", false);
+
 		// pop_start로 돌아간다.
 		$(pop_start).focus();
 
 		setTimeout(function () {
 			$close_target.removeAttr("data-popmark");
+			$close_target.removeAttr("tabindex");
 			$close_target.removeClass("active");
 			$close_target.attr("aria-hidden", true);
-		}, 2000);
+		}, 300);
 	} else {
 		//
 		console.log("팝업에서 팝업으로");
@@ -87,6 +89,12 @@ function closePop(element, close_target) {
 
 		$beforeTarget.attr("tabindex", "0").focus();
 
+		if ($beforeTarget.find(".popup_head").length) {
+			$beforeTarget.find(".popup_head").attr("tabindex", "0").css("outline", "none").focus();
+		} else {
+			$beforeTarget.find(".popup_cont").attr("tabindex", "0").css("outline", "none").focus();
+		}
+
 		/*
 		setTimeout(function(){
 			if ( $beforeTarget.find('.popup_head').length ) {
@@ -101,9 +109,10 @@ function closePop(element, close_target) {
 
 		setTimeout(function () {
 			$close_target.removeAttr("data-popmark");
+			$close_target.removeAttr("tabindex");
 			$close_target.removeClass("active");
 			$close_target.attr("aria-hidden", true);
-		}, 1000);
+		}, 300);
 	}
 }
 
