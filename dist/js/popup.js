@@ -65,9 +65,13 @@ function closePop(element, close_target) {
 		$(".wrap").attr("aria-hidden", false);
 
 		// body 갔다가 pop_start로 돌아간다.
-		$("body").attr("tabindex", "0").focus();
-		$(pop_start).focus();
-		$("body").removeAttr("tabindex");
+		$(".wrap").attr("tabindex", "0").focus();
+		$(pop_start).attr("tabindex", "0").focus();
+		setTimeout(function () {
+			$(".wrap").removeAttr("tabindex");
+			$(pop_start).removeAttr("tabindex");
+			$(pop_start).next().remove();
+		}, 1000);
 
 		setTimeout(function () {
 			$close_target.removeAttr("data-popmark");
