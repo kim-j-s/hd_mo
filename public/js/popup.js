@@ -76,16 +76,20 @@ function closePop(close_target) {
 
 		console.log('닫는중 target : ' + close_target + ' : 닫을 대상 ID : ' + beforeId);
 
-		if ( $beforeTarget.find('.popup_head').length ) {
-			$beforeTarget.find('.popup_head').attr("tabindex", "0").css('outline', 'none').focus();
-		} else {
-			$beforeTarget.find('.popup_cont').attr("tabindex", "0").css('outline', 'none').focus();
-		}
+		setTimeout(function(){
 
+			if ( $beforeTarget.find('.popup_head').length ) {
+				$beforeTarget.find('.popup_head').attr("tabindex", "0").css('outline', 'none').focus();
+			} else {
+				$beforeTarget.find('.popup_cont').attr("tabindex", "0").css('outline', 'none').focus();
+			}
 
-		$close_target.removeAttr('data-popmark');
-		$close_target.removeClass('active');
-		$close_target.attr("aria-hidden", true);
+			$close_target.removeAttr('data-popmark');
+			$close_target.removeClass('active');
+			$close_target.attr("aria-hidden", true);
+
+		}, 200);
+		
 	}
 		
 }

@@ -60,6 +60,7 @@ function closePop(close_target) {
 
 	// 마지막 닫히는 팝업인지 확인하기 위한 절차
 	if (!$close_target.attr("data-popmark")) {
+		console.log("???");
 		$("body").removeClass("scroll_lock").removeAttr("style");
 		$(".wrap").attr("aria-hidden", false);
 		// pop_start로 돌아간다.
@@ -75,15 +76,19 @@ function closePop(close_target) {
 		const $beforeTarget = $("#" + beforeId);
 		$beforeTarget.attr("aria-hidden", false);
 
-		if ($beforeTarget.find(".popup_head").length) {
-			$beforeTarget.find(".popup_head").attr("tabindex", "0").css("outline", "none").focus();
-		} else {
-			$beforeTarget.find(".popup_cont").attr("tabindex", "0").css("outline", "none").focus();
-		}
+		console.log("닫는중 target : " + close_target + " : 닫을 대상 ID : " + beforeId);
 
-		$close_target.removeAttr("data-popmark");
-		$close_target.removeClass("active");
-		$close_target.attr("aria-hidden", true);
+		setTimeout(function () {
+			if ($beforeTarget.find(".popup_head").length) {
+				$beforeTarget.find(".popup_head").attr("tabindex", "0").css("outline", "none").focus();
+			} else {
+				$beforeTarget.find(".popup_cont").attr("tabindex", "0").css("outline", "none").focus();
+			}
+
+			$close_target.removeAttr("data-popmark");
+			$close_target.removeClass("active");
+			$close_target.attr("aria-hidden", true);
+		}, 200);
 	}
 }
 
