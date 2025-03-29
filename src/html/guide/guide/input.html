@@ -5,23 +5,27 @@
 		<div class="guide_h4">Type - 휴대폰번호</div>
 		<div class="comp_wrap phone">
 			<div class="code_first">010</div>
-			{{> cp/text type="tel" id="phone01" maxlength="11" placeholder="연락처를 - 없이 입력하세요" }}
+			<span class="dash">-</span>
+			{{> cp/text type="tel" id="phone02" maxlength="4" placeholder="휴대폰번호 2번째 자리 입력" }}
+			<span class="dash">-</span>
+			{{> cp/text type="tel" id="phone03" maxlength="4" placeholder="휴대폰번호 3번째 자리 입력" }}
 		</div>
 
 		<!-- 주민등록번호 -->
 		<div class="guide_h4">Type - 주민등록번호</div>
-		<div class="comp_wrap">
-			{{> cp/text type="tel" maxlength="6" maxlength="6" placeholder="앞자리" }}
+		<div class="comp_wrap birth">
+			{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" title="주민등록번호 앞자리 입력" }}
 			<span class="dash">-</span>
-			{{> cp/text type="tel" maxlength="1" maxlength="1" placeholder="뒷자리" }}
+			{{> cp/text type="tel" class="masking" minlength="7" maxlength="7" placeholder="뒷자리" title="주민등록번호 뒷자리 입력" readonly=true }}
 		</div>
 		<br><br>
     <div class="guide_discription">Disabled</div>
-		<div class="comp_wrap">
-			{{> cp/text type="tel" placeholder="앞자리" value="990101" }}
+		<div class="comp_wrap birth">
+			{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" title="주민등록번호 앞자리 입력" disabled=true }}
 			<span class="dash">-</span>
-			{{> cp/text type="tel" placeholder="뒷자리" maxlength="1" }}
+			{{> cp/text type="tel" class="masking" minlength="7" maxlength="7" placeholder="뒷자리" title="주민등록번호 뒷자리 입력" readonly=true }}
 		</div>
+    <div class="security_keypad"></div>
 
     <div class="guide_h4">Type - text</div>
 
