@@ -55,3 +55,33 @@
 		flex: 1 1 0;
 	}
 }
+
+.d_list_ty2 {
+	--border-color: #CDD1D5;
+	@include list-style(
+		$ul-border-radius: 12px,
+    $li-padding: 16px 0,
+    $li-font-size: 14px,
+    $li-color: #333
+  ) {
+    // ul.list-2에 대한 추가적인 스타일
+		// background-color: var(--color-primary);
+    > li {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 8px;
+			&:first-child {
+				padding-top: 0;
+			}
+    }
+  }
+	&_l {
+		flex: none;
+		min-width: 100px;
+		max-width: 50%;
+	}
+	&_l {
+		flex: 1 1 0;
+	}
+}
