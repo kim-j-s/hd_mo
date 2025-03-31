@@ -13,51 +13,64 @@
 	border-left: calc(var(--trangle-width) / 2) solid transparent;
 	border-right: calc(var(--trangle-width) / 2) solid transparent;
 	&.increase {
-		border-bottom-color: var(--increase);	
+		border-bottom-color: var(--increase);
 	}
 	&.decrease {
 		border-bottom-color: var(--decrease);
 	}
 }
 
-
-
 //SVG아이콘 컴포넌트
 .hd_icon {
-	display: inline-block;		
+	display: inline-block;
 	background-size: contain;
-}	
-
+	background-repeat: no-repeat;
+}
 
 /**
 * 아이콘 에셋
-*/	
+*/
 
 //아이콘 에셋 불러오기
-@mixin getSvg($fileName){
+@mixin getSvg($fileName) {
 	background-image: url(../images/#{$fileName}.svg);
 }
 
 .btn {
 	&_ty_1 {
-		.downloadSvg {@include getSvg('icon/outlined/24/download');}		
-		.arrowRightSvg {@include getSvg('icon/outlined/24/arrowRight');}
+		.downloadSvg {
+			@include getSvg("icon/line/24/download_ty1");
+		}
+		.arrowRightSvg {
+			@include getSvg("icon/line/24/arrowRight_ty1");
+		}
 	}
 	&_ty_2 {
-		.downloadSvg { @include getSvg('icon/outlined/24/download_ty2');}
-		.arrowRightSvg {@include getSvg('icon/outlined/24/arrowRight_ty2');}
+		.downloadSvg {
+			@include getSvg("icon/line/24/download_ty2");
+		}
+		.arrowRightSvg {
+			@include getSvg("icon/line/24/arrowRight_ty2");
+		}
 	}
-	&_ty_3 { 
-		.downloadSvg { @include getSvg('icon/outlined/24/download_ty3');}
-		.arrowRightSvg {@include getSvg('icon/outlined/24/arrowRight_ty3');}
+	&_ty_3 {
+		.downloadSvg {
+			@include getSvg("icon/line/24/download_ty3");
+		}
+		.arrowRightSvg {
+			@include getSvg("icon/line/24/arrowRight_ty3");
+		}
 	}
 }
 
 //추후 btn_sample클래스명 변경시 위의 .btn그룹으로 편입 예정
 .btn_sample {
 	&:disabled {
-		.downloadSvg { @include getSvg('icon/outlined/24/download_disabled')}
-		.arrowRightSvg {@include getSvg('icon/outlined/24/arrowRight_disabled');}
-
+		.downloadSvg {
+			@include getSvg("icon/line/24/download_disabled");
+		}
+		.arrowRightSvg {
+			@include getSvg("icon/line/24/arrowRight_disabled");
+		}
 	}
 }
