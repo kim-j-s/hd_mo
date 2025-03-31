@@ -11,7 +11,7 @@ function openPop(element, target) {
 
 	// 팝업이 아닌 경우 출발자를 지정 - 고유
 	if (!$(element).closest(".popup_wrap").length) {
-		$(element).css("background", "red"); // 클릭한 버튼의 배경색 변경
+		// $(element).css('background', 'red'); // 클릭한 버튼의 배경색 변경
 		pop_start = $(element);
 		// 접근성에 맞추어 body에 속성 추가
 		$("body").css("overscroll-behavior", "contain").addClass("scroll_lock");
@@ -66,9 +66,9 @@ function closePop(element, close_target) {
 		$close_target.attr("aria-hidden", true);
 
 		// body 갔다가 pop_start로 돌아간다.
-		$(pop_start).parent().attr("tabindex", "0").focus().css("background", "green");
+		// $(pop_start).parent().attr('tabindex', '0').focus().css('background', 'green');
 		$(pop_start).attr("tabindex", "0").focus();
-		$(pop_start).css("background", "blue");
+		// $(pop_start).css('background', 'blue');
 		$(pop_start).parent().removeAttr("tabindex");
 		$(pop_start).removeAttr("tabindex");
 
