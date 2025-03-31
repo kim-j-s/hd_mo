@@ -1,4 +1,17 @@
 /* Common */
+@mixin blind {
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	clip:rect(0,0,0,0);
+}
+
+
+.blind {
+	@include blind;
+}
+
 body {
 	// overflow: hidden;
 }
@@ -16,6 +29,10 @@ body {
 	}
 }
 
-.info_box {
-	
+/* _하단 고정버튼 영역 */
+.bottom_fix_wrap {
+	padding: 8px;
+}
+.bottom_fix_wrap_ty2 {
+	padding: 0 24px 32px;
 }
