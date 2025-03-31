@@ -182,6 +182,7 @@
 /* popup_common2 - 테스트용(임시)*/
 /* Popup2 */
 .popup_wrap2 {
+	display: block;
 	visibility: hidden;
 	position: fixed;
 	top: 0;
@@ -193,6 +194,9 @@
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
 	pointer-events: none;
+}
+.popup_wrap2 *:focus {
+	background-color: red !important;
 }
 .popup_wrap2.active {
 	visibility: visible;
@@ -216,10 +220,6 @@
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.7);
-	border: 1px solid red;
-}
-.popup_wrap2 .popup_container .popup_dim:focus {
-	background-color: red;
 }
 .popup_wrap2 .popup_container .popup_inner {
 	position: relative;
