@@ -1,13 +1,23 @@
-{{#> layout/guide }}
-	<div class="guide_h1">유의사항</div>
-	{{#> cp/notice }}
+{{#> layout/default page-title="dept1 > dept2 > dept3 >"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="타이틀" h-back=true }}
+		
+		<div id="container" class="container">
+			컨텐츠
+		</div>
+		{{#> cp/notice dp-active="active" }}
+			<ul>
+				<li>내용1</li>
+				<li>내용2</li>
+				<li>내용3</li>
+			</ul>
+		{{/ cp/notice }}
 
-		<ul>
-			<li>내용1</li>
-			<li>내용2</li>
-			<li>내용3</li>
-		</ul>
-	{{/ cp/notice }}
-
-
-{{/ layout/guide }}
+		
+		{{#> layout/footer }}
+		<div class="btn_area">
+			{{#> cp/button class="full" type="1" size="2"}}정보를 입력했습니다{{/ cp/button}}
+		</div>
+		{{/ layout/footer }}
+	</div>
+{{/ layout/default }}
