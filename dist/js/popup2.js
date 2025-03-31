@@ -144,7 +144,7 @@ class HD_Popup {
 		event.currentTarget.blur();
 		event.target.blur();
 
-		this.$triggerEl.trigger("focus");
+		this.$triggerEl.focus();
 
 		if ($(this.$triggerEl[0]).hasClass("popup_wrap2")) {
 			this.focusMove(this.$triggerEl, this.$target);
