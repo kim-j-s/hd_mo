@@ -5,6 +5,8 @@
 		<div id="container" class="container">
 			컨텐츠
 		</div>
+
+		<!-- 추가 div 생성 필요 -->
 		{{#> cp/notice dp-active="active" }}
 			<ul>
 				<li>내용1</li>
@@ -13,11 +15,11 @@
 			</ul>
 		{{/ cp/notice }}
 
-		
-		{{#> layout/footer }}
 		<div class="btn_area">
-			{{#> cp/button class="full" type="1" size="2"}}정보를 입력했습니다{{/ cp/button}}
+			{{> cp/button class="full" type="1" size="2" b-text="정보를 입력했습니다"}}
 		</div>
-		{{/ layout/footer }}
+
+		
+		{{> layout/footer }}
 	</div>
 {{/ layout/default }}

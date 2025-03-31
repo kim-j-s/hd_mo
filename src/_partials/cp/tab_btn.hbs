@@ -1,10 +1,10 @@
 {{!-- 
 	Tab 버튼 컴포넌트
-	- tb_text: 버튼 텍스트
-	- tb_id: aria-controls와 연결할 tabPanel의 id
-	- tb_class: 추가 클래스
-	- tb_active: 현재 선택 상태 여부
+	- tb-text: 버튼 텍스트
+	- tb-id: aria-controls와 연결할 tabPanel의 id
+	- tb-class: 추가 클래스
+	- tb-active: 현재 선택 상태 여부
 	구조 삽입 예시:
-	{{>cp/tab_btn tb_text="<span class='x'>내용</span>" tb_id="01" tb_active=true}}
+	{{>cp/tab_btn tb-text="<span class='x'>내용</span>" tb-id="01" tb-active=true}}
  --}}
-<button type="button" class="tab_btn{{#if tb_class}} {{tb_class}}{{/if}}{{#if tb_active}} active{{/if}}" role="tab" aria-selected="{{#if tb_active}}true{{else}}false{{/if}}" aria-controls="tabPanel{{#if tb_id}}{{tb_id}}{{/if}}" id="tab{{#if tb_id}}{{tb_id}}{{/if}}">{{#if tb_text}}{{{tb_text}}}{{/if}}</button>
+<button type="button" class="tab_btn{{#if tb-class}} {{tb-class}}{{/if}}{{#if tb-active}} active{{/if}}" role="tab" aria-selected="{{#if tb-active}}true{{else}}false{{/if}}" aria-controls="tabPanel{{#if tb-id}}{{tb-id}}{{/if}}" id="tab{{#if tb-id}}{{tb-id}}{{/if}}">{{#if tb-text}}{{{tb-text}}}{{/if}}</button>

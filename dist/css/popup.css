@@ -4,6 +4,7 @@
 	overflow: hidden;
 }
 .popup_wrap {
+	display: block;
 	visibility: hidden;
 	position: fixed;
 	top: 0;
@@ -15,10 +16,15 @@
 	opacity: 0;
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
+	pointer-events: none;
+}
+.popup_wrap *:focus {
+	background-color: red !important;
 }
 .popup_wrap.active {
 	visibility: visible;
 	opacity: 1;
+	pointer-events: auto;
 }
 .popup_wrap .popup_container {
 	display: -webkit-box;
@@ -30,6 +36,14 @@
 	width: 100%;
 	height: 100%;
 	margin: 0 auto;
+	position: relative;
+}
+.popup_wrap .popup_container .popup_dim {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 .popup_wrap .popup_container .popup_inner {
 	position: relative;
