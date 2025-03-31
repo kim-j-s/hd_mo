@@ -11,6 +11,10 @@
  --}}
 <button type="button" class="btn_sample{{#if type}} btn_ty_{{type}}{{else}} btn_ty_1{{/if}}{{#if size}} btn_s_{{size}}{{else}} btn_s_1{{/if}}"{{#if disabled}} disabled{{/if}}>
 {{#if leftIcon}}{{> cp/icon iconClass=leftIcon}}{{/if}}
-<span class="text">{{> @partial-block }}</span>
+{{#if b_text}}
+	<span class="text">{{{b_text}}}</span>
+	{{else}}
+	<span class="text">{{> @partial-block }}</span>
+{{/if}}
 {{#if rightIcon}}{{> cp/icon iconClass=rightIcon}}{{/if}}
 </button>
