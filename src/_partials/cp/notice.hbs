@@ -2,17 +2,15 @@
  * @name : notice
  * @description : notice 컴포넌트
  * @property
- * 	- notice-class : bottom_notice class 배정
  *  - dp-active : 활성화 상태
  *  - dp-head-class : notice head 부분 class 배정
  *  - dp-cont-class : notice cont 부분 class 배정
- *	- sub-title : head영역 타이틀명 추가, sub-title(추가한 타이틀명) 없을 시, Defalut로 타이틀명이 유의사항 붙음
  */
  --}}
-<div class="bottom_fix_notice{{#if notice-class}} {{notice-class}}{{/if}}">
+<div class="bottom_fix_notice">
 	<div class="acd_item">
 		<div class="acd_head{{#if dp-active}} active{{/if}}{{#if dp-head-class}} {{dp-head-class}}{{/if}}">
-			<button type="button" class="acd_btn" {{#if dp-active}}aria-expanded="true"{{else}}aria-expanded="false"{{/if}}><span>{{#if sub-title}} {{{sub-title}}} {{else}} 유의사항{{/if}}</span></button>
+			<button type="button" class="acd_btn" {{#if dp-active}}aria-expanded="true"{{else}}aria-expanded="false"{{/if}}><span>꼭 알아두세요</span></button>
 		</div>
 		<div class="acd_cont{{#if dp-cont-class}} {{dp-cont-class}}{{/if}}">
 			<div class="inner"{{#if dp-active}} style="display:block;"{{/if}}>
