@@ -1833,7 +1833,8 @@
 				const ratePer = Math.round((completeCount / todayEnd) * 100);
 				// console.log(completeCount, todayEnd);
 				// console.log('진행률 : ' + ratePer + '%');
-				$tbody.prev("thead").find(".rate_per").text(ratePer);
+				const ratePerResult = isNaN(ratePer) ? 0 : ratePer;
+				$tbody.prev("thead").find(".rate_per").text(ratePerResult);
 			});
 
 			function detectDevice() {

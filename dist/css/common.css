@@ -734,6 +734,7 @@ svg {
 	padding-right: 1.6rem;
 	border-radius: 1.6rem;
 	border: 1px solid #ddd;
+	/* comp_wrap 내부에서 보안키패드 호출 버튼 공통 사용요소 - 필요시 각 class별로 별도 설정 필요 */
 }
 .comp_wrap [class^="input"] {
 	-webkit-box-flex: 1;
@@ -748,6 +749,18 @@ svg {
 }
 .comp_wrap .dash {
 	font-size: 1.6rem;
+}
+.comp_wrap .comp_wrap_keypad_call {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 0px;
+	flex: 1 1 0;
+}
+.comp_wrap .comp_wrap_keypad_call .keypad_call {
+	display: block;
+	width: 100%;
+}
+.comp_wrap .comp_wrap_keypad_call .keypad_call.active {
+	background-color: blue;
 }
 .phone .code_first {
 	font-size: 1.6rem;
