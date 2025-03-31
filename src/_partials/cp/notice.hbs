@@ -1,0 +1,21 @@
+{{!-- /**
+ * @name : notice
+ * @description : notice 컴포넌트
+ * @property
+ *  - id : 아이콘 id
+ *  - dp-head-class : notice head 부분 class
+ *  - dp-cont-class : notice cont 부분 class
+ *  - dp-active : 활성화 상태 
+ *  예시) .downloadSvg {@include getSvg('icon/outlined/24/download');}
+ */
+ --}}
+<div class="bottom_notice">
+	<div class="acd_head{{#if dp-active}} active{{/if}}{{#if dp-head-class}} {{dp-head-class}}{{/if}}">
+		<button type="button" class="acd_btn" {{#if dp-active}}aria-expanded="true"{{else}}aria-expanded="false"{{/if}}><span>{{{sub-title}}}</span></button>
+	</div>
+	<div class="acd_cont{{#if dp-cont-class}} {{dp-cont-class}}{{/if}}">
+		<div class="inner"{{#if dp-active}} style="display:block;"{{/if}}>
+			{{> @partial-block }}
+		</div>
+	</div>
+</div>
