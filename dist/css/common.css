@@ -762,6 +762,45 @@ svg {
 .comp_wrap .comp_wrap_keypad_call .keypad_call.active {
 	background-color: blue;
 }
+.comp_wrap .input_text input:-moz-read-only {
+	z-index: 1;
+	background-color: transparent;
+}
+.comp_wrap .input_text input:read-only {
+	z-index: 1;
+	background-color: transparent;
+}
+.comp_wrap .input_text input:-moz-read-only + i {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #ddd;
+	border-radius: 0.8rem;
+}
+.comp_wrap .input_text input:read-only + i {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #ddd;
+	border-radius: 0.8rem;
+}
+.comp_wrap .input_text input:disabled {
+	z-index: 1;
+	background-color: transparent;
+}
+.comp_wrap .input_text input:disabled + i {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #ddd;
+	border-radius: 0.8rem;
+}
 .phone .code_first {
 	font-size: 1.6rem;
 	color: #1e2124;
