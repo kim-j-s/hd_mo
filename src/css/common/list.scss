@@ -6,7 +6,8 @@
   $li-margin: 0, 
   $li-font-size: 16px,
 	$li-line-height: 20px,
-  $li-color: inherit
+  $li-color: inherit,
+	$li-dot-color: inherit
 ) {
   // margin: $ul-margin;
   // padding: $ul-padding;
@@ -18,6 +19,10 @@
     font-size: $li-font-size;
     line-height: $li-line-height;
     color: $li-color;
+
+		&::before {
+			background-color: $li-dot-color;
+		}
   }
   @content;
 }
@@ -26,7 +31,8 @@
   @include list-style(
     $li-padding: 0 0 0 10px,
     $li-font-size: 14px,
-    $li-color: #333
+    $li-color: #3E4A58,
+		$li-dot-color: #3E4A58
   ) {
     // ul.list-1에 대한 추가적인 스타일
 		// background-color: var(--color-primary);
@@ -34,14 +40,18 @@
 			&::before {
 				content: '';
 				position: absolute;
-				top: 50%;
+				top: 8px;
 				left: 0;
-				width: 4px;
-				height: 4px;
+				width: 2px;
+				height: 2px;
 				border-radius: 50%;
-				background-color: #333;
-				transform: translateY(-50%);
 			}
     }
   }
+
+	> li {
+		& ~ li {
+			margin-top: 8px;
+		}
+	}
 }
