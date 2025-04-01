@@ -1,5 +1,7 @@
-function draggable(click) {
-	const $bottomSheet = click;
+function draggable(caller) {
+	const _caller = caller;
+	const $bottomSheet = _caller.$target;
+
 	const $sheetContent = $bottomSheet.find(".popup_container");
 	const $dragIcon = $bottomSheet.find(".draggable");
 	let isDragging = false,
@@ -22,7 +24,7 @@ function draggable(click) {
 
 		// 팝업의 id를 target으로 전달
 		const targetId = $bottomSheet.attr("id");
-		closePop(targetId);
+		_caller.close();
 	}
 
 	function dragStart(e) {

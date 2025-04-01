@@ -29,7 +29,7 @@ class HD_Popup {
 
 		// bottom 팝업일 경우 - drag
 		if (this.$target.hasClass("bottom")) {
-			draggable(this.$target);
+			draggable(this);
 		}
 
 		//닫기버튼 이벤트리스너 추가

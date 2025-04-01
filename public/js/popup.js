@@ -29,7 +29,7 @@ class HD_Popup {
 
 		// bottom 팝업일 경우 - drag
 		if (this.$target.hasClass("bottom")) {
-			draggable(this.$target);
+			draggable(this);
 		}
 
 		//닫기버튼 이벤트리스너 추가
@@ -118,29 +118,28 @@ function openPop($triggerEl, target) {
 	myPopup.init();
 }
 
-
 /* Toast 팝업 */
 let toastTimer = null;
-function toastAction(click){
-	const $toast = $('.toast_wrap'),
-				msg = $(click).data('msg');
+function toastAction(click) {
+	const $toast = $(".toast_wrap"),
+		msg = $(click).data("msg");
 
-	if(toastTimer != undefined) return;
+	if (toastTimer != undefined) return;
 	// console.log(toastTimer);
 
-	$toast.find('.toast_msg').text('');
+	$toast.find(".toast_msg").text("");
 	toastMsg(msg);
-	$toast.addClass('active');
+	$toast.addClass("active");
 
 	// clearTimeout(toastTimer);
 
-	toastTimer = setTimeout(function(){
-		$toast.removeClass('active');
+	toastTimer = setTimeout(function () {
+		$toast.removeClass("active");
 		toastTimer = undefined;
 	}, 1200);
 }
 
-function toastMsg(msg){
+function toastMsg(msg) {
 	// const text = $('<div class='toast_msg'></div>').text(msg);
-	$('.toast_msg').text(msg);
+	$(".toast_msg").text(msg);
 }
