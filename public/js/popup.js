@@ -117,3 +117,30 @@ function openPop($triggerEl, target) {
 	const myPopup = new HD_Popup($triggerEl, target);
 	myPopup.init();
 }
+
+
+/* Toast 팝업 */
+let toastTimer = null;
+function toastAction(click){
+	const $toast = $('.toast_wrap'),
+				msg = $(click).data('msg');
+
+	if(toastTimer != undefined) return;
+	// console.log(toastTimer);
+
+	$toast.find('.toast_msg').text('');
+	toastMsg(msg);
+	$toast.addClass('active');
+
+	// clearTimeout(toastTimer);
+
+	toastTimer = setTimeout(function(){
+		$toast.removeClass('active');
+		toastTimer = undefined;
+	}, 1200);
+}
+
+function toastMsg(msg){
+	// const text = $('<div class='toast_msg'></div>').text(msg);
+	$('.toast_msg').text(msg);
+}
