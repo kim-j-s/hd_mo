@@ -1,14 +1,15 @@
-{{#> layout/default page-title="dept1 > dept2 > dept3 >"}}
+{{#> layout/default page-title="현재페이지 | 뎁스 페이지"}}
 	<div id="wrap" class="wrap">
 		{{> layout/header h-title="타이틀" h-back=true }}
-		
 		<div id="container" class="container">
 			<div class="content">
-				컨텐츠
+				<div style="height:200px; background-color: #ddd;"></div>
+				<div style="height:200px; background-color: #f8f8f8;"></div>
+				<div style="height:200px; background-color: #ddd;"></div>
 			</div>
 
 			<!-- s: 꼭 알아두세요 -->
-			{{#> cp/notice dp-active="active" }}
+			{{#> cp/notice }}
 				<ul>
 					<li>내용1</li>
 					<li>내용2</li>
@@ -18,10 +19,12 @@
 			<!-- e: 꼭 알아두세요 -->
 		</div>
 
+		<!-- s: 하단 고정 버튼 영역 -->
 		<div class="bottom_fix_wrap">
 			<div class="btn_area">
 				{{> cp/button class="full" type="1" size="2" b-text="정보를 입력했습니다"}}
 			</div>
 		</div>
+		<!-- s: 하단 고정 버튼 영역 -->
 	</div>
 {{/ layout/default }}
