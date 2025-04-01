@@ -65,7 +65,7 @@
 .header .header_inner .back {
 	width: 2.4rem;
 	height: 2.4rem;
-	background: url(../../images/icon/line/24/arrowLeft_ty1.svg) no-repeat center/2.4rem auto;
+	background: url(../images/icon/line/24/arrowLeft_ty1.svg) no-repeat center/2.4rem auto;
 }
 .header .header_inner .header_connect {
 	-webkit-box-flex: 1;
@@ -593,8 +593,25 @@ svg {
 	margin-top: 1.6rem;
 }
 .card_item_wrap .card_item > .card_link .item_top {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	gap: 0.4rem;
 	padding-right: 2.4rem;
 	background: url(../../images/icon/line/24/arrowRight_ty3.svg) no-repeat right bottom;
+}
+.card_item_wrap .card_item > .card_link .item_top .title {
+	font-size: 1.4rem;
+	line-height: 2.1rem;
+}
+.card_item_wrap .card_item > .card_link .item_top .cont {
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	font-weight: 700;
 }
 .card_item_wrap .card_item .item_top ~ * {
 	margin-top: 1.6rem;
@@ -1242,9 +1259,14 @@ svg {
 /* table */
 /* text */
 .title_h2 {
-	font-size: 2.4rem;
-	line-height: 3.6rem;
 	color: #2b3541;
+	font-size: var(--font-size-heading-large) !important;
+	font-weight: 400;
+	line-height: 150%; /* 36px */
+	letter-spacing: var(--typo-letter-spacing-0);
+}
+.title_h2 span {
+	font-weight: 700;
 }
 .title_sub {
 	font-size: 1.6rem;
