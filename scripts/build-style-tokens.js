@@ -23,13 +23,14 @@ const transformValue = value => {
 
 /**
  * CSS 토큰 문자열 생성
- * @param {string} prefix CSS 변수 접두사
+ * @param {string} prefixStr CSS 변수 접두사
  * @param {Object} tokenData 토큰 데이터 객체
  * @returns {string} CSS 문자열
  */
-const createStyleToken = (prefix = "", tokenData, responsiveMode) => {
+const createStyleToken = (prefixStr = "", tokenData, responsiveMode, suffixStr = "") => {
 	const cssVars = [];
 	const addPrefixStr = responsiveMode;
+	let _suffixStr = suffixStr;
 
 	const recursiveTokenObject = (prefixStr, data) => {
 		if (!data || typeof data !== "object") return;
@@ -46,12 +47,12 @@ const createStyleToken = (prefix = "", tokenData, responsiveMode) => {
 				recursiveTokenObject(varName, value);
 			} else if (key === "value") {
 				// 값 변환 및 CSS 변수 추가
-				cssVars.push(`  ${varName}: ${transformValue(value)};`);
+				cssVars.push(`  ${varName}: ${transformValue(value)}${_suffixStr};`);
 			}
 		}
 	};
 
-	recursiveTokenObject(prefix, tokenData);
+	recursiveTokenObject(prefixStr, tokenData);
 
 	// CSS 변수가 없으면 빈 문자열 반환
 	if (cssVars.length === 0) return "";
@@ -65,16 +66,25 @@ const generateThemeCssVariables = tokenData => {
 
 	for (const [_, categoryData] of Object.entries(tokenData)) {
 		for (const [mainKey, mainValue] of Object.entries(categoryData)) {
-			let prefixStr = `--${mainKey}`;
 			let responsiveMode = "";
-
 			if (mainKey == "mobile" || mainKey == "pc") {
 				responsiveMode = mainKey == "mobile" ? " .mobile" : " .pc";
-				prefixStr = `--`;
-			}
-			const cssBlock = createStyleToken(prefixStr, mainValue, responsiveMode);
-			if (cssBlock) {
-				cssBlocks.push(cssBlock);
+
+				Object.entries(mainValue).forEach(([subKey, subValue]) => {
+					let suffix = "";
+					if (subKey === "font-size") suffix = "px";
+					let prefixStr = `--${subKey}`;
+					const cssBlock = createStyleToken(prefixStr, subValue, responsiveMode, suffix);
+					if (cssBlock) {
+						cssBlocks.push(cssBlock);
+					}
+				});
+			} else {
+				let prefixStr = `--${mainKey}`;
+				const cssBlock = createStyleToken(prefixStr, mainValue, responsiveMode);
+				if (cssBlock) {
+					cssBlocks.push(cssBlock);
+				}
 			}
 		}
 	}
@@ -91,7 +101,7 @@ const generateThemeCss = () => {
 	if (!fs.existsSync(distDir)) {
 		fs.mkdirSync(distDir, { recursive: true });
 	}
-	fs.writeFileSync(`${distDir}/theme.css`, variables, "utf8");
+	fs.writeFileSync(`${distDir}/theme.scss`, variables, "utf8");
 };
 
 generateThemeCss();
