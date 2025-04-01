@@ -36,11 +36,11 @@
 .bottom_fix_wrap_ty2 + .bottom_fix_wrap {
 	margin-top: 2.4rem;
 }
-.list_top_wrap {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	gap: 0.8rem;
+.content .content-top {
+	margin-bottom: 3.2rem;
+}
+.content .content-main {
+	margin-top: 5.2rem;
 }
 /* header */
 .header {
@@ -277,6 +277,23 @@
 	font-size: 0;
 	line-height: 0;
 	border: none;
+}
+.infoButton {
+	width: 1.8rem;
+	height: 1.8rem;
+	position: relative;
+	background-color: #ffffff;
+	color: #1e2124;
+}
+.infoButton .hd_icon {
+	width: 1.8rem;
+	height: 1.8rem;
+	cursor: pointer;
+	position: relative;
+}
+.infoButton span.text {
+	cursor: pointer;
+	position: relative;
 }
 /* 기타 Case */
 .link_btn_box {
@@ -563,12 +580,12 @@ svg {
 .bann_text_wrap_ty1 {
 	display: block;
 	padding: 2.4rem 2rem 2.4rem 9.9rem;
-	background: #fff9f1 url(../../images/icon/img_bann_car.png) no-repeat 2rem center/auto 5.2rem;
+	background: #fff9f1 url(../images/icon/img_bann_car.png) no-repeat 2rem center/auto 5.2rem;
 	border-radius: 3.2rem;
 }
 .bann_text_wrap_ty1 .text {
-	font-size: 1.4rem;
-	line-height: 2.1rem;
+	font-size: var(--font-size-heading-xxsmall);
+	line-height: 150%;
 	font-weight: 500;
 	color: #2b3541;
 }
@@ -588,6 +605,9 @@ svg {
 	padding: 3.2rem 2.4rem;
 	border: 1px solid #e1e3ea;
 	border-radius: 2.4rem;
+	background: rgba(255, 255, 255, 0.9);
+	-webkit-backdrop-filter: blur(0.8rem);
+	backdrop-filter: blur(0.8rem);
 }
 .card_item_wrap .card_item ~ .card_item {
 	margin-top: 1.6rem;
@@ -744,6 +764,9 @@ svg {
 }
 .btn_sample:disabled .arrowRightSvg {
 	background-image: url(../images/icon/line/24/arrowRight_disabled.svg);
+}
+.fill_18_info {
+	background-image: url(../images/icon/fill/18/info.svg);
 }
 [class^="car_logo_ty"] {
 	display: inline-block;
@@ -1260,12 +1283,12 @@ svg {
 /* text */
 .title_h2 {
 	color: #2b3541;
-	font-size: var(--font-size-heading-large) !important;
+	font-size: var(--font-size-heading-large);
 	font-weight: 400;
 	line-height: 150%; /* 36px */
 	letter-spacing: var(--typo-letter-spacing-0);
 }
-.title_h2 span {
+.title_h2 span.strong {
 	font-weight: 700;
 }
 .title_sub {
@@ -1285,6 +1308,33 @@ svg {
 	font-size: 1.4rem;
 	line-height: 2rem;
 	text-align: right;
+}
+/* title */
+.list_top_wrap {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	gap: 0.8rem;
+	color: #3e4a58;
+	font-size: var(--font-size-body-small);
+	font-weight: 400;
+	line-height: 150%; /* 21px */
+	letter-spacing: var(--typo-letter-spacing-0);
+}
+.list_top_wrap span.strong {
+	color: #d82600;
+}
+.list_top_wrap .left {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 0.7rem;
+}
+.list_top_wrap + .card_item_wrap {
+	margin-top: 1.2rem;
 }
 /* tooltip */
 /* Tooltip */

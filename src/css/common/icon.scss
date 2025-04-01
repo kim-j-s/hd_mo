@@ -15,7 +15,7 @@
 	&.increase {
 		border-bottom-color: var(--increase);
 	}
-	&.decrease { 
+	&.decrease {
 		border-bottom-color: var(--decrease);
 	}
 }
@@ -75,6 +75,10 @@
 	}
 }
 
+//info
+.fill_18_info {
+	@include getSvg("icon/fill/18/info");
+}
 
 // logo
 
@@ -83,22 +87,22 @@
 	background-image: url(../images/#{$fileName}.png);
 }
 
-[class^='car_logo_ty'] {
+[class^="car_logo_ty"] {
 	display: inline-block;
 	width: 20px;
 	height: 20px;
-	background-color: #F5F5F5;
+	background-color: #f5f5f5;
 	background-repeat: no-repeat;
 	background-position: center;
 	border-radius: 3px;
 	vertical-align: middle;
 }
 
-.car_logo_{
-	&ty1{
+.car_logo_ {
+	&ty1 {
 		@include getLogo("logo/car_logo_ty1");
 	}
-	&ty2{
+	&ty2 {
 		@include getLogo("logo/car_logo_ty2");
 	}
 }
