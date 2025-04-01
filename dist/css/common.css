@@ -24,7 +24,7 @@
 	-webkit-box-flex: 1;
 	-ms-flex: 1;
 	flex: 1;
-	padding: 2.4rem;
+	padding: 2.4rem 2.4rem 1px;
 }
 /* _하단 고정버튼 영역 */
 .bottom_fix_wrap {
@@ -32,6 +32,15 @@
 }
 .bottom_fix_wrap_ty2 {
 	padding: 0 2.4rem 3.2rem;
+}
+.bottom_fix_wrap_ty2 + .bottom_fix_wrap {
+	margin-top: 2.4rem;
+}
+.list_top_wrap {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	gap: 0.8rem;
 }
 /* header */
 .header {
@@ -51,21 +60,28 @@
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	padding: 1.2rem;
+	padding: 1.4rem 1.6rem;
+}
+.header .header_inner .back {
+	width: 2.4rem;
+	height: 2.4rem;
+	background: url(../../images/icon/line/24/arrowLeft_ty1.svg) no-repeat center/2.4rem auto;
 }
 .header .header_inner .header_connect {
 	-webkit-box-flex: 1;
 	-ms-flex: 1;
 	flex: 1;
 	width: 100%;
-	padding: 0 8rem;
+	padding: 0 8rem 0 5.2rem;
 }
 .header .header_inner .header_connect .header_title {
 	overflow: hidden;
-	font-size: min(5vw, 2.4rem);
+	font-size: min(5vw, 1.8rem);
+	line-height: 2.7rem;
+	font-weight: 700;
+	color: #3e4a58;
 	white-space: nowrap;
 	text-overflow: ellipsis;
-	text-align: center;
 }
 .header .header_inner .left {
 	position: absolute;
@@ -261,6 +277,48 @@
 	font-size: 0;
 	line-height: 0;
 	border: none;
+}
+/* 기타 Case */
+.link_btn_box {
+	margin: 0 -1px;
+	padding: 1.2rem 1.4rem 1.2rem 1.2rem;
+	background-color: #2b3541;
+	-webkit-box-shadow:
+		0px 0px 0.2rem 0px var(--color-alpha-shadow2, rgba(0, 0, 0, 0.08)),
+		0px var(--shadow-y-4, 16px) var(--shadow-blur-4, 24px) 0px var(--color-alpha-shadow3, rgba(0, 0, 0, 0.12));
+	box-shadow:
+		0px 0px 0.2rem 0px var(--color-alpha-shadow2, rgba(0, 0, 0, 0.08)),
+		0px var(--shadow-y-4, 16px) var(--shadow-blur-4, 24px) 0px var(--color-alpha-shadow3, rgba(0, 0, 0, 0.12));
+	border-radius: 15rem;
+}
+.link_btn_box .link_icon {
+	width: 2.4rem;
+	height: 2.4rem;
+	background: #455c78 url(../../../images/icon/img_car.png) no-repeat center/1.8rem auto;
+	border-radius: 4rem;
+}
+.link_btn_box .link_inner {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 0.8rem;
+	color: #fff;
+}
+.link_btn_box .link_inner .cont {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 0.8rem;
+	font-size: 1.4rem;
 }
 /* Button */
 svg {
@@ -500,6 +558,29 @@ svg {
 	background-color: yellow;
 	border-color: orange;
 }
+/* banner */
+/* Banner */
+.bann_text_wrap_ty1 {
+	display: block;
+	padding: 2.4rem 2rem 2.4rem 9.9rem;
+	background: #fff9f1 url(../../images/icon/img_bann_car.png) no-repeat 2rem center/auto 5.2rem;
+	border-radius: 3.2rem;
+}
+.bann_text_wrap_ty1 .text {
+	font-size: 1.4rem;
+	line-height: 2.1rem;
+	font-weight: 500;
+	color: #2b3541;
+}
+.bann_text_wrap_ty1 .text > * {
+	display: block;
+}
+.bann_text_wrap_ty1 .text .point {
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	font-weight: 600;
+	color: #d82600;
+}
 /* calendar */
 /* card */
 /* Card*/
@@ -646,6 +727,22 @@ svg {
 }
 .btn_sample:disabled .arrowRightSvg {
 	background-image: url(../images/icon/line/24/arrowRight_disabled.svg);
+}
+[class^="car_logo_ty"] {
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+	background-color: #f5f5f5;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 0.3rem;
+	vertical-align: middle;
+}
+.car_logo_ty1 {
+	background-image: url(../images/logo/car_logo_ty1.png);
+}
+.car_logo_ty2 {
+	background-image: url(../images/logo/car_logo_ty2.png);
 }
 /* input */
 .input_text {

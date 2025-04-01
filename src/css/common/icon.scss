@@ -15,7 +15,7 @@
 	&.increase {
 		border-bottom-color: var(--increase);
 	}
-	&.decrease {
+	&.decrease { 
 		border-bottom-color: var(--decrease);
 	}
 }
@@ -72,5 +72,33 @@
 		.arrowRightSvg {
 			@include getSvg("icon/line/24/arrowRight_disabled");
 		}
+	}
+}
+
+
+// logo
+
+//logo 에셋 불러오기
+@mixin getLogo($fileName) {
+	background-image: url(../images/#{$fileName}.png);
+}
+
+[class^='car_logo_ty'] {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-color: #F5F5F5;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 3px;
+	vertical-align: middle;
+}
+
+.car_logo_{
+	&ty1{
+		@include getLogo("logo/car_logo_ty1");
+	}
+	&ty2{
+		@include getLogo("logo/car_logo_ty2");
 	}
 }
