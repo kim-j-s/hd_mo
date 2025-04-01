@@ -1,4 +1,13 @@
-(function () {})();
+(function () {
+	$(function () {
+		// radio 선택 시 이벤트 진행 - 다음단계 활성화
+		const $stepSelect = $("button");
+		$stepSelect.on("click", function () {
+			$("#a1").addClass("down");
+			$("#a2").removeClass("down");
+		});
+	});
+})();
 
 /*
 - 총 smp_stepper length를 구한다.
