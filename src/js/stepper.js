@@ -1,102 +1,183 @@
 (function(){
 	$(function(){
-		// 초기화
-		stepperInit();
+
+		// 현재 스텝 상태
+		let StepNum = 0;
+
+		// 전체 스텝
+		let allStep = stepperInit(StepNum);
+
 		// 선택 이벤트
 		selectEvent();
+
+		// keypad 이벤트
+		keypadEnter()
 	});
 
 })();
 
 
-function stepperInit() {
+function stepperInit(num) {
 	if( $('.smp').length ) {
-		console.log('stepperInit');
+		// console.log(num);
+		const totalStepCount = $('.opts_area').length;
+		allStep = totalStepCount;
+		$('.stepper_wrap').find('.stepper').attr('aria-label', `${totalStepCount}단계 중 ${num + 1}단계`);
+
+		// stepIng 호출
+		stepIng(num, totalStepCount);
+
+		// 전체 스텝 수 반환
+		return totalStepCount;
 	}
+	return 0;
 }
 
+// 선택 이벤트
 function selectEvent() {
-	let thisPosition = null;
+	let selectedIdx = null;
 	$('.opts_area_item input[type="radio"]').on('change', function() {
-    // 선택된 radio의 라벨을 찾고 텍스트 값을 추출
-		const data = $(this).closest('.opts_area').data('pickitem');
-    const selectedText = $(this).next('label').find('.label_i').text();
+		const $this = $(this);
+		const idx = $this.closest('.opts_area').index();
+		const data = $this.closest('.opts_area').data('pickitem');
+		const selectedText = $this.next('label').find('.label_i').text();
 
-		thisPosition = $(this);
-    
-    // 콘솔에 선택된 텍스트 출력
-    console.log('선택된 값: ', selectedText);
-    console.log('선택된 data: ', data);
+		// 선택 된 현재 index 값
+		selectedIdx = idx + 1;
+		console.log('선택 된 현재 index 값 : ', selectedIdx);
 
-		
-		$('.ds2_inner').children('button').each(function(){
-			if( $(this).hasClass(data) ) {
+		// 선택된 값 콘솔 출력
+		// console.log(`선택된 값: ${selectedText}, 선택된 data: ${data}`);
+
+		// UI 업데이트
+		$('.ds2_inner').children('button').each(function() {
+			if ($(this).hasClass(data)) {
 				$(this).text(selectedText);
 			}
 		});
 
-		// 선택된 활성화
-		motionEvent(thisPosition);
+		if(selectedIdx === allStep) {
+			return
+		} else {
+			// 선택된 항목 활성화
+			motionEvent($this, selectedIdx);
 
-		// stepper 진행
-		stepIng();
+			// stepper 진행 업데이트
+			stepIng(selectedIdx, allStep);
+		}		
   });
 }
 
+// 선택된 항목 활성화
+function motionEvent($element, stepIdx) {
+	console.log('stepIdx : ', stepIdx);
 
-function stepIng() {
-	// 스테퍼 추가	
+	$('.stepper_wrap').find('.stepper').attr('aria-label', `${allStep}단계 중 ${stepIdx + 1}단계`);
+	// console.log(`선택된 항목: ${$element}, 스텝 인덱스: ${stepIdx}`);
+	
+	const $ds1Items = $('.ds1').find('[data-pickitem]');
+	const $smpContentItems = $('.smp_content').find('[data-pickitem]');
+
+	// 모든 항목에서 'active' 제거 후, 현재 선택된 항목만 'active' 추가
+	$ds1Items.addClass('active');
+	$smpContentItems.addClass('active');
+
+	$ds1Items.eq(stepIdx).removeClass('active');
+	$smpContentItems.eq(stepIdx).removeClass('active');
+}
+
+// progress 상태 처리 및 aria label 처리
+function stepIng(num, allStep) {
+	console.log('stepIng: ', num);
+	// console.log('stepIng all: ', allStep);
+
+	// if(num === allStep) {
+	// 	return
+	// }
+
+	// 버튼 활성화 상태
+	if(num > 0) {
+		$('.stm_btn').addClass('active');
+	} else {
+		$('.stm_btn').removeClass('active');
+	}
+
+	// 진행 퍼센트 계산
+	const progress = Math.floor(((num + 1) / allStep) * 100);
+	console.log('progress: ', progress);
+	$('.pgs_per').css('width', `${progress}%`);
+
+	// 시작 및 완료 상태 클래스 추가/제거
+	$('.pgs_per').toggleClass('start', progress === 0);
+	$('.pgs_per').toggleClass('end', progress === 100);
+
+	// console.log(`진행 상황: ${progress}%`);
 }
 
 
-function motionEvent(t) {
-	console.log(t);
-	// 예: 라디오 버튼의 부모 요소를 찾고 스타일을 변경하는 등
-  const parentElement = t.closest('.opts_area_item');
-  console.log('선택된 항목의 부모 요소:', parentElement);
+function keypadEnter() {
 
-	$('#a1').addClass('active');
-	$('#a2').removeClass('active');
+	let selectedIdx = null;
 
-	$('#a3').addClass('active');
-	$('#a4').removeClass('active');
+	// 입력 값 저장 변수
+	let birthInput = "";
+
+	$('.keypad_btn').on('click', function(){
+		const $this = $(this);
+		const value = $this.text().trim();
+		const trgEle = $('.birth_date_field');
+
+		const idx = $this.closest('.opts_area').index();
+		selectedIdx = idx + 1;
+		console.log('선택 된 현재 index 값 : ', selectedIdx);
 
 
+		if( $(this).hasClass('keypad_btn_del') ) {
+			// 하나 지우기
+			birthInput = birthInput.slice(0, -1);
+			trgEle.text(birthInput);
+			
+		} else if ( $(this).hasClass('keypad_btn_delall') ) {
+			// 전체 초기화
+			birthInput = "";
+			trgEle.text("").removeClass('active');
+		} else {
+			if (birthInput.length < 8) {
+				birthInput += value;
+				trgEle.text(birthInput);
+				
+			}
+		}
+
+		const getLng = trgEle.text().length;
+		console.log('글자수 : ', getLng);
+		if(getLng > 0) {
+			trgEle.addClass('active');
+		} else {
+			trgEle.removeClass('active');
+		}
+
+		if(getLng === 8) {
+			console.log(getLng);
+
+			// const selectedText = $this.next('label').find('.label_i').text();
+			const selectedText = trgEle.text();
+			// console.log('selectedText: ', selectedText);
+			
+			const data = $this.closest('.opts_area').data('pickitem');
+			$('.ds2_inner').children('button').each(function() {
+				if ($(this).hasClass(data)) {
+					$(this).text(selectedText);
+				}
+			});
+
+			// 선택된 항목 활성화
+			motionEvent($this, selectedIdx);
+
+			// stepper 진행 업데이트
+			stepIng(selectedIdx, allStep);
+
+		}
+		
+	});
 }
-
-
-
-/*
-- 총 smp_stepper length를 구한다.
-- 항목 선택 시 다음 스텝으로 이동
-- 선택한 항목의 내역을 한곳에 모아둔다.
-- 
-
-
--- 공통조건 :
-진입하지 않았던 스텝은 현 스텝에서 다음버튼이 노출되지 않는다.
-
-
-
-
--- 선택된 항목 버튼 노출 방식
-- 최초 load시 
-
-
--- opts_area
-각각의 스텝에서 opts_area에 data-step-type1을 추가한다. type1은 step의 종류를 나타낸다.
-
-각각의 스텝에서 opts_area에 data-step-type2을 추가한다. type2는 버튼에 전달할 문구를 나타낸다.
-data-step-type2="성별" -> 성별 선택
-최초 진입 시 각 스텝에서 수집하여 ds2_inner 역순으로 추가한다.
-
-각각의 스텝에서 opts_area에 data-step-type3을 추가한다. type3는 추적용 class를 사용한다.
-car, persion, etc...
-
-
-
--- 진행 상황 
-전체 스텝을에서 현재 스텝을 나눈다. 소수점 없음
-추가조건으로 0일 경우 pgs_per는 start class를 부여하고 100일 경우 end를 부여한다.
-그 외는 start, end class를 제거한다.
-*/

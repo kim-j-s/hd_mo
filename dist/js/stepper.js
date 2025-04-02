@@ -1,22 +1,32 @@
 (function () {
 	$(function () {
-		stepperInit();
+		let StepNum = 0;
+		stepperInit(StepNum);
 		selectEvent();
+		keypadEnter();
 	});
 })();
-function stepperInit() {
+function stepperInit(num) {
 	if ($(".smp").length) {
-		console.log("stepperInit");
+		const totalStepCount = $(".opts_area").length;
+		allStep = totalStepCount;
+		$(".stepper_wrap")
+			.find(".stepper")
+			.attr("aria-label", `${totalStepCount}단계 중 ${num + 1}단계`);
+		stepIng(num, totalStepCount);
+		return totalStepCount;
 	}
+	return 0;
 }
 function selectEvent() {
-	let thisPosition = null;
+	let selectedIdx = null;
 	$('.opts_area_item input[type="radio"]').on("change", function () {
-		const data = $(this).closest(".opts_area").data("pickitem");
-		const selectedText = $(this).next("label").find(".label_i").text();
-		thisPosition = $(this);
-		console.log("선택된 값: ", selectedText);
-		console.log("선택된 data: ", data);
+		const $this = $(this);
+		const idx = $this.closest(".opts_area").index();
+		const data = $this.closest(".opts_area").data("pickitem");
+		const selectedText = $this.next("label").find(".label_i").text();
+		selectedIdx = idx + 1;
+		console.log("선택 된 현재 index 값 : ", selectedIdx);
 		$(".ds2_inner")
 			.children("button")
 			.each(function () {
@@ -24,15 +34,81 @@ function selectEvent() {
 					$(this).text(selectedText);
 				}
 			});
-		motionEvent(thisPosition);
+		if (selectedIdx === allStep) {
+			return;
+		} else {
+			motionEvent($this, selectedIdx);
+			stepIng(selectedIdx, allStep);
+		}
 	});
 }
-function motionEvent(t) {
-	console.log(t);
-	const parentElement = t.closest(".opts_area_item");
-	console.log("선택된 항목의 부모 요소:", parentElement);
-	$("#a1").addClass("active");
-	$("#a2").removeClass("active");
-	$("#a3").addClass("active");
-	$("#a4").removeClass("active");
+function motionEvent($element, stepIdx) {
+	console.log("stepIdx : ", stepIdx);
+	$(".stepper_wrap")
+		.find(".stepper")
+		.attr("aria-label", `${allStep}단계 중 ${stepIdx + 1}단계`);
+	const $ds1Items = $(".ds1").find("[data-pickitem]");
+	const $smpContentItems = $(".smp_content").find("[data-pickitem]");
+	$ds1Items.addClass("active");
+	$smpContentItems.addClass("active");
+	$ds1Items.eq(stepIdx).removeClass("active");
+	$smpContentItems.eq(stepIdx).removeClass("active");
+}
+function stepIng(num, allStep2) {
+	console.log("stepIng: ", num);
+	if (num > 0) {
+		$(".stm_btn").addClass("active");
+	} else {
+		$(".stm_btn").removeClass("active");
+	}
+	const progress = Math.floor(((num + 1) / allStep2) * 100);
+	console.log("progress: ", progress);
+	$(".pgs_per").css("width", `${progress}%`);
+	$(".pgs_per").toggleClass("start", progress === 0);
+	$(".pgs_per").toggleClass("end", progress === 100);
+}
+function keypadEnter() {
+	let selectedIdx = null;
+	let birthInput = "";
+	$(".keypad_btn").on("click", function () {
+		const $this = $(this);
+		const value = $this.text().trim();
+		const trgEle = $(".birth_date_field");
+		const idx = $this.closest(".opts_area").index();
+		selectedIdx = idx + 1;
+		console.log("선택 된 현재 index 값 : ", selectedIdx);
+		if ($(this).hasClass("keypad_btn_del")) {
+			birthInput = birthInput.slice(0, -1);
+			trgEle.text(birthInput);
+		} else if ($(this).hasClass("keypad_btn_delall")) {
+			birthInput = "";
+			trgEle.text("").removeClass("active");
+		} else {
+			if (birthInput.length < 8) {
+				birthInput += value;
+				trgEle.text(birthInput);
+			}
+		}
+		const getLng = trgEle.text().length;
+		console.log("글자수 : ", getLng);
+		if (getLng > 0) {
+			trgEle.addClass("active");
+		} else {
+			trgEle.removeClass("active");
+		}
+		if (getLng === 8) {
+			console.log(getLng);
+			const selectedText = trgEle.text();
+			const data = $this.closest(".opts_area").data("pickitem");
+			$(".ds2_inner")
+				.children("button")
+				.each(function () {
+					if ($(this).hasClass(data)) {
+						$(this).text(selectedText);
+					}
+				});
+			motionEvent($this, selectedIdx);
+			stepIng(selectedIdx, allStep);
+		}
+	});
 }

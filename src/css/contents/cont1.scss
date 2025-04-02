@@ -111,13 +111,24 @@
 			background-position: center center;
 			background-color: #fff;
 			transform: translateY(-50%);
+			visibility: hidden;
+			transition: all var(--t-time);
 			&.stm_l {
-				left: 0;
+				left: -50px;
 				background-image: url(../images/smp/ico_stm_l.svg);
 			}
 			&.stm_r {
-				right: 0;
+				right: -50px;
 				background-image: url(../images/smp/ico_stm_r.svg);
+			}
+			&.active {
+				visibility: visible;
+				&.stm_l {
+					left: 0;
+				}
+				&.stm_r {
+					right: 0;
+				}
 			}
 			&:disabled {
 				border: 1px solid #F5F5F5;
@@ -142,6 +153,7 @@
 				left: 0;
 				width: 100%;
 				opacity: 1;
+				visibility: visible;
 				transition: var(--t-time);
 				&_text {
 					font-size: 24px;
@@ -171,6 +183,7 @@
 				}
 				&.active {
 					opacity: 0;
+					visibility: hidden;
 				}
 			}
 		}
@@ -225,9 +238,9 @@
 			width: 100%;
 			height: 100%;
 			overflow: auto;
-			// opacity: 1;
-			// visibility: visible;
-			// transition: 1s;
+			opacity: 1;
+			visibility: visible;
+			transition: var(--t-time);
 			overflow: hidden;
 
 			.opts_area_item {
@@ -245,6 +258,10 @@
 				visibility: visible;
 				transition: var(--t-time);
 				background-color: #fff;
+				&.column {
+					flex-direction: column;
+					gap: 40px 0;
+				}
 			}
 			
 			.inp_radio {
@@ -292,23 +309,19 @@
 			}
 			&.active {
 				z-index: 0;
+				opacity: 0;
+				visibility: hidden;
 				.opts_area_item {
 					bottom: -100%;
 					z-index: 0;
 					opacity: 0;
 					visibility: hidden;
-					transition: var(--t-time);
 				}
 			}
 		}
 		
 	}
 }
-
-// ??
-button {
-}
-
 
 .selected_case {
 	flex: none;
@@ -339,8 +352,13 @@ button {
 	}
 	
 	&:empty {
+		width: 0;
+		padding: 9px 0;
 		visibility: hidden;
 		opacity: 0;
+		+ button {
+			margin-left: -10px;
+		}
 	}
 }
 
@@ -355,4 +373,74 @@ button {
 	100%{
 		bottom: 8px;
 	}
+}
+
+
+
+// 키패드
+.birth_date_field {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 36px;
+	font-weight: 700;
+	font-size: 24px;
+	color: #9f9f9f;
+	text-align: center;
+	&::before {
+		content: '8자리 입력';
+	}
+	&.active {
+		color: #000;
+		&::before {
+			content: none;
+		}
+		&::after {
+			content: '';
+			display: inline-block;
+			height: 28px;
+			margin-left: 4px;
+			border-left: 2px solid #f8633c;
+			animation: wating 1.5s linear infinite;
+		}
+	}
+}
+
+@keyframes wating {
+	0% {
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
+.keypad {
+	display: flex;
+	flex-direction: column;
+	gap: 24px 0;
+	&_item {
+		display: flex;
+		justify-content: space-between;
+		gap: 8px;
+		.keypad_btn {
+			display: block;
+			width: 100%;
+			height: 46px;
+			font-size: 24px;
+			color: var(--color-text-basic);
+			text-align: center;
+			&.keypad_btn_del {
+				background: #fff url(../images/smp/ico_del.svg) no-repeat center center;
+			}
+			&.keypad_btn_delall {
+				font-size: 16px;
+			}
+		}
+
+	};
 }

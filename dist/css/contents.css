@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* smp1 */
 .vt {
 	--hoheight: 50rem;
@@ -272,14 +273,26 @@
 	background-color: #fff;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
+	visibility: hidden;
+	-webkit-transition: all var(--t-time);
+	transition: all var(--t-time);
 }
 .smp .stepper_wrap .stm_btn.stm_l {
-	left: 0;
+	left: -5rem;
 	background-image: url(../images/smp/ico_stm_l.svg);
 }
 .smp .stepper_wrap .stm_btn.stm_r {
-	right: 0;
+	right: -5rem;
 	background-image: url(../images/smp/ico_stm_r.svg);
+}
+.smp .stepper_wrap .stm_btn.active {
+	visibility: visible;
+}
+.smp .stepper_wrap .stm_btn.active.stm_l {
+	left: 0;
+}
+.smp .stepper_wrap .stm_btn.active.stm_r {
+	right: 0;
 }
 .smp .stepper_wrap .stm_btn:disabled {
 	border: 1px solid #f5f5f5;
@@ -302,6 +315,7 @@
 	left: 0;
 	width: 100%;
 	opacity: 1;
+	visibility: visible;
 	-webkit-transition: var(--t-time);
 	transition: var(--t-time);
 }
@@ -333,6 +347,7 @@
 }
 .smp_top .ds1_inner.active {
 	opacity: 0;
+	visibility: hidden;
 }
 .smp_top .ds2 {
 	position: relative;
@@ -398,6 +413,10 @@
 	width: 100%;
 	height: 100%;
 	overflow: auto;
+	opacity: 1;
+	visibility: visible;
+	-webkit-transition: var(--t-time);
+	transition: var(--t-time);
 	overflow: hidden;
 }
 .smp_content .opts_area .opts_area_item {
@@ -421,6 +440,13 @@
 	-webkit-transition: var(--t-time);
 	transition: var(--t-time);
 	background-color: #fff;
+}
+.smp_content .opts_area .opts_area_item.column {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	gap: 4rem 0;
 }
 .smp_content .opts_area .inp_radio {
 	-webkit-box-flex: 0;
@@ -473,14 +499,14 @@
 }
 .smp_content .opts_area.active {
 	z-index: 0;
+	opacity: 0;
+	visibility: hidden;
 }
 .smp_content .opts_area.active .opts_area_item {
 	bottom: -100%;
 	z-index: 0;
 	opacity: 0;
 	visibility: hidden;
-	-webkit-transition: var(--t-time);
-	transition: var(--t-time);
 }
 .selected_case {
 	-webkit-box-flex: 0;
@@ -514,8 +540,13 @@
 	background-color: blue;
 }
 .selected_case:empty {
+	width: 0;
+	padding: 0.9rem 0;
 	visibility: hidden;
 	opacity: 0;
+}
+.selected_case:empty + button {
+	margin-left: -1rem;
 }
 @-webkit-keyframes carBounce {
 	0% {
@@ -538,4 +569,94 @@
 	100% {
 		bottom: 0.8rem;
 	}
+}
+.birth_date_field {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	height: 3.6rem;
+	font-weight: 700;
+	font-size: 2.4rem;
+	color: #9f9f9f;
+	text-align: center;
+}
+.birth_date_field::before {
+	content: "8자리 입력";
+}
+.birth_date_field.active {
+	color: #000;
+}
+.birth_date_field.active::before {
+	content: none;
+}
+.birth_date_field.active::after {
+	content: "";
+	display: inline-block;
+	height: 2.8rem;
+	margin-left: 0.4rem;
+	border-left: 0.2rem solid #f8633c;
+	-webkit-animation: wating 1.5s linear infinite;
+	animation: wating 1.5s linear infinite;
+}
+@-webkit-keyframes wating {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes wating {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+.keypad {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	gap: 2.4rem 0;
+}
+.keypad_item {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	gap: 0.8rem;
+}
+.keypad_item .keypad_btn {
+	display: block;
+	width: 100%;
+	height: 4.6rem;
+	font-size: 2.4rem;
+	color: var(--color-text-basic);
+	text-align: center;
+}
+.keypad_item .keypad_btn.keypad_btn_del {
+	background: #fff url(../images/smp/ico_del.svg) no-repeat center center;
+}
+.keypad_item .keypad_btn.keypad_btn_delall {
+	font-size: 1.6rem;
 }

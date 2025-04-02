@@ -295,7 +295,8 @@
  *  Button Type - ty_1(default), ty_2(secondary), ty_3(tertiary)
  */
 .hd_btn_ty_1 {
-	background-color: #ea7404;
+	border-radius: var(--radius-medium4);
+	background: var(--color-button-primary-fill);
 	color: #fff;
 	border: 0;
 }
@@ -356,7 +357,7 @@
 	min-width: 9.8rem;
 	height: 5.6rem;
 	padding: 0 2.4rem 0;
-	border-radius: 0.8rem;
+	border-radius: var(--radius-medium4);
 	font-size: 1.8rem;
 	font-weight: 700;
 }
@@ -368,7 +369,7 @@
 	min-width: 9rem;
 	height: 4.8rem;
 	padding: 0 2rem 0;
-	border-radius: 0.8rem;
+	border-radius: var(--radius-medium2);
 	font-size: 1.6rem;
 	line-height: 150%;
 	font-weight: 400;
@@ -381,7 +382,7 @@
 	min-width: 7.8rem;
 	height: 4rem;
 	padding: 0 1.6rem 0;
-	border-radius: 0.6rem;
+	border-radius: var(--radius-medium1);
 	font-size: 1.4rem;
 	line-height: 150%;
 	font-weight: 400;
@@ -394,7 +395,7 @@
 	min-width: 6.4rem;
 	height: 3.2rem;
 	padding: 0 1.2rem 0;
-	border-radius: 0.6rem;
+	border-radius: var(--radius-medium1);
 	font-size: 1.2rem;
 	line-height: 150%;
 	font-weight: 400;
@@ -407,7 +408,7 @@
 	min-width: 6rem;
 	height: 2.4rem;
 	padding: 0 1rem 0;
-	border-radius: 0.4rem;
+	border-radius: var(--radius-small3);
 	font-size: 1.2rem;
 	line-height: 150%;
 	font-weight: 400;
@@ -790,13 +791,16 @@
 	padding-top: 1.6rem;
 	border-top: 1px solid #e1e3ea;
 }
-.card_item_wrap .card_item ul > li > div.cont {
-	border: 1px solid red;
-}
 .card_item_wrap .card_item ul > li > div.cont p {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: end;
+}
+.card_item_wrap .card_item ul > li > div.cont p + p {
+	margin-top: 0.4rem;
 }
 .card_item_wrap .card_item ul > li > div.cont .hd_badge {
 	height: 2rem !important;
@@ -846,6 +850,9 @@
 }
 .card_item_wrap .card_item .btn_area {
 	margin-top: 1.6rem;
+}
+.card_item_wrap .card_item .btn_area .hd_btn {
+	border-radius: 1.6rem;
 }
 /* checkbox */
 /* Checkbox */

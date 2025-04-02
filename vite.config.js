@@ -193,7 +193,8 @@ export default defineConfig({
     },
   },
   server: {
-    host: 'localhost',
+    // host: 'localhost',
+    host: '0.0.0.0',
     open: 'index.html',
     port: 8081,
 		hmr: true,
