@@ -70,6 +70,12 @@ export default defineConfig({
     cssMinify: false,
     // cssMinify: true,
     overwrite: true,
+		minify: false,
+		terserOptions: {
+      output: {
+        comments: true, // 주석을 보존하도록 설정
+      },
+    },
     rollupOptions: {
       minify: false,
       input: getEntries('src'),
@@ -187,8 +193,9 @@ export default defineConfig({
     },
   },
   server: {
-    host: '0.0.0.0',
+    host: 'localhost',
     open: 'index.html',
     port: 8081,
+		hmr: true,
   }
 });
