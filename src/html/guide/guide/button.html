@@ -1,67 +1,256 @@
 {{#> layout/guide }}
 	<div class="guide_h1">Button</div>
 
-	<div class="guide_h4">Button Type</div>
-	<button type="button" class="btn s_1"><span>버튼명</span></button>
-	<br><br>
-	<a href="#" role="button" class="btn s_1"><span>버튼명</span></a>
-	<br><br><br><br>
 
-	<div class="guide_discription">height</div>
-	<button type="button" class="btn h_1"><span>버튼명</span></button>
-	<br><br>
-	<button type="button" class="btn h_2"><span>버튼명</span></button>
-	<br><br>
-	<button type="button" class="btn h_3"><span>버튼명</span></button>
+	<!-- 기본 버튼 variation -->
+	<div class="guide_h4">Button variation(타입별) - 스타일 미확정 상태 - 구조는 사용</div>
+	
+	<div class="guide_discription">구조 미삽입</div>
+	{{> cp/button b-text="구조 미삽입"}}
 
-	<div class="guide_discription">color</div>
-	<button type="button" class="btn c_1"><span>버튼명</span></button>
-	<br><br>
-	<button type="button" class="btn c_2"><span>버튼명</span></button>
-	<br><br>
-	<button type="button" class="btn c_3"><span>버튼명</span></button>
+	<div class="guide_discription">구조 삽입</div>
+	{{> cp/button b-text="<span>span태그</span> / <i>i tag</i> / <i class='class'>tag class 적용시</i>"}}
+	<br>
+	<!-- {{#> cp/button}}
+	<span class="sub_text">내부 구조 형</span>
+	{{/ cp/button}} -->
 
-	<div class="guide_discription">disable</div>
-	<button type="button" class="btn" disabled><span>버튼명</span></button>
+	<!-- [Type(1) - default] -->
+	<div class="guide_discription">[Type(1) default] type="1"</div>
+	<div class="btn_area">
+	{{#> cp/button}}size="1"{{/ cp/button}}
+	{{#> cp/button type="1" size="2"}}size="2"{{/ cp/button}}
+	{{#> cp/button type="1" size="3"}}size="3"{{/ cp/button}}
+	{{#> cp/button type="1" size="4"}}size="4"{{/ cp/button}}
+	{{#> cp/button type="1" size="5"}}size="5"{{/ cp/button}}
+	</div>
 
-	<div class="guide_h4">icon 형태 Button</div>
-	<button type="button" class="btn"><span>버튼명</span></button>
+	<div class="guide_discription">[Type(1) default:disabled] type="1"</div>
+	<div class="btn_area">
+	{{#> cp/button type="1" size="1" disabled="true"}}size="1"{{/ cp/button}}
+	{{#> cp/button type="1" size="2" disabled="true"}}size="2"{{/ cp/button}}
+	{{#> cp/button type="1" size="3" disabled="true"}}size="3"{{/ cp/button}}
+	{{#> cp/button type="1" size="4" disabled="true"}}size="4"{{/ cp/button}}
+	{{#> cp/button type="1" size="5" disabled="true"}}size="5"{{/ cp/button}}
+	</div>
 
-	<div class="guide_h4">Float Bottom - .btn_area</div>
+	<!-- [Type(2) - secondary] -->
+	<div class="guide_discription">[Type(2) secondary] type="2"</div>
+	<div class="btn_area">
+	{{#> cp/button type="2" size="1"}}size="1"{{/ cp/button}}
+	{{#> cp/button type="2" size="2"}}size="2"{{/ cp/button}}
+	{{#> cp/button type="2" size="3"}}size="3"{{/ cp/button}}
+	{{#> cp/button type="2" size="4"}}size="4"{{/ cp/button}}
+	{{#> cp/button type="2" size="5"}}size="5"{{/ cp/button}}
+	</div>
+
+	<div class="guide_discription">[Type(2) secondary:disabled] type="2"</div>
+	<div class="btn_area">
+	{{#> cp/button type="2" size="1" disabled="true"}}size="1"{{/ cp/button}}
+	{{#> cp/button type="2" size="2" disabled="true"}}size="2"{{/ cp/button}}
+	{{#> cp/button type="2" size="3" disabled="true"}}size="3"{{/ cp/button}}
+	{{#> cp/button type="2" size="4" disabled="true"}}size="4"{{/ cp/button}}
+	{{#> cp/button type="2" size="5" disabled="true"}}size="5"{{/ cp/button}}
+	</div>
+
+	<!-- [Type - tertiary] -->
+	<div class="guide_discription">[Type(3) tertiary] type="3"</div>
+	<div class="btn_area">
+	{{#> cp/button type="3" size="1"}}size="1"{{/ cp/button}}
+	{{#> cp/button type="3" size="2"}}size="2"{{/ cp/button}}
+	{{#> cp/button type="3" size="3"}}size="3"{{/ cp/button}}
+	{{#> cp/button type="3" size="4"}}size="4"{{/ cp/button}}
+	{{#> cp/button type="3" size="5"}}size="5"{{/ cp/button}}
+	</div>
+
+	<div class="guide_discription">[Type(3) tertiary:disabled] type="3"</div>
+	<div class="btn_area">
+	{{#> cp/button type="3" size="1" disabled="true"}}size="1"{{/ cp/button}}
+	{{#> cp/button type="3" size="2" disabled="true"}}size="2"{{/ cp/button}}
+	{{#> cp/button type="3" size="3" disabled="true"}}size="3"{{/ cp/button}}
+	{{#> cp/button type="3" size="4" disabled="true"}}size="4"{{/ cp/button}}
+	{{#> cp/button type="3" size="5" disabled="true"}}size="5"{{/ cp/button}}
+	</div>
+
+
+	<!-- 아이콘 버튼 -->
+	<div class="guide_h4">icon 형태 Button - 스타일 미정의 상태 - 구조는 사용</div>
+	<div class="guide_discription">
+		<p>- leftIcon, rightIcon속성에 svg 경로를 넣은 클래스를 지정한다.</p>
+		<p>- icon.scss 파일 내부에 아이콘 에셋을 불러오는 클래스를 생성하여 사용</p>
+	</div>
+
+	<!-- [Type - Icon] -->
+	<div class="guide_discription">[button size=1, icon size=24]</div>
+	<div class="btn_area">
+	{{#> cp/button type="1" size="1" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
+	{{#> cp/button type="1" size="1" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
+	{{#> cp/button type="1" size="1" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
+	</div>
+	<div class="btn_area">
+	{{#> cp/button type="2" size="1" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
+	{{#> cp/button type="2" size="1" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
+	{{#> cp/button type="2" size="1" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
+	</div>
+	<div class="btn_area">
+	{{#> cp/button type="3" size="1" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
+	{{#> cp/button type="3" size="1" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
+	{{#> cp/button type="3" size="1" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
+	</div>
+	<div class="btn_area">
+	{{#> cp/button type="1" size="1" disabled="true" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
+	{{#> cp/button type="1" size="1" disabled="true" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
+	{{#> cp/button type="1" size="1" disabled="true" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
+	</div>
+
+	<div class="guide_discription">[button size=2, icon size=24]</div>
+	<div class="btn_area">
+	{{#> cp/button type="1" size="2" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
+	{{#> cp/button type="1" size="2" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
+	{{#> cp/button type="1" size="2" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
+	</div>
+	<div class="btn_area">
+	{{#> cp/button type="2" size="2" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
+	{{#> cp/button type="2" size="2" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
+	{{#> cp/button type="2" size="2" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
+	</div>
+	<div class="btn_area">
+	{{#> cp/button type="3" size="2" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
+	{{#> cp/button type="3" size="2" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
+	{{#> cp/button type="3" size="2" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
+	</div>
+	<div class="btn_area">
+	{{#> cp/button type="1" size="2" disabled="true" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
+	{{#> cp/button type="1" size="2" disabled="true" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
+	{{#> cp/button type="1" size="2" disabled="true" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
+	</div>
+
+	<div class="guide_discription">[button size=3, icon size=16]</div>
+	<div class="btn_area">
+	{{#> cp/button type="1" size="3" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
+	{{#> cp/button type="1" size="3" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
+	{{#> cp/button type="1" size="3" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
+	</div>
+	<div class="btn_area">
+	{{#> cp/button type="2" size="3" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
+	{{#> cp/button type="2" size="3" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
+	{{#> cp/button type="2" size="3" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
+	</div>
+	<div class="btn_area">
+	{{#> cp/button type="3" size="3" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
+	{{#> cp/button type="3" size="3" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
+	{{#> cp/button type="3" size="3" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
+	</div>
+	<div class="btn_area">
+	{{#> cp/button type="1" size="3" disabled="true" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
+	{{#> cp/button type="1" size="3" disabled="true" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
+	{{#> cp/button type="1" size="3" disabled="true" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
+	</div>
+
+	<div class="guide_discription">[button size=4, icon size=16]</div>
+	<div class="btn_area">
+	{{#> cp/button type="1" size="4" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
+	{{#> cp/button type="1" size="4" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
+	{{#> cp/button type="1" size="4" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
+	</div>
+	<div class="btn_area">
+	{{#> cp/button type="2" size="4" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
+	{{#> cp/button type="2" size="4" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
+	{{#> cp/button type="2" size="4" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
+	</div>
+	<div class="btn_area">
+	{{#> cp/button type="3" size="4" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
+	{{#> cp/button type="3" size="4" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
+	{{#> cp/button type="3" size="4" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
+	</div>
+	<div class="btn_area">
+	{{#> cp/button type="1" size="4" disabled="true" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
+	{{#> cp/button type="1" size="4" disabled="true" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
+	{{#> cp/button type="1" size="4" disabled="true" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
+	</div>
+
+	<div class="guide_discription">[button size=5, icon size=16]</div>
+	<div class="btn_area">
+	{{#> cp/button type="1" size="5" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
+	{{#> cp/button type="1" size="5" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
+	{{#> cp/button type="1" size="5" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
+	</div>
+	<div class="btn_area">
+	{{#> cp/button type="2" size="5" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
+	{{#> cp/button type="2" size="5" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
+	{{#> cp/button type="2" size="5" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
+	</div>
+	<div class="btn_area">
+	{{#> cp/button type="3" size="5" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
+	{{#> cp/button type="3" size="5" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
+	{{#> cp/button type="3" size="5" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
+	</div>
+	<div class="btn_area">
+	{{#> cp/button type="1" size="5" disabled="true" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
+	{{#> cp/button type="1" size="5" disabled="true" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
+	{{#> cp/button type="1" size="5" disabled="true" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
+	</div>
+
+
+	<!-- 링크 버튼 -->
+	<div class="guide_h4">Link Button</div>
+	<div class="guide_discription">기본구조</div>
+	{{> cp/linkButton bl_text="링크"}}
+	<br>
+	{{> cp/linkButton bl_text="링크" size="1"}}
+	<br>
+	{{> cp/linkButton bl_text="새창에서열기" size="1" blank="true" href="http://www.naver.com"}}
+
+	<div class="guide_discription">기본구조 - 구조 삽입 예시</div>
+	{{> cp/linkButton bl_text="<i>i tag</i> <span class='ex'>span tag</span>"}}
+
+	<div class="guide_discription">기본구조 - 구조 삽입 예시 - a tag는 inline 요소</div>
+	{{#> cp/linkButton}}
+	<i>i tag</i> <br>
+	<span class="ex">span tag</span>
+	{{/ cp/linkButton}}
+
+	<div class="guide_h4">linkButton - 스타일 미정의 상태 - 구조는 사용</div>
+	<div class="guide_discription">크기별 정의 예시 - 추후 업데이트 예정</div>
+	<div class="btn_area">
+		{{> cp/linkButton bl_text="a tag" size="1"}}
+		{{> cp/linkButton bl_text="a tag" size="2"}}
+		{{> cp/linkButton bl_text="a tag" size="3"}}
+		{{> cp/linkButton bl_text="a tag" size="4"}}
+	</div>
+
+
+	<!-- Grouping Botton(btn_area) -->
+	<div class="guide_h4">Grouping Botton (.btn_area) - 스타일 미정의 상태 - 구조는 사용</div>
 	<div class="guide_discription">row (Defalut)</div>
 	<div class="btn_area">
-		<button type="button" class="btn"><span>버튼명</span></button>
-		<button type="button" class="btn"><span>버튼명</span></button>
-	</div>
-	<br>
-	<div class="btn_area">
-		<button type="button" class="btn full"><span>버튼명</span></button>
-		<button type="button" class="btn full"><span>버튼명</span></button>
+		{{> cp/button type="1" size="3" b-text="버튼명"}}
+		{{> cp/button type="1" size="3" b-text="버튼명"}}
 	</div>
 
-	<div class="guide_discription">row (ty1)</div>
+	<div class="guide_discription">row (.btn_area.ty1)</div>
 	<div class="btn_area ty1">
-		<button type="button" class="btn"><span>버튼명</span></button>
-		<button type="button" class="btn"><span>버튼명</span></button>
-		<button type="button" class="btn"><span>버튼명</span></button>
-		<button type="button" class="btn"><span>버튼명</span></button>
-		<button type="button" class="btn"><span>버튼명</span></button>
+		{{> cp/button type="2" size="3" b-text="버튼명"}}
+		{{> cp/button type="2" size="3" b-text="버튼명"}}
+		{{> cp/button type="2" size="3" b-text="버튼명"}}
+		{{> cp/button type="2" size="3" b-text="버튼명"}}
+		{{> cp/button type="2" size="3" b-text="버튼명"}}
 	</div>
 	
-	<div class="guide_discription">row (ty2)</div>
+	<div class="guide_discription">row (.btn_area.ty2)</div>
 	<div class="btn_area ty2">
-		<button type="button" class="btn"><span>버튼명</span></button>
-		<button type="button" class="btn"><span>버튼명</span></button>
-		<button type="button" class="btn"><span>버튼명</span></button>
-		<button type="button" class="btn"><span>버튼명</span></button>
-		<button type="button" class="btn"><span>버튼명</span></button>
-		<button type="button" class="btn full"><span>버튼명</span></button>
+		{{> cp/button type="3" size="3" b-text="버튼명"}}
+		{{> cp/button type="3" size="3" b-text="버튼명"}}
+		{{> cp/button type="3" size="3" b-text="버튼명"}}
+		{{> cp/button type="3" size="3" b-text="버튼명"}}
+		{{> cp/button type="3" size="3" b-text="버튼명"}}
+		{{> cp/button type="3" size="3" b-text="버튼명" class="full"}}
 	</div>
 
-	<div class="guide_discription">column</div>
+	<div class="guide_discription">column (.btn_area.column)</div>
 	<div class="btn_area column">
-		<button type="button" class="btn"><span>버튼명</span></button>
-		<button type="button" class="btn"><span>버튼명</span></button>
+		{{> cp/button type="1" size="3" b-text="버튼명"}}
+		{{> cp/button type="2" size="3" b-text="버튼명"}}
 	</div>
 
 {{/ layout/guide }}

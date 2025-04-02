@@ -31,11 +31,77 @@
 			}
 		}
 
+		// card 상단영역
 		.item_top {
 			& ~ * {
 				margin-top: 16px;
 				padding-top: 16px;
 				border-top: 1px solid #e1e3ea;
+			}
+		}
+
+
+		// card list type
+		@mixin car-list-style(
+			// $ul-padding: 0,
+			// $ul-margin: 0,
+			$ul-border-radius: 0,
+			$li-padding: 0,
+			$li-margin: 0,
+			$li-font-size: 16px,
+			$li-line-height: 20px,
+			$li-color: inherit
+		) {
+			// padding: $ul-padding;
+			// margin: $ul-margin;
+			border-radius: $ul-border-radius;
+			> li {
+				position: relative;
+				margin: $li-margin;
+				padding: $li-padding;
+				font-size: $li-font-size;
+				line-height: $li-line-height;
+				color: $li-color;
+			}
+			@content;
+		}
+
+		.card_list_ty1 {
+			@include car-list-style(
+				$ul-border-radius: 0,
+				$li-padding: 0 0 16px,
+				$li-font-size: 14px,
+				$li-color: #333
+			) {
+				// ul.list-2에 대한 추가적인 스타일
+				// background-color: var(--color-primary);
+				> li {
+					display: flex;
+					align-items: flex-start;
+					justify-content: space-between;
+					gap: 8px;
+					&:last-child {
+						padding-bottom: 0;
+					}
+				}
+			}
+
+			> li {
+				> * {
+					&:first-child {
+						flex: 1 1 0;
+						min-width: 100px;
+						max-width: 50%;
+					}
+					&:last-child {
+						text-align: right;
+					}
+				}
+
+				&.result {
+					padding-top: 16px;
+					border-top: 1px solid #E1E3EA;
+				}
 			}
 		}
 
