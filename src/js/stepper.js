@@ -9,8 +9,29 @@
 		});
 	})
 
+
+	stepperInit();
+
+	console.log('x');
+
+	// alert('xcv');
+
+
 	
 })();
+
+
+function stepperInit() {
+	
+
+	if( $('.smp').length ) {
+		console.log('stepperInit');
+		
+	}
+
+
+
+}
 
 
 
