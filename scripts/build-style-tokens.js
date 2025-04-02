@@ -8,7 +8,7 @@ const tokens = new URL("./design-tokens.json", import.meta.url);
 const tokenObj = JSON.parse(fs.readFileSync(tokens, "utf8"));
 
 //token value 변환
-const transformValue = value => {
+const transformValue = (value, suffix) => {
 	//value가 참조값인 경우 var()로 변환.
 	if (typeof value == "string" && value.includes("{") && value.includes("}")) {
 		return value.replace(/\{([^}]+)\}/g, (match, group) => {
@@ -17,7 +17,7 @@ const transformValue = value => {
 		});
 	} else {
 		//value가 절대값인 경우 그대로 리턴
-		return value;
+		return `${value}${suffix}`;
 	}
 };
 
@@ -27,17 +27,19 @@ const transformValue = value => {
  * @param {Object} tokenData 토큰 데이터 객체
  * @returns {string} CSS 문자열
  */
-const createStyleToken = (prefixStr = "", tokenData, responsiveMode, suffixStr = "") => {
+const createStyleToken = (prefixStr = "", tokenData, responsiveMode) => {
 	const cssVars = [];
 	const addPrefixStr = responsiveMode;
-	let _suffixStr = suffixStr;
+	let _suffixStr = "";
 
 	const recursiveTokenObject = (prefixStr, data) => {
 		if (!data || typeof data !== "object") return;
+		_suffixStr = ""; //초기화
 
 		// 객체 항목 처리
 		for (const [key, value] of Object.entries(data)) {
 			if (key === "extensions") continue;
+			if (typeof value !== "object" && key == "type" && value == "dimension") _suffixStr = "px";
 
 			// 변수명 생성
 			const varName = prefixStr ? (key === "value" ? prefixStr : `${prefixStr}-${key}`) : key;
@@ -47,7 +49,7 @@ const createStyleToken = (prefixStr = "", tokenData, responsiveMode, suffixStr =
 				recursiveTokenObject(varName, value);
 			} else if (key === "value") {
 				// 값 변환 및 CSS 변수 추가
-				cssVars.push(`  ${varName}: ${transformValue(value)}${_suffixStr};`);
+				cssVars.push(`  ${varName}: ${transformValue(value, _suffixStr)};`);
 			}
 		}
 	};
@@ -73,9 +75,9 @@ const generateThemeCssVariables = tokenData => {
 
 				Object.entries(mainValue).forEach(([subKey, subValue]) => {
 					let suffix = "";
-					if (subKey === "font-size") suffix = "px";
+					// if (subKey === "font-size") suffix = "px";
 					let prefixStr = `--${subKey}`;
-					const cssBlock = createStyleToken(prefixStr, subValue, responsiveMode, suffix);
+					const cssBlock = createStyleToken(prefixStr, subValue, responsiveMode);
 					if (cssBlock) {
 						cssBlocks.push(cssBlock);
 					}
