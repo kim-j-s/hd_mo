@@ -22,7 +22,7 @@
 				gap: 4px;
 				padding-right: 24px;
 				background: url(../../images/icon/line/24/arrowRight_ty3.svg) no-repeat right bottom;
-				
+
 				.title {
 					font-size: 14px;
 					line-height: 21px;
@@ -50,6 +50,19 @@
 			}
 		}
 
+		ul > li > div.cont {
+			border: 1px solid red;
+
+			p {
+				display: flex;
+			}
+			.hd_badge {
+				height: 20px !important;
+			}
+			.car_logo {
+				margin-left: 4px;
+			}
+		}
 
 		// card list type
 		@mixin car-list-style(
@@ -77,12 +90,7 @@
 		}
 
 		.card_list_ty1 {
-			@include car-list-style(
-				$ul-border-radius: 0,
-				$li-padding: 0 0 16px,
-				$li-font-size: 14px,
-				$li-color: #333
-			) {
+			@include car-list-style($ul-border-radius: 0, $li-padding: 0 0 16px, $li-font-size: 14px, $li-color: #333) {
 				// ul.list-2에 대한 추가적인 스타일
 				// background-color: var(--color-primary);
 				> li {
@@ -110,7 +118,7 @@
 
 				&.result {
 					padding-top: 16px;
-					border-top: 1px solid #E1E3EA;
+					border-top: 1px solid #e1e3ea;
 				}
 			}
 		}
