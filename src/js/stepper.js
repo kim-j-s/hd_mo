@@ -23,6 +23,7 @@ function stepperInit(num) {
 		const totalStepCount = $('.opts_area').length;
 		allStep = totalStepCount;
 		$('.stepper_wrap').find('.stepper').attr('aria-label', `${totalStepCount}단계 중 ${num + 1}단계`);
+		$('.smp').attr('data-now', num);
 
 		// stepIng 호출
 		stepIng(num, totalStepCount);
@@ -112,6 +113,8 @@ function stepIng(num, allStep) {
 	$('.pgs_per').toggleClass('end', progress === 100);
 
 	// console.log(`진행 상황: ${progress}%`);
+
+	$('.smp').attr('data-now', num);
 }
 
 
@@ -177,7 +180,62 @@ function keypadEnter() {
 			// stepper 진행 업데이트
 			stepIng(selectedIdx, allStep);
 
+			$('.smp').attr('data-now', selectedIdx + 1);
 		}
+
+		
 		
 	});
+}
+
+// 이전단계
+function stepBack() {
+	console.log('back');
+	// 현재 스텝 값 가져오기
+  let dataNow = $('.smp').data('now') || 0; // 기본값 0
+  console.log('back dataNow now: ', dataNow);
+
+  // 이전 스텝 계산 (최소값 0으로 제한)
+  const now = Math.max(dataNow - 1, 0);
+  console.log('back now: ', now);
+
+  // 선택된 항목 활성화
+  motionEvent(null, now); // motionEvent 호출 시 null 전달
+
+  // stepper 진행 업데이트
+  stepIng(now, allStep);
+
+  // 현재 스텝 표기
+  $('.smp').attr('data-now', now);
+
+  // 보완: 스텝이 0일 때 추가 처리 (필요 시)
+  if (now === 0) {
+    console.log('첫 번째 스텝입니다.');
+  }
+}
+
+// 이전단계
+function stepNext() {
+	console.log('next');
+	// 현재 스텝 값 가져오기
+  let dataNow = $('.smp').data('now') || 0; // 기본값 0
+  console.log('next dataNow now: ', dataNow);
+
+  // 다음 스텝 계산 (최대값 allStep으로 제한)
+  const now = Math.min(dataNow + 1, allStep - 1);
+  console.log('next now: ', now);
+
+  // 선택된 항목 활성화
+  motionEvent(null, now); // motionEvent 호출 시 null 전달
+
+  // stepper 진행 업데이트
+  stepIng(now, allStep);
+
+  // 현재 스텝 표기
+  $('.smp').attr('data-now', now);
+
+  // 보완: 마지막 스텝일 때 추가 처리 (필요 시)
+  if (now === allStep - 1) {
+    console.log('마지막 스텝입니다.');
+  }
 }

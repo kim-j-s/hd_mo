@@ -13,6 +13,7 @@ function stepperInit(num) {
 		$(".stepper_wrap")
 			.find(".stepper")
 			.attr("aria-label", `${totalStepCount}단계 중 ${num + 1}단계`);
+		$(".smp").attr("data-now", num);
 		stepIng(num, totalStepCount);
 		return totalStepCount;
 	}
@@ -66,6 +67,7 @@ function stepIng(num, allStep2) {
 	$(".pgs_per").css("width", `${progress}%`);
 	$(".pgs_per").toggleClass("start", progress === 0);
 	$(".pgs_per").toggleClass("end", progress === 100);
+	$(".smp").attr("data-now", num);
 }
 function keypadEnter() {
 	let selectedIdx = null;
@@ -109,6 +111,7 @@ function keypadEnter() {
 				});
 			motionEvent($this, selectedIdx);
 			stepIng(selectedIdx, allStep);
+			$(".smp").attr("data-now", selectedIdx + 1);
 		}
 	});
 }
