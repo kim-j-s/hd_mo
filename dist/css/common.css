@@ -218,13 +218,9 @@
 	display: none;
 }
 /* button */
-/* Button */
-.hd_btn {
-	display: inline-block;
-	padding: 0.4rem;
-	font-size: 1.2rem;
-	text-align: center;
-}
+/**********************
+* Button 
+**********************/
 .btn_area {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -235,6 +231,9 @@
 	gap: 1rem;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
+}
+.btn_area ~ .btn_area {
+	margin-top: 1.6rem;
 }
 .btn_area > * {
 	-webkit-box-flex: 1;
@@ -270,6 +269,202 @@
 .btn_area.ty2 .hd_btn.full {
 	-ms-flex-preferred-size: 100%;
 	flex-basis: 100%;
+}
+.btn_area:has(.hd_btn, .btn_link) {
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: start;
+}
+.hd_btn {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 0.4rem;
+}
+.hd_btn svg {
+	fill: #ffffff;
+	stroke: #ffffff;
+}
+/**
+ *  Button Type - ty_1(default), ty_2(secondary), ty_3(tertiary)
+ */
+.hd_btn_ty_1 {
+	background-color: #ea7404;
+	color: #fff;
+	border: 0;
+}
+.hd_btn_ty_1:hover {
+	background-color: #e66202;
+}
+.hd_btn_ty_1:active {
+	background-color: #ad4a02;
+}
+.hd_btn_ty_1:disabled {
+	background-color: #cdd1d5;
+	color: #6d7882;
+}
+.hd_btn_ty_2 {
+	background-color: #feede7;
+	border: 1px solid #ea7404;
+	color: #e66202;
+}
+.hd_btn_ty_2:hover {
+	background-color: #fad5ba;
+	border: 1px solid #ea7404;
+	color: #e66202;
+}
+.hd_btn_ty_2:active {
+	background-color: #f6bd8c;
+	border: 1px solid #e66202;
+	color: #e66202;
+}
+.hd_btn_ty_2:disabled {
+	background-color: #cdd1d5;
+	color: #6d7882;
+	border: 0;
+}
+.hd_btn_ty_3 {
+	background-color: #ffffff;
+	border: 1px solid #58616a;
+	color: #1e2124;
+}
+.hd_btn_ty_3:hover {
+	background-color: #f4f5f6;
+	border: 1px solid #58616a;
+	color: #1e2124;
+}
+.hd_btn_ty_3:active {
+	background-color: #e6e8ea;
+	border: 1px solid #58616a;
+	color: #1e2124;
+}
+.hd_btn_ty_3:disabled {
+	background-color: #cdd1d5;
+	color: #6d7882;
+	border: 0;
+}
+/**
+  * Button Size - s_1(CTA&primary) s_2(lg) s_3(md), s_4(sm), s_5(xs)
+  */
+.hd_btn_s_1 {
+	min-width: 9.8rem;
+	height: 5.6rem;
+	padding: 0 2.4rem 0;
+	border-radius: 0.8rem;
+	font-size: 1.8rem;
+	font-weight: 700;
+}
+.hd_btn_s_1 .hd_icon {
+	width: 2.4rem;
+	height: 2.4rem;
+}
+.hd_btn_s_2 {
+	min-width: 9rem;
+	height: 4.8rem;
+	padding: 0 2rem 0;
+	border-radius: 0.8rem;
+	font-size: 1.6rem;
+	line-height: 150%;
+	font-weight: 400;
+}
+.hd_btn_s_2 .hd_icon {
+	width: 2.4rem;
+	height: 2.4rem;
+}
+.hd_btn_s_3 {
+	min-width: 7.8rem;
+	height: 4rem;
+	padding: 0 1.6rem 0;
+	border-radius: 0.6rem;
+	font-size: 1.4rem;
+	line-height: 150%;
+	font-weight: 400;
+}
+.hd_btn_s_3 .hd_icon {
+	width: 1.6rem;
+	height: 1.6rem;
+}
+.hd_btn_s_4 {
+	min-width: 6.4rem;
+	height: 3.2rem;
+	padding: 0 1.2rem 0;
+	border-radius: 0.6rem;
+	font-size: 1.2rem;
+	line-height: 150%;
+	font-weight: 400;
+}
+.hd_btn_s_4 .hd_icon {
+	width: 1.6rem;
+	height: 1.6rem;
+}
+.hd_btn_s_5 {
+	min-width: 6rem;
+	height: 2.4rem;
+	padding: 0 1rem 0;
+	border-radius: 0.4rem;
+	font-size: 1.2rem;
+	line-height: 150%;
+	font-weight: 400;
+}
+.hd_btn_s_5 .hd_icon {
+	width: 1.6rem;
+	height: 1.6rem;
+}
+.hd_btn_ty_3.btn_s_1 {
+	font-weight: 400 !important;
+}
+/**
+  * Link Button(링크버튼)
+  */
+.btn_link {
+	background-color: #ffffff;
+	color: #1e2124;
+	border: 0;
+	border-radius: 0.6rem;
+	font-size: 1.6rem;
+	font-weight: 400;
+	line-height: 150%;
+}
+.btn_link span.text {
+	cursor: pointer;
+	position: relative;
+}
+.btn_link:hover {
+	background-color: #eef2f7;
+}
+.btn_link:active {
+	color: #1e2124;
+	background-color: #d6e0eb;
+}
+.btn_link.btn_link_s_1 {
+	border-radius: 0.6rem;
+	font-size: 1.6rem;
+	font-weight: 400;
+	line-height: 150%;
+}
+.btn_link.btn_link_s_2 {
+	border-radius: 0.4rem;
+	font-size: 1.4rem;
+	font-weight: 400;
+	line-height: 150%;
+}
+.btn_link.btn_link_s_3 {
+	border-radius: 0.4rem;
+	font-size: 1.2rem;
+	font-weight: 400;
+	line-height: 150%;
+}
+.btn_link.btn_link_s_4 {
+	border-radius: 0.4rem;
+	font-size: 1.2rem;
+	font-weight: 400;
+	line-height: 150%;
 }
 .btn_select {
 	background-color: #fff;
@@ -355,204 +550,11 @@
 	gap: 0.8rem;
 	font-size: 1.4rem;
 }
-/* Button */
-svg {
-	fill: #ffffff;
-	stroke: #ffffff;
-}
-.btn_sample {
-	display: -webkit-inline-box;
-	display: -ms-inline-flexbox;
-	display: inline-flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	gap: 0.4rem;
-}
-/**
- *  Button Type - ty_1(default), ty_2(secondary), ty_3(tertiary)
- */
-.btn_ty_1 {
-	background-color: #ea7404;
-	color: #fff;
-	border: 0;
-}
-.btn_ty_1:hover {
-	background-color: #e66202;
-}
-.btn_ty_1:active {
-	background-color: #ad4a02;
-}
-.btn_ty_1:disabled {
-	background-color: #cdd1d5;
-	color: #6d7882;
-}
-.btn_ty_2 {
-	background-color: #feede7;
-	border: 1px solid #ea7404;
-	color: #e66202;
-}
-.btn_ty_2:hover {
-	background-color: #fad5ba;
-	border: 1px solid #ea7404;
-	color: #e66202;
-}
-.btn_ty_2:active {
-	background-color: #f6bd8c;
-	border: 1px solid #e66202;
-	color: #e66202;
-}
-.btn_ty_2:disabled {
-	background-color: #cdd1d5;
-	color: #6d7882;
-	border: 0;
-}
-.btn_ty_3 {
-	background-color: #ffffff;
-	border: 1px solid #58616a;
-	color: #1e2124;
-}
-.btn_ty_3:hover {
-	background-color: #f4f5f6;
-	border: 1px solid #58616a;
-	color: #1e2124;
-}
-.btn_ty_3:active {
-	background-color: #e6e8ea;
-	border: 1px solid #58616a;
-	color: #1e2124;
-}
-.btn_ty_3:disabled {
-	background-color: #cdd1d5;
-	color: #6d7882;
-	border: 0;
-}
-/**
- * Button Size - s_1(CTA&primary) s_2(lg) s_3(md), s_4(sm), s_5(xs)
- */
-.btn_s_1 {
-	min-width: 9.8rem;
-	height: 5.6rem;
-	padding: 0 2.4rem 0;
-	border-radius: 0.8rem;
-	font-size: 1.8rem;
-	font-weight: 700;
-}
-.btn_s_1 .hd_icon {
-	width: 2.4rem;
-	height: 2.4rem;
-}
-.btn_s_2 {
-	min-width: 9rem;
-	height: 4.8rem;
-	padding: 0 2rem 0;
-	border-radius: 0.8rem;
-	font-size: 1.6rem;
-	line-height: 150%;
-	font-weight: 400;
-}
-.btn_s_2 .hd_icon {
-	width: 2.4rem;
-	height: 2.4rem;
-}
-.btn_s_3 {
-	min-width: 7.8rem;
-	height: 4rem;
-	padding: 0 1.6rem 0;
-	border-radius: 0.6rem;
-	font-size: 1.4rem;
-	line-height: 150%;
-	font-weight: 400;
-}
-.btn_s_3 .hd_icon {
-	width: 1.6rem;
-	height: 1.6rem;
-}
-.btn_s_4 {
-	min-width: 6.4rem;
-	height: 3.2rem;
-	padding: 0 1.2rem 0;
-	border-radius: 0.6rem;
-	font-size: 1.2rem;
-	line-height: 150%;
-	font-weight: 400;
-}
-.btn_s_4 .hd_icon {
-	width: 1.6rem;
-	height: 1.6rem;
-}
-.btn_s_5 {
-	min-width: 6rem;
-	height: 2.4rem;
-	padding: 0 1rem 0;
-	border-radius: 0.4rem;
-	font-size: 1.2rem;
-	line-height: 150%;
-	font-weight: 400;
-}
-.btn_s_5 .hd_icon {
-	width: 1.6rem;
-	height: 1.6rem;
-}
-.btn_ty_3.btn_s_1 {
-	font-weight: 400 !important;
-}
-/**
- * Link Button(링크버튼)
- */
-.btn_link {
-	background-color: #ffffff;
-	color: #1e2124;
-	border: 0;
-	border-radius: 0.6rem;
-	font-size: 1.6rem;
-	font-weight: 400;
-	line-height: 150%;
-}
-.btn_link span.text {
-	cursor: pointer;
-	position: relative;
-}
-.btn_link:hover {
-	background-color: #eef2f7;
-}
-.btn_link:active {
-	color: #1e2124;
-	background-color: #d6e0eb;
-}
-.btn_link.btn_link_s_1 {
-	border-radius: 0.6rem;
-	font-size: 1.6rem;
-	font-weight: 400;
-	line-height: 150%;
-}
-.btn_link.btn_link_s_2 {
-	border-radius: 0.4rem;
-	font-size: 1.4rem;
-	font-weight: 400;
-	line-height: 150%;
-}
-.btn_link.btn_link_s_3 {
-	border-radius: 0.4rem;
-	font-size: 1.2rem;
-	font-weight: 400;
-	line-height: 150%;
-}
-.btn_link.btn_link_s_4 {
-	border-radius: 0.4rem;
-	font-size: 1.2rem;
-	font-weight: 400;
-	line-height: 150%;
-}
-.btn_area:has(.btn_sample, .btn_link) {
-	-webkit-box-pack: start;
-	-ms-flex-pack: start;
-	justify-content: start;
-}
 /* badge */
+/**********************
+* Badge 
+* [category : badge_text, badge_number, badge_dot ]
+**********************/
 .badge_wrap {
 	display: -webkit-inline-box;
 	display: -ms-inline-flexbox;
@@ -563,9 +565,6 @@ svg {
 	flex-flow: row wrap;
 	gap: 0.8rem;
 }
-/***********
-* Badge [category : badge_text, badge_number, badge_dot ]
-***********/
 .hd_badge.badge_text {
 	display: -webkit-inline-box;
 	display: -ms-inline-flexbox;
@@ -755,7 +754,12 @@ svg {
 .card_item_wrap .card_item ~ .card_item {
 	margin-top: 1.6rem;
 }
-.card_item_wrap .card_item > .card_link .item_top {
+.card_item_wrap .card_item .item_inner {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.card_item_wrap .card_item .card_link .item_top {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -767,19 +771,38 @@ svg {
 	padding-right: 2.4rem;
 	background: url(../../images/icon/line/24/arrowRight_ty3.svg) no-repeat right bottom;
 }
-.card_item_wrap .card_item > .card_link .item_top .title {
+.card_item_wrap .card_item .card_link .item_top .title {
 	font-size: 1.4rem;
 	line-height: 2.1rem;
 }
-.card_item_wrap .card_item > .card_link .item_top .cont {
+.card_item_wrap .card_item .card_link .item_top .cont {
 	font-size: 1.6rem;
 	line-height: 2.4rem;
 	font-weight: 700;
+}
+.card_item_wrap .card_item .card_link + .card_list_ty1 {
+	margin-top: 1.6rem;
+	padding-top: 1.6rem;
+	border-top: 1px solid #e1e3ea;
 }
 .card_item_wrap .card_item .item_top ~ * {
 	margin-top: 1.6rem;
 	padding-top: 1.6rem;
 	border-top: 1px solid #e1e3ea;
+}
+.card_item_wrap .card_item ul > li > div.cont {
+	border: 1px solid red;
+}
+.card_item_wrap .card_item ul > li > div.cont p {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.card_item_wrap .card_item ul > li > div.cont .hd_badge {
+	height: 2rem !important;
+}
+.card_item_wrap .card_item ul > li > div.cont .car_logo {
+	margin-left: 0.4rem;
 }
 .card_item_wrap .card_item .card_list_ty1 {
 	border-radius: 0;
@@ -828,8 +851,8 @@ svg {
 /* Checkbox */
 .inp_checkbox input[type="checkbox"] {
 	position: absolute;
-	width: 1.6rem;
-	height: 1.6rem;
+	width: 2.4rem;
+	height: 2.4rem;
 	opacity: 0;
 }
 .inp_checkbox input[type="checkbox"] + label {
@@ -924,48 +947,49 @@ svg {
 /**
 * 아이콘 에셋
 */
-.btn_ty_1 .downloadSvg {
+.hd_btn_ty_1 .downloadSvg {
 	background-image: url(../images/icon/line/24/download_ty1.svg);
 }
-.btn_ty_1 .arrowRightSvg {
+.hd_btn_ty_1 .arrowRightSvg {
 	background-image: url(../images/icon/line/24/arrowRight_ty1.svg);
 }
-.btn_ty_2 .downloadSvg {
+.hd_btn_ty_2 .downloadSvg {
 	background-image: url(../images/icon/line/24/download_ty2.svg);
 }
-.btn_ty_2 .arrowRightSvg {
+.hd_btn_ty_2 .arrowRightSvg {
 	background-image: url(../images/icon/line/24/arrowRight_ty2.svg);
 }
-.btn_ty_3 .downloadSvg {
+.hd_btn_ty_3 .downloadSvg {
 	background-image: url(../images/icon/line/24/download_ty3.svg);
 }
-.btn_ty_3 .arrowRightSvg {
+.hd_btn_ty_3 .arrowRightSvg {
 	background-image: url(../images/icon/line/24/arrowRight_ty3.svg);
 }
-.btn_sample:disabled .downloadSvg {
+.hd_btn:disabled .downloadSvg {
 	background-image: url(../images/icon/line/24/download_disabled.svg);
 }
-.btn_sample:disabled .arrowRightSvg {
+.hd_btn:disabled .arrowRightSvg {
 	background-image: url(../images/icon/line/24/arrowRight_disabled.svg);
 }
 .fill_18_info {
 	background-image: url(../images/icon/fill/18/info.svg);
 }
-[class^="car_logo_ty"] {
+/********
+* logo 스타일
+*********/
+.car_logo {
 	display: inline-block;
+	line-height: 0;
+}
+.car_logo .hd_icon {
 	width: 2rem;
 	height: 2rem;
-	background-color: #f5f5f5;
-	background-repeat: no-repeat;
-	background-position: center;
-	border-radius: 0.3rem;
-	vertical-align: middle;
 }
-.car_logo_ty1 {
-	background-image: url(../images/logo/car_logo_ty1.png);
+.car_logo_hyundai {
+	background-image: url(../images/logo/hyundai.svg);
 }
-.car_logo_ty2 {
-	background-image: url(../images/logo/car_logo_ty2.png);
+.car_logo_samsung {
+	background-image: url(../images/logo/samsung.svg);
 }
 /* input */
 .input_text {
