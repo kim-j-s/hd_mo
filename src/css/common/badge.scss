@@ -1,4 +1,4 @@
-@mixin badge($font-color, $bg-colors, $border-color){
+@mixin badge($font-color, $bg-colors, $border-color) {
 	color: $font-color;
 	background-color: $bg-colors;
 	border-color: $border-color;
@@ -10,28 +10,171 @@
 	gap: 8px;
 }
 
-.badge_item {
-	.text {
-		display: block;
-		padding: 6px;
-		font-size: 12px;
-		font-weight: bold;
-		line-height: 20px;
-		border-width: 1px;
-		border-style: solid;
-		border-radius: 8px;
+/***********
+* Badge [category : badge_text, badge_number, badge_dot ]
+***********/
 
-		&.c_1 {
-			@include badge(white, red, black);
+//badge category : text
+.hd_badge.badge_text {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+	border-radius: var(--radius-small2);
+	padding: 0px var(--padding-3);
+
+	font-style: normal;
+	font-weight: 400;
+	line-height: 150%;
+	letter-spacing: var(--typo-letter-spacing-0);
+
+	cursor: default;
+	user-select: none;
+
+	&.size_l {
+		height: var(--size-height-5);
+		font-size: var(--font-size-label-medium);
+	}
+	&.size_m {
+		height: var(--size-height-4);
+		font-size: var(--font-size-label-small);
+	}
+
+	//variation
+	&.c_primary {
+		&.solid {
+			color: var(--color-text-inverse-static);
+			background: var(--color-element-primary);
 		}
-		&.c_2 {
-			@include badge(black, skyblue, blue);
+		&.solid-pastel {
+			color: var(--color-text-primary);
+			background: var(--color-element-primary-lighter);
 		}
-		&.c_3 {
-			@include badge(pink, gray, green);
+		&.outline {
+			color: var(--color-text-primary);
+			border: 1px solid var(--color-border-primary);
+			background: #ffffff;
 		}
-		&.c_4 {
-			@include badge(blue, yellow, orange);
+	}
+	&.c_secondary {
+		&.solid {
+			color: var(--color-text-inverse-static);
+			background: var(--color-element-secondary);
+		}
+		&.solid-pastel {
+			color: var(--color-text-secondary);
+			background: var(--color-element-secondary-lighter);
+		}
+		&.outline {
+			color: var(--color-text-secondary);
+			border: 1px solid var(--color-border-secondary);
+			background: #ffffff;
+		}
+	}
+	&.c_tertiary {
+		&.solid {
+			color: var(--color-text-inverse-static);
+			background: var(--color-element-gray);
+		}
+		&.solid-pastel {
+			color: var(--color-text-subtle);
+			background: var(--color-element-gray-light);
+		}
+		&.outline {
+			color: var(--color-text-subtle);
+			border: 1px solid var(--color-element-gray-dark);
+			background: #ffffff;
+		}
+	}
+	&.c_point {
+		&.solid {
+			color: var(--color-text-inverse-static);
+			background: var(--color-element-point);
+		}
+		&.solid-pastel {
+			color: var(--color-text-point);
+			background: var(--color-element-point-lighter);
+		}
+		&.outline {
+			color: var(--color-text-point);
+			border: 1px solid var(--color-element-point);
+			background: #ffffff;
+		}
+	}
+	&.c_danger {
+		&.solid {
+			color: var(--color-text-inverse-static);
+			background: var(--color-element-danger);
+		}
+		&.solid-pastel {
+			color: var(--color-text-danger);
+			background: var(--color-element-danger-lighter);
+		}
+		&.outline {
+			color: var(--color-text-danger);
+			border: 1px solid var(--color-element-danger);
+			background: #ffffff;
+		}
+	}
+	&.c_warning {
+		&.solid {
+			color: var(--color-text-inverse-static);
+			background: var(--color-element-warning);
+		}
+		&.solid-pastel {
+			color: var(--color-text-warning);
+			background: var(--color-element-warning-lighter);
+		}
+		&.outline {
+			color: var(--color-text-warning);
+			border: 1px solid var(--color-border-warning);
+			background: #ffffff;
+		}
+	}
+	&.c_success {
+		&.solid {
+			color: var(--color-text-inverse-static);
+			background: var(--color-element-success);
+		}
+		&.solid-pastel {
+			color: var(--color-text-success);
+			background: var(--color-element-success-lighter);
+		}
+		&.outline {
+			color: var(--color-text-success);
+			border: 1px solid var(--color-element-success);
+			background: #ffffff;
+		}
+	}
+	&.c_info {
+		&.solid {
+			color: var(--color-text-inverse-static);
+			background: var(--color-element-information);
+		}
+		&.solid-pastel {
+			color: var(--color-text-information);
+			background: var(--color-element-information-lighter);
+		}
+		&.outline {
+			color: var(--color-text-information);
+			border: 1px solid var(--color-element-information);
+			background: #ffffff;
+		}
+	}
+	&.disabled {
+		cursor: not-allowed;
+		&.solid {
+			color: var(--color-text-disabled-on) !important;
+			background: var(--color-element-disabled-light) !important;
+		}
+		&.solid-pastel {
+			color: var(--color-text-disabled-on);
+			background: var(--color-element-disabled-light);
+		}
+		&.outline {
+			color: var(--color-text-disabled);
+			border: 1px solid var(--color-element-disabled-dark);
+			background: #ffffff;
 		}
 	}
 }
