@@ -1,34 +1,65 @@
 (function(){
-
 	$(function(){
-		// radio 선택 시 이벤트 진행 - 다음단계 활성화
-		const $stepSelect = $('button');
-		$stepSelect.on('click', function(){
-			$('#a1').addClass('down');
-			$('#a2').removeClass('down');
-		});
-	})
+		// 초기화
+		stepperInit();
+		// 선택 이벤트
+		selectEvent();
+	});
 
-
-	stepperInit();
-
-	console.log('x');
-
-	// alert('xcv');
-
-
-	
 })();
 
 
 function stepperInit() {
-	
-
 	if( $('.smp').length ) {
 		console.log('stepperInit');
-		
 	}
+}
 
+function selectEvent() {
+	let thisPosition = null;
+	$('.opts_area_item input[type="radio"]').on('change', function() {
+    // 선택된 radio의 라벨을 찾고 텍스트 값을 추출
+		const data = $(this).closest('.opts_area').data('pickitem');
+    const selectedText = $(this).next('label').find('.label_i').text();
+
+		thisPosition = $(this);
+    
+    // 콘솔에 선택된 텍스트 출력
+    console.log('선택된 값: ', selectedText);
+    console.log('선택된 data: ', data);
+
+		
+		$('.ds2_inner').children('button').each(function(){
+			if( $(this).hasClass(data) ) {
+				$(this).text(selectedText);
+			}
+		});
+
+		// 선택된 활성화
+		motionEvent(thisPosition);
+
+		// stepper 진행
+		stepIng();
+  });
+}
+
+
+function stepIng() {
+	// 스테퍼 추가	
+}
+
+
+function motionEvent(t) {
+	console.log(t);
+	// 예: 라디오 버튼의 부모 요소를 찾고 스타일을 변경하는 등
+  const parentElement = t.closest('.opts_area_item');
+  console.log('선택된 항목의 부모 요소:', parentElement);
+
+	$('#a1').addClass('active');
+	$('#a2').removeClass('active');
+
+	$('#a3').addClass('active');
+	$('#a4').removeClass('active');
 
 
 }
