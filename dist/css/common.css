@@ -1213,9 +1213,33 @@ svg {
 	border-radius: 3.2rem;
 }
 .bottom_fix_notice .acd_head {
-	padding: 1.6rem 2.4rem 1.6rem 6.4rem;
+	min-height: 6.4rem;
+	padding: 1.6rem 2.4rem;
 	font-size: 1.6rem;
-	line-height: 2.4rem;
+	line-height: 3.2rem;
+}
+.bottom_fix_notice .acd_head .acd_btn {
+	position: relative;
+	width: 100%;
+	padding: 0 3.6rem;
+	background: url(../../images/icon/fill/24/alram.svg) no-repeat left 50%/2.4rem auto;
+}
+.bottom_fix_notice .acd_head .acd_btn:after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	content: "";
+	width: 3.2rem;
+	height: 3.2rem;
+	background: #fff url(../../images/icon/line/24/arrowDown_ty1.svg) no-repeat center/1.6rem auto;
+	border: 1px solid #d3d6db;
+	border-radius: 1.2rem;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.bottom_fix_notice .acd_head .acd_btn[aria-expanded="true"]:after {
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
 }
 .bottom_fix_notice .acd_cont .inner {
 	padding: 0 2.4rem 2rem;

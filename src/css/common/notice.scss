@@ -9,9 +9,36 @@
 	}
 
 	.acd_head {
-		padding: 16px 24px 16px 64px;
+		min-height: 64px;
+		padding: 16px 24px;
 		font-size: 16px;
-		line-height: 24px;
+		line-height: 32px;
+
+		.acd_btn {
+			position: relative;
+			width: 100%;
+			padding: 0 36px;
+			background: url(../../images/icon/fill/24/alram.svg) no-repeat left 50% /24px auto;
+
+			&:after {
+				position: absolute;
+				top:0;
+				right:0;
+				content: '';
+				width: 32px;
+				height: 32px;
+				background: #fff url(../../images/icon/line/24/arrowDown_ty1.svg) no-repeat center /16px auto;
+				border: 1px solid #D3D6DB;
+				border-radius: 12px;
+				box-sizing: border-box;
+			}
+
+			&[aria-expanded="true"] {
+				&:after {
+					transform: rotate(180deg);
+				}
+			}
+		}
 	}
 
 	.acd_cont {
