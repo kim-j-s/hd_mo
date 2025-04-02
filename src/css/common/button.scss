@@ -1,5 +1,5 @@
 /* Button */
-.btn {
+.hd_btn {
 	display: inline-block;
 	padding: 4px;
 	font-size: 12px;
@@ -22,10 +22,13 @@
 
 	&.column {
 		flex-direction: column;
+		.hd_btn {
+			flex-basis: auto;
+		}
 	}
 
 	&.ty1 {
-		> .btn {
+		.hd_btn {
 			flex-basis: calc(50% - 10px);
 
 			&.full {
@@ -35,7 +38,7 @@
 	}
 
 	&.ty2 {
-		> .btn {
+		.hd_btn {
 			flex-basis: calc(33.3% - 10px);
 
 			&.full {
