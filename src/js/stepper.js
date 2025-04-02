@@ -7,15 +7,16 @@
 			$('#a1').addClass('down');
 			$('#a2').removeClass('down');
 		});
-	})
+	});
+
+	/* 주석 */
 
 
 	stepperInit();
 
-	console.log('x');
-
-	// alert('xcv');
-
+	console.log('xx');
+	console.log('xx');
+	console.log('xx');
 
 	
 })();

@@ -7,7 +7,9 @@
 		});
 	});
 	stepperInit();
-	console.log("x");
+	console.log("xx");
+	console.log("xx");
+	console.log("xx");
 })();
 function stepperInit() {
 	if ($(".smp").length) {
