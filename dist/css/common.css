@@ -755,7 +755,12 @@ svg {
 .card_item_wrap .card_item ~ .card_item {
 	margin-top: 1.6rem;
 }
-.card_item_wrap .card_item > .card_link .item_top {
+.card_item_wrap .card_item .item_inner {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.card_item_wrap .card_item .card_link .item_top {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -767,14 +772,19 @@ svg {
 	padding-right: 2.4rem;
 	background: url(../../images/icon/line/24/arrowRight_ty3.svg) no-repeat right bottom;
 }
-.card_item_wrap .card_item > .card_link .item_top .title {
+.card_item_wrap .card_item .card_link .item_top .title {
 	font-size: 1.4rem;
 	line-height: 2.1rem;
 }
-.card_item_wrap .card_item > .card_link .item_top .cont {
+.card_item_wrap .card_item .card_link .item_top .cont {
 	font-size: 1.6rem;
 	line-height: 2.4rem;
 	font-weight: 700;
+}
+.card_item_wrap .card_item .card_link + .card_list_ty1 {
+	margin-top: 1.6rem;
+	padding-top: 1.6rem;
+	border-top: 1px solid #e1e3ea;
 }
 .card_item_wrap .card_item .item_top ~ * {
 	margin-top: 1.6rem;
