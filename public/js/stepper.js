@@ -15,6 +15,12 @@
 
 		// 선택 된 요소의 스텝으로 이동
 		moveStep();
+
+		// 이전스텝 이동
+		// stepNext();
+
+		// 다음스텝 이동
+		// moveStep();
 	});
 
 })();
@@ -96,7 +102,7 @@ function motionEvent($element, stepIdx) {
 
 // progress 상태 처리 및 aria label 처리
 function stepIng(num, allStep) {
-	// console.log('stepIng: ', num);
+	console.log('stepIng: ', num);
 	// console.log('stepIng all: ', allStep);
 
 	// if(num === allStep) {
@@ -139,7 +145,7 @@ function keypadEnter() {
 
 		const idx = $this.closest('.opts_area').index();
 		selectedIdx = idx + 1;
-		console.log('선택 된 현재 index 값 : ', selectedIdx);
+		// console.log('선택 된 현재 index 값 : ', selectedIdx);
 
 
 		if( $(this).hasClass('keypad_btn_del') ) {
@@ -160,14 +166,14 @@ function keypadEnter() {
 		}
 
 		const getLng = trgEle.text().length;
-		console.log('글자수 : ', getLng);
+		// console.log('글자수 : ', getLng);
 		if(getLng > 0) {
 			trgEle.addClass('active');
 		} else {
 			trgEle.removeClass('active');
 		}
 
-		if(getLng === 8) {
+		if(getLng === 3) {
 			console.log(getLng);
 
 			// const selectedText = $this.next('label').find('.label_i').text();
@@ -187,7 +193,7 @@ function keypadEnter() {
 			// stepper 진행 업데이트
 			stepIng(selectedIdx, allStep);
 
-			$('.smp').attr('data-now', selectedIdx + 1);
+			$('.smp').attr('data-now', selectedIdx);
 		}
 
 		
