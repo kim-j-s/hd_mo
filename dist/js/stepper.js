@@ -171,7 +171,7 @@ function keypadEnter() {
 			trgEle.removeClass("active");
 		}
 
-		if (getLng === 3) {
+		if (getLng === 8) {
 			console.log(getLng);
 
 			// const selectedText = $this.next('label').find('.label_i').text();
