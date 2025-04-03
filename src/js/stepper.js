@@ -11,7 +11,10 @@
 		selectEvent();
 
 		// keypad 이벤트
-		keypadEnter()
+		keypadEnter();
+
+		// 선택 된 요소의 스텝으로 이동
+		moveStep();
 	});
 
 })();
@@ -25,6 +28,9 @@ function stepperInit(num) {
 		$('.stepper_wrap').find('.stepper').attr('aria-label', `${totalStepCount}단계 중 ${num + 1}단계`);
 		$('.smp').attr('data-now', num);
 
+		// 선택된 항목 활성화
+		motionEvent(null, num);
+
 		// stepIng 호출
 		stepIng(num, totalStepCount);
 
@@ -36,6 +42,7 @@ function stepperInit(num) {
 
 // 선택 이벤트
 function selectEvent() {
+	// console.log('selectEvent');
 	let selectedIdx = null;
 	$('.opts_area_item input[type="radio"]').on('change', function() {
 		const $this = $(this);
@@ -45,7 +52,7 @@ function selectEvent() {
 
 		// 선택 된 현재 index 값
 		selectedIdx = idx + 1;
-		console.log('선택 된 현재 index 값 : ', selectedIdx);
+		// console.log('selectEvent : 선택 된 현재 index 값 : ', selectedIdx);
 
 		// 선택된 값 콘솔 출력
 		// console.log(`선택된 값: ${selectedText}, 선택된 data: ${data}`);
@@ -71,7 +78,7 @@ function selectEvent() {
 
 // 선택된 항목 활성화
 function motionEvent($element, stepIdx) {
-	console.log('stepIdx : ', stepIdx);
+	// console.log('motionEvent : stepIdx : ', stepIdx);
 
 	$('.stepper_wrap').find('.stepper').attr('aria-label', `${allStep}단계 중 ${stepIdx + 1}단계`);
 	// console.log(`선택된 항목: ${$element}, 스텝 인덱스: ${stepIdx}`);
@@ -89,7 +96,7 @@ function motionEvent($element, stepIdx) {
 
 // progress 상태 처리 및 aria label 처리
 function stepIng(num, allStep) {
-	console.log('stepIng: ', num);
+	// console.log('stepIng: ', num);
 	// console.log('stepIng all: ', allStep);
 
 	// if(num === allStep) {
@@ -105,7 +112,7 @@ function stepIng(num, allStep) {
 
 	// 진행 퍼센트 계산
 	const progress = Math.floor(((num + 1) / allStep) * 100);
-	console.log('progress: ', progress);
+	// console.log('progress: ', progress);
 	$('.pgs_per').css('width', `${progress}%`);
 
 	// 시작 및 완료 상태 클래스 추가/제거
@@ -190,14 +197,14 @@ function keypadEnter() {
 
 // 이전단계
 function stepBack() {
-	console.log('back');
+	// console.log('back');
 	// 현재 스텝 값 가져오기
-  let dataNow = $('.smp').data('now') || 0; // 기본값 0
-  console.log('back dataNow now: ', dataNow);
+	let dataNow = parseInt($('.smp').attr('data-now')) || 0;
+  // console.log('back dataNow now: ', dataNow);
 
   // 이전 스텝 계산 (최소값 0으로 제한)
   const now = Math.max(dataNow - 1, 0);
-  console.log('back now: ', now);
+  // console.log('back now: ', now);
 
   // 선택된 항목 활성화
   motionEvent(null, now); // motionEvent 호출 시 null 전달
@@ -209,16 +216,16 @@ function stepBack() {
   $('.smp').attr('data-now', now);
 
   // 보완: 스텝이 0일 때 추가 처리 (필요 시)
-  if (now === 0) {
-    console.log('첫 번째 스텝입니다.');
-  }
+  // if (now === 0) {
+  //   console.log('첫 번째 스텝입니다.');
+  // }
 }
 
 // 이전단계
 function stepNext() {
-	console.log('next');
+	// console.log('next');
 	// 현재 스텝 값 가져오기
-  let dataNow = $('.smp').data('now') || 0; // 기본값 0
+  let dataNow = parseInt($('.smp').attr('data-now')) || 0;
   console.log('next dataNow now: ', dataNow);
 
   // 다음 스텝 계산 (최대값 allStep으로 제한)
@@ -233,9 +240,31 @@ function stepNext() {
 
   // 현재 스텝 표기
   $('.smp').attr('data-now', now);
+}
 
-  // 보완: 마지막 스텝일 때 추가 처리 (필요 시)
-  if (now === allStep - 1) {
-    console.log('마지막 스텝입니다.');
-  }
+
+function moveStep() {
+	$('.selected_case').on('click', function () {
+		const $this = $(this);
+
+		// 1. 버튼의 클래스 중 `selected_case`를 제외한 특정 클래스 가져오기
+		let targetClass = $this.attr('class').split(' ').find(cls => cls !== 'selected_case');
+		console.log('클릭한 버튼의 추가 클래스:', targetClass);
+
+		if (!targetClass) return;
+
+		// 2. opts_area에서 해당 data-pickitem을 가진 요소 찾기
+		let targetIdx = $('.opts_area').filter(function () {
+				return $(this).data('pickitem') === targetClass;
+		}).index();
+
+		console.log('이동할 스텝 index:', targetIdx);
+
+		if (targetIdx !== -1) {
+				// 3. 해당 index로 스텝 이동
+				motionEvent(null, targetIdx);
+				stepIng(targetIdx, allStep);
+				$('.smp').attr('data-now', targetIdx);
+		}
+});
 }
