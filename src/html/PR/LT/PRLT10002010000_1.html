@@ -3,9 +3,13 @@
 <!-- s: Full 팝업 -->
 {{#> popup/popup_full popup-id="pop_type01" popup-class="active" no-header=true }}
 <div class="popup_cont">
-	<h2 class="title_h2">
-		<span class="point">필수</span> 고객정보 관리 및 가입설계를 위한 개인(신용)정보 처리 상세 동의
-	</h2>
+	<!-- s: content_top -->
+	<div class="content_top">
+		<h2 class="title_h2">
+			<span class="strong point">필수</span> 고객정보 관리 및 가입설계를 위한 개인(신용)정보 처리 상세 동의
+		</h2>
+	</div>
+	<!-- e: content_top -->
 
 	<div class="info_box">
 		귀하는 개인(신용)정보의 수집 &middot; 이용 및 조회, 제공에 관한 동의를 거부하실 수 있으며, 개인의 신용도 등을 평가하기 위한 목적 이외의 개인(신용)정보 제공 동의를 철회할 수 있습니다. 다만, 본 동의는 '고객정보 관리 및 가입설계'를 위해 필수적인 사항이므로 동의를 거부하시는 경우 관련 업무수행이 불가능합니다.
@@ -29,10 +33,8 @@
 </div>
 <div class="popup_bottom">
 	<div class="btn_area">
-		{{#> cp/button type="1" size="2"}}
-			정보를 입력했습니다
-		{{/ cp/button}}
-		<!-- {{#> cp/button type="1" size="2" disabled=true }}동의를 위해 정보를 입력합니다{{/ cp/button}} -->
+		{{> cp/button type="1" size="2" b-text="확인"}}
+		<!-- {{> cp/button type="1" size="2" disabled=true b-text="확인"}} -->
 	</div>
 </div>
 {{/ popup/popup_full}}
