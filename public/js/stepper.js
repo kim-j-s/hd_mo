@@ -220,8 +220,6 @@ function stepBack() {
 
   // 현재 스텝 표기
   $('.smp').attr('data-now', now);
-
-	$('.console').text('stepBack');
 }
 
 // 이전단계
@@ -243,10 +241,6 @@ function stepNext() {
 
   // 현재 스텝 표기
   $('.smp').attr('data-now', now);
-
-	$('.console').text('stepNext');
-
-
 }
 
 
