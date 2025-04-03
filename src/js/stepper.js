@@ -215,10 +215,7 @@ function stepBack() {
   // 현재 스텝 표기
   $('.smp').attr('data-now', now);
 
-  // 보완: 스텝이 0일 때 추가 처리 (필요 시)
-  // if (now === 0) {
-  //   console.log('첫 번째 스텝입니다.');
-  // }
+	$('.console').text('stepBack');
 }
 
 // 이전단계
@@ -240,6 +237,10 @@ function stepNext() {
 
   // 현재 스텝 표기
   $('.smp').attr('data-now', now);
+
+	$('.console').text('stepNext');
+
+
 }
 
 
