@@ -4,6 +4,7 @@
 		stepperInit(StepNum);
 		selectEvent();
 		keypadEnter();
+		moveStep();
 	});
 })();
 function stepperInit(num) {
@@ -14,6 +15,7 @@ function stepperInit(num) {
 			.find(".stepper")
 			.attr("aria-label", `${totalStepCount}단계 중 ${num + 1}단계`);
 		$(".smp").attr("data-now", num);
+		motionEvent(null, num);
 		stepIng(num, totalStepCount);
 		return totalStepCount;
 	}
@@ -27,7 +29,6 @@ function selectEvent() {
 		const data = $this.closest(".opts_area").data("pickitem");
 		const selectedText = $this.next("label").find(".label_i").text();
 		selectedIdx = idx + 1;
-		console.log("선택 된 현재 index 값 : ", selectedIdx);
 		$(".ds2_inner")
 			.children("button")
 			.each(function () {
@@ -44,7 +45,6 @@ function selectEvent() {
 	});
 }
 function motionEvent($element, stepIdx) {
-	console.log("stepIdx : ", stepIdx);
 	$(".stepper_wrap")
 		.find(".stepper")
 		.attr("aria-label", `${allStep}단계 중 ${stepIdx + 1}단계`);
@@ -56,14 +56,12 @@ function motionEvent($element, stepIdx) {
 	$smpContentItems.eq(stepIdx).removeClass("active");
 }
 function stepIng(num, allStep2) {
-	console.log("stepIng: ", num);
 	if (num > 0) {
 		$(".stm_btn").addClass("active");
 	} else {
 		$(".stm_btn").removeClass("active");
 	}
 	const progress = Math.floor(((num + 1) / allStep2) * 100);
-	console.log("progress: ", progress);
 	$(".pgs_per").css("width", `${progress}%`);
 	$(".pgs_per").toggleClass("start", progress === 0);
 	$(".pgs_per").toggleClass("end", progress === 100);
@@ -112,6 +110,28 @@ function keypadEnter() {
 			motionEvent($this, selectedIdx);
 			stepIng(selectedIdx, allStep);
 			$(".smp").attr("data-now", selectedIdx + 1);
+		}
+	});
+}
+function moveStep() {
+	$(".selected_case").on("click", function () {
+		const $this = $(this);
+		let targetClass = $this
+			.attr("class")
+			.split(" ")
+			.find(cls => cls !== "selected_case");
+		console.log("클릭한 버튼의 추가 클래스:", targetClass);
+		if (!targetClass) return;
+		let targetIdx = $(".opts_area")
+			.filter(function () {
+				return $(this).data("pickitem") === targetClass;
+			})
+			.index();
+		console.log("이동할 스텝 index:", targetIdx);
+		if (targetIdx !== -1) {
+			motionEvent(null, targetIdx);
+			stepIng(targetIdx, allStep);
+			$(".smp").attr("data-now", targetIdx);
 		}
 	});
 }
