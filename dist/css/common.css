@@ -103,6 +103,7 @@
 	color: #464c53;
 }
 /* common 인증, 로딩 등 */
+/* 인증방법 선택 */
 /* header */
 .header {
 	height: 4.8rem;
@@ -164,8 +165,6 @@
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
 }
 .header .header_inner .right .allmenu {
 	width: 2.4rem;
@@ -209,13 +208,13 @@
 /* navigation */
 /* Header Navigation */
 .nav_menu_wrap {
-	visibility: hidden;
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	z-index: 100;
+	visibility: hidden;
 	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
@@ -247,6 +246,7 @@
 .nav_menu_wrap.active {
 	visibility: visible;
 	opacity: 1;
+	background: blue;
 }
 .nav_menu_wrap.active:before {
 	opacity: 1;
