@@ -51,6 +51,9 @@
 .content .content_top + .bann_text_wrap_ty1 {
 	margin-top: 3.2rem;
 }
+.content .content_top + .bann_text_wrap_ty2 {
+	margin-top: 3.2rem;
+}
 .info_box {
 	padding: 2rem;
 	font-size: 1.6rem;
@@ -104,6 +107,60 @@
 }
 /* common 인증, 로딩 등 */
 /* 인증방법 선택 */
+* + .cert_select_list {
+	margin-top: 5.2rem;
+}
+.cert_select_list > li + li {
+	margin-top: 1.6rem;
+}
+.cert_select_list .cert_select_item {
+	position: relative;
+	display: block;
+	padding: 2.3rem 3.9rem 2.3rem 1.9rem;
+	border-radius: 1.6rem;
+	border: 1px solid #e1e3ea;
+	background: url(../images/icon/arrowRight_ty3.svg) no-repeat right 1.9rem center;
+}
+.cert_select_list .cert_select_item > .text {
+	position: relative;
+	display: block;
+	padding: 0.6rem 0 0.6rem 4.8rem;
+	font-size: var(--font-size-body-medium);
+	color: var(--gray-8003-e-4-a-58);
+	line-height: 2.4rem;
+}
+.cert_select_list .cert_select_item > .text::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 3.6rem;
+	height: 3.6rem;
+	border-radius: 1.2rem;
+	background-color: #f4f5f6;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.cert_select_list .cert_select_item.pin > .text::before {
+	background-image: url(../images/common/cert/icon_cert_pin.svg);
+}
+.cert_select_list .cert_select_item.bio > .text::before {
+	background-image: url(../images/common/cert/icon_cert_bio.svg);
+}
+.cert_select_list .cert_select_item.phone > .text::before {
+	background-image: url(../images/common/cert/icon_cert_phone.svg);
+}
+.cert_select_list .cert_select_item.kakao > .text::before {
+	background-image: url(../images/common/cert/icon_cert_kakao.svg);
+}
+.cert_select_list .cert_select_item.common_cert > .text::before {
+	background-image: url(../images/common/cert/icon_cert_common_cert.svg);
+}
+.cert_select_list .cert_select_item.fin_cert > .text::before {
+	background-image: url(../images/common/cert/icon_cert_fin_cert.svg);
+}
 /* header */
 .header {
 	height: 4.8rem;
@@ -842,6 +899,30 @@
 	color: #d82600;
 }
 .bann_text_wrap_ty1 + .list_top_wrap {
+	margin-top: 5.2rem;
+}
+.bann_text_wrap_ty2 {
+	display: block;
+	padding: 2.4rem 2rem 2.4rem 9.9rem;
+	background: #fff9f1 url(../images/icon/img_bann_car.png) no-repeat 2rem center/auto 5.2rem;
+	border-radius: 3.2rem;
+}
+.bann_text_wrap_ty2 .text {
+	font-size: var(--font-size-heading-xxsmall);
+	line-height: 150%;
+	font-weight: 500;
+	color: #2b3541;
+}
+.bann_text_wrap_ty2 .text > * {
+	display: block;
+}
+.bann_text_wrap_ty2 .text .point {
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	font-weight: 600;
+	color: #d82600;
+}
+.bann_text_wrap_ty2 + .list_top_wrap {
 	margin-top: 5.2rem;
 }
 /* calendar */
