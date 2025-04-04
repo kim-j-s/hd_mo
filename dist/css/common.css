@@ -8,6 +8,14 @@
 	clip: rect(0, 0, 0, 0);
 }
 /* Common */
+body {
+	color: #1e2124;
+}
+.truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
 .wrap {
 	position: relative;
 	display: -webkit-box;
@@ -95,7 +103,6 @@
 	font-size: 1.6rem;
 	font-weight: 700;
 	line-height: 2.4rem;
-	color: #1e2124;
 }
 .info_help_list dt ~ dt {
 	margin-top: 3.2rem;
@@ -679,13 +686,20 @@
 		0px var(--shadow-y-4, 16px) var(--shadow-blur-4, 24px) 0px var(--color-alpha-shadow3, rgba(0, 0, 0, 0.12));
 	border-radius: 15rem;
 }
+.link_btn_box a {
+	display: block;
+	width: 100%;
+}
 .link_btn_box .link_icon {
 	width: 2.4rem;
 	height: 2.4rem;
-	background: #455c78 url(../../../images/icon/img_car.png) no-repeat center/1.8rem auto;
+	background: #455c78 url(../images/icon/img_car.png) no-repeat center/1.8rem auto;
 	border-radius: 4rem;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
 }
 .link_btn_box .link_inner {
+	width: inherit;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -699,14 +713,48 @@
 	color: #fff;
 }
 .link_btn_box .link_inner .cont {
+	min-width: 5rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 0.8rem;
+	color: #ffffff;
+	font-size: var(--font-size-body-small);
+	line-height: 150%;
+	letter-spacing: var(--typo-letter-spacing-0);
+}
+.link_btn_box .link_inner .cont .strong {
+	font-weight: 700;
+}
+.link_btn_box .forward_button {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	gap: 0.8rem;
-	font-size: 1.4rem;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	font-size: var(--font-size-button-small);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 150%;
+}
+.link_btn_box .forward_button span {
+	display: inline-block;
+	line-height: 0;
+}
+.link_btn_box .forward_button span .hd_icon {
+	width: 1.6rem;
+	height: 1.6rem;
 }
 /* badge */
 /**********************
@@ -1124,6 +1172,10 @@
 	display: -webkit-inline-box;
 	display: -ms-inline-flexbox;
 	display: inline-flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
 	gap: 2rem;
 }
 .checkbox_group_wrap.column {
@@ -1219,6 +1271,9 @@
 .car_logo_samsung {
 	background-image: url(../images/logo/samsung.svg);
 }
+.arrowRightSvg {
+	background-image: url(../images/icon/line/24/arrowRight_ty1.svg);
+}
 /* input */
 .input_text {
 	position: relative;
@@ -1231,7 +1286,6 @@
 	padding: 1.6rem;
 	font-size: 1.6rem;
 	line-height: 2.4rem;
-	color: #1e2124;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -1411,7 +1465,6 @@
 }
 .phone .code_first {
 	font-size: 1.6rem;
-	color: #1e2124;
 }
 .phone input {
 	position: relative;
@@ -1568,6 +1621,10 @@
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
 	gap: 1.2rem;
 }
 .radio_group_wrap.column {
@@ -1577,7 +1634,7 @@
 	flex-direction: column;
 	gap: 1rem;
 }
-.radio_group_wrap .inp_radio {
+.radio_group_wrap .inp_radio.rd_btn {
 	-webkit-box-flex: 1;
 	-ms-flex: 1;
 	flex: 1;
@@ -1687,6 +1744,12 @@
 }
 /* table */
 /* text */
+[class^="title"] .strong {
+	font-weight: 700;
+}
+[class^="title"] .point {
+	color: #d82600;
+}
 .title_h2 {
 	color: #2b3541;
 	font-size: var(--font-size-heading-large);
@@ -1694,11 +1757,13 @@
 	line-height: 150%; /* 36px */
 	letter-spacing: var(--typo-letter-spacing-0);
 }
-.title_h2 span.strong {
-	font-weight: 700;
-}
-.title_h2 .point {
-	color: #d82600;
+.title_h3 {
+	color: #3e4a58;
+	font-size: var(--font-size-heading-medium);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 150%;
+	letter-spacing: var(--typo-letter-spacing-0);
 }
 .title_sub {
 	font-size: 1.6rem;
