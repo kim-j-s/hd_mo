@@ -76,75 +76,169 @@
 					<!-- s: content_top -->
 					<div class="content_top">
 						<h2 class="title_h2">
-							<span class="strong">보험기간</span>
-							을 입력해 주세요
+							<span class="strong">자동차번호</span>
+							또는
+							<br />
+							<span class="strong">차대번호</span>
+							를 입력해 주세요
 						</h2>
 					</div>
 					<!-- e: content_top -->
-
+					<button type="button" name="" id="" title="계약상태에 따른 가입 안내 팝업" class="btn popup_open open_1" onclick="openPop(this,'pop_type01');">보험만기일, 중고차, 신차 안내</button>
+					<!-- s: Bottom 팝업 -->
+					<div class="popup_wrap bottom" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="true">
+						<div class="popup_container">
+							<div class="popup_dim" aria-hidden="true"></div>
+							<div class="popup_inner">
+								<div class="draggable" aria-hidden="true">
+									<div class="move"></div>
+								</div>
+								<div class="popup_head">계약상태에 따른 가입 안내</div>
+								<div class="popup_cont">
+									<div class="content">
+										<ul class="list_ty1">
+											<li>
+												보험 만기일이
+												<span class="strong">2025년 04월 01일 이후</span>
+												이거나 구입예정이신 경우 보험료 계산까지만 가능합니다.
+											</li>
+											<li>중고차는 자동차번호를 입력해주세요.</li>
+											<li>차대번호는 새로 출고하는 차량만 가능합니다.</li>
+										</ul>
+									</div>
+								</div>
+								<div class="popup_bottom">
+									<div class="btn_area">
+										<button type="button" class="btn"><span>확인</span></button>
+									</div>
+								</div>
+								<button type="button" class="popup_close"><span class="blind">팝업 닫기</span></button>
+							</div>
+						</div>
+					</div>
+					<!-- e: Bottom 팝업 -->
 					<div class="form_group_wrap">
 						<div class="form_line">
-							<div class="label_tit">보험시작일</div>
+							<div class="label_tit">자동차번호 7~9자리, 차대번호 17자리</div>
 							<div class="input_text">
 								<div class="inp">
-									<input type="text" readonly />
+									<input type="text" placeholder="123가4567" />
 
-									<button type="button" class="btn cal"><span class="blind">달력 호출</span></button>
+									<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 								</div>
 							</div>
 						</div>
 						<div class="form_line">
-							<div class="label_tit">보험종료일</div>
-							<div class="input_text">
-								<div class="inp">
-									<input type="text" readonly />
-
-									<button type="button" class="btn cal"><span class="blind">달력 호출</span></button>
-								</div>
+							<div class="inp_checkbox">
+								<input type="checkbox" id="checkbox1" name="name1" />
+								<label for="checkbox1"><span>구매예정(자동차번호, 차대번호를 모르는 경우)</span></label>
 							</div>
 						</div>
 						<div class="form_line">
 							<div class="label_tit">계약기간</div>
-							<div class="radio_group_wrap">
+							<div class="radio_group_wrap column">
 								<div class="inp_radio rd_btn">
 									<input type="radio" id="radio_btn_g1" name="radio_g1" checked />
 									<label for="radio_btn_g1">
-										<span class="label_i">1년 계약</span>
+										<span class="label_i">
+											승용차
+											<br />
+											<span>승차정원 10인 이하</span>
+										</span>
 									</label>
 								</div>
 								<div class="inp_radio rd_btn">
 									<input type="radio" id="radio_btn_g2" name="radio_g1" />
 									<label for="radio_btn_g2">
-										<span class="label_i">1년 미만 계약</span>
+										<span class="label_i">
+											승합차
+											<br />
+											<span>승차정원 11인 이하</span>
+										</span>
+									</label>
+								</div>
+								<div class="inp_radio rd_btn">
+									<input type="radio" id="radio_btn_g3" name="radio_g1" />
+									<label for="radio_btn_g3">
+										<span class="label_i">
+											화물차
+											<br />
+											<span>적재함이 있는 자동차, 벤형 및 픽업트럭</span>
+										</span>
 									</label>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-
-				<!-- s: 꼭 알아두세요 -->
-				<div class="bottom_fix_notice">
-					<div class="acd_item">
-						<div class="acd_head">
-							<button type="button" class="acd_btn" aria-expanded="false"><span>꼭 알아두세요</span></button>
-						</div>
-						<div class="acd_cont">
-							<div class="inner">
-								<ul>
-									<li>내용1</li>
-									<li>내용2</li>
-									<li>내용3</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- e: 꼭 알아두세요 -->
 			</div>
 
 			<!-- s: 하단 고정 버튼 영역 -->
 			<div class="bottom_fix_wrap">
+				<div class="link_btn_box">
+					<a href="#" onclick="openPop(this,'pop_type02');">
+						<div class="link_inner">
+							<div class="cont">
+								<div class="link_icon"></div>
+								<div class="text">
+									최근설계내역
+									<span>3건</span>
+									이 있어요!
+								</div>
+							</div>
+							<!-- <button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_5">
+			
+				<span class="text">바로가기</span>
+			
+			</button> -->
+							<div class="link_btn">바로가기</div>
+						</div>
+					</a>
+				</div>
+				<!-- s: Full 팝업 -->
+				<div class="popup_wrap full" id="pop_type02" role="dialog" aria-hidden="true">
+					<div class="popup_container">
+						<div class="popup_dim" aria-hidden="true"></div>
+						<div class="popup_inner">
+							<div class="popup_head">
+								보유 차량 중 동일증권 가입대상
+								<br />
+								차량을 선택해 주세요
+							</div>
+							<div class="popup_cont">
+								<div class="content">
+									<div class="acd_item">
+										<div class="acd_head active">
+											<button type="button" class="acd_btn" aria-expanded="true"><span>동일증권 안내</span></button>
+										</div>
+										<div class="acd_cont">
+											<div class="inner" style="display: block">
+												<ul class="list_ty1">
+													<li>자동차가 2대 이상인 경우, 보험계약의 종료일을 동일하게 일치시켜 하나의 보험증권으로 가입하는 것을 말합니다. 만기일자가 동일하여 관리가 용이하며, 사고에 따른 할증이 전체 자동차 대수로 배분됩니다.</li>
+													<li>동일증권으로 가입이 가능한 차량은 개인소유 승용 차(10인 이하), 경승합, 1톤 이하 화물차 입니다.</li>
+													<li>할인할증등급은 고객님의 사고유무와 사고내용에 따라 산정되며, 등급이 높을수록 보험료 할인율이 높아지게 됩니다.</li>
+													<li>동일증권 가입으로 보험기간이 1년 미만으로 되는 경우, 단기요율이 적용됩니다.</li>
+													<li>
+														추가문의 사항이 있으시면 콜센터
+														<a href="tel:+1899-6782">1899-6782</a>
+														(내선1번)로 연락주시기 바랍니다.
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="popup_bottom">
+								<div class="btn_area">
+									<button type="button" class="btn"><span>동일보험으로</span></button>
+								</div>
+							</div>
+							<button type="button" class="popup_close" onclick="closePop(this, 'pop_type02');"><span class="blind">팝업 닫기</span></button>
+						</div>
+					</div>
+				</div>
+				<!-- e: Full 팝업 -->
 				<div class="btn_area">
 					<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2 full">
 						<span class="text">1년 계약으로</span>
