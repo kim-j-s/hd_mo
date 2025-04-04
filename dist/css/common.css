@@ -656,7 +656,7 @@ strong {
 	height: 0;
 	font-size: 0;
 }
-.btn.cal {
+.btn.calendar_call {
 	width: 2.4rem;
 	height: 2.4rem;
 	padding: 0;
@@ -1281,6 +1281,30 @@ strong {
 /* input */
 .input_text {
 	position: relative;
+	/*
+  input[type="date"] {
+  	position: relative;
+  	padding: 14px;
+  	width: 150px;
+  	height: 30px;
+  	font-size: 14px;
+  	color: #999;
+  	border: none;
+  	border-bottom: 1px solid #e0e0e0;
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+  	color: rgba(0, 0, 0, 0);
+  	opacity: 1;
+  	display: block;
+  	width: 20px;
+  	height: 20px;
+  	border-width: thin;
+  }
+  input[type="date"].active::before {
+  	content: attr(data-placeholder);
+  	width: 100%;
+  }
+  */
 }
 .input_text input {
 	position: relative;
@@ -1318,13 +1342,10 @@ strong {
 	color: #66727b;
 }
 .input_text input:focus {
-	border-color: #1e2124;
-}
-.input_text *:focus {
 	outline: none;
 }
 .input_text .del,
-.input_text .cal {
+.input_text .calendar_call {
 	position: absolute;
 	top: 50%;
 	right: 1rem;
@@ -1333,10 +1354,9 @@ strong {
 }
 .input_text .del {
 	display: none;
-	right: 1.6rem;
-	width: 2rem;
-	height: 2rem;
-	background: url(../images/icon/icon_reset.svg) no-repeat center/1.6rem auto;
+}
+.input_text.calendar input {
+	padding-right: 4.6rem;
 }
 .input_text .birth_all {
 	position: relative;

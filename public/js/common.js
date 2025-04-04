@@ -213,6 +213,8 @@
 		$(this).closest('.tab_wrap').children('.tab_wrap_content').eq(idx).addClass('active');
 	});
 
+	
+
 })();
 
 
