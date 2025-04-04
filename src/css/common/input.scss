@@ -1,112 +1,106 @@
 .input_text {
-  position: relative;
-  input {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 48px;
+	position: relative;
+	input {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 48px;
 		padding: 16px;
 		font-size: 16px;
 		line-height: 24px;
-    appearance: none;
-    box-sizing: border-box;
+		appearance: none;
+		box-sizing: border-box;
 		border-radius: 16px;
-    border: 1px solid #ddd;
+		border: 1px solid #ddd;
 
 		&::placeholder {
-			color: #6C7882;
+			color: #6c7882;
 		}
 
 		&:disabled {
-			background-color: #F5F5F5;
-			color: #66727B;
+			background-color: #f5f5f5;
+			color: #66727b;
 		}
-  }
-  
-  .del,
-  .cal {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-  }
-  .del {
-    display: none;
-  }
-	
-  input[type="date"] {
-    position:relative; 
-    padding:14px; 
-    width:150px; 
-    height:30px; 
-    font-size:14px; 
-    color:#999; 
-    border:none; 
-    border-bottom:1px solid #e0e0e0;
-  }
-  input[type="date"]::-webkit-calendar-picker-indicator {
-    color: rgba(0, 0, 0, 0); //숨긴다
-    opacity: 1;
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-width: thin;
-  }
-  input[type="date"].active::before {
-    content:attr(data-placeholder);
-    width:100%;
+	}
+
+	.del,
+	.cal {
+		position: absolute;
+		top: 50%;
+		right: 10px;
+		transform: translateY(-50%);
+	}
+	.del {
+		display: none;
+	}
+
+	input[type="date"] {
+		position: relative;
+		padding: 14px;
+		width: 150px;
+		height: 30px;
+		font-size: 14px;
+		color: #999;
+		border: none;
+		border-bottom: 1px solid #e0e0e0;
+	}
+	input[type="date"]::-webkit-calendar-picker-indicator {
+		color: rgba(0, 0, 0, 0); //숨긴다
+		opacity: 1;
+		display: block;
+		width: 20px;
+		height: 20px;
+		border-width: thin;
+	}
+	input[type="date"].active::before {
+		content: attr(data-placeholder);
+		width: 100%;
 	}
 
 	//phone
 	&.phone {
-
 	}
 
 	//birth
-	.birth_all{    
+	.birth_all {
 		position: relative;
 	}
 }
 
-
 // Error 문구
 .msg_success {
-  color: blue;
+	color: blue;
 }
 .msg_fail {
-  color: red;
+	color: red;
 }
-
 
 // file
 .inp_file {
-
-	input[type=file]{
+	input[type="file"] {
 		position: absolute;
 		width: 1px;
 		height: 1px;
 		overflow: hidden;
-		clip: rect(0,0,0,0);
+		clip: rect(0, 0, 0, 0);
 		border: none;
 
 		& + label {
 			display: flex;
 			font-size: 14px;
 			line-height: 20px;
-	
+
 			.file_name {
 				flex: 1;
 			}
-	
+
 			.file_btn {
 				background-color: #999;
-				color: #FFF;
+				color: #fff;
 			}
 		}
 	}
 }
-
-
 
 /* _조합 input */
 .comp_wrap {
@@ -119,13 +113,13 @@
 	border-radius: 16px;
 	border: 1px solid #ddd;
 
-	[class^=input]{
-		flex:1;
+	[class^="input"] {
+		flex: 1;
 
 		input {
 			padding-left: 0;
-			padding-right:0;
-			border:0;
+			padding-right: 0;
+			border: 0;
 			border-radius: 0;
 		}
 	}
@@ -133,7 +127,6 @@
 	.dash {
 		font-size: 16px;
 	}
-
 
 	/* comp_wrap 내부에서 보안키패드 호출 버튼 공통 사용요소 - 필요시 각 class별로 별도 설정 필요 */
 	.comp_wrap_keypad_call {
@@ -177,13 +170,7 @@
 			}
 		}
 	}
-
-
-
-
-
 }
-
 
 .phone {
 	.code_first {
@@ -193,23 +180,20 @@
 	input {
 		position: relative;
 
-
 		&:focus {
-
 			&::before {
 				position: absolute;
 				left: 0;
 				top: 0;
-				content:'';
+				content: "";
 				display: block;
 				width: 10px;
 				height: 24px;
-				background-color: #1E2124;
+				background-color: #1e2124;
 			}
 		}
 	}
 }
-
 
 /* Form group */
 .form_group_wrap {
@@ -221,6 +205,29 @@
 		}
 		.btn_area {
 			margin-top: 16px;
+		}
+		.explain_text {
+			position:relative;
+			display: inline-block;
+			padding-left: 10px;
+			margin-top:8px;
+			color: #697584;
+			font-size: var(--font-size-body-xsmall);
+			line-height: 150%;
+			letter-spacing: var(--typo-letter-spacing-0);
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: calc(50% - 1px);
+				left: 3px;
+				width: 2px;
+				height: 2px;
+				border-radius: 50%;
+				background-color:#697584;
+			}
+
+			.strong { font-weight:700;}
 		}
 
 		& ~ .form_line {
