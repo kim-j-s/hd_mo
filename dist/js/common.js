@@ -79,8 +79,8 @@
 		.on("focus input", ".input_text .inp > input", function () {
 			const $this = $(this),
 				$wrap = $this.closest(".inp"),
-				val = $this.val(),
 				$del = $this.siblings(".del");
+			let val = $this.val();
 
 			if ($del.length) {
 				$del.attr("tabindex", "0");
@@ -97,17 +97,45 @@
 				$del.hide();
 			}
 			// (this.value) ? $wrap.addClass('active'):$wrap.removeClass('active');
+
+			//전화번호
+			if ($this.closest(".comp_wrap").hasClass("phone")) {
+				if (val) {
+					const newVal = val.replace(/ - /g, "");
+					$this.attr("maxlength", 8);
+					$this.val(newVal).removeClass("isVal");
+				}
+			}
 		})
 		.on("blur", ".inp > input", function () {
 			const $this = $(this),
 				$wrap = $this.closest(".inp");
+			let val = $this.val(),
+				newVal = 0;
+
 			$wrap.removeClass("active");
+
+			// 전화번호
+			if ($this.closest(".comp_wrap").hasClass("phone")) {
+				$this.attr("maxlength", 14);
+				if (val) {
+					val = val.replace(/[^0-9]/g, "");
+					newVal = " - " + val.replace(/(\d{4})(?=\d)/g, "$1 - ");
+					$this.val(newVal).addClass("isVal");
+				} else {
+					$this.removeClass("isVal");
+				}
+			}
 		})
 		.on("click", ".inp > .del", function (e) {
 			const $this = $(this);
 			e.preventDefault();
 			$this.siblings("input").val("").focus();
 			$this.parent(".inp").removeClass("active");
+
+			if ($this.closest(".comp_wrap").hasClass("phone")) {
+				$this.siblings("input").removeClass("isVal");
+			}
 		});
 
 	// comma
@@ -181,6 +209,15 @@
 		$(this).closest(".tab_wrap").children(".tab_wrap_content").eq(idx).addClass("active");
 	});
 })();
+
+//
+function phoneVal(target) {
+	const $target = target;
+
+	if ($target.closest(".comp_wrap").hasClass("phone")) {
+		$target.siblings("input").removeClass("isVal");
+	}
+}
 
 /* Tab Scroll */
 function tabScroll() {
