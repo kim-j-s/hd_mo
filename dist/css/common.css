@@ -8,6 +8,11 @@
 	clip: rect(0, 0, 0, 0);
 }
 /* Common */
+.truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
 .wrap {
 	position: relative;
 	display: -webkit-box;
@@ -570,13 +575,20 @@
 		0px var(--shadow-y-4, 16px) var(--shadow-blur-4, 24px) 0px var(--color-alpha-shadow3, rgba(0, 0, 0, 0.12));
 	border-radius: 15rem;
 }
+.link_btn_box a {
+	display: block;
+	width: 100%;
+}
 .link_btn_box .link_icon {
 	width: 2.4rem;
 	height: 2.4rem;
-	background: #455c78 url(../../../images/icon/img_car.png) no-repeat center/1.8rem auto;
+	background: #455c78 url(../images/icon/img_car.png) no-repeat center/1.8rem auto;
 	border-radius: 4rem;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
 }
 .link_btn_box .link_inner {
+	width: inherit;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -590,14 +602,48 @@
 	color: #fff;
 }
 .link_btn_box .link_inner .cont {
+	min-width: 5rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 0.8rem;
+	color: #ffffff;
+	font-size: var(--font-size-body-small);
+	line-height: 150%;
+	letter-spacing: var(--typo-letter-spacing-0);
+}
+.link_btn_box .link_inner .cont .strong {
+	font-weight: 700;
+}
+.link_btn_box .forward_button {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	gap: 0.8rem;
-	font-size: 1.4rem;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	font-size: var(--font-size-button-small);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 150%;
+}
+.link_btn_box .forward_button span {
+	display: inline-block;
+	line-height: 0;
+}
+.link_btn_box .forward_button span .hd_icon {
+	width: 1.6rem;
+	height: 1.6rem;
 }
 /* badge */
 /**********************
@@ -1085,6 +1131,9 @@
 }
 .car_logo_samsung {
 	background-image: url(../images/logo/samsung.svg);
+}
+.arrowRightSvg {
+	background-image: url(../images/icon/line/24/arrowRight_ty1.svg);
 }
 /* input */
 .input_text {
