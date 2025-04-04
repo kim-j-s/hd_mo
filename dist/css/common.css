@@ -48,9 +48,8 @@
 .bottom_fix_wrap_ty2 + .bottom_fix_wrap {
 	margin-top: -0.8rem;
 }
-.content .content_top,
-.popup_cont .content_top {
-	margin-bottom: 3.2rem;
+.content .content_top + .bann_text_wrap_ty1 {
+	margin-top: 3.2rem;
 }
 .info_box {
 	padding: 2rem;
@@ -797,6 +796,7 @@
 /* card */
 /* Card*/
 .card_item_wrap .card_item {
+	position: relative;
 	padding: 3.2rem 2.4rem;
 	border: 1px solid #e1e3ea;
 	border-radius: 2.4rem;
@@ -811,8 +811,37 @@
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	gap: 0.8rem;
 }
-.card_item_wrap .card_item .card_link .item_top {
+.card_item_wrap .card_item .item_inner .inner_cont {
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+.card_item_wrap .card_item .item_inner .inner_cont .card_link + .card_list_ty1,
+.card_item_wrap .card_item .item_inner .inner_cont .item_top + .card_list_ty1 {
+	margin-top: 1.6rem;
+	padding-top: 1.6rem;
+	border-top: 1px solid #e1e3ea;
+}
+.card_item_wrap .card_item .item_inner .inp_checkbox input:checked ~ i {
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	z-index: -1;
+	width: calc(100% + 0.2rem);
+	height: calc(100% + 0.2rem);
+	border: 0.2rem solid #f8633c;
+	border-radius: 2.4rem;
+}
+.card_item_wrap .card_item .card_link .item_top .title_info {
+	padding-right: 2.4rem;
+	background: url(../images/icon/line/24/arrowRight_ty3.svg) no-repeat right bottom/2.4rem auto;
+}
+.card_item_wrap .card_item .item_top {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -821,24 +850,22 @@
 	-ms-flex-direction: column;
 	flex-direction: column;
 	gap: 0.4rem;
-	padding-right: 2.4rem;
-	background: url(../../images/icon/line/24/arrowRight_ty3.svg) no-repeat right bottom;
 }
-.card_item_wrap .card_item .card_link .item_top .title {
+.card_item_wrap .card_item .item_top .title_info .title {
 	font-size: 1.4rem;
 	line-height: 2.1rem;
 }
-.card_item_wrap .card_item .card_link .item_top .cont {
+.card_item_wrap .card_item .item_top .title_info .cont {
 	font-size: 1.6rem;
 	line-height: 2.4rem;
 	font-weight: 700;
 }
-.card_item_wrap .card_item .card_link + .card_list_ty1 {
-	margin-top: 1.6rem;
-	padding-top: 1.6rem;
-	border-top: 1px solid #e1e3ea;
+.card_item_wrap .card_item .item_top .desc {
+	font-size: 1.4rem;
+	line-height: 2.1rem;
+	color: #58616a;
 }
-.card_item_wrap .card_item .item_top ~ * {
+.card_item_wrap .card_item .item_top + .card_list_ty1 {
 	margin-top: 1.6rem;
 	padding-top: 1.6rem;
 	border-top: 1px solid #e1e3ea;
@@ -952,12 +979,12 @@
 	color: gray;
 }
 .inp_checkbox input[type="checkbox"]:checked + label::before {
-	background: #f8633c url(../../images/icon/line/24/check_ty1.svg) no-repeat center/1.2rem auto;
+	background: #f8633c url(../images/icon/line/24/check_ty1.svg) no-repeat center/1.2rem auto;
 	border-color: #f8633c;
 }
 .inp_checkbox input[type="checkbox"]:checked:disabled + label::before {
 	background-color: #f5f5f5;
-	background-image: url(../../images/icon/line/24/check_ty2.svg);
+	background-image: url(../images/icon/line/24/check_ty2.svg);
 	border-color: #f5f5f5;
 }
 .checkbox_group_wrap {

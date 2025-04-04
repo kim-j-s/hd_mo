@@ -1,6 +1,7 @@
 /* Card*/
 .card_item_wrap {
 	.card_item {
+		position: relative;
 		padding: 32px 24px;
 		border: 1px solid #e1e3ea;
 		border-radius: 24px;
@@ -13,16 +14,54 @@
 
 		.item_inner {
 			display: flex;
+			align-items: flex-start;
+			gap:8px;
+
+			.inner_cont {
+				flex: 1;
+
+				.card_link,
+				.item_top {
+					& + .card_list_ty1 {
+						margin-top: 16px;
+						padding-top: 16px;
+						border-top: 1px solid #e1e3ea;
+					}
+				}
+			}
+
+			.inp_checkbox {
+				input:checked{
+					& ~ i {
+						position: absolute;
+						top: -1px;
+						left: -1px;
+						z-index: -1;
+						width: calc(100% + 2px);
+						height: calc(100% + 2px);
+						border: 2px solid #F8633C;
+						border-radius: 24px;
+					}
+				}
+			}
 		}
 
 		.card_link {
 			.item_top {
-				display: flex;
-				flex-direction: column;
-				gap: 4px;
-				padding-right: 24px;
-				background: url(../../images/icon/line/24/arrowRight_ty3.svg) no-repeat right bottom;
+				.title_info {
+					padding-right: 24px;
+					background: url(../images/icon/line/24/arrowRight_ty3.svg) no-repeat right bottom / 24px auto;
+				}
+			}
+		}
 
+		// card 상단영역
+		.item_top {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+
+			.title_info {
 				.title {
 					font-size: 14px;
 					line-height: 21px;
@@ -33,17 +72,13 @@
 					font-weight: 700;
 				}
 			}
+			.desc {
+				font-size: 14px;
+				line-height: 21px;
+				color: #58616A;
+			}
 
 			& + .card_list_ty1 {
-				margin-top: 16px;
-				padding-top: 16px;
-				border-top: 1px solid #e1e3ea;
-			}
-		}
-
-		// card 상단영역
-		.item_top {
-			& ~ * {
 				margin-top: 16px;
 				padding-top: 16px;
 				border-top: 1px solid #e1e3ea;
