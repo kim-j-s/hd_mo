@@ -344,14 +344,21 @@
 		0px var(--shadow-y-4, 16px) var(--shadow-blur-4, 24px) 0px var(--color-alpha-shadow3, rgba(0, 0, 0, 0.12));
 	border-radius: 150px;
 
+	a { 
+		display: block; 
+		width:100%;
+	}
+
 	.link_icon {
 		width: 24px;
 		height: 24px;
-		background: #455c78 url(../../../images/icon/img_car.png) no-repeat center/ 18px auto;
+		background: #455c78 url(../images/icon/img_car.png) no-repeat center/ 18px auto;
 		border-radius: 40px;
+		flex-shrink: 0;
 	}
 
 	.link_inner {
+		width: inherit;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -359,10 +366,41 @@
 		color: #fff;
 
 		.cont {
+			min-width:50px;
 			display: flex;
+			flex-wrap: nowrap;
 			align-items: center;
 			gap: 8px;
-			font-size: 14px;
+
+			color: #ffffff;
+			font-size: var(--font-size-body-small);
+			line-height: 150%;
+			letter-spacing: var(--typo-letter-spacing-0);
+
+			.strong {  font-weight: 700;}
 		}
+	}
+
+	//바로가기
+	.forward_button {
+		width:fit-content;
+		display: flex;
+		align-items: center;
+		flex-shrink: 0;
+
+		font-size: var(--font-size-button-small);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%;
+
+		span{
+			display: inline-block;
+			line-height: 0;
+			.hd_icon {
+				width: 16px;
+				height: 16px;
+			}
+		}
+			
 	}
 }
