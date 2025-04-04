@@ -21,11 +21,14 @@
 		<!-- 휴대폰번호 -->
 		<div class="guide_h4">Type - 휴대폰번호</div>
 		<div class="comp_wrap phone">
-			<div class="code_first">010</div>
-			<span class="dash">-</span>
-			{{> cp/text type="tel" id="phone02" maxlength="4" placeholder="휴대폰번호 2번째 자리 입력" comp=true }}
-			<span class="dash">-</span>
-			{{> cp/text type="tel" id="phone03" maxlength="4" placeholder="휴대폰번호 3번째 자리 입력" comp=true }}
+			<div class="input_text">
+				<div class="code_first">010</div>
+				<div class="inp">
+					<input type="tel" id="phone02" placeholder="-없이 입력하세요" maxlength="8">
+					<i></i>
+					<button type="button" class="del" style="display: none;"><span class="blind">텍스트 삭제</span></button>
+				</div>
+			</div>
 		</div>
 
 		<!-- 주민등록번호 -->

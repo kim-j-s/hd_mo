@@ -1213,6 +1213,11 @@ body {
 	border-radius: 1.6rem;
 	border: 1px solid #ddd;
 }
+.input_text input:-webkit-autofill,
+.input_text input:-webkit-autofill:hover,
+.input_text input:-webkit-autofill:focus {
+	background: transparent;
+}
 .input_text input::-webkit-input-placeholder {
 	color: #6c7882;
 }
@@ -1232,6 +1237,12 @@ body {
 	background-color: #f5f5f5;
 	color: #66727b;
 }
+.input_text input:focus {
+	border-color: #1e2124;
+}
+.input_text *:focus {
+	outline: none;
+}
 .input_text .del,
 .input_text .cal {
 	position: absolute;
@@ -1242,6 +1253,10 @@ body {
 }
 .input_text .del {
 	display: none;
+	right: 1.6rem;
+	width: 2rem;
+	height: 2rem;
+	background: url(../images/icon/icon_reset.svg) no-repeat center/1.6rem auto;
 }
 .input_text input[type="date"] {
 	position: relative;
@@ -1300,36 +1315,35 @@ body {
 }
 /* _조합 input */
 .comp_wrap {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: row;
-	flex-direction: row;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	gap: 1.2rem;
-	padding-left: 1.6rem;
-	padding-right: 1.6rem;
-	border-radius: 1.6rem;
-	border: 1px solid #ddd;
+	position: relative;
 	/* comp_wrap 내부에서 보안키패드 호출 버튼 공통 사용요소 - 필요시 각 class별로 별도 설정 필요 */
-}
-.comp_wrap [class^="input"] {
-	-webkit-box-flex: 1;
-	-ms-flex: 1;
-	flex: 1;
-}
-.comp_wrap [class^="input"] input {
-	padding-left: 0;
-	padding-right: 0;
-	border: 0;
-	border-radius: 0;
 }
 .comp_wrap .dash {
 	font-size: 1.6rem;
+}
+.comp_wrap .input_text {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding-left: 1.6rem;
+	padding-right: 4.4rem;
+	border: 1px solid #ddd;
+	border-radius: 1.6rem;
+}
+.comp_wrap .input_text input {
+	border: none;
+}
+.comp_wrap .input_text input:focus + i {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #1e2124;
+	border-radius: 1.6rem;
 }
 .comp_wrap .comp_wrap_keypad_call {
 	-webkit-box-flex: 1;
@@ -1385,18 +1399,16 @@ body {
 .phone .code_first {
 	font-size: 1.6rem;
 }
-.phone input {
-	position: relative;
+.phone .inp {
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
 }
-.phone input:focus::before {
-	position: absolute;
-	left: 0;
-	top: 0;
-	content: "";
-	display: block;
-	width: 1rem;
-	height: 2.4rem;
-	background-color: #1e2124;
+.phone .inp input {
+	padding-left: 0.8rem;
+}
+.phone .inp input.isVal {
+	padding-left: 0;
 }
 /* Form group */
 .form_group_wrap .form_line .label_tit {
