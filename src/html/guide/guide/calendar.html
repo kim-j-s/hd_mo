@@ -1,9 +1,10 @@
 {{#> layout/guide }}
 	<div class="guide_h1">달력</div>
 	<div class="guide_h4">단일 선택 달력 - datepicker 인풋영역 선택</div>
-	{{> cp/text inpclass='xx' no_cal=true }}
+	{{> cp/text inpclass='inp_picker' cal=true }}
 
 	<div class="guide_h4">단일 선택 달력 - 버튼호출</div>
+	{{> cp/text cal=true }}
 
 
 
@@ -17,58 +18,36 @@
 	<script>
 		$(function() {
 
-			// 👇 닫힘 애니메이션을 위한 내부 함수 오버라이드
-			(function($) {
-				const _hideDatepicker = $.datepicker._hideDatepicker;
-
-				$.datepicker._hideDatepicker = function(input, duration) {
-					const inst = $.datepicker._curInst;
-
-					if (!inst) return;
-
-					// 애니메이션이 이미 실행 중이면 중단
-					inst.dpDiv
-						.stop(true, true)
-						.animate({ top: "+=100", opacity: 0 }, {
-							duration: 300,
-							queue: false,
-							complete: function() {
-								inst.dpDiv.hide(); // 숨김 처리
-								_hideDatepicker.call($.datepicker, input, duration); // 원래 동작 실행
-							}
-						});
-				};
-			})(jQuery);
-
 			$.datepicker.setDefaults({
 				dateFormat: 'yy.mm.dd',
+				prevText: '지난달',
+  			nextText: '다음달',
 				showOtherMonths: true,
 				showMonthAfterYear: true,
-				buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif",
-				buttonImageOnly: true,
-				buttonText: "선택",
 				yearSuffix: "년",
 				monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
 				monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
 				dayNamesMin: ['일','월','화','수','목','금','토'],
 				dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'],
 
-				// 👇 아래에서 올라오는 애니메이션 효과 추가
-				beforeShow: function(input, inst) {
-					setTimeout(function() {
-						inst.dpDiv
-							.hide()
-							.css({
-								top: "+=100", // 아래에서 시작
-								opacity: 0
-							})
-							.slideDown(300) // 기본 슬라이드
-							.animate({ top: "-=100", opacity: 1 }, { duration: 300, queue: false });
-					}, 0);
+				showAnim: "slideDown",
+				duration: 300,
+				disabled:true,
+				beforeShow: function () { 
+					$("body").append('<div class="modal_backdrop"></div>');
+					setTimeout(function(){
+						$("body").addClass('modal_open');
+					},50);
+				},
+				onClose: function() { 
+					setTimeout(function(){
+						$('.modal_backdrop').remove();
+					},200);
+					$("body").removeClass('modal_open')
 				}
 			});
 
-			$(".xx").datepicker();
+			$(".inp_picker").datepicker();
 		});
 	</script>
 

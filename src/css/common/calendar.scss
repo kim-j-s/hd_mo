@@ -166,7 +166,22 @@
 /* 달력 바디 */
 
 
-
+.modal_backdrop {
+  position: fixed;
+  z-index: 8000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 0.3s;
+}
+.modal_open {
+  .modal_backdrop {
+    opacity: 1;
+  }
+}
 
 
 
@@ -183,3 +198,9 @@
 
 
 /* 단일방식 */
+
+
+
+
+
+

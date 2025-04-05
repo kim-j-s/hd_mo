@@ -29,14 +29,13 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="../../../images/favicon/favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="96x96" href="../../../images/favicon/favicon-96x96.png" />
 		<script type="text/javascript" src="../../../js/libs/jquery-1.8.3.min.js"></script>
-		<script type="text/javascript" src="../../../js/libs/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../../../js/libs/jquery-ui-1.12.1.min.js"></script>
 		<script type="text/javascript" src="../../../js/libs/swiper-bundle.min.js"></script>
 		<script type="text/javascript" src="../../../js/common.js"></script>
 		<script type="text/javascript" src="../../../js/popup.js"></script>
 		<script type="text/javascript" src="../../../js/dragging.js"></script>
 		<script type="text/javascript" src="../../../js/stepper.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
-		<link rel="stylesheet" href="../../../css/libs/jquery-ui.min.css" />
 		<title>현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="guide.css" />
@@ -45,11 +44,19 @@
 		<link rel="stylesheet" href="../../../css/contents.css" />
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
-	<body class="guide_body mobile">
+	<body class="guide_body">
 		<div class="guide_wrap">
 			<div class="wrap">
 				<div class="guide_h1">달력</div>
-				<div class="guide_h4">단일 선택 달력</div>
+				<div class="guide_h4">단일 선택 달력 - datepicker 인풋영역 선택</div>
+				<div class="input_text calendar">
+					<div class="inp">
+						<input type="text" class="inp_picker" />
+						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+						<button type="button" class="btn calendar_call" title="날짜 선택"></button>
+					</div>
+				</div>
+				<div class="guide_h4">단일 선택 달력 - 버튼호출</div>
 				<div class="input_text calendar">
 					<div class="inp">
 						<input type="text" />
@@ -61,13 +68,38 @@
 				<div class="guide_h4">기간 선택 달력</div>
 				<div class="guide_discription">미정</div>
 
-				<input type="text" class="xxxx" />
-
 				<script>
 					$(function () {
-						console.log("dd");
-						// 			$(".calendar_call").datepicker();
-						$(".xxxx").datepicker();
+						$.datepicker.setDefaults({
+							dateFormat: "yy.mm.dd",
+							prevText: "지난달",
+							nextText: "다음달",
+							showOtherMonths: true,
+							showMonthAfterYear: true,
+							yearSuffix: "년",
+							monthNamesShort: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+							monthNames: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+							dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"],
+							dayNames: ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"],
+
+							showAnim: "slideDown",
+							duration: 300,
+							disabled: true,
+							beforeShow: function () {
+								$("body").append('<div class="modal_backdrop"></div>');
+								setTimeout(function () {
+									$("body").addClass("modal_open");
+								}, 50);
+							},
+							onClose: function () {
+								setTimeout(function () {
+									$(".modal_backdrop").remove();
+								}, 200);
+								$("body").removeClass("modal_open");
+							},
+						});
+
+						$(".inp_picker").datepicker();
 					});
 				</script>
 			</div>

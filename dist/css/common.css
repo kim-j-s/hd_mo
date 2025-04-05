@@ -979,7 +979,184 @@ strong {
 .bann_text_wrap_ty2 + .list_top_wrap {
 	margin-top: 5.2rem;
 }
-/* calendar */
+/* 달력 */
+/* datepicker */
+.guide_body .ui-datepicker {
+	display: none;
+	position: fixed !important;
+	top: auto !important;
+	right: 0 !important;
+	bottom: 0 !important;
+	left: 0 !important;
+	z-index: 9000 !important;
+	width: 100%;
+	padding: 4.2rem 2rem 4rem 2rem;
+	border: 1px solid #000;
+	border-radius: 3rem 3rem 0 0;
+	background: #ffffff !important;
+}
+.guide_body .ui-datepicker:before {
+	content: "";
+}
+.guide_body .ui-datepicker .ui-datepicker-calendar {
+	width: calc(100% - 0.4rem);
+	margin: 0 auto;
+}
+.guide_body .ui-datepicker-header {
+	position: relative;
+	margin-bottom: 1.2rem;
+	padding: 0 4rem;
+}
+.guide_body .ui-datepicker-header > a {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 3.2rem;
+	height: 3.2rem;
+	border-radius: 50%;
+	border: 1px solid var(--color-border-gray-light);
+	font-size: 0;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 2rem auto;
+}
+.guide_body .ui-datepicker-header > a.ui-datepicker-prev {
+	left: 0.8rem;
+	background-image: url(../images/icon/arrowLeft_ty1.svg);
+}
+.guide_body .ui-datepicker-header > a.ui-datepicker-next {
+	right: 0.8rem;
+	background-image: url(../images/icon/arrowRight_ty4.svg);
+}
+.guide_body .ui-datepicker-header .ui-datepicker-title {
+	font-weight: 700;
+	font-size: var(--font-size-heading-small);
+	line-height: 3.2rem;
+	text-align: center;
+}
+.guide_body .ui-datepicker-header .ui-datepicker-title .ui-datepicker-month {
+	padding-left: 1.2rem;
+}
+/* 달력 헤더 */
+.guide_body .ui-datepicker .ui-datepicker-calendar th {
+	border-bottom: 0.3rem solid #fff;
+}
+.guide_body .ui-datepicker .ui-datepicker-calendar th span {
+	display: block;
+	margin: 0 auto;
+	font-size: var(--font-size-label-small);
+	line-height: 2.8rem;
+	text-align: center;
+	color: var(--color-text-subtle);
+}
+/* 달력 헤더 */
+/* 달력 바디 */
+.guide_body .ui-datepicker .ui-datepicker-calendar tbody td {
+	border: 0.3rem solid #fff;
+	border-top: none;
+	border-bottom: none;
+	padding: 0;
+}
+.guide_body .ui-datepicker .ui-datepicker-calendar tbody td:nth-child(1) {
+	border-left: none;
+}
+.guide_body .ui-datepicker .ui-datepicker-calendar tbody td:nth-child(1):not(.ui-state-disabled) a,
+.guide_body .ui-datepicker .ui-datepicker-calendar tbody td:nth-child(1):not(.ui-state-disabled) span {
+	color: var(--color-text-danger);
+}
+.guide_body .ui-datepicker .ui-datepicker-calendar tbody td:nth-child(7) {
+	border-right: none;
+}
+.guide_body .ui-datepicker .ui-datepicker-calendar tbody tr td a,
+.guide_body .ui-datepicker .ui-datepicker-calendar tbody tr td span {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: 100%;
+	height: 4.8rem;
+	font-size: var(--font-size-label-medium);
+	line-height: 1;
+	border: none;
+}
+.guide_body .ui-state-default {
+	display: block;
+	width: 2.8rem;
+	height: 2.8rem;
+	margin: 0 auto;
+	font-size: 1.4rem;
+}
+.guide_body .ui-datepicker-today .ui-state-default {
+	position: relative;
+}
+.guide_body .ui-datepicker-today .ui-state-default:before {
+	content: "";
+	position: absolute;
+	bottom: 1.4rem;
+	left: 50%;
+	width: 0.4rem;
+	height: 0.4rem;
+	border-radius: 50%;
+	background-color: var(--color-element-point);
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+.guide_body .ui-datepicker-today .ui-state-default::after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 0.4rem;
+	margin-top: 1px;
+}
+.guide_body .ui-state-default.ui-state-active {
+	position: relative;
+	color: var(--color-text-inverse-static);
+}
+.guide_body .ui-state-default.ui-state-active:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: -1;
+	width: 4rem;
+	height: 4rem;
+	margin: -2rem 0 0 -2rem;
+	border-radius: 50%;
+	background-color: var(--color-action-secondary-active);
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+}
+.guide_body .ui-state-disabled span,
+.guide_body .ui-state-disabled a {
+	color: var(--color-text-disabled);
+}
+/* 달력 바디 */
+.modal_backdrop {
+	position: fixed;
+	z-index: 8000;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.modal_open .modal_backdrop {
+	opacity: 1;
+}
+/* 단일방식 */
 /* card */
 /* Card*/
 .card_item_wrap .card_item {
