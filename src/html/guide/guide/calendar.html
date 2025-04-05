@@ -4,7 +4,10 @@
 	{{> cp/text inpclass='inp_picker' cal=true }}
 
 	<div class="guide_h4">단일 선택 달력 - 버튼호출</div>
-	{{> cp/text cal=true }}
+	<!-- {{> cp/text cal=true }} -->
+	<div class="" style="font-size: 16px;">
+		<button type="button" class="btn popup_open" onclick="openPop(this,'calendar');" title="Bottom 선택 팝업열기"><span>달력 호출</span></button>
+	</div>
 
 
 
@@ -20,8 +23,8 @@
 
 			$.datepicker.setDefaults({
 				dateFormat: 'yy.mm.dd',
-				prevText: '지난달',
-  			nextText: '다음달',
+				prevText: '이전 달',
+  			nextText: '다음 달',
 				showOtherMonths: true,
 				showMonthAfterYear: true,
 				yearSuffix: "년",
@@ -50,6 +53,16 @@
 			$('.inp_picker:not([readonly])').datepicker();
 		});
 	</script>
+
+
+
+{{#> popup/popup_bottom popup-id="calendar" no-header=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		{{> cp/calendar}}
+	</div>
+</div>
+{{/ popup/popup_bottom}} 
 
 
 {{/ layout/guide }}
