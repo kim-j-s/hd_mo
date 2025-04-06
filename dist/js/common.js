@@ -151,6 +151,54 @@
 		$(this).closest(".inp_file").find(".file_name").text(fileName);
 	});
 
+	// 약관 동의
+	const $chkAll = function (click) {
+		const $group = click.closest(".chk_group_wrap"),
+			$total = $group.find(".chk_point:not(:disabled)").length,
+			$chked = $group.find(".chk_point:not(:disabled):checked").length;
+
+		if ($total === $chked) {
+			$group.find(".chk_point_all").prop("checked", true);
+		} else {
+			$group.find(".chk_point_all").prop("checked", false);
+		}
+	};
+
+	$DOM
+		.on("change", ".chk_group_wrap .chk_point", function () {
+			const $sub_status = $(this).is(":checked"),
+				$sub_list = $(this).closest(".checkbox").next(".chk_list");
+
+			if ($sub_status) {
+				$sub_list.find(".chk_point_sub:not(:disabled)").prop("checked", true);
+			} else {
+				$sub_list.find(".chk_point_sub:not(:disabled)").prop("checked", false);
+			}
+			$chkAll($(this));
+		})
+		.on("change", ".chk_group_wrap .chk_point_sub", function () {
+			const $group_sub = $(this).closest(".chk_list"),
+				$sub_total = $group_sub.find(".chk_point_sub:not(:disabled)").length,
+				$sub_chked = $group_sub.find(".chk_point_sub:not(:disabled):checked").length;
+
+			if ($sub_chked === $sub_total) {
+				$group_sub.closest("li").find(".chk_point").prop("checked", true);
+			} else {
+				$group_sub.closest("li").find(".chk_point").prop("checked", false);
+			}
+			$chkAll($(this));
+		})
+		.on("change", ".chk_group_wrap .chk_point_all", function () {
+			const allChked = $(this).is(":checked");
+
+			if (allChked) {
+				$(this).closest(".chk_group_wrap").find("input[type=checkbox]:not(:disabled)").prop("checked", true);
+			} else {
+				$(this).closest(".chk_group_wrap").find("input[type=checkbox]:not(:disabled)").prop("checked", false);
+			}
+		});
+	// 약관 동의
+
 	/* Textarea */
 	// byte check
 	$DOM.on("blur keyup", ".byte_check > textarea", function () {
