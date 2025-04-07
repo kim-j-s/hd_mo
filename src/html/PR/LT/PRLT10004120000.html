@@ -1,6 +1,6 @@
 <!---
-화면번호 : PRLT10004110000
-경로 : 3.자동차 상세정보 > 3-1.자동차 상세정보 입력 > 차량정보와 부품정보 조회(case2)
+화면번호 : PRLT10004120000
+경로 : 3.자동차 상세정보 > 3-1.자동차 상세정보 입력 > 부속품 조회/적용
 -->
 {{#> layout/default page-title="자동차 상세정보 | 상품"}}
 
@@ -11,15 +11,9 @@
 		<!-- s: popup_content_top -->
 		<div class="popup_content_top">
 			<h2 class="title_h2">
-				<strong>321가**54</strong>
-				<br />
-				입력하신 차량번호로
-				<strong>
-					차량정보가
-					<br />
-					자동으로 선택
-				</strong>
-				되었습니다
+				자동차 제조사를 통해 조회된 
+				<strong>출고시 옵션 장착 부속품 내역</strong>
+				입니다
 				<!-- <strong>321가**54</strong><br />
 				입력하신 차량번호로
 				<strong>차량정보가<br />자동으로 선택</strong>되었습니다 -->
@@ -27,7 +21,6 @@
 		</div>
 		<!-- e: popup_content_top -->
 
-		<p class="text_sub">일치하는 차량을 선택해주세요</p>
 		<div class="card_item_wrap">
 			<div class="card_item">
 				<div class="item_inner">
@@ -108,23 +101,23 @@
 			</div>
 		</div>
 
-		<div class="etc_area_ty1">
-			<p class="etc_title">차량 정보가 일치하지 않으면?</p>
-			<!-- 버튼인지 서치인풋인지 기획자,디자이너 확인 필요 -->
-			{{#> cp/button type="3" size="3" rightIcon="searchSvg" b-text="자동차 다시 검색하기"}}{{/ cp/button}}
-		</div>
 	</div>
 </div>
 
+
+<!-- s: 꼭 알아두세요 -->
+{{#> cp/notice }}
+<ul>
+	<li>내용1</li>
+	<li>내용2</li>
+	<li>내용3</li>
+</ul>
+{{/ cp/notice }}
+<!-- e: 꼭 알아두세요 -->
+ 
+
 <div class="popup_bottom">
-	<div class="btn_area">
-		<!-- s: 체크박스 선택 후 표출될 버튼 케이스 -->
-		<!-- {{> cp/button type="1" size="1" b-text="차량정보 일치해요"}} -->
-		<!-- s: 체크박스 선택 후 표출될 버튼 -->
-		<!-- s: 체크박스 선택 전 표출될 버튼 케이스 -->
-		{{> cp/button type="1" size="1" b-text="차량을 선택 중이에요" disabled="true"}}
-		<!-- e: 체크박스 선택 전 표출될 버튼 케이스 -->
-	</div>
+	<div class="btn_area">{{> cp/button type="1" size="1" b-text="부속품 적용하기"}}</div>
 </div>
 {{/ popup/popup_full}}
 <!-- e: Full 팝업 -->
