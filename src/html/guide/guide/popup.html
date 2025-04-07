@@ -3,12 +3,12 @@
 	{{> layout/header h-title="popup2 1654" h-back=true }}
 	<div id="container" class="container">
 		<div class="content" style="font-size: 16px;">
-			<button type="button" class="btn popup_open" onclick="openPop(this,'pop_type01');"><span>Full 팝업열기</span></button>
-			<button type="button" class="btn popup_open" onclick="openPop(this,'pop_type02');"><span>Layer 팝업열기</span></button>
-			<button type="button" class="btn popup_open" onclick="openPop(this,'pop_type03');"><span>Bottom 팝업열기1</span></button>
-			<button type="button" class="btn popup_open" onclick="openPop(this,'pop_type03');"><span>Bottom 팝업열기2</span></button>
-			<button type="button" class="btn popup_open" onclick="openPop(this,'pop_type05');" title="Bottom 선택 팝업열기"><span>value</span></button>
-			<div class="btn popup_open" role="button" title="Bottom 선택 팝업열기">
+			{{> cp/button type="2" size="5" b-text="Full 팝업열기" popup="pop_type01" }}
+			{{> cp/button type="2" size="5" b-text="Layer 팝업열기" popup="pop_type02" }}
+			{{> cp/button type="2" size="5" b-text="Bottom 팝업열기1" popup="pop_type03" }}
+			{{> cp/button type="2" size="5" b-text="Bottom 팝업열기2" popup="pop_type03" }}
+			{{> cp/button type="2" size="5" b-text="Bottom 선택 팝업열기" popup="pop_type05" }}
+			<div class="hd_btn hd_btn_ty_2 hd_btn_s_5" role="button" title="Bottom 선택 팝업열기" onclick="openPop(this, 'pop_type05')">
 				<span>value</span>
 			</div>
 
@@ -16,13 +16,10 @@
 			<br><br><br><br>
 			<p>팝업 호출 onclick 기능추가</p>
 			<br><br>
-			{{> cp/button b-text="호출버튼" popup="pop_type03" btn-title="Bottom 팝업열기" }}
+			{{> cp/button type="1" size="4" b-text="호출버튼" popup="pop_type03" btn-title="Bottom 팝업열기" }}
 
 
 		</div>
-
-
-
 	</div>
 
 	<!-- 추후 적용 문구
@@ -44,15 +41,18 @@
 			</h2>
 		</div>
 		<!-- e: popup_content_top -->
-		팝업내용입니다
-		<br />
-		내용
+		
+		<div>
+			팝업내용입니다
+			<br />
+			내용
+		</div>
 	</div>
 </div>
 <div class="popup_bottom">
 	<div class="btn_area">
-		<button type="button" class="btn"><span>확인</span></button>
-		<button type="button" class="btn"><span>확인</span></button>
+		{{> cp/button type="3" size="2" b-text="취소" }}
+		{{> cp/button type="1" size="2" b-text="확인" }}
 	</div>
 </div>
 {{/ popup/popup_full}}
@@ -76,7 +76,8 @@
 </div>
 <div class="popup_bottom">
 	<div class="btn_area">
-		<button type="button" class="btn"><span>확인</span></button>
+		{{> cp/button type="3" size="2" b-text="취소" }}
+		{{> cp/button type="1" size="2" b-text="확인" }}
 	</div>
 </div>
 {{/ popup/popup_layer}}
@@ -122,8 +123,8 @@
 </div>
 <div class="popup_bottom">
 	<div class="btn_area">
-		<button type="button" class="btn"><span>확인</span></button>
-		<button type="button" class="btn popup_open open_4" onclick="openPop(this,'pop_type04');"><span>Bottom 팝업열기</span></button>
+		{{> cp/button type="2" size="2" b-text="확인" }}
+		{{> cp/button type="1" size="2" b-text="Bottom 팝업열기" popup="pop_type04" btn-title="Bottom 팝업열기" }}
 	</div>
 </div>
 {{/ popup/popup_bottom}}
@@ -156,8 +157,8 @@
 </div>
 <div class="popup_bottom">
 	<div class="btn_area">
-		<button type="button" class="btn"><span>확인</span></button>
-		<button type="button" class="btn popup_open open5" onclick="openPop(this,'pop_type05');"><span>Bottom 팝업열기</span></button>
+		{{> cp/button type="2" size="2" b-text="확인" }}
+		{{> cp/button type="1" size="2" b-text="Bottom 팝업열기" popup="pop_type05" btn-title="Bottom 팝업열기" }}
 	</div>
 </div>
 {{/ popup/popup_bottom}} 
@@ -177,7 +178,7 @@
 </div>
 <div class="popup_bottom">
 	<div class="btn_area">
-		<button type="button" class="btn"><span>확인</span></button>
+		{{> cp/button type="1" size="2" b-text="확인" }}
 	</div>
 </div>
 {{/ popup/popup_bottom}}
