@@ -1,6 +1,6 @@
 .input_text {
 	position: relative;
-	
+
 	input {
 		position: relative;
 		display: block;
@@ -46,7 +46,6 @@
 	//phone
 	&.phone {
 	}
-
 
 	&.calendar {
 		input {
@@ -144,7 +143,6 @@
 	// 	}
 	// }
 
-
 	.dash {
 		font-size: 16px;
 	}
@@ -156,7 +154,7 @@
 		padding-right: 44px;
 		border: 1px solid #ddd;
 		border-radius: 16px;
- 
+
 		input {
 			border: none;
 
@@ -167,13 +165,98 @@
 					left: 0;
 					width: 100%;
 					height: 100%;
-					border: 1px solid #1E2124;
+					border: 1px solid #1e2124;
 					border-radius: 16px;
 				}
 			}
 		}
 	}
 
+	.price_wrap {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		padding: 4px 16px;
+		border: 1px solid #ddd;
+		border-radius: 16px;
+		height: 52px;
+		max-width: 100%;
+		font-size: var(--font-size-body-medium);
+
+		// & > * {
+		// 	flex-shrink: 0;
+		// }
+
+		.code_first {
+			color: #6C7882;
+		}
+
+		.inp {
+			// max-width: 60%;
+			display:flex;
+			align-items: center;
+			flex:1;
+			input {
+				width: 100%;
+				border: none;
+				text-align: right;				
+				// user-select: none;
+
+				&:focus-visible{
+					outline: 0px;
+				}
+
+				&:read-only{
+					color:inherit;
+					cursor:default;
+				}
+
+				&::placeholder {
+					width:100%;
+					text-align:left;
+				}
+			}
+		}
+	}
+
+	.price_wrap.result {
+		gap: 4px;
+		padding: 4px 16px;
+		border-radius: 20px;
+		height: 52px;
+		border: 1px solid #F2650E;
+		font-size: var(--font-size-body-small);
+
+		.code_first {
+			flex-grow: 1;
+			color: #697584;
+		}
+
+		.code_unit {
+			color: #3E4A58;
+		}
+
+		.inp {
+			max-width: 60%;
+			input {
+				width: 100%;
+				border: none;
+				font-size: var(--font-size-heading-large);
+				text-align: right;				
+				font-weight: 700;
+				line-height: 150%; /* 36px */
+
+				&:focus-visible{
+					outline: 0px;
+				}
+
+				&::placeholder {
+					text-align: right;
+					color:inherit;
+				}
+			}
+		}
+	}
 
 	/* comp_wrap 내부에서 보안키패드 호출 버튼 공통 사용요소 - 필요시 각 class별로 별도 설정 필요 */
 	.comp_wrap_keypad_call {
@@ -238,6 +321,23 @@
 
 /* Form group */
 .form_group_wrap {
+	.row {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 12px;
+		margin-top: 32px;
+
+		
+		.form_line + .form_line {
+			margin-top: 0;
+		}
+
+		.grow {
+			flex-grow: 1;
+		}
+	}
+
 	.form_line {
 		.label_tit {
 			font-size: 14px;
@@ -248,29 +348,34 @@
 			margin-top: 16px;
 		}
 		.explain_text {
-			position:relative;
+			position: relative;
 			display: inline-block;
 			padding-left: 10px;
-			margin-top:8px;
+			margin-top: 8px;
 			color: #697584;
 			font-size: var(--font-size-body-xsmall);
 			line-height: 150%;
 			letter-spacing: var(--typo-letter-spacing-0);
 
 			&::before {
-				content: '';
+				content: "";
 				position: absolute;
 				top: calc(50% - 1px);
 				left: 3px;
 				width: 2px;
 				height: 2px;
 				border-radius: 50%;
-				background-color:#697584;
+				background-color: #697584;
 			}
 		}
 
 		& ~ .form_line {
 			margin-top: 32px;
+		}
+
+		&:has(.price_wrap.result) {
+			margin-left: -16px;
+			margin-right: -16px;
 		}
 	}
 }

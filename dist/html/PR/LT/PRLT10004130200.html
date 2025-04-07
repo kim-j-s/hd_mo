@@ -1,3 +1,7 @@
+<!---
+화면번호 : PRLT10004130200
+경로 : 3.자동차 상세정보 > 3-1.자동차 상세정보 입력 > 부속품 정보 입력/수정
+-->
 <!doctype html>
 <html lang="ko">
 	<head>
@@ -36,7 +40,7 @@
 		<script type="text/javascript" src="../../../js/dragging.js"></script>
 		<script type="text/javascript" src="../../../js/stepper.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
-		<title>자동차 기본정보 | 상품 - 현대해상 다이렉트</title>
+		<title>자동차 상세정보 | 상품 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -44,97 +48,132 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body>
-		<!-- s: Full 팝업 -->
-		<div class="popup_wrap full active" id="pop_lt_ty02_05" role="dialog" aria-hidden="true">
+		<!-- s: Bottom 팝업 -->
+		<div class="popup_wrap bottom active" id="pop_lt_ty02_02" role="dialog" aria-modal="true" aria-hidden="true">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true"></div>
 				<div class="popup_inner">
-					<div class="popup_head"></div>
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head">블랙박스 정보 입력</div>
 					<div class="popup_cont">
-						<div class="popup_content">
+						<div class="popup_content_ty2">
 							<!-- s: popup_content_top -->
 							<div class="popup_content_top">
-								<h2 class="title_h2">
-									주행거리에 따라
+								<h2 class="title_h3">
+									<strong>블랙박스</strong>
+									정보를
 									<br />
-									<strong>보험료를 환급</strong>
-									받으세요
+									입력해 주세요
 								</h2>
 							</div>
 							<!-- e: popup_content_top -->
 
-							<p class="text_sub">연간주행거리가 15,000km 이하인 경우 주행거리에 따라 보험료 환급이 가능해요.</p>
-
-							<div class="info_box">휴대폰 문자나 알림톡으로 사진을 등록 할 수 있는 URL을 보내드려요.</div>
-
 							<div class="form_group_wrap">
 								<div class="form_line">
-									<div class="label_tit">휴대폰번호</div>
-									<div class="comp_wrap phone">
-										<div class="input_text">
-											<div class="code_first">010</div>
-											<div class="inp">
-												<input type="tel" id="phone02" placeholder="-없이 입력하세요" maxlength="8" />
-												<i></i>
-												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+									<div class="label_tit">세부명칭</div>
+									<div class="input_text">
+										<div class="inp">
+											<input type="text" placeholder="추가부품명 입력" />
+											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form_line">
+										<div class="label_tit">장착연도</div>
+										<!-- <div class="input_text">
+						
+						  <div class="inp">
+						    <input 
+											type="text"
+						      
+										
+						      placeholder="추가부품명 입력"
+						      
+						      
+						      
+						      
+						      
+						      
+						      
+						    >
+						    <button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+						  </div>
+						</div> -->
+										<div class="btn popup_open btn_select" role="button" title="Bottom 선택 팝업열기" onclick="openPop(this,'select_option_ty1');">
+											<span>2020</span>
+										</div>
+									</div>
+									<div class="form_line grow">
+										<div class="label_tit">구입가격</div>
+										<div class="comp_wrap">
+											<div class="price_wrap">
+												<div class="inp">
+													<input type="number" id="result_price" placeholder="숫자만" value="" />
+												</div>
+												<div class="code_unit">만원</div>
 											</div>
 										</div>
 									</div>
-									<div class="btn_area">
-										<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_2">
-											<span class="text">문자받기</span>
-										</button>
+								</div>
+								<div class="form_line">
+									<div class="comp_wrap">
+										<div class="price_wrap result">
+											<div class="code_first">현재가격</div>
+											<div class="inp">
+												<input type="number" id="result_price" readonly="readonly" class="point" placeholder="0" value="" />
+											</div>
+											<div class="code_unit">만원</div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-
-						<!-- s: 꼭 알아두세요 -->
-						<div class="bottom_fix_notice">
-							<div class="acd_item">
-								<div class="acd_head">
-									<button type="button" class="acd_btn" aria-expanded="false"><span>꼭 알아두세요</span></button>
-								</div>
-								<div class="acd_cont">
-									<div class="inner">
-										<ul class="list_ty1">
-											<li>
-												마일리지 환급금으로 갱신보험료 결제 시 차감하여 계약 체결할 수 있습니다.
-												<br />
-												예) 갱신 보험료 70만원, 마일리지 환급금 20만원 차감이용 시, 신용카드로 50만원(70만원-20만원) 결제하시면 갱신계약 체결완료!
-											</li>
-											<li>계기판(총주행거리 ODO표시)사진 1매 및 차량번호판 사진 1매가 필요합니다.</li>
-											<li>최종정보 등록 후 정산결과(환급여부)는 입력당일 문자로 안내됩니다.</li>
-											<li>
-												문자를 통해 송부하신 최종주행거리 정보는 전산판돈 후 자동정산 처리되며, 환급금 발생시 보험료계산화면에 차감금액으로 안내해 드립니다.
-												<br />
-												(사진 및 주행거리정보를 정확하게 입력해주세요)
-											</li>
-											<li>전산판독에 실패한 경우 수납방법에 따라 10일 이내 신용카드 부분취소 또는 계좌환급으로 정산하여 드립니다.(환급금 발생시)</li>
-											<li>관련 문의는 대표콜센터(1588-5656)로 연락주시기 바립니다.</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- e: 꼭 알아두세요 -->
 					</div>
 
 					<div class="popup_bottom">
-						<div class="btn_area basic">
-							<div class="inp_checkbox">
-								<input type="checkbox" id="checkbox1" />
-								<label for="checkbox1" class="chk_label"><span class="label_cont">다시 보지 않기</span></label>
-							</div>
-							<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_3">
-								<span class="text">닫기</span>
+						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
+								<span class="text">부품정보 저장하기</span>
 							</button>
 						</div>
 					</div>
-					<button type="button" class="popup_close" onclick="closePop(this, 'pop_lt_ty02_05');"><span class="blind">팝업 닫기</span></button>
+
+					<button type="button" class="popup_close"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
-		<!-- e: Full 팝업 -->
+		<!-- e: Bottom 팝업 -->
+
+		<!-- s: popup area -->
+		<div class="popup_wrap bottom" id="select_option_ty1" role="dialog" aria-modal="true" aria-hidden="true">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true"></div>
+				<div class="popup_inner">
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head">selectbox 타이틀</div>
+					<div class="popup_cont">
+						<div class="bottom_select_opt">
+							<div role="button" class="option active" title="선택됨"><span>value 1</span></div>
+							<div role="button" class="option"><span>value 22</span></div>
+							<div role="button" class="option"><span>value 333</span></div>
+							<div role="button" class="option"><span>value 4444</span></div>
+							<div role="button" class="option" aria-disabled="true"><span>value 4444</span></div>
+						</div>
+					</div>
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<button type="button" class="btn"><span>확인</span></button>
+						</div>
+					</div>
+					<button type="button" class="popup_close"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: popup area -->
 	</body>
 </html>
