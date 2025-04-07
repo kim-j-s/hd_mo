@@ -1,18 +1,33 @@
 //typography
+
+//타이틀 중복 스타일 정의
+[class^="title_h"] {
+	font-style: normal;
+	font-weight: 400;
+	line-height: 150%; /* 36px */
+	letter-spacing: var(--typo-letter-spacing-0);	
+}
+
 .title_h2 {
 	color: #2b3541;
 	font-size: var(--font-size-heading-large);
-	font-weight: 400;
-	line-height: 150%; /* 36px */
-	letter-spacing: var(--typo-letter-spacing-0);
+}
 
-	span.strong {
-		font-weight: 700;
-	}
+.title_h3 {
+	color: #3E4A58;
+	font-size: var(--font-size-heading-medium);
+}
 
-	.point {
-		color: #D82600;
-	}
+.title_h5 {
+	color: #3E4A58;
+	color: var(--color-text-subtle);
+	font-size: var(--font-size-heading-xsmall);
+}
+
+.title_h6 {
+	color: #3E4A58;
+	color: var(--color-text-subtle);
+	font-size: var(--font-size-heading-xxsmall);
 }
 
 .title_sub {
@@ -27,9 +42,5 @@
 
 	& + * {
 		margin-top: 24px;
-	}
-
-	.strong {
-		font-weight: 700;
 	}
 }

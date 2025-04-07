@@ -1,0 +1,349 @@
+/* datepicker */
+
+.guide_body {
+  
+}
+
+.guide_body .ui-datepicker {
+  display: none;
+  position: fixed !important;
+  top: auto !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  z-index: 9000 !important;
+  width: 100%;
+  padding: 42px 20px 40px 20px;
+  border: 1px solid #000;
+  border-radius: 30px 30px 0 0;
+  background: #FFFFFF !important;
+}
+
+.guide_body .ui-datepicker:before {
+    content: "";
+}
+
+.guide_body .ui-datepicker .ui-datepicker-calendar {
+    width: calc(100% - 4px);
+    margin: 0 auto;
+}
+
+.guide_body {
+  .ui-datepicker-header {
+    position: relative;
+    margin-bottom: 12px;
+    padding: 0 40px;
+    > a {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--color-border-gray-light);
+      font-size: 0;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 20px auto;
+      &.ui-datepicker-prev {
+        left: 8px;
+        background-image: url(../images/icon/arrowLeft_ty1.svg);        
+      }
+      &.ui-datepicker-next {
+        right: 8px;
+        background-image: url(../images/icon/arrowRight_ty4.svg);
+      }
+    }
+
+    .ui-datepicker-title {
+      font-weight: 700;
+      font-size: var(--font-size-heading-small);
+      line-height: 32px;
+      text-align: center;
+      .ui-datepicker-month {
+        padding-left: 12px;
+      }
+    }
+  }
+
+}
+
+/* 달력 헤더 */
+.guide_body .ui-datepicker .ui-datepicker-calendar th {
+  border-bottom: 3px solid #fff;
+}
+.guide_body .ui-datepicker .ui-datepicker-calendar th span {
+  display: block;
+  margin: 0 auto;
+  font-size: var(--font-size-label-small);
+  line-height: 28px;
+  text-align: center;
+  color: var(--color-text-subtle);
+}
+/* 달력 헤더 */
+
+/* 달력 바디 */
+.guide_body .ui-datepicker .ui-datepicker-calendar tbody td {
+  border: 3px solid #fff;
+  border-top: none;
+  border-bottom: none;
+  padding: 0;
+}
+.guide_body .ui-datepicker .ui-datepicker-calendar tbody td:nth-child(1) {
+    border-left: none;
+}
+.guide_body .ui-datepicker .ui-datepicker-calendar tbody td:nth-child(1):not(.ui-state-disabled) a,
+.guide_body .ui-datepicker .ui-datepicker-calendar tbody td:nth-child(1):not(.ui-state-disabled) span {
+  color: var(--color-text-danger);
+}
+.guide_body .ui-datepicker .ui-datepicker-calendar tbody td:nth-child(7) {
+  border-right: none;
+}
+
+.guide_body .ui-datepicker .ui-datepicker-calendar tbody tr td a, 
+.guide_body .ui-datepicker .ui-datepicker-calendar tbody tr td span {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  font-size: var(--font-size-label-medium);
+  line-height: 1;
+  border: none
+}
+.guide_body .ui-state-default {
+  // display: block;
+  // width: 28px;
+  // height: 28px;
+  margin: 0 auto;
+  // font-size: 14px;
+}
+.guide_body .ui-datepicker-today .ui-state-default {
+  position: relative;
+}
+.guide_body .ui-datepicker-today .ui-state-default:before {
+  content: "";
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--color-element-point);
+  transform: translateX(-50%);
+}
+.guide_body .ui-datepicker-today .ui-state-default::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  margin-top: 1px;
+}
+.guide_body .ui-state-default.ui-state-active {
+  position: relative;
+  color: var(--color-text-inverse-static);
+}
+.guide_body .ui-state-default.ui-state-active:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border-radius: 50%;
+  background-color: var(--color-action-secondary-active);
+  transform: translateX(0);
+}
+
+.guide_body .ui-state-disabled span, 
+.guide_body .ui-state-disabled a {
+  color: var(--color-text-disabled);
+}
+/* 달력 바디 */
+
+
+.modal_backdrop {
+  position: fixed;
+  z-index: 8000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 0.3s;
+}
+.modal_open {
+  .modal_backdrop {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 단일방식 - 직접 구현 */
+.calendar {
+
+  /* 머리 */
+  .calendar_top {
+    position: relative;
+    .calendar_change_btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--color-border-gray-light);
+      font-size: 0;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 20px auto;
+      &.ccb_prev {
+        left: 8px;
+        background-image: url(../images/icon/arrowLeft_ty1.svg);        
+      }
+      &.ccb_next {
+        right: 8px;
+        background-image: url(../images/icon/arrowRight_ty4.svg);
+      }
+    }
+    .calendar_title {
+      font-weight: 700;
+      font-size: var(--font-size-heading-small);
+      line-height: 32px;
+      text-align: center;
+      .calendar_title_dp {
+
+        &.calendar_month {
+          padding-left: 12px;
+        }
+      }
+    }
+    
+
+  }
+  /* 머리 */
+
+  /* 몸 */
+  .calendar_cont {
+    padding-top: 12px;
+  }
+
+  .calendar_tbl {
+    > table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      margin: 0 auto;
+      table-layout: fixed;
+      tbody {
+        td {
+          border: 3px solid #fff;
+          border-top: none;
+          border-bottom: none;
+          padding: 0;
+          &:nth-child(1) {
+            border-left: none;
+            .day_default {
+              color: var(--color-text-danger);
+              // background-color: green;
+            }
+          }
+          &:nth-child(7) {
+            border-right: none;
+          }
+          .day_default {
+            &.day_disabled {
+              color: var(--color-text-disabled);
+            }
+          }
+        }
+        tr {
+          td {
+            a, span {
+              display: inline-flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+              height: 48px;
+              font-size: var(--font-size-label-medium);
+              line-height: 1;
+              border: none
+            }
+          }
+        }
+      }
+
+      .day_default {
+        margin: 0 auto;
+      }
+      .day_today {
+        position: relative;
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: 14px;
+          left: 50%;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: var(--color-element-point);
+          transform: translateX(-50%);
+        }
+        &::after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 4px;
+          margin-top: 1px;
+        }
+      }
+      .day_active {
+        position: relative;
+        color: var(--color-text-inverse-static);
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          z-index: -1;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-color: var(--color-action-secondary-active);
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      td a.day_default {
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }
+  /* 몸 */
+
+
+}
+
+
+
+
+

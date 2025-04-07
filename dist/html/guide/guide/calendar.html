@@ -29,6 +29,7 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="../../../images/favicon/favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="96x96" href="../../../images/favicon/favicon-96x96.png" />
 		<script type="text/javascript" src="../../../js/libs/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="../../../js/libs/jquery-ui-1.12.1.min.js"></script>
 		<script type="text/javascript" src="../../../js/libs/swiper-bundle.min.js"></script>
 		<script type="text/javascript" src="../../../js/common.js"></script>
 		<script type="text/javascript" src="../../../js/popup.js"></script>
@@ -43,16 +44,176 @@
 		<link rel="stylesheet" href="../../../css/contents.css" />
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
-	<body class="guide_body mobile">
+	<body class="guide_body">
 		<div class="guide_wrap">
 			<div class="wrap">
-				<div class="guide_h1">Table</div>
+				<div class="guide_h1">달력</div>
+				<div class="guide_h4">단일 선택 달력 - datepicker 인풋영역 선택</div>
+				<div class="input_text calendar">
+					<div class="inp">
+						<input type="text" class="inp_picker" />
+						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+						<button type="button" class="btn calendar_call" title="날짜 선택"></button>
+					</div>
+				</div>
+				<div class="guide_h4">단일 선택 달력 - 버튼호출</div>
+				<!-- <div class="input_text calendar">
+        
+          <div class="inp">
+            <input 
+              				type="text"
+              
+              
+              
+              
+              
+              
+              
+              
+            >
+            <button type="button" class="del"><span class="blind">텍스트 삭제</span></button><button type="button" class="btn calendar_call" title="날짜 선택"></button>
+          </div>
+        </div> -->
+				<div class="" style="font-size: 16px">
+					<button type="button" class="btn popup_open" onclick="openPop(this,'calendar');" title="Bottom 선택 팝업열기"><span>달력 호출</span></button>
+				</div>
 
-				<div class="guide_discription">guide_discription</div>
+				<div class="guide_h4">기간 선택 달력</div>
+				<div class="guide_discription">미정</div>
 
-				<div class="guide_h4">guide_discription</div>
+				<script>
+					$(function () {
+						$.datepicker.setDefaults({
+							dateFormat: "yy.mm.dd",
+							prevText: "이전 달",
+							nextText: "다음 달",
+							showOtherMonths: true,
+							showMonthAfterYear: true,
+							yearSuffix: "년",
+							monthNamesShort: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+							monthNames: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+							dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"],
+							dayNames: ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"],
 
-				<div class="guide_dark_wrap">guide_dark_wrap</div>
+							showAnim: "slideDown",
+							duration: 300,
+							disabled: true,
+							beforeShow: function () {
+								$("body").append('<div class="modal_backdrop"></div>');
+								setTimeout(function () {
+									$("body").addClass("modal_open");
+								}, 50);
+							},
+							onClose: function () {
+								setTimeout(function () {
+									$(".modal_backdrop").remove();
+								}, 200);
+								$("body").removeClass("modal_open");
+							},
+						});
+
+						$(".inp_picker:not([readonly])").datepicker();
+					});
+				</script>
+
+				<div class="popup_wrap bottom" id="calendar" role="dialog" aria-modal="true" aria-hidden="true">
+					<div class="popup_container">
+						<div class="popup_dim" aria-hidden="true"></div>
+						<div class="popup_inner">
+							<div class="draggable" aria-hidden="true">
+								<div class="move"></div>
+							</div>
+							<div class="popup_head"></div>
+							<div class="popup_cont">
+								<div class="popup_content">
+									<div class="calendar">
+										<div class="calendar_top">
+											<a class="calendar_change_btn ccb_prev" title="이전 달"></a>
+											<a class="calendar_change_btn ccb_next" title="다음 달 "></a>
+											<div class="calendar_title">
+												<span class="calendar_title_dp calendar_year">
+													<span class="text">2025</span>
+													년
+												</span>
+												<span class="calendar_title_dp calendar_month">
+													<span class="text">4</span>
+													월
+												</span>
+											</div>
+										</div>
+
+										<div class="calendar_cont">
+											<div class="calendar_tbl">
+												<table>
+													<caption class="blind">달력</caption>
+													<thead>
+														<tr>
+															<th scope="col">월</th>
+															<th scope="col">화</th>
+															<th scope="col">수</th>
+															<th scope="col">목</th>
+															<th scope="col">금</th>
+															<th scope="col">토</th>
+															<th scope="col">일</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><span class="day_default day_disabled">30</span></td>
+															<td><span class="day_default day_disabled">31</span></td>
+															<td><a href="" class="day_default">1</a></td>
+															<td><a href="" class="day_default">2</a></td>
+															<td><a href="" class="day_default">3</a></td>
+															<td><a href="" class="day_default">4</a></td>
+															<td><a href="" class="day_default day_today">5</a></td>
+														</tr>
+														<tr>
+															<td><a href="" class="day_default">6</a></td>
+															<td><a href="" class="day_default">7</a></td>
+															<td><a href="" class="day_default day_active">8</a></td>
+															<td><a href="" class="day_default">9</a></td>
+															<td><a href="" class="day_default">10</a></td>
+															<td><a href="" class="day_default">11</a></td>
+															<td><a href="" class="day_default">12</a></td>
+														</tr>
+														<tr>
+															<td><a href="" class="day_default">13</a></td>
+															<td><a href="" class="day_default">14</a></td>
+															<td><a href="" class="day_default">15</a></td>
+															<td><a href="" class="day_default">16</a></td>
+															<td><a href="" class="day_default">17</a></td>
+															<td><a href="" class="day_default">18</a></td>
+															<td><a href="" class="day_default">19</a></td>
+														</tr>
+														<tr>
+															<td><a href="" class="day_default">20</a></td>
+															<td><a href="" class="day_default">21</a></td>
+															<td><a href="" class="day_default">22</a></td>
+															<td><a href="" class="day_default">23</a></td>
+															<td><a href="" class="day_default">24</a></td>
+															<td><a href="" class="day_default">25</a></td>
+															<td><a href="" class="day_default">26</a></td>
+														</tr>
+														<tr>
+															<td><a href="" class="day_default">27</a></td>
+															<td><a href="" class="day_default">28</a></td>
+															<td><a href="" class="day_default">29</a></td>
+															<td><span class="day_default day_disabled">30</span></td>
+															<td><span class="day_default day_disabled">31</span></td>
+															<td><span class="day_default day_disabled">1</span></td>
+															<td><span class="day_default day_disabled">2</span></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<button type="button" class="popup_close"><span class="blind">팝업 닫기</span></button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>

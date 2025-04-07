@@ -29,6 +29,7 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="../../../images/favicon/favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="96x96" href="../../../images/favicon/favicon-96x96.png" />
 		<script type="text/javascript" src="../../../js/libs/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="../../../js/libs/jquery-ui-1.12.1.min.js"></script>
 		<script type="text/javascript" src="../../../js/libs/swiper-bundle.min.js"></script>
 		<script type="text/javascript" src="../../../js/common.js"></script>
 		<script type="text/javascript" src="../../../js/popup.js"></script>
@@ -43,64 +44,93 @@
 		<link rel="stylesheet" href="../../../css/contents.css" />
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
-	<body class="guide_body mobile">
+	<body class="guide_body">
 		<div class="guide_wrap">
 			<div class="wrap">
 				<div class="guide_h1">Input</div>
 
-				<div class="guide_h4">label명 + type (.comp_wrap)</div>
-				<div class="form_group_wrap">
-					<div class="form_line">
-						<div class="label_tit">성명</div>
-						<div class="input_text">
-							<div class="inp">
-								<input type="text" placeholder="입력하세요" />
+				<div class="guide_h4">Type - text</div>
 
-								<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-							</div>
-						</div>
+				<!-- Attribute -->
+				<div class="guide_discription">Default</div>
+				<div class="input_text">
+					<div class="inp">
+						<input type="text" placeholder="플레이스홀더" />
+						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 					</div>
-
-					<div class="form_line">
-						<div class="label_tit">주민등록번호</div>
-						<div class="comp_wrap birth">
-							<div class="input_text">
-								<div class="inp">
-									<input type="tel" placeholder="앞자리" minlength="6" maxlength="6" />
-
-									<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-								</div>
-							</div>
-							<span class="dash">-</span>
-							<div class="input_text masking">
-								<div class="inp">
-									<input type="tel" placeholder="뒷자리" minlength="7" maxlength="7" readonly />
-									<i></i>
-									<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-								</div>
-							</div>
-						</div>
+				</div>
+				<div class="guide_discription">Value</div>
+				<div class="input_text">
+					<div class="inp">
+						<input type="text" placeholder="플레이스홀더" value="입력한 값" />
+						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+					</div>
+				</div>
+				<div class="guide_discription">disabled</div>
+				<div class="input_text">
+					<div class="inp">
+						<input type="text" placeholder="플레이스홀더" disabled />
+						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+					</div>
+				</div>
+				<div class="guide_discription">Readonly</div>
+				<div class="input_text">
+					<div class="inp">
+						<input type="text" placeholder="플레이스홀더" readonly />
+						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+					</div>
+				</div>
+				<!-- Error -->
+				<div class="guide_discription">Error success</div>
+				<div class="input_text">
+					<div class="inp">
+						<input type="text" />
+						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+					</div>
+					<p class="msg_success">에러문구</p>
+				</div>
+				<div class="guide_discription">Error Default</div>
+				<div class="input_text">
+					<div class="inp">
+						<input type="text" />
+						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+					</div>
+					<p class="msg_error">에러문구</p>
+				</div>
+				<div class="guide_discription">Error fail</div>
+				<div class="input_text">
+					<div class="inp">
+						<input type="text" />
+						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+					</div>
+					<p class="msg_fail">에러문구</p>
+				</div>
+				<!-- 금액Comma -->
+				<div class="guide_h4">Type - 금액입력(Comma)</div>
+				<div class="input_text price">
+					<div class="inp">
+						<input type="text" />
+						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+					</div>
+				</div>
+				<!-- Calendar -->
+				<div class="guide_h4">Type - calendar</div>
+				<div class="input_text calendar">
+					<div class="inp">
+						<input type="text" readonly />
+						<button type="button" class="btn calendar_call" title="날짜 선택"></button>
 					</div>
 				</div>
 
 				<!-- 휴대폰번호 -->
 				<div class="guide_h4">Type - 휴대폰번호</div>
 				<div class="comp_wrap phone">
-					<div class="code_first">010</div>
-					<span class="dash">-</span>
 					<div class="input_text">
+						<div class="code_first">010</div>
 						<div class="inp">
-							<input type="tel" id="phone02" placeholder="휴대폰번호 2번째 자리 입력" maxlength="4" />
+							<input type="tel" id="phone02" placeholder="-없이 입력하세요" maxlength="8" />
 							<i></i>
-							<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-						</div>
-					</div>
-					<span class="dash">-</span>
-					<div class="input_text">
-						<div class="inp">
-							<input type="tel" id="phone03" placeholder="휴대폰번호 3번째 자리 입력" maxlength="4" />
-							<i></i>
-							<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+							<button type="button" class="del" style="display: none"><span class="blind">텍스트 삭제</span></button>
 						</div>
 					</div>
 				</div>
@@ -207,87 +237,6 @@
 				</div>
 				<div class="security_keypad"></div>
 
-				<div class="guide_h4">Type - text</div>
-
-				<!-- Attribute -->
-				<div class="guide_discription">Default</div>
-				<div class="input_text">
-					<div class="inp">
-						<input type="text" placeholder="플레이스홀더" />
-
-						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-					</div>
-				</div>
-				<div class="guide_discription">Value</div>
-				<div class="input_text">
-					<div class="inp">
-						<input type="text" placeholder="플레이스홀더" value="입력한 값" />
-
-						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-					</div>
-				</div>
-				<div class="guide_discription">disabled</div>
-				<div class="input_text">
-					<div class="inp">
-						<input type="text" placeholder="플레이스홀더" disabled />
-
-						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-					</div>
-				</div>
-				<div class="guide_discription">Readonly</div>
-				<div class="input_text">
-					<div class="inp">
-						<input type="text" placeholder="플레이스홀더" readonly />
-
-						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-					</div>
-				</div>
-				<!-- Error -->
-				<div class="guide_discription">Error success</div>
-				<div class="input_text">
-					<div class="inp">
-						<input type="text" />
-
-						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-					</div>
-					<p class="msg_success">에러문구</p>
-				</div>
-				<div class="guide_discription">Error Default</div>
-				<div class="input_text">
-					<div class="inp">
-						<input type="text" />
-
-						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-					</div>
-					<p class="msg_error">에러문구</p>
-				</div>
-				<div class="guide_discription">Error fail</div>
-				<div class="input_text">
-					<div class="inp">
-						<input type="text" />
-
-						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-					</div>
-					<p class="msg_fail">에러문구</p>
-				</div>
-				<!-- 금액Comma -->
-				<div class="guide_h4">Type - 금액입력(Comma)</div>
-				<div class="input_text price">
-					<div class="inp">
-						<input type="text" />
-
-						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-					</div>
-				</div>
-				<!-- Calendar -->
-				<div class="guide_h4">Type - calendar</div>
-				<div class="input_text">
-					<div class="inp">
-						<input type="text" readonly />
-
-						<button type="button" class="btn cal"><span class="blind">달력 호출</span></button>
-					</div>
-				</div>
 				<!-- File -->
 				<div class="guide_h4">Type - file - 구조 사용 - 추후 디자인 반영 필요</div>
 				<div class="inp_file">
@@ -302,8 +251,31 @@
 				<div class="input_text">
 					<div class="inp">
 						<input type="email" />
-
 						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+					</div>
+				</div>
+
+				<div class="guide_h1">label명 + type</div>
+				<div class="guide_h4">.form_group_wrap</div>
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">label명</div>
+						<div class="input_text">
+							<div class="inp">
+								<input type="text" placeholder="입력하세요" />
+								<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+							</div>
+						</div>
+					</div>
+					<div class="form_line">
+						<div class="label_tit">label명</div>
+						<div class="input_text">
+							<div class="inp">
+								<input type="text" placeholder="입력하세요" />
+								<i></i>
+								<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

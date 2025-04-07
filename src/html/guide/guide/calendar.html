@@ -1,15 +1,68 @@
 {{#> layout/guide }}
-    <div class="guide_h1">Table</div>
+	<div class="guide_h1">달력</div>
+	<div class="guide_h4">단일 선택 달력 - datepicker 인풋영역 선택</div>
+	{{> cp/text inpclass='inp_picker' cal=true }}
 
-    <div class="guide_discription">
-        guide_discription
-    </div>
+	<div class="guide_h4">단일 선택 달력 - 버튼호출</div>
+	<!-- {{> cp/text cal=true }} -->
+	<div class="" style="font-size: 16px;">
+		<button type="button" class="btn popup_open" onclick="openPop(this,'calendar');" title="Bottom 선택 팝업열기"><span>달력 호출</span></button>
+	</div>
 
-    <div class="guide_h4">
-        guide_discription
-    </div>
 
-    <div class="guide_dark_wrap">guide_dark_wrap</div>
+
+
+	<div class="guide_h4">기간 선택 달력</div>
+	<div class="guide_discription">
+		미정
+	</div>
+	
+	
+	<script>
+		$(function() {
+
+			$.datepicker.setDefaults({
+				dateFormat: 'yy.mm.dd',
+				prevText: '이전 달',
+  			nextText: '다음 달',
+				showOtherMonths: true,
+				showMonthAfterYear: true,
+				yearSuffix: "년",
+				monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+				monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+				dayNamesMin: ['일','월','화','수','목','금','토'],
+				dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'],
+
+				showAnim: "slideDown",
+				duration: 300,
+				disabled:true,
+				beforeShow: function () { 
+					$("body").append('<div class="modal_backdrop"></div>');
+					setTimeout(function(){
+						$("body").addClass('modal_open');
+					},50);
+				},
+				onClose: function() { 
+					setTimeout(function(){
+						$('.modal_backdrop').remove();
+					},200);
+					$("body").removeClass('modal_open')
+				}
+			});
+
+			$('.inp_picker:not([readonly])').datepicker();
+		});
+	</script>
+
+
+
+{{#> popup/popup_bottom popup-id="calendar" no-header=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		{{> cp/calendar}}
+	</div>
+</div>
+{{/ popup/popup_bottom}} 
 
 
 {{/ layout/guide }}

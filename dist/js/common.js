@@ -79,8 +79,8 @@
 		.on("focus input", ".input_text .inp > input", function () {
 			const $this = $(this),
 				$wrap = $this.closest(".inp"),
-				val = $this.val(),
 				$del = $this.siblings(".del");
+			let val = $this.val();
 
 			if ($del.length) {
 				$del.attr("tabindex", "0");
@@ -97,17 +97,45 @@
 				$del.hide();
 			}
 			// (this.value) ? $wrap.addClass('active'):$wrap.removeClass('active');
+
+			//전화번호
+			if ($this.closest(".comp_wrap").hasClass("phone")) {
+				if (val) {
+					const newVal = val.replace(/ - /g, "");
+					$this.attr("maxlength", 8);
+					$this.val(newVal).removeClass("isVal");
+				}
+			}
 		})
 		.on("blur", ".inp > input", function () {
 			const $this = $(this),
 				$wrap = $this.closest(".inp");
+			let val = $this.val(),
+				newVal = 0;
+
 			$wrap.removeClass("active");
+
+			// 전화번호
+			if ($this.closest(".comp_wrap").hasClass("phone")) {
+				$this.attr("maxlength", 14);
+				if (val) {
+					val = val.replace(/[^0-9]/g, "");
+					newVal = " - " + val.replace(/(\d{4})(?=\d)/g, "$1 - ");
+					$this.val(newVal).addClass("isVal");
+				} else {
+					$this.removeClass("isVal");
+				}
+			}
 		})
 		.on("click", ".inp > .del", function (e) {
 			const $this = $(this);
 			e.preventDefault();
 			$this.siblings("input").val("").focus();
 			$this.parent(".inp").removeClass("active");
+
+			if ($this.closest(".comp_wrap").hasClass("phone")) {
+				$this.siblings("input").removeClass("isVal");
+			}
 		});
 
 	// comma
@@ -122,6 +150,54 @@
 		const fileName = $(this).val().split("\\").pop();
 		$(this).closest(".inp_file").find(".file_name").text(fileName);
 	});
+
+	// 약관 동의
+	const $chkAll = function (click) {
+		const $group = click.closest(".chk_group_wrap"),
+			$total = $group.find(".chk_point:not(:disabled)").length,
+			$chked = $group.find(".chk_point:not(:disabled):checked").length;
+
+		if ($total === $chked) {
+			$group.find(".chk_point_all").prop("checked", true);
+		} else {
+			$group.find(".chk_point_all").prop("checked", false);
+		}
+	};
+
+	$DOM
+		.on("change", ".chk_group_wrap .chk_point", function () {
+			const $sub_status = $(this).is(":checked"),
+				$sub_list = $(this).closest(".checkbox").next(".chk_list");
+
+			if ($sub_status) {
+				$sub_list.find(".chk_point_sub:not(:disabled)").prop("checked", true);
+			} else {
+				$sub_list.find(".chk_point_sub:not(:disabled)").prop("checked", false);
+			}
+			$chkAll($(this));
+		})
+		.on("change", ".chk_group_wrap .chk_point_sub", function () {
+			const $group_sub = $(this).closest(".chk_list"),
+				$sub_total = $group_sub.find(".chk_point_sub:not(:disabled)").length,
+				$sub_chked = $group_sub.find(".chk_point_sub:not(:disabled):checked").length;
+
+			if ($sub_chked === $sub_total) {
+				$group_sub.closest("li").find(".chk_point").prop("checked", true);
+			} else {
+				$group_sub.closest("li").find(".chk_point").prop("checked", false);
+			}
+			$chkAll($(this));
+		})
+		.on("change", ".chk_group_wrap .chk_point_all", function () {
+			const allChked = $(this).is(":checked");
+
+			if (allChked) {
+				$(this).closest(".chk_group_wrap").find("input[type=checkbox]:not(:disabled)").prop("checked", true);
+			} else {
+				$(this).closest(".chk_group_wrap").find("input[type=checkbox]:not(:disabled)").prop("checked", false);
+			}
+		});
+	// 약관 동의
 
 	/* Textarea */
 	// byte check
@@ -181,6 +257,15 @@
 		$(this).closest(".tab_wrap").children(".tab_wrap_content").eq(idx).addClass("active");
 	});
 })();
+
+//
+function phoneVal(target) {
+	const $target = target;
+
+	if ($target.closest(".comp_wrap").hasClass("phone")) {
+		$target.siblings("input").removeClass("isVal");
+	}
+}
 
 /* Tab Scroll */
 function tabScroll() {
