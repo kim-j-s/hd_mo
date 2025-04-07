@@ -36,50 +36,69 @@
 		<script type="text/javascript" src="../../../js/dragging.js"></script>
 		<script type="text/javascript" src="../../../js/stepper.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
-		<title>자동차 기본정보 | 상품 - 현대해상 다이렉트</title>
+		<title>현대해상 다이렉트</title>
 
+		<link rel="stylesheet" href="guide.css" />
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
 		<link rel="stylesheet" href="../../../css/contents.css" />
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
-	<body>
-		<!-- s: Full 팝업 -->
-		<div class="popup_wrap full active" id="pop_type01" role="dialog" aria-hidden="true">
-			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true"></div>
-				<div class="popup_inner">
-					<div class="popup_head"></div>
-					<div class="popup_cont">
-						<div class="popup_content">
-							<!-- s: popup_content_top -->
-							<div class="popup_content_top">
-								<h2 class="title_h2">
-									<strong class="point">필수</strong>
-									고객정보 관리 및 가입설계를 위한 개인(신용)정보 처리 상세 동의
-								</h2>
-							</div>
-							<!-- e: popup_content_top -->
+	<body class="guide_body">
+		<div class="guide_wrap">
+			<div class="wrap">
+				<div class="ssssmp" style="font-size: 16px">
+					<div class="ssssmp_wrap">
+						<div class="inp_radio">
+							<input type="radio" id="smp01" name="smp" />
+							<label for="smp01">
+								<span class="label_i">케이스 1</span>
+							</label>
 						</div>
+						<div class="inp_radio">
+							<input type="radio" id="smp02" name="smp" />
+							<label for="smp02">
+								<span class="label_i">케이스 2</span>
+							</label>
+						</div>
+						<div class="inp_radio">
+							<input type="radio" id="smp03" name="smp" />
+							<label for="smp03">
+								<span class="label_i">케이스 3</span>
+							</label>
+						</div>
+					</div>
+					<br />
+					<br />
+					<!-- s: 케이스 1 선택 시 노출 -->
+					<div class="case_dp active">케이스 1 컨텐츠</div>
+					<!-- e: 케이스 1 선택 시 노출 -->
 
-						<div>약관내용</div>
-					</div>
-					<div class="popup_bottom">
-						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
-								<span class="text">확인</span>
-							</button>
-							<!-- <button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2" disabled>
-						
-							<span class="text">확인</span>
-						
-						</button> -->
-						</div>
-					</div>
-					<button type="button" class="popup_close" onclick="closePop(this, 'pop_type01');"><span class="blind">팝업 닫기</span></button>
+					<!-- s: 케이스 2 선택 시 노출 -->
+					<div class="case_dp">케이스 2 컨텐츠</div>
+					<!-- e: 케이스 2 선택 시 노출 -->
+
+					<!-- s: 케이스 3 선택 시 노출 -->
+					<div class="case_dp">케이스 3 컨텐츠</div>
+					<!-- e: 케이스 3 선택 시 노출 -->
 				</div>
+
+				<style lang="scss">
+					.ssssmp_wrap {
+						display: -webkit-box;
+						display: -ms-flexbox;
+						display: flex;
+						-webkit-box-align: center;
+						-ms-flex-align: center;
+						align-items: center;
+						.inp_radio {
+							-webkit-box-flex: 1;
+							-ms-flex: 1 1 0px;
+							flex: 1 1 0;
+						}
+					}
+				</style>
 			</div>
 		</div>
-		<!-- e: Full 팝업 -->
 	</body>
 </html>
