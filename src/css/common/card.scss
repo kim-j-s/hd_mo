@@ -15,7 +15,6 @@
 		.item_inner {
 			display: flex;
 			align-items: flex-start;
-			gap:8px;
 
 			.inner_cont {
 				flex: 1;
@@ -31,6 +30,12 @@
 			}
 
 			.inp_checkbox {
+				position: static;
+				width: 28px;
+				
+				.chk_label {
+					padding-left: 28px;
+				}
 				input:checked{
 					& ~ i {
 						position: absolute;
@@ -42,6 +47,8 @@
 						border: 2px solid #F8633C;
 						border-radius: 24px;
 					}
+				}
+				& + * {
 				}
 			}
 		}
@@ -59,17 +66,28 @@
 		.item_top {
 			display: flex;
 			flex-direction: column;
-			gap: 4px;
+
+			.badge_wrap {
+				& + .title_info {
+					margin-top: 4px;
+				}
+			}
 
 			.title_info {
-				.title {
+				.sub_title {
 					font-size: 14px;
 					line-height: 21px;
+					& + .cont {
+						margin-top: 4px;
+					}
 				}
-				.cont {
+				.main_title {
 					font-size: 16px;
 					line-height: 24px;
 					font-weight: 700;
+				}
+				& + .desc {
+					margin-top: 8px;
 				}
 			}
 			.desc {
@@ -127,7 +145,7 @@
 		}
 
 		.card_list_ty1 {
-			@include car-list-style($ul-border-radius: 0, $li-padding: 0 0 16px, $li-font-size: 14px, $li-color: #333) {
+			@include car-list-style($ul-border-radius: 0, $li-padding: 0 0 12px, $li-font-size: 14px, $li-color: #333) {
 				// ul.list-2에 대한 추가적인 스타일
 				// background-color: var(--color-primary);
 				> li {
@@ -172,7 +190,12 @@
 
 			.hd_btn {
 				border-radius: 16px;
+				font-weight: 700;
 			}
 		}
+	}
+
+	& + .inp_checkbox {
+		margin-top: 32px;
 	}
 }
