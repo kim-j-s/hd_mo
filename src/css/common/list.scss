@@ -60,27 +60,23 @@
   @include list-style(
     $li-padding: 0 0 0 10px,
     $li-font-size: var(--font-size-body-small),
-    $li-color: #697584,
-		$li-dot-color: #697584
+    $li-color: var(--color-text-subtle)
   ) {
     // ul.list-1에 대한 추가적인 스타일
 		// background-color: var(--color-primary);
     > li {
-			&::before {
-				content: '';
-				position: absolute;
-				top: 9px;
-				left: 0;
-				width: 2px;
-				height: 2px;
-				border-radius: 50%;
-			}
+		&::before {
+			content: '-';
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
     }
   }
 
 	> li {
 		& ~ li {
-			margin-top: 12px;
+			margin-top: 8px;
 		}
 	}
 }
