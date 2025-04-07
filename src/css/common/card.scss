@@ -15,7 +15,6 @@
 		.item_inner {
 			display: flex;
 			align-items: flex-start;
-			gap:8px;
 
 			.inner_cont {
 				flex: 1;
@@ -31,6 +30,10 @@
 			}
 
 			.inp_checkbox {
+				position: static;
+				.chk_label {
+					padding-left: 28px;
+				}
 				input:checked{
 					& ~ i {
 						position: absolute;
@@ -42,6 +45,9 @@
 						border: 2px solid #F8633C;
 						border-radius: 24px;
 					}
+				}
+				& + * {
+					margin-left: 8px;
 				}
 			}
 		}
@@ -59,17 +65,28 @@
 		.item_top {
 			display: flex;
 			flex-direction: column;
-			gap: 4px;
+
+			.badge_wrap {
+				& + .title_info {
+					margin-top: 4px;
+				}
+			}
 
 			.title_info {
-				.title {
+				.sub_title {
 					font-size: 14px;
 					line-height: 21px;
+					& + .cont {
+						margin-top: 4px;
+					}
 				}
-				.cont {
+				.main_title {
 					font-size: 16px;
 					line-height: 24px;
 					font-weight: 700;
+				}
+				& + .desc {
+					margin-top: 8px;
 				}
 			}
 			.desc {
