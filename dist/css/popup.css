@@ -101,9 +101,6 @@
 .popup_wrap .popup_container .popup_inner .popup_cont .popup_content_ty2 .popup_content_body {
 	padding-bottom: 3.2rem;
 }
-.popup_wrap .popup_container .popup_inner .popup_cont .bottom_fix_notice {
-	margin-bottom: -0.8rem;
-}
 .popup_wrap .popup_container .popup_inner .popup_cont .etc_area_ty1 {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -156,6 +153,10 @@
 	-webkit-box-flex: 1;
 	-ms-flex: 1;
 	flex: 1;
+}
+.popup_wrap .popup_container .popup_inner .popup_bottom .bottom_fix_notice {
+	margin: 0 -0.8rem 0.8rem;
+	padding: 0;
 }
 .popup_wrap .popup_container .popup_inner > .popup_close {
 	position: absolute;
@@ -252,14 +253,17 @@
 .popup_wrap.bottom .popup_container .popup_inner .popup_cont {
 	padding-top: 1.2rem;
 }
-.bottom_select_opt .option {
+.bottom_select_opt.opt_case1 .option {
 	padding: 0.5rem 0;
 }
-.bottom_select_opt .option.active {
+.bottom_select_opt.opt_case1 .option.active {
 	color: blue;
 }
-.bottom_select_opt .option ~ .option {
+.bottom_select_opt.opt_case1 .option ~ .option {
 	margin-top: 1rem;
+}
+* + .bottom_select_opt.opt_case1 {
+	margin-top: 3.2rem;
 }
 /* toast */
 .toast_wrap {
