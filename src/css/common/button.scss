@@ -73,63 +73,50 @@
 .hd_btn {
 	&_ty_1 {
 		border-radius: var(--radius-medium4);
-		background: var(--color-button-primary-fill);
+		background-color: var(--color-button-primary-fill);
 		color: #fff;
 		border: 0;
 
 		&:hover {
-			background-color: #e66202;
+			background-color: var(--color-button-primary-fill-hover);
 		}
 		&:active {
-			background-color: #ad4a02;
-		}
-		&:disabled {
-			background-color: #cdd1d5;
-			color: #6d7882;
+			background-color: var(--color-button-primary-fill-pressed);
 		}
 	}
-
 	&_ty_2 {
-		background-color: #feede7;
-		border: 1px solid #ea7404;
-		color: #e66202;
+		background-color: var(--color-button-secondary-fill);
+		border: 1px solid var(--color-button-secondary-border);
+		color: var(--color-text-primary);
 
 		&:hover {
-			background-color: #fad5ba;
-			border: 1px solid #ea7404;
-			color: #e66202;
+			background-color: var(--color-button-secondary-fill-hover);
+			color: var(--color-text-primary);
 		}
 		&:active {
-			background-color: #f6bd8c;
-			border: 1px solid #e66202;
-			color: #e66202;
-		}
-		&:disabled {
-			background-color: #cdd1d5;
-			color: #6d7882;
-			border: 0;
+			background-color: var(--color-button-secondary-fill-pressed);
+			border: 1px solid var(--color-text-primary);
 		}
 	}
 	&_ty_3 {
-		background-color: #ffffff;
-		border: 1px solid #58616a;
-		color: #1e2124;
+		color: var(--color-text-basic);
+		border: 1px solid var(--color-button-tertiary-border);
+		background: var(--color-button-tertiary-fill);
 
 		&:hover {
-			background-color: #f4f5f6;
-			border: 1px solid #58616a;
-			color: #1e2124;
+			border: 1px solid var(--color-button-tertiary-border);
+			background: var(--color-button-tertiary-fill-hover);
 		}
 		&:active {
-			background-color: #e6e8ea;
-			border: 1px solid #58616a;
-			color: #1e2124;
+			border: 1px solid var(--color-button-tertiary-border);
+			background: var(--color-button-tertiary-fill-pressed);
 		}
-		&:disabled {
-			background-color: #cdd1d5;
-			color: #6d7882;
-			border: 0;
-		}
+	}
+
+	&:disabled {
+		background-color: var(--color-button-disabled-fill);
+		color: var(--color-text-disabled-on);
+		border: 0;
 	}
 }
 
@@ -141,10 +128,10 @@
 	&_s_1 {
 		//CTA&primary
 		min-width: 98px;
-		height: 56px;
-		padding: 0 24px 0;
+		height: var(--button-size-cta);
+		padding: 0px var(--padding-8);
 		border-radius: var(--radius-medium4);
-		font-size: 18px;
+		font-size: var(--font-size-button-cta-bold);
 		// line-height: 150%;
 		font-weight: 700;
 
@@ -156,12 +143,12 @@
 	&_s_2 {
 		//lg
 		min-width: 90px;
-		height: 48px;
-		padding: 0 20px 0;
+		height: var(--button-size-large);
+		padding: 0 var(--padding-7);
 		border-radius: var(--radius-medium2);
-		font-size: 16px;
-		line-height: 150%;
-		font-weight: 400;
+		font-size: var(--font-size-button-large-bold);
+		// line-height: 150%;
+		font-weight: 700;
 
 		.hd_icon {
 			width: 24px;
@@ -171,12 +158,12 @@
 	&_s_3 {
 		//md
 		min-width: 78px;
-		height: 40px;
-		padding: 0 16px 0;
-		border-radius: var(--radius-medium1);
-		font-size: 14px;
-		line-height: 150%;
-		font-weight: 400;
+		height: var(--button-size-medium);
+		padding: 0 var(--padding-6);
+		border-radius: var(--radius-medium2);
+		font-size: var(--font-size-button-medium-bold);
+		// line-height: 150%;
+		font-weight: 700;
 
 		.hd_icon {
 			width: 16px;
@@ -186,12 +173,12 @@
 	&_s_4 {
 		//sm
 		min-width: 64px;
-		height: 32px;
-		padding: 0 12px 0;
+		height: var(--button-size-small);
+		padding: 0 var(--padding-5);
 		border-radius: var(--radius-medium1);
-		font-size: 12px;
-		line-height: 150%;
-		font-weight: 400;
+		font-size: var(--font-size-button-small-bold);
+		// line-height: 150%;
+		font-weight: 700;
 
 		.hd_icon {
 			width: 16px;
@@ -200,13 +187,13 @@
 	}
 	&_s_5 {
 		//xs
-		min-width: 60px;
-		height: 24px;
-		padding: 0 10px 0;
+		min-width: 48px;
+		height: var(--button-size-xsmall);
+		padding: 0 var(--padding-4);
 		border-radius: var(--radius-small3);
-		font-size: 12px;
-		line-height: 150%;
-		font-weight: 400;
+		font-size: var(--font-size-button-xsmall-bold);
+		// line-height: 150%;
+		font-weight: 700;
 
 		.hd_icon {
 			width: 16px;
@@ -215,7 +202,7 @@
 	}
 
 	//예외
-	&_ty_3.btn_s_1 {
+	&_ty_3 {
 		font-weight: 400 !important;
 	}
 }
@@ -224,52 +211,60 @@
   * Link Button(링크버튼)
   */
 .btn_link {
-	background-color: #ffffff;
-	color: #1e2124;
+	width:fit-content;
+	background-color: var(--color-button-text-fill);
+	color: var(--color-text-basic);
 	border: 0;
+	padding: 0px 2px;
 
 	span.text {
 		cursor: pointer;
 		position: relative;
 	}
 
-	&:hover {
-		background-color: #eef2f7;
-	}
-	&:active {
-		color: #1e2124;
-		background-color: #d6e0eb;
-	}
-
 	//기본사이즈
-	border-radius: 6px;
-	font-size: 16px;
+	border-radius: var(--radius-medium1);
+	font-size: var(--font-size-button-large);
 	font-weight: 400;
 	line-height: 150%;
 
 	&.btn_link_s_1 {
-		border-radius: 6px;
-		font-size: 16px;
+		border-radius: var(--radius-medium1);
+		font-size: var(--font-size-button-large);
 		font-weight: 400;
 		line-height: 150%;
 	}
 	&.btn_link_s_2 {
-		border-radius: 4px;
-		font-size: 14px;
+		border-radius: var(--radius-small3);
+		font-size: var(--font-size-button-medium);
 		font-weight: 400;
 		line-height: 150%;
 	}
 	&.btn_link_s_3 {
-		border-radius: 4px;
-		font-size: 12px;
+		border-radius: var(--radius-small2);
+		font-size: var(--font-size-button-small);
 		font-weight: 400;
 		line-height: 150%;
 	}
 	&.btn_link_s_4 {
-		border-radius: 4px;
-		font-size: 12px;
+		border-radius: var(--radius-small1);
+		font-size: var(--font-size-button-small);
 		font-weight: 400;
 		line-height: 150%;
+	}
+
+	&:hover {
+		background-color: var(--color-button-text-fill-hover);
+		border-radius: var(--radius-xxsamll);
+	}
+	&:active {
+		background-color: var(--color-button-text-fill-pressed);
+		border-radius: var(--radius-xxsamll);
+	}
+
+	&:disabled {
+		background: var(--color-button-text-fill);
+		color: var(--color-text-disabled);
 	}
 }
 
@@ -344,9 +339,9 @@
 		0px var(--shadow-y-4, 16px) var(--shadow-blur-4, 24px) 0px var(--color-alpha-shadow3, rgba(0, 0, 0, 0.12));
 	border-radius: 150px;
 
-	a { 
-		display: block; 
-		width:100%;
+	a {
+		display: block;
+		width: 100%;
 	}
 
 	.link_icon {
@@ -366,7 +361,7 @@
 		color: #fff;
 
 		.cont {
-			min-width:50px;
+			min-width: 50px;
 			display: flex;
 			flex-wrap: nowrap;
 			align-items: center;
@@ -376,7 +371,7 @@
 			font-size: var(--font-size-body-small);
 			line-height: 150%;
 			letter-spacing: var(--typo-letter-spacing-0);
-			strong { 
+			strong {
 				font-weight: 700;
 			}
 		}
@@ -384,7 +379,7 @@
 
 	//바로가기
 	.forward_button {
-		width:fit-content;
+		width: fit-content;
 		display: flex;
 		align-items: center;
 		flex-shrink: 0;
@@ -394,7 +389,7 @@
 		font-weight: 400;
 		line-height: 150%;
 
-		span{
+		span {
 			display: inline-block;
 			line-height: 0;
 			.hd_icon {
@@ -402,6 +397,5 @@
 				height: 16px;
 			}
 		}
-			
 	}
 }
