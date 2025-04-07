@@ -1,6 +1,6 @@
 <!---
-화면번호 : PRLT10004120000
-경로 : 3.자동차 상세정보 > 3-1.자동차 상세정보 입력 > 부속품 조회/적용
+화면번호 : PRLT10004100800
+경로 : 3.자동차 상세정보 > 3-1.자동차 상세정보 입력 > 최초등록일 입력
 -->
 <!doctype html>
 <html lang="ko">
@@ -48,118 +48,61 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body>
-		<!-- s: Full 팝업 -->
-		<div class="popup_wrap full active" id="pop_lt_ty02_05" role="dialog" aria-hidden="true">
+		<!-- s: Bottom 팝업 -->
+		<div class="popup_wrap bottom active" id="pop_lt_ty02_02" role="dialog" aria-modal="true" aria-hidden="true">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true"></div>
 				<div class="popup_inner">
-					<div class="popup_head"></div>
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head">차량 최초 등록일 입력</div>
 					<div class="popup_cont">
-						<div class="popup_content">
+						<div class="popup_content_ty2">
 							<!-- s: popup_content_top -->
 							<div class="popup_content_top">
-								<h2 class="title_h2">
-									자동차 제조사를 통해 조회된
-									<strong>출고시 옵션 장착 부속품 내역</strong>
-									입니다
-									<!-- <strong>321가**54</strong><br />
-										입력하신 차량번호로
-										<strong>차량정보가<br />자동으로 선택</strong>되었습니다 -->
+								<h2 class="title_h3">
+									차량
+									<strong>최초 등록일</strong>
+									을
+									<br />
+									입력해 주세요
 								</h2>
 							</div>
 							<!-- e: popup_content_top -->
 
-							<div class="card_item_wrap">
-								<div class="card_item">
-									<div class="item_inner">
-										<div class="inp_checkbox">
-											<input type="checkbox" class="check_s_16" id="card_chk2" name="name2" aria-labelledby="card_chk2_cont" />
-											<label for="card_chk2" class="chk_label"></label>
-											<i></i>
-										</div>
-										<div class="inner_cont">
-											<div class="item_top">
-												<div class="title_info">
-													<div class="sub_title">현대스마트센스I(ISCC)</div>
-													<div class="main_title">현대스마트센스I</div>
-												</div>
+							<!-- s: popup_content_body -->
+							<div class="popup_content_body">
+								<div class="form_group_wrap">
+									<div class="form_line">
+										<div class="label_tit">최초등록일</div>
+										<div class="input_text calendar">
+											<div class="inp">
+												<input type="number" class="inp_picker" readonly />
+												<button type="button" class="btn calendar_call" title="날짜 선택"></button>
 											</div>
-
-											<ul class="card_list_ty1">
-												<li>
-													<div class="title">출고시가액</div>
-													<div class="cont">100만원</div>
-												</li>
-												<li>
-													<div class="title">개시기준 가액</div>
-													<div class="cont">54만원</div>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-
-								<div class="card_item">
-									<div class="item_inner">
-										<div class="inp_checkbox">
-											<input type="checkbox" class="check_s_16" id="card_chk2" name="name2" aria-labelledby="card_chk2_cont" />
-											<label for="card_chk2" class="chk_label"></label>
-											<i></i>
-										</div>
-										<div class="inner_cont">
-											<div class="item_top">
-												<div class="title_info">
-													<div class="sub_title">현대스마트센스I(ISCC)</div>
-													<div class="main_title">현대스마트센스I</div>
-												</div>
-											</div>
-
-											<ul class="card_list_ty1">
-												<li>
-													<div class="title">출고시가액</div>
-													<div class="cont">100만원</div>
-												</li>
-												<li>
-													<div class="title">개시기준 가액</div>
-													<div class="cont">54만원</div>
-												</li>
-											</ul>
 										</div>
 									</div>
 								</div>
 							</div>
+							<!-- e: popup_content_body -->
 						</div>
 					</div>
 
 					<div class="popup_bottom">
-						<!-- s: 꼭 알아두세요 -->
-						<div class="bottom_fix_notice">
-							<div class="acd_item">
-								<div class="acd_head">
-									<button type="button" class="acd_btn" aria-expanded="false"><span>꼭 알아두세요</span></button>
-								</div>
-								<div class="acd_cont">
-									<div class="inner">
-										<ul>
-											<li>내용1</li>
-											<li>내용2</li>
-											<li>내용3</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- e: 꼭 알아두세요 -->
 						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
-								<span class="text">부속품 적용하기</span>
+							<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_2">
+								<span class="text">취소</span>
+							</button>
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">신청하기</span>
 							</button>
 						</div>
 					</div>
-					<button type="button" class="popup_close" onclick="closePop(this, 'pop_lt_ty02_05');"><span class="blind">팝업 닫기</span></button>
+					<button type="button" class="popup_close"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
-		<!-- e: Full 팝업 -->
+		<!-- e: Bottom 팝업 -->
 	</body>
 </html>
