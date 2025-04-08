@@ -90,6 +90,9 @@ strong {
 .info_box + .form_group_wrap {
 	margin-top: 1.6rem;
 }
+.info_box + .form_group_wrap + .chk_group_wrap {
+	margin-top: 3.2rem;
+}
 .info_box + .chk_group_wrap {
 	margin-top: 5.2rem;
 }
@@ -741,6 +744,9 @@ strong {
 	height: 0;
 	font-size: 0;
 }
+.btn {
+	position: relative;
+}
 .btn.calendar_call {
 	width: 2.4rem;
 	height: 2.4rem;
@@ -749,6 +755,15 @@ strong {
 	font-size: 0;
 	line-height: 0;
 	border: none;
+}
+.btn.calendar_call::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: calc(100% + 1.4rem);
+	height: calc(100% + 1.4rem);
+	margin-top: -0.7rem;
 }
 .btn.btn_search {
 	width: 2.4rem;

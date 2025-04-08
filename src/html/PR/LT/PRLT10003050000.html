@@ -31,7 +31,27 @@
 			</div>
 		</div>
 
-		<div>약관내용</div>
+		<div class="chk_group_wrap">
+			<div class="chk_group_top">
+				{{> cp/checkbox id="chk_group03" chk_class="chk_point_all" labelname="아래 항목 모두 동의합니다." ag_top=true}}
+			</div>
+			<div class="chk_group_cont">
+				<ul class="chk_group_cont_list chk_list">
+					<li>
+						{{#> cp/checkbox id="chk_group0301" chk_class="chk_point" labelname="휴대폰 인증을 위한 개인(신용)정보 처리 상세 동의" ag=true exp=true}}
+						<ul class="space_list_ty1 chk_list">
+							<li>
+								{{> cp/checkbox id="chk_group030101" chk_class="chk_point_sub" label_class="chk_label_ty3" labelname="개인(신용)정보의 수집&middot;이용에 관한 사항" exp=false ag=true}}
+							</li>
+							<li>
+								{{> cp/checkbox id="chk_group030102" chk_class="chk_point_sub" label_class="chk_label_ty3" labelname="개인(신용)정보의 제공에 관한 사항" exp=false ag=true}}
+							</li>
+						</ul>
+						{{/ cp/checkbox}}
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </div>
 
