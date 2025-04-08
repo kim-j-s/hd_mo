@@ -1,0 +1,76 @@
+{{#> layout/default page-title="자동차 운전자 정보 | 상품"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="자동차보험" h-back=true }}
+		<div id="container" class="container">
+			<div class="content">
+				<!-- s: content_top -->
+				<div class="content_top">
+					<h2 class="title_h2">
+						운전하실 분을 <strong>김*대님</strong>을<br>
+						기준으로 선택 해 주세요
+					</h2>
+				</div>
+				<!-- e: content_top -->
+				
+				<div class="select_driver_range">
+					<div class="radio_group_wrap_ty2" role="radiogroup">
+						{{> cp/radio class="rd_btn" id="radio_btn_gt1" name="radio_gt1" labelname="본인만" }}
+						{{> cp/radio class="rd_btn" id="radio_btn_gt2" name="radio_gt1" labelname="부부" }}
+						{{> cp/radio class="rd_btn" id="radio_btn_gt3" name="radio_gt1" labelname="가족" }}
+						{{> cp/radio class="rd_btn" id="radio_btn_gt4" name="radio_gt1" labelname="누구나" }}
+						{{> cp/radio class="rd_btn" id="radio_btn_gt5" name="radio_gt1" labelname="임직원" }}
+						{{> cp/radio class="rd_btn" id="radio_btn_gt6" name="radio_gt1" labelname="본인+1인" }}
+						{{> cp/radio class="rd_btn" id="radio_btn_gt7" name="radio_gt1" labelname="부부+1인" }}
+						{{> cp/radio class="rd_btn" id="radio_btn_gt8" name="radio_gt1" labelname="부부+자녀" }}
+						{{> cp/radio class="rd_btn" id="radio_btn_gt9" name="radio_gt1" labelname="본인+자녀" }}
+						{{> cp/radio class="rd_btn" id="radio_btn_gt10" name="radio_gt1" labelname="자녀" }}
+					</div>
+
+					<div class="ouput_driver_relationship">
+						<div class="relationship_box">
+							<div class="line">
+								<div class="rel_group">
+									<div class="rel_case1 parent active">
+										<span>나의 부모</span>
+										<span>배우자의 부모</span>
+									</div>
+									<!-- <div class="rel_case2">배우자의 부모</div> -->
+								</div>
+							</div>
+							<div class="line">
+								<div class="rel_group">
+									<div class="rel_case2">김*대님</div>
+									<div class="rel_case3">배우자</div>
+								</div>
+							</div>
+							<div class="line">
+								<div class="rel_case4">자녀와 자녀의 배우자</div>
+							</div>
+						</div>
+						<div class="relationship_box">
+							<div class="line">
+								<div class="rel_case5 end">임직원</div>
+							</div>
+							<div class="line">
+								<div class="rel_case6 end">지정1인</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- s: 하단 고정 버튼 영역 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="2" b-text="선택 중이에요" disabled=true }}
+				<!-- {{> cp/button type="1" size="2" b-text="본인만으로" }} -->
+			</div>
+		</div>
+		<!-- s: 하단 고정 버튼 영역 -->
+	</div>
+
+	<!-- s: popup area -->
+
+	<!-- e: popup area -->
+{{/ layout/default }}
