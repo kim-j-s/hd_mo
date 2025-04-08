@@ -333,6 +333,7 @@
 
 // icon button
 .btn {
+	position: relative;
 	&.calendar_call {
 		width: 24px;
 		height: 24px;
@@ -341,6 +342,15 @@
 		font-size: 0;
 		line-height: 0;
 		border: none;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: calc(100% + 14px);
+			height: calc(100% + 14px);
+			margin-top: -7px;
+		}
 	}
 	// btn btn_search
 	&.btn_search {
