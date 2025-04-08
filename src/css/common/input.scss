@@ -321,6 +321,11 @@
 
 /* Form group */
 .form_group_wrap {
+
+	& + & {
+		margin-top: 48px;
+	}
+
 	.row {
 		display: flex;
 		flex-direction: row;
@@ -335,6 +340,27 @@
 
 		.grow {
 			flex-grow: 1;
+		}
+	}
+
+	.form_group_title {
+		width:100%;
+		line-height: 24px;		
+		font-weight: 700;
+		word-wrap: break-word;
+
+		& > .infoButton {
+			height:24px;
+			margin: 0 3px;
+
+			.hd_icon {
+				top:50%;
+				transform: translateY(-50%);
+			}
+		}
+
+		& ~ * {
+			margin-top: 16px;
 		}
 	}
 
