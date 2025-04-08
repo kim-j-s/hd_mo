@@ -503,11 +503,6 @@ strong {
 	-ms-flex-preferred-size: 100%;
 	flex-basis: 100%;
 }
-.btn_area:has(.hd_btn, .btn_link) {
-	-webkit-box-pack: start;
-	-ms-flex-pack: start;
-	justify-content: start;
-}
 .hd_btn {
 	display: -webkit-inline-box;
 	display: -ms-inline-flexbox;
@@ -733,7 +728,7 @@ strong {
 	right: 1.6rem;
 	width: 1.2rem;
 	height: 1.2rem;
-	background: url(../images/icon/arrowDown_ty2.svg) no-repeat center/contain;
+	background: url(../images/icon/arrowDown_ty2_2.svg) no-repeat center/contain;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
@@ -1781,18 +1776,36 @@ strong {
 * 기타 아이콘
 *********/
 .searchSvg {
-	background-image: url(../images/icon/line/16/search.svg);
+	background-image: url(../images/icon/icon_search.svg);
 }
 /* input */
+div:not(.comp_wrap) > .input_text {
+	border: 1px solid var(--border-width-variable-regular);
+	border: 1px solid #8a949e;
+}
+div:not(.comp_wrap) > .input_text:focus-within {
+	border-color: var(--color-input-border-active);
+}
 .input_text {
 	position: relative;
+	border-radius: 1.6rem;
+}
+.input_text .inp {
+	position: relative;
+	border-radius: inherit;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
 }
 .input_text input {
 	position: relative;
 	display: block;
 	width: 100%;
-	height: 4.8rem;
-	padding: 1.6rem;
+	height: 5.6rem;
+	padding: 0.3rem 0.8rem 0.3rem 1.6rem;
 	font-size: 1.6rem;
 	line-height: 2.4rem;
 	-webkit-appearance: none;
@@ -1800,42 +1813,46 @@ strong {
 	appearance: none;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	border-radius: 1.6rem;
-	border: 1px solid #ddd;
+	border-radius: inherit;
+	border: none;
 }
 .input_text input::-webkit-input-placeholder {
-	color: #6c7882;
+	color: var(--color-text-disabled);
 }
 .input_text input::-moz-placeholder {
-	color: #6c7882;
+	color: var(--color-text-disabled);
 }
 .input_text input:-ms-input-placeholder {
-	color: #6c7882;
+	color: var(--color-text-disabled);
 }
 .input_text input::-ms-input-placeholder {
-	color: #6c7882;
+	color: var(--color-text-disabled);
 }
 .input_text input::placeholder {
-	color: #6c7882;
+	color: var(--color-text-disabled);
+}
+.input_text input:-moz-read-only {
+	background-color: var(--color-input-surface-disabled);
+}
+.input_text input:read-only {
+	background-color: var(--color-input-surface-disabled);
+}
+.input_text input:-moz-read-only + .del {
+	display: none !important;
+}
+.input_text input:read-only + .del {
+	display: none !important;
 }
 .input_text input:disabled {
-	background-color: #f5f5f5;
-	color: #66727b;
+	color: var(--color-text-disabled-on);
+	background-color: var(--color-input-surface-disabled);
 }
 .input_text input:focus {
 	outline: none;
 }
-.input_text .del,
-.input_text .calendar_call,
-.input_text .btn_search {
-	position: absolute;
-	top: 50%;
-	right: 1.6rem;
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
-}
 .input_text .del {
 	display: none;
+	margin-right: 1.6rem;
 	width: 2rem;
 	height: 2rem;
 	background: url(../images/icon/icon_reset.svg) no-repeat center/1.6rem auto;
@@ -1888,7 +1905,20 @@ strong {
 /* _조합 input */
 .comp_wrap {
 	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 0.4rem;
+	border: 1px solid var(--border-width-variable-regular);
+	border: 1px solid #8a949e;
+	border-radius: 1.6rem;
 	/* comp_wrap 내부에서 보안키패드 호출 버튼 공통 사용요소 - 필요시 각 class별로 별도 설정 필요 */
+}
+.comp_wrap:focus-within {
+	border-color: var(--color-text-basic);
 }
 .comp_wrap .dash {
 	font-size: 1.6rem;
@@ -1900,22 +1930,7 @@ strong {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	padding-left: 1.6rem;
-	padding-right: 4.4rem;
-	border: 1px solid #ddd;
-	border-radius: 1.6rem;
-}
-.comp_wrap .input_text input {
 	border: none;
-}
-.comp_wrap .input_text input:focus + i {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	border: 1px solid #1e2124;
-	border-radius: 1.6rem;
 }
 .comp_wrap .price_wrap {
 	display: -webkit-box;
@@ -2047,56 +2062,111 @@ strong {
 }
 .comp_wrap .input_text input:-moz-read-only {
 	z-index: 1;
-	background-color: transparent;
+	background-color: var(--color-input-surface-disabled);
+	border-radius: 1.2rem;
 }
 .comp_wrap .input_text input:read-only {
 	z-index: 1;
-	background-color: transparent;
-}
-.comp_wrap .input_text input:-moz-read-only + i {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: #ddd;
-	border-radius: 0.8rem;
-}
-.comp_wrap .input_text input:read-only + i {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: #ddd;
-	border-radius: 0.8rem;
+	background-color: var(--color-input-surface-disabled);
+	border-radius: 1.2rem;
 }
 .comp_wrap .input_text input:disabled {
 	z-index: 1;
-	background-color: transparent;
+	background-color: var(--color-input-surface-disabled);
+	border-radius: 1.2rem;
 }
-.comp_wrap .input_text input:disabled + i {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: #ddd;
-	border-radius: 0.8rem;
+.price .inp input {
+	text-align: right;
+}
+.price .int-txt {
+	padding-right: 1.6rem;
+	font-size: var(--font-size-body-medium);
+}
+.price .int-txt + .del {
+	margin-left: -0.8rem;
+}
+.phone {
+	padding-left: 1.6rem;
 }
 .phone .code_first {
 	font-size: 1.6rem;
 }
-.phone .inp {
+.phone .input_text {
+	width: 100%;
+}
+.phone .input_text .inp {
+	width: 100%;
+}
+.phone .input_text .inp input {
+	padding-left: 0.8rem;
+}
+.phone .input_text .inp input.isVal {
+	padding-left: 0;
+}
+.card {
+	padding: 0 1.6rem;
+	width: 100%;
+}
+.card.readonly,
+.card.disabled,
+.card.readonly input,
+.card.disabled input {
+	background-color: var(--color-input-surface-disabled);
+}
+.card > div {
 	-webkit-box-flex: 1;
 	-ms-flex: 1;
 	flex: 1;
 }
-.phone .inp input {
-	padding-left: 0.8rem;
+.card input {
+	padding: 0;
+	text-align: center;
 }
-.phone .inp input.isVal {
-	padding-left: 0;
+.birth {
+	padding: 0.3rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 0.4rem;
+}
+.birth > .input_text {
+	width: calc(50% - 0.8rem);
+}
+.birth input {
+	height: 4.8rem;
+	text-align: center;
+}
+.birth .id_pass_box {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: calc(50% - 0.8rem);
+	gap: 0.4rem;
+}
+.birth .id_pass_box .input_text {
+	border: none;
+}
+.birth .id_pass_box input {
+	padding: 0.4rem;
+	width: 2rem;
+	height: 2.5rem;
+	text-align: center;
+	border-bottom: 1px solid #6d7882;
+	border-radius: 0;
+}
+.birth .id_pass_box .id_pass {
+	line-height: 4.2rem;
+	width: 100%;
+	font-size: 1.6rem;
+	text-align: center;
+	background-color: var(--color-input-surface-disabled);
+	border-radius: 1.2rem;
 }
 /* Form group */
 .form_group_wrap + .form_group_wrap {
@@ -2727,8 +2797,6 @@ strong {
 }
 .tooltip_wrap .tooltip_text .inner {
 	display: none;
-	overflow-y: auto;
-	max-height: 10rem;
 	padding: 1rem;
 	background-color: gray;
 	border-radius: 1rem;
