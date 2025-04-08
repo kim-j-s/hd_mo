@@ -2389,6 +2389,71 @@ strong {
 .inp_radio.rd_btn input[type="radio"]:disabled:checked + label:after {
 	border-color: #e1e3ea;
 }
+/* selectlist */
+* + .opt_select_list.opt_case1 {
+	margin-top: 3.2rem;
+}
+* + .opt_select_list.opt_case2 {
+	margin-top: 3.2rem;
+}
+.opt_select_list.opt_case1 .option {
+	padding: 0.5rem 0;
+}
+.opt_select_list.opt_case1 .option > .text {
+	position: relative;
+	display: block;
+	padding: 2.3rem 6.3rem 2.3rem 1.9rem;
+	font-size: var(--font-size-body-medium);
+	color: #3e4a58;
+	line-height: 2.4rem;
+	border-radius: 1.6rem;
+	border: 1px solid #e1e3ea;
+	background: url(../images/icon/arrowRight_ty3.svg) no-repeat right 2rem center;
+}
+.opt_select_list.opt_case1 .option.active {
+	color: blue;
+}
+.opt_select_list.opt_case1 .option.active > .text {
+	padding: 2.2rem 6.2rem 2.2rem 1.8rem;
+	border: 0.2rem solid #f8633c;
+}
+.opt_select_list.opt_case1 .option ~ .option {
+	margin-top: 1.2rem;
+}
+.opt_select_list.opt_case2 {
+	border-top: 1px solid #e1e3ea;
+}
+.opt_select_list.opt_case2 .option {
+	border-bottom: 1px solid #e1e3ea;
+}
+.opt_select_list.opt_case2 .option > .text {
+	display: block;
+	padding: 2rem 3rem 2rem 0;
+	font-size: var(--font-size-body-medium);
+	color: #3e4a58;
+	line-height: 2.4rem;
+	background: url(../images/icon/arrowRight_ty3.svg) no-repeat center right;
+}
+.opt_select_list.opt_case2 .option > .text .point {
+	color: #c64315;
+}
+.opt_select_list.opt_case2 .option.active {
+	color: blue;
+}
+.opt_select_list.opt_case2 .option.fixed > .text::after {
+	content: "입력";
+	display: inline-block;
+	margin-left: 0.4rem;
+	padding: 0 0.8rem;
+	font-size: var(--font-size-label-small);
+	color: var(--color-text-subtle);
+	line-height: 2rem;
+	border-radius: 0.8rem;
+	background: var(--color-element-gray-lighter);
+}
+.opt_select_list.opt_case2 .option ~ .option {
+	margin-top: 1rem;
+}
 /* stepper */
 .stepper_list {
 	display: -webkit-box;

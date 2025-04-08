@@ -1,0 +1,89 @@
+* {
+	& + .opt_select_list {
+		&.opt_case1 {
+			margin-top: 32px;
+		}
+		&.opt_case2 {
+			margin-top: 32px;
+		}
+	}
+}
+
+.opt_select_list {
+	// opt_case1
+	&.opt_case1 {
+		.option {
+			padding: 5px 0;
+			> .text {
+				position: relative;
+				display: block;
+				padding: 23px 63px 23px 19px;
+				font-size: var(--font-size-body-medium);
+				color: #3E4A58;
+				line-height: 24px;
+				border-radius: 16px;
+				border: 1px solid #E1E3EA;
+				background: url(../images/icon/arrowRight_ty3.svg) no-repeat right 20px center ;
+			}
+
+			&.active {
+				color: blue;
+				> .text {
+					padding: 22px 62px 22px 18px;
+					border: 2px solid #F8633C;
+				}
+			}
+
+			& ~ .option {
+				margin-top: 12px;
+			}
+		}
+	
+	}
+	// opt_case2
+	&.opt_case2 {
+		border-top: 1px solid #E1E3EA;
+		.option {			
+			border-bottom: 1px solid #E1E3EA;
+			> .text {
+				display: block;
+				padding: 20px 30px 20px 0;
+				font-size: var(--font-size-body-medium);
+				color: #3E4A58;
+				line-height: 24px;
+				background: url(../images/icon/arrowRight_ty3.svg) no-repeat center right;
+				.point {
+					color: #C64315;
+				}
+			}
+
+
+			&.active {
+				color: blue;
+			}
+			&.fixed {
+				> .text {
+					&::after {
+						content: '입력';
+						display: inline-block;
+						margin-left: 4px;
+						padding: 0 8px;
+						font-size: var(--font-size-label-small);
+						color: var(--color-text-subtle);
+						line-height: 20px;
+						border-radius: 8px;
+						background: var(--color-element-gray-lighter);
+					}
+				}
+			}
+			& ~ .option {
+				margin-top: 10px;
+			}
+
+
+		}
+	
+	}
+}
+
+
