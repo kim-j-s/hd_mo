@@ -1,0 +1,66 @@
+/* 자동차보험 - 운전자 정보 */
+.select_driver_range {
+	.ouput_driver_relationship {
+		display: flex;
+		align-items: flex-end;
+		gap: 24px;
+		margin: 32px -24px 0;
+		padding: 32px 24px;
+		background-color: #F5F5F5;
+		border-radius: 32px;
+	}
+
+	.relationship_box {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+
+		&:first-child {
+			flex: 1;
+			align-items: center;
+		}
+
+		.line {
+			display: flex;
+			justify-content: space-between;
+
+			[class^=rel_case]{
+				position: relative;
+				min-width: 70px;
+				padding: 8px 0;
+				background-color: #FFF;
+				font-size: 14px;
+				line-height: 21px;
+				color: #3E4A58;
+				text-align: center;
+				border-radius: 20px;
+
+				&.active {
+					font-weight: 700;
+
+					&:after {
+						position: absolute;
+						top:0;
+						left: 0;
+						content:'';
+						width: 100%;
+						height: 100%;
+						border: 2px solid #F8633C;
+						border-radius: 20px;
+					}
+				}
+			}
+
+			.rel_group {
+				display: inline-flex;
+
+				.parent {
+					display: flex;
+					gap: 10px;
+					background-color: #FFF;
+					padding: 0 24px;
+				}
+			}
+		}
+	}
+}
