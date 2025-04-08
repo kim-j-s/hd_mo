@@ -78,26 +78,47 @@
 
 
   /* Input */
+  $(function() {
+	$('.card input').each(function() {
+	  const $this = $(this),
+			$wrapBox = $this.closest('.comp_wrap'),
+			isDisabled = $this.prop('disabled'),
+			isReadonly = $this.prop('readonly');
+  
+		if (isReadonly) {
+			$wrapBox.addClass('readonly');
+			//$wrapBox.find('input').prop('readonly', true);
+		}
+		if (isDisabled) {
+			$wrapBox.addClass('disabled');
+			//$wrapBox.find('input').prop('disabled', true);
+		}
+	});
+  });
   $DOM.on('focus input', '.input_text .inp > input', function(){
     const $this = $(this),
           $wrap = $this.closest('.inp'),
-          $del = $this.siblings('.del');
+          $del = $this.siblings('.del'),
+		  isDisabled = $this.prop('disabled'),
+		  isReadonly = $this.prop('readonly');
 		let val = $this.val();
       
     if($del.length) {
       $del.attr('tabindex', '0');
     }
 
+	if (!isDisabled && !isReadonly) {
+		if(val){
+			$del.show();
+		}else {
+			$wrap.removeClass('active');
+			$del.hide();
+		}
+	}
     $('.input_text .inp').removeClass('active').children('.del').hide();
     $wrap.addClass('active');
     $del.show();
 
-    if(val){
-      $del.show();
-    }else {
-      $wrap.removeClass('active');
-      $del.hide();
-    }
     // (this.value) ? $wrap.addClass('active'):$wrap.removeClass('active');
 
 		//전화번호
@@ -111,11 +132,15 @@
     
   }).on('blur', '.inp > input', function(){
     const $this = $(this),
+		  $del = $this.siblings('.del'),
           $wrap = $this.closest('.inp');
 		let val = $this.val(),
 				newVal = 0;
 
-    $wrap.removeClass('active');
+		setTimeout(() => {
+			$del.hide();
+			$wrap.removeClass('active');
+		}, 100);
 
 		// 전화번호
 		if($this.closest('.comp_wrap').hasClass('phone')){
@@ -132,8 +157,11 @@
   }).on('click', '.inp > .del', function(e){
     const $this = $(this);
     e.preventDefault();
-    $this.siblings('input').val('').focus();
-    $this.parent('.inp').removeClass('active');
+	
+	setTimeout(() => {
+		$this.hide();
+		$this.siblings('input').val('').focus();
+	}, 100);
 
 		if($this.closest('.comp_wrap').hasClass('phone')){
 			$this.siblings('input').removeClass('isVal');

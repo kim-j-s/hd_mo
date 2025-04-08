@@ -2565,15 +2565,26 @@ strong {
 /* table */
 .table_wrap .table {
 	width: 100%;
+	border-top: 1px solid var(--color-border-gray-light);
 }
 .table_wrap .table th,
 .table_wrap .table td {
 	padding: 1.2rem 1.6rem;
 	line-height: 1.5;
 	border: 1px solid var(--color-border-gray-light);
+	border-width: 0 1px 1px 0;
 }
 .table_wrap .table th {
-	background-color: #f2f5f8;
+	background-color: #f4f5f6;
+}
+.table_wrap .table thead tr th:last-child {
+	border-width: 0 0 1px 0;
+}
+.table_wrap .table tbody tr td:last-child {
+	border-width: 0 0 1px 0;
+}
+.table_wrap .table tfoot tr td:last-child {
+	border-width: 0 0 1px 0;
 }
 /* text */
 [class^="title_h"] {
