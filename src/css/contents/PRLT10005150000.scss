@@ -1,4 +1,11 @@
 /* 자동차보험 - 운전자 정보 */
+@mixin relationshipImg($name){
+	background-repeat: no-repeat;
+	background-image: url($name);
+	background-position: center;
+	background-size: auto 44px;
+}
+
 .select_driver_range {
 	.ouput_driver_relationship {
 		display: flex;
@@ -26,14 +33,26 @@
 
 			[class^=rel_case]{
 				position: relative;
-				min-width: 70px;
-				padding: 8px 0;
+				padding: 0 13px;
 				background-color: #FFF;
-				font-size: 14px;
-				line-height: 21px;
-				color: #3E4A58;
 				text-align: center;
 				border-radius: 20px;
+
+				> span {
+					display: block;
+					padding: 8px 0;
+					font-size: 14px;
+					line-height: 21px;
+					color: #3E4A58;
+					border-radius: 20px;
+
+					img {
+						display: block;
+						height: 44px;
+						margin: 0 auto;
+						margin-bottom: 4px;
+					}
+				}
 
 				&.active {
 					font-weight: 700;
@@ -53,12 +72,17 @@
 
 			.rel_group {
 				display: inline-flex;
+				gap: 16px;
 
 				.parent {
 					display: flex;
 					gap: 10px;
 					background-color: #FFF;
 					padding: 0 24px;
+
+					i {
+						max-width: 100px;
+					}
 				}
 			}
 		}

@@ -256,6 +256,44 @@
 		$(this).closest(".tab_wrap").children(".tab_wrap_content").removeClass("active");
 		$(this).closest(".tab_wrap").children(".tab_wrap_content").eq(idx).addClass("active");
 	});
+
+	// select_driver
+	$DOM.on("change", '.select_driver_range input[type="radio"]', function () {
+		const $relGroup = $(".ouput_driver_relationship").find(".rel_group");
+		let chkNum = $(this).attr("data-num");
+
+		if (chkNum) {
+			chkNum = chkNum.split(",");
+		} else {
+			return;
+		}
+
+		console.log(chkNum);
+
+		$relGroup.children("div").each(function () {
+			const $this = $(this),
+				thisNum = $this.attr("data-num"),
+				numSrc = $this.find("img").attr("src"),
+				newFile = numSrc.substring(0, numSrc.lastIndexOf("."));
+
+			// console.log('chkNum' + chkNum, 'num' + num);
+			// console.log(numSrc)
+
+			if (chkNum.includes(thisNum)) {
+				$this.addClass("active");
+				$this.find("img").attr("src", newFile + "_on." + /[^.]+$/.exec(numSrc));
+			} else {
+				// chkNum에 해당하지 않는 div에 대해서는 '_on'을 삭제
+				if (numSrc.includes("_on")) {
+					const originalSrc = numSrc.replace("_on", "");
+					$this.find("img").attr("src", originalSrc);
+				}
+			}
+
+			// numCase.addClass('active');
+			// numCase.find('img').attr('src', newFile + '_on.' + /[^.]+$/.exec(numSrc));
+		});
+	});
 })();
 
 //
