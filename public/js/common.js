@@ -330,24 +330,25 @@ $(function(){
 		}
 	});
 
-	$(".inp_picker:not([readonly])").datepicker({
-		disabled: false  // 기본값 override
-	});
+	// $(".inp_picker:not([readonly])").datepicker({
+	// 	disabled: false  // 기본값 override
+	// });
 
 	// $(".calendar_call").on("click", function () {
 	// 	$(this).siblings(".inp_picker").datepicker("show"); // 정확한 input만 targeting
 	// });
 
+	$(".inp_picker").datepicker();
+
 
 	$(".calendar_call").on("click", function (e) {
 		e.preventDefault(); // 기본 동작 방지
 		const $input = $(this).siblings(".inp_picker");
-	
-		// input 포커스 제거
-		$input.blur();
-	
-		// 달력 호출
+		$input.attr("readonly", true); // readonly 속성 추가	
 		$input.datepicker("show");
+		setTimeout(function(){
+			$input.attr("readonly", false); // readonly 속성 제거
+		}, 500);
 	});
 
 
