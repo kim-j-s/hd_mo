@@ -12,8 +12,9 @@
 		{{#if ag}} title="체크하시면 {{{labelname}}} 약관 팝업이 활성화 됩니다."{{/if}}
 		{{#if ag_more}} title="체크하시면 {{{labelname}}} 약관 팝업이 활성화 됩니다."{{/if}}
 		{{#if ag_top}} title="체크하시면 {{{labelname}}} 약관 팝업이 활성화 됩니다."{{/if}}
+		{{#if exp}} aria-labelledby="{{id}}_desc"{{/if}}
 	>
-	<label for="{{id}}" class="chk_label{{#if label_class}} {{label_class}}{{/if}}{{#if ag_more}} more_add{{/if}}{{#if ag_top}} chk_label_ty2{{/if}}"{{#if exp}} aria-labelledby="{{id}}_desc"{{/if}}><span class="label_cont">{{{labelname}}}</span></label>
+	<label for="{{id}}" class="chk_label{{#if label_class}} {{label_class}}{{/if}}{{#if ag_more}} more_add{{/if}}{{#if ag_top}} chk_label_ty2{{/if}}"><span class="label_cont">{{{labelname}}}</span></label>
 	{{#if exp}}
 	<div class="chk_lby" id="{{id}}_desc">
 		{{> @partial-block }}
