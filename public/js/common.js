@@ -253,11 +253,50 @@
 	/* Tab */
 	$DOM.on('click', '.tab_btn', function(){
 		const idx = $(this).index();
-		$(this).closest('.tab_wrap_list').children('.tab_btn').removeClass('active').attr('aria-selected', 'false');
+		$(this).closest('[class^=tab_wrap_list]').children('.tab_btn').removeClass('active').attr('aria-selected', 'false');
 		$(this).addClass('active').attr('aria-selected', 'true');
 		$(this).closest('.tab_wrap').children('.tab_wrap_content').removeClass('active');
 		$(this).closest('.tab_wrap').children('.tab_wrap_content').eq(idx).addClass('active');
 	});
+
+
+	// select_driver 
+	$DOM.on('change', '.select_driver_range input[type="radio"]', function(){
+		const $relGroup = $('.ouput_driver_relationship').find('.rel_group')
+		let chkNum = $(this).attr('data-num');
+
+		if(chkNum){
+			chkNum = chkNum.split(',');
+		}else {
+			return;
+		}
+
+		console.log(chkNum);
+
+		$relGroup.children('div').each(function(){
+			const $this = $(this),
+						thisNum = $this.attr('data-num'),
+						numSrc = $this.find('img').attr('src'),
+						newFile = numSrc.substring(0, numSrc.lastIndexOf('.'));
+
+			// console.log('chkNum' + chkNum, 'num' + num);
+			// console.log(numSrc)
+
+			if (chkNum.includes(thisNum)) {
+				$this.addClass('active');
+				$this.find('img').attr('src', newFile + '_on.' + /[^.]+$/.exec(numSrc));
+		} else {
+				// chkNum에 해당하지 않는 div에 대해서는 '_on'을 삭제
+				if (numSrc.includes('_on')) {
+						const originalSrc = numSrc.replace('_on', '');
+						$this.find('img').attr('src', originalSrc);
+				}
+		}
+
+			// numCase.addClass('active');
+			// numCase.find('img').attr('src', newFile + '_on.' + /[^.]+$/.exec(numSrc));
+		});
+	})
 })();
 
 
@@ -330,12 +369,28 @@ $(function(){
 		}
 	});
 
-	$(".inp_picker:not([readonly])").datepicker({
-		disabled: false  // 기본값 override
+	// $(".inp_picker:not([readonly])").datepicker({
+	// 	disabled: false  // 기본값 override
+	// });
+
+	// $(".calendar_call").on("click", function () {
+	// 	$(this).siblings(".inp_picker").datepicker("show"); // 정확한 input만 targeting
+	// });
+
+	$(".inp_picker").datepicker();
+
+
+	$(".calendar_call").on("click", function (e) {
+		e.preventDefault(); // 기본 동작 방지
+		const $input = $(this).siblings(".inp_picker");
+		$input.attr("readonly", true); // readonly 속성 추가	
+		$input.datepicker("show");
+		setTimeout(function(){
+			$input.attr("readonly", false); // readonly 속성 제거
+		}, 500);
 	});
 
-	$(".calendar_call").on("click", function () {
-		$(this).siblings(".inp_picker").datepicker("show"); // 정확한 input만 targeting
-	});
+
+
 	// 달력 호출
 })

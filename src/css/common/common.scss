@@ -76,10 +76,10 @@ strong {
 
 .content {
 	.content_top {
-		+ .bann_text_wrap_ty1 {
-			margin-top: 32px;
-		}
-		+ .bann_text_wrap_ty2 {
+		& + .bann_text_wrap_ty1,
+		& + .bann_text_wrap_ty2,
+		& + .form_group_wrap,
+		& + .select_driver_range {
 			margin-top: 32px;
 		}
 	}
@@ -102,6 +102,10 @@ strong {
 
 	& + .form_group_wrap {
 		margin-top: 16px;
+
+		& + .chk_group_wrap {
+			margin-top: 32px;
+		}
 	}
 	& + .chk_group_wrap {
 		margin-top: 52px;
@@ -151,3 +155,15 @@ strong {
 	}
 }
 /* 개발에서 제어하는 부분 */
+
+.bg_area {
+	margin: 0 -24px;
+	padding: 32px 24px;
+	background-color: #f2f5f8;
+}
+
+.sticky_fix {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
