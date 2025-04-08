@@ -775,8 +775,8 @@ strong {
 	border: none;
 }
 .infoButton {
-	width: 1.8rem;
-	height: 1.8rem;
+	width: 2.4rem;
+	height: 2.4rem;
 	position: relative;
 	background-color: #ffffff;
 	color: #1e2124;
@@ -786,6 +786,10 @@ strong {
 	height: 1.8rem;
 	cursor: pointer;
 	position: relative;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
 }
 .infoButton span.text {
 	cursor: pointer;
@@ -2121,19 +2125,18 @@ strong {
 	flex-grow: 1;
 }
 .form_group_wrap .form_group_title {
+	display: inline-block;
 	width: 100%;
-	line-height: 2.4rem;
 	font-weight: 700;
 	word-wrap: break-word;
+	line-height: 2.4rem;
 }
-.form_group_wrap .form_group_title > .infoButton {
-	height: 2.4rem;
+.form_group_wrap .form_group_title > .tooltip_wrap {
 	margin: 0 0.3rem;
 }
-.form_group_wrap .form_group_title > .infoButton .hd_icon {
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
+.form_group_wrap .form_group_title > .tooltip_wrap .tooltip_head {
+	-webkit-transform: translateY(0.6rem);
+	transform: translateY(0.6rem);
 }
 .form_group_wrap .form_group_title ~ * {
 	margin-top: 1.6rem;
@@ -2627,11 +2630,11 @@ strong {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	gap: 0.8rem;
+	gap: 0.4rem;
 	color: #3e4a58;
 	font-size: var(--font-size-body-small);
 	font-weight: 400;
-	line-height: 150%; /* 21px */
+	line-height: 150%;
 	letter-spacing: var(--typo-letter-spacing-0);
 }
 .list_top_wrap .left {
@@ -2641,7 +2644,7 @@ strong {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	gap: 0.7rem;
+	gap: 0.4rem;
 }
 .list_top_wrap + .card_item_wrap {
 	margin-top: 1.2rem;
@@ -2655,6 +2658,25 @@ strong {
 .tooltip_wrap .tooltip_head {
 	position: relative;
 	display: inline-block;
+	height: 2.4rem;
+	-webkit-transform: translateY(0.4rem);
+	transform: translateY(0.4rem);
+}
+.tooltip_wrap .tooltip_head button {
+	width: 2.4rem;
+	height: 2.4rem;
+	position: relative;
+	line-height: 0;
+}
+.tooltip_wrap .tooltip_head button .hd_icon {
+	width: 1.8rem;
+	height: 1.8rem;
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
 }
 .tooltip_wrap .tooltip_head .open {
 	display: inline-block;
@@ -2664,8 +2686,8 @@ strong {
 .tooltip_wrap .tooltip_head.active::after {
 	content: "";
 	position: absolute;
-	left: calc(100% - 2.8rem);
-	bottom: -1.3rem;
+	left: calc(50% - 0.8rem);
+	bottom: -1.2rem;
 	width: 0.8rem;
 	height: 0.8rem;
 	border: 0.8rem solid gray;
@@ -2707,4 +2729,7 @@ strong {
 	width: 2.4rem;
 	height: 2.4rem;
 	background-color: blue;
+}
+.tooltip_wrap_text {
+	line-height: 1.5;
 }
