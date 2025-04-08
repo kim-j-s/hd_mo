@@ -1,6 +1,6 @@
 <!---
-화면번호 : PRLT10004100700
-경로 : 3.자동차 상세정보 > 3-1.자동차 상세정보 입력 > 외제차 차량가액 수정
+화면번호 : PRLT10004140000
+경로 : 3.자동차 상세정보 > 3-3. 자동차 추가 확인사항
 -->
 <!doctype html>
 <html lang="ko">
@@ -48,68 +48,122 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body>
-		<!-- s: Bottom 팝업 -->
-		<div class="popup_wrap bottom active" id="pop_lt_ty02_02" role="dialog" aria-modal="true" aria-hidden="true">
-			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true"></div>
-				<div class="popup_inner">
-					<div class="draggable" aria-hidden="true">
-						<div class="move"></div>
+		<div id="wrap" class="wrap">
+			<div id="header" class="header">
+				<div class="header_inner">
+					<div class="left">
+						<button type="button" class="back"><span class="blind">이전 페이지로 이동</span></button>
 					</div>
-					<div class="popup_head">외제차 차량가액 수정</div>
-					<div class="popup_cont">
-						<div class="popup_content">
-							<div class="form_group_wrap">
-								<div class="form_line">
-									<div class="label_tit">차량가액</div>
-									<div class="input_text price">
-										<div class="inp">
-											<input type="text" />
-											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-										</div>
-									</div>
-									<p class="explain_text">
-										수정가능범위 :
-										<strong>5,742~7,018</strong>
-										만원
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- s: 꼭 알아두세요 -->
-					<div class="bottom_fix_notice">
-						<div class="acd_item">
-							<div class="acd_head">
-								<button type="button" class="acd_btn" aria-expanded="false"><span>꼭 알아두세요</span></button>
-							</div>
-							<div class="acd_cont">
-								<div class="inner">
-									<ul>
-										<li>내용1</li>
-										<li>내용2</li>
-										<li>내용3</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- e: 꼭 알아두세요 -->
 
-					<div class="popup_bottom">
-						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_2">
-								<span class="text">취소</span>
-							</button>
-							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
-								<span class="text">신청하기</span>
-							</button>
+					<div class="header_connect">
+						<h1 class="header_title">타이틀</h1>
+					</div>
+
+					<div class="right">
+						<button type="button" class="allmenu" title="전체메뉴 열기"></button>
+						<div class="nav_menu_wrap" aria-hidden="true">
+							<div class="nav_menu_inner">
+								<div class="nav_menu_top">
+									<button type="button"><span class="blind">홈으로 이동</span></button>
+									<button type="button" class="allmenu_close"><span class="blind">전체메뉴 닫기</span></button>
+								</div>
+								<div class="nav_menu_bottom">
+									<div class="nav_content">전체메뉴 내용</div>
+									<div class="nav_link">기타 링크</div>
+								</div>
+							</div>
 						</div>
 					</div>
-					<button type="button" class="popup_close"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
+			<div id="container" class="container">
+				<div class="content">
+					<!-- s: content_top -->
+					<div class="content_top">
+						<h2 class="title_h2">
+							<strong>추가 확인 사항</strong>
+							중
+							<strong>해당하는 항목</strong>
+							이 있으면 체크해 주세요
+						</h2>
+					</div>
+					<!-- e: content_top -->
+
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<p class="title_h5">heading-xsmall(.title_h5)</p>
+							<div class="label_tit">보험시작일</div>
+							<div class="input_text calendar">
+								<div class="inp">
+									<input type="tel" class="inp_picker" title="날짜를 입력해주세요" />
+									<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+									<button type="button" class="btn calendar_call" title="날짜 선택"></button>
+								</div>
+							</div>
+						</div>
+						<div class="form_line">
+							<div class="label_tit">보험종료일</div>
+							<div class="input_text calendar">
+								<div class="inp">
+									<input type="tel" class="inp_picker" title="날짜를 입력해주세요" />
+									<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+									<button type="button" class="btn calendar_call" title="날짜 선택"></button>
+								</div>
+							</div>
+						</div>
+						<div class="form_line">
+							<div class="label_tit">계약기간</div>
+							<div class="radio_group_wrap" role="radiogroup">
+								<div class="inp_radio rd_btn">
+									<input type="radio" id="radio_btn_g1" name="radio_g1" checked />
+									<label for="radio_btn_g1">
+										<span class="label_i">1년 계약</span>
+									</label>
+								</div>
+								<div class="inp_radio rd_btn">
+									<input type="radio" id="radio_btn_g2" name="radio_g1" />
+									<label for="radio_btn_g2">
+										<span class="label_i">1년 미만 계약</span>
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- s: 꼭 알아두세요 -->
+				<div class="bottom_fix_notice">
+					<div class="acd_item">
+						<div class="acd_head">
+							<button type="button" class="acd_btn" aria-expanded="false"><span>꼭 알아두세요</span></button>
+						</div>
+						<div class="acd_cont">
+							<div class="inner">
+								<ul>
+									<li>내용1</li>
+									<li>내용2</li>
+									<li>내용3</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- e: 꼭 알아두세요 -->
+			</div>
+
+			<!-- s: 하단 고정 버튼 영역 -->
+			<div class="bottom_fix_wrap">
+				<div class="btn_area">
+					<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+						<span class="text">1년 계약으로</span>
+					</button>
+				</div>
+			</div>
+			<!-- s: 하단 고정 버튼 영역 -->
 		</div>
-		<!-- e: Bottom 팝업 -->
+
+		<!-- s: popup area -->
+
+		<!-- e: popup area -->
 	</body>
 </html>
