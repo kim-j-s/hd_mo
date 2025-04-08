@@ -24,20 +24,21 @@
       {{#if readonly}}readonly{{/if}}
       {{#if inp-title}}title="{{inp-title}}"{{/if}}
       {{#if cal}}title="날짜를 입력해주세요"{{/if}}
-    >{{#if comp}}<i></i>{{/if}}
+    >
     {{!-- 버튼 (초기화 삭제, 달력 호출) --}}
-    {{#unless no_del}}<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>{{/unless}}{{#if cal}}<button type="button" class="btn calendar_call" title="날짜 선택"></button>{{/if}}{{#if search}} <button type="button" class="btn btn_search"><span class="sr_only">검색</span></button>{{/if}}
+    {{#if r-text}}<span class="int-txt">{{r-text}}</span>{{/if}}
+    {{#unless no_del}}<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>{{/unless}}{{#if cal}}<button type="button" class="btn calendar_call" title="날짜 선택"></button>{{/if}}
   </div>
   {{!-- validation --}}
-  {{!-- 안내문구 노출 위치 --}}
-  {{#if msg1}}
-    <p class="msg_success">{{msg1}}</p>
-  {{/if}}
-  {{#if msg2}}
-    <p class="msg_error">{{msg2}}</p>
-  {{/if}}
-  {{#if msg3}}
-    <p class="msg_fail">{{msg3}}</p>
-  {{/if}}
-  {{!-- validation --}}
 </div>
+{{!-- 안내문구 노출 위치 --}}
+{{#if msg1}}
+  <p class="msg_success">{{msg1}}</p>
+{{/if}}
+{{#if msg2}}
+  <p class="msg_error">{{msg2}}</p>
+{{/if}}
+{{#if msg3}}
+  <p class="msg_fail">{{msg3}}</p>
+{{/if}}
+{{!-- validation --}}
