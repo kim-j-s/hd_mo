@@ -665,19 +665,206 @@
 /* 자동차보험 - 운전자정보 */
 /* 자동차보험 - 운전자 정보 */
 .select_driver_range .ouput_driver_relationship {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: end;
-	-ms-flex-align: end;
-	align-items: flex-end;
-	gap: 2.4rem;
 	margin: 3.2rem -2.4rem 0;
 	padding: 3.2rem 2.4rem;
 	background-color: #f5f5f5;
 	border-radius: 3.2rem;
 }
-.select_driver_range .relationship_box {
+.relationship_box {
+	position: relative;
+	height: 30.3rem;
+	overflow: hidden;
+}
+.relationship_box.pick1 .rel_case2 {
+	background-color: yellow;
+}
+.relationship_box.pick1 .rel_case2:before {
+	content: "선택됨";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	font-size: 0;
+	border: 0.2rem solid #f8633c;
+	border-radius: 2rem;
+}
+.relationship_box.pick2 .rel_case2,
+.relationship_box.pick2 .rel_case3 {
+	background-color: yellow;
+}
+.relationship_box.pick2 .rel_case2:before,
+.relationship_box.pick2 .rel_case3:before {
+	content: "선택됨";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	font-size: 0;
+	border: 0.2rem solid #f8633c;
+	border-radius: 2rem;
+}
+.relationship_box.pick3 .rel_case1,
+.relationship_box.pick3 .rel_case2,
+.relationship_box.pick3 .rel_case3,
+.relationship_box.pick3 .rel_case5 {
+	background-color: yellow;
+}
+.relationship_box.pick3 .rel_case1:before,
+.relationship_box.pick3 .rel_case2:before,
+.relationship_box.pick3 .rel_case3:before,
+.relationship_box.pick3 .rel_case5:before {
+	content: "선택됨";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	font-size: 0;
+	border: 0.2rem solid #f8633c;
+	border-radius: 2rem;
+}
+.relationship_box.pick4 [class^="rel_case"] {
+	background-color: yellow;
+}
+.relationship_box.pick4 [class^="rel_case"]:before {
+	content: "선택됨";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	font-size: 0;
+	border: 0.2rem solid #f8633c;
+	border-radius: 2rem;
+}
+.relationship_box.pick5 .rel_case4 {
+	background-color: yellow;
+}
+.relationship_box.pick5 .rel_case4:before {
+	content: "선택됨";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	font-size: 0;
+	border: 0.2rem solid #f8633c;
+	border-radius: 2rem;
+}
+.relationship_box.pick6 .rel_case2,
+.relationship_box.pick6 .rel_case6 {
+	background-color: yellow;
+}
+.relationship_box.pick6 .rel_case2:before,
+.relationship_box.pick6 .rel_case6:before {
+	content: "선택됨";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	font-size: 0;
+	border: 0.2rem solid #f8633c;
+	border-radius: 2rem;
+}
+.relationship_box.pick7 .rel_case2,
+.relationship_box.pick7 .rel_case3,
+.relationship_box.pick7 .rel_case6 {
+	background-color: yellow;
+}
+.relationship_box.pick7 .rel_case2:before,
+.relationship_box.pick7 .rel_case3:before,
+.relationship_box.pick7 .rel_case6:before {
+	content: "선택됨";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	font-size: 0;
+	border: 0.2rem solid #f8633c;
+	border-radius: 2rem;
+}
+.relationship_box.pick8 .rel_case2,
+.relationship_box.pick8 .rel_case3,
+.relationship_box.pick8 .rel_case5 {
+	background-color: yellow;
+}
+.relationship_box.pick8 .rel_case2:before,
+.relationship_box.pick8 .rel_case3:before,
+.relationship_box.pick8 .rel_case5:before {
+	content: "선택됨";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	font-size: 0;
+	border: 0.2rem solid #f8633c;
+	border-radius: 2rem;
+}
+.relationship_box.pick9 .rel_case2,
+.relationship_box.pick9 .rel_case5 {
+	background-color: yellow;
+}
+.relationship_box.pick9 .rel_case2:before,
+.relationship_box.pick9 .rel_case5:before {
+	content: "선택됨";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	font-size: 0;
+	border: 0.2rem solid #f8633c;
+	border-radius: 2rem;
+}
+.relationship_box.pick10 .rel_case5 {
+	background-color: yellow;
+}
+.relationship_box.pick10 .rel_case5:before {
+	content: "선택됨";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	font-size: 0;
+	border: 0.2rem solid #f8633c;
+	border-radius: 2rem;
+}
+.relationship_box [class^="rel_case"] {
+	position: absolute;
+	z-index: 10;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	background-color: #fff;
+	border-radius: 2rem;
+}
+.relationship_box [class^="rel_case"] > span {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -685,72 +872,91 @@
 	-webkit-box-direction: normal;
 	-ms-flex-direction: column;
 	flex-direction: column;
-	gap: 2.4rem;
-}
-.select_driver_range .relationship_box:first-child {
-	-webkit-box-flex: 1;
-	-ms-flex: 1;
-	flex: 1;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-}
-.select_driver_range .relationship_box .line {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: justify;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
-}
-.select_driver_range .relationship_box .line [class^="rel_case"] {
-	position: relative;
-	padding: 0 1.3rem;
-	background-color: #fff;
-	text-align: center;
-	border-radius: 2rem;
-}
-.select_driver_range .relationship_box .line [class^="rel_case"] > span {
-	display: block;
-	padding: 0.8rem 0;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	gap: 0.4rem;
+	padding: 0.8rem 1.3rem;
 	font-size: 1.4rem;
 	line-height: 2.1rem;
-	color: #3e4a58;
-	border-radius: 2rem;
+	text-align: center;
 }
-.select_driver_range .relationship_box .line [class^="rel_case"] > span img {
-	display: block;
+.relationship_box [class^="rel_case"] > span img {
 	height: 4.4rem;
-	margin: 0 auto;
-	margin-bottom: 0.4rem;
 }
-.select_driver_range .relationship_box .line [class^="rel_case"].active {
-	font-weight: 700;
-}
-.select_driver_range .relationship_box .line [class^="rel_case"].active:after {
-	position: absolute;
+.relationship_box .rel_case1 {
 	top: 0;
 	left: 0;
-	content: "";
-	width: 100%;
-	height: 100%;
-	border: 0.2rem solid #f8633c;
-	border-radius: 2rem;
-}
-.select_driver_range .relationship_box .line .rel_group {
-	display: -webkit-inline-box;
-	display: -ms-inline-flexbox;
-	display: inline-flex;
-	gap: 1.6rem;
-}
-.select_driver_range .relationship_box .line .rel_group .parent {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
+	width: 25.6rem;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 	gap: 1rem;
-	background-color: #fff;
-	padding: 0 2.4rem;
 }
-.select_driver_range .relationship_box .line .rel_group .parent i {
-	max-width: 10rem;
+.relationship_box .rel_case1 > span {
+	padding-left: 0;
+	padding-right: 0;
+}
+.relationship_box .rel_case1:after {
+	content: "";
+	display: block;
+	position: absolute;
+	bottom: -100vh;
+	left: 50%;
+	z-index: 1;
+	width: 1px;
+	height: 100vh;
+	background-color: #d9d9d9;
+}
+.relationship_box .rel_case2 {
+	top: 10.9rem;
+	left: 3rem;
+}
+.relationship_box .rel_case2 > span {
+	width: 9rem;
+}
+.relationship_box .rel_case2 > span:after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 100%;
+	z-index: 1;
+	width: 100vw;
+	height: 1px;
+	background-color: #d9d9d9;
+}
+.relationship_box .rel_case3 {
+	top: 10.9rem;
+	left: 50%;
+	margin-left: -2.8rem;
+}
+.relationship_box .rel_case3 > span {
+	width: 9rem;
+}
+.relationship_box .rel_case3 > span:after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 100%;
+	z-index: 1;
+	width: 100vw;
+	height: 1px;
+	background-color: #f5f5f5;
+}
+.relationship_box .rel_case4 {
+	top: 10.9rem;
+	right: 0;
+}
+.relationship_box .rel_case5 {
+	bottom: 0;
+	left: 3rem;
+}
+.relationship_box .rel_case5 > span {
+	width: 19.6rem;
+}
+.relationship_box .rel_case6 {
+	bottom: 0;
+	right: 0;
 }
