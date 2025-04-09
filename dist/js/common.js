@@ -59,17 +59,17 @@
 	$DOM.on("click", ".tooltip_wrap button", function () {
 		const $click = $(this).closest(".tooltip_wrap"),
 			$t_head = $click.children(".tooltip_head"),
-			$t_text = $click.find(".tooltip_text").children(".inner"),
+			$t_text = $click.find(".tooltip_panel").children(".inner"),
 			$focus_btn = $click.find(".open");
 
-		if ($(this).attr("class") == "open") {
+		if ($(this).hasClass("open")) {
 			$(".tooltip_wrap .tooltip_head").removeClass("active").find(".open").attr("aria-expanded", "false");
 			$t_head.addClass("active").find(".open").attr("aria-expanded", "true");
-			$(".tooltip_wrap .tooltip_text .inner").hide();
+			$(".tooltip_wrap .tooltip_panel .inner").hide();
 			$t_text.css("display", "block").focus();
 		} else {
 			$(".tooltip_wrap .tooltip_head").removeClass("active").find(".open").attr("aria-expanded", "false");
-			$(".tooltip_wrap .tooltip_text .inner").hide();
+			$(".tooltip_wrap .tooltip_panel .inner").hide();
 			$focus_btn.focus();
 		}
 	});
@@ -120,7 +120,7 @@
 			// (this.value) ? $wrap.addClass('active'):$wrap.removeClass('active');
 
 			//전화번호
-			if ($this.closest(".comp_wrap").hasClass("phone")) {
+			if ($this.closest(".input_text").hasClass("phone")) {
 				if (val) {
 					const newVal = val.replace(/ - /g, "");
 					$this.attr("maxlength", 8);
@@ -141,7 +141,7 @@
 			}, 100);
 
 			// 전화번호
-			if ($this.closest(".comp_wrap").hasClass("phone")) {
+			if ($this.closest(".input_text").hasClass("phone")) {
 				$this.attr("maxlength", 14);
 				if (val) {
 					val = val.replace(/[^0-9]/g, "");
