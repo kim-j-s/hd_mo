@@ -2516,6 +2516,9 @@ div:not(.comp_wrap) > .input_text:focus-within {
 .select_item.error .si_item::after {
 	border: 0.2rem solid var(--color-input-border-error);
 }
+.select_item[aria-disabled="true"] {
+	pointer-events: none;
+}
 .select_item[aria-disabled="true"] .si_item {
 	background-color: var(--color-input-surface-disabled);
 }
