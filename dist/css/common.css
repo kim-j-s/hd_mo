@@ -2473,11 +2473,25 @@ div:not(.comp_wrap) > .input_text:focus-within {
 	line-height: 2.4rem;
 	border-radius: var(--radius-medium3);
 }
+.select_item.select_item_case01 .si_item + .si_stat {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	white-space: nowrap;
+	clip: rect(0, 0, 0, 0);
+	clip-path: inset(50%);
+	visibility: hidden;
+	opacity: 0;
+}
 .select_item.select_item_case01 .si_item:empty::before {
 	content: attr(data-placeholder);
 	display: block;
 	min-height: 2.4rem;
 	color: var(--color-text-disabled);
+}
+.select_item.select_item_case01 .si_item:empty + .si_stat {
+	display: none;
 }
 .select_item.select_item_case01 .si_item::after {
 	content: "";
@@ -2588,9 +2602,6 @@ div:not(.comp_wrap) > .input_text:focus-within {
 }
 .opt_select_list.opt_case3 .option.active > .text {
 	background-color: var(--color-action-secondary-selected);
-}
-.opt_select_list.opt_case3 .option ~ .option {
-	margin-top: 1.2rem;
 }
 /* stepper */
 .stepper_list {

@@ -8,12 +8,26 @@
 			color: var(--color-text-subtle);
 			line-height: 24px;
 			border-radius: var(--radius-medium3);
+			+ .si_stat {
+				position: absolute;
+				width: 1px;
+				height: 1px;
+				overflow: hidden;
+				white-space: nowrap;
+				clip: rect(0, 0, 0, 0);
+				clip-path: inset(50%);
+				visibility: hidden;
+				opacity: 0;
+			}
 			&:empty {
 				&::before {
 					content: attr(data-placeholder);
 					display: block;
 					min-height: 24px;
 					color: var(--color-text-disabled);					
+				}
+				+ .si_stat {
+					display: none;
 				}
 			}
 			&::after {
