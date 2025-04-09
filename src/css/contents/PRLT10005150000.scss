@@ -1,4 +1,4 @@
-/* 자동차보험 - 운전자 정보 */
+/* 자동차보험 | 운전자 정보 - 운전자 범위 선택 */
 @mixin relationshipImg($name){
 	background-repeat: no-repeat;
 	background-image: url($name);
@@ -23,14 +23,10 @@
 }
 
 .select_driver_range {
-	.ouput_driver_relationship {
+	.driver_relationship_state {
 		// display: flex;
 		// align-items: flex-end;
 		// gap: 24px;
-		margin: 32px -24px 0;
-		padding: 32px 24px;
-		background-color: #F5F5F5;
-		border-radius: 32px;
 	}
 
 	// .relationship_box {
@@ -105,6 +101,12 @@
 	// }
 }
 
+.driver_relationship_state {
+	margin: 32px -24px 0;
+	padding: 32px 24px;
+	background-color: #F5F5F5;
+	border-radius: 32px;
+}
 
 .relationship_box {
 	position: relative;
@@ -314,5 +316,23 @@
 	.rel_case6 {
 		bottom: 0;
 		right: 0;
+	}
+}
+
+.relationship_box {
+	.rel_case1 {
+		> span {
+			padding-top: 56px;
+
+			&.ty1 {
+				min-width: 99px;
+				background:url(../images/content/prlt/img_rel_case1.svg) no-repeat center 8px / auto 44px;
+			}
+
+			&.ty2 {
+				min-width: 101px;
+				background:url(../images/content/prlt/img_rel_case2.svg) no-repeat center 8px / auto 44px;
+			}
+		}
 	}
 }
