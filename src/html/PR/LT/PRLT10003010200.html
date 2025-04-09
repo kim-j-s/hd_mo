@@ -1,0 +1,131 @@
+<!---
+화면번호 : PRLT10003010200
+경로 : 2.자동차 기본정보 > 2-2.자동차번호 입력 > 동일증권여부(동일동시만 있는 경우)
+-->
+{{#> layout/default page-title="자동차 기본정보 | 상품"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type02" popup-class="active" no-header=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- s: popup_content_top -->
+		<div class="popup_content_top">
+			<h2 class="title_h2">
+				보유 차량 중 <strong>동일증권 가입대상</strong><br>
+				차량을 선택해 주세요
+			</h2>
+		</div>
+		<!-- e: popup_content_top -->
+
+		<div class="target_area">
+
+		</div>
+		
+		<div class="card_item_wrap">
+			<div class="card_item">
+				<div class="item_inner">
+					<div class="inp_checkbox">
+						<input type="checkbox" id="card_chk1" name="name1" aria-labelledby="card_chk1_cont">
+						<label for="card_chk1" class="chk_label"></label>
+						<i></i>
+					</div>
+					<div class="inner_cont">
+						<a href="#" role="button" class="card_link">
+							<div class="item_top">
+								<div class="badge_wrap">
+									<span class="hd_badge badge_text solid-pastel c_success size_m">대상차량</span>
+								</div>
+								<div class="title_info">
+									<div class="sub_title">차량정보</div>
+									<div class="main_title">321가**54 (동일동시)</div>
+								</div>
+							</div>
+						</a>
+
+						<ul class="card_list_ty1" id="card_chk1_cont">
+							<li>
+								<div class="title">할인할증등급</div>
+								<div class="cont">
+									<p>23Z/42.9%</p>
+								</div>
+							</li>
+							<li>
+								<div class="title">보험기간</div>
+								<div class="cont">
+									<p>2020.01.01~2021.01.01</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="card_item">
+				<div class="item_inner">
+					<div class="inp_checkbox">
+						<input type="checkbox" id="card_chk2" name="name1" aria-labelledby="card_chk2_cont">
+						<label for="card_chk2" class="chk_label"></label>
+						<i></i>
+					</div>
+					<div class="inner_cont">
+						<a href="#" role="button" class="card_link">
+							<div class="item_top">
+								<div class="badge_wrap">
+									<span class="hd_badge badge_text solid-pastel c_success size_m">대상차량</span>
+								</div>
+								<div class="title_info">
+									<div class="sub_title">차량정보</div>
+									<div class="main_title">321가**54 (동일동시)</div>
+								</div>
+							</div>
+						</a>
+
+						<ul class="card_list_ty1" id="card_chk2_cont">
+							<li>
+								<div class="title">할인할증등급</div>
+								<div class="cont">
+									<p>23Z/42.9%</p>
+								</div>
+							</li>
+							<li>
+								<div class="title">보험기간</div>
+								<div class="cont">
+									<p>2020.01.01~2021.01.01</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{{> cp/checkbox id="checkbox1" labelname="선택안함" }}
+	 </div>
+
+	 <!-- s: 유의사항 -->
+	 <div class="bottom_fix_notice">
+		 <div class="acd_item">
+		 {{#> cp/accordian ac-title="동일증권 안내" active=true }}
+			 <ul class="list_ty1">
+				 <li>자동차가 2대 이상인 경우, 보험계약의 종료일을 동일하게 일치시켜 하나의 보험증권으로 가입하는 것을 말합니다. 만기일자가 동일하여 관리가 용이하며, 사고에 따른 할증이 전체 자동차 대수로 배분됩니다.</li>
+				 <li>동일증권으로 가입이 가능한 차량은 개인소유 승용 차(10인 이하), 경승합, 1톤 이하 화물차 입니다.</li>
+				 <li>할인할증등급은 고객님의 사고유무와 사고내용에 따라 산정되며, 등급이 높을수록 보험료 할인율이 높아지게 됩니다.</li>
+				 <li>동일증권 가입으로 보험기간이 1년 미만으로 되는 경우, 단기요율이 적용됩니다.</li>
+				 <li>추가문의 사항이 있으시면 콜센터 <a href="tel:+1899-6782">1899-6782</a>(내선1번)로 연락주시기 바랍니다.</li>
+			 </ul>
+		 {{/ cp/accordian }}
+		 </div>
+	 </div>
+	 <!-- e: 유의사항 -->
+</div>
+
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="선택 중이에요" disabled=true }}
+		<!-- {{> cp/button type="1" size="2" b-text="개별 가입하기"}} -->
+		<!-- {{> cp/button type="1" size="2" b-text="동일보험으로"}} -->
+	</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+{{/ layout/default }}
