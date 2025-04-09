@@ -38,80 +38,126 @@
 	</div>
 
 
+	<!-- 휴대폰번호 -->
+	<div class="guide_h4">Type - 생년월일</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">생년월일</div>
+			{{> cp/text class="birth_day" type="tel" placeholder="8자리" placeholder="생년월일을 입력하세요" maxlength="8" }}
+		</div>
+	</div>
 
 	<!-- 휴대폰번호 -->
 	<div class="guide_h4">Type - 휴대폰번호</div>
-	{{> cp/text class="phone" type="tel" placeholder="4자리" placeholder="-없이 입력하세요" maxlength="8" l-text="010" }}
-	
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">휴대폰번호</div>
+			{{> cp/text class="phone" type="tel" placeholder="4자리" placeholder="-없이 입력하세요" maxlength="8" l-text="010" }}
+		</div>
+	</div>
 	<!-- 카드번호 -->
 	<div class="guide_h4">Type - 카드</div>
-	<div class="comp_wrap card">
-		{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 첫번째 4자리 입력" no_del="flase" }}
-		<span class="dash">-</span>
-		{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 두번째 4자리 입력" no_del="flase" }}
-		<span class="dash">-</span>
-		{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 세번째 4자리 입력" no_del="flase" }}
-		<span class="dash">-</span>
-		{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" title="카드 마지막번째 4자리 입력" no_del="flase" }}
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">카드번호</div>
+			<div class="comp_wrap card">
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 첫번째 4자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 두번째 4자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 세번째 4자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" title="카드 마지막번째 4자리 입력" no_del="flase" }}
+			</div>
+		</div>
 	</div>
 	<div class="guide_h4">Type - 카드(readonly)</div>
-	<div class="comp_wrap card">
-		{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 첫번째 4자리 입력" value="2232" no_del="flase" readonly=true }}
-		<span class="dash">-</span>
-		{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 두번째 4자리 입력" no_del="flase" }}
-		<span class="dash">-</span>
-		{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 세번째 4자리 입력" no_del="flase" }}
-		<span class="dash">-</span>
-		{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" title="카드 마지막번째 4자리 입력" no_del="flase" }}
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">카드번호</div>
+			<div class="comp_wrap card">
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 첫번째 4자리 입력" value="2232" no_del="flase" readonly=true }}
+				<span class="dash">-</span>
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 두번째 4자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 세번째 4자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" title="카드 마지막번째 4자리 입력" no_del="flase" }}
+			</div>
+		</div>
 	</div>
 	<div class="guide_h4">Type - 카드(disabled)</div>
-	<div class="comp_wrap card">
-		{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 첫번째 4자리 입력" value="2232" no_del="flase" disabled=true }}
-		<span class="dash">-</span>
-		{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 두번째 4자리 입력" no_del="flase" }}
-		<span class="dash">-</span>
-		{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 세번째 4자리 입력" no_del="flase" }}
-		<span class="dash">-</span>
-		{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" title="카드 마지막번째 4자리 입력" no_del="flase" }}
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">카드번호</div>
+			<div class="comp_wrap card">
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 첫번째 4자리 입력" value="2232" no_del="flase" disabled=true }}
+				<span class="dash">-</span>
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 두번째 4자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 세번째 4자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" title="카드 마지막번째 4자리 입력" no_del="flase" }}
+			</div>
+		</div>
 	</div>
 
 	<!-- 주민등록번호 -->
 	<div class="guide_h4">Type - 주민등록번호</div>
-	<div class="comp_wrap birth">
-		{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" title="주민등록번호 앞자리 입력" }}
-		<span class="dash">-</span>
-		{{> cp/text type="password" class="masking" minlength="7" maxlength="7" placeholder="뒷자리" title="주민등록번호 뒷자리 입력" }}
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">주민등록번호</div>
+			<div class="comp_wrap birth">
+				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" title="주민등록번호 앞자리 입력" }}
+				<span class="dash">-</span>
+				{{> cp/text type="password" class="masking" minlength="7" maxlength="7" placeholder="뒷자리" title="주민등록번호 뒷자리 입력" }}
+			</div>
+		</div>
 	</div>
 	<br><br>
 	<div class="guide_h4">Type - 주민등록번호 뒷자리만 입력</div>
-	<div class="comp_wrap birth">
-		{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" value="250303" title="주민등록번호 앞자리 입력" readonly=true }}
-		<span class="dash">-</span>
-		{{> cp/text type="password" class="masking" minlength="7" maxlength="7" placeholder="뒷자리" title="주민등록번호 뒷자리 입력" }}
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">주민등록번호</div>
+			<div class="comp_wrap birth">
+				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" value="250303" title="주민등록번호 앞자리 입력" readonly=true }}
+				<span class="dash">-</span>
+				{{> cp/text type="password" class="masking" minlength="7" maxlength="7" placeholder="뒷자리" title="주민등록번호 뒷자리 입력" }}
+			</div>
+		</div>
 	</div>
 	<br><br>
 	<div class="guide_h4">Type - 주민등록번호 뒷자리 한자리만</div>
-	<div class="comp_wrap birth">
-		{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" title="주민등록번호 앞자리 입력" }}
-		<span class="dash">-</span>
-		<div class="id_pass_box">
-			{{> cp/text type="tel" minlength="1" maxlength="1" placeholder="1" title="주민등록번호 뒷1자리 입력" no_del="flase" }}
-			<div class="id_pass">
-				●●●●●●
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">주민등록번호</div>
+			<div class="comp_wrap birth">
+				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" title="주민등록번호 앞자리 입력" }}
+				<span class="dash">-</span>
+				<div class="id_pass_box">
+					{{> cp/text type="tel" minlength="1" maxlength="1" placeholder="1" title="주민등록번호 뒷1자리 입력" no_del="flase" }}
+					<div class="id_pass">
+						●●●●●●
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 	<br><br>
 
 	<div class="guide_h4">Type - 주민등록번호 - 보안키패드 호출 시 - 입력 전</div>
-	<div class="comp_wrap birth">
-		{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" title="주민등록번호 앞자리 입력"  }}
-		<span class="dash">-</span>
-		<div class="comp_wrap_keypad_call">
-			<button type="button" class="btn keypad_call" title="주민등록번호 뒷자리 입력"><span class="text">뒷자리</span></button>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">주민등록번호</div>
+			<div class="comp_wrap birth">
+				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" title="주민등록번호 앞자리 입력"  }}
+				<span class="dash">-</span>
+				<div class="comp_wrap_keypad_call">
+					<button type="button" class="btn keypad_call" title="주민등록번호 뒷자리 입력"><span class="text">뒷자리</span></button>
+				</div>
+			</div>
 		</div>
 	</div>
-
 	<div class="guide_discription">인증번호</div>
 	<div class="form_group_wrap">
 		<div class="form_line">
@@ -127,7 +173,12 @@
 
 	<!-- File -->
 	<div class="guide_h4">Type - file - 구조 사용 - 추후 디자인 반영 필요</div>
-	{{> cp/file id="file" text="파일을 선택해주세요." }}
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">파일 업로드</div>
+			{{> cp/file id="file" text="파일을 선택해주세요." }}
+		</div>
+	</div>
 
 	<div class="guide_h1">label명 + type</div>
 	<div class="guide_h4">.form_group_wrap</div>
