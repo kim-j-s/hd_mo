@@ -1,7 +1,7 @@
 {{#> layout/guide }}
 
 	<div class="guide_h1">선택목록 가이드</div>
-	<div class="guide_h4">선택 버튼 - 선택 팝업 호출 - 선택 전 - c2</div>
+	<div class="guide_h4">선택 버튼 - 선택 팝업 호출 - 선택 전 - c1</div>
 	{{> cp/selectitem si_popup="pop_type01" si_ph="선택해주세요." si_title="연도 선택"}}
 
 	<div class="guide_h4">선택 버튼 - 선택 팝업 호출 - 선택 후</div>
@@ -40,6 +40,20 @@
 	<!-- e: pop_type01 -->
 
 	<!-- e: popup area -->
+
+	<script>
+		$('.select_item').on('click', function (e) {
+			console.log('click');
+			if ($(this).attr('aria-disabled') === 'true') {
+				e.preventDefault();
+				e.stopPropagation();
+				return false;
+			}
+	
+			// 실제 버튼 동작
+			// alert('클릭됨!');
+		});
+	</script>
 
 
 
