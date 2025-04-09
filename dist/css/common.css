@@ -78,10 +78,11 @@ strong {
 	margin-top: 3.2rem;
 }
 .info_box {
-	padding: 2rem;
-	font-size: 1.6rem;
+	padding: var(--padding-card-medium) var(--padding-card-small);
+	background-color: var(--color-surface-secondary-subtler);
+	font-size: var(--font-size-body-medium);
 	line-height: 2.4rem;
-	background-color: #f2f5f8;
+	color: var(--color-text-basic);
 	border-radius: 1.6rem;
 }
 .info_box .btn_area {
@@ -95,6 +96,9 @@ strong {
 }
 .info_box + .chk_group_wrap {
 	margin-top: 5.2rem;
+}
+.info_box [class^="list_ty"] > li {
+	color: var(--color-text-basic);
 }
 .car_alarm_box {
 	display: -webkit-box;
@@ -2251,9 +2255,9 @@ div:not(.comp_wrap) > .input_text:focus-within {
 	position: relative;
 	margin: 0;
 	padding: 0 0 0 1rem;
-	font-size: 1.4rem;
+	font-size: var(--font-size-body-small);
 	line-height: 2rem;
-	color: #3e4a58;
+	color: var(--color-text-basic);
 }
 .list_ty1 > li::before {
 	background-color: #3e4a58;
@@ -2289,6 +2293,29 @@ div:not(.comp_wrap) > .input_text:focus-within {
 }
 .list_ty2 > li ~ li {
 	margin-top: 0.8rem;
+}
+.list_ty3 > li {
+	position: relative;
+	margin: 0;
+	padding: 0 0 0 1.5rem;
+	font-size: var(--font-size-body-medium);
+	line-height: 2.4rem;
+	color: #3e4a58;
+}
+.list_ty3 > li::before {
+	background-color: #3e4a58;
+}
+.list_ty3 > li::before {
+	content: "";
+	position: absolute;
+	top: 1rem;
+	left: 0.4rem;
+	width: 0.3rem;
+	height: 0.3rem;
+	border-radius: 100%;
+}
+.list_ty3 > li ~ li {
+	margin-top: 1.2rem;
 }
 /* notice */
 /* bottom_fix_notice */
@@ -2515,6 +2542,9 @@ div:not(.comp_wrap) > .input_text:focus-within {
 }
 .select_item.error .si_item::after {
 	border: 0.2rem solid var(--color-input-border-error);
+}
+.select_item[aria-disabled="true"] {
+	pointer-events: none;
 }
 .select_item[aria-disabled="true"] .si_item {
 	background-color: var(--color-input-surface-disabled);
@@ -2762,6 +2792,7 @@ div:not(.comp_wrap) > .input_text:focus-within {
 .text_sub {
 	font-size: var(--font-size-body-medium);
 	line-height: 2.4rem;
+	color: #3e4a58;
 }
 .text_sub + * {
 	margin-top: 2.4rem;

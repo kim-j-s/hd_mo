@@ -90,10 +90,11 @@ strong {
 }
 
 .info_box {
-	padding: 20px;
-	font-size: 16px;
+	padding: var(--padding-card-medium) var(--padding-card-small);;
+	background-color: var(--color-surface-secondary-subtler);
+	font-size: var(--font-size-body-medium);
 	line-height: 24px;
-	background-color: #f2f5f8;
+	color: var(--color-text-basic);
 	border-radius: 16px;
 
 	.btn_area {
@@ -109,6 +110,11 @@ strong {
 	}
 	& + .chk_group_wrap {
 		margin-top: 52px;
+	}
+	[class^='list_ty']{
+		> li {
+			color: var(--color-text-basic);
+		}
 	}
 }
 
