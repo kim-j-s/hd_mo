@@ -1,18 +1,27 @@
 {{#> layout/guide }}
 	<div class="guide_h1">Tooltip</div>
 	<div class="guide_h4">Defalut (Bottom)</div>
-	<div class="guide_discription">툴팁내용 1줄일 때 (예시)</div>
-	<div>
+
+	<!-- 기본 툴팁 샘플 -->
+	<div class="guide_discription">기본</div>
+	{{#> cp/tooltip trigger-icon="fill_18_info" position="left"}}
+	<p>툴팁샘플입니다.</p>
+	{{/  cp/tooltip}}
+
+
+	<div class="guide_discription">[툴팁내용 1줄일 때]</div>
+	<div>		
 		<span>
 			텍스트 텍스트 텍스트 텍스트텍스트<br>
 			텍스트텍스트텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트
 		</span>
-		{{> cp/tooltip text="<strong>내용</strong> 내용 샘플 <b>샘풀</b>" trigger-icon="fill_18_info"}}
+		{{> cp/tooltip text="<p>내용을 text속성으로 넣었습니다.</p>" trigger-icon="fill_18_info"}}
 	</div>
 
-	<div class="guide_discription">툴팁내용 여러 줄일 때 (예시)</div>
+	<div class="guide_discription">[툴팁내용 여러 줄일 때]</div>
 	<div>
-		{{#> cp/tooltip}}
+		{{#> cp/tooltip trigger-icon="fill_18_info"}}
+		<p>내용을 partial로 넣었습니다.</p>
 		<p>
 			내용입니다.<br>
 			내용입니다.<br>
@@ -31,10 +40,16 @@
 		<span class="tooltip_wrap_text">
 			텍스트 텍스트 텍스트 텍스트텍스트<br>
 			텍스트텍스트텍스트텍스트 텍스트텍스트
-			{{#> cp/tooltip }}
+			{{#> cp/tooltip trigger-icon="fill_18_info"}}
+			<p>내용을 partial로 넣었습니다.</p>
 			<p>
-				테스트입니다.<br>
-				내용입니다.<br>내용입니다.<br>내용입니다.</p>
+				내용입니다.<br>
+				내용입니다.<br>
+				내용입니다.<br>
+				내용입니다.<br>
+				내용입니다.<br>
+				내용입니다.
+			</p>
 			{{/ cp/tooltip}}
 			텍스트텍스트 텍스트텍스트 텍스트텍스트
 			텍스트텍스트텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트
@@ -42,13 +57,13 @@
 	</div>
 
 
-	<div class="guide_h4">Top</div>
+	<div class="guide_h4">Top (t-class="top")</div>
 	<div>
 		<span>
 			텍스트 텍스트 텍스트 텍스트텍스트<br>
 			텍스트텍스트텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트
 		</span>
-		{{> cp/tooltip t-class="top" text="<strong>내용</strong> 내용 샘플 <b>샘풀</b>"}}
+		{{> cp/tooltip t-class="top" text="<p>position이 top일 때 팝업</p><p>내용을 text속성으로 넣었습니다.</p>" trigger-icon="fill_18_info"}}
 	</div>
 
 	<br><br>
@@ -57,16 +72,17 @@
 		<span>
 			텍스트 텍스트 텍스트 텍스트텍스트<br>
 			텍스트텍스트텍스트텍스트 텍스트텍스트
-			{{#> cp/tooltip t-class="top" }}
-				테스트입니다.<br>
-				내용입니다.<br>내용입니다.<br>내용입니다.
+			{{#> cp/tooltip t-class="top" trigger-icon="fill_18_info"}}
+				<p>position이 top일 때 팝업</p>				
+				<p>내용을 partial로 넣었습니다.</p>
 			{{/ cp/tooltip}}
 			텍스트텍스트 텍스트텍스트 텍스트텍스트
 			텍스트텍스트텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트
 		</span>
-		{{#> cp/tooltip t-class="top"}}
-			내용입니다.<br>
+		{{#> cp/tooltip t-class="top" trigger-icon="fill_18_info"}}
+			<p>position이 top일 때 팝업</p>
+			<p>내용을 partial로 넣었습니다.</p>
 		{{/ cp/tooltip}}
-	</div>
-		
+	</div>		
 {{/ layout/guide }}
+

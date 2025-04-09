@@ -1725,6 +1725,8 @@ strong {
 	display: inline-block;
 	background-size: contain;
 	background-repeat: no-repeat;
+	width: 2.4rem;
+	height: 2.4rem;
 }
 /**
 * 아이콘 에셋
@@ -2825,13 +2827,14 @@ div:not(.comp_wrap) > .input_text:focus-within {
 .tooltip_wrap {
 	position: relative;
 	display: inline;
+	text-align: left;
 }
 .tooltip_wrap .tooltip_head {
 	position: relative;
 	display: inline-block;
+	width: 2.4rem;
 	height: 2.4rem;
-	-webkit-transform: translateY(0.4rem);
-	transform: translateY(0.4rem);
+	line-height: 0;
 }
 .tooltip_wrap .tooltip_head button {
 	width: 2.4rem;
@@ -2849,6 +2852,9 @@ div:not(.comp_wrap) > .input_text:focus-within {
 	-webkit-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
 }
+.tooltip_wrap .tooltip_head button.trigger_btn {
+	background-color: transparent;
+}
 .tooltip_wrap .tooltip_head .open {
 	display: inline-block;
 	width: 2.4rem;
@@ -2857,48 +2863,96 @@ div:not(.comp_wrap) > .input_text:focus-within {
 .tooltip_wrap .tooltip_head.active::after {
 	content: "";
 	position: absolute;
-	left: calc(50% - 0.8rem);
-	bottom: -1.2rem;
+	left: calc(50% - 0.4rem);
+	top: calc(100% + 1px);
 	width: 0.8rem;
 	height: 0.8rem;
-	border: 0.8rem solid gray;
-	border-left-color: transparent;
-	border-right-color: transparent;
-	border-top-color: transparent;
+	pointer-events: none;
+	background-color: var(--color-element-gray-dark);
+	clip-path: path("M4.74763 0.335971L7.81713 3.79145C7.93493 3.92407 8 4.09529 8 4.27268C8 4.67287 7.67558 4.99729 7.27539 4.99729H0.724613C0.32442 4.99729 0 4.67287 0 4.27268C0 4.09529 0.0650669 3.92407 0.182872 3.79145L3.25237 0.335971C3.65019 -0.111871 4.34981 -0.111871 4.74763 0.335971Z");
 }
 .tooltip_wrap .tooltip_head.top::after {
 	top: -1.2rem;
-	bottom: auto;
-	border-top-color: gray;
-	border-bottom-color: transparent;
+	-webkit-transform: scaleY(-1);
+	transform: scaleY(-1);
 }
-.tooltip_wrap .tooltip_head.top.active + .tooltip_text {
+.tooltip_wrap .tooltip_head.top.active + .tooltip_panel {
 	margin-top: 0;
-	bottom: 2.4rem;
+	bottom: 3.45rem;
 	top: auto;
 }
-.tooltip_wrap .tooltip_text {
+.tooltip_wrap .tooltip_panel {
 	display: block;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 	position: absolute;
 	width: calc(100vw - 4rem);
 	z-index: 10;
-	top: calc(100% + 1.3rem);
+	top: calc(100% + 0.3rem);
 }
-.tooltip_wrap .tooltip_text .inner {
+.tooltip_wrap .tooltip_panel .inner {
+	position: relative;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 	display: none;
-	padding: 1rem;
-	background-color: gray;
+	padding: 1.2rem 1.6rem;
+	background-color: var(--color-element-gray-dark);
 	border-radius: 1rem;
+	color: #ffffff;
+	text-align: left;
+	font-size: var(--font-size-body-xsmall);
 }
-.tooltip_wrap .tooltip_text .close {
-	position: absolute;
-	top: 0.4rem;
-	right: 0.6rem;
+.tooltip_wrap .tooltip_panel .inner .inner_title {
+	height: 100%;
+	line-height: 150%;
+}
+.tooltip_wrap .tooltip_panel .inner .inner_title + .inner_contents {
+	margin-top: 0.2rem;
+}
+.tooltip_wrap .tooltip_panel .inner .inner_contents {
+	line-height: 150%;
+}
+.tooltip_wrap .tooltip_panel .inner .inner_contents + .inner_footer {
+	margin-top: 0.8rem;
+}
+.tooltip_wrap .tooltip_panel .inner .inner_footer > .btn_link {
+	display: block;
+}
+.tooltip_wrap .tooltip_panel .inner .inner_footer > .btn_link span {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	line-height: 1.8rem;
+	color: #fff;
+}
+.tooltip_wrap .tooltip_panel .inner .inner_footer > .btn_link span:after {
 	display: inline-block;
-	width: 2.4rem;
-	height: 2.4rem;
-	background-color: blue;
+	content: "";
+	width: 1.6rem;
+	height: 1.6rem;
+	background: url(../images/icon/arrowRight_ty1.svg) no-repeat center/contain;
 }
-.tooltip_wrap_text {
+.tooltip_wrap .tooltip_panel .inner .inner_footer > .btn_link:active > span,
+.tooltip_wrap .tooltip_panel .inner .inner_footer > .btn_link:focus > span {
+	color: var(--color-text-basic, #1e2124);
+}
+.tooltip_wrap .tooltip_panel .inner .inner_footer > .btn_link:active > span:after,
+.tooltip_wrap .tooltip_panel .inner .inner_footer > .btn_link:focus > span:after {
+	background-image: url(../images/icon/arrowRight_ty3.svg);
+}
+.tooltip_wrap .tooltip_panel .inner .close {
+	position: absolute;
+	display: inline-block;
+	top: 1.2rem;
+	right: 1.6rem;
+	width: 1.6rem;
+	height: 1.6rem;
+	background-color: blue;
+	background: url(../images/icon/close_ty2.svg) no-repeat center/contain;
+}
+.tooltip_wrap .tooltip_wrap_text {
 	line-height: 1.5;
 }
