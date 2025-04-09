@@ -1784,32 +1784,44 @@ strong {
 }
 /* input */
 div:not(.comp_wrap) > .input_text {
-	border: 1px solid var(--border-width-variable-regular);
-	border: 1px solid #8a949e;
+	border: var(--border-width-variable-regular) solid var(--color-input-border);
+	background: var(--color-input-surface);
+	border-radius: var(--radius-medium3);
 }
 div:not(.comp_wrap) > .input_text:focus-within {
 	border-color: var(--color-input-border-active);
 }
 .input_text {
 	position: relative;
-	border-radius: 1.6rem;
-}
-.input_text .inp {
-	position: relative;
-	border-radius: inherit;
+	border-radius: var(--radius-medium3);
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
+	gap: 0.8rem;
+}
+.input_text .inp {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	width: 100%;
+	border-radius: inherit;
 }
 .input_text input {
 	position: relative;
 	display: block;
 	width: 100%;
-	height: 5.6rem;
-	padding: 0.3rem 0.8rem 0.3rem 1.6rem;
+	height: var(--size-height-8);
+	padding: 0.3rem 3.2rem 0.3rem 1.6rem;
 	font-size: 1.6rem;
 	line-height: 2.4rem;
 	-webkit-appearance: none;
@@ -1854,12 +1866,38 @@ div:not(.comp_wrap) > .input_text:focus-within {
 .input_text input:focus {
 	outline: none;
 }
+.input_text .int-txt {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+	font-size: var(--font-size-body-medium);
+}
+.input_text .int-txt.left {
+	padding-left: 1.6rem;
+}
+.input_text .int-txt.right {
+	padding-right: 1.6rem;
+}
+.input_text .del,
+.input_text .calendar_call,
+.input_text .btn_search {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
 .input_text .del {
 	display: none;
-	margin-right: 1.6rem;
-	width: 2rem;
-	height: 2rem;
-	background: url(../images/icon/icon_reset.svg) no-repeat center/1.6rem auto;
+	width: 4.4rem;
+	height: 5rem;
+	background: url(../images/icon/icon_reset.svg) no-repeat center right 1.6rem/1.6rem auto;
+}
+.input_text.phone {
+	width: 100%;
+}
+.input_text.phone .inp input {
+	padding-left: 0;
 }
 .input_text.calendar input {
 	padding-right: 7.6rem;
@@ -1876,35 +1914,47 @@ div:not(.comp_wrap) > .input_text:focus-within {
 .input_text .birth_all {
 	position: relative;
 }
-.msg_success {
-	color: blue;
+.input_text .inp_file {
+	width: 100%;
 }
-.msg_fail {
-	color: red;
-}
-.inp_file input[type="file"] {
+.input_text .inp_file input[type="file"] {
 	position: absolute;
 	width: 1px;
 	height: 1px;
 	overflow: hidden;
 	clip: rect(0, 0, 0, 0);
 	border: none;
+	background: var(--color-input-surface);
 }
-.inp_file input[type="file"] + label {
+.input_text .inp_file input[type="file"] + label {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	font-size: 1.4rem;
-	line-height: 2rem;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	height: 5.4rem;
+	width: 100%;
+	padding: 0.3rem 1.6rem;
+	font-size: 1.6rem;
+	line-height: 2.4rem;
 }
-.inp_file input[type="file"] + label .file_name {
+.input_text .inp_file input[type="file"] + label .file_name {
 	-webkit-box-flex: 1;
 	-ms-flex: 1;
 	flex: 1;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
-.inp_file input[type="file"] + label .file_btn {
-	background-color: #999;
-	color: #fff;
+.msg_success {
+	color: blue;
+}
+.msg_fail {
+	color: red;
 }
 /* _조합 input */
 .comp_wrap {
@@ -1916,9 +1966,8 @@ div:not(.comp_wrap) > .input_text:focus-within {
 	-ms-flex-align: center;
 	align-items: center;
 	gap: 0.4rem;
-	border: 1px solid var(--border-width-variable-regular);
-	border: 1px solid #8a949e;
-	border-radius: 1.6rem;
+	border: var(--border-width-variable-regular) solid var(--color-input-border);
+	border-radius: var(--radius-medium3);
 	/* comp_wrap 내부에서 보안키패드 호출 버튼 공통 사용요소 - 필요시 각 class별로 별도 설정 필요 */
 }
 .comp_wrap:focus-within {
@@ -1935,122 +1984,6 @@ div:not(.comp_wrap) > .input_text:focus-within {
 	-ms-flex-align: center;
 	align-items: center;
 	border: none;
-}
-.comp_wrap .price_wrap {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	gap: 0.8rem;
-	padding: 0.4rem 1.6rem;
-	border: 1px solid #ddd;
-	border-radius: 1.6rem;
-	height: 5.2rem;
-	max-width: 100%;
-	font-size: var(--font-size-body-medium);
-}
-.comp_wrap .price_wrap .code_first {
-	color: #6c7882;
-}
-.comp_wrap .price_wrap .inp {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-webkit-box-flex: 1;
-	-ms-flex: 1;
-	flex: 1;
-}
-.comp_wrap .price_wrap .inp input {
-	width: 100%;
-	border: none;
-	text-align: right;
-}
-.comp_wrap .price_wrap .inp input:focus-visible {
-	outline: 0px;
-}
-.comp_wrap .price_wrap .inp input:-moz-read-only {
-	color: inherit;
-	cursor: default;
-}
-.comp_wrap .price_wrap .inp input:read-only {
-	color: inherit;
-	cursor: default;
-}
-.comp_wrap .price_wrap .inp input::-webkit-input-placeholder {
-	width: 100%;
-	text-align: left;
-}
-.comp_wrap .price_wrap .inp input::-moz-placeholder {
-	width: 100%;
-	text-align: left;
-}
-.comp_wrap .price_wrap .inp input:-ms-input-placeholder {
-	width: 100%;
-	text-align: left;
-}
-.comp_wrap .price_wrap .inp input::-ms-input-placeholder {
-	width: 100%;
-	text-align: left;
-}
-.comp_wrap .price_wrap .inp input::placeholder {
-	width: 100%;
-	text-align: left;
-}
-.comp_wrap .price_wrap.result {
-	gap: 0.4rem;
-	padding: 0.4rem 1.6rem;
-	border-radius: 2rem;
-	height: 5.2rem;
-	border: 1px solid #f2650e;
-	font-size: var(--font-size-body-small);
-}
-.comp_wrap .price_wrap.result .code_first {
-	-webkit-box-flex: 1;
-	-ms-flex-positive: 1;
-	flex-grow: 1;
-	color: #697584;
-}
-.comp_wrap .price_wrap.result .code_unit {
-	color: #3e4a58;
-}
-.comp_wrap .price_wrap.result .inp {
-	max-width: 60%;
-}
-.comp_wrap .price_wrap.result .inp input {
-	width: 100%;
-	border: none;
-	font-size: var(--font-size-heading-large);
-	text-align: right;
-	font-weight: 700;
-	line-height: 150%; /* 36px */
-}
-.comp_wrap .price_wrap.result .inp input:focus-visible {
-	outline: 0px;
-}
-.comp_wrap .price_wrap.result .inp input::-webkit-input-placeholder {
-	text-align: right;
-	color: inherit;
-}
-.comp_wrap .price_wrap.result .inp input::-moz-placeholder {
-	text-align: right;
-	color: inherit;
-}
-.comp_wrap .price_wrap.result .inp input:-ms-input-placeholder {
-	text-align: right;
-	color: inherit;
-}
-.comp_wrap .price_wrap.result .inp input::-ms-input-placeholder {
-	text-align: right;
-	color: inherit;
-}
-.comp_wrap .price_wrap.result .inp input::placeholder {
-	text-align: right;
-	color: inherit;
 }
 .comp_wrap .comp_wrap_keypad_call {
 	-webkit-box-flex: 1;
@@ -2079,33 +2012,51 @@ div:not(.comp_wrap) > .input_text:focus-within {
 	background-color: var(--color-input-surface-disabled);
 	border-radius: 1.2rem;
 }
+.comp_wrap.price_big .price input {
+	color: var(--primay-900-d-82600);
+	color: #d82600;
+	font-size: var(--font-size-heading-large);
+	font-weight: 700;
+}
+.comp_wrap.price_big .price input::-webkit-input-placeholder {
+	font-weight: 400;
+}
+.comp_wrap.price_big .price input::-moz-placeholder {
+	font-weight: 400;
+}
+.comp_wrap.price_big .price input:-ms-input-placeholder {
+	font-weight: 400;
+}
+.comp_wrap.price_big .price input::-ms-input-placeholder {
+	font-weight: 400;
+}
+.comp_wrap.price_big .price input::placeholder {
+	font-weight: 400;
+}
+.comp_wrap.price_big .price .int-txt {
+	font-size: var(--font-size-body-small);
+}
+.comp_wrap.price_big .price .del {
+	right: calc(100% - 3.6rem);
+}
+.comp_wrap.price_big:focus-within {
+	border-color: #f2650e;
+}
+.price {
+	width: 100%;
+}
+.price .inp {
+	width: 100%;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
 .price .inp input {
+	padding-right: 0;
 	text-align: right;
 }
-.price .int-txt {
-	padding-right: 1.6rem;
-	font-size: var(--font-size-body-medium);
-}
-.price .int-txt + .del {
-	margin-left: -0.8rem;
-}
-.phone {
-	padding-left: 1.6rem;
-}
-.phone .code_first {
-	font-size: 1.6rem;
-}
-.phone .input_text {
-	width: 100%;
-}
-.phone .input_text .inp {
-	width: 100%;
-}
-.phone .input_text .inp input {
-	padding-left: 0.8rem;
-}
-.phone .input_text .inp input.isVal {
-	padding-left: 0;
+.price .del {
+	right: calc(100% - 4.8rem);
 }
 .card {
 	padding: 0 1.6rem;
@@ -2135,13 +2086,13 @@ div:not(.comp_wrap) > .input_text:focus-within {
 	-ms-flex-align: center;
 	align-items: center;
 	gap: 0.4rem;
+	width: 100%;
 }
 .birth > .input_text {
 	width: calc(50% - 0.8rem);
 }
 .birth input {
 	height: 4.8rem;
-	text-align: center;
 }
 .birth .id_pass_box {
 	display: -webkit-box;
@@ -2157,7 +2108,7 @@ div:not(.comp_wrap) > .input_text:focus-within {
 	border: none;
 }
 .birth .id_pass_box input {
-	padding: 0.4rem;
+	padding: 0;
 	width: 2rem;
 	height: 2.5rem;
 	text-align: center;
@@ -2165,12 +2116,46 @@ div:not(.comp_wrap) > .input_text:focus-within {
 	border-radius: 0;
 }
 .birth .id_pass_box .id_pass {
-	line-height: 4.2rem;
+	line-height: 4.8rem;
 	width: 100%;
 	font-size: 1.6rem;
 	text-align: center;
 	background-color: var(--color-input-surface-disabled);
 	border-radius: 1.2rem;
+}
+.key_number {
+	width: 100%;
+	padding-right: 1.6rem;
+}
+.key_number .input_text {
+	-webkit-box-flex: 1;
+	-ms-flex: auto;
+	flex: auto;
+}
+.key_number .input_text .int-txt {
+	padding-right: 0;
+	font-size: var(--font-size-button-small);
+	color: var(--color-text-point);
+}
+.key_number button {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+}
+@media screen and (max-width: 359px) {
+	.key_number {
+		padding-right: 1.2rem;
+		gap: 0.4rem;
+	}
+	.key_number .input_text {
+		gap: 0.4rem;
+	}
+	.key_number .input_text input {
+		padding: 0.3rem 0 0.3rem 1.2rem;
+	}
+	.key_number .hd_btn_s_4 {
+		padding: 0 var(--padding-3);
+	}
 }
 /* Form group */
 .form_group_wrap + .form_group_wrap {
@@ -2216,9 +2201,9 @@ div:not(.comp_wrap) > .input_text:focus-within {
 	margin-top: 1.6rem;
 }
 .form_group_wrap .form_line .label_tit {
-	font-size: 1.4rem;
+	font-size: var(--font-size-label-medium);
 	line-height: 2.1rem;
-	margin-bottom: 0.9rem;
+	margin-bottom: var(--padding-3);
 }
 .form_group_wrap .form_line .btn_area {
 	margin-top: 1.6rem;

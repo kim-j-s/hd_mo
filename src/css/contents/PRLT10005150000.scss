@@ -28,6 +28,7 @@
 
 @mixin activeImage($count){
 	background-image: url(../images/content/prlt/img_rel_case#{$count}_on.svg);
+
 }
 
 .select_driver_range {
@@ -121,6 +122,188 @@
 	height: 303px;
 	overflow: hidden;
 
+	[class^=rel_case]{
+		position: absolute;
+		z-index: 10;
+		display: flex;
+		background-color: #fff;
+		border-radius: 20px;
+
+		> span {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: 4px;
+			padding: 56px 13px 8px;
+			background-repeat: no-repeat;
+			background-size: auto 44px;
+			background-position: center 8px;
+			font-size: 14px;
+			line-height: 21px;
+			text-align: center;
+			white-space: nowrap;
+
+			img {
+				height: 44px;
+			}
+		}
+	}
+	.rel_case1 {
+		top: 0;
+		left: 0;
+		display: flex;
+		// justify-content: center;
+		justify-content: space-between;
+		gap: 10px;
+		// width: 256px;
+		width: calc(50% + 90px);
+		padding: 0 24px;
+
+		> span {
+			position: relative;
+			min-width: 99px;
+			
+			&:after {
+				content:'';
+				display: block;
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				z-index: 1;
+				width: 1px;
+				height: 100vh;
+				background-color: #D9D9D9;
+			}
+
+			&.ty1 {
+				background-image:url(../images/content/prlt/img_rel_case1.svg);
+			}
+	
+			&.ty2 {
+				background-image:url(../images/content/prlt/img_rel_case1_2.svg);
+			}
+	
+		}
+		&:after {
+			content:'';
+			display: block;
+			position: absolute;
+			top: 152px;
+			left: 50%;
+			z-index: 1;
+			width: 1px;
+			height: 100vh;
+			background-color: #D9D9D9;
+		}
+	}
+	.rel_case2 {
+		top: 109px;
+		left: 30px;
+
+		> span {
+			width: 90px;
+			background-image:url(../images/content/prlt/img_rel_case2.svg);
+
+			&:before {
+				content:'';
+				display: block;
+				position: absolute;
+				top: 100%;
+				left: 49%;
+				z-index: 1;
+				width: 1px;
+				height: 100vw;
+				background-color: #F5F5F5;
+			}
+	
+			&:after {
+				content:'';
+				display: block;
+				position: absolute;
+				top:50%;
+				left: 100%;
+				z-index: 1;
+				width: 100vw;
+				height: 1px;
+				background-color: #D9D9D9;
+			}
+
+			// &:after {
+			// 	content:'';
+			// 	display: block;
+			// 	position: absolute;
+			// 	top:-100vh;
+			// 	left: 50%;
+			// 	z-index: 1;
+			// 	width: 1px;
+			// 	height: 100vh;
+			// 	background-color: #D9D9D9;
+			// }
+		}
+	}
+	.rel_case3 {
+		top: 109px;
+		left: 50%;
+		margin-left: -28px;
+
+		> span {
+			width: 90px;
+				background-image:url(../images/content/prlt/img_rel_case3.svg);
+
+			&:before {
+				content:'';
+				display: block;
+				position: absolute;
+				top: 100%;
+				left: 1px;
+				// z-index: 1;
+				width: 100%;
+				height: 100vw;
+				background-color: #F5F5F5;
+			}
+
+			&:after {
+				content:'';
+				display: block;
+				position: absolute;
+				top:50%;
+				left: 100%;
+				z-index: 1;
+				width: 100vw;
+				height: 1px;
+				background-color: #F5F5F5;
+			}
+		}
+	}
+	.rel_case4 {
+		top: 109px;
+		right: 0;
+		
+		> span {
+			background-image:url(../images/content/prlt/img_rel_case4.svg);
+		}
+	}
+	.rel_case5 {
+		bottom: 0;
+		left: 30px;
+		justify-content: center;
+		width: calc(50% + 25px);
+
+		> span {
+			width: 196px;
+			background-image:url(../images/content/prlt/img_rel_case5.svg);
+		}
+	}
+	.rel_case6 {
+		bottom: 0;
+		right: 0;
+		
+		> span {
+			background-image:url(../images/content/prlt/img_rel_case6.svg);
+		}
+	}
+
+	/* 활성화 상태 */
 	//본인만
 	&.pick1 {
 		.rel_case2  {
@@ -299,160 +482,6 @@
 			> span {
 				@include activeImage(5);
 			}
-		}
-	}
-
-	// 위치
-	[class^=rel_case]{
-		position: absolute;
-		z-index: 10;
-		display: flex;
-		background-color: #fff;
-		border-radius: 20px;
-
-		> span {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			gap: 4px;
-			padding: 56px 13px 8px;
-			background-repeat: no-repeat;
-			background-size: auto 44px;
-			background-position: center 8px;
-			font-size: 14px;
-			line-height: 21px;
-			text-align: center;
-
-			img {
-				height: 44px;
-			}
-		}
-	}
-	.rel_case1 {
-		top: 0;
-		left: 0;
-		justify-content: center;
-		gap: 10px;
-		width: 256px;
-
-		> span {
-			position: relative;
-			padding-left: 0;
-			padding-right: 0;
-			
-			&:after {
-				content:'';
-				display: block;
-				position: absolute;
-				top: 100%;
-				left: 50%;
-				z-index: 1;
-				width: 1px;
-				height: 100vh;
-				background-color: #D9D9D9;
-			}
-
-			&.ty1 {
-				min-width: 99px;
-				background-image:url(../images/content/prlt/img_rel_case1.svg);
-			}
-	
-			&.ty2 {
-				min-width: 101px;
-				background-image:url(../images/content/prlt/img_rel_case1_2.svg);
-			}
-	
-		}
-		&:after {
-			content:'';
-			display: block;
-			position: absolute;
-			bottom: -100vh;
-			left: 50%;
-			z-index: 1;
-			width: 1px;
-			height: 100vh;
-			background-color: #D9D9D9;
-		}
-	}
-	.rel_case2 {
-		top: 109px;
-		left: 30px;
-
-		> span {
-			width: 90px;
-			background-image:url(../images/content/prlt/img_rel_case2.svg);
-	
-			&:after {
-				content:'';
-				display: block;
-				position: absolute;
-				top:50%;
-				left: 100%;
-				z-index: 1;
-				width: 100vw;
-				height: 1px;
-				background-color: #D9D9D9;
-			}
-
-			// &:after {
-			// 	content:'';
-			// 	display: block;
-			// 	position: absolute;
-			// 	top:-100vh;
-			// 	left: 50%;
-			// 	z-index: 1;
-			// 	width: 1px;
-			// 	height: 100vh;
-			// 	background-color: #D9D9D9;
-			// }
-		}
-	}
-	.rel_case3 {
-		top: 109px;
-		left: 50%;
-		margin-left: -28px;
-
-		> span {
-			width: 90px;
-				background-image:url(../images/content/prlt/img_rel_case3.svg);
-
-			&:after {
-				content:'';
-				display: block;
-				position: absolute;
-				top:50%;
-				left: 100%;
-				z-index: 1;
-				width: 100vw;
-				height: 1px;
-				background-color: #F5F5F5;
-			}
-		}
-	}
-	.rel_case4 {
-		top: 109px;
-		right: 0;
-		
-		> span {
-			background-image:url(../images/content/prlt/img_rel_case4.svg);
-		}
-	}
-	.rel_case5 {
-		bottom: 0;
-		left: 30px;
-
-		> span {
-			width: 196px;
-			background-image:url(../images/content/prlt/img_rel_case5.svg);
-		}
-	}
-	.rel_case6 {
-		bottom: 0;
-		right: 0;
-		
-		> span {
-			background-image:url(../images/content/prlt/img_rel_case6.svg);
 		}
 	}
 }
