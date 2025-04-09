@@ -75,23 +75,6 @@
 	});
 
 	/* Input */
-	$(function () {
-		$(".card input").each(function () {
-			const $this = $(this),
-				$wrapBox = $this.closest(".comp_wrap"),
-				isDisabled = $this.prop("disabled"),
-				isReadonly = $this.prop("readonly");
-
-			if (isReadonly) {
-				$wrapBox.addClass("readonly");
-				//$wrapBox.find('input').prop('readonly', true);
-			}
-			if (isDisabled) {
-				$wrapBox.addClass("disabled");
-				//$wrapBox.find('input').prop('disabled', true);
-			}
-		});
-	});
 	$DOM
 		.on("focus input", ".input_text .inp > input", function () {
 			const $this = $(this),
@@ -375,6 +358,30 @@ $(function () {
 	// tab Scroll
 	tabScroll();
 
+	//input disabled&readonly
+	$(".input_text input").each(function () {
+		const $this = $(this),
+			$wrapBox = $this.closest(".comp_wrap"),
+			$wrapCard = $this.closest(".card"),
+			$wrapCalendar = $this.closest(".calendar"),
+			isDisabled = $this.prop("disabled"),
+			isReadonly = $this.prop("readonly");
+
+		if (isReadonly) {
+			if ($wrapCard.length) {
+				$wrapBox.addClass("readonly");
+			} else if ($wrapCalendar.length) {
+				$this.siblings(".calendar_call").prop("disabled", true);
+			}
+		}
+		if (isDisabled) {
+			if ($wrapCard.length) {
+				$wrapBox.addClass("disabled");
+			} else if ($wrapCalendar.length) {
+				$this.siblings(".calendar_call").prop("disabled", true);
+			}
+		}
+	});
 	// 달력 호출
 	$.datepicker.setDefaults({
 		dateFormat: "yy.mm.dd",
