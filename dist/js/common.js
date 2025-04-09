@@ -287,7 +287,7 @@
 
 	// select_driver
 	$DOM.on("change", '.select_driver_range input[type="radio"]', function () {
-		const $relGroup = $(".ouput_driver_relationship").find(".relationship_box");
+		const $relGroup = $(".driver_relationship_state").find(".relationship_box");
 		const idx = $(this).closest(".inp_radio").index() + 1;
 		let newClass = "pick" + idx;
 
