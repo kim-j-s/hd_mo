@@ -1,8 +1,9 @@
 
 div:not(.comp_wrap){
 	& > .input_text {
-		border: 1px solid var(--border-width-variable-regular);
-		border: 1px solid #8A949E;
+		border: var(--border-width-variable-regular) solid var(--color-input-border);
+		background: var(--color-input-surface);
+		border-radius: var(--radius-medium3);
 		&:focus-within {
 			border-color: var(--color-input-border-active);
 		}
@@ -10,20 +11,24 @@ div:not(.comp_wrap){
 }
 .input_text {
 	position: relative;
-
-	border-radius: 16px;
+	border-radius: var(--radius-medium3);
+	display: flex;
+	align-items: center;
+	gap: 8px;
 	.inp {
 		position: relative;
-		border-radius: inherit;
 		display: flex;
 		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		border-radius: inherit;
 	}
 	input {
 		position: relative;
 		display: block;
 		width: 100%;
-		height: 56px;
-		padding: 3px 8px 3px 16px;
+		height: var(--size-height-8);
+		padding: 3px 32px 3px 16px;
 		font-size: 16px;
 		line-height: 24px;
 		appearance: none;               
@@ -49,25 +54,41 @@ div:not(.comp_wrap){
 			outline: none;
 		}
 	}
-
-	// .del,
-	// .calendar_call,
-	// .btn_search {
-	// 	position: absolute;
-	// 	top: 50%;
-	// 	right: 16px;
-	// 	transform: translateY(-50%);
-	// }
+	.int-txt {
+		flex: none;
+		font-size: var(--font-size-body-medium);
+		&.left {
+			padding-left: 16px;
+		}
+		&.right {
+			padding-right: 16px;
+		}
+	}
+	.del,
+	.calendar_call,
+	.btn_search {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%);
+	}
 	.del {
 		display: none;
-		margin-right: 16px;
-		width: 20px;
-		height: 20px;
-		background: url(../images/icon/icon_reset.svg) no-repeat center / 16px auto;
+		width: 44px;
+		height: 50px;
+		background: url(../images/icon/icon_reset.svg) no-repeat center right 16px / 16px auto;
 	}
 
 	//phone
 	&.phone {
+		padding: 0 16px;
+		width: 100%;
+		.inp {
+			input {
+				padding-left: 0;
+			}
+		}
+
 	}
 
 	&.calendar {
@@ -95,6 +116,40 @@ div:not(.comp_wrap){
 	.birth_all {
 		position: relative;
 	}
+	
+
+	// file
+	.inp_file {
+		width: 100%;
+		input[type="file"] {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip: rect(0, 0, 0, 0);
+			border: none;
+			background: var(--color-input-surface);
+
+			& + label {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				height: 54px;
+				width: 100%;
+				padding: 3px 16px;
+				font-size: 16px;
+				line-height: 24px;
+				.file_name {
+					flex: 1;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow: hidden;
+				}
+
+			}
+		}
+	}
+
 }
 // Error 문구
 .msg_success {
@@ -103,75 +158,14 @@ div:not(.comp_wrap){
 .msg_fail {
 	color: red;
 }
-
-// file
-.inp_file {
-	input[type="file"] {
-		position: absolute;
-		width: 1px;
-		height: 1px;
-		overflow: hidden;
-		clip: rect(0, 0, 0, 0);
-		border: none;
-
-		& + label {
-			display: flex;
-			font-size: 14px;
-			line-height: 20px;
-
-			.file_name {
-				flex: 1;
-			}
-
-			.file_btn {
-				background-color: #999;
-				color: #fff;
-			}
-		}
-	}
-}
-
 /* _조합 input */
 .comp_wrap {
-	position: relative;
-	// display: flex;
-	// flex-direction: row;
-	// align-items: center;
-	// gap: 12px;
-	// padding-left: 16px;
-	// padding-right: 16px;
-	// border-radius: 16px;
-	// border: 1px solid #ddd;
-
-	// [class^=input]{
-	// 	flex:1;
-
-	// 	input {
-	// 		padding-left: 0;
-	// 		padding-right:0;
-	// 		border:0;
-	// 		border-radius: 0;
-	// 		& + i {
-	// 			position: absolute;
-	// 			top:0;
-	// 			left:0;
-	// 			width: 100%;
-	// 			height: 100%;
-	// 			border: 1px solid var(--color-text-basic);
-	// 		}
-
-	// 		&:focus {
-	// 		}
-	// 	}
-	// }
-
-	
+	position: relative;	
 	display: flex;
 	align-items: center;
 	gap: 4px;
-	border: 1px solid var(--border-width-variable-regular);
-	border: 1px solid #8A949E;
-	border-radius: 16px;
+	border: var(--border-width-variable-regular) solid var(--color-input-border);
+	border-radius: var(--radius-medium3);
 	&:focus-within {
 		border-color: var(--color-text-basic);
 	}
@@ -183,92 +177,6 @@ div:not(.comp_wrap){
 		display: flex;
 		align-items: center;
 		border: none;
-	}
-
-	.price_wrap {
-		display: flex;
-		align-items: center;
-		gap: 8px;
-		padding: 4px 16px;
-		border: 1px solid #ddd;
-		border-radius: 16px;
-		height: 52px;
-		max-width: 100%;
-		font-size: var(--font-size-body-medium);
-
-		// & > * {
-		// 	flex-shrink: 0;
-		// }
-
-		.code_first {
-			color: #6C7882;
-		}
-
-		.inp {
-			// max-width: 60%;
-			display:flex;
-			align-items: center;
-			flex:1;
-			input {
-				width: 100%;
-				border: none;
-				text-align: right;				
-				// user-select: none;
-
-				&:focus-visible{
-					outline: 0px;
-				}
-
-				&:read-only{
-					color:inherit;
-					cursor:default;
-				}
-
-				&::placeholder {
-					width:100%;
-					text-align:left;
-				}
-			}
-		}
-	}
-
-	.price_wrap.result {
-		gap: 4px;
-		padding: 4px 16px;
-		border-radius: 20px;
-		height: 52px;
-		border: 1px solid #F2650E;
-		font-size: var(--font-size-body-small);
-
-		.code_first {
-			flex-grow: 1;
-			color: #697584;
-		}
-
-		.code_unit {
-			color: #3E4A58;
-		}
-
-		.inp {
-			max-width: 60%;
-			input {
-				width: 100%;
-				border: none;
-				font-size: var(--font-size-heading-large);
-				text-align: right;				
-				font-weight: 700;
-				line-height: 150%; /* 36px */
-
-				&:focus-visible{
-					outline: 0px;
-				}
-
-				&::placeholder {
-					text-align: right;
-					color:inherit;
-				}
-			}
-		}
 	}
 
 	/* comp_wrap 내부에서 보안키패드 호출 버튼 공통 사용요소 - 필요시 각 class별로 별도 설정 필요 */
@@ -297,38 +205,45 @@ div:not(.comp_wrap){
 			}
 		}
 	}
+	&.price_big {
+		.price {
+			input {
+				color: var(--primay-900-d-82600);
+				color: #D82600;
+				font-size: var(--font-size-heading-large);
+				font-weight: 700;
+				&::placeholder {
+					font-weight: 400;
+				}
+			}
+			.int-txt {
+				font-size: var(--font-size-body-small);
+			}
+			.del {
+				right: calc(100% - 36px);
+			}
+			
+		}
+		&:focus-within {
+			border-color: #F2650E;
+		}
+	}
 }
+
+// 금액
 .price {
+	padding: 0 16px;
+	width: 100%;
 	.inp {
+		width: 100%;
+		justify-content: space-between;
 		input {
+			padding-right: 0;
 			text-align: right;
 		}
 	}
-	.int-txt {
-		padding-right: 16px;
-		font-size: var(--font-size-body-medium);
-		& + .del {
-			margin-left: -8px;
-		}
-	}
-}
-// 휴대폰번호
-.phone {
-	padding-left: 16px;
-	.code_first {
-		font-size: 16px;
-	}
-	.input_text {
-		width: 100%;
-		.inp {
-			width: 100%;
-			input {
-				padding-left: 8px;
-				&.isVal {
-					padding-left: 0;
-				}
-			}
-		}
+	.del {
+		right: calc(100% - 48px);
 	}
 }
 //카드
@@ -355,12 +270,13 @@ div:not(.comp_wrap){
 	display: flex;
 	align-items: center;
 	gap: 4px;
+	width: 100%;
 	& > .input_text {
 		width: calc(50% - 8px);
+		
 	}
 	input {
 		height: 48px;
-		text-align: center;
 	}
 	.id_pass_box {
 		display: flex;
@@ -371,7 +287,7 @@ div:not(.comp_wrap){
 			border: none;
 		}
 		input {
-			padding: 4px;
+			padding: 0;
 			width: 20px;
 			height: 25px;
 			text-align: center;
@@ -379,7 +295,7 @@ div:not(.comp_wrap){
 			border-radius: 0;
 		}
 		.id_pass {
-			line-height: 42px;
+			line-height: 48px;
 			width: 100%;
 			font-size: 16px;
 			text-align: center;
@@ -388,7 +304,34 @@ div:not(.comp_wrap){
 		}
 	}
 }
-
+.key_number {
+	width: 100%;
+	padding-right: 16px;
+	.input_text {
+		flex: auto;
+		.int-txt {
+			padding-right: 0;
+			font-size: var(--font-size-button-small);
+			color: var(--color-text-point);
+		}
+	}
+	button {
+		flex: none;
+	}
+	@media screen and (max-width: 359px) {
+		padding-right: 12px;
+		gap: 4px;
+		.input_text {
+			gap: 4px;
+			input {
+				padding: 3px 0 3px 12px
+			}
+		}
+		.hd_btn_s_4 {
+			padding: 0 var(--padding-3);
+		}
+	}
+}
 /* Form group */
 .form_group_wrap {
 
@@ -436,9 +379,9 @@ div:not(.comp_wrap){
 
 	.form_line {
 		.label_tit {
-			font-size: 14px;
+			font-size: var(--font-size-label-medium);
 			line-height: 21px;
-			margin-bottom: 9px;
+			margin-bottom: var(--padding-3);
 		}
 		.btn_area {
 			margin-top: 16px;
