@@ -2463,6 +2463,56 @@ div:not(.comp_wrap) > .input_text:focus-within {
 .inp_radio.rd_btn input[type="radio"]:disabled:checked + label:after {
 	border-color: #e1e3ea;
 }
+/* select_item */
+.select_item.select_item_case01 .si_item {
+	position: relative;
+	min-height: 2.4rem;
+	padding: 1.6rem 4.4rem 1.6rem 1.6rem;
+	font-size: var(--font-size-label-large);
+	color: var(--color-text-subtle);
+	line-height: 2.4rem;
+	border-radius: var(--radius-medium3);
+}
+.select_item.select_item_case01 .si_item:empty::before {
+	content: attr(data-placeholder);
+	display: block;
+	min-height: 2.4rem;
+	color: var(--color-text-disabled);
+}
+.select_item.select_item_case01 .si_item::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: var(--radius-medium3);
+	border: 1px solid var(--color-input-border);
+	pointer-events: none;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.select_item.select_item_case01:focus .si_item {
+	color: var(--color-text-basic);
+}
+.select_item.select_item_case01:focus .si_item::after {
+	border: 1px solid var(--color-input-border-active);
+}
+.select_item:focus {
+	outline: none;
+}
+.select_item.error .si_item::after {
+	border: 0.2rem solid var(--color-input-border-error);
+}
+.select_item[aria-disabled="true"] .si_item {
+	background-color: var(--color-input-surface-disabled);
+}
+.select_item[aria-disabled="true"] .si_item:empty::before {
+	color: var(--color-text-disabled-on);
+}
+.select_item[aria-disabled="true"] .si_item::after {
+	border: 1px solid var(--color-input-border-disabled);
+}
 /* selectlist */
 * + .opt_select_list.opt_case1 {
 	margin-top: 3.2rem;
