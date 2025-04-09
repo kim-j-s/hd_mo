@@ -2,12 +2,14 @@
 .tooltip_wrap {
 	position: relative;
 	display: inline;
+	text-align: left;
 
 	.tooltip_head {
 		position: relative;
 		display: inline-block;
+		width: 24px;
 		height: 24px;
-		transform: translateY(4px);
+		line-height: 0;
 
 		button {
 			width: 24px;
@@ -24,6 +26,10 @@
 				left: 50%;
 				transform: translateX(-50%) translateY(-50%);
 			}
+
+			&.trigger_btn {
+				background-color: transparent;
+			}
 		}
 
 		.open {
@@ -33,65 +39,119 @@
 		}
 
 		&.active {
+			//tooltip arrow
 			&::after {
 				content: "";
 				position: absolute;
-				left: calc(50% - 8px);
-				bottom: -12px;
+				left: calc(50% - 4px);
+				top: calc(100% + 1px);
 				width: 8px;
 				height: 8px;
-				border: 8px solid gray;
-				border-left-color: transparent;
-				border-right-color: transparent;
-				border-top-color: transparent;
+				pointer-events: none;
+				background-color: var(--color-element-gray-dark);
+				clip-path: path("M4.74763 0.335971L7.81713 3.79145C7.93493 3.92407 8 4.09529 8 4.27268C8 4.67287 7.67558 4.99729 7.27539 4.99729H0.724613C0.32442 4.99729 0 4.67287 0 4.27268C0 4.09529 0.0650669 3.92407 0.182872 3.79145L3.25237 0.335971C3.65019 -0.111871 4.34981 -0.111871 4.74763 0.335971Z");
 			}
 		}
 
+		//tooltip position=top
 		&.top {
+			//tooltip arrow
 			&::after {
 				top: -12px;
-				bottom: auto;
-				border-top-color: gray;
-				border-bottom-color: transparent;
+				transform: scaleY(-1);
 			}
 
 			&.active {
-				& + .tooltip_text {
+				& + .tooltip_panel {
 					margin-top: 0;
-					bottom: 24px;
+					bottom: 34.5px;
 					top: auto;
 				}
 			}
 		}
 	}
 
-	.tooltip_text {
+	.tooltip_panel {
 		display: block;
+		box-sizing: border-box;
 		position: absolute;
 		width: calc(100vw - 40px);
 		z-index: 10;
-		top: calc(100% + 13px);
+		top: calc(100% + 3px);
 
 		.inner {
+			position: relative;
+			box-sizing: border-box;
 			display: none;
-			padding: 10px;
-			background-color: gray;
+			padding: 12px 16px;
+			background-color:  var(--color-element-gray-dark);
 			border-radius: 10px;
-		}
+			color: #ffffff;
+			text-align: left;
 
-		.close {
-			position: absolute;
-			top: 4px;
-			right: 6px;
-			display: inline-block;
-			width: 24px;
-			height: 24px;
-			background-color: blue;
+			font-size: var(--font-size-body-xsmall);
+
+			.inner_title {
+				height: 100%;
+				line-height: 150%;
+				& + .inner_contents {
+					margin-top: 2px;
+				}
+			}
+
+			.inner_contents {
+
+				line-height: 150%;
+
+				& + .inner_footer {
+					margin-top: 8px;
+				}
+			}
+
+			.inner_footer {
+				& > .btn_link {
+					display: block;
+
+					span {
+						display: flex;
+						align-items: center;
+						line-height: 18px;
+						color: #fff;
+
+						&:after {
+							display: inline-block;
+							content: "";
+							width: 16px;
+							height: 16px;
+							background: url(../images/icon/arrowRight_ty1.svg) no-repeat center/contain;
+						}
+					}
+
+					&:active > span,
+					&:focus > span {
+						color: var(--color-text-basic, #1e2124);
+
+						&:after {
+							background-image: url(../images/icon/arrowRight_ty3.svg);
+						}
+					}
+				}
+			}
+
+			.close {
+				position: absolute;
+				display: inline-block;
+				top:12px;
+				right:16px;
+				width: 16px;
+				height: 16px;
+				background-color: blue;
+				background: url(../images/icon/close_ty2.svg) no-repeat center/contain;
+			}
 		}
 	}
-}
 
-
-.tooltip_wrap_text {
-	line-height:1.5;
+	.tooltip_wrap_text {
+		line-height: 1.5;
+	}
 }
