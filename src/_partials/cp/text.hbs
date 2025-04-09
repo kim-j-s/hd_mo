@@ -1,4 +1,5 @@
 <div class="input_text{{#if class}} {{class}}{{/if}}{{#if inp_search}} search{{/if}}{{#if cal}} calendar{{/if}}">
+  {{#if l-text}}<div class="int-txt left">{{l-text}}</div>{{/if}}
   <div class="inp">
     <input 
       {{#if type}}
@@ -26,13 +27,10 @@
       {{#if cal}}title="날짜를 입력해주세요"{{/if}}
     >
     {{!-- 버튼 (초기화 삭제, 달력 호출) --}}
-    {{#if r-text}}<span class="int-txt">{{r-text}}</span>{{/if}}
     {{#unless no_del}}<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>{{/unless}}{{#if cal}}<button type="button" class="btn calendar_call" title="날짜 선택"></button>{{/if}}
   </div>
-  {{!-- validation --}}
-</div>
+  {{#if r-text}}<div class="int-txt right">{{r-text}}</div>{{/if}}
 {{!-- 안내문구 노출 위치 --}}
-{{#if msg1}}
   <p class="msg_success">{{msg1}}</p>
 {{/if}}
 {{#if msg2}}
