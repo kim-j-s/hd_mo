@@ -120,7 +120,7 @@
 			// (this.value) ? $wrap.addClass('active'):$wrap.removeClass('active');
 
 			//전화번호
-			if ($this.closest(".comp_wrap").hasClass("phone")) {
+			if ($this.closest(".input_text").hasClass("phone")) {
 				if (val) {
 					const newVal = val.replace(/ - /g, "");
 					$this.attr("maxlength", 8);
@@ -141,7 +141,7 @@
 			}, 100);
 
 			// 전화번호
-			if ($this.closest(".comp_wrap").hasClass("phone")) {
+			if ($this.closest(".input_text").hasClass("phone")) {
 				$this.attr("maxlength", 14);
 				if (val) {
 					val = val.replace(/[^0-9]/g, "");
