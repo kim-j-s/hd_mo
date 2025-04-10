@@ -115,7 +115,7 @@ class HD_Popup {
 
 			//팝업을 동적으로 생성하는 케이스에서만 사용
 			if(window.popupGroup) {
-				setTimeout(()=>{ this.$target.remove()},450);
+				setTimeout(()=>{ this.$target.remove()},1000);
 			}
 		} else {
 			$(".wrap").attr("aria-hidden", "false");

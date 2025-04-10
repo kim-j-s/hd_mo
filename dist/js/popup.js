@@ -115,7 +115,7 @@ class HD_Popup {
 			if (window.popupGroup) {
 				setTimeout(() => {
 					this.$target.remove();
-				}, 450);
+				}, 1000);
 			}
 		} else {
 			$(".wrap").attr("aria-hidden", "false");
