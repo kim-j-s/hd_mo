@@ -105,10 +105,6 @@ class HD_Popup {
 
 			$($prevPopup).attr("aria-hidden", "false");
 			$($prevPopup).find(".popup_inner").attr("aria-hidden", "false");
-<<<<<<< HEAD
-			$($prevPopup).find(".popup_inner").removeAttr("inert");
-=======
->>>>>>> 7cd71a126ff0335446f86183118081d8e5fe799c
 
 			const hasTitle = $prevHeader && $prevHeader.text().trim() !== "";
 			const focusTarget = hasTitle ? $prevHeader : $prevContent;
