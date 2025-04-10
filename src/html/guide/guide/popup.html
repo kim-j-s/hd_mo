@@ -55,6 +55,14 @@
 				</div>
 			</div>
 
+			<div class="g_line">
+				옵션 선택 팝업 케이스
+			</div>
+			<div class="g_dom">
+				<div class="p_guide_wrap_b">
+					{{> cp/button type="2" size="5" b-text="Bottom 옵션 선택 팝업열기 유형 1" popup="pop_type08" b-title="상황별 타이틀 입력 필요"}}
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -270,9 +278,83 @@
 	</div>
 	{{/ popup/popup_bottom}}
 	<!-- e: pop_type07 -->
+
+	<!-- s: pop_type07 -->
+	{{#> popup/popup_bottom popup-id="pop_type08" popup-title="가입조건 변경"}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">보험기간(년)</div>
+					<div class="select_rolling_opt">
+						<div id="option_swiper" class="swiper-container">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">3년</div>
+								<div class="swiper-slide">5년</div>
+								<div class="swiper-slide">7년</div>
+								<div class="swiper-slide">10년</div>
+								<div class="swiper-slide">15년</div>
+								<div class="swiper-slide">20년</div>
+							</div>
+							<div class="swiper-button-next"></div>
+							<div class="swiper-button-prev"></div>
+						</div>
+					</div>
+				</div>
+				<div class="form_line">
+					<div class="label_tit">납입기간(년)</div>
+					<div class="select_rolling_opt">
+						<div id="option_swiper" class="swiper-container">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">3년</div>
+								<div class="swiper-slide">5년</div>
+								<div class="swiper-slide">7년</div>
+								<div class="swiper-slide">10년</div>
+								<div class="swiper-slide">15년</div>
+								<div class="swiper-slide">20년</div>
+							</div>
+							<div class="swiper-button-next"></div>
+							<div class="swiper-button-prev"></div>
+						</div>
+					</div>
+				</div>
+				<div class="form_line">
+					<div class="label_tit">납입방법</div>
+					<div class="radio_group_wrap_ty2">
+						{{> cp/radio rd-class="rd_btn" id="radio01-1" name="radio01" labelname="매월 보험료 내기" }}
+						{{> cp/radio rd-class="rd_btn" id="radio01-2" name="radio01" labelname="1년치 한꺼번에 내기" }}
+						{{> cp/radio rd-class="rd_btn" id="radio01-1" name="radio01" labelname="매월 보험료 내기" }}
+						{{> cp/radio rd-class="rd_btn" id="radio01-2" name="radio01" labelname="1년치 한꺼번에 내기" }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: pop_type07 -->
 	<!-- e: Bottom 팝업 -->
 
 </div>
 <!-- e: popup area -->
+<script>
+	$(document).ready(function(){
+		const optionSwiper = new Swiper('#option_swiper', {
+			slidesPerView: 'auto',
+			centeredSlides: true,
+			initialSlide: 2,
+			spaceBetween: 16,
+			observer: true,
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+			a11y: {
+				enabled: true,
+				prevSlideMessage: '이전 항목으로 이동',
+				nextSlideMessage: '다음 항목으로 이동',
+			},
+		});
+	});
+</script>
 
 {{/ layout/default }}

@@ -155,6 +155,80 @@ strong {
 	top: 0;
 	z-index: 10;
 }
+.popup_wrap.bottom .select_rolling_opt {
+	margin: 0 -2.4rem;
+}
+.select_rolling_opt {
+	position: relative;
+}
+.select_rolling_opt .swiper-container {
+	margin: 0 1rem;
+	overflow: hidden;
+}
+.select_rolling_opt .swiper-container .swiper-wrapper .swiper-slide {
+	width: auto !important;
+	min-width: 9.8rem;
+	padding: 1.4rem var(--padding-7);
+	font-size: 1.8rem;
+	line-height: 2.8rem;
+	font-weight: 700;
+	color: var(--color-text-disabled);
+	text-align: center;
+	border-radius: var(--radius-medium3);
+}
+.select_rolling_opt .swiper-container .swiper-wrapper .swiper-slide-active {
+	position: relative;
+	background-color: var(--color-element-secondary-lighter);
+	color: var(--color-text-basic);
+}
+.select_rolling_opt .swiper-container .swiper-wrapper .swiper-slide-active:before {
+	position: absolute;
+	content: "선택됨";
+	font-size: 0;
+}
+.select_rolling_opt .swiper-container [class^="swiper-button"] {
+	top: 50%;
+	margin-top: -1.6rem;
+	width: 3.2rem;
+	height: 3.2rem;
+}
+.select_rolling_opt .swiper-container [class^="swiper-button"]:before {
+	position: absolute;
+	z-index: -1;
+	content: "";
+	width: 4rem;
+	height: 3.2rem;
+	background: var(--white, linear-gradient(90deg, var(--color-alpha-base25, rgba(255, 255, 255, 0.25)) 27.34%, var(--color-alpha-base100, #fff) 100%));
+}
+.select_rolling_opt .swiper-container [class^="swiper-button"]:after {
+	content: "";
+	width: 1.9rem;
+	height: 1.9rem;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 1.9rem auto;
+	width: 3.2rem;
+	height: 3.2rem;
+	background-color: var(--color-action-white);
+	border: 1px solid var(--color-border-gray-light);
+	border-radius: var(--radius-max);
+}
+.select_rolling_opt .swiper-container .swiper-button-prev:before {
+	left: 1.8rem;
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.select_rolling_opt .swiper-container .swiper-button-prev:after {
+	background-image: url(../images/icon/arrowRight_ty3.svg);
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.select_rolling_opt .swiper-container .swiper-button-next:before {
+	left: -2.4rem;
+}
+.select_rolling_opt .swiper-container .swiper-button-next:after {
+	background-image: url(../images/icon/arrowRight_ty3.svg);
+}
 /* common 인증, 로딩 등 */
 /* 인증방법 선택 */
 * + .cert_select_list {
@@ -2429,6 +2503,11 @@ div:not(.comp_wrap) > .input_text:focus-within {
 	flex-flow: row wrap;
 	gap: 1.2rem;
 }
+.radio_group_wrap .inp_radio[class*="rd_btn"] {
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
 .radio_group_wrap.column {
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
@@ -2445,29 +2524,48 @@ div:not(.comp_wrap) > .input_text:focus-within {
 	-webkit-box-direction: normal;
 	-ms-flex-flow: row wrap;
 	flex-flow: row wrap;
+	-webkit-box-align: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
 	gap: 1.2rem;
 }
 .radio_group_wrap_ty2 .inp_radio {
 	-ms-flex-preferred-size: calc(50% - 0.6rem);
 	flex-basis: calc(50% - 0.6rem);
 }
-.radio_group_wrap .inp_radio.rd_btn {
-	-webkit-box-flex: 1;
-	-ms-flex: 1;
-	flex: 1;
+.radio_group_wrap_ty2 .inp_radio.rd_btn input[type="radio"] + label {
+	height: 100%;
+}
+.radio_group_wrap_ty3 {
+	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	gap: 1.2rem;
+}
+.radio_group_wrap_ty3 .inp_radio {
+	-ms-flex-preferred-size: calc(50% - 0.6rem);
+	flex-basis: calc(50% - 0.6rem);
 }
 /* radiobutton */
 /* Radiobutton */
-.inp_radio.rd_btn input[type="radio"] + label {
+.inp_radio[class*="rd_btn"] input[type="radio"] + label {
 	position: relative;
-	padding: 1.6rem;
-	color: #3e4a58;
-	border-radius: 1.2rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	width: 100%;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: var(--padding-3) var(--number-8);
+	font-size: var(--font-size-button-large);
+	line-height: 2.4rem;
 }
-.inp_radio.rd_btn input[type="radio"] + label:before {
+.inp_radio[class*="rd_btn"] input[type="radio"] + label:before {
 	content: none;
 }
-.inp_radio.rd_btn input[type="radio"] + label:after {
+.inp_radio[class*="rd_btn"] input[type="radio"] + label:after {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -2480,17 +2578,38 @@ div:not(.comp_wrap) > .input_text:focus-within {
 	-webkit-transition: border-color 0.3s;
 	transition: border-color 0.3s;
 }
-.inp_radio.rd_btn input[type="radio"]:checked + label:after {
+.inp_radio[class*="rd_btn"] input[type="radio"]:checked + label:after {
 	border: 0.2rem solid #f8633c;
 }
-.inp_radio.rd_btn input[type="radio"]:checked:disabled + label {
+.inp_radio[class*="rd_btn"] input[type="radio"]:checked:disabled + label {
 	background-color: #fafafa;
 }
-.inp_radio.rd_btn input[type="radio"]:disabled + label {
+.inp_radio[class*="rd_btn"] input[type="radio"]:disabled + label {
 	background-color: #fafafa;
 }
-.inp_radio.rd_btn input[type="radio"]:disabled:checked + label:after {
+.inp_radio[class*="rd_btn"] input[type="radio"]:disabled:checked + label:after {
 	border-color: #e1e3ea;
+}
+.inp_radio.rd_btn input[type="radio"] + label {
+	min-height: 7.2rem;
+	font-size: var(--font-size-button-large);
+	border-radius: var(--radius-medium3);
+}
+.inp_radio.rd_btn_ty2 input[type="radio"] + label {
+	min-height: 5.6rem;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	font-size: var(--font-size-button-large);
+	border-radius: var(--radius-medium1);
+}
+.inp_radio.rd_btn_ty3 input[type="radio"] + label {
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	font-size: var(--font-size-button-medium);
+	border-radius: var(--radius-small3);
+	line-height: 2.1rem;
 }
 /* select_item */
 .select_item.select_item_case01 .si_item {
