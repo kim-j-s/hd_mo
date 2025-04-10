@@ -75,6 +75,7 @@ class HD_Popup {
 		$focusTarget.css("display", "block");
 
 		setTimeout(() => {
+			$focusTarget.find(".popup_inner").removeAttr("inert");
 			$focusTarget.focus();
 			$focusTarget.attr("aria-live", "assertive"); //포커스 이동을 스크린 리더에 알림
 
@@ -89,7 +90,6 @@ class HD_Popup {
 			} else if (!this.isOpen && activePopups.length > 0) {
 				this.$target.attr("aria-hidden", "true");
 				this.$target.find(".popup_inner").attr("aria-hidden", "true");
-				$focusTarget.find(".popup_inner").removeAttr("inert");
 			}
 		}, 400);
 	}
