@@ -22,7 +22,6 @@ class HD_Popup {
 
 	init() {
 
-		console.log($(".wrap").attr("aria-hidden"))
 		if($(".wrap").attr("aria-hidden")==undefined || $(".wrap").attr("aria-hidden")=='false'){
 			$(".wrap").attr("aria-hidden", "true");
 			$(".wrap").attr("inert",'');
@@ -56,7 +55,9 @@ class HD_Popup {
 		if (this.$header) this.$header.attr("tabindex", 0);
 		if (this.$content) this.$content.attr("tabindex", 0);
 
-		const focusTarget = this.$header || this.$content;
+		// const focusTarget = this.$header || this.$content;
+		const hasTitle = this.$header.text().trim() !=='';
+		const focusTarget = hasTitle ? this.$header : this.$content;
 		this.focusMove(focusTarget);
 	}
 

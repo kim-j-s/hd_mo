@@ -1908,10 +1908,10 @@ div:not(.comp_wrap) > .input_text:focus-within {
 	right: 2.6rem;
 }
 .input_text.search input {
-	padding-right: 7.6rem;
+	padding-right: 4.4rem;
 }
 .input_text.search .del {
-	right: 4.4rem;
+	right: 2.6rem;
 }
 .input_text .birth_all {
 	position: relative;
@@ -2014,36 +2014,6 @@ div:not(.comp_wrap) > .input_text:focus-within {
 	background-color: var(--color-input-surface-disabled);
 	border-radius: 1.2rem;
 }
-.comp_wrap.price_big .price input {
-	color: var(--primay-900-d-82600);
-	color: #d82600;
-	font-size: var(--font-size-heading-large);
-	font-weight: 700;
-}
-.comp_wrap.price_big .price input::-webkit-input-placeholder {
-	font-weight: 400;
-}
-.comp_wrap.price_big .price input::-moz-placeholder {
-	font-weight: 400;
-}
-.comp_wrap.price_big .price input:-ms-input-placeholder {
-	font-weight: 400;
-}
-.comp_wrap.price_big .price input::-ms-input-placeholder {
-	font-weight: 400;
-}
-.comp_wrap.price_big .price input::placeholder {
-	font-weight: 400;
-}
-.comp_wrap.price_big .price .int-txt {
-	font-size: var(--font-size-body-small);
-}
-.comp_wrap.price_big .price .del {
-	right: calc(100% - 3.6rem);
-}
-.comp_wrap.price_big:focus-within {
-	border-color: #f2650e;
-}
 .price {
 	width: 100%;
 }
@@ -2059,6 +2029,35 @@ div:not(.comp_wrap) > .input_text:focus-within {
 }
 .price .del {
 	right: calc(100% - 4.8rem);
+}
+.price.big input {
+	color: #d82600;
+	font-size: var(--font-size-heading-large);
+	font-weight: 700;
+}
+.price.big input::-webkit-input-placeholder {
+	font-weight: 400;
+}
+.price.big input::-moz-placeholder {
+	font-weight: 400;
+}
+.price.big input:-ms-input-placeholder {
+	font-weight: 400;
+}
+.price.big input::-ms-input-placeholder {
+	font-weight: 400;
+}
+.price.big input::placeholder {
+	font-weight: 400;
+}
+.price.big .int-txt {
+	font-size: var(--font-size-body-small);
+}
+.price.big .del {
+	right: calc(100% - 3.6rem);
+}
+.price.big:focus-within {
+	border-color: #f2650e !important;
 }
 .card {
 	padding: 0 1.6rem;
@@ -2797,15 +2796,32 @@ div:not(.comp_wrap) > .input_text:focus-within {
 /* Textarea */
 .textarea_wrap textarea {
 	width: 100%;
-	padding: 1rem;
-	font-size: 1.4rem;
-	line-height: 2rem;
+	padding: 1.2rem 1.6rem;
+	font-size: 1.6rem;
+	line-height: 2.4rem;
 	resize: none;
+	border: var(--border-width-variable-regular) solid var(--color-input-border);
+	background: var(--color-input-surface);
+	border-radius: var(--radius-medium3);
+}
+.textarea_wrap textarea:focus-within {
+	border-color: var(--color-input-border-active);
+}
+.textarea_wrap textarea:-moz-read-only {
+	background-color: var(--color-input-surface-disabled);
+}
+.textarea_wrap textarea:read-only {
+	background-color: var(--color-input-surface-disabled);
+}
+.textarea_wrap textarea:disabled {
+	color: var(--color-text-disabled-on);
+	background-color: var(--color-input-surface-disabled);
 }
 .textarea_wrap .counter {
 	font-size: 1.4rem;
 	line-height: 2rem;
 	text-align: right;
+	padding-right: 0.8rem;
 }
 /* title */
 .list_top_wrap {
