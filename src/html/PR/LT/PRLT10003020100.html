@@ -28,16 +28,9 @@
 		<div class="form_group_wrap">
 			<div class="form_line">
 				<div class="label_tit">휴대폰번호</div>
-				<div class="comp_wrap phone">
-					<div class="input_text">
-						<div class="code_first">010</div>
-						<div class="inp">
-							<input type="tel" id="phone02" placeholder="-없이 입력하세요" maxlength="8" title="휴대폰 번호 뒷자리 8자리 입력">
-							<i></i>
-							<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-						</div>
-					</div>
-				</div>
+				<!-- 2025-04-09 S -->
+				{{> cp/text class="phone" type="tel" placeholder="4자리" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+				<!-- 2025-04-09 E -->
 				<div class="btn_area">
 					{{> cp/button type="2" size="2" b-text="문자받기"}}
 				</div>

@@ -35,26 +35,15 @@
 				</div>
 				<div class="form_line grow">
 					<div class="label_tit">구입가격</div>
-					<div class="comp_wrap">
-						<div class="price_wrap">
-							<div class="inp">
-								<input type="number" id="result_price" placeholder="숫자만" value="" />
-							</div>
-							<div class="code_unit">만원</div>
-						</div>
-					</div>
+					<!-- 2025-04-09 S -->
+					{{> cp/text type="tel" class="price" placeholder="숫자만" r-text="만원" inp-title="구입가격 입력"}}
+					<!-- 2025-04-09 E -->
 				</div>
 			</div>
 			<div class="form_line">
-				<div class="comp_wrap">
-					<div class="price_wrap result">
-						<div class="code_first">현재가격</div>
-						<div class="inp">
-							<input type="number" id="result_price" readonly="readonly" class="point" placeholder="0" value="" />
-						</div>
-						<div class="code_unit">만원</div>
-					</div>
-				</div>
+				<!-- 2025-04-09 S -->
+				{{> cp/text type="tel" class="price big" placeholder="숫자만" l-text="현재가격" r-text="만원" inp-title="현재가격 입력"}}
+				<!-- 2025-04-09 E -->
 			</div>
 		</div>
 	</div>

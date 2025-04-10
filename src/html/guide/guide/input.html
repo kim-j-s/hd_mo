@@ -5,45 +5,43 @@
 
     <!-- Attribute -->
     <div class="guide_discription">Default</div>
-    {{> cp/text placeholder="플레이스홀더"}}
+    {{> cp/text placeholder="플레이스홀더" inp-title="Default" }}
     <div class="guide_discription">Value</div>
-    {{> cp/text placeholder="플레이스홀더" value="입력한 값" }}
+    {{> cp/text placeholder="플레이스홀더" value="입력한 값" inp-title="Value" }}
     <div class="guide_discription">disabled</div>
-    {{> cp/text placeholder="플레이스홀더" disabled=true value="입력한 값"  }}
+    {{> cp/text placeholder="플레이스홀더" disabled=true value="입력한 값" inp-title="disabled" }}
     <div class="guide_discription">Readonly</div>
-    {{> cp/text placeholder="플레이스홀더" readonly=true value="입력한 값"  }}
+    {{> cp/text placeholder="플레이스홀더" readonly=true value="입력한 값" inp-title="Readonly" }}
 
 	<!-- Error -->
 	<div class="guide_discription">Error success</div>
-	{{> cp/text msg1="에러문구"}}
+	{{> cp/text msg1="에러문구" inp-title="Error success"}}
 
 	<div class="guide_discription">Error Default</div>
-	{{> cp/text msg2="에러문구"}}
+	{{> cp/text msg2="에러문구" inp-title="Error Default" }}
 
 	<div class="guide_discription">Error fail</div>
-	{{> cp/text msg3="에러문구"}}
+	{{> cp/text msg3="에러문구" inp-title="Error fail" }}
 
 	<!-- 금액Comma -->
 	<div class="guide_h4">Type - 금액입력(Comma)</div>
-	{{> cp/text class="price" r-text="원"}}
+	{{> cp/text type="tel" class="price" r-text="원" inp-title="금액입력"}}
 
 	<div class="guide_discription">combination</div>
 	<div class="form_group_wrap">
 		<div class="form_line">
 			<div class="label_tit">구입가격</div>
-			<div class="comp_wrap price_big">
-				{{> cp/text class="price" placeholder="숫자만" l-text="현재가격" r-text="만원" }}
-			</div>
+			{{> cp/text  type="tel" class="price big" placeholder="숫자만" l-text="현재가격" r-text="만원" inp-title="구입가격 입력"}}
 		</div>
 	</div>
 
 
-	<!-- 휴대폰번호 -->
+	<!-- 생년월일 -->
 	<div class="guide_h4">Type - 생년월일</div>
 	<div class="form_group_wrap">
 		<div class="form_line">
 			<div class="label_tit">생년월일</div>
-			{{> cp/text class="birth_day" type="tel" placeholder="8자리" placeholder="생년월일을 입력하세요" maxlength="8" }}
+			{{> cp/text class="birth_day" type="tel" placeholder="8자리" placeholder="생년월일을 입력하세요" maxlength="8" inp-title="생년월일 입력" }}
 		</div>
 	</div>
 
@@ -52,7 +50,7 @@
 	<div class="form_group_wrap">
 		<div class="form_line">
 			<div class="label_tit">휴대폰번호</div>
-			{{> cp/text class="phone" type="tel" placeholder="4자리" placeholder="-없이 입력하세요" maxlength="8" l-text="010" }}
+			{{> cp/text class="phone" type="tel" placeholder="4자리" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
 		</div>
 	</div>
 	<!-- 카드번호 -->
@@ -61,13 +59,13 @@
 		<div class="form_line">
 			<div class="label_tit">카드번호</div>
 			<div class="comp_wrap card">
-				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 첫번째 4자리 입력" no_del="flase" }}
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" no_del="flase" }}
 				<span class="dash">-</span>
-				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 두번째 4자리 입력" no_del="flase" }}
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="flase" }}
 				<span class="dash">-</span>
-				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 세번째 4자리 입력" no_del="flase" }}
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
 				<span class="dash">-</span>
-				{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" title="카드 마지막번째 4자리 입력" no_del="flase" }}
+				{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" inp-title="카드 마지막번째 4자리 입력" no_del="flase" }}
 			</div>
 		</div>
 	</div>
@@ -76,13 +74,13 @@
 		<div class="form_line">
 			<div class="label_tit">카드번호</div>
 			<div class="comp_wrap card">
-				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 첫번째 4자리 입력" value="2232" no_del="flase" readonly=true }}
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" value="2232" no_del="flase" readonly=true }}
 				<span class="dash">-</span>
-				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 두번째 4자리 입력" no_del="flase" }}
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="flase" }}
 				<span class="dash">-</span>
-				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 세번째 4자리 입력" no_del="flase" }}
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
 				<span class="dash">-</span>
-				{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" title="카드 마지막번째 4자리 입력" no_del="flase" }}
+				{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" inp-title="카드 마지막번째 4자리 입력" no_del="flase" }}
 			</div>
 		</div>
 	</div>
@@ -91,13 +89,13 @@
 		<div class="form_line">
 			<div class="label_tit">카드번호</div>
 			<div class="comp_wrap card">
-				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 첫번째 4자리 입력" value="2232" no_del="flase" disabled=true }}
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" value="2232" no_del="flase" disabled=true }}
 				<span class="dash">-</span>
-				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 두번째 4자리 입력" no_del="flase" }}
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="flase" }}
 				<span class="dash">-</span>
-				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" title="카드 세번째 4자리 입력" no_del="flase" }}
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
 				<span class="dash">-</span>
-				{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" title="카드 마지막번째 4자리 입력" no_del="flase" }}
+				{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" inp-title="카드 마지막번째 4자리 입력" no_del="flase" }}
 			</div>
 		</div>
 	</div>
@@ -108,9 +106,9 @@
 		<div class="form_line">
 			<div class="label_tit">주민등록번호</div>
 			<div class="comp_wrap birth">
-				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" title="주민등록번호 앞자리 입력" }}
+				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" }}
 				<span class="dash">-</span>
-				{{> cp/text type="password" class="masking" minlength="7" maxlength="7" placeholder="뒷자리" title="주민등록번호 뒷자리 입력" }}
+				{{> cp/text type="password" class="masking" minlength="7" maxlength="7" placeholder="뒷자리" inp-title="주민등록번호 뒷자리 입력" }}
 			</div>
 		</div>
 	</div>
@@ -120,9 +118,9 @@
 		<div class="form_line">
 			<div class="label_tit">주민등록번호</div>
 			<div class="comp_wrap birth">
-				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" value="250303" title="주민등록번호 앞자리 입력" readonly=true }}
+				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" value="250303" inp-title="주민등록번호 앞자리 입력" readonly=true }}
 				<span class="dash">-</span>
-				{{> cp/text type="password" class="masking" minlength="7" maxlength="7" placeholder="뒷자리" title="주민등록번호 뒷자리 입력" }}
+				{{> cp/text type="password" class="masking" minlength="7" maxlength="7" placeholder="뒷자리" inp-title="주민등록번호 뒷자리 입력" }}
 			</div>
 		</div>
 	</div>
@@ -132,10 +130,10 @@
 		<div class="form_line">
 			<div class="label_tit">주민등록번호</div>
 			<div class="comp_wrap birth">
-				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" title="주민등록번호 앞자리 입력" }}
+				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" }}
 				<span class="dash">-</span>
 				<div class="id_pass_box">
-					{{> cp/text type="tel" minlength="1" maxlength="1" placeholder="1" title="주민등록번호 뒷1자리 입력" no_del="flase" }}
+					{{> cp/text type="tel" minlength="1" maxlength="1" placeholder="1" inp-title="주민등록번호 뒷1자리 입력" no_del="flase" }}
 					<div class="id_pass">
 						●●●●●●
 					</div>
@@ -150,7 +148,7 @@
 		<div class="form_line">
 			<div class="label_tit">주민등록번호</div>
 			<div class="comp_wrap birth">
-				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" title="주민등록번호 앞자리 입력"  }}
+				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력"  }}
 				<span class="dash">-</span>
 				<div class="comp_wrap_keypad_call">
 					<button type="button" class="btn keypad_call" title="주민등록번호 뒷자리 입력"><span class="text">뒷자리</span></button>
@@ -163,7 +161,7 @@
 		<div class="form_line">
 			<div class="label_tit">인증번호</div>
 			<div class="comp_wrap key_number">
-				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="숫자 6자리 입력" title="인증번호 입력" r-text="00:00" }}
+				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="숫자 6자리 입력" inp-title="인증번호 입력" r-text="00:00" }}
 				{{#> cp/button type="3" size="4"}}시간연장{{/ cp/button}}
 				{{#> cp/button type="3" size="4"}}재요청{{/ cp/button}}
 			</div>
@@ -171,6 +169,14 @@
 	</div>
 
 
+	<!-- search -->
+	<!-- <div class="guide_h4">Type - search</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">search</div>
+			{{> cp/text placeholder="플레이스홀더" inp-title="search" }}
+		</div>
+	</div> -->
 	<!-- File -->
 	<div class="guide_h4">Type - file - 구조 사용 - 추후 디자인 반영 필요</div>
 	<div class="form_group_wrap">
@@ -185,11 +191,11 @@
 	<div class="form_group_wrap">
 		<div class="form_line">
 			<div class="label_tit">label명</div>
-			{{> cp/text placeholder="입력하세요" title="이름 입력" }}
+			{{> cp/text placeholder="입력하세요" inp-title="이름 입력" }}
 		</div>
 		<div class="form_line">
 			<div class="label_tit">label명</div>
-			{{> cp/text placeholder="입력하세요" title="이름 입력" comp=true }}
+			{{> cp/text placeholder="입력하세요" inp-title="이름 입력" comp=true }}
 		</div>
 	</div>
 	{{/ layout/guide }}
