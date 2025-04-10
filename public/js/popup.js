@@ -111,7 +111,9 @@ class HD_Popup {
 			// $($prevPopup).attr("aria-hidden", "false");
 			$($prevPopup).find(".popup_inner").attr("aria-hidden", "false");
 			$($prevPopup).find(".popup_inner").removeAttr('inert');
-			const focusTarget = $prevHeader || $prevContent;
+			// const focusTarget = $prevHeader || $prevContent;
+			const hasTitle = $prevHeader.text().trim() !=='';
+			const focusTarget = hasTitle ? $prevHeader : $prevContent;
 			this.focusMove(focusTarget);
 
 			//팝업을 동적으로 생성하는 케이스에서만 사용
