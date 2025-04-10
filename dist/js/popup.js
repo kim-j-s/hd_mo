@@ -55,8 +55,10 @@ class HD_Popup {
 		if (this.$content) this.$content.attr("tabindex", 0);
 
 		// const focusTarget = this.$header || this.$content;
-		const hasTitle = this.$header.text().trim() !== "";
+		const hasTitle = this.$header && this.$header.text().trim() !== "";
+		console.log("init-hasTitle", hasTitle);
 		const focusTarget = hasTitle ? this.$header : this.$content;
+		console.log("init-focusTarget", focusTarget);
 		this.focusMove(focusTarget);
 	}
 
@@ -64,6 +66,8 @@ class HD_Popup {
 	focusMove(target) {
 		if (!target) return;
 		const $focusTarget = target;
+
+		console.log("this.isOpen", this.isOpen);
 
 		const activePopups = $(".popup_wrap.active").not(this.$target);
 
@@ -84,9 +88,10 @@ class HD_Popup {
 				activePopups.attr("aria-hidden", "true");
 				activePopups.find(".popup_inner").attr("aria-hidden", "true");
 				activePopups.find(".popup_inner").attr("inert", "");
-			} else if (!this.isOpen) {
+			} else if (!this.isOpen && activePopups.length > 0) {
 				this.$target.attr("aria-hidden", "true");
 				this.$target.find(".popup_inner").attr("aria-hidden", "true");
+				this.$target.find(".popup_inner").attr("inert", "");
 			}
 		}, 400);
 	}
@@ -109,7 +114,12 @@ class HD_Popup {
 			// $($prevPopup).attr("aria-hidden", "false");
 			$($prevPopup).find(".popup_inner").attr("aria-hidden", "false");
 			$($prevPopup).find(".popup_inner").removeAttr("inert");
-			const focusTarget = $prevHeader || $prevContent;
+			// const focusTarget = $prevHeader || $prevContent;
+
+			const hasTitle = $prevHeader && $prevHeader.text().trim() !== "";
+			console.log("close-hasTitle", hasTitle);
+			const focusTarget = hasTitle ? $prevHeader : $prevContent;
+			console.log("close-focusTarget", focusTarget);
 			this.focusMove(focusTarget);
 
 			//팝업을 동적으로 생성하는 케이스에서만 사용
