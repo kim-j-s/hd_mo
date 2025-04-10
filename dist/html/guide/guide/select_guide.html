@@ -47,8 +47,8 @@
 	<body class="guide_body">
 		<div class="guide_wrap">
 			<div class="wrap">
-				<div class="guide_h1">선택목록 가이드</div>
-				<div class="guide_h4">선택 버튼 - 선택 팝업 호출 - 선택 전 - c1</div>
+				<div class="guide_h1">선택목록 가이드 - c1</div>
+				<div class="guide_h4">선택 버튼 - 선택 팝업 호출 - 선택 전</div>
 				<div class="select_item select_item_case01" role="button" tabindex="0" title="연도 선택" onclick="openPop(this,'pop_type01');">
 					<div class="select_item_inner">
 						<div class="si_item" data-placeholder="선택해주세요."></div>
@@ -70,14 +70,14 @@
 					</div>
 				</div>
 				<div class="guide_h4">선택 버튼 - 선택 팝업 호출 - 선택 불가 - 선택 전</div>
-				<div class="select_item select_item_case01" role="button" tabindex="0" title="연도 선택" onclick="openPop(this,'pop_type01');" aria-disabled="true">
+				<div class="select_item select_item_case01" role="button" tabindex="0" title="연도 선택" aria-disabled="true">
 					<div class="select_item_inner">
 						<div class="si_item" data-placeholder="선택해주세요."></div>
 						<span class="si_stat">선택됨</span>
 					</div>
 				</div>
 				<div class="guide_h4">선택 버튼 - 선택 팝업 호출 - 선택 불가 - 선택 후</div>
-				<div class="select_item select_item_case01" role="button" tabindex="0" title="연도 선택" onclick="openPop(this,'pop_type01');" aria-disabled="true">
+				<div class="select_item select_item_case01" role="button" tabindex="0" title="연도 선택" aria-disabled="true">
 					<div class="select_item_inner">
 						<div class="si_item" data-placeholder="선택해주세요.">2023</div>
 						<span class="si_stat">선택됨</span>
@@ -114,20 +114,6 @@
 				<!-- e: pop_type01 -->
 
 				<!-- e: popup area -->
-
-				<script>
-					$(".select_item").on("click", function (e) {
-						console.log("click");
-						if ($(this).attr("aria-disabled") === "true") {
-							e.preventDefault();
-							e.stopPropagation();
-							return false;
-						}
-
-						// 실제 버튼 동작
-						// alert('클릭됨!');
-					});
-				</script>
 			</div>
 		</div>
 	</body>
