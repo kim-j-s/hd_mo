@@ -1,0 +1,81 @@
+<!---
+화면번호 : PRDR10003020000
+경로 : 보험료 확인 > 가입조건 변경
+-->
+{{#> layout/default page-title="보험료 확인 | 상품"}}
+
+<!-- s: Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="담보 변경" active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<p class="title_sub">교통상해후유장해(운전자)</p>
+		<div class="select_rolling_opt">
+			<div id="option_swiper" class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><span>4천만원</span></div>
+					<div class="swiper-slide"><span>3천만원</span></div>
+					<div class="swiper-slide"><span>2천만원</span></div>
+				</div>
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+			</div>
+		</div>
+
+		{{#> cp/notice dp-title="보장 내용을 확인해 보세요" }}
+			<ul>
+				<li>
+					보장 내용
+				</li>
+			</ul>
+		{{/ cp/notice }}
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="가입 담보를 변경합니다" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: Bottom 팝업 -->
+
+<script>
+	$(document).ready(function(){
+		$('.swiper-container').each(function (idx, ele) {
+			const $swiperContainer = $(ele);
+			const swiperInstance = $swiperContainer[0].swiper;
+
+			const swiper = new Swiper($swiperContainer[0], {
+				slidesPerView: 'auto',
+				centeredSlides: true,
+				spaceBetween: 16,
+				observer: true,
+				navigation: {
+					nextEl: ".swiper-button-next",
+					prevEl: ".swiper-button-prev",
+				},
+				a11y: {
+					enabled: true,
+					prevSlideMessage: '이전 항목으로 이동',
+					nextSlideMessage: '다음 항목으로 이동',
+				},
+			});
+
+			swiper.on('init', function() {
+				const totalSlides = swiper.slides.length;
+				console.log(`Swiper #${idx} 슬라이드 총 갯수: ${totalSlides}`);
+
+				// 3. 중간 슬라이드 설정
+				const initialSlideIdx = Math.floor(totalSlides / 2); // 중앙 슬라이드
+				swiper.initialSlide = initialSlideIdx;  // 초기 슬라이드 설정
+
+				// 4. 초기 슬라이드를 설정한 후, swiper 업데이트
+				swiper.update();
+			});
+
+			// 5. Swiper 인스턴스 초기화
+			swiper.init();
+		});
+	});
+</script>
+ 
+{{/ layout/default }}

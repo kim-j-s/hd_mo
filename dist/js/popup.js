@@ -54,7 +54,6 @@ class HD_Popup {
 		if (this.$header) this.$header.attr("tabindex", 0);
 		if (this.$content) this.$content.attr("tabindex", 0);
 
-		// const focusTarget = this.$header || this.$content;
 		const hasTitle = this.$header && this.$header.text().trim() !== "";
 		console.log("init-hasTitle", hasTitle);
 		const focusTarget = hasTitle ? this.$header : this.$content;
@@ -66,8 +65,6 @@ class HD_Popup {
 	focusMove(target) {
 		if (!target) return;
 		const $focusTarget = target;
-
-		console.log("this.isOpen", this.isOpen);
 
 		const activePopups = $(".popup_wrap.active").not(this.$target);
 
@@ -111,10 +108,9 @@ class HD_Popup {
 			const $prevHeader = $($prevPopup).find(".popup_head").length > 0 ? $($prevPopup).find(".popup_head") : null;
 			const $prevContent = $($prevPopup).find(".popup_cont").length > 0 ? $($prevPopup).find(".popup_cont") : null;
 
-			// $($prevPopup).attr("aria-hidden", "false");
+			$($prevPopup).attr("aria-hidden", "false");
 			$($prevPopup).find(".popup_inner").attr("aria-hidden", "false");
 			$($prevPopup).find(".popup_inner").removeAttr("inert");
-			// const focusTarget = $prevHeader || $prevContent;
 
 			const hasTitle = $prevHeader && $prevHeader.text().trim() !== "";
 			console.log("close-hasTitle", hasTitle);

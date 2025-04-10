@@ -485,12 +485,12 @@
 										<div class="select_rolling_opt">
 											<div id="option_swiper" class="swiper-container">
 												<div class="swiper-wrapper">
-													<div class="swiper-slide">3년</div>
-													<div class="swiper-slide">5년</div>
-													<div class="swiper-slide">7년</div>
-													<div class="swiper-slide">10년</div>
-													<div class="swiper-slide">15년</div>
-													<div class="swiper-slide">20년</div>
+													<div class="swiper-slide"><span>3년</span></div>
+													<div class="swiper-slide"><span>5년</span></div>
+													<div class="swiper-slide"><span>7년</span></div>
+													<div class="swiper-slide"><span>10년</span></div>
+													<div class="swiper-slide"><span>15년</span></div>
+													<div class="swiper-slide"><span>20년</span></div>
 												</div>
 												<div class="swiper-button-next"></div>
 												<div class="swiper-button-prev"></div>
@@ -502,12 +502,12 @@
 										<div class="select_rolling_opt">
 											<div id="option_swiper" class="swiper-container">
 												<div class="swiper-wrapper">
-													<div class="swiper-slide">3년</div>
-													<div class="swiper-slide">5년</div>
-													<div class="swiper-slide">7년</div>
-													<div class="swiper-slide">10년</div>
-													<div class="swiper-slide">15년</div>
-													<div class="swiper-slide">20년</div>
+													<div class="swiper-slide"><span>3년</span></div>
+													<div class="swiper-slide"><span>5년</span></div>
+													<div class="swiper-slide"><span>7년</span></div>
+													<div class="swiper-slide"><span>10년</span></div>
+													<div class="swiper-slide"><span>15년</span></div>
+													<div class="swiper-slide"><span>20년</span></div>
 												</div>
 												<div class="swiper-button-next"></div>
 												<div class="swiper-button-prev"></div>
@@ -516,34 +516,29 @@
 									</div>
 									<div class="form_line">
 										<div class="label_tit">납입방법</div>
-										<div class="radio_group_wrap_ty2">
-											<div class="inp_radio rd_btn">
-												<input type="radio" id="" name="radio01" />
-												<label for="">
+										<div class="radio_group_wrap" role="radiogroup">
+											<div class="inp_radio rd_btn_ty2">
+												<input type="radio" id="radio01-1" name="radio01" />
+												<label for="radio01-1">
 													<span class="label_i">매월 보험료 내기</span>
 												</label>
 											</div>
-											<div class="inp_radio rd_btn">
-												<input type="radio" id="" name="radio01" />
-												<label for="">
-													<span class="label_i">1년치 한꺼번에 내기</span>
-												</label>
-											</div>
-											<div class="inp_radio rd_btn">
-												<input type="radio" id="" name="radio01" />
-												<label for="">
-													<span class="label_i">매월 보험료 내기</span>
-												</label>
-											</div>
-											<div class="inp_radio rd_btn">
-												<input type="radio" id="" name="radio01" />
-												<label for="">
+											<div class="inp_radio rd_btn_ty2">
+												<input type="radio" id="radio01-2" name="radio01" />
+												<label for="radio01-2">
 													<span class="label_i">1년치 한꺼번에 내기</span>
 												</label>
 											</div>
 										</div>
 									</div>
 								</div>
+							</div>
+						</div>
+						<div class="popup_bottom">
+							<div class="btn_area">
+								<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+									<span class="text">가입 조건을 변경합니다</span>
+								</button>
 							</div>
 						</div>
 						<button type="button" class="popup_close"><span class="blind">팝업 닫기</span></button>
@@ -556,21 +551,25 @@
 		<!-- e: popup area -->
 		<script>
 			$(document).ready(function () {
-				const optionSwiper = new Swiper("#option_swiper", {
-					slidesPerView: "auto",
-					centeredSlides: true,
-					initialSlide: 2,
-					spaceBetween: 16,
-					observer: true,
-					navigation: {
-						nextEl: ".swiper-button-next",
-						prevEl: ".swiper-button-prev",
-					},
-					a11y: {
-						enabled: true,
-						prevSlideMessage: "이전 항목으로 이동",
-						nextSlideMessage: "다음 항목으로 이동",
-					},
+				$(".swiper-container").each(function (idx, ele) {
+					const $swiperContainer = $(ele);
+
+					new Swiper($swiperContainer[0], {
+						slidesPerView: "auto",
+						centeredSlides: true,
+						initialSlide: 2,
+						spaceBetween: 16,
+						observer: true,
+						navigation: {
+							nextEl: ".swiper-button-next",
+							prevEl: ".swiper-button-prev",
+						},
+						a11y: {
+							enabled: true,
+							prevSlideMessage: "이전 항목으로 이동",
+							nextSlideMessage: "다음 항목으로 이동",
+						},
+					});
 				});
 			});
 		</script>
