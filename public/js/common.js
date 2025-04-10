@@ -211,7 +211,14 @@
     }
   })
 	// 약관 동의
-
+  	
+	
+	//toggle-swich
+	$DOM.on('change', '.inp_checkbox input[role="switch"]', function(){
+		$isChecked = $(this).is(":checked");
+		$(this).attr('aria-checked', $isChecked ? 'true' : 'false');
+	});
+	
   /* Textarea */
 	// byte check
   $DOM.on('blur keyup', '.byte_check > textarea', function(){
