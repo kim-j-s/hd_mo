@@ -21,6 +21,12 @@ class HD_Popup {
 	}
 
 	init() {
+
+		if($(".wrap").attr("aria-hidden")==undefined || $(".wrap").attr("aria-hidden")=='false'){
+			$(".wrap").attr("aria-hidden", "true");
+		}
+			
+
 		//popup active
 		this.isOpen = true;
 		$("body").css("overscroll-behavior", "contain");
