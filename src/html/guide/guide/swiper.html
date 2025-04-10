@@ -1,7 +1,7 @@
 {{#> layout/guide }}
     <div class="guide_h1">Swiper</div>
 
-		<div id="swiper1" class="swiper-container">
+		<!-- <div id="swiper1" class="swiper-container">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">Slide 1</div>
 				<div class="swiper-slide">Slide 2</div>
@@ -16,9 +16,24 @@
 			<div class="swiper-button-next"></div>
 			<div class="swiper-button-prev"></div>
 			<div class="swiper-pagination"></div>
+		</div> -->
+    
+		<div class="guide_h4">Option Swiper</div>
+		<div class="select_rolling_opt">
+			<div id="option_swiper" class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">3년</div>
+					<div class="swiper-slide">5년</div>
+					<div class="swiper-slide">7년</div>
+					<div class="swiper-slide">10년</div>
+					<div class="swiper-slide">15년</div>
+					<div class="swiper-slide">20년</div>
+				</div>
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+			</div>
 		</div>
 
-    
 
 
 		<script>
@@ -42,6 +57,23 @@
 							// return `<span class="${className}" aria-label="Go to slidesss ${index + 1}">${index + 1}</span>`;
 							return `<span class="${className}">${index + 1}</span>`;
 						},
+					},
+				});
+
+				const optionSwiper = new Swiper('#option_swiper', {
+					slidesPerView: 'auto',
+					centeredSlides: true,
+					initialSlide: 2,
+					spaceBetween: 16,
+					observer: true,
+					navigation: {
+						nextEl: ".swiper-button-next",
+						prevEl: ".swiper-button-prev",
+					},
+					a11y: {
+						enabled: true,
+						prevSlideMessage: '이전 항목으로 이동',
+						nextSlideMessage: '다음 항목으로 이동',
 					},
 				});
 			});
