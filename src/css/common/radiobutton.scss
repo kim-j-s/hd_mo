@@ -1,13 +1,15 @@
 /* Radiobutton */
 .inp_radio {
-	&.rd_btn {
+	&[class*=rd_btn]{
 		input[type='radio']{
-
 			& + label {
 				position: relative;
-				padding: 16px;
-				color: #3E4A58;
-				border-radius: 12px;
+				display: flex;
+				width: 100%;
+				align-items: center;
+				padding: var(--padding-3) var(--number-8);
+				font-size: var(--font-size-button-large);
+				line-height: 24px;
 
 				&:before {
 					content: none;
@@ -53,6 +55,40 @@
 					}
 				}
 			}
+		}
+	}
+
+	&.rd_btn {
+		input[type='radio']{
+			& + label {
+				min-height: 72px;
+				font-size: var(--font-size-button-large);
+				border-radius: var(--radius-medium3);
+			}
+		}
+
+		&_ty2 {
+			input[type='radio']{
+				& + label {
+					min-height: 56px;
+					justify-content: center;
+					font-size: var(--font-size-button-large);
+					border-radius: var(--radius-medium1);
+				}
+			}
+
+		}
+
+		&_ty3 {
+			input[type='radio']{
+				& + label {
+					justify-content: center;
+					font-size: var(--font-size-button-medium);
+					border-radius: var(--radius-small3);
+					line-height: 21px;
+				}
+			}
+
 		}
 	}
 }

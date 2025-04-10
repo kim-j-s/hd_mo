@@ -1,28 +1,37 @@
 {{#> layout/guide }}
 	<div class="guide_h1">radiobutton</div>
 
+	<div class="guide_h4">State</div>
 	<div class="guide_discription">Default</div>
-	{{> cp/radio class="rd_btn" rd-id="radio_btn1" name="name1" labelname="라벨명" }}
+	{{> cp/radio rd-class="rd_btn " rd-id="radio_btn1" name="name1" labelname="라벨명" }}
 	<div class="guide_discription">checked</div>
-	{{> cp/radio class="rd_btn" rd-id="radio_btn2" name="name2" labelname="라벨명" checked=true }}
+	{{> cp/radio rd-class="rd_btn" rd-id="radio_btn2" name="name2" labelname="라벨명" checked=true }}
 	<div class="guide_discription">disabled</div>
-	{{> cp/radio class="rd_btn" rd-id="radio_btn3" name="name3" labelname="라벨명" disabled=true }}
+	{{> cp/radio rd-class="rd_btn" rd-id="radio_btn3" name="name3" labelname="라벨명" disabled=true }}
 	<div class="guide_discription">checked + disabled</div>
-	{{> cp/radio class="rd_btn" rd-id="radio_btn4" name="name4" labelname="라벨명" checked=true disabled=true }}
+	{{> cp/radio rd-class="rd_btn" rd-id="radio_btn4" name="name4" labelname="라벨명" checked=true disabled=true }}
+
+	<div class="guide_h4">Type</div>
+	<div class="guide_discription">type1 (large : 72px)</div>
+	{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_ty1" name="name1" labelname="라벨명 large" }}
+	<div class="guide_discription">type2 (medium : 56px)</div>
+	{{> cp/radio rd-class="rd_btn_ty2" rd-id="radio_btn_ty2" name="name1" labelname="라벨명 medium" }}
+	<div class="guide_discription">type3 (small : 40px)</div>
+	{{> cp/radio rd-class="rd_btn_ty3" rd-id="radio_btn_ty3" name="name1" labelname="라벨명 small" }}
 
 	<div class="guide_h4">radio button group</div>
 	<div class="guide_discription">.radio_group_wrap</div>
-	<div class="radio_group_wrap">
-		{{> cp/radio class="rd_btn" rd-id="radio_btn_g1" name="radio_g1" labelname="라벨명" checked=true }}
-		{{> cp/radio class="rd_btn" rd-id="radio_btn_g2" name="radio_g1" labelname="라벨명" }}
-		{{> cp/radio class="rd_btn" rd-id="radio_btn_g2" name="radio_g1" labelname="라벨명" }}
+	<div class="radio_group_wrap" role="radiogroup">
+		{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_g1" name="radio_g1" labelname="라벨명1" checked=true }}
+		{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_g2" name="radio_g1" labelname="라벨명2" }}
+		{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_g3" name="radio_g1" labelname="라벨명3" }}
 	</div>
 	
 	<div class="guide_discription">.radio_group_wrap_ty2</div>
 	<div class="radio_group_wrap_ty2" role="radiogroup">
-		{{> cp/radio class="rd_btn" rd-id="radio_btn_gt1" name="radio_gt1" labelname="라벨명" checked=true }}
-		{{> cp/radio class="rd_btn" rd-id="radio_btn_gt2" name="radio_gt1" labelname="라벨명" }}
-		{{> cp/radio class="rd_btn" rd-id="radio_btn_gt3" name="radio_gt1" labelname="라벨명" }}
-		{{> cp/radio class="rd_btn" rd-id="radio_btn_gt4" name="radio_gt1" labelname="라벨명" }}
+		{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt1" name="radio_gt1" labelname="라벨명1" checked=true }}
+		{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt2" name="radio_gt1" labelname="라벨명2" }}
+		{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt3" name="radio_gt1" labelname="라벨명3" }}
+		{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt4" name="radio_gt1" labelname="라벨명4" }}
 	</div>
 {{/ layout/guide }}
