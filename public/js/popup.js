@@ -12,7 +12,6 @@ class HD_Popup {
 
 	constructor($triggerEl, target) {
 		this.isOpen = false;
-		this.targetName = target;
 		this.$target = $("#" + target);
 		this.$popup_dim = this.$target.find(".popup_dim");
 		this.$triggerEl = $triggerEl;
@@ -23,8 +22,11 @@ class HD_Popup {
 
 	init() {
 
+		console.log($(".wrap").attr("aria-hidden"))
 		if($(".wrap").attr("aria-hidden")==undefined || $(".wrap").attr("aria-hidden")=='false'){
 			$(".wrap").attr("aria-hidden", "true");
+			$(".wrap").attr("inert",'');
+			// disableAutoFocus 
 		}
 
 		//popup active
@@ -81,6 +83,8 @@ class HD_Popup {
 			if (this.isOpen && activePopups.length > 0) {
 				activePopups.attr("aria-hidden", "true");
 				activePopups.find(".popup_inner").attr("aria-hidden", "true");
+				activePopups.find(".popup_inner").attr("inert",'');
+
 			} else if (!this.isOpen) {
 				this.$target.attr("aria-hidden", "true");
 				this.$target.find(".popup_inner").attr("aria-hidden", "true");
@@ -103,17 +107,19 @@ class HD_Popup {
 			const $prevHeader = $($prevPopup).find(".popup_head").length > 0 ? $($prevPopup).find(".popup_head") : null;
 			const $prevContent = $($prevPopup).find(".popup_cont").length > 0 ? $($prevPopup).find(".popup_cont") : null;
 
-			$($prevPopup).attr("aria-hidden", "false");
+			// $($prevPopup).attr("aria-hidden", "false");
 			$($prevPopup).find(".popup_inner").attr("aria-hidden", "false");
+			$($prevPopup).find(".popup_inner").removeAttr('inert');
 			const focusTarget = $prevHeader || $prevContent;
 			this.focusMove(focusTarget);
 
 			//팝업을 동적으로 생성하는 케이스에서만 사용
 			if(window.popupGroup) {
-				setTimeout(()=>{ this.$target.remove()},450);
+				setTimeout(()=>{ this.$target.remove()},1000);
 			}
 		} else {
 			$(".wrap").attr("aria-hidden", "false");
+			$(".wrap").removeAttr('inert');
 			$("body").css("overscroll-behavior", "auto");
 			$("body").removeClass("scroll_lock");
 
