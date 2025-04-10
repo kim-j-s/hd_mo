@@ -66,6 +66,8 @@ class HD_Popup {
 		if (!target) return;
 		const $focusTarget = target;
 
+		console.log('this.isOpen',this.isOpen);
+
 		const activePopups = $(".popup_wrap.active").not(this.$target);
 
 		// ios 스크린리더가 dom의 변경사항을 인식하도록 상태변경
@@ -86,9 +88,10 @@ class HD_Popup {
 				activePopups.find(".popup_inner").attr("aria-hidden", "true");
 				activePopups.find(".popup_inner").attr("inert",'');
 
-			} else if (!this.isOpen) {
+			} else if (!this.isOpen && activePopups.length > 0) {				
 				this.$target.attr("aria-hidden", "true");
 				this.$target.find(".popup_inner").attr("aria-hidden", "true");
+				$focusTarget.find(".popup_inner").removeAttr('inert');
 			}
 		}, 400);
 	}
