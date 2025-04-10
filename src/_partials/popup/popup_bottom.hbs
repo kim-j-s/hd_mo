@@ -9,9 +9,11 @@
 			<div class="draggable" aria-hidden="true">
         		<div class="move"></div>
       		</div>
+			{{#unless no-header}}
 			<div class="popup_head">
 				{{{popup-title}}}
 			</div>
+			{{/unless}}
 			{{> @partial-block}}
 			{{#unless close-btn}}
 				<button type="button" class="popup_close"><span class="blind">팝업 닫기</span></button>
