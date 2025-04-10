@@ -137,13 +137,16 @@ class HD_Popup {
 
 function openPop($triggerEl, target) {
 
+	let delayTime = 0;
+
 	//팝업을 동적으로 생성하는 케이스에서만 사용
 	if(window.popupGroup) {
 		//popup dom을 동적으로 body에 add
 		attachPopup(target);
+		delayTime = 0.5;
 	}
 	const myPopup = new HD_Popup($triggerEl, target);
-	myPopup.init();
+	setTimeout(() => {myPopup.init();},delayTime);	
 }
 
 
