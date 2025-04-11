@@ -1,9 +1,13 @@
 /* 자동차보험 | 기본 정보 */
 
 .insurance_policyBox {
+	margin-top: 12px;
+	padding-top: 17px;
 
 	.insurance_barbox {
 		position: relative;
+		padding: 0 14px;
+
 		&:before {
 			position: absolute;
 			top: 13px;
@@ -19,11 +23,14 @@
 
 	.progress_box {
 		position: relative;
-		padding: 0 0 21px;
+		padding: 12px 0 21px;
 		
 		.date {
+			position: absolute;
+			top: -20px;
+			left: 38%;
 			display: inline-block;
-			padding: 12px 4px 0;
+			padding: 0 4px;
 			background-color: var(--color-border-gray-darker);
 			font-size: var(--font-size-label-xsmall);
 			line-height: 17px;
@@ -33,26 +40,27 @@
 
 		.ing {
 			position: relative;
-			width: 50%;
 			display: block;
+			width: 50%;
 			height: 4px;
 			background-color: var(--color-border-secondary);
 			text-align: center;
 
 			i {
 				position: absolute;
-				top: calc(50% - 4px);
-				z-index: -1;
+				top: calc(50% - 5px);
 				content:'';
-				width: 8px;
-				height: 8px;
-				background-color: var(--color-border-secondary);
+				width: 10px;
+				height: 10px;
+				// background-color: var(--color-border-secondary);
+				background: url(../images/icon/progressbar_dot.svg) no-repeat center / 8px auto;
 				border-radius: 100%;
+				filter: drop-shadow(0px 0px 2px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05))) drop-shadow(0px 1px 2px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)));
 
 				&:before {
 					display: block;
 					width: 37px;
-					margin: 10px 0 0 -16px;
+					margin: 10px 0 0 -13px;
 					padding: 0 4px;
 					background-color: var(--color-border-secondary);
 					// background-color: red;
@@ -67,6 +75,12 @@
 				&.start {
 					left: -4px;
 
+					&.left {
+						&:before {
+							margin-left: 0;
+						}
+					}
+
 					&:before {
 						content:'시작일';
 					}
@@ -80,6 +94,50 @@
 					}
 				}
 			}
+
+			// i {
+			// 	position: absolute;
+			// 	top: 7px;
+
+			// 	display: block;
+			// 	width: 37px;
+			// 	// margin: 10px 0 0 -14px;
+			// 	padding: 0 4px;
+			// 	background-color: var(--color-border-secondary);
+			// 	// background-color: red;
+			// 	font-size: var(--font-size-label-xsmall);
+			// 	line-height: 17px;
+			// 	font-style: normal;
+			// 	color: #FFF;
+			// 	white-space: nowrap;
+			// 	border-radius: var(--radius-small1);
+
+			// 	&:before {
+			// 		position: absolute;
+			// 		top: -10px;
+			// 		left: 0;
+			// 		content:'';
+			// 		width: 10px;
+			// 		height: 10px;
+			// 		// background-color: var(--color-border-secondary);
+			// 		background: url(../images/icon/progressbar_dot.svg) no-repeat center / 8px auto;
+			// 		border-radius: 100%;
+			// 		filter: drop-shadow(0px 0px 2px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05))) drop-shadow(0px 1px 2px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)));
+			// 	}
+
+			// 	&.start {
+			// 		left: -4px;
+			// 	}
+
+			// 	&.end {
+			// 		right: -4px;
+
+			// 		&:before {
+			// 			left: auto;
+			// 			right: 0;
+			// 		}
+			// 	}
+			// }
 		}
 	}
 }
