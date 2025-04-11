@@ -5,25 +5,15 @@
 {{#> layout/default page-title="자동차 상세정보 | 상품"}}
 
 <!-- s: Bottom 팝업 -->
-{{#> popup/popup_bottom popup-id="pop_type01" active=true popup-title="차량 최초 등록일 입력"}}
+
+ <!-- s: 25-04-11 수정 -->
+{{#> popup/popup_bottom popup-id="pop_type01" active=true popup-title="차량 최초 등록일"}}
 <div class="popup_cont">
 	<div class="popup_content">
-		<!-- s: popup_content_top -->
-		<div class="popup_content_top">
-			<h2 class="title_h3">
-				차량
-				<strong>최초 등록일</strong>
-				을
-				<br />
-				입력해 주세요
-			</h2>
-		</div>
-		<!-- e: popup_content_top -->
-
 		<div class="form_group_wrap">
 			<div class="form_line">
 				<div class="label_tit">최초등록일</div>
-				{{> cp/text readonly=true no_del=true cal=true }}
+				{{> cp/text no_del=true cal=true title="차량최초등록일입력" placeholder="2021.01.01"}}
 			</div>
 		</div>
 	
@@ -31,9 +21,11 @@
 </div>
 
 <div class="popup_bottom">
-	<div class="btn_area">{{> cp/button type="3" size="2" b-text="취소"}} {{> cp/button type="1" size="2" b-text="신청하기"}}</div>
+	<div class="btn_area">{{> cp/button type="3" size="2" b-text="취소"}} {{> cp/button type="1" size="2" b-text="확인"}}</div>
 </div>
 {{/ popup/popup_bottom}}
+
+<!-- e: 25-04-11 수정 -->
 <!-- e: Bottom 팝업 -->
 
 {{/ layout/default }}
