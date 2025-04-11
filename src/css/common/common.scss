@@ -290,28 +290,6 @@ strong {
 }
 .select_rolling_opt {
 	position: relative;
-		
-	&.ty2 {
-		.swiper-container {
-			.swiper-wrapper {
-				.swiper-slide {
-					&-active {
-						&:before {
-							content: none;
-						}
-	
-						button {
-							&:before {
-								position: absolute;
-								content: '선택됨';
-								font-size: 0;
-							}
-						}
-					}
-				}
-			}
-		}
-	}
 
 	.swiper-container {
 		overflow: hidden;
@@ -343,12 +321,12 @@ strong {
 					> span,
 					> button {
 						color: var(--color-text-basic);
-					}
 
-					&:before {
-						position: absolute;
-						content: '선택됨';
-						font-size: 0;
+						&:after {
+							position: absolute;
+							content: '선택됨';
+							font-size: 0;
+						}
 					}
 				}
 			}
