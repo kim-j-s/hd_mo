@@ -1097,7 +1097,7 @@ strong {
 }
 .hd_badge.badge_text.c_success.outline {
 	color: var(--color-text-success);
-	border: 1px solid var(--color-element-success);
+	border: 1px solid var(--color-border-success-light);
 }
 .hd_badge.badge_text.c_info.solid {
 	color: var(--color-text-inverse-static);
@@ -1764,15 +1764,16 @@ strong {
 	background: #fff url(../images/icon/toggle_close.svg) no-repeat center;
 }
 .inp_checkbox input[type="checkbox"]:disabled + .chk_label::before {
-	background-color: #f5f5f5;
-	border-color: #f5f5f5;
+	background-color: #f4f5f6;
+	border: 1px dashed var(--color-border-disabled);
 }
 .inp_checkbox input[type="checkbox"]:disabled + .chk_label > .label_cont {
 	color: gray;
 }
 .inp_checkbox input[type="checkbox"]:disabled + .chk_label.switch_check::before {
 	background-color: #fff;
-	border-color: #b1b8be;
+	border-style: solid;
+	border-color: var(--color-border-gray-light);
 }
 .inp_checkbox input[type="checkbox"]:disabled + .chk_label.switch_check::after {
 	background-color: #e6e8ea;
@@ -1782,7 +1783,7 @@ strong {
 	border-color: #f8633c;
 }
 .inp_checkbox input[type="checkbox"]:checked + .chk_label.chk_label_ty3::before {
-	background: #fff url(../images/icon/check_ty4.svg) no-repeat center/2rem auto;
+	background: #fff url(../images/icon/check_ty4.svg) no-repeat center/1.2rem auto;
 }
 .inp_checkbox input[type="checkbox"]:checked + .chk_label.switch_check::before {
 	background: #f8633c;
@@ -1797,12 +1798,13 @@ strong {
 	background: #fff url(../../images/icon/toggle_open.svg) no-repeat center;
 }
 .inp_checkbox input[type="checkbox"]:checked:disabled + .chk_label::before {
-	background-color: #f5f5f5;
-	border-color: #f5f5f5;
+	background: #f4f5f6 url(../images/icon/check_ty5.svg) no-repeat center;
+	border-style: solid;
+	border-color: var(--color-border-disabled);
 }
 .inp_checkbox input[type="checkbox"]:checked:disabled + .chk_label.switch_check::before {
-	background-color: #fff;
-	border-color: #b1b8be;
+	background: #fff;
+	border-color: var(--color-border-gray-light);
 }
 .inp_checkbox input[type="checkbox"]:checked:disabled + .chk_label.switch_check::after {
 	background-color: #e6e8ea;
@@ -2567,7 +2569,7 @@ div:not(.comp_wrap) > .input_text:focus-within {
 .inp_radio input[type="radio"]:checked:disabled + label::before {
 	border: 1px dashed var(--color-border-disabled);
 	background-color: var(--color-element-gray-lighter);
-	background-image: url(../images/icon/check_ty2.svg);
+	background-image: url(../images/icon/check_ty5.svg);
 }
 .radio_group_wrap {
 	display: -webkit-box;
