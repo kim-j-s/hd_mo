@@ -3,15 +3,18 @@
 	name : name 배정
 	labelname : label 배정
 --}}
-<div class="inp_radio{{#if rd-class}} {{rd-class}}{{/if}}">
+<div class="inp_radio">
 	<input type="radio"
 		id="{{rd-id}}"
 		name="{{name}}"
 		{{#if checked}}checked{{/if}}
 		{{#if disabled}}disabled{{/if}}
 	>
-	<label for="{{rd-id}}">
-		<span class="label_i">{{{labelname}}}</span>
+	<label for="{{rd-id}}" {{#if rd-class}}class="{{rd-class}}"{{/if}}>
+		<span class="label_cont">
+			{{{labelname}}}
+			{{#if labelcont}}<span class="sub_g_txt">{{{labelcont}}}</span>{{/if}}
+		</span>
 	</label>
 	{{#if @partial-block}}{{> @partial-block }}{{/if}}
 </div>
