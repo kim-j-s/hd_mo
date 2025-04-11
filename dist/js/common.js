@@ -321,6 +321,30 @@
 	// })
 })();
 
+function prograssBar() {
+	const $card = $(".card_item");
+
+	$card.each(function () {
+		const $this = $(this),
+			$bar = $this.find(".progress_box .ing");
+
+		if ($this.find(".progress_box").length > 0) {
+			const marginLeft = parseFloat($bar.css("margin-left"));
+			const infoWidth = $bar.find(".start:before").width();
+			console.log(infoWidth, marginLeft);
+			if (marginLeft <= 37) {
+				$bar.find(".start").addClass("left");
+			}
+
+			// if(marginLeft >= 37){
+			// 	$bar.find('.start').css('left','0');
+			// }else {
+			// 	$bar.find('.start').css('left','-4px');
+			// }
+		}
+	});
+}
+
 //
 function phoneVal(target) {
 	const $target = target;
@@ -436,6 +460,8 @@ $(function () {
 			$input.attr("readonly", false); // readonly 속성 제거
 		}, 500);
 	});
+
+	// prograssBar();
 
 	// 달력 호출
 });
