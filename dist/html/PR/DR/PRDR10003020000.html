@@ -63,9 +63,10 @@
 							<div class="select_rolling_opt">
 								<div id="option_swiper" class="swiper-container">
 									<div class="swiper-wrapper">
-										<div class="swiper-slide"><span>4천만원</span></div>
-										<div class="swiper-slide"><span>3천만원</span></div>
-										<div class="swiper-slide"><span>2천만원</span></div>
+										<div class="swiper-slide"><span>1억</span></div>
+										<div class="swiper-slide"><span>1억 5천만원</span></div>
+										<div class="swiper-slide"><span>2억원</span></div>
+										<div class="swiper-slide"><span>2억 5천만원</span></div>
 									</div>
 									<div class="swiper-button-next"></div>
 									<div class="swiper-button-prev"></div>
@@ -105,11 +106,14 @@
 			$(document).ready(function () {
 				$(".swiper-container").each(function (idx, ele) {
 					const $swiperContainer = $(ele);
-					const swiperInstance = $swiperContainer[0].swiper;
+					const slideNum = $swiperContainer.find(".swiper-slide").length,
+						newNum = Math.round(slideNum / 2) - 1;
+					// console.log(newNum);
 
 					const swiper = new Swiper($swiperContainer[0], {
 						slidesPerView: "auto",
 						centeredSlides: true,
+						initialSlide: newNum,
 						spaceBetween: 16,
 						observer: true,
 						navigation: {
@@ -122,21 +126,6 @@
 							nextSlideMessage: "다음 항목으로 이동",
 						},
 					});
-
-					swiper.on("init", function () {
-						const totalSlides = swiper.slides.length;
-						console.log(`Swiper #${idx} 슬라이드 총 갯수: ${totalSlides}`);
-
-						// 3. 중간 슬라이드 설정
-						const initialSlideIdx = Math.floor(totalSlides / 2); // 중앙 슬라이드
-						swiper.initialSlide = initialSlideIdx; // 초기 슬라이드 설정
-
-						// 4. 초기 슬라이드를 설정한 후, swiper 업데이트
-						swiper.update();
-					});
-
-					// 5. Swiper 인스턴스 초기화
-					swiper.init();
 				});
 			});
 		</script>

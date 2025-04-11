@@ -85,9 +85,6 @@
 												<div class="swiper-slide"><span>3년</span></div>
 												<div class="swiper-slide"><span>5년</span></div>
 												<div class="swiper-slide"><span>7년</span></div>
-												<div class="swiper-slide"><span>10년</span></div>
-												<div class="swiper-slide"><span>15년</span></div>
-												<div class="swiper-slide"><span>20년</span></div>
 											</div>
 											<div class="swiper-button-next"></div>
 											<div class="swiper-button-prev"></div>
@@ -131,11 +128,14 @@
 			$(document).ready(function () {
 				$(".swiper-container").each(function (idx, ele) {
 					const $swiperContainer = $(ele);
+					const slideNum = $swiperContainer.find(".swiper-slide").length,
+						newNum = Math.round(slideNum / 2) - 1;
+					// console.log(newNum);
 
-					new Swiper($swiperContainer[0], {
+					const swiper = new Swiper($swiperContainer[0], {
 						slidesPerView: "auto",
 						centeredSlides: true,
-						initialSlide: 2,
+						initialSlide: newNum,
 						spaceBetween: 16,
 						observer: true,
 						navigation: {
