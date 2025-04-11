@@ -43,6 +43,10 @@ strong {
 	color: var(--color-text-primary);
 }
 
+.primary_bold {
+	color: var(--color-text-primary-bold);
+}
+
 //background 색상
 .bg_white { background-color: #ffffff;}
 
@@ -51,6 +55,13 @@ strong {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+}
+
+//정렬
+.space_between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .wrap {
@@ -139,11 +150,14 @@ strong {
 	.content_top + .card_item_wrap {
 		margin-top: 20px;
 	}	
-}
 
+	.content_top + .text_sub {
+		margin-top: 20px;
+	}
 
-.popup_content_top + .info_box {
-	margin-top: 32px;
+	.text_sub + .card_item_wrap {
+		margin-top: 16px;
+	}
 }
 
 .info_box {
