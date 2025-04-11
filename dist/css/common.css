@@ -162,8 +162,9 @@ strong {
 	position: relative;
 }
 .select_rolling_opt .swiper-container {
-	margin: 0 1rem;
 	overflow: hidden;
+	position: relative;
+	margin: 0 1rem;
 }
 .select_rolling_opt .swiper-container .swiper-wrapper .swiper-slide {
 	width: auto !important;
@@ -200,6 +201,7 @@ strong {
 }
 .select_rolling_opt .swiper-container [class^="swiper-button"]:before {
 	position: absolute;
+	right: 0;
 	z-index: -1;
 	content: "";
 	width: 4rem;
@@ -219,6 +221,9 @@ strong {
 	border: 1px solid var(--color-border-gray-light);
 	border-radius: var(--radius-max);
 }
+.select_rolling_opt .swiper-container .swiper-button-prev {
+	left: 0;
+}
 .select_rolling_opt .swiper-container .swiper-button-prev:before {
 	left: 1.8rem;
 	-webkit-transform: rotate(180deg);
@@ -228,6 +233,9 @@ strong {
 	background-image: url(../images/icon/arrowRight_ty3.svg);
 	-webkit-transform: rotate(180deg);
 	transform: rotate(180deg);
+}
+.select_rolling_opt .swiper-container .swiper-button-next {
+	right: 0;
 }
 .select_rolling_opt .swiper-container .swiper-button-next:before {
 	left: -2.4rem;
