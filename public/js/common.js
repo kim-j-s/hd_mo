@@ -331,21 +331,24 @@ function prograssBar(){
 
 	$card.each(function(){
 		const $this = $(this),
-					$bar = $this.find('.progress_box .ing');
+					$bar = $this.find('.insurance_policyBox2 .progress_box .ing');
 
-		if($this.find('.progress_box').length > 0){
+		if($this.find('.insurance_policyBox2 .progress_box').length > 0){
 			const marginLeft = parseFloat($bar.css('margin-left'));
-			const infoWidth = $bar.find('.start:before').width();
-			console.log(infoWidth, marginLeft);
+			const barBoxWidth = $bar.closest('.progress_box').width();
+			const barWidth = $bar.width();
+			const infoWidth = $bar.find('.start').width();
+			const total = marginLeft + barWidth;
+
+			console.log(marginLeft, barWidth, total, '/'+ barBoxWidth);
+
 			if(marginLeft <= 37){
 				$bar.find('.start').addClass('left');
 			}
 
-			// if(marginLeft >= 37){
-			// 	$bar.find('.start').css('left','0');
-			// }else {
-			// 	$bar.find('.start').css('left','-4px');
-			// }
+			if(barBoxWidth <= total){
+				$bar.find('.end').addClass('right');
+			}
 		}
 	})
 }
@@ -464,7 +467,12 @@ $(function(){
 		}, 500);
 	});
 
-	// prograssBar();
+	prograssBar();
 
 	// 달력 호출
+});
+
+
+$(window).resize(function(){
+	// prograssBar();
 })
