@@ -689,6 +689,78 @@
 .keypad_item .keypad_btn.keypad_btn_delall {
 	font-size: 1.6rem;
 }
+/* 자동차보험 - 기본정보 */
+/* 자동차보험 | 기본 정보 */
+.insurance_policyBox .insurance_barbox {
+	position: relative;
+}
+.insurance_policyBox .insurance_barbox:before {
+	position: absolute;
+	top: 1.3rem;
+	left: 0;
+	z-index: -1;
+	content: "";
+	width: 100%;
+	height: 0.2rem;
+	background-color: var(--color-background-gray-subtle);
+	border-radius: 0.4rem;
+}
+.insurance_policyBox .progress_box {
+	position: relative;
+	padding: 0 0 2.1rem;
+}
+.insurance_policyBox .progress_box .date {
+	display: inline-block;
+	padding: 1.2rem 0.4rem 0;
+	background-color: var(--color-border-gray-darker);
+	font-size: var(--font-size-label-xsmall);
+	line-height: 1.7rem;
+	color: #fff;
+	border-radius: 0.8rem;
+}
+.insurance_policyBox .progress_box .ing {
+	position: relative;
+	width: 50%;
+	display: block;
+	height: 0.4rem;
+	background-color: var(--color-border-secondary);
+	text-align: center;
+}
+.insurance_policyBox .progress_box .ing i {
+	position: absolute;
+	top: calc(50% - 0.4rem);
+	z-index: -1;
+	content: "";
+	width: 0.8rem;
+	height: 0.8rem;
+	background-color: var(--color-border-secondary);
+	border-radius: 100%;
+}
+.insurance_policyBox .progress_box .ing i:before {
+	display: block;
+	width: 3.7rem;
+	margin: 1rem 0 0 -1.6rem;
+	padding: 0 0.4rem;
+	background-color: var(--color-border-secondary);
+	font-size: var(--font-size-label-xsmall);
+	line-height: 1.7rem;
+	font-style: normal;
+	color: #fff;
+	white-space: nowrap;
+	border-radius: var(--radius-small1);
+}
+.insurance_policyBox .progress_box .ing i.start {
+	left: -0.4rem;
+}
+.insurance_policyBox .progress_box .ing i.start:before {
+	content: "시작일";
+}
+.insurance_policyBox .progress_box .ing i.end {
+	right: -0.4rem;
+}
+.insurance_policyBox .progress_box .ing i.end:before {
+	content: "종료일";
+}
 /* 자동차보험 - 운전자정보 */
 /* 자동차보험 | 운전자 정보 - 운전자 범위 선택 */
 .driver_relationship_state {

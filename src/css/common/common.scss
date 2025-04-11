@@ -39,6 +39,13 @@ strong {
 	color: #009419;
 }
 
+.primary {
+	color: var(--color-text-primary);
+}
+
+//background 색상
+.bg_white { background-color: #ffffff;}
+
 //텍스트 ellipsis
 .truncate {
 	overflow: hidden;
@@ -57,20 +64,46 @@ strong {
 		display: flex;
 		flex-direction: column;
 		flex: 1;
-		padding: 24px 24px 1px;
-
-		// &.container_ty2 {
-		// 	padding: 
-		// }
+		padding: 24px 24px 64px;
 
 		.content {
 			flex: 1;
 		}
 	}
 
-
 	&.wrap_ty2 {
 		background: var(--color-surface-secondary-subtler);
+
+		.container {
+			padding: 24px 0px 1px;
+		}
+
+		.content {
+			// padding: 24px 24px 1px;
+			padding: 0 24px 32px;			
+		}
+		
+		.content_ty2{
+			background-color: #ffffff;
+			padding: 40px 24px;
+		}
+
+		.content.content_ty2 + .content.content_ty2 {
+			margin-top: 8px;
+			position: relative;
+	
+			&:before {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 8px;
+				background: var(--color-divider-gray-light);
+				position:absolute;
+				top: -8px;
+				margin-left: -24px;
+			}
+		}
+		
 	}
 }
 
@@ -91,7 +124,8 @@ strong {
 		& + .bann_text_wrap_ty1,
 		& + .bann_text_wrap_ty2,
 		& + .form_group_wrap,
-		& + .select_driver_range {
+		& + .select_driver_range,
+		& + .card_item_wrap {
 			margin-top: 32px;
 		}
 
@@ -101,28 +135,11 @@ strong {
 	}
 }
 
-
-.content_box {
-	& + & {
-		margin-top: 8px;
-		position: relative;
-
-		&:before {
-			content: '';
-			display: block;
-			width: 100vw;
-			height: 8px;
-			background: var(--color-divider-gray-light);
-			position:absolute;
-			top:-8px;
-			margin-left: -24px;
-		}
-	}
+.content_ty2 {
+	.content_top + .card_item_wrap {
+		margin-top: 20px;
+	}	
 }
-
-
-
-
 
 
 .popup_content_top + .info_box {
@@ -205,7 +222,7 @@ strong {
 .bg_area {
 	margin: 0 -24px;
 	padding: 32px 24px;
-	background-color: #f2f5f8;
+	background-color: var(--color-background-gray-subtler);
 }
 
 .sticky_fix {

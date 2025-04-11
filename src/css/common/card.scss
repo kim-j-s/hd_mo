@@ -2,7 +2,7 @@
 .card_item_wrap {
 	.card_item {
 		position: relative;
-		padding: 32px 24px;
+		padding: var(--padding-card-large);
 		border: 1px solid #e1e3ea;
 		border-radius: 24px;
 		background: rgba(255, 255, 255, 0.9);
@@ -10,6 +10,10 @@
 
 		& ~ .card_item {
 			margin-top: 16px;
+
+			&.non_chk {
+				margin-top: 52px;
+			}
 		}
 
 		.item_inner {
@@ -48,8 +52,6 @@
 						border-radius: 24px;
 					}
 				}
-				& + * {
-				}
 			}
 		}
 
@@ -74,20 +76,29 @@
 			}
 
 			.title_info {
+				display: flex;
+				flex-direction: column;
+				gap: 4px;
+
 				.sub_title {
-					font-size: 14px;
-					line-height: 21px;
+					color: var(--color-text-subtle);
+					font-size: var(--font-size-body-small);
+					line-height: 150%; 
+
 					& + .cont {
 						margin-top: 4px;
 					}
 				}
 				.main_title {
-					font-size: 16px;
-					line-height: 24px;
+					font-size: var(--font-size-heading-small);
+					line-height: 27px;
 					font-weight: 700;
+					color: var(--color-text-bolder);
 				}
 				& + .desc {
 					margin-top: 8px;
+					font-size: var(--font-size-body-small);
+					color: var(--color-text-information);
 				}
 			}
 			.desc {
@@ -117,6 +128,11 @@
 			.car_logo {
 				margin-left: 4px;
 			}
+
+			.text_body_large {
+				font-size: var(--font-size-body-large);
+				line-height: 150%;
+			}
 		}
 
 		// card list type
@@ -145,7 +161,7 @@
 		}
 
 		.card_list_ty1 {
-			@include car-list-style($ul-border-radius: 0, $li-padding: 0 0 12px, $li-font-size: 14px, $li-color: #333) {
+			@include car-list-style($ul-border-radius: 0, $li-padding: 0 0 12px, $li-font-size: var(--font-size-body-small)) {
 				// ul.list-2에 대한 추가적인 스타일
 				// background-color: var(--color-primary);
 				> li {
@@ -165,9 +181,11 @@
 						flex: 1 1 0;
 						min-width: 100px;
 						max-width: 50%;
+						color: var(--color-text-subtle);
 					}
 					&:last-child {
 						text-align: right;
+						color: #000;
 					}
 				}
 
