@@ -59,9 +59,18 @@ strong {
 		flex: 1;
 		padding: 24px 24px 1px;
 
+		// &.container_ty2 {
+		// 	padding: 
+		// }
+
 		.content {
 			flex: 1;
 		}
+	}
+
+
+	&.wrap_ty2 {
+		background: var(--color-surface-secondary-subtler);
 	}
 }
 
@@ -85,8 +94,36 @@ strong {
 		& + .select_driver_range {
 			margin-top: 32px;
 		}
+
+		.title_h2 + .hd_btn {
+			margin-top: 8px;
+		}
 	}
 }
+
+
+.content_box {
+	& + & {
+		margin-top: 8px;
+		position: relative;
+
+		&:before {
+			content: '';
+			display: block;
+			width: 100vw;
+			height: 8px;
+			background: var(--color-divider-gray-light);
+			position:absolute;
+			top:-8px;
+			margin-left: -24px;
+		}
+	}
+}
+
+
+
+
+
 
 .popup_content_top + .info_box {
 	margin-top: 32px;
