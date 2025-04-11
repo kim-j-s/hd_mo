@@ -11,17 +11,23 @@
 		{{#if disabled}}disabled{{/if}}
 		{{#if role}}role="{{{role}}}"{{/if}}{{!-- swich --}}
 		{{#if aria-checked}}aria-checked="{{{aria-checked}}}"{{/if}}{{!-- swich --}}
-		{{#if ag}} title="체크하시면 {{{labelname}}} 약관 팝업이 활성화 됩니다."{{/if}}
-		{{#if ag_more}} title="체크하시면 {{{labelname}}} 약관 팝업이 활성화 됩니다."{{/if}}
-		{{#if ag_top}} title="체크하시면 {{{labelname}}} 약관 팝업이 활성화 됩니다."{{/if}}
+		{{!-- 체크 시 팝업 활성화 되지 않음. 문구 미제공, 추후 변경 시 재사용 예정 --}}
+		{{!-- {{#if ag}} title="체크하시면 {{{labelname}}} 약관 팝업이 활성화 됩니다."{{/if}} --}}
+		{{!-- {{#if ag_more}} title="체크하시면 {{{labelname}}} 약관 팝업이 활성화 됩니다."{{/if}} --}}
+		{{!-- {{#if ag_top}} title="체크하시면 {{{labelname}}} 약관 팝업이 활성화 됩니다."{{/if}} --}}
 	>
-	<label for="{{id}}" class="chk_label{{#if label_class}} {{label_class}}{{/if}}{{#if ag_more}} more_add{{/if}}{{#if ag_top}} chk_label_ty2{{/if}}"><span class="label_cont">{{{labelname}}}</span></label>
+	<label for="{{id}}" class="chk_label{{#if label_class}} {{label_class}}{{/if}}{{#if ag_more}} more_add{{/if}}{{#if ag_top}} chk_label_ty2{{/if}}">
+		<span class="label_cont">
+			{{{labelname}}}
+			{{#if labelcont}}<span class="sub_g_txt">{{{labelcont}}}</span>{{/if}}
+		</span>
+	</label>
 	{{#if exp}}
-	<div class="chk_lby">
-		{{> @partial-block }}
-	</div>
+		<div class="chk_lby">
+			{{> @partial-block }}
+		</div>
 	{{else}}
-	{{#if @partial-block}}{{> @partial-block }}{{/if}}
+		{{#if @partial-block}}{{> @partial-block }}{{/if}}
 	{{/if}}
 	{{#if ag_more}}
 	<button type="button" class="ag_more_btn" aria-label="{{{labelname}}} 자세히 보기">자세히</button>

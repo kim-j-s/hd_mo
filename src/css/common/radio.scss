@@ -11,25 +11,52 @@
 		& + label {
 			position: relative;
 			display: block;
-			padding-left: 32px;
-
-			> span {
+			padding-left: 28px;
+			cursor: pointer;
+			> .label_cont {
 				display: block;
 				font-size: var(--font-size-label-large);
 				color: var(--color-text-bolder);
-				line-height: 24px;
+				line-height: 22px;
+				.sub_g_txt {
+					display: block;
+					padding-top: 4px;
+					font-size: var(--font-size-label-small);
+					color: var(--color-text-subtle);
+				}
 			}
-			cursor: pointer;
-
 			&::before {
 				content:'';
 				position: absolute;
-				top: 0;
+				top: 1px;
 				left: 0;
-				width: 24px;
-				height: 24px;
+				width: 20px;
+				height: 20px;
 				border: 1px solid var(--color-border-gray-dark);
 				border-radius: 100%;
+			}
+			&.lg {
+				padding-left: 32px;
+				&::before {
+					top: 0;
+					width: 24px;
+					height: 24px;
+				}
+				> .label_cont {
+					font-size: var(--font-size-label-large);
+					line-height: 24px;
+					.sub_g_txt {
+						font-size: var(--font-size-label-medium);
+					}
+				}
+			}
+			&.sm {
+				padding-left: 24px;
+				&::before {
+					top: 3px;
+					width: 16px;
+					height: 16px;
+				}
 			}
 		}
 
@@ -40,7 +67,7 @@
 					background-color: var(--color-element-gray-lighter);
 				}
 
-				> span {
+				> .label_cont {
 					color: var(--color-text-disabled);
 				} 
 			}
@@ -49,8 +76,18 @@
 		&:checked {
 			& + label {
 				&::before {
-					background: var(--color-element-primary) url(../images/icon/check_ty1.svg) no-repeat center center / 12px auto;
+					background: var(--color-element-primary) url(../images/icon/check_ty1.svg) no-repeat center center / 14px auto;
 					border: 1px solid var(--color-element-primary);
+				}
+				&.lg {
+					&::before {
+						background-size: 16px auto;
+					}
+				}
+				&.sm {
+					&::before {
+						background-size: 10px auto;
+					}
 				}
 			}
 
@@ -59,14 +96,33 @@
 					&::before {
 						border: 1px dashed var(--color-border-disabled);
 						background-color: var(--color-element-gray-lighter);
-						background-image: url(../images/icon/check_ty5.svg);
 					}
 				}
 			}
 		}
 
 
+	
+		&:checked {
+			& + label {
+				&::before {
+					background-size: 12px auto;
+				}
+			}
+
+			&:disabled {
+				& + label {
+					&::before {
+						border: 1px solid var(--color-border-disabled);
+						background-color: var(--color-element-gray-lighter);
+						background-image: url(../images/icon/check_ty5.svg);
+					}
+				}
+			}
+		}
+
 	}
+	
 }
 
 .radio_group_wrap {

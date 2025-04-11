@@ -2,58 +2,85 @@
 	<div class="guide_h1">Checkbox</div>
 
 	<div class="guide_discription">Default</div>
-	{{> cp/checkbox id="checkbox1" labelname="라벨명" }}
+	{{> cp/checkbox id="checkbox1" labelname="라벨명 Default" }}
 	<div class="guide_discription">checked</div>
-	{{> cp/checkbox id="checkbox2" labelname="라벨명" checked=true }}
+	{{> cp/checkbox id="checkbox2" labelname="라벨명 checked" checked=true }}
 	<div class="guide_discription">disabled</div>
-	{{> cp/checkbox id="checkbox3" labelname="라벨명" disabled=true }}
+	{{> cp/checkbox id="checkbox3" labelname="라벨명 disabled" disabled=true }}
 	<div class="guide_discription">checked + disabled</div>
-	{{> cp/checkbox id="checkbox4" labelname="라벨명" checked=true disabled=true }}
+	{{> cp/checkbox id="checkbox4" labelname="라벨명 checked disabled" checked=true disabled=true }}
 
 	<div class="guide_h4">.checkbox_group_wrap</div>
 	<div class="guide_discription">Default</div>
 	<div class="checkbox_group_wrap">
-		{{> cp/checkbox id="checkbox01-1" labelname="라벨명 type01" }}
-		{{> cp/checkbox id="checkbox01-2" labelname="라벨명 type02" }}
-		{{> cp/checkbox id="checkbox01-3" labelname="라벨명 type03" }}
-		{{> cp/checkbox id="checkbox01-4" labelname="라벨명 type04" }}
+		{{> cp/checkbox id="checkbox01-1" labelname="라벨명 Default" }}
+		{{> cp/checkbox id="checkbox01-2" labelname="라벨명 checked" checked=true }}
+		{{> cp/checkbox id="checkbox01-3" labelname="라벨명 disabled" disabled=true }}
+		{{> cp/checkbox id="checkbox01-4" labelname="라벨명 checked disabled" checked=true disabled=true }}
 	</div>
-
 	<div class="guide_discription">Column Type</div>
-	<div class="radio_group_wrap column">
+	<div class="checkbox_group_wrap column">
 		{{> cp/checkbox id="checkbox02-1" labelname="라벨명 type01 : 내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다." }}
 		{{> cp/checkbox id="checkbox02-2" labelname="라벨명 type02 : 내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다." }}
 		{{> cp/checkbox id="checkbox02-3" labelname="라벨명 type03 : 내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다." }}
 	</div>
+	<div class="guide_discription">Default+help text</div>
+	<div class="checkbox_group_wrap column">
+		{{> cp/checkbox id="checkbox01-5" labelname="라벨명 Default" labelcont="부가적인 설명이 들어갑니다." }}
+		{{> cp/checkbox id="checkbox01-6" labelname="라벨명 checked" labelcont="부가적인 설명이 들어갑니다." checked=true }}
+		{{> cp/checkbox id="checkbox01-7" labelname="라벨명 disabled" labelcont="부가적인 설명이 들어갑니다." disabled=true }}
+		{{> cp/checkbox id="checkbox01-8" labelname="라벨명 checked disabled" labelcont="부가적인 설명이 들어갑니다." checked=true disabled=true }}
+	</div>
 
-	<div class="guide_h4">크기별</div>
-	<div class="guide_discription">chk_label_ty2</div>
-	{{> cp/checkbox id="checkbox03-1" label_class="chk_label_ty2" labelname="라벨명 type01" }}
 
-	<div class="guide_discription">chk_label_ty3</div>
-	{{> cp/checkbox id="checkbox03-2" label_class="chk_label_ty3" labelname="라벨명 type01" }}
-
-	<br><br>
-	{{> cp/checkbox id="checkbox03-3" label_class="chk_label_ty3" labelname="라벨명 type01" checked=true}}
+	<div class="guide_h4">.chk_label_ty2</div>
+	<div class="guide_discription">Large_bold</div>
+	<div class="checkbox_group_wrap">
+		{{> cp/checkbox id="checkbox03-1" label_class="chk_label_ty2" labelname="라벨명 Default" }}
+		{{> cp/checkbox id="checkbox03-2" label_class="chk_label_ty2" labelname="라벨명 checked" checked=true }}
+		{{> cp/checkbox id="checkbox03-3" label_class="chk_label_ty2" labelname="라벨명 disabled" disabled=true }}
+		{{> cp/checkbox id="checkbox03-4" label_class="chk_label_ty2" labelname="라벨명 checked disabled" checked=true disabled=true }}
+	</div>
 	
+	<div class="guide_h4">.chk_label_ty3</div>
+	<div class="guide_discription">Large</div>
+	<div class="checkbox_group_wrap">
+		{{> cp/checkbox id="checkbox04-1" label_class="chk_label_ty3" labelname="라벨명 Default" }}
+		{{> cp/checkbox id="checkbox04-2" label_class="chk_label_ty3" labelname="라벨명 checked" checked=true }}
+		{{> cp/checkbox id="checkbox04-3" label_class="chk_label_ty3" labelname="라벨명 disabled" disabled=true }}
+		{{> cp/checkbox id="checkbox04-4" label_class="chk_label_ty3" labelname="라벨명 checked disabled" checked=true disabled=true }}
+	</div>
+	<div class="guide_discription">Large+help text</div>
+	<div class="checkbox_group_wrap column">
+		{{> cp/checkbox id="checkbox04-5" label_class="chk_label_ty3" labelname="라벨명 Default" labelcont="부가적인 설명이 들어갑니다." }}
+		{{> cp/checkbox id="checkbox04-6" label_class="chk_label_ty3" labelname="라벨명 checked" labelcont="부가적인 설명이 들어갑니다." checked=true }}
+		{{> cp/checkbox id="checkbox04-7" label_class="chk_label_ty3" labelname="라벨명 disabled" labelcont="부가적인 설명이 들어갑니다." disabled=true }}
+		{{> cp/checkbox id="checkbox04-8" label_class="chk_label_ty3" labelname="라벨명 checked disabled" labelcont="부가적인 설명이 들어갑니다." checked=true disabled=true }}
+	</div>
+
+	<div class="guide_h4">.chk_label_ty4</div>
+	<div class="guide_discription">None_box</div>
+	<div class="checkbox_group_wrap">
+		{{> cp/checkbox id="checkbox05-1" label_class="chk_label_ty4" labelname="라벨명 Default" }}
+		{{> cp/checkbox id="checkbox05-2" label_class="chk_label_ty4" labelname="라벨명 checked" checked=true }}
+		{{> cp/checkbox id="checkbox05-3" label_class="chk_label_ty4" labelname="라벨명 disabled" disabled=true }}
+		{{> cp/checkbox id="checkbox05-4" label_class="chk_label_ty4" labelname="라벨명 checked disabled" checked=true disabled=true }}
+	</div>
 
 
-
-	<div class="guide_h4">switch 크기별</div>
-	{{> cp/checkbox id="switch_check1" label_class="switch_check lg" role="switch" aria-checked="false" labelname="switch_large" }}
-	<br>
-	{{> cp/checkbox id="switch_check2" label_class="switch_check lg" role="switch" aria-checked="false" labelname="switch_large_disabled " disabled="true" }}
-	<br><br>
-	{{> cp/checkbox id="switch_check3" label_class="switch_check lg" role="switch" checked="true" aria-checked="true" labelname="switch_large:cheked" }}
-	<br><br>
-	{{> cp/checkbox id="switch_check4" label_class="switch_check lg" role="switch" checked="true" aria-checked="true" labelname="switch_large_disabled:cheked" disabled="true" }}
-	<br><br>
-	{{> cp/checkbox id="switch_check5" label_class="switch_check" role="switch" aria-checked="false" labelname="switch_medium" }}
-	<br><br>
-	{{> cp/checkbox id="switch_check6" label_class="switch_check" role="switch" aria-checked="false" labelname="switch_medium_disabled" disabled="true" }}
-	<br><br>
-	{{> cp/checkbox id="switch_check7" label_class="switch_check" role="switch" checked="true" aria-checked="true" labelname="switch_medium:cheked" }}
-	<br><br>
-	{{> cp/checkbox id="switch_check8" label_class="switch_check" role="switch" checked="true" aria-checked="true" labelname="switch_medium_disabled:cheked" disabled="true" }}
-	<br><br>
+	<div class="guide_h4">.switch_check</div>
+	<div class="guide_discription">Default</div>
+	<div class="checkbox_group_wrap">
+		{{> cp/checkbox id="switch_check5" label_class="switch_check" role="switch" aria-checked="false" labelname="switch_medium" }}
+		{{> cp/checkbox id="switch_check6" label_class="switch_check" role="switch" aria-checked="false" labelname="switch_medium_disabled" disabled="true" }}
+		{{> cp/checkbox id="switch_check7" label_class="switch_check" role="switch" checked="true" aria-checked="true" labelname="switch_medium:cheked" }}
+		{{> cp/checkbox id="switch_check8" label_class="switch_check" role="switch" checked="true" aria-checked="true" labelname="switch_medium_disabled:cheked" disabled="true" }}
+	</div>
+	<div class="guide_discription">Large</div>
+	<div class="checkbox_group_wrap">
+		{{> cp/checkbox id="switch_check1" label_class="switch_check lg" role="switch" aria-checked="false" labelname="switch_large" }}
+		{{> cp/checkbox id="switch_check2" label_class="switch_check lg" role="switch" aria-checked="false" labelname="switch_large_disabled " disabled="true" }}
+		{{> cp/checkbox id="switch_check3" label_class="switch_check lg" role="switch" checked="true" aria-checked="true" labelname="switch_large:cheked" }}
+		{{> cp/checkbox id="switch_check4" label_class="switch_check lg" role="switch" checked="true" aria-checked="true" labelname="switch_large_disabled:cheked" disabled="true" }}
+	</div>
 {{/ layout/guide }}
