@@ -1,6 +1,6 @@
 <!---
-화면번호 : PRLT10004001000
-경로 : 3.자동차 상세정보 > 3-1.자동차 상세정보 입력 > 부속품 조회/적용
+화면번호 : PRLT10004000800
+경로 : 3.자동차 상세정보 > 3-1.자동차 상세정보 입력 > 최초등록일 입력
 -->
 <!doctype html>
 <html lang="ko">
@@ -48,113 +48,40 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body>
-		<!-- s: Full 팝업 -->
-		<div class="popup_wrap full active" id="pop_type01" role="dialog" aria-hidden="false">
+		<!-- s: Bottom 팝업 -->
+
+		<!-- s: 25-04-14 수정 -->
+		<div class="popup_wrap bottom active" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="false">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true"></div>
 				<div class="popup_inner">
-					<div class="popup_head"></div>
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head">차량 최초 등록일을 입력해주세요</div>
 					<div class="popup_cont">
 						<div class="popup_content">
-							<!-- s: popup_content_top -->
-							<div class="popup_content_top">
-								<h2 class="title_h2">
-									자동차 제조사를 통해 조회된
-									<strong>출고시 옵션 장착 부속품 내역</strong>
-									입니다
-								</h2>
-							</div>
-							<!-- e: popup_content_top -->
-
-							<div class="card_item_wrap">
-								<div class="card_item">
-									<div class="item_inner">
-										<div class="inp_checkbox">
-											<input type="checkbox" class="check_s_16" id="card_chk2" name="name2" aria-labelledby="card_chk2_cont" />
-											<label for="card_chk2" class="chk_label"></label>
-											<i></i>
-										</div>
-										<div class="inner_cont">
-											<!-- s: 25-04-11 수정 -->
-											<div class="item_top">
-												<div class="title_info">
-													<div class="main_title">현대스마트센스I</div>
-												</div>
-												<div class="desc">현대스마트센스I(ISCC)</div>
-											</div>
-											<!-- e: 25-04-11 수정 -->
-
-											<ul class="card_list_ty1">
-												<li>
-													<div class="title">출고시가액</div>
-													<div class="cont">100만원</div>
-												</li>
-												<li>
-													<div class="title">개시기준 가액</div>
-													<div class="cont">54만원</div>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-
-								<div class="card_item">
-									<div class="item_inner">
-										<div class="inp_checkbox">
-											<input type="checkbox" class="check_s_16" id="card_chk2" name="name2" aria-labelledby="card_chk2_cont" />
-											<label for="card_chk2" class="chk_label"></label>
-											<i></i>
-										</div>
-										<div class="inner_cont">
-											<!-- s: 25-04-11 수정 -->
-											<div class="item_top">
-												<div class="title_info">
-													<div class="main_title">현대스마트센스I</div>
-												</div>
-												<!-- s: 25-04-14 수정 -->
-												<div class="desc">현대스마트센스I(ISCC)</div>
-												<!-- e: 25-04-14 수정 -->
-											</div>
-											<!-- e: 25-04-11 수정 -->
-
-											<ul class="card_list_ty1">
-												<li>
-													<div class="title">출고시가액</div>
-													<div class="cont">100만원</div>
-												</li>
-												<li>
-													<div class="title">개시기준 가액</div>
-													<div class="cont">54만원</div>
-												</li>
-											</ul>
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">차량 최초등록일</div>
+									<div class="input_text calendar">
+										<div class="inp">
+											<input type="tel" class="inp_picker" placeholder="2021.01.01" title="날짜를 입력해주세요" />
+											<button type="button" class="btn calendar_call" title="날짜 선택"></button>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-
-						<!-- s: 꼭 알아두세요 -->
-						<div class="bottom_fix_notice">
-							<div class="acd_item">
-								<div class="acd_head">
-									<button type="button" class="acd_btn" aria-expanded="false"><span>꼭 알아두세요</span></button>
-								</div>
-								<div class="acd_cont">
-									<div class="inner">
-										<ul class="list_ty1">
-											<li>부속명 및 가액이 일치하는 부속은 적용여부 선택 후 적용하기를 누르시면 됩니다. 단, 제조사 조회 결과로 적용된 부속은 수정할 수 없습니다. 부속품 내용이 일치하지 않거나, 차량 출고 이후 장착한 부속은 직접입력하시면 됩니다.</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- e: 꼭 알아두세요 -->
 					</div>
 
 					<div class="popup_bottom">
 						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
-								<span class="text">부속품 적용하기</span>
+							<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_2">
+								<span class="text">취소</span>
+							</button>
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">확인</span>
 							</button>
 						</div>
 					</div>
@@ -162,6 +89,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- e: Full 팝업 -->
+		<!-- e: 25-04-14 수정 -->
+		<!-- e: Bottom 팝업 -->
 	</body>
 </html>

@@ -53,7 +53,7 @@ function selectEvent() {
 		const $this = $(this);
 		const idx = $this.closest(".opts_area").index();
 		const data = $this.closest(".opts_area").data("pickitem");
-		const selectedText = $this.next("label").find(".label_i").text();
+		const selectedText = $this.next("label").find(".label_cont").text();
 
 		// 선택 된 현재 index 값
 		selectedIdx = idx + 1;
