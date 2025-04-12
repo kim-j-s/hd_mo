@@ -45,395 +45,391 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body class="guide_body">
-		<div class="guide_wrap">
-			<div class="wrap">
-				<div class="guide_h1">Input</div>
+		<div class="guide_h1">Input</div>
 
-				<div class="guide_h4">Type - text</div>
+		<div class="guide_h4">Type - text</div>
 
-				<!-- Attribute -->
-				<div class="guide_discription">Default</div>
-				<div class="input_text">
+		<!-- Attribute -->
+		<div class="guide_discription">Default</div>
+		<div class="input_text">
+			<div class="inp">
+				<input type="text" placeholder="플레이스홀더" title="Default" />
+				<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+			</div>
+		</div>
+		<div class="guide_discription">Value</div>
+		<div class="input_text">
+			<div class="inp">
+				<input type="text" placeholder="플레이스홀더" value="입력한 값" title="Value" />
+				<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+			</div>
+		</div>
+		<div class="guide_discription">disabled</div>
+		<div class="input_text">
+			<div class="inp">
+				<input type="text" placeholder="플레이스홀더" value="입력한 값" disabled title="disabled" />
+				<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+			</div>
+		</div>
+		<div class="guide_discription">Readonly</div>
+		<div class="input_text">
+			<div class="inp">
+				<input type="text" placeholder="플레이스홀더" value="입력한 값" readonly title="Readonly" />
+				<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+			</div>
+		</div>
+
+		<!-- Error -->
+		<div class="guide_discription">Error success</div>
+		<div class="input_text">
+			<div class="inp">
+				<input type="text" title="Error success" />
+				<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+			</div>
+		</div>
+		<p class="msg_success">에러문구</p>
+
+		<div class="guide_discription">Error Default</div>
+		<div class="input_text">
+			<div class="inp">
+				<input type="text" title="Error Default" />
+				<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+			</div>
+		</div>
+		<p class="msg_error">에러문구</p>
+
+		<div class="guide_discription">Error fail</div>
+		<div class="input_text">
+			<div class="inp">
+				<input type="text" title="Error fail" />
+				<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+			</div>
+		</div>
+		<p class="msg_fail">에러문구</p>
+
+		<!-- 금액Comma -->
+		<div class="guide_h4">Type - 금액입력(Comma)</div>
+		<div class="input_text price">
+			<div class="inp">
+				<input type="tel" title="금액입력" />
+				<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+			</div>
+			<div class="int_txt right">원</div>
+		</div>
+
+		<div class="guide_discription">combination</div>
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">구입가격</div>
+				<div class="input_text price big">
+					<div class="int_txt left">현재가격</div>
 					<div class="inp">
-						<input type="text" placeholder="플레이스홀더" title="Default" />
+						<input type="tel" placeholder="숫자만" title="구입가격 입력" />
+						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+					</div>
+					<div class="int_txt right">만원</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 생년월일 -->
+		<div class="guide_h4">Type - 생년월일</div>
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">생년월일</div>
+				<div class="input_text birth_day">
+					<div class="inp">
+						<input type="tel" placeholder="8자리" maxlength="8" title="생년월일 입력" />
 						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 					</div>
 				</div>
-				<div class="guide_discription">Value</div>
-				<div class="input_text">
+			</div>
+		</div>
+
+		<!-- 휴대폰번호 -->
+		<div class="guide_h4">Type - 휴대폰번호</div>
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">휴대폰번호</div>
+				<div class="input_text phone">
+					<div class="int_txt left">010</div>
 					<div class="inp">
-						<input type="text" placeholder="플레이스홀더" value="입력한 값" title="Value" />
+						<input type="tel" placeholder="-없이 입력하세요" maxlength="8" title="휴대폰번호 입력" />
 						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 					</div>
 				</div>
-				<div class="guide_discription">disabled</div>
-				<div class="input_text">
-					<div class="inp">
-						<input type="text" placeholder="플레이스홀더" value="입력한 값" disabled title="disabled" />
-						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+			</div>
+		</div>
+		<!-- 카드번호 -->
+		<div class="guide_h4">Type - 카드</div>
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">카드번호</div>
+				<div class="comp_wrap card">
+					<div class="input_text">
+						<div class="inp">
+							<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 첫번째 4자리 입력" />
+						</div>
+					</div>
+					<span class="dash">-</span>
+					<div class="input_text">
+						<div class="inp">
+							<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 두번째 4자리 입력" />
+						</div>
+					</div>
+					<span class="dash">-</span>
+					<div class="input_text">
+						<div class="inp">
+							<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 세번째 4자리 입력" />
+						</div>
+					</div>
+					<span class="dash">-</span>
+					<div class="input_text">
+						<div class="inp">
+							<input type="password" placeholder="4(3자리)" minlength="3" maxlength="4" title="카드 마지막번째 4자리 입력" />
+						</div>
 					</div>
 				</div>
-				<div class="guide_discription">Readonly</div>
-				<div class="input_text">
-					<div class="inp">
-						<input type="text" placeholder="플레이스홀더" value="입력한 값" readonly title="Readonly" />
-						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+			</div>
+		</div>
+		<div class="guide_h4">Type - 카드(readonly)</div>
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">카드번호</div>
+				<div class="comp_wrap card">
+					<div class="input_text">
+						<div class="inp">
+							<input type="tel" placeholder="4자리" value="2232" minlength="4" maxlength="4" readonly title="카드 첫번째 4자리 입력" />
+						</div>
+					</div>
+					<span class="dash">-</span>
+					<div class="input_text">
+						<div class="inp">
+							<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 두번째 4자리 입력" />
+						</div>
+					</div>
+					<span class="dash">-</span>
+					<div class="input_text">
+						<div class="inp">
+							<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 세번째 4자리 입력" />
+						</div>
+					</div>
+					<span class="dash">-</span>
+					<div class="input_text">
+						<div class="inp">
+							<input type="password" placeholder="4(3자리)" minlength="3" maxlength="4" title="카드 마지막번째 4자리 입력" />
+						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="guide_h4">Type - 카드(disabled)</div>
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">카드번호</div>
+				<div class="comp_wrap card">
+					<div class="input_text">
+						<div class="inp">
+							<input type="tel" placeholder="4자리" value="2232" minlength="4" maxlength="4" disabled title="카드 첫번째 4자리 입력" />
+						</div>
+					</div>
+					<span class="dash">-</span>
+					<div class="input_text">
+						<div class="inp">
+							<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 두번째 4자리 입력" />
+						</div>
+					</div>
+					<span class="dash">-</span>
+					<div class="input_text">
+						<div class="inp">
+							<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 세번째 4자리 입력" />
+						</div>
+					</div>
+					<span class="dash">-</span>
+					<div class="input_text">
+						<div class="inp">
+							<input type="password" placeholder="4(3자리)" minlength="3" maxlength="4" title="카드 마지막번째 4자리 입력" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-				<!-- Error -->
-				<div class="guide_discription">Error success</div>
-				<div class="input_text">
-					<div class="inp">
-						<input type="text" title="Error success" />
-						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+		<!-- 주민등록번호 -->
+		<div class="guide_h4">Type - 주민등록번호</div>
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">주민등록번호</div>
+				<div class="comp_wrap birth">
+					<div class="input_text">
+						<div class="inp">
+							<input type="tel" placeholder="앞자리" minlength="6" maxlength="6" title="주민등록번호 앞자리 입력" />
+							<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+						</div>
 					</div>
-				</div>
-				<p class="msg_success">에러문구</p>
-
-				<div class="guide_discription">Error Default</div>
-				<div class="input_text">
-					<div class="inp">
-						<input type="text" title="Error Default" />
-						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-					</div>
-				</div>
-				<p class="msg_error">에러문구</p>
-
-				<div class="guide_discription">Error fail</div>
-				<div class="input_text">
-					<div class="inp">
-						<input type="text" title="Error fail" />
-						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-					</div>
-				</div>
-				<p class="msg_fail">에러문구</p>
-
-				<!-- 금액Comma -->
-				<div class="guide_h4">Type - 금액입력(Comma)</div>
-				<div class="input_text price">
-					<div class="inp">
-						<input type="tel" title="금액입력" />
-						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-					</div>
-					<div class="int-txt right">원</div>
-				</div>
-
-				<div class="guide_discription">combination</div>
-				<div class="form_group_wrap">
-					<div class="form_line">
-						<div class="label_tit">구입가격</div>
-						<div class="input_text price big">
-							<div class="int-txt left">현재가격</div>
-							<div class="inp">
-								<input type="tel" placeholder="숫자만" title="구입가격 입력" />
-								<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-							</div>
-							<div class="int-txt right">만원</div>
+					<span class="dash">-</span>
+					<div class="input_text masking">
+						<div class="inp">
+							<input type="password" placeholder="뒷자리" minlength="7" maxlength="7" title="주민등록번호 뒷자리 입력" />
+							<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 						</div>
 					</div>
 				</div>
-
-				<!-- 생년월일 -->
-				<div class="guide_h4">Type - 생년월일</div>
-				<div class="form_group_wrap">
-					<div class="form_line">
-						<div class="label_tit">생년월일</div>
-						<div class="input_text birth_day">
-							<div class="inp">
-								<input type="tel" placeholder="8자리" maxlength="8" title="생년월일 입력" />
-								<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-							</div>
+			</div>
+		</div>
+		<br />
+		<br />
+		<div class="guide_h4">Type - 주민등록번호 뒷자리만 입력</div>
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">주민등록번호</div>
+				<div class="comp_wrap birth">
+					<div class="input_text">
+						<div class="inp">
+							<input type="tel" placeholder="앞자리" value="250303" minlength="6" maxlength="6" readonly title="주민등록번호 앞자리 입력" />
+							<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+						</div>
+					</div>
+					<span class="dash">-</span>
+					<div class="input_text masking">
+						<div class="inp">
+							<input type="password" placeholder="뒷자리" minlength="7" maxlength="7" title="주민등록번호 뒷자리 입력" />
+							<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 						</div>
 					</div>
 				</div>
-
-				<!-- 휴대폰번호 -->
-				<div class="guide_h4">Type - 휴대폰번호</div>
-				<div class="form_group_wrap">
-					<div class="form_line">
-						<div class="label_tit">휴대폰번호</div>
-						<div class="input_text phone">
-							<div class="int-txt left">010</div>
-							<div class="inp">
-								<input type="tel" placeholder="-없이 입력하세요" maxlength="8" title="휴대폰번호 입력" />
-								<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-							</div>
+			</div>
+		</div>
+		<br />
+		<br />
+		<div class="guide_h4">Type - 주민등록번호 뒷자리 한자리만</div>
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">주민등록번호</div>
+				<div class="comp_wrap birth">
+					<div class="input_text">
+						<div class="inp">
+							<input type="tel" placeholder="앞자리" minlength="6" maxlength="6" title="주민등록번호 앞자리 입력" />
+							<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 						</div>
 					</div>
-				</div>
-				<!-- 카드번호 -->
-				<div class="guide_h4">Type - 카드</div>
-				<div class="form_group_wrap">
-					<div class="form_line">
-						<div class="label_tit">카드번호</div>
-						<div class="comp_wrap card">
-							<div class="input_text">
-								<div class="inp">
-									<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 첫번째 4자리 입력" />
-								</div>
-							</div>
-							<span class="dash">-</span>
-							<div class="input_text">
-								<div class="inp">
-									<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 두번째 4자리 입력" />
-								</div>
-							</div>
-							<span class="dash">-</span>
-							<div class="input_text">
-								<div class="inp">
-									<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 세번째 4자리 입력" />
-								</div>
-							</div>
-							<span class="dash">-</span>
-							<div class="input_text">
-								<div class="inp">
-									<input type="password" placeholder="4(3자리)" minlength="3" maxlength="4" title="카드 마지막번째 4자리 입력" />
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="guide_h4">Type - 카드(readonly)</div>
-				<div class="form_group_wrap">
-					<div class="form_line">
-						<div class="label_tit">카드번호</div>
-						<div class="comp_wrap card">
-							<div class="input_text">
-								<div class="inp">
-									<input type="tel" placeholder="4자리" value="2232" minlength="4" maxlength="4" readonly title="카드 첫번째 4자리 입력" />
-								</div>
-							</div>
-							<span class="dash">-</span>
-							<div class="input_text">
-								<div class="inp">
-									<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 두번째 4자리 입력" />
-								</div>
-							</div>
-							<span class="dash">-</span>
-							<div class="input_text">
-								<div class="inp">
-									<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 세번째 4자리 입력" />
-								</div>
-							</div>
-							<span class="dash">-</span>
-							<div class="input_text">
-								<div class="inp">
-									<input type="password" placeholder="4(3자리)" minlength="3" maxlength="4" title="카드 마지막번째 4자리 입력" />
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="guide_h4">Type - 카드(disabled)</div>
-				<div class="form_group_wrap">
-					<div class="form_line">
-						<div class="label_tit">카드번호</div>
-						<div class="comp_wrap card">
-							<div class="input_text">
-								<div class="inp">
-									<input type="tel" placeholder="4자리" value="2232" minlength="4" maxlength="4" disabled title="카드 첫번째 4자리 입력" />
-								</div>
-							</div>
-							<span class="dash">-</span>
-							<div class="input_text">
-								<div class="inp">
-									<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 두번째 4자리 입력" />
-								</div>
-							</div>
-							<span class="dash">-</span>
-							<div class="input_text">
-								<div class="inp">
-									<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 세번째 4자리 입력" />
-								</div>
-							</div>
-							<span class="dash">-</span>
-							<div class="input_text">
-								<div class="inp">
-									<input type="password" placeholder="4(3자리)" minlength="3" maxlength="4" title="카드 마지막번째 4자리 입력" />
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- 주민등록번호 -->
-				<div class="guide_h4">Type - 주민등록번호</div>
-				<div class="form_group_wrap">
-					<div class="form_line">
-						<div class="label_tit">주민등록번호</div>
-						<div class="comp_wrap birth">
-							<div class="input_text">
-								<div class="inp">
-									<input type="tel" placeholder="앞자리" minlength="6" maxlength="6" title="주민등록번호 앞자리 입력" />
-									<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-								</div>
-							</div>
-							<span class="dash">-</span>
-							<div class="input_text masking">
-								<div class="inp">
-									<input type="password" placeholder="뒷자리" minlength="7" maxlength="7" title="주민등록번호 뒷자리 입력" />
-									<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<br />
-				<br />
-				<div class="guide_h4">Type - 주민등록번호 뒷자리만 입력</div>
-				<div class="form_group_wrap">
-					<div class="form_line">
-						<div class="label_tit">주민등록번호</div>
-						<div class="comp_wrap birth">
-							<div class="input_text">
-								<div class="inp">
-									<input type="tel" placeholder="앞자리" value="250303" minlength="6" maxlength="6" readonly title="주민등록번호 앞자리 입력" />
-									<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-								</div>
-							</div>
-							<span class="dash">-</span>
-							<div class="input_text masking">
-								<div class="inp">
-									<input type="password" placeholder="뒷자리" minlength="7" maxlength="7" title="주민등록번호 뒷자리 입력" />
-									<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<br />
-				<br />
-				<div class="guide_h4">Type - 주민등록번호 뒷자리 한자리만</div>
-				<div class="form_group_wrap">
-					<div class="form_line">
-						<div class="label_tit">주민등록번호</div>
-						<div class="comp_wrap birth">
-							<div class="input_text">
-								<div class="inp">
-									<input type="tel" placeholder="앞자리" minlength="6" maxlength="6" title="주민등록번호 앞자리 입력" />
-									<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-								</div>
-							</div>
-							<span class="dash">-</span>
-							<div class="id_pass_box">
-								<div class="input_text">
-									<div class="inp">
-										<input type="tel" placeholder="1" minlength="1" maxlength="1" title="주민등록번호 뒷1자리 입력" />
-									</div>
-								</div>
-								<div class="id_pass">●●●●●●</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<br />
-				<br />
-
-				<div class="guide_h4">Type - 주민등록번호 - 보안키패드 호출 시 - 입력 전</div>
-				<div class="form_group_wrap">
-					<div class="form_line">
-						<div class="label_tit">주민등록번호</div>
-						<div class="comp_wrap birth">
-							<div class="input_text">
-								<div class="inp">
-									<input type="tel" placeholder="앞자리" minlength="6" maxlength="6" title="주민등록번호 앞자리 입력" />
-									<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-								</div>
-							</div>
-							<span class="dash">-</span>
-							<div class="comp_wrap_keypad_call">
-								<button type="button" class="btn keypad_call" title="주민등록번호 뒷자리 입력"><span class="text">뒷자리</span></button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="guide_discription">인증번호</div>
-				<div class="form_group_wrap">
-					<div class="form_line">
-						<div class="label_tit">인증번호</div>
-						<div class="comp_wrap key_number">
-							<div class="input_text">
-								<div class="inp">
-									<input type="tel" placeholder="숫자 6자리 입력" minlength="6" maxlength="6" title="인증번호 입력" />
-									<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-								</div>
-								<div class="int-txt right">00:00</div>
-							</div>
-							<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_4">
-								<span class="text">시간연장</span>
-							</button>
-							<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_4">
-								<span class="text">재요청</span>
-							</button>
-						</div>
-					</div>
-				</div>
-
-				<!-- search -->
-				<!-- <div class="guide_h4">Type - search</div>
-        	<div class="form_group_wrap">
-        		<div class="form_line">
-        			<div class="label_tit">search</div>
-        			<div class="input_text">
-        			  
-        			  <div class="inp">
-        			    <input 
-        								type="text"
-        			      
-        							
-        			      placeholder="플레이스홀더"
-        			      
-        			      
-        			      
-        			      
-        			      
-        			      title="search"
-        			      
-        			    >
-        			    <button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-        			  </div>
-        			  
-        			</div>
-        		</div>
-        	</div> -->
-				<!-- File -->
-				<div class="guide_h4">Type - file - 구조 사용 - 추후 디자인 반영 필요</div>
-				<div class="form_group_wrap">
-					<div class="form_line">
-						<div class="label_tit">파일 업로드</div>
-						<div class="input_text">
-							<div class="inp_file">
-								<input type="file" id="file" name="" class="" />
-								<label for="file">
-									<span class="file_name">파일을 선택해주세요.</span>
-									<span class="hd_btn hd_btn_ty_3 hd_btn_s_4">파일 업로드하기</span>
-								</label>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="guide_h1">label명 + type</div>
-				<div class="guide_h4">.form_group_wrap</div>
-				<div class="form_group_wrap">
-					<div class="form_line">
-						<div class="label_tit">label명</div>
+					<span class="dash">-</span>
+					<div class="id_pass_box">
 						<div class="input_text">
 							<div class="inp">
-								<input type="text" placeholder="입력하세요" title="이름 입력" />
-								<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+								<input type="tel" placeholder="1" minlength="1" maxlength="1" title="주민등록번호 뒷1자리 입력" />
 							</div>
+						</div>
+						<div class="id_pass">●●●●●●</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br />
+		<br />
+
+		<div class="guide_h4">Type - 주민등록번호 - 보안키패드 호출 시 - 입력 전</div>
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">주민등록번호</div>
+				<div class="comp_wrap birth">
+					<div class="input_text">
+						<div class="inp">
+							<input type="tel" placeholder="앞자리" minlength="6" maxlength="6" title="주민등록번호 앞자리 입력" />
+							<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 						</div>
 					</div>
-					<div class="form_line">
-						<div class="label_tit">label명</div>
-						<div class="input_text">
-							<div class="inp">
-								<input type="text" placeholder="입력하세요" title="이름 입력" />
-								<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-							</div>
+					<span class="dash">-</span>
+					<div class="comp_wrap_keypad_call">
+						<button type="button" class="btn keypad_call" title="주민등록번호 뒷자리 입력"><span class="text">뒷자리</span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="guide_discription">인증번호</div>
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">인증번호</div>
+				<div class="comp_wrap key_number">
+					<div class="input_text">
+						<div class="inp">
+							<input type="tel" placeholder="숫자 6자리 입력" minlength="6" maxlength="6" title="인증번호 입력" />
+							<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 						</div>
+						<div class="int_txt right">00:00</div>
+					</div>
+					<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_4">
+						<span class="text">시간연장</span>
+					</button>
+					<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_4">
+						<span class="text">재요청</span>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- search -->
+		<!-- <div class="guide_h4">Type - search</div>
+    	<div class="form_group_wrap">
+    		<div class="form_line">
+    			<div class="label_tit">search</div>
+    			<div class="input_text">
+    			  
+    			  <div class="inp">
+    			    <input 
+    								type="text"
+    			      
+    							
+    			      placeholder="플레이스홀더"
+    			      
+    			      
+    			      
+    			      
+    			      
+    			      title="search"
+    			      
+    			    >
+    			    <button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+    			  </div>
+    			  
+    			</div>
+    		</div>
+    	</div> -->
+		<!-- File -->
+		<div class="guide_h4">Type - file - 구조 사용 - 추후 디자인 반영 필요</div>
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">파일 업로드</div>
+				<div class="input_text">
+					<div class="inp_file">
+						<input type="file" id="file" name="" class="" />
+						<label for="file">
+							<span class="file_name">파일을 선택해주세요.</span>
+							<span class="hd_btn hd_btn_ty_3 hd_btn_s_4">파일 업로드하기</span>
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="guide_h1">label명 + type</div>
+		<div class="guide_h4">.form_group_wrap</div>
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">label명</div>
+				<div class="input_text">
+					<div class="inp">
+						<input type="text" placeholder="입력하세요" title="이름 입력" />
+						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+					</div>
+				</div>
+			</div>
+			<div class="form_line">
+				<div class="label_tit">label명</div>
+				<div class="input_text">
+					<div class="inp">
+						<input type="text" placeholder="입력하세요" title="이름 입력" />
+						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 					</div>
 				</div>
 			</div>

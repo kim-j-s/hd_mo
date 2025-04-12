@@ -4,12 +4,12 @@ div:not(.comp_wrap){
 		border: var(--border-width-variable-regular) solid var(--color-input-border);
 		background: var(--color-input-surface);
 		border-radius: var(--radius-medium3);
-		// .inp {
-		// 	input {
-		// 		height: calc(var(--size-height-8) - 2px);
-		// 		border: none;
-		// 	}
-		// }
+		.inp {
+			input {
+				height: calc(var(--size-height-8) - 2px);
+				border: none;
+			}
+		}
 		&:focus-within {
 			border-color: var(--color-input-border-active);
 		}
@@ -21,6 +21,8 @@ div:not(.comp_wrap){
 	display: flex;
 	align-items: center;
 	gap: 8px;
+	border: var(--border-width-variable-regular) solid var(--color-input-border);
+	transition: border-color 0.3s;
 	.inp {
 		position: relative;
 		display: flex;
@@ -33,7 +35,8 @@ div:not(.comp_wrap){
 		position: relative;
 		display: block;
 		width: 100%;
-		height: var(--size-height-8);
+		// height: var(--size-height-8);
+		height: calc(var(--size-height-8) - 2px);
 		padding: 3px 32px 3px 16px;
 		font-size: 16px;
 		line-height: 24px;
@@ -41,7 +44,6 @@ div:not(.comp_wrap){
 		box-sizing: border-box;
 		border-radius: inherit;
 		border: none;
-		// border: var(--border-width-variable-regular) solid var(--color-input-border);
 
 		&::placeholder {
 			color: var(--color-text-disabled);
@@ -61,7 +63,7 @@ div:not(.comp_wrap){
 			outline: none;
 		}
 	}
-	.int-txt {
+	.int_txt {
 		flex: none;
 		font-size: var(--font-size-body-medium);
 		&.left {
@@ -232,12 +234,18 @@ div:not(.comp_wrap){
 			color: #D82600;
 			font-size: var(--font-size-heading-large);
 			font-weight: 700;
+			line-height: 54px;
 			&::placeholder {
-				font-weight: 400;
+				font-weight: 700;
+				font-size: var(--font-size-body-large);
 			}
 		}
-		.int-txt {
+		.int_txt {
 			font-size: var(--font-size-body-small);
+			&.right {
+				font-weight: 700;
+				font-size: var(--font-size-body-large);
+			}
 		}
 		.del {
 			right: calc(100% - 36px);
@@ -311,7 +319,7 @@ div:not(.comp_wrap){
 	padding-right: 16px;
 	.input_text {
 		flex: auto;
-		.int-txt {
+		.int_txt {
 			padding-right: 0;
 			font-size: var(--font-size-button-small);
 			color: var(--color-text-point);
@@ -348,10 +356,17 @@ div:not(.comp_wrap){
 		gap: 12px;
 		margin-top: 32px;
 
-		
-		.form_line + .form_line {
-			margin-top: 0;
+		.form_line {
+			& + .form_line {
+				margin-top: 0;
+			}
+			&.fix_w_case01 {
+				flex: none;
+				width: 100px;
+			}
 		}
+
+		
 
 		.grow {
 			flex-grow: 1;
