@@ -9,6 +9,7 @@
 <div class="popup_cont">
 	<div class="popup_content">
 		<div class="form_group_wrap">
+			<!-- 
 			<div class="form_line">
 				<div class="label_tit">보험기간(년)</div>
 				<div class="select_rolling_opt">
@@ -26,6 +27,7 @@
 					</div>
 				</div>
 			</div>
+			 -->
 			<div class="form_line">
 				<div class="label_tit">납입기간(년)</div>
 				<div class="select_rolling_opt ty2">
@@ -34,6 +36,9 @@
 							<div class="swiper-slide"><span>3년</span></div>
 							<div class="swiper-slide"><span>5년</span></div>
 							<div class="swiper-slide"><span>7년</span></div>
+							<div class="swiper-slide"><span>10년</span></div>
+							<div class="swiper-slide"><span>15년</span></div>
+							<div class="swiper-slide"><span>20년</span></div>
 						</div>
 						<div class="swiper-button-prev"></div>
 						<div class="swiper-button-next"></div>
@@ -62,24 +67,46 @@
 	$(document).ready(function(){
 		function slideFocus(swiper) {
 			const $slides = $(swiper.slides);
-			
+
+			// 초기화: 모든 slide tabindex 및 title 제거
 			$slides.each(function () {
-				const $btn = $(this).find('button');
-				$btn.removeAttr('title').removeAttr('aria-label').attr('aria-selected', 'false');
+				$(this)
+					.removeAttr('title')
+					.attr('tabindex', '0')
+					.attr('aria-selected', 'false');
 			});
-			
+
+			// 현재 active slide 설정
 			const $activeSlide = $($slides[swiper.activeIndex]);
-			const $activeBtn = $activeSlide.find('button');
-			$activeBtn.attr('title', '선택됨'); // 현재 활성 슬라이드에 title 추가
+			$activeSlide
+				.attr('tabindex', '0')
+				.attr('title', '선택됨')
+				.attr('aria-selected', 'true');
 
+			// 포커스 진입 시 swiper 이동 + title 부여
+			$slides.off('focusin').on('focusin', function () {
+				const $slide = $(this);
+				const index = $slides.index(this);
 
-			$slides.find('button').off('focusin').on('focusin', function () {
-				const index = $slides.find('button').index(this);
+				// swiper 슬라이드 이동
 				if (swiper.activeIndex !== index) {
 					swiper.slideTo(index);
 				}
+
+				// 모든 slide 초기화
+				$slides.each(function () {
+					$(this)
+						.removeAttr('title')
+						.attr('tabindex', '0')
+						.attr('aria-selected', 'false');
+				});
+
+				// 현재 slide 설정
+				$slide
+					.attr('tabindex', '0')
+					.attr('title', '선택됨')
+					.attr('aria-selected', 'true');
 			});
-			
 		}
 
 		$('.swiper-wrapper').attr('aria-live', 'off');
