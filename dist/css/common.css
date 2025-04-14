@@ -48,6 +48,20 @@ strong {
 	-ms-flex-align: center;
 	align-items: center;
 }
+.etc_btn_area {
+	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.etc_btn_area.right {
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+}
 .wrap {
 	position: relative;
 	display: -webkit-box;
@@ -2115,6 +2129,9 @@ strong {
 .fill_18_info {
 	background-image: url(../images/icon/info.svg);
 }
+.deleteSvg {
+	background-image: url(../images/icon/icon_delete.svg);
+}
 /* input */
 *:not(.comp_wrap) .input_text {
 	border: var(--border-width-variable-regular) solid var(--color-input-border);
@@ -2558,9 +2575,6 @@ strong {
 	font-weight: 700;
 	word-wrap: break-word;
 	line-height: 2.4rem;
-}
-.form_group_wrap .form_group_title > .tooltip_wrap {
-	margin: 0 0.3rem;
 }
 .form_group_wrap .form_group_title > .tooltip_wrap .tooltip_head {
 	-webkit-transform: translateY(0.6rem);
@@ -3391,6 +3405,8 @@ strong {
 /* tooltip */
 /* Tooltip */
 .tooltip_wrap {
+	width: 2rem;
+	height: 2rem;
 	position: relative;
 	display: inline;
 	text-align: left;
@@ -3455,6 +3471,10 @@ strong {
 	width: calc(100vw - 4rem);
 	z-index: 10;
 	top: calc(100% + 0.4rem);
+	border-radius: var(--radius-medium1, 12px);
+	background: var(--color-element-information);
+	-webkit-box-shadow: 0px var(--shadow-y-3) var(--shadow-blur-3) 0px var(--color-alpha-shadow3, rgba(0, 0, 0, 0.12));
+	box-shadow: 0px var(--shadow-y-3) var(--shadow-blur-3) 0px var(--color-alpha-shadow3, rgba(0, 0, 0, 0.12));
 }
 .tooltip_wrap .tooltip_panel .inner {
 	position: relative;
@@ -3466,17 +3486,16 @@ strong {
 	border-radius: 1rem;
 	color: #ffffff;
 	text-align: left;
+	font-weight: 400;
 	font-size: var(--font-size-body-xsmall);
+	line-height: 150%;
 }
 .tooltip_wrap .tooltip_panel .inner .inner_title {
 	height: 100%;
-	line-height: 150%;
+	font-weight: 700;
 }
 .tooltip_wrap .tooltip_panel .inner .inner_title + .inner_contents {
-	margin-top: 0.2rem;
-}
-.tooltip_wrap .tooltip_panel .inner .inner_contents {
-	line-height: 150%;
+	margin-top: 0.4rem;
 }
 .tooltip_wrap .tooltip_panel .inner .inner_contents + .inner_footer {
 	margin-top: 0.8rem;
@@ -3521,4 +3540,10 @@ strong {
 }
 .tooltip_wrap .tooltip_wrap_text {
 	line-height: 1.5;
+}
+.title_h5 .tooltip_wrap .tooltip_panel {
+	top: calc(100% + 1rem);
+}
+.title_h5 .tooltip_wrap .tooltip_head.top + .tooltip_panel {
+	bottom: 2.65rem;
 }
