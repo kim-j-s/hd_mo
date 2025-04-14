@@ -5,7 +5,7 @@
 {{#> layout/default page-title="보험료 확인 | 상품"}}
 
 <!-- s: Bottom 팝업 -->
-{{#> popup/popup_bottom popup-id="pop_type01" popup-title="가입조건 변경" active=true }}
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="가입조건 변경 2" active=true }}
 <div class="popup_cont">
 	<div class="popup_content">
 		<div class="form_group_wrap">
@@ -64,14 +64,17 @@
 			const $slides = $(swiper.slides);
 			
 			$slides.each(function () {
-				$(this).removeAttr('title'); // 모든 슬라이드에서 title 제거
+				const $btn = $(this).find('button');
+				$btn.removeAttr('title').removeAttr('aria-label').attr('aria-selected', 'false');
 			});
 			
 			const $activeSlide = $($slides[swiper.activeIndex]);
-			$activeSlide.attr('title', '선택됨'); // 현재 활성 슬라이드에 title 추가
+			const $activeBtn = $activeSlide.find('button');
+			$activeBtn.attr('title', '선택됨'); // 현재 활성 슬라이드에 title 추가
 
-			$slides.off('focusin').on('focusin', function () {
-				const index = $slides.index(this);
+
+			$slides.find('button').off('focusin').on('focusin', function () {
+				const index = $slides.find('button').index(this);
 				if (swiper.activeIndex !== index) {
 					swiper.slideTo(index);
 				}

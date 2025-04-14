@@ -56,7 +56,7 @@
 					<div class="draggable" aria-hidden="true">
 						<div class="move"></div>
 					</div>
-					<div class="popup_head"><div class="popup_head_title">가입조건 변경</div></div>
+					<div class="popup_head"><div class="popup_head_title">가입조건 변경 2</div></div>
 
 					<div class="popup_cont">
 						<div class="popup_content">
@@ -147,18 +147,23 @@
 					const $slides = $(swiper.slides);
 
 					$slides.each(function () {
-						$(this).removeAttr("title"); // 모든 슬라이드에서 title 제거
+						const $btn = $(this).find("button");
+						$btn.removeAttr("title").removeAttr("aria-label").attr("aria-selected", "false");
 					});
 
 					const $activeSlide = $($slides[swiper.activeIndex]);
-					$activeSlide.attr("title", "선택됨"); // 현재 활성 슬라이드에 title 추가
+					const $activeBtn = $activeSlide.find("button");
+					$activeBtn.attr("title", "선택됨"); // 현재 활성 슬라이드에 title 추가
 
-					$slides.off("focusin").on("focusin", function () {
-						const index = $slides.index(this);
-						if (swiper.activeIndex !== index) {
-							swiper.slideTo(index);
-						}
-					});
+					$slides
+						.find("button")
+						.off("focusin")
+						.on("focusin", function () {
+							const index = $slides.find("button").index(this);
+							if (swiper.activeIndex !== index) {
+								swiper.slideTo(index);
+							}
+						});
 				}
 
 				$(".swiper-wrapper").attr("aria-live", "off");
