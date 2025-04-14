@@ -141,15 +141,15 @@
 		<!-- e: Bottom 팝업 -->
 
 		<script>
-			$(document).ready(function(){
-				$('.swiper-container').each(function (idx, ele) {
+			$(document).ready(function () {
+				$(".swiper-container").each(function (idx, ele) {
 					const $swiperContainer = $(ele);
-					const slideNum = $swiperContainer.find('.swiper-slide').length,
-								newNum = Math.round(slideNum / 2) - 1;
+					const slideNum = $swiperContainer.find(".swiper-slide").length,
+						newNum = Math.round(slideNum / 2) - 1;
 					// console.log(newNum);
 
 					const swiper = new Swiper($swiperContainer[0], {
-						slidesPerView: 'auto',
+						slidesPerView: "auto",
 						centeredSlides: true,
 						initialSlide: newNum,
 						spaceBetween: 16,
@@ -160,9 +160,9 @@
 						},
 						a11y: {
 							enabled: true,
-							slideLabelMessage: '',
-							prevSlideMessage: '이전 항목으로 이동',
-							nextSlideMessage: '다음 항목으로 이동',
+							slideLabelMessage: "",
+							prevSlideMessage: "이전 항목으로 이동",
+							nextSlideMessage: "다음 항목으로 이동",
 						},
 						on: {
 							// slideChange: function(swiperInstance) {
@@ -171,13 +171,14 @@
 							// 	if (button) button.focus();
 							// }
 							slideChangeTransitionEnd: function () {
-							const activeSlide = this.slides[this.activeIndex];
-							const firstFocusableElement = activeSlide.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+								const $activeSlide = $(this.slides[this.activeIndex]);
+								const $firstFocusableElement = $activeSlide.find('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])').first();
 
-							if (firstFocusableElement) {
-								firstFocusableElement.focus();
-							}
-						}
+								if ($firstFocusableElement.length) {
+									$firstFocusableElement.focus();
+								}
+							},
+						},
 					});
 				});
 			});

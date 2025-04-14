@@ -89,11 +89,12 @@
 					// 	if (button) button.focus();
 					// }
 					slideChangeTransitionEnd: function () {
-					const activeSlide = this.slides[this.activeIndex];
-					const firstFocusableElement = activeSlide.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-					
-					if (firstFocusableElement) {
-						firstFocusableElement.focus();
+						const $activeSlide = $(this.slides[this.activeIndex]);
+						const $firstFocusableElement = $activeSlide.find('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])').first();
+
+						if ($firstFocusableElement.length) {
+							$firstFocusableElement.focus();
+						}
 					}
 				}
 			});
