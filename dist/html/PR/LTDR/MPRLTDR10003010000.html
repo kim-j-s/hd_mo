@@ -130,7 +130,7 @@
 					</div>
 					<div class="popup_bottom">
 						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+							<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_2">
 								<span class="text">가입 조건을 변경합니다</span>
 							</button>
 						</div>
@@ -182,7 +182,7 @@
 							// 	}
 							// }
 							init: function (swiperInstance) {
-								slideFocus(swiperInstance, this.activeIndex);
+								slideFocus(swiperInstance);
 							},
 							slideChange: function (swiperInstance) {
 								swiperInstance.slideTo(swiperInstance.activeIndex, 0, false);
@@ -192,21 +192,21 @@
 					});
 				});
 
-				function slideFocus(swiperInstance, idx) {
-					$(swiperInstance.slides).on("click", function () {
-						swiperInstance.slideTo(idx);
-						console.log(idx);
-					});
-					// $(swiperInstance.slides).each(function(idx) {
-					// 	$(this).on('focusin', function () {
-					// 		if (swiperInstance.activeIndex !== idx) {
-					// 			swiperInstance.slideTo(idx, 300);
-					// 		}
+				function slideFocus(swiperInstance) {
+					$(swiperInstance.slides).each(function (idx) {
+						$(this).on("click", function () {
+							swiperInstance.slideTo(idx);
+							$(".popup_head").text(idx);
+						});
+						// 	$(this).on('focusin', function () {
+						// 		if (swiperInstance.activeIndex !== idx) {
+						// 			swiperInstance.slideTo(idx, 300);
+						// 		}
 
-					// 		console.log(document.activeElement, '순서 : ', idx);
-					// 		console.log('현재 active slide : ', swiperInstance.activeIndex);
-					// 	});
-					// });
+						// 		console.log(document.activeElement, '순서 : ', idx);
+						// 		console.log('현재 active slide : ', swiperInstance.activeIndex);
+						// 	});
+					});
 				}
 			});
 		</script>
