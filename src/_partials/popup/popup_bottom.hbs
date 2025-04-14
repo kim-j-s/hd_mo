@@ -8,12 +8,9 @@
 			{{!-- <div class="draggable" aria-grabbed="false" aria-dropeffect="close" tabindex="0" aria-label="드래그 하여 닫기"> --}}
 			<div class="draggable" aria-hidden="true">
         		<div class="move"></div>
-      		</div>
-			{{#unless no-header}}
-			<div class="popup_head">
-				{{{popup-title}}}
-			</div>
-			{{/unless}}
+      		</div>			
+			<div class="popup_head">{{#unless no-header}}<div class="popup_head_title">{{{popup-title}}}</div>{{/unless}}</div>
+			
 			{{> @partial-block}}
 			{{#unless close-btn}}
 				<button type="button" class="popup_close"><span class="blind">팝업 닫기</span></button>
