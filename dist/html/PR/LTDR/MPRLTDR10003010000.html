@@ -143,6 +143,7 @@
 
 		<script>
 			$(document).ready(function () {
+				$(".swiper-wrapper").attr("aria-live", "off");
 				$(".swiper-container").each(function (idx, ele) {
 					const $swiperContainer = $(ele);
 					const slideNum = $swiperContainer.find(".swiper-slide").length,
@@ -162,11 +163,11 @@
 						},
 						a11y: {
 							enabled: true,
-							slideRole: "button",
+							// slideRole: 'button',
 							slideLabelMessage: "",
 							prevSlideMessage: "이전 항목으로 이동",
 							nextSlideMessage: "다음 항목으로 이동",
-							scrollOnFocus: true,
+							// scrollOnFocus: true,
 						},
 						on: {
 							// slideChange: function(swiperInstance) {
