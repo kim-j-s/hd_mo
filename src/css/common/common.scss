@@ -83,19 +83,32 @@ strong {
 	}
 
 	&.wrap_ty2 {
-		background: var(--color-surface-secondary-subtler);
+
+		.header {
+			transition: background-color 0.3s ease-in-out;
+		}
+
+		&.scrollTop {
+			.header {
+				background: var(--color-surface-secondary-subtler);
+			}
+		}		
 
 		.container {
-			padding: 24px 0px 1px;
+			padding: 0px 0px 1px;
 		}
 
 		.content {
-			// padding: 24px 24px 1px;
-			padding: 0 24px 32px;			
+			padding: 24px 24px 32px;
+			background-color: #ffffff;		
+		}
+
+		.content_ty1 {
+			background: var(--color-surface-secondary-subtler);
 		}
 		
 		.content_ty2{
-			background-color: #ffffff;
+			
 			padding: 40px 24px;
 
 			.card_item_wrap + .total_price_display_ty1 {
@@ -116,6 +129,7 @@ strong {
 				position:absolute;
 				top: -8px;
 				margin-left: -24px;
+				margin-right: -24px;
 			}
 		}
 		
@@ -147,7 +161,7 @@ strong {
 			margin-top: 32px;
 		}
 
-		.title_h2 + .hd_btn {
+		.title_h2 + .btn_area {
 			margin-top: 8px;
 		}
 	}

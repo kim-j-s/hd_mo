@@ -3,11 +3,11 @@
 경로 : 3.자동차 상세정보 > 3-2.자동차 부품정보 입력
 -->
 {{#> layout/default page-title="자동차 상세정보 | 상품"}}
-<div id="wrap" class="wrap wrap_ty2">
+<div id="wrap" class="wrap wrap_ty2 scrollTop">
 	{{> layout/header h-title="자동차보험" h-back=true }}
 	<div id="container" class="container container_ty2">
 		<!-- s: content(1) -->
-		<div class="content">
+		<div class="content content_ty1">
 			<!-- s: content_top -->
 			<div class="content_top">
 				<h2 class="title_h2">
@@ -40,7 +40,7 @@
 									<div class="cont">
 										<p class="text_body_large">
 											<strong>
-												<span class="primary">2097</span>
+												<span class="primary">2,097</span>
 												만원
 											</strong>
 										</p>
@@ -413,3 +413,30 @@
 <!-- s: popup area -->
 <!-- e: popup area -->
 {{/ layout/default }}
+
+<script>
+	$(document).ready(function () {
+
+	/* 스크롤시 헤더 배경 변경 */
+	const containerOffsetTop = $('#container').offset().top;
+	let isScrollTop = true; // #container가 제자리 위치할 때 true
+	let scrollDown = false; //스크롤이 내려간 상태
+
+
+	$('#container').on('scroll', function(){
+		var scrollTop = $('#container').scrollTop();
+
+		if (scrollTop > containerOffsetTop) {
+			if(scrollDown) return;
+			$('#wrap').removeClass('scrollTop');
+			isScrollTop = false;
+			scrollDown = true;
+		} else {
+			if(isScrollTop) return;		
+			$('#wrap').addClass('scrollTop');
+			isScrollTop = true;
+			scrollDown = false;
+		}
+	});
+});
+</script>
