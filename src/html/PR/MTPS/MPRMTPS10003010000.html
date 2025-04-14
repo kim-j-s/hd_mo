@@ -25,14 +25,31 @@
 						{{> cp/text placeholder="123가4567" inp-title="자동차 또는 차대번호 입력"}}
 					</div>
 					<div class="form_line">
-						{{> cp/checkbox id="checkbox1" labelname="구매예정(자동차번호, 차대번호를 모르는 경우)" }}
+						<div class="card_item_wrap">
+						<div class="card_item">
+								<div class="item_inner">
+									<div class="inp_checkbox">
+										<input type="checkbox" id="card_chk1_3" name="name1" aria-labelledby="card_chk1_3_cont">
+										<label for="card_chk1_3" class="chk_label"></label>
+										<i></i>
+									</div>
+									<div class="inner_cont">
+										<div class="item_top" id="card_chk1_3_cont">
+											<div class="text">구매예정</div>
+											<div class="desc">자동차번호, 차대번호를 모르는 경우</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="form_line">
-						<div class="label_tit">계약기간</div>
-						<div class="radio_group_wrap column" role="radiogroup">
-							{{> cp/radio rd-class="rd_btn_s1" rd-id="radio_btn_g1" name="radio_g1" labelname="승용차<br><span>승차정원 10인 이하</span>" checked=true }}
-							{{> cp/radio rd-class="rd_btn_s1" rd-id="radio_btn_g2" name="radio_g1" labelname="승합차<br><span>승차정원 11인 이하</span>" }}
-							{{> cp/radio rd-class="rd_btn_s1" rd-id="radio_btn_g3" name="radio_g1" labelname="화물차<br><span>적재함이 있는 자동차, 벤형 및 픽업트럭</span>" }}
+						<div class="car_type_option">
+							<div class="radio_group_wrap column icon_case" role="radiogroup">
+								{{> cp/radio rd-class="rd_btn_s1" rd-id="radio_btn_g1" name="radio_g1" labelname="승용차<br><span>승차정원 10인 이하</span>" checked=true }}
+								{{> cp/radio rd-class="rd_btn_s1" rd-id="radio_btn_g2" name="radio_g1" labelname="승합차<br><span>승차정원 11인 이하</span>" }}
+								{{> cp/radio rd-class="rd_btn_s1" rd-id="radio_btn_g3" name="radio_g1" labelname="화물차<br><span>적재함이 있는 자동차, 벤형 및 픽업트럭</span>" }}
+							</div>
 						</div>
 					</div>
 				</div>
