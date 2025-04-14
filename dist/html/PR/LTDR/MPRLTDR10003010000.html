@@ -129,7 +129,7 @@
 					</div>
 					<div class="popup_bottom">
 						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_2">
 								<span class="text">가입 조건을 변경합니다</span>
 							</button>
 						</div>
@@ -160,15 +160,25 @@
 						},
 						a11y: {
 							enabled: true,
-							slideLabelMessage: "",
+							// slideLabelMessage: '',
 							prevSlideMessage: "이전 항목으로 이동",
 							nextSlideMessage: "다음 항목으로 이동",
+							slideLabelMessage: "번째 항목 / 총 개 항목",
 						},
 						on: {
-							slideChange: function (swiperInstance) {
-								const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
-								const button = activeSlide.querySelector("button");
-								if (button) button.focus();
+							// slideChange: function(swiperInstance) {
+							// 	const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
+							// 	const button = activeSlide.querySelector('button');
+							// 	if (button) button.focus();
+							// }
+							slideChangeTransitionEnd: function () {
+								const $activeSlide = $(this.slides[this.activeIndex]);
+								const $firstFocusableElement = $activeSlide.find('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])').first();
+
+								this.slideTo(this.activeIndex, 0, false);
+								if ($firstFocusableElement.length) {
+									$firstFocusableElement.focus();
+								}
 							},
 						},
 					});
