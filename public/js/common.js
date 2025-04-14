@@ -342,7 +342,7 @@ function prograssBar(){
 			const infoWidth = $bar.find('.start').width();
 			const total = marginLeft + barWidth;
 
-			console.log(marginLeft, barWidth, total, '/'+ barBoxWidth);
+			// console.log(marginLeft, barWidth, total, '/'+ barBoxWidth);
 
 			if(marginLeft <= 37){
 				$bar.find('.start').addClass('left');
