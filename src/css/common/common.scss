@@ -153,11 +153,16 @@ strong {
 
 .content {
 	.content_top {
-		& + .bann_text_wrap_ty1,
-		& + .bann_text_wrap_ty2,
-		& + .form_group_wrap,
-		& + .select_driver_range,
-		& + .card_item_wrap {
+		// & + .bann_text_wrap_ty1,
+		// & + .bann_text_wrap_ty2,
+		// & + .form_group_wrap,
+		// & + .select_driver_range,
+		// & + .card_item_wrap {
+		// 	margin-top: 32px;
+		// }
+		// content_top + * 은 기본적으로 32px 간격을 두고 있음
+		// 예외 간격은 별도 처리
+		& + * {
 			margin-top: 32px;
 		}
 
