@@ -52,7 +52,7 @@
 </div>
 <div class="popup_bottom">
 	<div class="btn_area">
-		{{> cp/button type="1" size="2" b-text="가입 조건을 변경합니다" }}
+		{{> cp/button type="2" size="2" b-text="가입 조건을 변경합니다" }}
 	</div>
 </div>
 {{/ popup/popup_bottom}}
@@ -78,9 +78,10 @@
 				},
 				a11y: {
 					enabled: true,
-					slideLabelMessage: '',
+					// slideLabelMessage: '',
 					prevSlideMessage: '이전 항목으로 이동',
 					nextSlideMessage: '다음 항목으로 이동',
+					slideLabelMessage: '{{index}}번째 항목 / 총 {{slidesLength}}개 항목'
 				},
 				on: {
 					// slideChange: function(swiperInstance) {
@@ -92,6 +93,7 @@
 						const $activeSlide = $(this.slides[this.activeIndex]);
 						const $firstFocusableElement = $activeSlide.find('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])').first();
 
+						this.slideTo(this.activeIndex, 0, false); 
 						if ($firstFocusableElement.length) {
 							$firstFocusableElement.focus();
 						}
