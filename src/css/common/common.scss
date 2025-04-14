@@ -64,6 +64,19 @@ strong {
 	align-items: center;
 }
 
+
+.etc_btn_area {
+	width:100%;
+	display: flex;
+	align-items: center;
+
+	&.right { 
+		justify-content: flex-end;
+	}
+}
+
+
+
 .wrap {
 	position: relative;
 	display: flex;
@@ -345,15 +358,19 @@ strong {
 					transition: background-color .5s;
 					color: var(--color-text-basic);
 
+					&:after {
+						position: absolute;
+						content: '선택됨';
+						width: 1px;
+						height: 1px;
+						margin: -1px;
+						opacity: 0;
+						clip: rect(0, 0, 0, 0);
+					}
+
 					> span,
 					> button {
-						color: var(--color-text-basic);
-
-						&:after {
-							position: absolute;
-							content: '선택됨';
-							opacity: 0;
-						}
+						// color: var(--color-text-basic);
 					}
 				}
 			}

@@ -1,5 +1,5 @@
 <!---
-화면번호 : PRLT10004020000
+화면번호 : MPRMTPS10004020000
 경로 : 3.자동차 상세정보 > 3-3. 자동차 추가 확인사항
 -->
 <!doctype html>
@@ -56,7 +56,7 @@
 					</div>
 
 					<div class="header_connect">
-						<h1 class="header_title">타이틀</h1>
+						<h1 class="header_title">자동차보험</h1>
 					</div>
 
 					<div class="right">
@@ -101,16 +101,12 @@
 								</div>
 								<div class="tooltip_panel" role="tooltip">
 									<div class="inner">
-										<p class="inner_title" aria-describedby="title"><strong>타이틀</strong></p>
+										<p class="inner_title" aria-describedby="title"></p>
 										<div class="inner_contents">
 											<p class="tooltip_title">특정용도 차량</p>
 											<p class="tooltip_desc">특정한 용도에 사용되는 자동차로서 이동진료차, 이동도서관차, 채혈차, 방송중계차, 혈액수송차, 검사측정차, 현금수송차, 방역차, 소독차, 이동우편차, 영화촬영차, 이동판매차, 충전차, 배전차, 발전차등 이와 유사한 형태로 사용되는 자동차 (단, 관련 장비가 차체에 부착된 경우에만 해당되며, 화물차에 장비를 싣고 다니는 경우에는 해당되지 않습니다.)</p>
 										</div>
-										<div class="inner_footer">
-											<a href="javascrip:void(0)" class="btn_link btn_link_s_4">
-												<span>바로가기</span>
-											</a>
-										</div>
+
 										<button type="button" class="close"><span class="blind">툴팁 닫기</span></button>
 									</div>
 								</div>
@@ -119,22 +115,17 @@
 							<div class="tooltip_wrap">
 								<div class="tooltip_head">
 									<button type="button" class="open trigger_btn" aria-expanded="false">
-										<i class="hd_icon fill_18_info"></i>
+										<i class="hd_icon popover_help"></i>
 										<span class="blind">툴팁 열기</span>
 									</button>
 								</div>
 								<div class="tooltip_panel" role="tooltip">
 									<div class="inner">
-										<p class="inner_title" aria-describedby="title"><strong>타이틀</strong></p>
+										<p class="inner_title" aria-describedby="title">교습용 차량</p>
 										<div class="inner_contents">
-											<p class="tooltip_title">교습용 차량</p>
 											<p class="tooltip_desc">차량이 인가된 자동차학원 또는 자동차학원 대표자가 소유하면서, 운전교습 및 도로주행교육 및 시험에 사용되는 자동차</p>
 										</div>
-										<div class="inner_footer">
-											<a href="javascrip:void(0)" class="btn_link btn_link_s_4">
-												<span>바로가기</span>
-											</a>
-										</div>
+
 										<button type="button" class="close"><span class="blind">툴팁 닫기</span></button>
 									</div>
 								</div>
@@ -142,6 +133,7 @@
 						</div>
 						<div class="form_line">
 							<div class="radio_group_wrap" role="radiogroup">
+								<!-- '예'클릭시 alert팝업 노출, 버튼 disabled처리(하단 script 예시) -->
 								<div class="inp_radio rd_btn">
 									<input type="radio" id="radio_btn_01" name="radio_g1" />
 									<label for="radio_btn_01">
@@ -159,7 +151,7 @@
 					</div>
 
 					<div class="form_group_wrap">
-						<p class="form_group_title title_h5">차량이 캠핑트레일러, 보트, 수상오토바이등의 레저장비를 견인하는 자동차 입니까?</p>
+						<p class="form_group_title title_h5">차량이 캠핑트레일러, 보트, 수상오토바이 등의 레저장비를 견인하는 자동차 입니까?</p>
 						<div class="info_box">레저장비를 견인하는 자동차는 레저장비견인 중 위험담보요율 적용으로 기본보험요율이 할증됩니다.</div>
 						<div class="form_line">
 							<div class="radio_group_wrap" role="radiogroup">
@@ -214,7 +206,34 @@
 		</div>
 
 		<!-- s: popup area -->
-
+		<!-- s: Layer 팝업 -->
+		<div class="popup_wrap layer" id="alert_q1" role="dialog" aria-hidden="true">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true"></div>
+				<div class="popup_inner">
+					<div class="popup_head"></div>
+					<div class="popup_cont">
+						<div class="popup_content">특정용도, 교습용 차량은 하이카다이렉트 보험을 가입하실 수 없으므로 현대해상 자동차보험(오프라인 자동차보험)으로 문의해 주십시오.</div>
+					</div>
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">확인</span>
+							</button>
+						</div>
+					</div>
+					<button type="button" class="popup_close"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: Layer 팝업 -->
 		<!-- e: popup area -->
 	</body>
 </html>
+<script>
+	//1번 질문(특정용도 차량입니까?) -'예'클릭시 alert팝업 노출, 버튼 disabled처리
+	$("#radio_btn_01").on("click", function () {
+		openPop(this, "alert_q1");
+		$(this).attr("disabled", "");
+	});
+</script>

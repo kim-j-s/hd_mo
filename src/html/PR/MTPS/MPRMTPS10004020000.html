@@ -1,10 +1,10 @@
 <!---
-화면번호 : PRLT10004020000
+화면번호 : MPRMTPS10004020000
 경로 : 3.자동차 상세정보 > 3-3. 자동차 추가 확인사항
 -->
 {{#> layout/default page-title="자동차 상세정보 | 상품"}}
 <div id="wrap" class="wrap">
-	{{> layout/header h-title="타이틀" h-back=true }}
+	{{> layout/header h-title="자동차보험" h-back=true }}
 	<div id="container" class="container">
 		<div class="content">
 			<!-- s: content_top -->
@@ -25,17 +25,18 @@
 						<p class="tooltip_title">특정용도 차량</p>
 						<p class="tooltip_desc">특정한 용도에 사용되는 자동차로서 이동진료차, 이동도서관차, 채혈차, 방송중계차, 혈액수송차, 검사측정차, 현금수송차, 방역차, 소독차, 이동우편차, 영화촬영차, 이동판매차, 충전차, 배전차, 발전차등 이와 유사한 형태로 사용되는 자동차 (단, 관련 장비가 차체에 부착된 경우에만 해당되며, 화물차에 장비를 싣고 다니는 경우에는 해당되지 않습니다.)</p>
 					{{/ cp/tooltip}}
-					교습용 차량입니까?{{#> cp/tooltip trigger-icon="fill_18_info"}}<p class="tooltip_title">교습용 차량</p><p class="tooltip_desc">차량이 인가된 자동차학원 또는 자동차학원 대표자가 소유하면서, 운전교습 및 도로주행교육 및 시험에 사용되는 자동차</p>{{/ cp/tooltip}}
+					교습용 차량입니까?{{#> cp/tooltip trigger-icon="popover_help" title="교습용 차량"}}<p class="tooltip_desc">차량이 인가된 자동차학원 또는 자동차학원 대표자가 소유하면서, 운전교습 및 도로주행교육 및 시험에 사용되는 자동차</p>{{/ cp/tooltip}}
 				</div>
 				<div class="form_line">
 					<div class="radio_group_wrap" role="radiogroup">
+						<!-- '예'클릭시 alert팝업 노출, 버튼 disabled처리(하단 script 예시) -->
 						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_01" name="radio_g1" labelname="예"}}
 						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_02" name="radio_g1" labelname="아니오" checked=true}}</div>
 				</div>
 			</div>
 
 			<div class="form_group_wrap">
-				<p class="form_group_title title_h5">차량이 캠핑트레일러, 보트, 수상오토바이등의 레저장비를 견인하는 자동차 입니까?</p>
+				<p class="form_group_title title_h5">차량이 캠핑트레일러, 보트, 수상오토바이 등의 레저장비를 견인하는 자동차 입니까?</p>
 				<div class="info_box">레저장비를 견인하는 자동차는 레저장비견인 중 위험담보요율 적용으로 기본보험요율이 할증됩니다.</div>
 				<div class="form_line">
 					<div class="radio_group_wrap" role="radiogroup">
@@ -66,6 +67,27 @@
 </div>
 
 <!-- s: popup area -->
-
+	<!-- s: Layer 팝업 -->
+	{{#> popup/popup_layer popup-id="alert_q1"}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			특정용도, 교습용 차량은 하이카다이렉트 보험을 가입하실 수 없으므로 현대해상 자동차보험(오프라인 자동차보험)으로 문의해 주십시오.
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="2" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_layer}}
+	<!-- e: Layer 팝업 -->
 <!-- e: popup area -->
 {{/ layout/default }}
+
+<script>
+	//1번 질문(특정용도 차량입니까?) -'예'클릭시 alert팝업 노출, 버튼 disabled처리
+	$('#radio_btn_01').on('click', function() {
+		openPop(this, 'alert_q1');
+		$(this).attr('disabled','');
+	});
+</script>

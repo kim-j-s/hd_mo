@@ -14,12 +14,12 @@
 				<div class="select_rolling_opt">
 					<div id="option_swiper1" class="swiper-container">
 						<div class="swiper-wrapper">
-							<div class="swiper-slide">3년</div>
-							<div class="swiper-slide">5년</div>
-							<div class="swiper-slide">7년</div>
-							<div class="swiper-slide">10년</div>
-							<div class="swiper-slide">15년</div>
-							<div class="swiper-slide">20년</div>
+							<div class="swiper-slide"><button type="button">3년</button></div>
+							<div class="swiper-slide"><button type="button">5년</button></div>
+							<div class="swiper-slide"><button type="button">7년</button></div>
+							<div class="swiper-slide"><button type="button">10년</button></div>
+							<div class="swiper-slide"><button type="button">15년</button></div>
+							<div class="swiper-slide"><button type="button">20년</button></div>
 						</div>
 						<div class="swiper-button-prev"></div>
 						<div class="swiper-button-next"></div>
@@ -52,7 +52,7 @@
 </div>
 <div class="popup_bottom">
 	<div class="btn_area">
-		{{> cp/button type="1" size="2" b-text="가입 조건을 변경합니다" }}
+		{{> cp/button type="3" size="2" b-text="가입 조건을 변경합니다" }}
 	</div>
 </div>
 {{/ popup/popup_bottom}}
@@ -71,6 +71,7 @@
 				centeredSlides: true,
 				initialSlide: newNum,
 				spaceBetween: 16,
+				slideToClickedSlide: true,
 				observer: true,
 				navigation: {
 					nextEl: ".swiper-button-next",
@@ -82,6 +83,7 @@
 					slideLabelMessage: '',
 					prevSlideMessage: '이전 항목으로 이동',
 					nextSlideMessage: '다음 항목으로 이동',
+					scrollOnFocus: true,
 				},
 				on: {
 					// slideChange: function(swiperInstance) {
@@ -101,24 +103,28 @@
 					init: function (swiperInstance) {
 						slideFocus(swiperInstance);
 					},
-					slideChange: function(swiperInstance){
-						swiperInstance.slideTo(swiperInstance.activeIndex, 0, false);
-						$('.popup_head').text(swiperInstance.activeIndex);
-					},
+					// slideChange: function(swiperInstance){
+					// 	swiperInstance.slideTo(swiperInstance.activeIndex, 0, false);
+					// 	// $('.popup_head').text(swiperInstance.activeIndex);
+					// },
 				}
 			});
 		});
 
 		function slideFocus(swiperInstance) {
 			$(swiperInstance.slides).each(function(idx) {
-				$(this).on('focusin', function () {
-					if (swiperInstance.activeIndex !== idx) {
-						swiperInstance.slideTo(idx, 300);
-					}
-					
-					console.log(document.activeElement, '순서 : ', idx);
-					console.log('현재 active slide : ', swiperInstance.activeIndex);
+				$(this).on('click', function() {
+					swiperInstance.slideTo(idx);
+					$('.popup_head').text(idx);
 				});
+			// 	$(this).on('focusin', function () {
+			// 		if (swiperInstance.activeIndex !== idx) {
+			// 			swiperInstance.slideTo(idx, 300);
+			// 		}
+					
+			// 		console.log(document.activeElement, '순서 : ', idx);
+			// 		console.log('현재 active slide : ', swiperInstance.activeIndex);
+			// 	});
 			});
 		}
 	});
