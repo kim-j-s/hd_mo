@@ -1,6 +1,6 @@
 <!---
-화면번호 : PRLT10004000700
-경로 : 3.자동차 상세정보 > 3-1.자동차 상세정보 입력 > 외제차 차량가액 수정
+화면번호 : MPRMTPS10004000900
+경로 : 3.자동차 상세정보 > 3-1.자동차 상세정보 입력 > 필터링 옵션
 -->
 <!doctype html>
 <html lang="ko">
@@ -48,6 +48,7 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body>
+		<!-- s: popup area -->
 		<!-- s: Bottom 팝업 -->
 		<div class="popup_wrap bottom active" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="false">
 			<div class="popup_container">
@@ -56,63 +57,84 @@
 					<div class="draggable" aria-hidden="true">
 						<div class="move"></div>
 					</div>
-					<div class="popup_head"><div class="popup_head_title">외제차 차량가액 수정</div></div>
+					<div class="popup_head"></div>
 
 					<div class="popup_cont">
 						<div class="popup_content">
 							<div class="form_group_wrap">
-								<!-- s: 25-04-14 수정 -->
 								<div class="form_line">
-									<div class="label_tit">차량가액</div>
-									<div class="input_text price">
-										<div class="inp">
-											<input type="tel" placeholder="금액을 입력하세요" title="금액입력" />
-											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+									<div class="label_tit">인승</div>
+									<div class="radio_group_wrap" role="radiogroup">
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="radio_btn_g1_1" name="radio_g1" checked />
+											<label for="radio_btn_g1_1">
+												<span class="label_cont">라벨명1</span>
+											</label>
 										</div>
-										<div class="int_txt right">원</div>
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="radio_btn_g1_2" name="radio_g1" />
+											<label for="radio_btn_g1_2">
+												<span class="label_cont">라벨명2</span>
+											</label>
+										</div>
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="radio_btn_g1_3" name="radio_g1" />
+											<label for="radio_btn_g1_3">
+												<span class="label_cont">라벨명3</span>
+											</label>
+										</div>
 									</div>
-									<p class="explain_text">수정가능범위 :5,742~7,018만원</p>
 								</div>
-								<!-- e: 25-04-14 수정 -->
-							</div>
-						</div>
 
-						<!-- s: 꼭 알아두세요 -->
-						<div class="bottom_fix_notice">
-							<div class="acd_item">
-								<div class="acd_head">
-									<button type="button" class="acd_btn" aria-expanded="false"><span>꼭 알아두세요</span></button>
-								</div>
-								<div class="acd_cont">
-									<div class="inner">
-										<ul class="list_ty1">
-											<li>외제차량의 경우, 일정 범위 내에서 차량가액 수정이 가능합니다.</li>
-											<li>외제차는 고장출동서비스 중 잠금해제 서비스가 제공되지 않습니다.</li>
-										</ul>
+								<div class="form_line">
+									<div class="label_tit">배기량</div>
+									<div class="radio_group_wrap" role="radiogroup">
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="radio_btn_g2_1" name="radio_g2" checked />
+											<label for="radio_btn_g2_1">
+												<span class="label_cont">라벨명1</span>
+											</label>
+										</div>
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="radio_btn_g2_2" name="radio_g2" />
+											<label for="radio_btn_g2_2">
+												<span class="label_cont">라벨명2</span>
+											</label>
+										</div>
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="radio_btn_g2_3" name="radio_g2" />
+											<label for="radio_btn_g2_3">
+												<span class="label_cont">라벨명3</span>
+											</label>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<!-- e: 꼭 알아두세요 -->
 					</div>
 
-					<!-- s: 25-04-14 수정 -->
 					<div class="popup_bottom">
 						<div class="btn_area">
 							<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_2">
 								<span class="text">취소</span>
 							</button>
 							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
-								<span class="text">수정하기</span>
+								<span class="text">조회하기</span>
 							</button>
 						</div>
 					</div>
-					<!-- e: 25-04-14 수정 -->
 
 					<button type="button" class="popup_close"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
 		<!-- e: Bottom 팝업 -->
+		<!-- e: popup area -->
 	</body>
 </html>
+<script>
+	$(document).ready(function () {
+		// 팝업 열기
+		openPop(document.body, "pop_type01");
+	});
+</script>

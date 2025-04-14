@@ -56,7 +56,8 @@
 					<div class="draggable" aria-hidden="true">
 						<div class="move"></div>
 					</div>
-					<div class="popup_head">가입조건 변경</div>
+					<div class="popup_head"><div class="popup_head_title">가입조건 변경</div></div>
+
 					<div class="popup_cont">
 						<div class="popup_content">
 							<div class="form_group_wrap">
@@ -183,6 +184,10 @@
 							init: function () {
 								slideFocus(this);
 							},
+							slideChange: function () {
+								this.slideTo(this.activeIndex, 0, false);
+								$(".popup_head").text(this.activeIndex);
+							},
 						},
 					});
 				});
@@ -193,10 +198,13 @@
 						const $focusableEls = $(this).find('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
 
 						// 각 포커스 요소에 포커스 이벤트 바인딩
-						$focusableEls.on("focus", function () {
+						$(this).on("focusin", function () {
 							if (swiperInstance.activeIndex !== idx) {
 								swiperInstance.slideTo(idx, 300); // 300ms 애니메이션으로 해당 슬라이드로 이동
 							}
+
+							console.log(document.activeElement, "순서 : ", idx);
+							console.log("현재 active slide : ", swiperInstance.activeIndex);
 						});
 					});
 				}
