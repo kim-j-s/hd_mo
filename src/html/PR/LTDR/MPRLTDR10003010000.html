@@ -18,11 +18,11 @@
 							<div class="swiper-slide">5년</div>
 							<div class="swiper-slide">7년</div>
 							<div class="swiper-slide">10년</div>
-							<div class="swiper-slide">15년></div>
-							<div class="swiper-slide">20년></div>
+							<div class="swiper-slide">15년</div>
+							<div class="swiper-slide">20년</div>
 						</div>
-						<div class="swiper-button-next"></div>
 						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
 					</div>
 				</div>
 			</div>
@@ -35,8 +35,8 @@
 							<div class="swiper-slide"><span>5년</span></div>
 							<div class="swiper-slide"><span>7년</span></div>
 						</div>
-						<div class="swiper-button-next"></div>
 						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
 					</div>
 				</div>
 			</div>
@@ -52,7 +52,7 @@
 </div>
 <div class="popup_bottom">
 	<div class="btn_area">
-		{{> cp/button type="2" size="2" b-text="가입 조건을 변경합니다" }}
+		{{> cp/button type="1" size="2" b-text="가입 조건을 변경합니다" }}
 	</div>
 </div>
 {{/ popup/popup_bottom}}
@@ -98,27 +98,22 @@
 					// 		$firstFocusableElement.focus();
 					// 	}
 					// }
-					init: function () {
-						slideFocus(this);
+					init: function (swiperInstance) {
+						slideFocus(swiperInstance);
 					},
-					slideChange: function(){
-						this.slideTo(this.activeIndex, 0, false);
-						$('.popup_head').text(this.activeIndex);
-					}
+					slideChange: function(swiperInstance){
+						swiperInstance.slideTo(swiperInstance.activeIndex, 0, false);
+						$('.popup_head').text(swiperInstance.activeIndex);
+					},
 				}
 			});
 		});
 
 		function slideFocus(swiperInstance) {
 			$(swiperInstance.slides).each(function(idx) {
-				// 슬라이드 내부의 포커스 가능한 요소들을 찾음
-				const $focusableEls = $(this).find('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-
-
-				// 각 포커스 요소에 포커스 이벤트 바인딩
 				$(this).on('focusin', function () {
 					if (swiperInstance.activeIndex !== idx) {
-						swiperInstance.slideTo(idx, 300); // 300ms 애니메이션으로 해당 슬라이드로 이동
+						swiperInstance.slideTo(idx, 300);
 					}
 					
 					console.log(document.activeElement, '순서 : ', idx);
