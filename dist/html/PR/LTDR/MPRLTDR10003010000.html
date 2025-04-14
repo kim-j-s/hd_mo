@@ -66,12 +66,12 @@
 									<div class="select_rolling_opt">
 										<div id="option_swiper1" class="swiper-container">
 											<div class="swiper-wrapper">
-												<div class="swiper-slide">3년</div>
-												<div class="swiper-slide">5년</div>
-												<div class="swiper-slide">7년</div>
-												<div class="swiper-slide">10년</div>
-												<div class="swiper-slide">15년</div>
-												<div class="swiper-slide">20년</div>
+												<div class="swiper-slide"><button type="button">3년</button></div>
+												<div class="swiper-slide"><button type="button">5년</button></div>
+												<div class="swiper-slide"><button type="button">7년</button></div>
+												<div class="swiper-slide"><button type="button">10년</button></div>
+												<div class="swiper-slide"><button type="button">15년</button></div>
+												<div class="swiper-slide"><button type="button">20년</button></div>
 											</div>
 											<div class="swiper-button-prev"></div>
 											<div class="swiper-button-next"></div>
@@ -154,6 +154,7 @@
 						centeredSlides: true,
 						initialSlide: newNum,
 						spaceBetween: 16,
+						slideToClickedSlide: true,
 						observer: true,
 						navigation: {
 							nextEl: ".swiper-button-next",
@@ -165,6 +166,7 @@
 							slideLabelMessage: "",
 							prevSlideMessage: "이전 항목으로 이동",
 							nextSlideMessage: "다음 항목으로 이동",
+							scrollOnFocus: true,
 						},
 						on: {
 							// slideChange: function(swiperInstance) {
@@ -184,10 +186,10 @@
 							init: function (swiperInstance) {
 								slideFocus(swiperInstance);
 							},
-							slideChange: function (swiperInstance) {
-								swiperInstance.slideTo(swiperInstance.activeIndex, 0, false);
-								// $('.popup_head').text(swiperInstance.activeIndex);
-							},
+							// slideChange: function(swiperInstance){
+							// 	swiperInstance.slideTo(swiperInstance.activeIndex, 0, false);
+							// 	// $('.popup_head').text(swiperInstance.activeIndex);
+							// },
 						},
 					});
 				});
