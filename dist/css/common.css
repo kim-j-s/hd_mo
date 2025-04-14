@@ -78,17 +78,24 @@ strong {
 	-ms-flex: 1;
 	flex: 1;
 }
-.wrap.wrap_ty2 {
+.wrap.wrap_ty2 .header {
+	-webkit-transition: background-color 0.3s ease-in-out;
+	transition: background-color 0.3s ease-in-out;
+}
+.wrap.wrap_ty2.scrollTop .header {
 	background: var(--color-surface-secondary-subtler);
 }
 .wrap.wrap_ty2 .container {
-	padding: 2.4rem 0px 1px;
+	padding: 0px 0px 1px;
 }
 .wrap.wrap_ty2 .content {
-	padding: 0 2.4rem 3.2rem;
+	padding: 2.4rem 2.4rem 3.2rem;
+	background-color: #ffffff;
+}
+.wrap.wrap_ty2 .content_ty1 {
+	background: var(--color-surface-secondary-subtler);
 }
 .wrap.wrap_ty2 .content_ty2 {
-	background-color: #ffffff;
 	padding: 4rem 2.4rem;
 }
 .wrap.wrap_ty2 .content_ty2 .card_item_wrap + .total_price_display_ty1 {
@@ -107,6 +114,7 @@ strong {
 	position: absolute;
 	top: -0.8rem;
 	margin-left: -2.4rem;
+	margin-right: -2.4rem;
 }
 .wrap.wrap_ty2 .bottom_fix_wrap {
 	background-color: #ffffff;
@@ -2801,29 +2809,6 @@ div:not(.comp_wrap) > .input_text:focus-within {
 	border: 1px solid var(--color-border-gray-dark);
 	border-radius: 100%;
 }
-.inp_radio input[type="radio"] + label.lg {
-	padding-left: 3.2rem;
-}
-.inp_radio input[type="radio"] + label.lg::before {
-	top: 0;
-	width: 2.4rem;
-	height: 2.4rem;
-}
-.inp_radio input[type="radio"] + label.lg > .label_cont {
-	font-size: var(--font-size-label-large);
-	line-height: 2.4rem;
-}
-.inp_radio input[type="radio"] + label.lg > .label_cont .sub_g_txt {
-	font-size: var(--font-size-label-medium);
-}
-.inp_radio input[type="radio"] + label.sm {
-	padding-left: 2.4rem;
-}
-.inp_radio input[type="radio"] + label.sm::before {
-	top: 0.3rem;
-	width: 1.6rem;
-	height: 1.6rem;
-}
 .inp_radio input[type="radio"]:disabled + label::before {
 	border: 1px dashed var(--color-border-disabled);
 	background-color: var(--color-element-gray-lighter);
@@ -2834,12 +2819,6 @@ div:not(.comp_wrap) > .input_text:focus-within {
 .inp_radio input[type="radio"]:checked + label::before {
 	background: var(--color-element-primary) url(../images/icon/check_ty1.svg) no-repeat center center/1.4rem auto;
 	border: 1px solid var(--color-element-primary);
-}
-.inp_radio input[type="radio"]:checked + label.lg::before {
-	background-size: 1.6rem auto;
-}
-.inp_radio input[type="radio"]:checked + label.sm::before {
-	background-size: 1rem auto;
 }
 .inp_radio input[type="radio"]:checked:disabled + label::before {
 	border: 1px dashed var(--color-border-disabled);
@@ -2852,6 +2831,35 @@ div:not(.comp_wrap) > .input_text:focus-within {
 	border: 1px solid var(--color-border-disabled);
 	background-color: var(--color-element-gray-lighter);
 	background-image: url(../images/icon/check_ty5.svg);
+}
+.inp_radio.lg input[type="radio"] + label {
+	padding-left: 3.2rem;
+}
+.inp_radio.lg input[type="radio"] + label::before {
+	top: 0;
+	width: 2.4rem;
+	height: 2.4rem;
+}
+.inp_radio.lg input[type="radio"] + label > .label_cont {
+	font-size: var(--font-size-label-large);
+	line-height: 2.4rem;
+}
+.inp_radio.lg input[type="radio"] + label > .label_cont .sub_g_txt {
+	font-size: var(--font-size-label-medium);
+}
+.inp_radio.lg input[type="radio"]:checked + label::before {
+	background-size: 1.6rem auto;
+}
+.inp_radio.sm input[type="radio"] + label {
+	padding-left: 2.4rem;
+}
+.inp_radio.sm input[type="radio"] + label::before {
+	top: 0.3rem;
+	width: 1.6rem;
+	height: 1.6rem;
+}
+.inp_radio.sm input[type="radio"]:checked + label::before {
+	background-size: 1rem auto;
 }
 .radio_group_wrap {
 	display: -webkit-box;
