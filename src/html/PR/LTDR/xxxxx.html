@@ -1,0 +1,80 @@
+<!---
+화면번호 : PRDR10003010000
+경로 : 보험료 확인 > 가입조건 변경
+-->
+{{#> layout/default page-title="보험료 확인 | 상품"}}
+
+<!-- s: Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="가입조건 변경" active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">보험기간(년)</div>
+				<div class="tsts">
+					<div class="i">
+						<button type="button" class="opt_btn">1</button>
+						<button type="button" class="opt_btn">2</button>
+						<button type="button" class="opt_btn">3</button>
+						<button type="button" class="opt_btn">4</button>
+						<button type="button" class="opt_btn">5</button>
+						<!-- <button type="button">6</button> -->
+						<!-- <button type="button">7</button> -->
+						<!-- <button type="button">8</button> -->
+					</div>
+					<button type="button" class="tsts_btn left">이전</button>
+					<button type="button" class="tsts_btn right">다음</button>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: Bottom 팝업 -->
+
+<script>
+	$(function(){
+	// $(window).on('load', function () {
+		const $scrollArea = $(this).find('.i');
+		const $buttons = $scrollArea.find('button');
+
+		// ✅ 초기 가운데 버튼 중앙 정렬 + active + title
+		const centerIndex = Math.floor($buttons.length / 2);
+		const $centerBtn = $buttons.eq(centerIndex);
+		setActive($centerBtn);
+		centerToButton($centerBtn);
+
+		// ✅ 버튼 클릭 시
+		$buttons.on('click', function () {
+			setActive($(this));
+			centerToButton($(this));
+		});
+
+		// ✅ 활성화 처리 함수
+		function setActive($btn) {
+			$buttons.removeClass('active').removeAttr('title');
+			$btn.addClass('active').attr('title', '선택됨');
+		}
+
+		// ✅ 중앙으로 이동 함수
+		function centerToButton($btn) {
+			const scrollAreaWidth = $scrollArea[0].clientWidth;
+			const btnLeftInScroll = $btn[0].offsetLeft;
+			const btnWidth = $btn.outerWidth();
+
+			const btnCenter = btnLeftInScroll + btnWidth / 2;
+			const scrollTo = btnCenter - scrollAreaWidth / 2;
+
+			$scrollArea[0].scrollTo({
+				left: scrollTo,
+				behavior: 'smooth'
+			});
+		}
+	});
+	</script>
+	
+	
+	
+ 
+{{/ layout/default }}

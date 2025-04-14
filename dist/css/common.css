@@ -369,6 +369,63 @@ strong {
 .select_rolling_opt .swiper-container .swiper-button-next:after {
 	background-image: url(../images/icon/arrowRight_ty3.svg);
 }
+.radio_group_wrap.icon_case .inp_radio input[type="radio"] + label {
+	padding-left: 6rem;
+}
+.tsts {
+	position: relative;
+	height: 5rem;
+	margin-top: 2rem;
+	font-size: 0;
+	text-align: center;
+	margin: 0 -2.4rem;
+}
+.tsts .i {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	gap: 1.6rem;
+	white-space: nowrap;
+	width: 100%;
+	padding: 0 50%;
+	overflow-x: auto;
+	-ms-scroll-snap-type: x mandatory;
+	scroll-snap-type: x mandatory;
+}
+.tsts .opt_btn {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+	display: inline-block;
+	width: 9.8rem;
+	height: 5rem;
+	text-align: center;
+	color: #000;
+	font-size: 2.4rem;
+	scroll-snap-align: center;
+}
+.tsts .opt_btn.active {
+	background: #000;
+	color: #fff;
+	border-radius: 0.8rem;
+}
+.tsts .tsts_btn {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 3.2rem;
+	height: 3.2rem;
+	background-color: blue;
+	border-radius: 50%;
+	border: 1px solid #e1e3ea;
+}
+.tsts .tsts_btn.left {
+	left: 2.4rem;
+}
+.tsts .tsts_btn.right {
+	right: 2.4rem;
+}
 /* common 인증, 로딩 등 */
 /* 인증방법 선택 */
 * + .cert_select_list {
@@ -1666,7 +1723,7 @@ strong {
 .card_item_wrap .card_item {
 	position: relative;
 	padding: var(--padding-card-large);
-	border: 1px solid #e1e3ea;
+	border: 1px solid var(--color-border-gray-light);
 	border-radius: 2.4rem;
 	background: rgba(255, 255, 255, 0.9);
 	-webkit-backdrop-filter: blur(0.8rem);
@@ -1758,6 +1815,13 @@ strong {
 	margin-top: 0.8rem;
 	font-size: var(--font-size-body-small);
 	color: var(--color-text-information);
+}
+.card_item_wrap .card_item .item_top .text {
+	font-size: var(--font-size-label-large);
+	line-height: 2.4rem;
+}
+.card_item_wrap .card_item .item_top .text + .desc {
+	margin-top: 0.4rem;
 }
 .card_item_wrap .card_item .item_top .desc {
 	font-size: 1.4rem;
@@ -2650,6 +2714,17 @@ strong {
 	margin-left: -1.6rem;
 	margin-right: -1.6rem;
 }
+.form_group_wrap .form_line .line_group {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	gap: 1.2rem;
+}
+.form_group_wrap .form_line .line_group .line {
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
 .range_calrendar {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -2706,19 +2781,19 @@ strong {
 .list_ty3 > li {
 	position: relative;
 	margin: 0;
-	padding: 0 0 0 1.5rem;
+	padding: 0 0 0 0.8rem;
 	font-size: var(--font-size-body-medium);
 	line-height: 2.4rem;
-	color: #3e4a58;
+	color: #33363d;
 }
 .list_ty3 > li::before {
-	background-color: #3e4a58;
+	background-color: #33363d;
 }
 .list_ty3 > li::before {
 	content: "";
 	position: absolute;
 	top: 1rem;
-	left: 0.4rem;
+	left: 0;
 	width: 0.3rem;
 	height: 0.3rem;
 	border-radius: 100%;
@@ -2992,6 +3067,9 @@ strong {
 .radio_group_wrap_ty3 .inp_radio {
 	-ms-flex-preferred-size: calc(50% - 0.6rem);
 	flex-basis: calc(50% - 0.6rem);
+}
+.radio_group_wrap.icon_case .inp_radio input[type="radio"] + label {
+	padding-left: 6rem;
 }
 /* radiobutton */
 /* Radiobutton */
