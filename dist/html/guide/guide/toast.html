@@ -45,6 +45,33 @@
 	</head>
 	<body>
 		<div id="wrap" class="wrap">
+			<style>
+				.g_line {
+					padding-bottom: 1rem;
+					font-size: 70rem;
+					font-size: 2rem;
+					line-height: 2.8rem;
+					border-bottom: 1px solid #000;
+				}
+				.g_dom {
+					margin: 2rem 0;
+				}
+				.p_guide_wrap_b {
+					display: -webkit-box;
+					display: -ms-flexbox;
+					display: flex;
+					-webkit-box-orient: horizontal;
+					-webkit-box-direction: normal;
+					-ms-flex-flow: row wrap;
+					flex-flow: row wrap;
+					gap: 0.6rem;
+					> * {
+						-webkit-box-flex: 0;
+						-ms-flex: none;
+						flex: none;
+					}
+				}
+			</style>
 			<div id="header" class="header">
 				<div class="header_inner">
 					<div class="left">
@@ -52,7 +79,7 @@
 					</div>
 
 					<div class="header_connect">
-						<h1 class="header_title">타이틀33</h1>
+						<h1 class="header_title">토스트 팝업</h1>
 					</div>
 
 					<div class="right">
@@ -74,8 +101,13 @@
 			</div>
 			<div id="container" class="container">
 				<div class="content">
-					<button type="button" onclick="toastAction(this);" data-msg="실행1 완료되었습니다."><span>toast 실행</span></button>
-					<button type="button" onclick="toastAction(this);" data-msg="실행2 완료"><span>toast 실행</span></button>
+					<div class="g_line">toast 팝업 예시</div>
+					<div class="g_dom">
+						<div class="p_guide_wrap_b">
+							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="toastAction(this);" data-msg="실행1 완료되었습니다."><span class="text">toast 실행</span></button>
+							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="toastAction(this);" data-msg="실행2 완료"><span class="text">toast 실행</span></button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
