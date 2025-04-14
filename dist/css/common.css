@@ -264,11 +264,17 @@ strong {
 	overflow: hidden;
 	position: relative;
 	margin: 0 1rem;
+	padding: 0 3.2rem;
 }
 .select_rolling_opt .swiper-container .swiper-wrapper .swiper-slide {
 	width: auto !important;
 	min-width: 9.8rem;
 	padding: 1.4rem var(--padding-7);
+	font-size: 1.8rem;
+	line-height: 2.8rem;
+	font-weight: 700;
+	color: var(--color-text-disabled);
+	background: transparent;
 	text-align: center;
 	border-radius: var(--radius-medium3);
 }
@@ -285,6 +291,7 @@ strong {
 	background-color: var(--color-element-secondary-lighter);
 	-webkit-transition: background-color 0.5s;
 	transition: background-color 0.5s;
+	color: var(--color-text-basic);
 }
 .select_rolling_opt .swiper-container .swiper-wrapper .swiper-slide-active > span,
 .select_rolling_opt .swiper-container .swiper-wrapper .swiper-slide-active > button {
@@ -301,6 +308,7 @@ strong {
 	margin-top: -1.6rem;
 	width: 3.2rem;
 	height: 3.2rem;
+	background-color: #fff;
 }
 .select_rolling_opt .swiper-container [class^="swiper-button"]:before {
 	position: absolute;
@@ -887,6 +895,17 @@ strong {
 	font-weight: 400;
 	line-height: 150%;
 }
+.btn_link.short_cut {
+	display: inline-block;
+	padding-right: 1.6rem;
+	font-size: var(--font-size-button-medium);
+	line-height: 2.1rem;
+	background: url(../images/icon/arrowRight_ty3.svg) no-repeat right center/1.6rem auto;
+}
+.btn_link.short_cut.sm {
+	font-size: var(--font-size-button-small);
+	line-height: 1.8rem;
+}
 .btn_link:hover {
 	background-color: var(--color-button-text-fill-hover);
 	border-radius: var(--radius-xxsamll);
@@ -976,13 +995,6 @@ strong {
 	font-size: 0;
 	line-height: 0;
 	border: none;
-}
-.btn.t_type.t_type_case01 {
-	display: inline-block;
-	padding-right: 1.6rem;
-	font-size: var(--font-size-button-small);
-	line-height: 1.8rem;
-	background: url(../images/icon/arrowRight_ty3.svg) no-repeat right center/1.6rem auto;
 }
 .infoButton {
 	width: 2.4rem;
@@ -2861,6 +2873,20 @@ strong {
 }
 .inp_radio.sm input[type="radio"]:checked + label::before {
 	background-size: 1rem auto;
+}
+.radio_group_link {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.radio_group_link + .radio_group_link {
+	margin-top: 1.2rem;
 }
 .radio_group_wrap {
 	display: -webkit-box;
