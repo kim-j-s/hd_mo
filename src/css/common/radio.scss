@@ -35,31 +35,8 @@
 				border: 1px solid var(--color-border-gray-dark);
 				border-radius: 100%;
 			}
-			&.lg {
-				padding-left: 32px;
-				&::before {
-					top: 0;
-					width: 24px;
-					height: 24px;
-				}
-				> .label_cont {
-					font-size: var(--font-size-label-large);
-					line-height: 24px;
-					.sub_g_txt {
-						font-size: var(--font-size-label-medium);
-					}
-				}
-			}
-			&.sm {
-				padding-left: 24px;
-				&::before {
-					top: 3px;
-					width: 16px;
-					height: 16px;
-				}
-			}
+			
 		}
-
 		&:disabled {
 			& + label {
 				&::before {
@@ -78,16 +55,6 @@
 				&::before {
 					background: var(--color-element-primary) url(../images/icon/check_ty1.svg) no-repeat center center / 14px auto;
 					border: 1px solid var(--color-element-primary);
-				}
-				&.lg {
-					&::before {
-						background-size: 16px auto;
-					}
-				}
-				&.sm {
-					&::before {
-						background-size: 10px auto;
-					}
 				}
 			}
 
@@ -121,6 +88,52 @@
 			}
 		}
 
+	}
+	&.lg {
+		input[type='radio']{
+			& + label {
+				padding-left: 32px;
+				&::before {
+					top: 0;
+					width: 24px;
+					height: 24px;
+				}
+				> .label_cont {
+					font-size: var(--font-size-label-large);
+					line-height: 24px;
+					.sub_g_txt {
+						font-size: var(--font-size-label-medium);
+					}
+				}
+			}
+			&:checked {
+				& + label {
+					&::before {
+						background-size: 16px auto;
+					}
+				}
+			}
+		}
+	}
+	&.sm {
+		input[type='radio']{
+			& + label {
+				padding-left: 24px;
+				&::before {
+					top: 3px;
+					width: 16px;
+					height: 16px;
+				}
+			}
+			
+			&:checked {
+				& + label {
+					&::before {
+						background-size: 10px auto;
+					}
+				}
+			}
+		}
 	}
 	
 }
