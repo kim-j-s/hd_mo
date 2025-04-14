@@ -60,6 +60,25 @@
 
 <script>
 	$(document).ready(function(){
+		function slideFocus(swiper) {
+			const $slides = $(swiper.slides);
+			
+			$slides.each(function () {
+				$(this).removeAttr('title'); // 모든 슬라이드에서 title 제거
+			});
+			
+			const $activeSlide = $($slides[swiper.activeIndex]);
+			$activeSlide.attr('title', '선택됨'); // 현재 활성 슬라이드에 title 추가
+
+			$slides.off('focusin').on('focusin', function () {
+				const index = $slides.index(this);
+				if (swiper.activeIndex !== index) {
+					swiper.slideTo(index);
+				}
+			});
+			
+		}
+
 		$('.swiper-wrapper').attr('aria-live', 'off');
 		$('.swiper-container').each(function (idx, ele) {
 			const $swiperContainer = $(ele);
@@ -84,7 +103,7 @@
 					slideLabelMessage: '',
 					prevSlideMessage: '이전 항목으로 이동',
 					nextSlideMessage: '다음 항목으로 이동',
-					// scrollOnFocus: true,
+					//scrollOnFocus: true,
 				},
 				on: {
 					// slideChange: function(swiperInstance) {
@@ -104,6 +123,9 @@
 					init: function (swiperInstance) {
 						slideFocus(swiperInstance);
 					},
+					slideChange: function (swiperInstance) {
+						slideFocus(swiperInstance);
+					}
 					// slideChange: function(swiperInstance){
 					// 	swiperInstance.slideTo(swiperInstance.activeIndex, 0, false);
 					// 	// $('.popup_head').text(swiperInstance.activeIndex);
@@ -112,22 +134,22 @@
 			});
 		});
 
-		function slideFocus(swiperInstance) {
-			$(swiperInstance.slides).each(function(idx) {
-				$(this).on('click', function() {
-					swiperInstance.slideTo(idx);
-					$('.popup_head').text(idx);
-				});
-			// 	$(this).on('focusin', function () {
-			// 		if (swiperInstance.activeIndex !== idx) {
-			// 			swiperInstance.slideTo(idx, 300);
-			// 		}
+		// function slideFocus(swiperInstance) {
+		// 	$(swiperInstance.slides).each(function(idx) {
+		// 		$(this).on('click', function() {
+		// 			swiperInstance.slideTo(idx);
+		// 			$('.popup_head').text(idx);
+		// 		});
+		// 	// 	$(this).on('focusin', function () {
+		// 	// 		if (swiperInstance.activeIndex !== idx) {
+		// 	// 			swiperInstance.slideTo(idx, 300);
+		// 	// 		}
 					
-			// 		console.log(document.activeElement, '순서 : ', idx);
-			// 		console.log('현재 active slide : ', swiperInstance.activeIndex);
-			// 	});
-			});
-		}
+		// 	// 		console.log(document.activeElement, '순서 : ', idx);
+		// 	// 		console.log('현재 active slide : ', swiperInstance.activeIndex);
+		// 	// 	});
+		// 	});
+		// }
 	});
 </script>
  
