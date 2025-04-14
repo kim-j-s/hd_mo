@@ -89,18 +89,35 @@
 					// 	const button = activeSlide.querySelector('button');
 					// 	if (button) button.focus();
 					// }
-					slideChangeTransitionStart: function () {
-						const $activeSlide = $(this.slides[this.activeIndex]);
-						const $firstFocusableElement = $activeSlide.find('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])').first();
+					// slideChange: function () {
+					// 	const $activeSlide = $(this.slides[this.activeIndex]);
+					// 	const $firstFocusableElement = $activeSlide.find('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])').first();
 
-						this.slideTo(this.activeIndex, 0, false); 
-						if ($firstFocusableElement.length) {
-							$firstFocusableElement.focus();
-						}
+					// 	if ($firstFocusableElement.length) {
+					// 		this.slideTo(this.activeIndex, 0, false); 
+					// 		$firstFocusableElement.focus();
+					// 	}
+					// }
+					init: function () {
+						slideFocus(this);
 					}
 				}
 			});
 		});
+
+		function slideFocus(swiperInstance) {
+			$(swiperInstance.slides).each(function(idx) {
+				// 슬라이드 내부의 포커스 가능한 요소들을 찾음
+				const $focusableEls = $(this).find('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+
+				// 각 포커스 요소에 포커스 이벤트 바인딩
+				$focusableEls.on('focus', function () {
+					if (swiperInstance.activeIndex !== idx) {
+						swiperInstance.slideTo(idx, 300); // 300ms 애니메이션으로 해당 슬라이드로 이동
+					}
+				});
+			});
+		}
 	});
 </script>
  
