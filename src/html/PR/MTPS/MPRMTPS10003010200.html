@@ -14,7 +14,9 @@
 				보유 차량 중 <strong>동일증권 가입대상</strong><br>
 				차량을 선택해 주세요
 			</h2>
-			{{> cp/button type="3" size="5" b-text="동일증권 안내" }}
+			<div class="btn_area basic">
+				{{> cp/button type="3" size="5" b-text="동일증권 안내" }}
+			</div>
 		</div>
 		<!-- e: popup_content_top -->
 		
@@ -22,15 +24,15 @@
 			<div class="card_item">
 				<div class="item_inner">
 					<div class="inp_checkbox">
-						<input type="checkbox" id="card_chk1" name="name1" aria-labelledby="card_chk1_cont">
+						<input type="checkbox" id="card_chk1" name="name1" aria-labelledby="card_chk1_1_cont">
 						<label for="card_chk1" class="chk_label"></label>
 						<i></i>
 					</div>
 					<div class="inner_cont">
 						<a href="#" role="button" class="card_link">
-							<div class="item_top" id="card_chk1_cont">
+							<div class="item_top" id="card_chk1_1_cont">
 								<div class="badge_wrap">
-									<span class="hd_badge badge_text solid-pastel c_primary size_m">대상차량1</span>
+									<span class="hd_badge solid_pastel c_primary size_m">대상차량1</span>
 								</div>
 								<div class="title_info">
 									<div class="main_title">321가**54 (동일동시)</div>
@@ -58,15 +60,15 @@
 			<div class="card_item">
 				<div class="item_inner">
 					<div class="inp_checkbox">
-						<input type="checkbox" id="card_chk2" name="name1" aria-labelledby="card_chk2_cont">
+						<input type="checkbox" id="card_chk2" name="name1" aria-labelledby="card_chk1_2_cont">
 						<label for="card_chk2" class="chk_label"></label>
 						<i></i>
 					</div>
 					<div class="inner_cont">
 						<a href="#" role="button" class="card_link">
-							<div class="item_top" id="card_chk2_cont">
+							<div class="item_top" id="card_chk1_2_cont">
 								<div class="badge_wrap">
-									<span class="hd_badge badge_text solid-pastel c_primary size_m">대상차량2</span>
+									<span class="hd_badge solid_pastel c_primary size_m">대상차량2</span>
 								</div>
 								<div class="title_info">
 									<div class="main_title">321가**54 (동일동시)</div>
@@ -91,9 +93,27 @@
 					</div>
 				</div>
 			</div>
+			<!-- s: 선택안함 -->
+			<!-- s: 선택안함일 시, class 추가 -->
+			<div class="card_item non_chk">
+			<!-- e: 선택안함일 시, class 추가 -->
+				<div class="item_inner">
+					<div class="inp_checkbox">
+						<input type="checkbox" id="card_chk1_3" name="name1" aria-labelledby="card_chk1_3_cont">
+						<label for="card_chk1_3" class="chk_label"></label>
+						<i></i>
+					</div>
+					<div class="inner_cont">
+						<div class="item_top" id="card_chk1_3_cont">
+							<div class="title_info">
+								<div class="sub_title">선택안함</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- e: 선택안함 -->
 		</div>
-
-		{{> cp/checkbox id="checkbox1" labelname="선택안함" }}
 	 </div>
 </div>
 

@@ -321,21 +321,22 @@
 	// })
 })();
 
+// prograss
 function prograssBar() {
 	const $card = $(".card_item");
 
 	$card.each(function () {
 		const $this = $(this),
-			$bar = $this.find(".insurance_policyBox2 .progress_box .ing");
+			$bar = $this.find(".insurance_policyBox .progress_box .ing");
 
-		if ($this.find(".insurance_policyBox2 .progress_box").length > 0) {
+		if ($this.find(".insurance_policyBox .progress_box").length > 0) {
 			const marginLeft = parseFloat($bar.css("margin-left"));
 			const barBoxWidth = $bar.closest(".progress_box").width();
 			const barWidth = $bar.width();
 			const infoWidth = $bar.find(".start").width();
 			const total = marginLeft + barWidth;
 
-			console.log(marginLeft, barWidth, total, "/" + barBoxWidth);
+			// console.log(marginLeft, barWidth, total, '/'+ barBoxWidth);
 
 			if (marginLeft <= 37) {
 				$bar.find(".start").addClass("left");
@@ -346,15 +347,6 @@ function prograssBar() {
 			}
 		}
 	});
-}
-
-//
-function phoneVal(target) {
-	const $target = target;
-
-	if ($target.closest(".comp_wrap").hasClass("phone")) {
-		$target.siblings("input").removeClass("isVal");
-	}
 }
 
 /* Tab Scroll */

@@ -136,7 +136,7 @@ strong {
 .content .content_top + .card_item_wrap {
 	margin-top: 3.2rem;
 }
-.content .content_top .title_h2 + .hd_btn {
+.content .content_top .title_h2 + .btn_area {
 	margin-top: 0.8rem;
 }
 .content_ty2 .content_top + .card_item_wrap {
@@ -671,11 +671,24 @@ strong {
 	flex-basis: auto;
 }
 .btn_area.basic {
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
 }
 .btn_area.basic > * {
+	-webkit-box-flex: 0;
+	-ms-flex: 0 1 auto;
+	flex: 0 1 auto;
+}
+.btn_area.between {
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.btn_area.between > * {
 	-webkit-box-flex: 0;
 	-ms-flex: 0 1 auto;
 	flex: 0 1 auto;
@@ -1121,7 +1134,7 @@ strong {
 	color: var(--color-text-inverse-static);
 	background: var(--color-element-primary);
 }
-.hd_badge.badge_text.c_primary.solid-pastel {
+.hd_badge.badge_text.c_primary.solid_pastel {
 	color: var(--color-text-primary);
 	background: var(--color-element-primary-lighter);
 }
@@ -1133,7 +1146,7 @@ strong {
 	color: var(--color-text-inverse-static);
 	background: var(--color-element-secondary);
 }
-.hd_badge.badge_text.c_secondary.solid-pastel {
+.hd_badge.badge_text.c_secondary.solid_pastel {
 	color: var(--color-text-secondary);
 	background: var(--color-element-secondary-light-blue);
 }
@@ -1145,7 +1158,7 @@ strong {
 	color: var(--color-text-inverse-static);
 	background: var(--color-element-gray);
 }
-.hd_badge.badge_text.c_tertiary.solid-pastel {
+.hd_badge.badge_text.c_tertiary.solid_pastel {
 	color: var(--color-text-subtle);
 	background: var(--color-element-gray-light);
 }
@@ -1157,7 +1170,7 @@ strong {
 	color: var(--color-text-inverse-static);
 	background: var(--color-element-point);
 }
-.hd_badge.badge_text.c_point.solid-pastel {
+.hd_badge.badge_text.c_point.solid_pastel {
 	color: var(--color-text-point);
 	background: var(--color-element-point-lighter);
 }
@@ -1169,7 +1182,7 @@ strong {
 	color: var(--color-text-inverse-static);
 	background: var(--color-element-danger);
 }
-.hd_badge.badge_text.c_danger.solid-pastel {
+.hd_badge.badge_text.c_danger.solid_pastel {
 	color: var(--color-text-danger);
 	background: var(--color-element-danger-lighter);
 }
@@ -1181,7 +1194,7 @@ strong {
 	color: var(--color-text-inverse-static);
 	background: var(--color-element-warning);
 }
-.hd_badge.badge_text.c_warning.solid-pastel {
+.hd_badge.badge_text.c_warning.solid_pastel {
 	color: var(--color-text-warning);
 	background: var(--color-element-warning-lighter);
 }
@@ -1193,7 +1206,7 @@ strong {
 	color: var(--color-text-inverse-static);
 	background: var(--color-element-success);
 }
-.hd_badge.badge_text.c_success.solid-pastel {
+.hd_badge.badge_text.c_success.solid_pastel {
 	color: var(--color-text-success);
 	background: var(--color-element-success-lighter);
 }
@@ -1205,7 +1218,7 @@ strong {
 	color: var(--color-text-inverse-static);
 	background: var(--color-element-information);
 }
-.hd_badge.badge_text.c_info.solid-pastel {
+.hd_badge.badge_text.c_info.solid_pastel {
 	color: var(--color-text-information);
 	background: var(--color-element-information-lighter);
 }
@@ -1220,7 +1233,7 @@ strong {
 	color: var(--color-text-disabled-on) !important;
 	background: var(--color-element-disabled-light) !important;
 }
-.hd_badge.badge_text.disabled.solid-pastel {
+.hd_badge.badge_text.disabled.solid_pastel {
 	color: var(--color-text-disabled-on);
 	background: var(--color-element-disabled-light);
 }
