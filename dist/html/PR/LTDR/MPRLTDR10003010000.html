@@ -183,6 +183,10 @@
 							init: function () {
 								slideFocus(this);
 							},
+							slideChange: function () {
+								this.slideTo(this.activeIndex, 0, false);
+								$(".popup_head").text(this.activeIndex);
+							},
 						},
 					});
 				});
@@ -197,7 +201,9 @@
 							if (swiperInstance.activeIndex !== idx) {
 								swiperInstance.slideTo(idx, 300); // 300ms 애니메이션으로 해당 슬라이드로 이동
 							}
-							console.log(swiperInstance.activeIndex);
+
+							console.log(document.activeElement, "순서 : ", idx);
+							console.log("현재 active slide : ", swiperInstance.activeIndex);
 						});
 					});
 				}
