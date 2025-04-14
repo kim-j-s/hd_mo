@@ -1,6 +1,6 @@
 <!---
-화면번호 : MPRMTPS10004010200
-경로 : 3.자동차 상세정보 > 	3-2.자동차 부품정보 입력 > 추가부속품 목록
+화면번호 : MPRMTPS10004000900
+경로 : 3.자동차 상세정보 > 3-1.자동차 상세정보 입력 > 필터링 옵션
 -->
 <!doctype html>
 <html lang="ko">
@@ -48,28 +48,68 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body>
+		<!-- s: popup area -->
 		<!-- s: Bottom 팝업 -->
-		<div class="popup_wrap bottom active" id="pop_ty1" role="dialog" aria-modal="true" aria-hidden="true">
+		<div class="popup_wrap bottom active" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="false">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true"></div>
 				<div class="popup_inner">
 					<div class="draggable" aria-hidden="true">
 						<div class="move"></div>
 					</div>
-					<div class="popup_head"><div class="popup_head_title">추가부속품 선택</div></div>
+					<div class="popup_head"></div>
 
 					<div class="popup_cont">
 						<div class="popup_content">
-							<!-- s: popup_content_top -->
-							<div class="popup_content_top">
-								<h2 class="title_h3">
-									<strong>추가부속품</strong>
-									을
-									<br />
-									선택해 주세요
-								</h2>
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">인승</div>
+									<div class="radio_group_wrap" role="radiogroup">
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="radio_btn_g1_1" name="radio_g1" checked />
+											<label for="radio_btn_g1_1">
+												<span class="label_cont">라벨명1</span>
+											</label>
+										</div>
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="radio_btn_g1_2" name="radio_g1" />
+											<label for="radio_btn_g1_2">
+												<span class="label_cont">라벨명2</span>
+											</label>
+										</div>
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="radio_btn_g1_3" name="radio_g1" />
+											<label for="radio_btn_g1_3">
+												<span class="label_cont">라벨명3</span>
+											</label>
+										</div>
+									</div>
+								</div>
+
+								<div class="form_line">
+									<div class="label_tit">배기량</div>
+									<div class="radio_group_wrap" role="radiogroup">
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="radio_btn_g2_1" name="radio_g2" checked />
+											<label for="radio_btn_g2_1">
+												<span class="label_cont">라벨명1</span>
+											</label>
+										</div>
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="radio_btn_g2_2" name="radio_g2" />
+											<label for="radio_btn_g2_2">
+												<span class="label_cont">라벨명2</span>
+											</label>
+										</div>
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="radio_btn_g2_3" name="radio_g2" />
+											<label for="radio_btn_g2_3">
+												<span class="label_cont">라벨명3</span>
+											</label>
+										</div>
+									</div>
+								</div>
 							</div>
-							<!-- e: popup_content_top -->
 						</div>
 					</div>
 
@@ -79,14 +119,22 @@
 								<span class="text">취소</span>
 							</button>
 							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
-								<span class="text">신청하기</span>
+								<span class="text">조회하기</span>
 							</button>
 						</div>
 					</div>
+
 					<button type="button" class="popup_close"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
 		<!-- e: Bottom 팝업 -->
+		<!-- e: popup area -->
 	</body>
 </html>
+<script>
+	$(document).ready(function () {
+		// 팝업 열기
+		openPop(document.body, "pop_type01");
+	});
+</script>
