@@ -56,28 +56,30 @@
 					<div class="draggable" aria-hidden="true">
 						<div class="move"></div>
 					</div>
-					<div class="popup_head"><div class="popup_head_title">가입조건 변경</div></div>
+					<div class="popup_head"><div class="popup_head_title">가입조건 변경 2</div></div>
 
 					<div class="popup_cont">
 						<div class="popup_content">
 							<div class="form_group_wrap">
-								<div class="form_line">
-									<div class="label_tit">보험기간(년)</div>
-									<div class="select_rolling_opt">
-										<div id="option_swiper1" class="swiper-container">
-											<div class="swiper-wrapper">
-												<div class="swiper-slide"><button type="button">3년</button></div>
-												<div class="swiper-slide"><button type="button">5년</button></div>
-												<div class="swiper-slide"><button type="button">7년</button></div>
-												<div class="swiper-slide"><button type="button">10년</button></div>
-												<div class="swiper-slide"><button type="button">15년</button></div>
-												<div class="swiper-slide"><button type="button">20년</button></div>
+								<!-- 
+									<div class="form_line">
+										<div class="label_tit">보험기간(년)</div>
+										<div class="select_rolling_opt">
+											<div id="option_swiper1" class="swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide"><button type="button">3년</button></div>
+													<div class="swiper-slide"><button type="button">5년</button></div>
+													<div class="swiper-slide"><button type="button">7년</button></div>
+													<div class="swiper-slide"><button type="button">10년</button></div>
+													<div class="swiper-slide"><button type="button">15년</button></div>
+													<div class="swiper-slide"><button type="button">20년</button></div>
+												</div>
+												<div class="swiper-button-prev"></div>
+												<div class="swiper-button-next"></div>
 											</div>
-											<div class="swiper-button-prev"></div>
-											<div class="swiper-button-next"></div>
 										</div>
 									</div>
-								</div>
+									 -->
 								<div class="form_line">
 									<div class="label_tit">납입기간(년)</div>
 									<div class="select_rolling_opt ty2">
@@ -86,6 +88,9 @@
 												<div class="swiper-slide"><span>3년</span></div>
 												<div class="swiper-slide"><span>5년</span></div>
 												<div class="swiper-slide"><span>7년</span></div>
+												<div class="swiper-slide"><span>10년</span></div>
+												<div class="swiper-slide"><span>15년</span></div>
+												<div class="swiper-slide"><span>20년</span></div>
 											</div>
 											<div class="swiper-button-prev"></div>
 											<div class="swiper-button-next"></div>
@@ -143,6 +148,39 @@
 
 		<script>
 			$(document).ready(function () {
+				function slideFocus(swiper) {
+					const $slides = $(swiper.slides);
+
+					// 초기화: 모든 slide tabindex 및 title 제거
+					$slides.each(function () {
+						$(this).removeAttr("title").attr("tabindex", "0").attr("aria-selected", "false");
+					});
+
+					// 현재 active slide 설정
+					const $activeSlide = $($slides[swiper.activeIndex]);
+					$activeSlide.attr("tabindex", "0").attr("title", "선택됨").attr("aria-selected", "true");
+
+					// 포커스 진입 시 swiper 이동 + title 부여
+					$slides.off("focusin").on("focusin", function () {
+						const $slide = $(this);
+						const index = $slides.index(this);
+
+						// swiper 슬라이드 이동
+						if (swiper.activeIndex !== index) {
+							swiper.slideTo(index);
+						}
+
+						// 모든 slide 초기화
+						$slides.each(function () {
+							$(this).removeAttr("title").attr("tabindex", "0").attr("aria-selected", "false");
+						});
+
+						// 현재 slide 설정
+						$slide.attr("tabindex", "0").attr("title", "선택됨").attr("aria-selected", "true");
+					});
+				}
+
+				$(".swiper-wrapper").attr("aria-live", "off");
 				$(".swiper-container").each(function (idx, ele) {
 					const $swiperContainer = $(ele);
 					const slideNum = $swiperContainer.find(".swiper-slide").length,
@@ -162,11 +200,11 @@
 						},
 						a11y: {
 							enabled: true,
-							slideRole: "button",
+							// slideRole: 'button',
 							slideLabelMessage: "",
 							prevSlideMessage: "이전 항목으로 이동",
 							nextSlideMessage: "다음 항목으로 이동",
-							scrollOnFocus: true,
+							//scrollOnFocus: true,
 						},
 						on: {
 							// slideChange: function(swiperInstance) {
@@ -186,6 +224,9 @@
 							init: function (swiperInstance) {
 								slideFocus(swiperInstance);
 							},
+							slideChange: function (swiperInstance) {
+								slideFocus(swiperInstance);
+							},
 							// slideChange: function(swiperInstance){
 							// 	swiperInstance.slideTo(swiperInstance.activeIndex, 0, false);
 							// 	// $('.popup_head').text(swiperInstance.activeIndex);
@@ -194,22 +235,22 @@
 					});
 				});
 
-				function slideFocus(swiperInstance) {
-					$(swiperInstance.slides).each(function (idx) {
-						$(this).on("click", function () {
-							swiperInstance.slideTo(idx);
-							$(".popup_head").text(idx);
-						});
-						// 	$(this).on('focusin', function () {
-						// 		if (swiperInstance.activeIndex !== idx) {
-						// 			swiperInstance.slideTo(idx, 300);
-						// 		}
+				// function slideFocus(swiperInstance) {
+				// 	$(swiperInstance.slides).each(function(idx) {
+				// 		$(this).on('click', function() {
+				// 			swiperInstance.slideTo(idx);
+				// 			$('.popup_head').text(idx);
+				// 		});
+				// 	// 	$(this).on('focusin', function () {
+				// 	// 		if (swiperInstance.activeIndex !== idx) {
+				// 	// 			swiperInstance.slideTo(idx, 300);
+				// 	// 		}
 
-						// 		console.log(document.activeElement, '순서 : ', idx);
-						// 		console.log('현재 active slide : ', swiperInstance.activeIndex);
-						// 	});
-					});
-				}
+				// 	// 		console.log(document.activeElement, '순서 : ', idx);
+				// 	// 		console.log('현재 active slide : ', swiperInstance.activeIndex);
+				// 	// 	});
+				// 	});
+				// }
 			});
 		</script>
 	</body>
