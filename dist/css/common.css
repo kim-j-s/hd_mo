@@ -129,11 +129,7 @@ strong {
 .bottom_fix_wrap_ty2 + .bottom_fix_wrap {
 	margin-top: -0.8rem;
 }
-.content .content_top + .bann_text_wrap_ty1,
-.content .content_top + .bann_text_wrap_ty2,
-.content .content_top + .form_group_wrap,
-.content .content_top + .select_driver_range,
-.content .content_top + .card_item_wrap {
+.content .content_top + * {
 	margin-top: 3.2rem;
 }
 .content .content_top .title_h2 + .btn_area {
@@ -2085,9 +2081,6 @@ strong {
 .hd_btn:disabled .arrowRightSvg {
 	background-image: url(../images/icon/arrowRight_disabled.svg);
 }
-.fill_18_info {
-	background-image: url(../images/icon/info.svg);
-}
 /********
 * logo 스타일
 *********/
@@ -2116,6 +2109,12 @@ strong {
 }
 .plusSvg {
 	background-image: url(../images/icon/icon_plus.svg);
+}
+.popover_help {
+	background-image: url(../images/icon/popover_help.svg);
+}
+.fill_18_info {
+	background-image: url(../images/icon/info.svg);
 }
 /* input */
 *:not(.comp_wrap) .input_text {
@@ -3288,7 +3287,6 @@ strong {
 }
 /* text */
 [class^="title_h"] {
-	font-weight: 700;
 	line-height: 150%; /* 36px */
 	letter-spacing: var(--typo-letter-spacing-0);
 }
@@ -3396,13 +3394,13 @@ strong {
 .tooltip_wrap .tooltip_head {
 	position: relative;
 	display: inline-block;
-	width: 2.4rem;
-	height: 2.4rem;
+	width: 2rem;
+	height: 2rem;
 	line-height: 0;
 }
 .tooltip_wrap .tooltip_head button {
-	width: 2.4rem;
-	height: 2.4rem;
+	width: 2rem;
+	height: 2rem;
 	position: relative;
 	line-height: 0;
 }
@@ -3421,14 +3419,14 @@ strong {
 }
 .tooltip_wrap .tooltip_head .open {
 	display: inline-block;
-	width: 2.4rem;
-	height: 2.4rem;
+	width: 2rem;
+	height: 2rem;
 }
 .tooltip_wrap .tooltip_head.active::after {
 	content: "";
 	position: absolute;
 	left: calc(50% - 0.4rem);
-	top: calc(100% + 1px);
+	top: calc(100% + 0.4rem);
 	width: 0.8rem;
 	height: 0.8rem;
 	pointer-events: none;
@@ -3436,13 +3434,13 @@ strong {
 	clip-path: path("M4.74763 0.335971L7.81713 3.79145C7.93493 3.92407 8 4.09529 8 4.27268C8 4.67287 7.67558 4.99729 7.27539 4.99729H0.724613C0.32442 4.99729 0 4.67287 0 4.27268C0 4.09529 0.0650669 3.92407 0.182872 3.79145L3.25237 0.335971C3.65019 -0.111871 4.34981 -0.111871 4.74763 0.335971Z");
 }
 .tooltip_wrap .tooltip_head.top::after {
-	top: -0.9rem;
+	top: -1.2rem;
 	-webkit-transform: scaleY(-1);
 	transform: scaleY(-1);
 }
 .tooltip_wrap .tooltip_head.top.active + .tooltip_panel {
 	margin-top: 0;
-	bottom: 3.36rem;
+	bottom: 3.25rem;
 	top: auto;
 }
 .tooltip_wrap .tooltip_panel {
@@ -3452,7 +3450,7 @@ strong {
 	position: absolute;
 	width: calc(100vw - 4rem);
 	z-index: 10;
-	top: calc(100% + 1px);
+	top: calc(100% + 0.4rem);
 }
 .tooltip_wrap .tooltip_panel .inner {
 	position: relative;

@@ -182,27 +182,31 @@
 							// 	}
 							// }
 							init: function (swiperInstance) {
-								slideFocus(swiperInstance);
+								slideFocus(swiperInstance, this.activeIndex);
 							},
 							slideChange: function (swiperInstance) {
 								swiperInstance.slideTo(swiperInstance.activeIndex, 0, false);
-								$(".popup_head").text(swiperInstance.activeIndex);
+								// $('.popup_head').text(swiperInstance.activeIndex);
 							},
 						},
 					});
 				});
 
-				function slideFocus(swiperInstance) {
-					$(swiperInstance.slides).each(function (idx) {
-						$(this).on("focusin", function () {
-							if (swiperInstance.activeIndex !== idx) {
-								swiperInstance.slideTo(idx, 300);
-							}
-
-							console.log(document.activeElement, "순서 : ", idx);
-							console.log("현재 active slide : ", swiperInstance.activeIndex);
-						});
+				function slideFocus(swiperInstance, idx) {
+					$(swiperInstance.slides).on("click", function () {
+						swiperInstance.slideTo(idx);
+						console.log(idx);
 					});
+					// $(swiperInstance.slides).each(function(idx) {
+					// 	$(this).on('focusin', function () {
+					// 		if (swiperInstance.activeIndex !== idx) {
+					// 			swiperInstance.slideTo(idx, 300);
+					// 		}
+
+					// 		console.log(document.activeElement, '순서 : ', idx);
+					// 		console.log('현재 active slide : ', swiperInstance.activeIndex);
+					// 	});
+					// });
 				}
 			});
 		</script>
