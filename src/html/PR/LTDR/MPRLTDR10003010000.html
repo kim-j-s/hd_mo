@@ -83,10 +83,17 @@
 					nextSlideMessage: '다음 항목으로 이동',
 				},
 				on: {
-					slideChange: function(swiperInstance) {
-						const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
-						const button = activeSlide.querySelector('button');
-						if (button) button.focus();
+					// slideChange: function(swiperInstance) {
+					// 	const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
+					// 	const button = activeSlide.querySelector('button');
+					// 	if (button) button.focus();
+					// }
+					slideChangeTransitionEnd: function () {
+					const activeSlide = this.slides[this.activeIndex];
+					const firstFocusableElement = activeSlide.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+					
+					if (firstFocusableElement) {
+						firstFocusableElement.focus();
 					}
 				}
 			});
