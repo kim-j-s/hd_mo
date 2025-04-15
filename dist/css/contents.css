@@ -336,6 +336,47 @@
 	position: relative;
 	height: 11rem;
 	padding-top: 1.6rem;
+	/*
+  &_inner {
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	width: 100%;
+  	opacity: 1;
+  	visibility: visible;
+  	transition: var(--t-time);
+  	&_text {
+  		font-size: 24px;
+  		line-height: 34px;					
+  	}
+  	.sub_text {
+  		position: relative;
+  		display: inline-block;
+  		margin-top: 8px;
+  		padding-right: 22px;
+  		font-size: 14px;
+  		color: #464C53;
+  		line-height: 22px;
+  		&::after {
+  			content: '';
+  			position: absolute;
+  			top: 1px;
+  			right: 0;
+  			width: 20px;
+  			height: 20px;
+  			border-radius: 5px;
+  			background-repeat: no-repeat;
+  			background-position: center center;
+  			background-image: url(../images/smp/ico_i_mark.svg);
+  			background-color: rgba($color: #33363D, $alpha: 0.6);
+  		}
+  	}
+  	&.active {
+  		opacity: 0;
+  		visibility: hidden;
+  	}
+  }
+  */
 }
 .smp_top .ds1_inner {
 	position: absolute;
@@ -374,8 +415,11 @@
 	background-color: rgba(51, 54, 61, 0.6);
 }
 .smp_top .ds1_inner.active {
+	top: 3rem;
 	opacity: 0;
 	visibility: hidden;
+	-webkit-transition: opacity 0s;
+	transition: opacity 0s;
 }
 .smp_top .ds2 {
 	position: relative;
@@ -445,6 +489,8 @@
 	visibility: visible;
 	-webkit-transition: var(--t-time);
 	transition: var(--t-time);
+	-webkit-transition-delay: 0.3s;
+	transition-delay: 0.3s;
 	overflow: hidden;
 }
 .smp_content .opts_area .opts_area_item {
@@ -535,6 +581,8 @@
 	z-index: 0;
 	opacity: 0;
 	visibility: hidden;
+	-webkit-transition: bottom 0s;
+	transition: bottom 0s;
 }
 .selected_case {
 	-webkit-box-flex: 0;
@@ -542,17 +590,18 @@
 	flex: none;
 	position: relative;
 	padding: 0.9rem 1rem 0.9rem 3.4rem;
+	font-size: 1.4rem;
+	line-height: 2rem;
 	color: #666d7d;
-	border-radius: 1rem;
+	border-radius: 1.2rem;
 	border: 1px solid #f5f5f5;
 	background-repeat: no-repeat;
 	background-position: 1rem center;
 	background-size: 2rem auto;
-	background-color: #f5f5f5;
+	border: 1px solid #b1b8be;
+	background-color: #fff;
 	visibility: visible;
 	opacity: 1;
-	-webkit-transition: var(--t-time);
-	transition: var(--t-time);
 }
 .selected_case.person {
 	background-image: url(../images/smp/ico_stepper_person.svg);
@@ -564,8 +613,7 @@
 	background-image: url(../images/smp/ico_stepper_date.svg);
 }
 .selected_case.gender {
-	color: #fff;
-	background-color: blue;
+	background-image: url(../images/smp/ico_stepper_person.svg);
 }
 .selected_case:empty {
 	width: 0;
