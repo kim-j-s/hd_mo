@@ -379,9 +379,35 @@ function tabScroll() {
 	});
 }
 
+// 최근설계내역
+function currentPlan() {
+	const $plan_area = $(".fixed_link_wrap"),
+		$link_btn = $plan_area.find(".link_btn_box").children(".btn_current"),
+		$close_btn = $plan_area.find(".link_btn_box").children(".link_close");
+
+	$(document).on("click", ".link_btn_box .link_close", function () {
+		$(this).closest(".fixed_link_wrap").remove();
+	});
+}
+
+function oncePlan() {
+	const $state = $(".fixed_link_wrap").find(".current_state");
+
+	setTimeout(function () {
+		$state.addClass("effect");
+	}, 1500);
+
+	// setTimeout(function(){
+	// 	$state.removeClass('effect');
+	// }, 6000);
+}
+
 $(function () {
 	// tab Scroll
 	tabScroll();
+
+	currentPlan();
+	oncePlan();
 
 	//input disabled&readonly
 	$(".input_text input").each(function () {

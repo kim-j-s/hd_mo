@@ -2,6 +2,7 @@
 화면번호 : MPRMTPS10004020000
 경로 : 3.자동차 상세정보 > 3-3. 자동차 추가 확인사항
 -->
+<!-- s: 25-04-15 수정 -->
 <!doctype html>
 <html lang="ko">
 	<head>
@@ -81,68 +82,32 @@
 					<!-- s: content_top -->
 					<div class="content_top">
 						<h2 class="title_h2">
-							<strong>추가 확인 사항</strong>
+							<strong>차량관련 확인 사항</strong>
 							중
 							<strong>해당하는 항목</strong>
 							이 있으면 체크해 주세요
 						</h2>
+						<!--TO-DO : (25-04-15 위서진) 추후 용어사전 팝업이 완성되면, popup id를 popup props에 적용해야함-->
+						<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5" onclick="openPop(this,'pop_01');" title="도움말 열기">
+							<span class="text">어려운 용어 설명을 보시려면</span>
+						</button>
 					</div>
 					<!-- e: content_top -->
 
 					<div class="form_group_wrap">
-						<div class="form_group_title title_h5">
-							차량이 특정용도 차량(이동진료차 등)
-							<div class="tooltip_wrap">
-								<div class="tooltip_head">
-									<button type="button" class="open trigger_btn" aria-expanded="false">
-										<i class="hd_icon fill_18_info"></i>
-										<span class="blind">툴팁 열기</span>
-									</button>
-								</div>
-								<div class="tooltip_panel" role="tooltip">
-									<div class="inner">
-										<p class="inner_title" aria-describedby="title"></p>
-										<div class="inner_contents">
-											<p class="tooltip_title">특정용도 차량</p>
-											<p class="tooltip_desc">특정한 용도에 사용되는 자동차로서 이동진료차, 이동도서관차, 채혈차, 방송중계차, 혈액수송차, 검사측정차, 현금수송차, 방역차, 소독차, 이동우편차, 영화촬영차, 이동판매차, 충전차, 배전차, 발전차등 이와 유사한 형태로 사용되는 자동차 (단, 관련 장비가 차체에 부착된 경우에만 해당되며, 화물차에 장비를 싣고 다니는 경우에는 해당되지 않습니다.)</p>
-										</div>
-
-										<button type="button" class="close"><span class="blind">툴팁 닫기</span></button>
-									</div>
-								</div>
-							</div>
-							교습용 차량입니까?
-							<div class="tooltip_wrap">
-								<div class="tooltip_head">
-									<button type="button" class="open trigger_btn" aria-expanded="false">
-										<i class="hd_icon popover_help"></i>
-										<span class="blind">툴팁 열기</span>
-									</button>
-								</div>
-								<div class="tooltip_panel" role="tooltip">
-									<div class="inner">
-										<p class="inner_title" aria-describedby="title">교습용 차량</p>
-										<div class="inner_contents">
-											<p class="tooltip_desc">차량이 인가된 자동차학원 또는 자동차학원 대표자가 소유하면서, 운전교습 및 도로주행교육 및 시험에 사용되는 자동차</p>
-										</div>
-
-										<button type="button" class="close"><span class="blind">툴팁 닫기</span></button>
-									</div>
-								</div>
-							</div>
-						</div>
+						<p class="form_group_title title_h5">자동차관리법령에 따라 ‘승용캠핑카'로 구조변경(튜닝)한 차량입니까?</p>
+						<div class="info_box">승용캠핑카=승용 번호판(01-69, 100-699) & 등록 원부상 캠핑카 구조변경 내역 존재</div>
 						<div class="form_line">
 							<div class="radio_group_wrap" role="radiogroup">
-								<!-- '예'클릭시 alert팝업 노출, 버튼 disabled처리(하단 script 예시) -->
 								<div class="inp_radio rd_btn">
-									<input type="radio" id="radio_btn_01" name="radio_g1" />
-									<label for="radio_btn_01">
+									<input type="radio" id="radio_btn_05" name="radio_g3" />
+									<label for="radio_btn_05">
 										<span class="label_cont">예</span>
 									</label>
 								</div>
 								<div class="inp_radio rd_btn">
-									<input type="radio" id="radio_btn_02" name="radio_g1" checked />
-									<label for="radio_btn_02">
+									<input type="radio" id="radio_btn_06" name="radio_g3" checked />
+									<label for="radio_btn_06">
 										<span class="label_cont">아니오</span>
 									</label>
 								</div>
@@ -170,27 +135,6 @@
 							</div>
 						</div>
 					</div>
-
-					<div class="form_group_wrap">
-						<p class="form_group_title title_h5">자동차관리법령에 따라 ‘승용캠핑카'로 구조변경(튜닝)한 차량입니까?</p>
-						<div class="info_box">승용캠핑카=승용 번호판(01-69, 100-699) & 등록 원부상 캠핑카 구조변경 내역 존재</div>
-						<div class="form_line">
-							<div class="radio_group_wrap" role="radiogroup">
-								<div class="inp_radio rd_btn">
-									<input type="radio" id="radio_btn_05" name="radio_g3" />
-									<label for="radio_btn_05">
-										<span class="label_cont">예</span>
-									</label>
-								</div>
-								<div class="inp_radio rd_btn">
-									<input type="radio" id="radio_btn_06" name="radio_g3" checked />
-									<label for="radio_btn_06">
-										<span class="label_cont">아니오</span>
-									</label>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 
@@ -206,14 +150,25 @@
 		</div>
 
 		<!-- s: popup area -->
-		<!-- s: Layer 팝업 -->
-		<div class="popup_wrap layer" id="alert_q1" role="dialog" aria-hidden="true">
+		<!-- s: Bottom 팝업 -->
+		<div class="popup_wrap bottom" id="pop_01" role="dialog" aria-modal="true" aria-hidden="true">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true"></div>
 				<div class="popup_inner">
-					<div class="popup_head"></div>
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head"><div class="popup_head_title">도움말</div></div>
+
 					<div class="popup_cont">
-						<div class="popup_content">특정용도, 교습용 차량은 하이카다이렉트 보험을 가입하실 수 없으므로 현대해상 자동차보험(오프라인 자동차보험)으로 문의해 주십시오.</div>
+						<div class="popup_content">
+							<dl class="info_help_list">
+								<dt>특정용도 차량</dt>
+								<dd>특정한 용도에 사용되는 자동차로서 이동진료차, 이동도서관차, 채혈차, 방송중계차, 혈액수송차, 검사측정차, 현금수송차, 방역차, 소독차, 이동우편차, 영화촬영차, 이동판매차, 충전차, 배전차, 발전차등 이와 유사한 형태로 사용되는 자동차 (단, 관련 장비가 차체에 부착된 경우에만 해당되며, 화물차에 장비를 싣고 다니는 경우에는 해당되지 않습니다.)</dd>
+								<dt>교습용 차량</dt>
+								<dd>차량이 인가된 자동차학원 또는 자동차학원 대표자가 소유하면서, 운전교습 및 도로주행교육 및 시험에 사용되는 자동차</dd>
+							</dl>
+						</div>
 					</div>
 					<div class="popup_bottom">
 						<div class="btn_area">
@@ -226,14 +181,8 @@
 				</div>
 			</div>
 		</div>
-		<!-- e: Layer 팝업 -->
+		<!-- e: Bottom 팝업 -->
 		<!-- e: popup area -->
 	</body>
 </html>
-<script>
-	//1번 질문(특정용도 차량입니까?) -'예'클릭시 alert팝업 노출, 버튼 disabled처리
-	$("#radio_btn_01").on("click", function () {
-		openPop(this, "alert_q1");
-		$(this).attr("disabled", "");
-	});
-</script>
+<!-- e: 25-04-15 수정 -->
