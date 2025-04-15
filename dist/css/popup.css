@@ -65,6 +65,10 @@
 	font-weight: 700;
 	color: var(--color-text-bolder);
 }
+.popup_wrap .popup_container .popup_inner .popup_head small {
+	font-weight: 400;
+	font-size: inherit;
+}
 .popup_wrap .popup_container .popup_inner .popup_cont {
 	overflow-y: auto;
 	display: -webkit-box;
@@ -116,7 +120,7 @@
 }
 .popup_wrap .popup_container .popup_inner .popup_cont .etc_area_ty1 .etc_title {
 	font-size: var(--font-size-body-medium);
-	color: #3e4a58;
+	color: #131416;
 	font-weight: 400;
 	line-height: 150%;
 }
@@ -125,7 +129,8 @@
 	border: 1px solid #d3d6db;
 }
 .popup_wrap .popup_container .popup_inner .popup_cont .etc_area_ty1 .hd_btn .hd_icon {
-	margin-top: 0.2rem;
+	width: 2rem;
+	height: 2rem;
 }
 .popup_wrap .popup_container .popup_inner .popup_bottom {
 	padding: var(--gap-4) var(--gap-layout-contents-margin) var(--gap-5) var(--gap-layout-contents-margin);
@@ -282,17 +287,17 @@
 	line-height: 2.1rem;
 	font-weight: 700;
 }
-.popup_wrap.bottom .popup_container .popup_inner .popup_cont > .popup_content .info_cont .list_ty1 li {
+.popup_wrap.bottom .popup_container .popup_inner .popup_cont > .popup_content .info_cont .list_ty1 > li {
 	padding-left: 0.8rem;
 	font-size: var(--font-size-body-medium);
 	line-height: 2.4rem;
 }
-.popup_wrap.bottom .popup_container .popup_inner .popup_cont > .popup_content .info_cont .list_ty1 li::before {
+.popup_wrap.bottom .popup_container .popup_inner .popup_cont > .popup_content .info_cont .list_ty1 > li::before {
 	top: 0.9rem;
 	width: 0.3rem;
 	height: 0.3rem;
 }
-.popup_wrap.bottom .popup_container .popup_inner .popup_cont > .popup_content .info_cont .list_ty1 li .point {
+.popup_wrap.bottom .popup_container .popup_inner .popup_cont > .popup_content .info_cont .list_ty1 > li .point {
 	font-weight: 700;
 }
 .popup_wrap.bottom .popup_container .popup_inner .popup_cont > .popup_content .info_cont .list_ty2 {
@@ -310,6 +315,23 @@
 	margin-top: 2rem;
 	font-size: var(--font-size-body-medium);
 	line-height: 2.4rem;
+}
+.popup_wrap.bottom .popup_container .popup_inner .popup_cont > .popup_content .info_cont p + p {
+	margin-top: 0.8rem;
+}
+.popup_cont.search_list_type {
+	max-height: calc(100% - 7.2rem);
+	overflow-y: hidden !important;
+}
+.popup_cont.search_list_type .popup_content {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	overflow-y: hidden;
 }
 /* toast */
 .toast_wrap {

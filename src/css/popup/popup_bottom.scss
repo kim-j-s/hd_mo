@@ -72,7 +72,7 @@
 							line-height: 21px;
 							font-weight: 700;
 						}
-						.list_ty1 li {
+						.list_ty1 > li {
 							padding-left: 8px;
 							font-size: var(--font-size-body-medium);
 							line-height: 24px;
@@ -100,6 +100,9 @@
 							margin-top: 20px;
 							font-size: var(--font-size-body-medium);
 							line-height: 24px;
+							& + p {
+								margin-top: 8px;
+							}
 						}
 					}
 				}
@@ -107,4 +110,18 @@
 		}
 	}
 }
+
+
+//flex column스타일이 필요한 케이스
+.popup_cont.search_list_type{
+	max-height: calc(100% - 72px);
+	overflow-y: hidden !important;
+
+	.popup_content{
+		display: flex;
+		flex-direction: column;
+		overflow-y:hidden;
+	}
+}
+
 

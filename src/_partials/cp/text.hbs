@@ -1,21 +1,34 @@
-<div class="input_text{{#if class}} {{class}}{{/if}}{{#if inp-search}} search{{/if}}{{#if cal}} calendar{{/if}}">
+<div class="input_text{{#if class}} {{class}}{{/if}}{{#if inp_search}} search{{/if}}{{#if cal}} calendar{{/if}}">
   {{#if l-text}}<div class="int_txt left">{{l-text}}</div>{{/if}}
   <div class="inp">
     <input 
       {{#if type}}
 				type="{{type}}"
 			{{else}}
-				{{#if cal}}
-					type="tel"
+				{{#if inp_search}}
+					type="search"
 				{{else}}
-					type="text"
+					{{#if cal}}
+						type="tel"
+					{{else}}
+						type="text"
+					{{/if}}
 				{{/if}}
 			{{/if}}
       {{#if id}}id="{{id}}"{{/if}}
-      {{#if cal}}
+      {{!-- {{#if cal}}
 				class="{{#if cal}}inp_picker {{/if}}{{inpclass}}"
 			{{else}}
 				{{#if inpclass}}class="{{inpclass}}"{{/if}}
+			{{/if}} --}}
+			{{#if cal}}
+				class="{{#if cal}}inp_picker {{/if}}{{#if auto}}autocomplete_input {{/if}}{{inpclass}}"
+			{{else}}
+				{{#if inpclass}}
+					class="{{#if auto}}autocomplete_input {{/if}}{{inpclass}}"
+				{{else}}
+					{{#if auto}}class="autocomplete_input"{{/if}}
+				{{/if}}
 			{{/if}}
       {{#if placeholder}}placeholder="{{placeholder}}"{{/if}}
       {{#if value}}value="{{value}}"{{/if}}
@@ -24,10 +37,11 @@
       {{#if disabled}}disabled{{/if}}
       {{#if readonly}}readonly{{/if}}
       {{#if inp-title}}title="{{inp-title}}"{{/if}}
+			{{#if auto}}autocomplete="off"{{/if}}
       {{#if cal}}title="날짜를 입력해주세요"{{/if}}
     >
     {{!-- 버튼 (초기화 삭제, 달력 호출) --}}
-    {{#unless no_del}}<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>{{/unless}}{{#if cal}}<button type="button" class="btn calendar_call" title="날짜 선택"></button>{{/if}}{{#if inp-search}}<button type="button" class="btn btn_search" title="검색"></button>{{/if}}
+    {{#unless no_del}}<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>{{/unless}}{{#if cal}}<button type="button" class="btn calendar_call" title="날짜 선택"></button>{{/if}}{{#if inp_search}}<button type="button" class="btn btn_search" title="검색"></button>{{/if}}
   </div>
   {{#if r-text}}<div class="int_txt right">{{r-text}}</div>{{/if}}
 </div>
