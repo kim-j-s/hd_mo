@@ -1,157 +1,276 @@
 /* Popup 관련 */
 
-class HD_Popup {
-	$triggerEl;
-	$target;
-	$header; //타이틀
-	$content; //본문
-	$popup_dim;
-	isOpen; // trigger 할 상태
-	$closeBtn;
-	count;
+// class HD_Popup {
+// 	$triggerEl;
+// 	$target;
+// 	$header; //타이틀
+// 	$content; //본문
+// 	$popup_dim;
+// 	$closeBtn;
 
-	constructor($triggerEl, target) {
-		this.isOpen = false;
-		this.$target = $("#" + target);
-		this.$popup_dim = this.$target.find(".popup_dim");
-		this.$triggerEl = $triggerEl;
-		this.$closeBtn = this.$target.find(".popup_close");
-		this.$header = this.$target.find(".popup_head_title").length > 0 ? this.$target.find(".popup_head_title") : null;
-		this.$content = this.$target.find(".popup_cont").length > 0 ? this.$target.find(".popup_cont") : null;
-	}
+// 	constructor($triggerEl, target) {
+// 		this.$target = $("#" + target);
+// 		this.$popup_dim = this.$target.find(".popup_dim");
+// 		this.$triggerEl = $triggerEl;
+// 		this.$closeBtn = this.$target.find(".popup_close");
+// 		this.$header = this.$target.find(".popup_head_title").length > 0 ? this.$target.find(".popup_head_title") : null;
+// 		this.$content = this.$target.find(".popup_cont").length > 0 ? this.$target.find(".popup_cont") : null;
+// 	}
 
-	init() {
+// 	//focus 이동
+// 	focusMove(target) {
+
 		
+// 		if (!target) return;
+// 		const $focusTarget = target;
+
+// 		const activePopups = $(".popup_wrap.active").not(this.$target);
+
+// 		// ios 스크린리더가 dom의 변경사항을 인식하도록 상태변경
+// 		$focusTarget.css("display", "none");
+// 		$focusTarget[0].offsetHeight; //강제 reflow
+// 		$focusTarget.css("display", "block");
+
+// 		setTimeout(() => {
+// 			$focusTarget.focus();
+// 			$focusTarget.attr("aria-live", "assertive"); //포커스 이동을 스크린 리더에 알림
+
+// 			setTimeout(() => {
+// 				$focusTarget.attr("aria-live", null);
+// 			}, 500);
+
+// 			if (this.isOpen && activePopups.length > 0) {
+// 				activePopups.attr("aria-hidden", "true");
+// 				activePopups.find(".popup_inner").attr("aria-hidden", "true");
+
+// 			} else if (!this.isOpen && activePopups.length > 0) {				
+// 				this.$target.attr("aria-hidden", "true");
+// 				this.$target.find(".popup_inner").attr("aria-hidden", "true");
+// 			}
+// 		}, 400);
+// 	}
+
+// 	//close popup
+// 	close(event) {
+
+// 		this.$target = $("#" + target);
+// 		this.$popup_dim = this.$target.find(".popup_dim");
+// 		this.$triggerEl = $triggerEl;
+// 		this.$closeBtn = this.$target.find(".popup_close");
+// 		this.$header = this.$target.find(".popup_head_title").length > 0 ? this.$target.find(".popup_head_title") : null;
+// 		this.$content = this.$target.find(".popup_cont").length > 0 ? this.$target.find(".popup_cont") : null;
+// 		this.$target.removeClass("active");
+
+// 		if (event) {
+// 			event.currentTarget.blur();
+// 			event.target.blur();
+// 		}
+
+// 		const $prevPopup = this.$triggerEl.closest(".popup_wrap.active");
+// 		if ($prevPopup) {
+// 			const $prevHeader = $($prevPopup).find(".popup_head_title").length > 0 ? $($prevPopup).find(".popup_head_title") : null;
+// 			const $prevContent = $($prevPopup).find(".popup_cont").length > 0 ? $($prevPopup).find(".popup_cont") : null;
+
+// 			$($prevPopup).attr("aria-hidden", "false");
+// 			$($prevPopup).find(".popup_inner").attr("aria-hidden", "false");
+
+// 			const hasTitle = $prevHeader&&$prevHeader.text().trim() !=='';
+// 			const focusTarget = hasTitle ? $prevHeader : $prevContent;
+// 			focusTarget.attr("data-returnTarget",true);
+
+// 			const activePopups = $(".popup_wrap.active").not(this.$target);
+
+// 			// ios 스크린리더가 dom의 변경사항을 인식하도록 상태변경
+// 			focusTarget.css("display", "none");
+// 			focusTarget[0].offsetHeight; //강제 reflow
+// 			focusTarget.css("display", "block");
+	
+// 			setTimeout(() => {
+// 				focusTarget.focus();
+// 				focusTarget.attr("aria-live", "assertive"); //포커스 이동을 스크린 리더에 알림
+	
+// 				setTimeout(() => {
+// 					focusTarget.attr("aria-live", null);
+// 				}, 500);
+	
+// 				if(activePopups.length > 0) {				
+// 					this.$target.attr("aria-hidden", "true");
+// 					this.$target.find(".popup_inner").attr("aria-hidden", "true");
+// 				}
+// 			}, 400);
+
+
+// 			//팝업을 동적으로 생성하는 케이스에서만 사용
+// 			if(window.popupGroup) {
+// 				setTimeout(()=>{ this.$target.remove()},1000);
+// 			}
+// 		} else {
+// 			$(".wrap").attr("aria-hidden", "false");
+// 			$(".wrap").removeAttr('inert');
+// 			$("body").css("overscroll-behavior", "auto");
+// 			$("body").removeClass("scroll_lock");
+
+// 			setTimeout(() => {
+// 				this.$triggerEl.focus();
+
+// 				//팝업을 동적으로 생성하는 케이스에서만 사용
+// 				if(window.popupGroup) {
+// 					setTimeout(()=>{ this.$target.remove()},0)	
+// 				}		
+// 			}, 400);
+// 		}
+// 	}
+// }
+
+function openHDPopup($triggerEl, target) {
+
+	if(!target.length) return;
+
+	// s: 개발단에서는 지우고 사용하세요.
+	attachPopup(target);
+	// e: 개발단에서는 지우고 사용하세요.
+
+	let $target = $("#" + target);
+	let $header = $target.find(".popup_head_title").length > 0 ? $target.find(".popup_head_title") : null;
+	let $content = $target.find(".popup_cont").length > 0 ? $target.find(".popup_cont") : null;
+
+		const getOpenerId = $($triggerEl).attr('triggerId');
+		let openerId;
+
+		if(!getOpenerId){
+			openerId= generateUUID();
+			$($triggerEl).attr('triggerId',openerId);
+		}else {
+			openerId=getOpenerId;
+		}
+		
+		$target.attr('opner', openerId);
 
 		if($(".wrap").attr("aria-hidden")==undefined || $(".wrap").attr("aria-hidden")=='false'){
 			$(".wrap").attr("aria-hidden", "true");
 			$(".wrap").attr("inert",'');
 		}
-
-		console.log(this.$target.find(".popup_head_title"))
-
 		
 		//popup active
-		this.isOpen = true;
 		$("body").css("overscroll-behavior", "contain");
 		$("body").addClass("scroll_lock");
-		this.$target.addClass("active");
+		$target.addClass("active");
 
 		// bottom 팝업일 경우 - drag
-		if (this.$target.hasClass("bottom")) {
-			draggable(this);
+		if ($target.hasClass("bottom")) {
+			draggable($target);
 		}
 
-		//닫기버튼 이벤트리스너 추가
-		this.$target.find(".popup_close").on("click", e => {
-			this.close(e);
-		});
+		$target.attr("aria-hidden", "false");
+		$target.find(".popup_inner").attr("tabindex", 0).attr("aria-hidden", "false");
 
-		//dim 클릭 시 팝업 닫기
-		this.$popup_dim.on("click", e => {
-			this.close(e);
-		});
+		if ($header) $header.attr("tabindex", 0);
+		if ($content) $content.attr("tabindex", 0);
 
-		this.$target.attr("aria-hidden", "false");
-		this.$target.find(".popup_inner").attr("tabindex", 0).attr("aria-hidden", "false");
+		const focusTarget = $header || $content;
 
-		if (this.$header) this.$header.attr("tabindex", 0);
-		if (this.$content) this.$content.attr("tabindex", 0);
+		const activePopups = $(".popup_wrap.active").not($target);
+		focusTarget.css("display", "none");
+		focusTarget[0].offsetHeight; //강제 reflow
+		focusTarget.css("display", "block");
 
-		const hasTitle = this.$header&&this.$header.text().trim() !=='';
-		const focusTarget = hasTitle ? this.$header : this.$content;
-		this.focusMove(focusTarget);
-	}
-
-	//focus 이동
-	focusMove(target) {
-		if (!target) return;
-		const $focusTarget = target;
-
-		const activePopups = $(".popup_wrap.active").not(this.$target);
-
-		// ios 스크린리더가 dom의 변경사항을 인식하도록 상태변경
-		$focusTarget.css("display", "none");
-		$focusTarget[0].offsetHeight; //강제 reflow
-		$focusTarget.css("display", "block");
 
 		setTimeout(() => {
-			$focusTarget.focus();
-			$focusTarget.attr("aria-live", "assertive"); //포커스 이동을 스크린 리더에 알림
+			focusTarget.focus();
+			focusTarget.attr("aria-live", "assertive"); //포커스 이동을 스크린 리더에 알림
 
 			setTimeout(() => {
-				$focusTarget.attr("aria-live", null);
+				focusTarget.attr("aria-live", null);
 			}, 500);
 
-			if (this.isOpen && activePopups.length > 0) {
+			if (activePopups.length > 0) {
 				activePopups.attr("aria-hidden", "true");
 				activePopups.find(".popup_inner").attr("aria-hidden", "true");
+			}
+		}, 400);
+}
 
-			} else if (!this.isOpen && activePopups.length > 0) {				
-				this.$target.attr("aria-hidden", "true");
-				this.$target.find(".popup_inner").attr("aria-hidden", "true");
+//동적으로 popup을 append하는 경우에 사용
+function openPop($triggerEl, target) {
+	// const myPopup = new HD_Popup($triggerEl, target);
+	// setTimeout(() => {myPopup.init();}, 0.5);
+	console.log('popup오픈 수정해야함')	
+}
+
+/**
+ * closeHDPopup
+ * - 동적으로 popup을 append하는 경우에 사용
+ * @param {string} target (필수)close할 popup id
+ * @param {object} returnTarget (선택)팝업이 닫힌 뒤에 포커스할 엘리먼트(하단에 다른 팝업이 존재할 경우 사용x)
+ * @returns {void}
+ */
+function closeHDPopup(target, returnTarget=null) {
+
+	let $target = $("#" + target);
+	console.log('$target', $target);
+
+	const $opener = $('[triggerId="'+$target.attr('opner')+'"]');
+
+	const $triggerEl = returnTarget ? returnTarget : $opener;
+
+	$target.removeClass("active");
+
+
+	//하단에 다른 팝업이 열려있는 경우, 가장 최근 팝업으로 focus강제 이동
+	const $prevPopup = $(".popup_wrap.active:last");
+	if ($prevPopup.length > 0) {
+		console.log('$prevPopup 있음',$prevPopup);
+		const $prevHeader = $($prevPopup).find(".popup_head_title").length > 0 ? $($prevPopup).find(".popup_head_title") : null;
+		const $prevContent = $($prevPopup).find(".popup_cont").length > 0 ? $($prevPopup).find(".popup_cont") : null;
+
+		$($prevPopup).attr("aria-hidden", "false");
+		$($prevPopup).find(".popup_inner").attr("aria-hidden", "false");
+
+		const focusTarget = $prevHeader || $prevContent;
+		focusTarget.attr("data-returnTarget",true);
+
+
+		// ios 스크린리더가 dom의 변경사항을 인식하도록 상태변경
+		focusTarget.css("display", "none");
+		focusTarget[0].offsetHeight; //강제 reflow
+		focusTarget.css("display", "block");
+
+		setTimeout(() => {
+			focusTarget.focus();
+			focusTarget.attr("aria-live", "assertive"); //포커스 이동을 스크린 리더에 알림
+
+			setTimeout(() => {
+				focusTarget.attr("aria-live", null);
+			}, 500);
+
+				$target.attr("aria-hidden", "true");
+				$target.find(".popup_inner").attr("aria-hidden", "true");
+		}, 400);
+
+
+		//팝업을 동적으로 생성하는 케이스에서만 사용
+		if(window.popupGroup) {
+			setTimeout(()=>{ $target.remove()},1000);
+		}
+	} else {
+		console.log('$prevPopup없음!!');
+		$(".wrap").attr("aria-hidden", "false");
+		$(".wrap").removeAttr('inert');
+		$("body").css("overscroll-behavior", "auto");
+		$("body").removeClass("scroll_lock");
+
+		setTimeout(() => {
+			$triggerEl.focus();
+
+			//팝업을 동적으로 생성하는 케이스에서만 사용
+			if(window.popupGroup) {
+				setTimeout(()=>{ $target.remove()},0)	
 			}
 		}, 400);
 	}
 
-	//close popup
-	close(event) {
-		this.isOpen = false;
-		this.$target.removeClass("active");
-
-		if (event) {
-			event.currentTarget.blur();
-			event.target.blur();
-		}
-
-		const $prevPopup = this.$triggerEl.closest(".popup_wrap.active");
-		if ($prevPopup) {
-			const $prevHeader = $($prevPopup).find(".popup_head_title").length > 0 ? $($prevPopup).find(".popup_head_title") : null;
-			const $prevContent = $($prevPopup).find(".popup_cont").length > 0 ? $($prevPopup).find(".popup_cont") : null;
-
-			$($prevPopup).attr("aria-hidden", "false");
-			$($prevPopup).find(".popup_inner").attr("aria-hidden", "false");
-
-			const hasTitle = $prevHeader&&$prevHeader.text().trim() !=='';
-			const focusTarget = hasTitle ? $prevHeader : $prevContent;
-			focusTarget.attr("data-returnTarget",true);
-			this.focusMove(focusTarget);
-
-			//팝업을 동적으로 생성하는 케이스에서만 사용
-			if(window.popupGroup) {
-				setTimeout(()=>{ this.$target.remove()},1000);
-			}
-		} else {
-			$(".wrap").attr("aria-hidden", "false");
-			$(".wrap").removeAttr('inert');
-			$("body").css("overscroll-behavior", "auto");
-			$("body").removeClass("scroll_lock");
-
-			setTimeout(() => {
-				this.$triggerEl.focus();
-
-				//팝업을 동적으로 생성하는 케이스에서만 사용
-				if(window.popupGroup) {
-					setTimeout(()=>{ this.$target.remove()},0)	
-				}		
-			}, 400);
-		}
-	}
 }
 
-function openPop($triggerEl, target) {
-
-	let delayTime = 0;
-
-	//팝업을 동적으로 생성하는 케이스에서만 사용
-	if(window.popupGroup) {
-		//popup dom을 동적으로 body에 add
-		attachPopup(target);
-		delayTime = 0.5;
-	}
-	const myPopup = new HD_Popup($triggerEl, target);
-	setTimeout(() => {myPopup.init();},delayTime);	
-}
 
 
 
@@ -162,6 +281,17 @@ function attachPopup (newPopup) {
 }
 
 
+// UUID생성
+function generateUUID() {
+    var d = new Date().getTime();
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = (d + Math.random()*16)%16 | 0;
+        d = Math.floor(d/16);
+        return (c=='x' ? r : (r&0x3|0x8)).toString(16);
+    });
+    return uuid;
+};
+
 
 /*****************/
 /* 팝업을 호출하는 페이지에 붙이는 함수 */
@@ -169,12 +299,6 @@ function attachPopup (newPopup) {
 
 {/* <script>
 	window.onload = function(){	
-	//팝업 DOM을 string으로 저장
-	window.popupGroup = {};
-
-	window.addEventListener('unload', function() {
-		window.popupGroup = null;
-	  });
 
 	//Full 팝업
 	window.popupGroup.pop_type01 = `<div class="popup_wrap full" id="pop_type01" role="dialog" aria-hidden="true">

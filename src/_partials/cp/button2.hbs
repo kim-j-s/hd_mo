@@ -1,0 +1,24 @@
+{{!-- /**
+ * @name : 버튼
+ * @description : 버튼 컴포넌트
+ * @property
+ *  - type : 버튼타입[1(default)-기본, 2(secondary), 3(tertiary)]
+ *  - size : 버튼사이즈[1(CTA&primary)-기본, 2(lg), 3(md), 4(sm), 5(xs)]
+ * 	- class : 추가 class
+ *  - popup : 호출할 팝업 ID
+ *  - b-text : 버튼 표시 텍스트
+ *  - btn-title : 호버시 툴팁 title
+ *  - leftIcon : 왼쪽 아이콘 설정 class
+ *  - rightIcon : 오른쪽 아이콘 설정 class
+ *  - disabled : 비활성화 여부
+ */
+ --}}
+<button type="button" class="hd_btn{{#if type}} hd_btn_ty_{{type}}{{else}} hd_btn_ty_1{{/if}}{{#if size}} hd_btn_s_{{size}}{{else}} hd_btn_s_1{{/if}}{{#if class}} {{class}}{{/if}}"{{#if disabled}} disabled{{/if}}{{#if popup}} onclick="openHDPopup(this,'{{popup}}');"{{/if}}{{#if btn-title}} title="{{btn-title}}"{{/if}}>
+{{#if leftIcon}}{{> cp/icon iconClass=leftIcon}}{{/if}}
+{{#if b-text}}
+	<span class="text">{{{b-text}}}</span>
+	{{else}}
+	<span class="text">{{> @partial-block }}</span>
+{{/if}}
+{{#if rightIcon}}{{> cp/icon iconClass=rightIcon}}{{/if}}
+</button>
