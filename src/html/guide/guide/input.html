@@ -193,20 +193,24 @@
 			<div class="label_tit">label명</div>
 			{{> cp/text placeholder="입력하세요" inp-title="이름 입력" }}
 		</div>
-		<div class="form_line">
-			<div class="label_tit">label명</div>
-			{{> cp/text placeholder="입력하세요" inp-title="이름 입력" comp=true }}
+		<div class="row">
+			<div class="form_line grow">
+				<div class="label_tit">보험시작일</div>
+				{{> cp/text cal=true }}
+			</div>
+			<div class="form_line grow">
+				<div class="label_tit">보험종료일</div>
+				{{> cp/text cal=true }}
+			</div>
 		</div>
-		<div class="form_line">
-			<div class="line_group">
-				<div class="line">
-					<div class="label_tit">label명</div>
-					{{> cp/text placeholder="입력하세요" inp-title="이름 입력" comp=true }}
-				</div>
-				<div class="line">
-					<div class="label_tit">label명</div>
-					{{> cp/text placeholder="입력하세요" inp-title="이름 입력" comp=true }}
-				</div>
+		<div class="row">
+			<div class="form_line fix_w_case01">
+				<div class="label_tit">장착연도</div>
+				{{> cp/selectitem si_popup="select_option_ty1" si_ph="선택" si_title="장착연도 선택"}}
+			</div>
+			<div class="form_line grow">
+				<div class="label_tit">구입가격</div>
+					{{> cp/text type="tel" class="price" placeholder="숫자만" r-text="만원" inp-title="구입가격 입력"}}
 			</div>
 		</div>
 	</div>

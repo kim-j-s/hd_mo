@@ -15,7 +15,7 @@
 				차량을 선택해 주세요
 			</h2>
 			<div class="btn_area basic">
-				{{> cp/button type="3" size="5" b-text="동일증권 안내" }}
+				{{> cp/button type="3" size="5" b-text="동일증권 안내" popup="pop_type02" }}
 			</div>
 		</div>
 		<!-- e: popup_content_top -->
@@ -39,7 +39,6 @@
 								</div>
 							</div>
 						</a>
-
 						<ul class="card_list_ty1">
 							<li>
 								<div class="title">할인할증등급</div>
@@ -118,5 +117,26 @@
 </div>
 {{/ popup/popup_full}}
 <!-- e: Full 팝업 -->
+
+<!-- s: 동일증권 안내 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type02" popup-title="동일증권 안내" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<ul class="list_ty3">
+			<li>자동차가 2대 이상인 경우, 보험계약의 종료일을 동일하게 일치시켜 하나의 보험증권으로 가입하는 것을 말합니다. 만기일자가 동일하여 관리가 용이하며, 사고에 따른 할증이 전체 자동차 대수로 배분됩니다.</li>
+			<li>동일증권으로 가입이 가능한 차량은 개인소유 승용차(10인 이하), 경승합, 1톤 이하 화물차입니다.</li>
+			<li>할인할증등급은 고객님의 사고유무와 사고내용에 따라 산정되며, 등급이 높을수록 보험료 할인율이 높아지게 됩니다.</li>
+			<li>동일증권 가입으로 보험기간이 1년 미만으로 되는 경우, 단기요율이 적용됩니다.</li>
+			<li>추가문의 사항이 있으시면 콜센터 1899-6782(내선1번)로 연락주시기 바랍니다.</li>
+		</ul>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="닫기" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 동일증권 안내 팝업 -->
 
 {{/ layout/default }}

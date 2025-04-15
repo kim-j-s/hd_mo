@@ -336,6 +336,47 @@
 	position: relative;
 	height: 11rem;
 	padding-top: 1.6rem;
+	/*
+  &_inner {
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	width: 100%;
+  	opacity: 1;
+  	visibility: visible;
+  	transition: var(--t-time);
+  	&_text {
+  		font-size: 24px;
+  		line-height: 34px;					
+  	}
+  	.sub_text {
+  		position: relative;
+  		display: inline-block;
+  		margin-top: 8px;
+  		padding-right: 22px;
+  		font-size: 14px;
+  		color: #464C53;
+  		line-height: 22px;
+  		&::after {
+  			content: '';
+  			position: absolute;
+  			top: 1px;
+  			right: 0;
+  			width: 20px;
+  			height: 20px;
+  			border-radius: 5px;
+  			background-repeat: no-repeat;
+  			background-position: center center;
+  			background-image: url(../images/smp/ico_i_mark.svg);
+  			background-color: rgba($color: #33363D, $alpha: 0.6);
+  		}
+  	}
+  	&.active {
+  		opacity: 0;
+  		visibility: hidden;
+  	}
+  }
+  */
 }
 .smp_top .ds1_inner {
 	position: absolute;
@@ -374,8 +415,11 @@
 	background-color: rgba(51, 54, 61, 0.6);
 }
 .smp_top .ds1_inner.active {
+	top: 3rem;
 	opacity: 0;
 	visibility: hidden;
+	-webkit-transition: opacity 0s;
+	transition: opacity 0s;
 }
 .smp_top .ds2 {
 	position: relative;
@@ -445,6 +489,8 @@
 	visibility: visible;
 	-webkit-transition: var(--t-time);
 	transition: var(--t-time);
+	-webkit-transition-delay: 0.3s;
+	transition-delay: 0.3s;
 	overflow: hidden;
 }
 .smp_content .opts_area .opts_area_item {
@@ -535,6 +581,8 @@
 	z-index: 0;
 	opacity: 0;
 	visibility: hidden;
+	-webkit-transition: bottom 0s;
+	transition: bottom 0s;
 }
 .selected_case {
 	-webkit-box-flex: 0;
@@ -542,17 +590,18 @@
 	flex: none;
 	position: relative;
 	padding: 0.9rem 1rem 0.9rem 3.4rem;
+	font-size: 1.4rem;
+	line-height: 2rem;
 	color: #666d7d;
-	border-radius: 1rem;
+	border-radius: 1.2rem;
 	border: 1px solid #f5f5f5;
 	background-repeat: no-repeat;
 	background-position: 1rem center;
 	background-size: 2rem auto;
-	background-color: #f5f5f5;
+	border: 1px solid #b1b8be;
+	background-color: #fff;
 	visibility: visible;
 	opacity: 1;
-	-webkit-transition: var(--t-time);
-	transition: var(--t-time);
 }
 .selected_case.person {
 	background-image: url(../images/smp/ico_stepper_person.svg);
@@ -564,8 +613,7 @@
 	background-image: url(../images/smp/ico_stepper_date.svg);
 }
 .selected_case.gender {
-	color: #fff;
-	background-color: blue;
+	background-image: url(../images/smp/ico_stepper_person.svg);
 }
 .selected_case:empty {
 	width: 0;
@@ -690,15 +738,39 @@
 	font-size: 1.6rem;
 }
 /* 자동완성 */
-.recommend_wrap {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	-ms-flex-flow: row wrap;
-	flex-flow: row wrap;
-	gap: 0.8rem;
+.autocomplete_wrap {
+	position: relative;
+	z-index: 1;
+}
+.autocomplete_wrap_list {
+	position: absolute;
+	top: 5.6rem;
+	left: 0;
+	display: none;
+	width: 100%;
+	padding: 2.4rem;
+	border-radius: var(--number-10);
+	border: 1px solid var(--color-border-gray-light);
+	background-color: var(--color-background-gray-subtler);
+}
+.autocomplete_wrap_list.active {
+	display: block;
+}
+.autocomplete_list {
+	max-height: 20rem;
+	overflow: auto;
+}
+.autocomplete_list > li > a {
+	display: block;
+	font-size: var(--font-size-body-medium);
+	line-height: 2.4rem;
+	color: var(--color-text-subtle);
+}
+.autocomplete_list > li > a .mark {
+	color: var(--color-text-primary);
+}
+.autocomplete_list > li + li {
+	margin-top: 2.4rem;
 }
 /* 자동차보험 - 기본정보 */
 /* 자동차보험 | 기본 정보 */
@@ -793,20 +865,109 @@
 .insurance_policyBox .progress_box .ing i.end.right:before {
 	right: -0.2rem;
 }
-.car_type_option .icon_case input[type="radio"] + label {
-	padding: var(--padding-card-large) var(--number-8);
+.car_type_option .label_cont {
+	width: 100%;
+	padding: 1.6rem 0 1.6rem 4.4rem;
 	background-repeat: no-repeat;
 	background-size: 3.2rem auto;
-	background-position: 1.6rem center;
+	background-position: 0 center;
+	font-size: var(--font-size-body-medium);
+	line-height: 2.4rem;
 }
-.car_type_option .icon_case .inp_radio:first-child input[type="radio"] + label {
+.car_type_option .label_cont > span {
+	padding-top: 0.4rem;
+	font-size: var(--font-size-label-medium);
+	line-height: 2.1rem;
+	color: var(--color-text-subtle);
+}
+.car_type_option .icon_opt1 .label_cont {
 	background-image: url(../images/content/mtps/icon_car_type_option1.svg);
 }
-.car_type_option .icon_case .inp_radio:nth-child(2) input[type="radio"] + label {
+.car_type_option .icon_opt2 .label_cont {
 	background-image: url(../images/content/mtps/icon_car_type_option2.svg);
 }
-.car_type_option .icon_case .inp_radio:nth-child(3) input[type="radio"] + label {
+.car_type_option .icon_opt3 .label_cont {
 	background-image: url(../images/content/mtps/icon_car_type_option3.svg);
+}
+.car_input_box {
+	position: relative;
+	padding: 0.3rem;
+}
+.car_input_box:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: #052b57;
+	background: -webkit-gradient(linear, left top, right top, from(rgb(5, 43, 87)), color-stop(50%, rgb(107, 150, 199)), to(rgb(5, 43, 87)));
+	background: linear-gradient(90deg, rgb(5, 43, 87) 0%, rgb(107, 150, 199) 50%, rgb(5, 43, 87) 100%);
+	border-radius: 1.9rem;
+	-webkit-box-shadow:
+		1.5px 1.5px 0px 0px #fff,
+		-1.5px -1.5px 0px 0px rgba(136, 136, 136, 0.4),
+		var(--shadow-y-1, 1px) 0.4rem 0.8rem 0px rgba(0, 0, 0, 0.3),
+		0.4rem 0.4rem 0.4rem 0px rgba(0, 0, 0, 0.2);
+	box-shadow:
+		1.5px 1.5px 0px 0px #fff,
+		-1.5px -1.5px 0px 0px rgba(136, 136, 136, 0.4),
+		var(--shadow-y-1, 1px) 0.4rem 0.8rem 0px rgba(0, 0, 0, 0.3),
+		0.4rem 0.4rem 0.4rem 0px rgba(0, 0, 0, 0.2);
+}
+.car_input_box .car_number_input {
+	padding: 1.2rem 0 1.2rem 4rem;
+	background: #fff url(../images/content/mprm/car_input_bg.svg) no-repeat left center;
+	background-size: 4rem auto;
+	border: none;
+	border-radius: 1.6rem;
+}
+.car_input_box .car_number_input .inp input {
+	height: auto;
+	padding: 1rem 3.3rem 1rem 1.4rem;
+	line-height: 3rem;
+	text-align: center;
+}
+.car_input_box .car_number_input .inp input::-webkit-input-placeholder {
+	font-weight: 700;
+	text-align: center;
+	color: var(--color-text-disabled);
+}
+.car_input_box .car_number_input .inp input::-moz-placeholder {
+	font-weight: 700;
+	text-align: center;
+	color: var(--color-text-disabled);
+}
+.car_input_box .car_number_input .inp input:-ms-input-placeholder {
+	font-weight: 700;
+	text-align: center;
+	color: var(--color-text-disabled);
+}
+.car_input_box .car_number_input .inp input::-ms-input-placeholder {
+	font-weight: 700;
+	text-align: center;
+	color: var(--color-text-disabled);
+}
+.car_input_box .car_number_input .inp input::placeholder {
+	font-weight: 700;
+	text-align: center;
+	color: var(--color-text-disabled);
+}
+.autocomplete_wrap + .recommend_wrap {
+	margin-top: 5.2rem;
+}
+.title_h4 + .recommend_wrap_item {
+	margin-top: 1.6rem;
+}
+.recommend_wrap .recommend_wrap_item {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	gap: 0.8rem;
 }
 /* 자동차보험 - 운전자정보 */
 /* 자동차보험 | 운전자 정보 - 운전자 범위 선택 */
@@ -1322,4 +1483,45 @@
 }
 .guarantee_item_cont .gic.gic_03 .tit {
 	background-image: url(../images/content/prlt/img_PRDR10003000000_04.svg);
+}
+/* 운전자보험 - 보험료 계산결과 */
+/* 자동차보험 | 6.보험료 계산결과 */
+.special_contract_list li {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 0.8rem;
+}
+.special_contract_list li .check_box {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 0.8rem;
+}
+.special_contract_list li .check_box .question_mark_btn {
+	background: transparent;
+	width: 2rem;
+	height: 2rem;
+}
+.special_contract_list li .check_box .question_mark_btn .hd_icon.popover_help {
+	width: inherit;
+	height: inherit;
+}
+.special_contract_list li .money {
+	color: var(--color-text-primary);
+	font-size: var(--font-size-button-large);
+	line-height: 2.4rem;
+	font-weight: 700;
+}
+.special_contract_list li + li {
+	margin-top: 2rem;
 }
