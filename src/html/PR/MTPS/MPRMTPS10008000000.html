@@ -1,0 +1,128 @@
+<!---
+화면번호 : PRLT10005000000
+경로 : 4.운전자 정보 > 4-1.운전자 범위 선택
+-->
+{{#> layout/default page-title="자동차 운전자 정보 | 상품"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="자동차보험" h-back=true }}
+		<div id="container" class="container">
+			<div class="content">
+				<!-- s: content_top -->
+				<div class="content_top">
+					<h2 class="title_h2">
+						피보험자/계약자 <strong>정보를 입력</strong>해 주세요
+					</h2>
+				</div>
+				<!-- e: content_top -->
+				<div class="from_box first">
+					<h3 class="title_h3">피보험자/계약자 정보</h3>
+					<div class="info_gray">
+						<dl>
+							<dt>피보험자 이름</dt>
+							<dd>김*대</dd>
+						</dl>
+						<dl>
+							<dt>주민등록번호</dt>
+							<dd>900101-1******</dd>
+						</dl>
+						<dl>
+							<dt>휴대폰번호</dt>
+							<dd>010-1234-5678</dd>
+						</dl>
+					</div>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">이메일</div>
+							{{> cp/text type="text" placeholder="이메일을 입력하세요" maxlength="" inp-title="이메일 입력" }}
+						</div>
+					</div>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">우편물 수령지</div>
+							<div class="radio_group_wrap" role="radiogroup">
+								<!-- '예'클릭시 alert팝업 노출, 버튼 disabled처리(하단 script 예시) -->
+								{{> cp/radio rd-class="rd_btn" rd-id="addSel_01" name="addSel" labelname="자택" checked=true }}
+								{{> cp/radio rd-class="rd_btn" rd-id="addSel_02" name="addSel" labelname="직장" }}
+							</div>
+						</div>
+					</div>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">주소</div>
+							<div class="comp_wrap add_text">
+								<div class="input_text">
+									(03379) 서울 은평구 서오릉로4길 7-8 101동 301호 (녹번동, 녹번 2차 현대 아파트)
+								</div>
+								<button type="button" class="search_button" title="주소 검색"><span class="blind">검색</span></button>
+							</div>
+						</div>
+					</div>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">
+								피보험자(자동차 소유자)와 계약자(보험료 납입자) 관계 
+								<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openPop(this,'pop_type01');"><i class="hd_icon popover_help"></i><span class="blind">핍업 열기</span></button>
+							</div>
+							{{> cp/selectitem value="피보험자(자동차소유자)와 동일" si_title="연도 선택" si_popup="pop_type02"}}
+						</div>
+					</div>
+
+				</div>
+				<hr class="divider">
+				<div class="from_box">
+					<h3 class="title_h3">연락처 정보</h3>
+					
+				</div>
+				
+			</div>
+		</div>
+
+		<!-- s: 하단 고정 버튼 영역 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="2" b-text="선택 중이에요" disabled=true }}
+				<!-- {{> cp/button type="1" size="2" b-text="본인만으로" }} -->
+			</div>
+		</div>
+		<!-- s: 하단 고정 버튼 영역 -->
+	</div>
+
+	<!-- s: popup area -->
+
+    	<!-- s: 피보험자/계약 관계 안내 Bottom 팝업 -->
+		{{#> popup/popup_bottom popup-id="pop_type01" active=false popup-title="피보험자/계약 관계 안내" }}
+		<div class="popup_cont">
+			<div class="popup_content">
+                <div class="info_cont">
+                    <h2>보상책임</h2>
+                    <ul class="list_ty1">
+                        <li>계약자가 계약변경/환급금수령/소득공제 권한을 갖습니다.</li>
+                        <li>강사에 등록된 개인정보가 보험가입 시 입력하신 정보(주소, 휴대폰번호, 이메일 등)로 업데이트 되오니 이 점 유의하시기 바랍니다.</li>
+                    </ul>
+                </div>
+			</div>
+		</div>
+		<div class="popup_bottom">
+			<div class="btn_area">
+				{{> cp/button type="1" size="2" b-text="확인"}}
+			</div>
+		</div>
+		{{/ popup/popup_bottom}} 
+		<!-- e: 피보험자/계약 관계 안내 Bottom 팝업 -->
+		 
+	<!-- s: pop_type01 -->
+	{{#> popup/popup_bottom popup-id="pop_type02" popup-title="피보험자와 계약자 과계"}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="opt_select_list opt_case3">
+				<div role="button" class="option active" title="선택됨"><span class="text">피보험자(자동차소유자)와 동일</span></div>
+				<div role="button" class="option"><span class="text">배우자</span></div>
+				<div role="button" class="option"><span class="text">자녀</span></div>
+				<div role="button" class="option"><span class="text">부모(시부모/처부모포함)</span></div>
+			</div>
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: pop_type01 -->
+	<!-- e: popup area -->
+{{/ layout/default }}
