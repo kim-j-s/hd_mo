@@ -59,14 +59,14 @@
 		&.top {
 			//tooltip arrow
 			&::after {
-				top: -12px;
+				top: -7px;
 				transform: scaleY(-1);
 			}
 
 			&.active {
 				& + .tooltip_panel {
 					margin-top: 0;
-					bottom: 32.5px;
+					bottom: 27.5px;
 					top: auto;
 				}
 			}
@@ -161,12 +161,24 @@
 	}
 }
 
-.title_h5 {
+.title_has_tooltip {
+	display: inline-block;
+	width:100%;
+	font-weight: 700;
+	word-wrap: break-word;
+	line-height: 24px;	
+
+	& > .tooltip_wrap{
+		.tooltip_head {
+			transform: translateY(2px);
+		}			
+	}		
+
 	.tooltip_wrap .tooltip_panel {
-		top: calc(100% + 10px);
+		top: calc(100% + 6px);
 	}
 
 	.tooltip_wrap .tooltip_head.top + .tooltip_panel {
-		bottom: 26.5px;
+		bottom: 26px;
 	}
 }
