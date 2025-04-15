@@ -690,15 +690,39 @@
 	font-size: 1.6rem;
 }
 /* 자동완성 */
-.recommend_wrap {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	-ms-flex-flow: row wrap;
-	flex-flow: row wrap;
-	gap: 0.8rem;
+.autocomplete_wrap {
+	position: relative;
+	z-index: 1;
+}
+.autocomplete_wrap_list {
+	position: absolute;
+	top: 5.6rem;
+	left: 0;
+	display: none;
+	width: 100%;
+	padding: 2.4rem;
+	border-radius: var(--number-10);
+	border: 1px solid var(--color-border-gray-light);
+	background-color: var(--color-background-gray-subtler);
+}
+.autocomplete_wrap_list.active {
+	display: block;
+}
+.autocomplete_list {
+	max-height: 20rem;
+	overflow: auto;
+}
+.autocomplete_list > li > a {
+	display: block;
+	font-size: var(--font-size-body-medium);
+	line-height: 2.4rem;
+	color: var(--color-text-subtle);
+}
+.autocomplete_list > li > a .mark {
+	color: var(--color-text-primary);
+}
+.autocomplete_list > li + li {
+	margin-top: 2.4rem;
 }
 /* 자동차보험 - 기본정보 */
 /* 자동차보험 | 기본 정보 */
@@ -807,6 +831,22 @@
 }
 .car_type_option .icon_case .inp_radio:nth-child(3) input[type="radio"] + label {
 	background-image: url(../images/content/mtps/icon_car_type_option3.svg);
+}
+.autocomplete_wrap + .recommend_wrap {
+	margin-top: 5.2rem;
+}
+.title_h4 + .recommend_wrap_item {
+	margin-top: 1.6rem;
+}
+.recommend_wrap .recommend_wrap_item {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	gap: 0.8rem;
 }
 /* 자동차보험 - 운전자정보 */
 /* 자동차보험 | 운전자 정보 - 운전자 범위 선택 */

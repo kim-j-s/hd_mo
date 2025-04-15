@@ -5,17 +5,30 @@
       {{#if type}}
 				type="{{type}}"
 			{{else}}
-				{{#if cal}}
-					type="tel"
+				{{#if inp_search}}
+					type="search"
 				{{else}}
-					type="text"
+					{{#if cal}}
+						type="tel"
+					{{else}}
+						type="text"
+					{{/if}}
 				{{/if}}
 			{{/if}}
       {{#if id}}id="{{id}}"{{/if}}
-      {{#if cal}}
+      {{!-- {{#if cal}}
 				class="{{#if cal}}inp_picker {{/if}}{{inpclass}}"
 			{{else}}
 				{{#if inpclass}}class="{{inpclass}}"{{/if}}
+			{{/if}} --}}
+			{{#if cal}}
+				class="{{#if cal}}inp_picker {{/if}}{{#if auto}}autocomplete_input {{/if}}{{inpclass}}"
+			{{else}}
+				{{#if inpclass}}
+					class="{{#if auto}}autocomplete_input {{/if}}{{inpclass}}"
+				{{else}}
+					{{#if auto}}class="autocomplete_input"{{/if}}
+				{{/if}}
 			{{/if}}
       {{#if placeholder}}placeholder="{{placeholder}}"{{/if}}
       {{#if value}}value="{{value}}"{{/if}}
@@ -24,6 +37,7 @@
       {{#if disabled}}disabled{{/if}}
       {{#if readonly}}readonly{{/if}}
       {{#if inp-title}}title="{{inp-title}}"{{/if}}
+			{{#if auto}}autocomplete="off"{{/if}}
       {{#if cal}}title="날짜를 입력해주세요"{{/if}}
     >
     {{!-- 버튼 (초기화 삭제, 달력 호출) --}}
