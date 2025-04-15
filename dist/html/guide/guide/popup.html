@@ -103,7 +103,7 @@
 				<div class="content">
 					<div class="g_line">선택된 정보 입력되는 케이스</div>
 					<div class="g_dom">
-						<div class="hd_btn hd_btn_ty_2 hd_btn_s_5" role="button" onclick="openPop(this, 'pop_type05')">
+						<div class="hd_btn hd_btn_ty_2 hd_btn_s_5" role="button" onclick="openHDPopup(this, 'pop_type05')">
 							<span>div로 만들어지는 케이스</span>
 						</div>
 					</div>
@@ -111,16 +111,16 @@
 					<div class="g_line">일반 팝업 호출 케이스</div>
 					<div class="g_dom">
 						<div class="p_guide_wrap_b">
-							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openPop(this,'pop_type01');">
+							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openHDPopup(this,'pop_type01');">
 								<span class="text">Full 팝업열기</span>
 							</button>
-							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openPop(this,'pop_type02');">
+							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openHDPopup(this,'pop_type02');">
 								<span class="text">Layer 팝업열기</span>
 							</button>
-							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openPop(this,'pop_type03');">
+							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openHDPopup(this,'pop_type03');">
 								<span class="text">Bottom 팝업열기1</span>
 							</button>
-							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openPop(this,'pop_type03');">
+							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openHDPopup(this,'pop_type03');">
 								<span class="text">Bottom 팝업열기2</span>
 							</button>
 						</div>
@@ -129,13 +129,13 @@
 					<div class="g_line">선택 목록 팝업 케이스</div>
 					<div class="g_dom">
 						<div class="p_guide_wrap_b">
-							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openPop(this,'pop_type05');">
+							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openHDPopup(this,'pop_type05');">
 								<span class="text">Bottom 선택 팝업열기 유형 1</span>
 							</button>
-							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openPop(this,'pop_type06');">
+							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openHDPopup(this,'pop_type06');">
 								<span class="text">Bottom 선택 팝업열기 유형 2</span>
 							</button>
-							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openPop(this,'pop_type07');">
+							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openHDPopup(this,'pop_type07');">
 								<span class="text">Bottom 선택 팝업열기 유형 3</span>
 							</button>
 						</div>
@@ -144,7 +144,7 @@
 					<div class="g_line">옵션 선택 팝업 케이스</div>
 					<div class="g_dom">
 						<div class="p_guide_wrap_b">
-							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openPop(this,'pop_type08');">
+							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openHDPopup(this,'pop_type08');">
 								<span class="text">Bottom 옵션 선택 팝업열기 유형 1</span>
 							</button>
 						</div>
@@ -174,7 +174,7 @@
 			<!-- s: Full 팝업 -->
 			<div class="popup_wrap full" id="pop_type01" role="dialog" aria-hidden="true">
 				<div class="popup_container">
-					<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup(this,'pop_type01');"></div>
+					<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
 					<div class="popup_inner">
 						<div class="popup_head"><div class="popup_head_title">팝업 타이틀</div></div>
 						<div class="popup_cont">
@@ -218,7 +218,7 @@
 								</button>
 							</div>
 						</div>
-						<button type="button" class="popup_close" onclick="closeHDPopup(this,'pop_type01');"><span class="blind">팝업 닫기</span></button>
+						<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
 					</div>
 				</div>
 			</div>
@@ -227,7 +227,7 @@
 			<!-- s: Layer 팝업 -->
 			<div class="popup_wrap layer" id="pop_type02" role="dialog" aria-hidden="true">
 				<div class="popup_container">
-					<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup(this,'pop_type02');"></div>
+					<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type02');"></div>
 					<div class="popup_inner">
 						<div class="popup_head"><div class="popup_head_title">팝업 타이틀</div></div>
 						<div class="popup_cont">
@@ -252,7 +252,7 @@
 								</button>
 							</div>
 						</div>
-						<button type="button" class="popup_close" onclick="closeHDPopup(this,'pop_type02');"><span class="blind">팝업 닫기</span></button>
+						<button type="button" class="popup_close" onclick="closeHDPopup('pop_type02');"><span class="blind">팝업 닫기</span></button>
 					</div>
 				</div>
 			</div>
@@ -307,7 +307,7 @@
 								<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_2">
 									<span class="text">확인</span>
 								</button>
-								<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2" onclick="openPop(this,'pop_type04');" title="Bottom 팝업열기">
+								<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2" onclick="openHDPopup(this,'pop_type04');" title="Bottom 팝업열기">
 									<span class="text">Bottom 팝업열기</span>
 								</button>
 							</div>
@@ -354,7 +354,7 @@
 								<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_2">
 									<span class="text">확인</span>
 								</button>
-								<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2" onclick="openPop(this,'pop_type05');" title="Bottom 팝업열기">
+								<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2" onclick="openHDPopup(this,'pop_type05');" title="Bottom 팝업열기">
 									<span class="text">Bottom 팝업열기</span>
 								</button>
 							</div>

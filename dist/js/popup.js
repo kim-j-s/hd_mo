@@ -1,135 +1,27 @@
 /* Popup 관련 */
 
-class HD_Popup {
-	$triggerEl;
-	$target;
-	$header; //타이틀
-	$content; //본문
-	$popup_dim;
-	$closeBtn;
-
-	constructor($triggerEl, target) {
-		this.$target = $("#" + target);
-		this.$popup_dim = this.$target.find(".popup_dim");
-		this.$triggerEl = $triggerEl;
-		this.$closeBtn = this.$target.find(".popup_close");
-		this.$header = this.$target.find(".popup_head_title").length > 0 ? this.$target.find(".popup_head_title") : null;
-		this.$content = this.$target.find(".popup_cont").length > 0 ? this.$target.find(".popup_cont") : null;
-	}
-
-	//focus 이동
-	focusMove(target) {
-		if (!target) return;
-		const $focusTarget = target;
-
-		const activePopups = $(".popup_wrap.active").not(this.$target);
-
-		// ios 스크린리더가 dom의 변경사항을 인식하도록 상태변경
-		$focusTarget.css("display", "none");
-		$focusTarget[0].offsetHeight; //강제 reflow
-		$focusTarget.css("display", "block");
-
-		setTimeout(() => {
-			$focusTarget.focus();
-			$focusTarget.attr("aria-live", "assertive"); //포커스 이동을 스크린 리더에 알림
-
-			setTimeout(() => {
-				$focusTarget.attr("aria-live", null);
-			}, 500);
-
-			if (this.isOpen && activePopups.length > 0) {
-				activePopups.attr("aria-hidden", "true");
-				activePopups.find(".popup_inner").attr("aria-hidden", "true");
-			} else if (!this.isOpen && activePopups.length > 0) {
-				this.$target.attr("aria-hidden", "true");
-				this.$target.find(".popup_inner").attr("aria-hidden", "true");
-			}
-		}, 400);
-	}
-
-	//close popup
-	close(event) {
-		this.$target = $("#" + target);
-		this.$popup_dim = this.$target.find(".popup_dim");
-		this.$triggerEl = $triggerEl;
-		this.$closeBtn = this.$target.find(".popup_close");
-		this.$header = this.$target.find(".popup_head_title").length > 0 ? this.$target.find(".popup_head_title") : null;
-		this.$content = this.$target.find(".popup_cont").length > 0 ? this.$target.find(".popup_cont") : null;
-		this.$target.removeClass("active");
-
-		if (event) {
-			event.currentTarget.blur();
-			event.target.blur();
-		}
-
-		const $prevPopup = this.$triggerEl.closest(".popup_wrap.active");
-		if ($prevPopup) {
-			const $prevHeader = $($prevPopup).find(".popup_head_title").length > 0 ? $($prevPopup).find(".popup_head_title") : null;
-			const $prevContent = $($prevPopup).find(".popup_cont").length > 0 ? $($prevPopup).find(".popup_cont") : null;
-
-			$($prevPopup).attr("aria-hidden", "false");
-			$($prevPopup).find(".popup_inner").attr("aria-hidden", "false");
-
-			const hasTitle = $prevHeader && $prevHeader.text().trim() !== "";
-			const focusTarget = hasTitle ? $prevHeader : $prevContent;
-			focusTarget.attr("data-returnTarget", true);
-
-			const activePopups = $(".popup_wrap.active").not(this.$target);
-
-			// ios 스크린리더가 dom의 변경사항을 인식하도록 상태변경
-			focusTarget.css("display", "none");
-			focusTarget[0].offsetHeight; //강제 reflow
-			focusTarget.css("display", "block");
-
-			setTimeout(() => {
-				focusTarget.focus();
-				focusTarget.attr("aria-live", "assertive"); //포커스 이동을 스크린 리더에 알림
-
-				setTimeout(() => {
-					focusTarget.attr("aria-live", null);
-				}, 500);
-
-				if (activePopups.length > 0) {
-					this.$target.attr("aria-hidden", "true");
-					this.$target.find(".popup_inner").attr("aria-hidden", "true");
-				}
-			}, 400);
-
-			//팝업을 동적으로 생성하는 케이스에서만 사용
-			if (window.popupGroup) {
-				setTimeout(() => {
-					this.$target.remove();
-				}, 1000);
-			}
-		} else {
-			$(".wrap").attr("aria-hidden", "false");
-			$(".wrap").removeAttr("inert");
-			$("body").css("overscroll-behavior", "auto");
-			$("body").removeClass("scroll_lock");
-
-			setTimeout(() => {
-				this.$triggerEl.focus();
-
-				//팝업을 동적으로 생성하는 케이스에서만 사용
-				if (window.popupGroup) {
-					setTimeout(() => {
-						this.$target.remove();
-					}, 0);
-				}
-			}, 400);
-		}
-	}
-}
-
+/**
+ * openHDPopup
+ * popup ui를 오픈하는 함수(접근성 대응)
+ *
+ * @param {object} $triggerEl [필수]팝업이 닫힌 뒤에 포커스할 엘리먼트(하단에 다른 팝업이 존재할 경우 사용x)
+ * @param {string} target [필수]Open할 popup id
+ * @returns {void}
+ */
 function openHDPopup($triggerEl, target) {
-	if (!target.length) return;
+	if (target == undefined || target == null) {
+		console.log("오픈할 팝업 타겟이 없습니다.");
+		return false;
+	}
 
-	// s: 개발단에서는 지우고 사용하세요.
-	attachPopup(target);
-	// e: 개발단에서는 지우고 사용하세요.
+	// s: 퍼블테스트용 (개발단에서는 삭제해주세요.)
+	if (window.popupGroup) {
+		attachPopup(target);
+	}
+	// e: 퍼블테스트용 (개발단에서는 삭제해주세요.)
 
 	let $target = $("#" + target);
-	let $popup_dim = $target.find(".popup_dim");
+
 	let $header = $target.find(".popup_head_title").length > 0 ? $target.find(".popup_head_title") : null;
 	let $content = $target.find(".popup_cont").length > 0 ? $target.find(".popup_cont") : null;
 
@@ -160,17 +52,6 @@ function openHDPopup($triggerEl, target) {
 		draggable($target);
 	}
 
-	//To-Do: 추후 핸들바에 close함수 붙이기
-	//닫기버튼 이벤트리스너 추가
-	// $target.find(".popup_close").on("click", () => {
-	// 	closeHDPopup($triggerEl, target);
-	// });
-
-	// //dim 클릭 시 팝업 닫기
-	// $popup_dim.on("click", () => {
-	// 	closeHDPopup($triggerEl, target);
-	// });
-
 	$target.attr("aria-hidden", "false");
 	$target.find(".popup_inner").attr("tabindex", 0).attr("aria-hidden", "false");
 
@@ -180,9 +61,12 @@ function openHDPopup($triggerEl, target) {
 	const focusTarget = $header || $content;
 
 	const activePopups = $(".popup_wrap.active").not($target);
-	focusTarget.css("display", "none");
-	focusTarget[0].offsetHeight; //강제 reflow
-	focusTarget.css("display", "block");
+	if (focusTarget) {
+		console.log("test", focusTarget.css);
+		focusTarget.css("display", "none");
+		focusTarget[0].offsetHeight; //강제 reflow
+		focusTarget.css("display", "block");
+	}
 
 	setTimeout(() => {
 		focusTarget.focus();
@@ -190,44 +74,31 @@ function openHDPopup($triggerEl, target) {
 
 		setTimeout(() => {
 			focusTarget.attr("aria-live", null);
-		}, 500);
+		}, 0);
 
 		if (activePopups.length > 0) {
 			activePopups.attr("aria-hidden", "true");
 			activePopups.find(".popup_inner").attr("aria-hidden", "true");
 		}
-	}, 400);
-}
-
-//동적으로 popup을 append하는 경우에 사용
-function openPop($triggerEl, target) {
-	const myPopup = new HD_Popup($triggerEl, target);
-	setTimeout(() => {
-		myPopup.init();
-	}, 0.5);
+	}, 350);
 }
 
 /**
  * closeHDPopup
- * - 동적으로 popup을 append하는 경우에 사용
- * @param {string} target (필수)close할 popup id
- * @param {object} returnTarget (선택)팝업이 닫힌 뒤에 포커스할 엘리먼트(하단에 다른 팝업이 존재할 경우 사용x)
+ * - popup ui를 제거하는 함수(접근성 대응)
+ * @param {string} target [필수]close할 popup id
+ * @param {object} returnTarget [선택]팝업이 닫힌 뒤에 포커스할 엘리먼트(하단에 다른 팝업이 존재할 경우 사용x)
  * @returns {void}
  */
 function closeHDPopup(target, returnTarget = null) {
 	let $target = $("#" + target);
-	console.log("$target", $target);
-
 	const $opener = $('[triggerId="' + $target.attr("opner") + '"]');
-
-	const $triggerEl = returnTarget ? returnTarget : $opener;
-
+	const $triggerEl = returnTarget || $opener;
 	$target.removeClass("active");
 
 	//하단에 다른 팝업이 열려있는 경우, 가장 최근 팝업으로 focus강제 이동
 	const $prevPopup = $(".popup_wrap.active:last");
 	if ($prevPopup.length > 0) {
-		console.log("$prevPopup 있음", $prevPopup);
 		const $prevHeader = $($prevPopup).find(".popup_head_title").length > 0 ? $($prevPopup).find(".popup_head_title") : null;
 		const $prevContent = $($prevPopup).find(".popup_cont").length > 0 ? $($prevPopup).find(".popup_cont") : null;
 
@@ -248,39 +119,48 @@ function closeHDPopup(target, returnTarget = null) {
 
 			setTimeout(() => {
 				focusTarget.attr("aria-live", null);
-			}, 500);
+			}, 0);
 
 			$target.attr("aria-hidden", "true");
 			$target.find(".popup_inner").attr("aria-hidden", "true");
-		}, 400);
+		}, 350);
 
-		//팝업을 동적으로 생성하는 케이스에서만 사용
+		// s: 퍼블테스트용 (개발단에서는 삭제해주세요.)
 		if (window.popupGroup) {
 			setTimeout(() => {
 				$target.remove();
 			}, 1000);
 		}
+		// e: 퍼블테스트용 (개발단에서는 삭제해주세요.)
+
+		// s: 개발에서는 이 구문을 주석 해제 바랍니다.
+		// setTimeout(()=>{ $target.remove()},1000);
+		// e: 개발에서는 이 구문을 주석 해제 바랍니다.
 	} else {
-		console.log("$prevPopup없음!!");
 		$(".wrap").attr("aria-hidden", "false");
 		$(".wrap").removeAttr("inert");
 		$("body").css("overscroll-behavior", "auto");
 		$("body").removeClass("scroll_lock");
 
 		setTimeout(() => {
-			$triggerEl.focus();
+			$triggerEl.attr("tabindex", 0).focus();
 
-			//팝업을 동적으로 생성하는 케이스에서만 사용
+			// s: 퍼블테스트용 (개발단에서는 삭제해주세요.)
 			if (window.popupGroup) {
 				setTimeout(() => {
 					$target.remove();
-				}, 0);
+				}, 400);
 			}
-		}, 400);
+			// e: 퍼블테스트용 (개발단에서는 삭제해주세요.)
+
+			// s: 개발에서는 이 구문을 주석 해제 바랍니다.
+			// setTimeout(()=>{ $target.remove()},1000);
+			// e: 개발에서는 이 구문을 주석 해제 바랍니다.
+		}, 350);
 	}
 }
 
-//동적 append 테스트용 함수
+//동적 append 함수(퍼블 테스트용)
 function attachPopup(newPopup) {
 	const popupArea = $(".popup_area");
 	popupArea.append(window.popupGroup[newPopup]);
@@ -295,70 +175,6 @@ function generateUUID() {
 		return (c == "x" ? r : (r & 0x3) | 0x8).toString(16);
 	});
 	return uuid;
-}
-
-/*****************/
-/* 팝업을 호출하는 페이지에 붙이는 함수 */
-/*****************/
-
-{
-	/* <script>
-	window.onload = function(){	
-
-	//Full 팝업
-	window.popupGroup.pop_type01 = `<div class="popup_wrap full" id="pop_type01" role="dialog" aria-hidden="true">
-				<div class="popup_container">
-					<div class="popup_dim" aria-hidden="true"></div>
-					<div class="popup_inner">
-						<div class="popup_head"><div class="popup_head_title">팝업 타이틀</div></div>
-						<div class="popup_cont">
-							<div class="popup_content">
-								<!-- s: popup_content_top -->
-								<div class="popup_content_top">
-									<h2 class="title_h2">타이틀영역</h2>
-								</div>
-								<!-- e: popup_content_top -->
-
-								팝업내용입니다
-								<br />
-								내용
-							</div>
-						</div>
-						<div class="popup_bottom">
-							<!-- s: 꼭 알아두세요 -->
-							<div class="bottom_fix_notice">
-								<div class="acd_item">
-									<div class="acd_head">
-										<button type="button" class="acd_btn" aria-expanded="false"><span>꼭 알아두세요</span></button>
-									</div>
-									<div class="acd_cont">
-										<div class="inner">
-											<ul>
-												<li>내용1</li>
-												<li>내용2</li>
-												<li>내용3</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- e: 꼭 알아두세요 -->
-							<div class="btn_area">
-								<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_2">
-									<span class="text">취소</span>
-								</button>
-								<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
-									<span class="text">확인</span>
-								</button>
-							</div>
-						</div>
-						<button type="button" class="popup_close"><span class="blind">팝업 닫기</span></button>
-					</div>
-				</div>
-			</div>`;
-
-	}
-</script> */
 }
 
 /* Toast 팝업 */
