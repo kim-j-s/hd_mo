@@ -98,67 +98,65 @@
 					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">자동차번호 7~9자리, 차대번호 17자리</div>
-							<div class="input_text">
-								<div class="inp">
-									<input type="text" placeholder="123가4567" title="자동차 또는 차대번호 입력" />
-									<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-								</div>
-							</div>
-						</div>
-						<div class="form_line">
-							<div class="card_item_wrap">
-								<div class="card_item">
-									<div class="item_inner">
-										<div class="inp_checkbox">
-											<input type="checkbox" id="card_chk1_3" name="name1" aria-labelledby="card_chk1_3_cont" />
-											<label for="card_chk1_3" class="chk_label"></label>
-											<i></i>
-										</div>
-										<div class="inner_cont">
-											<div class="item_top" id="card_chk1_3_cont">
-												<div class="text">구매예정</div>
-												<div class="desc">자동차번호, 차대번호를 모르는 경우</div>
-											</div>
-										</div>
+							<div class="car_input_box">
+								<div class="input_text car_number_input">
+									<div class="inp">
+										<input type="text" placeholder="123가4567" minlength="7" maxlength="17" title="자동차 또는 차대번호 입력" />
+										<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="form_line">
-							<div class="car_type_option">
-								<div class="radio_group_wrap column icon_case" role="radiogroup">
-									<div class="inp_radio rd_btn_s1">
-										<input type="radio" id="radio_btn_g1" name="radio_g1" checked />
-										<label for="radio_btn_g1">
-											<span class="label_cont">
-												승용차
-												<br />
-												<span>승차정원 10인 이하</span>
-											</span>
-										</label>
-									</div>
-									<div class="inp_radio rd_btn_s1">
-										<input type="radio" id="radio_btn_g2" name="radio_g1" />
-										<label for="radio_btn_g2">
-											<span class="label_cont">
-												승합차
-												<br />
-												<span>승차정원 11인 이하</span>
-											</span>
-										</label>
-									</div>
-									<div class="inp_radio rd_btn_s1">
-										<input type="radio" id="radio_btn_g3" name="radio_g1" />
-										<label for="radio_btn_g3">
-											<span class="label_cont">
-												화물차
-												<br />
-												<span>적재함이 있는 자동차, 벤형 및 픽업트럭</span>
-											</span>
-										</label>
+					</div>
+
+					<div class="card_item_wrap">
+						<div class="card_item">
+							<div class="item_inner">
+								<div class="inp_checkbox">
+									<input type="checkbox" id="card_chk1_3" name="name1" aria-labelledby="card_chk1_3_cont" />
+									<label for="card_chk1_3" class="chk_label"></label>
+									<i></i>
+								</div>
+								<div class="inner_cont">
+									<div class="item_top" id="card_chk1_3_cont">
+										<div class="text">구매예정</div>
+										<div class="desc">자동차번호, 차대번호를 모르는 경우</div>
 									</div>
 								</div>
 							</div>
+						</div>
+					</div>
+
+					<div class="radio_group_wrap column car_type_option" role="radiogroup">
+						<div class="inp_radio rd_btn_s1 icon_opt1">
+							<input type="radio" id="radio_btn_g1" name="radio_g1" checked />
+							<label for="radio_btn_g1">
+								<span class="label_cont">
+									승용차
+									<br />
+									<span>승차정원 10인 이하</span>
+								</span>
+							</label>
+						</div>
+						<div class="inp_radio rd_btn_s1 icon_opt2">
+							<input type="radio" id="radio_btn_g2" name="radio_g1" />
+							<label for="radio_btn_g2">
+								<span class="label_cont">
+									승합차
+									<br />
+									<span>승차정원 11인 이하</span>
+								</span>
+							</label>
+						</div>
+						<div class="inp_radio rd_btn_s1 icon_opt3">
+							<input type="radio" id="radio_btn_g3" name="radio_g1" />
+							<label for="radio_btn_g3">
+								<span class="label_cont">
+									화물차
+									<br />
+									<span>적재함이 있는 자동차, 벤형 및 픽업트럭</span>
+								</span>
+							</label>
 						</div>
 					</div>
 				</div>
@@ -166,28 +164,9 @@
 
 			<!-- s: 하단 고정 버튼 영역 -->
 			<div class="bottom_fix_wrap">
-				<div class="link_btn_box">
-					<a href="#" class="link_inner" title="레이어 팝업 오픈">
-						<div class="cont">
-							<div class="link_icon"></div>
-							<div class="text">
-								최근설계내역
-								<strong>
-									<span>3</span>
-									건
-								</strong>
-								이 있어요!
-							</div>
-						</div>
-						<p class="forward_button">
-							바로가기
-							<span><i class="hd_icon arrowRightSvg"></i></span>
-						</p>
-					</a>
-				</div>
 				<div class="btn_area">
 					<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2 full" onclick="openPop(this,'pop_type01');">
-						<span class="text">1년 계약으로</span>
+						<span class="text">승용차 차량번호로</span>
 					</button>
 				</div>
 			</div>

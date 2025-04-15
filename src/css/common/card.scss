@@ -1,8 +1,18 @@
 /* Card*/
 .card_item_wrap {
-
 	& + & {
 		margin-top: 16px;
+	}
+
+	& + * {
+		margin-top: 16px;
+
+		&.list_top_wrap {
+			margin-top: 52px;
+		}
+		&.card_item_wrap {
+			margin-top: 52px;
+		}
 	}
 	
 	.card_item {
@@ -99,6 +109,13 @@
 					line-height: 27px;
 					font-weight: 700;
 					color: var(--color-text-bolder);
+
+					.info {
+						color: var(--color-text-information);
+					}
+					.hd {
+						color: var(--color-text-primary-bold);
+					}
 				}
 				& + .desc {
 					margin-top: 8px;

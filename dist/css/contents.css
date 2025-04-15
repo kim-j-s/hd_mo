@@ -793,20 +793,93 @@
 .insurance_policyBox .progress_box .ing i.end.right:before {
 	right: -0.2rem;
 }
-.car_type_option .icon_case input[type="radio"] + label {
-	padding: var(--padding-card-large) var(--number-8);
+.car_type_option .label_cont {
+	width: 100%;
+	padding: 1.6rem 0 1.6rem 4.4rem;
 	background-repeat: no-repeat;
 	background-size: 3.2rem auto;
-	background-position: 1.6rem center;
+	background-position: 0 center;
+	font-size: var(--font-size-body-medium);
+	line-height: 2.4rem;
 }
-.car_type_option .icon_case .inp_radio:first-child input[type="radio"] + label {
+.car_type_option .label_cont > span {
+	padding-top: 0.4rem;
+	font-size: var(--font-size-label-medium);
+	line-height: 2.1rem;
+	color: var(--color-text-subtle);
+}
+.car_type_option .icon_opt1 .label_cont {
 	background-image: url(../images/content/mtps/icon_car_type_option1.svg);
 }
-.car_type_option .icon_case .inp_radio:nth-child(2) input[type="radio"] + label {
+.car_type_option .icon_opt2 .label_cont {
 	background-image: url(../images/content/mtps/icon_car_type_option2.svg);
 }
-.car_type_option .icon_case .inp_radio:nth-child(3) input[type="radio"] + label {
+.car_type_option .icon_opt3 .label_cont {
 	background-image: url(../images/content/mtps/icon_car_type_option3.svg);
+}
+.car_input_box {
+	position: relative;
+	padding: 0.3rem;
+}
+.car_input_box:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: #052b57;
+	background: -webkit-gradient(linear, left top, right top, from(rgb(5, 43, 87)), color-stop(50%, rgb(107, 150, 199)), to(rgb(5, 43, 87)));
+	background: linear-gradient(90deg, rgb(5, 43, 87) 0%, rgb(107, 150, 199) 50%, rgb(5, 43, 87) 100%);
+	border-radius: 1.9rem;
+	-webkit-box-shadow:
+		1.5px 1.5px 0px 0px #fff,
+		-1.5px -1.5px 0px 0px rgba(136, 136, 136, 0.4),
+		var(--shadow-y-1, 1px) 0.4rem 0.8rem 0px rgba(0, 0, 0, 0.3),
+		0.4rem 0.4rem 0.4rem 0px rgba(0, 0, 0, 0.2);
+	box-shadow:
+		1.5px 1.5px 0px 0px #fff,
+		-1.5px -1.5px 0px 0px rgba(136, 136, 136, 0.4),
+		var(--shadow-y-1, 1px) 0.4rem 0.8rem 0px rgba(0, 0, 0, 0.3),
+		0.4rem 0.4rem 0.4rem 0px rgba(0, 0, 0, 0.2);
+}
+.car_input_box .car_number_input {
+	padding: 1.2rem 0 1.2rem 4rem;
+	background: #fff url(../images/content/mprm/car_input_bg.svg) no-repeat left center;
+	background-size: 4rem auto;
+	border: none;
+	border-radius: 1.6rem;
+}
+.car_input_box .car_number_input .inp input {
+	height: auto;
+	padding: 1rem 3.3rem 1rem 1.4rem;
+	line-height: 3rem;
+	text-align: center;
+}
+.car_input_box .car_number_input .inp input::-webkit-input-placeholder {
+	font-weight: 700;
+	text-align: center;
+	color: var(--color-text-disabled);
+}
+.car_input_box .car_number_input .inp input::-moz-placeholder {
+	font-weight: 700;
+	text-align: center;
+	color: var(--color-text-disabled);
+}
+.car_input_box .car_number_input .inp input:-ms-input-placeholder {
+	font-weight: 700;
+	text-align: center;
+	color: var(--color-text-disabled);
+}
+.car_input_box .car_number_input .inp input::-ms-input-placeholder {
+	font-weight: 700;
+	text-align: center;
+	color: var(--color-text-disabled);
+}
+.car_input_box .car_number_input .inp input::placeholder {
+	font-weight: 700;
+	text-align: center;
+	color: var(--color-text-disabled);
 }
 /* 자동차보험 - 운전자정보 */
 /* 자동차보험 | 운전자 정보 - 운전자 범위 선택 */
