@@ -1,111 +1,104 @@
 /* 운전자보험 | 보험료확인 */
-.motion_tit {
-	.motion_tit_case01 {
-
-		
-
+.guarantee_top {
+	&_item {
+		display: none;
+		&.active {
+			display: block;
+		}
 	}
-
 }
 
 
+
 .guarantee_choice_wrap {
+	position: relative;
 	border-radius: var(--radius-large2);
-	// background-color: var(--color-surface-gray-subtler);
-	border: 1px solid var(--color-border-gray-light);
-	overflow: hidden;
+	background-color: var(--color-surface-white-subtle);
+	transition: background-color 0.3s;
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: var(--radius-large2);
+		border: 1px solid var(--color-border-gray-light);
+		pointer-events: none;
+	}
+	&.active {
+		background-color: var(--color-surface-gray-subtler);
+		&::after {
+			border: 1px solid var(--color-surface-gray-subtler);
+		}
+	}
 }
 
 .guarantee_item {
 	position: relative;
-	display: flex;
-	flex-flow: row wrap;
-	padding: 20px;
+	cursor: pointer;
+	
 
-	/*
-	.gi_radio {
-		position: absolute;
-		top: 20px;
-		left: 20px;
-		z-index: 10;
-		// opacity: 0;
-	}
 
-	.gi_label {
-		flex: none;
-		width: 50px;
-		z-index: 1;
-		&::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			border-radius: var(--radius-large2);
-			// border: 1px solid var(--color-surface-gray-subtler);
-			pointer-events: none;
-			transition: border 0.3s;
+	&_top {
+		display: flex;
+		align-items: center;
+		gap: 0 16px;
+		padding: 20px;
+		.git_l {
+			flex: none;
 		}
-	}
-	*/
-
-
-	&_ts {
-		flex: 1 1 0;
-		.fs {
+		.git_r {
+			flex: 1 1 0;
 			position: relative;
 			font-size: var(--font-size-body-medium);
-			line-height: 24px;
-			.fs_sub {
+			// line-height: 24px;
+			.git_r_sub {
 				display: block;
-				padding-top: 4px;
-				.fs_sub_point {
+				.git_r_sub_point {
 					font-weight: 700;
 				}
 			}
 		}
 
-		.af {
-			position: relative;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			font-size: var(--font-size-label-small);
-			.af_l {
-				display: block;
-				line-height: 24px;
-			}
-			.af_r {
-				.btn {
-					&.t_type {
-						position: relative;
-						z-index: 3;
-					}
-				}
-
-			}
-		}
+		
 	}
 
 	&_cont {
-		flex: none;
-		width: 100%;
-		margin-top: 20px;
-		border-top: 1px solid var(--color-divider-gray-light);
+		position: relative;
+		z-index: 1;
+		display: none;
+		padding: 20px;
+		border-radius: var(--radius-large2);
+		border: 2px solid var(--color-border-primary);
+		background-color: var(--color-surface-white-subtle);
+		.gic_inner_top {
+			position: relative;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			padding-right: 140px;
+			font-size: var(--font-size-label-small);
+			.badge_wrap {
+				flex: none;
+			}
+			.text {
+				flex: 1 1 0;
+			}
+		}
 		.gic_inner {
-			display: none;
+			// display: none;
 		}
 		.gic {
 			padding: 24px 0;
 			.tit {
 				display: block;
-				padding-top: 130px;
+				padding-top: 96px;
 				text-align: center;
 				font-size: var(--font-size-heading-small);
 				background-repeat: no-repeat;
 				background-position: top center;
-				background-size: 114px auto;
+				background-size: 80px auto;
 			}
 			.desc {
 				padding-top: 4px;
@@ -116,41 +109,68 @@
 			}
 			&.gic_01 {
 				.tit {
-					background-image: url(../images/content/prlt/img_PRDR10003000000_02.svg);
+					background-image: url(../images/content/mprl/img_MPRLTDR10003000000_02.svg);
 				}
 			}
 			&.gic_02 {
 				.tit {
-					background-image: url(../images/content/prlt/img_PRDR10003000000_03.svg);
+					background-image: url(../images/content/mprl/img_MPRLTDR10003000000_03.svg);
 				}
 			}
 			&.gic_03 {
 				.tit {
-					background-image: url(../images/content/prlt/img_PRDR10003000000_04.svg);
+					background-image: url(../images/content/mprl/img_MPRLTDR10003000000_04.svg);
 				}
 			}
 
 		}
 	}
 
+	.short_cut {
+		position: absolute;
+		top: 23px;
+		right: 20px;
+		z-index: 1;
+		display: none;
+	}
 
 
-	// style 정의
-	// .gi_radio {
-	// 	&:checked {
-	// 		+ .gi_label {
-	// 			// &::before {
-	// 			// 	background-color: var(--color-surface-white-subtle);
-	// 			// }
-	// 			&::after {
-	// 				border: 1px solid var(--color-border-primary);
-	// 			}
-	// 			+ .guarantee_item_ts {
-	// 				background-color: var(--color-surface-white-subtle);
-	// 			}
-	// 		}
-	// 	}
-	// }
+	& + & {
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 20px;
+			width: calc(100% - 40px);
+			border-bottom: 1px solid var(--color-border-gray-light);
+		}
+	}
+	& + &.active {
+		&::before {
+			content: none;
+		}
+	}
+
+	&.active {
+		.guarantee_item_top {
+			display: none;
+		}
+		.guarantee_item_cont {
+			display: block;
+		}
+		+ .guarantee_item {
+			&::before {
+				content: none;
+			}
+		}
+		.short_cut {
+			display: block;
+		}
+	}
+
+
+
+
 
 	// checked style 정의
 
