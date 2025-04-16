@@ -401,12 +401,16 @@ function fixedMenuPlay() {
 
 	setTimeout(function () {
 		$state.addClass("effect");
-	}, 1000);
+	}, 500);
 
 	$state.one("transitionend", function () {
-		setTimeout(() => {
+		setTimeout(function () {
 			$state.removeClass("effect").attr("aria-hidden", "true");
-		}, 2500);
+
+			setTimeout(function () {
+				$state.hide();
+			}, 500);
+		}, 3000);
 	});
 }
 
