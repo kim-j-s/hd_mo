@@ -77,18 +77,18 @@
 							<div class="recommend_wrap">
 								<h4 class="title_h4">인기 검색어</h4>
 								<div class="recommend_wrap_item">
-									<button type="button" class="tag_item size_m c_ty01"><span class="text">그랜져</span></button>
-									<button type="button" class="tag_item size_m c_ty01"><span class="text">쏘렌토</span></button>
-									<button type="button" class="tag_item size_m c_ty01"><span class="text">쏘나타</span></button>
-									<button type="button" class="tag_item size_m c_ty01"><span class="text">아반떼</span></button>
-									<button type="button" class="tag_item size_m c_ty01"><span class="text">모닝</span></button>
-									<button type="button" class="tag_item size_m c_ty01"><span class="text">카니발</span></button>
-									<button type="button" class="tag_item size_m c_ty01"><span class="text">투싼</span></button>
-									<button type="button" class="tag_item size_m c_ty01"><span class="text">싼타페</span></button>
-									<button type="button" class="tag_item size_m c_ty01"><span class="text">코나</span></button>
-									<button type="button" class="tag_item size_m c_ty01"><span class="text">티볼리</span></button>
-									<button type="button" class="tag_item size_m c_ty01"><span class="text">쏘울</span></button>
-									<button type="button" class="tag_item size_m c_ty01"><span class="text">무쏘</span></button>
+									<a href="#" class="tag_item size_m c_ty01"><span class="span text">그랜져</span></a>
+									<a href="#" class="tag_item size_m c_ty01"><span class="span text">쏘렌토</span></a>
+									<a href="#" class="tag_item size_m c_ty01"><span class="span text">쏘나타</span></a>
+									<a href="#" class="tag_item size_m c_ty01"><span class="span text">아반떼</span></a>
+									<a href="#" class="tag_item size_m c_ty01"><span class="span text">모닝</span></a>
+									<a href="#" class="tag_item size_m c_ty01"><span class="span text">카니발</span></a>
+									<a href="#" class="tag_item size_m c_ty01"><span class="span text">투싼</span></a>
+									<a href="#" class="tag_item size_m c_ty01"><span class="span text">싼타페</span></a>
+									<a href="#" class="tag_item size_m c_ty01"><span class="span text">코나</span></a>
+									<a href="#" class="tag_item size_m c_ty01"><span class="span text">티볼리</span></a>
+									<a href="#" class="tag_item size_m c_ty01"><span class="span text">쏘울</span></a>
+									<a href="#" class="tag_item size_m c_ty01"><span class="span text">무쏘</span></a>
 								</div>
 							</div>
 						</div>
@@ -108,9 +108,9 @@
 
 		<script>
 			$(function () {
-				console.log("자동차 상세정보 | 상품");
 				const keywords = ["그랜져", "쏘렌토", "쏘나타", "아반떼", "모닝", "카니발", "투싼", "싼타페", "코나", "티볼리", "쏘울", "무쏘"];
 
+				const $wrap = $(".autocomplete_wrap");
 				const $input = $(".autocomplete_input");
 				const $listWrap = $(".autocomplete_wrap_list");
 				const $list = $(".autocomplete_list");
@@ -144,11 +144,14 @@
 					$input.val("").trigger("input");
 				});
 
-				// 외부 클릭 시 자동완성 닫기
-				$(document).on("click", function (e) {
-					if (!$(e.target).closest(".autocomplete_wrap").length) {
-						$listWrap.removeClass("active");
-					}
+				// 포커스 아웃 시 자동완성 리스트 닫기
+				$wrap.on("focusout", function (e) {
+					// 약간의 지연을 주면 클릭 등 다른 이벤트와 충돌 방지 가능
+					setTimeout(() => {
+						if (!$(document.activeElement).closest(".autocomplete_wrap").length) {
+							$listWrap.removeClass("active");
+						}
+					}, 100);
 				});
 			});
 		</script>
