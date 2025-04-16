@@ -149,6 +149,11 @@ strong {
 .content .content_top .title_h2 + .btn_area {
 	margin-top: 0.8rem;
 }
+.content .content_top .title_h2 + .desc_area {
+	margin-top: 0.8rem;
+	color: var(--color-text-subtle);
+	font-size: var(--font-size-body-small);
+}
 .content_ty2 .content_top + .card_item_wrap {
 	margin-top: 2rem;
 }
@@ -425,6 +430,30 @@ strong {
 }
 .tsts .tsts_btn.right {
 	right: 2.4rem;
+}
+.no_list_area {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	gap: 0.4rem;
+	padding: 2.4rem 2rem;
+	color: var(--color-text-subtle);
+	font-size: var(--font-size-body-medium);
+	min-height: 16rem;
+}
+.no_list_area .hd_icon {
+	width: 3.2rem;
+	height: 3.2rem;
 }
 /* common 인증, 로딩 등 */
 /* 인증방법 선택 */
@@ -1968,6 +1997,16 @@ strong {
 .card_item_wrap + .inp_checkbox {
 	margin-top: 3.2rem;
 }
+.card_item_wrap > .card_item.disabled * {
+	color: var(--color-text-disabled) !important;
+}
+.card_item_wrap > .card_item.disabled .item_top .title_info .main_title {
+	color: inherit;
+}
+.card_item_wrap > .card_item.disabled .card_link .item_top .title_info {
+	padding-right: 2.4rem;
+	background: url(../images/icon/arrowRight_disabled_ty2.svg) no-repeat right bottom/2.4rem auto;
+}
 /* Card - information Type*/
 .card_item_wrap.info_type .card_item {
 	border: 1px solid var(--color-border-gray-light);
@@ -2359,6 +2398,9 @@ strong {
 }
 .deleteSvg {
 	background-image: url(../images/icon/icon_delete.svg);
+}
+.exclamationSvg {
+	background-image: url(../images/icon/icon_exclamation.svg);
 }
 /* input */
 .input_text {
