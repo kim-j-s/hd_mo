@@ -1,20 +1,4 @@
 
-*:not(.comp_wrap){
-	.input_text {
-		border: var(--border-width-variable-regular) solid var(--color-input-border);
-		background: var(--color-input-surface);
-		border-radius: var(--radius-medium3);
-		.inp {
-			input {
-				height: calc(var(--size-height-8) - 2px);
-				border: none;
-			}
-		}
-		&:focus-within {
-			border-color: var(--color-input-border-active);
-		}
-	}
-}
 .input_text {
 	position: relative;
 	border-radius: var(--radius-medium3);
@@ -23,13 +7,18 @@
 	gap: 8px;
 	border: var(--border-width-variable-regular) solid var(--color-input-border);
 	transition: border-color 0.3s;
+	border: var(--border-width-variable-regular) solid var(--color-input-border);
+	background: var(--color-input-surface);
+	border-radius: var(--radius-medium3);
 	.inp {
 		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		width: 100%;
+		background: transparent;
 		border-radius: inherit;
+		border: none;
 	}
 	input {
 		position: relative;
@@ -168,6 +157,18 @@
 			}
 		}
 	}
+	&:focus-within {
+		border-color: var(--color-input-border-active);
+	}
+	&.error {
+		border: 3px solid var(--color-input-border-error);
+		input {
+			height: calc(var(--size-height-8) - 6px);
+		}
+		&:focus-within {
+			border-color: var(--color-input-border-error);
+		}
+	}
 
 }
 // Error 문구
@@ -187,6 +188,19 @@
 	border-radius: var(--radius-medium3);
 	&:focus-within {
 		border-color: var(--color-text-basic);
+	}
+	
+	&.error {
+		border: 3px solid var(--color-input-border-error);
+		.input_text {
+			input {
+				height: calc(var(--size-height-8) - 6px);
+			}
+			&:focus-within {
+				border-color: var(--color-input-border-error);
+			}
+
+		}
 	}
 	.dash {
 		font-size: 16px;
@@ -273,6 +287,8 @@
 	width: 100%;
 	&.readonly,
 	&.disabled,
+	&.readonly .input_text,
+	&.disabled .input_text,
 	&.readonly input,
 	&.disabled input {
 		background-color: var(--color-input-surface-disabled);
