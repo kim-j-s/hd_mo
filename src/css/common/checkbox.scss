@@ -234,7 +234,21 @@
 
 
 	}
-
+	&.rd_box {
+		width: 100%;
+		border: 1px solid var(--color-border-gray-light);
+		border-radius: 24px;
+		input[type=checkbox] {
+			& + .chk_label {
+				padding: var(--padding-card-large);
+				padding-left: 56px;
+				&::before {
+					top: 24px;
+					left: 24px;
+				}
+			}
+		}
+	}
 	.chk_lby {
 		padding: 12px 0 0 32px;
 	}
@@ -261,5 +275,6 @@
 	&.column {
 		flex-direction: column;
 		gap: 10px;
+		width: 100%;
 	}
 }
