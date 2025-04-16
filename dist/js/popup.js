@@ -4,7 +4,7 @@
  * openHDPopup
  * popup ui를 오픈하는 함수(접근성 대응)
  *
- * @param {object} $triggerEl [필수]팝업이 닫힌 뒤에 포커스할 엘리먼트(하단에 다른 팝업이 존재할 경우 사용x)
+ * @param {object} $triggerEl [필수]팝업을 호출한 DOM(팝업이 닫힌 뒤에 포커스할 엘리먼트)
  * @param {string} target [필수]Open할 popup id
  * @returns {void}
  */
@@ -62,7 +62,6 @@ function openHDPopup($triggerEl, target) {
 
 	const activePopups = $(".popup_wrap.active").not($target);
 	if (focusTarget) {
-		console.log("test", focusTarget.css);
 		focusTarget.css("display", "none");
 		focusTarget[0].offsetHeight; //강제 reflow
 		focusTarget.css("display", "block");
@@ -87,7 +86,7 @@ function openHDPopup($triggerEl, target) {
  * closeHDPopup
  * - popup ui를 제거하는 함수(접근성 대응)
  * @param {string} target [필수]close할 popup id
- * @param {object} returnTarget [선택]팝업이 닫힌 뒤에 포커스할 엘리먼트(하단에 다른 팝업이 존재할 경우 사용x)
+ * @param {object} [returnTarget] [선택]팝업이 닫힌 뒤에 포커스할 엘리먼트(하단에 다른 팝업이 존재할 경우 사용x)
  * @returns {void}
  */
 function closeHDPopup(target, returnTarget = null) {

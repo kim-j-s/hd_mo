@@ -458,7 +458,7 @@
 	.current_state {
 		position: relative;
 		z-index: -1;
-		display: none;
+		// display: none;
 		margin-right: -30px;
 		padding: 7px 60px 7px 8px;
 		background-color: var(--color-graphic-blue-darker);
@@ -467,15 +467,14 @@
 			0px var(--shadow-y-4, 16px) var(--shadow-blur-4, 24px) 0px var(--color-alpha-shadow3, rgba(0, 0, 0, 0.12));
 		border-radius: 150px 0 0 150px;
 		opacity: 0;
-		transform: scaleY(0);
-		transform: translateX(40%);
-		transform-origin: left;
-		transition: transform .3s ease-out;
+		transform-origin: right;
+		transform: translateX(24px) scale(0);
+		transition: transform .5s ease-in-out, opacity .5s ease-in-out;
 
 		&.effect {
-			// transform: translateX(0);
-			// transform: scaleY(100%);
-			// opacity: 1;
+			width:100%;
+			transform: translateX(0) scale(100%);
+			opacity: 1;
 		}
 
 		.link_icon {
@@ -487,7 +486,6 @@
 		}
 
 		.cont {
-			min-width: 50px;
 			display: flex;
 			flex-wrap: nowrap;
 			align-items: center;
@@ -502,35 +500,6 @@
 			}
 		}
 	}
-}
-
-@keyframes zoomSlideLeft {
-  // 0% {
-	// 	// transform: scaleX(0);
-	// 	// transform: scaleX(0);
-	// 	transform: translateX(100%);
-  //   opacity: 0;
-  // }
-  // 40% {
-  //   opacity: .5;
-  // }
-  // 60% {
-  //   opacity: 1;
-  // }
-  // 100% {
-	// 	// transform: scaleX(100%);
-	// 	transform: translateX(0);
-  //   opacity: 0;
-  // }
-	0% {
-    width: 0;
-  }
-  50% {
-    width: 300px;  /* 펼쳐질 너비 */
-  }
-  100% {
-    width: 0;
-  }
 }
 
 .question_mark_btn {

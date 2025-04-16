@@ -27,23 +27,9 @@
 						</div>
 					</div>
 				</div>
-
-				<div class="card_item_wrap">
-					<div class="card_item">
-						<div class="item_inner">
-							<div class="inp_checkbox">
-								<input type="checkbox" id="card_chk1_3" name="name1" aria-labelledby="card_chk1_3_cont">
-								<label for="card_chk1_3" class="chk_label"></label>
-								<i></i>
-							</div>
-							<div class="inner_cont">
-								<div class="item_top" id="card_chk1_3_cont">
-									<div class="text">구매예정</div>
-									<div class="desc">자동차번호, 차대번호를 모르는 경우</div>
-								</div>
-							</div>
-						</div>
-					</div>
+				
+				<div class="checkbox_group_wrap column">
+					{{> cp/checkbox checkbox_class="rd_box" id="checkbox01" label_class="chk_label_ty3" labelname="구매예정" labelcont="자동차번호, 차대번호를 모르는 경우" }}
 				</div>
 
 				<div class="radio_group_wrap column car_type_option" role="radiogroup">
@@ -52,6 +38,30 @@
 					{{> cp/radio rd-class="rd_btn_s1 icon_opt3" rd-id="radio_btn_g3" name="radio_g1" labelname="화물차<br><span>적재함이 있는 자동차, 벤형 및 픽업트럭</span>" }}
 				</div>
 			</div>
+
+			<!-- s: 최근계산내역-->
+			<div class="fixed_link_wrap">
+				<div class="inner">
+					<div class="link_btn_box">
+						<button type="button" class="btn_current">
+							최근설계<br>
+							<span>3건</span>
+						</button>
+						<button type="button" class="link_close">
+							<span class="sr_only">최근계산내역 닫기</span>
+						</button>
+					</div>
+					<div class="current_state" aria-hidden="false">
+						<div class="cont">
+							<div class="link_icon"></div>
+							<div class="text">
+								최근설계내역 <strong><span>3</span>건</strong>이 있어요! 
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- e: 최근계산내역-->
 		</div>
 
 		<!-- s: 하단 고정 버튼 영역 -->
