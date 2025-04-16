@@ -177,3 +177,78 @@
 
 	  }
 }
+
+.list_depth {
+	@include list-style(
+	  	$li-padding: 0 0 0 8px,
+	  	$li-font-size: var(--font-size-body-medium),
+	  	$li-color: var(--color-text-basic),
+		$li-line-height: 1.5,
+		$li-dot-color: #33363D
+	) {
+		> li {
+			line-height: 24px;
+			&::before {
+				content: '';
+				position: absolute;
+				top: 9px;
+				left: 0;
+				width: 3px;
+				height: 3px;
+				border-radius: 50%;
+			}
+			& ~ li {
+				margin-top: 12px;
+			}
+			> ul {
+				margin-top: 12px;
+				@include list-style(
+					$li-padding: 0 0 0 8px,
+					$li-font-size: var(--font-size-body-small),
+					$li-line-height: 1.5,
+					$li-color: var(--color-text-subtle)
+				) {
+					> li {
+						&::before {
+							content: '-';
+							position: absolute;
+							top: 0;
+							left: 0;
+						}
+						& ~ li {
+							margin-top: 8px;
+						}
+						> ul {
+							margin-top: 4px;
+							@include list-style(
+								$li-padding: 0 0 0 8px,
+								$li-font-size: var(--font-size-body-xsmall),
+								$li-color: var(--color-text-information),
+								$li-line-height: 1.5,
+								$li-dot-color: #6D7882
+							) {
+								> li {
+									&::before {
+										content: '';
+										position: absolute;
+										top: 8px;
+										left: 0;
+										width: 2px;
+										height: 2px;
+										border-radius: 50%;
+									}
+									& ~ li {
+										margin-top: 4px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.point {
+			font-weight: 700;
+		}
+	}
+}
