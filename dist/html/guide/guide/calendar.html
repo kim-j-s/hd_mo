@@ -86,7 +86,7 @@
 
 		<div class="guide_h4" style="background-color: red; color: #fff">단일 선택 달력 - 버튼호출 - 미 사용 시 후 삭제 예정</div>
 		<div class="" style="font-size: 16px">
-			<button type="button" class="btn popup_open" onclick="openPop(this,'calendar');" title="Bottom 선택 팝업열기"><span>달력 호출</span></button>
+			<button type="button" class="btn popup_open" onclick="openHDPopup(this,'calendar');" title="Bottom 선택 팝업열기"><span>달력 호출</span></button>
 		</div>
 
 		<div class="guide_h4">기간 선택 달력</div>
@@ -109,7 +109,7 @@
 
 		<div class="popup_wrap bottom" id="calendar" role="dialog" aria-modal="true" aria-hidden="true">
 			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true"></div>
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('calendar');"></div>
 				<div class="popup_inner">
 					<div class="draggable" aria-hidden="true">
 						<div class="move"></div>
@@ -202,7 +202,7 @@
 							</div>
 						</div>
 					</div>
-					<button type="button" class="popup_close"><span class="blind">팝업 닫기</span></button>
+					<button type="button" class="popup_close" onclick="closeHDPopup('calendar');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>

@@ -82,22 +82,22 @@
 				</style>
 
 				<div class="guide_t">- 선택 전</div>
-				<div class="btn popup_open btn_select" role="button" title="Bottom 선택 팝업열기" onclick="openPop(this,'select_option_ty1');">
+				<div class="btn popup_open btn_select" role="button" title="Bottom 선택 팝업열기" onclick="openHDPopup(this,'select_option_ty1');">
 					<span>옵션 value</span>
 				</div>
 
 				<div class="guide_t">- 선택 후</div>
-				<div class="btn popup_open btn_select active" role="button" title="Bottom 선택 팝업열기" onclick="openPop(this,'select_option_ty1');">
+				<div class="btn popup_open btn_select active" role="button" title="Bottom 선택 팝업열기" onclick="openHDPopup(this,'select_option_ty1');">
 					<span>옵션 value</span>
 				</div>
 
 				<div class="guide_t">- 선택 불가능</div>
-				<div class="btn popup_open btn_select" role="button" title="Bottom 선택 팝업열기" aria-disabled="true" onclick="openPop(this,'select_option_ty1');">
+				<div class="btn popup_open btn_select" role="button" title="Bottom 선택 팝업열기" aria-disabled="true" onclick="openHDPopup(this,'select_option_ty1');">
 					<span>옵션 value</span>
 				</div>
 
 				<div class="guide_t">- 선택 불가능(선택된 값이 있는 상태)</div>
-				<div class="btn popup_open btn_select active" role="button" title="Bottom 선택 팝업열기" aria-disabled="true" onclick="openPop(this,'select_option_ty1');">
+				<div class="btn popup_open btn_select active" role="button" title="Bottom 선택 팝업열기" aria-disabled="true" onclick="openHDPopup(this,'select_option_ty1');">
 					<span>옵션 value</span>
 				</div>
 			</div>
@@ -123,7 +123,7 @@
 		<!-- s: Bottom 팝업 -->
 		<div class="popup_wrap bottom" id="select_option_ty1" role="dialog" aria-modal="true" aria-hidden="true">
 			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true"></div>
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('select_option_ty1');"></div>
 				<div class="popup_inner">
 					<div class="draggable" aria-hidden="true">
 						<div class="move"></div>
@@ -146,7 +146,7 @@
 							</button>
 						</div>
 					</div>
-					<button type="button" class="popup_close"><span class="blind">팝업 닫기</span></button>
+					<button type="button" class="popup_close" onclick="closeHDPopup('select_option_ty1');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>

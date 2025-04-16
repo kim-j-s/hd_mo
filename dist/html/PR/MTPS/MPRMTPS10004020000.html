@@ -88,7 +88,7 @@
 							이 있으면 체크해 주세요
 						</h2>
 						<!--TO-DO : (25-04-15 위서진) 추후 용어사전 팝업이 완성되면, popup id를 popup props에 적용해야함-->
-						<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5" onclick="openPop(this,'pop_01');" title="도움말 열기">
+						<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5" onclick="openHDPopup(this,'pop_01');" title="도움말 열기">
 							<span class="text">어려운 용어 설명을 보시려면</span>
 						</button>
 					</div>
@@ -153,7 +153,7 @@
 		<!-- s: Bottom 팝업 -->
 		<div class="popup_wrap bottom" id="pop_01" role="dialog" aria-modal="true" aria-hidden="true">
 			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true"></div>
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_01');"></div>
 				<div class="popup_inner">
 					<div class="draggable" aria-hidden="true">
 						<div class="move"></div>
@@ -177,7 +177,7 @@
 							</button>
 						</div>
 					</div>
-					<button type="button" class="popup_close"><span class="blind">팝업 닫기</span></button>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_01');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
