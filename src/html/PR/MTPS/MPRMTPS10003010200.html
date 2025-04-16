@@ -1,6 +1,6 @@
 <!---
-화면번호 : PRLT10003010200
-경로 : 2.자동차 기본정보 > 2-2.자동차번호 입력 > 동일증권여부(동일동시만 있는 경우)
+화면번호 : MPRMTPS10003010200
+경로 : 2.자동차 기본정보 > 2-2.자동차번호 입력 > 동일증권여부
 -->
 {{#> layout/default page-title="자동차 기본정보 | 상품"}}
 
@@ -25,8 +25,7 @@
 		</div>
 		<!-- e: popup_content_top -->
 
-		<!-- <div class="bg_area sticky_fix"> -->
-		<div class="bg_area">
+		<div class="bg_area sticky_fix">
 			<div class="card_item_wrap">
 				<div class="card_item">
 					<div class="item_inner">
@@ -77,8 +76,9 @@
 
 		<div class="tab_wrap">
 			<div class="tab_wrap_list_ty2" role="tablist">
+				<!-- 동일동시 또는 동일추가 한케이스만 있는 경우 해당 비활성화될 탭 버튼에 disabled 적용 -->
 				{{>cp/tab_btn tb-text="동일동시" tb-id="01" tb-active=true}}
-				{{>cp/tab_btn tb-text="동일추가" tb-id="02"}}
+				{{>cp/tab_btn tb-text="동일추가" tb-id="02" disabled=true }}
 			</div>
 
 			<!-- 동일동시 Tab 내용 -->
@@ -334,9 +334,9 @@
 
 <div class="popup_bottom">
 	<div class="btn_area">
-		{{> cp/button type="1" size="2" b-text="선택 중이에요" disabled=true }}
+		<!-- {{> cp/button type="1" size="2" b-text="선택 중이에요" disabled=true }} -->
+		{{> cp/button type="1" size="2" b-text="동일보험으로"}}
 		<!-- {{> cp/button type="1" size="2" b-text="개별 가입하기"}} -->
-		<!-- {{> cp/button type="1" size="2" b-text="동일보험으로"}} -->
 	</div>
 </div>
 {{/ popup/popup_full}}
