@@ -1,5 +1,6 @@
 /* 운전자보험 | 보험료확인 */
 .guarantee_top {
+	padding-bottom: 24px;
 	&_item {
 		display: none;
 		&.active {
@@ -8,6 +9,28 @@
 	}
 }
 
+/* 상단 이미지 영역 */
+.guarantee_visuval {
+	font-size: 0;
+	line-height: normal;
+	text-align: center;
+}
+/* 상단 이미지 영역 */
+
+// 
+
+.guarantee_list_wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 16px 0;
+	margin-top: 12px;
+}
+.gtl_special {
+	display: none;
+	&.active {
+		display: block;
+	}
+}
 
 
 .guarantee_choice_wrap {
@@ -37,9 +60,6 @@
 .guarantee_item {
 	position: relative;
 	cursor: pointer;
-	
-
-
 	&_top {
 		display: flex;
 		align-items: center;
@@ -152,12 +172,12 @@
 	}
 
 	&.active {
-		.guarantee_item_top {
-			display: none;
-		}
-		.guarantee_item_cont {
-			display: block;
-		}
+		// .guarantee_item_top {
+		// 	display: none;
+		// }
+		// .guarantee_item_cont {
+		// 	display: block;
+		// }
 		+ .guarantee_item {
 			&::before {
 				content: none;
@@ -177,3 +197,9 @@
 
 
 }
+
+/*
+guarantee_item_top
+
+guarantee_item_cont
+*/
