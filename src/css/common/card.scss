@@ -29,7 +29,7 @@
 			&.non_chk {
 				margin-top: 52px;
 			}
-		}
+		}		
 
 		.item_inner {
 			display: flex;
@@ -55,6 +55,10 @@
 				
 				.chk_label {
 					padding-left: 28px;
+
+					&:before {
+						top: 1px;
+					}
 				}
 				input:checked{
 					& ~ i {
@@ -243,6 +247,30 @@
 }
 
 
+//비활성화 케이스
+.card_item_wrap > .card_item.disabled {
+	// pointer-events: none;
+	* {
+		color: var(--color-text-disabled) !important;
+	}
+
+
+	.item_top .title_info .main_title {
+		color: inherit;
+	}
+
+	.card_link {
+		.item_top {
+			.title_info {
+				padding-right: 24px;
+				background: url(../images/icon/arrowRight_disabled_ty2.svg) no-repeat right bottom / 24px auto;
+			}
+		}
+	}
+
+}
+
+
 /* Card - information Type*/
 .card_item_wrap.info_type { 
 
@@ -262,7 +290,6 @@
 	}
 
 	.card_list_ty1 {
-
 		li {
 			.title {
 				font-size: var(--font-size-body-small);
@@ -282,7 +309,6 @@
 				}
 			}
 		}
-		
 	}
 	
 }
