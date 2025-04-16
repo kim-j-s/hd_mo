@@ -111,10 +111,98 @@
 }
 
 
+/* 검색 리스트 관련 스타일*/
+
+//search_list_type
+.popup_cont.search_list_type{
+	max-height: calc(100% - 72px);
+	overflow-y: hidden !important;
+
+	.popup_content{
+		display: flex;
+		flex-direction: column;
+		overflow-y:hidden;
+	}
+}
+
+//search_list_type2(tab_wrap내부에서 사용할 때)
+.popup_cont.search_list_type2 {
+	max-height: calc(100% - 55px);
+	overflow-y: hidden !important;
+	position:relative;
+	
+	.tab_wrap{
+		position:absolute;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		display:flex;
+		flex-direction:column;
+
+		.tab_wrap_list_ty2 { 
+			margin : 0 0 32px;
+		}
+
+		.tab_wrap_content {
+			padding: 0 24px;
+		}
+
+	}
+
+	.has_scroll.active{
+		flex:1;
+		max-height: inherit;
+		display: flex;
+		flex-direction: column;
+		overflow-y:hidden;
+	}
+
+	.search_inp_box {
+		display: flex;
+		flex-direction: column;
+		gap:12px;
+		margin-bottom: 52px;
+	}
+
+	
+}
+
+.suggestion_list_wrap {
+	display: none;
+	&.active {
+		display: block;
+	}
+
+	.title_h4 {
+		margin-bottom:16px;
+	}
+	.item_wrap {
+		display:flex;
+		gap: 8px;
+		flex-wrap:wrap;
+	}
+}
+
 .search_reult_list_container {
 	flex:1;
 	padding: 0;
 	overflow-y: auto;
+	display: none;
+	
+	&.active {
+		display: block;
+	}
+
+	.search_result_count {
+		margin-top: 16px;
+		color: var(--color-text-subtle);
+		font-size: var(--font-size-body-small);
+	}
+
+	.search_result_count + & {
+		margin-top: 12px;
+	}
 
 	ul.search_reult_list{
 
