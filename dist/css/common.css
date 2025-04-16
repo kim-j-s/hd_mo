@@ -1401,6 +1401,51 @@ strong {
 	border: 1px solid var(--color-border-disabled);
 	background: var(--color-element-disabled-light);
 }
+.hd_badge.class_type {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: 4.4rem;
+	height: 5.6rem;
+}
+.hd_badge.class_type > .text {
+	display: block;
+	padding-top: 2rem;
+	font-size: var(--font-size-label-small);
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: 2rem auto;
+}
+.hd_badge.class_type.class_type01 {
+	border: 1px solid var(--color-border-primary-light);
+	background-color: var(--color-element-primary-lighter);
+}
+.hd_badge.class_type.class_type01 > .text {
+	color: var(--color-text-primary);
+	background-image: url(../images/icon/icon_badge_bg01.svg);
+}
+.hd_badge.class_type.class_type02 {
+	border: 1px solid var(--color-border-secondary-light);
+	background-color: var(--color-element-secondary-light-blue);
+}
+.hd_badge.class_type.class_type02 > .text {
+	color: var(--color-text-secondary);
+	background-image: url(../images/icon/icon_badge_bg02.svg);
+}
+.hd_badge.class_type.class_type03 {
+	border: 1px solid var(--color-border-success-light);
+	background-color: var(--color-element-success-lighter);
+}
+.hd_badge.class_type.class_type03 > .text {
+	color: var(--color-text-success);
+	background-image: url(../images/icon/icon_badge_bg03.svg);
+}
 /* banner */
 /* Banner */
 .bann_text_wrap_ty1 {
@@ -2193,6 +2238,19 @@ strong {
 	top: 2.4rem;
 	left: 2.4rem;
 }
+.inp_checkbox.rd_box.question {
+	padding-right: 1.6rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 0.8rem;
+}
+.inp_checkbox.rd_box.question input[type="checkbox"] + .chk_label {
+	padding-right: 0;
+}
 .inp_checkbox .chk_lby {
 	padding: 1.2rem 0 0 3.2rem;
 }
@@ -2341,18 +2399,6 @@ strong {
 	background-image: url(../images/icon/icon_delete.svg);
 }
 /* input */
-*:not(.comp_wrap) .input_text {
-	border: var(--border-width-variable-regular) solid var(--color-input-border);
-	background: var(--color-input-surface);
-	border-radius: var(--radius-medium3);
-}
-*:not(.comp_wrap) .input_text .inp input {
-	height: calc(var(--size-height-8) - 0.2rem);
-	border: none;
-}
-*:not(.comp_wrap) .input_text:focus-within {
-	border-color: var(--color-input-border-active);
-}
 .input_text {
 	position: relative;
 	border-radius: var(--radius-medium3);
@@ -2366,6 +2412,9 @@ strong {
 	border: var(--border-width-variable-regular) solid var(--color-input-border);
 	-webkit-transition: border-color 0.3s;
 	transition: border-color 0.3s;
+	border: var(--border-width-variable-regular) solid var(--color-input-border);
+	background: var(--color-input-surface);
+	border-radius: var(--radius-medium3);
 }
 .input_text .inp {
 	position: relative;
@@ -2379,7 +2428,9 @@ strong {
 	-ms-flex-pack: justify;
 	justify-content: space-between;
 	width: 100%;
+	background: transparent;
 	border-radius: inherit;
+	border: none;
 }
 .input_text input {
 	position: relative;
@@ -2529,6 +2580,18 @@ strong {
 	text-overflow: ellipsis;
 	overflow: hidden;
 }
+.input_text:focus-within {
+	border-color: var(--color-input-border-active);
+}
+.input_text.error {
+	border: 0.3rem solid var(--color-input-border-error);
+}
+.input_text.error input {
+	height: calc(var(--size-height-8) - 0.6rem);
+}
+.input_text.error:focus-within {
+	border-color: var(--color-input-border-error);
+}
 .msg_success {
 	color: blue;
 }
@@ -2551,6 +2614,15 @@ strong {
 }
 .comp_wrap:focus-within {
 	border-color: var(--color-text-basic);
+}
+.comp_wrap.error {
+	border: 0.3rem solid var(--color-input-border-error);
+}
+.comp_wrap.error .input_text input {
+	height: calc(var(--size-height-8) - 0.6rem);
+}
+.comp_wrap.error .input_text:focus-within {
+	border-color: var(--color-input-border-error);
 }
 .comp_wrap .dash {
 	font-size: 1.6rem;
@@ -2652,6 +2724,8 @@ strong {
 }
 .card.readonly,
 .card.disabled,
+.card.readonly .input_text,
+.card.disabled .input_text,
 .card.readonly input,
 .card.disabled input {
 	background-color: var(--color-input-surface-disabled);

@@ -1379,36 +1379,20 @@
 }
 /* 운전자보험 - 보험료확인 */
 /* 운전자보험 | 보험료확인 */
+.guarantee_top_item {
+	display: none;
+}
+.guarantee_top_item.active {
+	display: block;
+}
 .guarantee_choice_wrap {
-	border-radius: var(--radius-large2);
-	border: 1px solid var(--color-border-gray-light);
-	overflow: hidden;
-}
-.guarantee_item {
 	position: relative;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	-ms-flex-flow: row wrap;
-	flex-flow: row wrap;
-	padding: 2rem;
+	border-radius: var(--radius-large2);
+	background-color: var(--color-surface-white-subtle);
+	-webkit-transition: background-color 0.3s;
+	transition: background-color 0.3s;
 }
-.guarantee_item .gi_radio {
-	position: absolute;
-	top: 2rem;
-	left: 2rem;
-	z-index: 10;
-}
-.guarantee_item .gi_label {
-	-webkit-box-flex: 0;
-	-ms-flex: none;
-	flex: none;
-	width: 5rem;
-	z-index: 1;
-}
-.guarantee_item .gi_label::after {
+.guarantee_choice_wrap::after {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -1416,28 +1400,57 @@
 	width: 100%;
 	height: 100%;
 	border-radius: var(--radius-large2);
+	border: 1px solid var(--color-border-gray-light);
 	pointer-events: none;
-	-webkit-transition: border 0.3s;
-	transition: border 0.3s;
 }
-.guarantee_item_ts {
+.guarantee_choice_wrap.active {
+	background-color: var(--color-surface-gray-subtler);
+}
+.guarantee_choice_wrap.active::after {
+	border: 1px solid var(--color-surface-gray-subtler);
+}
+.guarantee_item {
+	position: relative;
+	cursor: pointer;
+}
+.guarantee_item_top {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 0 1.6rem;
+	padding: 2rem;
+}
+.guarantee_item_top .git_l {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+}
+.guarantee_item_top .git_r {
 	-webkit-box-flex: 1;
 	-ms-flex: 1 1 0px;
 	flex: 1 1 0;
-}
-.guarantee_item_ts .fs {
 	position: relative;
 	font-size: var(--font-size-body-medium);
-	line-height: 2.4rem;
 }
-.guarantee_item_ts .fs .fs_sub {
+.guarantee_item_top .git_r .git_r_sub {
 	display: block;
-	padding-top: 0.4rem;
 }
-.guarantee_item_ts .fs .fs_sub .fs_sub_point {
+.guarantee_item_top .git_r .git_r_sub .git_r_sub_point {
 	font-weight: 700;
 }
-.guarantee_item_ts .af {
+.guarantee_item_cont {
+	position: relative;
+	z-index: 1;
+	display: none;
+	padding: 2rem;
+	border-radius: var(--radius-large2);
+	border: 0.2rem solid var(--color-border-primary);
+	background-color: var(--color-surface-white-subtle);
+}
+.guarantee_item_cont .gic_inner_top {
 	position: relative;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -1445,41 +1458,31 @@
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	-webkit-box-pack: justify;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
+	gap: 0.8rem;
+	padding-right: 14rem;
 	font-size: var(--font-size-label-small);
 }
-.guarantee_item_ts .af .af_l {
-	display: block;
-	line-height: 2.4rem;
-}
-.guarantee_item_ts .af .af_r .btn.t_type {
-	position: relative;
-	z-index: 3;
-}
-.guarantee_item_cont {
+.guarantee_item_cont .gic_inner_top .badge_wrap {
 	-webkit-box-flex: 0;
 	-ms-flex: none;
 	flex: none;
-	width: 100%;
-	margin-top: 2rem;
-	border-top: 1px solid var(--color-divider-gray-light);
 }
-.guarantee_item_cont .gic_inner {
-	display: none;
+.guarantee_item_cont .gic_inner_top .text {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 0px;
+	flex: 1 1 0;
 }
 .guarantee_item_cont .gic {
 	padding: 2.4rem 0;
 }
 .guarantee_item_cont .gic .tit {
 	display: block;
-	padding-top: 13rem;
+	padding-top: 9.6rem;
 	text-align: center;
 	font-size: var(--font-size-heading-small);
 	background-repeat: no-repeat;
 	background-position: top center;
-	background-size: 11.4rem auto;
+	background-size: 8rem auto;
 }
 .guarantee_item_cont .gic .desc {
 	padding-top: 0.4rem;
@@ -1489,13 +1492,43 @@
 	text-align: center;
 }
 .guarantee_item_cont .gic.gic_01 .tit {
-	background-image: url(../images/content/prlt/img_PRDR10003000000_02.svg);
+	background-image: url(../images/content/mprl/img_MPRLTDR10003000000_02.svg);
 }
 .guarantee_item_cont .gic.gic_02 .tit {
-	background-image: url(../images/content/prlt/img_PRDR10003000000_03.svg);
+	background-image: url(../images/content/mprl/img_MPRLTDR10003000000_03.svg);
 }
 .guarantee_item_cont .gic.gic_03 .tit {
-	background-image: url(../images/content/prlt/img_PRDR10003000000_04.svg);
+	background-image: url(../images/content/mprl/img_MPRLTDR10003000000_04.svg);
+}
+.guarantee_item .short_cut {
+	position: absolute;
+	top: 2.3rem;
+	right: 2rem;
+	z-index: 1;
+	display: none;
+}
+.guarantee_item + .guarantee_item::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 2rem;
+	width: calc(100% - 4rem);
+	border-bottom: 1px solid var(--color-border-gray-light);
+}
+.guarantee_item + .guarantee_item.active::before {
+	content: none;
+}
+.guarantee_item.active .guarantee_item_top {
+	display: none;
+}
+.guarantee_item.active .guarantee_item_cont {
+	display: block;
+}
+.guarantee_item.active + .guarantee_item::before {
+	content: none;
+}
+.guarantee_item.active .short_cut {
+	display: block;
 }
 /* 운전자보험 - 보험료 계산결과 */
 /* 자동차보험 | 6.보험료 계산결과 */
