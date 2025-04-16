@@ -1,6 +1,6 @@
 <!---
-화면번호 : PRLT10003010000
-경로 : 2.자동차 기본정보 > 2-2.자동차번호 입력
+화면번호 : MPRGIPT30004000000
+경로 :  상품 > 펫 > 기존계약목록(case 1: 갱신가능한 계약이 있는 상태)
 -->
 <!doctype html>
 <html lang="ko">
@@ -40,7 +40,7 @@
 		<script type="text/javascript" src="../../../js/dragging.js"></script>
 		<script type="text/javascript" src="../../../js/stepper.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
-		<title>자동차 기본정보 | 상품 - 현대해상 다이렉트</title>
+		<title>기존계약목록 | 상품 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -56,7 +56,7 @@
 					</div>
 
 					<div class="header_connect">
-						<h1 class="header_title">타이틀</h1>
+						<h1 class="header_title">하이펫보험(1~3년)</h1>
 					</div>
 
 					<div class="right">
@@ -81,123 +81,110 @@
 					<!-- s: content_top -->
 					<div class="content_top">
 						<h2 class="title_h2">
-							<strong>자동차번호</strong>
-							또는
-							<br />
-							<strong>차대번호</strong>
-							를 입력해 주세요
+							<strong>가입 내역을 확인</strong>
+							해 주세요
 						</h2>
-						<div class="btn_area basic">
-							<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5">
-								<span class="text">보험만기일, 중고차, 신차 안내</span>
-							</button>
+						<div class="desc_area">
+							<p class="point">갱신(재가입)하려는 계약을 선택해 주세요.</p>
+							<p>만기 14일 전부터 만기일까지 갱신(재가입) 가능합니다.</p>
 						</div>
 					</div>
 					<!-- e: content_top -->
 
-					<div class="form_group_wrap">
-						<div class="form_line">
-							<div class="label_tit">자동차번호 7~9자리, 차대번호 17자리</div>
-							<!-- s: 25-04-17 수정 -->
-							<div class="car_input_box">
-								<!-- 에러 메시지 시, error 클래스 추가 -->
-								<div class="input_text car_number_input error">
-									<div class="inp">
-										<input type="text" placeholder="123가4567" minlength="7" maxlength="17" title="자동차 또는 차대번호 입력" />
-										<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-									</div>
-								</div>
-								<p class="msg_error">자동차 번호, 또는 차대번호를 입력해 주세요.</p>
-							</div>
-							<!-- e: 25-04-17 수정 -->
-						</div>
-					</div>
+					<div class="card_item_wrap">
+						<div class="card_item">
+							<div class="item_inner">
+								<div class="inner_cont">
+									<a href="#" role="button" class="card_link" id="card_chk1_cont">
+										<div class="item_top">
+											<div class="badge_wrap">
+												<span class="hd_badge outline solid_pastel c_primary size_m">만기 D-12일</span>
+											</div>
+											<div class="title_info">
+												<div class="main_title">$펫이름$($품종$)</div>
+											</div>
+										</div>
+									</a>
 
-					<div class="checkbox_group_wrap column">
-						<div class="inp_checkbox rd_box">
-							<input type="checkbox" id="checkbox01" />
-							<label for="checkbox01" class="chk_label chk_label_ty3">
-								<span class="label_cont">
-									구매예정
-									<span class="sub_g_txt">자동차번호, 차대번호를 모르는 경우</span>
-								</span>
-							</label>
-						</div>
-					</div>
-
-					<div class="radio_group_wrap column car_type_option" role="radiogroup">
-						<div class="inp_radio rd_btn_s1 icon_opt1">
-							<input type="radio" id="radio_btn_g1" name="radio_g1" checked />
-							<label for="radio_btn_g1">
-								<span class="label_cont">
-									승용차
-									<br />
-									<span>승차정원 10인 이하</span>
-								</span>
-							</label>
-						</div>
-						<div class="inp_radio rd_btn_s1 icon_opt2">
-							<input type="radio" id="radio_btn_g2" name="radio_g1" />
-							<label for="radio_btn_g2">
-								<span class="label_cont">
-									승합차
-									<br />
-									<span>승차정원 11인 이하</span>
-								</span>
-							</label>
-						</div>
-						<div class="inp_radio rd_btn_s1 icon_opt3">
-							<input type="radio" id="radio_btn_g3" name="radio_g1" />
-							<label for="radio_btn_g3">
-								<span class="label_cont">
-									화물차
-									<br />
-									<span>적재함이 있는 자동차, 벤형 및 픽업트럭</span>
-								</span>
-							</label>
-						</div>
-					</div>
-				</div>
-
-				<!-- s: 최근계산내역-->
-				<div class="fixed_link_wrap">
-					<div class="inner">
-						<div class="link_btn_box">
-							<button type="button" class="btn_current">
-								최근설계
-								<br />
-								<span>3건</span>
-							</button>
-							<button type="button" class="link_close">
-								<span class="sr_only">최근계산내역 닫기</span>
-							</button>
-						</div>
-						<div class="current_state" aria-hidden="false">
-							<div class="cont">
-								<div class="link_icon"></div>
-								<div class="text">
-									최근설계내역
-									<strong>
-										<span>3</span>
-										건
-									</strong>
-									이 있어요!
+									<ul class="card_list_ty1">
+										<li>
+											<div class="title">생년월일·성별</div>
+											<div class="cont">2020.02.02·여아</div>
+										</li>
+										<li>
+											<div class="title">등록번호</div>
+											<div class="cont">410160012224292</div>
+										</li>
+										<li>
+											<div class="title">보험기간</div>
+											<div class="cont">2024.03.25~2025.03.25</div>
+										</li>
+										<li class="result">
+											<div class="title">월보험료</div>
+											<div class="cont">
+												<p class="text_body_large">
+													<strong>
+														<span class="primary">48,750</span>
+														원
+													</strong>
+												</p>
+											</div>
+										</li>
+									</ul>
 								</div>
 							</div>
 						</div>
+
+						<!-- s: disabled 케이스 -->
+						<div class="card_item disabled">
+							<div class="item_inner">
+								<div class="inner_cont">
+									<a href="#" role="button" class="card_link" id="card_chk1_cont">
+										<div class="item_top">
+											<div class="badge_wrap">
+												<span class="hd_badge outline solid_pastel disabled size_m">만기 D-1,095일</span>
+											</div>
+											<div class="title_info">
+												<div class="main_title">$펫이름$($품종$)</div>
+											</div>
+										</div>
+									</a>
+
+									<ul class="card_list_ty1">
+										<li>
+											<div class="title">생년월일·성별</div>
+											<div class="cont">2020.02.02·여아</div>
+										</li>
+										<li>
+											<div class="title">등록번호</div>
+											<div class="cont">410160012224292</div>
+										</li>
+										<li>
+											<div class="title">보험기간</div>
+											<div class="cont">2024.03.25~2025.03.25</div>
+										</li>
+										<li class="result">
+											<div class="title">월보험료</div>
+											<div class="cont">
+												<p class="text_body_large">
+													<strong>
+														<span class="primary">48,750</span>
+														원
+													</strong>
+												</p>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- e: disabled 케이스 -->
 					</div>
 				</div>
-				<!-- e: 최근계산내역-->
 			</div>
 
 			<!-- s: 하단 고정 버튼 영역 -->
-			<div class="bottom_fix_wrap">
-				<div class="btn_area">
-					<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2 full" onclick="openHDPopup(this,'pop_type01');">
-						<span class="text">승용차 차량번호로</span>
-					</button>
-				</div>
-			</div>
+			<div class="bottom_fix_wrap"></div>
 			<!-- s: 하단 고정 버튼 영역 -->
 		</div>
 

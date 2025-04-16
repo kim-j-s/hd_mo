@@ -149,6 +149,11 @@ strong {
 .content .content_top .title_h2 + .btn_area {
 	margin-top: 0.8rem;
 }
+.content .content_top .title_h2 + .desc_area {
+	margin-top: 0.8rem;
+	color: var(--color-text-subtle);
+	font-size: var(--font-size-body-small);
+}
 .content_ty2 .content_top + .card_item_wrap {
 	margin-top: 2rem;
 }
@@ -425,6 +430,30 @@ strong {
 }
 .tsts .tsts_btn.right {
 	right: 2.4rem;
+}
+.no_list_area {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	gap: 0.4rem;
+	padding: 2.4rem 2rem;
+	color: var(--color-text-subtle);
+	font-size: var(--font-size-body-medium);
+	min-height: 16rem;
+}
+.no_list_area .hd_icon {
+	width: 3.2rem;
+	height: 3.2rem;
 }
 /* common 인증, 로딩 등 */
 /* 인증방법 선택 */
@@ -1853,13 +1882,20 @@ strong {
 	padding-top: 1.6rem;
 	border-top: 1px solid #e1e3ea;
 }
+.card_item_wrap .card_item .item_inner .inp_radio,
 .card_item_wrap .card_item .item_inner .inp_checkbox {
 	position: static;
 	width: 2.8rem;
 }
+.card_item_wrap .card_item .item_inner .inp_radio .chk_label,
 .card_item_wrap .card_item .item_inner .inp_checkbox .chk_label {
 	padding-left: 2.8rem;
 }
+.card_item_wrap .card_item .item_inner .inp_radio .chk_label:before,
+.card_item_wrap .card_item .item_inner .inp_checkbox .chk_label:before {
+	top: 1px;
+}
+.card_item_wrap .card_item .item_inner .inp_radio input:checked ~ i,
 .card_item_wrap .card_item .item_inner .inp_checkbox input:checked ~ i {
 	position: absolute;
 	top: -1px;
@@ -2005,6 +2041,16 @@ strong {
 }
 .card_item_wrap + .inp_checkbox {
 	margin-top: 3.2rem;
+}
+.card_item_wrap > .card_item.disabled * {
+	color: var(--color-text-disabled) !important;
+}
+.card_item_wrap > .card_item.disabled .item_top .title_info .main_title {
+	color: inherit;
+}
+.card_item_wrap > .card_item.disabled .card_link .item_top .title_info {
+	padding-right: 2.4rem;
+	background: url(../images/icon/arrowRight_disabled_ty2.svg) no-repeat right bottom/2.4rem auto;
 }
 /* Card - information Type*/
 .card_item_wrap.info_type .card_item {
@@ -2397,6 +2443,9 @@ strong {
 }
 .deleteSvg {
 	background-image: url(../images/icon/icon_delete.svg);
+}
+.exclamationSvg {
+	background-image: url(../images/icon/icon_exclamation.svg);
 }
 /* input */
 .input_text {
@@ -2896,11 +2945,7 @@ strong {
 	background: url(../images/icon/info_ty2.svg) no-repeat center/contain;
 }
 .form_group_wrap .form_line ~ .form_line {
-	margin-top: 3.2rem;
-}
-.form_group_wrap .form_line:has(.price_wrap.result) {
-	margin-left: -1.6rem;
-	margin-right: -1.6rem;
+	margin-top: 1.6rem;
 }
 .form_group_wrap .form_line .line_group {
 	display: -webkit-box;
@@ -2912,6 +2957,13 @@ strong {
 	-webkit-box-flex: 1;
 	-ms-flex: 1;
 	flex: 1;
+}
+.form_group_wrap .form_line button.full {
+	width: 100%;
+}
+.form_group_wrap .ex_text {
+	margin-top: 1.6rem;
+	font-size: var(--font-size-label-medium);
 }
 .range_calrendar {
 	display: -webkit-box;
@@ -3669,6 +3721,9 @@ strong {
 [class^="title_h"] .ext {
 	font-weight: 400;
 }
+[class^="title_h"] + .title_sub {
+	margin-top: 0.8rem;
+}
 .title_h1 {
 	font-size: var(--font-size-heading-xlarge);
 	color: var(--color-text-subtle);
@@ -3695,11 +3750,12 @@ strong {
 	font-size: var(--font-size-heading-xxsmall);
 }
 .title_sub {
-	font-size: var(--font-size-body-large);
-	line-height: 2.8rem;
+	font-size: var(--font-size-body-small);
+	line-height: 2.1rem;
+	color: var(--color-text-subtle);
 }
-.title_sub + .select_rolling_opt {
-	padding-top: 1.6rem;
+.title_sub + .btn_area {
+	margin-top: 0.8rem;
 }
 .text_sub {
 	font-size: var(--font-size-body-medium);
@@ -3809,22 +3865,24 @@ strong {
 .tooltip_wrap .tooltip_head.active::after {
 	content: "";
 	position: absolute;
-	left: calc(50% - 0.4rem);
-	top: calc(100% + 0.4rem);
+	left: calc(50% - 0.7rem);
+	top: calc(100% - 0.4rem);
 	width: 0.8rem;
 	height: 0.8rem;
 	pointer-events: none;
-	background-color: var(--color-element-gray-dark);
-	clip-path: path("M4.74763 0.335971L7.81713 3.79145C7.93493 3.92407 8 4.09529 8 4.27268C8 4.67287 7.67558 4.99729 7.27539 4.99729H0.724613C0.32442 4.99729 0 4.67287 0 4.27268C0 4.09529 0.0650669 3.92407 0.182872 3.79145L3.25237 0.335971C3.65019 -0.111871 4.34981 -0.111871 4.74763 0.335971Z");
+	border: 0.8rem solid var(--color-element-information);
+	border-left-color: transparent;
+	border-right-color: transparent;
+	border-top-color: transparent;
 }
 .tooltip_wrap .tooltip_head.top::after {
-	top: -0.7rem;
+	top: -1.1rem;
 	-webkit-transform: scaleY(-1);
 	transform: scaleY(-1);
 }
 .tooltip_wrap .tooltip_head.top.active + .tooltip_panel {
 	margin-top: 0;
-	bottom: 2.75rem;
+	bottom: 2.85rem;
 	top: auto;
 }
 .tooltip_wrap .tooltip_panel {
@@ -3834,7 +3892,7 @@ strong {
 	position: absolute;
 	width: calc(100vw - 4rem);
 	z-index: 10;
-	top: calc(100% + 0.4rem);
+	top: calc(100% + 0.95rem);
 	border-radius: var(--radius-medium1, 12px);
 	background: var(--color-element-information);
 	-webkit-box-shadow: 0px var(--shadow-y-3) var(--shadow-blur-3) 0px var(--color-alpha-shadow3, rgba(0, 0, 0, 0.12));
@@ -3846,7 +3904,7 @@ strong {
 	box-sizing: border-box;
 	display: none;
 	padding: 1.2rem 1.6rem;
-	background-color: var(--color-element-gray-dark);
+	background-color: var(--color-element-information);
 	border-radius: 1rem;
 	color: #ffffff;
 	text-align: left;
@@ -3899,7 +3957,6 @@ strong {
 	right: 1.6rem;
 	width: 1.6rem;
 	height: 1.6rem;
-	background-color: blue;
 	background: url(../images/icon/close_ty2.svg) no-repeat center/contain;
 }
 .tooltip_wrap .tooltip_wrap_text {
@@ -3913,12 +3970,21 @@ strong {
 	line-height: 2.4rem;
 }
 .title_has_tooltip > .tooltip_wrap .tooltip_head {
-	-webkit-transform: translateY(0.2rem);
-	transform: translateY(0.2rem);
+	-webkit-transform: translateY(0.4rem);
+	transform: translateY(0.4rem);
+}
+.title_has_tooltip > .tooltip_wrap .tooltip_head.active::after {
+	left: calc(50% - 0.7rem);
+	top: calc(100% - 0.3rem);
 }
 .title_has_tooltip .tooltip_wrap .tooltip_panel {
-	top: calc(100% + 0.6rem);
+	top: calc(100% + 1rem);
+}
+.title_has_tooltip .tooltip_wrap .tooltip_head.top.top::after {
+	top: -1.1rem;
+	-webkit-transform: scaleY(-1);
+	transform: scaleY(-1);
 }
 .title_has_tooltip .tooltip_wrap .tooltip_head.top + .tooltip_panel {
-	bottom: 2.6rem;
+	bottom: 2.8rem;
 }
