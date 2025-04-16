@@ -385,25 +385,33 @@ function tabScroll(){
 
 // 최근설계내역
 function currentPlan() {
-	const $plan_area = $('.fixed_link_wrap'),
+	const $bottom = $('.bottom_fix_wrap'),
+				$bottom_h = $bottom.outerHeight(),
+				$plan_area = $('.fixed_link_wrap'),
 				$link_btn = $plan_area.find('.link_btn_box').children('.btn_current'),
 				$close_btn = $plan_area.find('.link_btn_box').children('.link_close');
 
+	if($bottom.length) {
+		$plan_area.css('bottom', $bottom_h + 12);
+	}
+
 	$(document).on('click', '.link_btn_box .link_close', function(){
 		$(this).closest('.fixed_link_wrap').remove();
-	})
+	});
 }
 
-function oncePlan() {
+function fixedMenuPlay() {
 	const $state = $('.fixed_link_wrap').find('.current_state');
 
 	setTimeout(function(){
 		$state.addClass('effect');
-	}, 1500);
-
-	// setTimeout(function(){
-	// 	$state.removeClass('effect');
-	// }, 6000);
+	}, 1000);
+	
+	$state.one('transitionend', function () {
+		setTimeout(() => {
+			$state.removeClass('effect').attr('aria-hidden', 'true');
+		}, 2500);
+	});
 }
 
 $(function(){
@@ -411,7 +419,7 @@ $(function(){
 	tabScroll();
 
 	currentPlan();
-	oncePlan();
+	fixedMenuPlay();
 
 	//input disabled&readonly
 	$('.input_text input').each(function() {
