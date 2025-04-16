@@ -1147,7 +1147,6 @@ strong {
 .fixed_link_wrap .current_state {
 	position: relative;
 	z-index: -1;
-	display: none;
 	margin-right: -3rem;
 	padding: 0.7rem 6rem 0.7rem 0.8rem;
 	background-color: var(--color-graphic-blue-darker);
@@ -1159,18 +1158,29 @@ strong {
 		0px var(--shadow-y-4, 16px) var(--shadow-blur-4, 24px) 0px var(--color-alpha-shadow3, rgba(0, 0, 0, 0.12));
 	border-radius: 15rem 0 0 15rem;
 	opacity: 0;
-	-webkit-transform: scaleY(0);
-	transform: scaleY(0);
-	-webkit-transform: translateX(40%);
-	transform: translateX(40%);
-	-webkit-transform-origin: left;
-	transform-origin: left;
-	-webkit-transition: -webkit-transform 0.3s ease-out;
-	transition: -webkit-transform 0.3s ease-out;
-	transition: transform 0.3s ease-out;
+	-webkit-transform-origin: right;
+	transform-origin: right;
+	-webkit-transform: translateX(2.4rem) scale(0);
+	transform: translateX(2.4rem) scale(0);
+	-webkit-transition:
+		opacity 0.5s ease-in-out,
+		-webkit-transform 0.5s ease-in-out;
 	transition:
-		transform 0.3s ease-out,
-		-webkit-transform 0.3s ease-out;
+		opacity 0.5s ease-in-out,
+		-webkit-transform 0.5s ease-in-out;
+	transition:
+		transform 0.5s ease-in-out,
+		opacity 0.5s ease-in-out;
+	transition:
+		transform 0.5s ease-in-out,
+		opacity 0.5s ease-in-out,
+		-webkit-transform 0.5s ease-in-out;
+}
+.fixed_link_wrap .current_state.effect {
+	width: 100%;
+	-webkit-transform: translateX(0) scale(100%);
+	transform: translateX(0) scale(100%);
+	opacity: 1;
 }
 .fixed_link_wrap .current_state .link_icon {
 	width: 2.4rem;
@@ -1181,7 +1191,6 @@ strong {
 	flex-shrink: 0;
 }
 .fixed_link_wrap .current_state .cont {
-	min-width: 5rem;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -1198,28 +1207,6 @@ strong {
 }
 .fixed_link_wrap .current_state .cont strong {
 	font-weight: 700;
-}
-@-webkit-keyframes zoomSlideLeft {
-	0% {
-		width: 0;
-	}
-	50% {
-		width: 30rem; /* 펼쳐질 너비 */
-	}
-	100% {
-		width: 0;
-	}
-}
-@keyframes zoomSlideLeft {
-	0% {
-		width: 0;
-	}
-	50% {
-		width: 30rem; /* 펼쳐질 너비 */
-	}
-	100% {
-		width: 0;
-	}
 }
 /* button_tag */
 .tag_item {
