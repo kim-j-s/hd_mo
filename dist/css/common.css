@@ -191,6 +191,15 @@ strong {
 	font-weight: 700;
 	line-height: 150%;
 }
+/* 개발에서 제어하는 부분 */
+.case_dp {
+	display: none;
+}
+.case_dp.active {
+	display: block;
+}
+/* 개발에서 제어하는 부분 */
+/* info_box */
 .info_box {
 	padding: var(--padding-card-medium) var(--padding-card-small);
 	background-color: var(--color-surface-secondary-subtler);
@@ -211,8 +220,14 @@ strong {
 .info_box + .chk_group_wrap {
 	margin-top: 5.2rem;
 }
+.info_box [class^="title_h"] + [class^="list_ty"] {
+	margin-top: 1.6rem;
+}
 .info_box [class^="list_ty"] > li {
 	color: var(--color-text-basic);
+}
+.info_box .img_area + * {
+	margin-top: 1.6rem;
 }
 .car_alarm_box {
 	display: -webkit-box;
@@ -251,14 +266,6 @@ strong {
 	line-height: 2.4rem;
 	color: #464c53;
 }
-/* 개발에서 제어하는 부분 */
-.case_dp {
-	display: none;
-}
-.case_dp.active {
-	display: block;
-}
-/* 개발에서 제어하는 부분 */
 .bg_area {
 	margin: 0 -2.4rem;
 	padding: 3.2rem 2.4rem;
@@ -268,6 +275,12 @@ strong {
 	position: sticky;
 	top: 0;
 	z-index: 10;
+}
+.img_area {
+	text-align: center;
+}
+.img_area + * {
+	margin-top: 5.2rem;
 }
 .popup_wrap.bottom .select_rolling_opt {
 	margin: 0 -2.4rem;
@@ -799,6 +812,16 @@ strong {
 	align-items: center;
 }
 .btn_area.between > * {
+	-webkit-box-flex: 0;
+	-ms-flex: 0 1 auto;
+	flex: 0 1 auto;
+}
+.btn_area.center {
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+.btn_area.center > * {
 	-webkit-box-flex: 0;
 	-ms-flex: 0 1 auto;
 	flex: 0 1 auto;
@@ -2402,6 +2425,9 @@ strong {
 .exclamationSvg {
 	background-image: url(../images/icon/icon_exclamation.svg);
 }
+.carmeraSvg {
+	background-image: url(../images/icon/icon_carmera.svg);
+}
 /* input */
 .input_text {
 	position: relative;
@@ -3711,6 +3737,9 @@ strong {
 }
 .title_sub + .btn_area {
 	margin-top: 0.8rem;
+}
+.title_sub + .img_area {
+	margin-top: 2rem;
 }
 .text_sub {
 	font-size: var(--font-size-body-medium);
