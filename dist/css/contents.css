@@ -865,6 +865,12 @@
 .insurance_policyBox .progress_box .ing i.end.right:before {
 	right: -0.2rem;
 }
+.car_type_option input[type="radio"] label {
+	border-radius: 1.6rem;
+}
+.car_type_option input[type="radio"]:checked + label:after {
+	border-radius: 1.6rem;
+}
 .car_type_option .label_cont {
 	width: 100%;
 	padding: 1.6rem 0 1.6rem 4.4rem;
@@ -889,11 +895,15 @@
 .car_type_option .icon_opt3 .label_cont {
 	background-image: url(../images/content/mtps/icon_car_type_option3.svg);
 }
-.car_input_box {
+.car_input_box .car_number_input {
 	position: relative;
 	padding: 0.3rem;
+	border: none;
 }
-.car_input_box:before {
+.car_input_box .car_number_input.error:before {
+	background: var(--color-input-border-error);
+}
+.car_input_box .car_number_input:before {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -915,9 +925,9 @@
 		var(--shadow-y-1, 1px) 0.4rem 0.8rem 0px rgba(0, 0, 0, 0.3),
 		0.4rem 0.4rem 0.4rem 0px rgba(0, 0, 0, 0.2);
 }
-.car_input_box .car_number_input {
+.car_input_box .car_number_input .inp {
 	padding: 1.2rem 0 1.2rem 4rem;
-	background: #fff url(../images/content/mprm/car_input_bg.svg) no-repeat left center;
+	background: #fff url(../images/content/mtps/car_input_bg.svg) no-repeat left center;
 	background-size: 4rem auto;
 	border: none;
 	border-radius: 1.6rem;
@@ -952,6 +962,9 @@
 	font-weight: 700;
 	text-align: center;
 	color: var(--color-text-disabled);
+}
+.car_input_box .msg_fail {
+	margin-top: 0.8rem;
 }
 .autocomplete_wrap + .recommend_wrap {
 	margin-top: 5.2rem;
@@ -1061,10 +1074,10 @@
 	background-color: #d9d9d9;
 }
 .relationship_box .rel_case1 > span.ty1 {
-	background-image: url(../images/content/prlt/img_rel_case1.svg);
+	background-image: url(../images/content/mtps/img_rel_case1.svg);
 }
 .relationship_box .rel_case1 > span.ty2 {
-	background-image: url(../images/content/prlt/img_rel_case1_2.svg);
+	background-image: url(../images/content/mtps/img_rel_case1_2.svg);
 }
 .relationship_box .rel_case1:after {
 	content: "";
@@ -1083,7 +1096,7 @@
 }
 .relationship_box .rel_case2 > span {
 	width: 9rem;
-	background-image: url(../images/content/prlt/img_rel_case2.svg);
+	background-image: url(../images/content/mtps/img_rel_case2.svg);
 }
 .relationship_box .rel_case2 > span:before {
 	content: "";
@@ -1114,7 +1127,7 @@
 }
 .relationship_box .rel_case3 > span {
 	width: 9rem;
-	background-image: url(../images/content/prlt/img_rel_case3.svg);
+	background-image: url(../images/content/mtps/img_rel_case3.svg);
 }
 .relationship_box .rel_case3 > span:before {
 	content: "";
@@ -1142,7 +1155,7 @@
 	right: 0;
 }
 .relationship_box .rel_case4 > span {
-	background-image: url(../images/content/prlt/img_rel_case4.svg);
+	background-image: url(../images/content/mtps/img_rel_case4.svg);
 }
 .relationship_box .rel_case5 {
 	bottom: 0;
@@ -1154,14 +1167,14 @@
 }
 .relationship_box .rel_case5 > span {
 	width: 19.6rem;
-	background-image: url(../images/content/prlt/img_rel_case5.svg);
+	background-image: url(../images/content/mtps/img_rel_case5.svg);
 }
 .relationship_box .rel_case6 {
 	bottom: 0;
 	right: 0;
 }
 .relationship_box .rel_case6 > span {
-	background-image: url(../images/content/prlt/img_rel_case6.svg);
+	background-image: url(../images/content/mtps/img_rel_case6.svg);
 }
 .relationship_box.pick1 .rel_case2:before {
 	opacity: 1;
@@ -1170,7 +1183,7 @@
 	font-weight: 700;
 }
 .relationship_box.pick1 .rel_case2 > span {
-	background-image: url(../images/content/prlt/img_rel_case2_on.svg);
+	background-image: url(../images/content/mtps/img_rel_case2_on.svg);
 }
 .relationship_box.pick2 .rel_case2:before {
 	opacity: 1;
@@ -1179,7 +1192,7 @@
 	font-weight: 700;
 }
 .relationship_box.pick2 .rel_case2 > span {
-	background-image: url(../images/content/prlt/img_rel_case2_on.svg);
+	background-image: url(../images/content/mtps/img_rel_case2_on.svg);
 }
 .relationship_box.pick2 .rel_case3:before {
 	opacity: 1;
@@ -1188,7 +1201,7 @@
 	font-weight: 700;
 }
 .relationship_box.pick2 .rel_case3 > span {
-	background-image: url(../images/content/prlt/img_rel_case3_on.svg);
+	background-image: url(../images/content/mtps/img_rel_case3_on.svg);
 }
 .relationship_box.pick3 .rel_case1:before {
 	opacity: 1;
@@ -1197,10 +1210,10 @@
 	font-weight: 700;
 }
 .relationship_box.pick3 .rel_case1 > span.ty1 {
-	background-image: url(../images/content/prlt/img_rel_case1_on.svg);
+	background-image: url(../images/content/mtps/img_rel_case1_on.svg);
 }
 .relationship_box.pick3 .rel_case1 > span.ty2 {
-	background-image: url(../images/content/prlt/img_rel_case1_2_on.svg);
+	background-image: url(../images/content/mtps/img_rel_case1_2_on.svg);
 }
 .relationship_box.pick3 .rel_case2:before {
 	opacity: 1;
@@ -1209,7 +1222,7 @@
 	font-weight: 700;
 }
 .relationship_box.pick3 .rel_case2 > span {
-	background-image: url(../images/content/prlt/img_rel_case2_on.svg);
+	background-image: url(../images/content/mtps/img_rel_case2_on.svg);
 }
 .relationship_box.pick3 .rel_case3:before {
 	opacity: 1;
@@ -1218,7 +1231,7 @@
 	font-weight: 700;
 }
 .relationship_box.pick3 .rel_case3 > span {
-	background-image: url(../images/content/prlt/img_rel_case3_on.svg);
+	background-image: url(../images/content/mtps/img_rel_case3_on.svg);
 }
 .relationship_box.pick3 .rel_case5:before {
 	opacity: 1;
@@ -1227,7 +1240,7 @@
 	font-weight: 700;
 }
 .relationship_box.pick3 .rel_case5 > span {
-	background-image: url(../images/content/prlt/img_rel_case5_on.svg);
+	background-image: url(../images/content/mtps/img_rel_case5_on.svg);
 }
 .relationship_box.pick4 [class^="rel_case"]:before {
 	opacity: 1;
@@ -1236,25 +1249,25 @@
 	font-weight: 700;
 }
 .relationship_box.pick4 .rel_case1 > span.ty1 {
-	background-image: url(../images/content/prlt/img_rel_case1_on.svg);
+	background-image: url(../images/content/mtps/img_rel_case1_on.svg);
 }
 .relationship_box.pick4 .rel_case1 > span.ty2 {
-	background-image: url(../images/content/prlt/img_rel_case1_2_on.svg);
+	background-image: url(../images/content/mtps/img_rel_case1_2_on.svg);
 }
 .relationship_box.pick4 .rel_case2 > span {
-	background-image: url("../images/content/prlt/img_rel_case2_on.svg");
+	background-image: url("../images/content/mtps/img_rel_case2_on.svg");
 }
 .relationship_box.pick4 .rel_case3 > span {
-	background-image: url("../images/content/prlt/img_rel_case3_on.svg");
+	background-image: url("../images/content/mtps/img_rel_case3_on.svg");
 }
 .relationship_box.pick4 .rel_case4 > span {
-	background-image: url("../images/content/prlt/img_rel_case4_on.svg");
+	background-image: url("../images/content/mtps/img_rel_case4_on.svg");
 }
 .relationship_box.pick4 .rel_case5 > span {
-	background-image: url("../images/content/prlt/img_rel_case5_on.svg");
+	background-image: url("../images/content/mtps/img_rel_case5_on.svg");
 }
 .relationship_box.pick4 .rel_case6 > span {
-	background-image: url("../images/content/prlt/img_rel_case6_on.svg");
+	background-image: url("../images/content/mtps/img_rel_case6_on.svg");
 }
 .relationship_box.pick5 .rel_case4:before {
 	opacity: 1;
@@ -1263,7 +1276,7 @@
 	font-weight: 700;
 }
 .relationship_box.pick5 .rel_case4 > span {
-	background-image: url(../images/content/prlt/img_rel_case4_on.svg);
+	background-image: url(../images/content/mtps/img_rel_case4_on.svg);
 }
 .relationship_box.pick6 .rel_case2:before {
 	opacity: 1;
@@ -1272,7 +1285,7 @@
 	font-weight: 700;
 }
 .relationship_box.pick6 .rel_case2 > span {
-	background-image: url(../images/content/prlt/img_rel_case2_on.svg);
+	background-image: url(../images/content/mtps/img_rel_case2_on.svg);
 }
 .relationship_box.pick6 .rel_case6:before {
 	opacity: 1;
@@ -1281,7 +1294,7 @@
 	font-weight: 700;
 }
 .relationship_box.pick6 .rel_case6 > span {
-	background-image: url(../images/content/prlt/img_rel_case6_on.svg);
+	background-image: url(../images/content/mtps/img_rel_case6_on.svg);
 }
 .relationship_box.pick7 .rel_case2:before {
 	opacity: 1;
@@ -1290,7 +1303,7 @@
 	font-weight: 700;
 }
 .relationship_box.pick7 .rel_case2 > span {
-	background-image: url(../images/content/prlt/img_rel_case2_on.svg);
+	background-image: url(../images/content/mtps/img_rel_case2_on.svg);
 }
 .relationship_box.pick7 .rel_case3:before {
 	opacity: 1;
@@ -1299,7 +1312,7 @@
 	font-weight: 700;
 }
 .relationship_box.pick7 .rel_case3 > span {
-	background-image: url(../images/content/prlt/img_rel_case3_on.svg);
+	background-image: url(../images/content/mtps/img_rel_case3_on.svg);
 }
 .relationship_box.pick7 .rel_case6:before {
 	opacity: 1;
@@ -1308,7 +1321,7 @@
 	font-weight: 700;
 }
 .relationship_box.pick7 .rel_case6 > span {
-	background-image: url(../images/content/prlt/img_rel_case6_on.svg);
+	background-image: url(../images/content/mtps/img_rel_case6_on.svg);
 }
 .relationship_box.pick8 .rel_case2:before {
 	opacity: 1;
@@ -1317,7 +1330,7 @@
 	font-weight: 700;
 }
 .relationship_box.pick8 .rel_case2 > span {
-	background-image: url(../images/content/prlt/img_rel_case2_on.svg);
+	background-image: url(../images/content/mtps/img_rel_case2_on.svg);
 }
 .relationship_box.pick8 .rel_case3:before {
 	opacity: 1;
@@ -1326,7 +1339,7 @@
 	font-weight: 700;
 }
 .relationship_box.pick8 .rel_case3 > span {
-	background-image: url(../images/content/prlt/img_rel_case3_on.svg);
+	background-image: url(../images/content/mtps/img_rel_case3_on.svg);
 }
 .relationship_box.pick8 .rel_case5:before {
 	opacity: 1;
@@ -1335,7 +1348,7 @@
 	font-weight: 700;
 }
 .relationship_box.pick8 .rel_case5 > span {
-	background-image: url(../images/content/prlt/img_rel_case5_on.svg);
+	background-image: url(../images/content/mtps/img_rel_case5_on.svg);
 }
 .relationship_box.pick9 .rel_case2:before {
 	opacity: 1;
@@ -1344,7 +1357,7 @@
 	font-weight: 700;
 }
 .relationship_box.pick9 .rel_case2 > span {
-	background-image: url(../images/content/prlt/img_rel_case2_on.svg);
+	background-image: url(../images/content/mtps/img_rel_case2_on.svg);
 }
 .relationship_box.pick9 .rel_case5:before {
 	opacity: 1;
@@ -1353,7 +1366,7 @@
 	font-weight: 700;
 }
 .relationship_box.pick9 .rel_case5 > span {
-	background-image: url(../images/content/prlt/img_rel_case5_on.svg);
+	background-image: url(../images/content/mtps/img_rel_case5_on.svg);
 }
 .relationship_box.pick10 .rel_case5:before {
 	opacity: 1;
@@ -1362,7 +1375,7 @@
 	font-weight: 700;
 }
 .relationship_box.pick10 .rel_case5 > span {
-	background-image: url(../images/content/prlt/img_rel_case5_on.svg);
+	background-image: url(../images/content/mtps/img_rel_case5_on.svg);
 }
 /* 운전자보험 - 보험료확인 */
 /* 운전자보험 | 보험료확인 */

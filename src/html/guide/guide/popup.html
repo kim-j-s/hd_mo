@@ -49,9 +49,10 @@
 			</div>
 			<div class="g_dom">
 				<div class="p_guide_wrap_b">
-					{{> cp/button type="2" size="5" b-text="Bottom 선택 팝업열기 유형 1" popup="pop_type05" b-title="상황별 타이틀 입력 필요"}}
-					{{> cp/button type="2" size="5" b-text="Bottom 선택 팝업열기 유형 2" popup="pop_type06" b-title="상황별 타이틀 입력 필요"}}
+					{{> cp/button type="2" size="5" b-text="Bottom 선택 팝업열기 유형 1" popup="pop_type05" b-title="상황별 타이틀 입력 필요"}}				
 					{{> cp/button type="2" size="5" b-text="Bottom 선택 팝업열기 유형 3" popup="pop_type07" b-title="상황별 타이틀 입력 필요"}}
+					{{> cp/button type="2" size="5" b-text="검색어 입력 후 리스트(Bottom 유형1)" popup="search_list_bottom_ty1" b-title="상황별 타이틀 입력 필요"}}
+					{{> cp/button type="2" size="5" b-text="검색어 입력 후 리스트(Bottom 유형2)" popup="search_list_bottom_ty2" b-title="상황별 타이틀 입력 필요"}}
 				</div>
 			</div>
 
@@ -237,30 +238,7 @@
 		</div>
 	</div>
 	{{/ popup/popup_bottom}}
-	<!-- e: pop_type05 -->
-
-	<!-- s: pop_type06 -->
-	{{#> popup/popup_bottom popup-id="pop_type06" popup-title="팝업 타이틀" }}
-	<div class="popup_cont">
-		<div class="popup_content">
-			{{> cp/text inp-title="추가부속품 명을 입력해 보세요" placeholder="추가부속품 명을 입력해 보세요" search=true}}
-			<div class="opt_select_list opt_case2">
-				<div role="button" class="option active" title="선택됨"><span class="text"><span class="point">4륜</span> 구동</span></div>
-				<div role="button" class="option"><span class="text">ABS</span></div>
-				<div role="button" class="option"><span class="text">Around View Monitor 패키지(단품)</span></div>
-				<div role="button" class="option fixed"><span class="text">Around View Monitor 패키지(직접입력)</span></div>
-				<div role="button" class="option"><span class="text">ECM 사이드/룸미러</span></div>
-				<div role="button" class="option"><span class="text">Head Up Display</span></div>
-			</div>
-		</div>
-	</div>
-	<div class="popup_bottom">
-		<div class="btn_area">
-			{{> cp/button type="1" size="2" b-text="확인" }}
-		</div>
-	</div>
-	{{/ popup/popup_bottom}}
-	<!-- e: pop_type06 -->
+	<!-- e: pop_type05 -->	
 
 	<!-- s: pop_type07 -->
 	{{#> popup/popup_bottom popup-id="pop_type07" popup-title="팝업 타이틀"}}
@@ -335,6 +313,69 @@
 	</div>
 	{{/ popup/popup_bottom}}
 	<!-- e: pop_type07 -->
+
+
+	<!-- s: Bottom 팝업(검색어 입력 후 리스트 유형1) -->
+	{{#> popup/popup_bottom popup-id="search_list_bottom_ty1" popup-title="팝업 타이틀" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			{{> cp/text inp-title="추가부속품 명을 입력해 보세요" placeholder="추가부속품 명을 입력해 보세요" search=true}}
+			<div class="opt_select_list opt_case2">
+				<div role="button" class="option active" title="선택됨"><span class="text"><span class="point">4륜</span> 구동</span></div>
+				<div role="button" class="option"><span class="text">ABS</span></div>
+				<div role="button" class="option"><span class="text">Around View Monitor 패키지(단품)</span></div>
+				<div role="button" class="option fixed"><span class="text">Around View Monitor 패키지(직접입력)</span></div>
+				<div role="button" class="option"><span class="text">ECM 사이드/룸미러</span></div>
+				<div role="button" class="option"><span class="text">Head Up Display</span></div>
+			</div>
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="2" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: Bottom 팝업(검색어 입력 후 리스트 유형1) -->
+
+	<!-- s: Bottom 팝업(검색어 입력 후 리스트 유형2) -->
+	{{#> popup/popup_bottom popup-id="search_list_bottom_ty2" popup-class="active" popup-title="추가부속품을 선택해 주세요"}}
+	<div class="popup_cont search_list_type">
+		<div class="popup_content">
+			<!-- s: popup_content_top -->
+			<div class="popup_content_top">
+				{{> cp/text inp-search=true placeholder="추가부속품 명을 입력해 보세요" inp-title="검색어 입력" }}
+			</div>
+			<!-- e: popup_content_top -->
+
+			<div class="search_reult_list_container">
+				<ul class="search_reult_list">
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">4륜구동</span></a></li>
+					<!-- 검색시 스타일 예시 : 검색키워드 <i>태그로 강조 -->
+					<li class="search_reult_list_item"><a href="#"><span class="item_text"><i>Around</i> View Monitor 패키지(단품)</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text"><i>Around</i> View Monitor 패키지(직접입력)</span></a></li>
+					<!-- 입력 완료 케이스 예시(배지 추가됨) -->
+					<li class="search_reult_list_item"><a href="#"><span class="hd_badge outline solid_pastel c_success size_m">입력완료</span><span class="item_text">ECM 사이드/룸미러</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">Head Up Display</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">Smart Cruise Control</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">가죽시트</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">내비게이션(후방카메라)</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">루프캐리어/랙</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">리어스포일러</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">리프트게이트</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">머플러</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">배출가스 저감장치</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">사이드(커튼)에어백</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">서스펜션</span></a></li>
+						<!-- 목록 최하단 기타 항목 필수 -->
+						<li class="search_reult_list_item add_item"><a href="#"><span class="item_text">기타</span>{{#> cp/button type="3" size="5" rightIcon="plusSvg" popup="alert_d1"}}추가{{/ cp/button}}</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		{{/ popup/popup_bottom}}
+		<!-- e: Bottom 팝업 -->
+
 	<!-- e: Bottom 팝업 -->
 
 </div>
