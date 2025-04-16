@@ -22,9 +22,13 @@
 				<div class="form_group_wrap">
 					<div class="form_line">
 						<div class="label_tit">자동차번호 7~9자리, 차대번호 17자리</div>
+						<!-- s: 25-04-17 수정 -->
 						<div class="car_input_box">
-							{{> cp/text class="car_number_input" placeholder="123가4567" minlength="7" maxlength="17" inp-title="자동차 또는 차대번호 입력"}}
+							<!-- 에러 메시지 시, error 클래스 추가 -->
+							{{> cp/text class="car_number_input error" placeholder="123가4567" minlength="7" maxlength="17" inp-title="자동차 또는 차대번호 입력"}}
+							<p class="msg_fail">자동차 번호, 또는 차대번호를 입력해 주세요.</p>
 						</div>
+						<!-- e: 25-04-17 수정 -->
 					</div>
 				</div>
 				
