@@ -38,6 +38,7 @@
 
   /* Accordian */   
   $DOM.on('click', '.acd_item .acd_head .acd_btn', function(){
+	console.log('아코디언')
     const $this = $(this),
 					$head = $this.parent('.acd_head'),
           $inner = $head.next('.acd_cont').children('.inner'),
