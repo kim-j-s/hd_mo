@@ -154,7 +154,7 @@
 <!-- s: popup area -->
 
 <!-- s: 특약 팝업 -->
-{{#> popup/popup_bottom popup-id="sp_pop" popup-title="다음 특약에 가입하시겠어요?"}}
+{{#> popup/popup_bottom popup-id="sp_pop" popup-title="팝업 타이틀" }}
 	<div class="popup_cont">
 		<div class="popup_content">
 			<div class="info_gray">
@@ -174,12 +174,24 @@
 					<li>보험증권에 기재된 본인소유 해당 차량에 대해서만 보장됩니다.</li>
 				</ul>
 			</div>
+			<!-- e: popup_content_top -->
+			팝업내용입니다
+			<br />
+			내용 팝업내용입니다
+			<br />
+			팝업내용입니다
+			<br />
+			내용 팝업내용입니다
+			<br />
+			내용 팝업내용입니다
+			<br />
+			내용 팝업내용입니다
 		</div>
 	</div>
 	<div class="popup_bottom">
 		<div class="btn_area">
-			{{> cp/button type="3" size="2" b-text="가입안함" }}
-			{{> cp/button type="1" size="2" b-text="특약 가입" }}
+			{{> cp/button type="2" size="2" b-text="확인" }}
+			{{> cp/button type="1" size="2" b-text="Bottom 팝업열기" popup="pop_type04" btn-title="Bottom 팝업열기" }}
 		</div>
 	</div>
 	{{/ popup/popup_bottom}}
@@ -228,9 +240,8 @@
 		
 
 		// cont 클릭 시
-		/*
 		$('.guarantee_item_cont').on('click', function () {
-			console.log('click')
+			// console.log('click')
 			$(this).closest('.guarantee_item').removeClass('active');
 			$(this).stop(true, true).slideUp(300);
 			$(this).prev().stop(true, true).slideDown(300, function() {
@@ -247,7 +258,6 @@
 				$('.guarantee_visuval').stop(true, true).slideDown(300);
 			}
 		});
-		*/
 	});
 </script>
 

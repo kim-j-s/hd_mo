@@ -1,6 +1,6 @@
 <!---
 화면번호 : MPRGIPT30002010200
-경로 :  상품 > 펫 > 하이펫보험 > 기본정보 입력 > 반려동물종류선택 > 초성으로 찾기
+경로 :  상품 > 펫 > 하이펫보험 > 기본정보 입력 > 반려동물종류선택 > 초성으로 찾기 (case 1: 최초 진입시 화면)
 -->
 <!doctype html>
 <html lang="ko">
@@ -63,88 +63,132 @@
 
 							<!-- tab01.검색어로 찾기 Tab 내용 -->
 							<div class="tab_wrap_content has_scroll" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
+								<!-- 검색어를 submit 했을 때 search_on클래스 추가, 검색어 클리어시에 search_on클래스 제거 -->
 								<div class="search_inp_box">
 									<div class="input_text search">
 										<div class="inp">
-											<input type="search" placeholder="추가부속품 명을 입력해 보세요" title="검색어 입력" />
+											<input type="search" placeholder="품종 입력" title="검색어 입력" />
 											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 											<button type="button" class="btn btn_search" title="검색"></button>
 										</div>
 									</div>
 									<div class="search_inp_box_sub">
-										<span>반려동물의 종류와 가입 나이에 따라 가입이 제한될 수 있어요.</span>
-										<div class="tooltip_wrap">
-											<div class="tooltip_head">
-												<button type="button" class="open trigger_btn" aria-expanded="false">
-													<i class="hd_icon popover_help"></i>
-													<span class="blind">툴팁 열기</span>
-												</button>
-											</div>
-											<div class="tooltip_panel" role="tooltip">
-												<div class="inner">
-													<p class="inner_title" aria-describedby="title">팝업타이틀</p>
-													<div class="inner_contents">
-														<p>내용을 partial로 넣었습니다.</p>
-														<p>
-															내용입니다.
-															<br />
-															내용입니다.
-															<br />
-															내용입니다.
-															<br />
-															내용입니다.
-															<br />
-															내용입니다.
-														</p>
-													</div>
-
-													<button type="button" class="close"><span class="blind">툴팁 닫기</span></button>
-												</div>
-											</div>
-										</div>
+										<span role="button" onclick="openHDPopup(this,'helper_popup')">
+											<a href="javascrip:void(0)" class="btn_link short_cut" title="팝업 열림">
+												<span class="sss">가입이 어려운 경우</span>
+											</a>
+										</span>
 									</div>
 								</div>
 
-								<!-- s: 자주찾는 품종 리스트 (표시하려면 active클래스 추가) -->
-								<div class="suggestion_list_wrap">
-									<p class="title_h4"><strong>자주 찾는 견종</strong></p>
-									<div class="item_wrap">
-										<button type="button" class="tag_item size_m c_ty01"><span class="text">말티즈</span></button>
-										<button type="button" class="tag_item size_m c_ty01"><span class="text">포메라니안</span></button>
-										<button type="button" class="tag_item size_m c_ty01"><span class="text">비숑프리제</span></button>
-										<button type="button" class="tag_item size_m c_ty01"><span class="text">치와와</span></button>
-										<button type="button" class="tag_item size_m c_ty01"><span class="text">말티푸</span></button>
-										<button type="button" class="tag_item size_m c_ty01"><span class="text">토이푸들</span></button>
-										<button type="button" class="tag_item size_m c_ty01"><span class="text">요크셔테리어</span></button>
-										<button type="button" class="tag_item size_m c_ty01"><span class="text">시츄</span></button>
-										<button type="button" class="tag_item size_m c_ty01"><span class="text">믹스견(5kg~15kg)</span></button>
+								<!-- s: 키워드 검색 결과 리스트 -->
+								<div class="search_reult_list_container">
+									<div class="search_result_count">
+										<p>
+											검색결과
+											<span class="point">0</span>
+											건
+										</p>
 									</div>
+
+									<ul class="search_reult_list">
+										<li class="search_reult_list_item">
+											<a href="#"><span class="item_text">4륜구동</span></a>
+										</li>
+										<!-- 검색시 스타일 예시 : 검색키워드 <i>태그로 강조 -->
+										<li class="search_reult_list_item">
+											<a href="#">
+												<span class="item_text">
+													<i>Around</i>
+													View Monitor 패키지(단품)
+												</span>
+											</a>
+										</li>
+										<li class="search_reult_list_item">
+											<a href="#">
+												<span class="item_text">
+													<i>Around</i>
+													View Monitor 패키지(직접입력)
+												</span>
+											</a>
+										</li>
+										<!-- 입력 완료 케이스 예시(배지 추가됨) -->
+										<li class="search_reult_list_item">
+											<a href="#">
+												<span class="hd_badge outline solid_pastel c_success size_m">입력완료</span>
+												<span class="item_text">ECM 사이드/룸미러</span>
+											</a>
+										</li>
+										<li class="search_reult_list_item">
+											<a href="#"><span class="item_text">Head Up Display</span></a>
+										</li>
+										<li class="search_reult_list_item">
+											<a href="#"><span class="item_text">Smart Cruise Control</span></a>
+										</li>
+										<li class="search_reult_list_item">
+											<a href="#"><span class="item_text">가죽시트</span></a>
+										</li>
+										<li class="search_reult_list_item">
+											<a href="#"><span class="item_text">내비게이션(후방카메라)</span></a>
+										</li>
+										<li class="search_reult_list_item">
+											<a href="#"><span class="item_text">루프캐리어/랙</span></a>
+										</li>
+										<li class="search_reult_list_item">
+											<a href="#"><span class="item_text">리어스포일러</span></a>
+										</li>
+										<li class="search_reult_list_item">
+											<a href="#"><span class="item_text">리프트게이트</span></a>
+										</li>
+										<li class="search_reult_list_item">
+											<a href="#"><span class="item_text">머플러</span></a>
+										</li>
+										<li class="search_reult_list_item">
+											<a href="#"><span class="item_text">배출가스 저감장치</span></a>
+										</li>
+										<li class="search_reult_list_item">
+											<a href="#"><span class="item_text">사이드(커튼)에어백</span></a>
+										</li>
+										<li class="search_reult_list_item">
+											<a href="#"><span class="item_text">서스펜션</span></a>
+										</li>
+									</ul>
 								</div>
-								<!-- e: 자주찾는 품종 리스트 -->
+								<!-- e: 키워드 검색 결과 리스트 -->
 							</div>
 
 							<!-- tab02. 초성으로 찾기 Tab 내용 -->
 							<div class="tab_wrap_content has_scroll active" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
 								<!-- s: 키워드 검색 리스트 -->
-								<div class="search_inp_box">
-									<div class="input_text search">
-										<div class="inp">
-											<input type="search" placeholder="추가부속품 명을 입력해 보세요" title="검색어 입력" />
-											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-											<button type="button" class="btn btn_search" title="검색"></button>
-										</div>
+								<div class="search_inp_box search_on">
+									<!-- s: 초성 버튼 리스트 -->
+									<ul class="keypad_wrap search_letter_btn_list">
+										<button type="button" class="keypad_chip_item selected">ㄱ</button>
+										<button type="button" class="keypad_chip_item">ㄴ</button>
+										<button type="button" class="keypad_chip_item">ㄷ</button>
+										<button type="button" class="keypad_chip_item">ㄹ</button>
+										<button type="button" class="keypad_chip_item">ㅁ</button>
+										<button type="button" class="keypad_chip_item">ㅂ</button>
+										<button type="button" class="keypad_chip_item">ㅅ</button>
+										<button type="button" class="keypad_chip_item">ㅇ</button>
+										<button type="button" class="keypad_chip_item">ㅈ</button>
+										<button type="button" class="keypad_chip_item">ㅊ</button>
+										<button type="button" class="keypad_chip_item">ㅋ</button>
+										<button type="button" class="keypad_chip_item">ㅌ</button>
+										<button type="button" class="keypad_chip_item">ㅍ</button>
+										<button type="button" class="keypad_chip_item">ㅎ</button>
+									</ul>
+									<!-- e: 초성 버튼 리스트 -->
+									<div class="search_inp_box_sub">
+										<span role="button" onclick="openHDPopup(this,'helper_popup')">
+											<a href="javascrip:void(0)" class="btn_link short_cut" title="팝업 열림">
+												<span class="sss">가입이 어려운 경우</span>
+											</a>
+										</span>
 									</div>
 								</div>
 
-								<div class="search_reult_list_container active">
-									<div class="search_result_count">
-										<p>
-											검색결과
-											<span class="point">7</span>
-											건
-										</p>
-									</div>
-
+								<div class="search_reult_list_container">
 									<ul class="search_reult_list">
 										<li class="search_reult_list_item">
 											<a href="#"><span class="item_text">4륜구동</span></a>
@@ -190,9 +234,9 @@
 
 		<!-- s: popup area -->
 		<!-- s: 가입제한 안내 팝업 -->
-		<div class="popup_wrap bottom" id="pop_type02" role="dialog" aria-modal="true" aria-hidden="true">
+		<div class="popup_wrap bottom" id="helper_popup" role="dialog" aria-modal="true" aria-hidden="true">
 			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type02');"></div>
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('helper_popup');"></div>
 				<div class="popup_inner">
 					<div class="draggable" aria-hidden="true">
 						<div class="move"></div>
@@ -201,10 +245,25 @@
 
 					<div class="popup_cont">
 						<div class="popup_content">
-							<ul class="list_ty3">
-								<li>ㅇ</li>
-								<li>ㅇ</li>
-							</ul>
+							<p class="text_sub">아래의 경우에는 반려동물보험 가입이 어려워요.</p>
+							<div class="info_box ty2">
+								<ul class="list_ty1">
+									<li>판매점,브리더 등 매매를 목적으로 사육, 관리하는 반려동물</li>
+									<li>
+										특수 목적
+										<span class="point">*</span>
+										의 반려동물
+										<ul class="list_ty2">
+											<li>
+												<span class="point">*</span>
+												특수 목적 : 경찰, 구조, 군, 사냥 등 (단, 맹도견, 청도견 등 장애인 안내견 제외)
+											</li>
+										</ul>
+									</li>
+									<li>흥행을 목적으로 사육,관리하는 반려동물</li>
+									<li>유기동물 보호센터 등에서 사육, 관리하는 반려동물</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 					<div class="popup_bottom">
@@ -214,7 +273,7 @@
 							</button>
 						</div>
 					</div>
-					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type02');"><span class="blind">팝업 닫기</span></button>
+					<button type="button" class="popup_close" onclick="closeHDPopup('helper_popup');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>

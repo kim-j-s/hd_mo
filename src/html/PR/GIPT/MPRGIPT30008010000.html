@@ -10,15 +10,24 @@
 	<div class="popup_content">
 		<div class="form_group_wrap">
 			<div class="form_line">
-				<div class="label_tit">동물번호</div>
-				{{> cp/text placeholder="15자리 숫자" minlength="15" maxlength="15" inp-title="동물번호 입력" }}
+				<div class="label_tit box">
+					<div>동물번호</div>
+					{{> cp/linkButton bl_class="new_open sm" bl_text="우리 아이 동물번호 찾기" bl_title="새창으로 열림" blank="true" href="http://www.animal.go.kr" }}
+				</div>
+				{{> cp/text type="number" placeholder="15자리 숫자" minlength="15" maxlength="15" inp-title="동물번호 입력" }}
 			</div>
 		</div>
 
 		<div class="form_group_wrap">
 			<div class="form_line">
-				<div class="label_tit">동물등록증(카드형 또는 출력형) 사진</div>
+				<div class="label_tit box">
+					<div>동물등록증(카드형 또는 출력형) 사진</div>
+					{{> cp/linkButton bl_class="short_cut sm" bl_text="예시" bl_title="팝업 열림" }}
+				</div>
 				<div class="info_box">
+					<div class="file_area">
+
+					</div>
 					<div class="img_area">
 						<img src="../../../images/content/gipt/img_animal_certificate_ty1.svg" alt="동물등록증 예시 이미지">
 					</div>
@@ -28,7 +37,15 @@
 					</ul>
 		
 					<div class="btn_area center">
-						{{> cp/button type="2" size="2" leftIcon="carmeraSvg" b-text="사진 등록"}}
+						<div class="inp_file">
+							<input type="file" name="file" id="file">
+							<label for="file">
+								<span class="hd_btn hd_btn_ty_2 hd_btn_s_2">
+									<i class="hd_icon carmeraSvg"></i>
+									사진 등록
+								</span>
+							</label>
+						</div>
 					</div>
 				</div>
 			</div>
