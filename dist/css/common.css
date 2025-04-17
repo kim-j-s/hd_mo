@@ -220,11 +220,8 @@ strong {
 .info_box + .chk_group_wrap {
 	margin-top: 5.2rem;
 }
-.info_box [class^="title_h"] + [class^="list_ty"] {
+.info_box [class^="title_h"] + [class^="list_"] {
 	margin-top: 1.6rem;
-}
-.info_box [class^="list_ty"] > li {
-	color: var(--color-text-basic);
 }
 .info_box .img_area + * {
 	margin-top: 1.6rem;
@@ -1942,6 +1939,8 @@ strong {
 	height: calc(100% + 0.2rem);
 	border: 0.2rem solid #f8633c;
 	border-radius: 2.4rem;
+	-webkit-transition: border-color 0.2s ease;
+	transition: border-color 0.2s ease;
 }
 .card_item_wrap .card_item .card_link .item_top .title_info {
 	padding-right: 2.4rem;
@@ -2312,6 +2311,12 @@ strong {
 	width: 100%;
 	border: 1px solid var(--color-border-gray-light);
 	border-radius: 2.4rem;
+}
+.inp_checkbox.rd_box input[type="checkbox"] {
+	top: 2.4rem;
+	left: 2.4rem;
+	width: 2.4rem;
+	height: 2.4rem;
 }
 .inp_checkbox.rd_box input[type="checkbox"] + .chk_label {
 	padding: var(--padding-card-large);
@@ -2961,6 +2966,17 @@ strong {
 .form_group_wrap .form_line .label_tit .question_mark_btn {
 	-webkit-transform: translateY(0.5rem);
 	transform: translateY(0.5rem);
+}
+.form_group_wrap .form_line .label_tit.box {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: end;
+	-ms-flex-align: end;
+	align-items: end;
 }
 .form_group_wrap .form_line .btn_area {
 	margin-top: 1.6rem;
@@ -3869,13 +3885,13 @@ strong {
 	padding: 1.2rem;
 	font-size: 1.6rem;
 	line-height: 2.4rem;
-	color: #6c7882;
+	color: var(--color-text-subtle);
 	background-color: #fff;
 	text-align: center;
 }
 .tab_wrap_list_ty2 .tab_btn.active {
 	font-weight: 700;
-	color: #2b3541;
+	color: var(--color-text-basic);
 }
 .tab_wrap_list_ty2 .tab_btn.active:before {
 	position: absolute;
@@ -3885,6 +3901,9 @@ strong {
 	width: 100%;
 	height: 0.3rem;
 	background-color: #1e2124;
+}
+.tab_wrap_list_ty2 .tab_btn:disabled {
+	color: var(--color-text-disabled);
 }
 .tab_wrap_content {
 	display: none;
@@ -3962,6 +3981,9 @@ strong {
 .title_h5 {
 	font-size: var(--font-size-heading-xsmall);
 	color: var(--color-text-subtle);
+}
+.title_h5 + .list_depth {
+	margin-top: 1.6rem;
 }
 .title_h6 {
 	color: var(--color-text-subtle);
@@ -4208,4 +4230,78 @@ strong {
 }
 .title_has_tooltip .tooltip_wrap .tooltip_head.top + .tooltip_panel {
 	bottom: 2.8rem;
+}
+/* infobox */
+/* info box */
+.info_gray {
+	padding: var(--padding-card-medium) var(--padding-card-small);
+	background: var(--color-surface-secondary-subtler);
+	border-radius: var(--radius-large2);
+}
+.info_gray + .form_group_wrap {
+	margin-top: 3.2rem;
+}
+.info_gray .title_h3 + .list_depth,
+.info_gray .title_h3 + dl,
+.info_gray .title_h4 + .list_depth,
+.info_gray .title_h4 + dl {
+	margin-top: 1.6rem;
+}
+.info_gray .title_h4 + dl {
+	margin-top: 1.2rem;
+}
+.info_gray .title_h3 {
+	color: var(--color-text-bolder);
+	font-size: var(--font-size-heading-xsmall);
+}
+.info_gray .title_h4 {
+	color: var(--color-text-bolder);
+	font-size: var(--font-size-heading-xxsmall);
+}
+.info_gray .info_text {
+	margin-top: 1.2rem;
+	font-size: var(--font-size-body-medium);
+}
+.info_gray button {
+	margin-top: 1.6rem;
+}
+.info_gray dl {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 0.8rem;
+	width: 100%;
+	font-size: var(--font-size-body-small);
+}
+.info_gray dl dt {
+	color: var(--color-text-subtle);
+}
+.info_gray dl dd {
+	text-align: right;
+}
+.info_gray dl .sub_text {
+	display: block;
+	font-size: var(--font-size-body-xsmall);
+	color: var(--color-text-subtle);
+}
+.info_gray dl + dl {
+	margin-top: 1.6rem;
+}
+.info_gray dl.footer_dl {
+	margin-top: 2rem;
+	padding-top: 2rem;
+	border-top: 1px solid var(--color-divider-gray-light);
+}
+.info_gray dl.footer_dl dd {
+	font-size: var(--font-size-body-large);
+	font-weight: 700;
+}
+.info_gray.ty2 {
+	background: var(--color-surface-information-subtler);
 }
