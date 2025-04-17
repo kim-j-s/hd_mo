@@ -114,9 +114,9 @@
 
 							<div class="guarantee_list_wrap">
 								<div class="gtl_special">
-									<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openHDPopup(this,'sp_pop');">
-										<span class="text">Full 팝업열기</span>
-									</button>
+									<a href="javascript:void(0)" class="btn_link short_cut btn_gtl_special" roll="button" onclick="openHDPopup(this,'sp_pop');">
+										<span class="text">차량 손해도 보장받을 수 있는 특약</span>
+									</a>
 								</div>
 								<div class="guarantee_choice_wrap">
 									<div class="guarantee_item">
@@ -230,7 +230,9 @@
 
 						<!-- s: guarantee_container_right -->
 						<div class="guarantee_container_right">
-							<img src="../../../images/xxxxx.png" alt="" />
+							<!-- s: guarantee_detail -->
+							<div class="guarantee_detail"></div>
+							<!-- e: guarantee_detail -->
 						</div>
 						<!-- e: guarantee_container_right -->
 					</div>
@@ -288,26 +290,15 @@
 								</ul>
 							</div>
 							<!-- e: popup_content_top -->
-							팝업내용입니다
-							<br />
-							내용 팝업내용입니다
-							<br />
-							팝업내용입니다
-							<br />
-							내용 팝업내용입니다
-							<br />
-							내용 팝업내용입니다
-							<br />
-							내용 팝업내용입니다
 						</div>
 					</div>
 					<div class="popup_bottom">
 						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_2">
-								<span class="text">확인</span>
+							<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_2">
+								<span class="text">가입안함</span>
 							</button>
-							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2" onclick="openHDPopup(this,'pop_type04');" title="Bottom 팝업열기">
-								<span class="text">Bottom 팝업열기</span>
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">특약 가입</span>
 							</button>
 						</div>
 					</div>
@@ -361,27 +352,24 @@
 				});
 
 				// cont 클릭 시
-				$(".guarantee_item_cont").on("click", function () {
-					// console.log('click')
-					$(this).closest(".guarantee_item").removeClass("active");
-					$(this).stop(true, true).slideUp(300);
-					$(this)
-						.prev()
-						.stop(true, true)
-						.slideDown(300, function () {
-							$(this).focus();
-						});
+				// $('.guarantee_item_cont').on('click', function () {
+				// 	// console.log('click')
+				// 	$(this).closest('.guarantee_item').removeClass('active');
+				// 	$(this).stop(true, true).slideUp(300);
+				// 	$(this).prev().stop(true, true).slideDown(300, function() {
+				// 		$(this).focus();
+				// 	});
 
-					$(".gtl_special").removeClass("active");
+				// 	$('.gtl_special').removeClass('active');
 
-					if ($(this).closest(".guarantee_choice_wrap").find(".guarantee_item.active").length) {
-						$(".guarantee_choice_wrap").addClass("active");
-					} else {
-						$(".guarantee_choice_wrap").removeClass("active");
-						$(".guarantee_top_item").eq(0).addClass("active").siblings(".guarantee_top_item").removeClass("active");
-						$(".guarantee_visuval").stop(true, true).slideDown(300);
-					}
-				});
+				// 	if( $(this).closest('.guarantee_choice_wrap').find('.guarantee_item.active').length ) {
+				// 		$('.guarantee_choice_wrap').addClass('active');
+				// 	} else {
+				// 		$('.guarantee_choice_wrap').removeClass('active');
+				// 		$('.guarantee_top_item').eq(0).addClass('active').siblings('.guarantee_top_item').removeClass('active');
+				// 		$('.guarantee_visuval').stop(true, true).slideDown(300);
+				// 	}
+				// });
 			});
 		</script>
 	</body>

@@ -283,7 +283,7 @@
 		display: inline-block;
 		padding-right: 16px;
 		font-size: var(--font-size-button-medium);
-		line-height: 21px;
+		line-height: 1.5;
 		background: url(../images/icon/arrowRight_ty3.svg) no-repeat right center / 16px auto;
 		> .text {
 			display: block;
@@ -293,6 +293,36 @@
 			font-size: var(--font-size-button-small);
 			line-height: 18px;
 		}
+
+		&.btn_gtl_special {
+			display: block;
+			width: 100%;
+			padding: 20px;
+			border-radius: var(--radius-medium4);
+			background-color: var(--color-surface-secondary-subtler);
+			background-image: none;
+			> .text {
+				padding-left: 44px;
+				padding-right: 30px;
+				font-size: var(--font-size-body-medium);
+				background: url(../images/icon/arrowRight_ty3.svg) no-repeat right center/ 20px auto;
+				
+				&::before {
+					content: '';
+					position: absolute;
+					top: 50%;
+					left: 0;
+					width: 32px;
+					height: 32px;
+					border-radius: 12px;
+					border-radius: var(--radius-medium2);
+					background: #fff url(../images/content/guarantee/icon_gtl_special.svg) no-repeat center center / 24px auto;
+					transform: translateY(-50%);
+				}
+			}
+		}
+
+
 	}
 
 	&.new_open {
