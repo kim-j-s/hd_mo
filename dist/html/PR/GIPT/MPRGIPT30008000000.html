@@ -1,6 +1,6 @@
 <!---
-화면번호 : PRLT10003010000
-경로 : 2.자동차 기본정보 > 2-2.자동차번호 입력
+화면번호 : MPRGIPT30008000000
+경로 : 하이펫보험 > 반려동물정보 입력
 -->
 <!doctype html>
 <html lang="ko">
@@ -40,7 +40,7 @@
 		<script type="text/javascript" src="../../../js/dragging.js"></script>
 		<script type="text/javascript" src="../../../js/stepper.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
-		<title>자동차 기본정보 | 상품 - 현대해상 다이렉트</title>
+		<title>반려동물정보 입력 | 상품 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -56,7 +56,7 @@
 					</div>
 
 					<div class="header_connect">
-						<h1 class="header_title">타이틀</h1>
+						<h1 class="header_title">하이펫보험</h1>
 					</div>
 
 					<div class="right">
@@ -81,127 +81,154 @@
 					<!-- s: content_top -->
 					<div class="content_top">
 						<h2 class="title_h2">
-							<strong>자동차번호</strong>
-							또는
+							반려동물
 							<br />
-							<strong>차대번호</strong>
-							를 입력해 주세요
+							<strong>정보를 입력</strong>
+							해주세요
 						</h2>
-						<div class="btn_area basic">
-							<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5">
-								<span class="text">보험만기일, 중고차, 신차 안내</span>
-							</button>
-						</div>
 					</div>
 					<!-- e: content_top -->
 
+					<h3 class="title_h3">기본정보</h3>
 					<div class="form_group_wrap">
-						<div class="form_line">
-							<div class="label_tit">자동차번호 7~9자리, 차대번호 17자리</div>
-							<!-- s: 25-04-17 수정 -->
-							<div class="car_input_box">
-								<!-- 에러 메시지 시, error 클래스 추가 -->
-								<div class="input_text car_number_input error">
+						<div class="row">
+							<div class="form_line grow">
+								<div class="label_tit">이름</div>
+								<div class="input_text">
 									<div class="inp">
-										<input type="text" placeholder="123가4567" minlength="7" maxlength="17" title="자동차 또는 차대번호 입력" />
+										<input type="text" title="이름 입력" />
 										<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 									</div>
 								</div>
-								<p class="msg_error">자동차 번호, 또는 차대번호를 입력해 주세요.</p>
 							</div>
-							<!-- e: 25-04-17 수정 -->
+							<div class="form_line grow">
+								<div class="label_tit">몸무게(단위 : kg)</div>
+								<div class="input_text">
+									<div class="inp">
+										<input type="text" placeholder="예) 5" title="몸무게 입력" />
+										<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+									</div>
+								</div>
+							</div>
 						</div>
-					</div>
-
-					<!-- s: 25-04-17 수정 -->
-					<div class="checkbox_group_wrap column">
-						<div class="inp_checkbox rd_box">
-							<input type="checkbox" id="checkbox01" />
-							<label for="checkbox01" class="chk_label chk_label_ty3">
-								<span class="label_cont">
-									차량을 구매예정이신가요?
-									<span class="sub_g_txt">자동차번호, 차대번호를 모르는 경우</span>
-								</span>
-							</label>
+						<div class="row">
+							<div class="form_line grow">
+								<div class="label_tit">생년월일</div>
+								<div class="input_text">
+									<div class="inp">
+										<input type="text" value="20220123" readonly />
+										<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+									</div>
+								</div>
+							</div>
+							<div class="form_line grow">
+								<div class="label_tit">성별</div>
+								<div class="input_text">
+									<div class="inp">
+										<input type="text" value="여아" readonly />
+										<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+									</div>
+								</div>
+							</div>
 						</div>
-					</div>
-					<!-- e: 25-04-17 수정 -->
-
-					<div class="radio_group_wrap column car_type_option" role="radiogroup">
-						<div class="inp_radio rd_btn_s1 icon_opt1">
-							<input type="radio" id="radio_btn_g1" name="radio_g1" checked />
-							<label for="radio_btn_g1">
-								<span class="label_cont">
-									승용차
-									<br />
-									<span>승차정원 10인 이하</span>
-								</span>
-							</label>
-						</div>
-						<!-- s: 25-04-18 수정 -->
-						<div class="inp_radio rd_btn_s1 icon_opt2">
-							<input type="radio" id="radio_btn_g2" name="radio_g1" />
-							<label for="radio_btn_g2">
-								<span class="label_cont">
-									승합차
-									<br />
-									<span>승차정원 11인 이상</span>
-								</span>
-							</label>
-						</div>
-						<div class="inp_radio rd_btn_s1 icon_opt3">
-							<input type="radio" id="radio_btn_g3" name="radio_g1" />
-							<label for="radio_btn_g3">
-								<span class="label_cont">
-									화물차
-									<br />
-									<span>적재함이 있는 자동차, 밴형 및 픽업트럭</span>
-								</span>
-							</label>
-						</div>
-						<!-- e: 25-04-18 수정 -->
-					</div>
-				</div>
-
-				<!-- s: 최근계산내역-->
-				<div class="fixed_link_wrap">
-					<div class="inner">
-						<div class="link_btn_box">
-							<button type="button" class="btn_current">
-								최근설계
-								<br />
-								<span>3건</span>
-							</button>
-							<button type="button" class="link_close">
-								<span class="sr_only">최근계산내역 닫기</span>
-							</button>
-						</div>
-						<div class="current_state" aria-hidden="false">
-							<div class="cont">
-								<div class="link_icon"></div>
-								<div class="text">
-									최근설계내역
-									<strong>
-										<span>3</span>
-										건
-									</strong>
-									이 있어요!
+						<div class="row">
+							<div class="form_line grow">
+								<div class="label_tit">품종</div>
+								<div class="input_text">
+									<div class="inp">
+										<input type="text" value="말티푸" readonly />
+										<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+
+					<div class="divider_ty1" aria-hidden="true"></div>
+
+					<h3 class="title_h3">반려동물 사진</h3>
+
+					<div class="divider_ty1" aria-hidden="true"></div>
+
+					<h3 class="title_h3">할인 정보</h3>
+					<p class="text_sub">
+						동물보호관리시스템에 동물등록을 했어요.(
+						<span class="point">5%</span>
+						할인)
+					</p>
+					<div class="checkbox_group_wrap column">
+						<div class="inp_checkbox rd_box">
+							<input type="checkbox" id="checkbox01-9" />
+							<label for="checkbox01-9" class="chk_label">
+								<span class="label_cont">반려동물 정보를 정확히 입력했어요</span>
+							</label>
+							<div class="chk_lby">
+								<ul class="list_ty2">
+									<li>
+										입력된 반려동물의 정보(
+										<strong>품종/생년월일/성별/이름</strong>
+										)가 정확한지 확인해 주세요.
+										<br />
+										(동물등록증이 있다면 동물등록증에 등록된 정보와 일치 하는지 확인해 주세요.)
+									</li>
+									<li>제출한 사진 및 서류가 정확하지 않을 경우 추후 보상에 불이익이 있거나, 보험료 추징이 발생할 수도 있습니다.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="checkbox_group_wrap column">
+						<div class="inp_checkbox rd_box">
+							<input type="checkbox" id="checkbox01-9" />
+							<label for="checkbox01-9" class="chk_label">
+								<span class="label_cont">라벨명 Default</span>
+							</label>
+							<div class="chk_lby">
+								<ul class="list_ty2">
+									<li>
+										입력된 반려동물의 정보(
+										<strong>품종/생년월일/성별/이름</strong>
+										)가 정확한지 확인해 주세요.
+										<br />
+										(동물등록증이 있다면 동물등록증에 등록된 정보와 일치 하는지 확인해 주세요.)
+									</li>
+									<li>제출한 사진 및 서류가 정확하지 않을 경우 추후 보상에 불이익이 있거나, 보험료 추징이 발생할 수도 있습니다.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
-				<!-- e: 최근계산내역-->
+
+				<!-- s: 꼭 알아두세요 -->
+				<div class="bottom_fix_notice">
+					<div class="acd_item">
+						<div class="acd_head active">
+							<button type="button" class="acd_btn" aria-expanded="true"><span>꼭 알아두세요</span></button>
+						</div>
+						<div class="acd_cont">
+							<div class="inner" style="display: block">
+								<ul>
+									<li>내용1</li>
+									<li>내용2</li>
+									<li>내용3</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- e: 꼭 알아두세요 -->
 			</div>
 
 			<!-- s: 하단 고정 버튼 영역 -->
 			<div class="bottom_fix_wrap">
 				<div class="btn_area">
-					<!-- s: 24-04-17 수정 -->
-					<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2 full" onclick="openHDPopup(this,'pop_type01');">
-						<span class="text">승용차 구매예정으로</span>
+					<!-- <button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2" disabled>
+			
+				<span class="text">이름을 입력해주세요</span>
+			
+			</button> -->
+					<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+						<span class="text">모두 입력했어요</span>
 					</button>
-					<!-- e: 24-04-17 수정 -->
 				</div>
 			</div>
 			<!-- s: 하단 고정 버튼 영역 -->
