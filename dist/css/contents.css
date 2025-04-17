@@ -1441,10 +1441,16 @@
 	margin-top: 1.2rem;
 }
 .gtl_special {
-	display: none;
+	height: 0;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
 }
 .gtl_special.active {
-	display: block;
+	height: auto;
+	opacity: 1;
+	visibility: visible;
 }
 .guarantee_choice_wrap {
 	position: relative;
@@ -1472,7 +1478,21 @@
 }
 .guarantee_item {
 	position: relative;
-	cursor: pointer;
+}
+.guarantee_item .gi_radio input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+.guarantee_item .gi_radio input + label::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
 }
 .guarantee_item_top {
 	display: -webkit-box;
@@ -1628,11 +1648,6 @@
 .guarantee_container_right .guarantee_detail {
 	font-size: initial;
 }
-/* 특약 버튼 */
-.btn_gtl_special {
-	background-color: red;
-}
-/* 특약 버튼 */
 /* 운전자보험 - 보험료 계산결과 */
 /* 자동차보험 | 6.보험료 계산결과 */
 .special_contract_list li {

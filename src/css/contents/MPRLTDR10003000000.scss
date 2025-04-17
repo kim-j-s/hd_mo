@@ -26,9 +26,14 @@
 	margin-top: 12px;
 }
 .gtl_special {
-	display: none;
+	height: 0;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.3s;
 	&.active {
-		display: block;
+		height: auto;
+		opacity: 1;
+		visibility: visible;
 	}
 }
 
@@ -59,7 +64,27 @@
 
 .guarantee_item {
 	position: relative;
-	cursor: pointer;
+	// cursor: pointer;
+	.gi_radio {
+		input {
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			+ label {
+				&::after {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 1;
+					width: 100%;
+					height: 100%;
+				}
+
+			}
+		}
+	}
 	&_top {
 		display: flex;
 		align-items: center;
@@ -247,10 +272,3 @@
 	}
 }
 
-
-/* 특약 버튼 */
-.btn_gtl_special {
-	background-color: red;
-	
-}
-/* 특약 버튼 */

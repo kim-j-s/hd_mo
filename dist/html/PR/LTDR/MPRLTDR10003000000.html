@@ -74,7 +74,7 @@
 			</div>
 			<div id="container" class="container">
 				<div class="content">
-					<div class="guarantee_container active">
+					<div class="guarantee_container">
 						<!-- s: guarantee_container_left -->
 						<div class="guarantee_container_left">
 							<!-- s: live 처리 위치 -->
@@ -120,8 +120,12 @@
 								</div>
 								<div class="guarantee_choice_wrap">
 									<div class="guarantee_item">
+										<div class="gi_radio">
+											<input type="radio" name="guarantee_item" id="gi_radio01" aria-labelledby="guarantee_item_top_01" />
+											<label for="gi_radio01"></label>
+										</div>
 										<div class="guarantee_item_ev">
-											<div class="guarantee_item_top" role="button" tabindex="0" title="선택하시면 보장 내용이 펼쳐집니다.">
+											<div class="guarantee_item_top" id="guarantee_item_top_01">
 												<div class="git_l">
 													<span class="hd_badge class_type class_type01"><span class="text">고급</span></span>
 												</div>
@@ -134,7 +138,7 @@
 													</span>
 												</div>
 											</div>
-											<div class="guarantee_item_cont" role="button" tabindex="0" title="선택됨">
+											<div class="guarantee_item_cont">
 												<div class="gic_inner_top">
 													<div class="badge_wrap">
 														<span class="hd_badge outline solid_pastel c_primary size_m">고급</span>
@@ -155,8 +159,12 @@
 									</div>
 
 									<div class="guarantee_item">
+										<div class="gi_radio">
+											<input type="radio" name="guarantee_item" id="gi_radio02" aria-labelledby="guarantee_item_top_02" />
+											<label for="gi_radio02"></label>
+										</div>
 										<div class="guarantee_item_ev">
-											<div class="guarantee_item_top" role="button" tabindex="0" title="선택하시면 보장 내용이 펼쳐집니다.">
+											<div class="guarantee_item_top" id="guarantee_item_top_02">
 												<div class="git_l">
 													<span class="hd_badge class_type class_type02"><span class="text">표준</span></span>
 												</div>
@@ -169,10 +177,10 @@
 													</span>
 												</div>
 											</div>
-											<div class="guarantee_item_cont" role="button" tabindex="0" title="선택됨">
+											<div class="guarantee_item_cont">
 												<div class="gic_inner_top">
 													<div class="badge_wrap">
-														<span class="hd_badge outline solid_pastel c_secondary size_m" tabindex="0">표준</span>
+														<span class="hd_badge outline solid_pastel c_secondary size_m">표준</span>
 													</div>
 													<span class="text">40개 보장</span>
 												</div>
@@ -190,8 +198,12 @@
 									</div>
 
 									<div class="guarantee_item">
+										<div class="gi_radio">
+											<input type="radio" name="guarantee_item" id="gi_radio03" aria-labelledby="guarantee_item_top_03" />
+											<label for="gi_radio03"></label>
+										</div>
 										<div class="guarantee_item_ev">
-											<div class="guarantee_item_top" role="button" tabindex="0" title="선택하시면 보장 내용이 펼쳐집니다.">
+											<div class="guarantee_item_top" id="guarantee_item_top_03">
 												<div class="git_l">
 													<span class="hd_badge class_type class_type03"><span class="text">기본</span></span>
 												</div>
@@ -204,7 +216,7 @@
 													</span>
 												</div>
 											</div>
-											<div class="guarantee_item_cont" role="button" tabindex="0" title="선택됨">
+											<div class="guarantee_item_cont">
 												<div class="gic_inner_top">
 													<div class="badge_wrap">
 														<span class="hd_badge outline solid_pastel c_success size_m">기본</span>
@@ -231,7 +243,7 @@
 						<!-- s: guarantee_container_right -->
 						<div class="guarantee_container_right">
 							<!-- s: guarantee_detail -->
-							<div class="guarantee_detail">
+							<div class="guarantee_detail" tabindex="0">
 								<div class="guarantee_select">스위퍼 영역</div>
 								<div class="guarantee_select_mini">포지션 영역 기능 추가 필요</div>
 								<div class="btn_area">
@@ -387,22 +399,23 @@
 
 		<script>
 			$(function () {
-				// top 클릭 시
-				$(".guarantee_item_top").on("click", function () {
+				$('.guarantee_choice_wrap .guarantee_item .gi_radio input[type="radio"]').on("change", function () {
 					const idx = $(this).closest(".guarantee_item").index();
 					console.log(idx);
-					$(this).closest(".guarantee_item").addClass("active");
-					$(this).stop(true, true).slideUp(300);
-					$(this)
-						.next()
-						.stop(true, true)
-						.slideDown(300, function () {
-							$(this).focus();
-						});
-					$(this).closest(".guarantee_item").siblings(".guarantee_item").removeClass("active");
-					$(this).closest(".guarantee_item").siblings(".guarantee_item").find(".guarantee_item_top").stop(true, true).slideDown(300);
-					$(this).closest(".guarantee_item").siblings(".guarantee_item").find(".guarantee_item_cont").stop(true, true).slideUp(300);
+					const $selectedItem = $(this).closest(".guarantee_item");
 					$(this).closest(".guarantee_choice_wrap").addClass("active");
+					$(this).closest(".guarantee_choice_wrap").find(".guarantee_item").removeClass("active");
+					$(this).closest(".guarantee_item").addClass("active");
+
+					// 모든 항목 초기화: 컨텐츠 닫고 타이틀 열기
+					$(".guarantee_choice_wrap .guarantee_item").each(function () {
+						$(this).find(".guarantee_item_cont").stop(true, true).slideUp(300);
+						$(this).find(".guarantee_item_top").stop(true, true).slideDown(300);
+					});
+
+					// 선택된 항목만: 컨텐츠 열고 타이틀 닫기
+					$selectedItem.find(".guarantee_item_cont").stop(true, true).slideDown(300);
+					$selectedItem.find(".guarantee_item_top").stop(true, true).slideUp(300);
 
 					// 고급 선택 시
 					if (idx === 0 && $(".gtl_special").length) {
@@ -424,27 +437,10 @@
 
 				$(".acccccc").on("click", function () {
 					$(".guarantee_container").addClass("active");
+					setTimeout(function () {
+						$(".guarantee_container_right").find(".guarantee_detail").focus();
+					}, 200);
 				});
-
-				// cont 클릭 시
-				// $('.guarantee_item_cont').on('click', function () {
-				// 	// console.log('click')
-				// 	$(this).closest('.guarantee_item').removeClass('active');
-				// 	$(this).stop(true, true).slideUp(300);
-				// 	$(this).prev().stop(true, true).slideDown(300, function() {
-				// 		$(this).focus();
-				// 	});
-
-				// 	$('.gtl_special').removeClass('active');
-
-				// 	if( $(this).closest('.guarantee_choice_wrap').find('.guarantee_item.active').length ) {
-				// 		$('.guarantee_choice_wrap').addClass('active');
-				// 	} else {
-				// 		$('.guarantee_choice_wrap').removeClass('active');
-				// 		$('.guarantee_top_item').eq(0).addClass('active').siblings('.guarantee_top_item').removeClass('active');
-				// 		$('.guarantee_visuval').stop(true, true).slideDown(300);
-				// 	}
-				// });
 			});
 		</script>
 	</body>
