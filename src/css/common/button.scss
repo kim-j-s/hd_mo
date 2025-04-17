@@ -294,7 +294,7 @@
 			line-height: 18px;
 		}
 
-		&.btn_gtl_special {
+		&.short_cut_icon {
 			display: block;
 			width: 100%;
 			padding: 20px;
@@ -316,8 +316,20 @@
 					height: 32px;
 					border-radius: 12px;
 					border-radius: var(--radius-medium2);
-					background: #fff url(../images/content/guarantee/icon_gtl_special.svg) no-repeat center center / 24px auto;
+					// background: #fff url(../images/content/guarantee/icon_gtl_special.svg) no-repeat center center / 24px auto;
+					background-repeat: no-repeat;
+					background-position: center center;
+					background-size: 24px auto;
+					background-color: #fff;
 					transform: translateY(-50%);
+				}
+			}
+			&.short_cut_icon_ty1 {
+				> .text {
+					// background: url(../images/icon/arrowRight_ty3.svg) no-repeat right center/ 20px auto;
+					&::before {
+						background-image: url(../images/content/guarantee/icon_gtl_special.svg);
+					}
 				}
 			}
 		}
