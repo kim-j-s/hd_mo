@@ -806,23 +806,46 @@ strong {
 	margin-top: 1.6rem;
 }
 /* accordian */
-.acd_wrap .acd_item .acd_cont {
-	background-color: #fff;
-}
-.acd_wrap .acd_item .acd_cont .inner {
-	padding: 2rem 0;
-}
-.acd_wrap .acd_item .acd_cont .acd_btn {
-	margin-top: 1rem;
-}
-.acd_wrap .acd_item > .acd_head {
-	background-color: skyblue;
-}
-.acd_wrap .acd_item > .acd_cont {
-	background-color: #d4d4d4;
-}
-.acd_cont .inner {
+.acd_item .acd_cont .inner {
 	display: none;
+}
+/* Accordian */
+.acd_bottom_fixed {
+	margin: 0 -2.4rem;
+}
+.acd_bottom_fixed .acd_item {
+	background-color: var(--color-surface-gray-subtler);
+}
+.acd_bottom_fixed .acd_head {
+	min-height: 6.4rem;
+	padding: var(--padding-6) var(--padding-7);
+	font-size: var(--font-size-heading-xsmall);
+	line-height: 3.2rem;
+}
+.acd_bottom_fixed .acd_head .acd_btn {
+	position: relative;
+	width: 100%;
+	padding: 0 2.4rem;
+	background: url(../images/icon/point_circle.svg) no-repeat left 50%/2rem auto;
+}
+.acd_bottom_fixed .acd_head .acd_btn:after {
+	position: absolute;
+	top: 0.4rem;
+	right: 0;
+	content: "";
+	width: 2.4rem;
+	height: 2.4rem;
+	background: url(../images/icon/arrowDown_ty3.svg) no-repeat center/2.4rem auto;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.acd_bottom_fixed .acd_head .acd_btn[aria-expanded="true"]:after {
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.acd_bottom_fixed .acd_cont[aria-expanded="true"]:after {
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
 }
 .acd_item.acd_item_ty1 {
 	border-radius: var(--radius-large2);
@@ -2664,6 +2687,9 @@ strong {
 .hd_btn_ty_2 .arrowRightSvg {
 	background-image: url(../images/icon/arrowRight_ty2.svg);
 }
+.hd_btn_ty_2 .cameraSvg {
+	background-image: url(../images/icon/camera.svg);
+}
 .hd_btn_ty_3 .downloadSvg {
 	background-image: url(../images/icon/download_ty3.svg);
 }
@@ -3247,7 +3273,7 @@ strong {
 	background: url(../images/icon/info_ty2.svg) no-repeat center/contain;
 }
 .form_group_wrap .form_line ~ .form_line {
-	margin-top: 3.2rem;
+	margin-top: 1.6rem;
 }
 .form_group_wrap .form_line .line_group {
 	display: -webkit-box;
@@ -4561,6 +4587,8 @@ strong {
 }
 .info_gray dl dt {
 	color: var(--color-text-subtle);
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
 }
 .info_gray dl dd {
 	text-align: right;
