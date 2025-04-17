@@ -18,7 +18,8 @@
 {{#if b-text}}
 	<span class="text">{{{b-text}}}</span>
 	{{else}}
-	<span class="text">{{> @partial-block }}</span>
+	{{!-- <span class="text">{{> @partial-block }}</span> --}}
+	<span class="text">{{#if @partial-block}}{{> @partial-block }}{{/if}}</span>
 {{/if}}
 {{#if rightIcon}}{{> cp/icon iconClass=rightIcon}}{{/if}}
 </button>

@@ -161,10 +161,6 @@ function keypadEnter() {
 				birthInput += value;
 				trgEle.text(birthInput);
 			}
-			// if (birthInput.length < 2) {
-			// 	birthInput += value;
-			// 	trgEle.text(birthInput);
-			// }
 		}
 
 		const getLng = trgEle.text().length;
