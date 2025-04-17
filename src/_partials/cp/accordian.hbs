@@ -1,10 +1,16 @@
 {{!-- 
 	ac-title : 아코디언 버튼 타이틀
 --}}
-<div class="acd_head{{#if active}} active{{/if}}{{#if head-class}} {{head-class}}{{/if}}">
-  <button type="button" class="acd_btn" {{#if ac-active}}aria-expanded="true"{{else}}aria-expanded="false"{{/if}}>
-		<span>{{{ac-title}}}</span>
-	</button>
+<div class="acd_head{{#if ac-active}} active{{/if}}{{#if head-class}} {{head-class}}{{/if}}">
+	{{#if aci}}
+	<div class="inp_checkbox">
+		<input type="checkbox" id="{{aci}}" />
+		<label for="{{aci}}" class="chk_label{{#if aclc}} {{aclc}}{{/if}}">
+			<span class="label_cont">{{{acl}}}</span>
+		</label>
+	</div>
+	{{/if}}
+  <button type="button" class="acd_btn" {{#if ac-active}}aria-expanded="true"{{else}}aria-expanded="false"{{/if}}>{{#if ac-title}}<span>{{{ac-title}}}</span>{{/if}}</button>
 </div>
 <div class="acd_cont{{#if cont-class}} {{cont-class}}{{/if}}">
   <div class="inner"{{#if ac-active}} style="display:block;"{{/if}}>
