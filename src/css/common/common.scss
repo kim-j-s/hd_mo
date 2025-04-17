@@ -270,10 +270,20 @@ strong {
 		& + [class^='list_']{
 			margin-top: 16px;
 		}
+
+		& + .file_attach_box {
+			margin-top: 12px;
+		}
 	}
 
 	.img_area {
 		& + * {
+			margin-top: 16px;
+		}
+	}
+
+	.file_attach_box {
+		& + [class^=list_ty]{
 			margin-top: 16px;
 		}
 	}
@@ -549,5 +559,68 @@ strong {
 	.hd_icon {
 		width: 32px;
 		height: 32px;
+	}
+}
+
+
+// 파일등록
+.file_attach_box {
+	position: relative;
+
+	& + [class^=list_ty]{
+		margin-top: 16px;
+	}
+	.file_thumbnail {
+		overflow: hidden;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 180px;
+		background-color: #fff;
+		font-size: 0;
+		line-height: 0;
+		border-radius: 16px;
+
+		&:before {
+			position: absolute;
+			top:0;
+			left: 0;
+			content:'';
+			width: 100%;
+			height: 100%;
+			border: 1px solid rgba(0, 0, 0, 0.10);
+			border-radius: 16px;
+		}
+
+		img {
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+
+	.btn_file_delete {
+		position: absolute;
+		top: 12px;
+		right: 12px;
+		width: 32px;
+		height: 32px;
+		border-radius: 100%;
+		background: rgba(0, 0, 0, 0.50);
+
+		> span {
+			display: block;
+			width: 32px;
+			height: 32px;
+			font-size: 0;
+			line-height: 0;
+			background: url(../images/icon/icon_remove.svg) no-repeat center / 16px auto;
+		}
+	}
+}
+
+.file_btn {
+	input[type=file]{
+		display: none;
 	}
 }
