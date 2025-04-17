@@ -1,12 +1,12 @@
 <!---
 화면번호 : MPRGIPT30005030000
-경로 :  상품 > 펫 > 하이펫보험 > 보험료계산결과 > 제휴설계내역
+경로 :  상품 > 펫 > 하이펫보험 > 보험료계산결과 > 제휴설계내역(case1. 기본케이스)
 -->
 {{#> layout/default page-title="제휴설계내역 | 상품"}}
 <!-- s: popup area -->
 
 <!-- s: Bottom 팝업 -->
-{{#> popup/popup_bottom popup-id="pop_type01" active=true popup-title="보험비교 설계결과"}}
+{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="보험비교 설계결과"}}
 <div class="popup_cont">
 	<div class="popup_content">
 		<!-- s: popup_content_top -->
@@ -47,42 +47,49 @@
 			</dl>
 		</div>
 		<ul class="list_ty2">
-			<li>반려동물 및 고객 정보 변경 시 보험료 변경될 수 있어요</li>	
+			<li>반려동물 및 고객 정보 변경 시 보험료 변경될 수 있어요</li>
 		</ul>
-		
+
 		<!-- e: 보험료 정보 영역 -->
 	</div>
 
-	
+	<div class="acd_bottom_fixed">
+		<div class="acd_item">
+			<!-- s: case1.강아지 -->
+			{{#> cp/accordian ac-title="6개 담보" }}
+			<ul class="list_ty1">
+				<li>반려견치료비담보II(1일한도, 연간한도)</li>
+				<li>슬관절 확장보장II(반려견)</li>
+				<li>피부질환보장(반려견)</li>
+				<li>구강질환보장(반려견)</li>
+				<li>일괄배상</li>
+				<li>장례비보장(반려견)</li>
+			</ul>
+			{{/ cp/accordian }}
+			<!-- e: case1.강아지 -->
 
-
+			<!-- s: case2.고양이
+			{{#> cp/accordian ac-title="4개 담보" }}
+			<ul class="list_ty1">
+				<li>반려묘치료비담보II(1일한도, 연간한도)</li>
+				<li>구강질환보장(반려묘)</li>
+				<li>비뇨기질환보장(반려묘)</li>
+				<li>장례비보장(반려묘)</li>
+			</ul>
+			{{/ cp/accordian }}
+			-->
+		</div>
+	</div>
 </div>
 
 <div class="popup_bottom">
 	<!-- s: 버튼 활성화 -->
-	<div class="btn_area">{{> cp/button type="1" size="1" b-text="부품정보 저장하기"}}</div>
+	<div class="btn_area">{{> cp/button type="1" size="1" b-text="다른 플랜 더보기"}}</div>
 	<!-- e: 버튼 활성화 -->
-
-	
 </div>
 
-
-
-<div class="acd_item">
-	{{#> cp/accordian ac-title="아코디언 타이틀" }}
-		아코디언 내용
-		{{#> cp/accordian-dp sub-title="서브 타이틀1" }}
-			서브내용
-		{{/ cp/accordian-dp }}
-		{{#> cp/accordian-dp sub-title="서브 타이틀2" }}
-			서브내용
-		{{/ cp/accordian-dp }}
-	{{/ cp/accordian }}
-</div>
 {{/ popup/popup_bottom}}
 <!-- e: Bottom 팝업 -->
 <!-- e: popup area -->
-
-
 
 {{/ layout/default }}
