@@ -430,6 +430,7 @@ $(function(){
 		const $this = $(this),
 			  $wrapBox = $this.closest('.comp_wrap'),
 			  $wrapCard = $this.closest('.card'),
+			  $inpBox = $this.closest('.input_text'),
 			  $wrapCalendar = $this.closest('.calendar'),
 			  isDisabled = $this.prop('disabled'),
 			  isReadonly = $this.prop('readonly');
@@ -439,6 +440,9 @@ $(function(){
 				$wrapBox.addClass('readonly');
 			} else if($wrapCalendar.length) {
 				$this.siblings('.calendar_call').prop('disabled', true);
+			} 
+			if(!$wrapBox.length) {
+				$inpBox.addClass('readonly');
 			}
 		} 
 		if (isDisabled) {
@@ -446,6 +450,9 @@ $(function(){
 			  	$wrapBox.addClass('disabled');
 			} else if($wrapCalendar.length) {
 				$this.siblings('.calendar_call').prop('disabled', true);
+			}
+			if(!$wrapBox.length) {
+				$inpBox.addClass('disabled');
 			}
 		}
 	});
