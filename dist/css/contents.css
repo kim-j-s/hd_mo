@@ -1413,10 +1413,37 @@
 }
 /* 운전자보험 - 보험료확인 */
 /* 운전자보험 | 보험료확인 */
+.guarantee_top {
+	padding-bottom: 2.4rem;
+}
 .guarantee_top_item {
 	display: none;
 }
 .guarantee_top_item.active {
+	display: block;
+}
+/* 상단 이미지 영역 */
+.guarantee_visuval {
+	font-size: 0;
+	line-height: normal;
+	text-align: center;
+}
+/* 상단 이미지 영역 */
+.guarantee_list_wrap {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	gap: 1.6rem 0;
+	margin-top: 1.2rem;
+}
+.gtl_special {
+	display: none;
+}
+.gtl_special.active {
 	display: block;
 }
 .guarantee_choice_wrap {
@@ -1552,17 +1579,59 @@
 .guarantee_item + .guarantee_item.active::before {
 	content: none;
 }
-.guarantee_item.active .guarantee_item_top {
-	display: none;
-}
-.guarantee_item.active .guarantee_item_cont {
-	display: block;
-}
 .guarantee_item.active + .guarantee_item::before {
 	content: none;
 }
 .guarantee_item.active .short_cut {
 	display: block;
+}
+.guarantee_container {
+	position: relative;
+	margin: 0 -2.4rem;
+	font-size: 0;
+	overflow: hidden;
+}
+.guarantee_container.active .guarantee_container_left {
+	position: absolute;
+	left: -100%;
+	height: 100%;
+	visibility: hidden;
+	opacity: 0;
+}
+.guarantee_container.active .guarantee_container_right {
+	position: relative;
+	left: 0;
+	height: auto;
+	visibility: visible;
+	opacity: 1;
+}
+.guarantee_container_left {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 0 2.4rem;
+	visibility: visible;
+	opacity: 1;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+}
+.guarantee_container_right {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 100%;
+	height: 100%;
+	font-size: 0;
+	/* 효과 */
+	visibility: hidden;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+	/* 효과 */
+}
+.guarantee_container_right img {
+	display: block;
+	width: 100%;
 }
 /* 운전자보험 - 보험료 계산결과 */
 /* 자동차보험 | 6.보험료 계산결과 */
@@ -1604,44 +1673,25 @@
 	background-color: var(--color-divider-gray-light);
 	border: none;
 }
-.from_box {
+.form_box {
 	padding: 4rem 0;
 }
-.from_box.first {
+.form_box.first {
 	padding: 0 0 4rem;
 }
-.from_box .title_h3 {
+.form_box .title_h3 {
 	margin-bottom: 2rem;
 }
-.from_box .form_group_wrap .list_ty2 {
-	margin-top: 1.6rem;
+.form_list > li .form_group_wrap .label_tit {
+	margin-bottom: 1.6rem;
+	font-size: var(--font-size-heading-xsmall);
+	font-weight: 700;
 }
-.info_gray {
-	padding: var(--padding-card-medium) var(--padding-card-small);
-	background: var(--color-surface-secondary-subtler);
-	border-radius: var(--radius-large2);
+.form_list > li .info_gray {
+	margin-bottom: 2.4rem;
 }
-.info_gray + .form_group_wrap {
+.form_list > li + li {
 	margin-top: 3.2rem;
-}
-.info_gray dl {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: justify;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	width: 100%;
-	font-size: var(--font-size-body-small);
-}
-.info_gray dl dt {
-	color: var(--color-text-subtle);
-}
-.info_gray dl + dl {
-	margin-top: 1.6rem;
 }
 .add_text {
 	padding: 1.6rem;

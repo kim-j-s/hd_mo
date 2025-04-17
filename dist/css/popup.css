@@ -4,15 +4,15 @@
 	overflow: hidden;
 }
 .popup_wrap {
-	display: block;
-	visibility: hidden;
 	position: fixed;
 	top: 0;
 	left: 0;
+	z-index: 1000;
+	display: block;
 	width: 100%;
 	height: 100%;
-	z-index: 1000;
 	background-color: rgba(0, 0, 0, 0.7);
+	visibility: hidden;
 	opacity: 0;
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
@@ -252,7 +252,7 @@
 	border-radius: 3rem 3rem 0 0;
 }
 .popup_wrap.bottom .popup_container .popup_inner .popup_head {
-	min-height: 5.2rem;
+	min-height: 4.3rem;
 	padding: 0 2.4rem 1.6rem;
 }
 .popup_wrap.bottom .popup_container .popup_inner .popup_cont {
@@ -318,20 +318,6 @@
 }
 .popup_wrap.bottom .popup_container .popup_inner .popup_cont > .popup_content .info_cont p + p {
 	margin-top: 0.8rem;
-}
-.popup_cont.search_list_type {
-	max-height: calc(100% - 7.2rem);
-	overflow-y: hidden !important;
-}
-.popup_cont.search_list_type .popup_content {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	overflow-y: hidden;
 }
 /* toast */
 .toast_wrap {
