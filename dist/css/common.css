@@ -223,7 +223,13 @@ strong {
 .info_box [class^="title_h"] + [class^="list_"] {
 	margin-top: 1.6rem;
 }
+.info_box [class^="title_h"] + .file_attach_box {
+	margin-top: 1.2rem;
+}
 .info_box .img_area + * {
+	margin-top: 1.6rem;
+}
+.info_box .file_attach_box + [class^="list_ty"] {
 	margin-top: 1.6rem;
 }
 .info_box.ty2 .list_ty1 > li {
@@ -476,6 +482,64 @@ strong {
 .no_list_area .hd_icon {
 	width: 3.2rem;
 	height: 3.2rem;
+}
+.file_attach_box {
+	position: relative;
+}
+.file_attach_box + [class^="list_ty"] {
+	margin-top: 1.6rem;
+}
+.file_attach_box .file_thumbnail {
+	overflow: hidden;
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	height: 18rem;
+	background-color: #fff;
+	font-size: 0;
+	line-height: 0;
+	border-radius: 1.6rem;
+}
+.file_attach_box .file_thumbnail:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 1.6rem;
+}
+.file_attach_box .file_thumbnail img {
+	max-width: 100%;
+	max-height: 100%;
+}
+.file_attach_box .btn_file_delete {
+	position: absolute;
+	top: 1.2rem;
+	right: 1.2rem;
+	width: 3.2rem;
+	height: 3.2rem;
+	border-radius: 100%;
+	background: rgba(0, 0, 0, 0.5);
+}
+.file_attach_box .btn_file_delete > span {
+	display: block;
+	width: 3.2rem;
+	height: 3.2rem;
+	font-size: 0;
+	line-height: 0;
+	background: url(../images/icon/icon_remove.svg) no-repeat center/1.6rem auto;
+}
+.file_btn input[type="file"] {
+	display: none;
 }
 /* common 인증, 로딩 등 */
 /* 인증방법 선택 */
@@ -783,6 +847,9 @@ strong {
 .btn_area ~ .btn_area {
 	margin-top: 1.6rem;
 }
+.btn_area + .checkbox_group_wrap {
+	margin-top: 3.2rem;
+}
 .btn_area > * {
 	-webkit-box-flex: 1;
 	-ms-flex: 1;
@@ -1042,7 +1109,7 @@ strong {
 	font-size: var(--font-size-button-small);
 	line-height: 1.8rem;
 }
-.btn_link.short_cut.btn_gtl_special {
+.btn_link.short_cut.short_cut_icon {
 	display: block;
 	width: 100%;
 	padding: 2rem;
@@ -1050,13 +1117,13 @@ strong {
 	background-color: var(--color-surface-secondary-subtler);
 	background-image: none;
 }
-.btn_link.short_cut.btn_gtl_special > .text {
+.btn_link.short_cut.short_cut_icon > .text {
 	padding-left: 4.4rem;
 	padding-right: 3rem;
 	font-size: var(--font-size-body-medium);
 	background: url(../images/icon/arrowRight_ty3.svg) no-repeat right center/2rem auto;
 }
-.btn_link.short_cut.btn_gtl_special > .text::before {
+.btn_link.short_cut.short_cut_icon > .text::before {
 	content: "";
 	position: absolute;
 	top: 50%;
@@ -1065,9 +1132,15 @@ strong {
 	height: 3.2rem;
 	border-radius: 1.2rem;
 	border-radius: var(--radius-medium2);
-	background: #fff url(../images/content/guarantee/icon_gtl_special.svg) no-repeat center center/2.4rem auto;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 2.4rem auto;
+	background-color: #fff;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
+}
+.btn_link.short_cut.short_cut_icon.short_cut_icon_ty1 > .text::before {
+	background-image: url(../images/content/guarantee/icon_gtl_special.svg);
 }
 .btn_link.new_open {
 	display: inline-block;
@@ -2577,7 +2650,10 @@ strong {
 	background-image: url(../images/icon/icon_exclamation.svg);
 }
 .carmeraSvg {
-	background-image: url(../images/icon/icon_carmera.svg);
+	background-image: url(../images/icon/icon_carmera_ty1.svg);
+}
+.carmeraSvg2 {
+	background-image: url(../images/icon/icon_carmera_ty2.svg);
 }
 /* input */
 .input_text {
@@ -3007,6 +3083,9 @@ strong {
 .form_group_wrap + * {
 	margin-top: 5.2rem;
 }
+.form_group_wrap > * ~ .row {
+	margin-top: 3.2rem;
+}
 .form_group_wrap .row {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -3019,7 +3098,6 @@ strong {
 	-ms-flex-align: center;
 	align-items: center;
 	gap: 1.2rem;
-	margin-top: 3.2rem;
 }
 .form_group_wrap .row .form_line + .form_line {
 	margin-top: 0;
@@ -3088,7 +3166,7 @@ strong {
 	background: url(../images/icon/info_ty2.svg) no-repeat center/contain;
 }
 .form_group_wrap .form_line ~ .form_line {
-	margin-top: 1.6rem;
+	margin-top: 3.2rem;
 }
 .form_group_wrap .form_line .line_group {
 	display: -webkit-box;
@@ -4081,6 +4159,9 @@ strong {
 	font-size: var(--font-size-heading-medium);
 	color: var(--color-text-subtle);
 }
+.title_h3 + .info_box {
+	margin-top: 2rem;
+}
 .title_h4 {
 	font-size: var(--font-size-heading-small);
 	color: var(--color-text-subtle);
@@ -4114,6 +4195,9 @@ strong {
 }
 .text_sub + * {
 	margin-top: 2.4rem;
+}
+.text_sub + .btn_area {
+	margin-top: 0.4rem;
 }
 /* textarea */
 /* Textarea */

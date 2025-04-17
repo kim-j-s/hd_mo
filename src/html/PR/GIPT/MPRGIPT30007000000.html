@@ -1,8 +1,8 @@
 <!---
-화면번호 : MPRGIPT30008000000
-경로 : 하이펫보험 > 반려동물정보 입력
+화면번호 : MPRGIPT30007000000
+경로 : 하이펫보험 > 계약자정보 입력
 -->
-{{#> layout/default page-title="반려동물정보 입력 | 상품"}}
+{{#> layout/default page-title="계약자정보 입력 | 상품"}}
 <div id="wrap" class="wrap">
 	{{> layout/header h-title="하이펫보험(1~3년)" h-back=true }}
 
@@ -11,39 +11,33 @@
 			<!-- s: content_top -->
 			<div class="content_top">
 				<h2 class="title_h2">
-					반려동물<br>
+					계약자<br>
 					<strong>정보를 입력</strong>해주세요
 				</h2>
 			</div>
 			<!-- e: content_top -->
 
-			<h3 class="title_h3">기본정보</h3>
 			<div class="form_group_wrap">
-				<div class="row">
-					<div class="form_line grow">
-    				<div class="label_tit">이름</div>
-						{{> cp/text inp-title="이름 입력" }}
-    			</div>
-					<div class="form_line grow">
-    				<div class="label_tit">몸무게(단위 : kg)</div>
-						{{> cp/text type="tel" placeholder="예) 5" inp-title="몸무게 입력" }}
-    			</div>
+				<div class="form_line">
+					<div class="label_tit">이름</div>
+					{{> cp/text value="김현대" inp-title="이름 입력" readonly=true }}
 				</div>
-				<div class="row">
-					<div class="form_line grow">
-    				<div class="label_tit">생년월일</div>
-						{{> cp/text type="tel" value="20220123" readonly=true }}
-    			</div>
-					<div class="form_line grow">
-    				<div class="label_tit">성별</div>
-						{{> cp/text value="여아" readonly=true }}
-    			</div>
-				</div>
-				<div class="row">
-					<div class="form_line grow">
-						<div class="label_tit">품종</div>
-						{{> cp/text value="말티푸" readonly=true }}
+				<div class="form_line">
+					<div class="label_tit">주민등록번호</div>
+					<div class="comp_wrap birth">
+						{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" }}
+						<span class="dash">-</span>
+						<div class="id_pass_box">
+							{{> cp/text type="tel" minlength="1" maxlength="1" placeholder="●" inp-title="주민등록번호 뒷1자리 입력" no_del="flase" }}
+							<div class="id_pass">
+								●●●●●●
+							</div>
+						</div>
 					</div>
+				</div>
+				<div class="form_line">
+					<div class="label_tit">휴대폰번호</div>
+					{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" readonly=true }}
 				</div>
 			</div>
 

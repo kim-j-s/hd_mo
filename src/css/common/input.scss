@@ -380,12 +380,17 @@
 		margin-top: 52px;
 	}
 
+	> * {
+		~ .row {
+			margin-top: 32px;
+		}
+	}
+
 	.row {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		gap: 12px;
-		margin-top: 32px;
 
 		.form_line {
 			& + .form_line {
@@ -396,8 +401,6 @@
 				width: 100px;
 			}
 		}
-
-		
 
 		.grow {
 			flex-grow: 1;
@@ -456,7 +459,7 @@
 		}
 
 		& ~ .form_line {
-			margin-top: 16px;
+			margin-top: 32px;
 		}
 
 		.line_group {
