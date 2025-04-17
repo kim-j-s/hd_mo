@@ -12,7 +12,7 @@
 			<div class="form_line">
 				<div class="label_tit box">
 					<div>동물번호</div>
-					{{> cp/linkButton bl_class="new_open sm" bl_text="우리 아이 동물번호 찾기" bl_title="새창으로 열림" blank="true" href="http://www.animal.go.kr" }}
+					{{> cp/linkButton bl_class="new_open sm" bl_text="우리 아이 동물번호 찾기" blank="true" href="http://www.animal.go.kr" }}
 				</div>
 				{{> cp/text type="number" placeholder="15자리 숫자" minlength="15" maxlength="15" inp-title="동물번호 입력" }}
 			</div>
@@ -22,22 +22,37 @@
 			<div class="form_line">
 				<div class="label_tit box">
 					<div>동물등록증(카드형 또는 출력형) 사진</div>
-					{{> cp/linkButton bl_class="short_cut sm" bl_text="예시" bl_title="팝업 열림" }}
+					{{> cp/linkButton bl_class="short_cut sm" bl_text="예시" pop_id="pop_type00" question_tit="링크" }}
 				</div>
 				<div class="info_box">
-					<div class="file_area">
+					<!-- s: 이미지 파일 붙는 영역 -->
+					<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+					<div class="file_attach_box">
+						<div class="file_thumbnail">
+							<img src="../../../images/content/gipt/img_animal_certificate_ty1.png" alt="동물등록증 예시 이미지">
+						</div>
+					</div>
+					
+					<!-- 등록 후 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+					<!-- <div class="file_attach_box">
+						<div class="file_thumbnail">
+							<img src="../../../images/temp/img_carmera_temp.png" alt="동물등록증 이미지">
+						</div>
+						<button type="button" class="btn_file_delete">
+							<span>등록한 이미지 삭제하기</span>
+						</button>
+					</div> -->
+					<!-- e: 이미지 파일 붙는 영역 -->
 
-					</div>
-					<div class="img_area">
-						<img src="../../../images/content/gipt/img_animal_certificate_ty1.svg" alt="동물등록증 예시 이미지">
-					</div>
 					<ul class="list_ty2">
 						<li>동물등록된 반려동물의 경우 <strong>동물등록증 상 소유자와 계약자가 동일한 경우에 할인</strong> 받으실 수 있습니다.</li>
 						<li>10MB이하의 jpg, jpeg, gif, png 파일만 등록 가능합니다.</li>
 					</ul>
 		
+					<!-- s: 이미지 파일 버튼 -->
 					<div class="btn_area center">
-						<div class="inp_file">
+						<!-- 등록 전 노출 -->
+						<div class="file_btn">
 							<input type="file" name="file" id="file">
 							<label for="file">
 								<span class="hd_btn hd_btn_ty_2 hd_btn_s_2">
@@ -46,7 +61,18 @@
 								</span>
 							</label>
 						</div>
+						<!-- 등록 후 노출 -->
+						<!-- <div class="file_btn">
+							<input type="file" name="file" id="file">
+							<label for="file">
+								<span class="hd_btn hd_btn_ty_3 hd_btn_s_2">
+									<i class="hd_icon carmeraSvg2"></i>
+									사진 변경
+								</span>
+							</label>
+						</div> -->
 					</div>
+					<!-- e: 이미지 파일 버튼 -->
 				</div>
 			</div>
 		</div>

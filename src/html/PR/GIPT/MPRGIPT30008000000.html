@@ -4,7 +4,7 @@
 -->
 {{#> layout/default page-title="반려동물정보 입력 | 상품"}}
 <div id="wrap" class="wrap">
-	{{> layout/header h-title="하이펫보험" h-back=true }}
+	{{> layout/header h-title="하이펫보험(1~3년)" h-back=true }}
 
 	<div id="container" class="container">
 		<div class="content">
@@ -26,13 +26,13 @@
     			</div>
 					<div class="form_line grow">
     				<div class="label_tit">몸무게(단위 : kg)</div>
-						{{> cp/text placeholder="예) 5" inp-title="몸무게 입력" }}
+						{{> cp/text type="tel" placeholder="예) 5" inp-title="몸무게 입력" }}
     			</div>
 				</div>
 				<div class="row">
 					<div class="form_line grow">
     				<div class="label_tit">생년월일</div>
-						{{> cp/text value="20220123" readonly=true }}
+						{{> cp/text type="tel" value="20220123" readonly=true }}
     			</div>
 					<div class="form_line grow">
     				<div class="label_tit">성별</div>
@@ -47,33 +47,72 @@
 				</div>
 			</div>
 
+			<!-- Case1. 동물등록 N인 경우 -->
 			<div class="divider_ty1" aria-hidden="true"></div>
-
 			<h3 class="title_h3">반려동물 사진</h3>
-			
-			<div class="divider_ty1" aria-hidden="true"></div>
+			<div class="info_box">
+				<div class="title_h5">앞모습 전체 사진 등록</div>
 
-			<h3 class="title_h3">할인 정보</h3>
-			<p class="text_sub">동물보호관리시스템에 동물등록을 했어요.(<span class="point">5%</span> 할인)</p>
-			<div class="checkbox_group_wrap column">
-				<div class="inp_checkbox rd_box">
-					<input type="checkbox" id="checkbox01-9">
-					<label for="checkbox01-9" class="chk_label">
-						<span class="label_cont">반려동물 정보를 정확히 입력했어요</span>
-					</label>
-					<div class="chk_lby">
-						<ul class="list_ty2">
-							<li>
-								입력된 반려동물의 정보(<strong>품종/생년월일/성별/이름</strong>)가 정확한지 확인해 주세요.<br>
-								(동물등록증이 있다면 동물등록증에 등록된 정보와 일치 하는지 확인해 주세요.)
-							</li>
-							<li>제출한 사진 및 서류가 정확하지 않을 경우 추후 보상에 불이익이 있거나, 보험료 추징이 발생할 수도 있습니다.</li>
-						</ul>
+				<!-- s: 이미지 파일 붙는 영역 -->
+				<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+				<div class="file_attach_box">
+					<div class="file_thumbnail">
+						<img src="../../../images/content/gipt/img_file_before.png" alt="예시 이미지">
 					</div>
 				</div>
+				
+				<!-- 등록 후 이미지 (등록 전/후 따라 alt값 변경 필요) --> 
+				<!-- <div class="file_attach_box">
+					<div class="file_thumbnail">
+						<img src="../../../images/temp/img_carmera_temp.png" alt="등록된 반려동물 이미지">
+					</div>
+					<button type="button" class="btn_file_delete">
+						<span>등록한 이미지 삭제하기</span>
+					</button>
+				</div> -->
+				<!-- e: 이미지 파일 붙는 영역 -->
+
+				<ul class="list_ty2">
+					<li>최근 3개월 이내의 사진을 올려주세요.</li>
+					<li>10MB이하의 jpg, jpeg, gif, png 파일만 등록 가능합니다.</li>
+				</ul>
+
+				<!-- s: 이미지 파일 버튼 -->
+				<div class="btn_area center">
+					<!-- 등록 전 노출 -->
+					<div class="file_btn">
+						<input type="file" name="file" id="file">
+						<label for="file">
+							<span class="hd_btn hd_btn_ty_2 hd_btn_s_2">
+								<i class="hd_icon carmeraSvg"></i>
+								사진 등록
+							</span>
+						</label>
+					</div>
+					<!-- 등록 후 노출 -->
+					<!-- <div class="file_btn">
+						<input type="file" name="file" id="file">
+						<label for="file">
+							<span class="hd_btn hd_btn_ty_3 hd_btn_s_2">
+								<i class="hd_icon carmeraSvg2"></i>
+								사진 변경
+							</span>
+						</label>
+					</div> -->
+				</div>
+				<!-- e: 이미지 파일 버튼 -->
 			</div>
+			
+			<!-- Case2. 동물등록 Y인 경우 -->
+			<div class="divider_ty1" aria-hidden="true"></div>
+			<h3 class="title_h3">할인 정보</h3>
+			<p class="text_sub">동물보호관리시스템에 동물등록을 했어요.(<span class="point">5%</span> 할인)</p>
+			<div class="btn_area basic">
+				{{> cp/linkButton bl_class="short_cut" bl_text="동물등록 우대 할인" pop_id="pop_type00" question_tit="링크" }}
+			</div>
+
 			<div class="checkbox_group_wrap column">
-				{{#> cp/checkbox checkbox_class="rd_box" id="checkbox01-9" labelname="라벨명 Default" }}
+				{{#> cp/checkbox checkbox_class="rd_box" id="checkbox01" label_class="chk_label_ty3" labelname="반려동물 정보를 정확히 입력했어요" }}
 				<div class="chk_lby">
 					<ul class="list_ty2">
 						<li>
@@ -86,16 +125,6 @@
 				{{/ cp/checkbox}}
 			</div>
 		</div>
-
-		<!-- s: 꼭 알아두세요 -->
-		{{#> cp/notice dp-active="active" }}
-			<ul>
-				<li>내용1</li>
-				<li>내용2</li>
-				<li>내용3</li>
-			</ul>
-		{{/ cp/notice }}
-		<!-- e: 꼭 알아두세요 -->
 	</div>
 
 	<!-- s: 하단 고정 버튼 영역 -->

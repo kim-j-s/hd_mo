@@ -56,7 +56,7 @@
 					</div>
 
 					<div class="header_connect">
-						<h1 class="header_title">하이펫보험</h1>
+						<h1 class="header_title">하이펫보험(1~3년)</h1>
 					</div>
 
 					<div class="right">
@@ -105,7 +105,7 @@
 								<div class="label_tit">몸무게(단위 : kg)</div>
 								<div class="input_text">
 									<div class="inp">
-										<input type="text" placeholder="예) 5" title="몸무게 입력" />
+										<input type="tel" placeholder="예) 5" title="몸무게 입력" />
 										<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 									</div>
 								</div>
@@ -116,7 +116,7 @@
 								<div class="label_tit">생년월일</div>
 								<div class="input_text">
 									<div class="inp">
-										<input type="text" value="20220123" readonly />
+										<input type="tel" value="20220123" readonly />
 										<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 									</div>
 								</div>
@@ -144,22 +144,80 @@
 						</div>
 					</div>
 
+					<!-- Case1. 동물등록 N인 경우 -->
 					<div class="divider_ty1" aria-hidden="true"></div>
-
 					<h3 class="title_h3">반려동물 사진</h3>
+					<div class="info_box">
+						<div class="title_h5">앞모습 전체 사진 등록</div>
 
+						<!-- s: 이미지 파일 붙는 영역 -->
+						<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+						<div class="file_attach_box">
+							<div class="file_thumbnail">
+								<img src="../../../images/content/gipt/img_file_before.png" alt="예시 이미지" />
+							</div>
+						</div>
+
+						<!-- 등록 후 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+						<!-- <div class="file_attach_box">
+								<div class="file_thumbnail">
+									<img src="../../../images/temp/img_carmera_temp.png" alt="등록된 반려동물 이미지">
+								</div>
+								<button type="button" class="btn_file_delete">
+									<span>등록한 이미지 삭제하기</span>
+								</button>
+							</div> -->
+						<!-- e: 이미지 파일 붙는 영역 -->
+
+						<ul class="list_ty2">
+							<li>최근 3개월 이내의 사진을 올려주세요.</li>
+							<li>10MB이하의 jpg, jpeg, gif, png 파일만 등록 가능합니다.</li>
+						</ul>
+
+						<!-- s: 이미지 파일 버튼 -->
+						<div class="btn_area center">
+							<!-- 등록 전 노출 -->
+							<div class="file_btn">
+								<input type="file" name="file" id="file" />
+								<label for="file">
+									<span class="hd_btn hd_btn_ty_2 hd_btn_s_2">
+										<i class="hd_icon carmeraSvg"></i>
+										사진 등록
+									</span>
+								</label>
+							</div>
+							<!-- 등록 후 노출 -->
+							<!-- <div class="file_btn">
+									<input type="file" name="file" id="file">
+									<label for="file">
+										<span class="hd_btn hd_btn_ty_3 hd_btn_s_2">
+											<i class="hd_icon carmeraSvg2"></i>
+											사진 변경
+										</span>
+									</label>
+								</div> -->
+						</div>
+						<!-- e: 이미지 파일 버튼 -->
+					</div>
+
+					<!-- Case2. 동물등록 Y인 경우 -->
 					<div class="divider_ty1" aria-hidden="true"></div>
-
 					<h3 class="title_h3">할인 정보</h3>
 					<p class="text_sub">
 						동물보호관리시스템에 동물등록을 했어요.(
 						<span class="point">5%</span>
 						할인)
 					</p>
+					<div class="btn_area basic">
+						<a href="javascript:void(0)" class="btn_link short_cut" roll="button" onclick="openHDPopup(this,'pop_type00');" title="링크 팝업 오픈">
+							<span class="text">동물등록 우대 할인</span>
+						</a>
+					</div>
+
 					<div class="checkbox_group_wrap column">
 						<div class="inp_checkbox rd_box">
-							<input type="checkbox" id="checkbox01-9" />
-							<label for="checkbox01-9" class="chk_label">
+							<input type="checkbox" id="checkbox01" />
+							<label for="checkbox01" class="chk_label chk_label_ty3">
 								<span class="label_cont">반려동물 정보를 정확히 입력했어요</span>
 							</label>
 							<div class="chk_lby">
@@ -176,46 +234,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="checkbox_group_wrap column">
-						<div class="inp_checkbox rd_box">
-							<input type="checkbox" id="checkbox01-9" />
-							<label for="checkbox01-9" class="chk_label">
-								<span class="label_cont">라벨명 Default</span>
-							</label>
-							<div class="chk_lby">
-								<ul class="list_ty2">
-									<li>
-										입력된 반려동물의 정보(
-										<strong>품종/생년월일/성별/이름</strong>
-										)가 정확한지 확인해 주세요.
-										<br />
-										(동물등록증이 있다면 동물등록증에 등록된 정보와 일치 하는지 확인해 주세요.)
-									</li>
-									<li>제출한 사진 및 서류가 정확하지 않을 경우 추후 보상에 불이익이 있거나, 보험료 추징이 발생할 수도 있습니다.</li>
-								</ul>
-							</div>
-						</div>
-					</div>
 				</div>
-
-				<!-- s: 꼭 알아두세요 -->
-				<div class="bottom_fix_notice">
-					<div class="acd_item">
-						<div class="acd_head active">
-							<button type="button" class="acd_btn" aria-expanded="true"><span>꼭 알아두세요</span></button>
-						</div>
-						<div class="acd_cont">
-							<div class="inner" style="display: block">
-								<ul>
-									<li>내용1</li>
-									<li>내용2</li>
-									<li>내용3</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- e: 꼭 알아두세요 -->
 			</div>
 
 			<!-- s: 하단 고정 버튼 영역 -->

@@ -1,0 +1,137 @@
+<!---
+화면번호 : MPRGIPT30007000000
+경로 : 하이펫보험 > 계약자정보 입력
+-->
+{{#> layout/default page-title="계약자정보 입력 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="하이펫보험(1~3년)" h-back=true }}
+
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
+				<h2 class="title_h2">
+					계약자<br>
+					<strong>정보를 입력</strong>해주세요
+				</h2>
+			</div>
+			<!-- e: content_top -->
+
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">이름</div>
+					{{> cp/text value="김현대" inp-title="이름 입력" readonly=true }}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">주민등록번호</div>
+					<div class="comp_wrap birth">
+						{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" }}
+						<span class="dash">-</span>
+						<div class="id_pass_box">
+							{{> cp/text type="tel" minlength="1" maxlength="1" placeholder="●" inp-title="주민등록번호 뒷1자리 입력" no_del="flase" }}
+							<div class="id_pass">
+								●●●●●●
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form_line">
+					<div class="label_tit">휴대폰번호</div>
+					{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" readonly=true }}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">이메일</div>
+					{{> cp/text placeholder="이메일을 입력하세요" inp-title="이메일 입력" }}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">우편물 수령지</div>
+					<div class="radio_group_wrap">
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt1" name="radio_address" labelname="자택" checked=true }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt2" name="radio_address" labelname="직장" }}
+					</div>
+					{{> cp/text inp-search=true placeholder="검색어를 입력하세요" inp-title="검색어 입력" }}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">영문이름</div>
+					{{> cp/text placeholder="여권 영문이름 입력(예: KIM HYUN DAI)" inp-title="영문이름 입력" }}
+
+				</div>
+				<div class="form_line">
+					<div class="label_tit">보험계약서류 수령방법</div>
+					<div class="radio_group_wrap">
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt3" name="radio_method1" labelname="모바일" checked=true }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt4" name="radio_method1" labelname="이메일" }}
+					</div>
+				</div>
+			</div>
+
+			<div class="divider_ty1"></div>
+			<h3 class="title_h3">장애인전용보험전환특약 대상 여부</h3>
+			<div class="info_box">
+				<div class="title_h5">장애인증명서(복지카드) 사진 등록</div>
+
+				<!-- s: 이미지 파일 붙는 영역 -->
+				<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+				<div class="file_attach_box">
+					<div class="file_thumbnail">
+						<img src="../../../images/content/gipt/img_file_before.png" alt="예시 이미지">
+					</div>
+				</div>
+				
+				<!-- 등록 후 이미지 (등록 전/후 따라 alt값 변경 필요) --> 
+				<!-- <div class="file_attach_box">
+					<div class="file_thumbnail">
+						<img src="../../../images/temp/img_carmera_temp.png" alt="등록된 반려동물 이미지">
+					</div>
+					<button type="button" class="btn_file_delete">
+						<span>등록한 이미지 삭제하기</span>
+					</button>
+				</div> -->
+				<!-- e: 이미지 파일 붙는 영역 -->
+
+				<ul class="list_ty2">
+					<li>10MB이하의 jpg, jpeg, gif, png 파일만 등록 가능합니다.</li>
+				</ul>
+
+				<!-- s: 이미지 파일 버튼 -->
+				<div class="btn_area center">
+					<!-- 등록 전 노출 -->
+					<div class="file_btn">
+						<input type="file" name="file" id="file">
+						<label for="file">
+							<span class="hd_btn hd_btn_ty_2 hd_btn_s_2">
+								<i class="hd_icon carmeraSvg"></i>
+								사진 등록
+							</span>
+						</label>
+					</div>
+					<!-- 등록 후 노출 -->
+					<!-- <div class="file_btn">
+						<input type="file" name="file" id="file">
+						<label for="file">
+							<span class="hd_btn hd_btn_ty_3 hd_btn_s_2">
+								<i class="hd_icon carmeraSvg2"></i>
+								사진 변경
+							</span>
+						</label>
+					</div> -->
+				</div>
+				<!-- e: 이미지 파일 버튼 -->
+			</div>
+		</div>
+	</div>
+
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			<!-- {{> cp/button type="1" size="2" b-text="이메일을 입력해주세요" disabled=true }} -->
+			{{> cp/button type="1" size="2" b-text="모두 입력했어요"}}
+		</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
+</div>
+
+<!-- s: popup area -->
+<!-- e: popup area -->
+
+{{/ layout/default }}
