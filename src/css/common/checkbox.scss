@@ -235,23 +235,22 @@
 
 	}
 	&.rd_box {
+		padding: var(--padding-card-large);
 		width: 100%;
 		border: 1px solid var(--color-border-gray-light);
 		border-radius: 24px;
+
 		input[type=checkbox] {
 			top: 24px;
 			left: 24px;
 			width: 24px;
 			height: 24px;
-			& + .chk_label {
-				padding: var(--padding-card-large);
-				padding-left: 56px;
-				&::before {
-					top: 24px;
-					left: 24px;
-				}
+
+			& + [class^=chk_label] {
+				padding-left: 32px;
 			}
 		}
+
 		&.question {
 			padding-right: 16px;
 			display: flex;
@@ -262,6 +261,10 @@
 					padding-right: 0;
 				}
 			}
+		}
+
+		.chk_lby {
+			padding-left: 32px;
 		}
 	}
 	.chk_lby {
