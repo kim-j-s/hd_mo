@@ -44,12 +44,21 @@
 			}
 		}
 		&:disabled {
-			color: var(--color-text-disabled-on);
+			color: var(--color-text-disabled-on) !important;
 			background-color: var(--color-input-surface-disabled);
 		}
 
 		&:focus {
 			outline: none;
+		}
+	}
+	&.readonly,
+	&.disabled {
+		background-color: var(--color-input-surface-disabled);
+	}
+	&.disabled {
+		.int_txt {
+			color: var(--color-text-disabled-on);
 		}
 	}
 	.int_txt {
@@ -169,6 +178,7 @@
 			border-color: var(--color-input-border-error);
 		}
 	}
+	
 
 }
 // Error 문구
@@ -202,6 +212,7 @@
 
 		}
 	}
+
 	.dash {
 		font-size: 16px;
 	}

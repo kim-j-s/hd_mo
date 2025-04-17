@@ -1,35 +1,22 @@
-<!--
-화면번호 : MPRMTPS10008000000
-경로 : 7.피보험자 정보 
--->
-{{#> layout/default page-title="자동차 운전자 정보 | 상품"}}
+{{#> layout/default page-title="고객정보입력 | 상품"}}
 	<div id="wrap" class="wrap">
-		{{> layout/header h-title="자동차보험" h-back=true }}
+		{{> layout/header h-title="피보험자/계약자 정보" h-back=true }}
 		<div id="container" class="container">
 			<div class="content">
 				<!-- s: content_top -->
 				<div class="content_top">
 					<h2 class="title_h2">
-						피보험자/계약자 <strong>정보를 입력</strong>해 주세요
+						보험 가입을 위해 고객님의 <strong>정보를 입력</strong>해 주세요
 					</h2>
 				</div>
 				<!-- e: content_top -->
-					<!-- s: 피보험자/계약자 동일 -->
 				<div class="form_box">
-					<h3 class="title_h3">피보험자/계약자 정보</h3>
-					<div class="info_gray">
-						<dl>
-							<dt>피보험자 이름</dt>
-							<dd>김*대</dd>
-						</dl>
-						<dl>
-							<dt>주민등록번호</dt>
-							<dd>900101-1******</dd>
-						</dl>
-						<dl>
-							<dt>휴대폰번호</dt>
-							<dd>010-1234-5678</dd>
-						</dl>
+					<h3 class="title_h3">연락처 정보</h3>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">휴대폰번호</div>
+							{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" value="- 1234 - 5678" inp-title="휴대폰번호" disabled="true" }}
+						</div>
 					</div>
 					<div class="form_group_wrap">
 						<div class="form_line">
@@ -276,7 +263,7 @@
 	<!-- s: popup area -->
 
     	<!-- s: 피보험자/계약 관계 안내 Bottom 팝업 -->
-		{{#> popup/popup_bottom popup-id="pop_type01" popup-active=false popup-title="피보험자/계약 관계 안내" }}
+		{{#> popup/popup_bottom popup-id="pop_type01" active=false popup-title="피보험자/계약 관계 안내" }}
 		<div class="popup_cont">
 			<div class="popup_content">
                 <div class="info_cont">
@@ -311,7 +298,7 @@
 		<!-- e: selpop -->
 		 
     	<!-- s: 질권설정이란 Bottom 팝업 -->
-		{{#> popup/popup_bottom popup-id="pop_type03" popup-active=false popup-title="질권설정이란" }}
+		{{#> popup/popup_bottom popup-id="pop_type03" active=false popup-title="질권설정이란" }}
 		<div class="popup_cont">
 			<div class="popup_content">
                 <div class="info_cont">
