@@ -1,36 +1,47 @@
-// Accordian
-.acd_wrap {
+/* Accordian */
+
+.acd_bottom_fixed {
+	margin: 0 -24px;
+      
 	.acd_item {
-		.acd_head {
-			.acd_btn {
-				padding: 20px 10px;
-				font-size: 16px;
-				background-color: #fff;
-			}
-		}
-		.acd_cont {
-			background-color: #fff;
+		background-color: var(--color-surface-gray-subtler);
+	}
 
-			.inner {
-				padding: 20px 0;
+	.acd_head {
+		min-height: 64px;
+		padding: var(--padding-6) var(--padding-7);
+		font-size: var(--font-size-heading-xsmall);
+		line-height: 32px;
+
+		.acd_btn {
+			position: relative;
+			width: 100%;
+			padding: 0 24px;
+			background: url(../images/icon/point_circle.svg) no-repeat left 50% /20px auto;
+
+			&:after {
+				position: absolute;
+				top:4px;
+				right:0;
+				content: '';
+				width: 24px;
+				height: 24px;
+				background: url(../images/icon/arrowDown_ty3.svg) no-repeat center /24px auto;
+				box-sizing: border-box;
 			}
 
-			.acd_btn {
-				margin-top: 10px;
+			&[aria-expanded="true"] {
+				&:after {
+					transform: rotate(180deg);
+				}
 			}
-		}
-
-		>.acd_head {
-			background-color: skyblue;
-		}
-		>.acd_cont {
-			background-color: #d4d4d4;
 		}
 	}
-}
 
-.acd_cont {
-	.inner {
-		display: none;
+	.acd_cont {
+		.inner {
+			display:none;
+			padding: 0 24px 20px;
+		}
 	}
 }
