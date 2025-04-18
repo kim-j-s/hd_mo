@@ -8,62 +8,11 @@
 		}
 	}
 }
-/* Accordion */
 
-.acd_bottom_fixed {
-	margin: 0 -24px;
-      
-	.acd_item {
-		background-color: var(--color-surface-gray-subtler);
-	}
-	.acd_head {
-		min-height: 64px;
-		padding: var(--padding-6) var(--padding-7);
-		font-size: var(--font-size-heading-xsmall);
-		line-height: 32px;
 
-		.acd_btn {
-			position: relative;
-			width: 100%;
-			padding: 0 24px;
-			background: url(../images/icon/point_circle.svg) no-repeat left 50% /20px auto;
-
-			&:after {
-				position: absolute;
-				top:4px;
-				right:0;
-				content: '';
-				width: 24px;
-				height: 24px;
-				background: url(../images/icon/arrowDown_ty3.svg) no-repeat center /24px auto;
-				box-sizing: border-box;
-			}
-
-			&[aria-expanded="true"] {
-				&:after {
-					transform: rotate(180deg);
-				}
-			}
-		}
-	}
-	.acd_cont {
-
-			.inner {
-				display:none;
-				padding: 0 24px 20px;
-			}
-
-		&[aria-expanded="true"] {
-			&:after {
-				transform: rotate(180deg);
-			}
-		}
-	}
-}
+/** Accordion **/
 
 // default
-
-
 .acd_item {
 	&.acd_item_ty1 {
 		border-radius: var(--radius-large2);
@@ -134,5 +83,60 @@
 			}
 		}
 
+	}
+}
+
+
+
+/** Accordion - info box 타입 **/
+
+.acd_info_box {
+	margin: 0 -24px;
+      
+	.acd_item {
+		background-color: var(--color-surface-gray-subtler);
+	}
+	.acd_head {
+		min-height: 64px;
+		padding: var(--padding-6) var(--padding-7);
+		font-size: var(--font-size-heading-xsmall);
+		line-height: 32px;
+
+		.acd_btn {
+			position: relative;
+			width: 100%;
+			padding: 0 24px;
+			background: url(../images/icon/point_circle.svg) no-repeat left 50% /20px auto;
+
+			&:after {
+				position: absolute;
+				top:4px;
+				right:0;
+				content: '';
+				width: 24px;
+				height: 24px;
+				background: url(../images/icon/arrowDown_ty3.svg) no-repeat center /24px auto;
+				box-sizing: border-box;
+			}
+
+			&[aria-expanded="true"] {
+				&:after {
+					transform: rotate(180deg);
+				}
+			}
+		}
+	}
+	.acd_cont {
+
+			.inner {
+				display:none;
+				padding: 0 24px 20px;
+			}
+
+		&[aria-expanded="true"] {
+			&:after {
+				transform: rotate(180deg);
+			}
+		}
 	}
 }
