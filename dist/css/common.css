@@ -133,6 +133,9 @@ strong {
 .wrap.wrap_ty2 .bottom_fix_wrap {
 	background-color: #ffffff;
 }
+.wrap.wrap_ty3 .container {
+	border: 1px solid red;
+}
 /* _하단 고정버튼 영역 */
 .bottom_fix_wrap {
 	padding: 1.2rem 2.4rem 1.6rem;
@@ -874,6 +877,93 @@ strong {
 	opacity: 0;
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
+}
+.acd_item.acd_item_ty2 {
+	border-radius: var(--radius-large2);
+	border: 1px solid var(--color-border-gray-light);
+}
+.acd_item.acd_item_ty2 .acd_head {
+	position: relative;
+	padding: 2.4rem 2rem;
+}
+.acd_item.acd_item_ty2 .acd_head .acd_btn {
+	position: relative;
+	width: 100%;
+	padding: 0 2.4rem 0 0;
+	background-color: #fff;
+	font-weight: 700;
+	font-size: var(--font-size-heading-small);
+}
+.acd_item.acd_item_ty2 .acd_head .acd_btn:after {
+	position: absolute;
+	top: 0.4rem;
+	right: 0;
+	content: "";
+	width: 2rem;
+	height: 2rem;
+	background: url(../images/icon/arrowDown_ty3.svg) no-repeat center/2rem auto;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.acd_item.acd_item_ty2 .acd_head .acd_btn[aria-expanded="true"]:after {
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.acd_item.acd_item_ty2 .acd_head.active + .acd_cont {
+	padding: 2.4rem 2rem;
+}
+.acd_item.acd_item_ty2 .acd_head.active + .acd_cont::before {
+	opacity: 1;
+}
+.acd_item.acd_item_ty2 .acd_cont {
+	position: relative;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	padding: 0 2rem;
+}
+.acd_item.acd_item_ty2 .acd_cont::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 2rem;
+	width: calc(100% - 4rem);
+	border-bottom: 1px solid var(--color-divider-gray-light);
+	opacity: 0;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.acd_item.acd_item_ty2 .acd_cont .inp_checkbox label > span {
+	border: 1px solid red;
+	background: url(../images/icon/arrowRight_ty5.svg) no-repeat right top/2rem auto;
+}
+.acd_item.acd_item_ty2 .acd_cont .inp_checkbox .sub_txt_area {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	gap: 0.8rem;
+	line-height: 2.8rem;
+	font-size: 0;
+	padding-top: 0.4rem;
+	color: var(--color-text-subtle);
+	font-size: var(--font-size-label-small);
+}
+.acd_item.acd_item_ty2 .acd_cont .inp_checkbox .sub_txt_area > .hd_badge {
+	line-height: 2rem;
+}
+.acd_item.acd_item_ty2 .acd_cont .inp_checkbox .price_btn {
+	color: var(--color-text-primary);
+	font-size: var(--font-size-button-large);
+	position: relative;
+	background: url(../images/icon/arrowRight_ty6.svg) no-repeat right center/2rem auto;
+	padding-right: 1.9rem;
+}
+.acd_item.acd_item_ty2 .acd_cont .inp_checkbox .price_btn:hover {
+	background-color: var(--color-button-text-fill-hover);
+}
+.acd_item.acd_item_ty2 .acd_cont .inp_checkbox + .inp_checkbox {
+	margin-top: 2rem;
 }
 /** Accordion - info box 타입 **/
 .acd_info_box {
@@ -4312,22 +4402,14 @@ strong {
 	background-color: #ddd;
 }
 /* tab */
-.tab_wrap_list .tab_btn {
-	padding: 1rem 2rem;
-	font-size: 1.2rem;
-}
-.tab_wrap_list .tab_btn.active {
-	background-color: blue;
-	color: #fff;
-}
-.tab_wrap_list_ty2 {
+.tab_wrap_list_ty1 {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	margin: 0 -2.4rem 3.2rem;
 	border-bottom: 1px solid #e1e3ea;
 }
-.tab_wrap_list_ty2 .tab_btn {
+.tab_wrap_list_ty1 .tab_btn {
 	position: relative;
 	-webkit-box-flex: 1;
 	-ms-flex: 1;
@@ -4339,11 +4421,11 @@ strong {
 	background-color: #fff;
 	text-align: center;
 }
-.tab_wrap_list_ty2 .tab_btn.active {
+.tab_wrap_list_ty1 .tab_btn.active {
 	font-weight: 700;
 	color: var(--color-text-basic);
 }
-.tab_wrap_list_ty2 .tab_btn.active:before {
+.tab_wrap_list_ty1 .tab_btn.active:before {
 	position: absolute;
 	bottom: -1px;
 	left: 0;
@@ -4352,8 +4434,16 @@ strong {
 	height: 0.3rem;
 	background-color: #1e2124;
 }
-.tab_wrap_list_ty2 .tab_btn:disabled {
+.tab_wrap_list_ty1 .tab_btn:disabled {
 	color: var(--color-text-disabled);
+}
+.tab_wrap_list_ty2 .tab_btn {
+	padding: 1rem 2rem;
+	font-size: 1.2rem;
+}
+.tab_wrap_list_ty2 .tab_btn.active {
+	background-color: blue;
+	color: #fff;
 }
 .tab_wrap_content {
 	display: none;
@@ -4367,7 +4457,7 @@ strong {
 .tab_scroll_box {
 	overflow-x: auto;
 }
-.tab_scroll_box .tab_wrap_list {
+.tab_scroll_box [class^="tab_wrap_list"].scroll {
 	display: -webkit-inline-box;
 	display: -ms-inline-flexbox;
 	display: inline-flex;
@@ -4538,6 +4628,9 @@ strong {
 }
 .title_sub + .img_area {
 	margin-top: 2rem;
+}
+.title_sub + .form_group_wrap {
+	margin-top: 3.2rem;
 }
 .text_sub {
 	font-size: var(--font-size-body-medium);

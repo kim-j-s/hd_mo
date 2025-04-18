@@ -362,7 +362,7 @@ function tabScroll() {
 	$(".tab_scroll_box .tab_btn").on("click", function () {
 		const $this = $(this),
 			$scrollBox = $this.closest(".tab_scroll_box");
-		$scrollList = $scrollBox.children(".tab_wrap_list");
+		$scrollList = $scrollBox.children(".scroll");
 
 		const btn_offset = $this.offset().left - 20,
 			scrollBox_offset = $scrollBox.offset().left,

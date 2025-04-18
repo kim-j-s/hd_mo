@@ -18,7 +18,7 @@
 			<div class="form_line">
 				<div class="label_tit">보험기간(년)</div>
 				<div class="sweep_select">
-					<span class="iii" tabindex="1">보험기간 선택</span>
+					<!-- <span class="iii" tabindex="1">보험기간 선택</span> -->
 					<div id="option_swiper2" class="swiper-container">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide"><span>3년</span></div>
@@ -45,7 +45,7 @@
 			<div class="form_line">
 				<div class="label_tit">보험기간(년)</div>
 				<div class="sweep_select">
-					<span class="iii" tabindex="-1">보험기간 선택</span>
+					<!-- <span class="iii" tabindex="-1">보험기간 선택</span> -->
 					<div id="option_swiper1" class="swiper-container">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide"><span>3년</span></div>
@@ -124,16 +124,17 @@
 			});
 		}
 
-		// $(document).on('blur', '.sweep_select .iii', function () {
 		$(document).on('blur', '.popup_head_title', function () {
-			const $sweepSelect = $(this).closest('.sweep_select');
-			const swiperContainer = $sweepSelect.find('.swiper-container')[0];
-			const swiperInstance = swiperMap.get(swiperContainer);
+			const $popupContainer = $(this).closest('.popup_container');
 
-			if (swiperInstance) {
-				swiperInstance.slideTo(0);
-				$('.bbooxx').text('스크립트 실행');
-			}
+			$popupContainer.find('.sweep_select .swiper-container').each(function () {
+				const swiperInstance = swiperMap.get(this);
+				if (swiperInstance) {
+					swiperInstance.slideTo(0);
+				}
+			});
+
+			$('.bbooxx').text('전체 초기화 실행');
 		});
 
 		$(document).on('blur', '.popup_head_title', function () {

@@ -1,5 +1,5 @@
 <!---
-화면번호 : PRDR10003010000
+화면번호 : MPRGIPT30005010000
 경로 : 보험료 확인 > 가입조건 변경
 -->
 <!doctype html>
@@ -48,16 +48,8 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body>
-		<p class="bbooxx" tabindex="0"></p>
-
-		<div style="padding: 50px; text-align: center">
-			<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openHDPopup(this,'pop_type01');">
-				<span class="text">pop_type01</span>
-			</button>
-		</div>
-
 		<!-- s: Bottom 팝업 -->
-		<div class="popup_wrap bottom" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="true">
+		<div class="popup_wrap bottom active" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="false">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
 				<div class="popup_inner">
@@ -68,50 +60,75 @@
 
 					<div class="popup_cont">
 						<div class="popup_content">
+							<p class="title_sub">
+								<span class="point">5</span>
+								살
+								<span class="point">그레이트하운드</span>
+								보장
+							</p>
 							<div class="form_group_wrap">
 								<div class="form_line">
-									<div class="label_tit">보험기간(년)</div>
-									<div class="sweep_select">
-										<!-- <span class="iii" tabindex="1">보험기간 선택</span> -->
-										<div id="option_swiper2" class="swiper-container">
-											<div class="swiper-wrapper">
-												<div class="swiper-slide"><span>3년</span></div>
-												<div class="swiper-slide"><span class="active">5년</span></div>
-												<div class="swiper-slide"><span>7년</span></div>
-												<div class="swiper-slide"><span>10년</span></div>
-												<div class="swiper-slide"><span>15년</span></div>
-												<div class="swiper-slide"><span>20년</span></div>
-												<div class="swiper-slide"><span>30년</span></div>
-												<div class="swiper-slide"><span>40년</span></div>
-												<div class="swiper-slide"><span>50년</span></div>
-												<div class="swiper-slide"><span>60년</span></div>
-												<div class="swiper-slide"><span>70년</span></div>
-												<div class="swiper-slide"><span>80년</span></div>
-												<div class="swiper-slide"><span>90년</span></div>
-												<div class="swiper-slide"><span>100년</span></div>
-												<div class="swiper-slide"><span>110년</span></div>
-											</div>
+									<div class="label_tit">보험기간</div>
+									<div class="radio_group_wrap" role="radiogroup">
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="rd_opt1_1" name="rd_opt1" checked />
+											<label for="rd_opt1_1">
+												<span class="label_cont">1년</span>
+											</label>
 										</div>
-										<div class="swiper-button-prev"></div>
-										<div class="swiper-button-next"></div>
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="rd_opt1_2" name="rd_opt1" />
+											<label for="rd_opt1_2">
+												<span class="label_cont">3년</span>
+											</label>
+										</div>
 									</div>
 								</div>
 								<div class="form_line">
-									<div class="label_tit">보험기간(년)</div>
-									<div class="sweep_select">
-										<!-- <span class="iii" tabindex="-1">보험기간 선택</span> -->
-										<div id="option_swiper1" class="swiper-container">
+									<div class="label_tit">보상비율</div>
+									<div class="select_rolling_opt">
+										<div id="option_swiper" class="swiper-container">
 											<div class="swiper-wrapper">
-												<div class="swiper-slide"><span>3년</span></div>
-												<div class="swiper-slide"><span>5년</span></div>
-												<div class="swiper-slide"><span>7년</span></div>
-												<div class="swiper-slide"><span>10년</span></div>
-												<div class="swiper-slide"><span class="active">15년</span></div>
-												<div class="swiper-slide"><span>20년</span></div>
+												<div class="swiper-slide"><span>50%</span></div>
+												<div class="swiper-slide"><span>70%</span></div>
+												<div class="swiper-slide"><span>80%</span></div>
+												<div class="swiper-slide"><span>90%</span></div>
 											</div>
+											<div class="swiper-button-next"></div>
+											<div class="swiper-button-prev"></div>
 										</div>
-										<div class="swiper-button-prev"></div>
-										<div class="swiper-button-next"></div>
+									</div>
+								</div>
+								<div class="form_line">
+									<div class="label_tit">자기부담금</div>
+									<div class="select_rolling_opt">
+										<div id="option_swiper" class="swiper-container">
+											<div class="swiper-wrapper">
+												<div class="swiper-slide"><span>1만원</span></div>
+												<div class="swiper-slide"><span>2만원</span></div>
+												<div class="swiper-slide"><span>3만원</span></div>
+												<div class="swiper-slide"><span>5만원</span></div>
+											</div>
+											<div class="swiper-button-next"></div>
+											<div class="swiper-button-prev"></div>
+										</div>
+									</div>
+								</div>
+								<div class="form_line">
+									<div class="label_tit">납입방법</div>
+									<div class="radio_group_wrap" role="radiogroup">
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="rd_opt2_1" name="rd_opt2" checked />
+											<label for="rd_opt2_1">
+												<span class="label_cont">월납</span>
+											</label>
+										</div>
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="rd_opt2_2" name="rd_opt2" />
+											<label for="rd_opt2_2">
+												<span class="label_cont">일시납</span>
+											</label>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -119,8 +136,8 @@
 					</div>
 					<div class="popup_bottom">
 						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_2">
-								<span class="text">가입 조건을 변경합니다</span>
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">확인했어요</span>
 							</button>
 						</div>
 					</div>
@@ -132,71 +149,28 @@
 
 		<script>
 			$(document).ready(function () {
-				const swiperMap = new Map();
-
 				$(".swiper-container").each(function (idx, ele) {
 					const $swiperContainer = $(ele);
-					const $swiperWrapper = $swiperContainer.find(".swiper-wrapper");
-					const $sweepSelect = $swiperContainer.closest(".sweep_select");
-					const $prevBtn = $sweepSelect.find(".swiper-button-prev");
-					const $nextBtn = $sweepSelect.find(".swiper-button-next");
-
-					// .swiper-slide > span.active 의 인덱스를 찾아 초기 슬라이드로 설정
-					const $activeSlide = $swiperWrapper.find(".swiper-slide span.active");
-					const initialSlideIndex = $activeSlide.length ? $activeSlide.closest(".swiper-slide").index() : 0;
+					const slideNum = $swiperContainer.find(".swiper-slide").length,
+						newNum = Math.round(slideNum / 2) - 1;
+					// console.log(newNum);
 
 					const swiper = new Swiper($swiperContainer[0], {
 						slidesPerView: "auto",
 						centeredSlides: true,
-						initialSlide: initialSlideIndex,
+						initialSlide: newNum,
 						spaceBetween: 16,
-						slideToClickedSlide: true,
 						observer: true,
 						navigation: {
-							nextEl: $nextBtn[0],
-							prevEl: $prevBtn[0],
+							nextEl: ".swiper-button-next",
+							prevEl: ".swiper-button-prev",
 						},
 						a11y: {
 							enabled: true,
-							slideRole: "button",
-							slideLabelMessage: "",
 							prevSlideMessage: "이전 항목으로 이동",
 							nextSlideMessage: "다음 항목으로 이동",
-							scrollOnFocus: true,
-						},
-						on: {
-							init: function (swiperInstance) {
-								slideFocus(swiperInstance);
-							},
 						},
 					});
-					swiperMap.set($swiperContainer[0], swiper);
-				});
-
-				function slideFocus(swiperInstance) {
-					$(swiperInstance.slides).each(function (idx) {
-						$(this).on("click", function () {
-							swiperInstance.slideTo(idx);
-							// $('.popup_head').text(idx);
-						});
-					});
-				}
-
-				$(document).on("blur", ".popup_head_title", function () {
-					const $popupContainer = $(this).closest(".popup_container");
-
-					$popupContainer.find(".sweep_select .swiper-container").each(function () {
-						const swiperInstance = swiperMap.get(this);
-						if (swiperInstance) {
-							swiperInstance.slideTo(0);
-						}
-					});
-
-					$(".bbooxx").text("전체 초기화 실행");
-				});
-
-				$(document).on("blur", ".popup_head_title", function () {
-					$(".bbooxx").text("blur");
 				});
 			});
 		</script>
