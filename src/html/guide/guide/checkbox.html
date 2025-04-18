@@ -3,12 +3,47 @@
 
 	<div class="guide_discription">Default</div>
 	{{> cp/checkbox id="checkbox1" labelname="라벨명 Default" }}
+
 	<div class="guide_discription">checked</div>
 	{{> cp/checkbox id="checkbox2" labelname="라벨명 checked" checked=true }}
+
 	<div class="guide_discription">disabled</div>
 	{{> cp/checkbox id="checkbox3" labelname="라벨명 disabled" disabled=true }}
+
 	<div class="guide_discription">checked + disabled</div>
 	{{> cp/checkbox id="checkbox4" labelname="라벨명 checked disabled" checked=true disabled=true }}
+
+	<div class="guide_discription">더보기 유형 - 1</div>
+	{{> cp/checkbox labelname="더보기" ag_more=true id="more_case1" }}
+
+		<div class="guide_discription">확장형</div>
+	{{#> cp/checkbox labelname="장례비보장(반려견)" id="checkbox03-1" }}
+	<div class="chk_lby2">
+		{{> cp/linkButton bl_text="15만원" size="1" bl_class="price_btn" pop_id="popup_ex" question_tit="가입조건변경"}}
+	</div>
+	{{/ cp/checkbox }}
+
+	<div class="guide_discription">확장형 + 더보기 유형 1</div>
+	{{#> cp/checkbox labelname="슬관절 확장보장II(반려견)" ag_more=true id="checkbox01-2" }}
+	<div class="chk_lby2">
+		<div class="badge_wrap">
+			<span class="hd_badge outline solid_pastel c_secondary size_m">새로 나왔어요</span>
+		</div>
+	</div>
+	{{/ cp/checkbox }}
+
+	<div class="guide_discription">확장형 + 더보기 유형 2</div>
+	{{#> cp/checkbox labelname="슬관절 확장보장II(반려견)" ag_more2=true id="checkbox01-3" }}
+	<div class="chk_lby2">
+		<div class="badge_wrap">
+			<span class="hd_badge outline solid_pastel c_secondary size_m">새로 나왔어요</span>
+		</div>
+	</div>
+	{{/ cp/checkbox }}
+	<br>
+	<br>
+	<br>
+
 
 	<div class="guide_h4">.checkbox_group_wrap</div>
 	<div class="guide_discription">Default</div>
@@ -20,11 +55,13 @@
 	</div>
 	<div class="guide_discription">Column Type</div>
 	<div class="checkbox_group_wrap column">
-		{{> cp/checkbox id="checkbox02-1" labelname="라벨명 type01 : 내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다." }}
-		{{> cp/checkbox id="checkbox02-2" labelname="라벨명 type02 : 내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다." }}
-		{{> cp/checkbox id="checkbox02-3" labelname="라벨명 type03 : 내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다." }}
+		{{> cp/checkbox id="checkbox02-1" labelname="라벨명 type01 : 내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다." }}
+		{{> cp/checkbox id="checkbox02-2" labelname="라벨명 type02 : 내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다." }}
+		{{> cp/checkbox id="checkbox02-3" labelname="라벨명 type03 : 내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다." }}
 	</div>
-	<div class="guide_discription">Default+help text</div>
+	
+
+	<div class="guide_discription">Default + help text</div>
 	<div class="checkbox_group_wrap column">
 		{{> cp/checkbox id="checkbox01-5" labelname="라벨명 Default" labelcont="부가적인 설명이 들어갑니다." }}
 		{{> cp/checkbox id="checkbox01-6" labelname="라벨명 checked" labelcont="부가적인 설명이 들어갑니다." checked=true }}
@@ -44,6 +81,7 @@
 		{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-10" labelname="라벨명 checked" labelcont="부가적인 설명이 들어갑니다." checked=true }}
 		{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-11" labelname="라벨명 disabled" labelcont="부가적인 설명이 들어갑니다." disabled=true }}
 		{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-12" labelname="라벨명 checked disabled" labelcont="부가적인 설명이 들어갑니다." checked=true disabled=true }}
+		{{> cp/checkbox labelname="더보기" ag_more=true id="more_case2" checkbox_class="rd_box" }}
 	</div>
 	<div class="guide_discription">.rd_box > Default + help text(.check_hide)</div>
 	<div class="checkbox_group_wrap column">
