@@ -35,7 +35,7 @@
 		}
 	});
 
-	/* Accordian */
+	/* Accordion */
 	$DOM.on("click", ".acd_item .acd_head .acd_btn", function () {
 		console.log("아코디언");
 		const $this = $(this),
