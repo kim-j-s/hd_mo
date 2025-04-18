@@ -145,17 +145,22 @@
 				transition: all 0.3s;
 			}
 
+			.detail_list_btn {
+				font-size: var(--font-size-label-medium);
+				background: url(../images/icon/arrowRight_disabled.svg) no-repeat right center /20px auto;
+				cursor: pointer;				
+			}
+
+
 			.inp_checkbox {
 				label > span{
-					border: 1px solid red;
-					background: url(../images/icon/arrowRight_ty5.svg) no-repeat right top /20px auto;
+					background: url(../images/icon/arrowRight_disabled.svg) no-repeat right top /20px auto;
 				}
 
 				.sub_txt_area {
 					display: flex;
 					gap: 8px;
 					line-height: 28px;
-					font-size:0;
 					padding-top: 4px;
 					color: var(--color-text-subtle);
 					font-size: var(--font-size-label-small);
@@ -166,6 +171,7 @@
 				}
 
 				.price_btn {
+					height: 100%;
 					color: var(--color-text-primary);
 					font-size: var(--font-size-button-large);
 					position: relative;
@@ -176,10 +182,13 @@
 						background-color: var(--color-button-text-fill-hover);
 					}
 				}
-
 			}
 
-			.inp_checkbox + .inp_checkbox {
+			// .inp_checkbox + .inp_checkbox {
+			// 	margin-top: 20px;		
+			// }
+
+			* + .inp_checkbox {
 				margin-top: 20px;		
 			}
 
