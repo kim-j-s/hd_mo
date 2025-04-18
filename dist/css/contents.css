@@ -1424,9 +1424,37 @@
 }
 /* 상단 이미지 영역 */
 .guarantee_visuval {
+	position: relative;
 	font-size: 0;
 	line-height: normal;
 	text-align: center;
+}
+.guarantee_visuval .visual_msg {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: 5.2rem;
+	padding: 0.4rem 1.6rem;
+	background: var(--color-element-primary);
+	border-radius: 10rem;
+}
+.guarantee_visuval .visual_msg .msg_text {
+	position: relative;
+	font-size: var(--font-size-body-xsmall);
+	font-weight: 700;
+	line-height: 1.8rem;
+	color: #fff;
+	border-radius: 10rem;
+}
+.guarantee_visuval .visual_msg .msg_text:after {
+	position: absolute;
+	bottom: -0.7rem;
+	left: -1.6rem;
+	z-index: 0;
+	content: "";
+	width: 1.7rem;
+	height: 1.8rem;
+	background: url(../images/icon/icon_bb_tail.svg) no-repeat center/100% auto;
 }
 /* 상단 이미지 영역 */
 .guarantee_list_wrap {
@@ -1645,7 +1673,7 @@
 	-webkit-transition: all 0.5s ease;
 	transition: all 0.5s ease;
 }
-.guarantee_container_right .guarantee_detail {
+.guarantee_detail {
 	font-size: initial;
 }
 /* 운전자보험 - 보험료 계산결과 */
@@ -1761,12 +1789,6 @@
 }
 .table_wrap + .list_ty1 {
 	margin-top: 1.6rem;
-}
-.table_form .title_h3 {
-	margin-bottom: 2rem;
-}
-.table_form .table_wrap + .title_h3 {
-	margin-top: 3.2rem;
 }
 .add_text {
 	padding: 1.6rem;

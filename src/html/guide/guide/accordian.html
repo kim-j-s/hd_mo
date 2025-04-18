@@ -1,0 +1,123 @@
+{{#> layout/guide }}
+	<div class="guide_h1">accordian</div>
+
+	<div class="guide_h4">적용 케이스</div>
+	<div class="guide_discription">case1 : 꼭 알아두세요</div>
+	<!-- s: 꼭 알아두세요 -->
+	{{#> cp/notice }}
+	<ul>
+		<li>내용1</li>
+		<li>내용2</li>
+		<li>내용3</li>
+	</ul>
+	{{/ cp/notice }}
+	<!-- e: 꼭 알아두세요 -->
+
+	<div class="guide_discription">case2 : .acd_bottom_fixed</div>
+	<div class="acd_bottom_fixed">
+		<div class="acd_item">
+			{{#> cp/accordian ac-title="아코디언 타이틀" }}
+			<ul>
+				<li>내용1</li>
+				<li>내용2</li>
+				<li>내용3</li>
+			</ul>				
+			{{/ cp/accordian }}
+		</div>	
+	</div>
+
+	<div class="guide_discription">case3</div>
+	<div class="acd_item acd_item_ty1">
+		{{#> cp/accordian ac-title="상세보기" aci="aci03" aclc="chk_label_ty2" acl="빠른 일상 생활 복귀!"}}
+			컨텐츠 내용
+		{{/ cp/accordian }}
+	</div>
+
+	<div class="guide_discription">case4</div>
+	<div class="acd_item acd_item_ty1">
+		{{#> cp/accordian ac-title="상세보기" aci="aci04" aclc="chk_label_ty2" acl="운전자 3대 비용은 기본! <span class='sub_g_txt'>사고처리지원금 공탁금 50% 선지급 가능</span>"}}
+			컨텐츠 내용
+		{{/ cp/accordian }}
+	</div>
+
+	
+
+	<div class="guide_h4">각각 열리는 Type(1Depth 기준)</div>
+	<div class="guide_discription">Default (닫혀있는 Type)</div>
+	<div class="acd_item">
+		{{#> cp/accordian ac-title="아코디언 타이틀" }}
+			아코디언 내용
+			{{#> cp/accordian-dp sub-title="서브 타이틀1" }}
+				서브내용
+			{{/ cp/accordian-dp }}
+			{{#> cp/accordian-dp sub-title="서브 타이틀2" }}
+				서브내용
+			{{/ cp/accordian-dp }}
+		{{/ cp/accordian }}
+	</div>
+	<div class="acd_item">
+		{{#> cp/accordian ac-title="아코디언 테스트" }}
+		아코디언 내용
+			{{#> cp/accordian-dp sub-title="서브 타이틀1" }}
+				서브내용
+			{{/ cp/accordian-dp }}
+		{{/ cp/accordian }}
+	</div>
+
+	<div class="guide_discription">열려있는 Type</div>
+	<div class="acd_item">
+		{{#> cp/accordian ac-title="아코디언 타이틀" ac-active=true }}
+			아코디언 내용
+			{{#> cp/accordian-dp sub-title="서브 타이틀1" dp-active=true }}
+				서브내용
+			{{/ cp/accordian-dp }}
+			{{#> cp/accordian-dp sub-title="서브 타이틀2" }}
+				서브내용
+			{{/ cp/accordian-dp }}
+		{{/ cp/accordian }}
+	</div>
+	<div class="acd_item">
+		{{#> cp/accordian ac-title="아코디언 테스트"}}
+		아코디언 내용
+			{{#> cp/accordian-dp sub-title="서브 타이틀" }}
+				서브내용
+			{{/ cp/accordian-dp }}
+		{{/ cp/accordian }}
+	</div>
+	
+
+	<div class="guide_h4">하나만 열리는 Type(1Depth 기준)</div>
+	<div class="guide_discription">Default (닫혀있는 Type)</div>
+	<div class="acd_item">
+		{{#> cp/accordian ac-title="아코디언 테스트" }}
+		아코디언 내용
+		{{/ cp/accordian }}
+		{{#> cp/accordian ac-title="아코디언 테스트" }}
+		아코디언 내용
+			{{#> cp/accordian-dp sub-title="서브 타이틀" }}
+				서브내용
+			{{/ cp/accordian-dp }}
+			{{#> cp/accordian-dp sub-title="서브 타이틀" }}
+				서브내용
+			{{/ cp/accordian-dp }}
+		{{/ cp/accordian }}
+	</div>
+
+	<div class="guide_discription">열려있는 Type</div>
+	<div class="acd_item">
+		{{#> cp/accordian ac-title="아코디언 테스트" }}
+		아코디언 내용
+		{{/ cp/accordian }}
+		{{#> cp/accordian ac-title="아코디언 테스트" ac-active=true }}
+		아코디언 내용
+			{{#> cp/accordian-dp sub-title="서브 타이틀" dp-active=true }}
+				서브내용
+			{{/ cp/accordian-dp }}
+			{{#> cp/accordian-dp sub-title="서브 타이틀"}}
+				서브내용
+			{{/ cp/accordian-dp }}
+		{{/ cp/accordian }}
+	</div>
+
+	
+{{/ layout/guide }}
