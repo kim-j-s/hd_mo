@@ -62,6 +62,9 @@ strong {
 	-ms-flex-pack: end;
 	justify-content: flex-end;
 }
+.gap_12 {
+	gap: 1.2rem !important;
+}
 .wrap {
 	position: relative;
 	display: -webkit-box;
@@ -541,6 +544,28 @@ strong {
 .file_btn input[type="file"] {
 	display: none;
 }
+.plan_btn_area.space_between {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.plan_btn_area.center {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
 /* common 인증, 로딩 등 */
 /* 인증방법 선택 */
 * + .cert_select_list {
@@ -934,36 +959,26 @@ strong {
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
 }
-.acd_item.acd_item_ty2 .acd_cont .inp_checkbox label > span {
-	border: 1px solid red;
-	background: url(../images/icon/arrowRight_ty5.svg) no-repeat right top/2rem auto;
+.acd_item.acd_item_ty2 .acd_cont .detail_list_btn {
+	font-size: var(--font-size-label-medium);
+	background: url(../images/icon/arrowRight_disabled.svg) no-repeat right center/2rem auto;
+	cursor: pointer;
 }
-.acd_item.acd_item_ty2 .acd_cont .inp_checkbox .sub_txt_area {
+.acd_item.acd_item_ty2 .acd_cont * + .inp_checkbox {
+	margin-top: 2rem;
+}
+.acd_item .sub_txt_area {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	gap: 0.8rem;
 	line-height: 2.8rem;
-	font-size: 0;
 	padding-top: 0.4rem;
 	color: var(--color-text-subtle);
 	font-size: var(--font-size-label-small);
 }
-.acd_item.acd_item_ty2 .acd_cont .inp_checkbox .sub_txt_area > .hd_badge {
+.acd_item .sub_txt_area > .hd_badge {
 	line-height: 2rem;
-}
-.acd_item.acd_item_ty2 .acd_cont .inp_checkbox .price_btn {
-	color: var(--color-text-primary);
-	font-size: var(--font-size-button-large);
-	position: relative;
-	background: url(../images/icon/arrowRight_ty6.svg) no-repeat right center/2rem auto;
-	padding-right: 1.9rem;
-}
-.acd_item.acd_item_ty2 .acd_cont .inp_checkbox .price_btn:hover {
-	background-color: var(--color-button-text-fill-hover);
-}
-.acd_item.acd_item_ty2 .acd_cont .inp_checkbox + .inp_checkbox {
-	margin-top: 2rem;
 }
 /** Accordion - info box 타입 **/
 .acd_info_box {
@@ -1324,6 +1339,9 @@ strong {
 .btn_link.short_cut.short_cut_icon.short_cut_icon_ty1 > .text::before {
 	background-image: url(../images/content/guarantee/icon_gtl_special.svg);
 }
+.btn_link.short_cut.short_cut_icon.short_cut_icon_ty2 > .text::before {
+	background-image: url(../images/content/guarantee/icon_gtl_pet.svg);
+}
 .btn_link.new_open {
 	display: inline-block;
 	padding-right: 1.8rem;
@@ -1335,17 +1353,16 @@ strong {
 	font-size: var(--font-size-button-small);
 	line-height: 1.8rem;
 }
-.btn_link.short_cut_ty2 {
-	display: inline-block;
-	padding-right: 2rem;
-	background: url(../images/icon/arrowRight_ty7.svg) no-repeat right center/2rem auto;
-	font-size: var(--font-size-button-large);
-	line-height: 2.4rem;
+.btn_link.price_btn {
+	height: 100%;
 	color: var(--color-text-primary);
+	font-size: var(--font-size-button-large);
+	position: relative;
+	background: url(../images/icon/arrowRight_ty6.svg) no-repeat right center/2rem auto;
+	padding-right: 1.9rem;
 }
-.btn_link.short_cut_ty2.sm {
-	font-size: var(--font-size-button-small);
-	line-height: 1.8rem;
+.btn_link.price_btn:hover {
+	background-color: var(--color-button-text-fill-hover);
 }
 .btn_link:hover {
 	background-color: var(--color-button-text-fill-hover);
@@ -2519,6 +2536,9 @@ strong {
 .inp_checkbox input[type="checkbox"] + .chk_label.more_add {
 	padding-right: 6.4rem;
 }
+.inp_checkbox input[type="checkbox"] + .chk_label.more_add2 {
+	padding-right: 6.4rem;
+}
 .inp_checkbox input[type="checkbox"] + .chk_label.chk_label_ty2 {
 	padding-left: 3.2rem;
 }
@@ -2726,6 +2746,9 @@ strong {
 .inp_checkbox .chk_lby {
 	padding: 1.2rem 0 0 3.2rem;
 }
+.inp_checkbox .chk_lby2 {
+	padding: 0.4rem 0 0 2.8rem;
+}
 .inp_checkbox .ag_more_btn {
 	position: absolute;
 	top: 0;
@@ -2736,6 +2759,17 @@ strong {
 	font-size: var(--font-size-button-small);
 	line-height: 2.4rem;
 	background: url(../images/icon/arrowRight_ty4.svg) no-repeat right center/1.6rem auto;
+}
+.inp_checkbox .ag_more_btn2 {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	width: 2rem;
+	height: 2rem;
+	font-size: var(--font-size-button-small);
+	line-height: 2.4rem;
+	background: url(../images/icon/arrowRight_ty4.svg) no-repeat center center/2rem auto;
 }
 .checkbox_group_wrap {
 	display: -webkit-inline-box;
@@ -4275,6 +4309,9 @@ strong {
 }
 .space_list_ty2 > * + * {
 	margin-top: 1.6rem;
+}
+.space_list_ty3 > * + * {
+	margin-top: 3rem;
 }
 /* swiper */
 /* 예시 */
