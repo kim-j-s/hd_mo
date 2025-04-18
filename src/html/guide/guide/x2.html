@@ -11,7 +11,7 @@
 </div>
 
 <!-- s: Bottom 팝업 -->
-{{#> popup/popup_bottom popup-id="pop_type01" popup-title="가입조건 변경" }}
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="가입조건 변경" popup-active=true}}
 <div class="popup_cont">
 	<div class="popup_content">
 		<div class="form_group_wrap">
@@ -19,7 +19,7 @@
 				<div class="label_tit">보험기간(년)</div>
 				<div class="sweep_select">
 					<!-- <span class="iii" tabindex="1">보험기간 선택</span> -->
-					<div id="option_swiper2" class="swiper-container">
+					<div id="option_swiper1" class="swiper-container">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide"><span>3년</span></div>
 							<div class="swiper-slide"><span class="active">5년</span></div>
@@ -46,14 +46,14 @@
 				<div class="label_tit">보험기간(년)</div>
 				<div class="sweep_select">
 					<!-- <span class="iii" tabindex="-1">보험기간 선택</span> -->
-					<div id="option_swiper1" class="swiper-container">
+					<div id="option_swiper2" class="swiper-container">
 						<div class="swiper-wrapper">
-							<div class="swiper-slide"><span>3년</span></div>
-							<div class="swiper-slide"><span>5년</span></div>
-							<div class="swiper-slide"><span>7년</span></div>
-							<div class="swiper-slide"><span>10년</span></div>
-							<div class="swiper-slide"><span class="active">15년</span></div>
-							<div class="swiper-slide"><span>20년</span></div>
+							<div class="swiper-slide"><button type="button">3년</button></div>
+							<div class="swiper-slide"><button type="button">5년</button></div>
+							<div class="swiper-slide"><button type="button">7년</button></div>
+							<div class="swiper-slide"><button type="button" class="active">10년</button></div>
+							<div class="swiper-slide"><button type="button">15년</button></div>
+							<div class="swiper-slide"><button type="button">20년</button></div>
 						</div>
 					</div>
 					<div class="swiper-button-prev"></div>
@@ -84,12 +84,14 @@
 			const $nextBtn = $sweepSelect.find('.swiper-button-next');
 
 			// .swiper-slide > span.active 의 인덱스를 찾아 초기 슬라이드로 설정
-			const $activeSlide = $swiperWrapper.find('.swiper-slide span.active');
+			// const $activeSlide = $swiperWrapper.find('.swiper-slide span.active');
+			const $activeSlide = $swiperWrapper.find('.swiper-slide .active');
 			const initialSlideIndex = $activeSlide.length ? $activeSlide.closest('.swiper-slide').index() : 0;
+			console.log(initialSlideIndex);
 
 			const swiper = new Swiper($swiperContainer[0], {
 				slidesPerView: 'auto',
-				centeredSlides: true,
+				// centeredSlides: true,
 				initialSlide: initialSlideIndex,
 				spaceBetween: 16,
 				slideToClickedSlide: true,
@@ -119,27 +121,11 @@
 			$(swiperInstance.slides).each(function(idx) {
 				$(this).on('click', function() {
 					swiperInstance.slideTo(idx);
-					// $('.popup_head').text(idx);
 				});
 			});
 		}
 
-		$(document).on('blur', '.popup_head_title', function () {
-			const $popupContainer = $(this).closest('.popup_container');
-
-			$popupContainer.find('.sweep_select .swiper-container').each(function () {
-				const swiperInstance = swiperMap.get(this);
-				if (swiperInstance) {
-					swiperInstance.slideTo(0);
-				}
-			});
-
-			$('.bbooxx').text('전체 초기화 실행');
-		});
-
-		$(document).on('blur', '.popup_head_title', function () {
-			$('.bbooxx').text('blur');	
-		});
+		
 
 		
 	
