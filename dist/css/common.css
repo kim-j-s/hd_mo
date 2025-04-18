@@ -853,8 +853,8 @@ strong {
 	position: absolute;
 	top: 50%;
 	right: 2rem;
-	width: 2rem;
-	height: 2rem;
+	width: 2.4rem;
+	height: 2.4rem;
 	font-size: 0;
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
@@ -869,6 +869,7 @@ strong {
 	width: 3rem;
 	height: 3rem;
 	margin: -1.5rem 0 0 -1.5rem;
+	background: transparent;
 }
 .acd_item.acd_item_ty1 .acd_head .acd_btn::after {
 	content: "";
@@ -877,7 +878,7 @@ strong {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: #fff url(../images/icon/arrowDown_ty3.svg) no-repeat center/2rem auto;
+	background: #fff url(../images/icon/arrowDown_ty3.svg) no-repeat center/2.4rem auto;
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
 }
@@ -921,7 +922,7 @@ strong {
 	position: relative;
 	width: 100%;
 	padding: 0 2.4rem 0 0;
-	background-color: #fff;
+	background-color: transparent;
 	font-weight: 700;
 	font-size: var(--font-size-heading-small);
 }
@@ -930,9 +931,9 @@ strong {
 	top: 0.4rem;
 	right: 0;
 	content: "";
-	width: 2rem;
-	height: 2rem;
-	background: url(../images/icon/arrowDown_ty3.svg) no-repeat center/2rem auto;
+	width: 2.4rem;
+	height: 2.4rem;
+	background: url(../images/icon/arrowDown_ty3.svg) no-repeat center/2.4rem auto;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	-webkit-transition: all 0.3s;
@@ -985,6 +986,53 @@ strong {
 }
 .acd_item .sub_txt_area > .hd_badge {
 	line-height: 2rem;
+}
+.acd_item.acd_item_ty3 .acd_head {
+	position: relative;
+	border-bottom: 1px solid var(--color-divider-gray-light);
+}
+.acd_item.acd_item_ty3 .acd_head .acd_btn {
+	position: relative;
+	width: 100%;
+	padding: 1.2rem 2.4rem 1.2rem 0;
+	background-color: #fff;
+	font-weight: 700;
+	font-size: var(--font-size-heading-small);
+}
+.acd_item.acd_item_ty3 .acd_head .acd_btn::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 0;
+	width: 3rem;
+	height: 3rem;
+	background: transparent url(../images/icon/arrowDown_ty3.svg) no-repeat center/2.4rem auto;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.acd_item.acd_item_ty3 .acd_head .acd_btn:active {
+	background: var(--color-action-secondary-pressed);
+}
+.acd_item.acd_item_ty3 .acd_head.active {
+	border: none;
+}
+.acd_item.acd_item_ty3 .acd_head.active .acd_btn::after {
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.acd_item.acd_item_ty3 .acd_head.active + .acd_cont {
+	border-top: 1px solid var(--color-divider-gray-darker);
+}
+.acd_item.acd_item_ty3 .acd_head.active + .acd_cont::before {
+	opacity: 1;
+}
+.acd_item.acd_item_ty3 .acd_cont {
+	position: relative;
+	padding: 2rem 0;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
 }
 /** Accordion - info box 타입 **/
 .acd_info_box {
@@ -1090,6 +1138,16 @@ strong {
 	align-items: center;
 }
 .btn_area.between > * {
+	-webkit-box-flex: 0;
+	-ms-flex: 0 1 auto;
+	flex: 0 1 auto;
+}
+.btn_area.center {
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+.btn_area.center > * {
 	-webkit-box-flex: 0;
 	-ms-flex: 0 1 auto;
 	flex: 0 1 auto;
@@ -2881,19 +2939,182 @@ strong {
 /********
 * logo 스타일
 *********/
-.car_logo {
+.logo {
 	display: inline-block;
 	line-height: 0;
 }
-.car_logo .hd_icon {
-	width: 2rem;
-	height: 2rem;
+.logo .hd_icon {
+	width: 3.2rem;
+	height: 3.2rem;
+	background-position: center;
 }
-.car_logo_hyundai {
-	background-image: url(../images/logo/hyundai.svg);
+.logo_ins_hyundai {
+	background-image: url(../images/logo/ins_hyundai.svg);
 }
-.car_logo_samsung {
-	background-image: url(../images/logo/samsung.svg);
+.logo_ins_samsung {
+	background-image: url(../images/logo/ins_samsung.svg);
+}
+.logo_car_chevrolet {
+	background-image: url(../images/logo/car_chevrolet.svg);
+}
+.logo_car_hyundai {
+	background-image: url(../images/logo/car_hyundai.svg);
+}
+.logo_car_kgm {
+	background-image: url(../images/logo/car_kgm.svg);
+}
+.logo_car_kia {
+	background-image: url(../images/logo/car_kia.svg);
+}
+.logo_car_samsung {
+	background-image: url(../images/logo/car_samsung.svg);
+}
+.logo_sns_facebook {
+	background-image: url(../images/logo/sns_facebook.svg);
+}
+.logo_sns_kakao {
+	background-image: url(../images/logo/sns_kakao.svg);
+}
+.logo_sns_kakaotalk {
+	background-image: url(../images/logo/sns_kakaotalk.svg);
+}
+.logo_pay_kakao {
+	background-image: url(../images/logo/pay_kakao.svg);
+}
+.logo_pay_naver {
+	background-image: url(../images/logo/pay_naver.svg);
+}
+.logo_pay_toss {
+	background-image: url(../images/logo/pay_toss.svg);
+}
+.logo_bank_busan {
+	background-image: url(../images/logo/bank_busan.svg);
+}
+.logo_bank_citi {
+	background-image: url(../images/logo/bank_citi.svg);
+}
+.logo_bank_cu {
+	background-image: url(../images/logo/bank_cu.svg);
+}
+.logo_bank_daegu {
+	background-image: url(../images/logo/bank_deagu.svg);
+}
+.logo_bank_epost {
+	background-image: url(../images/logo/bank_epost.svg);
+}
+.logo_bank_hana {
+	background-image: url(../images/logo/bank_hana.svg);
+}
+.logo_bank_hana_old {
+	background-image: url(../images/logo/bank_hana_old.svg);
+}
+.logo_bank_ibk {
+	background-image: url(../images/logo/bank_ibk.svg);
+}
+.logo_bank_jeju {
+	background-image: url(../images/logo/bank_jeju.svg);
+}
+.logo_bank_jeonbuk {
+	background-image: url(../images/logo/bank_jeonbuk.svg);
+}
+.logo_bank_k {
+	background-image: url(../images/logo/bank_k.svg);
+}
+.logo_bank_kakaobank {
+	background-image: url(../images/logo/bank_kakaobank.svg);
+}
+.logo_bank_kb {
+	background-image: url(../images/logo/bank_kb.svg);
+}
+.logo_bank_kwangju {
+	background-image: url(../images/logo/bank_kwangju.svg);
+}
+.logo_bank_kyongnam {
+	background-image: url(../images/logo/bank_kyongnam.svg);
+}
+.logo_bank_mg {
+	background-image: url(../images/logo/bank_mg.svg);
+}
+.logo_bank_nh {
+	background-image: url(../images/logo/bank_nh.svg);
+}
+.logo_bank_nh_region {
+	background-image: url(../images/logo/bank_nh_region.svg);
+}
+.logo_bank_sc {
+	background-image: url(../images/logo/bank_sc.svg);
+}
+.logo_bank_sh {
+	background-image: url(../images/logo/bank_sh.svg);
+}
+.logo_bank_shinhan {
+	background-image: url(../images/logo/bank_shinhan.svg);
+}
+.logo_bank_toss {
+	background-image: url(../images/logo/bank_toss.svg);
+}
+.logo_bank_woori {
+	background-image: url(../images/logo/bank_woori.svg);
+}
+.logo_stock_daishin {
+	background-image: url(../images/logo/stock_daishin.svg);
+}
+.logo_stock_ebest {
+	background-image: url(../images/logo/stock_ebest.svg);
+}
+.logo_stock_hana {
+	background-image: url(../images/logo/stock_hana.svg);
+}
+.logo_stock_hi {
+	background-image: url(../images/logo/stock_hi.svg);
+}
+.logo_stock_hmc {
+	background-image: url(../images/logo/stock_hmc.svg);
+}
+.logo_stock_kb {
+	background-image: url(../images/logo/stock_kb.svg);
+}
+.logo_stock_korea {
+	background-image: url(../images/logo/stock_korea.svg);
+}
+.logo_stock_meritz {
+	background-image: url(../images/logo/stock_meritz.svg);
+}
+.logo_stock_mirae {
+	background-image: url(../images/logo/stock_mirae.svg);
+}
+.logo_stock_nh {
+	background-image: url(../images/logo/stock_nh.svg);
+}
+.logo_stock_samsung {
+	background-image: url(../images/logo/stock_samsung.svg);
+}
+.logo_stock_shinhan {
+	background-image: url(../images/logo/stock_shinhan.svg);
+}
+.logo_stock_sk {
+	background-image: url(../images/logo/stock_sk.svg);
+}
+.logo_stock_yuanta {
+	background-image: url(../images/logo/stock_yuanta.svg);
+}
+.logo_card_etc {
+	background-image: url(../images/logo/card_etc.svg);
+}
+.logo_card_hundai {
+	background-image: url(../images/logo/card_hundai.svg);
+}
+.logo_card_kb {
+	background-image: url(../images/logo/card_kb.svg);
+}
+.logo_card_lotte {
+	background-image: url(../images/logo/card_lotte.svg);
+}
+.logo_card_samsung {
+	background-image: url(../images/logo/card_samsung.svg);
+}
+.logo_card_shinhan {
+	background-image: url(../images/logo/card_shinhan.svg);
 }
 /********
 * 기타 아이콘
@@ -2927,6 +3148,9 @@ strong {
 }
 .carmeraSvg {
 	background-image: url(../images/icon/icon_carmera_ty1.svg);
+}
+.carmeraSvg2 {
+	background-image: url(../images/icon/icon_carmera_ty2.svg);
 }
 .carmeraSvg2 {
 	background-image: url(../images/icon/icon_carmera_ty2.svg);
@@ -3737,6 +3961,40 @@ strong {
 .search_reult_list_container ul.search_reult_list li.add_item a::after {
 	content: none;
 }
+/* 로고 리스트 관련 스타일*/
+.select_list_ty_logo {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	gap: 1.2rem 2.4rem;
+	width: 100%;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+.select_list_ty_logo .item {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: start;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 1.2rem;
+	width: calc(50% - 1.2rem);
+	height: 4.8rem;
+	font-size: var(--font-size-body-medium);
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;
+}
+.select_list_ty_logo .hd_icon {
+	width: 3.2rem;
+	height: 3.2rem;
+}
 .list_depth > li {
 	position: relative;
 	margin: 0;
@@ -3814,6 +4072,99 @@ strong {
 }
 .list_depth .point {
 	font-weight: 700;
+}
+.number_list {
+	counter-reset: number 0;
+}
+.number_list li {
+	position: relative;
+	padding-left: 1.8rem;
+}
+.number_list li::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	counter-increment: number 1;
+	content: counter(number) ". ";
+}
+.number_list li + li {
+	margin-top: 1.2rem;
+}
+.number_list > li {
+	font-size: var(--font-size-body-medium);
+}
+.number_list > li p {
+	font-size: var(--font-size-body-small);
+	color: var(--color-text-subtle);
+}
+.number_list > li strong {
+	display: block;
+}
+.number_list > li .circle_list {
+	margin-top: 1.2rem;
+	counter-reset: circle 0;
+}
+.number_list > li .circle_list > li {
+	font-size: var(--font-size-body-small);
+}
+.number_list > li .circle_list > li strong {
+	margin-top: 0.4rem;
+	font-size: var(--font-size-body-xsmall);
+	color: var(--color-text-subtle);
+	font-weight: 400;
+}
+.number_list > li .circle_list > li::before {
+	position: absolute;
+	top: 1.1rem;
+	left: 0.4em;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	counter-increment: circle 1;
+	content: counter(circle);
+	font-size: 0.65em;
+}
+.number_list > li .circle_list > li::after {
+	content: "";
+	position: absolute;
+	top: 1.1rem;
+	left: 0;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	display: inline-block;
+	border: 1px solid #333;
+	border-radius: 50%;
+	width: 0.9em;
+	height: 0.9em;
+}
+.number_list > li .circle_list > li ol {
+	margin-top: 0.8rem;
+	counter-reset: number 0;
+}
+.number_list > li .circle_list > li ol > li {
+	font-size: var(--font-size-body-xsmall);
+	color: var(--color-text-information);
+}
+.number_list > li .circle_list > li ol > li + li {
+	margin-top: 0.8rem;
+}
+.clause_list {
+	counter-reset: number 0;
+}
+.clause_list > li {
+	font-size: var(--font-size-body-medium);
+}
+.clause_list > li strong::before {
+	counter-increment: number 1;
+	content: "제" counter(number) "조 ";
+}
+.clause_list > li + li {
+	margin-top: 3.2rem;
+}
+.clause_list > li p {
+	margin-top: 1.2rem;
+}
+.clause_list > li .list_ty1 {
+	margin-top: 0.8rem;
 }
 /* notice */
 /* bottom_fix_notice */
@@ -4351,6 +4702,9 @@ strong {
 	background-color: #ddd;
 }
 /* tab */
+.tab_wrap + .info_gray {
+	margin-top: 3.2rem;
+}
 .tab_wrap_list_ty1 {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -4833,6 +5187,9 @@ strong {
 }
 .info_gray + .form_group_wrap {
 	margin-top: 3.2rem;
+}
+.info_gray + .checkbox_group_wrap {
+	margin-top: 5.2rem;
 }
 .info_gray .hd_badge + [class^="title_h"] {
 	margin-top: 1.2rem;
