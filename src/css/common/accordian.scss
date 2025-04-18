@@ -1,0 +1,132 @@
+// Accordian
+
+// default
+.acd_item {
+	.acd_cont {
+		.inner {
+			display: none;
+		}
+	}
+}
+/* Accordian */
+
+.acd_bottom_fixed {
+	margin: 0 -24px;
+      
+	.acd_item {
+		background-color: var(--color-surface-gray-subtler);
+	}
+	.acd_head {
+		min-height: 64px;
+		padding: var(--padding-6) var(--padding-7);
+		font-size: var(--font-size-heading-xsmall);
+		line-height: 32px;
+
+		.acd_btn {
+			position: relative;
+			width: 100%;
+			padding: 0 24px;
+			background: url(../images/icon/point_circle.svg) no-repeat left 50% /20px auto;
+
+			&:after {
+				position: absolute;
+				top:4px;
+				right:0;
+				content: '';
+				width: 24px;
+				height: 24px;
+				background: url(../images/icon/arrowDown_ty3.svg) no-repeat center /24px auto;
+				box-sizing: border-box;
+			}
+
+			&[aria-expanded="true"] {
+				&:after {
+					transform: rotate(180deg);
+				}
+			}
+		}
+	}
+	.acd_cont {
+		&[aria-expanded="true"] {
+			&:after {
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+
+// default
+
+
+.acd_item {
+	&.acd_item_ty1 {
+		border-radius: var(--radius-large2);
+		border: 1px solid var(--color-border-gray-light);
+		.acd_head {
+			position: relative;
+			padding: 24px 56px 24px 20px;
+
+			.acd_btn {
+				position: absolute;
+				top: 50%;
+				right: 20px;
+				width: 20px;
+				height: 20px;
+				font-size: 0;
+				transition: all 0.3s;
+				transform: translateY(-50%);
+				
+				&::before {
+					content: '';
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					width: 30px;
+					height: 30px;
+					margin: -15px 0 0 -15px;
+				}
+				&::after {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: #fff url(../images/icon/arrowDown_ty3.svg) no-repeat center / 20px auto;
+					transition: all 0.3s;
+				}
+			}
+			&.active {
+				.acd_btn {
+					&::after {
+						transform: rotate(180deg);
+					}
+				}
+				+ .acd_cont {
+					padding-top: 20px;
+					padding-bottom: 20px;
+					&::before {
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+		.acd_cont {
+			position: relative;
+			padding: 0 20px;
+			transition: all 0.3s;
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 20px;
+				width: calc(100% - 40px);
+				border-bottom: 1px solid var(--color-divider-gray-light);
+				opacity: 0;
+				transition: all 0.3s;
+			}
+		}
+
+	}
+}

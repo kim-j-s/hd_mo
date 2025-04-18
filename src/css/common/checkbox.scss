@@ -188,7 +188,6 @@
 						background-size: 16px auto;
 					}
 				}
-
 				&.chk_label_ty4 {
 					&::before {
 						background: #fff url(../images/icon/check_ty4.svg) no-repeat center;
@@ -208,6 +207,22 @@
 							left: 18px;
 							background-size: 14px auto;
 						}
+					}
+				}
+				&.check_hide {
+					.sub_g_txt {
+						overflow: hidden;
+						position: absolute;
+						width: 1px;
+						height: 1px;
+						clip: rect(0, 0, 0, 0);
+					}
+					& + .chk_lby {
+						overflow: hidden;
+						position: absolute;
+						width: 1px;
+						height: 1px;
+						clip: rect(0, 0, 0, 0);
 					}
 				}
 			}
@@ -243,7 +258,8 @@
 	}
 	&.rd_box {
 		padding: var(--padding-card-large);
-		width: 100%;
+		flex: 1;
+		min-width: 40%;
 		border: 1px solid var(--color-border-gray-light);
 		border-radius: 24px;
 
@@ -262,6 +278,7 @@
 			padding-right: 16px;
 			display: flex;
 			align-items: center;
+			justify-content: space-between;
 			gap: 8px;
 			input[type=checkbox] {
 				& + .chk_label {
@@ -295,11 +312,12 @@
 .checkbox_group_wrap {
 	display: inline-flex;
 	flex-flow: row wrap;
-	gap: 20px;
+	gap: 12px;
+	width: 100%;
 
 	&.column {
 		flex-direction: column;
-		gap: 10px;
+		gap: 16px;
 		width: 100%;
 	}
 
