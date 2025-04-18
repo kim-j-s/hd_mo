@@ -4,19 +4,7 @@
 
 
 // tab type1
-.tab_wrap_list {
-	.tab_btn {
-		padding: 10px 20px;
-		font-size: 12px;
-		&.active {
-			background-color: blue;
-			color: #FFF;
-		}
-	}
-}
-
-// tab type2
-.tab_wrap_list_ty2 {
+.tab_wrap_list_ty1 {
 	display: flex;
 	margin: 0 -24px 32px;
 	border-bottom: 1px solid #E1E3EA;
@@ -52,6 +40,18 @@
 	}
 }
 
+// tab type2
+.tab_wrap_list_ty2 {
+	.tab_btn {
+		padding: 10px 20px;
+		font-size: 12px;
+		&.active {
+			background-color: blue;
+			color: #FFF;
+		}
+	}
+}
+
 .tab_wrap_content {
 	display: none;
 	&.active {
@@ -65,11 +65,11 @@
 
 .tab_scroll_box {
 	overflow-x: auto;
-	.tab_wrap_list {
-		display: inline-flex;
-		align-items: center;
+	[class^=tab_wrap_list] {
 
-		.tab_btn {
+		&.scroll {
+			display: inline-flex;
+			align-items: center;
 		}
 	}
 }
