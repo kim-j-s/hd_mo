@@ -964,7 +964,10 @@ strong {
 	background: url(../images/icon/arrowRight_disabled.svg) no-repeat right center/2rem auto;
 	cursor: pointer;
 }
-.acd_item.acd_item_ty2 .acd_cont .inp_checkbox .sub_txt_area {
+.acd_item.acd_item_ty2 .acd_cont * + .inp_checkbox {
+	margin-top: 2rem;
+}
+.acd_item .sub_txt_area {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -974,22 +977,8 @@ strong {
 	color: var(--color-text-subtle);
 	font-size: var(--font-size-label-small);
 }
-.acd_item.acd_item_ty2 .acd_cont .inp_checkbox .sub_txt_area > .hd_badge {
+.acd_item .sub_txt_area > .hd_badge {
 	line-height: 2rem;
-}
-.acd_item.acd_item_ty2 .acd_cont .inp_checkbox .price_btn {
-	height: 100%;
-	color: var(--color-text-primary);
-	font-size: var(--font-size-button-large);
-	position: relative;
-	background: url(../images/icon/arrowRight_ty6.svg) no-repeat right center/2rem auto;
-	padding-right: 1.9rem;
-}
-.acd_item.acd_item_ty2 .acd_cont .inp_checkbox .price_btn:hover {
-	background-color: var(--color-button-text-fill-hover);
-}
-.acd_item.acd_item_ty2 .acd_cont * + .inp_checkbox {
-	margin-top: 2rem;
 }
 /** Accordion - info box 타입 **/
 .acd_info_box {
@@ -1363,6 +1352,17 @@ strong {
 .btn_link.new_open.sm {
 	font-size: var(--font-size-button-small);
 	line-height: 1.8rem;
+}
+.btn_link.price_btn {
+	height: 100%;
+	color: var(--color-text-primary);
+	font-size: var(--font-size-button-large);
+	position: relative;
+	background: url(../images/icon/arrowRight_ty6.svg) no-repeat right center/2rem auto;
+	padding-right: 1.9rem;
+}
+.btn_link.price_btn:hover {
+	background-color: var(--color-button-text-fill-hover);
 }
 .btn_link:hover {
 	background-color: var(--color-button-text-fill-hover);
