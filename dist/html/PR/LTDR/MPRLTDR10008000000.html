@@ -85,22 +85,185 @@
 						</h2>
 					</div>
 					<!-- e: content_top -->
+
+					<div class="bg_area ty2"></div>
+					<div class="tab_wrap">
+						<div class="tab_wrap_list_ty1" role="tablist">
+							<button type="button" class="tab_btn active" role="tab" aria-selected="true" aria-controls="tabPanel01" id="tab01">신용(앱)카드</button>
+							<button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanel02" id="tab02">계좌이체</button>
+							<button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanel03" id="tab03">간편결제</button>
+						</div>
+
+						<!-- 신용(앱)카드 -->
+						<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
+							<div class="btn_area basic">
+								<a href="javascript:void(0)" class="btn_link short_cut" title="페이지 이동">
+									<span class="text">이전 결제 정보 불러오기</span>
+								</a>
+							</div>
+							<h3 class="title_h4">신용카드 정보 입력</h3>
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">카드사</div>
+									<div class="select_item select_item_case01" role="button" tabindex="0" title="카드사 선택" onclick="openHDPopup(this,'pop_type01');">
+										<div class="select_item_inner">
+											<div class="si_item" data-placeholder="카드사 선택"></div>
+											<span class="si_stat">선택됨</span>
+										</div>
+									</div>
+									<!-- s: KB카드 선택 시 노출 -->
+									<div class="inp_checkbox">
+										<input type="checkbox" id="checkbox1" />
+										<label for="checkbox1" class="chk_label">
+											<span class="label_cont">앱카드 결제</span>
+										</label>
+									</div>
+									<!-- e: KB카드 선택 시 노출 -->
+								</div>
+								<div class="form_line">
+									<div class="label_tit">카드번호</div>
+									<div class="comp_wrap card">
+										<div class="input_text">
+											<div class="inp">
+												<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 첫번째 4자리 입력" />
+											</div>
+										</div>
+										<span class="dash">-</span>
+										<div class="input_text">
+											<div class="inp">
+												<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 두번째 4자리 입력" />
+											</div>
+										</div>
+										<span class="dash">-</span>
+										<div class="input_text">
+											<div class="inp">
+												<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 세번째 4자리 입력" />
+											</div>
+										</div>
+										<span class="dash">-</span>
+										<div class="input_text">
+											<div class="inp">
+												<input type="password" placeholder="4(3자리)" minlength="3" maxlength="4" title="카드 마지막번째 4자리 입력" />
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form_line">
+									<div class="label_tit">유효기간</div>
+									<div class="input_text">
+										<div class="inp">
+											<input type="text" placeholder="MMYY" title="유효기간 입력" />
+											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+										</div>
+									</div>
+								</div>
+								<div class="form_line">
+									<div class="label_tit">카드 할부</div>
+									<div class="select_item select_item_case01" role="button" tabindex="0" title="카드 할부 선택" onclick="openHDPopup(this,'pop_type01');">
+										<div class="select_item_inner">
+											<div class="si_item" data-placeholder="">일시불</div>
+											<span class="si_stat">선택됨</span>
+										</div>
+									</div>
+									<ul class="list_ty2">
+										<li>계약자 명의의 국내발급 카드로만 결제가 가능합니다. (법인, 가족카드 불가)</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<!-- 계좌이체 -->
+						<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
+							<h3 class="title_h4">계좌 정보 입력</h3>
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">은행</div>
+									<div class="select_item select_item_case01" role="button" tabindex="0" title="은행 선택" onclick="openHDPopup(this,'pop_type01');">
+										<div class="select_item_inner">
+											<div class="si_item" data-placeholder="은행 선택"></div>
+											<span class="si_stat">선택됨</span>
+										</div>
+									</div>
+								</div>
+								<div class="form_line">
+									<div class="label_tit">계좌번호</div>
+									<div class="input_text">
+										<div class="inp">
+											<input type="text" placeholder="계좌번호 입력" title="계좌번호 입력" />
+											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+										</div>
+									</div>
+									<ul class="list_ty2">
+										<li>계약자 명의 계좌만 입력 가능합니다.</li>
+										<li>즉시 이체 가능 시간 : 09:00 ~ 21:50</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<!-- 간편결제 -->
+						<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel02">tab inner 3</div>
+					</div>
+
+					<div class="divider_ty1"></div>
+					<h3 class="title_h4">2회차 이후 결제 정보 입력</h3>
+
+					<div class="inp_checkbox rd_box">
+						<input type="checkbox" id="checkbox04-9" />
+						<label for="checkbox04-9" class="chk_label chk_label_ty3">
+							<span class="label_cont">1회차 보험료 결제 계좌와 동일합니다</span>
+						</label>
+					</div>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">은행</div>
+							<div class="select_item select_item_case01" role="button" tabindex="0" title="은행 선택" onclick="openHDPopup(this,'pop_type01');">
+								<div class="select_item_inner">
+									<div class="si_item" data-placeholder="은행 선택"></div>
+									<span class="si_stat">선택됨</span>
+								</div>
+							</div>
+						</div>
+						<div class="form_line">
+							<div class="label_tit">계좌번호</div>
+							<div class="input_text">
+								<div class="inp">
+									<input type="text" placeholder="계좌번호 입력" title="계좌번호 입력" />
+									<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+								</div>
+							</div>
+						</div>
+						<div class="form_line">
+							<div class="label_tit">매월 자동이체일</div>
+							<div class="select_item select_item_case01" role="button" tabindex="0" title="매월 자동이체일 선택" onclick="openHDPopup(this,'pop_type01');">
+								<div class="select_item_inner">
+									<div class="si_item" data-placeholder="매월 자동이체일 선택">매월 5일</div>
+									<span class="si_stat">선택됨</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="info_gray">
+						<dl>
+							<dt>납입 기간</dt>
+							<dd>10년</dd>
+						</dl>
+						<dl>
+							<dt>납입 방법</dt>
+							<dd>매월</dd>
+						</dl>
+					</div>
 				</div>
 			</div>
 
 			<div class="bottom_fix_wrap">
 				<div class="btn_area">
 					<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2" disabled>
-						<span class="text"></span>
+						<span class="text">결제 정보를 입력 중이에요</span>
 					</button>
 					<!-- <button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
 			
-				<span class="text">선택한 플랜으로 가입할게요</span>
-			
-			</button> -->
-					<!-- <button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
-			
-				<span class="text">이대로 가입할게요</span>
+				<span class="text">보험료 결제하고 가입하기</span>
 			
 			</button> -->
 				</div>
