@@ -6,8 +6,12 @@
 
 <p class="bbooxx" tabindex="0"></p>
 
+<div style="padding: 50px; text-align: center;">
+	{{> cp/button type="2" size="5" b-text="pop_type01" popup="pop_type01" }}
+</div>
+
 <!-- s: Bottom 팝업 -->
-{{#> popup/popup_bottom popup-id="pop_type01" popup-title="가입조건 변경" popup-active=true }}
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="가입조건 변경" }}
 <div class="popup_cont">
 	<div class="popup_content">
 		<div class="form_group_wrap">
@@ -120,7 +124,8 @@
 			});
 		}
 
-		$(document).on('blur', '.sweep_select .iii', function () {
+		// $(document).on('blur', '.sweep_select .iii', function () {
+		$(document).on('blur', '.popup_head_title', function () {
 			const $sweepSelect = $(this).closest('.sweep_select');
 			const swiperContainer = $sweepSelect.find('.swiper-container')[0];
 			const swiperInstance = swiperMap.get(swiperContainer);
@@ -131,7 +136,7 @@
 			}
 		});
 
-		$(document).on('blur', '.bbooxx', function () {
+		$(document).on('blur', '.popup_head_title', function () {
 			$('.bbooxx').text('blur');	
 		});
 
