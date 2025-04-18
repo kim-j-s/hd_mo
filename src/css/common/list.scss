@@ -374,3 +374,76 @@
 		}
 	}
 }
+.number_list {
+	counter-reset: number 0;
+	li {
+		position: relative;
+		padding-left: 18px;
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			counter-increment: number 1;
+			content: counter(number) '. ';
+		}
+		& + li {
+			margin-top: 12px;
+		}
+	}
+	& > li {
+		font-size: var(--font-size-body-medium);
+		p {
+			font-size: var(--font-size-body-small);
+			color: var(--color-text-subtle);
+		}
+		
+		strong {
+			display: block;
+		}
+		.circle_list  {
+			margin-top: 12px;
+			counter-reset: circle 0;
+			& > li {
+				font-size: var(--font-size-body-small);
+				strong {
+					margin-top: 4px;
+					font-size: var(--font-size-body-xsmall);
+					color: var(--color-text-subtle);
+					font-weight: 400;
+				}
+				&::before {
+					position: absolute;
+					top: 11px;
+					left: 0.4em;
+					transform: translateY(-50%);
+					counter-increment: circle 1;
+					content: counter(circle);
+					font-size: 0.65em;
+				}
+				&::after {
+					content: '';
+					position: absolute;
+					top: 11px;
+					left: 0;
+					transform: translateY(-50%);
+					display: inline-block;
+					border: 1px solid #333;
+					border-radius: 50%;
+					width: 0.9em;
+					height: 0.9em;
+				}
+				ol {
+					margin-top:8px;
+					counter-reset: number 0;
+					& > li {
+						font-size: var(--font-size-body-xsmall);
+						color: var(--color-text-information);
+						& + li {
+							margin-top: 8px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
