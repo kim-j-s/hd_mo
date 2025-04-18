@@ -447,3 +447,25 @@
 		}
 	}
 }
+
+.clause_list {
+	counter-reset: number 0;
+	> li {
+		font-size: var(--font-size-body-medium);
+		strong {
+			&::before {
+				counter-increment: number 1;
+				content: '제' counter(number) '조 ';
+			}
+		}
+		& + li {
+			margin-top: 32px;
+		}
+		p {
+			margin-top: 12px;
+		}
+		.list_ty1 {
+			margin-top: 8px;
+		}
+	}
+}
