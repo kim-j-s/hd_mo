@@ -14,7 +14,30 @@
 			<!-- e: content_top -->	
 			 
 			<div class="bg_area ty2">
-
+				<div class="card_item_wrap">
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inner_cont">
+								<ul class="card_list_ty1">
+									<li>
+										<div class="title">결제하실 금액</div>
+										<div class="cont">
+											<span>23,250원</span>
+										</div>
+									</li>
+									<li class="result">
+										<div class="title">할인 전 보험료</div>
+										<div class="cont">46,100원</div>
+									</li>
+									<li>
+										<div class="title">자동차보험 고객 할인 <span class="point">5%</span></div>
+										<div class="cont">1,200원</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="tab_wrap">
 				<div class="tab_wrap_list_ty1" role="tablist">
@@ -104,17 +127,6 @@
 						{{> cp/radio rd-class="rd_btn" rd-id="radio_card2" name="radio01" labelname="계좌이체로 결제" }}
 					</div>
 					<!-- e: 카드사 선택 후 -->
-
-					<div class="info_gray">
-						<dl>
-							<dt>납입 기간</dt>
-							<dd>10년</dd>
-						</dl>
-						<dl>
-							<dt>납입 방법</dt>
-							<dd>매월</dd>
-						</dl>
-					</div>
 				</div>
 
 				<!-- 계좌이체 -->
@@ -153,16 +165,6 @@
 							{{> cp/selectitem si_ph="매월 자동이체일 선택" si_item="매월 5일" si_title="매월 자동이체일 선택" si_popup="pop_type01"}}
 						</div>
 					</div>
-					<div class="info_gray">
-						<dl>
-							<dt>납입 기간</dt>
-							<dd>10년</dd>
-						</dl>
-						<dl>
-							<dt>납입 방법</dt>
-							<dd>매월</dd>
-						</dl>
-					</div>
 				</div>
 
 				<!-- 간편결제 -->
@@ -187,17 +189,23 @@
 							{{> cp/selectitem si_ph="매월 자동이체일 선택" si_item="매월 5일" si_title="매월 자동이체일 선택" si_popup="pop_type01"}}
 						</div>
 					</div>
-					<div class="info_gray">
-						<dl>
-							<dt>납입 기간</dt>
-							<dd>10년</dd>
-						</dl>
-						<dl>
-							<dt>납입 방법</dt>
-							<dd>매월</dd>
-						</dl>
-					</div>
 				</div>
+			</div>
+
+			<div class="info_gray">
+				<dl>
+					<dt>납입 기간</dt>
+					<dd>10년</dd>
+				</dl>
+				<dl>
+					<dt>납입 방법</dt>
+					<dd>매월</dd>
+				</dl>
+			</div>
+			
+			<div class="checkbox_group_wrap column">
+				{{> cp/checkbox labelname="만기환급금 입금 계좌 동의" ag_more=true id="more_case2" checkbox_class="rd_box" }}
+				{{> cp/checkbox labelname="자동이체 약관 동의" ag_more=true id="more_case2" checkbox_class="rd_box" }}
 			</div>
 		</div>
 	</div>
