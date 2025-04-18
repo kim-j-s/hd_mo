@@ -1,5 +1,5 @@
 <!---
-화면번호 : PRLT10003000200
+화면번호 : MPRLTDR10008040000
 경로 : 운전자보험 > 보험료 결제 > 은행 선택
 -->
 {{#> layout/default page-title="운전자보험 | 상품"}}
@@ -9,25 +9,62 @@
 <div class="popup_cont">
 	<div class="popup_content">
 		<div class="tab_wrap">
-      <div class="tab_wrap_list_ty1" role="tablist">
-        {{>cp/tab_btn tb-text="은행" tb-id="01" tb-active=true}}
-			{{>cp/tab_btn tb-text="증권사" tb-id="02"}}
-      </div>
-      <div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tabs01" id="tabPanels01">
-        1번 탭 내용 <br>
-        tab inner 1 <br>
-        tab in tab
-      </div>
-      <div class="tab_wrap_content has_scroll" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
-        ㄴㄴㄴㄴ
-      </div>
+			<div class="tab_wrap_list_ty1 sticky_fix" role="tablist">{{>cp/tab_btn tb-text="은행" tb-id="01" tb-active=true}} {{>cp/tab_btn tb-text="증권사" tb-id="02"}}</div>
+			<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="은행선택탭" id="tabPanels01">
+				<ul class="select_list_ty_logo">
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_ibk"}}기업은행</li>
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_kb"}}KB국민은행</li>
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_nh"}}농협은행</li>
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_nh_region"}}지역농협</li>
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_woori"}}우리은행</li>
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_sc"}}SC은행</li>
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_citi"}}씨티은행(한미)</li>
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_jeonbuk"}}전북은행</li>
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_jeju"}}제주은행</li>
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_epost"}}우체국</li>
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_hana"}}KEB하나은행</li>
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_hana_old"}}KEB하나은행(구.외환은행)</li>
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_shinhan"}}신한은행</li>
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_mg"}}새마을금고</li>
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_cu"}}신용협동조합</li>
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_sh"}}수협</li>
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_k"}}케이뱅크</li>
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_kakaobank"}}카카오뱅크</li>
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_toss"}}토스뱅크</li>
+					<!-- To-Do : 여기서부터는 기획서 확인필요(25-04-19 위서진) -->
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_busan"}}BNK부산은행</li>
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_kyongnam"}}BNK경남은행</li>
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_daegu"}}대구은행</li>
+					<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_bank_kwangju"}}광주은행</li>
+				</ul>
+			</div>
+			<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="증권사선택탭" id="tabPanel02">
+				<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="은행선택탭" id="tabPanels01">
+					<ul class="select_list_ty_logo">
+						<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_stock_daishin"}}대신증권</li>
+						<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_stock_meritz"}}메리츠증권</li>
+						<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_stock_mirae"}}미래에셋증권</li>
+						<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_stock_samsung"}}삼성증권</li>
+						<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_stock_shinhan"}}신한금융투자</li>
+						<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_stock_sk"}}SK증권</li>
+						<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_stock_hmc"}}HMC투자증권</li>
+						<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_stock_yuanta"}}유안타증권</li>
+						<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_stock_ebest"}}이베스트투자증권</li>
+						<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_stock_hana"}}하나금융투자</li>
+						<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_stock_hi"}}하이투자증권</li>
+						<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_stock_korea"}}한국투자증권</li>
+						<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_stock_kb"}}KB증권</li>
+						<li role="button" tabindex="0" class="item">{{> cp/icon iconClass="logo_stock_nh"}}NH투자증권</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <div class="popup_bottom">
-	<div class="btn_area">
-		{{> cp/button type="1" size="2" b-text="확인"}}
-	</div>
+	<div class="btn_area">{{> cp/button type="1" size="2" b-text="확인"}}</div>
 </div>
 {{/ popup/popup_bottom}}
 <!-- e: Bottom 팝업 -->
- 
+
 {{/ layout/default }}
