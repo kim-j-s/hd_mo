@@ -9,7 +9,6 @@
 	}
 }
 
-
 /** Accordion **/
 
 // default
@@ -30,9 +29,9 @@
 				font-size: 0;
 				transition: all 0.3s;
 				transform: translateY(-50%);
-				
+
 				&::before {
-					content: '';
+					content: "";
 					position: absolute;
 					top: 50%;
 					left: 50%;
@@ -42,7 +41,7 @@
 					background: transparent;
 				}
 				&::after {
-					content: '';
+					content: "";
 					position: absolute;
 					top: 0;
 					left: 0;
@@ -73,7 +72,7 @@
 			padding: 0 20px;
 			transition: all 0.3s;
 			&::before {
-				content: '';
+				content: "";
 				position: absolute;
 				top: 0;
 				left: 20px;
@@ -83,7 +82,6 @@
 				transition: all 0.3s;
 			}
 		}
-
 	}
 
 	&.acd_item_ty2 {
@@ -103,16 +101,16 @@
 				font-size: var(--font-size-heading-small);
 
 				&:after {
-					position: absolute;
-					top:4px;
-					right:0;
-					content: '';
-					width: 24px;
-					height: 24px;
-					background: url(../images/icon/arrowDown_ty3.svg) no-repeat center /24px auto;
-					box-sizing: border-box;
-					transition: all 0.3s;
-				}
+						position: absolute;
+						top:4px;
+						right:0;
+						content: '';
+						width: 24px;
+						height: 24px;
+						background: url(../images/icon/arrowDown_ty3.svg) no-repeat center /24px auto;
+						box-sizing: border-box;
+						transition: all 0.3s;
+					}
 
 				&[aria-expanded="true"] {
 					&:after {
@@ -120,10 +118,7 @@
 					}
 				}
 			}
-			&:active {
-				background: var(--color-action-secondary-pressed);
-				border-radius: var(--radius-large2);
-			}
+
 			&.active {
 				& + .acd_cont {
 					padding: 24px 20px;
@@ -131,15 +126,15 @@
 						opacity: 1;
 					}
 				}
-			}
+			}		
 		}
 
 		.acd_cont {
-			position: relative;			
+			position: relative;
 			transition: all 0.3s;
 			padding: 0 20px;
 			&::before {
-				content: '';
+				content: "";
 				position: absolute;
 				top: 0;
 				left: 20px;
@@ -151,51 +146,13 @@
 
 			.detail_list_btn {
 				font-size: var(--font-size-label-medium);
-				background: url(../images/icon/arrowRight_disabled.svg) no-repeat right center /20px auto;
-				cursor: pointer;				
+				background: url(../images/icon/arrowRight_disabled.svg) no-repeat right center / 20px auto;
+				cursor: pointer;
 			}
-
-
-			.inp_checkbox {
-				// label > span{
-				// 	background: url(../images/icon/arrowRight_disabled.svg) no-repeat right top /20px auto;
-				// }
-
-				// .sub_txt_area {
-				// 	display: flex;
-				// 	gap: 8px;
-				// 	line-height: 28px;
-				// 	padding-top: 4px;
-				// 	color: var(--color-text-subtle);
-				// 	font-size: var(--font-size-label-small);
-					
-				// 	& > .hd_badge {
-				// 		line-height: 20px;
-				// 	}
-				// }
-
-				// .price_btn {
-				// 	height: 100%;
-				// 	color: var(--color-text-primary);
-				// 	font-size: var(--font-size-button-large);
-				// 	position: relative;
-				// 	background: url(../images/icon/arrowRight_ty6.svg) no-repeat right center /20px auto;
-				// 	padding-right: 19px;
-
-				// 	&:hover {
-				// 		background-color: var(--color-button-text-fill-hover);
-				// 	}
-				// }
-			}
-
-			// .inp_checkbox + .inp_checkbox {
-			// 	margin-top: 20px;		
-			// }
 
 			* + .inp_checkbox {
-				margin-top: 20px;		
+				margin-top: 20px;
 			}
-
 		}
 	}
 
@@ -206,7 +163,7 @@
 		padding-top: 4px;
 		color: var(--color-text-subtle);
 		font-size: var(--font-size-label-small);
-		
+
 		& > .hd_badge {
 			line-height: 20px;
 		}
@@ -262,13 +219,11 @@
 	}
 }
 
-
-
 /** Accordion - info box 타입 **/
 
 .acd_info_box {
 	margin: 0 -24px;
-      
+
 	.acd_item {
 		background-color: var(--color-surface-gray-subtler);
 	}
@@ -286,12 +241,12 @@
 
 			&:after {
 				position: absolute;
-				top:4px;
-				right:0;
-				content: '';
+				top: 4px;
+				right: 0;
+				content: "";
 				width: 24px;
 				height: 24px;
-				background: url(../images/icon/arrowDown_ty3.svg) no-repeat center /24px auto;
+				background: url(../images/icon/arrowDown_ty3.svg) no-repeat center / 24px auto;
 				box-sizing: border-box;
 			}
 
@@ -303,11 +258,10 @@
 		}
 	}
 	.acd_cont {
-
-			.inner {
-				display:none;
-				padding: 0 24px 20px;
-			}
+		.inner {
+			display: none;
+			padding: 0 24px 20px;
+		}
 
 		&[aria-expanded="true"] {
 			&:after {
