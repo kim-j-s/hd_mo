@@ -2553,6 +2553,20 @@ strong {
 	left: 1.8rem;
 	background-size: 1.4rem auto;
 }
+.inp_checkbox input[type="checkbox"]:checked + .chk_label.check_hide .sub_g_txt {
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	clip: rect(0, 0, 0, 0);
+}
+.inp_checkbox input[type="checkbox"]:checked + .chk_label.check_hide + .chk_lby {
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	clip: rect(0, 0, 0, 0);
+}
 .inp_checkbox input[type="checkbox"]:checked:disabled + .chk_label::before {
 	background: #f4f5f6 url(../images/icon/check_ty5.svg) no-repeat center;
 	border: 1px solid var(--color-border-disabled);
@@ -2593,6 +2607,9 @@ strong {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
 	gap: 0.8rem;
 }
 .inp_checkbox.rd_box.question input[type="checkbox"] + .chk_label {
@@ -4203,14 +4220,20 @@ strong {
 	transition: background-color 0.5s;
 	color: var(--color-text-basic);
 }
-.sweep_select .swiper-container [class^="swiper-button"] {
+.sweep_select .swiper-container .swiper-button-disabled {
+	opacity: 1;
+}
+.sweep_select .swiper-container .swiper-button-disabled:after {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+.sweep_select [class^="swiper-button"] {
 	top: 50%;
 	margin-top: -1.6rem;
 	width: 3.2rem;
 	height: 3.2rem;
 	background-color: #fff;
 }
-.sweep_select .swiper-container [class^="swiper-button"]:before {
+.sweep_select [class^="swiper-button"]:before {
 	position: absolute;
 	right: 0;
 	z-index: -1;
@@ -4219,7 +4242,7 @@ strong {
 	height: 3.2rem;
 	background: var(--white, linear-gradient(90deg, var(--color-alpha-base25, rgba(255, 255, 255, 0.25)) 27.34%, var(--color-alpha-base100, #fff) 100%));
 }
-.sweep_select .swiper-container [class^="swiper-button"]:after {
+.sweep_select [class^="swiper-button"]:after {
 	content: "";
 	width: 1.9rem;
 	height: 1.9rem;
@@ -4232,33 +4255,30 @@ strong {
 	border: 1px solid var(--color-border-gray-light);
 	border-radius: var(--radius-max);
 }
-.sweep_select .swiper-container .swiper-button-disabled {
-	opacity: 1;
-}
-.sweep_select .swiper-container .swiper-button-disabled:after {
-	background-color: rgba(0, 0, 0, 0.1);
-}
-.sweep_select .swiper-container .swiper-button-prev {
+.sweep_select .swiper-button-prev {
 	left: 0;
 }
-.sweep_select .swiper-container .swiper-button-prev:before {
+.sweep_select .swiper-button-prev:before {
 	left: 1.8rem;
 	-webkit-transform: rotate(180deg);
 	transform: rotate(180deg);
 }
-.sweep_select .swiper-container .swiper-button-prev:after {
+.sweep_select .swiper-button-prev:after {
 	background-image: url(../images/icon/arrowRight_ty3.svg);
 	-webkit-transform: rotate(180deg);
 	transform: rotate(180deg);
 }
-.sweep_select .swiper-container .swiper-button-next {
+.sweep_select .swiper-button-next {
 	right: 0;
 }
-.sweep_select .swiper-container .swiper-button-next:before {
+.sweep_select .swiper-button-next:before {
 	left: -2.4rem;
 }
-.sweep_select .swiper-container .swiper-button-next:after {
+.sweep_select .swiper-button-next:after {
 	background-image: url(../images/icon/arrowRight_ty3.svg);
+}
+.sweep_select .iii {
+	position: absolute;
 }
 /* swiper */
 /* 예시 */

@@ -12,18 +12,46 @@
 			<div class="form_line">
 				<div class="label_tit">보험기간(년)</div>
 				<div class="sweep_select">
+					<span class="iii" tabindex="1">보험기간 선택</span>
+					<div id="option_swiper2" class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><span>3년</span></div>
+							<div class="swiper-slide"><span class="active">5년</span></div>
+							<div class="swiper-slide"><span>7년</span></div>
+							<div class="swiper-slide"><span>10년</span></div>
+							<div class="swiper-slide"><span>15년</span></div>
+							<div class="swiper-slide"><span>20년</span></div>
+							<div class="swiper-slide"><span>30년</span></div>
+							<div class="swiper-slide"><span>40년</span></div>
+							<div class="swiper-slide"><span>50년</span></div>
+							<div class="swiper-slide"><span>60년</span></div>
+							<div class="swiper-slide"><span>70년</span></div>
+							<div class="swiper-slide"><span>80년</span></div>
+							<div class="swiper-slide"><span>90년</span></div>
+							<div class="swiper-slide"><span>100년</span></div>
+							<div class="swiper-slide"><span>110년</span></div>
+						</div>
+					</div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
+			</div>
+			<div class="form_line">
+				<div class="label_tit">보험기간(년)</div>
+				<div class="sweep_select">
+					<span class="iii" tabindex="-1">보험기간 선택</span>
 					<div id="option_swiper1" class="swiper-container">
 						<div class="swiper-wrapper">
-							<div class="swiper-slide"><button type="button">3년</button></div>
-							<div class="swiper-slide"><button type="button">5년</button></div>
-							<div class="swiper-slide"><button type="button">7년</button></div>
-							<div class="swiper-slide"><button type="button">10년</button></div>
-							<div class="swiper-slide"><button type="button">15년</button></div>
-							<div class="swiper-slide"><button type="button">20년</button></div>
+							<div class="swiper-slide"><span>3년</span></div>
+							<div class="swiper-slide"><span>5년</span></div>
+							<div class="swiper-slide"><span>7년</span></div>
+							<div class="swiper-slide"><span>10년</span></div>
+							<div class="swiper-slide"><span class="active">15년</span></div>
+							<div class="swiper-slide"><span>20년</span></div>
 						</div>
-						<div class="swiper-button-prev"></div>
-						<div class="swiper-button-next"></div>
 					</div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
 				</div>
 			</div>
 		</div>
@@ -38,24 +66,31 @@
 <!-- e: Bottom 팝업 -->
 
 <script>
-	$(document).ready(function(){
-		$('.swiper-wrapper').attr('aria-live', 'off');
+	$(document).ready(function() {
+
+		const swiperMap = new Map();
+
 		$('.swiper-container').each(function (idx, ele) {
 			const $swiperContainer = $(ele);
-			const slideNum = $swiperContainer.find('.swiper-slide').length,
-						newNum = Math.round(slideNum / 2) - 1;
-			// console.log(newNum);
+			const $swiperWrapper = $swiperContainer.find('.swiper-wrapper');
+			const $sweepSelect = $swiperContainer.closest('.sweep_select');
+			const $prevBtn = $sweepSelect.find('.swiper-button-prev');
+			const $nextBtn = $sweepSelect.find('.swiper-button-next');
+
+			// .swiper-slide > span.active 의 인덱스를 찾아 초기 슬라이드로 설정
+			const $activeSlide = $swiperWrapper.find('.swiper-slide span.active');
+			const initialSlideIndex = $activeSlide.length ? $activeSlide.closest('.swiper-slide').index() : 0;
 
 			const swiper = new Swiper($swiperContainer[0], {
 				slidesPerView: 'auto',
 				centeredSlides: true,
-				initialSlide: newNum,
+				initialSlide: initialSlideIndex,
 				spaceBetween: 16,
 				slideToClickedSlide: true,
 				observer: true,
 				navigation: {
-					nextEl: ".swiper-button-next",
-					prevEl: ".swiper-button-prev",
+					nextEl: $nextBtn[0],
+					prevEl: $prevBtn[0],
 				},
 				a11y: {
 					enabled: true,
@@ -71,16 +106,29 @@
 					},
 				}
 			});
+			swiperMap.set($swiperContainer[0], swiper);
 		});
 
 		function slideFocus(swiperInstance) {
 			$(swiperInstance.slides).each(function(idx) {
 				$(this).on('click', function() {
 					swiperInstance.slideTo(idx);
-					$('.popup_head').text(idx);
+					// $('.popup_head').text(idx);
 				});
 			});
 		}
+
+		$(document).on('blur', '.sweep_select .iii', function () {
+			const $sweepSelect = $(this).closest('.sweep_select');
+			const swiperContainer = $sweepSelect.find('.swiper-container')[0];
+			const swiperInstance = swiperMap.get(swiperContainer);
+
+			if (swiperInstance) {
+				swiperInstance.slideTo(0);
+			}
+		});
+	
+	
 	});
 </script>
  
