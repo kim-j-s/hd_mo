@@ -11,9 +11,40 @@
 
 /* 상단 이미지 영역 */
 .guarantee_visuval {
+	position: relative;
 	font-size: 0;
 	line-height: normal;
 	text-align: center;
+
+	.visual_msg {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		margin-left: 52px;
+		padding: 4px 16px;
+		background: var(--color-element-primary);
+		border-radius: 100px; 
+
+		.msg_text {
+			position: relative;
+			font-size: var(--font-size-body-xsmall);
+			font-weight: 700;
+			line-height: 18px;
+			color: #FFF;
+			border-radius: 100px; 
+
+			&:after {
+				position: absolute;
+				bottom: -7px;
+				left: -16px;
+				z-index: 0;
+				content:'';
+				width: 17px;
+				height: 18px;
+				background: url(../images/icon/icon_bb_tail.svg) no-repeat center / 100% auto;
+			}
+		}
+	}
 }
 /* 상단 이미지 영역 */
 
