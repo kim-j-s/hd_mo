@@ -48,6 +48,8 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body>
+		<p class="bbooxx" tabindex="0"></p>
+
 		<!-- s: Bottom 팝업 -->
 		<div class="popup_wrap bottom active" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="false">
 			<div class="popup_container">
@@ -169,7 +171,7 @@
 					$(swiperInstance.slides).each(function (idx) {
 						$(this).on("click", function () {
 							swiperInstance.slideTo(idx);
-							$(".popup_head").text(idx);
+							// $('.popup_head').text(idx);
 						});
 					});
 				}
@@ -182,6 +184,10 @@
 					if (swiperInstance) {
 						swiperInstance.slideTo(0);
 					}
+				});
+
+				$(document).on("blur", ".bbooxx", function () {
+					$(".bbooxx").text("blur");
 				});
 			});
 		</script>

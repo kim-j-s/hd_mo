@@ -4,6 +4,8 @@
 -->
 {{#> layout/default page-title="보험료 확인 | 상품"}}
 
+<p class="bbooxx" tabindex="0"></p>
+
 <!-- s: Bottom 팝업 -->
 {{#> popup/popup_bottom popup-id="pop_type01" popup-title="가입조건 변경" popup-active=true }}
 <div class="popup_cont">
@@ -125,8 +127,15 @@
 
 			if (swiperInstance) {
 				swiperInstance.slideTo(0);
+				$('.bbooxx').text('스크립트 실행');
 			}
 		});
+
+		$(document).on('blur', '.bbooxx', function () {
+			$('.bbooxx').text('blur');	
+		});
+
+		
 	
 	
 	});

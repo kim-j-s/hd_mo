@@ -2586,7 +2586,10 @@ strong {
 }
 .inp_checkbox.rd_box {
 	padding: var(--padding-card-large);
-	width: 100%;
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	min-width: 40%;
 	border: 1px solid var(--color-border-gray-light);
 	border-radius: 2.4rem;
 }
@@ -2640,14 +2643,15 @@ strong {
 	-webkit-box-direction: normal;
 	-ms-flex-flow: row wrap;
 	flex-flow: row wrap;
-	gap: 2rem;
+	gap: 1.2rem;
+	width: 100%;
 }
 .checkbox_group_wrap.column {
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-ms-flex-direction: column;
 	flex-direction: column;
-	gap: 1rem;
+	gap: 1.6rem;
 	width: 100%;
 }
 .checkbox_group_wrap + * {
@@ -3333,10 +3337,6 @@ strong {
 }
 .form_group_wrap .list_ty2 {
 	margin-top: 1.6rem;
-}
-.form_group_wrap .ex_text {
-	margin-top: 1.6rem;
-	font-size: var(--font-size-label-medium);
 }
 .range_calrendar {
 	display: -webkit-box;
@@ -4279,6 +4279,19 @@ strong {
 }
 .sweep_select .iii {
 	position: absolute;
+}
+.bbooxx {
+	position: fixed;
+	top: 10rem;
+	left: 50%;
+	z-index: 9999;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	background-color: #fff;
+	width: 50%;
+	height: 2.4rem;
+	line-height: 2.4rem;
+	text-align: center;
 }
 /* swiper */
 /* 예시 */
