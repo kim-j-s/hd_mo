@@ -414,60 +414,6 @@ strong {
 .radio_group_wrap.icon_case .inp_radio input[type="radio"] + label {
 	padding-left: 6rem;
 }
-.tsts {
-	position: relative;
-	height: 5rem;
-	margin-top: 2rem;
-	font-size: 0;
-	text-align: center;
-	margin: 0 -2.4rem;
-}
-.tsts .i {
-	display: -webkit-inline-box;
-	display: -ms-inline-flexbox;
-	display: inline-flex;
-	gap: 1.6rem;
-	white-space: nowrap;
-	width: 100%;
-	padding: 0 50%;
-	overflow-x: auto;
-	-ms-scroll-snap-type: x mandatory;
-	scroll-snap-type: x mandatory;
-}
-.tsts .opt_btn {
-	-webkit-box-flex: 0;
-	-ms-flex: none;
-	flex: none;
-	display: inline-block;
-	width: 9.8rem;
-	height: 5rem;
-	text-align: center;
-	color: #000;
-	font-size: 2.4rem;
-	scroll-snap-align: center;
-}
-.tsts .opt_btn.active {
-	background: #000;
-	color: #fff;
-	border-radius: 0.8rem;
-}
-.tsts .tsts_btn {
-	position: absolute;
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
-	width: 3.2rem;
-	height: 3.2rem;
-	background-color: blue;
-	border-radius: 50%;
-	border: 1px solid #e1e3ea;
-}
-.tsts .tsts_btn.left {
-	left: 2.4rem;
-}
-.tsts .tsts_btn.right {
-	right: 2.4rem;
-}
 .no_list_area {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -4506,6 +4452,140 @@ strong {
 	font-size: var(--font-size-button-medium);
 	line-height: 2.1rem;
 }
+/* 좌우 스크롤 옵션 선택 영역 */
+/* 선택 목록 스타일 */
+.opt_select_wrap {
+	position: relative;
+	margin-top: 2rem;
+	font-size: 0;
+	text-align: center;
+	margin: 0 -2.4rem;
+}
+.opt_select_wrap::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 6.4rem;
+	height: 100%;
+	background: #ffffff;
+	background: -webkit-gradient(linear, left top, right top, from(rgb(255, 255, 255)), color-stop(70%, rgb(255, 255, 255)), to(rgba(255, 255, 255, 0)));
+	background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 70%, rgba(255, 255, 255, 0) 100%);
+	pointer-events: none;
+}
+.opt_select_wrap::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
+	width: 6.4rem;
+	height: 100%;
+	background: #ffffff;
+	background: -webkit-gradient(linear, right top, left top, from(rgb(255, 255, 255)), color-stop(70%, rgb(255, 255, 255)), to(rgba(255, 255, 255, 0)));
+	background: linear-gradient(270deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 70%, rgba(255, 255, 255, 0) 100%);
+	pointer-events: none;
+}
+.opt_select_wrap .opt_select_inner {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	gap: 1.6rem;
+	white-space: nowrap;
+	width: 100%;
+	overflow-x: auto;
+	-ms-scroll-snap-type: x mandatory;
+	scroll-snap-type: x mandatory;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+.opt_select_wrap .opt_select_inner::-webkit-scrollbar {
+	display: none;
+}
+.opt_select_wrap .opt_select_inner.active {
+	scroll-behavior: smooth;
+}
+.opt_select_wrap .opt_select {
+	position: relative;
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+	display: inline-block;
+	scroll-snap-align: center;
+}
+.opt_select_wrap .opt_select input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+.opt_select_wrap .opt_select input + label {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	height: 5.6rem;
+	font-weight: 700;
+	font-size: 2.4rem;
+	color: var(--color-text-disabled);
+	border-radius: var(--radius-medium3);
+	background-color: var(--color-element-inverse);
+	-webkit-transition: background-color 0.3s;
+	transition: background-color 0.3s;
+}
+.opt_select_wrap .opt_select input:checked + label {
+	color: var(--color-text-basic);
+	background-color: var(--color-element-secondary-lighter);
+}
+.opt_select_wrap .opt_select.opt_select_dmp {
+	height: 5.6rem;
+}
+.opt_select_wrap .opt_select.opt_select_w1 input + label {
+	width: 9.8rem;
+}
+.opt_select_wrap .opt_select.opt_select_w2 input + label {
+	width: 14rem;
+}
+.opt_select_wrap .opt_select_control {
+	position: absolute;
+	top: 50%;
+	z-index: 2;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 3.2rem;
+	height: 3.2rem;
+	border-radius: 50%;
+	border: 1px solid var(--color-border-gray-light);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: var(--color-action-white);
+	background-size: 1.6rem auto;
+}
+.opt_select_wrap .opt_select_control_left {
+	left: 0.8rem;
+	background-image: url(../images/icon/arrowLeft_ty1.svg);
+}
+.opt_select_wrap .opt_select_control_right {
+	right: 0.8rem;
+	background-image: url(../images/icon/arrowRight_ty5.svg);
+}
+.opt_select_wrap .opt_select_control:disabled {
+	border-color: var(--color-action-disabled);
+	background-color: var(--color-action-disabled);
+}
+.opt_select_wrap .opt_select_control:disabled.opt_select_control_left {
+	background-image: url(../images/icon/arrowLeft_disabled.svg);
+}
+.opt_select_wrap .opt_select_control:disabled.opt_select_control_right {
+	background-image: url(../images/icon/arrowRight_disabled.svg);
+}
+/* 선택 목록 스타일 */
 /* select_item */
 .select_item.select_item_case01 .si_item {
 	position: relative;
