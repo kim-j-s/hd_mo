@@ -259,7 +259,7 @@
 	position: relative;
 	min-height: 100%;
 	margin: 0 -24px;
-	font-size: 0;
+	// font-size: 0;
 
 	&.active {
 		.guarantee_container_left {
@@ -299,7 +299,6 @@
 	visibility: hidden;
 	transition: left 0.5s;
 	overflow: hidden;
-
 }
 
  
@@ -317,6 +316,7 @@
 
 	.gd_item {
 		position: relative;
+		min-height: 100%;
 		padding: 24px;
 		border-radius: var(--radius-large2);
 		background-color: var(--color-surface-white-subtle);
@@ -348,7 +348,50 @@
 						font-size: var(--font-size-body-large);
 					}
 				}
+				+ .gdi_content_list {
+					margin-top: 12px;
+				}
+			}
 
+			.gdi_content_list {
+				> li {
+					padding-top: 16px;
+ 					border-top: 1px solid var(--color-divider-gray-light);
+					 + li {
+						margin-top: 16px;
+					}
+					.item {
+						display: flex;
+						align-items: center;
+						width: 100%;
+						min-height: 40px;
+						font-size: var(--font-size-body-small);
+						background-repeat: no-repeat;
+						background-position: right center;
+						background-size: 40px auto;
+						.txt {
+							.question_mark_btn {
+								vertical-align: middle;
+							}
+						}
+					}
+					&.ico_add {						
+						.item {
+							padding-right: 50px;
+						}
+						&.ico_add_ty1 {
+							.item {
+								background-image: url(../images/content/guarantee/icon_gil_01.svg);
+							}
+						}
+						&.ico_add_ty2 {
+							.item {
+								background-image: url(../images/content/guarantee/icon_gil_02.svg);
+							}
+						}
+					}
+					
+				}
 			}
 		}
 
