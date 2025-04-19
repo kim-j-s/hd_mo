@@ -150,14 +150,36 @@
 					<!-- s: guarantee_detail -->
 					<div class="guarantee_detail">
 						<div class="guarantee_select" tabindex="0">
+
+							<div class="swiper mySwiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">Slide 1</div>
+									<div class="swiper-slide">Slide 2</div>
+									<div class="swiper-slide">Slide 3</div>
+									<div class="swiper-slide">Slide 4</div>
+									<div class="swiper-slide">Slide 5</div>
+									<div class="swiper-slide">Slide 6</div>
+									<div class="swiper-slide">Slide 7</div>
+									<div class="swiper-slide">Slide 8</div>
+									<div class="swiper-slide">Slide 9</div>
+								</div>
+								<button type="button" class="swiper_button sbc_02 sbs_02 swiper_button_left" aria-label="이전"></button>
+								<button type="button" class="swiper_button sbc_02 sbs_02 swiper_button_right" aria-label="다음"></button>
+								<div class="swiper-pagination"></div>
+							</div>
+
+
+
+
+
 							스위퍼 영역
 						</div>
 						<div class="guarantee_select_mini">
-							포지션 영역 기능 추가 필요							
+							포지션 영역 기능 추가 필요
 						</div>
 						<div class="btn_area">
-							{{> cp/button type="3" size="4" b-text="모든 플랜 한눈에 보기" popup="pop1" btn-title="전체 팝업"}}
-							{{> cp/button type="3" size="4" b-text="계산 결과 문자로 받기" popup="pop1" btn-title="전체 팝업"}}
+							{{> cp/button type="3" size="3" b-text="모든 플랜 한눈에 보기" popup="pop1" btn-title="전체 팝업"}}
+							{{> cp/button type="3" size="3" b-text="계산 결과 문자로 받기" popup="pop1" btn-title="전체 팝업"}}
 						</div>
 
 						<div class="acc_group">
@@ -383,9 +405,24 @@
 			$('.guarantee_container').addClass('active');
 			setTimeout(function() {
 				$('.guarantee_container_right').find('.guarantee_detail').focus();
-			}, 200);
-			
+			}, 200);			
 		});
+
+
+
+
+		// 페이지 상단 스위퍼
+		var swiper = new Swiper(".mySwiper", {
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+			pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+
+
 
 		
 	});

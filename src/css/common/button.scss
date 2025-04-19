@@ -617,3 +617,66 @@
 	width: 30px;
 	background: transparent url(../images/icon/icon_search.svg) no-repeat center;	
 }
+
+
+/* swiper button */
+.swiper_button {
+	display: inline-block;
+	
+	border-radius: 50%;
+	
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: var(--color-action-white);
+	
+	&_left {
+		background-image: url(../images/icon/arrowLeft_ty1.svg);
+	}
+	&_right {
+		background-image: url(../images/icon/arrowRight_ty5.svg);
+	}
+
+	&[aria-disabled="true"],
+	&:disabled {
+		&.swiper_button_left {
+			background-image: url(../images/icon/arrowLeft_disabled.svg);
+		}
+		&.swiper_button_right {
+			background-image: url(../images/icon/arrowRight_disabled.svg);
+		}
+	}
+
+	&.sbc_01 {
+		border: 1px solid var(--color-border-gray-light);
+		&[aria-disabled="true"],
+		&:disabled {
+			border-color: var(--color-action-disabled);
+			background-color: var(--color-action-disabled);
+		}
+	}
+	&.sbc_02 {
+		border: 1px solid var(--color-border-gray-light);
+		background-color: var(--color-action-black-alpha);
+		&[aria-disabled="true"],
+		&:disabled {
+			border-color: var(--color-action-disabled);
+			background-color: var(--color-action-disabled);
+		}
+	}
+
+	
+
+	&.sbs_01 {
+		width: 32px;
+		height: 32px;
+		background-size: 16px auto;
+	}
+	&.sbs_02 {
+		width: 40px;
+		height: 40px;
+		background-size: 24px auto;
+	}
+	
+	
+}
+/* swiper button */

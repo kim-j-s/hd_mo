@@ -54,12 +54,13 @@ $(function () {
 			updateOptSelectButtonState($wrap);
 
 			// 좌측 버튼
-			$wrap.find('.opt_select_control_left').on('click', function () {
+			$wrap.find('.swiper_button_left').on('click', function () {
 				const $checked = $items.find('input:checked').closest('.opt_select');
 				const $prev = $checked.prevAll('.opt_select:not(.opt_select_dmp)').first();
 
 				if ($prev.length) {
 					$prev.find('input[type=radio]').prop('checked', true).trigger('change');
+					updateLiveRegion($wrap);
 				} else {
 					// 그래도 이동은 살짝
 					$inner.animate({
@@ -71,12 +72,13 @@ $(function () {
 			});
 
 			// 우측 버튼
-			$wrap.find('.opt_select_control_right').on('click', function () {
+			$wrap.find('.swiper_button_right').on('click', function () {
 				const $checked = $items.find('input:checked').closest('.opt_select');
 				const $next = $checked.nextAll('.opt_select:not(.opt_select_dmp)').first();
 
 				if ($next.length) {
 					$next.find('input[type=radio]').prop('checked', true).trigger('change');
+					updateLiveRegion($wrap);
 				} else {
 					// 그래도 이동은 살짝
 					$inner.animate({
@@ -101,21 +103,21 @@ $(function () {
 		const scrollWidth = $inner[0].scrollWidth;
 		const clientWidth = $inner.outerWidth();
 
-		const $btnLeft = $wrap.find('.opt_select_control_left');
-		const $btnRight = $wrap.find('.opt_select_control_right');
+		const $btnLeft = $wrap.find('.swiper_button_left');
+		const $btnRight = $wrap.find('.swiper_button_right');
 
 		// 왼쪽 끝일 때
 		if (scrollLeft <= 0) {
-			$btnLeft.prop('disabled', true);
+			$btnLeft.attr('aria-disabled', true);
 		} else {
-			$btnLeft.prop('disabled', false);
+			$btnLeft.attr('aria-disabled', false);
 		}
 
 		// 오른쪽 끝일 때
 		if (scrollLeft + clientWidth >= scrollWidth - 1) {
-			$btnRight.prop('disabled', true);
+			$btnRight.attr('aria-disabled', true);
 		} else {
-			$btnRight.prop('disabled', false);
+			$btnRight.attr('aria-disabled', false);
 		}
 	}
 
@@ -192,6 +194,14 @@ $(function () {
 		if (closest) {
 			closest.find('input[type=radio]').prop('checked', true).trigger('change');
 		}
+	}
+
+
+	// 라이브 리전 업데이트
+	function updateLiveRegion($wrap) {
+		const $checked = $wrap.find('input[type=radio]:checked');
+		const text = $checked.closest('.opt_select').find('label').text().trim();
+		$wrap.find('.opt_select_wrap_live').text(text + ' 선택됨');
 	}
 
 

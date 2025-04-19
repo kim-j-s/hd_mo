@@ -65,12 +65,14 @@
 				font-size: 24px;
 				color: var(--color-text-disabled);
 				border-radius: var(--radius-medium3);
+				border: 1px solid var(--color-element-inverse);
 				background-color: var(--color-element-inverse);
-				transition: background-color 0.3s;
+				transition: border-color 0.3s background-color 0.3s;
 			}
 			&:checked {
 				& + label {
 					color: var(--color-text-basic);
+					border-color: var(--color-element-secondary-lighter);
 					background-color: var(--color-element-secondary-lighter);
 				}
 			}
@@ -94,36 +96,16 @@
 		}
 	}
 
-	.opt_select_control {
+	.swiper_button {
 		position: absolute;
 		top: 50%;
 		z-index: 2;
 		transform: translateY(-50%);
-		width: 32px;
-		height: 32px;
-		border-radius: 50%;
-		border: 1px solid var(--color-border-gray-light);
-		background-repeat: no-repeat;
-		background-position: center center;
-		background-color: var(--color-action-white);
-		background-size: 16px auto;
 		&_left {
 			left: 8px;
-			background-image: url(../images/icon/arrowLeft_ty1.svg);
 		}
 		&_right {
 			right: 8px;
-			background-image: url(../images/icon/arrowRight_ty5.svg);
-		}
-		&:disabled {
-			border-color: var(--color-action-disabled);
-			background-color: var(--color-action-disabled);
-			&.opt_select_control_left {
-				background-image: url(../images/icon/arrowLeft_disabled.svg);
-			}
-			&.opt_select_control_right {
-				background-image: url(../images/icon/arrowRight_disabled.svg);
-			}
 		}
 	}
 }
