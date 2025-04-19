@@ -575,9 +575,6 @@ strong {
 	background-image: url(../images/common/cert/icon_cert_fin_cert.svg);
 }
 /* header */
-.header {
-	height: 4.8rem;
-}
 .header .header_inner {
 	position: relative;
 	-webkit-box-flex: 1;
@@ -1621,6 +1618,7 @@ strong {
 /* swiper button */
 .swiper_button {
 	display: inline-block;
+	cursor: pointer;
 	border-radius: 50%;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -1779,6 +1777,20 @@ strong {
 	font-size: var(--font-size-label-small);
 	line-height: 1.8rem;
 }
+.hd_badge .pipe_line {
+	position: relative;
+	margin-left: 0.7rem;
+}
+.hd_badge .pipe_line::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: -0.5rem;
+	height: 1.2rem;
+	border-left: 1px solid #000;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
 .hd_badge.c_primary {
 	color: var(--color-text-primary);
 	border: 1px solid var(--color-border-primary);
@@ -1792,6 +1804,9 @@ strong {
 	border: 1px solid var(--color-border-primary-light);
 	background: var(--color-element-primary-lighter);
 }
+.hd_badge.c_primary .pipe_line::before {
+	border-left: 1px solid var(--color-border-primary-light);
+}
 .hd_badge.c_secondary {
 	color: var(--color-text-secondary);
 	border: 1px solid var(--color-border-secondary);
@@ -1804,6 +1819,9 @@ strong {
 	color: var(--color-text-secondary);
 	border: 1px solid var(--color-border-secondary-light);
 	background: var(--color-element-secondary-light-blue);
+}
+.hd_badge.c_secondary .pipe_line::before {
+	border-left: 1px solid var(--color-border-secondary-light);
 }
 .hd_badge.c_tertiary {
 	color: var(--color-text-subtle);
@@ -1870,6 +1888,9 @@ strong {
 	color: var(--color-text-success);
 	border: 1px solid var(--color-border-success-light);
 	background: var(--color-element-success-lighter);
+}
+.hd_badge.c_success .pipe_line::before {
+	border-left: 1px solid var(--color-border-success-light);
 }
 .hd_badge.c_info {
 	color: var(--color-text-information);
@@ -4813,8 +4834,52 @@ strong {
 #swiper1 .swiper-slide:nth-child(even) {
 	background-color: #ddd;
 }
-/* 보장플랜 */
-/* 보장플랜 */
+/* 보장플랜 케이스 */
+.sw_case01 {
+	margin: 0 -2.4rem;
+}
+.sw_case01 .swiper {
+	position: relative;
+	padding: 0 2.4rem;
+}
+.sw_case01 .swiper-slide {
+	height: auto;
+}
+.sw_case01 .swiper_button {
+	position: absolute;
+	top: 50%;
+	z-index: 2;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.sw_case01 .swiper_button.swiper_button_left {
+	left: 0.4rem;
+}
+.sw_case01 .swiper_button.swiper_button_right {
+	right: 0.4rem;
+}
+.sw_case01 .swiper-pagination {
+	position: relative;
+	top: auto;
+	bottom: auto;
+	margin-top: 1.6rem;
+	font-size: 0;
+}
+/* 보장플랜 케이스 */
+/* swiper-pagination */
+.swiper-pagination.sp_ty1 .swiper-pagination-bullet {
+	margin: 0 0.2rem;
+	opacity: 1;
+	background-color: var(--color-element-disabled-light);
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.swiper-pagination.sp_ty1 .swiper-pagination-bullet.swiper-pagination-bullet-active {
+	width: 2rem;
+	border-radius: 0.8rem;
+	background-color: #58616a;
+}
+/* swiper-pagination */
 /* tab */
 .tab_wrap + .info_gray {
 	margin-top: 3.2rem;

@@ -1637,8 +1637,6 @@
 	position: relative;
 	min-height: 100%;
 	margin: 0 -2.4rem;
-	font-size: 0;
-	overflow: hidden;
 }
 .guarantee_container.active .guarantee_container_left {
 	position: absolute;
@@ -1648,8 +1646,10 @@
 .guarantee_container.active .guarantee_container_right {
 	left: 0;
 	height: auto;
+	width: 100%;
 	opacity: 1;
 	visibility: visible;
+	overflow: initial;
 }
 .guarantee_container_left {
 	position: relative;
@@ -1665,16 +1665,133 @@
 	position: relative;
 	top: 0;
 	left: 100%;
-	width: 100%;
+	width: 0;
 	height: 0;
 	padding: 0 2.4rem;
 	opacity: 0;
 	visibility: hidden;
-	-webkit-transition: all 0.5s ease;
-	transition: all 0.5s ease;
+	-webkit-transition: left 0.5s;
+	transition: left 0.5s;
+	overflow: hidden;
 }
-.guarantee_detail {
-	font-size: initial;
+.guarantee_detail:focus {
+	outline: none;
+}
+.guarantee_detail .guarantee_detail_top {
+	margin: -2.4rem -2.4rem 0 -2.4rem;
+	padding: 2.4rem 2.4rem 2rem 2.4rem;
+	background-color: var(--color-surface-secondary-subtler);
+}
+.guarantee_detail .gd_item {
+	position: relative;
+	min-height: 100%;
+	padding: 2.4rem;
+	border-radius: var(--radius-large2);
+	background-color: var(--color-surface-white-subtle);
+}
+.guarantee_detail .gd_item .rdo_box {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.guarantee_detail .gd_item .rdo_box input {
+	opacity: 0;
+}
+.guarantee_detail .gd_item .gdi_content .head_text {
+	padding-top: 0.8rem;
+	font-size: var(--font-size-body-medium);
+}
+.guarantee_detail .gd_item .gdi_content .head_text .price {
+	display: block;
+	padding-top: 0.8rem;
+}
+.guarantee_detail .gd_item .gdi_content .head_text .price .price_num {
+	display: inline-block;
+	vertical-align: middle;
+	font-weight: 700;
+	font-size: var(--font-size-display-medium);
+}
+.guarantee_detail .gd_item .gdi_content .head_text .price .won {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: var(--font-size-body-large);
+}
+.guarantee_detail .gd_item .gdi_content .head_text + .gdi_content_list {
+	margin-top: 1.2rem;
+}
+.guarantee_detail .gd_item .gdi_content .gdi_content_list > li {
+	padding-top: 1.6rem;
+	border-top: 1px solid var(--color-divider-gray-light);
+}
+.guarantee_detail .gd_item .gdi_content .gdi_content_list > li + li {
+	margin-top: 1.6rem;
+}
+.guarantee_detail .gd_item .gdi_content .gdi_content_list > li .item {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 100%;
+	min-height: 4rem;
+	font-size: var(--font-size-body-small);
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-size: 4rem auto;
+}
+.guarantee_detail .gd_item .gdi_content .gdi_content_list > li .item .txt .question_mark_btn {
+	vertical-align: middle;
+}
+.guarantee_detail .gd_item .gdi_content .gdi_content_list > li.ico_add .item {
+	padding-right: 5rem;
+}
+.guarantee_detail .gd_item .gdi_content .gdi_content_list > li.ico_add.ico_add_ty1 .item {
+	background-image: url(../images/content/guarantee/icon_gil_01.svg);
+}
+.guarantee_detail .gd_item .gdi_content .gdi_content_list > li.ico_add.ico_add_ty2 .item {
+	background-image: url(../images/content/guarantee/icon_gil_02.svg);
+}
+.guarantee_detail .guarantee_detail_mini {
+	margin-top: 2.4rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+.guarantee_detail .guarantee_detail_mini .i_data {
+	position: relative;
+	padding-left: 0.8rem;
+	padding-top: 0.2rem;
+	font-size: var(--font-size-body-small);
+	color: var(--color-text-subtle);
+}
+.guarantee_detail .guarantee_detail_mini .i_data .data {
+	padding-left: 0.6rem;
+	font-weight: 700;
+}
+.guarantee_detail .guarantee_detail_mini .i_data::before {
+	content: "";
+	position: absolute;
+	top: 1.1rem;
+	left: 0;
+	width: 0.2rem;
+	border-bottom: 1px solid var(--color-text-subtle);
+	border-radius: 50%;
+}
+.guarantee_detail .guarantee_detail_mini .i_data + .i_data {
+	margin-left: 1.2rem;
+}
+.guarantee_detail .guarantee_detail_mini .modify_ba {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+	margin-left: 1.8rem;
+}
+.guarantee_detail .btn_area.gd_middle_ba {
+	margin-top: 2.4rem;
 }
 .guarantee_detail .btn_area + .acc_group {
 	margin-top: 2.4rem;
@@ -1682,6 +1799,61 @@
 .guarantee_detail .acc_group + .btn_area {
 	margin-top: 5.2rem;
 }
+/* 간편정보 */
+.simple_info_wrap {
+	position: sticky;
+	top: -2.4rem;
+	z-index: 1;
+	margin: 0 -2.4rem;
+	background: var(--color-surface-white-subtler, #fff);
+}
+.simple_info_wrap .simple_info_item {
+	display: none;
+	border-radius: 0px 0px var(--padding-6, 16px) var(--padding-6, 16px);
+	background: var(--color-surface-white-subtler, #fff);
+	-webkit-box-shadow: 0px 0.2rem 0.8rem 0px var(--color-alpha-shadow3, rgba(0, 0, 0, 0.12));
+	box-shadow: 0px 0.2rem 0.8rem 0px var(--color-alpha-shadow3, rgba(0, 0, 0, 0.12));
+}
+.simple_info_wrap .simple_info_item .sii_list {
+	padding: 0 2.4rem;
+}
+.simple_info_wrap .simple_info_item .sii_list > li {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	padding: 2rem 0;
+	font-size: var(--font-size-body-small);
+}
+.simple_info_wrap .simple_info_item .sii_list > li + li {
+	border-top: 1px solid var(--color-divider-gray-light);
+}
+.simple_info_wrap .simple_info_item .sii_list > li .bold {
+	font-weight: 700;
+}
+.simple_info_wrap .simple_info_item .sii_list > li .price {
+	font-size: var(--font-size-body-medium);
+}
+.simple_info_wrap .simple_info_item .sii_list > li .pipe {
+	position: relative;
+	margin-left: 1.4rem;
+}
+.simple_info_wrap .simple_info_item .sii_list > li .pipe::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: -0.9rem;
+	height: 1.2rem;
+	border-left: 1px solid var(--color-divider-gray-light);
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+/* 간편정보 */
 .coverage_item_list > .list {
 	display: -webkit-box;
 	display: -ms-flexbox;

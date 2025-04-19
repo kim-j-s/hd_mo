@@ -72,7 +72,7 @@
 										</div>
 									</div>
 								</div>
-								{{> cp/linkButton bl_class="short_cut sm acccccc" bl_text="보장내용 자세히 보기" bl_title="슬라이드 이동" }}
+								{{> cp/linkButton bl_class="short_cut sm move_detail" bl_text="보장내용 자세히 보기" bl_title="슬라이드 이동" }}
 							</div>
 
 							<div class="guarantee_item">
@@ -105,7 +105,7 @@
 										</div>
 									</div>
 								</div>
-								{{> cp/linkButton bl_class="short_cut sm acccccc" bl_text="보장내용 자세히 보기" bl_title="슬라이드 이동" }}
+								{{> cp/linkButton bl_class="short_cut sm move_detail" bl_text="보장내용 자세히 보기" bl_title="슬라이드 이동" }}
 							</div>
 
 							<div class="guarantee_item">
@@ -138,7 +138,7 @@
 										</div>
 									</div>
 								</div>
-								{{> cp/linkButton bl_class="short_cut sm acccccc" bl_text="보장내용 자세히 보기" bl_title="슬라이드 이동" }}
+								{{> cp/linkButton bl_class="short_cut sm move_detail" bl_text="보장내용 자세히 보기" bl_title="슬라이드 이동" }}
 							</div>
 						</div>
 					</div>
@@ -155,7 +155,7 @@
 								<div class="swiper" id="sw_case01">
 									<div class="swiper-wrapper">
 										<!-- s: 기본 -->
-										<div class="swiper-slide">
+										<div class="swiper-slide" tabindex="0">
 											<div class="gd_item">
 												<div class="rdo_box">
 													<input type="radio" name="d_r" id="d_r_01" aria-labelledby="d_rdo_01">
@@ -197,7 +197,7 @@
 										<!-- e: 기본 -->
 
 										<!-- s: 표준 -->
-										<div class="swiper-slide">
+										<div class="swiper-slide" tabindex="0">
 											<div class="gd_item">
 												<div class="rdo_box">
 													<input type="radio" name="d_r" id="d_r_02" aria-labelledby="d_rdo_02">
@@ -239,7 +239,7 @@
 										<!-- e: 표준 -->
 
 										<!-- s: 고급 -->
-										<div class="swiper-slide">
+										<div class="swiper-slide" tabindex="0">
 											<div class="gd_item">
 												<div class="rdo_box">
 													<input type="radio" name="d_r" id="d_r_03" aria-labelledby="d_rdo_03">
@@ -288,10 +288,52 @@
 								<div class="swiper-pagination sp_ty1"></div>
 							</div>
 
+							<div class="guarantee_detail_mini">
+								<span class="i_data">
+									<span class="text">보험/납입 기간</span>
+									<strong class="data">10년</strong>
+								</span>
+								<span class="i_data">
+									<span class="text">납입 방법</span>
+									<strong class="data">월납</strong>
+								</span>
+								<div class="modify_ba">
+									{{> cp/button type="3" size="5" b-text="변경"}}
+								</div>
+							</div>
 						</div>
-						<div class="guarantee_select_mini">
-							포지션 영역 기능 추가 필요
+
+						<!-- 간편정보 -->
+						<div class="simple_info_wrap">
+							<div class="simple_info_item">
+								<ul class="sii_list">
+									<li>
+										<span class="sii_list_l">보험료</span>
+										<span class="sii_list_r">
+											<strong class="price">24,900원</strong>
+										</span>
+									</li>
+									<li>
+										<span class="sii_list_l">
+											<span class="text">
+												보장 범위 <strong class="bold">40개</strong>
+											</span>
+										</span>
+										<span class="sii_list_r">
+											<span class="text">
+												보험/납입기간 및 방법 <strong class="bold">10년</strong>
+											</span>
+											<span class="pipe">
+												<strong class="bold">월납</strong>
+											</span>
+										</span>
+									</li>
+								</ul>
+							</div>
 						</div>
+						<!-- 간편정보 -->
+
+
 						<div class="gd_middle_ba btn_area">
 							{{> cp/button type="3" size="3" b-text="모든 플랜 한눈에 보기" popup="pop1" btn-title="전체 팝업"}}
 							{{> cp/button type="3" size="3" b-text="계산 결과 문자로 받기" popup="pop1" btn-title="전체 팝업"}}
@@ -484,7 +526,7 @@
 
 		$('.guarantee_choice_wrap .guarantee_item .gi_radio input[type="radio"]').on('change', function() {
 			const idx = $(this).closest('.guarantee_item').index();
-			console.log(idx)
+			// console.log(idx)
 			const $selectedItem = $(this).closest('.guarantee_item');
 			$(this).closest('.guarantee_choice_wrap').addClass('active');
 			$(this).closest('.guarantee_choice_wrap').find('.guarantee_item').removeClass('active');
@@ -516,10 +558,12 @@
 		});
 
 
-		$('.acccccc').on('click', function () {
+		$('.move_detail').on('click', function () {
+			const idx = $(this).closest('.guarantee_item').index();
+			console.log(idx);
 			$('.guarantee_container').addClass('active');
 			setTimeout(function() {
-				$('.guarantee_container_right').find('.guarantee_detail').focus();
+				$('.guarantee_container_right').find('.swiper-slide').eq(idx).focus();
 				$('.container').scrollTop(0);
 			}, 200);
 		});
