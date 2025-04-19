@@ -4,7 +4,7 @@
 
 	<div id="container" class="container">
 		<div class="content">
-			<div class="guarantee_container active">
+			<div class="guarantee_container">
 				<!-- s: guarantee_container_left -->
 				<div class="guarantee_container_left">
 					<!-- s: live 처리 위치 -->
@@ -42,7 +42,7 @@
 							{{> cp/linkButton bl_class="short_cut short_cut_icon short_cut_icon_ty1" bl_text="차량 손해도 보장받을 수 있는 특약" pop_id="sp_pop" }}
 						</div>
 						<div class="guarantee_choice_wrap">
-							<div class="guarantee_item">
+							<div class="guarantee_item" data-sendclass="01">
 								<div class="gi_radio">
 									<input type="radio" name="guarantee_item" id="gi_radio01" aria-labelledby="guarantee_item_top_01">
 									<label for="gi_radio01"></label>
@@ -75,7 +75,7 @@
 								{{> cp/linkButton bl_class="short_cut sm move_detail" bl_text="보장내용 자세히 보기" bl_title="슬라이드 이동" }}
 							</div>
 
-							<div class="guarantee_item">
+							<div class="guarantee_item" data-sendclass="02">
 								<div class="gi_radio">
 									<input type="radio" name="guarantee_item" id="gi_radio02" aria-labelledby="guarantee_item_top_02">
 									<label for="gi_radio02"></label>
@@ -108,7 +108,7 @@
 								{{> cp/linkButton bl_class="short_cut sm move_detail" bl_text="보장내용 자세히 보기" bl_title="슬라이드 이동" }}
 							</div>
 
-							<div class="guarantee_item">
+							<div class="guarantee_item" data-sendclass="03">
 								<div class="gi_radio">
 									<input type="radio" name="guarantee_item" id="gi_radio03" aria-labelledby="guarantee_item_top_03">
 									<label for="gi_radio03"></label>
@@ -149,13 +149,46 @@
 				<div class="guarantee_container_right">
 					<!-- s: guarantee_detail -->
 					<div class="guarantee_detail">
+
+						<div class="new">
+							<div class="splide" role="group" aria-label="Splide Basic HTML Example">
+								<div class="splide__track">
+									<ul class="splide__list">
+										<li class="splide__slide c1" tabindex="0">
+											Slide 01 <br>
+											<a href="#">테스트</a>
+											<br>
+											워딩
+										</li>
+										<li class="splide__slide c2" tabindex="0">
+											Slide 02 <br>
+											<br>
+											워딩
+											<br>
+											sdfsdfsdf sdfsdfsdfsdf <a href="#">테스트</a>
+										</li>
+										<li class="splide__slide c3" tabindex="0">
+											Slide 03 <br>
+											<a href="#">테스트</a>
+											<br>
+											워딩
+											<a href="#">테스트</a>
+											<br>
+											워딩
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+
 						<div class="guarantee_detail_top">
 
 							<div class="sw_case01">
 								<div class="swiper" id="sw_case01">
 									<div class="swiper-wrapper">
 										<!-- s: 기본 -->
-										<div class="swiper-slide" tabindex="0">
+										<div class="swiper-slide" tabindex="0" data-getclass="03">
 											<div class="gd_item">
 												<div class="rdo_box">
 													<input type="radio" name="d_r" id="d_r_01" aria-labelledby="d_rdo_01">
@@ -197,7 +230,7 @@
 										<!-- e: 기본 -->
 
 										<!-- s: 표준 -->
-										<div class="swiper-slide" tabindex="0">
+										<div class="swiper-slide" tabindex="0" data-getclass="02">
 											<div class="gd_item">
 												<div class="rdo_box">
 													<input type="radio" name="d_r" id="d_r_02" aria-labelledby="d_rdo_02">
@@ -239,7 +272,7 @@
 										<!-- e: 표준 -->
 
 										<!-- s: 고급 -->
-										<div class="swiper-slide" tabindex="0">
+										<div class="swiper-slide" tabindex="0" data-getclass="01">
 											<div class="gd_item">
 												<div class="rdo_box">
 													<input type="radio" name="d_r" id="d_r_03" aria-labelledby="d_rdo_03">
@@ -555,18 +588,53 @@
 			// 비쥬얼 영역 변경			
 			$('.guarantee_visuval').stop(true, true).slideUp(300);
 
+			// 추가된 부분
+			const selectedClass = $(this).closest('.guarantee_item').data('sendclass'); // 선택된 항목의 data-sendclass 값
+	    console.log('선택된 항목의 data-sendclass:', selectedClass);
+
+			// const targetSlide = $('.swiper-slide[data-getclass="' + selectedClass + '"]'); // data-getclass 값으로 슬라이드를 찾기
+			// if (targetSlide.length) {
+			// 	// Swiper의 slideTo 메서드 사용하여 해당 슬라이드로 이동
+			// 	swiper.slideTo(targetSlide.index());
+			// }
+			$('.swiper-wrapper').removeAttr('aria-live');
 		});
 
 
 		$('.move_detail').on('click', function () {
-			const idx = $(this).closest('.guarantee_item').index();
-			console.log(idx);
-			$('.guarantee_container').addClass('active');
-			setTimeout(function() {
-				$('.guarantee_container_right').find('.swiper-slide').eq(idx).focus();
-				$('.container').scrollTop(0);
-			}, 200);
+			// 선택된 라디오 버튼을 찾고, 해당하는 swiper-slide의 인덱스를 찾습니다.
+			const selectedClass = $('.guarantee_choice_wrap .guarantee_item input[type="radio"]:checked').closest('.guarantee_item').data('sendclass');
+			console.log('선택된 항목의 data-sendclass:', selectedClass);
+
+			// swiper에서 선택된 data-sendclass에 해당하는 swiper-slide를 찾습니다.
+			const targetSlide = $('.swiper-slide[data-getclass="' + selectedClass + '"]');
+
+			if (targetSlide.length) {
+				const targetIndex = targetSlide.index();  // 슬라이드의 인덱스를 구합니다.
+				console.log('목표 슬라이드 인덱스:', targetIndex);
+
+				console.log(targetIndex);
+				$('.guarantee_container_right').find('.swiper-slide').eq(targetIndex).find('input').prop('checked', true);
+
+
+				$('.guarantee_container').addClass('active');
+				setTimeout(function() {
+					$('.guarantee_container_right').find('.swiper-slide').eq(targetIndex).attr('tabindex','0').css('background','blue');
+					$('.guarantee_container_right').find('.swiper-slide').eq(targetIndex).focus();
+					$('.container').scrollTop(0);
+				}, 1200);
+			}
 		});
+
+
+		var splide = new Splide( '.splide', {
+			// type   : 'loop',
+			padding: '5rem',
+			accessibility: true,
+		} );
+
+		splide.mount();
+
 
 
 
@@ -582,6 +650,10 @@
         el: ".swiper-pagination",
 				clickable: true,
       },
+			a11y: {
+        slideRole: 'button', // 기본 'group' 대신 'region' 사용 가능
+        slideLabelMessage: '{{index}}번째 항목 / 총 {{slidesLength}}개 항목',
+    	},
     });
 
 
