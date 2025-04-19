@@ -31,6 +31,20 @@
 		line-height: 18px;
 	}
 
+	.pipe_line {
+		position: relative;
+		margin-left: 7px;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: -5px;
+			height: 12px;
+			border-left: 1px solid #000;
+			transform: translateY(-50%);
+		}
+	}
+
 	//variation
 	&.c_primary {
 		color: var(--color-text-primary);
@@ -42,6 +56,11 @@
 				color: var(--color-text-primary);
 				border: 1px solid var(--color-border-primary-light);		
 				background: var(--color-element-primary-lighter);
+			}
+		}
+		.pipe_line {
+			&::before {
+				border-left: 1px solid var(--color-border-primary-light);
 			}
 		}
 	}
@@ -58,7 +77,13 @@
 				background: var(--color-element-secondary-light-blue);
 			}
 		}
+		.pipe_line {
+			&::before {
+				border-left: 1px solid var(--color-border-secondary-light);
+			}
+		}
 	}
+
 	&.c_tertiary {
 		color: var(--color-text-subtle);
 		border: 1px solid var(--color-element-gray-dark);
@@ -72,6 +97,7 @@
 			}
 		}
 	}
+
 	&.c_point {
 		color: var(--color-text-point);
 		border: 1px solid var(--color-element-point);
@@ -85,6 +111,7 @@
 			}
 		}
 	}
+
 	&.c_danger {
 		color: var(--color-text-danger);
 		border: 1px solid var(--color-element-danger);
@@ -98,6 +125,7 @@
 			}
 		}
 	}
+
 	&.c_warning {
 		color: var(--color-text-warning);
 		border: 1px solid var(--color-border-warning);
@@ -112,6 +140,7 @@
 			}
 		}
 	}
+
 	&.c_success {
 		color: var(--color-text-success);
 		border: 1px solid var(--color-border-success);
@@ -124,7 +153,13 @@
 				background: var(--color-element-success-lighter);
 			}
 		}
+		.pipe_line {
+			&::before {
+				border-left: 1px solid var(--color-border-success-light);
+			}
+		}
 	}
+
 	&.c_info {
 		color: var(--color-text-information);
 		border: 1px solid var(--color-element-information);
@@ -138,6 +173,7 @@
 			}
 		}
 	}
+
 	&.disabled {
 		color: var(--color-text-disabled);
 		border: 1px solid var(--color-element-disabled-dark);
@@ -159,7 +195,6 @@
 		justify-content: center;
 		width: 44px;
 		height: 56px;
-		// border: 1px solid #000;
 		> .text {
 			display: block;
 			padding-top: 20px;
@@ -194,5 +229,4 @@
 		}
 	}
 
-	// 
 }

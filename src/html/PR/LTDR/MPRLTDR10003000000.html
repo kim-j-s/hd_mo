@@ -149,18 +149,68 @@
 				<div class="guarantee_container_right">
 					<!-- s: guarantee_detail -->
 					<div class="guarantee_detail">
-						<div class="guarantee_select" tabindex="0">
+						<div class="guarantee_detail_top">
 
 							<div class="sw_case01 swiper">
 								<div class="swiper-wrapper">
-									<div class="swiper-slide">Slide 1</div>
-									<div class="swiper-slide">Slide 2</div>
-									<div class="swiper-slide">Slide 9</div>
+									<!-- s: 기본 -->
+									<div class="swiper-slide">
+										<div class="gd_item">
+											<div class="rdo_box">
+												<input type="radio" name="d_r" id="d_r_01" aria-labelledby="d_rdo_01">
+												<label for="d_r_01"></label>
+											</div>
+											<div class="gdi_content" aria-labelledby="d_rdo_01">
+												<div class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_success size_m"><strong>기본</strong> <span class="pipe_line">13개 보장</span></span>
+												</div>
+												<p class="head_text">
+													운전자 3대 필수 비용은 기본
+													<span class="price">
+														<strong class="price_num">9,500</strong><span class="won">원</span>
+													</span>
+												</p>
+											</div>
+										</div>
+									</div>
+									<!-- e: 기본 -->
+
+									<!-- s: 표준 -->
+									<div class="swiper-slide">
+										<div class="gd_item">
+											<div class="rdo_box">
+												<input type="radio" name="d_r" id="d_r_02" aria-labelledby="d_rdo_02" checked>
+												<label for="d_r_02"></label>
+											</div>
+											<div class="gdi_content" aria-labelledby="d_rdo_02">
+												<div class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_secondary size_m"><strong>표준</strong> <span class="pipe_line">13개 보장</span></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- e: 표준 -->
+
+									<!-- s: 고급 -->
+									<div class="swiper-slide">
+										<div class="gd_item">
+											<div class="rdo_box">
+												<input type="radio" name="d_r" id="d_r_03" aria-labelledby="d_rdo_03"> 
+												<label for="d_r_03"></label>
+											</div>
+											<div class="gdi_content" aria-labelledby="d_rdo_03">
+												<div class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_primary size_m"><strong>고급</strong> <span class="pipe_line">13개 보장</span></span>
+												</div>
+											</div>
+										</div>
+									</div> 
+									<!-- e: 고급 -->
+
 								</div>
 								<div class="swiper_button sbc_02 sbs_02 swiper_button_left" aria-label="이전"></div>
 								<div class="swiper_button sbc_02 sbs_02 swiper_button_right" aria-label="다음"></div>
-								<!-- <div class="swiper-button-next"></div> -->
-    						<!-- <div class="swiper-button-prev"></div> -->
+
 								<div class="swiper-pagination"></div>
 							</div>
 
@@ -168,7 +218,7 @@
 						<div class="guarantee_select_mini">
 							포지션 영역 기능 추가 필요
 						</div>
-						<div class="btn_area">
+						<div class="gd_middle_ba btn_area">
 							{{> cp/button type="3" size="3" b-text="모든 플랜 한눈에 보기" popup="pop1" btn-title="전체 팝업"}}
 							{{> cp/button type="3" size="3" b-text="계산 결과 문자로 받기" popup="pop1" btn-title="전체 팝업"}}
 						</div>
@@ -404,15 +454,11 @@
 
 		// 페이지 상단 스위퍼
 		var swiper = new Swiper(".sw_case01", {
-			autoHeight : true,
+			spaceBetween: 12,
       navigation: {
         prevEl: ".swiper_button_left",
         nextEl: ".swiper_button_right",
       },
-			// navigation: {
-      //   nextEl: ".swiper-button-next",
-      //   prevEl: ".swiper-button-prev",
-      // },
 			pagination: {
         el: ".swiper-pagination",
 				clickable: true,

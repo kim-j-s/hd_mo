@@ -260,7 +260,6 @@
 	min-height: 100%;
 	margin: 0 -24px;
 	font-size: 0;
-	overflow: hidden;
 
 	&.active {
 		.guarantee_container_left {
@@ -271,8 +270,10 @@
 		.guarantee_container_right {
 			left: 0;
 			height: auto;
+			width: 100%;
 			opacity: 1;
 			visibility: visible;
+			overflow: initial;
 		}
 	}
 }
@@ -291,20 +292,74 @@
 	position: relative;
 	top: 0;
 	left: 100%;
-	width: 100%;
+	width: 0;
 	height: 0;
 	padding: 0 24px;
 	opacity: 0;
 	visibility: hidden;
-	transition: all 0.5s ease;
+	transition: left 0.5s;
+	overflow: hidden;
 
 }
 
  
 .guarantee_detail {
-	font-size: initial;
+	&:focus {
+		outline: none;
+	}
+	// background-color: blue;
+
+	.guarantee_detail_top {
+		margin: -24px -24px 0 -24px;
+		padding: 24px 24px 20px 24px;
+		background-color: var(--color-surface-secondary-subtler);
+	}
+
+	.gd_item {
+		position: relative;
+		padding: 24px;
+		border-radius: var(--radius-large2);
+		background-color: var(--color-surface-white-subtle);
+		.rdo_box {
+			position: absolute;
+			top: 0;
+			left: 0;
+			input {
+				opacity: 0;
+			}
+		}
+
+		.gdi_content {
+			.head_text {
+				padding-top: 8px;
+				font-size: var(--font-size-body-medium);
+				.price {
+					display: block;
+					padding-top: 8px;
+					.price_num {
+						display: inline-block;
+						vertical-align: middle;
+						font-weight: 700;
+						font-size: var(--font-size-display-medium);
+					}
+					.won {
+						display: inline-block;
+						vertical-align: middle;
+						font-size: var(--font-size-body-large);
+					}
+				}
+
+			}
+		}
+
+
+	}
+
 
 	.btn_area {
+		&.gd_middle_ba {
+			margin-top: 24px;
+		}
 		+ .acc_group {
 			margin-top: 24px;
 		}
