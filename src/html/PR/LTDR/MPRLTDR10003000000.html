@@ -151,28 +151,19 @@
 					<div class="guarantee_detail">
 						<div class="guarantee_select" tabindex="0">
 
-							<div class="swiper mySwiper">
+							<div class="sw_case01 swiper">
 								<div class="swiper-wrapper">
 									<div class="swiper-slide">Slide 1</div>
 									<div class="swiper-slide">Slide 2</div>
-									<div class="swiper-slide">Slide 3</div>
-									<div class="swiper-slide">Slide 4</div>
-									<div class="swiper-slide">Slide 5</div>
-									<div class="swiper-slide">Slide 6</div>
-									<div class="swiper-slide">Slide 7</div>
-									<div class="swiper-slide">Slide 8</div>
 									<div class="swiper-slide">Slide 9</div>
 								</div>
-								<button type="button" class="swiper_button sbc_02 sbs_02 swiper_button_left" aria-label="이전"></button>
-								<button type="button" class="swiper_button sbc_02 sbs_02 swiper_button_right" aria-label="다음"></button>
+								<div class="swiper_button sbc_02 sbs_02 swiper_button_left" aria-label="이전"></div>
+								<div class="swiper_button sbc_02 sbs_02 swiper_button_right" aria-label="다음"></div>
+								<!-- <div class="swiper-button-next"></div> -->
+    						<!-- <div class="swiper-button-prev"></div> -->
 								<div class="swiper-pagination"></div>
 							</div>
 
-
-
-
-
-							스위퍼 영역
 						</div>
 						<div class="guarantee_select_mini">
 							포지션 영역 기능 추가 필요
@@ -412,13 +403,19 @@
 
 
 		// 페이지 상단 스위퍼
-		var swiper = new Swiper(".mySwiper", {
+		var swiper = new Swiper(".sw_case01", {
+			autoHeight : true,
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        prevEl: ".swiper_button_left",
+        nextEl: ".swiper_button_right",
       },
+			// navigation: {
+      //   nextEl: ".swiper-button-next",
+      //   prevEl: ".swiper-button-prev",
+      // },
 			pagination: {
         el: ".swiper-pagination",
+				clickable: true,
       },
     });
 
