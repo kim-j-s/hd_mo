@@ -31,12 +31,14 @@
 		<script type="text/javascript" src="../../../js/libs/jquery-1.8.3.min.js"></script>
 		<script type="text/javascript" src="../../../js/libs/jquery-ui-1.12.1.min.js"></script>
 		<script type="text/javascript" src="../../../js/libs/swiper-bundle.min.js"></script>
+		<script type="text/javascript" src="../../../js/libs/splide.min.js"></script>
 		<script type="text/javascript" src="../../../js/common.js"></script>
 		<script type="text/javascript" src="../../../js/popup.js"></script>
 		<script type="text/javascript" src="../../../js/dragging.js"></script>
 		<script type="text/javascript" src="../../../js/stepper.js"></script>
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
 		<title>보험료 확인 | 상품 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
@@ -75,7 +77,7 @@
 			</div>
 			<div id="container" class="container">
 				<div class="content">
-					<div class="guarantee_container active">
+					<div class="guarantee_container">
 						<!-- s: guarantee_container_left -->
 						<div class="guarantee_container_left">
 							<!-- s: live 처리 위치 -->
@@ -120,7 +122,7 @@
 									</a>
 								</div>
 								<div class="guarantee_choice_wrap">
-									<div class="guarantee_item">
+									<div class="guarantee_item" data-sendclass="01">
 										<div class="gi_radio">
 											<input type="radio" name="guarantee_item" id="gi_radio01" aria-labelledby="guarantee_item_top_01" />
 											<label for="gi_radio01"></label>
@@ -159,7 +161,7 @@
 										</a>
 									</div>
 
-									<div class="guarantee_item">
+									<div class="guarantee_item" data-sendclass="02">
 										<div class="gi_radio">
 											<input type="radio" name="guarantee_item" id="gi_radio02" aria-labelledby="guarantee_item_top_02" />
 											<label for="gi_radio02"></label>
@@ -198,7 +200,7 @@
 										</a>
 									</div>
 
-									<div class="guarantee_item">
+									<div class="guarantee_item" data-sendclass="03">
 										<div class="gi_radio">
 											<input type="radio" name="guarantee_item" id="gi_radio03" aria-labelledby="guarantee_item_top_03" />
 											<label for="gi_radio03"></label>
@@ -246,181 +248,184 @@
 							<!-- s: guarantee_detail -->
 							<div class="guarantee_detail">
 								<div class="guarantee_detail_top">
-									<div class="sw_case01">
-										<div class="swiper" id="sw_case01">
-											<div class="swiper-wrapper">
-												<!-- s: 기본 -->
-												<div class="swiper-slide" tabindex="0">
-													<div class="gd_item">
-														<div class="rdo_box">
-															<input type="radio" name="d_r" id="d_r_01" aria-labelledby="d_rdo_01" />
-															<label for="d_r_01"></label>
-														</div>
-														<div class="gdi_content" aria-labelledby="d_rdo_01">
-															<div class="badge_wrap">
-																<span class="hd_badge outline solid_pastel c_success size_m">
-																	<strong>기본</strong>
-																	<span class="pipe_line">13개 보장</span>
-																</span>
+									<div class="splide_wrap splide_wrap_ty1" id="splide_wrap_ty1">
+										<div class="splide" role="group">
+											<div class="splide__track">
+												<ul class="splide__list">
+													<!-- s: 기본 -->
+													<li class="splide__slide c1" tabindex="0" data-getclass="03">
+														<div class="gd_item">
+															<div class="rdo_box">
+																<input type="radio" name="d_r" id="d_r_01" aria-labelledby="d_rdo_01" />
+																<label for="d_r_01"></label>
 															</div>
-															<p class="head_text">
-																운전자 3대 필수 비용은 기본
-																<span class="price">
-																	<strong class="price_num">9,500</strong>
-																	<span class="won">원</span>
-																</span>
-															</p>
-															<ul class="gdi_content_list">
-																<li class="ico_add ico_add_ty1">
-																	<div class="item">
-																		<div class="txt">
-																			현대해상 자동차보험 가입 고객님
-																			<br />
-																			<span class="point">매월 7% 할인</span>
-																			을 해드려요
-																			<button type="button" class="question_mark_btn" aria-expanded="false" title="할인 내역 팝업 오픈">
-																				<i class="hd_icon popover_help"></i>
-																				<span class="blind">도움말</span>
-																			</button>
+															<div class="gdi_content" aria-labelledby="d_rdo_01">
+																<div class="badge_wrap">
+																	<span class="hd_badge outline solid_pastel c_success size_m">
+																		<strong>기본</strong>
+																		<span class="pipe_line">13개 보장</span>
+																	</span>
+																</div>
+																<p class="head_text">
+																	운전자 3대 필수 비용은 기본
+																	<span class="price">
+																		<strong class="price_num">9,500</strong>
+																		<span class="won">원</span>
+																	</span>
+																</p>
+																<ul class="gdi_content_list">
+																	<li class="ico_add ico_add_ty1">
+																		<div class="item">
+																			<div class="txt">
+																				현대해상 자동차보험 가입 고객님
+																				<br />
+																				<span class="point">매월 7% 할인</span>
+																				을 해드려요
+																				<button type="button" class="question_mark_btn" aria-expanded="false" title="할인 내역 팝업 오픈">
+																					<i class="hd_icon popover_help"></i>
+																					<span class="blind">도움말</span>
+																				</button>
+																			</div>
 																		</div>
-																	</div>
-																</li>
-																<li class="ico_add ico_add_ty2">
-																	<div class="item">
-																		<div class="txt">
-																			현대카드로 결제하고
-																			<br />
-																			<span class="point">M포인트 100%</span>
-																			사용 해보세요
-																			<button type="button" class="question_mark_btn" aria-expanded="false" title="할인 내역 팝업 오픈">
-																				<i class="hd_icon popover_help"></i>
-																				<span class="blind">도움말</span>
-																			</button>
+																	</li>
+																	<li class="ico_add ico_add_ty2">
+																		<div class="item">
+																			<div class="txt">
+																				현대카드로 결제하고
+																				<br />
+																				<span class="point">M포인트 100%</span>
+																				사용 해보세요
+																				<button type="button" class="question_mark_btn" aria-expanded="false" title="할인 내역 팝업 오픈">
+																					<i class="hd_icon popover_help"></i>
+																					<span class="blind">도움말</span>
+																				</button>
+																			</div>
 																		</div>
-																	</div>
-																</li>
-															</ul>
+																	</li>
+																</ul>
+															</div>
 														</div>
-													</div>
-												</div>
-												<!-- e: 기본 -->
+													</li>
+													<!-- e: 기본 -->
 
-												<!-- s: 표준 -->
-												<div class="swiper-slide" tabindex="0">
-													<div class="gd_item">
-														<div class="rdo_box">
-															<input type="radio" name="d_r" id="d_r_02" aria-labelledby="d_rdo_02" />
-															<label for="d_r_02"></label>
-														</div>
-														<div class="gdi_content" aria-labelledby="d_rdo_02">
-															<div class="badge_wrap">
-																<span class="hd_badge outline solid_pastel c_secondary size_m">
-																	<strong>표준</strong>
-																	<span class="pipe_line">40개 보장</span>
-																</span>
+													<!-- s: 표준 -->
+													<li class="splide__slide c2" tabindex="0" data-getclass="02">
+														<div class="gd_item">
+															<div class="rdo_box">
+																<input type="radio" name="d_r" id="d_r_02" aria-labelledby="d_rdo_02" />
+																<label for="d_r_02"></label>
 															</div>
-															<p class="head_text">
-																자동차 사고로 다쳤을 때 걱정 없게
-																<span class="price">
-																	<strong class="price_num">23,900</strong>
-																	<span class="won">원</span>
-																</span>
-															</p>
-															<ul class="gdi_content_list">
-																<li class="ico_add ico_add_ty1">
-																	<div class="item">
-																		<div class="txt">
-																			현대해상 자동차보험 가입 고객님
-																			<br />
-																			<span class="point">매월 7% 할인</span>
-																			을 해드려요
-																			<button type="button" class="question_mark_btn" aria-expanded="false" title="할인 내역 팝업 오픈">
-																				<i class="hd_icon popover_help"></i>
-																				<span class="blind">도움말</span>
-																			</button>
+															<div class="gdi_content" aria-labelledby="d_rdo_02">
+																<div class="badge_wrap">
+																	<span class="hd_badge outline solid_pastel c_secondary size_m">
+																		<strong>표준</strong>
+																		<span class="pipe_line">40개 보장</span>
+																	</span>
+																</div>
+																<p class="head_text">
+																	자동차 사고로 다쳤을 때 걱정 없게
+																	<span class="price">
+																		<strong class="price_num">23,900</strong>
+																		<span class="won">원</span>
+																	</span>
+																</p>
+																<ul class="gdi_content_list">
+																	<li class="ico_add ico_add_ty1">
+																		<div class="item">
+																			<div class="txt">
+																				현대해상 자동차보험 가입 고객님
+																				<br />
+																				<span class="point">매월 7% 할인</span>
+																				을 해드려요
+																				<button type="button" class="question_mark_btn" aria-expanded="false" title="할인 내역 팝업 오픈">
+																					<i class="hd_icon popover_help"></i>
+																					<span class="blind">도움말</span>
+																				</button>
+																			</div>
 																		</div>
-																	</div>
-																</li>
-																<li class="ico_add ico_add_ty2">
-																	<div class="item">
-																		<div class="txt">
-																			현대카드로 결제하고
-																			<br />
-																			<span class="point">M포인트 100%</span>
-																			사용 해보세요
-																			<button type="button" class="question_mark_btn" aria-expanded="false" title="할인 내역 팝업 오픈">
-																				<i class="hd_icon popover_help"></i>
-																				<span class="blind">도움말</span>
-																			</button>
+																	</li>
+																	<li class="ico_add ico_add_ty2">
+																		<div class="item">
+																			<div class="txt">
+																				현대카드로 결제하고
+																				<br />
+																				<span class="point">M포인트 100%</span>
+																				사용 해보세요
+																				<button type="button" class="question_mark_btn" aria-expanded="false" title="할인 내역 팝업 오픈">
+																					<i class="hd_icon popover_help"></i>
+																					<span class="blind">도움말</span>
+																				</button>
+																			</div>
 																		</div>
-																	</div>
-																</li>
-															</ul>
+																	</li>
+																</ul>
+															</div>
 														</div>
-													</div>
-												</div>
-												<!-- e: 표준 -->
+													</li>
+													<!-- e: 표준 -->
 
-												<!-- s: 고급 -->
-												<div class="swiper-slide" tabindex="0">
-													<div class="gd_item">
-														<div class="rdo_box">
-															<input type="radio" name="d_r" id="d_r_03" aria-labelledby="d_rdo_03" />
-															<label for="d_r_03"></label>
-														</div>
-														<div class="gdi_content" aria-labelledby="d_rdo_03">
-															<div class="badge_wrap">
-																<span class="hd_badge outline solid_pastel c_primary size_m">
-																	<strong>고급</strong>
-																	<span class="pipe_line">60개 보장</span>
-																</span>
+													<!-- s: 고급 -->
+													<li class="splide__slide c3" tabindex="0" data-getclass="01">
+														<div class="gd_item">
+															<div class="rdo_box">
+																<input type="radio" name="d_r" id="d_r_03" aria-labelledby="d_rdo_03" />
+																<label for="d_r_03"></label>
 															</div>
-															<p class="head_text">
-																사고 후 치료와 재활까지도 꼼꼼하게
-																<span class="price">
-																	<strong class="price_num">35,200</strong>
-																	<span class="won">원</span>
-																</span>
-															</p>
-															<ul class="gdi_content_list">
-																<li class="ico_add ico_add_ty1">
-																	<div class="item">
-																		<div class="txt">
-																			현대해상 자동차보험 가입 고객님
-																			<br />
-																			<span class="point">매월 7% 할인</span>
-																			을 해드려요
-																			<button type="button" class="question_mark_btn" aria-expanded="false" title="할인 내역 팝업 오픈">
-																				<i class="hd_icon popover_help"></i>
-																				<span class="blind">도움말</span>
-																			</button>
+															<div class="gdi_content" aria-labelledby="d_rdo_03">
+																<div class="badge_wrap">
+																	<span class="hd_badge outline solid_pastel c_primary size_m">
+																		<strong>고급</strong>
+																		<span class="pipe_line">60개 보장</span>
+																	</span>
+																</div>
+																<p class="head_text">
+																	사고 후 치료와 재활까지도 꼼꼼하게
+																	<span class="price">
+																		<strong class="price_num">35,200</strong>
+																		<span class="won">원</span>
+																	</span>
+																</p>
+																<ul class="gdi_content_list">
+																	<li class="ico_add ico_add_ty1">
+																		<div class="item">
+																			<div class="txt">
+																				현대해상 자동차보험 가입 고객님
+																				<br />
+																				<span class="point">매월 7% 할인</span>
+																				을 해드려요
+																				<button type="button" class="question_mark_btn" aria-expanded="false" title="할인 내역 팝업 오픈">
+																					<i class="hd_icon popover_help"></i>
+																					<span class="blind">도움말</span>
+																				</button>
+																			</div>
 																		</div>
-																	</div>
-																</li>
-																<li class="ico_add ico_add_ty2">
-																	<div class="item">
-																		<div class="txt">
-																			현대카드로 결제하고
-																			<br />
-																			<span class="point">M포인트 100%</span>
-																			사용 해보세요
-																			<button type="button" class="question_mark_btn" aria-expanded="false" title="할인 내역 팝업 오픈">
-																				<i class="hd_icon popover_help"></i>
-																				<span class="blind">도움말</span>
-																			</button>
+																	</li>
+																	<li class="ico_add ico_add_ty2">
+																		<div class="item">
+																			<div class="txt">
+																				현대카드로 결제하고
+																				<br />
+																				<span class="point">M포인트 100%</span>
+																				사용 해보세요
+																				<button type="button" class="question_mark_btn" aria-expanded="false" title="할인 내역 팝업 오픈">
+																					<i class="hd_icon popover_help"></i>
+																					<span class="blind">도움말</span>
+																				</button>
+																			</div>
 																		</div>
-																	</div>
-																</li>
-															</ul>
+																	</li>
+																</ul>
+															</div>
 														</div>
-													</div>
-												</div>
-												<!-- e: 고급 -->
+													</li>
+													<!-- e: 고급 -->
+												</ul>
 											</div>
-											<div class="swiper_button sbc_02 sbs_02 swiper_button_left" aria-label="이전"></div>
-											<div class="swiper_button sbc_02 sbs_02 swiper_button_right" aria-label="다음"></div>
+											<div class="splide_arrows">
+												<button type="button" class="swiper_button sbc_02 sbs_02 swiper_button_left" aria-label="이전"></button>
+												<button type="button" class="swiper_button sbc_02 sbs_02 swiper_button_right" aria-label="다음"></button>
+											</div>
 										</div>
-										<div class="swiper-pagination sp_ty1"></div>
 									</div>
 
 									<div class="guarantee_detail_mini">
@@ -433,7 +438,7 @@
 											<strong class="data">월납</strong>
 										</span>
 										<div class="modify_ba">
-											<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5">
+											<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5" title="가입조건 변경 팝업열기">
 												<span class="text">변경</span>
 											</button>
 										</div>
@@ -769,64 +774,70 @@
 
 		<script>
 			$(function () {
-				$('.guarantee_choice_wrap .guarantee_item .gi_radio input[type="radio"]').on("change", function () {
-					const idx = $(this).closest(".guarantee_item").index();
-					// console.log(idx)
-					const $selectedItem = $(this).closest(".guarantee_item");
-					$(this).closest(".guarantee_choice_wrap").addClass("active");
-					$(this).closest(".guarantee_choice_wrap").find(".guarantee_item").removeClass("active");
-					$(this).closest(".guarantee_item").addClass("active");
+				// splide 설정
+				// var splide = new Splide('.splide', {
+				// 	// padding: '24px',
+				// 	accessibility: false,
+				// 	arrows: false,
+				// });
+				// splide.mount();
 
-					// 모든 항목 초기화: 컨텐츠 닫고 타이틀 열기
-					$(".guarantee_choice_wrap .guarantee_item").each(function () {
-						$(this).find(".guarantee_item_cont").stop(true, true).slideUp(300);
-						$(this).find(".guarantee_item_top").stop(true, true).slideDown(300);
-					});
+				// splide.on('moved', function () {
+				// 	const $activeSlide = $('.splide__slide.is-active');
+				// 	const $radio = $activeSlide.find('input[type="radio"]');
+				// 	if ($radio.length) {
+				// 		$radio.prop('checked', true).trigger('change');
+				// 	}
+				// });
+				// $('#splide_prev').on('click', () => splide.go('<'));
+				// $('#splide_next').on('click', () => splide.go('>'));
+				// splide 설정
 
-					// 선택된 항목만: 컨텐츠 열고 타이틀 닫기
-					$selectedItem.find(".guarantee_item_cont").stop(true, true).slideDown(300);
-					$selectedItem.find(".guarantee_item_top").stop(true, true).slideUp(300);
+				// Splide 설정
+				var splide = new Splide(".splide", {
+					speed: 500,
+					accessibility: false,
+					arrows: false, // 기본 화살표 비활성화
+				});
+				splide.mount();
 
-					// 고급 선택 시
-					if (idx === 0 && $(".gtl_special").length) {
-						$(".gtl_special").addClass("active");
-					} else {
-						$(".gtl_special").removeClass("active");
+				// 슬라이드 이동 후: is-active 슬라이드의 radio 체크 및 trigger
+				splide.on("moved", function () {
+					const $activeSlide = $(".splide__slide.is-active");
+					const $radio = $activeSlide.find('input[type="radio"]');
+
+					if ($radio.length) {
+						$radio.prop("checked", true).trigger("change");
 					}
 
-					// head 문구 변경
-					$(".guarantee_top_item")
-						.eq(idx + 1)
-						.addClass("active")
-						.siblings(".guarantee_top_item")
-						.removeClass("active");
-
-					// 비쥬얼 영역 변경
-					$(".guarantee_visuval").stop(true, true).slideUp(300);
+					// 버튼 상태 갱신
+					updateArrowState();
 				});
 
-				$(".move_detail").on("click", function () {
-					const idx = $(this).closest(".guarantee_item").index();
-					console.log(idx);
-					$(".guarantee_container").addClass("active");
-					setTimeout(function () {
-						$(".guarantee_container_right").find(".swiper-slide").eq(idx).focus();
-						$(".container").scrollTop(0);
-					}, 200);
+				// 슬라이드 효과를 주기 위함
+				splide.on("move", function (newIndex) {
+					const $slides = $(".splide__slide");
+					$slides.removeClass("effect");
+
+					const $nextSlide = $slides.eq(newIndex);
+					$nextSlide.addClass("effect");
 				});
 
-				// 페이지 상단 스위퍼
-				var swiper = new Swiper("#sw_case01", {
-					spaceBetween: 12,
-					navigation: {
-						prevEl: ".swiper_button_left",
-						nextEl: ".swiper_button_right",
-					},
-					pagination: {
-						el: ".swiper-pagination",
-						clickable: true,
-					},
-				});
+				// 커스텀 좌우 버튼 클릭 시 이동
+				$("#splide_wrap_ty1 .swiper_button_left").on("click", () => splide.go("<"));
+				$("#splide_wrap_ty1 .swiper_button_right").on("click", () => splide.go(">"));
+
+				// 버튼 상태 업데이트 함수
+				function updateArrowState() {
+					const curr = splide.index;
+					const max = splide.length - 1;
+
+					$("#splide_wrap_ty1 .swiper_button_left").prop("disabled", curr === 0);
+					$("#splide_wrap_ty1 .swiper_button_right").prop("disabled", curr === max);
+				}
+
+				// 초기 로드 시 상태 설정
+				updateArrowState();
 			});
 		</script>
 	</body>

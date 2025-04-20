@@ -48,9 +48,7 @@
 		bottom: auto;
 		margin-top: 16px;
 		font-size: 0;
-
 	}
-
 }
 /* 보장플랜 케이스 */
 
@@ -72,3 +70,75 @@
 
 }
 /* swiper-pagination */
+
+
+
+/* splide css */
+.splide_wrap {
+	position: relative;
+	&.splide_wrap_ty1 {
+		margin: 0 -24px;
+		.splide {
+			.splide__list {
+				&::after {
+					content: '';
+					display: block;
+					height: 100px;
+					padding-left: 24px;
+				}
+			}
+			.splide__track {
+				padding: 0 24px !important;
+			}
+			.splide__slide {
+				margin-right: 12px;
+				.gd_item {
+					transform: scale(0.97);
+					transition: transform 0.5s;
+				}
+				&.effect {
+					.gd_item {
+						transform: scale(1);
+					}
+				}
+			}
+			/* splide css pagination */
+			.splide__pagination {
+				position: relative;
+				bottom: auto;
+				margin-top: 16px;
+				font-size: 0;
+				.splide__pagination__page {
+					margin: 0 2px;
+					opacity: 1;
+					background-color: var(--color-element-disabled-light);
+					transition: all 0.3s;
+
+					&.is-active {
+						width: 20px;
+						border-radius: 8px;
+						background-color: #58616A;
+						transform: scale(1);
+					}
+				}
+			}
+			/* splide css pagination */
+		}
+		/* splide css arrow */
+		.swiper_button {
+			position: absolute;
+			// top: 50%;
+			top: calc(50% - 12px);
+			transform: translateY(-50%);
+			&.swiper_button_left {
+				left: 4px;
+			}
+			&.swiper_button_right {
+				right: 4px;
+			}
+		}
+		/* splide css arrow */
+	}
+}
+
+

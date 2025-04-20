@@ -4,7 +4,7 @@
 
 	<div id="container" class="container">
 		<div class="content">
-			<div class="guarantee_container active">
+			<div class="guarantee_container">
 				<!-- s: guarantee_container_left -->
 				<div class="guarantee_container_left">
 					<!-- s: live 처리 위치 -->
@@ -150,7 +150,7 @@
 					<!-- s: guarantee_detail -->
 					<div class="guarantee_detail">
 						<div class="guarantee_detail_top">
-							<div class="splide_wrap">
+							<div class="splide_wrap splide_wrap_ty1" id="splide_wrap_ty1">
 								<div class="splide" role="group">
 									<div class="splide__track">
 										<ul class="splide__list">
@@ -281,12 +281,27 @@
 											<!-- e: 고급 -->
 										</ul>
 									</div>
+									<div class="splide_arrows">
+										<button type="button" class="swiper_button sbc_02 sbs_02 swiper_button_left" aria-label="이전"></button>
+										<button type="button" class="swiper_button sbc_02 sbs_02 swiper_button_right" aria-label="다음"></button>
+									</div>
+								</div>
+							</div>
+
+							<div class="guarantee_detail_mini">
+								<span class="i_data">
+									<span class="text">보험/납입 기간</span>
+									<strong class="data">10년</strong>
+								</span>
+								<span class="i_data">
+									<span class="text">납입 방법</span>
+									<strong class="data">월납</strong>
+								</span>
+								<div class="modify_ba">
+									{{> cp/button type="3" size="5" b-text="변경" btn-title="가입조건 변경 팝업열기"}}
 								</div>
 							</div>
 						</div>
-
-
-						
 
 						<!-- 간편정보 -->
 						<div class="simple_info_wrap">
@@ -509,70 +524,34 @@
 <script>
 	$(function () {
 
-		$('.guarantee_choice_wrap .guarantee_item .gi_radio input[type="radio"]').on('change', function() {
-			const idx = $(this).closest('.guarantee_item').index();
-			// console.log(idx)
-			const $selectedItem = $(this).closest('.guarantee_item');
-			$(this).closest('.guarantee_choice_wrap').addClass('active');
-			$(this).closest('.guarantee_choice_wrap').find('.guarantee_item').removeClass('active');
-			$(this).closest('.guarantee_item').addClass('active');
-
-			// 모든 항목 초기화: 컨텐츠 닫고 타이틀 열기
-			$('.guarantee_choice_wrap .guarantee_item').each(function() {
-				$(this).find('.guarantee_item_cont').stop(true, true).slideUp(300);
-				$(this).find('.guarantee_item_top').stop(true, true).slideDown(300);
-			});
-
-			// 선택된 항목만: 컨텐츠 열고 타이틀 닫기
-			$selectedItem.find('.guarantee_item_cont').stop(true, true).slideDown(300);
-			$selectedItem.find('.guarantee_item_top').stop(true, true).slideUp(300);
-
-			// 고급 선택 시
-			if( idx === 0 && $('.gtl_special').length ) {
-				$('.gtl_special').addClass('active');
-			} else {
-				$('.gtl_special').removeClass('active');
-			}
-
-			// head 문구 변경
-			$('.guarantee_top_item').eq(idx + 1).addClass('active').siblings('.guarantee_top_item').removeClass('active');
-
-			// 비쥬얼 영역 변경			
-			$('.guarantee_visuval').stop(true, true).slideUp(300);
-
-			// 추가된 부분
-			const selectedClass = $(this).closest('.guarantee_item').data('sendclass'); // 선택된 항목의 data-sendclass 값
-	    console.log('선택된 항목의 data-sendclass:', selectedClass);
-		});
-
-
-		$('.move_detail').on('click', function () {
-			const selectedClass = $('.guarantee_choice_wrap .guarantee_item input[type="radio"]:checked').closest('.guarantee_item').data('sendclass');
-			console.log('선택된 항목의 data-sendclass:', selectedClass);
-			const targetSlide = $('.splide__slide[data-getclass="' + selectedClass + '"]');
-
-			if (targetSlide.length) {
-				const targetIndex = targetSlide.index();  // 슬라이드의 인덱스를 구합니다.
-				// console.log('목표 슬라이드 인덱스:', targetIndex);
-				$('.guarantee_container').addClass('active');
-
-				setTimeout(function() {
-					$('.splide__list').find('.splide__slide').eq(targetIndex).find('input[type="radio"]').prop('checked', true);;
-					$('.splide__list').find('.splide__slide').eq(targetIndex).focus();
-					$('.container').scrollTop(0);
-				}, 500);
-			}
-		});
-
-
 		// splide 설정
+		// var splide = new Splide('.splide', {
+		// 	// padding: '24px',
+		// 	accessibility: false,
+		// 	arrows: false,
+		// });
+		// splide.mount();
+
+		// splide.on('moved', function () {
+		// 	const $activeSlide = $('.splide__slide.is-active');
+		// 	const $radio = $activeSlide.find('input[type="radio"]');
+		// 	if ($radio.length) {
+		// 		$radio.prop('checked', true).trigger('change');
+		// 	}
+		// });
+		// $('#splide_prev').on('click', () => splide.go('<'));
+		// $('#splide_next').on('click', () => splide.go('>'));
+		// splide 설정
+
+		// Splide 설정
 		var splide = new Splide('.splide', {
-			// padding: '24px',
+			speed: 500,
 			accessibility: false,
+			arrows: false, // 기본 화살표 비활성화
 		});
 		splide.mount();
-		// splide.go(1);
 
+		// 슬라이드 이동 후: is-active 슬라이드의 radio 체크 및 trigger
 		splide.on('moved', function () {
 			const $activeSlide = $('.splide__slide.is-active');
 			const $radio = $activeSlide.find('input[type="radio"]');
@@ -580,49 +559,39 @@
 			if ($radio.length) {
 				$radio.prop('checked', true).trigger('change');
 			}
+
+			// 버튼 상태 갱신
+			updateArrowState();
 		});
-		// splide 설정
 
+		// 슬라이드 효과를 주기 위함
+		splide.on('move', function (newIndex) {
+			const $slides = $('.splide__slide');
+			$slides.removeClass('effect');
 
-		
+			const $nextSlide = $slides.eq(newIndex);
+			$nextSlide.addClass('effect');
+		});
+
+		// 커스텀 좌우 버튼 클릭 시 이동
+		$('#splide_wrap_ty1 .swiper_button_left').on('click', () => splide.go('<'));
+		$('#splide_wrap_ty1 .swiper_button_right').on('click', () => splide.go('>'));
+
+		// 버튼 상태 업데이트 함수
+		function updateArrowState() {
+			const curr = splide.index;
+			const max = splide.length - 1;
+
+			$('#splide_wrap_ty1 .swiper_button_left').prop('disabled', curr === 0);
+			$('#splide_wrap_ty1 .swiper_button_right').prop('disabled', curr === max);
+		}
+
+		// 초기 로드 시 상태 설정
+		updateArrowState();	
 		
 	});
 
-	// .simple_info_wrap
-	$('#container').on('scroll', function () {
-		const headerHeight = $('#header').outerHeight();
-		const $wrap = $('.simple_info_wrap');
-		const $item = $wrap.find('.simple_info_item');
-		const targetOffsetTop = $wrap.offset().top;
-
-		if (targetOffsetTop <= headerHeight && !$wrap.hasClass('active')) {
-			// 펼치기
-			$item.css('height', 'auto');
-			const targetHeight = $item.outerHeight();
-			$item.css('height', 0);
-
-			$item.stop().animate({ height: targetHeight }, 300, function () {
-				$wrap.addClass('active');
-				$item.css('height', '');
-			});
-		}
-
-		if (targetOffsetTop > headerHeight && $wrap.hasClass('active')) {
-			// 접기
-			const currentHeight = $item.outerHeight();
-			$item.css('height', currentHeight); // 현재 높이 고정
-
-			$item.stop().animate({ height: 0 }, 300, function () {
-				$wrap.removeClass('active');
-				$item.css('height', '');
-			});
-		}
-	});
-
-	// 도달 시 컨텐츠의 높이를 가진다 받은 값은 인라인으로 padding-bottom 처리하여 공간을 확보하고
-	// 후에 효과로 펼쳐진다. 해당 요소는 absoulte로 처리한다.
-
-
+	
 
 
 </script>

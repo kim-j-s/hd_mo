@@ -505,6 +505,91 @@ $(function () {
 	prograssBar();
 
 	// 달력 호출
+
+	// 보험 플랜 - 진입화면 라디오 선택 이벤트
+	$('.guarantee_choice_wrap .guarantee_item .gi_radio input[type="radio"]').on("change", function () {
+		const idx = $(this).closest(".guarantee_item").index();
+		// console.log(idx)
+		const $selectedItem = $(this).closest(".guarantee_item");
+		$(this).closest(".guarantee_choice_wrap").addClass("active");
+		$(this).closest(".guarantee_choice_wrap").find(".guarantee_item").removeClass("active");
+		$(this).closest(".guarantee_item").addClass("active");
+
+		// 모든 항목 초기화: 컨텐츠 닫고 타이틀 열기
+		$(".guarantee_choice_wrap .guarantee_item").each(function () {
+			$(this).find(".guarantee_item_cont").stop(true, true).slideUp(300);
+			$(this).find(".guarantee_item_top").stop(true, true).slideDown(300);
+		});
+
+		// 선택된 항목만: 컨텐츠 열고 타이틀 닫기
+		$selectedItem.find(".guarantee_item_cont").stop(true, true).slideDown(300);
+		$selectedItem.find(".guarantee_item_top").stop(true, true).slideUp(300);
+
+		// 고급 선택 시
+		if (idx === 0 && $(".gtl_special").length) {
+			$(".gtl_special").addClass("active");
+		} else {
+			$(".gtl_special").removeClass("active");
+		}
+
+		// head 문구 변경
+		$(".guarantee_top_item")
+			.eq(idx + 1)
+			.addClass("active")
+			.siblings(".guarantee_top_item")
+			.removeClass("active");
+
+		// 비쥬얼 영역 변경
+		$(".guarantee_visuval").stop(true, true).slideUp(300);
+
+		// 추가된 부분
+		const selectedClass = $(this).closest(".guarantee_item").data("sendclass"); // 선택된 항목의 data-sendclass 값
+		console.log("선택된 항목의 data-sendclass:", selectedClass);
+	});
+	// 보험 플랜 - 진입화면 라디오 선택 이벤트
+
+	// 보험 플랜 - 우측 이동
+	$(".move_detail").on("click", function () {
+		const selectedClass = $('.guarantee_choice_wrap .guarantee_item input[type="radio"]:checked').closest(".guarantee_item").data("sendclass");
+		console.log("선택된 항목의 data-sendclass:", selectedClass);
+		const targetSlide = $('.splide__slide[data-getclass="' + selectedClass + '"]');
+
+		if (targetSlide.length) {
+			const targetIndex = targetSlide.index(); // 슬라이드의 인덱스를 구합니다.
+			// console.log('목표 슬라이드 인덱스:', targetIndex);
+			$(".guarantee_container").addClass("active");
+
+			setTimeout(function () {
+				$(".splide__list").find(".splide__slide").eq(targetIndex).addClass("effect").find('input[type="radio"]').prop("checked", true);
+				$(".splide__list").find(".splide__slide").eq(targetIndex).focus();
+				$(".container").scrollTop(0);
+			}, 500);
+		}
+	});
+	// 보험 플랜 - 우측 이동
+
+	// 간편정보 노출 방식
+	$("#container").on("scroll", function () {
+		const $target = $(".simple_info_wrap");
+		const targetOffsetTop = $target.position().top;
+		const $targetChild = $(".simple_info_wrap").children(".simple_info_item");
+		const scrollTop = $("#container").scrollTop();
+
+		// console.log('target 위치 : ' + targetOffsetTop);
+		// console.log('컨텐츠 스크롤 위치 : ' + scrollTop);
+
+		if (targetOffsetTop - 50 <= scrollTop && !$targetChild.hasClass("active")) {
+			// console.log('펴기');
+			$targetChild.addClass("active");
+			$targetChild.stop().slideDown(300);
+		} else if (scrollTop < targetOffsetTop - 51 && $targetChild.hasClass("active")) {
+			// console.log('접기');
+			$target.removeAttr("style").removeClass("active");
+			$targetChild.removeClass("active");
+			$targetChild.stop().slideUp(300);
+		}
+	});
+	// 간편정보 노출 방식
 });
 
 $(window).resize(function () {

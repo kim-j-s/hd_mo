@@ -95,7 +95,6 @@
  
 .guarantee_item {
 	position: relative;
-	// cursor: pointer;
 	.gi_radio {
 		input {
 			position: absolute;
@@ -228,12 +227,6 @@
 	}
 
 	&.active {
-		// .guarantee_item_top {
-		// 	display: none;
-		// }
-		// .guarantee_item_cont {
-		// 	display: block;
-		// }
 		+ .guarantee_item {
 			&::before {
 				content: none;
@@ -243,23 +236,13 @@
 			display: block;
 		}
 	}
-
-
-
-
-
 	// checked style 정의
-
-
-
 }
-
 
 .guarantee_container {
 	position: relative;
 	min-height: 100%;
 	margin: 0 -24px;
-	// font-size: 0;
 
 	&.active {
 		.guarantee_container_left {
@@ -321,12 +304,9 @@
 		border-radius: var(--radius-large2);
 		background-color: var(--color-surface-white-subtle);
 		.rdo_box {
-			// position: absolute;
-			// top: 0;
-			// left: 0;
 			input {
 				position: absolute;
-				// opacity: 0;
+				opacity: 0;
 				+ label {
 					&::after {
 						content: '';
@@ -406,8 +386,6 @@
 				}
 			}
 		}
-
-
 	}
 
 	.guarantee_detail_mini {
@@ -447,7 +425,6 @@
 		}
 	}
 
-
 	.btn_area {
 		&.gd_middle_ba {
 			margin-top: 24px;
@@ -472,15 +449,15 @@
 	z-index: 1;
 	margin: 0 -24px;
 	background: var(--color-surface-white-subtler, #FFF);
+	
 	.simple_info_item {
-		height: 0;
+		display: none;
+		width: 100%;
+		// height: 0;
 		overflow: hidden;
 		border-radius: 0px 0px var(--padding-6, 16px) var(--padding-6, 16px);
 		background: var(--color-surface-white-subtler, #FFF);
 		box-shadow: 0px 2px 8px 0px var(--color-alpha-shadow3, rgba(0, 0, 0, 0.12));
-		&.active {
-			height: auto;
-		}
 		.sii_list {
 			padding: 0 24px;
 			> li {
@@ -539,29 +516,5 @@
 			margin-top: 20px;
 		}
 	}
-}
-
-
-.splide_wrap {
-	margin: 0 -24px;
-	// padding: 0 24px;
-	.splide {
-		.splide__list {
-			&::after {
-				content: '';
-				display: block;
-				height: 100px;
-				padding-left: 24px;
-				// background-color: blue;
-			}
-		}
-		.splide__track {
-			padding: 0 24px !important;
-		}
-		.splide__slide {
-			margin-right: 12px;
-		}
-	}
-	
 }
 
