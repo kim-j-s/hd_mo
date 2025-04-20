@@ -473,10 +473,14 @@
 	margin: 0 -24px;
 	background: var(--color-surface-white-subtler, #FFF);
 	.simple_info_item {
-		display: none;
+		height: 0;
+		overflow: hidden;
 		border-radius: 0px 0px var(--padding-6, 16px) var(--padding-6, 16px);
 		background: var(--color-surface-white-subtler, #FFF);
 		box-shadow: 0px 2px 8px 0px var(--color-alpha-shadow3, rgba(0, 0, 0, 0.12));
+		&.active {
+			height: auto;
+		}
 		.sii_list {
 			padding: 0 24px;
 			> li {

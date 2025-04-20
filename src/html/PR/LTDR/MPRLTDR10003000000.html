@@ -4,7 +4,7 @@
 
 	<div id="container" class="container">
 		<div class="content">
-			<div class="guarantee_container">
+			<div class="guarantee_container active">
 				<!-- s: guarantee_container_left -->
 				<div class="guarantee_container_left">
 					<!-- s: live 처리 위치 -->
@@ -565,6 +565,7 @@
 		});
 
 
+		// splide 설정
 		var splide = new Splide('.splide', {
 			// padding: '24px',
 			accessibility: false,
@@ -580,9 +581,50 @@
 				$radio.prop('checked', true).trigger('change');
 			}
 		});
+		// splide 설정
+
 
 		
+		
 	});
+
+	// .simple_info_wrap
+	$('#container').on('scroll', function () {
+		const headerHeight = $('#header').outerHeight();
+		const $wrap = $('.simple_info_wrap');
+		const $item = $wrap.find('.simple_info_item');
+		const targetOffsetTop = $wrap.offset().top;
+
+		if (targetOffsetTop <= headerHeight && !$wrap.hasClass('active')) {
+			// 펼치기
+			$item.css('height', 'auto');
+			const targetHeight = $item.outerHeight();
+			$item.css('height', 0);
+
+			$item.stop().animate({ height: targetHeight }, 300, function () {
+				$wrap.addClass('active');
+				$item.css('height', '');
+			});
+		}
+
+		if (targetOffsetTop > headerHeight && $wrap.hasClass('active')) {
+			// 접기
+			const currentHeight = $item.outerHeight();
+			$item.css('height', currentHeight); // 현재 높이 고정
+
+			$item.stop().animate({ height: 0 }, 300, function () {
+				$wrap.removeClass('active');
+				$item.css('height', '');
+			});
+		}
+	});
+
+	// 도달 시 컨텐츠의 높이를 가진다 받은 값은 인라인으로 padding-bottom 처리하여 공간을 확보하고
+	// 후에 효과로 펼쳐진다. 해당 요소는 absoulte로 처리한다.
+
+
+
+
 </script>
 
 
