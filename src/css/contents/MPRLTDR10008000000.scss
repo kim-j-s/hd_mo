@@ -25,10 +25,117 @@
 		}
 	}
 
-	.hd {
-		display: block;
+	.logo_card_hundai {
 		width: 32px;
 		height: 32px;
-		background: url(../images/icon/icon_card_ty1.svg) no-repeat center / 20px auto;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 32px auto;
+	}
+}
+
+.bg_area {
+	&.ty2 {
+		.card_item_wrap {
+			.card_item {
+				.offset_area {
+					&.fixed {
+						position: sticky;
+						top: 0;
+						left: 0;
+						z-index: 100;
+						// margin: 0 -48px;
+						padding: 16px 24px;
+						background-color: #fff;
+						border-radius: 0px 0px var(--padding-6, 16px) var(--padding-6, 16px);
+						box-shadow: 0px 2px 8px 0px var(--color-alpha-shadow3, rgba(0, 0, 0, 0.12));
+						transition: margin .2s ease-in-out, padding .2s ease-in-out;
+					
+						.total {
+							font-size: var(--font-size-body-medium);
+							line-height: 24px;
+						}
+					}
+				}
+			}
+		}
+	}	
+}
+
+// 결제금액 고정 영역
+.offset_area {
+	opacity: 0;
+	height: 0;
+
+	& + .tab_wrap {
+		margin-top: 24px;
+	}
+
+	&.fixed {
+		position: fixed;
+		// top: -24px;
+		// left: -24px;
+		top: 55px;
+		left: 0;
+		z-index: 100;
+		opacity: 1;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 8px;
+		width: 100%;
+		height: auto;
+		// width: calc(100% + 48px);
+		// margin: 0 -24px;
+		padding: 16px 24px;
+		background-color: #fff;
+		border-radius: 0px 0px var(--padding-6, 16px) var(--padding-6, 16px);
+		box-shadow: 0px 7px 8px 0px var(--color-alpha-shadow3, rgba(0, 0, 0, 0.12));
+		transition: opacity .4s ease-in-out;
+
+		.title {
+			font-size: var(--font-size-body-small);
+			line-height: 21px;
+		}
+		.cont {
+			font-size: var(--font-size-body-medium);
+			line-height: 24px;
+			font-weight: 700;
+		}
+	
+		.total {
+			font-size: var(--font-size-body-medium);
+			line-height: 24px;
+		}
+	}
+}
+
+
+// 간편결제 정보
+.tab_wrap_list_ty2 {
+	[class*=icon_pay_ty]{
+		height: 56px;
+		padding: 16px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: auto 22px;
+		font-size: 0;
+		line-height: 0;
+	}
+
+	.icon_pay_ty1 {
+		background-image: url(../images/logo/pay_kakao.svg);
+	}
+	.icon_pay_ty2 {
+		background-image: url(../images/logo/pay_naver.svg);
+	}
+	.icon_pay_ty3 {
+		background-image: url(../images/logo/pay_toss.svg);
+	}
+
+	& ~ .tab_wrap_content {
+		.acd_item_ty4 {
+			margin-top: 32px;
+		}
 	}
 }
