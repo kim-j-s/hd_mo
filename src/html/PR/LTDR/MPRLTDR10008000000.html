@@ -40,7 +40,7 @@
 				</div>
 			</div>
 			<!-- s: 결제하실 금액 고정영역 -->
-			 <div class="offset_area ">
+			 <div class="offset_area">
 				<div class="title">결제하실 금액</div>
 				<div class="cont">
 					<span class="total">23,250원</span>
@@ -96,6 +96,33 @@
 						<div class="form_line">
 							<div class="checkbox_group_wrap column">
 								{{> cp/checkbox checkbox_class="rd_box" id="checkbox04-13" label_class="chk_label_ty3" labelname="현대카드 M포인트 사용" labelcont="(최소 1,000P부터 30,000P까지 이용 가능)" }}
+							</div>
+							<div class="card_item_wrap">
+								<div class="card_item">
+									<div class="item_inner">
+										<div class="inp_checkbox">
+											<input type="checkbox" id="card_chk1" name="name1" aria-labelledby="card_chk1_cont">
+											<label for="card_chk1" class="chk_label"></label>
+											<i></i>
+										</div>
+										<div class="inner_cont">
+											<a href="#" role="button" class="card_link" id="card_chk1_cont">
+												<div class="item_top">
+													<div class="title_info">
+														<div class="sub_title">subtitle</div>
+														<div class="main_title">title</div>
+													</div>
+													<div class="text">text</div>
+													<div class="desc">description</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="btn_area">
+										{{> cp/button type="3" size="2" b-text="취소" }}
+										{{> cp/button type="1" size="2" b-text="확인" }}
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -309,13 +336,13 @@
 
 <script>
 	function offset_fixed() {
-		const $target = $('.offset_area');
-		const $targetTop = $target.position().top;
+		$('#container').on('scroll', function(){
+			const $total_fixed = $('.offset_area');
 
-		if($target.length){
-			$('#container').on('scroll', function(){
+			if($total_fixed.length){
 				const $contTop = $('#container').scrollTop();
-				const $newOffset = $targetTop - 100;
+				const $total_top = $total_fixed.position().top;
+				const $newOffset = $total_top - 100;
 
 				console.log('container' + $contTop, '/ element' + $newOffset);
 
@@ -324,8 +351,8 @@
 				}else {
 					$('.offset_area').removeClass('fixed');
 				}
-			})
-		}
+			}
+		})
 	}
 
 	$(function(){
