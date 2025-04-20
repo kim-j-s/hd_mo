@@ -1689,13 +1689,18 @@
 	border-radius: var(--radius-large2);
 	background-color: var(--color-surface-white-subtle);
 }
-.guarantee_detail .gd_item .rdo_box {
+.guarantee_detail .gd_item .rdo_box input {
+	position: absolute;
+	opacity: 0;
+}
+.guarantee_detail .gd_item .rdo_box input + label::after {
+	content: "";
 	position: absolute;
 	top: 0;
 	left: 0;
-}
-.guarantee_detail .gd_item .rdo_box input {
-	opacity: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
 }
 .guarantee_detail .gd_item .gdi_content .head_text {
 	padding-top: 0.8rem;
@@ -1741,7 +1746,7 @@
 	background-size: 4rem auto;
 }
 .guarantee_detail .gd_item .gdi_content .gdi_content_list > li .item .txt .question_mark_btn {
-	vertical-align: middle;
+	vertical-align: top;
 }
 .guarantee_detail .gd_item .gdi_content .gdi_content_list > li.ico_add .item {
 	padding-right: 5rem;
@@ -1809,6 +1814,8 @@
 }
 .simple_info_wrap .simple_info_item {
 	display: none;
+	width: 100%;
+	overflow: hidden;
 	border-radius: 0px 0px var(--padding-6, 16px) var(--padding-6, 16px);
 	background: var(--color-surface-white-subtler, #fff);
 	-webkit-box-shadow: 0px 0.2rem 0.8rem 0px var(--color-alpha-shadow3, rgba(0, 0, 0, 0.12));

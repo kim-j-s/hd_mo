@@ -94,9 +94,9 @@
 				margin-right: 12px;
 				.gd_item {
 					transform: scale(0.97);
-					transition: transform 0.3s;
+					transition: transform 0.5s;
 				}
-				&.is-active {
+				&.effect {
 					.gd_item {
 						transform: scale(1);
 					}
@@ -105,8 +105,9 @@
 			/* splide css pagination */
 			.splide__pagination {
 				position: relative;
+				bottom: auto;
+				margin-top: 16px;
 				font-size: 0;
-				margin-top: 15px;
 				.splide__pagination__page {
 					margin: 0 2px;
 					opacity: 1;
@@ -126,7 +127,8 @@
 		/* splide css arrow */
 		.swiper_button {
 			position: absolute;
-			top: 50%;
+			// top: 50%;
+			top: calc(50% - 12px);
 			transform: translateY(-50%);
 			&.swiper_button_left {
 				left: 4px;
