@@ -383,7 +383,7 @@
 						background-size: 40px auto;
 						.txt {
 							.question_mark_btn {
-								vertical-align: middle;
+								vertical-align: top;
 							}
 						}
 					}
@@ -538,18 +538,26 @@
 }
 
 
-.splide {
-	.splide__slide {
-		height: 200px;
-		background-color: #ddd;
-		&.c1 {
-			background-color: red;
+.splide_wrap {
+	margin: 0 -24px;
+	// padding: 0 24px;
+	.splide {
+		.splide__list {
+			&::after {
+				content: '';
+				display: block;
+				height: 100px;
+				padding-left: 24px;
+				// background-color: blue;
+			}
 		}
-		&.c2 {
-			background-color: blue;
+		.splide__track {
+			padding: 0 24px !important;
 		}
-		&.c3 {
-			background-color: green;
+		.splide__slide {
+			margin-right: 12px;
 		}
 	}
+	
 }
+
