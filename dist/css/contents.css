@@ -336,47 +336,6 @@
 	position: relative;
 	height: 11rem;
 	padding-top: 1.6rem;
-	/*
-  &_inner {
-  	position: absolute;
-  	top: 0;
-  	left: 0;
-  	width: 100%;
-  	opacity: 1;
-  	visibility: visible;
-  	transition: var(--t-time);
-  	&_text {
-  		font-size: 24px;
-  		line-height: 34px;					
-  	}
-  	.sub_text {
-  		position: relative;
-  		display: inline-block;
-  		margin-top: 8px;
-  		padding-right: 22px;
-  		font-size: 14px;
-  		color: #464C53;
-  		line-height: 22px;
-  		&::after {
-  			content: '';
-  			position: absolute;
-  			top: 1px;
-  			right: 0;
-  			width: 20px;
-  			height: 20px;
-  			border-radius: 5px;
-  			background-repeat: no-repeat;
-  			background-position: center center;
-  			background-image: url(../images/smp/ico_i_mark.svg);
-  			background-color: rgba($color: #33363D, $alpha: 0.6);
-  		}
-  	}
-  	&.active {
-  		opacity: 0;
-  		visibility: hidden;
-  	}
-  }
-  */
 }
 .smp_top .ds1_inner {
 	position: absolute;
@@ -1719,6 +1678,7 @@
 }
 .guarantee_detail .gd_item .rdo_box input {
 	position: absolute;
+	opacity: 0;
 }
 .guarantee_detail .gd_item .rdo_box input + label::after {
 	content: "";
@@ -1795,9 +1755,9 @@
 	font-size: var(--font-size-body-small);
 }
 .guarantee_detail .gd_item .gdi_content .gdi_content_list > li .item .add_text_btn .txt::after {
-	display: inline-block;
 	content: "";
-	position: absolute;
+	display: inline-block;
+	vertical-align: bottom;
 	width: 1.6rem;
 	height: 1.6rem;
 	background: url(../images/icon/arrowRight_ty3.svg) no-repeat right center/1.6rem auto;

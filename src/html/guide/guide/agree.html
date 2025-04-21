@@ -5,9 +5,7 @@
 		전체동의 항목의 경우  ag_top=true 설정 <br><br>
 		상세보기 항목의 경우 : <br>
 		- 기본형과 자세히 보기형, 하위 컨텐츠 추가형으로 나뉜다. <br>
-		- 기본형 : ag=true 설정 <br>
-		- 자세히 보기형 : ag_more=true 설정 <br>
-		- 하위 컨텐츠 추가형 : exp=true 추가 설정 <br><br>
+		- 자세히 보기형 : ag_more=true 설정 <br><br>
 		동의 받는 스크립트는 chk_list 클래스에 체크된 항목을 모두 체크해야만 동의가 완료된다. <br>
 		관련 스크립트 참조
 		<br><br><br>
@@ -27,25 +25,31 @@
 		<div class="chk_group_cont">
 			<ul class="chk_group_cont_list chk_list">
 				<li>
-					{{#> cp/checkbox id="chk_group0101" chk_class="chk_point" labelname="수집·이용에 관한 사항" ag=true exp=true}}
-					<ul class="list_ty2">
-						<li>고유식별정보, 민감정보, 개인(신용)정보</li>
-					</ul>
+					{{#> cp/checkbox id="chk_group0101" chk_class="chk_point" labelname="수집·이용에 관한 사항"}}
+					<div class="chk_lby">
+						<ul class="list_ty2">
+							<li>고유식별정보, 민감정보, 개인(신용)정보</li>
+						</ul>
+					</div>
 					{{/ cp/checkbox}}
 				</li>
 				<li>
-					{{#> cp/checkbox id="chk_group0102" chk_class="chk_point" labelname="수집·이용에 관한 사항" ag=true exp=true}}
-					<ul class="list_ty2">
-						<li>[국내] 고유식별정보, 민감정보, 개인(신용)정보</li>
-						<li>[국내] 개인(신용)정보</li>
-					</ul>
+					{{#> cp/checkbox id="chk_group0102" chk_class="chk_point" labelname="수집·이용에 관한 사항"}}
+					<div class="chk_lby">
+						<ul class="list_ty2">
+							<li>[국내] 고유식별정보, 민감정보, 개인(신용)정보</li>
+							<li>[국내] 개인(신용)정보</li>
+						</ul>
+					</div>
 					{{/ cp/checkbox}}
 				</li>
 				<li>
-					{{#> cp/checkbox id="chk_group0103" chk_class="chk_point" labelname="조회에 관한 사항" ag=true exp=true}}
-					<ul class="list_ty2">
-						<li>고유식별정보, 민감정보, 개인(신용)정보</li>
-					</ul>
+					{{#> cp/checkbox id="chk_group0103" chk_class="chk_point" labelname="조회에 관한 사항"}}
+					<div class="chk_lby">
+						<ul class="list_ty2">
+							<li>고유식별정보, 민감정보, 개인(신용)정보</li>
+						</ul>
+					</div>
 					{{/ cp/checkbox}}
 				</li>
 			</ul>
@@ -60,32 +64,40 @@
 		<div class="chk_group_cont">
 			<ul class="chk_group_cont_list chk_list">
 				<li>
-					{{#> cp/checkbox id="chk_group0201" chk_class="chk_point" labelname="수집·이용에 관한 사항" ag_more=true exp=true}}
-					<ul class="list_ty2">
-						<li>고유식별정보, 민감정보, 개인(신용)정보</li>
-					</ul>
+					{{#> cp/checkbox id="chk_group0201" chk_class="chk_point" labelname="수집·이용에 관한 사항" ag_more=true}}
+					<div class="chk_lby">
+						<ul class="list_ty2">
+							<li>고유식별정보, 민감정보, 개인(신용)정보</li>
+						</ul>
+					</div>
 					{{/ cp/checkbox}}
 				</li>
 				<li>
-					{{#> cp/checkbox id="chk_group0202" chk_class="chk_point" labelname="수집·이용에 관한 사항" ag_more=true exp=true}}
-					<ul class="list_ty2">
-						<li>[국내] 고유식별정보, 민감정보, 개인(신용)정보</li>
-						<li>[국내] 개인(신용)정보</li>
-					</ul>
+					{{#> cp/checkbox id="chk_group0202" chk_class="chk_point" labelname="수집·이용에 관한 사항" ag_more=true}}
+					<div class="chk_lby">
+						<ul class="list_ty2">
+							<li>[국내] 고유식별정보, 민감정보, 개인(신용)정보</li>
+							<li>[국내] 개인(신용)정보</li>
+						</ul>
+					</div>
 					{{/ cp/checkbox}}
 				</li>
 				<li>
-					{{#> cp/checkbox id="chk_group0203" chk_class="chk_point" labelname="조회에 관한 사항" ag_more=true exp=true}}
-					<ul class="list_ty2">
-						<li>고유식별정보, 민감정보, 개인(신용)정보</li>
-					</ul>
+					{{#> cp/checkbox id="chk_group0203" chk_class="chk_point" labelname="조회에 관한 사항" ag_more=true}}
+					<div class="chk_lby">
+						<ul class="list_ty2">
+							<li>고유식별정보, 민감정보, 개인(신용)정보</li>
+						</ul>
+					</div>
 					{{/ cp/checkbox}}
 				</li>
 				<li>
-					{{#> cp/checkbox id="chk_group0204" chk_class="chk_point" labelname="개인(신용)정보 수집·이용에 관한 사항 <span class='badge_wrap'><span class='hd_badge solid_pastel c_point size_m'>안심</span></span>" ag_more=true exp=true}}
-					<ul class="list_ty2">
-						<li>고유식별정보, 민감정보, 개인(신용)정보</li>
-					</ul>
+					{{#> cp/checkbox id="chk_group0204" chk_class="chk_point" labelname="개인(신용)정보 수집·이용에 관한 사항 <span class='badge_wrap'><span class='hd_badge solid_pastel c_point size_m'>안심</span></span>" ag_more=true}}
+					<div class="chk_lby">
+						<ul class="list_ty2">
+							<li>고유식별정보, 민감정보, 개인(신용)정보</li>
+						</ul>
+					</div>
 					{{/ cp/checkbox}}
 				</li>
 			</ul>
@@ -100,19 +112,21 @@
 		<div class="chk_group_cont">
 			<ul class="chk_group_cont_list chk_list">
 				<li>
-					{{#> cp/checkbox id="chk_group0301" chk_class="chk_point" labelname="수집·이용에 관한 사항" ag=true exp=true}}
-					<ul class="space_list_ty1 chk_list">
-						<li>
-							{{> cp/checkbox id="chk_group030101" chk_class="chk_point_sub" label_class="chk_label_ty3" labelname="고유식별정보, 민감정보, 개인(신용)정보" exp=false ag=true}}
-						</li>
-						<li>
-							{{> cp/checkbox id="chk_group030102" chk_class="chk_point_sub" label_class="chk_label_ty3" labelname="광고성 정보의 수신동의 <small class='sub_g_txt'>문자, 이메일, DM, 전화(ARS)중 선택</small>" exp=false ag=true}}
-						</li>
-					</ul>
+					{{#> cp/checkbox id="chk_group0301" chk_class="chk_point" labelname="수집·이용에 관한 사항"}}
+					<div class="chk_lby">
+						<ul class="space_list_ty1 chk_list">
+							<li>
+								{{> cp/checkbox id="chk_group030101" chk_class="chk_point_sub" label_class="chk_label_ty3" labelname="고유식별정보, 민감정보, 개인(신용)정보"}}
+							</li>
+							<li>
+								{{> cp/checkbox id="chk_group030102" chk_class="chk_point_sub" label_class="chk_label_ty3" labelname="광고성 정보의 수신동의 <small class='sub_g_txt'>문자, 이메일, DM, 전화(ARS)중 선택</small>"}}
+							</li>
+						</ul>
+					</div>
 					{{/ cp/checkbox}}
 				</li>
 				<li>
-					{{> cp/checkbox id="chk_group0302" chk_class="chk_point" labelname="수집·이용에 관한 사항" ag=true}}
+					{{> cp/checkbox id="chk_group0302" chk_class="chk_point" labelname="수집·이용에 관한 사항"}}
 				</li>
 			</ul>
 		</div>
