@@ -582,14 +582,18 @@ $(function(){
 			const $targetChild = $('.simple_info_wrap').children('.simple_info_item');		
 			const scrollTop = $('#container').scrollTop();
 
-			// console.log('target 위치 : ' + targetOffsetTop);
-			// console.log('컨텐츠 스크롤 위치 : ' + scrollTop);
-			
-			if (targetOffsetTop - 50 <= scrollTop && !$targetChild.hasClass('active')) {
+			if($('.gd_middle_b').length){
+				targetOffsetTop = targetOffsetTop - 50
+			}
+
+			console.log('target 위치 : ' + targetOffsetTop);
+			console.log('컨텐츠 스크롤 위치 : ' + scrollTop);
+
+			if (targetOffsetTop <= scrollTop && !$targetChild.hasClass('active')) {
 				// console.log('펴기');
 				$targetChild.addClass('active');
 				$targetChild.stop().slideDown(300);
-			} else if (scrollTop < targetOffsetTop - 51 && $targetChild.hasClass('active')) {
+			} else if (scrollTop < targetOffsetTop && $targetChild.hasClass('active')) {
 				// console.log('접기');
 				$target.removeAttr('style').removeClass('active');
 				$targetChild.removeClass('active');
