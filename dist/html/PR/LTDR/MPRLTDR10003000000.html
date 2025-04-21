@@ -794,12 +794,14 @@
 				// splide 설정
 
 				// Splide 설정
-				var splide = new Splide(".splide", {
+				var splide = new Splide("#splide_wrap_ty1 .splide", {
 					speed: 500,
 					accessibility: false,
 					arrows: false, // 기본 화살표 비활성화
-				});
-				splide.mount();
+					focusableNodes: "a, button, input, textarea, select, li",
+					// });
+				}).mount();
+				// splide.mount();
 
 				// 슬라이드 이동 후: is-active 슬라이드의 radio 체크 및 trigger
 				splide.on("moved", function () {
@@ -838,6 +840,31 @@
 
 				// 초기 로드 시 상태 설정
 				updateArrowState();
+
+				// 보험 플랜 - 우측 이동
+				$(".move_detail").on("click", function () {
+					const selectedClass = $('.guarantee_choice_wrap .guarantee_item input[type="radio"]:checked').closest(".guarantee_item").data("sendclass");
+					console.log("선택된 항목의 data-sendclass:", selectedClass);
+					const targetSlide = $('.splide__slide[data-getclass="' + selectedClass + '"]');
+
+					if (targetSlide.length) {
+						const targetIndex = targetSlide.index(); // 슬라이드의 인덱스를 구합니다.
+						// console.log('목표 슬라이드 인덱스:', targetIndex);
+						$(".guarantee_container").addClass("active");
+
+						setTimeout(function () {
+							$(".splide__list").find(".splide__slide").eq(targetIndex).addClass("effect").find('input[type="radio"]').prop("checked", true);
+							splide.go(targetIndex);
+							$(".container").scrollTop(0);
+							setTimeout(function () {
+								$(".splide__list").find(".splide__slide").eq(targetIndex).attr("tabindex", "0").focus();
+								$(".guarantee_container").css("position", "static");
+								$(".guarantee_container_right").css("position", "static");
+							}, 100);
+						}, 500);
+					}
+				});
+				// 보험 플랜 - 우측 이동
 			});
 		</script>
 	</body>

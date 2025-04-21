@@ -1,6 +1,6 @@
 <!---
 화면번호 : MPRGIPT30002010100
-경로 :  상품 > 펫 > 하이펫보험 > 기본정보 입력 > 반려동물종류선택 > 검색어로 찾기 (case 1: 최초 진입시 화면)
+경로 :  공통 > 직업 검색 (case 1: 최초 진입시 화면)
 -->
 <!doctype html>
 <html lang="ko">
@@ -56,55 +56,44 @@
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
 				<div class="popup_inner">
-					<div class="popup_head"><div class="popup_head_title">반려동물 종류 선택</div></div>
+					<div class="popup_head"><div class="popup_head_title">직업 검색</div></div>
 					<div class="popup_cont search_list_type2">
 						<div class="tab_wrap">
 							<div class="tab_wrap_list_ty1" role="tablist">
 								<button type="button" class="tab_btn active" role="tab" aria-selected="true" aria-controls="tabPanel01" id="tab01">검색어로 찾기</button>
-								<button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanel02" id="tab02">초성으로 찾기</button>
+								<button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanel02" id="tab02">분류로 찾기</button>
 							</div>
 
-							<!-- s: tab01.검색어로 찾기 Tab 내용 -->
+							<!-- s: tab01. 검색어로 찾기 Tab 내용 -->
 							<div class="tab_wrap_content has_scroll active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
 								<div class="search_inp_box">
 									<div class="input_text search">
 										<div class="inp">
-											<input type="search" placeholder="품종 입력" title="검색어 입력" />
+											<input type="search" placeholder="검색어를 입력해 주세요." title="검색어 입력" />
 											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 											<button type="button" class="btn btn_search" title="검색"></button>
 										</div>
 									</div>
-									<div class="desc">
-										<p class="point">반려동물 종류와 나이에 따라 가입이 제한될 수 있어요.</p>
-										<a href="javascript:void(0)" class="btn_link short_cut" role="button" onclick="openHDPopup(this,'helper_popup');" title="팝업 열림 팝업 오픈">
-											<span class="text">가입이 어려운 경우</span>
-										</a>
-									</div>
 								</div>
 
 								<!-- s: 자주찾는 품종 추천 리스트 -->
-								<!-- 최초 진입 시 노출 -->
 								<div class="suggestion_list_wrap">
-									<!-- s: 25-04-21 수정 -->
-									<div class="title_h4"><strong>자주 찾는 견종</strong></div>
-									<!-- e: 25-04-21 수정 -->
+									<div class="title_h4"><strong>자주 찾는 직업</strong></div>
 									<div class="item_wrap">
-										<button type="button" class="tag_item size_m c_ty01"><span class="text">말티즈</span></button>
-										<button type="button" class="tag_item size_m c_ty01"><span class="text">포메라니안</span></button>
-										<button type="button" class="tag_item size_m c_ty01"><span class="text">비숑프리제</span></button>
-										<button type="button" class="tag_item size_m c_ty01"><span class="text">치와와</span></button>
-										<button type="button" class="tag_item size_m c_ty01"><span class="text">말티푸</span></button>
-										<button type="button" class="tag_item size_m c_ty01"><span class="text">토이푸들</span></button>
-										<button type="button" class="tag_item size_m c_ty01"><span class="text">요크셔테리어</span></button>
-										<button type="button" class="tag_item size_m c_ty01"><span class="text">시츄</span></button>
-										<button type="button" class="tag_item size_m c_ty01"><span class="text">믹스견(5kg~15kg)</span></button>
+										<button type="button" class="tag_item size_m c_ty01"><span class="text">경영지원 사무직 관리자</span></button>
+										<button type="button" class="tag_item size_m c_ty01"><span class="text">전업주부</span></button>
+										<button type="button" class="tag_item size_m c_ty01"><span class="text">제품 생산관련 업체 사무직 관리자</span></button>
+										<button type="button" class="tag_item size_m c_ty01"><span class="text">대학생 및 대학원생</span></button>
+										<button type="button" class="tag_item size_m c_ty01"><span class="text">소규모 상점 경영 및 일선 관리 종사원</span></button>
+										<button type="button" class="tag_item size_m c_ty01"><span class="text">무직</span></button>
+										<button type="button" class="tag_item size_m c_ty01"><span class="text">영업 및 판매업체 관련 사무직 관리자</span></button>
+										<button type="button" class="tag_item size_m c_ty01"><span class="text">공무원(기술직, 특수직 제외)</span></button>
+										<button type="button" class="tag_item size_m c_ty01"><span class="text">중&middot;고등학교 교사</span></button>
 									</div>
 								</div>
-								<!-- 최초 진입 시 노출 -->
 								<!-- e: 자주찾는 품종 추천 리스트 -->
 
 								<!-- s: 키워드 검색 결과 리스트 -->
-								<!-- s: 25-04-21 수정 -->
 								<div class="search_result_count">
 									<p>
 										검색결과
@@ -112,15 +101,14 @@
 										건
 									</p>
 								</div>
-								<!-- e: 25-04-21 수정 -->
 								<div class="search_reult_list_container sr_list">
 									<ul class="search_reult_list">
 										<li class="search_reult_list_item">
 											<a href="#">
 												<span class="item_text">
-													글렌 오브 이
-													<i>말</i>
-													테리어
+													가구
+													<i>제조</i>
+													원 및 수리원
 												</span>
 											</a>
 										</li>
@@ -128,117 +116,110 @@
 										<li class="search_reult_list_item">
 											<a href="#">
 												<span class="item_text">
-													<i>말</i>
-													View Monitor 패키지(단품)
+													그 외
+													<i>제조</i>
+													관련 단순종사원
 												</span>
 											</a>
 										</li>
 										<li class="search_reult_list_item">
 											<a href="#">
 												<span class="item_text">
-													<i>말</i>
-													티폼(
-													<i>말</i>
-													티즈+포메라니안)
+													떡
+													<i>제조</i>
+													원
 												</span>
 											</a>
 										</li>
 										<li class="search_reult_list_item">
 											<a href="#">
 												<span class="item_text">
-													<i>말</i>
-													티푸
+													목제품
+													<i>제조</i>
+													관련 종사원(산업용 목재제품)
 												</span>
 											</a>
 										</li>
 										<li class="search_reult_list_item">
 											<a href="#">
 												<span class="item_text">
-													몰티즈(
-													<i>말</i>
-													티즈+요크셔테리어)
+													석유 및 천연가스
+													<i>제조</i>
+													관련 조작원
 												</span>
 											</a>
 										</li>
 										<li class="search_reult_list_item">
 											<a href="#">
 												<span class="item_text">
-													알라스칸
-													<i>말</i>
-													라뮤트
+													섬유
+													<i>제조</i>
+													기계조작원
 												</span>
 											</a>
 										</li>
 										<li class="search_reult_list_item">
 											<a href="#">
 												<span class="item_text">
-													알라스칸
-													<i>말</i>
-													라뮤트 가나다라마바사 줄바꿈이 가능합니다. 계속 길어질 수 있습니다.
+													시멘트 및 광물제품
+													<i>제조</i>
+													기 조작원
+												</span>
+											</a>
+										</li>
+										<li class="search_reult_list_item">
+											<a href="#">
+												<span class="item_text">
+													그 외
+													<i>제조</i>
+													관련 단순종사원
 												</span>
 											</a>
 										</li>
 									</ul>
+									<div class="no_list_area">
+										<i class="hd_icon exclamationSvg"></i>
+										<p>내역이 없어요</p>
+									</div>
 								</div>
 								<!-- e: 키워드 검색 결과 리스트 -->
 							</div>
-							<!-- e: tab01.검색어로 찾기 Tab 내용 -->
+							<!-- e: tab01. 검색어로 찾기 Tab 내용 -->
 
-							<!-- s: tab02. 초성으로 찾기 Tab 내용 -->
+							<!-- s: tab02. 분류로 찾기 Tab 내용 -->
 							<div class="tab_wrap_content has_scroll" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
-								<div class="search_inp_box">
-									<!-- s: 초성 버튼 리스트 -->
-									<ul class="keypad_wrap search_letter_btn_list">
-										<button type="button" class="keypad_chip_item">ㄱ</button>
-										<button type="button" class="keypad_chip_item">ㄴ</button>
-										<button type="button" class="keypad_chip_item">ㄷ</button>
-										<button type="button" class="keypad_chip_item">ㄹ</button>
-										<button type="button" class="keypad_chip_item">ㅁ</button>
-										<button type="button" class="keypad_chip_item">ㅂ</button>
-										<button type="button" class="keypad_chip_item">ㅅ</button>
-										<button type="button" class="keypad_chip_item">ㅇ</button>
-										<button type="button" class="keypad_chip_item">ㅈ</button>
-										<button type="button" class="keypad_chip_item">ㅊ</button>
-										<button type="button" class="keypad_chip_item">ㅋ</button>
-										<button type="button" class="keypad_chip_item">ㅌ</button>
-										<button type="button" class="keypad_chip_item">ㅍ</button>
-										<button type="button" class="keypad_chip_item">ㅎ</button>
-									</ul>
-									<!-- e: 초성 버튼 리스트 -->
-									<a href="javascript:void(0)" class="btn_link short_cut" role="button" onclick="openHDPopup(this,'helper_popup');" title="팝업 열림 팝업 오픈">
-										<span class="text">가입이 어려운 경우</span>
-									</a>
+								<div class="form_group_wrap">
+									<div class="form_line">
+										<div class="select_item select_item_case01" role="button" tabindex="0" title="직업 대분류 선택" onclick="openHDPopup(this,'pop_type02');">
+											<div class="select_item_inner">
+												<div class="si_item" data-placeholder="대분류를 선택해주세요."></div>
+												<span class="si_stat">선택됨</span>
+											</div>
+										</div>
+									</div>
 								</div>
-
-								<!-- s: 키워드 검색 결과 리스트 -->
-								<div class="search_reult_list_container">
-									<ul class="search_reult_list">
-										<li class="search_reult_list_item">
-											<a href="#"><span class="item_text">닥스훈트</span></a>
-										</li>
-										<li class="search_reult_list_item">
-											<a href="#"><span class="item_text">달마시안</span></a>
-										</li>
-										<li class="search_reult_list_item">
-											<a href="#"><span class="item_text">대니시 스웨디시 팜도그</span></a>
-										</li>
-										<li class="search_reult_list_item">
-											<a href="#"><span class="item_text">댄디 딘몬트 테리어</span></a>
-										</li>
-										<li class="search_reult_list_item">
-											<a href="#"><span class="item_text">더치 스마우스혼드</span></a>
-										</li>
-										<li class="search_reult_list_item">
-											<a href="#"><span class="item_text">덩케르</span></a>
-										</li>
-										<li class="search_reult_list_item">
-											<a href="#"><span class="item_text">도그 드보르도</span></a>
-										</li>
-									</ul>
+								<div class="form_group_wrap">
+									<div class="form_line">
+										<div class="select_item select_item_case01" role="button" tabindex="0" title="직업 정분류 선택" onclick="openHDPopup(this,'pop_type02');">
+											<div class="select_item_inner">
+												<div class="si_item" data-placeholder="중분류를 선택해주세요."></div>
+												<span class="si_stat">선택됨</span>
+											</div>
+										</div>
+									</div>
 								</div>
-								<!-- e: 키워드 검색 결과 리스트 -->
+								<div class="form_group_wrap">
+									<div class="form_line">
+										<div class="select_item select_item_case01" role="button" tabindex="0" title="직업 소분류 선택" onclick="openHDPopup(this,'pop_type02');">
+											<div class="select_item_inner">
+												<div class="si_item" data-placeholder="대분류를 선택해주세요."></div>
+												<span class="si_stat">선택됨</span>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
-							<!-- e: tab02.초성으로로 찾기 Tab 내용 -->
+							<!-- e: tab02. 분류로 찾기 Tab 내용 -->
 						</div>
 					</div>
 					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
@@ -248,51 +229,31 @@
 		<!-- e: Full 팝업 -->
 
 		<!-- s: popup area -->
-		<!-- s: 가입제한 안내 팝업 -->
-		<div class="popup_wrap bottom" id="helper_popup" role="dialog" aria-modal="true" aria-hidden="true">
+		<!-- s: selpop -->
+		<div class="popup_wrap bottom" id="pop_type02" role="dialog" aria-modal="true" aria-hidden="true">
 			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('helper_popup');"></div>
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type02');"></div>
 				<div class="popup_inner">
 					<div class="draggable" aria-hidden="true">
 						<div class="move"></div>
 					</div>
-					<div class="popup_head"><div class="popup_head_title">가입제한 안내</div></div>
+					<div class="popup_head"><div class="popup_head_title">피보험자와 계약자 과계</div></div>
 
 					<div class="popup_cont">
 						<div class="popup_content">
-							<p class="text_sub">아래의 경우에는 반려동물보험 가입이 어려워요.</p>
-							<div class="info_box ty2">
-								<ul class="list_ty1">
-									<li>판매점,브리더 등 매매를 목적으로 사육, 관리하는 반려동물</li>
-									<li>
-										특수 목적
-										<span class="point">*</span>
-										의 반려동물
-										<ul class="list_ty2">
-											<li>
-												<span class="point">*</span>
-												특수 목적 : 경찰, 구조, 군, 사냥 등 (단, 맹도견, 청도견 등 장애인 안내견 제외)
-											</li>
-										</ul>
-									</li>
-									<li>흥행을 목적으로 사육,관리하는 반려동물</li>
-									<li>유기동물 보호센터 등에서 사육, 관리하는 반려동물</li>
-								</ul>
+							<div class="opt_select_list opt_case3">
+								<div role="button" class="option active" title="선택됨"><span class="text">관리직(사무직)</span></div>
+								<div role="button" class="option"><span class="text">직업1</span></div>
+								<div role="button" class="option"><span class="text">직업2</span></div>
+								<div role="button" class="option"><span class="text">직업3</span></div>
 							</div>
 						</div>
 					</div>
-					<div class="popup_bottom">
-						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
-								<span class="text">확인했습니다</span>
-							</button>
-						</div>
-					</div>
-					<button type="button" class="popup_close" onclick="closeHDPopup('helper_popup');"><span class="blind">팝업 닫기</span></button>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type02');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
-		<!-- e: 가입제한 안내 팝업 -->
+		<!-- e: selpop -->
 
 		<!-- e: popup area -->
 	</body>
