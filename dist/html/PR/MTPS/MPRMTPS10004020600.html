@@ -1,6 +1,6 @@
 <!---
-화면번호 : MPRMTPS10004000700
-경로 : 3.자동차 상세정보 > 3-1.자동차 상세정보 입력 > 외제차 차량가액 수정
+화면번호 : MPRMTPS10004020600
+경로 : 3.자동차 상세정보 > 3-3. 자동차 추가 확인사항 > 기중기, 붐, 집게 등이 장착된 차량 안내
 -->
 <!doctype html>
 <html lang="ko">
@@ -51,79 +51,91 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body>
+		<!-- s: popup area -->
 		<!-- s: Bottom 팝업 -->
-		<div class="popup_wrap bottom active" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="false">
+		<div class="popup_wrap bottom active" id="pop_01" role="dialog" aria-modal="true" aria-hidden="false">
 			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_01');"></div>
 				<div class="popup_inner">
 					<div class="draggable" aria-hidden="true">
 						<div class="move"></div>
 					</div>
-					<div class="popup_head"><div class="popup_head_title">외제차 차량가액 수정</div></div>
+					<div class="popup_head"><div class="popup_head_title">기중기, 붐, 집게 등이 장착된 차량 안내</div></div>
 
 					<div class="popup_cont">
 						<div class="popup_content">
-							<div class="form_group_wrap">
-								<!-- s: 25-04-14 수정 -->
-								<div class="form_line">
-									<div class="label_tit">차량가액</div>
-									<!-- s: 25-04-21 수정 -->
-									<div class="input_text price">
-										<div class="inp">
-											<input type="tel" placeholder="금액을 입력하세요" title="금액입력" />
-											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-										</div>
-										<div class="int_txt right">만원</div>
-									</div>
-									<p class="explain_text">
-										수정가능범위 :
-										<strong>5,742~7,018</strong>
-										만원
-									</p>
-									<!-- e: 25-04-21 수정 -->
-								</div>
-								<!-- e: 25-04-14 수정 -->
-							</div>
-						</div>
+							<p class="text_sub">기중기 또는 붐(boom)장치가 되어있는 구난형 자동차, 사다리차 등의 자동차(건설기계 제외)</p>
 
-						<!-- s: 꼭 알아두세요 -->
-						<!-- s: 25-04-16 수정 -->
-						<div class="bottom_fix_notice">
-							<div class="acd_item">
-								<div class="acd_head active">
-									<button type="button" class="acd_btn" aria-expanded="true"><span>꼭 알아두세요</span></button>
-								</div>
-								<div class="acd_cont">
-									<div class="inner" style="display: block">
-										<ul class="list_ty1">
-											<li>외제차량의 경우, 일정 범위 내에서 차량가액 수정이 가능합니다.</li>
-											<li>외제차는 고장출동서비스 중 잠금해제 서비스가 제공되지 않습니다.</li>
-										</ul>
+							<h5 class="title_h5">해당되는 차량</h5>
+							<ul class="view_img_list">
+								<li>
+									<div class="thumnail"></div>
+									<div class="name">사다리차</div>
+								</li>
+								<li>
+									<div class="thumnail"></div>
+									<div class="name">고소작업차</div>
+								</li>
+								<li>
+									<div class="thumnail"></div>
+									<div class="name">구난용렉카차</div>
+								</li>
+								<li>
+									<div class="thumnail"></div>
+									<div class="name">견인용렉카차</div>
+								</li>
+								<li>
+									<div class="thumnail"></div>
+									<div class="name">스틱크레인</div>
+								</li>
+								<li>
+									<div class="thumnail"></div>
+									<div class="name">너클크레인</div>
+								</li>
+								<li>
+									<div class="thumnail"></div>
+									<div class="name">기타 화물차</div>
+								</li>
+							</ul>
+
+							<h5 class="title_h5">해당되지 않는 차량</h5>
+							<p class="text_sub">해당되지 않을 경우 차량 용도를 “해당없음”을 선택해 주세요.</p>
+							<ul class="view_img_list">
+								<li>
+									<div class="thumnail"></div>
+									<div class="name">세이프티 로더</div>
+								</li>
+								<li>
+									<div class="thumnail"></div>
+									<div class="name">셀프로더</div>
+								</li>
+								<li>
+									<div class="thumnail"></div>
+									<div class="name">파워게이트</div>
+								</li>
+								<li>
+									<div class="thumnail"></div>
+									<div class="name">
+										주차위반 견인용
+										<br />
+										렉카차
 									</div>
-								</div>
-							</div>
+								</li>
+							</ul>
 						</div>
-						<!-- e: 25-04-16 수정 -->
-						<!-- e: 꼭 알아두세요 -->
 					</div>
-
-					<!-- s: 25-04-14 수정 -->
 					<div class="popup_bottom">
 						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_2">
-								<span class="text">취소</span>
-							</button>
 							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
-								<span class="text">수정하기</span>
+								<span class="text">확인</span>
 							</button>
 						</div>
 					</div>
-					<!-- e: 25-04-14 수정 -->
-
-					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_01');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
 		<!-- e: Bottom 팝업 -->
+		<!-- e: popup area -->
 	</body>
 </html>

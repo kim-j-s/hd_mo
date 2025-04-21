@@ -894,6 +894,9 @@
 	background-image: url(../images/icon/progressbar_dot.svg);
 	background-size: 0.8rem auto;
 }
+.car_type_option {
+	gap: 1rem;
+}
 .car_type_option input[type="radio"] label {
 	border-radius: 1.6rem;
 }
@@ -1002,6 +1005,44 @@
 }
 .autocomplete_wrap + .suggestion_list_wrap {
 	margin-top: 5.2rem;
+}
+/* 자동차보험 - 자동차 상세정보 */
+.view_img_list {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	gap: 1.2rem;
+}
+.view_img_list > li {
+	width: calc((100% - 2.4rem) / 3);
+	text-align: center;
+}
+.view_img_list > li .thumnail {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: 100%;
+	height: 10.6rem;
+	border: 1px solid var(--color-element-gray-light);
+	border-radius: 1.2rem;
+}
+.view_img_list > li .thumnail + .name {
+	margin-top: 0.8rem;
+}
+.view_img_list > li > .name {
+	font-size: var(--font-size-label-medium);
 }
 /* 자동차보험 - 운전자정보 */
 /* 자동차보험 | 운전자 정보 - 운전자 범위 선택 */
@@ -2017,7 +2058,7 @@
 	font-weight: 700;
 }
 .form_list > li .info_gray {
-	margin-bottom: 2.4rem;
+	margin-bottom: 1.6rem;
 }
 .form_list > li .radio_group_wrap + .checkbox_group_wrap {
 	margin-top: 1.6rem;

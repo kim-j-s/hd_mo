@@ -1,8 +1,7 @@
 <!---
-화면번호 : MPRMTPS10004020000
+화면번호 : MPRMTPS10004020000_1
 경로 : 3.자동차 상세정보 > 3-3. 자동차 추가 확인사항
 -->
-<!-- s: 25-04-15 수정 -->
 <!doctype html>
 <html lang="ko">
 	<head>
@@ -82,7 +81,6 @@
 			</div>
 			<div id="container" class="container">
 				<div class="content">
-					<!-- s: 25-04-21 수정 -->
 					<!-- s: content_top -->
 					<div class="content_top">
 						<h2 class="title_h2">
@@ -105,10 +103,7 @@
 						<li>
 							<div class="form_group_wrap">
 								<div class="form_line">
-									<div class="label_tit">자동차관리법령에 따라 ‘승용캠핑카'로 구조변경(튜닝)한 차량입니까?</div>
-									<div class="info_gray">
-										<p class="info_text">승용캠핑카=승용 번호판(01-69, 100-699) & 등록 원부상 캠핑카 구조변경 내역 존재</p>
-									</div>
+									<div class="label_tit">차량이 특정용도 차량(이동진료차 등) 입니까?</div>
 									<div class="radio_group_wrap" role="radiogroup">
 										<div class="inp_radio rd_btn">
 											<input type="radio" id="radio_btn_05" name="radio_g3" />
@@ -128,28 +123,128 @@
 						</li>
 						<li>
 							<div class="form_group_wrap">
-								<div class="label_tit">차량이 캠핑트레일러, 보트, 수상오토바이 등의 레저장비를 견인하는 자동차 입니까?</div>
-								<div class="info_gray">
-									<p class="info_text">레저장비를 견인하는 자동차는 레저장비견인 중 위험담보요율 적용으로 기본보험요율이 할증됩니다.</p>
-								</div>
-								<div class="radio_group_wrap" role="radiogroup">
-									<div class="inp_radio rd_btn">
-										<input type="radio" id="radio_btn_03" name="radio_g2" />
-										<label for="radio_btn_03">
-											<span class="label_cont">예</span>
-										</label>
-									</div>
-									<div class="inp_radio rd_btn">
-										<input type="radio" id="radio_btn_04" name="radio_g2" checked />
-										<label for="radio_btn_04">
-											<span class="label_cont">아니오</span>
-										</label>
+								<div class="form_line">
+									<div class="label_tit">차량이 수반차(자체동력이 없어 견인되는 형태로 이동하는 차량) 입니까?</div>
+									<div class="radio_group_wrap" role="radiogroup">
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="radio_btn_05" name="radio_g3" />
+											<label for="radio_btn_05">
+												<span class="label_cont">예</span>
+											</label>
+										</div>
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="radio_btn_06" name="radio_g3" checked />
+											<label for="radio_btn_06">
+												<span class="label_cont">아니오</span>
+											</label>
+										</div>
 									</div>
 								</div>
 							</div>
 						</li>
 					</ul>
-					<!-- e: 25-04-21 수정 -->
+
+					<div class="divider_ty1"></div>
+
+					<ul class="form_list">
+						<li>
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">가입 전 알릴 사항에 대한 동의</div>
+									<div class="checkbox_group_wrap column">
+										<div class="inp_checkbox rd_box">
+											<input type="checkbox" id="checkbox01-1" />
+											<label for="checkbox01-1" class="chk_label chk_label_ty3">
+												<span class="label_cont">
+													계약 전 알려야 할 사항(구조 및 운행용도) 선택은 보험료 산출과 연계된 고지사항으로, 차량사진이 포함된 구조 및 운행 용도를 보시고 정확하게 선택하여 주기시 바랍니다.
+													<strong class="primary_bold">차후 잘못된 선택으로 인한 사고 발생 시 보상면책, 구상 등의 문제가 발생할 수 있습니다.</strong>
+												</span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">
+										자동차의 구조 및 용도를 선택해 주세요.
+										<br />
+										(중복선택 가능)
+									</div>
+									<div class="checkbox_group_wrap column">
+										<div class="inp_checkbox">
+											<input type="checkbox" id="checkbox03-1" />
+											<label for="checkbox03-1" class="chk_label">
+												<span class="label_cont">해당없음</span>
+											</label>
+										</div>
+										<div class="inp_checkbox">
+											<input type="checkbox" id="checkbox03-2" />
+											<label for="checkbox03-2" class="chk_label more_add">
+												<span class="label_cont">탑차/활어차</span>
+											</label>
+
+											<button type="button" class="ag_more_btn" aria-label="탑차/활어차 자세히 보기">자세히</button>
+										</div>
+										<div class="inp_checkbox">
+											<input type="checkbox" id="checkbox03-3" />
+											<label for="checkbox03-3" class="chk_label more_add">
+												<span class="label_cont">기중기, 붐, 집게 장착차량</span>
+											</label>
+
+											<button type="button" class="ag_more_btn" aria-label="기중기, 붐, 집게 장착차량 자세히 보기">자세히</button>
+										</div>
+										<div class="inp_checkbox">
+											<input type="checkbox" id="checkbox03-4" />
+											<label for="checkbox03-4" class="chk_label">
+												<span class="label_cont">보안/경비업체 긴급출동 차량</span>
+											</label>
+										</div>
+										<div class="inp_checkbox">
+											<input type="checkbox" id="checkbox03-5" />
+											<label for="checkbox03-5" class="chk_label">
+												<span class="label_cont">경찰청/소방본부 소유차량(앰블런스 제외)</span>
+											</label>
+										</div>
+										<div class="inp_checkbox">
+											<input type="checkbox" id="checkbox03-6" />
+											<label for="checkbox03-6" class="chk_label more_add">
+												<span class="label_cont">청소차량</span>
+											</label>
+
+											<button type="button" class="ag_more_btn" aria-label="청소차량 자세히 보기">자세히</button>
+										</div>
+										<div class="inp_checkbox">
+											<input type="checkbox" id="checkbox03-7" />
+											<label for="checkbox03-7" class="chk_label">
+												<span class="label_cont">위험물 적재가 가능한 차량</span>
+											</label>
+										</div>
+										<div class="inp_checkbox">
+											<input type="checkbox" id="checkbox03-8" />
+											<label for="checkbox03-8" class="chk_label">
+												<span class="label_cont">캠핑트레일러, 보트 등을 견인하는 차량</span>
+											</label>
+										</div>
+										<div class="inp_checkbox">
+											<input type="checkbox" id="checkbox03-9" />
+											<label for="checkbox03-9" class="chk_label">
+												<span class="label_cont">운전면허교습, 기능/주행시험 사용 차량</span>
+											</label>
+										</div>
+										<div class="inp_checkbox">
+											<input type="checkbox" id="checkbox03-10" />
+											<label for="checkbox03-10" class="chk_label">
+												<span class="label_cont">자동차 판매를 위한 고객 시승용 차량</span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
 				</div>
 			</div>
 
@@ -168,4 +263,3 @@
 		<!-- e: popup area -->
 	</body>
 </html>
-<!-- e: 25-04-15 수정 -->
