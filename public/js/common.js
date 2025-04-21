@@ -580,12 +580,12 @@ $(function(){
 	// 간편정보 노출 방식
 	$('#container').on('scroll', function() {
 		const $headHeight = $('#header').outerHeight();
-		const $target = $('.simple_info_wrap');
-		const targetOffsetTop = $target.offset().top;
-		const $targetChild = $('.simple_info_wrap').children('.simple_info_item');		
-		const scrollTop = $('#container').scrollTop();
 
-		if ($target.length) {
+		if ($('.simple_info_wrap').length) {
+			const $target = $('.simple_info_wrap');
+			const targetOffsetTop = $target.offset().top;
+			const $targetChild = $('.simple_info_wrap').children('.simple_info_item');
+			const scrollTop = $('#container').scrollTop();
 
 			if($('.gd_middle_b').length){
 				targetOffsetTop = targetOffsetTop - 50

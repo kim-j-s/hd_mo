@@ -5,130 +5,85 @@
 {{#> layout/default page-title="보험료 확인 | 상품"}}
 
 <!-- s: Bottom 팝업 -->
-{{#> popup/popup_bottom popup-id="pop_type01" popup-title="가입조건 변경" popup-active=true }}
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="변경할 가입조건 선택" popup-active=true }}
 <div class="popup_cont">
 	<div class="popup_content">
 		<div class="form_group_wrap">
 			<div class="form_line">
 				<div class="label_tit">보험기간(년)</div>
-				<div class="select_rolling_opt">
-					<div id="option_swiper1" class="swiper-container">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide"><button type="button">3년</button></div>
-							<div class="swiper-slide"><button type="button">5년</button></div>
-							<div class="swiper-slide"><button type="button">7년</button></div>
-							<div class="swiper-slide"><button type="button">10년</button></div>
-							<div class="swiper-slide"><button type="button">15년</button></div>
-							<div class="swiper-slide"><button type="button">20년</button></div>
+				<div class="opt_select_wrap">
+					<span class="opt_select_wrap_live" aria-live="polite"></span>
+					<div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
+						<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="r1" id="r1_s1">
+							<label for="r1_s1">3년</label>
 						</div>
-						<div class="swiper-button-prev"></div>
-						<div class="swiper-button-next"></div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="r1" id="r1_s2">
+							<label for="r1_s2">5년</label>
+						</div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="r1" id="r1_s3" checked>
+							<label for="r1_s3">7년</label>
+						</div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="r1" id="r1_s4">
+							<label for="r1_s4">10년</label>
+						</div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="r1" id="r1_s5">
+							<label for="r1_s5">15년</label>
+						</div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="r1" id="r1_s6">
+							<label for="r1_s6">20년</label>
+						</div>
+						<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
 					</div>
+					<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_left" aria-label="이전 옵션"></button>
+					<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
 				</div>
 			</div>
 			<div class="form_line">
 				<div class="label_tit">납입기간(년)</div>
-				<div class="select_rolling_opt ty2">
-					<div id="option_swiper2" class="swiper-container">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide"><span>3년</span></div>
-							<div class="swiper-slide"><span>5년</span></div>
-							<div class="swiper-slide"><span>7년</span></div>
+				<div class="opt_select_wrap">
+					<span class="opt_select_wrap_live" aria-live="polite"></span>
+					<div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
+						<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="r2" id="r2_s1">
+							<label for="r2_s1">3년</label>
 						</div>
-						<div class="swiper-button-prev"></div>
-						<div class="swiper-button-next"></div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="r2" id="r2_s2" checked>
+							<label for="r2_s2">5년</label>
+						</div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="r2" id="r2_s3">
+							<label for="r2_s3">7년</label>
+						</div>
+						<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
 					</div>
+					<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_left" aria-label="이전 옵션"></button>
+					<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
 				</div>
 			</div>
-			<!-- <div class="form_line">
+			<div class="form_line">
 				<div class="label_tit">납입방법</div>
 				<div class="radio_group_wrap" role="radiogroup">
-					{{> cp/radio rd-class="rd_btn" rd-id="radio01-1" name="radio01" labelname="매월 보험료 내기" }}
+					{{> cp/radio rd-class="rd_btn" rd-id="radio01-1" name="radio01" labelname="매월 보험료 내기" checked=true }}
 					{{> cp/radio rd-class="rd_btn" rd-id="radio01-2" name="radio01" labelname="1년치 한꺼번에 내기" }}
 				</div>
-			</div> -->
+			</div>
 		</div>
 	</div>
 </div>
 <div class="popup_bottom">
 	<div class="btn_area">
-		{{> cp/button type="3" size="2" b-text="가입 조건을 변경합니다" }}
+		{{> cp/button type="1" size="2" b-text="가입 조건 변경하기" }}
 	</div>
 </div>
 {{/ popup/popup_bottom}}
 <!-- e: Bottom 팝업 -->
-
-<script>
-	$(document).ready(function(){
-		$('.swiper-wrapper').attr('aria-live', 'off');
-		$('.swiper-container').each(function (idx, ele) {
-			const $swiperContainer = $(ele);
-			const slideNum = $swiperContainer.find('.swiper-slide').length,
-						newNum = Math.round(slideNum / 2) - 1;
-			// console.log(newNum);
-
-			const swiper = new Swiper($swiperContainer[0], {
-				slidesPerView: 'auto',
-				centeredSlides: true,
-				initialSlide: newNum,
-				spaceBetween: 16,
-				slideToClickedSlide: true,
-				observer: true,
-				navigation: {
-					nextEl: ".swiper-button-next",
-					prevEl: ".swiper-button-prev",
-				},
-				a11y: {
-					enabled: true,
-					slideRole: 'button',
-					slideLabelMessage: '',
-					prevSlideMessage: '이전 항목으로 이동',
-					nextSlideMessage: '다음 항목으로 이동',
-					scrollOnFocus: true,
-				},
-				on: {
-					// slideChange: function(swiperInstance) {
-					// 	const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
-					// 	const button = activeSlide.querySelector('button');
-					// 	if (button) button.focus();
-					// }
-					// slideChange: function () {
-					// 	const $activeSlide = $(this.slides[this.activeIndex]);
-					// 	const $firstFocusableElement = $activeSlide.find('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])').first();
-
-					// 	if ($firstFocusableElement.length) {
-					// 		this.slideTo(this.activeIndex, 0, false); 
-					// 		$firstFocusableElement.focus();
-					// 	}
-					// }
-					init: function (swiperInstance) {
-						slideFocus(swiperInstance);
-					},
-					// slideChange: function(swiperInstance){
-					// 	swiperInstance.slideTo(swiperInstance.activeIndex, 0, false);
-					// 	// $('.popup_head').text(swiperInstance.activeIndex);
-					// },
-				}
-			});
-		});
-
-		function slideFocus(swiperInstance) {
-			$(swiperInstance.slides).each(function(idx) {
-				$(this).on('click', function() {
-					swiperInstance.slideTo(idx);
-					$('.popup_head').text(idx);
-				});
-			// 	$(this).on('focusin', function () {
-			// 		if (swiperInstance.activeIndex !== idx) {
-			// 			swiperInstance.slideTo(idx, 300);
-			// 		}
-					
-			// 		console.log(document.activeElement, '순서 : ', idx);
-			// 		console.log('현재 active slide : ', swiperInstance.activeIndex);
-			// 	});
-			});
-		}
-	});
-</script>
- 
 {{/ layout/default }}
