@@ -322,6 +322,18 @@
 		}
 
 		.gdi_content {
+
+			.badge_wrap.hasText {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				.desc {
+					color: var(--color-text-subtle);
+					font-size: var(--font-size-body-small);
+				}
+			}
+
 			.head_text {
 				padding-top: 8px;
 				font-size: var(--font-size-body-medium);
@@ -361,24 +373,66 @@
 						background-repeat: no-repeat;
 						background-position: right center;
 						background-size: 40px auto;
+
+						
 						.txt {
 							.question_mark_btn {
 								vertical-align: top;
 							}
 						}
+
+						.add_text_btn {						
+							.txt{
+								position: relative;
+								font-size: var(--font-size-body-small);
+
+								&::after {
+									display: inline-block;
+									content: '';
+									position:absolute;
+									width: 16px;
+									height: 16px;
+									background: url(../images/icon/arrowRight_ty3.svg) no-repeat right center / 16px auto;
+									bottom: 0;
+									transform: translateY(-4px);
+								}						
+							}
+
+							&:hover {
+								background-color: #ffffff;
+							}
+						}
+						
+
+
 					}
 					&.ico_add {						
 						.item {
 							padding-right: 50px;
 						}
-						&.ico_add_ty1 {
+						&.ico_add_ty1 {//자동차
 							.item {
 								background-image: url(../images/content/guarantee/icon_gil_01.svg);
 							}
 						}
-						&.ico_add_ty2 {
+						&.ico_add_ty2 {//현대카드
 							.item {
 								background-image: url(../images/content/guarantee/icon_gil_02.svg);
+							}
+						}
+						&.ico_add_ty3 {//펫-강아지
+							.item {
+								background-image: url(../images/content/guarantee/icon_gil_03.svg);
+							}
+						}
+						&.ico_add_ty4 {//펫-고양이
+							.item {
+								background-image: url(../images/content/guarantee/icon_gil_04.svg);
+							}
+						}
+						&.ico_add_ty5 {//여행
+							.item {
+								background-image: url(../images/content/guarantee/icon_gil_05.svg);
 							}
 						}
 					}
@@ -392,8 +446,18 @@
 		margin-top: 24px;
 		display: flex;
 		justify-content: center;
+		align-items:center;
+		width: fit-content;
+		margin-left: auto;
+		margin-right: auto;
+		gap: var(--gap-5);
+		
+		.item_wrap {
+			width: fit-content;
+		}
 
 		.i_data {
+			width: fit-content;
 			position: relative;
 			padding-left: 8px;
 			padding-top: 2px;
@@ -413,17 +477,16 @@
 				border-radius: 50%;
 			}
 
-			+ .i_data {
-				margin-left: 12px;
+			& + .i_data { 
+				margin-left: var(--gap-4)
 			}
-
 		}
 
 		.modify_ba {
 			flex: none;
-			margin-left: 18px;
 		}
-	}
+	}	
+
 
 	.btn_area {
 		&.gd_middle_ba {
@@ -437,6 +500,41 @@
 	.acc_group {
 		& + .btn_area {
 			margin-top: 52px;
+		}
+	}
+
+}
+
+.guarantee_detail.ty2 {
+	.guarantee_detail_mini {
+			margin-top:16px;
+			width: 100%;
+			
+			.item_wrap {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(2, auto) ;
+				gap: 4px var(--gap-4);
+
+				.i_data {
+					min-width: 110px;
+				}
+
+				.i_data + .i_data { 
+					margin:0;
+				}
+	}
+
+	.modify_ba {
+		justify-self: flex-end;
+	}
+}
+
+	.btn_area {
+		gap: 12px;
+
+		&.ty2 + .acc_group{
+			margin-top:32px;	
 		}
 	}
 }
