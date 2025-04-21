@@ -8,16 +8,20 @@
 {{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="만기알람을 신청하세요"}}
 <div class="popup_cont">
 	<div class="popup_content">
-		<p class="text_sub">
-			<strong>갱신 가능한 일자</strong>에 등록한 휴대폰으로 <strong>관련 안내</strong>를 받을 수 있어요
-		</p>
+		<!-- s: 25-04-21 수정 -->
+		<div class="popup_content_top">
+			<p class="text_sub">
+				<strong>갱신 가능한 일자</strong>에 등록한 휴대폰으로 <strong>관련 안내</strong>를 받을 수 있어요
+			</p>
+		</div>
 	
-		<div class="info_box">
+		<div class="info_gray">
 			<div class="car_alarm_box">
 				<div class="info">111너**11</div> 
 				<div class="date">갱신보험료 계산 가능 예상일자 : 2025.12.31</div>
 			</div>
 		</div>
+		<!-- e: 25-04-21 수정 -->
 	 
 		<div class="form_group_wrap">
 			<div class="form_line">
@@ -25,28 +29,6 @@
 				<!-- s: 25-04-14 수정 -->
 				{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
 				<!-- e: 25-04-14 수정 -->
-			</div>
-		</div>
-
-		<div class="chk_group_wrap">
-			<div class="chk_group_top">
-				{{> cp/checkbox id="chk_group03" chk_class="chk_point_all" labelname="아래 항목 모두 동의합니다." ag_top=true}}
-			</div>
-			<div class="chk_group_cont">
-				<ul class="chk_group_cont_list chk_list">
-					<li>
-						{{#> cp/checkbox id="chk_group0301" chk_class="chk_point" labelname="휴대폰 인증을 위한 개인(신용)정보 처리 상세 동의" ag=true exp=true}}
-						<ul class="space_list_ty1 chk_list">
-							<li>
-								{{> cp/checkbox id="chk_group030101" chk_class="chk_point_sub" label_class="chk_label_ty3" labelname="개인(신용)정보의 수집&middot;이용에 관한 사항" exp=false ag=true}}
-							</li>
-							<li>
-								{{> cp/checkbox id="chk_group030102" chk_class="chk_point_sub" label_class="chk_label_ty3" labelname="개인(신용)정보의 제공에 관한 사항" exp=false ag=true}}
-							</li>
-						</ul>
-						{{/ cp/checkbox}}
-					</li>
-				</ul>
 			</div>
 		</div>
 	</div>

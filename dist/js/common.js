@@ -548,32 +548,13 @@ $(function () {
 	});
 	// 보험 플랜 - 진입화면 라디오 선택 이벤트
 
-	// 보험 플랜 - 우측 이동
-	$(".move_detail").on("click", function () {
-		const selectedClass = $('.guarantee_choice_wrap .guarantee_item input[type="radio"]:checked').closest(".guarantee_item").data("sendclass");
-		console.log("선택된 항목의 data-sendclass:", selectedClass);
-		const targetSlide = $('.splide__slide[data-getclass="' + selectedClass + '"]');
-
-		if (targetSlide.length) {
-			const targetIndex = targetSlide.index(); // 슬라이드의 인덱스를 구합니다.
-			// console.log('목표 슬라이드 인덱스:', targetIndex);
-			$(".guarantee_container").addClass("active");
-
-			setTimeout(function () {
-				$(".splide__list").find(".splide__slide").eq(targetIndex).addClass("effect").find('input[type="radio"]').prop("checked", true);
-				$(".splide__list").find(".splide__slide").eq(targetIndex).focus();
-				$(".container").scrollTop(0);
-			}, 500);
-		}
-	});
-	// 보험 플랜 - 우측 이동
-
 	// 간편정보 노출 방식
 	$("#container").on("scroll", function () {
-		const $target = $(".simple_info_wrap");
+		const $headHeight = $("#header").outerHeight();
 
-		if ($target.length) {
-			const targetOffsetTop = $target.position().top;
+		if ($(".simple_info_wrap").length) {
+			const $target = $(".simple_info_wrap");
+			const targetOffsetTop = $target.offset().top;
 			const $targetChild = $(".simple_info_wrap").children(".simple_info_item");
 			const scrollTop = $("#container").scrollTop();
 
@@ -584,11 +565,11 @@ $(function () {
 			console.log("target 위치 : " + targetOffsetTop);
 			console.log("컨텐츠 스크롤 위치 : " + scrollTop);
 
-			if (targetOffsetTop <= scrollTop && !$targetChild.hasClass("active")) {
+			if (targetOffsetTop <= $headHeight + 30 && !$targetChild.hasClass("active")) {
 				// console.log('펴기');
 				$targetChild.addClass("active");
 				$targetChild.stop().slideDown(300);
-			} else if (scrollTop < targetOffsetTop && $targetChild.hasClass("active")) {
+			} else if (targetOffsetTop > $headHeight + 30 && $targetChild.hasClass("active")) {
 				// console.log('접기');
 				$target.removeAttr("style").removeClass("active");
 				$targetChild.removeClass("active");

@@ -551,29 +551,7 @@ $(function(){
 	});
 	// 보험 플랜 - 진입화면 라디오 선택 이벤트
 	
-	// 보험 플랜 - 우측 이동
-	$('.move_detail').on('click', function () {
-		const selectedClass = $('.guarantee_choice_wrap .guarantee_item input[type="radio"]:checked').closest('.guarantee_item').data('sendclass');
-		console.log('선택된 항목의 data-sendclass:', selectedClass);
-		const targetSlide = $('.splide__slide[data-getclass="' + selectedClass + '"]');
-
-		if (targetSlide.length) {
-			const targetIndex = targetSlide.index();  // 슬라이드의 인덱스를 구합니다.
-			// console.log('목표 슬라이드 인덱스:', targetIndex);
-			$('.guarantee_container').addClass('active');
-
-			setTimeout(function() {
-				$('.splide__list').find('.splide__slide').eq(targetIndex).addClass('effect').find('input[type="radio"]').prop('checked', true);;
-				$('.splide__list').find('.splide__slide').eq(targetIndex).focus();
-				$('.container').scrollTop(0);
-				setTimeout(function(){
-					$('.guarantee_container').css('position', 'static');
-					$('.guarantee_container_right').css('position', 'static');
-				}, 100)
-			}, 500);
-		}
-	});
-	// 보험 플랜 - 우측 이동
+	
 
 
 
