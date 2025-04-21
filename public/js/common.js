@@ -564,7 +564,7 @@ $(function(){
 
 			setTimeout(function() {
 				$('.splide__list').find('.splide__slide').eq(targetIndex).addClass('effect').find('input[type="radio"]').prop('checked', true);;
-				$('.splide__list').find('.splide__slide').eq(targetIndex).focus();
+				$('.splide__list').find('.splide__slide').eq(targetIndex).attr('tabindex', '0').focus();
 				$('.container').scrollTop(0);
 				setTimeout(function(){
 					$('.guarantee_container').css('position', 'static');

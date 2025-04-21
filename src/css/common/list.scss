@@ -209,22 +209,21 @@
 		}
 
 		// 검색 결과에 따른 추천 리스트 표출
-		& ~ .suggestion_list_wrap {
-			display: block;
-			
-		}
-		&.search_on ~ .suggestion_list_wrap {
-			display: none;
-		}
+		// & ~ .suggestion_list_wrap {
+		// 	display: block;			
+		// }
+		// &.search_on ~ .suggestion_list_wrap {
+		// 	display: none;
+		// }
 
 
 		// 검색 결과에 따른 결과 리스트 표출
-		& ~ .search_reult_list_container {
-			display: none;
-		}
-		&.search_on ~ .search_reult_list_container {
-			display: block;
-		}
+		// & ~ .search_reult_list_container {
+		// 	display: none;
+		// }
+		// &.search_on ~ .search_reult_list_container {
+		// 	display: block;
+		// }
 
 		//초성 검색 버튼 리스트
 		.search_letter_btn_list{		
@@ -250,38 +249,19 @@
 	flex:1;
 	padding: 0;
 	overflow-y: auto;
-	// display: none;
-	
-	// &.active {
-	// 	display: block;
-	// }
+	border-top: 1px solid var(--color-divider-gray-light);
+	border-bottom: 1px solid var(--color-divider-gray-light);
 
-	.search_result_count {
-		// margin-top: 16px;
-		color: var(--color-text-subtle);
-		font-size: var(--font-size-body-small);
-	}
-
-	.search_result_count + .search_reult_list {
-		margin-top: 12px;
-	}
-
-	ul.search_reult_list{
-
-		.search_result_count + & {
-			margin-top: 12px;
-		}
+	ul.search_reult_list {
 
 		li {
-			list-style-type:none;
-
 			a {
 				display: block;
 				position: relative;
 				padding: 24px 36px 24px 0;
 
-				border-top: 1px solid var(--color-divider-gray-light);
-				border-bottom: 1px solid var(--color-divider-gray-light);
+				// border-top: 1px solid var(--color-divider-gray-light);
+				// border-bottom: 1px solid var(--color-divider-gray-light);
 
 				color: var(--color-text-basic);
 				font-size: var(--font-size-body-medium);
@@ -314,24 +294,40 @@
 			}
 		}	
 	  
-		  > li {
-			  & ~ li {
+		> li {
+			& ~ li {
 				a {
-					border-top: none;
+					// border-top: none;
+					border-top: 1px solid var(--color-divider-gray-light);
 				}				  
-			  }
-		  }
+			}
+		}
 
-		  li.add_item a { 
+		li.add_item a { 
 			flex-direction: row;
 			justify-content: space-between;
 
-			&::after { content: none; }
-		  }
-
-	  }
+			&::after { 
+				content: none; 
+			}
+		}
+	}
 }
 
+
+/* 검색결과 표기 */
+.search_result_count {
+	// margin-top: 16px;
+	color: var(--color-text-subtle);
+	font-size: var(--font-size-body-small);
+	.point {
+		color: var(--color-text-primary-bold);
+	}
+	+ .sr_list {
+		margin-top: 12px;
+	}
+}
+/* 검색결과 표기 */
 
 
 /* 로고 리스트 관련 스타일*/
