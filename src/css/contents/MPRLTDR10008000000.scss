@@ -112,15 +112,20 @@
 
 
 // 간편결제 정보
-.tab_wrap_list_ty2 {
+.radio_group_wrap {
 	[class*=icon_pay_ty]{
 		height: 56px;
-		padding: 16px;
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: auto 22px;
-		font-size: 0;
-		line-height: 0;
+
+		.label_cont {
+			overflow: hidden;
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			clip: rect(0, 0, 0, 0);
+		}
 	}
 
 	.icon_pay_ty1 {
@@ -131,11 +136,5 @@
 	}
 	.icon_pay_ty3 {
 		background-image: url(../images/logo/pay_toss.svg);
-	}
-
-	& ~ .tab_wrap_content {
-		.acd_item_ty4 {
-			margin-top: 32px;
-		}
 	}
 }

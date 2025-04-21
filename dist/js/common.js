@@ -571,22 +571,25 @@ $(function () {
 	// 간편정보 노출 방식
 	$("#container").on("scroll", function () {
 		const $target = $(".simple_info_wrap");
-		const targetOffsetTop = $target.position().top;
-		const $targetChild = $(".simple_info_wrap").children(".simple_info_item");
-		const scrollTop = $("#container").scrollTop();
 
-		// console.log('target 위치 : ' + targetOffsetTop);
-		// console.log('컨텐츠 스크롤 위치 : ' + scrollTop);
+		if ($target.length) {
+			const targetOffsetTop = $target.position().top;
+			const $targetChild = $(".simple_info_wrap").children(".simple_info_item");
+			const scrollTop = $("#container").scrollTop();
 
-		if (targetOffsetTop - 50 <= scrollTop && !$targetChild.hasClass("active")) {
-			// console.log('펴기');
-			$targetChild.addClass("active");
-			$targetChild.stop().slideDown(300);
-		} else if (scrollTop < targetOffsetTop - 51 && $targetChild.hasClass("active")) {
-			// console.log('접기');
-			$target.removeAttr("style").removeClass("active");
-			$targetChild.removeClass("active");
-			$targetChild.stop().slideUp(300);
+			// console.log('target 위치 : ' + targetOffsetTop);
+			// console.log('컨텐츠 스크롤 위치 : ' + scrollTop);
+
+			if (targetOffsetTop - 50 <= scrollTop && !$targetChild.hasClass("active")) {
+				// console.log('펴기');
+				$targetChild.addClass("active");
+				$targetChild.stop().slideDown(300);
+			} else if (scrollTop < targetOffsetTop - 51 && $targetChild.hasClass("active")) {
+				// console.log('접기');
+				$target.removeAttr("style").removeClass("active");
+				$targetChild.removeClass("active");
+				$targetChild.stop().slideUp(300);
+			}
 		}
 	});
 	// 간편정보 노출 방식
