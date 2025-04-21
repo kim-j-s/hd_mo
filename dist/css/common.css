@@ -78,6 +78,7 @@ strong {
 	height: 100%;
 }
 .wrap .container {
+	position: relative;
 	overflow-y: auto;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -4839,7 +4840,6 @@ strong {
 	padding: 1.6rem 4.4rem 1.6rem 1.6rem;
 	font-size: var(--font-size-label-large);
 	color: var(--color-text-subtle);
-	line-height: 2.4rem;
 	border-radius: var(--radius-medium3);
 	background: url(../images/icon/arrowDown_ty3.svg) no-repeat right 1.6rem center/2rem auto;
 }
@@ -4876,6 +4876,20 @@ strong {
 }
 .select_item.select_item_case01:focus .si_item {
 	color: var(--color-text-basic);
+}
+.select_item.select_item_case01.select_item_case01_sm {
+	min-height: 1.8rem;
+}
+.select_item.select_item_case01.select_item_case01_sm .si_item {
+	padding: 1.1rem 4.4rem 1.1rem 1.6rem;
+	font-size: var(--font-size-label-small);
+	border-radius: var(--radius-medium1);
+}
+.select_item.select_item_case01.select_item_case01_sm .si_item:empty::before {
+	min-height: 1.8rem;
+}
+.select_item.select_item_case01.select_item_case01_sm .si_item::after {
+	border-radius: var(--radius-medium1);
 }
 .select_item:focus {
 	outline: none;
