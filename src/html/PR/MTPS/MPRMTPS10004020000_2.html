@@ -1,0 +1,93 @@
+<!---
+화면번호 : MPRMTPS10004020000_1
+경로 : 3.자동차 상세정보 > 3-3. 자동차 추가 확인사항
+-->
+{{#> layout/default page-title="자동차 상세정보 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="자동차보험" h-back=true }}
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
+				<h2 class="title_h2">
+					<strong>차량관련 확인사항</strong> 중
+					<strong>해당하는 항목</strong>이 있으면 체크해 주세요
+				</h2>
+			</div>
+			<!-- e: content_top -->
+			 <div class="btn_area basic">
+				<!--TO-DO : (25-04-15 위서진) 추후 용어사전 팝업이 완성되면, popup id를 popup props에 적용해야함-->
+				{{> cp/button type="3" size="5" b-text="어려운 용어 설명을 보시려면" popup="pop_01" btn-title="도움말 열기" rightIcon="arrowRightSvg" }}
+			 </div>
+
+			<ul class="form_list">
+				<li>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">차량이 특정용도 차량(이동진료차 등) 입니까?</div>
+							<div class="radio_group_wrap" role="radiogroup">
+								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_05" name="radio_g3" labelname="예"}}
+								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_06" name="radio_g3" labelname="아니오" checked=true}}
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">차량이 수반차(자체동력이 없어 견인되는 형태로 이동하는 차량) 입니까?</div>
+							<div class="radio_group_wrap" role="radiogroup">
+								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_05" name="radio_g3" labelname="예"}}
+								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_06" name="radio_g3" labelname="아니오" checked=true}}
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+
+			<div class="divider_ty1"></div>
+
+			<ul class="form_list">
+				<li>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">가입 전 알릴 사항에 대한 동의</div>
+							<div class="checkbox_group_wrap column">
+								{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-1" label_class="chk_label_ty3" labelname="계약 전 알려야 할 사항(구조 및 운행용도) 선택은 보험료 산출과 연계된 고지사항으로, 차량사진이 포함된 구조 및 운행 용도를 보시고 정확하게 선택하여 주기시 바랍니다. <strong class='primary_bold'>차후 잘못된 선택으로 인한 사고 발생 시 보상면책, 구상 등의 문제가 발생할 수 있습니다.</strong>" }}
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">자동차의 구조 및 용도를 선택해 주세요.<br>(중복선택 가능)</div>
+							<div class="checkbox_group_wrap column">
+								{{> cp/checkbox id="checkbox03-1" labelname="해당없음" }}
+								{{> cp/checkbox id="checkbox03-2" labelname="탑차/활어차" ag_more=true }}
+								{{> cp/checkbox id="checkbox03-3" labelname="기중기, 붐, 집게 장착차량" ag_more=true }}
+								{{> cp/checkbox id="checkbox03-4" labelname="보안/경비업체 긴급출동 차량" }}
+								{{> cp/checkbox id="checkbox03-5" labelname="경찰청/소방본부 소유차량(앰블런스 제외)" }}
+								{{> cp/checkbox id="checkbox03-6" labelname="청소차량" ag_more=true }}
+								{{> cp/checkbox id="checkbox03-7" labelname="위험물 적재가 가능한 차량" }}
+								{{> cp/checkbox id="checkbox03-8" labelname="캠핑트레일러, 보트 등을 견인하는 차량" }}
+								{{> cp/checkbox id="checkbox03-9" labelname="운전면허교습, 기능/주행시험 사용 차량" }}
+								{{> cp/checkbox id="checkbox03-10" labelname="자동차 판매를 위한 고객 시승용 차량" }}
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">{{> cp/button type="1" size="1" b-text="다음으로"}}</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
+</div>
+
+<!-- s: popup area -->
+<!-- e: popup area -->
+{{/ layout/default }}

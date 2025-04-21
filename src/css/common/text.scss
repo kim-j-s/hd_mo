@@ -27,18 +27,18 @@
 
 .title_h1 {
 	font-size: var(--font-size-heading-xlarge);
-	color: var(--color-text-subtle);
+	color: var(--color-text-bolder);
 }
 
 .title_h2 {
 	font-weight: 400;
 	font-size: var(--font-size-heading-large);
-	color: var(--color-text-basic);
+	color: var(--color-text-bolder);
 }
 
 .title_h3 {
 	font-size: var(--font-size-heading-medium);
-	color: var(--color-text-subtle);
+	color: var(--color-text-bolder   );
 
 	& + .info_box,
 	& + .info_gray.ty2 {
@@ -52,21 +52,29 @@
 
 .title_h4 {
 	font-size: var(--font-size-heading-small);
-	color: var(--color-text-subtle);
+	color: var(--color-text-bolder);
 }
 
 .title_h5 {
 	// font-weight: 700;
 	font-size: var(--font-size-heading-xsmall);
-	color: var(--color-text-subtle);
-	+ .list_depth {
+
+	& ~ & {
+		margin-top: 24px;
+	}
+
+	& + .list_depth {
 		margin-top: 16px;
+	}
+
+	& + .text_sub,
+	& + .view_img_list {
+		margin-top: 12px;
 	}
 }
 
 .title_h6 {
 	// font-weight: 700;
-	color: var(--color-text-subtle);
 	font-size: var(--font-size-heading-xxsmall);
 }
 
@@ -105,7 +113,8 @@
 		margin-top: 4px;
 	}
 
-	& + .circle_list {
+	& + .circle_list,
+	& + .view_img_list {
 		margin-top: 16px;
 	}
 }

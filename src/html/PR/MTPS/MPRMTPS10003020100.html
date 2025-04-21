@@ -7,38 +7,61 @@
 <!-- s: Full 팝업 -->
 {{#> popup/popup_full popup-id="pop_type01" popup-active=true }}
 <div class="popup_cont">
+	<!-- s: 25-04-22 수정 -->
 	<div class="popup_content">
 		<!-- s: popup_content_top -->
 		<div class="popup_content_top">
 			<h2 class="title_h2">
-				전계약 중 자동차 주행거리에 따른 <strong>보험료 환급</strong>을 확인해 보세요
+				전계약 중 마일리지 특약 주행거리 등록 후 <strong>정산환급금을 확인</strong>해보세요
 			</h2>
 		</div>
 		<!-- e: popup_content_top -->
-	
-		<p class="text_sub">
-			연간주행거리가 15,000km 이하인 경우 주행거리에 따라 보험료 환급이 가능해요.
-		</p>
-	
-		<div class="info_box">
-			휴대폰 문자나 알림톡으로 사진을 등록 할 수 있는 URL을 보내드려요.
+
+		<div class="info_gray">
+			<ul class="list_depth">
+				<li>
+					<strong>마일리지 정산 환급금이 발생한 경우 갱신에서 차감하여 계약을 체결</strong> 하실 수 있습니다.
+					<ul>
+						<li>예) 갱신 보험료 70만원, 마일리지 환급금 20만원 차감 이 용시, 신용카드로 50만원(70만원~20만원) 결제하시면 갱신계약 체결완료!</li>
+					</ul>
+				</li>
+			</ul>
 		</div>
-	
-		<div class="form_group_wrap">
-			<div class="form_line">
-				<div class="label_tit">휴대폰번호</div>
-				<!-- s: 25-04-14 수정 -->
-				{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
-				<!-- e: 25-04-14 수정 -->
-				<div class="btn_area">
-					{{> cp/button type="2" size="2" b-text="문자받기"}}
+		
+		<div class="tab_wrap">
+			<div class="tab_wrap_list_ty1" role="tablist">
+				{{>cp/tab_btn tb-text="문자로 링크 받기" tb-id="01" tb-active=true}}
+				{{>cp/tab_btn tb-text="직접 사진 등록" tb-id="02"}}
+			</div>
+			<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">휴대폰번호</div>
+						<!-- s: 25-04-14 수정 -->
+						{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+						<!-- e: 25-04-14 수정 -->
+						<ul class="list_ty2">
+							<li>연간주행거리가 15,000km 이하인 경우에 가능해요</li>
+							<li>휴대폰 문자나 알림톡으로 사진을 등록할 수 있는 URL을 보내드려요.</li>
+						</ul>
+					</div>
 				</div>
 			</div>
+			<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
+				tab inner 2
+			</div>
+		</div>
+
+		<div class="info_gray">
+			<p class="info_text">
+				마일리지 특약 사진 등록없이도 갱신보험료 산출 및 계약체결이 가능합니다.<br>
+				(전계약 마일리지 특약 정산은 만기일 +30일까지 진행하실 수 있습니다.)
+			</p>
 		</div>
 	</div>
 
 	<!-- s: 꼭 알아두세요 -->
-	{{#> cp/notice }}
+	{{#> cp/notice dp-active=true }}
 	<ul class="list_ty1">
 		<li>
 			마일리지 환급금으로 갱신보험료 결제 시 차감하여 계약 체결할 수 있습니다.<br>
@@ -55,6 +78,7 @@
 	</ul>
 	{{/ cp/notice }}
 	<!-- e: 꼭 알아두세요 -->
+	<!-- e: 25-04-22 수정 -->
 </div>
  
 <div class="popup_bottom">
