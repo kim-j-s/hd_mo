@@ -780,9 +780,7 @@
 					accessibility: true,
 					arrows: false, // 기본 화살표 비활성화
 					focusableNodes: "a, button, input, textarea, select, li",
-					// });
 				}).mount();
-				// splide.mount();
 
 				// 슬라이드 이동 후: is-active 슬라이드의 radio 체크 및 trigger
 				splide.on("moved", function () {
@@ -792,10 +790,6 @@
 					if ($radio.length) {
 						$radio.prop("checked", true).trigger("change");
 					}
-
-					document.querySelectorAll("#splide_wrap_ty1 .splide__slide").forEach(slide => {
-						slide.removeAttribute("aria-hidden");
-					});
 
 					// 버튼 상태 갱신
 					updateArrowState();
@@ -811,8 +805,24 @@
 				});
 
 				// 커스텀 좌우 버튼 클릭 시 이동
-				$("#splide_wrap_ty1 .swiper_button_left").on("click", () => splide.go("<"));
-				$("#splide_wrap_ty1 .swiper_button_right").on("click", () => splide.go(">"));
+				$("#splide_wrap_ty1 .swiper_button_left").on("click", () => {
+					splide.go("<");
+					setTimeout(() => {
+						const $slides = $(".splide__slide");
+						$slides.removeAttr("tabindex");
+						const $target = $(".splide__slide.is-active");
+						$target.attr("tabindex", "0").focus();
+					}, 100);
+				});
+				$("#splide_wrap_ty1 .swiper_button_right").on("click", () => {
+					splide.go(">");
+					setTimeout(() => {
+						const $slides = $(".splide__slide");
+						$slides.removeAttr("tabindex");
+						const $target = $(".splide__slide.is-active");
+						$target.attr("tabindex", "0").focus();
+					}, 100);
+				});
 
 				// 버튼 상태 업데이트 함수
 				function updateArrowState() {
