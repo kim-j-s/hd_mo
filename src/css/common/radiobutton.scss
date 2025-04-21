@@ -13,7 +13,6 @@
 				&:before {
 					content: none;
 				}
-
 				&:after {
 					content:'';
 					position: absolute;
@@ -22,8 +21,8 @@
 					display: block;
 					width: 100%;
 					height: 100%;
-					border: 1px solid #E1E3EA;
-					border-radius: 12px;
+					border: 1px solid var(--color-border-gray-light);
+					border-radius: var(--radius-medium1);
 					transition: border-color 0.3s;
 				}
 			}
@@ -31,28 +30,29 @@
 			&:checked {
 				& + label {
 					&:after {
-						border:2px solid #F8633C;
-					}
-				}
-				&:disabled {
-					& + label {
-						background-color: #fafafa;
+						border:2px solid var(--color-border-primary);
 					}
 				}
 			}
 			
 			&:disabled {
 				& + label {
-					background-color: #fafafa;
+					color: var(--color-text-disabled-on);
+					background-color: var(--color-action-disabled);
+					&:after {
+						border: 1px dashed var(--color-border-disabled);
+					}
 				}
-
 				&:checked {
 					& + label {
+						color: var(--color-text-disabled-on);
+						background-color: var(--color-action-disabled);
 						&:after {
-							border-color: #E1E3EA;
+							border: 1px solid var(--color-action-disabled);
 						}
 					}
 				}
+
 			}
 		}
 	}
