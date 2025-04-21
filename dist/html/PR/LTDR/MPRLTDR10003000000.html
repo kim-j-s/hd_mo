@@ -774,25 +774,6 @@
 
 		<script>
 			$(function () {
-				// splide 설정
-				// var splide = new Splide('.splide', {
-				// 	// padding: '24px',
-				// 	accessibility: false,
-				// 	arrows: false,
-				// });
-				// splide.mount();
-
-				// splide.on('moved', function () {
-				// 	const $activeSlide = $('.splide__slide.is-active');
-				// 	const $radio = $activeSlide.find('input[type="radio"]');
-				// 	if ($radio.length) {
-				// 		$radio.prop('checked', true).trigger('change');
-				// 	}
-				// });
-				// $('#splide_prev').on('click', () => splide.go('<'));
-				// $('#splide_next').on('click', () => splide.go('>'));
-				// splide 설정
-
 				// Splide 설정
 				var splide = new Splide("#splide_wrap_ty1 .splide", {
 					speed: 500,
@@ -811,6 +792,10 @@
 					if ($radio.length) {
 						$radio.prop("checked", true).trigger("change");
 					}
+
+					document.querySelectorAll("#splide_wrap_ty1 .splide__slide").forEach(slide => {
+						slide.removeAttribute("aria-hidden");
+					});
 
 					// 버튼 상태 갱신
 					updateArrowState();
