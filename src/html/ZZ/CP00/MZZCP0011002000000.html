@@ -18,7 +18,6 @@
 		<!-- s: tab01. 도로명 찾기 Tab 내용 -->
 		<div class="tab_wrap_content has_scroll active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
 
-			<!-- 검색어를 submit 했을 때 search_on클래스 추가, 검색어 클리어시에 search_on클래스 제거 -->
 			<div class="search_inp_box">
 				{{> cp/text inp-search=true placeholder="입력해 주세요." inp-title="검색어 입력" }}		
 				<p class="info_message">
@@ -27,21 +26,21 @@
 			</div>
 
 			<!-- s: 도로명 검색 결과 리스트 -->
+			<div class="title_h4 search_head_tit">
+				<strong>도로명</strong>
+				{{> cp/linkButton bl_class="prev_btn" bl_text="이전" bl_title="이전 선택지로 이동" }}
+			</div>
 			<div class="search_reult_list_container">
-				<div class="title_h4">
-					<strong>도로명</strong>
-					{{> cp/linkButton bl_class="prev_btn" bl_text="이전" bl_title="이전 선택지로 이동" }}
-				</div>
 				<ul class="search_reult_list">
 					<li class="search_reult_list_item"><a href="#"><span class="item_text">세종대로</span></a></li>
 					<li class="search_reult_list_item"><a href="#"><span class="item_text">세종대로21길</span></a></li>
 					<li class="search_reult_list_item"><a href="#"><span class="item_text">떡<i>제조</i>원</span></a></li>
 					<li class="search_reult_list_item"><a href="#"><span class="item_text">세종대로23길</a></li>
 				</ul>
-                <div class="no_list_area">
-                    {{> cp/icon iconClass="exclamationSvg"}}
-                    <p>내역이 없어요</p>
-                </div>
+				<div class="no_list_area">
+					{{> cp/icon iconClass="exclamationSvg"}}
+					<p>내역이 없어요</p>
+				</div>
 			</div>
 			<!-- e: 도로명 검색 결과 리스트 -->
 		</div>
@@ -99,10 +98,10 @@
 					<li class="search_reult_list_item"><a href="#"><span class="item_text">12345</span><span class="item_text">서울 종로구 당주동</span></a></li>
 					<li class="search_reult_list_item"><a href="#"><span class="item_text">12345</span><span class="item_text">서울 종로구 당주동</span></a></li>
 				</ul>
-                <div class="no_list_area">
-                    {{> cp/icon iconClass="exclamationSvg"}}
-                    <p>내역이 없어요</p>
-                </div>
+				<div class="no_list_area">
+					{{> cp/icon iconClass="exclamationSvg"}}
+					<p>내역이 없어요</p>
+				</div>
 			</div>
 			<!-- e: 도로명 검색 결과 리스트 -->
 			
