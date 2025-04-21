@@ -1,4 +1,7 @@
 // 운전자보험 - 보험료 결제
+.insurance_payment_area {
+	position: relative;
+}
 
 .bann_wrap {
 	display: flex;
@@ -59,58 +62,10 @@
 	}	
 }
 
-// 결제금액 고정 영역
-.offset_area {
-	opacity: 0;
-	height: 0;
-
-	& + .tab_wrap {
-		margin-top: 24px;
-	}
-
-	&.fixed {
-		position: fixed;
-		// top: -24px;
-		// left: -24px;
-		top: 55px;
-		left: 0;
-		z-index: 100;
-		opacity: 1;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 8px;
-		width: 100%;
-		height: auto;
-		// width: calc(100% + 48px);
-		// margin: 0 -24px;
-		padding: 16px 24px;
-		background-color: #fff;
-		border-radius: 0px 0px var(--padding-6, 16px) var(--padding-6, 16px);
-		box-shadow: 0px 7px 8px 0px var(--color-alpha-shadow3, rgba(0, 0, 0, 0.12));
-		transition: opacity .4s ease-in-out;
-
-		.title {
-			font-size: var(--font-size-body-small);
-			line-height: 21px;
-		}
-		.cont {
-			font-size: var(--font-size-body-medium);
-			line-height: 24px;
-			font-weight: 700;
-		}
-	
-		.total {
-			font-size: var(--font-size-body-medium);
-			line-height: 24px;
-		}
-	}
-}
-
 
 // 간편결제 정보
 .radio_group_wrap {
-	[class*=icon_pay_ty]{
+	[class*=icon_]{
 		height: 56px;
 		background-repeat: no-repeat;
 		background-position: center;

@@ -11,9 +11,9 @@
 					<strong>가입이 완료</strong>돼요
 				</h2>
 			</div>
-			<!-- e: content_top -->	
-			 
-			<div class="bg_area ty2 ">
+			<!-- e: content_top -->
+
+			<div class="bg_area ty2">
 				<div class="card_item_wrap">
 					<div class="card_item">
 						<div class="item_inner">
@@ -22,7 +22,7 @@
 									<li>
 										<div class="title">결제하실 금액</div>
 										<div class="cont">
-											<span class="total">23,250원</span>
+											<span class="total">24,900원</span>
 										</div>
 									</li>
 									<li class="result">
@@ -39,15 +39,21 @@
 					</div>
 				</div>
 			</div>
-			<!-- s: 결제하실 금액 고정영역 -->
-			 <div class="offset_area">
-				<div class="title">결제하실 금액</div>
-				<div class="cont">
-					<span class="total">23,250원</span>
-				</div>
-			 </div>
-			<!-- e: 결제하실 금액 고정영역 -->
 
+			<!-- s: 간편정보 -->
+			<div class="simple_info_wrap">
+				<div class="simple_info_item">
+					<ul class="sii_list">
+						<li>
+							<span class="sii_list_l">결제하실 금액</span>
+							<span class="sii_list_r">
+								<strong class="price">24,900원</strong>
+							</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- e: 간편정보 -->
 		
 			<div class="tab_wrap">
 				<div class="tab_wrap_list_ty1" role="tablist">
@@ -95,6 +101,7 @@
 								<li>계약자 명의의 국내발급 카드로만 결제가 가능합니다. (법인, 가족카드 불가)</li>
 							</ul>
 						</div>
+						<!-- s: 현대카드 선택 시, 노출 -->
 						<div class="form_line">
 							<div class="card_item_wrap">
 								<div class="card_item">
@@ -120,7 +127,10 @@
 								</div>
 							</div>
 						</div>
+						<!-- e: 현대카드 선택 시, 노출 -->
 					</div>
+
+					<!-- s: 카드 안내 배너 -->
 					<div class="bann_wrap bann_ty1">
 						<i class="logo_card_hundai"></i>
 						<div class="bann_cont">
@@ -131,6 +141,7 @@
 							</div>
 						</div>
 					</div>
+					<!-- e: 카드 안내 배너 -->
 					
 					<div class="divider_ty1"></div>
 					<h3 class="title_h4">2회차 이후 결제 정보 입력</h3>
@@ -361,30 +372,4 @@
 {{/ popup/popup_bottom}}
 <!-- e: 현대카드 결제 혜택 안내 팝업 -->
 <!-- e: popup area -->
-
-<script>
-	function offset_fixed() {
-		const $total_fixed = $('.offset_area');
-		const $total_top = $total_fixed.position().top;
-
-		$('#container').on('scroll', function(){
-			if($total_fixed.length){
-				const $contTop = $('#container').scrollTop();
-				const $newOffset = $total_top - 100;
-
-				// console.log('container' + $contTop, '/ element' + $newOffset);
-
-				if($contTop >= $newOffset){
-					$('.offset_area').addClass('fixed');
-				}else {
-					$('.offset_area').removeClass('fixed');
-				}
-			}
-		})
-	}
-
-	$(function(){
-		offset_fixed();
-	})
-</script>
 {{/ layout/default }}
