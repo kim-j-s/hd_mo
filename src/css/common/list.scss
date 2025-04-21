@@ -110,6 +110,35 @@
 	}
 }
 
+.list_ty4 {
+  @include list-style(
+    $li-padding: 0 0 0 8px,
+    $li-font-size: var(--font-size-body-small),
+    $li-color: var(--color-text-basic),
+  ) {
+    // ul.list-1에 대한 추가적인 스타일
+		// background-color: var(--color-primary);
+    > li {
+			&::before {
+				content: '';
+				position: absolute;
+				top: 8px;
+				left: 0;
+				width: 2px;
+				height: 2px;
+				border-radius: 50%;
+				background-color: #6D7882;
+			}
+    }
+  }
+
+	> li {
+		& ~ li {
+			margin-top: 12px;
+		}
+	}
+}
+
 
 /* 검색 리스트 관련 스타일*/
 
@@ -141,7 +170,11 @@
 		display:flex;
 		flex-direction:column;
 
-		.tab_wrap_list_ty2 { 
+		.tab_wrap_list_ty1 {
+			margin : 0 0 32px;
+		}
+
+		.tab_wrap_list_ty2 {
 			margin : 0 0 32px;
 		}
 
@@ -309,18 +342,23 @@
 	flex-wrap: wrap;
 
 	.item {
-		display: flex;
-		justify-content: start;
-		align-items: center;
-		gap: 12px;
-		// flex-grow: 1;
 		width: calc(50% - 12px);
 		height: 48px;
 		font-size: var(--font-size-body-medium);
 
 		user-select: none;
 		cursor: pointer;
+		background-color: #fff;
+
+		.text {
+			display: flex;
+			justify-content: start;
+			align-items: center;
+			gap: 12px;
+			position: relative;
+		}
 	}
+
 
 	.hd_icon {
 		width: 32px;
@@ -433,48 +471,62 @@
 		strong {
 			display: block;
 		}
-		.circle_list  {
+	}
+}
+
+
+.circle_list  {
+	margin-top: 12px;
+	counter-reset: circle 0;
+
+	& + .list_ty4 {
+		margin-top: 16px;
+	}
+	
+	& > li {
+		position: relative;
+		padding-left: 18px;
+		font-size: var(--font-size-body-small);
+
+		& ~ li {
 			margin-top: 12px;
-			counter-reset: circle 0;
+		}
+
+		strong {
+			margin-top: 4px;
+			font-size: var(--font-size-body-xsmall);
+			color: var(--color-text-subtle);
+			font-weight: 400;
+		}
+		&::before {
+			position: absolute;
+			top: 11px;
+			left: 0.4em;
+			transform: translateY(-50%);
+			counter-increment: circle 1;
+			content: counter(circle);
+			font-size: 0.65em;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			top: 11px;
+			left: 0;
+			transform: translateY(-50%);
+			display: inline-block;
+			border: 1px solid #333;
+			border-radius: 50%;
+			width: 0.9em;
+			height: 0.9em;
+		}
+		ol {
+			margin-top:8px;
+			counter-reset: number 0;
 			& > li {
-				font-size: var(--font-size-body-small);
-				strong {
-					margin-top: 4px;
-					font-size: var(--font-size-body-xsmall);
-					color: var(--color-text-subtle);
-					font-weight: 400;
-				}
-				&::before {
-					position: absolute;
-					top: 11px;
-					left: 0.4em;
-					transform: translateY(-50%);
-					counter-increment: circle 1;
-					content: counter(circle);
-					font-size: 0.65em;
-				}
-				&::after {
-					content: '';
-					position: absolute;
-					top: 11px;
-					left: 0;
-					transform: translateY(-50%);
-					display: inline-block;
-					border: 1px solid #333;
-					border-radius: 50%;
-					width: 0.9em;
-					height: 0.9em;
-				}
-				ol {
-					margin-top:8px;
-					counter-reset: number 0;
-					& > li {
-						font-size: var(--font-size-body-xsmall);
-						color: var(--color-text-information);
-						& + li {
-							margin-top: 8px;
-						}
-					}
+				font-size: var(--font-size-body-xsmall);
+				color: var(--color-text-information);
+				& + li {
+					margin-top: 8px;
 				}
 			}
 		}
