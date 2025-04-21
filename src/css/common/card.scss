@@ -41,9 +41,22 @@
 				.card_link,
 				.item_top {
 					& + .card_list_ty1 {
-						margin-top: 16px;
-						padding-top: 16px;
-						border-top: 1px solid #e1e3ea;
+						// margin-top: 16px;
+						// padding-top: 16px;
+						// border-top: 1px solid #e1e3ea;
+						> li {
+							&:first-child {
+								margin-top: 16px;
+								padding-top: 16px;
+								border-top: 1px solid #e1e3ea;
+								/* 스타일 수정 진행 중 */
+								/* 목록 상 결과값만 최상단에 존재하는 경우 */
+								&.result {
+									background-color: #ddd;
+								}
+								/* 스타일 수정 진행 중 */
+							}
+						}
 					}
 				}
 			}
@@ -79,8 +92,10 @@
 		.card_link {
 			.item_top {
 				.title_info {
-					padding-right: 24px;
-					background: url(../images/icon/arrowRight_ty3.svg) no-repeat right bottom / 24px auto;
+					.main_title {
+						padding-right: 30px;
+						background: url(../images/icon/arrowRight_ty3.svg) no-repeat right center / 20px auto;
+					}
 				}
 			}
 		}
@@ -145,9 +160,23 @@
 			}
 
 			& + .card_list_ty1 {
-				margin-top: 16px;
-				padding-top: 16px;
-				border-top: 1px solid #e1e3ea;
+				// margin-top: 16px;
+				// padding-top: 16px;
+				// border-top: 1px solid #e1e3ea;
+				> li {
+					&:first-child {
+						margin-top: 16px;
+						padding-top: 16px;
+						border-top: 1px solid #e1e3ea;
+						/* 스타일 수정 진행 중 */
+						/* 목록 상 결과값만 최상단에 존재하는 경우 */
+						&.result {
+							background-color: #ddd;
+						}
+						/* 스타일 수정 진행 중 */
+					}
+				}
+
 			}
 
 			.hd_btn {
@@ -229,14 +258,15 @@
 				}
 
 				&.result {
-					padding-top: 16px;
-					border-top: 1px solid #e1e3ea;
+					// padding-top: 16px;
+					// border-top: 1px solid #e1e3ea;
 					> * {
 						line-height: 24px;
 					}
 					.point {
-						font-size: 16px;
-						line-height: 24px;
+						// font-size: 16px;
+						// line-height: 24px;
+						font-size: var(--font-size-body-large);
 					}
 				}
 
@@ -279,8 +309,11 @@
 	.card_link {
 		.item_top {
 			.title_info {
-				padding-right: 24px;
-				background: url(../images/icon/arrowRight_disabled_ty2.svg) no-repeat right bottom / 24px auto;
+				// padding-right: 24px;
+				.main_title {
+					padding-right: 30px;
+					background: url(../images/icon/arrowRight_disabled_ty2.svg) no-repeat right bottom / 24px auto;
+				}
 			}
 		}
 	}
