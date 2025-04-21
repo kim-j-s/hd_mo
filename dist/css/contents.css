@@ -1000,21 +1000,8 @@
 	line-height: 2.1rem;
 	color: var(--color-text-danger);
 }
-.autocomplete_wrap + .recommend_wrap {
+.autocomplete_wrap + .suggestion_list_wrap {
 	margin-top: 5.2rem;
-}
-.title_h4 + .recommend_wrap_item {
-	margin-top: 1.6rem;
-}
-.recommend_wrap .recommend_wrap_item {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	-ms-flex-flow: row wrap;
-	flex-flow: row wrap;
-	gap: 0.8rem;
 }
 /* 자동차보험 - 운전자정보 */
 /* 자동차보험 | 운전자 정보 - 운전자 범위 선택 */
@@ -1691,7 +1678,6 @@
 }
 .guarantee_detail .gd_item .rdo_box input {
 	position: absolute;
-	opacity: 0;
 }
 .guarantee_detail .gd_item .rdo_box input + label::after {
 	content: "";
@@ -1701,6 +1687,21 @@
 	width: 100%;
 	height: 100%;
 	pointer-events: none;
+}
+.guarantee_detail .gd_item .gdi_content .badge_wrap.hasText {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.guarantee_detail .gd_item .gdi_content .badge_wrap.hasText .desc {
+	color: var(--color-text-subtle);
+	font-size: var(--font-size-body-small);
 }
 .guarantee_detail .gd_item .gdi_content .head_text {
 	padding-top: 0.8rem;
@@ -1748,6 +1749,24 @@
 .guarantee_detail .gd_item .gdi_content .gdi_content_list > li .item .txt .question_mark_btn {
 	vertical-align: top;
 }
+.guarantee_detail .gd_item .gdi_content .gdi_content_list > li .item .add_text_btn .txt {
+	position: relative;
+	font-size: var(--font-size-body-small);
+}
+.guarantee_detail .gd_item .gdi_content .gdi_content_list > li .item .add_text_btn .txt::after {
+	display: inline-block;
+	content: "";
+	position: absolute;
+	width: 1.6rem;
+	height: 1.6rem;
+	background: url(../images/icon/arrowRight_ty3.svg) no-repeat right center/1.6rem auto;
+	bottom: 0;
+	-webkit-transform: translateY(-0.4rem);
+	transform: translateY(-0.4rem);
+}
+.guarantee_detail .gd_item .gdi_content .gdi_content_list > li .item .add_text_btn:hover {
+	background-color: #ffffff;
+}
 .guarantee_detail .gd_item .gdi_content .gdi_content_list > li.ico_add .item {
 	padding-right: 5rem;
 }
@@ -1757,6 +1776,15 @@
 .guarantee_detail .gd_item .gdi_content .gdi_content_list > li.ico_add.ico_add_ty2 .item {
 	background-image: url(../images/content/guarantee/icon_gil_02.svg);
 }
+.guarantee_detail .gd_item .gdi_content .gdi_content_list > li.ico_add.ico_add_ty3 .item {
+	background-image: url(../images/content/guarantee/icon_gil_03.svg);
+}
+.guarantee_detail .gd_item .gdi_content .gdi_content_list > li.ico_add.ico_add_ty4 .item {
+	background-image: url(../images/content/guarantee/icon_gil_04.svg);
+}
+.guarantee_detail .gd_item .gdi_content .gdi_content_list > li.ico_add.ico_add_ty5 .item {
+	background-image: url(../images/content/guarantee/icon_gil_05.svg);
+}
 .guarantee_detail .guarantee_detail_mini {
 	margin-top: 2.4rem;
 	display: -webkit-box;
@@ -1765,8 +1793,25 @@
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	gap: var(--gap-5);
+}
+.guarantee_detail .guarantee_detail_mini .item_wrap {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
 }
 .guarantee_detail .guarantee_detail_mini .i_data {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
 	position: relative;
 	padding-left: 0.8rem;
 	padding-top: 0.2rem;
@@ -1787,13 +1832,12 @@
 	border-radius: 50%;
 }
 .guarantee_detail .guarantee_detail_mini .i_data + .i_data {
-	margin-left: 1.2rem;
+	margin-left: var(--gap-4);
 }
 .guarantee_detail .guarantee_detail_mini .modify_ba {
 	-webkit-box-flex: 0;
 	-ms-flex: none;
 	flex: none;
-	margin-left: 1.8rem;
 }
 .guarantee_detail .btn_area.gd_middle_ba {
 	margin-top: 2.4rem;
@@ -1803,6 +1847,31 @@
 }
 .guarantee_detail .acc_group + .btn_area {
 	margin-top: 5.2rem;
+}
+.guarantee_detail.ty2 .guarantee_detail_mini {
+	margin-top: 1.6rem;
+	width: 100%;
+}
+.guarantee_detail.ty2 .guarantee_detail_mini .item_wrap {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, auto);
+	gap: 0.4rem var(--gap-4);
+}
+.guarantee_detail.ty2 .guarantee_detail_mini .item_wrap .i_data {
+	min-width: 11rem;
+}
+.guarantee_detail.ty2 .guarantee_detail_mini .item_wrap .i_data + .i_data {
+	margin: 0;
+}
+.guarantee_detail.ty2 .guarantee_detail_mini .modify_ba {
+	justify-self: flex-end;
+}
+.guarantee_detail.ty2 .btn_area {
+	gap: 1.2rem;
+}
+.guarantee_detail.ty2 .btn_area.ty2 + .acc_group {
+	margin-top: 3.2rem;
 }
 /* 간편정보 */
 .simple_info_wrap {
@@ -2048,6 +2117,41 @@
 }
 .btn_area + .banner_box {
 	margin-top: 1.6rem;
+}
+.info_message {
+	padding-left: 2rem;
+	font-size: var(--font-size-label-medium);
+	color: var(--color-text-information);
+	background: url(../images/icon/icon_info.svg) no-repeat left 0.2rem/1.6rem auto;
+}
+.search_reult_list_container .title_h4 {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.search_reult_list_container .title_h4 + .search_reult_list {
+	margin-top: 1.6rem;
+}
+/* 수정 kjs */
+.title_h4.search_head_tit {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.title_h4.search_head_tit + .search_reult_list_container {
+	margin-top: 1.2rem;
 }
 /* 운전자보험 - 보험료 결제 */
 .insurance_payment_area {
