@@ -20,4 +20,5 @@ https://kim-j-s.github.io/hd_mo/dist/index.html
 ## 스타일 토큰 관련
 
 - 추출한 json 파일 위치 : /scripts/design-tokens.json
-- css변환 : `node scripts/build-style-tokens.js`
+- css변환 명령어 : `node scripts/build-style-tokens.js`
+- 토큰 추출 파일 위치 : /src/css/theme.scss
