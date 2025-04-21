@@ -578,7 +578,7 @@ $(function(){
 		const $target = $('.simple_info_wrap');
 
 		if ($target.length) {
-			const targetOffsetTop = $target.position().top;
+			const targetOffsetTop = $target.offset().top;
 			const $targetChild = $('.simple_info_wrap').children('.simple_info_item');		
 			const scrollTop = $('#container').scrollTop();
 
