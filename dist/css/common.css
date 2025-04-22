@@ -19,7 +19,7 @@ strong {
 	font-weight: 700;
 }
 .point {
-	color: #d82600;
+	color: var(--color-text-primary);
 }
 .success {
 	color: #009419;
@@ -3581,7 +3581,7 @@ strong {
 	right: calc(100% - 4.8rem);
 }
 .price.big input {
-	color: #d82600;
+	color: var(--color-text-primary);
 	font-size: var(--font-size-heading-large);
 	font-weight: 700;
 	line-height: 5.4rem;
@@ -3880,6 +3880,20 @@ strong {
 }
 .list_ty1 > li ~ li {
 	margin-top: 0.8rem;
+}
+.list_ty1.black > li {
+	position: relative;
+	margin: 0;
+	padding: 0 0 0 1rem;
+	font-size: var(--font-size-body-medium);
+	line-height: 2rem;
+	color: var(--color-text-basic);
+}
+.list_ty1.black > li::before {
+	background-color: #33363d;
+}
+.list_ty1.black > li ~ li {
+	margin-top: 1.2rem;
 }
 .list_ty2 > li {
 	position: relative;
@@ -4821,6 +4835,38 @@ strong {
 }
 /* 선택 목록 스타일 */
 /* select_item */
+.selectitem_wrap {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	gap: 1.2rem;
+}
+.selectitem_wrap .select_item {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 0px;
+	flex: 1 1 0;
+}
+.selectitem_wrap .select_item.select_item_case01 .select_item_inner {
+	height: 100%;
+}
+.selectitem_wrap .select_item.select_item_case01 .select_item_inner .si_item {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	height: 100%;
+}
+.selectitem_wrap + .search_result_count {
+	margin-top: 3.2rem;
+}
 .select_item.select_item_case01 .si_item {
 	position: relative;
 	min-height: 2.4rem;

@@ -1,0 +1,31 @@
+<!---
+화면번호 : MPRGIPT30002010100
+경로 :  공통 > 	공유하기 
+-->
+{{#> layout/default page-title="기본정보 입력 | 상품"}}
+
+
+<!-- s: SNS bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="공유하기"}}
+<div class="popup_cont">
+    <div class="sns_box">
+        <button type="button" title="kakaoTalk 공유하기">
+            <img src="../../../images/icon/icon_kakao.svg" alt="kakaoTalk">
+        </button>
+        <button type="button" title="facebook 공유하기">
+            <img src="../../../images/icon/icon_facebook.svg" alt="facebook">
+        </button>
+        <button type="button" title="url 복사하기" onclick="toastAction(this);" data-msg="https://direct.hi.co.kr/">
+            <img src="../../../images/icon/icon_export.svg" alt="내보내는 이미지 아이콘">
+        </button>
+    </div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: SNS bottom 팝업 -->
+
+<!-- s: popup area -->
+<div class="toast_wrap" aria-live="assertive">
+    <div class="toast_msg"></div>
+</div>
+<!-- e: popup area -->
+{{/ layout/default }}
