@@ -297,11 +297,18 @@
 
 //비활성화 케이스
 .card_item_wrap > .card_item.disabled {
-	// pointer-events: none;
-	* {
-		color: var(--color-text-disabled) !important;
-	}
+	pointer-events: none;
+	// * {
+	// 	color: var(--color-text-disabled) !important;
+	// }
 
+	.inp_checkbox {
+		input[type=checkbox]:checked {
+			& ~ i {
+				border-color: var(--color-border-primary-light);
+			}
+		}
+	}
 
 	.item_top .title_info .main_title {
 		color: inherit;
@@ -321,13 +328,17 @@
 }
 
 
-//readonly Case
-.card_item_wrap > .card_item.readonly {
-	// pointer-events: none;
-	* {
-		color: var(--color-text-disabled) !important;
+//selected Case
+.card_item_wrap > .card_item.selected {
+	pointer-events: none;
+	
+	.inp_checkbox {
+		input[type=checkbox]:checked {
+			& ~ i {
+				border-color: var(--color-border-primary-light);
+			}
+		}
 	}
-
 	.card_link {
 		.item_top {
 			.title_info {

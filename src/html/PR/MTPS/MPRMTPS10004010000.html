@@ -123,10 +123,12 @@
 
 			<!-- s: 25-04-22 수정 -->
 			<div class="card_item_wrap">
-				<div class="card_item">
+				<!-- s: disabled selected 클래스 추가 -->
+				<div class="card_item disabled selected">
+				<!-- e: disabled selected 클래스 추가 -->
 					<div class="item_inner">
 						<div class="inp_checkbox">
-							<input type="checkbox" id="card_chk_opt2_1" name="name2" aria-labelledby="card_chk_opt2_1_cont" />
+							<input type="checkbox" id="card_chk_opt2_1" name="name2" aria-labelledby="card_chk_opt2_1_cont" checked disabled />
 							<label for="card_chk_opt2_1" class="chk_label"></label>
 							<i></i>
 						</div>
@@ -134,7 +136,7 @@
 							<a href="#" role="button" class="card_link">
 								<div class="item_top" id="card_chk_opt2_1_cont">
 									<div class="badge_wrap">
-										<span class="hd_badge outline solid_pastel c_success size_m">기본장착</span>
+										<span class="hd_badge outline solid_pastel c_success size_m badge">기본장착</span>
 									</div>
 									<div class="title_info">
 										<div class="main_title">차선이탈 경고장치</div>
@@ -144,7 +146,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="card_item">
+				<div class="card_item disabled selected">
 					<div class="item_inner">
 						<div class="inp_checkbox">
 							<input type="checkbox" id="card_chk_opt2_2" name="name2" aria-labelledby="card_chk_opt2_2_cont" />
@@ -197,7 +199,7 @@
 							<a href="#" role="button" class="card_link">
 								<div class="item_top" id="card_chk_opt2_4_cont">
 									<div class="badge_wrap">
-										<span class="hd_badge outline solid_pastel c_secondary size_m">옵션장착</span>
+										<span class="hd_badge outline solid_pastel c_secondary size_m">직접입력</span>
 									</div>
 									<div class="title_info">
 										<div class="main_title">헤드업디스플레이</div>
@@ -218,7 +220,7 @@
 							<a href="#" role="button" class="card_link">
 								<div class="item_top" id="card_chk_opt2_5_cont">
 									<div class="badge_wrap">
-										<span class="hd_badge outline solid_pastel c_secondary size_m">옵션장착</span>
+										<span class="hd_badge outline solid_pastel c_secondary size_m">직접입력</span>
 									</div>
 									<div class="title_info">
 										<div class="main_title">어라운드뷰 모니터</div>
@@ -239,7 +241,7 @@
 							<a href="#" role="button" class="card_link">
 								<div class="item_top" id="card_chk_opt2_6_cont">
 									<div class="badge_wrap">
-										<span class="hd_badge outline solid_pastel c_secondary size_m">옵션장착</span>
+										<span class="hd_badge outline solid_pastel c_secondary size_m">직접입력</span>
 									</div>
 									<div class="title_info">
 										<div class="main_title">스마트크루즈</div>
@@ -255,6 +257,10 @@
 								</li>
 							</ul>
 						</div>
+					</div>
+					<div class="btn_area">
+						{{> cp/button type="3" size="2" b-text="삭제" }}
+						{{> cp/button type="1" size="2" b-text="수정" }}
 					</div>
 				</div>
 			</div>
@@ -274,23 +280,25 @@
 
 			<div class="text_sub">기본 모델에 썬루프 등 추가 부속품을 장착하신 경우 입력해 주세요.</div>
 
+			<!-- s: 25-04-22 수정 -->
 			<div class="card_item_wrap">
 				<div class="card_item">
 					<div class="item_inner">
 						<div class="inner_cont">
 							<div class="item_top">
+								<div class="badge_wrap">
+									<span class="hd_badge outline solid_pastel c_secondary size_m">직접입력</span>
+								</div>
 								<div class="title_info">
 									<div class="main_title">전방충돌포함패키지(직접입력)</div>
 								</div>
 							</div>
 							<ul class="card_list_ty1">
-								<li>
-									<div class="title">구매</div>
-									<div class="cont">2023년 100만원</div>
-								</li>
-								<li>
-									<div class="title">현재가</div>
-									<div class="cont">100만원</div>
+								<li class="result">
+									<div class="title">가입금액</div>
+									<div class="cont">
+										<strong class="point">100만원</strong>
+									</div>
 								</li>
 							</ul>
 						</div>
@@ -300,25 +308,24 @@
 						{{> cp/button type="1" size="2" b-text="수정" }}
 					</div>
 				</div>
-			</div>
 
-			<div class="card_item_wrap">
 				<div class="card_item">
 					<div class="item_inner">
 						<div class="inner_cont">
 							<div class="item_top">
+								<div class="badge_wrap">
+									<span class="hd_badge outline solid_pastel c_secondary size_m">직접입력</span>
+								</div>
 								<div class="title_info">
 									<div class="main_title">Around View Monitor 패키지(직접입력)</div>
 								</div>
 							</div>
 							<ul class="card_list_ty1">
-								<li>
-									<div class="title">구매</div>
-									<div class="cont">2023년 100만원</div>
-								</li>
-								<li>
-									<div class="title">현재가</div>
-									<div class="cont">100만원</div>
+								<li class="result">
+									<div class="title">가입금액</div>
+									<div class="cont">
+										<strong class="point">100만원</strong>
+									</div>
 								</li>
 							</ul>
 						</div>
@@ -329,6 +336,7 @@
 					</div>
 				</div>
 			</div>
+			<!-- e: 25-04-22 수정 -->
 			
 		</div>
 		<!-- e: content(4) 추가부속품 영역 끝 -->
@@ -339,10 +347,12 @@
 		<div class="total_price_display_ty1">
 			<p class="price_label">총 차량가액</p>
 			<p class="price_val">
-			<strong>
-				<span class="primary">2,179</span>
-				만원
-			</strong></p>
+				<strong>
+					<!-- s: 25-04-22 수정 -->
+					<span class="primary">2,179만원</span>
+					<!-- e: 25-04-22 수정 -->
+				</strong>
+			</p>
 		</div>
 		<div class="btn_area">
 			{{> cp/button type="1" size="2" b-text="다음으로" class="full" popup="pop_type01" }}
