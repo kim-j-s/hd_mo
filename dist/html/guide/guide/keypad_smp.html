@@ -39,7 +39,7 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>셀렉트박스 | 가이드 - 현대해상 다이렉트</title>
+		<title>현재페이지 | 카테고리 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -55,7 +55,7 @@
 					</div>
 
 					<div class="header_connect">
-						<h1 class="header_title">타이틀 t3</h1>
+						<h1 class="header_title">타이틀</h1>
 					</div>
 
 					<div class="right">
@@ -76,87 +76,123 @@
 				</div>
 			</div>
 			<div id="container" class="container">
-				<style>
-					.guide_t {
-						margin: 1rem 0;
-						font-size: 1.4rem;
-						font-weight: bold;
+				<div class="content">
+					<!-- s: content_top -->
+					<div class="content_top">
+						<h2 class="title_h2">
+							<strong>
+								고객정보 관리 및 가입 설계를 위해
+								<br />
+								동의
+							</strong>
+							가 필요합니다.
+						</h2>
+					</div>
+					<!-- e: content_top -->
+
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">피보험자(미성년 자녀) 이름</div>
+							<div class="input_text">
+								<div class="inp">
+									<input type="text" title="피보험자(미성년 자녀) 이름 입력" />
+									<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+								</div>
+							</div>
+						</div>
+						<div class="form_line">
+							<div class="label_tit">주민등록번호</div>
+							<div class="comp_wrap birth">
+								<div class="input_text">
+									<div class="inp">
+										<input type="tel" placeholder="앞자리" minlength="6" maxlength="6" title="주민등록번호 앞자리 입력" />
+										<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+									</div>
+								</div>
+								<span class="dash">-</span>
+								<div class="comp_wrap_keypad_call">
+									<button type="button" class="btn keypad_call" role="textbox" title="주민등록번호 뒷자리 입력"><span class="text">뒷자리</span></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="divider_ty1"></div>
+
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">계약자 이름</div>
+							<div class="input_text">
+								<div class="inp">
+									<input type="text" placeholder="입력해주세요" title="계약자 이름 입력" />
+									<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+								</div>
+							</div>
+						</div>
+						<div class="form_line">
+							<div class="label_tit">주민등록번호</div>
+							<div class="comp_wrap birth">
+								<div class="input_text">
+									<div class="inp">
+										<input type="tel" placeholder="앞자리" minlength="6" maxlength="6" title="주민등록번호 앞자리 입력" />
+										<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+									</div>
+								</div>
+								<span class="dash">-</span>
+								<div class="comp_wrap_keypad_call">
+									<div class="form_wrap form_key">
+										<div class="pin_area" title="주민등록번호 뒤7자리" role="textbox">
+											<strong class="ergAt dot_mark active"></strong>
+											<strong class="ergAt dot_mark active"></strong>
+											<strong class="ergAt dot_mark"></strong>
+											<strong class="ergAt dot_mark"></strong>
+											<strong class="ergAt dot_mark"></strong>
+											<strong class="ergAt dot_mark"></strong>
+											<strong class="ergAt dot_mark"></strong>
+											<input type="password" name="" id="" autocomplete="new-password" style="display: none" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<style lang="scss">
+			.form_key {
+				.pin_area {
+					display: -webkit-box;
+					display: -ms-flexbox;
+					display: flex;
+					-webkit-box-align: center;
+					-ms-flex-align: center;
+					align-items: center;
+					-webkit-box-pack: center;
+					-ms-flex-pack: center;
+					justify-content: center;
+					height: 5.4rem;
+					gap: 0.4rem;
+					.dot_mark {
+						-webkit-box-flex: 0;
+						-ms-flex: none;
+						flex: none;
+						display: inline-block;
+						width: 1rem;
+						height: 1rem;
+						border: 1px solid #000;
+						border-radius: 50%;
+						&.active {
+							background-color: #000;
+						}
 					}
-				</style>
+				}
+			}
+		</style>
 
-				<div class="guide_t">- 선택 전</div>
-				<div class="btn popup_open btn_select" role="button" title="Bottom 선택 팝업열기" onclick="openHDPopup(this,'select_option_ty1');">
-					<span>옵션 value</span>
-				</div>
+		<!-- s: popup area -->
 
-				<div class="guide_t">- 선택 후</div>
-				<div class="btn popup_open btn_select active" role="button" title="Bottom 선택 팝업열기" onclick="openHDPopup(this,'select_option_ty1');">
-					<span>옵션 value</span>
-				</div>
-
-				<div class="guide_t">- 선택 불가능</div>
-				<div class="btn popup_open btn_select" role="button" title="Bottom 선택 팝업열기" aria-disabled="true" onclick="openHDPopup(this,'select_option_ty1');">
-					<span>옵션 value</span>
-				</div>
-
-				<div class="guide_t">- 선택 불가능(선택된 값이 있는 상태)</div>
-				<div class="btn popup_open btn_select active" role="button" title="Bottom 선택 팝업열기" aria-disabled="true" onclick="openHDPopup(this,'select_option_ty1');">
-					<span>옵션 value</span>
-				</div>
-			</div>
-
-			<!-- 추후 적용 문구
-				선택목록 :
-				호출 버튼 : 이용구분 시 : 이용구분 선택목록 보기
-				호출 버튼 : 선택된 요소가 존재하는 경우 : 이용구분 선택목록 보기 : 선택된 요소명 선택됨 -> 선택됨은 sr_only로 처리
-				추후 적용 문구 -->
-
-			<div id="footer" class="footer">
-				<div id="footer" class="nav_footer">
-					<ul class="fix_nav_menu">
-						<li><a href="#" class="menu_num1">하단메뉴1</a></li>
-						<li><a href="#" class="menu_num2">하단메뉴2</a></li>
-						<li><a href="#" class="menu_num3">하단메뉴3</a></li>
-						<li><a href="#" class="menu_num4">하단메뉴4</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-
-		<!-- s: 나이 선택 팝업 -->
-		<div class="popup_wrap bottom" id="select_option_ty1" role="dialog" aria-modal="true" aria-hidden="true">
-			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('select_option_ty1');"></div>
-				<div class="popup_inner">
-					<div class="draggable" aria-hidden="true">
-						<div class="move"></div>
-					</div>
-					<div class="popup_head"><div class="popup_head_title">연령선택</div></div>
-
-					<div class="popup_cont">
-						<div class="opt_select_list opt_case1">
-							<div role="button" tabindex="0" class="option active" title="선택됨"><span>만 21세 이상</span></div>
-							<div role="button" tabindex="0" class="option"><span>만 22세 이상</span></div>
-							<div role="button" tabindex="0" class="option"><span>만 24세 이상</span></div>
-							<div role="button" tabindex="0" class="option"><span>만 26세 이상</span></div>
-							<div role="button" tabindex="0" class="option"><span>만 28세 이상</span></div>
-							<div role="button" tabindex="0" class="option"><span>만 30세 이상</span></div>
-							<div role="button" tabindex="0" class="option"><span>만 35세 이상</span></div>
-							<div role="button" tabindex="0" class="option"><span>만 43세 이상</span></div>
-							<div role="button" tabindex="0" class="option"><span>만 48세 이상</span></div>
-						</div>
-					</div>
-					<div class="popup_bottom">
-						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
-								<span class="text">확인</span>
-							</button>
-						</div>
-					</div>
-					<button type="button" class="popup_close" onclick="closeHDPopup('select_option_ty1');"><span class="blind">팝업 닫기</span></button>
-				</div>
-			</div>
-		</div>
-		<!-- e: 나이 선택 팝업 -->
+		<!-- e: popup area -->
 	</body>
 </html>

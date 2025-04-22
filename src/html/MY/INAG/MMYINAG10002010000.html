@@ -1,0 +1,208 @@
+{{#> layout/default page-title="기본정보 | 마이페이지"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="계약상세조회" h-back=true }}
+		<div id="container" class="container">
+			<div class="content">
+
+				<div class="d" style="height: 200px; background-color: blue;"></div>
+
+
+				<div class="tab_wrap">
+
+					
+
+					<div class="tab_wrap_list_ty1" role="tablist">
+						{{>cp/tab_btn tb-text="기본정보" tb-id="01" tb-active=true}}
+						{{>cp/tab_btn tb-text="보장내용" tb-id="02"}}
+						{{>cp/tab_btn tb-text="납입정보" tb-id="03"}}
+					</div>
+
+					<!-- s: 기본정보 -->
+					<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
+						<h3 class="title_h3">기본정보</h3>
+						<div class="table_wrap">
+							<table class="table">
+								<caption>계약번호, 계약상태, 보험기간, 목적물소재지 제공</caption>
+								<colgroup>
+									<col style="width:35%;">
+									<col style="width:65%;">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">계약상태</th>
+										<td>L1234****901</td>
+									</tr>
+									<tr>
+										<th scope="row">보험기간</th>
+										<td>실효(2023.11.11)</td>
+									</tr>
+									<tr>
+										<th scope="row">보험기간</th>
+										<td>2015.11.23~2037.11.23</td>
+									</tr>
+									<tr>
+										<th scope="row">목적물소재지</th>
+										<td>04535 서울 중구 명동2길 20, 현대해상명동사옥</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="btn_area ty2">
+							{{> cp/button type="3" size="3" b-text="연금보험공시 조회" popup="pop_type01"}}
+							{{> cp/button type="3" size="3" b-text="저축보험공시 조회" popup="pop_type02"}}
+							{{> cp/button type="3" size="3" b-text="환급금 조회" popup="pop_type03"}}
+							<!-- 연금, 연금저축 보험인 경우 버튼명 변경하여 노출 -->
+							<!-- 
+							{{> cp/button type="3" size="3" b-text="환급금/연금 조회" popup="pop_type04"}}
+							-->
+							<!-- 연금, 연금저축 보험인 경우 버튼명 변경하여 노출 -->
+						</div>
+
+						<div class="divider_ty1"></div>
+
+						<h3 class="title_h3">가입자 정보</h3>
+						<div class="table_wrap">
+							<table class="table">
+								<caption>계약자, 피보험자, 휴대폰번호, 유선전화번호, 우편물수령지 제공</caption>
+								<colgroup>
+									<col style="width:35%;">
+									<col style="width:65%;">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">계약자</th>
+										<td>하*현(991123-1******)</td>
+									</tr>
+									<tr>
+										<th scope="row">피보험자</th>
+										<td>하*현(991123-1******)</td>
+									</tr>
+									<tr>
+										<th scope="row">휴대폰번호</th>
+										<td>010-****-1234</td>
+									</tr>
+									<tr>
+										<th scope="row">유선전화번호</th>
+										<td>010-****-1234</td>
+									</tr>
+									<tr>
+										<th scope="row">우편물수령지</th>
+										<td>(회사) 04535 서울 중구 명동2길 20, 현대해상명동사옥</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="btn_area">
+							{{> cp/button type="3" size="3" b-text="개인정보 변경" atag="true"}}
+						</div>
+
+						<div class="divider_ty1"></div>
+
+						<h3 class="title_h3">수익자 정보</h3>
+
+						<div class="form_group_wrap">
+							<div class="form_line">
+								<div class="label_tit">피보험자</div>
+								{{> cp/selectitem si_ph="선택해주세요." si_title="연도 선택" si_item="2023" si_popup="pop_type05"}}
+							</div>
+							<div class="form_line">
+								<div class="label_tit">피보험자</div>
+								{{> cp/text placeholder="입력해주세요" inp-title="계약자 이름 입력"}}
+							</div>
+						</div>
+
+						<div class="table_wrap">
+							<table class="table">
+								<caption> 제공</caption>
+								<colgroup>
+									<col style="width:35%;">
+									<col style="width:65%;">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row"></th>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="btn_area">
+							{{> cp/button type="3" size="3" b-text="개인정보 변경"  }}
+						</div>
+
+						<div class="divider_ty1"></div>
+
+						<h3 class="title_h3">계약담당자</h3>
+
+
+
+					</div>
+					<!-- e: 기본정보 -->
+
+					<!-- s: 보장내용 -->
+					<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
+						tab inner 2
+					</div>
+					<!-- e: 보장내용 -->
+					 
+					<!-- s: 납입정보 -->
+					<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel02">
+						tab inner 3
+					</div>
+					<!-- e: 납입정보 -->
+				</div>
+
+
+				<!-- s: 꼭 알아두세요 -->
+				{{#> cp/notice dp-active="active"}}
+				<ul class="list_ty1">
+					<li>
+						보험료는 적립보험료와 보장보험료를 합한 금액으로, 해당 계약에 할인이 적용되는 경우 할인율이 적용된 금액입니다. 자세한 내용은 계약담당자에게 문의해 주세요.
+					</li>
+					<li>
+						보장내용 중 갱신형 담보의 보장기간은 갱신주기별로 계산됩니다. 
+						<ul class="list_ty2">
+							<li>
+								예시: 보험기간이 2022.01.01 시작 계약의 5년 갱신주기 담보의 경우<br>
+								최초 보장기간이 ‘2022.01.01~2027.01.01’로 표시되며, 5년 갱신주기 이후 보장기간이 재계산되어 표시됨
+							</li>
+						</ul>
+					</li>
+					<li>
+						어린이보험은 2019년 4월 이후 계약부터 총 납입횟수에 태아보험료(태아확정 이전) 납입횟수가 포함됩니다. 
+						<ul class="list_ty2">
+							<li>
+								예시: 3월에 태아보험 가입, 6월에 태아확정, 20년납으로 가입한 경우<br>
+								3, 4, 5월 태아보험료 납입횟수 3회 + 20년납 납입횟수 240회 → 총 ‘243회’로 납입횟수가 합산되어 표시됨
+							</li>
+						</ul>
+					</li>
+					<li>
+						보호상품: 보험계약자가 개인인 경우, 가입한 보험상품은 해지환급금(또는 만기 시 보험금이나 사고보험금)에 기타 지급금을 합하여 5천만원까지(현대해상 모든 상품 합산) 예금자보호가 됩니다. 다만, 계약체결 이후 보험계약자 및 보험료납부자가 법인이면 보호되지 않습니다.
+					</li>
+				</ul>
+				{{/ cp/notice }}
+				<!-- e: 꼭 알아두세요 -->
+
+				<div class="suggestion_list_wrap">
+					<div class="title_h4"><strong>어떤 서비스가 필요하세요?</strong></div>
+					<div class="item_wrap">
+						<button type="button" class="tag_item size_m"><span class="text">#보험금 청구 안내</span></button>
+						<button type="button" class="tag_item size_m"><span class="text">#보험계약대출 신청</span></button>
+						<button type="button" class="tag_item size_m"><span class="text">#보험증권</span></button>
+						<button type="button" class="tag_item size_m"><span class="text">#자동이체계좌 신청/변경</span></button>
+					</div>
+				</div>
+
+				
+
+
+			</div>
+		</div>
+	</div>
+
+	<!-- s: popup area -->
+	 
+	<!-- e: popup area -->
+
+{{/ layout/default }}
