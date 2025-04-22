@@ -1,26 +1,64 @@
 // 약관
 .chk_group_wrap {
-	padding: 24px 20px;
-	border-radius: 16px;
-	border: 1px solid #E1E3EA;
 	.chk_group_top {
-		padding-bottom: 21px;
-		border-bottom: 1px solid #000;
+		
 	}
 	.chk_group_cont {
-		padding-top: 24px;
+		padding-top: 16px;
 	}
 }
 .chk_group_cont_list {
 	> li {
 		+ li {
-			margin-top: 20px;
+			margin-top: 16px;
+		}
+		.agree_card {
+			padding: 24px 20px;
+			background: var(--color-surface-white-subtle);
+			border: 1px solid var(--color-border-gray-light);				
+			border-radius: var(--radius-large2);
+			> dd {
+				margin-top: 24px;
+				padding-top: 24px;
+				border-top: 1px solid var(--color-divider-gray-light);
+			}
 		}
 	}
-	.chk_list {
+	.agree_ditail_list {
+		margin-top: 16px;
 		> li {
 			+ li {
-				margin-top: 16px;
+				margin-top: 12px;
+			}
+			dl {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: 16px;
+				dt {
+					position: relative;
+					padding-left: 8px;
+					word-wrap: break-word;
+    				word-break: auto-phrase;
+					&::before {
+						content: '';
+						position: absolute;
+						top: 8px;
+						left: 0;
+						width: 2px;
+						height: 2px;
+						border-radius: 50%;
+						background: var(--color-icon-information);
+					}
+				}
+				dd {
+					.radio_group_wrap {
+						justify-content: end;
+						min-width: 122px;
+
+					}
+				}
+				
 			}
 		}
 	}

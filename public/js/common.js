@@ -289,6 +289,16 @@
 		$relGroup.removeAttr('class').addClass('relationship_box ' + newClass);
 	})
 
+
+	//radio_comb(2개의 라디오 버튼 중 택1 콤비네이션)
+	$DOM.on('change', '.radio_comb input[type="radio"]', function(){
+		const parentCont = $(this).closest('.radio_comb');
+
+		if(parentCont.length > 0){
+			parentCont.removeClass('origin').addClass('active');
+		}
+	});
+
 	// $DOM.on('change', '.select_driver_range input[type="radio"]', function(){
 	// 	const $relGroup = $('.ouput_driver_relationship').find('.rel_group')
 	// 	let chkNum = $(this).attr('data-num');
@@ -585,11 +595,6 @@ $(function(){
 		}
 	});
 	// 간편정보 노출 방식
-
-
-
-
-
 
 });
 
