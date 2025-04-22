@@ -1,0 +1,50 @@
+/* 계약 담당자 */
+.contact_list {
+	padding: 23px 24px;
+	border-radius: 24px;
+	border: 1px solid var(--color-border-gray-light);
+	> li {
+		+ li {
+			margin-top: 16px;
+			padding-top: 16px;
+			border-top: 1px solid var(--color-border-gray-light);
+		}
+		.item {
+			display: flex;
+			align-items: center;
+			gap: 16px;
+			min-height: 40px;
+			&::before {
+				content: '';
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				border-radius: var(--radius-medium1);
+				background-color: var(--color-surface-primary-subtler);
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: 24px auto;
+			}			
+			.name {
+				font-size: var(--font-size-body-medium);
+			}
+			.tel {
+				display: block;
+				font-size: var(--font-size-body-small);
+				color: var(--color-text-subtle);
+			}
+			&.person {
+				&::before {
+					background-image: url(../images/content/my/icon_manager_person.svg);
+				}
+			}
+			&.spot {
+				&::before {
+					background-image: url(../images/content/my/icon_manager_spot.svg);
+				}
+			}
+		}
+	}
+
+}
+/* 계약 담당자 */
