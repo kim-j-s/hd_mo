@@ -250,11 +250,10 @@
 	padding: 0;
 	overflow-y: auto;
 	border-top: 1px solid var(--color-divider-gray-light);
-	border-bottom: 1px solid var(--color-divider-gray-light);
 
 	ul.search_reult_list {
-
 		li {
+			border-bottom: 1px solid var(--color-divider-gray-light);
 			a {
 				display: block;
 				position: relative;
@@ -292,17 +291,7 @@
 					background: url(../images/icon/arrowRight_ty5.svg) no-repeat center / 24px auto;
 				}
 			}
-		}	
-	  
-		> li {
-			& ~ li {
-				a {
-					// border-top: none;
-					border-top: 1px solid var(--color-divider-gray-light);
-				}				  
-			}
-		}
-
+		}		  
 		li.add_item a { 
 			flex-direction: row;
 			justify-content: space-between;
@@ -310,6 +299,15 @@
 			&::after { 
 				content: none; 
 			}
+		}
+	}
+
+	&.no_data {
+		border-top: none;
+		.search_reult_list {
+			li {
+				border-bottom: none;
+			}			
 		}
 	}
 }
@@ -324,6 +322,9 @@
 		color: var(--color-text-primary-bold);
 	}
 	+ .sr_list {
+		margin-top: 12px;
+	}
+	+ .search_reult_list_container {
 		margin-top: 12px;
 	}
 }

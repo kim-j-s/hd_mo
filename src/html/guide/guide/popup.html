@@ -437,6 +437,9 @@
 			<!-- e: popup_content_top -->
 
 			<div class="search_reult_list_container">
+			<!-- 데이터가 없는 경우 no_data 클래스 추가
+			<div class="search_reult_list_container sr_list no_data">
+			-->
 				<ul class="search_reult_list">
 					<li class="search_reult_list_item"><a href="#"><span class="item_text">4륜구동</span></a></li>
 					<!-- 검색시 스타일 예시 : 검색키워드 <i>태그로 강조 -->
@@ -457,6 +460,12 @@
 					<li class="search_reult_list_item"><a href="#"><span class="item_text">서스펜션</span></a></li>
 					<!-- 목록 최하단 기타 항목 필수 -->
 					<li class="search_reult_list_item add_item"><a href="#"><span class="item_text">기타</span>{{#> cp/button type="3" size="5" rightIcon="plusSvg" popup="alert_d1"}}추가{{/ cp/button}}</a></li>
+					<li class="search_reult_list_item">
+						<div class="no_list_area">
+							{{> cp/icon iconClass="exclamationSvg"}}
+							<p>내역이 없어요</p>
+						</div>
+					</li>
 				</ul>
 			</div>
 		</div>
