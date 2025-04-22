@@ -1,47 +1,50 @@
 <!---
 화면번호 : MPRGIPT30002010100
-경로 :  공통 > 	주소검색 (case 1: 최초 진입시 화면(도로명))
+경로 :  공통 > 	주소검색 (상세)
 -->
 {{#> layout/default page-title="기본정보 입력 | 상품"}}
 
 
 <!-- s: Full 팝업 -->
 {{#> popup/popup_full popup-id="pop_type01" popup-active=true popup-title="주소 찾기"}}
-<div class="popup_cont search_list_type2">
-	<div class="tab_wrap">
-		<div class="tab_wrap_list_ty1" role="tablist">
-			{{>cp/tab_btn tb-text="도로명" tb-id="01"}}
-			{{>cp/tab_btn tb-text="지번" tb-id="02"}}
-			{{>cp/tab_btn tb-text="건물명" tb-id="03" tb-active=true}}
-		</div>
-
-		<!-- s: tab01. 도로명 찾기 Tab 내용 -->
-		<div class="tab_wrap_content has_scroll" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
-
-			<!-- 검색어를 submit 했을 때 search_on클래스 추가, 검색어 클리어시에 search_on클래스 제거 -->
-			<div class="search_inp_box">
-				{{> cp/text inp-search=true placeholder="입력해 주세요." inp-title="검색어 입력" }}		
-				<p class="info_message">
-					도로 + 건물번(예: 세종로 178)                      
-				</p>	
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="info_gray">
+			<div class="address_pop">
+				<span>03186</span>
+				<span>서울시 종로구 세종대로 145-2</span>
 			</div>
+		</div>
+		<!-- s: 상세주소 입력 -->
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">상세주소</div>
+				{{> cp/text type="text" placeholder="입력해 주세요" maxlength="" inp-title="이메일 입력" }}
+				{{> cp/checkbox id="checkbox01" labelname="상세주소없음" }}
+			</div>
+<<<<<<< HEAD
 
 			<!-- s: 도로명 검색 결과 리스트 -->
+			<div class="title_h4 search_head_tit">
+				<strong>도로명</strong>
+				{{> cp/linkButton bl_class="prev_btn" bl_text="이전" bl_title="이전 선택지로 이동" }}
+			</div>
 			<div class="search_reult_list_container">
-				<div class="title_h4">
-					<strong>도로명</strong>
-					{{> cp/linkButton bl_class="prev_btn" bl_text="이전" bl_title="이전 선택지로 이동" }}
-				</div>
+			<!-- 데이터가 없는 경우 no_data 클래스 추가
+			<div class="search_reult_list_container no_data">
+			-->
 				<ul class="search_reult_list">
 					<li class="search_reult_list_item"><a href="#"><span class="item_text">세종대로</span></a></li>
 					<li class="search_reult_list_item"><a href="#"><span class="item_text">세종대로21길</span></a></li>
 					<li class="search_reult_list_item"><a href="#"><span class="item_text">떡<i>제조</i>원</span></a></li>
-					<li class="search_reult_list_item"><a href="#"><span class="item_text">세종대로23길</a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">세종대로23길</span></a></li>
+					<li class="search_reult_list_item">
+						<div class="no_list_area">
+							{{> cp/icon iconClass="exclamationSvg"}}
+							<p>내역이 없어요</p>
+						</div>
+					</li>
 				</ul>
-                <div class="no_list_area">
-                    {{> cp/icon iconClass="exclamationSvg"}}
-                    <p>내역이 없어요</p>
-                </div>
 			</div>
 			<!-- e: 도로명 검색 결과 리스트 -->
 		</div>
@@ -66,11 +69,13 @@
 					<li class="search_reult_list_item"><a href="#"><span class="item_text">12345</span><span class="item_text">서울 종로구 당주동</span></a></li>
 					<li class="search_reult_list_item"><a href="#"><span class="item_text">12345</span><span class="item_text">서울 종로구 당주동</span></a></li>
 					<li class="search_reult_list_item"><a href="#"><span class="item_text">12345</span><span class="item_text">서울 종로구 당주동</span></a></li>
+					<li class="search_reult_list_item">
+						<div class="no_list_area">
+							{{> cp/icon iconClass="exclamationSvg"}}
+							<p>내역이 없어요</p>
+						</div>
+					</li>
 				</ul>
-                <div class="no_list_area">
-                    {{> cp/icon iconClass="exclamationSvg"}}
-                    <p>내역이 없어요</p>
-                </div>
 			</div>
 			<!-- e: 지번 검색 결과 리스트 -->
 		</div>
@@ -94,17 +99,43 @@
 					<li class="search_reult_list_item"><a href="#"><span class="item_text">12345</span><span class="item_text">서울 종로구 당주동</span></a></li>
 					<li class="search_reult_list_item"><a href="#"><span class="item_text">12345</span><span class="item_text">서울 종로구 당주동</span></a></li>
 					<li class="search_reult_list_item"><a href="#"><span class="item_text">12345</span><span class="item_text">서울 종로구 당주동</span></a></li>
+					<li class="search_reult_list_item">
+						<div class="no_list_area">
+							{{> cp/icon iconClass="exclamationSvg"}}
+							<p>내역이 없어요</p>
+						</div>
+					</li>
 				</ul>
-                <div class="no_list_area">
-                    {{> cp/icon iconClass="exclamationSvg"}}
-                    <p>내역이 없어요</p>
-                </div>
 			</div>
 			<!-- e: 도로명 검색 결과 리스트 -->
 			
 		</div>
 		<!-- e: tab03. 건물명 찾기 Tab 내용 -->
 
+=======
+			<ul class="list_ty2">
+				<li>상세주소 입력 후 [확인]을 눌러 주소를 한 번 더 확인해 주세요.</li>
+			</ul>
+		</div>
+		<!-- e: 상세주소 입력 -->
+		<!-- s: 상세주소 확인 -->
+		<div class="address_pop2">
+			<span class="">03186</span>
+			<ul class="list_ty1 black">
+				<li>서울시 종로구 세종대로 145-2</li>
+				<li>[지번] 서울 종로구 세종로 215번지 11</li>
+			</ul>
+		</div>
+		<ul class="list_ty2">
+			<li>도로명 주소 전명시행에 따라 <span class="point">도로명 주소만 사용 가능</span>합니다. (주택화재보험 목적물은 도로명주소/지번주소 병행 사용 가능)</li>
+		</ul>
+		<!-- e: 상세주소 확인 -->
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인"}}
+>>>>>>> 0ccdfcab8178df07952f51ab7c52a9b4f3904c11
 	</div>
 </div>
 {{/ popup/popup_full}}
