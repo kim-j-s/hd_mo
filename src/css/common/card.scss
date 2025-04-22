@@ -1,4 +1,30 @@
 /* Card*/
+// card list type
+@mixin car-list-style(
+	// $ul-padding: 0,
+	// $ul-margin: 0,
+	$ul-border-radius: 0,
+	$li-padding: 0,
+	$li-margin: 0,
+	$li-font-size: 16px,
+	$li-line-height: 20px,
+	$li-color: inherit
+) {
+	// padding: $ul-padding;
+	// margin: $ul-margin;
+	border-radius: $ul-border-radius;
+	> li {
+		position: relative;
+		margin: $li-margin;
+		padding: $li-padding;
+		font-size: $li-font-size;
+		line-height: $li-line-height;
+		color: $li-color;
+	}
+	@content;
+}
+
+
 .card_item_wrap {
 	& + & {
 		margin-top: 16px;
@@ -204,31 +230,6 @@
 			}
 		}
 
-		// card list type
-		@mixin car-list-style(
-			// $ul-padding: 0,
-			// $ul-margin: 0,
-			$ul-border-radius: 0,
-			$li-padding: 0,
-			$li-margin: 0,
-			$li-font-size: 16px,
-			$li-line-height: 20px,
-			$li-color: inherit
-		) {
-			// padding: $ul-padding;
-			// margin: $ul-margin;
-			border-radius: $ul-border-radius;
-			> li {
-				position: relative;
-				margin: $li-margin;
-				padding: $li-padding;
-				font-size: $li-font-size;
-				line-height: $li-line-height;
-				color: $li-color;
-			}
-			@content;
-		}
-
 		.card_list_ty1 {
 			@include car-list-style($ul-border-radius: 0, $li-padding: 0 0 12px, $li-font-size: var(--font-size-body-small)) {
 				// ul.list-2에 대한 추가적인 스타일
@@ -287,6 +288,77 @@
 				font-weight: 700;
 			}
 		}
+
+
+		//비활성화 케이스
+		&.disabled {
+			pointer-events: none;
+			background-color: var(--color-surface-gray-subtler);
+
+			* {
+				color: var(--color-text-disabled-on) !important;
+			}
+			
+			.item_top {
+				.title_info {
+					.main_title {
+						color: var(--color-text-disabled-on);
+					}
+					.desc {
+						color: var(--color-text-information);
+					}
+				}
+			}
+		
+			.inp_checkbox {
+				input[type=checkbox]:checked {
+					& ~ i {
+						border-color: var(--color-border-primary-light);
+					}
+				}
+			}
+		
+			.item_top .title_info .main_title {
+				color: inherit;
+			}
+		
+			.card_link {
+				.item_top {
+					.title_info {
+						// padding-right: 24px;
+						.main_title {
+							padding-right: 30px;
+							background: url(../images/icon/arrowRight_disabled_ty2.svg) no-repeat right bottom / 24px auto;
+						}
+					}
+				}
+			}
+		}
+
+		//비활성화 + 선택 예외 케이스
+		&.selected {
+			pointer-events: none;
+			background-color: #fff;
+			
+			.inp_checkbox {
+				input[type=checkbox]:checked {
+					& ~ i {
+						border-color: var(--color-border-primary-light);
+					}
+				}
+			}
+			.card_link {
+				.item_top {
+					.title_info {
+						// padding-right: 24px;
+						.main_title {
+							padding-right: 30px;
+							background: url(../images/icon/arrowRight_disabled_ty2.svg) no-repeat right bottom / 24px auto;
+						}
+					}
+				}
+			}
+		}
 	}
 
 	& + .inp_checkbox {
@@ -295,62 +367,6 @@
 }
 
 
-//비활성화 케이스
-.card_item_wrap > .card_item.disabled {
-	pointer-events: none;
-	// * {
-	// 	color: var(--color-text-disabled) !important;
-	// }
-
-	.inp_checkbox {
-		input[type=checkbox]:checked {
-			& ~ i {
-				border-color: var(--color-border-primary-light);
-			}
-		}
-	}
-
-	.item_top .title_info .main_title {
-		color: inherit;
-	}
-
-	.card_link {
-		.item_top {
-			.title_info {
-				// padding-right: 24px;
-				.main_title {
-					padding-right: 30px;
-					background: url(../images/icon/arrowRight_disabled_ty2.svg) no-repeat right bottom / 24px auto;
-				}
-			}
-		}
-	}
-}
-
-
-//selected Case
-.card_item_wrap > .card_item.selected {
-	pointer-events: none;
-	
-	.inp_checkbox {
-		input[type=checkbox]:checked {
-			& ~ i {
-				border-color: var(--color-border-primary-light);
-			}
-		}
-	}
-	.card_link {
-		.item_top {
-			.title_info {
-				// padding-right: 24px;
-				.main_title {
-					padding-right: 30px;
-					background: url(../images/icon/arrowRight_disabled_ty2.svg) no-repeat right bottom / 24px auto;
-				}
-			}
-		}
-	}
-}
 
 /* Card - information Type*/
 .card_item_wrap.info_type { 
