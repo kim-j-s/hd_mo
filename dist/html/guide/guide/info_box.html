@@ -215,8 +215,9 @@
 
 		<div class="guide_h4">info_accordion</div>
 
-		<div class="guide_h4">file 관련</div>
-		<div class="info_gray ty2">
+		<div class="guide_h4">file</div>
+		<div class="guide_discription">.file_upload_wrap</div>
+		<div class="file_upload_wrap">
 			<h3 class="title_h3">앞모습 전체 사진 등록</h3>
 			<!-- s: 이미지 파일 붙는 영역 -->
 			<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
@@ -246,7 +247,7 @@
 			<div class="btn_area center">
 				<!-- 등록 전 노출 -->
 				<div class="file_btn">
-					<input type="file" name="file" id="file" />
+					<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png" />
 					<label for="file">
 						<span class="hd_btn hd_btn_ty_2 hd_btn_s_2">
 							<i class="hd_icon carmeraSvg"></i>
@@ -266,6 +267,81 @@
     		</div> -->
 			</div>
 			<!-- e: 이미지 파일 버튼 -->
+		</div>
+
+		<div class="guide_discription">.file_upload_wrap_ty2</div>
+		<div class="file_upload_wrap_ty2">
+			<p class="text_sub">ECO 마일리지 특약 정산을 위한 사진을 등록해 주세요.</p>
+			<!-- s: 이미지 파일 붙는 영역 -->
+			<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+			<div class="file_attach_box">
+				<div class="file_thumbnail">
+					<img src="../../../images/common/img_file_shot.png" alt="등록 전 상태 이미지" />
+				</div>
+			</div>
+
+			<!-- 등록 후 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+			<!-- <div class="file_attach_box">
+    		<div class="file_thumbnail">
+    			<img src="../../../images/temp/img_carmera_temp.png" alt="등록된 계기판 이미지">
+    		</div>
+    		<button type="button" class="btn_file_delete">
+    			<span>등록한 이미지 삭제하기</span>
+    		</button>
+    	</div> -->
+			<!-- e: 이미지 파일 붙는 영역 -->
+
+			<!-- s: 이미지 파일 버튼 -->
+			<div class="btn_area center">
+				<div class="file_btn">
+					<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png" />
+					<label for="file">
+						<span class="hd_btn hd_btn_ty_3 hd_btn_s_2">
+							<i class="hd_icon carmeraSvg2"></i>
+							사진 등록
+						</span>
+					</label>
+				</div>
+				<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_2">
+					<i class="hd_icon carmeraSvg"></i>
+					<span class="text">사진 촬영</span>
+				</button>
+			</div>
+			<!-- e: 이미지 파일 버튼 -->
+
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">기준일</div>
+					<div class="input_text calendar">
+						<div class="inp">
+							<input type="tel" class="inp_picker" value="2025.01.01" title="날짜를 입력해주세요" />
+							<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+							<button type="button" class="btn calendar_call" title="날짜 선택"></button>
+						</div>
+					</div>
+				</div>
+				<div class="form_line">
+					<div class="label_tit">최종주행거리</div>
+					<div class="input_text">
+						<div class="inp">
+							<input type="tel" placeholder="숫자만" title="최종주행거리 입력" />
+							<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+						</div>
+						<div class="int_txt right">km</div>
+					</div>
+				</div>
+			</div>
+			<div class="btn_area">
+				<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_2" disabled>
+					<span class="text">사진 전송하기</span>
+				</button>
+			</div>
+
+			<ul class="list_ty2">
+				<li>사진촬영 기준일과 계기판의 최종 주행거리를 입력해 주세요.</li>
+				<li>운행거리 증빙을 위한 계기판 사진은 ODO(총 운행거리 사진)만 인정되며 리셋된 트립 사진은 인정되지 않습니다.</li>
+				<li>최종 주행거리는 전산판독 시 활용되므로 계기판과 동일하게 입력해 주세요.</li>
+			</ul>
 		</div>
 	</body>
 </html>

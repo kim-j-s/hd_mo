@@ -151,7 +151,7 @@
 		});
 
 	// comma
-	$DOM.on("keyup", ".price .inp input", function () {
+	$DOM.on("keyup", ".price .inp input, .comma .inp input", function () {
 		const $this = $(this),
 			$val = $this.val();
 		$this.val($val.replace(/[^0-9]/gi, "").replace(/(\d)(?=(?:\d{3})+(?!\d))/g, "$1,"));

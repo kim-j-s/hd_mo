@@ -1,24 +1,26 @@
 <!---
 화면번호 : MPRMTPS10004020000_1
-경로 : 3.자동차 상세정보 > 3-3. 자동차 추가 확인사항
+경로 : 3.자동차 상세정보 > 3-3. 자동차 추가 확인사항 (승합)
 -->
 {{#> layout/default page-title="자동차 상세정보 | 상품"}}
 <div id="wrap" class="wrap">
 	{{> layout/header h-title="자동차보험" h-back=true }}
 	<div id="container" class="container">
 		<div class="content">
+		<!-- s: 25-04-22 수정 -->
 			<!-- s: content_top -->
 			<div class="content_top">
 				<h2 class="title_h2">
 					<strong>차량관련 확인사항</strong> 중
-					<strong>해당하는 항목</strong>이 있으면 체크해 주세요
+					<strong>해당하는 항목</strong>이 있으면 체크해주세요
 				</h2>
+				<div class="btn_area basic">
+				 <!--TO-DO : (25-04-15 위서진) 추후 용어사전 팝업이 완성되면, popup id를 popup props에 적용해야함-->
+				 {{> cp/button type="3" size="5" b-text="어려운 용어 설명을 보시려면" popup="pop_01" btn-title="도움말 열기" rightIcon="arrowRightSvg" }}
+				</div>
 			</div>
 			<!-- e: content_top -->
-			 <div class="btn_area basic">
-				<!--TO-DO : (25-04-15 위서진) 추후 용어사전 팝업이 완성되면, popup id를 popup props에 적용해야함-->
-				{{> cp/button type="3" size="5" b-text="어려운 용어 설명을 보시려면" popup="pop_01" btn-title="도움말 열기" rightIcon="arrowRightSvg" }}
-			 </div>
+		<!-- e: 25-04-22 수정 -->
 
 			<ul class="form_list">
 				<li>
