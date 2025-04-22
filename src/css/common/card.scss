@@ -410,8 +410,66 @@
 				}
 			}
 		}
-		& + [class^=list_ty]{
-			margin-top: 12px;
+	}
+	
+}
+
+.card_list_wrap {
+	> li {
+		+ li {
+			margin-top: 16px;
+		}
+		.card_wrap {
+			padding: 24px 20px;
+			background: var(--color-surface-white-subtle);
+			border: 1px solid var(--color-border-gray-light);				
+			border-radius: var(--radius-large2);
+			> dt {
+				.title {
+					display: block;
+					font-size: var(--font-size-heading-small);
+					font-weight: 700;
+					&.icon {
+						padding-left: 28px;
+						background-image: url(../images/icon/icon_car_agreement01.svg);
+						background-repeat: no-repeat;
+						background-size: 24px auto;
+						background-position: left center;
+					}
+					& + .sub_text {
+						margin-top: 8px;
+					}
+				}
+				.sub_text {
+					font-size: var(--font-size-body-small);
+				}
+			}
+			> dd {
+				margin-top: 16px;
+				padding-top: 16px;
+				border-top: 1px solid var(--color-divider-gray-light);
+				&.card_cont_list {
+					dl {
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						gap: 16px;
+						dt {
+							color: var(--color-text-subtle);
+						}
+						dd {
+							text-align: right;
+						}
+						& + dl {
+							margin-top: 12px;
+						}
+						.point {
+							color: var(--color-text-primary-bold);
+							font-weight: 700;
+						}
+					}
+				}
+			}
 		}
 	}
 }
