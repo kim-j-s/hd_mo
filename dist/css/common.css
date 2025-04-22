@@ -4741,6 +4741,72 @@ strong {
 	font-size: var(--font-size-button-medium);
 	line-height: 2.1rem;
 }
+.radio_comb {
+	min-width: 11.4rem;
+	min-height: 5.8rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	border-radius: var(--radius-medium3);
+	font-size: var(--font-size-label-medium);
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	border-radius: var(--radius-medium3, 16px);
+	position: relative;
+}
+.radio_comb.origin {
+	border: 1px solid var(--color-border-gray-light);
+}
+.radio_comb.origin:before {
+	display: block;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 1px;
+	height: 100%;
+	background-color: var(--color-border-gray-light);
+}
+.radio_comb.active {
+	background: var(--color-element-gray-lighter, #f4f5f6);
+}
+.radio_comb .inp_radio.rd_btn {
+	width: 5.6rem;
+	height: 5.6rem;
+	overflow: hidden;
+}
+.radio_comb .inp_radio.rd_btn span.label_cont {
+	z-index: 10;
+}
+.radio_comb .inp_radio.rd_btn input[type="radio"] + label:after {
+	border-width: 0;
+}
+.radio_comb .inp_radio.rd_btn input[type="radio"] + label:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+	-webkit-transition: background-color 0.3s;
+	transition: background-color 0.3s;
+	z-index: 0;
+}
+.radio_comb .inp_radio.rd_btn input[type="radio"]:checked + label:before {
+	content: "";
+	background: #fff;
+	border-radius: var(--radius-medium3);
+	border: 0.2rem solid #fff;
+}
+.radio_comb .inp_radio.rd_btn input[type="radio"]:checked + label:after {
+	border-radius: var(--radius-medium3);
+	border-width: 0.2rem;
+	width: 5.6rem;
+	height: 5.6rem;
+}
 /* 좌우 스크롤 옵션 선택 영역 */
 /* 선택 목록 스타일 */
 .opt_select_wrap {
@@ -5474,6 +5540,9 @@ strong {
 .text_sub + .circle_list,
 .text_sub + .view_img_list {
 	margin-top: 1.6rem;
+}
+.text_sub + .list_ty3 {
+	margin-top: 3.2rem;
 }
 /* textarea */
 /* Textarea */
