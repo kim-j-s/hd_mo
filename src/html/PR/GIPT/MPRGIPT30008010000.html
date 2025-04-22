@@ -24,12 +24,16 @@
 					<div>동물등록증(카드형 또는 출력형) 사진</div>
 					{{> cp/linkButton bl_class="short_cut sm" bl_text="예시" pop_id="pop_type00" question_tit="링크" }}
 				</div>
-				<div class="info_gray ty2">
+				<!-- s: 25-04-22 수정 -->
+				<div class="file_upload_wrap">
+				<!-- e: 25-04-22 수정 -->
 					<!-- s: 이미지 파일 붙는 영역 -->
 					<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
 					<div class="file_attach_box">
 						<div class="file_thumbnail">
-							<img src="../../../images/content/gipt/img_animal_certificate_card.png" alt="동물등록증 예시 이미지">
+							<!-- s: 25-04-22 수정 -->
+							<img src="../../../images/content/gipt/img_animal_certificate_card_before.png" alt="동물등록증 예시 이미지">
+							<!-- e: 25-04-22 수정 -->
 						</div>
 					</div>
 					
@@ -53,7 +57,9 @@
 					<div class="btn_area center">
 						<!-- 등록 전 노출 -->
 						<div class="file_btn">
-							<input type="file" name="file" id="file">
+							<!-- s: 25-04-22 수정 -->
+							<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png">
+							<!-- e: 25-04-22 수정 -->
 							<label for="file">
 								<span class="hd_btn hd_btn_ty_2 hd_btn_s_2">
 									<i class="hd_icon carmeraSvg"></i>
@@ -63,7 +69,7 @@
 						</div>
 						<!-- 등록 후 노출 -->
 						<!-- <div class="file_btn">
-							<input type="file" name="file" id="file">
+							<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png">
 							<label for="file">
 								<span class="hd_btn hd_btn_ty_3 hd_btn_s_2">
 									<i class="hd_icon carmeraSvg2"></i>

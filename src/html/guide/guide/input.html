@@ -23,8 +23,12 @@
 	<div class="guide_discription">Error fail</div>
 	{{> cp/text msg3="에러문구" inp-title="Error fail" }}
 
-	<!-- 금액Comma -->
-	<div class="guide_h4">Type - 금액입력(Comma)</div>
+	<!-- Comma -->
+	<div class="guide_h4">Type - Comma</div>
+	<div class="guide_discription">default</div>
+	{{> cp/text type="tel" class="comma" r-text="km" inp-title="주행거리 입력"}}
+
+	<div class="guide_discription">금액 입력</div>
 	{{> cp/text type="tel" class="price" r-text="원" inp-title="금액입력"}}
 
 	<div class="guide_discription">combination</div>
@@ -239,6 +243,18 @@
 		</div>
 	</div>
 
+	<div class="guide_h4">Type - 왼쪽/오른쪽 입력 케이스</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">왼쪽 Case</div>
+			{{> cp/text type="tel" placeholder="숫자만" l-text="km" inp-title="최종주행거리 입력"}}
+		</div>
+		<div class="form_line">
+			<div class="label_tit">오른쪽 Case</div>
+			{{> cp/text type="tel" placeholder="숫자만" r-text="km" inp-title="최종주행거리 입력"}}
+		</div>
+	</div>
+
 
 	<!-- search -->
 	<!-- <div class="guide_h4">Type - search</div>
@@ -258,7 +274,7 @@
 	</div>
 	<div class="guide_discription">사진등록 버튼</div>
 	<div class="file_btn">
-		<input type="file" name="file" id="file">
+		<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png">
 		<label for="file">
 			<span class="hd_btn hd_btn_ty_2 hd_btn_s_2">
 				<i class="hd_icon carmeraSvg"></i>
@@ -268,7 +284,7 @@
 	</div>
 	<div class="guide_discription">사진변경 버튼</div>
 	<div class="file_btn">
-		<input type="file" name="file" id="file">
+		<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png">
 		<label for="file">
 			<span class="hd_btn hd_btn_ty_3 hd_btn_s_2">
 				<i class="hd_icon carmeraSvg2"></i>

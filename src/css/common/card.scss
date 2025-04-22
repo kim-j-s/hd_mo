@@ -369,7 +369,11 @@
 
 
 /* Card - information Type*/
-.card_item_wrap.info_type { 
+.card_item_wrap.info_type {
+
+	& + .info_gray {
+		margin-top: 52px;
+	}
 
 	.card_item {
 		border: 1px solid var(--color-border-gray-light);
@@ -399,13 +403,15 @@
 			}
 
 			&.result {
-				padding-top: 16px;
-				border-top: 1px solid var(--color-input-border-disabled);
+				// padding-top: 16px;
+				// border-top: 1px solid var(--color-input-border-disabled);
 				strong {
 					font-size: var(--font-size-body-large);
 				}
 			}
 		}
+		& + [class^=list_ty]{
+			margin-top: 12px;
+		}
 	}
-	
 }
