@@ -50,6 +50,19 @@
 	<body class="guide_body">
 		<div class="guide_h1">tab</div>
 
+		<div class="guide_h4">탭 추가 기능 - 개발 참고 - 탭 버튼 클릭 시 탭 전환 방지</div>
+		<div class="guide_discription">접근성을 위해서 선택된 요소의 aria-selected true/false 는 처리 해야합니다.</div>
+		<div class="tab_wrap">
+			<div class="tab_wrap_list_ty1" role="tablist">
+				<button type="button" class="tab_btn tab_btn_blcok active" role="tab" aria-selected="true" aria-controls="tabPanelex01" id="tabex01">1번 탭</button>
+				<button type="button" class="tab_btn tab_btn_blcok" role="tab" aria-selected="false" aria-controls="tabPanelex02" id="tabex02">2번 탭</button>
+				<button type="button" class="tab_btn tab_btn_blcok" role="tab" aria-selected="false" aria-controls="tabPanelex03" id="tabex03">3번 탭</button>
+			</div>
+			<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanelex01">tab inner 1</div>
+			<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanelex02">tab inner 2</div>
+			<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanelex02">tab inner 3</div>
+		</div>
+
 		<div class="guide_h4">.tab_wrap_list_ty1</div>
 		<div class="tab_wrap">
 			<div class="tab_wrap_list_ty1" role="tablist">

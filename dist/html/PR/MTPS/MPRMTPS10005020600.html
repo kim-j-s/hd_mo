@@ -1,6 +1,6 @@
 <!---
-화면번호 : MPRMTPS10005020400
-경로 : 4.운전자 정보 > 4-2.운전자 정보 입력	 > 누구나
+화면번호 : MPRMTPS10005020600
+경로 : 4.운전자 정보 > 4-2.운전자 정보 입력	 > 본인+1인
 -->
 <!doctype html>
 <html lang="ko">
@@ -67,7 +67,7 @@
 								<div class="title_h3">
 									운전자 범위는
 									<br />
-									<strong>운전자 제한 없음</strong>
+									<strong>본인+1인</strong>
 									이에요
 								</div>
 							</div>
@@ -77,21 +77,34 @@
 								<strong class="point">만 24세 이상 한정 운전 특약</strong>
 								입니다.
 							</p>
-							<div class="info_box">
-								<strong>2024년 3월 13일 이전</strong>
-								출생자부터 운전가능
-							</div>
-							<div class="info_box">운전자 제한없음, 만24세이상 한정 운전 특약 이외의 운전자가 차량 운전 사고 발생 시 대인배상I(책임보험)을 제외한 나머지 보상은 받으실 수 없습니다.</div>
+							<div class="info_box">본인+1인, 만24세이상 한정 운전 특약 이외의 운전자가 차량 운전 사고 발생 시 대인배상I(책임보험)을 제외한 나머지 보상은 받으실 수 없습니다.</div>
 							<!-- e: 유효한 생년월일이 입력되면 출력 -->
-							<!-- s: 25-04-23 수정 -->
-							<p class="text_sub">운전자 중 가장 어린 분의 나이를 선택해 주세요.</p>
-							<!-- e: 25-04-23 수정 -->
+							<p class="text_sub">지정 1인의 생년월일을 입력해 주세요.</p>
 
 							<div class="form_group_wrap">
 								<div class="form_line">
-									<div class="label_tit">나이</div>
-									<div class="btn popup_open btn_select" role="button" title="연령 선택 팝업열기" onclick="openHDPopup(this,'select_option_ty1');">
-										<span>옵션 value</span>
+									<div class="label_tit">생년월일/성별</div>
+									<div class="row">
+										<div class="input_text birth_day grow">
+											<div class="inp">
+												<input type="tel" placeholder="8자리 숫자 입력" maxlength="8" title="생년월일 입력" />
+												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+											</div>
+										</div>
+										<div class="radio_comb origin" role="radiogroup">
+											<div class="inp_radio rd_btn">
+												<input type="radio" id="radio_comb_g2_1" name="radio_g1" />
+												<label for="radio_comb_g2_1">
+													<span class="label_cont">남</span>
+												</label>
+											</div>
+											<div class="inp_radio rd_btn">
+												<input type="radio" id="radio_comb_g2_2" name="radio_g1" />
+												<label for="radio_comb_g2_2">
+													<span class="label_cont">여</span>
+												</label>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -100,7 +113,7 @@
 					<div class="popup_bottom">
 						<div class="btn_area">
 							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2" disabled>
-								<span class="text">나이를 선택 중이에요</span>
+								<span class="text">생년월일을 입력 중이에요</span>
 							</button>
 							<!-- <button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
 						
@@ -114,43 +127,5 @@
 			</div>
 		</div>
 		<!-- e: Bottom 팝업 -->
-
-		<!-- s: 나이 선택 팝업 -->
-		<div class="popup_wrap bottom" id="select_option_ty1" role="dialog" aria-modal="true" aria-hidden="true">
-			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('select_option_ty1');"></div>
-				<div class="popup_inner">
-					<div class="draggable" aria-hidden="true">
-						<div class="move"></div>
-					</div>
-					<div class="popup_head"><div class="popup_head_title">연령선택</div></div>
-
-					<div class="popup_cont">
-						<!-- s: 25-04-23 수정 -->
-						<div class="opt_select_list opt_case3">
-							<div role="button" tabindex="0" class="option active" title="선택됨"><span class="text">만 21세 이상</span></div>
-							<div role="button" tabindex="0" class="option"><span class="text">만 22세 이상</span></div>
-							<div role="button" tabindex="0" class="option"><span class="text">만 24세 이상</span></div>
-							<div role="button" tabindex="0" class="option"><span class="text">만 26세 이상</span></div>
-							<div role="button" tabindex="0" class="option"><span class="text">만 28세 이상</span></div>
-							<div role="button" tabindex="0" class="option"><span class="text">만 30세 이상</span></div>
-							<div role="button" tabindex="0" class="option"><span class="text">만 35세 이상</span></div>
-							<div role="button" tabindex="0" class="option"><span class="text">만 43세 이상</span></div>
-							<div role="button" tabindex="0" class="option"><span class="text">만 48세 이상</span></div>
-						</div>
-						<!-- e: 25-04-23 수정 -->
-					</div>
-					<div class="popup_bottom">
-						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
-								<span class="text">확인</span>
-							</button>
-						</div>
-					</div>
-					<button type="button" class="popup_close" onclick="closeHDPopup('select_option_ty1');"><span class="blind">팝업 닫기</span></button>
-				</div>
-			</div>
-		</div>
-		<!-- e: 나이 선택 팝업 -->
 	</body>
 </html>
