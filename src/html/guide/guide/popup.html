@@ -65,9 +65,7 @@
 				</div>
 			</div>
 
-			<div class="g_line">
-				은행/증권사, 카드사 선택 팝업 케이스
-			</div>
+			<div class="g_line">은행/증권사, 카드사 선택 팝업 케이스</div>
 			<div class="g_dom">
 				<div class="p_guide_wrap_b">
 					{{> cp/button type="2" size="5" b-text="은행/증권사 선택 팝업" popup="bank_select_pop" b-title="상황별 타이틀 입력 필요"}}				
@@ -79,6 +77,13 @@
 			<div class="g_dom">
 				<div class="p_guide_wrap_b">
 					{{> cp/button_question pop_id="pop_type03" question_tit="상해간병비&middot;사망담보 특약" }}
+				</div>
+			</div>
+
+			<div class="g_line">키패드 예시 - 추후 삭제 예정</div>
+			<div class="g_dom">
+				<div class="p_guide_wrap_b">
+					{{> cp/button type="2" size="5" b-text="키패드 예시" popup="p1" b-title="입력정보 케이스"}}
 				</div>
 			</div>
 
@@ -96,6 +101,96 @@
 
 <!-- s: popup area -->
  <div class="popup_area">
+
+	<!-- s: Full 팝업 - 키패드 예시 - 추후 삭제 예정 -->
+	{{#> popup/popup_full popup-id="p1" popup-title="팝업 타이틀" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<!-- s: popup_content_top -->
+			<div class="popup_content_top">
+				<h2 class="title_h2">
+					<strong>고객정보 관리 및 가입 설계를 위해<br> 동의</strong>가 필요합니다.
+				</h2>
+			</div>
+			<!-- e: popup_content_top -->
+
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">피보험자(미성년 자녀) 이름 dsfsdf</div>
+					{{> cp/text inp-title="피보험자(미성년 자녀) 이름 입력"}}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">주민등록번호</div>
+					<div class="comp_wrap birth">
+						{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력"  }}
+						<span class="dash">-</span>
+						<div class="comp_wrap_keypad_call">
+							<button type="button" class="btn keypad_call" role="textbox" title="주민등록번호 뒷자리 입력"><span class="text">뒷자리</span></button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="divider_ty1"></div>
+
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">계약자 이름</div>
+					{{> cp/text placeholder="입력해주세요" inp-title="계약자 이름 입력"}}
+				</div>
+				<div class="form_line xxx">
+					<div class="label_tit">주민등록번호</div>
+					<div class="comp_wrap birth">
+						{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력"  }}
+						<span class="dash">-</span>
+						<div class="comp_wrap_keypad_call">
+							<div class="form_wrap form_key">
+								<div class="pin_area" title="주민등록번호 뒤7자리" role="textbox">
+									<strong class="ergAt dot_mark active"></strong>
+									<strong class="ergAt dot_mark active"></strong>
+									<strong class="ergAt dot_mark"></strong>
+									<strong class="ergAt dot_mark"></strong>
+									<strong class="ergAt dot_mark"></strong>
+									<strong class="ergAt dot_mark"></strong>
+									<strong class="ergAt dot_mark"></strong>
+									<input type="password" name="" id="" autocomplete="new-password" style="display: none;">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<style lang="scss">
+				.form_key {
+					.pin_area {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						height: 54px;
+						gap: 4px;
+						.dot_mark {
+							flex: none;
+							display: inline-block;
+							width: 10px;
+							height: 10px;
+							border: 1px solid #000;
+							border-radius: 50%;
+							&.active {
+								background-color: #000;
+							}
+						}
+					}
+				}
+			</style>
+
+			
+		</div>
+	</div>
+	{{/ popup/popup_full}}
+	<!-- e: Full 팝업 - 키패드 예시 - 추후 삭제 예정 -->
+
+
 	<!-- s: Full 팝업 -->
 	{{#> popup/popup_full popup-id="pop_type01" popup-title="팝업 타이틀" }}
 	<div class="popup_cont">
@@ -108,6 +203,7 @@
 			</div>
 			<!-- e: popup_content_top -->
 
+			전체팝업 <br>
 			팝업내용입니다
 			<br />
 			내용

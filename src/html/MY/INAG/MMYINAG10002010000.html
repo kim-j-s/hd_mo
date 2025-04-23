@@ -18,7 +18,7 @@
 					</div>
 
 					<!-- s: 기본정보 -->
-					<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
+					<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
 						<h3 class="title_h3">기본정보</h3>
 						<div class="table_wrap">
 							<table class="table">
@@ -155,15 +155,25 @@
 								</div>
 							</li>
 						</ul>
-
-
-
 					</div>
 					<!-- e: 기본정보 -->
 
 					<!-- s: 보장내용 -->
-					<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
-						tab inner 2
+					<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
+
+
+						<div class="form_group_wrap">
+							<div class="form_line">
+								<div class="label_tit">피보험자</div>
+								{{> cp/selectitem si_ph="선택해주세요." si_title="피보험자 선택" si_item="하*현" si_popup="pop_type05"}}
+							</div>
+							<div class="form_line">
+								<div class="label_tit">피보험자/목적물소재지</div>
+								{{> cp/selectitem si_ph="선택해주세요." si_title="피보험자/목적물소재지 선택" si_item="04535 서울 중구 명동2길 20, 현대해상명동사" si_popup="pop_type06"}}
+							</div>
+						</div>
+
+
 					</div>
 					<!-- e: 보장내용 -->
 					 
@@ -224,6 +234,41 @@
 	</div>
 
 	<!-- s: popup area -->
+
+
+	<!-- s: 피보험자 선택 목록 -->
+	{{#> popup/popup_bottom popup-id="pop_type05" popup-title="팝업 타이틀"}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="opt_select_list opt_case3">
+				<div role="button" class="option active" title="선택됨"><span class="text">하*현</span></div>
+				<div role="button" class="option"><span class="text">하*현 2</span></div>
+				<div role="button" class="option"><span class="text">하*현 3</span></div>
+				<div role="button" class="option"><span class="text">하*현 4</span></div>
+				<div role="button" class="option"><span class="text">하*현 5</span></div>
+				<div role="button" class="option"><span class="text">하*현 6</span></div>
+			</div>
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: 피보험자 선택 목록 -->
+
+	<!-- s: 피보험자/목적물소재지 선택 목록 -->
+	{{#> popup/popup_bottom popup-id="pop_type06" popup-title="팝업 타이틀"}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="opt_select_list opt_case3">
+				<div role="button" class="option active" title="선택됨"><span class="text">04535 서울 중구 명동2길 20, 현대해상명동사옥</span></div>
+				<div role="button" class="option"><span class="text">04535 서울 중구 명동2길 20, 현대해상명동사옥 2</span></div>
+				<div role="button" class="option"><span class="text">04535 서울 중구 명동2길 20, 현대해상명동사옥 3</span></div>
+				<div role="button" class="option"><span class="text">04535 서울 중구 명동2길 20, 현대해상명동사옥 4</span></div>
+				<div role="button" class="option"><span class="text">04535 서울 중구 명동2길 20, 현대해상명동사옥 5</span></div>
+				<div role="button" class="option"><span class="text">04535 서울 중구 명동2길 20, 현대해상명동사옥 6</span></div>
+			</div>
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: 피보험자/목적물소재지 선택 목록 -->
 	 
 	<!-- e: popup area -->
 

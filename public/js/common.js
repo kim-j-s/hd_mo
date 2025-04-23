@@ -272,7 +272,7 @@
 
 
 	/* Tab */
-	$DOM.on('click', '.tab_btn:not(.tab_btn_blcok)', function(){
+	$DOM.on('click', '.tab_btn:not(.tab_btn_block)', function(){
 		const idx = $(this).index();
 		$(this).closest('[class^=tab_wrap_list]').children('.tab_btn').removeClass('active').attr('aria-selected', 'false');
 		$(this).addClass('active').attr('aria-selected', 'true');

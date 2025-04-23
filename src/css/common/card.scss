@@ -61,7 +61,9 @@
 		.item_inner {
 			display: flex;
 			align-items: flex-start;
-
+			> .inp_checkbox {
+				margin-top: 3px;
+			}
 			.inner_cont {
 				flex: 1;
 
@@ -117,6 +119,7 @@
 		}
 
 		.card_link {
+			display: block;
 			.item_top {
 				.title_info {
 					.main_title {
@@ -289,6 +292,15 @@
 			}
 		}
 
+		.checkbox_group_wrap {
+			margin-top: 16px;
+			padding-top: 16px;
+			border-top: 1px solid #e1e3ea;
+			gap: 16px;
+			.inp_checkbox{
+				width: 100%;
+			}
+		}
 
 		//비활성화 케이스
 		&.disabled {
@@ -431,10 +443,27 @@
 					font-weight: 700;
 					&.icon {
 						padding-left: 28px;
-						background-image: url(../images/icon/icon_car_agreement01.svg);
 						background-repeat: no-repeat;
 						background-size: 24px auto;
 						background-position: left center;
+						&.car {
+							background-image: url(../images/icon/icon_connected_car.svg);
+						}
+						&.handlebar {
+							background-image: url(../images/icon/icon_handlebar.svg);
+						}
+						&.advanced_safety {
+							background-image: url(../images/icon/icon_advanced_safety.svg);
+						}
+						&.blackbox {
+							background-image: url(../images/icon/icon_blackbox.svg);
+						}
+						&.child_discount {
+							background-image: url(../images/icon/icon_child_discount.svg);
+						}
+						&.accident_free {
+							background-image: url(../images/icon/icon_accident_free.svg);
+						}
 					}
 					& + .sub_text {
 						margin-top: 8px;

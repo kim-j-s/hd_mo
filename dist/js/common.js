@@ -97,6 +97,7 @@
 					$del.hide();
 				}
 			}
+
 			$(".input_text .inp").removeClass("active").children(".del").hide();
 			$wrap.addClass("active");
 			$del.show();
@@ -267,7 +268,7 @@
 	});
 
 	/* Tab */
-	$DOM.on("click", ".tab_btn", function () {
+	$DOM.on("click", ".tab_btn:not(.tab_btn_blcok)", function () {
 		const idx = $(this).index();
 		$(this).closest("[class^=tab_wrap_list]").children(".tab_btn").removeClass("active").attr("aria-selected", "false");
 		$(this).addClass("active").attr("aria-selected", "true");
@@ -360,6 +361,7 @@ function prograssBar() {
 }
 
 /* Tab Scroll */
+// 탭 버튼 클릭 시 중앙에 위치하는 기능 - 접근성 관련 기능
 function tabScroll() {
 	let scrollPosition = 0;
 
