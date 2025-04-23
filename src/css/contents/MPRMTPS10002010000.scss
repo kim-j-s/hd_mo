@@ -6,10 +6,11 @@
 }
 
 
-.car_main_top {
+.product_main_top {
 	margin: 0 -24px;
 	padding: 16px 24px 60px;
 	background: url(../images/content/mtps/img_MPRMTPS10002010000.png) no-repeat right bottom / 156px auto;
+
 
 	.logo {
 		& + .point,
@@ -26,5 +27,96 @@
 
 	& + .bg_area {
 		margin-top: -26px;
+	}
+}
+
+
+.input_form_box {
+	background-color: var(--color-border-information-light);
+	border-radius: 16px;
+
+	& + .bg_area {
+		margin-top: 40px;
+	}
+
+	.input_title {
+		padding: 16px 24px;
+		font-size: var(--font-size-label-medium);
+		color: var(--color-text-basic);
+	}
+
+	.input_item_wrap {
+		.acd_item {
+			margin-bottom: 30px;
+			// margin-top: -30px;
+			overflow: hidden;
+			// padding: 20px 24px;
+			// background-color: #fff;
+			border-radius: 16px;
+			box-shadow: 0px 0px 2px 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)), 0px 4px 8px 0px var(--color-alpha-shadow2, rgba(0, 0, 0, 0.08));
+
+			&:first-child {
+				margin-top: 0;
+
+				.acd_head {
+					margin-top: 0;
+
+					&.active {
+						margin-top: 0;
+					}
+				}
+			}
+
+			.acd_head {
+				overflow: hidden;
+				margin-top: 30px;
+				border-radius: 16px 16px 0 0;
+
+				&.active {
+				}
+				
+				.acd_btn {
+					position: relative;
+					width: 100%;
+					padding: 20px 48px 20px 24px;
+					// padding-right: 24px;
+					background-color: #fff;
+					font-size: var(--font-size-label-medium);
+
+					&:after {
+						position: absolute;
+						right: 24px;
+						top: calc(50% - 12px);
+						content:'';
+						width: 24px;
+						height: 24px;
+						background: url(../images/icon/arrowDown_ty1.svg) no-repeat right center / 24px auto;
+					}
+					
+					&[aria-expanded='true']{
+						transition: border-radius .4s ease-in;
+						border-radius: 16px 16px 0 0 ;
+
+						&:after {
+							transform: rotate(180deg);
+						}
+					}
+				}
+				&.active {
+					& + .acd_cont {
+						.inner {
+						}
+					}
+				}
+			}
+
+			.acd_cont {
+				background-color: #fff;
+				// border-radius: 0 0 16px 16px;
+				.inner {
+					padding: 8px 24px 50px;
+				}
+			}
+		}
 	}
 }
