@@ -38,7 +38,7 @@
 
   /* Accordion */   
   $DOM.on('click', '.acd_item .acd_head .acd_btn', function(){
-	console.log('아코디언');
+		// console.log('아코디언');
     const $this = $(this),
 					$head = $this.parent('.acd_head'),
           $inner = $head.next('.acd_cont').children('.inner'),
@@ -50,10 +50,18 @@
       $head.addClass('active');
 			$this.attr('aria-expanded', 'true');
       $inner.slideDown();
+
+			// if($this.closest('.acd_item').parent().hasClass('input_item_wrap')){
+			// 	$this.closest('.acd_item').addClass('open')
+			// }
     }else {
 			$this.attr('aria-expanded', 'false');
       $head.removeClass('active');
       $inner.slideUp();
+
+			// if($this.closest('.acd_item').parent().hasClass('input_item_wrap')){
+			// 	$this.closest('.acd_item').removeClass('open')
+			// }
     }
   });
 

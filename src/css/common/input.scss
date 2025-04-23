@@ -10,6 +10,14 @@
 	border: var(--border-width-variable-regular) solid var(--color-input-border);
 	background: var(--color-input-surface);
 	border-radius: var(--radius-medium3);
+
+	&.big {
+		input {
+			font-size: var(--font-size-heading-medium);
+			font-weight: 700;
+		}
+	}
+
 	.inp {
 		position: relative;
 		display: flex;
@@ -20,6 +28,7 @@
 		border-radius: inherit;
 		border: none;
 	}
+
 	input {
 		position: relative;
 		display: block;
@@ -51,8 +60,8 @@
 		&:focus {
 			outline: none;
 		}
-
 	}
+
 	&.readonly,
 	&.disabled {
 		background-color: var(--color-input-surface-disabled);
