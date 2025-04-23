@@ -274,6 +274,10 @@ strong {
 		margin-top: 52px;
 	}
 
+	& + .list_ty2 {
+		margin-top: 16px;
+	}
+
 	[class^='title_h']{
 		& + [class^='list_']{
 			margin-top: 16px;
@@ -528,3 +532,42 @@ strong {
 		align-items: center;
 	}
 }
+
+//invalid 메시지
+.invalid_msg {
+	display: flex;
+	gap:4px;
+	align-items: flex-start;
+	color: var(--color-text-danger);
+	font-size: var(--font-size-label-medium);
+
+	.icon {
+		position: relative;
+		min-width: 16px;
+		height:20px;
+		
+		.hd_icon {
+			display: block;
+			position:absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%, -50%);
+			width: 16px;
+			height: 16px;
+		}
+	}
+
+	& + .info_box,
+	& + .info_gray { 
+		margin-top:20px;
+	}
+
+}
+
+// position: absolute;
+// display: inline-block;
+// top: 12px;
+// right: 16px;
+// width: 16px;
+// height: 16px;
+// background: url(../images/icon/close_ty2.svg) no-repeat center/contain;

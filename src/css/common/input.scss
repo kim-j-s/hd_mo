@@ -396,9 +396,9 @@
 /* Form group */
 .form_group_wrap {
 
-	& + & {
-		margin-top: 32px;
-	}
+	// & + & {
+	// 	margin-top: 32px;
+	// }
 
 	& + * {
 		margin-top: 52px;
@@ -420,6 +420,13 @@
 		margin-top: 24px;
 	}
 
+	.form_line + .info_box {
+		margin-top:32px;
+	}
+	.info_box + .btn_area{
+		margin-top:16px;
+	}
+
 	.row {
 		display: flex;
 		flex-direction: row;
@@ -438,6 +445,16 @@
 
 		.grow {
 			flex-grow: 1;
+		}
+
+		.fit {
+			&.input_text input { 
+				padding-right:0;
+			}
+		}
+
+		&.balance {
+			& > * { width: 50%;}
 		}
 	}
 

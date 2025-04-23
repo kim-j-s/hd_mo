@@ -37,7 +37,7 @@
 
 	/* Accordion */
 	$DOM.on("click", ".acd_item .acd_head .acd_btn", function () {
-		console.log("아코디언");
+		// console.log('아코디언');
 		const $this = $(this),
 			$head = $this.parent(".acd_head"),
 			$inner = $head.next(".acd_cont").children(".inner"),
@@ -49,10 +49,18 @@
 			$head.addClass("active");
 			$this.attr("aria-expanded", "true");
 			$inner.slideDown();
+
+			// if($this.closest('.acd_item').parent().hasClass('input_item_wrap')){
+			// 	$this.closest('.acd_item').addClass('open')
+			// }
 		} else {
 			$this.attr("aria-expanded", "false");
 			$head.removeClass("active");
 			$inner.slideUp();
+
+			// if($this.closest('.acd_item').parent().hasClass('input_item_wrap')){
+			// 	$this.closest('.acd_item').removeClass('open')
+			// }
 		}
 	});
 
@@ -268,7 +276,7 @@
 	});
 
 	/* Tab */
-	$DOM.on("click", ".tab_btn:not(.tab_btn_blcok)", function () {
+	$DOM.on("click", ".tab_btn:not(.tab_btn_block)", function () {
 		const idx = $(this).index();
 		$(this).closest("[class^=tab_wrap_list]").children(".tab_btn").removeClass("active").attr("aria-selected", "false");
 		$(this).addClass("active").attr("aria-selected", "true");
@@ -518,45 +526,43 @@ $(function () {
 	// 달력 호출
 
 	// 보험 플랜 - 진입화면 라디오 선택 이벤트
-	$('.guarantee_choice_wrap .guarantee_item .gi_radio input[type="radio"]').on("change", function () {
-		const idx = $(this).closest(".guarantee_item").index();
+	/*
+	$('.guarantee_choice_wrap .guarantee_item .gi_radio input[type="radio"]').on('change', function() {
+		const idx = $(this).closest('.guarantee_item').index();
 		// console.log(idx)
-		const $selectedItem = $(this).closest(".guarantee_item");
-		$(this).closest(".guarantee_choice_wrap").addClass("active");
-		$(this).closest(".guarantee_choice_wrap").find(".guarantee_item").removeClass("active");
-		$(this).closest(".guarantee_item").addClass("active");
+		const $selectedItem = $(this).closest('.guarantee_item');
+		$(this).closest('.guarantee_choice_wrap').addClass('active');
+		$(this).closest('.guarantee_choice_wrap').find('.guarantee_item').removeClass('active');
+		$(this).closest('.guarantee_item').addClass('active');
 
 		// 모든 항목 초기화: 컨텐츠 닫고 타이틀 열기
-		$(".guarantee_choice_wrap .guarantee_item").each(function () {
-			$(this).find(".guarantee_item_cont").stop(true, true).slideUp(300);
-			$(this).find(".guarantee_item_top").stop(true, true).slideDown(300);
+		$('.guarantee_choice_wrap .guarantee_item').each(function() {
+			$(this).find('.guarantee_item_cont').stop(true, true).slideUp(300);
+			$(this).find('.guarantee_item_top').stop(true, true).slideDown(300);
 		});
 
 		// 선택된 항목만: 컨텐츠 열고 타이틀 닫기
-		$selectedItem.find(".guarantee_item_cont").stop(true, true).slideDown(300);
-		$selectedItem.find(".guarantee_item_top").stop(true, true).slideUp(300);
+		$selectedItem.find('.guarantee_item_cont').stop(true, true).slideDown(300);
+		$selectedItem.find('.guarantee_item_top').stop(true, true).slideUp(300);
 
 		// 고급 선택 시
-		if (idx === 0 && $(".gtl_special").length) {
-			$(".gtl_special").addClass("active");
+		if( idx === 0 && $('.gtl_special').length ) {
+			$('.gtl_special').addClass('active');
 		} else {
-			$(".gtl_special").removeClass("active");
+			$('.gtl_special').removeClass('active');
 		}
 
 		// head 문구 변경
-		$(".guarantee_top_item")
-			.eq(idx + 1)
-			.addClass("active")
-			.siblings(".guarantee_top_item")
-			.removeClass("active");
+		$('.guarantee_top_item').eq(idx + 1).addClass('active').siblings('.guarantee_top_item').removeClass('active');
 
-		// 비쥬얼 영역 변경
-		$(".guarantee_visuval").stop(true, true).slideUp(300);
+		// 비쥬얼 영역 변경			
+		$('.guarantee_visuval').stop(true, true).slideUp(300);
 
 		// 추가된 부분
-		const selectedClass = $(this).closest(".guarantee_item").data("sendclass"); // 선택된 항목의 data-sendclass 값
-		console.log("선택된 항목의 data-sendclass:", selectedClass);
+		const selectedClass = $(this).closest('.guarantee_item').data('sendclass'); // 선택된 항목의 data-sendclass 값
+		console.log('선택된 항목의 data-sendclass:', selectedClass);
 	});
+	*/
 	// 보험 플랜 - 진입화면 라디오 선택 이벤트
 
 	// 간편정보 노출 방식

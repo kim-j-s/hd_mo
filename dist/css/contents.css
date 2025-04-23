@@ -736,22 +736,179 @@
 	font-size: var(--font-size-heading-medium);
 	color: var(--color-text-bolder);
 }
-.car_main_top {
+.product_main_top {
 	margin: 0 -2.4rem;
-	padding: 1.6rem 2.4rem 6rem;
+	padding: 0 2.4rem 6rem;
 	background: url(../images/content/mtps/img_MPRMTPS10002010000.png) no-repeat right bottom/15.6rem auto;
 }
-.car_main_top .logo + .point,
-.car_main_top .logo + .title_h2 {
+.product_main_top .logo + .point,
+.product_main_top .logo + .title_h2 {
 	margin-top: 1.6rem;
 }
-.car_main_top .point {
+.product_main_top .point {
 	font-size: var(--font-size-heading-xsmall);
 	font-weight: 700;
 	line-height: 2.4rem;
 }
-.car_main_top + .bg_area {
+.product_main_top + .bg_area {
 	margin-top: -2.6rem;
+}
+.input_form_box {
+	margin-top: -2.6rem;
+	background-color: var(--color-border-information-light);
+	border-radius: 1.6rem;
+}
+.input_form_box + .bg_area {
+	margin-top: 4rem;
+}
+.input_form_box .input_title {
+	padding: 1.6rem 2.4rem;
+	font-size: var(--font-size-label-medium);
+	color: var(--color-text-basic);
+}
+.input_form_box .input_item_wrap {
+	overflow: hidden;
+	border-radius: 1.6rem;
+	-webkit-box-shadow:
+		0 0 0.2rem 0 var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)),
+		0 0.4rem 0.8rem 0 var(--color-alpha-shadow2, rgba(0, 0, 0, 0.08));
+	box-shadow:
+		0 0 0.2rem 0 var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)),
+		0 0.4rem 0.8rem 0 var(--color-alpha-shadow2, rgba(0, 0, 0, 0.08));
+}
+.input_form_box .input_item_wrap .acd_item {
+	position: relative;
+	overflow: hidden;
+}
+.input_form_box .input_item_wrap .acd_item:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	-webkit-box-shadow:
+		0 0 0.2rem 0 var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)),
+		0 0.4rem 0.8rem 0 var(--color-alpha-shadow2, rgba(0, 0, 0, 0.08));
+	box-shadow:
+		0 0 0.2rem 0 var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)),
+		0 0.4rem 0.8rem 0 var(--color-alpha-shadow2, rgba(0, 0, 0, 0.08));
+}
+.input_form_box .input_item_wrap .acd_item ~ .acd_item {
+	border-top: 1px solid var(--color-divider-gray-light);
+}
+.input_form_box .input_item_wrap .acd_item .acd_head {
+	overflow: hidden;
+	background-color: #fff;
+}
+.input_form_box .input_item_wrap .acd_item .acd_head .acd_btn {
+	position: relative;
+	width: 100%;
+	padding: 2rem 4.8rem 2rem 2.4rem;
+	background-color: #fff;
+	font-size: var(--font-size-label-medium);
+}
+.input_form_box .input_item_wrap .acd_item .acd_head .acd_btn:after {
+	position: absolute;
+	right: 2.4rem;
+	top: calc(50% - 1.2rem);
+	content: "";
+	width: 2.4rem;
+	height: 2.4rem;
+	background: url(../images/icon/arrowDown_ty1.svg) no-repeat right center/2.4rem auto;
+}
+.input_form_box .input_item_wrap .acd_item .acd_head .acd_btn[aria-expanded="true"] {
+	-webkit-transition: border-radius 0.4s ease-in;
+	transition: border-radius 0.4s ease-in;
+}
+.input_form_box .input_item_wrap .acd_item .acd_head .acd_btn[aria-expanded="true"]:after {
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.input_form_box .input_item_wrap .acd_item .acd_cont {
+	background-color: #fff;
+}
+.input_form_box .input_item_wrap .acd_item .acd_cont .inner {
+	padding: 0 2.4rem 2rem;
+}
+.input_form_box .input_item_wrap .birth {
+	gap: 0.8rem;
+}
+.input_form_box .input_item_wrap .birth .input_text.big input {
+	caret-color: var(--color-element-primary);
+}
+.input_form_box .input_item_wrap .birth .input_text.big input::-webkit-input-placeholder {
+	font-size: var(--font-size-heading-medium);
+}
+.input_form_box .input_item_wrap .birth .input_text.big input::-moz-placeholder {
+	font-size: var(--font-size-heading-medium);
+}
+.input_form_box .input_item_wrap .birth .input_text.big input:-ms-input-placeholder {
+	font-size: var(--font-size-heading-medium);
+}
+.input_form_box .input_item_wrap .birth .input_text.big input::-ms-input-placeholder {
+	font-size: var(--font-size-heading-medium);
+}
+.input_form_box .input_item_wrap .birth .input_text.big input::placeholder {
+	font-size: var(--font-size-heading-medium);
+}
+.input_form_box .input_item_wrap .birth .input_text.big + .dash {
+	font-size: var(--font-size-heading-medium);
+	font-weight: 700;
+	color: var(--color-text-disabled);
+}
+.discount_item_box {
+	padding: 2.4rem;
+	background-color: #fff;
+	border-radius: var(--radius-large2);
+}
+.discount_item_box .item {
+	background-repeat: no-repeat;
+	background-position: left top 3.2rem;
+	background-size: 3.2rem auto;
+}
+.discount_item_box .item.opt1 {
+	background-image: url(../images/content/mtps/icon_MPRMTPS10002010000_ty1.svg);
+}
+.discount_item_box .item.opt2 {
+	background-image: url(../images/content/mtps/icon_MPRMTPS10002010000_ty2.svg);
+}
+.discount_item_box .item.opt3 {
+	background-image: url(../images/content/mtps/icon_MPRMTPS10002010000_ty3.svg);
+}
+.discount_item_box .item.opt4 {
+	background-image: url(../images/content/mtps/icon_MPRMTPS10002010000_ty4.svg);
+}
+.discount_item_box .item.opt5 {
+	background-image: url(../images/content/mtps/icon_MPRMTPS10002010000_ty5.svg);
+}
+.discount_item_box .item.opt6 {
+	background-image: url(../images/content/mtps/icon_MPRMTPS10002010000_ty6.svg);
+}
+.discount_item_box .item.opt7 {
+	background-image: url(../images/content/mtps/icon_MPRMTPS10002010000_ty7.svg);
+}
+.discount_item_box .item.opt8 {
+	background-image: url(../images/content/mtps/icon_MPRMTPS10002010000_ty8.svg);
+}
+.discount_item_box .item.opt9 {
+	background-image: url(../images/content/mtps/icon_MPRMTPS10002010000_ty9.svg);
+}
+.discount_item_box .item > a {
+	display: block;
+	padding: 2.4rem 3.6rem 2.4rem 4.4rem;
+	background: url(../images/icon/arrowRight_ty4.svg) no-repeat right center;
+}
+.discount_item_box .item .cont {
+	font-size: var(--font-size-body-medium);
+}
+.discount_item_box .item .cont + .desc {
+	margin-top: 0.4rem;
+}
+.discount_item_box .item .desc {
+	font-size: var(--font-size-body-small);
+	color: var(--color-text-subtle);
 }
 /* 자동차보험 - 기본정보 */
 /* 자동차보험 | 기본 정보 */
@@ -1940,12 +2097,8 @@
 	overflow: hidden;
 	border-radius: 0px 0px var(--padding-6, 16px) var(--padding-6, 16px);
 	background: var(--color-surface-white-subtler, #fff);
-	-webkit-box-shadow:
-		0px 0px 0.2rem 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)),
-		0px 0.4rem 0.8rem 0px var(--color-alpha-shadow2, rgba(0, 0, 0, 0.08));
-	box-shadow:
-		0px 0px 0.2rem 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)),
-		0px 0.4rem 0.8rem 0px var(--color-alpha-shadow2, rgba(0, 0, 0, 0.08));
+	-webkit-box-shadow: 0px var(--shadow-y-2, 6px) var(--shadow-blur-2, 8px) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
+	box-shadow: 0px var(--shadow-y-2, 6px) var(--shadow-blur-2, 8px) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
 }
 .simple_info_wrap .simple_info_item .sii_list {
 	padding: 0 2.4rem;
@@ -2121,6 +2274,11 @@
 .info_cont ul + h4 {
 	margin-top: 2rem;
 }
+.info_cont h2 + .list_deth,
+.info_cont h3 + .list_deth,
+.info_cont h4 + .list_deth {
+	margin-top: 1.6rem;
+}
 .info_cont .table_wrap {
 	margin: 1.6rem 0 2rem;
 }
@@ -2247,7 +2405,7 @@
 .insurance_payment_area {
 	position: relative;
 }
-.bann_wrap {
+.bann_wrap.bann_ty1 {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -2256,12 +2414,12 @@
 	background-color: var(--color-element-success-lighter);
 	border-radius: 2.4rem;
 }
-.bann_wrap .bann_cont .title {
+.bann_wrap.bann_ty1 .bann_cont .title {
 	font-size: var(--font-size-heading-xsmall);
 	line-height: 2.4rem;
 	font-weight: 700;
 }
-.bann_wrap .bann_cont .cont {
+.bann_wrap.bann_ty1 .bann_cont .cont {
 	margin-top: 0.4rem;
 	font-size: var(--font-size-body-small);
 	line-height: 2.1rem;
