@@ -534,6 +534,7 @@ $(function(){
 
 
 	// 보험 플랜 - 진입화면 라디오 선택 이벤트
+	/*
 	$('.guarantee_choice_wrap .guarantee_item .gi_radio input[type="radio"]').on('change', function() {
 		const idx = $(this).closest('.guarantee_item').index();
 		// console.log(idx)
@@ -569,6 +570,7 @@ $(function(){
 		const selectedClass = $(this).closest('.guarantee_item').data('sendclass'); // 선택된 항목의 data-sendclass 값
 		console.log('선택된 항목의 data-sendclass:', selectedClass);
 	});
+	*/
 	// 보험 플랜 - 진입화면 라디오 선택 이벤트
 	
 	
