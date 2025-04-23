@@ -8,7 +8,7 @@
 
 	<div id="container" class="container">
 		<div class="content">
-			<div class="car_main_top">
+			<div class="product_main_top">
 				<div class="logo">
 					<img src="../../../images/logo/logo_hd_direct.svg" alt="현대해상 다이렉트">
 				</div>
@@ -23,6 +23,22 @@
 				</div>
 			</div>
 
+			<div class="input_form_box">
+				<div class="input_title">자동차 소유(예정)자 정보</div>
+				<div class="input_item_wrap">
+					<div class="acd_item">
+						{{#> cp/accordion ac-title="이름" ac-active=true }}
+						아코디언 내용
+						{{/ cp/accordion }}
+					</div>
+					<div class="acd_item">
+						{{#> cp/accordion ac-title="주민등록번호" }}
+						아코디언 내용
+						{{/ cp/accordion }}
+					</div>
+				</div>
+			</div>
+
 			<div class="bg_area">
 				<h3 class="title_h3"><span class="light">내 차 보험료</span> 할인 받는 방법<span class="light">은?</span></h3>
 
@@ -32,6 +48,12 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="bann_wrap">
+				<a href="#">
+					<img src="../../../images/event/img_car_bann01.png" alt="자동차보험 결제혜택 최대 3만원 받으세요. 30만원 이상 결제시 카드사, 간편결제사 제공 (이륜차포함)">
+				</a>
+			</div>
 		</div>
 
 		<!-- s: 꼭 알아두세요 -->
@@ -39,12 +61,21 @@
 		<ul class="list_ty1">
 			<li>보험료 계산시 개인(신용)정보 동의 및 본인인증이 필요합니다.</li>
 			<li>가입 가능한 연령은 만 19세 이상입니다.</li>
+			<li>이륜차보험(가정용, 배달용)</li>
 			<li>24.12 첨단안전장치할인특약에 ‘어라운드뷰 모니터‘ 장치가 추가되었습니다.</li>
 			<li>25.1.11 보험시작일 기준 스마트안전운전할인특약 할인율이 변경되었습니다.</li>
 		</ul>
 		{{/ cp/notice }}
 		<!-- e: 꼭 알아두세요 -->
 	</div>
+
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="보험료 계산하기" disabled=true }}
+		</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
 </div>
 
 <!-- s: popup area -->
