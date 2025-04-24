@@ -244,6 +244,27 @@
 	min-height: 100%;
 	margin: 0 -24px;
 
+	&.detail_only {
+		margin: 0;
+
+		.guarantee_detail_mini {
+			justify-content: flex-start;
+			margin: 0;
+			.item_wrap {
+				margin: 16px 0 0 16px;
+
+				.i_data {
+					display: block;
+
+					& + .i_data {
+						margin: 0;
+						padding-top: 4px;
+					}
+				}
+			}
+		}
+	}
+
 	&.active {
 		.guarantee_container_left {
 			position: absolute;
@@ -284,6 +305,25 @@
 	overflow: hidden;
 }
 
+
+.gdi_info_list {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 16px;
+	padding-top: 12px;
+	border-top: 1px solid var(--color-divider-gray-light);
+
+	dl {
+		display: flex;
+		align-items: center;
+		gap: 2px;
+
+		dt, dd {
+			font-size: var(--font-size-body-small);
+		}
+	}
+}
  
 .guarantee_detail {
 	&:focus {
@@ -471,10 +511,11 @@
 			&::before {
 				content: '';
 				position: absolute;
-				top: 11px;
+				top: 12px;
 				left: 0;
 				width: 2px;
-				border-bottom: 1px solid var(--color-text-subtle);
+				height: 2px;
+				background-color: var(--color-icon-information);
 				border-radius: 50%;
 			}
 
@@ -492,6 +533,10 @@
 	.btn_area {
 		&.gd_middle_ba {
 			margin-top: 24px;
+
+			& + .coverage_item_wrap {
+				margin-top: 24px;
+			}
 		}
 		+ .acc_group {
 			margin-top: 24px;
@@ -600,7 +645,21 @@
 /* 간편정보 */
 
 
+.coverage_item_wrap {
+	padding: var(--number-10) var(--padding-7);
+	border: 1px solid var(--color-border-gray-light);
+	border-radius: var(--radius-large2);
 
+	.coverage_item_list {
+		> .list {
+			& + .list {
+				margin-top: 20px;
+				padding-top: 20px;
+				border-top: 1px solid var(--color-divider-gray-light);
+			}
+		}
+	}
+}
 .coverage_item_list {
 	> .list {
 		display: flex;
