@@ -18,6 +18,10 @@
 		}
 	}
 
+	& + .checkbox_group_wrap {
+		margin-top: 16px;
+	}
+
 	.inp {
 		position: relative;
 		display: flex;
@@ -420,8 +424,10 @@
 		margin-top: 24px;
 	}
 
-	.form_line + .info_box {
-		margin-top:32px;
+	.form_line {
+		& + .info_box {
+			margin-top:32px;
+		}
 	}
 	.info_box + .btn_area{
 		margin-top:16px;
@@ -456,6 +462,10 @@
 		&.balance {
 			& > * { width: 50%;}
 		}
+		
+		& + .form_line {
+			margin-top: 16px;
+		} 
 	}
 
 	.column {
