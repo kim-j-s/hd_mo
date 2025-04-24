@@ -1,4 +1,89 @@
 {{#> layout/guide }}
+
+
 <div class="guide_h1">Progress</div>
-<div>추후 작업예정</div>
+<div class="guide_h4">case 1</div>
+
+<div class="progress_bar progress_bar_ty1" role="img" tabindex="0" id="pb1">
+	<div class="progress_bar_per">
+		<div class="per_bar">
+			<span class="per_bar_dp dp_ic1" data-pbc="170">
+				<span class="text">63회</span>
+			</span>
+		</div>
+	</div>
+	<div class="progress_bar_bottom">
+		<span class="pbb_start" data-pbcs="0">0회</span>
+		<span class="pbb_end" data-pbce="180">180회</span>
+	</div>
+</div>
+
+
+
+
+<script>
+	$(function(){
+
+		// 접근성 관련 문구 생성 후 삽입
+		var $progressBar = $('#pb1');
+		var current = $progressBar.find('[data-pbc]').data('pbc');
+		var total = $progressBar.find('[data-pbce]').data('pbce');
+
+		$progressBar.attr('aria-label', '전체 ' + total + '회 중 ' + current + '회 납입');
+
+		function updateProgressBarPosition() {
+			
+			var $progressBar = $('#pb1');
+
+			var $perBar = $progressBar.find('.per_bar');
+			var $perBarDp = $perBar.find('.per_bar_dp');
+			var $progressBarPer = $progressBar.find('.progress_bar_per');
+			var perBarWidth = $perBar.outerWidth();
+			var perBarDpWidth = $perBarDp.outerWidth();
+			var progressBarPerWidth = $progressBarPer.outerWidth();
+
+			// 퍼센트 계산 (소수점 없이)
+			var percent = Math.floor((current / total) * 100);
+
+			console.log('current', percent);
+
+			// 초기 클래스 제거
+			$perBar.removeClass('pos');
+			$perBarDp.removeClass('poe');
+
+			console.log('progressBarPer : ', progressBarPerWidth);
+			console.log('perBarWidth : ', perBarWidth);
+
+			// 조건1: per_bar의 넓이가 per_bar_dp의 넓이의 절반보다 작을 때 → pos 클래스 추가
+			if (perBarWidth < perBarDpWidth / 2) {
+				$perBar.addClass('pos');
+			}
+
+			// 조건2: 오른쪽 공간이 부족할 때 → poe 클래스 추가
+			if ((progressBarPerWidth - perBarWidth) < (perBarDpWidth / 2)) {
+				$perBar.addClass('poe');
+			}
+
+			
+
+			// per_bar 너비 설정
+			$progressBar.find('.per_bar').css('width', percent + '%');
+
+			
+		}
+
+		$(function () {
+			// updateProgressBarPosition();
+
+			// 리사이즈 시에도 적용
+			$(window).on('resize', function () {
+				// updateProgressBarPosition();
+			});
+		});
+
+
+	});
+</script>
+
+
 {{/ layout/guide }}
