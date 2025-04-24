@@ -1,13 +1,74 @@
 {{#> layout/guide }}
 
+<style>
+	.progress_bar + .progress_bar {
+		margin-top: 20px;
+	}
+</style>
 
 <div class="guide_h1">Progress</div>
 <div class="guide_h4">case 1</div>
 
-<div class="progress_bar progress_bar_ty1" role="img" tabindex="0" id="pb1">
+<div class="progress_bar progress_bar_ty1" role="img" tabindex="0">
+	<div class="progress_bar_per">
+		<div class="per_bar">
+			<span class="per_bar_dp dp_ic1" data-pbc="3">
+				<span class="text">63회</span>
+			</span>
+		</div>
+	</div>
+	<div class="progress_bar_bottom">
+		<span class="pbb_start" data-pbcs="0">0회</span>
+		<span class="pbb_end" data-pbce="180">180회</span>
+	</div>
+</div>
+
+<div class="progress_bar progress_bar_ty1" role="img" tabindex="0">
+	<div class="progress_bar_per">
+		<div class="per_bar">
+			<span class="per_bar_dp dp_ic1" data-pbc="50">
+				<span class="text">63회</span>
+			</span>
+		</div>
+	</div>
+	<div class="progress_bar_bottom">
+		<span class="pbb_start" data-pbcs="0">0회</span>
+		<span class="pbb_end" data-pbce="180">180회</span>
+	</div>
+</div>
+
+<div class="progress_bar progress_bar_ty1" role="img" tabindex="0">
+	<div class="progress_bar_per">
+		<div class="per_bar">
+			<span class="per_bar_dp dp_ic1" data-pbc="165">
+				<span class="text">63회</span>
+			</span>
+		</div>
+	</div>
+	<div class="progress_bar_bottom">
+		<span class="pbb_start" data-pbcs="0">0회</span>
+		<span class="pbb_end" data-pbce="180">180회</span>
+	</div>
+</div>
+
+<div class="progress_bar progress_bar_ty1" role="img" tabindex="0">
 	<div class="progress_bar_per">
 		<div class="per_bar">
 			<span class="per_bar_dp dp_ic1" data-pbc="170">
+				<span class="text">63회</span>
+			</span>
+		</div>
+	</div>
+	<div class="progress_bar_bottom">
+		<span class="pbb_start" data-pbcs="0">0회</span>
+		<span class="pbb_end" data-pbce="180">180회</span>
+	</div>
+</div>
+
+<div class="progress_bar progress_bar_ty1" role="img" tabindex="0">
+	<div class="progress_bar_per">
+		<div class="per_bar">
+			<span class="per_bar_dp dp_ic1" data-pbc="179">
 				<span class="text">63회</span>
 			</span>
 		</div>
@@ -22,67 +83,73 @@
 
 
 <script>
-	$(function(){
+	$(function(){		
 
+	function updateProgressBarPosition($progressBar) {
+			
 		// 접근성 관련 문구 생성 후 삽입
-		var $progressBar = $('#pb1');
 		var current = $progressBar.find('[data-pbc]').data('pbc');
 		var total = $progressBar.find('[data-pbce]').data('pbce');
 
 		$progressBar.attr('aria-label', '전체 ' + total + '회 중 ' + current + '회 납입');
+		
+		// 전체 넓이
+		var $progressBarPer = $progressBar.find('.progress_bar_per');
+		var progressBarPerWidth = $progressBarPer.outerWidth(); // 기준 넓이(px)
 
-		function updateProgressBarPosition() {
-			
-			var $progressBar = $('#pb1');
+		// 퍼센트 계산 (소수점 없이)
+		var percent = Math.floor((current / total) * 100);       // 현재 진행률(%)
 
-			var $perBar = $progressBar.find('.per_bar');
-			var $perBarDp = $perBar.find('.per_bar_dp');
-			var $progressBarPer = $progressBar.find('.progress_bar_per');
-			var perBarWidth = $perBar.outerWidth();
-			var perBarDpWidth = $perBarDp.outerWidth();
-			var progressBarPerWidth = $progressBarPer.outerWidth();
+		var pixelWidth = Math.floor((percent / 100) * progressBarPerWidth);  // 진행률 px 환산
 
-			// 퍼센트 계산 (소수점 없이)
-			var percent = Math.floor((current / total) * 100);
+		var $perBar = $progressBar.find('.per_bar');
+		var $perBarDp = $perBar.find('.per_bar_dp');
+		var perBarDpWidth = $perBarDp.outerWidth();
 
-			console.log('current', percent);
+		// console.log('움직이는 컨텐츠 넓이 : ', perBarDpWidth);
 
-			// 초기 클래스 제거
+		// 초기 클래스 제거
+		$perBar.removeClass('pos');
+		$perBarDp.removeClass('poe');
+
+		// 앞에 고정하기
+		if (pixelWidth < perBarDpWidth / 2) {
+			$perBar.addClass('pos');
+		} else {
 			$perBar.removeClass('pos');
-			$perBarDp.removeClass('poe');
-
-			console.log('progressBarPer : ', progressBarPerWidth);
-			console.log('perBarWidth : ', perBarWidth);
-
-			// 조건1: per_bar의 넓이가 per_bar_dp의 넓이의 절반보다 작을 때 → pos 클래스 추가
-			if (perBarWidth < perBarDpWidth / 2) {
-				$perBar.addClass('pos');
-			}
-
-			// 조건2: 오른쪽 공간이 부족할 때 → poe 클래스 추가
-			if ((progressBarPerWidth - perBarWidth) < (perBarDpWidth / 2)) {
-				$perBar.addClass('poe');
-			}
-
-			
-
-			// per_bar 너비 설정
-			$progressBar.find('.per_bar').css('width', percent + '%');
-
-			
 		}
 
-		$(function () {
-			// updateProgressBarPosition();
+		// 끝으로 보내기
+		if (progressBarPerWidth - pixelWidth < perBarDpWidth / 2) {
+			$perBar.addClass('poe');
+		} else {
+			$perBar.removeClass('poe');
+		}
 
-			// 리사이즈 시에도 적용
-			$(window).on('resize', function () {
-				// updateProgressBarPosition();
-			});
+		// per_bar 너비 설정
+		setTimeout(function(){
+			$perBar.addClass('active').css('width', percent + '%');
+		}, 100);
+	}
+
+	// 여러 개의 .progress_bar_ty1에 대해 반복 처리
+	$('.progress_bar_ty1').each(function() {
+		var $this = $(this); // 각 progress_bar_ty1을 $this로 참조
+		
+		// 윈도우 로드 시 updateProgressBarPosition 함수 호출
+		$(window).on('load', function () {
+			updateProgressBarPosition($this);
 		});
 
-
+		// 리사이즈 시에도 적용
+		$(window).on('resize', function () {
+			console.log('리사이즈 됨?');
+			updateProgressBarPosition($this);
+		});
 	});
+
+});
+
 </script>
 
 

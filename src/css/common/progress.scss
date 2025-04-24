@@ -3,7 +3,6 @@
 		
 		.progress_bar_per {
 			position: relative;
-			// height: 24px;
 			padding: 10px 0;
 			&::before {
 				content: '';
@@ -23,13 +22,21 @@
 				height: 4px;
 				border-radius: 50px;
 				background-color: var(--color-element-primary);
-				// transform: translateY(-50%);
-				transition: width 0.3s;
+				&.active {
+					transition: width 1.3s ease;
+					.per_bar_dp {
+						left: auto;
+						right: 0;
+						transform: translateX(50%);
+					}
+				}
 				&.pos {
+					position: static;
 					.per_bar_dp {
 						left: 0;
 						right: auto;
-						// transform: none;
+						transform: none;
+						transition: none;
 					}
 				}
 				&.poe {
@@ -38,10 +45,7 @@
 						left: auto;
 						right: 0;
 						transform: none;
-						
-						// left: 0;
-						// right: auto;
-						// transform: none;
+						transition: right 1.3s ease;
 					}
 				}
 			}
@@ -50,7 +54,8 @@
 			position: absolute;
 			top: calc(50% - 12px);
 			top: calc(50% - 28px);
-			// right: 0;
+			// left: 0;
+			right: 100%;
 			padding: 0 8px;
 			font-size: var(--font-size-body-xsmall);
 			color: var(--color-text-point);
@@ -58,12 +63,11 @@
 			border-radius: var(--radius-large1);
 			border: 1px solid var(--color-border-primary);
 			background-color: var(--color-surface-primary-subtler);
-			transform: translateX(50%);
-			transition: right 1.3s;
+			white-space: nowrap;
+			transition: left 1.3s ease;
 			> .text {
 				display: block;
 				padding-left: 20px;
-				white-space: nowrap;
 				background-repeat: no-repeat;
 				background-position: left center;
 				background-size: 16px auto;
@@ -77,8 +81,7 @@
 				> .text {
 					background-image: url(../images/icon/icon_progress_ty2.svg);
 				}
-			}
-			
+			}			
 		}
 
 		.progress_bar_bottom {
