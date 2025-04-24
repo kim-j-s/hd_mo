@@ -1831,6 +1831,25 @@
 	min-height: 100%;
 	margin: 0 -2.4rem;
 }
+.guarantee_container.detail_only {
+	margin: 0;
+}
+.guarantee_container.detail_only .guarantee_detail_mini {
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	margin: 0;
+}
+.guarantee_container.detail_only .guarantee_detail_mini .item_wrap {
+	margin: 1.6rem 0 0 1.6rem;
+}
+.guarantee_container.detail_only .guarantee_detail_mini .item_wrap .i_data {
+	display: block;
+}
+.guarantee_container.detail_only .guarantee_detail_mini .item_wrap .i_data + .i_data {
+	margin: 0;
+	padding-top: 0.4rem;
+}
 .guarantee_container.active .guarantee_container_left {
 	position: absolute;
 	left: -100%;
@@ -1866,6 +1885,33 @@
 	-webkit-transition: left 0.5s;
 	transition: left 0.5s;
 	overflow: hidden;
+}
+.gdi_info_list {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	margin-top: 1.6rem;
+	padding-top: 1.2rem;
+	border-top: 1px solid var(--color-divider-gray-light);
+}
+.gdi_info_list dl {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 0.2rem;
+}
+.gdi_info_list dl dt,
+.gdi_info_list dl dd {
+	font-size: var(--font-size-body-small);
 }
 .guarantee_detail:focus {
 	outline: none;
@@ -2032,10 +2078,11 @@
 .guarantee_detail .guarantee_detail_mini .i_data::before {
 	content: "";
 	position: absolute;
-	top: 1.1rem;
+	top: 1.2rem;
 	left: 0;
 	width: 0.2rem;
-	border-bottom: 1px solid var(--color-text-subtle);
+	height: 0.2rem;
+	background-color: var(--color-icon-information);
 	border-radius: 50%;
 }
 .guarantee_detail .guarantee_detail_mini .i_data + .i_data {
@@ -2047,6 +2094,9 @@
 	flex: none;
 }
 .guarantee_detail .btn_area.gd_middle_ba {
+	margin-top: 2.4rem;
+}
+.guarantee_detail .btn_area.gd_middle_ba + .coverage_item_wrap {
 	margin-top: 2.4rem;
 }
 .guarantee_detail .btn_area + .acc_group {
@@ -2140,6 +2190,16 @@
 	transform: translateY(-50%);
 }
 /* 간편정보 */
+.coverage_item_wrap {
+	padding: var(--number-10) var(--padding-7);
+	border: 1px solid var(--color-border-gray-light);
+	border-radius: var(--radius-large2);
+}
+.coverage_item_wrap .coverage_item_list > .list + .list {
+	margin-top: 2rem;
+	padding-top: 2rem;
+	border-top: 1px solid var(--color-divider-gray-light);
+}
 .coverage_item_list > .list {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -2221,7 +2281,7 @@
 .input_text + .inp_checkbox {
 	margin-top: 1.6rem;
 }
-.form_list > li .form_group_wrap .label_tit {
+.form_list > li > .form_group_wrap > .form_line > .label_tit {
 	margin-bottom: 1.6rem;
 	font-size: var(--font-size-heading-xsmall);
 	font-weight: 700;
@@ -2234,6 +2294,14 @@
 }
 .form_list > li + li {
 	margin-top: 5.2rem;
+}
+ul + .form_group_wrap {
+	margin-top: 3.2rem;
+}
+.info_cont h1 {
+	margin-bottom: 2rem;
+	font-size: var(--font-size-heading-medium);
+	font-weight: 700;
 }
 .info_cont h2 {
 	margin-bottom: 1.6rem;
@@ -2274,6 +2342,9 @@
 }
 .info_cont > p:first-child {
 	margin-top: 0;
+}
+.info_cont + .form_group_wrap {
+	margin-top: 3.2rem;
 }
 .text_info_lg {
 	font-size: var(--font-size-heading-medium);
@@ -2444,7 +2515,30 @@
 	border-radius: var(--radius-large2);
 	background-color: var(--color-surface-white-subtle);
 }
-.cd_top + .tab_wrap {
+.cd_top_wrap .cd_top .badge_wrap + .cd_top_name {
+	margin-top: 0.8rem;
+}
+.cd_top_wrap .cd_top .cd_top_name {
+	font-size: var(--font-size-body-medium);
+}
+.cd_top_wrap .cd_top .cd_price {
+	margin-top: 0.8rem;
+	font-weight: 700;
+}
+.cd_top_wrap .cd_top .cd_price .word {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: var(--font-size-body-large);
+}
+.cd_top_wrap .cd_top .cd_price .won {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: var(--font-size-display-medium);
+}
+.cd_top_wrap .cd_top .progress_bar {
+	margin-top: 1.6rem;
+}
+.cd_top_wrap + .tab_wrap {
 	margin-top: 2.4rem;
 }
 /* 계약상세 */
