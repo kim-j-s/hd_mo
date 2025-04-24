@@ -96,10 +96,14 @@
 			&.chk_label_ty5 {
 				padding: var(--padding-6);
 				min-height: var(--size-height-8);
-				text-align: center;
+				// text-align: center;
 				border-radius: var(--radius-medium1);
 				> .label_cont {
 					font-size: var(--font-size-label-large);
+				}
+
+				&.large {
+					min-height: 72px;
 				}
 				&::before {
 					display: none;
@@ -193,6 +197,12 @@
 
 				> .label_cont {
 					color: var(--color-text-disabled);
+				}
+
+				&.more_add {
+					> .label_cont {
+						color: var(--color-text-basic);
+					}
 				}
 				
 				&.chk_label_ty4 {
@@ -373,7 +383,26 @@
 	&.rd_check_btn {
 		flex: 1;
 		min-width: 40%;
+
+		&.lg {
+			input[type='checkbox'] {
+				& + .chk_label {
+					&.chk_label_ty5 {
+						display: flex;
+						align-items: center;
+						min-height: 80px;
+
+						span {
+							&:before {
+								top: calc(50% - 10px);
+							}
+						}
+					}
+				}
+			}
+		}
 	}
+
 	.chk_lby {
 		padding: 12px 0 0 32px;
 	}
@@ -413,6 +442,17 @@
 		flex-direction: column;
 		gap: 20px;
 		width: 100%;
+	}
+
+	&.ty2 {
+		display: flex;
+		flex-flow: row wrap;
+		gap: 12px;
+
+		.inp_checkbox {
+			flex: 0 1 calc(50% - 6px);
+			min-width: auto;
+		}
 	}
 
 	& + * {

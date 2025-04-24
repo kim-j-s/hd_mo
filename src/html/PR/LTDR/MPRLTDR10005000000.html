@@ -11,22 +11,34 @@
 				</h2>
 			</div>
 			<!-- e: content_top -->
+
+			<!-- s: 25-04-24 수정 -->
 			<ol class="form_list">
 				<li>
 					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">
-								01 현재 운전하는 차종을 모두 선택해주세요
+								01 고객님의 직업을 입력해 주세요.
 							</div>
-							<!-- s: 25-04-21 수정 -->
-							<div class="checkbox_group_wrap">
-								{{> cp/checkbox checkbox_class="rd_check_btn" id="checkbox01-1" label_class="chk_label_ty5" labelname="승용차" }}
-								{{> cp/checkbox checkbox_class="rd_check_btn text_center" id="checkbox01-2" label_class="chk_label_ty5" labelname="승합차" }}
-								{{> cp/checkbox checkbox_class="rd_check_btn text_center" id="checkbox01-3" label_class="chk_label_ty5" labelname="화물차" }}
-								{{> cp/checkbox checkbox_class="rd_check_btn text_center" id="checkbox01-4" label_class="chk_label_ty5" labelname="기타" }}
+
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">근무처</div>
+									{{> cp/text placeholder="입력해 주세요" inp-title="근무처 입력"}}
+								</div>
+								<div class="form_line">
+									<div class="label_tit">근무 지역</div>
+									{{> cp/text placeholder="입력해 주세요" inp-title="근무 지역 입력"}}
+								</div>
+								<div class="form_line">
+									<div class="label_tit">취급하는 업무</div>
+									{{> cp/text placeholder="입력해 주세요" inp-title="취급하는 업무 입력"}}
+								</div>
 							</div>
-							<!-- e: 25-04-21 수정 -->
-                            {{> cp/text type="text" placeholder="기타 차종 입력" maxlength="" inp-title="기타 차종 입력" }}
+
+							<ul class="list_ty2">
+								<li>보험계약 체결 당시 직업 또는 직무를 사실대로 알리지 않거나 보험계약 체결 후 직업 또는 직무가 변경된 사실 (예: 사무관리⥊현장관리)을 지체없이 회사에 알리지 않은 경우 계약 해지 등 알릴 의무 위반에 따른 불이익이 발생할 수 있습니다.</li>
+							</ul>
 						</div>
 					</div>
 				</li>
@@ -34,15 +46,54 @@
 					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">
-								02 이륜차(오토바이)를 운전하시나요?
+								02 현재 운전을 하십니까?
 							</div>
 							<div class="radio_group_wrap" role="radiogroup">
 								{{> cp/radio rd-class="rd_btn" rd-id="notification02_01" name="notification02" labelname="예" }}
 								{{> cp/radio rd-class="rd_btn" rd-id="notification02_02" name="notification02" labelname="아니오" checked=true }}
 							</div>
-                            <div class="checkbox_group_wrap column">
-                                {{> cp/checkbox checkbox_class="rd_box" id="checkbox02-1" label_class="chk_label_ty3" labelname="피보험자가 이륜자동차 운전 중에 발생한 상해사고는 보험에서 보상되지 않습니다. 이륜자동차 운전중 상해 부담보 특별약관이 자동가입됩니다" }}
-                            </div>
+							<div class="checkbox_group_wrap column">
+								{{> cp/checkbox checkbox_class="rd_box" id="checkbox02-1-12" label_class="chk_label_ty3" labelname="<strong class='disabled_on'>선택</strong> 피보험자가 이륜자동차 운전 중에 발생한 상해사고는 보험에서 보상되지 않습니다. 이륜자동차 운전중 상해 부담보 특별약관이 자동가입됩니다." }}
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">
+								02-1 운전하시는 차종을 모두 선택해주세요.
+							</div>
+							<div class="checkbox_group_wrap ty2">
+								{{> cp/checkbox checkbox_class="rd_check_btn lg" id="checkbox02-1-1" label_class="chk_label_ty5" labelname="승용차 (자가용)" }}
+								{{> cp/checkbox checkbox_class="rd_check_btn lg" id="checkbox02-1-2" label_class="chk_label_ty5" labelname="승용차 (영업용)" }}
+								{{> cp/checkbox checkbox_class="rd_check_btn lg" id="checkbox02-1-3" label_class="chk_label_ty5" labelname="승합차 (자가용)" }}
+								{{> cp/checkbox checkbox_class="rd_check_btn lg" id="checkbox02-1-4" label_class="chk_label_ty5" labelname="승합차 (영업용)" }}
+								{{> cp/checkbox checkbox_class="rd_check_btn lg" id="checkbox02-1-5" label_class="chk_label_ty5" labelname="화물차 (자가용)" }}
+								{{> cp/checkbox checkbox_class="rd_check_btn lg" id="checkbox02-1-6" label_class="chk_label_ty5" labelname="화물차 (영업용)" }}
+								{{> cp/checkbox checkbox_class="rd_check_btn lg" id="checkbox02-1-7" label_class="chk_label_ty5" labelname="이륜자동차 (자가용)" }}
+								{{> cp/checkbox checkbox_class="rd_check_btn lg" id="checkbox02-1-8" label_class="chk_label_ty5" labelname="이륜자동차 (영업용)" }}
+								{{> cp/checkbox checkbox_class="rd_check_btn lg" id="checkbox02-1-9" label_class="chk_label_ty5" labelname="건설기계" }}
+								{{> cp/checkbox checkbox_class="rd_check_btn lg" id="checkbox02-1-10" label_class="chk_label_ty5" labelname="농기계" }}
+								{{> cp/checkbox checkbox_class="rd_check_btn lg" id="checkbox02-1-11" label_class="chk_label_ty5" labelname="기타" }}
+							</div>
+							
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<!-- s: 이륜자동차 외 선택 시 -->
+									<div class="checkbox_group_wrap column">
+										{{> cp/checkbox checkbox_class="rd_box" id="checkbox02-1-12" label_class="chk_label_ty3" labelname="<strong class='disabled_on'>선택</strong> 피보험자가 이륜자동차 운전 중에 발생한 상해사고는 보험에서 보상되지 않습니다. 이륜자동차 운전중 상해 부담보 특별약관이 자동가입됩니다." }}
+									</div>
+									<!-- e: 이륜자동차 외 선택 시  -->
+									<!-- s: 이륜자동차 선택 시  -->
+									<div class="label_tit">기타 차종</div>
+									{{> cp/text placeholder="입력해 주세요" inp-title="기타 차종 입력"}}
+									<div class="checkbox_group_wrap column">
+										{{> cp/checkbox checkbox_class="rd_box" id="checkbox02-1-12" label_class="chk_label_ty3" labelname="<strong class='point'>필수</strong> 피보험자가 이륜자동차 운전 중에 발생한 상해사고는 보험에서 보상되지 않습니다. 이륜자동차 운전중 상해 부담보 특별약관이 자동가입됩니다." }}
+									</div>
+									<!-- e: 이륜자동차 선택 시  -->
+								</div>
+							</div>
 						</div>
 					</div>
 				</li>
@@ -51,27 +102,33 @@
 						<div class="form_line">
 							<div class="label_tit">
 								03 원동기장치 자전거를 사용하시나요?(전동킥보드, 전동이륜평행차, 전동기의 동력만으로 움직일 수 있는 자전거 등 개인형 이동장치를 포함)
-                                <p>
-                                    다만, 전동휠체어, 의료용 스쿠터 등 보행보조용 의자차는 제외합니다.
-                                </p>
-                            </div>
+							</div>
+							<div class="info_gray">
+								<p class="info_text">전동휠체어, 의료용 스쿠터 등 보행보조용 의자차는 제외합니다.</p>
+							</div>
 							<div class="radio_group_wrap" role="radiogroup">
 								{{> cp/radio rd-class="rd_btn" rd-id="notification03_01" name="notification03" labelname="예" }}
 								{{> cp/radio rd-class="rd_btn" rd-id="notification03_02" name="notification03" labelname="아니오" checked=true }}
 							</div>
-                            <div class="checkbox_group_wrap column">
-                                {{> cp/checkbox checkbox_class="rd_box" id="checkbox03-1" label_class="chk_label_ty3" labelname="피보험자가 원동기장치 자전거(개인형 이동장치 포함) 운전 중에 발생한 상해사고는 보험에서 보상되지 않습니다." }}
-                            </div>
-							<div class="info_gray">
-								<ol class="list_depth">
-									<li>계속적으로 사용(직업, 직무 또는 동호회 활동과 출퇴근용도 등으로 주로 사용하는 경우에 한함)하는 경우 기재</li>
-									<li>이 질문에 [아니요]로 선택하고 보험계약∙체결 후 이륜자동차 또는 전동킥보드 등 개인형이동장치를 포함한 원동기장치 자전거를 사용하게 된 사실을 지체 없이 회사에 알리지 않은 경우 계약 해지 등 알릴 의무 위반에 따른 불이익이 발생할 수 있습니다.</li>
-								</ol>
+							<div class="checkbox_group_wrap column">
+								{{> cp/checkbox checkbox_class="rd_box" id="checkbox03-1" label_class="chk_label_ty3" labelname="피보험자가 원동기장치 자전거(개인형 이동장치 포함) 운전 중에 발생한 상해사고는 보험에서 보상되지 않습니다." }}
 							</div>
+							<ul class="list_ty2">
+								<li>계속적으로 사용(직업, 직무 또는 동호회 활동과 출퇴근용도 등으로 주로 사용하는 경우에 한함)하는 경우 기재</li>
+								<li>이 질문에 [아니요]로 선택하고 보험계약&middot;체결 후 이륜자동차 또는 전동킥보드 등 개인형이동장치를 포함한 원동기장치 자전거를 사용하게 된 사실을 지체 없이 회사에 알리지 않은 경우 계약 해지 등 알릴 의무 위반에 따른 불이익이 발생할 수 있습니다.</li>
+							</ul>
 						</div>
 					</div>
 				</li>
 			</ol>
+			<!-- e: 25-04-24 수정 -->
+		</div>
+	</div>
+
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="중요 사항을 확인 중이에요" disabled=true }}
+			<!-- {{> cp/button type="1" size="1" b-text="모두 확인했어요" }} -->
 		</div>
 	</div>
 </div>
