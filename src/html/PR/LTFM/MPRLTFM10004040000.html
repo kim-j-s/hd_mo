@@ -1,0 +1,33 @@
+{{#> layout/default page-title="보험료 확인 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="보험료 확인" h-back=true }}
+</div>
+<!-- s: popup area -->
+
+<!-- s: 계산 내역 문자로 받기 Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="휴대폰번호 입력 안내" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="info_cont">
+			<p>입력하신 휴대폰번호는 이번 발송 용도로만 사용하고 폐기되오니 안심하세요.</p>
+		</div>
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">휴대폰번호</div>
+				{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+			</div>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인했습니다"}}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 계산 내역 문자로 받기 Bottom 팝업 -->
+
+
+<!-- e: popup area -->
+
+{{/ layout/default }}
