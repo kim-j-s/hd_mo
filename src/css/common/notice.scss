@@ -8,26 +8,32 @@
 	}
 
 	.acd_head {
-		min-height: 64px;
-		padding: var(--padding-card-small);
+		// min-height: 32px;
 		font-size: var(--font-size-heading-xsmall);
-		line-height: 24px;
+		// line-height: 24px;
 
 		.acd_btn {
 			position: relative;
 			width: 100%;
-			padding: 0 24px;
-			background: url(../images/icon/point_circle.svg) no-repeat left 50% /20px auto;
+			padding: 20px 24px;
+			background-color: transparent;
+			
+			> span {
+				display: block;
+				padding-left: 24px;
+				font-size: var(--font-size-heading-xsmall);
+				background: url(../images/icon/point_circle.svg) no-repeat left 50% /20px auto;
+			}
 
 			&:after {
 				position: absolute;
-				top:0;
-				right:0;
+				top: calc(50% - 12px);
+				right: 24px;
 				content: '';
 				width: 24px;
 				height: 24px;
 				background: url(../images/icon/arrowDown_ty3.svg) no-repeat center /24px auto;
-				box-sizing: border-box;
+				transition: all 0.3s;
 			}
 
 			&[aria-expanded="true"] {

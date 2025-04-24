@@ -469,6 +469,7 @@
 		}
 	}
 }
+
 .number_list {
 	counter-reset: number 0;
 	li {
@@ -494,6 +495,58 @@
 		
 		strong {
 			display: block;
+		}
+	}
+}
+
+.list_depth.lv2 {
+	@include list-style(
+	  	$li-padding: 0,
+	  	$li-font-size: var(--font-size-body-small),
+	  	$li-color: var(--color-text-basic),
+			$li-line-height: 1.5,
+	) {
+
+		*:before {
+			display: none;
+		}
+
+		& > li {			
+			& ~ li {
+				margin-top: 12px;
+			}
+			> ul {
+				@include list-style(
+					$li-padding: 0,
+					$li-font-size: var(--font-size-body-xsmall),
+					$li-color: var(--color-text-information),
+					$li-line-height: 1.5
+				) {
+					> li {
+						& ~ li {
+							margin-top: 8px;
+						}
+						> ul {
+							margin-top: 4px;
+							@include list-style(
+								$li-padding: 0,
+								$li-font-size: var(--font-size-body-xsmall),
+								$li-color: var(--color-text-information),
+								$li-line-height: 1.5,
+							) {
+								> li {									
+									& ~ li {
+										margin-top: 4px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.point {
+			font-weight: 700;
 		}
 	}
 }
