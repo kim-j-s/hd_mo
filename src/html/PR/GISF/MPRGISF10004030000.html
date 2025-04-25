@@ -13,12 +13,18 @@
 	</div>
 	<div class="popup_bottom">
 		<div class="btn_area">
-			{{> cp/button type="3" size="2" b-text="다른번호로"}}
-			{{> cp/button type="1" size="2" b-text="계산결과 받기"}}
+			{{> cp/button type="3" size="2" b-text="다른 번호로"}}
+			<!-- s: 25-04-25 수정 -->
+			{{> cp/button type="1" size="2" b-text="계산결과 받기" toast-msg="보험료 계산 결과를 보내드렸습니다." }}
+			<!-- e: 25-04-25 수정 -->
 		</div>
 	</div>
 	{{/ popup/popup_bottom}} 
 	<!-- e: 계산 내역 문자로 받기 Bottom 팝업 -->
 <!-- e: popup area -->
+		
+<div class="toast_wrap" aria-live="assertive">
+	<div class="toast_msg"></div>
+</div>
 
 {{/ layout/default }}
