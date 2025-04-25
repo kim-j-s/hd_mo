@@ -101,7 +101,7 @@
 .list_ty3 {
   @include list-style(
     $li-padding: 0 0 0 8px,
-		$li-line-height: 24px,
+		$li-line-height: 150%,
     $li-color: #33363D,
 		$li-dot-color: #33363D
   ) {
@@ -124,7 +124,7 @@
 		& ~ li {
 			margin-top: 12px;
 		}
-		> .list_ty2 {
+		> .list_ty2, .circle_list_ty2,.list_depth_ty2 {
 			margin-top: 12px;
 		}
 	}
@@ -478,23 +478,29 @@
 //레벨2부터 사용하는 depth_list
 .list_depth_ty2 {
 
+	* {
+		line-height: 1.5;
+	}
+
+	.sub_title {
+		font-size: var(--font-size-body-small);
+		line-height: 1.5;
+
+		& + li {
+			margin-top: 12px;
+		}
+	}
+
 	li {
 		padding-left: 8px;
 		position: relative;
+		line-height: 1.5 !important;
 
 		&::before {
 			content: '';
 			position: absolute;
 			top:0;
 			left: 0;			
-		}
-	}
-
-	//bullet이 없는 케이스
-	&.no_bullet li {
-		padding-left: 0;
-		&::before { 
-			display: none;		
 		}
 	}
 
@@ -532,10 +538,64 @@
 				}
 			}
 		}
+
+
+		& > ol {
+			margin-top: 4px;
+			& > li {
+				padding: 0 0 0 8px;
+				font-size: var(--font-size-body-xsmall);
+				color: var(--color-text-information);
+				
+				//기본 : circle_list
+				&::before {
+					top: 8px;
+					width: 2px;
+					height: 2px;
+					background-color: var(--color-text-information);
+				}
+
+				& ~ li {
+					margin-top:8px;
+				}
+			}
+
+			&.number_list {
+				& > li {
+					padding-left: 16px;
+
+					&::before {
+						top: 0;
+						left: 0;
+						width: 12px;
+						height: 18px;
+						// background-color: var(--color-text-information);
+						background-color: transparent;
+					}
+				}			
+			}
+		}
 	}	
 }
 
+.list_depth_ty2_area {
+	
+	.list_depth_ty2 { 
+		margin-top: 0px !important;
+	}
 
+	.sub_title { 
+		margin-top: 8px;
+	}
+}
+
+//bullet이 없는 케이스
+.no_bullet li {
+	padding-left: 0 !important;
+	&::before { 
+		display: none !important;		
+	}
+}
 
 .number_list {
 	counter-reset: number 0;
@@ -632,6 +692,7 @@
 		position: relative;
 		padding-left: 20px;
 		font-size: var(--font-size-body-small);
+		line-height: 1.5;
 
 		& ~ li {
 			margin-top: 8px;
@@ -655,7 +716,7 @@
 
 		&::before {
 			position: absolute;
-			top: 11px;
+			top: 10.5px;
 			left: 0.4em;
 			transform: translateY(-50%);
 			counter-increment: circle 1;
@@ -666,11 +727,11 @@
 		&::after {
 			content: '';
 			position: absolute;
-			top: 11px;
+			top: 10px;
 			left: 0;
 			transform: translateY(-50%);
 			display: inline-block;
-			border: 1px solid #333;
+			border: 1px solid var(--color-icon-gray-light);
 			border-radius: 50%;
 			width: 0.9em;
 			height: 0.9em;
@@ -734,7 +795,6 @@
 				margin-top: 8px;
 			}
 		}
-
 	}
 
 }
@@ -758,5 +818,38 @@
 		.list_ty1 {
 			margin-top: 8px;
 		}
+	}
+}
+
+.star_list {
+	margin-top: 4px;
+
+  span {
+		display: block;
+		position: relative;
+		padding-left : 16px;
+		color: var(--color-text-information);
+		font-size: var(--font-size-body-xsmall) !important;
+		line-height: 1.5 !important;
+
+		&::before {
+			display: block;
+			content:'*';
+			width: 12px;
+			height: 18px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		&:nth-child(2) {
+			&::before {
+				content:'**';
+			}
+		}
+	}
+
+	& > span + span {
+		margin-top: 4px;
 	}
 }
