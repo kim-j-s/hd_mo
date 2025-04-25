@@ -1,0 +1,24 @@
+{{#> layout/default page-title="보험료 확인 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="보험료 확인" h-back=true }}
+</div>
+
+<!-- s: popup area -->
+	<!-- s: 계산 내역 문자로 받기 Bottom 팝업 -->
+	{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="계산 결과 문자로 받기" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<p class="text_info_lg"><strong>010-1234-5678</strong>로 <br>계산 결과를 보내드릴까요?</p>
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="3" size="2" b-text="다른번호로"}}
+			{{> cp/button type="1" size="2" b-text="계산결과 받기"}}
+		</div>
+	</div>
+	{{/ popup/popup_bottom}} 
+	<!-- e: 계산 내역 문자로 받기 Bottom 팝업 -->
+<!-- e: popup area -->
+
+{{/ layout/default }}
