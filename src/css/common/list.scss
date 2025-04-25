@@ -392,10 +392,6 @@
 }
 
 
-
-
-
-
 .list_depth {
 	@include list-style(
 	  	$li-padding: 0 0 0 8px,
@@ -473,6 +469,68 @@
 	}
 }
 
+//레벨2부터 사용하는 depth_list
+.list_depth_ty2 {
+
+	li {
+		padding-left: 8px;
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top:0;
+			left: 0;			
+		}
+	}
+
+	& > li {		
+    margin: 0;
+    font-size: var(--font-size-body-small);
+
+		&::before {
+			background-color: none;
+			content: '-';
+		}
+
+		& ~ li {
+			margin-top: 8px;
+		}
+
+		
+		& > ul {
+			margin-top: 4px;
+			& > li {
+				padding: 0 0 0 8px;
+				font-size: var(--font-size-body-xsmall);
+				color: var(--color-text-information);
+
+				&::before {
+					top: 8px;
+					width: 2px;
+					height: 2px;
+					border-radius: 50%;
+					background-color: var(--color-text-information);
+				}
+
+				& ~ li {
+					margin-top:8px;
+				}
+			}
+		}
+	}
+
+	//bullet이 없는 케이스
+	&.no_bullet li {
+		padding-left: 0;
+		&::before { 
+			display: none;			
+		}
+	}
+}
+
+
+
 .number_list {
 	counter-reset: number 0;
 	li {
@@ -498,58 +556,6 @@
 		
 		strong {
 			display: block;
-		}
-	}
-}
-
-.list_depth.lv2 {
-	@include list-style(
-	  	$li-padding: 0,
-	  	$li-font-size: var(--font-size-body-small),
-	  	$li-color: var(--color-text-basic),
-			$li-line-height: 1.5,
-	) {
-
-		*:before {
-			display: none;
-		}
-
-		& > li {			
-			& ~ li {
-				margin-top: 12px;
-			}
-			> ul {
-				@include list-style(
-					$li-padding: 0,
-					$li-font-size: var(--font-size-body-xsmall),
-					$li-color: var(--color-text-information),
-					$li-line-height: 1.5
-				) {
-					> li {
-						& ~ li {
-							margin-top: 8px;
-						}
-						> ul {
-							margin-top: 4px;
-							@include list-style(
-								$li-padding: 0,
-								$li-font-size: var(--font-size-body-xsmall),
-								$li-color: var(--color-text-information),
-								$li-line-height: 1.5,
-							) {
-								> li {									
-									& ~ li {
-										margin-top: 4px;
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		.point {
-			font-weight: 700;
 		}
 	}
 }
