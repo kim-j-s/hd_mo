@@ -52,9 +52,9 @@
 	</head>
 	<body>
 		<!-- s: Full 팝업 -->
-		<div class="popup_wrap full active" id="pop_MPRMTPS10003050700" role="dialog" aria-hidden="false">
+		<div class="popup_wrap full active" id="pop_full" role="dialog" aria-hidden="false">
 			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_MPRMTPS10003050700');"></div>
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_full');"></div>
 				<div class="popup_inner">
 					<div class="popup_head"><div class="popup_head_title"></div></div>
 					<div class="popup_cont">
@@ -66,7 +66,7 @@
 									특약
 								</div>
 								<div class="btn_area basic">
-									<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5" onclick="openHDPopup(this,'pop_MPRMTPS10003050701');" title="자녀 할인특약 자세히보기 팝업 열기">
+									<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5" onclick="openHDPopup(this,'pop_bottom_01');" title="어린이 통학버스 할인특약 자세히보기 팝업 열기">
 										<span class="text">자세히 보기</span>
 										<i class="hd_icon arrowRightSvg"></i>
 									</button>
@@ -74,14 +74,16 @@
 							</div>
 
 							<div class="info_cont">
-								<ul class="list_depth lv2">
-									<li>
+								<!-- s: 25-04-25 수정 -->
+								<ul class="list_depth_ty2 no_bullet">
+									<li class="">
 										해당 차량이 자동차 등록증상 어린이 통학버스가 맞는지 확인해주세요.
 										<ul>
 											<li>어린이 통학버스 전용 특약으로, 특약증빙(어린이 통학버스 신고증명서)이 부정확할 경우 증빙 재요청 또는 할인보험료 반환을 요청드릴 수 있습니다.</li>
 										</ul>
 									</li>
 								</ul>
+								<!-- e: 25-04-25 수정 -->
 							</div>
 
 							<div class="form_group_wrap">
@@ -127,13 +129,50 @@
 						</div>
 					</div>
 					<!-- s: 하단 고정 버튼 영역 -->
-					<button type="button" class="popup_close" onclick="closeHDPopup('pop_MPRMTPS10003050700');"><span class="blind">팝업 닫기</span></button>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_full');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
 		<!-- e: Full 팝업 -->
 
-		<!-- s: popup area -->
-		<!-- e: popup area -->
+		<!-- s: 어린이 통학버스 할인특약 자세히보기 팝업 -->
+		<div class="popup_wrap bottom" id="pop_bottom_01" role="dialog" aria-modal="true" aria-hidden="true">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_bottom_01');"></div>
+				<div class="popup_inner">
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head"><div class="popup_head_title">어린이 통학버스 할인특약 자세히보기</div></div>
+
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="info_cont">
+								<h2>기타 유의사항</h2>
+								<ul class="list_depth">
+									<li>
+										어린이 통학버스 신고증명서가 없어도 보험료 계산은 가능합니다.
+										<br />
+										단, 보험가입 시
+										<strong>어린이 통학버스 신고증명서</strong>
+										가 필요하므로 미리 이미지 파일을 준비해 주세요.
+									</li>
+									<li>어린이 통학버스 전용 특약으로, 특약증빙(신고증명서)이 부정확할 경우 증빙 재요청 또는 할인보험료 반환을 요청드릴 수 있습니다.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">확인</span>
+							</button>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_bottom_01');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: 어린이 통학버스 할인특약 자세히보기 팝업 -->
 	</body>
 </html>

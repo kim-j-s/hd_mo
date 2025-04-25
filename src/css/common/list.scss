@@ -484,6 +484,14 @@
 		}
 	}
 
+	//bullet이 없는 케이스
+	&.no_bullet li {
+		padding-left: 0;
+		&::before { 
+			display: none;		
+		}
+	}
+
 	& > li {		
     margin: 0;
     font-size: var(--font-size-body-small);
@@ -518,15 +526,7 @@
 				}
 			}
 		}
-	}
-
-	//bullet이 없는 케이스
-	&.no_bullet li {
-		padding-left: 0;
-		&::before { 
-			display: none;			
-		}
-	}
+	}	
 }
 
 
@@ -582,7 +582,7 @@
 			margin-top: 4px;
 			font-size: var(--font-size-body-xsmall);
 			color: var(--color-text-subtle);
-			font-weight: 400;
+			font-weight: 400;			
 		}
 		&::before {
 			position: absolute;
@@ -617,6 +617,120 @@
 			}
 		}
 	}
+}
+
+.circle_list_ty2  {
+	counter-reset: circle 0;
+
+	& > li {
+		position: relative;
+		padding-left: 20px;
+		font-size: var(--font-size-body-small);
+
+		& ~ li {
+			margin-top: 8px;
+		}
+
+		strong {
+			display: block;
+			margin-top: 4px;
+			font-size: var(--font-size-body-xsmall);
+			color: var(--color-text-subtle);
+			font-weight: 400;
+
+			&.txt_information {
+				color: var(--color-text-information);
+			}
+		}
+
+		ul + strong {
+			margin-top: 8px;
+		}
+
+		&::before {
+			position: absolute;
+			top: 11px;
+			left: 0.4em;
+			transform: translateY(-50%);
+			counter-increment: circle 1;
+			content: counter(circle);
+			font-size: 0.65em;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 11px;
+			left: 0;
+			transform: translateY(-50%);
+			display: inline-block;
+			border: 1px solid #333;
+			border-radius: 50%;
+			width: 0.9em;
+			height: 0.9em;
+		}
+
+		ol {
+			margin-top: 8px;
+			counter-reset: number 0;
+			
+			& > li {
+				position: relative;
+				font-size: var(--font-size-body-xsmall);
+				color: var(--color-text-information);
+				padding-left: 15px;
+
+				&::before {
+					display: block;
+					content:'';
+					position: absolute;
+					top: 0;
+					left: 0;
+					counter-increment: number 1;
+					content: counter(number) '. ';
+					font-size: var(--font-size-body-xsmall);
+					width: 11px;
+					height: 18px;
+				}	
+
+				& + li {
+					margin-top: 8px;
+				}
+			}
+		}
+		
+		ul {
+			margin-top:8px;
+			& > li {
+				position: relative;
+				padding: 0 0 0 8px;
+				font-size: var(--font-size-body-xsmall);
+				color: var(--color-text-information);
+
+				&::before {
+					display: block;
+					content:'';
+					position: absolute;
+					top: 8px;
+					left: 0;
+					width: 2px;
+					height: 2px;
+					border-radius: 50%;
+					background-color: var(--color-text-information);
+				}
+
+				& + li {
+					margin-top: 8px;
+				}
+			}
+
+			strong + li {
+				margin-top: 8px;
+			}
+		}
+
+	}
+
 }
 
 .clause_list {
