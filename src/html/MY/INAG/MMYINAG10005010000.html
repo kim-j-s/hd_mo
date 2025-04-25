@@ -3,14 +3,19 @@
 		{{> layout/header h-title="계약상세조회" h-back=true }}
 		<div id="container" class="container">
 			<div class="content">
+
 				<div class="cd_top_wrap">
 					<div class="cd_top">
 						<div class="badge_wrap">
 							<span class="hd_badge outline solid_pastel c_primary size_m">유지</span>
 						</div>
 						<div class="cd_top_name">
-							현대해상단체상해보험(직급전용)
+							다이렉트자동차보험(CM)
 						</div>
+						<p class="cd_price">
+							<span class="sr_only">자동차번호</span>
+							<strong class="won">20보**56</strong>
+						</p>
 
 						<div class="progress_bar progress_bar_ty1 progress_bar_ty1_date" role="img" tabindex="0">
 							<div class="progress_bar_per_cover">
@@ -30,20 +35,25 @@
 					</div>
 				</div>
 
-
 				<div class="tab_wrap">
 
 					<div class="tab_wrap_list_ty1" role="tablist">
 						{{>cp/tab_btn tb-text="기본정보" tb-id="01" tb-active=true}}
 						{{>cp/tab_btn tb-text="보장내용" tb-id="02"}}
+						{{>cp/tab_btn tb-text="납입정보" tb-id="03"}}
 					</div>
 
 					<!-- s: 기본정보 -->
-					<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
+					<div class="tab_wrap_content " role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
 						<h3 class="title_h3">기본정보</h3>
 						<div class="table_wrap">
 							<table class="table">
-								<caption>계약번호, 계약상태, 보험기간 제공</caption>
+								<caption>계약번호, 계약상태, 자동차번호, 보험기간, 목적물소재지 제공</caption>
+								<!-- ‘차대번호’ 노출 시 caption -->
+								<!-- 
+								<caption>계약번호, 계약상태, 차대번호, 보험기간, 목적물소재지 제공</caption>
+								-->
+								<!-- ‘차대번호’ 노출 시 caption -->
 								<colgroup>
 									<col style="width:35%;">
 									<col style="width:65%;">
@@ -58,11 +68,28 @@
 										<td>실효(2023.11.11)</td>
 									</tr>
 									<tr>
+										<th scope="row">자동차번호</th>
+										<td></td>
+									</tr>
+									<!-- 미확정 계약일 경우 ‘자동차번호’ -> ‘차대번호’로 노출 -->
+									<tr>
+										<th scope="row">차대번호</th>
+										<td></td>
+									</tr>
+									<!-- 미확정 계약일 경우 ‘자동차번호’ -> ‘차대번호’로 노출 -->
+									<tr>
 										<th scope="row">보험기간</th>
-										<td>2015.11.23~2037.11.23</td>
+										<td>1,508만원</td>
+									</tr>
+									<tr>
+										<th scope="row">총 차량가액</th>
+										<td>1,508만원</td>
 									</tr>
 								</tbody>
 							</table>
+						</div>
+						<div class="btn_area">
+							{{> cp/button type="3" size="3" b-text="자동차번호 확정/변경" atag="true"}}
 						</div>
 
 						<div class="divider_ty1"></div>
@@ -70,7 +97,7 @@
 						<h3 class="title_h3">가입자 정보</h3>
 						<div class="table_wrap">
 							<table class="table">
-								<caption>계약자, 피보험자 제공</caption>
+								<caption>계약자, 피보험자, 가입경력인정자1, 가입경력인정자2, 휴대폰번호, 유선전화번호, 우편물수령지 제공</caption>
 								<colgroup>
 									<col style="width:35%;">
 									<col style="width:65%;">
@@ -84,154 +111,268 @@
 										<th scope="row">피보험자</th>
 										<td>하*현(991123-1******)</td>
 									</tr>
+									<tr>
+										<th scope="row">가입경력인정자1</th>
+										<td>하*현(991123-1******)</td>
+									</tr>
+									<tr>
+										<th scope="row">가입경력인정자2</th>
+										<td>-</td>
+									</tr>
+									<tr>
+										<th scope="row">휴대폰번호</th>
+										<td>010-****-1234</td>
+									</tr>
+									<tr>
+										<th scope="row">유선전화번호</th>
+										<td>010-****-1234</td>
+									</tr>
+									<tr>
+										<th scope="row">우편물수령지</th>
+										<td>(회사) 04535 서울 중구 명동2길 20, 현대해상명동사옥</td>
+									</tr>
 								</tbody>
 							</table>
 						</div>
 						<div class="btn_area">
 							{{> cp/button type="3" size="3" b-text="개인정보 변경" atag="true"}}
+							{{> cp/button type="3" size="3" b-text="가입경력인정자 신청/변경" atag="true"}}
 						</div>
+
+						<div class="divider_ty1"></div>
+
+						<h3 class="title_h3">보험료 납입정보</h3>
+
+						<div class="table_wrap">
+							<table class="table">
+								<caption>총 납입보험, 납입방법, 다음회차 납입보험료, 다음회차 납입예정일 제공</caption>
+								<colgroup>
+									<col style="width:35%;">
+									<col style="width:65%;">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">총 납입보험료</th>
+										<td>1,345,000원</td>
+									</tr>
+									<tr>
+										<th scope="row">납입방법</th>
+										<td>일시납</td>
+									</tr>
+									<tr>
+										<th scope="row">다음회차 납입보험료</th>
+										<td>20,000원</td>
+									</tr>
+									<tr>
+										<th scope="row">다음회차 납입예정일</th>
+										<td>2025.03.24</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="btn_area ty2">
+							{{> cp/button type="3" size="3" b-text="납입내역 조회" atag=true}}
+							{{> cp/button type="3" size="3" b-text="마일리지 할인특약 가입" atag=true}}
+							<!-- 마일리지 할인특약 가입상태인 경우 노출 -->
+							<!-- 
+							{{> cp/button type="3" size="3" b-text="마일리지 (예상)환급금 조회" atag=true}}
+							-->
+							<!-- 마일리지 할인특약 가입상태인 경우 노출 -->
+						</div>
+
+						<div class="divider_ty1"></div>
+
+						<h3 class="title_h3">계약담당자</h3>
+						<ul class="contact_list">
+							<li>
+								<div class="item person">
+									<div class="inner">
+										<div class="name">홍길동</div>
+										<a href="tel:010-1234-5678" class="tel">010-1234-5678</a>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item spot">
+									<div class="inner">
+										<div class="name">서울사업부 명동지점</div>
+										<a href="tel:010-1234-5678" class="tel">010-1234-5678</a>
+									</div>
+								</div>
+							</li>
+						</ul>
 					</div>
 					<!-- e: 기본정보 -->
 
 					<!-- s: 보장내용 -->
-					<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
+					<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
 
 						<h3 class="title_h3">보장내용</h3>
-						<div class="opt_select_list opt_case4">
-							<a href="#" class="option" role="button">
+
+						<ul class="opt_select_list opt_case4">
+							<li class="option">
 								<div class="item">
 									<div class="data_l">
-										<span class="name">기본계약(상해사망)</span>
-										<span class="date">2021.01.15~2055.01.15</span>
+										<span class="name">대인배상Ⅰ</span>
+										<span class="date">가입</span>
 									</div>
 									<div class="data_r">
-										<span class="price">1억 5,000만원</span>
+										<span class="price">138,550원</span>
 									</div>
 								</div>
-							</a>
-							<a href="#" class="option" role="button">
+							</li>
+							<li class="option">
 								<div class="item">
 									<div class="data_l">
-										<span class="name">기본계약(상해후유장해)</span>
-										<span class="date">2021.01.15~2055.01.15</span>
+										<span class="name">대물(의무)</span>
+										<span class="date">2천만원</span>
 									</div>
 									<div class="data_r">
-										<span class="price">5,000만원</span>
+										<span class="price">293,390원</span>
 									</div>
 								</div>
-							</a>
-							<a href="#" class="option" role="button">
+							</li>
+							<li class="option">
 								<div class="item">
 									<div class="data_l">
-										<span class="name">상해사망추가담보</span>
-										<span class="date">2021.01.15~2055.01.15</span>
+										<span class="name">대인배상Ⅱ</span>
+										<span class="date">무한(의무담보 포함) </span>
 									</div>
 									<div class="data_r">
-										<span class="price">5,000만원</span>
+										<span class="price">243,970원</span>
 									</div>
 								</div>
-							</a>
-							<a href="#" class="option" role="button">
+							</li>
+							<li class="option">
 								<div class="item">
 									<div class="data_l">
-										<span class="name">중증화상/부식진단담보</span>
-										<span class="date">2021.01.15~2055.01.15</span>
+										<span class="name">대물(선택)</span>
+										<span class="date">3억원(의무담보 포함) </span>
 									</div>
 									<div class="data_r">
-										<span class="price">2,000만원</span>
+										<span class="price">82,760원</span>
 									</div>
 								</div>
-							</a>
-							<!-- CASE. 보장(보험)기간이 없는 경우 -->
-							<a href="#" class="option" role="button">
+							</li>
+							<li class="option">
 								<div class="item">
 									<div class="data_l">
-										<span class="name">기본계약(자동차사고부상(운전자,1-7급))</span>
+										<span class="name">자동차상해</span>
+										<span class="date">2억원/5천만원</span>
 									</div>
 									<div class="data_r">
-										<span class="price">1억 5,000만원</span>
+										<span class="price">46,600원</span>
 									</div>
 								</div>
-							</a>
-							<a href="#" class="option" role="button">
+							</li>
+							<li class="option">
 								<div class="item">
 									<div class="data_l">
-										<span class="name">교통상해후유장해(운전자,50%이상)담보</span>
+										<span class="name">긴급출동특약</span>
+										<span class="date">하이카서비스(10km) </span>
 									</div>
 									<div class="data_r">
-										<span class="price">5,000만원</span>
+										<span class="price">25,870원</span>
 									</div>
 								</div>
-							</a>
-							<a href="#" class="option" role="button">
+							</li>
+							<li class="option">
 								<div class="item">
 									<div class="data_l">
-										<span class="name">스프링쿨러누출손해</span>
+										<span class="name">특약보험료</span>
+										<span class="date">1개 특약 선택</span>
 									</div>
 									<div class="data_r">
-										<span class="price">5,000만원</span>
+										<span class="price">20원</span>
 									</div>
 								</div>
-							</a>
-							<a href="#" class="option" role="button">
-								<div class="item">
-									<div class="data_l">
-										<span class="name">화재손해</span>
-									</div>
-									<div class="data_r">
-										<span class="price">1,000만원</span>
-									</div>
-								</div>
-							</a>
-							<!-- CASE. 보장(보험)기간이 없는 경우 -->
+							</li>
+						</ul>
+
+						<div class="btn_area">
+							{{> cp/button type="3" size="3" b-text="담보/특약 변경" atag=true}}
 						</div>
+						
+
 
 					</div>
 					<!-- e: 보장내용 -->
-				</div>
+					 
+					<!-- s: 납입정보 -->
+					<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel02">
 
+						<h3 class="title_h3">보장내용</h3>
+						<div class="table_wrap">
+							<table class="table">
+								<caption>보험료(납입주기), 납입방법(이체일), 보장보험료, 적립보험료, 납입횟수, 납기/만기, 최초납입일, 최종납입월, 자동이체계좌정보 제공</caption>
+								<colgroup>
+									<col style="width:35%;">
+									<col style="width:65%;">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">보험료(납입주기)</th>
+										<td>2,920원(1개월납)</td>
+									</tr>
+									<tr>
+										<th scope="row">납입방법(이체일)</th>
+										<td>자동이체(16일)</td>
+									</tr>
+									<tr>
+										<th scope="row">보장보험료</th>
+										<td>5,180원</td>
+									</tr>
+									<tr>
+										<th scope="row">적립보험료</th>
+										<td>24,820원</td>
+									</tr>
+									<tr>
+										<th scope="row">납입횟수</th>
+										<td>63회/180회</td>
+									</tr>
+									<tr>
+										<th scope="row">납기/만기</th>
+										<td>전기납/15년만기</td>
+									</tr>
+									<tr>
+										<th scope="row">최초납입일</th>
+										<td>2019.01.16</td>
+									</tr>
+									<tr>
+										<th scope="row">최종납입월</th>
+										<td>2023년 05월분</td>
+									</tr>
+									<tr>
+										<th scope="row">자동이체계좌정보</th>
+										<td>
+											우리은행 1002*****1234<br>
+											예금주: 김*대 
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 
-				<!-- s: 이용안내 -->
-				<!-- dp-active=true -->
-				<div class="acd_item acd_item_ty5">
-				{{#> cp/accordion ac-title="이용안내" ac-active=true}}
-				<ul class="list_depth">
-					<li>
-						단체보험은 피보험자 추가, 탈퇴, 변경 등이 계약자(법인) 통보에 따라 이루어지기 때문에 변경사항이 실시간으로 반영되지 않습니다.
-					</li>
-					<li>
-						계약자 통보에 따라 현대해상이 보유한 정보를 근거로 조회되므로 계약이 조회되지 않는 경우, 재직 중인 회사 또는 카드사 등의 회원가입사에 계약 반영을 문의해 주세요.
-						<ul>
-							<li>
-								예시: A기업이 직원을 피보험자로 하는 단체보험에 가입한 경우<br>
-								① 신입사원 김OO 입사(02.01), 현대해상에 피보험자 추가 통보(03.01) → 김OO님이 02.15에 계약조회 시 단체피보험자로 조회되지 않음<br>
-								② 직원 이OO 퇴사(06.01), 현대해상에 피보험자 탈퇴 통보(12.01) → 이OO님이 07.01에 계약조회 시 단체피보험자로 조회되지만 유효하지 않음
-							</li>
-						</ul>
-					</li>
-					<li>
-						단체보험은 다수의 보험사가 담보 또는 가입금액을 분담해서 인수하는 계약이 가능합니다.<br>
-						해당 서비스에서 조회되는 내용은 현대해상이 인수한 담보와 가입금액이 기준이므로, 하므로 조회되지 않는 담보는 재직 중인 회사 또는 카드사 등의 회원가입사에 문의해 주세요.
-						<ul>
-							<li>
-								예시: A손해보험사(상해사망 3천만원, 상해입원일당 2만원)와 현대해상(상해사망 2천만원)으로 분담된 계약을 조회한 경우 → 조회 시 '상해사망 2천만원'만 보장내용으로 표시됨
-							</li>
-						</ul>
-					</li>
-				</ul>
-				{{/ cp/accordion }}
+						<div class="btn_area">
+							{{> cp/button type="3" size="3" b-text="납입내역 조회"}}
+							{{> cp/button type="3" size="3" b-text="자동이체계좌 신청/변경" atag="true"}}
+						</div>
+
+					</div>
+					<!-- e: 납입정보 -->
 				</div>
-				<!-- e: 이용안내 -->
 
 				<div class="divider_ty1"></div>
 
 				<div class="suggestion_list_wrap">
 					<div class="title_h4"><strong>어떤 서비스가 필요하세요?</strong></div>
 					<div class="item_wrap">
-						<button type="button" class="tag_item size_m"><span class="text">#보험금 청구 안내</span></button>
-						<button type="button" class="tag_item size_m"><span class="text">#보험계약대출 신청</span></button>
-						<button type="button" class="tag_item size_m"><span class="text">#보험증권</span></button>
-						<button type="button" class="tag_item size_m"><span class="text">#자동이체계좌 신청/변경</span></button>
+						<button type="button" class="tag_item size_m"><span class="text">단기운전자특약확대 특약 신청</span></button>
+						<button type="button" class="tag_item size_m"><span class="text">마일리지 할인특약 사진 등록</span></button>
+						<button type="button" class="tag_item size_m"><span class="text">자동차사고 처리현황 조회</span></button>
+						<button type="button" class="tag_item size_m"><span class="text">운전자 범위/연령 변경</span></button>
+						<button type="button" class="tag_item size_m"><span class="text">자동차보험가입증명서</span></button>
 					</div>
 				</div>
 
