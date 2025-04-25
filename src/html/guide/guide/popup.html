@@ -207,18 +207,18 @@
 			팝업내용입니다
 			<br />
 			내용
+			<!-- s: 꼭 알아두세요 -->
+			{{#> cp/notice }}
+			<ul class="list_depth">
+				<li>내용1</li>
+				<li>내용2</li>
+				<li>내용3</li>
+			</ul>
+			{{/ cp/notice }}
+			<!-- e: 꼭 알아두세요 -->
 		</div>
 	</div>
 	<div class="popup_bottom">
-		<!-- s: 꼭 알아두세요 -->
-		{{#> cp/notice }}
-		<ul class="list_depth">
-			<li>내용1</li>
-			<li>내용2</li>
-			<li>내용3</li>
-		</ul>
-		{{/ cp/notice }}
-		<!-- e: 꼭 알아두세요 -->
 		<div class="btn_area">
 			{{> cp/button type="3" size="2" b-text="취소" }}
 			{{> cp/button type="1" size="2" b-text="확인" }}
@@ -570,7 +570,7 @@
 	<!-- e: Bottom 팝업(검색어 입력 후 리스트 유형2) -->
 
 	<!-- s: Bottom 팝업(검색어 입력 후 리스트 유형1) -->
-	{{#> popup/popup_bottom popup-id="search_list_bottom_ty3" popup-title="팝업 타이틀" popup-active=true }}
+	{{#> popup/popup_bottom popup-id="search_list_bottom_ty3" popup-title="팝업 타이틀" }}
 	<div class="popup_cont">
 		<div class="popup_content">
 			<div class="opt_select_list opt_case4">

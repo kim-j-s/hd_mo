@@ -1135,11 +1135,6 @@
 }
 .car_input_box .msg_error {
 	margin-top: 0.9rem;
-	padding-left: 2rem;
-	background: url(../images/icon/icon_error.svg) no-repeat left center/1.6rem auto;
-	font-size: var(--font-size-label-medium);
-	line-height: 2.1rem;
-	color: var(--color-text-danger);
 }
 .autocomplete_wrap + .suggestion_list_wrap {
 	margin-top: 5.2rem;
@@ -2287,6 +2282,9 @@
 .form_box .ex_text + .form_group_wrap {
 	margin-top: 3.2rem;
 }
+.form_box + .form_group_wrap {
+	margin-top: 3.2rem;
+}
 .input_text + .inp_checkbox {
 	margin-top: 1.6rem;
 }
@@ -2306,6 +2304,12 @@
 }
 ul + .form_group_wrap {
 	margin-top: 3.2rem;
+}
+.form_group_wrap + .file_upload_wrap {
+	margin-top: 3.2rem;
+}
+.text_lg {
+	font-size: var(--font-size-body-large);
 }
 .info_cont h1 {
 	margin-bottom: 2rem;
@@ -2331,9 +2335,17 @@ ul + .form_group_wrap {
 .info_cont ol + h2 {
 	margin-top: 4rem;
 }
+.info_cont ul + h3 + h1,
+.info_cont .table_wrap + h1 {
+	margin-top: 5.2rem;
+}
 .info_cont ul + h3 + h3,
 .info_cont .table_wrap + h3 {
 	margin-top: 2.4rem;
+}
+.info_cont ul + h3 .table ~ *,
+.info_cont .table_wrap .table ~ * {
+	margin-top: 1.6rem;
 }
 .info_cont ul + h4 {
 	margin-top: 1.6rem;
@@ -2383,7 +2395,7 @@ ul + .form_group_wrap {
 	margin-top: 2rem;
 }
 .info_gray + .btn_area {
-	margin-top: 2.4rem;
+	margin-top: 1.6rem;
 }
 .btn_area + .acd_item {
 	margin-top: 5.2rem;
@@ -2464,6 +2476,43 @@ ul + .form_group_wrap {
 .sns_box button img {
 	display: block;
 }
+.travel_day {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 1.2rem;
+}
+.travel_day > div {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+.travel_day i {
+	display: block;
+	width: 2.4rem;
+	height: 2.4rem;
+	background: url(../images/../images/icon/arrowRight_ty8.svg) no-repeat center/2.4rem auto;
+}
+.travel_day dl {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	text-align: center;
+	gap: 0;
+}
+.travel_day dl dd {
+	text-align: center;
+}
 /* 운전자보험 - 보험료 결제 */
 .insurance_payment_area {
 	position: relative;
@@ -2517,6 +2566,13 @@ ul + .form_group_wrap {
 	line-height: 2.4rem;
 }
 /* 마이 */
+/* 배경색 있는 상단 컨텐츠 영역 */
+.bg_top_cover {
+	margin: -2.4rem -2.4rem 0 -2.4rem;
+	padding: 2.4rem;
+	background-color: var(--color-surface-secondary-subtler);
+}
+/* 배경색 있는 상단 컨텐츠 영역 */
 /* 계약상세 */
 .cd_top_wrap {
 	margin: -2.4rem -2.4rem 0 -2.4rem;
