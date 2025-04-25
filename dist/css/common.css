@@ -4383,7 +4383,7 @@ strong {
 	margin: 0;
 	padding: 0 0 0 0.8rem;
 	font-size: var(--font-size-body-medium);
-	line-height: 2.4rem;
+	line-height: 150%;
 	color: #33363d;
 }
 .list_ty3 > li::before {
@@ -4401,7 +4401,9 @@ strong {
 .list_ty3 > li ~ li {
 	margin-top: 1.2rem;
 }
-.list_ty3 > li > .list_ty2 {
+.list_ty3 > li > .list_ty2,
+.list_ty3 > li .circle_list_ty2,
+.list_ty3 > li .list_depth_ty2 {
 	margin-top: 1.2rem;
 }
 .list_ty3 + .btn_area {
@@ -4713,21 +4715,26 @@ strong {
 .list_depth .point {
 	font-weight: 700;
 }
+.list_depth_ty2 * {
+	line-height: 1.5;
+}
+.list_depth_ty2 .sub_title {
+	font-size: var(--font-size-body-small);
+	line-height: 1.5;
+}
+.list_depth_ty2 .sub_title + li {
+	margin-top: 1.2rem;
+}
 .list_depth_ty2 li {
 	padding-left: 0.8rem;
 	position: relative;
+	line-height: 1.5 !important;
 }
 .list_depth_ty2 li::before {
 	content: "";
 	position: absolute;
 	top: 0;
 	left: 0;
-}
-.list_depth_ty2.no_bullet li {
-	padding-left: 0;
-}
-.list_depth_ty2.no_bullet li::before {
-	display: none;
 }
 .list_depth_ty2 > li {
 	margin: 0;
@@ -4757,6 +4764,45 @@ strong {
 }
 .list_depth_ty2 > li > ul > li ~ li {
 	margin-top: 0.8rem;
+}
+.list_depth_ty2 > li > ol {
+	margin-top: 0.4rem;
+}
+.list_depth_ty2 > li > ol > li {
+	padding: 0 0 0 0.8rem;
+	font-size: var(--font-size-body-xsmall);
+	color: var(--color-text-information);
+}
+.list_depth_ty2 > li > ol > li::before {
+	top: 0.8rem;
+	width: 0.2rem;
+	height: 0.2rem;
+	background-color: var(--color-text-information);
+}
+.list_depth_ty2 > li > ol > li ~ li {
+	margin-top: 0.8rem;
+}
+.list_depth_ty2 > li > ol.number_list > li {
+	padding-left: 1.6rem;
+}
+.list_depth_ty2 > li > ol.number_list > li::before {
+	top: 0;
+	left: 0;
+	width: 1.2rem;
+	height: 1.8rem;
+	background-color: transparent;
+}
+.list_depth_ty2_area .list_depth_ty2 {
+	margin-top: 0px !important;
+}
+.list_depth_ty2_area .sub_title {
+	margin-top: 0.8rem;
+}
+.no_bullet li {
+	padding-left: 0 !important;
+}
+.no_bullet li::before {
+	display: none !important;
 }
 .number_list {
 	counter-reset: number 0;
@@ -4847,6 +4893,7 @@ strong {
 	position: relative;
 	padding-left: 2rem;
 	font-size: var(--font-size-body-small);
+	line-height: 1.5;
 }
 .circle_list_ty2 > li ~ li {
 	margin-top: 0.8rem;
@@ -4866,7 +4913,7 @@ strong {
 }
 .circle_list_ty2 > li::before {
 	position: absolute;
-	top: 1.1rem;
+	top: 1.05rem;
 	left: 0.4em;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
@@ -4877,12 +4924,12 @@ strong {
 .circle_list_ty2 > li::after {
 	content: "";
 	position: absolute;
-	top: 1.1rem;
+	top: 1rem;
 	left: 0;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 	display: inline-block;
-	border: 1px solid #333;
+	border: 1px solid var(--color-icon-gray-light);
 	border-radius: 50%;
 	width: 0.9em;
 	height: 0.9em;
@@ -4956,6 +5003,32 @@ strong {
 }
 .clause_list > li .list_ty1 {
 	margin-top: 0.8rem;
+}
+.star_list {
+	margin-top: 0.4rem;
+}
+.star_list span {
+	display: block;
+	position: relative;
+	padding-left: 1.6rem;
+	color: var(--color-text-information);
+	font-size: var(--font-size-body-xsmall) !important;
+	line-height: 1.5 !important;
+}
+.star_list span::before {
+	display: block;
+	content: "*";
+	width: 1.2rem;
+	height: 1.8rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.star_list span:nth-child(2)::before {
+	content: "**";
+}
+.star_list > span + span {
+	margin-top: 0.4rem;
 }
 /* notice */
 /* bottom_fix_notice */
