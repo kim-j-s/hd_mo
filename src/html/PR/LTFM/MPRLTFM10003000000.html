@@ -20,20 +20,20 @@
 						{{> cp/address ad_ph="주소 검색" case2=true ad_popup="pop_type01"}}
 					</div>
 					<div class="form_line">
-						<div class="label_tit">건물 구조 {{> cp/tooltip text="<p>완공 후 20년 이상인 경우, 급배수설비누출로인한손해(주택)담보에 가입할 수 없습니다.</p>" trigger-icon="popover_help"}}</div>
-						{{> cp/address ad_ph="건물 구조 선택" msg1="건물 구조" case2=true ad_popup="pop_type01"}}
+						<div class="label_tit">건물 구조</div>
+						{{> cp/address ad_ph="건물 구조 선택" msg1="건물 급수 : 1급" case3=true ad_popup="pop_type01"}}
 					</div>
 					<div class="form_line">
 						<div class="label_tit">주택면적</div>
 						<div class="row balance">
-							{{> cp/text type="tel" placeholder="숫자만 입력" value="68.77" r-text="㎡" inp-title="제곱미터 입력" }}
+							{{> cp/text type="tel" placeholder="숫자만 입력" value="78" r-text="㎡" inp-title="제곱미터 입력" }}
 							{{> cp/text type="tel" placeholder="숫자만 입력" r-text="평" inp-title="평수 면적 입력" disabled=true }}
 						</div>
 					</div>
 					<div class="form_line">
 						<div class="label_tit">층수</div>
 						<div class="row"> 
-							{{> cp/text value="1층" inp-title="층수 입력" }}
+							{{> cp/text type="tel" class="grow" placeholder="숫자만 입력" value="1" r-text="층" inp-title="층수 입력" }}
 							<div class="radio_comb origin" role="radiogroup">	
 								{{> cp/radio rd-class="rd_btn" rd-id="radio_comb_g2_1" name="radio_g1" labelname="지상" }}
 								{{> cp/radio rd-class="rd_btn" rd-id="radio_comb_g2_2" name="radio_g1" labelname="지하" }}
@@ -41,7 +41,7 @@
 						</div>
 					</div>
 					<div class="form_line">
-						<div class="label_tit">건축 년도</div>
+						<div class="label_tit">건축 년도 {{> cp/tooltip text="<p>완공 후 20년 이상인 경우, 급배수설비누출로인한손해(주택)담보에 가입할 수 없습니다.</p>" trigger-icon="popover_help"}}</div>
 						{{> cp/text type="tel" placeholder="숫자만 입력" value="2008" r-text="년" inp-title="건축 년도 입력" }}
 					</div>
 					<div class="form_line">

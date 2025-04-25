@@ -44,6 +44,27 @@
 				pointer-events: none;
 				transition: all 0.3s;
 			}
+			.item_list {
+				position: relative;
+				display: block;
+				padding-left: 8px;
+				color: var(--color-text-basic);
+
+				&:before {
+					position: absolute;
+					top: 10px;
+					left: 0;
+					content:'';
+					width: 3px;
+					height: 3px;
+					background-color: #33363D;
+					border-radius: 100%;
+				}
+				
+				& + .item_list {
+					margin-top: 12px;
+				}
+			}
 		}
 		&:focus {
 			.ad_item {
