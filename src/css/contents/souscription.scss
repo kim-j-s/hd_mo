@@ -23,6 +23,9 @@
             margin-top: 32px;
         }
 	}
+    & + .form_group_wrap {
+        margin-top: 32px;
+    }
 }
 .input_text {
     & + .inp_checkbox {
@@ -57,6 +60,14 @@
 ul + .form_group_wrap {
     margin-top: 32px;
 }
+.form_group_wrap {
+    & + .file_upload_wrap {
+        margin-top: 32px;
+    }
+}
+.text_lg {
+    font-size: var(--font-size-body-large);
+}
 .info_cont {
     h1 {
         margin-bottom: 20px;
@@ -83,8 +94,16 @@ ul + .form_group_wrap {
     }
     ul + h3,
     .table_wrap {
+        & + h1 {
+            margin-top: 52px;
+        }
         & + h3 {
             margin-top: 24px;
+        }
+        .table {
+            & ~ * {
+                margin-top: 16px;
+            }
         }
     }
     ul + h4 {
@@ -217,6 +236,31 @@ ul + .form_group_wrap {
         background: transparent;
         img {
             display: block;
+        }
+    }
+}
+
+.travel_day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    > div {
+        display: flex;
+        justify-content: center;
+    }
+    i {
+        display: block;
+        width: 24px;
+        height: 24px;
+        background: url(../images/../images/icon/arrowRight_ty8.svg) no-repeat center / 24px auto;
+    }
+    dl {
+        flex-direction: column;
+        text-align: center;
+        gap: 0;
+        dd {
+            text-align: center;
         }
     }
 }
