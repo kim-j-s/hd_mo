@@ -1,8 +1,7 @@
 <!---
-화면번호 : MPRMTPS10004020000
-경로 : 3.자동차 상세정보 > 3-3. 자동차 추가 확인사항 (승용)
+화면번호 : MPRMTPS10003010000
+경로 : 2.자동차 기본정보 > 2-2.자동차번호 입력
 -->
-<!-- s: 25-04-15 수정 -->
 <!doctype html>
 <html lang="ko">
 	<head>
@@ -44,7 +43,7 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>자동차 상세정보 | 상품 - 현대해상 다이렉트</title>
+		<title>자동차 기본정보 | 상품 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -60,7 +59,7 @@
 					</div>
 
 					<div class="header_connect">
-						<h1 class="header_title">자동차보험</h1>
+						<h1 class="header_title">타이틀</h1>
 					</div>
 
 					<div class="right">
@@ -82,85 +81,145 @@
 			</div>
 			<div id="container" class="container">
 				<div class="content">
-					<!-- s: 25-04-21 수정 -->
-					<!-- s: 25-04-22 수정 -->
 					<!-- s: content_top -->
 					<div class="content_top">
 						<h2 class="title_h2">
-							<strong>차량관련 확인사항</strong>
-							중
-							<strong>해당하는 항목</strong>
-							이 있으면 체크해주세요
+							<strong>자동차번호</strong>
+							또는
+							<br />
+							<strong>차대번호</strong>
+							를 입력해 주세요
 						</h2>
 						<div class="btn_area basic">
-							<!--TO-DO : (25-04-15 위서진) 추후 용어사전 팝업이 완성되면, popup id를 popup props에 적용해야함-->
-							<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5" onclick="openHDPopup(this,'pop_01');" title="도움말 열기">
-								<span class="text">어려운 용어 설명을 보시려면</span>
+							<!-- s: 25-04-21 수정 -->
+							<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5">
+								<span class="text">보험만기일, 중고차, 신차 안내</span>
 								<i class="hd_icon arrowRightSvg"></i>
 							</button>
+							<!-- e: 25-04-21 수정 -->
 						</div>
 					</div>
 					<!-- e: content_top -->
-					<!-- e: 25-04-22 수정 -->
 
-					<ul class="form_list">
-						<li>
-							<div class="form_group_wrap">
-								<div class="form_line">
-									<div class="label_tit">자동차관리법령에 따라 ‘승용캠핑카'로 구조변경(튜닝)한 차량입니까?</div>
-									<div class="info_gray">
-										<p class="info_text">승용캠핑카=승용 번호판(01-69, 100-699) & 등록 원부상 캠핑카 구조변경 내역 존재</p>
-									</div>
-									<div class="radio_group_wrap" role="radiogroup">
-										<div class="inp_radio rd_btn">
-											<input type="radio" id="radio_btn_05" name="radio_g3" />
-											<label for="radio_btn_05">
-												<span class="label_cont">예</span>
-											</label>
-										</div>
-										<div class="inp_radio rd_btn">
-											<input type="radio" id="radio_btn_06" name="radio_g3" checked />
-											<label for="radio_btn_06">
-												<span class="label_cont">아니오</span>
-											</label>
-										</div>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">자동차번호 7~9자리, 차대번호 17자리</div>
+							<!-- s: 25-04-17 수정 -->
+							<div class="car_input_box">
+								<!-- 에러 메시지 시, error 클래스 추가 -->
+								<div class="input_text car_number_input error">
+									<div class="inp">
+										<input type="text" placeholder="123가4567" minlength="7" maxlength="17" title="자동차 또는 차대번호 입력" />
+										<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 									</div>
 								</div>
+								<p class="msg_error">자동차 번호, 또는 차대번호를 입력해 주세요.</p>
 							</div>
-						</li>
-						<li>
-							<div class="form_group_wrap">
-								<div class="label_tit">차량이 캠핑트레일러, 보트, 수상오토바이 등의 레저장비를 견인하는 자동차 입니까?</div>
-								<div class="info_gray">
-									<p class="info_text">레저장비를 견인하는 자동차는 레저장비견인 중 위험담보요율 적용으로 기본보험요율이 할증됩니다.</p>
-								</div>
-								<div class="radio_group_wrap" role="radiogroup">
-									<div class="inp_radio rd_btn">
-										<input type="radio" id="radio_btn_03" name="radio_g2" />
-										<label for="radio_btn_03">
-											<span class="label_cont">예</span>
-										</label>
-									</div>
-									<div class="inp_radio rd_btn">
-										<input type="radio" id="radio_btn_04" name="radio_g2" checked />
-										<label for="radio_btn_04">
-											<span class="label_cont">아니오</span>
-										</label>
-									</div>
-								</div>
-							</div>
-						</li>
-					</ul>
-					<!-- e: 25-04-21 수정 -->
+							<!-- e: 25-04-17 수정 -->
+						</div>
+					</div>
+
+					<!-- s: 25-04-17 수정 -->
+					<div class="checkbox_group_wrap column">
+						<div class="inp_checkbox rd_box">
+							<input type="checkbox" id="checkbox01" />
+							<label for="checkbox01" class="chk_label chk_label_ty3">
+								<span class="label_cont">
+									차량을 구매예정이신가요?
+									<span class="sub_g_txt">자동차번호, 차대번호를 모르는 경우</span>
+								</span>
+							</label>
+						</div>
+					</div>
+					<!-- e: 25-04-17 수정 -->
+
+					<div class="radio_group_wrap column car_type_option" role="radiogroup">
+						<div class="inp_radio rd_btn_s1 icon_opt1">
+							<input type="radio" id="radio_btn_g1" name="radio_g1" checked />
+							<label for="radio_btn_g1">
+								<span class="label_cont">
+									승용차
+									<br />
+									<span>승차정원 10인 이하</span>
+								</span>
+							</label>
+						</div>
+						<!-- s: 25-04-18 수정 -->
+						<div class="inp_radio rd_btn_s1 icon_opt2">
+							<input type="radio" id="radio_btn_g2" name="radio_g1" />
+							<label for="radio_btn_g2">
+								<span class="label_cont">
+									승합차
+									<br />
+									<span>승차정원 11인 이상</span>
+								</span>
+							</label>
+						</div>
+						<div class="inp_radio rd_btn_s1 icon_opt3">
+							<input type="radio" id="radio_btn_g3" name="radio_g1" />
+							<label for="radio_btn_g3">
+								<span class="label_cont">
+									화물차
+									<br />
+									<span>적재함이 있는 자동차, 밴형 및 픽업트럭</span>
+								</span>
+							</label>
+						</div>
+						<!-- e: 25-04-18 수정 -->
+					</div>
 				</div>
+
+				<!-- s: 최근계산내역-->
+				<div class="fixed_link_wrap">
+					<div class="inner">
+						<div class="link_btn_box">
+							<button type="button" class="btn_current">
+								최근설계
+								<br />
+								<span>3건</span>
+							</button>
+							<button type="button" class="link_close">
+								<span class="sr_only">최근계산내역 닫기</span>
+							</button>
+						</div>
+						<div class="current_state" aria-hidden="false">
+							<div class="cont">
+								<div class="link_icon"></div>
+								<div class="text">
+									최근설계내역
+									<strong>
+										<span>3</span>
+										건
+									</strong>
+									이 있어요!
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- e: 최근계산내역-->
 			</div>
 
 			<!-- s: 하단 고정 버튼 영역 -->
 			<div class="bottom_fix_wrap">
 				<div class="btn_area">
-					<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
-						<span class="text">다음으로</span>
+					<!-- s: 25-04-21 수정 -->
+					<!-- s: 25-04-17 수정 -->
+					<!-- <button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2 full" disabled >
+			
+				<span class="text">다음</span>
+			
+			</button> -->
+					<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2 full">
+						<span class="text">승용차 차량번호로</span>
 					</button>
+					<!-- <button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2 full" >
+			
+				<span class="text">승용차 구매예정으로</span>
+			
+			</button> -->
+					<!-- e: 25-04-17 수정 -->
+					<!-- e: 25-04-21 수정 -->
 				</div>
 			</div>
 			<!-- s: 하단 고정 버튼 영역 -->
@@ -170,4 +229,3 @@
 		<!-- e: popup area -->
 	</body>
 </html>
-<!-- e: 25-04-15 수정 -->

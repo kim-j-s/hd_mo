@@ -1,155 +1,104 @@
 <!---
-화면번호 : PRLT10003000000
-경로 : 2. 자동차 기본정보 > 2-1. 보유차량 목록
+화면번호 : MPRMTPS10005000000
+경로 : 4.운전자 정보 > 4-1.운전자 범위 선택
 -->
-{{#> layout/default page-title="자동차 기본정보 | 상품"}}
-<div id="wrap" class="wrap">
-	{{> layout/header h-title="자동차보험" h-back=true }}
-
-	<div id="container" class="container">
-		<div class="content">
-			<!-- s: content_top -->
-			<div class="content_top">
-				<!-- s: 25-04-21 수정 -->
-				<h2 class="title_h2">
-					보험료를 계산할<br />
-					<strong>자동차를 선택</strong>하세요
-				</h2>
-
-				<div class="btn_area basic">
-					{{> cp/button type="3" size="5" b-text="계약 상태에 따른 가입 안내" rightIcon="arrowRightSvg" }}
+{{#> layout/default page-title="자동차 운전자 정보 | 상품"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="자동차보험" h-back=true }}
+		<div id="container" class="container">
+			<div class="content">
+				<!-- s: content_top -->
+				<div class="content_top">
+					<h2 class="title_h2">
+						운전하실 분을 <strong>김*대님</strong>을<br>
+						기준으로 선택 해 주세요
+					</h2>
+					<!-- s: 25-04-22 수정 -->
+					<div class="btn_area basic">
+						{{> cp/button type="3" size="5" b-text="가입경력인정제도 안내" rightIcon="arrowRightSvg" popup="ex_popup_bottom"}}
+					</div>
+					<!-- e: 25-04-22 수정 -->
 				</div>
-				<!-- e: 25-04-21 수정 -->
-			</div>
-			<!-- e: content_top -->
-
-			<!-- s: 신규가입 차량 -->
-			<div class="card_item_wrap">
-				<div class="card_item">
-					<div class="item_inner">
-						<div class="inner_cont">
-							<div class="item_top">
-								<div class="title_info">
-									<div class="main_title">신규차량</div>
-								</div>
-								<div class="desc">
-									가입된 차량 이외에 별도로 신규 차량의 자동차보험을 가입하시기 원하시나요?
-								</div>
+				<!-- e: content_top -->
+				
+				<div class="select_driver_range">
+					<div class="radio_group_wrap_ty2" role="radiogroup">
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt1" name="radio_gt1" labelname="본인만" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt2" name="radio_gt1" labelname="부부" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt3" name="radio_gt1" labelname="가족" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt4" name="radio_gt1" labelname="누구나" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt5" name="radio_gt1" labelname="임직원" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt6" name="radio_gt1" labelname="본인+1인" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt7" name="radio_gt1" labelname="부부+1인" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt8" name="radio_gt1" labelname="부부+자녀" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt9" name="radio_gt1" labelname="본인+자녀" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt10" name="radio_gt1" labelname="자녀" }}
+					</div>
+					
+					<div class="driver_relationship_state">
+						<div class="relationship_box">
+							<div class="rel_case1">
+								<span class="ty1">나의 부모</span>
+								<span class="ty2">배우자의 부모</span>
+							</div>
+							<div class="rel_case2">
+								<span>김*대님</span>
+							</div>
+							<div class="rel_case3">
+								<span>배우자</span>
+							</div>
+							<!-- s: 25-04-22 수정 -->
+							<div class="rel_case4">
+								<span class="ty2">임직원<i>개인사업자<br />전용</i></span>
+							</div>
+							<!-- e: 25-04-22 수정 -->
+							<div class="rel_case5">
+								<span>자녀와 자녀의 배우자</span>
+							</div>
+							<!-- s: 25-04-22 수정 -->
+							<div class="rel_case6">
+								<span class="ty2">지정1인</span>
+							<!-- e: 25-04-22 수정 -->
 							</div>
 						</div>
-					</div>
-					<div class="btn_area">
-						{{> cp/button type="2" size="2" b-text="신규차량 보험가입" }}
-					</div>
-				</div>
-			</div>
-			<!-- e: 신규가입 차량 -->
-
-			<div class="list_top_wrap">
-				<div class="left">
-					<span>보유 중인 자동차 <span class="point">2</span>건</span>
-				</div>
-			</div>
-
-			
-			<div class="card_item_wrap">
-				<div class="card_item">
-					<div class="item_inner">
-						<div class="inner_cont">
-							<!-- s: 25-04-23 수정 -->
-							<div class="item_top">
-								<div class="badge_wrap">
-									<span class="hd_badge outline solid_pastel c_primary size_m">만기 D-4</span>
-								</div>
-								<div class="title_info">
-									<div class="main_title">
-										111너**11 <span class="info">(삼성)</span>
-									</div>
-								</div>
-							</div>
-							<!-- e: 25-04-23 수정 -->
-							<ul class="card_list_ty1">
-								<li>
-									<div class="title">보험기간</div>
-									<div class="cont">2020.01.01 ~ 2021.01.01</div>
-								</li>
-								<li>
-									<div class="title">계약자</div>
-									<div class="cont">김*대</div>
-								</li>
-								<li>
-									<div class="title">피보험자</div>
-									<div class="cont">김*대</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="btn_area">
-						{{> cp/button type="2" size="2" b-text="계산가능" }}
-					</div>
-				</div>
-				<div class="card_item">
-					<div class="item_inner">
-						<div class="inner_cont">
-							<!-- s: 25-04-23 수정 -->
-							<div class="item_top">
-								<div class="title_info">
-									<div class="main_title">
-										111너**11 <span class="info hd">(현대)</span>
-									</div>
-								</div>
-							</div>
-							<!-- e: 25-04-23 수정 -->
-							<ul class="card_list_ty1">
-								<li>
-									<div class="title">보험기간</div>
-									<div class="cont">2020.01.01 ~ 2021.01.01</div>
-								</li>
-								<li>
-									<div class="title">계약자</div>
-									<div class="cont">김*대</div>
-								</li>
-								<li>
-									<div class="title">피보험자</div>
-									<div class="cont">김*대</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="btn_area">
-						{{> cp/button type="3" size="2" b-text="만기알람" }}
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<!-- s: 최근계산내역-->
-		<div class="fixed_link_wrap">
-			<div class="inner">
-				<div class="link_btn_box">
-					<button type="button" class="btn_current">
-						최근설계<br>
-						<span>3건</span>
-					</button>
-					<button type="button" class="link_close">
-						<span class="sr_only">최근계산내역 닫기</span>
-					</button>
-				</div>
-				<div class="current_state" aria-hidden="false">
-					<div class="cont">
-						<div class="link_icon"></div>
-						<div class="text">
-							최근설계내역 <strong><span>3</span>건</strong>이 있어요! 
-						</div>
-					</div>
-				</div>
+		<!-- s: 하단 고정 버튼 영역 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				<!-- s: 25-04-22 수정 -->
+				{{> cp/button type="1" size="1" b-text="선택 중이에요" disabled=true }}
+				<!-- {{> cp/button type="1" size="1" b-text="본인만으로" }} -->
+				<!-- e: 25-04-22 수정 -->
 			</div>
 		</div>
-		<!-- e: 최근계산내역-->
+		<!-- s: 하단 고정 버튼 영역 -->
 	</div>
-</div>
 
-<!-- s: popup area -->
-<!-- e: popup area -->
-
+	<!-- s: popup area -->
+	<!-- s: 25-04-22 수정 -->
+	{{#> popup/popup_bottom popup-id="ex_popup_bottom" popup-title="보험가입경력 인정 안내" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<p class="text_sub">자동차보험 <strong>가입경력이 3년 미만인 운전자</strong>가 운전범위에 포함된 경우, 가입경력인정제도를 통해 향후 <strong>보험료를 절감</strong>할 수 있습니다.</p>
+    		<ul class="list_ty3">
+					<li>자동차보험 가입시 운전범위에 따라 기명피보험자 이외의 운전자(가족, 지정1인 등)를 가입경력인정자로 등록하시면 해당 운전자가 향후 본인명의로 자동차보험을 가입할 때 가입경력을 인정받아 보험료를 절감할 수 있습니다.</li>
+    			<li>가입경력인정자 등록방법: 보험가입 완료 후 자동차 계약변경-<strong>[가입경력인정자 신청 입력]</strong> 메뉴를 통해 등록하실 수 있습니다.</li>
+					<li>운전범위에 따라 최대 2명까지 홈페이지 및 다이렉트 콜센터(1899-6782)을 통해 등록가능하며, 홈페이지 등록시 계약자의 전자서명 또는 휴대폰직접서명이 필요합니다.</li>
+					<li>과거 관공서 및 법인체에서 운전직으로 근무한 경력이나, 군에서 운전관련특기로 복무한 경력이 있을 경우, 보험가입 시 해당 증명서 제출을 통해 가입경력을 인정 받으실 수 있습니다.</li>
+					<li>다이렉트 콜센터(1899-6782)를 통해 증명서(운전직: 재직증명서 / 군경력: 병무청 발행 병적기록표 등) 제출시 계약체결 후에도 가입경력 인정이 가능합니다.</li>
+				</ul>		
+		</div>
+	</div>	
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="2" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: 25-04-22 수정 -->
+	<!-- e: popup area -->
 {{/ layout/default }}
