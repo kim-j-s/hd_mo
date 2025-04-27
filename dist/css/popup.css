@@ -245,12 +245,36 @@
 	transition: opacity 0.3s ease;
 }
 .popup_wrap.layer .popup_container {
-	padding: 2rem;
+	padding: 4rem 4.8rem;
 	opacity: 0;
 }
 .popup_wrap.layer .popup_container .popup_inner {
 	height: auto;
 	max-height: 100%;
+	border-radius: var(--radius-large2);
+}
+.popup_wrap.layer .popup_container .popup_inner .popup_cont {
+	padding: var(--gap-4) var(--number-10) var(--padding-6) var(--number-10);
+}
+.popup_wrap.layer .popup_container .popup_inner .pl_msg_top {
+	font-weight: 700;
+	font-size: var(--font-size-heading-small);
+}
+.popup_wrap.layer .popup_container .popup_inner .pl_msg_top.ico_ty {
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+.popup_wrap.layer .popup_container .popup_inner .pl_msg_top.ico_ty.ico_ty_case1 {
+	padding-top: 4.8rem;
+	background-image: url(../images/icon/icon_exclamation.svg);
+	background-size: 3.2rem auto;
+}
+.popup_wrap.layer .popup_container .popup_inner .pl_msg_top + .pl_txt1 {
+	margin-top: 1.6rem;
+}
+.popup_wrap.layer .popup_container .popup_inner .pl_txt1 {
+	font-size: var(--font-size-body-medium);
 }
 /* popup_bottom */
 .popup_wrap.bottom.active .popup_container {
@@ -286,9 +310,6 @@
 .popup_wrap.bottom .popup_container .popup_inner .popup_cont {
 	padding: 0px 2.4rem 1.2rem;
 	margin-top: 0.4rem;
-}
-.popup_wrap.bottom .popup_container .popup_inner .popup_bottom {
-	padding: var(--gap-4) 0 var(--gap-5) 0;
 }
 .popup_wrap.bottom .popup_container .popup_inner .popup_cont > .popup_content {
 	-webkit-box-flex: 1;

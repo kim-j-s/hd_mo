@@ -53,7 +53,9 @@ function selectEvent() {
 		const $this = $(this);
 		const idx = $this.closest(".opts_area").index();
 		const data = $this.closest(".opts_area").data("pickitem");
-		const selectedText = $this.next("label").find(".label_cont").text();
+		const selectedText = $this.next("label").find(".label_cont").text().trim();
+
+		console.log("selectedText", selectedText);
 
 		// 선택 된 현재 index 값
 		selectedIdx = idx + 1;
@@ -63,17 +65,35 @@ function selectEvent() {
 		// console.log(`선택된 값: ${selectedText}, 선택된 data: ${data}`);
 
 		// UI 업데이트
-		$(".ds2_inner")
+		$(".bit_history_inner")
 			.children("button")
 			.each(function () {
 				if ($(this).hasClass(data)) {
-					$(this).text(selectedText);
+					const thisData = $(this).text();
+					const thisDataIndex = $(this).index();
+					// console.log(thisData);
+					// console.log(thisDataIndex);
+
+					if (thisData == "") {
+						$(this).text(selectedText);
+						$(".stepper").attr("tabindex", "0");
+					} else if (thisData != selectedText) {
+						// console.log('초기화');
+						// 현재 선택된 인덱스를 기준으로 다음 단계에 있는 selected_case 텍스트를 빈 값으로 초기화
+						$(".bit_history_inner")
+							.children(".selected_case")
+							.slice(thisDataIndex + 1)
+							.text("");
+					}
 				}
 			});
 
 		if (selectedIdx === allStep) {
 			return;
 		} else {
+			// 선택된 구간의 값 초기화
+			stepReset(selectedIdx); // 선택된 스텝에 맞게 초기화 함수 호출
+
 			// 선택된 항목 활성화
 			motionEvent($this, selectedIdx);
 
@@ -92,20 +112,23 @@ function motionEvent($element, stepIdx) {
 		.attr("aria-label", `${allStep}단계 중 ${stepIdx + 1}단계`);
 	// console.log(`선택된 항목: ${$element}, 스텝 인덱스: ${stepIdx}`);
 
-	const $ds1Items = $(".ds1").find("[data-pickitem]");
+	const $bitItems = $(".bit").find("[data-pickitem]");
 	const $smpContentItems = $(".bi_opts_wrap").find("[data-pickitem]");
 
 	// 모든 항목에서 'active' 제거 후, 현재 선택된 항목만 'active' 추가
-	$ds1Items.addClass("active");
+	$bitItems.addClass("active");
 	$smpContentItems.addClass("active");
 
-	$ds1Items.eq(stepIdx).removeClass("active");
+	$bitItems.eq(stepIdx).removeClass("active");
 	$smpContentItems.eq(stepIdx).removeClass("active");
+
+	// $('.stepper').attr('tabindex', '0').focus();
+	$(".stepper").focus();
 }
 
 // progress 상태 처리 및 aria label 처리
 function stepIng(num, allStep) {
-	console.log("stepIng: ", num);
+	// console.log('stepIng: ', num);
 	// console.log('stepIng all: ', allStep);
 
 	// if(num === allStep) {
@@ -113,18 +136,25 @@ function stepIng(num, allStep) {
 	// }
 
 	// 버튼 활성화 상태
-
 	if (num > 0) {
-		$(".stm_btn").addClass("active");
+		$(".stm_btn").addClass("active").prop("disabled", false);
 	} else {
-		$(".stm_btn").removeClass("active");
+		$(".stm_btn").prop("disabled", true);
+		// active는 지우지 않는다
 	}
+	// 버튼 활성화 상태
 
 	// 이전/다음 버튼 활성화
+	// 추가된 다음 버튼 활성/비활성 처리
+	const $selectedButton = $(".bit_history_inner").find(".selected_case").eq(num);
+	const buttonText = $selectedButton.text().trim();
 
-	// ds2_inner
-
-	// 버튼 활성화 상태
+	if (buttonText === "") {
+		$(".stm_btn.stm_r").prop("disabled", true);
+	} else {
+		$(".stm_btn.stm_r").prop("disabled", false);
+	}
+	// 여기까지
 
 	// 진행 퍼센트 계산
 	const progress = Math.floor(((num + 1) / allStep) * 100);
@@ -140,16 +170,17 @@ function stepIng(num, allStep) {
 	$(".bi_wrap").attr("data-now", num);
 }
 
+// 입력 값 저장 변수
+let birthInput = "";
 function keypadEnter() {
 	let selectedIdx = null;
-
-	// 입력 값 저장 변수
-	let birthInput = "";
 
 	$(".keypad_btn").on("click", function () {
 		const $this = $(this);
 		const value = $this.text().trim();
 		const trgEle = $(".birth_date_field");
+
+		// console.log('눌린 숫자 : ', value);
 
 		const idx = $this.closest(".opts_area").index();
 		selectedIdx = idx + 1;
@@ -164,13 +195,15 @@ function keypadEnter() {
 			birthInput = "";
 			trgEle.text("").removeClass("active");
 		} else {
+			// if (birthInput.length < 8) {
 			if (birthInput.length < 8) {
 				birthInput += value;
 				trgEle.text(birthInput);
 			}
 		}
 
-		const getLng = trgEle.text().length;
+		// const getLng = trgEle.text().length;
+		let getLng = trgEle.text().length;
 		// console.log('글자수 : ', getLng);
 		if (getLng > 0) {
 			trgEle.addClass("active");
@@ -178,15 +211,16 @@ function keypadEnter() {
 			trgEle.removeClass("active");
 		}
 
+		// if(getLng === 8) {
 		if (getLng === 8) {
-			console.log(getLng);
+			// console.log(getLng);
 
 			// const selectedText = $this.next('label').find('.label_i').text();
 			const selectedText = trgEle.text();
 			// console.log('selectedText: ', selectedText);
 
 			const data = $this.closest(".opts_area").data("pickitem");
-			$(".ds2_inner")
+			$(".bit_history_inner")
 				.children("button")
 				.each(function () {
 					if ($(this).hasClass(data)) {
@@ -216,6 +250,9 @@ function stepBack() {
 	const now = Math.max(dataNow - 1, 0);
 	// console.log('back now: ', now);
 
+	// 선택된 구간의 값 초기화
+	stepReset(now); // 선택된 스텝에 맞게 초기화 함수 호출
+
 	// 선택된 항목 활성화
 	motionEvent(null, now); // motionEvent 호출 시 null 전달
 
@@ -231,11 +268,11 @@ function stepNext() {
 	// console.log('next');
 	// 현재 스텝 값 가져오기
 	let dataNow = parseInt($(".bi_wrap").attr("data-now")) || 0;
-	console.log("next dataNow now: ", dataNow);
+	// console.log('next dataNow now: ', dataNow);
 
 	// 다음 스텝 계산 (최대값 allStep으로 제한)
 	const now = Math.min(dataNow + 1, allStep - 1);
-	console.log("next now: ", now);
+	// console.log('next now: ', now);
 
 	// 선택된 항목 활성화
 	motionEvent(null, now); // motionEvent 호출 시 null 전달
@@ -247,6 +284,7 @@ function stepNext() {
 	$(".bi_wrap").attr("data-now", now);
 }
 
+// 이동
 function moveStep() {
 	$(".selected_case").on("click", function () {
 		const $this = $(this);
@@ -256,7 +294,7 @@ function moveStep() {
 			.attr("class")
 			.split(" ")
 			.find(cls => cls !== "selected_case");
-		console.log("클릭한 버튼의 추가 클래스:", targetClass);
+		// console.log('클릭한 버튼의 추가 클래스:', targetClass);
 
 		if (!targetClass) return;
 
@@ -270,10 +308,35 @@ function moveStep() {
 		console.log("이동할 스텝 index:", targetIdx);
 
 		if (targetIdx !== -1) {
+			// 선택된 구간의 값 초기화
+			stepReset(targetIdx); // 선택된 스텝에 맞게 초기화 함수 호출
+
 			// 3. 해당 index로 스텝 이동
 			motionEvent(null, targetIdx);
 			stepIng(targetIdx, allStep);
 			$(".bi_wrap").attr("data-now", targetIdx);
 		}
 	});
+}
+
+// 초기화
+function stepReset(stepIdx) {
+	// console.log('초기화');
+	// 각 스텝의 초기화 작업을 여기서 수행
+
+	// 1. 선택된 라디오 버튼 초기화
+	const $stepRadio = $(".opts_area").eq(stepIdx).find('input[type="radio"]');
+	$stepRadio.prop("checked", false); // 라디오 버튼 선택 해제
+
+	// 2. birth_date_field 텍스트 초기화
+	const $birthDateField = $(".birth_date_field");
+	$birthDateField.text("").removeClass("active"); // 텍스트와 active 클래스 제거
+
+	// 3. 키패드에서 입력된 값 초기화
+	birthInput = ""; // 저장된 입력값 초기화
+	$(".birth_date_field").text(birthInput); // 텍스트 업데이트
+
+	// 4. 기타 필요한 초기화 작업 추가
+	// 예시로, 특정 클래스에 있는 입력값들 초기화
+	$(".some_other_input").val(""); // 다른 입력 필드 값 초기화
 }

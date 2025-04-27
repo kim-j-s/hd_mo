@@ -9,12 +9,43 @@
 		}
 
 		.popup_container {
-			padding: 20px;
+			padding: 40px 48px;
 			opacity: 0;
 
 			.popup_inner {
 				height: auto;
 				max-height: 100%;
+				border-radius: var(--radius-large2);
+				.popup_cont {
+					padding: var(--gap-4) var(--number-10) var(--padding-6) var(--number-10);
+				}
+
+				.pl_msg_top {
+					font-weight: 700;
+					font-size: var(--font-size-heading-small);
+					&.ico_ty {
+						text-align: center;
+						background-repeat: no-repeat;
+						background-position: top center;
+						&.ico_ty_case1 {
+							padding-top: 48px;
+							background-image: url(../images/icon/icon_exclamation.svg);
+							background-size: 32px auto;
+						}
+					}
+					+ .pl_txt1 {
+						margin-top: 16px;
+					}	
+				}
+
+
+				.pl_txt1 {
+					font-size: var(--font-size-body-medium);
+				}
+
+				// 
+
+
 			}
 		}
 	}
