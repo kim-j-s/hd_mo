@@ -75,11 +75,8 @@
 					</div>
 				</div>
 			</div>
-			<form action="" class="form">
-				<div class="smp">
-					<!-- <div class="smp_header">
-						<h1 class="smp_title">HEADER</h1>
-					</div> -->
+			<form action="" class="bi_form">
+				<div class="bi_wrap">
 					<div class="stepper_wrap">
 						<div class="stepper" role="img" aria-label="5단계 중 1단계">
 							<div class="pgs">
@@ -89,8 +86,9 @@
 						<button type="button" class="stm_btn stm_l" onclick="stepBack();">이전 단계</button>
 						<button type="button" class="stm_btn stm_r" onclick="stepNext();">다음 단계</button>
 					</div>
-					<div class="smp_stepper">
-						<div class="smp_top">
+
+					<div class="bi_stepper">
+						<div class="bi_top">
 							<!-- ds1 -->
 							<div class="ds1">
 								<!-- 운전자 -->
@@ -148,28 +146,30 @@
 							</div>
 							<!-- ds2 -->
 						</div>
-						<div class="smp_content">
+
+						<div class="bi_opts_wrap">
+							<!-- 운전자 -->
 							<div class="opts_area" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="person">
 								<div class="opts_area_item">
-									<div class="inp_radio">
+									<div class="inp_radio rd_btn_s1">
 										<input type="radio" id="radio11" name="radio1" />
 										<label for="radio11">
 											<span class="label_cont">본인</span>
 										</label>
 									</div>
-									<div class="inp_radio">
+									<div class="inp_radio rd_btn_s1">
 										<input type="radio" id="radio12" name="radio1" />
 										<label for="radio12">
 											<span class="label_cont">부모님</span>
 										</label>
 									</div>
-									<div class="inp_radio">
+									<div class="inp_radio rd_btn_s1">
 										<input type="radio" id="radio13" name="radio1" />
 										<label for="radio13">
 											<span class="label_cont">배우자</span>
 										</label>
 									</div>
-									<div class="inp_radio">
+									<div class="inp_radio rd_btn_s1">
 										<input type="radio" id="radio14" name="radio1" />
 										<label for="radio14">
 											<span class="label_cont">자녀</span>
@@ -177,15 +177,18 @@
 									</div>
 								</div>
 							</div>
+							<!-- 운전자 -->
+
+							<!-- 용도 -->
 							<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="car">
 								<div class="opts_area_item">
-									<div class="inp_radio">
+									<div class="inp_radio rd_btn_s1">
 										<input type="radio" id="radio21" name="radio2" />
 										<label for="radio21">
 											<span class="label_cont">자가용</span>
 										</label>
 									</div>
-									<div class="inp_radio">
+									<div class="inp_radio rd_btn_s1">
 										<input type="radio" id="radio22" name="radio2" />
 										<label for="radio22">
 											<span class="label_cont">영업용</span>
@@ -193,24 +196,26 @@
 									</div>
 								</div>
 							</div>
-							<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="생년월일 8자리를 입력하시면 다음단계로 이동합니다." data-pickitem="date">
-								<!-- <div class="opts_area" tabindex="0" aria-label="생년월일 8자리를 입력하시면 다음단계로 이동합니다." data-pickitem="date"> -->
+							<!-- 용도 -->
+
+							<!-- 생년월일 -->
+							<div class="opts_area active" tabindex="0" aria-label="생년월일 8자리를 입력하시면 다음단계로 이동합니다." data-pickitem="date">
 								<div class="opts_area_item column">
 									<div class="birth_date_field" aria-live="polite"></div>
-									<div class="keypad">
-										<div class="keypad_item">
+									<div class="bi_keypad">
+										<div class="bi_keypad_item">
 											<button type="button" class="keypad_btn">1</button>
 											<button type="button" class="keypad_btn">2</button>
 											<button type="button" class="keypad_btn">3</button>
 											<button type="button" class="keypad_btn keypad_btn_del" aria-label="지우기"></button>
 										</div>
-										<div class="keypad_item">
+										<div class="bi_keypad_item">
 											<button type="button" class="keypad_btn">4</button>
 											<button type="button" class="keypad_btn">5</button>
 											<button type="button" class="keypad_btn">6</button>
 											<button type="button" class="keypad_btn keypad_btn_delall">전체삭제</button>
 										</div>
-										<div class="keypad_item">
+										<div class="bi_keypad_item">
 											<button type="button" class="keypad_btn">7</button>
 											<button type="button" class="keypad_btn">8</button>
 											<button type="button" class="keypad_btn">9</button>
@@ -219,15 +224,18 @@
 									</div>
 								</div>
 							</div>
+							<!-- 생년월일 -->
+
+							<!-- 성별 -->
 							<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="gender">
 								<div class="opts_area_item">
-									<div class="inp_radio">
+									<div class="inp_radio rd_btn_s1">
 										<input type="radio" id="radio31" name="radio3" />
 										<label for="radio31">
 											<span class="label_cont">남성</span>
 										</label>
 									</div>
-									<div class="inp_radio">
+									<div class="inp_radio rd_btn_s1">
 										<input type="radio" id="radio32" name="radio3" />
 										<label for="radio32">
 											<span class="label_cont">여성</span>
@@ -235,20 +243,11 @@
 									</div>
 								</div>
 							</div>
+							<!-- 성별 -->
 						</div>
 					</div>
-
-					<div class="console"></div>
 				</div>
 			</form>
 		</div>
-
-		<style>
-			form {
-				-webkit-box-flex: 1;
-				-ms-flex: 1 1 0px;
-				flex: 1 1 0;
-			}
-		</style>
 	</body>
 </html>
