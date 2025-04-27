@@ -65,39 +65,33 @@ function selectEvent() {
 		// 선택된 값 콘솔 출력
 		// console.log(`선택된 값: ${selectedText}, 선택된 data: ${data}`);
 
-
-
-
 		// UI 업데이트
-		$('.ds2_inner').children('button').each(function() {
+		$('.bit_history_inner').children('button').each(function() {
 			if ($(this).hasClass(data)) {
-				$(this).text(selectedText);
+				const thisData = $(this).text();
+				const thisDataIndex = $(this).index();
+				// console.log(thisData);
+				// console.log(thisDataIndex);
 
-				// 조건 추가
-				// 만약 비어있으면 값만 받고 다음단계
-				// 만약 비어있지 않다면
-				// 비어있지 않고 기존 값과 현재 선택한 값이 같다면 다음단계
-				// 비어있지 않고 기존 값과 현재 선택한 값이 다르다면 지금 인덱스를 기준으로 selected_case text는 '' 처리
-
-
-			
-
-
-
-
+				if(thisData == '') {
+					$(this).text(selectedText);
+					$('.stepper').attr('tabindex', '0');
+				} else if (thisData != selectedText) {
+					// console.log('초기화');
+					// 현재 선택된 인덱스를 기준으로 다음 단계에 있는 selected_case 텍스트를 빈 값으로 초기화
+					$('.bit_history_inner').children('.selected_case').slice(thisDataIndex + 1).text('');
+				}
 			}
 		});
-
-
-
-
-
-
 
 
 		if(selectedIdx === allStep) {
 			return
 		} else {
+
+			// 선택된 구간의 값 초기화
+      stepReset(selectedIdx);  // 선택된 스텝에 맞게 초기화 함수 호출
+
 			// 선택된 항목 활성화
 			motionEvent($this, selectedIdx);
 
@@ -114,15 +108,20 @@ function motionEvent($element, stepIdx) {
 	$('.stepper_wrap').find('.stepper').attr('aria-label', `${allStep}단계 중 ${stepIdx + 1}단계`);
 	// console.log(`선택된 항목: ${$element}, 스텝 인덱스: ${stepIdx}`);
 	
-	const $ds1Items = $('.ds1').find('[data-pickitem]');
+	const $bitItems = $('.bit').find('[data-pickitem]');
 	const $smpContentItems = $('.bi_opts_wrap').find('[data-pickitem]');
 
 	// 모든 항목에서 'active' 제거 후, 현재 선택된 항목만 'active' 추가
-	$ds1Items.addClass('active');
+	$bitItems.addClass('active');
 	$smpContentItems.addClass('active');
 
-	$ds1Items.eq(stepIdx).removeClass('active');
+	$bitItems.eq(stepIdx).removeClass('active');
 	$smpContentItems.eq(stepIdx).removeClass('active');
+
+	// $('.stepper').attr('tabindex', '0').focus();
+	$('.stepper').focus();
+
+
 }
 
 // progress 상태 처리 및 aria label 처리
@@ -145,7 +144,7 @@ function stepIng(num, allStep) {
 
 	// 이전/다음 버튼 활성화
 	// 추가된 다음 버튼 활성/비활성 처리
-  const $selectedButton = $('.ds2_inner').find('.selected_case').eq(num);
+  const $selectedButton = $('.bit_history_inner').find('.selected_case').eq(num);
   const buttonText = $selectedButton.text().trim();
 
   if (buttonText === '') {
@@ -225,7 +224,7 @@ function keypadEnter() {
 			// console.log('selectedText: ', selectedText);
 			
 			const data = $this.closest('.opts_area').data('pickitem');
-			$('.ds2_inner').children('button').each(function() {
+			$('.bit_history_inner').children('button').each(function() {
 				if ($(this).hasClass(data)) {
 					$(this).text(selectedText);
 				}
@@ -255,6 +254,9 @@ function stepBack() {
   // 이전 스텝 계산 (최소값 0으로 제한)
   const now = Math.max(dataNow - 1, 0);
   // console.log('back now: ', now);
+
+	// 선택된 구간의 값 초기화
+	stepReset(now);  // 선택된 스텝에 맞게 초기화 함수 호출
 
   // 선택된 항목 활성화
   motionEvent(null, now); // motionEvent 호출 시 null 전달
@@ -287,10 +289,7 @@ function stepNext() {
   $('.bi_wrap').attr('data-now', now);
 }
 
-
-
-
-
+// 이동
 function moveStep() {
 	$('.selected_case').on('click', function () {
 		const $this = $(this);
