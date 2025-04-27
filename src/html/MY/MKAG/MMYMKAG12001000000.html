@@ -18,7 +18,11 @@
 					</div>
 					<div class="form_line">
 						<div class="label_tit">주민등록번호/외국인등록번호</div>
-						{{> cp/text inp-title="이름 입력" }}
+						<div class="comp_wrap birth">
+							{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력"  }}
+							<span class="dash">-</span>
+							{{> cp/keypad7 kt="주민등록번호(외국인등록번호) 뒷자리 입력"}}
+						</div>
 					</div>
 					<div class="form_line">
 						<div class="label_tit">휴대폰번호</div>
