@@ -27,12 +27,12 @@
 
 
 function stepperInit(num) {
-	if( $('.smp').length ) {
+	if( $('.bi_wrap').length ) {
 		// console.log(num);
 		const totalStepCount = $('.opts_area').length;
 		allStep = totalStepCount;
 		$('.stepper_wrap').find('.stepper').attr('aria-label', `${totalStepCount}단계 중 ${num + 1}단계`);
-		$('.smp').attr('data-now', num);
+		$('.bi_wrap').attr('data-now', num);
 
 		// 선택된 항목 활성화
 		motionEvent(null, num);
@@ -90,7 +90,7 @@ function motionEvent($element, stepIdx) {
 	// console.log(`선택된 항목: ${$element}, 스텝 인덱스: ${stepIdx}`);
 	
 	const $ds1Items = $('.ds1').find('[data-pickitem]');
-	const $smpContentItems = $('.smp_content').find('[data-pickitem]');
+	const $smpContentItems = $('.bi_opts_wrap').find('[data-pickitem]');
 
 	// 모든 항목에서 'active' 제거 후, 현재 선택된 항목만 'active' 추가
 	$ds1Items.addClass('active');
@@ -110,11 +110,15 @@ function stepIng(num, allStep) {
 	// }
 
 	// 버튼 활성화 상태
+
+	
 	if(num > 0) {
 		$('.stm_btn').addClass('active');
 	} else {
 		$('.stm_btn').removeClass('active');
 	}
+
+	// 버튼 활성화 상태
 
 	// 진행 퍼센트 계산
 	const progress = Math.floor(((num + 1) / allStep) * 100);
@@ -127,8 +131,10 @@ function stepIng(num, allStep) {
 
 	// console.log(`진행 상황: ${progress}%`);
 
-	$('.smp').attr('data-now', num);
+	$('.bi_wrap').attr('data-now', num);
 }
+
+
 
 
 function keypadEnter() {
@@ -162,10 +168,6 @@ function keypadEnter() {
 				birthInput += value;
 				trgEle.text(birthInput);				
 			}
-			// if (birthInput.length < 2) {
-			// 	birthInput += value;
-			// 	trgEle.text(birthInput);				
-			// }
 		}
 
 		const getLng = trgEle.text().length;
@@ -196,7 +198,7 @@ function keypadEnter() {
 			// stepper 진행 업데이트
 			stepIng(selectedIdx, allStep);
 
-			$('.smp').attr('data-now', selectedIdx);
+			$('.bi_wrap').attr('data-now', selectedIdx);
 		}
 
 		
@@ -208,7 +210,7 @@ function keypadEnter() {
 function stepBack() {
 	// console.log('back');
 	// 현재 스텝 값 가져오기
-	let dataNow = parseInt($('.smp').attr('data-now')) || 0;
+	let dataNow = parseInt($('.bi_wrap').attr('data-now')) || 0;
   // console.log('back dataNow now: ', dataNow);
 
   // 이전 스텝 계산 (최소값 0으로 제한)
@@ -222,14 +224,14 @@ function stepBack() {
   stepIng(now, allStep);
 
   // 현재 스텝 표기
-  $('.smp').attr('data-now', now);
+  $('.bi_wrap').attr('data-now', now);
 }
 
 // 이전단계
 function stepNext() {
 	// console.log('next');
 	// 현재 스텝 값 가져오기
-  let dataNow = parseInt($('.smp').attr('data-now')) || 0;
+  let dataNow = parseInt($('.bi_wrap').attr('data-now')) || 0;
   console.log('next dataNow now: ', dataNow);
 
   // 다음 스텝 계산 (최대값 allStep으로 제한)
@@ -243,7 +245,7 @@ function stepNext() {
   stepIng(now, allStep);
 
   // 현재 스텝 표기
-  $('.smp').attr('data-now', now);
+  $('.bi_wrap').attr('data-now', now);
 }
 
 
@@ -268,7 +270,7 @@ function moveStep() {
 				// 3. 해당 index로 스텝 이동
 				motionEvent(null, targetIdx);
 				stepIng(targetIdx, allStep);
-				$('.smp').attr('data-now', targetIdx);
+				$('.bi_wrap').attr('data-now', targetIdx);
 		}
 });
 }
