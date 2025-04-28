@@ -509,11 +509,31 @@ strong {
 .process_info_area + .table_wrap {
 	margin-top: 3.2rem;
 }
-.complete_top {
+.pl_msg_top {
+	font-weight: 700;
+	font-size: var(--font-size-heading-small);
 	text-align: center;
 }
-.complete_top + * {
+.pl_msg_top + .pl_txt1 {
 	margin-top: 1.6rem;
+}
+[class*="pl_ico_ty_"] {
+	padding-top: 4.8rem;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: 3.2rem auto;
+}
+[class*="pl_ico_ty_"] + .pl_txt1 {
+	margin-top: 1.6rem;
+}
+[class*="pl_ico_ty_"] + [class^="list_ty"] {
+	margin-top: 1.6rem;
+}
+.pl_ico_ty_case1 {
+	background-image: url(../images/icon/icon_exclamation.svg);
+}
+.pl_ico_ty_case2 {
+	background-image: url(../images/icon/icon_complete_error.svg);
 }
 .msg_error {
 	padding-left: 2rem;
@@ -4372,9 +4392,6 @@ strong {
 .form_key {
 	border-radius: 1.2rem;
 }
-.form_key[aria-disabled="true"] {
-	background-color: var(--color-input-surface-disabled);
-}
 .form_key .pin_area {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -4415,6 +4432,13 @@ strong {
 	width: 0;
 	height: calc(100% + 0.8rem);
 	border: 0 !important;
+}
+.form_key[aria-disabled="true"] {
+	background-color: var(--color-input-surface-disabled);
+}
+.form_key.big .pin_area {
+	font-weight: 700;
+	font-size: var(--font-size-heading-medium);
 }
 /* list */
 .list_ty1 > li {

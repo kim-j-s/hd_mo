@@ -56,7 +56,7 @@ function selectEvent() {
 		const data = $this.closest('.opts_area').data('pickitem');
 		const selectedText = $this.next('label').find('.label_cont').text().trim();
 
-		console.log('selectedText', selectedText);
+		// console.log('selectedText', selectedText);
 
 		// 선택 된 현재 index 값
 		selectedIdx = idx + 1;
@@ -78,6 +78,7 @@ function selectEvent() {
 					$('.stepper').attr('tabindex', '0');
 				} else if (thisData != selectedText) {
 					// console.log('초기화');
+					$(this).text(selectedText);
 					// 현재 선택된 인덱스를 기준으로 다음 단계에 있는 selected_case 텍스트를 빈 값으로 초기화
 					$('.bit_history_inner').children('.selected_case').slice(thisDataIndex + 1).text('');
 				}
@@ -278,6 +279,9 @@ function stepNext() {
   // 다음 스텝 계산 (최대값 allStep으로 제한)
   const now = Math.min(dataNow + 1, allStep - 1);
   // console.log('next now: ', now);
+
+	// 선택된 구간의 값 초기화
+	stepReset(now);  // 선택된 스텝에 맞게 초기화 함수 호출
 
   // 선택된 항목 활성화
   motionEvent(null, now); // motionEvent 호출 시 null 전달
