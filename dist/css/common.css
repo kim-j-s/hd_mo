@@ -512,10 +512,12 @@ strong {
 .pl_msg_top {
 	font-weight: 700;
 	font-size: var(--font-size-heading-small);
-	text-align: center;
 }
 .pl_msg_top + .pl_txt1 {
 	margin-top: 1.6rem;
+}
+.pl_msg_top[class*="pl_ico_ty_"] {
+	text-align: center;
 }
 [class*="pl_ico_ty_"] {
 	padding-top: 4.8rem;
@@ -924,6 +926,12 @@ strong {
 	display: none;
 }
 /** Accordion **/
+.acd_item .acd_head .acd_btn[class*="acd_ico_"] {
+	padding-left: 3.2rem;
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: 2.4rem auto;
+}
 .acd_item.acd_item_ty1 {
 	border-radius: var(--radius-large2);
 	border: 1px solid var(--color-border-gray-light);
@@ -1011,7 +1019,7 @@ strong {
 .acd_item.acd_item_ty2 .acd_head .acd_btn {
 	position: relative;
 	width: 100%;
-	padding: 0 2.4rem 0 0;
+	padding-right: 2.8rem;
 	background-color: transparent;
 	font-weight: 700;
 	font-size: var(--font-size-heading-small);
@@ -4543,7 +4551,7 @@ strong {
 	margin: 0;
 	padding: 0 0 0 0.8rem;
 	font-size: var(--font-size-body-small);
-	line-height: 2rem;
+	line-height: 150%;
 	color: var(--color-text-basic);
 }
 .list_ty4 > li::before {
@@ -4561,6 +4569,32 @@ strong {
 }
 .list_ty4 > li ~ li {
 	margin-top: 1.2rem;
+}
+.list_ty5 > li {
+	position: relative;
+	margin: 0;
+	padding: 0 0 0 1rem;
+	font-size: var(--font-size-body-xsmall);
+	line-height: 150%;
+	color: var(--color-text-information);
+}
+.list_ty5 > li::before {
+	background-color: var(--color-text-information);
+}
+.list_ty5 > li::before {
+	content: "";
+	position: absolute;
+	top: 0.8rem;
+	left: 0;
+	width: 0.2rem;
+	height: 0.2rem;
+	border-radius: 50%;
+}
+.list_ty5 > li ~ li {
+	margin-top: 0.8rem;
+}
+.list_ty5 + .info_gray {
+	margin-top: 5.2rem;
 }
 /* 검색 리스트 관련 스타일*/
 .popup_cont.search_list_type {
@@ -5165,6 +5199,10 @@ strong {
 	padding-top: 5.2rem;
 	margin: 0 -2.4rem;
 }
+.bottom_fix_notice.etc01 {
+	padding-top: 3.2rem;
+	margin-top: 0;
+}
 .bottom_fix_notice .acd_item {
 	background-color: var(--color-surface-gray-subtler);
 }
@@ -5174,7 +5212,7 @@ strong {
 .bottom_fix_notice .acd_head .acd_btn {
 	position: relative;
 	width: 100%;
-	padding: 2rem 2.4rem;
+	padding: 1.6rem 2rem;
 	background-color: transparent;
 }
 .bottom_fix_notice .acd_head .acd_btn > span {
@@ -5199,7 +5237,10 @@ strong {
 	transform: rotate(180deg);
 }
 .bottom_fix_notice .acd_cont .inner {
-	padding: 0 2.4rem 2rem;
+	padding: 0 2rem 2rem;
+}
+.bottom_fix_notice .acd_cont .inner .list_depth > li {
+	font-size: var(--font-size-body-small);
 }
 .bottom_fix_notice .acd_cont .inner .list_depth > li ul > li {
 	color: var(--color-text-subtle);
