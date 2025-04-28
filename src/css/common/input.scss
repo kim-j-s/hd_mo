@@ -613,10 +613,6 @@
 // 보안키패드
 .form_key {
 	border-radius: 12px;
-	// background-color: yellow;
-	&[aria-disabled="true"] {
-		background-color: var(--color-input-surface-disabled);
-	}
 	.pin_area {
 		display: flex;
 		align-items: center;
@@ -647,5 +643,14 @@
 		width: 0;
 		height: calc(100% + 8px);
 		border: 0 !important;
+	}
+	&[aria-disabled="true"] {
+		background-color: var(--color-input-surface-disabled);
+	}
+	&.big {
+		.pin_area {
+			font-weight: 700;
+			font-size: var(--font-size-heading-medium);
+		}
 	}
 }
