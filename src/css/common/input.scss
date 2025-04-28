@@ -613,26 +613,44 @@
 // 보안키패드
 .form_key {
 	border-radius: 12px;
-	background-color: var(--color-input-surface-disabled);
 	.pin_area {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 54px;
+		height: 48px;
 		gap: 2px;
+		padding: 0 16px;
+		font-size: var(--font-size-body-medium);
+		color: var(--color-text-disabled);
+		&.default {
+			justify-content: flex-start;
+		}
 		.dot_mark {
 			flex: none;
 			display: inline-block;
 			width: 12px;
 			height: 12px;
-			border: 1px solid var(--color-text-basic);
 			border-radius: 50%;
-			background-color: var(--color-text-basic);
+			border: 1px solid var(--color-surface-white-subtle);
+			background-color: var(--color-surface-white-subtle);
+			&.active {
+				border: 1px solid var(--color-text-basic);
+				background-color: var(--color-text-basic);
+			}
 		}
 	}
 	input[type="password"] {
 		width: 0;
-		height: 0;
-		border: 0;
+		height: calc(100% + 8px);
+		border: 0 !important;
+	}
+	&[aria-disabled="true"] {
+		background-color: var(--color-input-surface-disabled);
+	}
+	&.big {
+		.pin_area {
+			font-weight: 700;
+			font-size: var(--font-size-heading-medium);
+		}
 	}
 }
