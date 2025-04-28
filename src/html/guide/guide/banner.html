@@ -15,6 +15,79 @@
 		<strong class="title_h5 success">회원가입 후 편리하게 이용하세요!</strong>
 	</span>
 </button>
+
+<br />
+
+<!-- s: 카드 혜택 안내 배너 -->
+<div class="banner_slide_wrap">
+	<div id="card_reward_banner_wrap" class="swiper"> 
+		<div class="swiper-wrapper">
+			<div class="swiper-slide bann_wrap bann_ty1 co_ty2">			
+				<div class="inner">
+					<span class="logo">{{> cp/icon iconClass="logo_card_shinhan"}}</span>		
+					<div class="bann_cont">
+						<div class="title">신한카드로 결제해 보세요</div>
+						<div class="cont">
+							신한카드로 결제하면 포인트 100% 사용가능
+					</div>		
+				</div>
+			</div>
+			</div>
+			<div class="swiper-slide bann_wrap bann_ty1">
+				<div class="inner">
+					<i class="logo_card_hundai"></i>
+					<div class="bann_cont">
+						<div class="title">현대카드로 결제해 보세요</div>
+						<div class="cont">
+							M포인트 100% 사용가능<br>
+							계속보험료 결제 가능
+						</div>
+					</div>
+				</div>
+			</div>			
+			<div class="swiper-slide bann_wrap bann_ty1 co_ty3">			
+				<div class="inner">
+					<span class="logo">{{> cp/icon iconClass="logo_card_samsung"}}</span>		
+					<div class="bann_cont">
+						<div class="title">삼성카드로 결제해 보세요</div>
+						<div class="cont">
+							삼성카드로 결제하면 포인트 100% 사용가능
+						</div>		
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<div class="swiper-pagination sp_ty1"></div>
+	<button class="swiper_button sbc_03 sbs_01 swiper_button_left"></button>
+	<button class="swiper_button sbc_03 sbs_01 swiper_button_right" aria-label="다음" disabled></button>
+</div>
+<!-- e: 카드 혜택 안내 배너 -->		
+
 {{/ layout/guide }}
 
-<strong class="point"></strong>
+
+<script>
+	$(document).ready(function(){
+		var bannerSwiper = new Swiper('#card_reward_banner_wrap', {
+					slidesPerView: 1,
+					navigation: {
+						nextEl: ".swiper_button_left",
+						prevEl: ".swiper_button_right",
+					},
+					a11y: {
+						enabled: true,
+						prevSlideMessage: '이전 항목으로 이동',
+						nextSlideMessage: '다음 항목으로 이동',
+					},
+					pagination: {
+						el: '.swiper-pagination',
+						clickable: true,
+						type: 'bullets',
+						renderBullet: function (index, className) {
+							return `<span class="${className}" aria-label="Go to slidesss ${index + 1}"></span>`;
+						},
+					}				
+				});
+		});
+</script>
