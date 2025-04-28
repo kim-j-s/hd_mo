@@ -15,6 +15,10 @@
 			}
 		}
 	}
+
+	& + .info_gray {
+		margin-top: 16px;
+	}
 }
 
 /** Accordion **/
@@ -287,6 +291,12 @@
 				padding: 16px 20px 0;
 			}
 		}
+
+		.sub_text {
+			display: block;
+			font-size: var(--font-size-body-small);
+		}
+
 	}
 
 	&.acd_item_ty5 {
@@ -334,6 +344,110 @@
 
 	}
 
+	&.acd_item_ty6 {
+		.acd_head {
+			position: relative;
+			.acd_btn {
+				position: relative;
+				width: 100%;
+				padding: 20px 52px 16px 20px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				background-color: #fff;
+				.sii_list_l {
+					font-size: var(--font-size-body-small);
+					color: var(--color-text-subtle);
+				}
+				.sii_list_r {
+					font-size: var(--font-size-body-medium);
+					text-align: right;
+					del {
+						display: none;
+						color: var(--color-text-subtle);
+						font-size: var(--font-size-body-small);
+						font-weight: 400;
+					}
+				}
+				&::before {
+					content: '';
+					position: absolute;
+					top: 50%;
+					right: 20px;
+					width: 24px;
+					height: 24px;
+					background: transparent url(../images/icon/arrowDown_ty3.svg) no-repeat center / 24px auto;
+					transition: all 0.3s;
+					transform: translateY(-50%);
+				}
+				&:active {
+					background: var(--color-action-secondary-pressed);
+				}
+			}
+			&.active {
+				border: none;
+				.acd_btn {
+					&::before {
+						transform: translateY(-50%) rotate(180deg);
+					}
+				}
+				& + .acd_cont {
+					&::before {
+						opacity: 1;
+					}
+				}
+			}
+		}
+		.acd_cont {
+			transition: all 0.3s;
+			.info_gray {
+				padding-top: 0;
+			}
+			.line1,
+			.line2  {
+				margin-bottom: 16px;
+				&::before {
+					content: '';
+					display: block;
+					width: 100%;
+					height: 1px;
+					background: var(--color-divider-gray-light);
+					opacity: 1;
+				}
+			}
+			.line1 {
+				display: block;
+			}
+		}
+		&.ty2 {
+			.acd_head {
+				&.active {
+					.acd_btn {
+						margin-top: 21px;
+						.sii_list_r {
+							color: var(--color-text-primary-bold);
+						}
+						del {
+							margin-top: -21px;
+							display: block;
+						}
+					}
+					& + .acd_cont {
+						.line1 {
+							display: none;
+						}
+						.line2 {
+							margin-top: 16px;
+						}
+						.info_gray {
+							padding-bottom: 16px;
+						}
+					} 
+				}
+			}
+		}
+
+	}
 	.sub_txt_area {
 		display: flex;
 		gap: 8px;

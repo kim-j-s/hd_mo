@@ -108,6 +108,10 @@
 			}
 		}
 	}
+
+	& + .info_cont {
+		margin-top: 32px;
+	}
 }
 
 //버튼 스타일 정의
@@ -350,6 +354,11 @@
 		&.sm {
 			font-size: var(--font-size-button-small);
 			line-height: 18px;
+		}
+		&.lg {
+			padding-right: 28px;
+			font-weight: 700;
+			background-size: 24px auto;
 		}
 
 		&.short_cut_icon {
@@ -705,6 +714,18 @@
 	}
 }
 
+.check_title_more_btn {
+	width: 24px;
+	height: 24px;
+	background: transparent;
+	vertical-align: top;
+	padding: 2px 0 0 2px;
+	.hd_icon {
+		width: 20px;
+		height: 20px;
+	}
+
+}
 .search_button {
 	height: 56px;
 	width: 30px;
@@ -764,6 +785,21 @@
 		}
 	}
 
+	&.sbc_03 {
+		border: 1px solid var(--color-border-gray-light);
+		background-color: rgba(0, 0, 0, 0.10);
+
+		&[aria-disabled="true"],
+		&:disabled {
+			border-color: var(--color-action-disabled);
+			background-color: var(--color-action-disabled);
+		}
+
+		&[aria-disabled="false"]:active {
+			border-color: var(--color-border-gray-light);
+			background-color: rgba(0, 0, 0, 0.25);
+		}
+	}
 	
 
 	&.sbs_01 {

@@ -16,6 +16,14 @@ import pxtorem from 'postcss-pxtorem'; // pxtorem 플러그인 가져오기
 const partialPath = 'src/_partials';
 // const helperPath = 'src/_helpers';
 
+
+const helpers = {
+  stripHtml: (text) => {
+    if (typeof text !== 'string') return text;
+    return text.replace(/(<([^>]+)>)/gi, '');
+  },
+};
+
 const getEntries = dir => {
   const htmlEntries = {};
 
@@ -106,12 +114,12 @@ export default defineConfig({
         resolve(__dirname, 'src/_partials'),
       ],
       context(pagePath) {
-        console.log('test2---');
+        // console.log('test2---');
         console.log(pageData);
         console.log(pagePath);
         return pageData[pagePath];
       },
-      // helpers, // helpers 등록
+      helpers, // helpers 등록
     }),
     {
       name: 'html-transform', // 플러그인 이름

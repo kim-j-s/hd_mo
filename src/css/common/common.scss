@@ -601,11 +601,18 @@ strong {
 .process_info_area {
 	text-align: center;
 
+	.process_info_icon_area {
+		width: 64px;
+		height: 64px;
+		margin: 38px auto;
+	}
+
 	.complete_info {
 		width: 120px;
 		height: 120px;
-		margin: 0 auto;
+		margin: 0 auto;	
 	}
+
 	.process_title {
 		font-size: var(--font-size-heading-large);
 		color: var(--Grey-12);
@@ -618,24 +625,23 @@ strong {
 		font-size: var(--font-size-body-medium);
 		color: var(--color-text-basic);
 	}
-
-
 	+ .table_wrap {
 		margin-top: 32px;
 	}
-
-
-
 }
 
 // 완료 Case
 .pl_msg_top {
 	font-weight: 700;
 	font-size: var(--font-size-heading-small);
-	text-align: center;
+	// text-align: center;
 	
 	& + .pl_txt1 {
 		margin-top: 16px;
+	}
+
+	&[class*=pl_ico_ty_] {
+		text-align: center;
 	}
 }
 
@@ -668,4 +674,11 @@ strong {
 	font-size: var(--font-size-label-medium);
 	line-height: 21px;
 	color: var(--color-text-danger);
+}
+
+.link_area {
+	&.right {
+		text-align: right;
+	}
+
 }
