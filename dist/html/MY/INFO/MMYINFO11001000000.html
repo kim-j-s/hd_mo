@@ -33,6 +33,7 @@
 		<script type="text/javascript" src="../../../js/libs/swiper-bundle.min.js"></script>
 		<script type="text/javascript" src="../../../js/libs/splide.min.js"></script>
 		<script type="text/javascript" src="../../../js/common.js"></script>
+		<script type="text/javascript" src="../../../js/libs/lottie-player.js"></script>
 		<script type="text/javascript" src="../../../js/popup.js"></script>
 		<script type="text/javascript" src="../../../js/dragging.js"></script>
 		<script type="text/javascript" src="../../../js/stepper.js"></script>
@@ -120,19 +121,19 @@
 							<div class="label_tit">주소</div>
 							<div class="radio_group_wrap" role="radiogroup">
 								<div class="inp_radio rd_btn">
-									<input type="radio" id="addSel_01" name="addSel" checked />
+									<input type="radio" id="addSel_01" name="addSel" data-sendpos="pos1" />
 									<label for="addSel_01">
 										<span class="label_cont">자택</span>
 									</label>
 								</div>
 								<div class="inp_radio rd_btn">
-									<input type="radio" id="addSel_02" name="addSel" />
+									<input type="radio" id="addSel_02" name="addSel" data-sendpos="pos2" />
 									<label for="addSel_02">
 										<span class="label_cont">직장</span>
 									</label>
 								</div>
 							</div>
-							<div class="address_item address_item_case01" role="button" tabindex="0" title="주소검색 팝업열기" onclick="openHDPopup(this,'pop_type01');">
+							<div class="address_item address_item_case01" role="button" tabindex="0" title="주소검색 팝업열기">
 								<div class="address_item_inner">
 									<div class="ad_item">
 										<span class="zip_code">03379</span>
@@ -154,13 +155,13 @@
 							<div class="sa_wrap">
 								<div class="radio_group_wrap" role="radiogroup">
 									<div class="inp_radio rd_btn">
-										<input type="radio" id="paSel_01" name="paSel" class="sa_change" checked />
+										<input type="radio" id="paSel_01" name="paSel" class="sa_change" data-getpos="pos1" />
 										<label for="paSel_01">
-											<span class="label_cont">모두 자택</span>
+											<span class="label_cont">모두 집</span>
 										</label>
 									</div>
 									<div class="inp_radio rd_btn">
-										<input type="radio" id="paSel_02" name="paSel" class="sa_change" />
+										<input type="radio" id="paSel_02" name="paSel" class="sa_change" data-getpos="pos2" />
 										<label for="paSel_02">
 											<span class="label_cont">모두 직장</span>
 										</label>
@@ -176,13 +177,13 @@
 											<div class="scp_list_r">
 												<div class="radio_group_wrap">
 													<div class="inp_radio sm">
-														<input type="radio" id="radio01-1" name="radio01_1" />
+														<input type="radio" id="radio01-1" name="radio01_1" data-getpos="pos1" />
 														<label for="radio01-1">
-															<span class="label_cont">자택</span>
+															<span class="label_cont">집</span>
 														</label>
 													</div>
 													<div class="inp_radio sm">
-														<input type="radio" id="radio01-2" name="radio01_1" />
+														<input type="radio" id="radio01-2" name="radio01_1" data-getpos="pos2" />
 														<label for="radio01-2">
 															<span class="label_cont">직장</span>
 														</label>
@@ -198,13 +199,13 @@
 											<div class="scp_list_r">
 												<div class="radio_group_wrap">
 													<div class="inp_radio sm">
-														<input type="radio" id="radio02-1" name="radio01_2" />
+														<input type="radio" id="radio02-1" name="radio01_2" data-getpos="pos1" />
 														<label for="radio02-1">
-															<span class="label_cont">자택</span>
+															<span class="label_cont">집</span>
 														</label>
 													</div>
 													<div class="inp_radio sm">
-														<input type="radio" id="radio02-2" name="radio01_2" />
+														<input type="radio" id="radio02-2" name="radio01_2" data-getpos="pos2" />
 														<label for="radio02-2">
 															<span class="label_cont">직장</span>
 														</label>
@@ -220,13 +221,13 @@
 											<div class="scp_list_r">
 												<div class="radio_group_wrap">
 													<div class="inp_radio sm">
-														<input type="radio" id="radio03-1" name="radio01_3" />
+														<input type="radio" id="radio03-1" name="radio01_3" data-getpos="pos1" />
 														<label for="radio03-1">
-															<span class="label_cont">자택</span>
+															<span class="label_cont">집</span>
 														</label>
 													</div>
 													<div class="inp_radio sm">
-														<input type="radio" id="radio03-2" name="radio01_3" />
+														<input type="radio" id="radio03-2" name="radio01_3" data-getpos="pos2" />
 														<label for="radio03-2">
 															<span class="label_cont">직장</span>
 														</label>

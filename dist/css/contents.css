@@ -767,8 +767,12 @@
 .input_form_box .input_item_wrap .acd_item .acd_cont .inner {
 	padding: 0 2.4rem 2rem;
 }
+.input_form_box .input_item_wrap .acd_item .acd_cont .inner .input_text {
+	border-color: var(--color-border-gray-light);
+}
 .input_form_box .input_item_wrap .birth {
 	gap: 0.8rem;
+	border-color: var(--color-border-gray-light);
 }
 .input_form_box .input_item_wrap .birth .input_text.big input {
 	caret-color: var(--color-element-primary);
@@ -2246,7 +2250,10 @@ ul + .form_group_wrap {
 .text_lg {
 	font-size: var(--font-size-body-large);
 }
-.info_cont h1 {
+[class^="title_h"] + .info_cont {
+	margin-top: 3.2rem;
+}
+.info_cont .pop_title_h1 {
 	margin-bottom: 2rem;
 	font-size: var(--font-size-heading-medium);
 	font-weight: 700;
@@ -2270,8 +2277,8 @@ ul + .form_group_wrap {
 .info_cont ol + h2 {
 	margin-top: 4rem;
 }
-.info_cont ul + h3 + h1,
-.info_cont .table_wrap + h1 {
+.info_cont ul + h3 + .pop_title_h1,
+.info_cont .table_wrap + .pop_title_h1 {
 	margin-top: 5.2rem;
 }
 .info_cont ul + h3 + h3,
@@ -2325,6 +2332,9 @@ ul + .form_group_wrap {
 .banner_box a img {
 	display: block;
 	width: 100%;
+}
+.info_text {
+	font-size: var(--font-size-body-medium);
 }
 .info_text + .file_attach_box {
 	margin-top: 2rem;
