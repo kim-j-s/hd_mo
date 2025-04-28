@@ -628,13 +628,38 @@ strong {
 
 }
 
-.complete_top {
+// 완료 Case
+.pl_msg_top {
+	font-weight: 700;
+	font-size: var(--font-size-heading-small);
 	text-align: center;
-
-	& + * {
+	
+	& + .pl_txt1 {
 		margin-top: 16px;
 	}
 }
+
+[class*=pl_ico_ty_] {
+	padding-top: 48px;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: 32px auto;
+
+	& + .pl_txt1 {
+		margin-top: 16px;
+	}
+	& + [class^=list_ty]{
+		margin-top: 16px;
+	}
+}
+
+.pl_ico_ty_case1 {
+	background-image: url(../images/icon/icon_exclamation.svg);
+}
+.pl_ico_ty_case2 {
+	background-image: url(../images/icon/icon_complete_error.svg);
+}
+
 
 //error_masage
 .msg_error {
