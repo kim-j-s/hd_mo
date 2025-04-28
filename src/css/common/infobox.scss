@@ -11,6 +11,7 @@
 	&.ty2 {
 		background: var(--color-surface-information-subtler);
 	}
+
 	& + .title_h3,
 	& + .form_group_wrap {
 		margin-top: 32px;
@@ -34,6 +35,16 @@
 	
 	& + .info_cont {
 		margin-top: 32px;
+	}
+
+	.badge_wrap {
+		display: flex;
+		gap: 8px;
+		align-items: center;
+	}
+	.cont_tel {
+		font-size: var(--font-size-heading-medium);
+		font-weight: 700;		
 	}
 
 	.hd_badge + [class^="title_h"] {
@@ -93,8 +104,9 @@
 			font-size: var(--font-size-body-xsmall);
 			color: var(--color-text-subtle);
 		}
+		
 		& + dl {
-			margin-top: 16px;
+			margin-top: 12px;
 		}
 		&.footer_dl {
 			margin-top: 20px;
@@ -103,6 +115,14 @@
 			dd {
 				font-size: var(--font-size-body-large);
 				font-weight: 700;
+
+				span.text_sub {
+					display: block;
+					color: var(--color-text-subtle);
+					font-size: var(--font-size-body-small);
+					font-weight: 400;
+					text-decoration: line-through;
+				}
 			}
 		}
 	}
@@ -120,5 +140,46 @@
 		.date {
 			font-size: var(--font-size-body-small);
 		}
+	}
+	.total {
+		.big {
+			font-size: 20px;
+		}
+		&.car {
+			dl + dl {
+				margin-top: 8px;
+			}
+			.total_car {
+				margin-top: 21px;
+				dd {
+					margin-top: -21px;
+					del {
+						display: block;
+						font-size: var(--font-size-body-small);
+						color: var(--color-text-subtle);
+						font-weight: 400;
+					}
+				}
+			}
+			& + .info_top_cont {
+				display: none;
+				margin-top: 8px;
+				padding-top: 16px;
+			}
+			&.ty2 {
+				& + .info_top_cont {
+					display: block;
+				}
+			}
+		}
+	}
+	.total_bic {
+		font-size: var(--font-size-display-medium);
+		color: var(--color-text-primary-bold);
+	}
+	.info_top_cont {
+		margin-top: 20px;
+		padding-top: 20px;
+		border-top: 1px solid var(--color-divider-gray-light);
 	}
 }
