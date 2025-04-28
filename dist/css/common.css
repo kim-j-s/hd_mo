@@ -1217,6 +1217,106 @@ strong {
 .acd_item.acd_item_ty5 .acd_cont > .inner {
 	padding: 0 2rem 2rem 2rem;
 }
+.acd_item.acd_item_ty6 .acd_head {
+	position: relative;
+}
+.acd_item.acd_item_ty6 .acd_head .acd_btn {
+	position: relative;
+	width: 100%;
+	padding: 2rem 5.2rem 1.6rem 2rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	background-color: #fff;
+}
+.acd_item.acd_item_ty6 .acd_head .acd_btn .sii_list_l {
+	font-size: var(--font-size-body-small);
+	color: var(--color-text-subtle);
+}
+.acd_item.acd_item_ty6 .acd_head .acd_btn .sii_list_r {
+	font-size: var(--font-size-body-medium);
+	text-align: right;
+}
+.acd_item.acd_item_ty6 .acd_head .acd_btn .sii_list_r del {
+	display: none;
+	color: var(--color-text-subtle);
+	font-size: var(--font-size-body-small);
+	font-weight: 400;
+}
+.acd_item.acd_item_ty6 .acd_head .acd_btn::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 2rem;
+	width: 2.4rem;
+	height: 2.4rem;
+	background: transparent url(../images/icon/arrowDown_ty3.svg) no-repeat center/2.4rem auto;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.acd_item.acd_item_ty6 .acd_head .acd_btn:active {
+	background: var(--color-action-secondary-pressed);
+}
+.acd_item.acd_item_ty6 .acd_head.active {
+	border: none;
+}
+.acd_item.acd_item_ty6 .acd_head.active .acd_btn::before {
+	-webkit-transform: translateY(-50%) rotate(180deg);
+	transform: translateY(-50%) rotate(180deg);
+}
+.acd_item.acd_item_ty6 .acd_head.active + .acd_cont::before {
+	opacity: 1;
+}
+.acd_item.acd_item_ty6 .acd_cont {
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.acd_item.acd_item_ty6 .acd_cont .info_gray {
+	padding-top: 0;
+}
+.acd_item.acd_item_ty6 .acd_cont .line1,
+.acd_item.acd_item_ty6 .acd_cont .line2 {
+	margin-bottom: 1.6rem;
+}
+.acd_item.acd_item_ty6 .acd_cont .line1::before,
+.acd_item.acd_item_ty6 .acd_cont .line2::before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: var(--color-divider-gray-light);
+	opacity: 1;
+}
+.acd_item.acd_item_ty6 .acd_cont .line1 {
+	display: block;
+}
+.acd_item.acd_item_ty6.ty2 .acd_head.active .acd_btn {
+	margin-top: 2.1rem;
+}
+.acd_item.acd_item_ty6.ty2 .acd_head.active .acd_btn .sii_list_r {
+	color: var(--color-text-primary-bold);
+}
+.acd_item.acd_item_ty6.ty2 .acd_head.active .acd_btn del {
+	margin-top: -2.1rem;
+	display: block;
+}
+.acd_item.acd_item_ty6.ty2 .acd_head.active + .acd_cont .line1 {
+	display: none;
+}
+.acd_item.acd_item_ty6.ty2 .acd_head.active + .acd_cont .line2 {
+	margin-top: 1.6rem;
+}
+.acd_item.acd_item_ty6.ty2 .acd_head.active + .acd_cont .info_gray {
+	padding-bottom: 1.6rem;
+}
 .acd_item .sub_txt_area {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -1597,6 +1697,11 @@ strong {
 .btn_link.short_cut.sm {
 	font-size: var(--font-size-button-small);
 	line-height: 1.8rem;
+}
+.btn_link.short_cut.lg {
+	padding-right: 2.8rem;
+	font-weight: 700;
+	background-size: 2.4rem auto;
 }
 .btn_link.short_cut.short_cut_icon {
 	display: block;
@@ -7188,7 +7293,7 @@ strong {
 	color: var(--color-text-subtle);
 }
 .info_gray dl + dl {
-	margin-top: 1.6rem;
+	margin-top: 1.2rem;
 }
 .info_gray dl.footer_dl {
 	margin-top: 2rem;
@@ -7225,4 +7330,39 @@ strong {
 }
 .info_gray .car_alarm_box .date {
 	font-size: var(--font-size-body-small);
+}
+.info_gray .total .big {
+	font-size: 2rem;
+}
+.info_gray .total.car dl + dl {
+	margin-top: 0.8rem;
+}
+.info_gray .total.car .total_car {
+	margin-top: 2.1rem;
+}
+.info_gray .total.car .total_car dd {
+	margin-top: -2.1rem;
+}
+.info_gray .total.car .total_car dd del {
+	display: block;
+	font-size: var(--font-size-body-small);
+	color: var(--color-text-subtle);
+	font-weight: 400;
+}
+.info_gray .total.car + .info_top_cont {
+	display: none;
+	margin-top: 0.8rem;
+	padding-top: 1.6rem;
+}
+.info_gray .total.car.ty2 + .info_top_cont {
+	display: block;
+}
+.info_gray .total_bic {
+	font-size: var(--font-size-display-medium);
+	color: var(--color-text-primary-bold);
+}
+.info_gray .info_top_cont {
+	margin-top: 2rem;
+	padding-top: 2rem;
+	border-top: 1px solid var(--color-divider-gray-light);
 }
