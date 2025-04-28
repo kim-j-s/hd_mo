@@ -42,20 +42,35 @@
 							<div class="agc_item_cont">
 								<div class="aic_list">
 									<li>
-										<div class="aic_list_l">고유식별정보</div>
-										<div class="aic_list_r">
-											<div class="radio_group_wrap">
-												{{> cp/radio rd-class="sm" rd-id="rm11-1" name="rm11" labelname="미동의" data="agwr='noag'" }}
-												{{> cp/radio rd-class="sm" rd-id="rm11-2" name="rm11" labelname="동의" data="agwr='ag'" }}
+										<div class="agrdo_group">
+											<div class="aic_list_l">고유식별정보</div>
+											<div class="aic_list_r">
+												<div class="radio_group_wrap">
+													{{> cp/radio rd-class="sm" rd-id="rm11-1" rdip-class="agr_dept1 noag" name="rm11" labelname="미동의" }}
+													{{> cp/radio rd-class="sm" rd-id="rm11-2" rdip-class="agr_dept1 ag" name="rm11" labelname="동의" }}
+												</div>
 											</div>
 										</div>
 									</li>
 									<li>
-										<div class="aic_list_l">민감정보</div>
-										<div class="aic_list_r">
-											<div class="radio_group_wrap">
-												{{> cp/radio rd-class="sm" rd-id="rm12-1" name="rm12" labelname="미동의" data="agwr='noag'" }}
-												{{> cp/radio rd-class="sm" rd-id="rm12-2" name="rm12" labelname="동의" data="agwr='ag'" }}
+										<div class="agrdo_group">
+											<div class="aic_list_l">민감정보</div>
+											<div class="aic_list_r">
+												<div class="radio_group_wrap">
+													{{> cp/radio rd-class="sm" rd-id="rm12-1" rdip-class="agr_dept1 noag" name="rm12" labelname="미동의" }}
+													{{> cp/radio rd-class="sm" rd-id="rm12-2" rdip-class="agr_dept1 ag" name="rm12" labelname="동의" }}
+												</div>
+											</div>
+										</div>
+										<div class="agrdo_group_sub">
+											<div class="ags_top">
+												{{> cp/checkbox id="agsall" chk_class="ags_sub_all" labelname="전체" }}
+											</div>
+											<div class="ags_cont">
+												{{> cp/checkbox id="ags01" chk_class="ags_sub_chk" label_class="chk_label_ty4" labelname="문자" }}
+												{{> cp/checkbox id="ags02" chk_class="ags_sub_chk" label_class="chk_label_ty4" labelname="이메일" }}
+												{{> cp/checkbox id="ags03" chk_class="ags_sub_chk" label_class="chk_label_ty4" labelname="전화(ARS)" }}
+												{{> cp/checkbox id="ags04" chk_class="ags_sub_chk" label_class="chk_label_ty4" labelname="DM" }}
 											</div>
 										</div>
 									</li>
@@ -79,20 +94,24 @@
 							<div class="agc_item_cont">
 								<div class="aic_list">
 									<li>
-										<div class="aic_list_l">[국내]고유식별정보</div>
-										<div class="aic_list_r">
-											<div class="radio_group_wrap">
-												{{> cp/radio rd-class="sm" rd-id="rm21-1" name="rm21" labelname="미동의" data="agwr='noag'" }}
-												{{> cp/radio rd-class="sm" rd-id="rm21-2" name="rm21" labelname="동의" data="agwr='ag'" }}
+										<div class="agrdo_group">
+											<div class="aic_list_l">[국내]고유식별정보</div>
+											<div class="aic_list_r">
+												<div class="radio_group_wrap">
+													{{> cp/radio rd-class="sm" rd-id="rm21-1" rdip-class="agr_dept1 noag" name="rm21" labelname="미동의" }}
+													{{> cp/radio rd-class="sm" rd-id="rm21-2" rdip-class="agr_dept1 ag" name="rm21" labelname="동의" }}
+												</div>
 											</div>
 										</div>
 									</li>
 									<li>
-										<div class="aic_list_l">[국내]민감정보</div>
-										<div class="aic_list_r">
-											<div class="radio_group_wrap">
-												{{> cp/radio rd-class="sm" rd-id="rm22-1" name="rm22" labelname="미동의" data="agwr='noag'" }}
-												{{> cp/radio rd-class="sm" rd-id="rm22-2" name="rm22" labelname="동의" data="agwr='ag'" }}
+										<div class="agrdo_group">
+											<div class="aic_list_l">[국내]민감정보</div>
+											<div class="aic_list_r">
+												<div class="radio_group_wrap">
+													{{> cp/radio rd-class="sm" rd-id="rm22-1" rdip-class="agr_dept1 noag" name="rm22" labelname="미동의" }}
+													{{> cp/radio rd-class="sm" rd-id="rm22-2" rdip-class="agr_dept1 ag" name="rm22" labelname="동의" }}
+												</div>
 											</div>
 										</div>
 									</li>
@@ -114,49 +133,7 @@
 
 	</div>
 
-	<script>
-		$(function() {
-			// 전체 동의 체크박스 클릭
-			$('.agw_all').on('change', function() {
-				const isChecked = $(this).is(':checked');
-
-				// 하위 라디오 버튼 중 "동의" 선택
-				$('.ag_group_cont .aic_list').each(function() {
-					const $agList = $(this);
-					if (isChecked) {
-						// "동의" radio 체크
-						$agList.find('input[data-agwr="ag"]').prop('checked', true);
-					} else {
-						// "미동의" radio 체크
-						$agList.find('input[data-agwr="noag"]').prop('checked', true);
-					}
-				});
-			});
-
-			// 하위 라디오 버튼 클릭 시 전체 동의 상태 갱신
-			$('.ag_group_cont input[type="radio"]').on('change', function() {
-				const totalAgreeItems = $('.ag_group_cont .aic_list').length;
-				let agreeCount = 0;
-
-				$('.ag_group_cont .aic_list').each(function() {
-					const $list = $(this);
-					const $checked = $list.find('input[type="radio"]:checked');
-					if ($checked.data('agwr') === 'ag') {
-						agreeCount++;
-					}
-				});
-
-				if (agreeCount === totalAgreeItems) {
-					$('.agw_all').prop('checked', true);
-				} else {
-					$('.agw_all').prop('checked', false);
-				}
-			});
-		});
-
-		
-	</script>
-
+	
 	<!-- s: popup area -->
 	 
 	<!-- e: popup area -->
