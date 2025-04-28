@@ -1,8 +1,8 @@
 {{#> layout/guide }}
 	<div class="guide_h1">accordion</div>
 
-	<div class="guide_h4">적용 케이스</div>
-	<div class="guide_discription">case1 : 꼭 알아두세요</div>
+	<div class="guide_h4">.bottom_fix_notice</div>
+	<div class="guide_discription">꼭 알아두세요 (margin-top: 52px)</div>
 	<!-- s: 꼭 알아두세요 -->
 	{{#> cp/notice }}
 	<ul class="list_depth">
@@ -13,39 +13,47 @@
 	{{/ cp/notice }}
 	<!-- e: 꼭 알아두세요 -->
 
-	<div class="guide_discription">case2 : .acd_info_box</div>
-	<div class="acd_info_box">
-		<div class="acd_item">
-			{{#> cp/accordion ac-title="아코디언 타이틀" }}
-			<ul class="list_depth">
-				<li>내용1</li>
-				<li>내용2</li>
-				<li>내용3</li>
-			</ul>				
-			{{/ cp/accordion }}
-		</div>	
-	</div>
+	<div class="guide_discription">그 외 Case (margin-top: 32px)<br>.bottom_fix_notice.etc01</div>
+	{{#> cp/notice notice-class="etc01" dp-title="타이틀" }}
+	<ul class="list_depth">
+		<li>내용1</li>
+		<li>내용2</li>
+		<li>내용3</li>
+	</ul>
+	{{/ cp/notice }}
 
-	<div class="guide_discription">case3</div>
+
+	<div class="guide_h4">.acd_item_ty1</div>
+	<div class="guide_discription">acd_head에 체크박스 있는 Case</div>
 	<div class="acd_item acd_item_ty1">
-		{{#> cp/accordion ac-title="상세보기" aci="aci03" aclc="chk_label_ty2" acl="빠른 일상 생활 복귀!"}}
-			컨텐츠 내용
+		{{#> cp/accordion ac-active=true ac-title="상세보기" aci="aci03" aclc="chk_label_ty2" acl="빠른 일상 생활 복귀! <span class='sub_g_txt'>사고처리지원금 공탁금 50% 선지급 가능</span>"}}
+		<ul class="coverage_item_list">
+			<li class="list">
+				<div class="item_title">교통상해후유장해(운전자)</div>
+				<div class="sub_txt_area">
+					{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" pop_id="pop_type01" question_tit="가입금액 변경" }}
+				</div>
+			</li>
+			<li class="list">
+				<div class="item_title">교통상해사망후유장해(대중교통이용중)</div>
+				<div class="sub_txt_area">
+					{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" pop_id="pop_type01" question_tit="가입금액 변경" }}
+					<div class="badge_wrap">
+						<span class="hd_badge solid_pastel c_warning size_m">보장을 확대 했어요</span>
+					</div>
+				</div>
+			</li>
+		</ul>
 		{{/ cp/accordion }}
 	</div>
 
-	<div class="guide_discription">case4</div>
-	<div class="acd_item acd_item_ty1">
-		{{#> cp/accordion ac-title="상세보기" aci="aci04" aclc="chk_label_ty2" acl="운전자 3대 비용은 기본! <span class='sub_g_txt'>사고처리지원금 공탁금 50% 선지급 가능</span>"}}
-			컨텐츠 내용
-		{{/ cp/accordion }}
-	</div>
 
-	<div class="guide_discription">case5 (.acd_item_ty2)</div>
+	<div class="guide_h4">.acd_item_ty2</div>
+	<div class="guide_discription">acd_cont 안에 체크박스 있는 Case</div>
 	<div class="acd_item acd_item_ty2">
 		{{#> cp/accordion ac-title="샘플 타이틀" cont-class="" ac-active=true }}
 
 		<div role="button" tabindex="0" class="detail_list_btn">반려견치료비담보II(1일한도, 연간한도)</div>
-
 		<div class="inp_checkbox">
 			<input type="checkbox" id="checkbox01-1" />
 			<label for="checkbox01-1" class="chk_label">
@@ -66,76 +74,15 @@
 			</div>
 		</div>
 		{{/ cp/checkbox }}
-
-		{{#> cp/checkbox labelname="슬관절 확장보장II(반려견)" ag_more=true id="checkbox01-3" }}
-		<div class="chk_lby2">
-			<div class="badge_wrap">
-				<span class="hd_badge outline solid_pastel c_secondary size_m">새로 나왔어요</span>
-			</div>
-		</div>
-		{{/ cp/checkbox }}
-		{{/ cp/accordion }}
-	</div>
-	<br>
-	<div class="acd_item acd_item_ty2">
-		{{#> cp/accordion ac-title="계약 주요 사항을 모두 확인하였습니다." cont-class="" ac-active=true }}
-			{{> cp/checkbox labelname="청약서류" ag_more=true id="checkbox01-1" }}
-			{{> cp/checkbox labelname="보험 약관" ag_more=true id="checkbox01-2" }}
-			{{> cp/checkbox labelname="상품설명서 주요 내용" ag_more=true id="checkbox01-3" checked=true disabled=true }}
+		{{> cp/checkbox labelname="상품설명서 주요 내용" ag_more=true id="checkbox01-3" checked=true disabled=true }}
 		{{/ cp/accordion }}
 	</div>
 
-	<div class="guide_discription">case6</div>
-	<div class="acd_item acd_item_ty1">
-		{{#> cp/accordion ac-title="상세보기" ac-active=true aci="aci01" aclc="chk_label_ty2" acl="교통사고 났을 때 든든하게!"}}
-			<ul class="coverage_item_list">
-				<li class="list">
-					<div class="item_title">교통상해후유장해(운전자)</div>
-					<div class="sub_txt_area">
-						{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" pop_id="pop_type01" question_tit="가입금액 변경" }}
-					</div>
-				</li>
-				<li class="list">
-					<div class="item_title">교통상해후유장해(운전자, 80%이상, 월지급형)</div>
-					<div class="sub_txt_area">
-						{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" pop_id="pop_type01" question_tit="가입금액 변경" }}
-						<div class="badge_wrap">
-							<span class="hd_badge outline solid_pastel c_secondary size_m">새로 나왔어요</span>
-						</div>
-					</div>
-				</li>
-				<li class="list">
-					<div class="item_title">교통상해사망(운전자)</div>
-					<div class="sub_txt_area">
-						{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" pop_id="pop_type01" question_tit="가입금액 변경" }}
-					</div>
-				</li>
-				<li class="list">
-					<div class="item_title">교통상해사망후유장해(대중교통이용중)</div>
-					<div class="sub_txt_area">
-						{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" pop_id="pop_type01" question_tit="가입금액 변경" }}
-						<div class="badge_wrap">
-							<span class="hd_badge solid_pastel c_warning size_m">보장을 확대 했어요</span>
-						</div>
-					</div>
-				</li>
-			</ul>
-		{{/ cp/accordion }}
-	</div>
 
-	<div class="guide_discription">base7(round)</div>
-	<div class="acd_item acd_item_ty2">
-		{{#> cp/accordion ac-title="샘플 타이틀" cont-class="" ac-active=true }}
-		<ul>
-			<li>내용1</li>
-			<li>내용2</li>
-			<li>내용3</li>
-		</ul>				
-		{{/ cp/accordion }}
-	</div>
-	<div class="guide_discription">case8(line)</div>
+	<div class="guide_h4">.acd_item_ty3</div>
+	<div class="guide_discription">line Case</div>
 	<div class="acd_item acd_item_ty3">
-		{{#> cp/accordion ac-title="샘플 타이틀" cont-class="" ac-active=true }}
+		{{#> cp/accordion ac-title="샘플 타이틀" cont-class="" }}
 		<ul>
 			<li>내용1</li>
 			<li>내용2</li>
@@ -144,9 +91,10 @@
 		{{/ cp/accordion }}
 	</div>
 
-	<div class="guide_discription">case9 : .acd_item_ty4</div>
+
+	<div class="guide_h4">.acd_item_ty4</div>
 	<div class="acd_item acd_item_ty4">
-		{{#> cp/accordion ac-title="아코디언 타이틀" }}
+		{{#> cp/accordion ac-title="샘플 타이틀" }}
 		<ul>
 			<li>내용1</li>
 			<li>내용2</li>
@@ -155,7 +103,9 @@
 		{{/ cp/accordion }}
 	</div>
 
+	
 	<div class="guide_h4">정보입력 아코디언 Case</div>
+	<br>
 	<div class="input_form_box">
 		<div class="input_title">자동차 소유(예정)자 정보</div>
 		<div class="input_item_wrap">
