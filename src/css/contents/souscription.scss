@@ -68,8 +68,13 @@ ul + .form_group_wrap {
 .text_lg {
     font-size: var(--font-size-body-large);
 }
+[class^="title_h"] {
+    & + .info_cont {
+        margin-top: 32px;
+    }
+}
 .info_cont {
-    h1 {
+    .pop_title_h1 {
         margin-bottom: 20px;
         font-size: var(--font-size-heading-medium);
         font-weight: 700;
@@ -94,7 +99,7 @@ ul + .form_group_wrap {
     }
     ul + h3,
     .table_wrap {
-        & + h1 {
+        & + .pop_title_h1 {
             margin-top: 52px;
         }
         & + h3 {
@@ -159,6 +164,7 @@ ul + .form_group_wrap {
     }
 }
 .info_text {
+	font-size: var(--font-size-body-medium);
     & + .file_attach_box {
         margin-top: 20px;
     }
