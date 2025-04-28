@@ -1,0 +1,77 @@
+{{#> layout/default page-title="보험료 확인 | 상품"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_full" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- s: popup_content_top -->
+		<div class="popup_content_top">
+			<div class="title_h2">
+				<strong>해당하는 항목을 선택</strong>해주세요<br>
+				해당하는 항목을 선택해 주세요
+			</div>
+			<div class="title_sub">(중복선택 가능)</div>
+		</div>
+		<!-- e: popup_content_top -->
+
+		<div class="acd_item acd_item_ty1">
+			{{#> cp/accordion ac-title="상세보기" ac-active=true aci="aci01" aclc="chk_label_ty2" acl="교통사고 났을 때 든든하게!"}}
+				<ul class="coverage_item_list">
+					<li class="list">
+						<div class="item_title">교통상해후유장해(운전자)</div>
+						<div class="sub_txt_area">
+							{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" pop_id="pop_type01" question_tit="가입금액 변경" }}
+						</div>
+					</li>
+					<li class="list">
+						<div class="item_title">교통상해후유장해(운전자, 80%이상, 월지급형)</div>
+						<div class="sub_txt_area">
+							{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" pop_id="pop_type01" question_tit="가입금액 변경" }}
+							<div class="badge_wrap">
+								<span class="hd_badge outline solid_pastel c_secondary size_m">새로 나왔어요</span>
+							</div>
+						</div>
+					</li>
+					<li class="list">
+						<div class="item_title">교통상해사망(운전자)</div>
+						<div class="sub_txt_area">
+							{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" pop_id="pop_type01" question_tit="가입금액 변경" }}
+						</div>
+					</li>
+					<li class="list">
+						<div class="item_title">교통상해사망후유장해(대중교통이용중)</div>
+						<div class="sub_txt_area">
+							{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" pop_id="pop_type01" question_tit="가입금액 변경" }}
+							<div class="badge_wrap">
+								<span class="hd_badge solid_pastel c_warning size_m">보장을 확대 했어요</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			{{/ cp/accordion }}
+		</div>
+	</div>
+</div>
+
+<!-- s: 하단 고정 버튼 영역 -->
+<div class="popup_bottom">
+	<div class="total_price_display_ty1">
+		<p class="price_label">총 차량가액</p>
+		<p class="price_val">
+			<strong>
+				<!-- s: 25-04-22 수정 -->
+				<span class="primary">2,179만원</span>
+				<!-- e: 25-04-22 수정 -->
+			</strong>
+		</p>
+	</div>
+	<div class="btn_area">
+		{{> cp/button type="3" size="1" b-text="취소"}}
+		{{> cp/button type="1" size="1" b-text="가입"}}
+	</div>
+</div>
+<!-- s: 하단 고정 버튼 영역 -->
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+{{/ layout/default }}
