@@ -68,8 +68,7 @@
 			.inner_cont {
 				flex: 1;
 
-				.card_link,
-				.item_top {
+				> * {
 					& + .card_list_ty1 {
 						// margin-top: 16px;
 						// padding-top: 16px;
@@ -354,7 +353,6 @@
 
 		//비활성화 케이스
 		&.disabled {
-			pointer-events: none;
 			background-color: var(--color-surface-gray-subtler);
 
 			* {
@@ -399,7 +397,6 @@
 
 		//비활성화 + 선택 예외 케이스
 		&.selected {
-			pointer-events: none;
 			background-color: #fff;
 			
 			.inp_checkbox {
