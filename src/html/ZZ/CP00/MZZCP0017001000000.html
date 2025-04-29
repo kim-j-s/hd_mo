@@ -1,4 +1,4 @@
-{{#> layout/default page-title="자동차 상세정보 | 상품"}}
+{{#> layout/default page-title="본인인증"}}
 
 <!-- s: Full 팝업 -->
 {{#> popup/popup_full popup-id="pop_type01" popup-active=true }}
@@ -8,8 +8,8 @@
 		<div class="popup_content_top">
 			<h2 class="title_h2">
 				<strong>
-					휴대폰으로<br>
-					본인인증을 진행해 주세요.
+					카카오로<br>
+					본인인증을 진행해 주세요
 				</strong>
 			</h2>
 			<div class="btn_area basic">
@@ -25,49 +25,28 @@
 			</div>
 
 			<div class="form_line">
-				<div class="label_tit">주민등록번호</div>
+				<div class="label_tit">주민등록번호/외국인등록번호</div>
 				<div class="comp_wrap birth">
-					{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" }}
+					{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호(외국인등록번호) 앞자리 입력"  }}
 					<span class="dash">-</span>
-					<div class="id_pass_box">
-						{{> cp/text type="tel" minlength="1" maxlength="1" placeholder="●" inp-title="주민등록번호 뒷1자리 입력" no_del="flase" }}
-						<div class="id_pass">
-							●●●●●●
-						</div>
-					</div>
+					{{> cp/keypad7 case1=true kt="주민등록번호(외국인등록번호) 뒷자리 입력"}}
 				</div>
 			</div>
 
 			<div class="form_line">
 				<div class="label_tit">휴대폰번호</div>
-				<div class="comp_wrap key_number">
-					{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
-					{{> cp/button type="3" size="4" b-text="인증번호요청"}}
-				</div>
+				{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
 			</div>
-
-
-			<div class="form_line">
-				<div class="label_tit">인증번호</div>
-				<div class="comp_wrap key_number">
-					{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="숫자 6자리 입력" inp-title="인증번호 입력" r-text="00:00" }}
-					{{> cp/button type="3" size="4" b-text="시간연장"}}
-					{{> cp/button type="3" size="4" b-text="재요청"}}
-				</div>
-			</div>
-
 
 		</div>
+
 
 	</div>
 
 </div>
-
-<div class="popup_bottom">
-	<div class="btn_area">{{> cp/button type="1" size="1" b-text="다음" disabled=true}}</div>
-</div>
 {{/ popup/popup_full}}
 <!-- e: Full 팝업 -->
+
 
 <!-- s: 다른 인증방식 선택 -->
 {{#> popup/popup_bottom popup-id="pop_type02" popup-title="인증방법을 선택해 주세요."}}
