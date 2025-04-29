@@ -40,7 +40,7 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>PIN인증 - 현대해상 다이렉트</title>
+		<title>본인인증 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -56,43 +56,68 @@
 					<div class="popup_head"><div class="popup_head_title"></div></div>
 					<div class="popup_cont">
 						<div class="popup_content">
-							<div class="process_info_area">
-								<div class="complete_info" aria-hidden="true">
-									<lottie-player src="../../../json/lottie_info.json" background="transparent" speed="1" autoplay></lottie-player>
-								</div>
-								<h2 class="process_title">
+							<!-- s: popup_content_top -->
+							<div class="popup_content_top">
+								<h2 class="title_h2">
 									<strong>
-										고객님이 등록한
+										카카오로
 										<br />
-										PIN번호가 없어요.
+										본인인증을 진행해 주세요
 									</strong>
 								</h2>
+								<div class="btn_area basic">
+									<a href="javascript:void(0)" class="btn_link short_cut sm" role="button" onclick="openHDPopup(this,'pop_type02');">
+										<span class="text">다른 인증방식 선택</span>
+									</a>
+								</div>
 							</div>
+							<!-- e: popup_content_top -->
 
-							<div class="info_gray">
-								<ul class="list_depth">
-									<li>기존 PIN번호 사용자도 등록해 주셔야 합니다.</li>
-									<li>PIN번호의 등록, 변경 및 재설정을 위해서는 본인확인이 필요합니다.</li>
-									<li>PIN번호는 등록한 브라우저에서만 이용할 수 있습니다.</li>
-									<li>PC/휴대폰/인터넷 브라우저 등 사용환경이 다르거나 캐시 및 데이터를 삭제한 경우에는 PIN번호를 다시 등록해 주셔야 합니다.</li>
-								</ul>
-							</div>
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">이름</div>
+									<div class="input_text">
+										<div class="inp">
+											<input type="text" placeholder="입력해 주세요" title="이름 입력" />
+											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+										</div>
+									</div>
+								</div>
 
-							<div class="btn_area center">
-								<a href="javascript:void(0)" class="btn_link short_cut sm" role="button" onclick="openHDPopup(this,'pop_type02');">
-									<span class="text">다른 인증방식 선택</span>
-								</a>
+								<div class="form_line">
+									<div class="label_tit">주민등록번호/외국인등록번호</div>
+									<div class="comp_wrap birth">
+										<div class="input_text">
+											<div class="inp">
+												<input type="tel" placeholder="앞자리" minlength="6" maxlength="6" title="주민등록번호(외국인등록번호) 앞자리 입력" />
+												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+											</div>
+										</div>
+										<span class="dash">-</span>
+										<div class="id_pass_box">
+											<div class="input_text">
+												<div class="inp">
+													<input type="tel" placeholder="●" minlength="1" maxlength="1" title="주민등록번호(외국인등록번호) 뒷1자리 입력" />
+												</div>
+											</div>
+											<div class="id_pass">●●●●●●</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="form_line">
+									<div class="label_tit">휴대폰번호</div>
+									<div class="input_text phone">
+										<div class="int_txt left">010</div>
+										<div class="inp">
+											<input type="tel" placeholder="-없이 입력하세요" maxlength="8" title="휴대폰번호 입력" />
+											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="popup_bottom">
-						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
-								<span class="text">PIN번호 등록</span>
-							</button>
-						</div>
-					</div>
-
 					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
