@@ -265,34 +265,50 @@
 
 
 // 담보 Case
-.rd_btn {
-	.hd_badge {
-		& + .option_box {
-			margin-top: 8px;
-		}
+.select_radio_item {
+
+	& + .title_h3 {
+		margin-top: 52px;
 	}
-	.option_box {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		font-size: var(--font-size-body-small);
-		color: var(--color-text-subtle);
 
+	.rd_btn {
+		input[type=radio]{
+			width: 100%;
+			height: 100%;
 
-		> strong {
-			font-size: var(--font-size-button-large);
-			color:  var(--color-text-basic);
+			& + label {
+				min-height: 130px;
+			}
+		}
+		.hd_badge {
+			& + .option_box {
+				margin-top: 8px;
+			}
 		}
 
-		> em {
+		.option_box {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 			font-size: var(--font-size-body-small);
-
-			&.up {
-				color: var(--color-text-point);
+			color: var(--color-text-subtle);
+	
+	
+			> strong {
+				font-size: var(--font-size-button-large);
+				color:  var(--color-text-basic);
 			}
-			&.down {
-				color: var(--color-light-secondary-60);
+	
+			> em {
+				font-size: var(--font-size-body-small);
+	
+				&.up {
+					color: var(--color-text-point);
+				}
+				&.down {
+					color: var(--color-light-secondary-60);
+				}
 			}
 		}
 	}
