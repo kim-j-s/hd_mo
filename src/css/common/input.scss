@@ -658,4 +658,31 @@
 			font-size: var(--font-size-heading-medium);
 		}
 	}
+
+	&.pin_type {
+		.pin_area {
+			align-items: flex-end;
+			gap: 8px;
+			height: 44px;
+			.dot_mark {
+				width: 20px;
+				height: 20px;
+				border: 1px solid var(--color-text-disabled);
+				background-color: var(--color-text-disabled);
+
+				&.active {
+					background-color: var(--color-text-basic);
+				}
+			}
+		}
+
+		&.error {
+			.pin_area {
+				.dot_mark {
+					border: 1px solid var(--color-text-danger);
+					background-color: var(--color-text-danger);
+				}
+			}
+		}
+	}
 }

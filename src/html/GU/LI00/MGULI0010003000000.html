@@ -1,0 +1,61 @@
+{{#> layout/default page-title="PIN인증"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- s: popup_content_top -->
+		<div class="popup_content_top">
+			<h2 class="title_h2">
+				<strong>PIN번호 6자리를 입력해 주세요</strong>
+			</h2>
+			<div class="btn_area basic">
+				{{> cp/linkButton bl_class="short_cut sm" bl_text="다른 인증방식 선택" }}
+			</div>
+		</div>
+		<!-- e: popup_content_top -->
+
+		<div class="pin_enter">
+			<div class="form_key pin_type" role="textbox" tabindex="0">
+				<div class="pin_area">
+					<strong class="ergAt dot_mark active"></strong>
+					<strong class="ergAt dot_mark active"></strong>
+					<strong class="ergAt dot_mark"></strong>
+					<strong class="ergAt dot_mark"></strong>
+					<strong class="ergAt dot_mark"></strong>
+					<strong class="ergAt dot_mark"></strong>
+				</div>
+			</div>
+		</div>
+
+		<!-- s: pin 에러 시 유형 -->
+		<div class="pin_enter">
+			<div class="form_key pin_type error" role="textbox" tabindex="0">
+				<div class="pin_area">
+					<strong class="ergAt dot_mark active"></strong>
+					<strong class="ergAt dot_mark active"></strong>
+					<strong class="ergAt dot_mark"></strong>
+					<strong class="ergAt dot_mark"></strong>
+					<strong class="ergAt dot_mark"></strong>
+					<strong class="ergAt dot_mark"></strong>
+				</div>
+			</div>
+			<p class="pin_enter_error_msg">
+				<span class="text">PIN번호가 일치하지 않습니다. (1/5회)</span>
+			</p>
+		</div>
+		<!-- e: pin 에러 시 유형 -->
+
+		<div class="btn_area center">
+			{{> cp/linkButton bl_class="short_cut" bl_text="PIN번호를 잊으셨나요?" }}
+		</div>
+
+
+	</div>
+
+</div>
+
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+{{/ layout/default }}

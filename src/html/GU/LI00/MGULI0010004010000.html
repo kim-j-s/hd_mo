@@ -1,0 +1,41 @@
+{{#> layout/default page-title="PIN인증"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- s: popup_content_top -->
+		<div class="popup_content_top">
+			<h2 class="title_h2">
+				<strong>
+					PIN 인증을 위해 주민등록번호를<br>
+					입력해 주세요.
+				</strong>
+			</h2>
+			<div class="btn_area basic">
+				{{> cp/linkButton bl_class="short_cut sm" bl_text="다른 인증방식 선택" }}
+			</div>
+		</div>
+		<!-- e: popup_content_top -->
+
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">주민등록번호/외국인등록번호</div>
+				<div class="comp_wrap birth">
+					{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호(외국인등록번호) 앞자리 입력"  }}
+					<span class="dash">-</span>
+					{{> cp/keypad7 case1=true kt="주민등록번호(외국인등록번호) 뒷자리 입력"}}
+				</div>
+			</div>
+		</div>
+
+		
+
+	</div>
+
+</div>
+
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+{{/ layout/default }}
