@@ -40,7 +40,7 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>보험료 확인 | 상품 - 현대해상 다이렉트</title>
+		<title>PIN인증 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -49,9 +49,9 @@
 	</head>
 	<body>
 		<!-- s: Full 팝업 -->
-		<div class="popup_wrap full active" id="pop_full" role="dialog" aria-hidden="false">
+		<div class="popup_wrap full active" id="pop_type01" role="dialog" aria-hidden="false">
 			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_full');"></div>
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
 				<div class="popup_inner">
 					<div class="popup_head"><div class="popup_head_title"></div></div>
 					<div class="popup_cont">
@@ -59,134 +59,44 @@
 							<!-- s: popup_content_top -->
 							<div class="popup_content_top">
 								<h2 class="title_h2">
-									<strong>연간 주행거리</strong>
-									에 따른
-									<br />
-									내 보험료를 확인해 보세요
+									<strong>
+										PIN 인증을 위해 주민등록번호를
+										<br />
+										입력해 주세요.
+									</strong>
 								</h2>
-								<div class="text_sub">
-									만기시 마일리지 특약 연간주행거리에 따른
-									<br />
-									예상환급금을 알려드려요. (특약 가입시)
+								<div class="btn_area basic">
+									<a href="javascript:void(0)" class="btn_link short_cut sm">
+										<span class="text">다른 인증방식 선택</span>
+									</a>
 								</div>
 							</div>
 							<!-- e: popup_content_top -->
 
-							<div class="info_gray">
-								<dl>
-									<dt>현재 보험료 합계</dt>
-									<dd>583,860원</dd>
-								</dl>
-							</div>
-
-							<div class="table_wrap">
-								<table class="table table_c">
-									<caption>연간 주행거리에 따른 보험료 확인 표</caption>
-									<colgroup>
-										<col style="width: 35%" />
-										<col style="width: 25%" />
-										<col style="width: 35%" />
-									</colgroup>
-									<thead>
-										<tr>
-											<th scope="col">연간 주행거리</th>
-											<th scope="col">할인율</th>
-											<th scope="col" class="ta_r">
-												예상환급금
-												<br />
-												<span class="point">내 보험료</span>
-											</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>1,000km 이하</td>
-											<td>45%</td>
-											<td class="ta_r">
-												258,540원
-												<br />
-												<strong class="point">315,150원</strong>
-											</td>
-										</tr>
-										<tr>
-											<td>3,000km 이하</td>
-											<td>36%</td>
-											<td class="ta_r">
-												213,580원
-												<br />
-												<strong class="point">360,110원</strong>
-											</td>
-										</tr>
-										<tr>
-											<td>5,000km 이하</td>
-											<td>29%</td>
-											<td class="ta_r">
-												174,230원
-												<br />
-												<strong class="point">399,460원</strong>
-											</td>
-										</tr>
-										<tr>
-											<td>8,000km 이하</td>
-											<td>22%</td>
-											<td class="ta_r">
-												134,890원
-												<br />
-												<strong class="point">438,800원</strong>
-											</td>
-										</tr>
-										<tr>
-											<td>10,000km 이하</td>
-											<td>18%</td>
-											<td class="ta_r">
-												112,410원
-												<br />
-												<strong class="point">461,280원</strong>
-											</td>
-										</tr>
-										<tr>
-											<td>12,000km 이하</td>
-											<td>8%</td>
-											<td class="ta_r">
-												56,200원
-												<br />
-												<strong class="point">517,490원</strong>
-											</td>
-										</tr>
-										<tr>
-											<td>315,000km 이하</td>
-											<td>5%</td>
-											<td class="ta_r">
-												39,340원
-												<br />
-												<strong class="point">534,350원</strong>
-											</td>
-										</tr>
-										<tr>
-											<td>18,000km 이하</td>
-											<td>2%</td>
-											<td class="ta_r">
-												193,340원
-												<br />
-												<strong class="point">554,350원</strong>
-											</td>
-										</tr>
-									</tbody>
-								</table>
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">주민등록번호/외국인등록번호</div>
+									<div class="comp_wrap birth">
+										<div class="input_text">
+											<div class="inp">
+												<input type="tel" placeholder="앞자리" minlength="6" maxlength="6" title="주민등록번호(외국인등록번호) 앞자리 입력" />
+												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+											</div>
+										</div>
+										<span class="dash">-</span>
+										<div class="comp_wrap_keypad_call form_key" role="textbox" tabindex="0" title="주민등록번호(외국인등록번호) 뒷자리 입력">
+											<div class="pin_area default">
+												뒷자리
+												<input type="password" name="" id="" readonly="true" autocomplete="new-password" />
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 
-					<!-- s: 하단 고정 버튼 영역 -->
-					<div class="popup_bottom">
-						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
-								<span class="text">확인</span>
-							</button>
-						</div>
-					</div>
-					<!-- s: 하단 고정 버튼 영역 -->
-					<button type="button" class="popup_close" onclick="closeHDPopup('pop_full');"><span class="blind">팝업 닫기</span></button>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>

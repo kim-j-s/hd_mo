@@ -1,3 +1,6 @@
+<!---
+경로 : 6.보험료 확인 > 무보험차상해 > 무보험차상해 자세히 보기
+-->
 <!doctype html>
 <html lang="ko">
 	<head>
@@ -48,148 +51,53 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body>
-		<!-- s: Full 팝업 -->
-		<div class="popup_wrap full active" id="pop_full" role="dialog" aria-hidden="false">
+		<!-- s: popup area -->
+		<!-- s: Bottom 팝업 -->
+		<div class="popup_wrap bottom active" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="false">
 			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_full');"></div>
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
 				<div class="popup_inner">
-					<div class="popup_head"><div class="popup_head_title"></div></div>
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head"><div class="popup_head_title">무보험차상해 자세히 보기</div></div>
+
 					<div class="popup_cont">
 						<div class="popup_content">
-							<!-- s: popup_content_top -->
-							<div class="popup_content_top">
-								<h2 class="title_h2">
-									<strong>연간 주행거리</strong>
-									에 따른
-									<br />
-									내 보험료를 확인해 보세요
-								</h2>
-								<div class="text_sub">
-									만기시 마일리지 특약 연간주행거리에 따른
-									<br />
-									예상환급금을 알려드려요. (특약 가입시)
-								</div>
-							</div>
-							<!-- e: popup_content_top -->
-
-							<div class="info_gray">
-								<dl>
-									<dt>현재 보험료 합계</dt>
-									<dd>583,860원</dd>
-								</dl>
-							</div>
-
-							<div class="table_wrap">
-								<table class="table table_c">
-									<caption>연간 주행거리에 따른 보험료 확인 표</caption>
-									<colgroup>
-										<col style="width: 35%" />
-										<col style="width: 25%" />
-										<col style="width: 35%" />
-									</colgroup>
-									<thead>
-										<tr>
-											<th scope="col">연간 주행거리</th>
-											<th scope="col">할인율</th>
-											<th scope="col" class="ta_r">
-												예상환급금
-												<br />
-												<span class="point">내 보험료</span>
-											</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>1,000km 이하</td>
-											<td>45%</td>
-											<td class="ta_r">
-												258,540원
-												<br />
-												<strong class="point">315,150원</strong>
-											</td>
-										</tr>
-										<tr>
-											<td>3,000km 이하</td>
-											<td>36%</td>
-											<td class="ta_r">
-												213,580원
-												<br />
-												<strong class="point">360,110원</strong>
-											</td>
-										</tr>
-										<tr>
-											<td>5,000km 이하</td>
-											<td>29%</td>
-											<td class="ta_r">
-												174,230원
-												<br />
-												<strong class="point">399,460원</strong>
-											</td>
-										</tr>
-										<tr>
-											<td>8,000km 이하</td>
-											<td>22%</td>
-											<td class="ta_r">
-												134,890원
-												<br />
-												<strong class="point">438,800원</strong>
-											</td>
-										</tr>
-										<tr>
-											<td>10,000km 이하</td>
-											<td>18%</td>
-											<td class="ta_r">
-												112,410원
-												<br />
-												<strong class="point">461,280원</strong>
-											</td>
-										</tr>
-										<tr>
-											<td>12,000km 이하</td>
-											<td>8%</td>
-											<td class="ta_r">
-												56,200원
-												<br />
-												<strong class="point">517,490원</strong>
-											</td>
-										</tr>
-										<tr>
-											<td>315,000km 이하</td>
-											<td>5%</td>
-											<td class="ta_r">
-												39,340원
-												<br />
-												<strong class="point">534,350원</strong>
-											</td>
-										</tr>
-										<tr>
-											<td>18,000km 이하</td>
-											<td>2%</td>
-											<td class="ta_r">
-												193,340원
-												<br />
-												<strong class="point">554,350원</strong>
-											</td>
-										</tr>
-									</tbody>
-								</table>
+							<div class="info_cont">
+								<h2>가입 TIP</h2>
+								<ul class="list_depth">
+									<li>무보험차상해는 가해자가 보험에 가입하지 않았거나 뺑소니사고를 당했을 때 보상을 받기 위해 꼭 필요합니다.</li>
+									<li>
+										최근 증가하는
+										<strong>대포차 등의 위험에 대비하기 위해</strong>
+										무보험차상해 담보를 선택하시기 바랍니다.
+									</li>
+								</ul>
+								<h2>도움말</h2>
+								<h3>보상책임</h3>
+								<ul class="list_depth">
+									<li>피보험자(본인및 가족-배우자, 부모, 자녀)가 무보험자동차로 인한 사고로 죽거나 다쳤을 때 그 손해에 대하여 배상의무자가 있을 경우 보상</li>
+								</ul>
+								<h3>보상내용</h3>
+								<ul class="list_depth">
+									<li>피보험자 1인당 선택한 보험 가입 금액 한도로 보상합니다. 대인배상I, 대인배상II, 대물 배상, 자기신체 사고나 자동차상해 담보에 모두 가입 하는 경우 가입 할 수 있습니다.</li>
+								</ul>
 							</div>
 						</div>
 					</div>
-
-					<!-- s: 하단 고정 버튼 영역 -->
 					<div class="popup_bottom">
 						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
 								<span class="text">확인</span>
 							</button>
 						</div>
 					</div>
-					<!-- s: 하단 고정 버튼 영역 -->
-					<button type="button" class="popup_close" onclick="closeHDPopup('pop_full');"><span class="blind">팝업 닫기</span></button>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
-		<!-- e: Full 팝업 -->
+		<!-- e: Bottom 팝업 -->
+		<!-- e: popup area -->
 	</body>
 </html>
