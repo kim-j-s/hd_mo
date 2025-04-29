@@ -74,6 +74,11 @@
 		padding: 24px 0 24px 16px;
 		border-top: 1px solid var(--color-border-gray-light);
 
+		> .badge_wrap {
+			margin-left: -16px;
+			margin-bottom: 4px;
+		}
+
 	}
 
 	.agc_item {
@@ -85,6 +90,7 @@
 		.agc_item_top {
 			position: relative;
 			> .text {
+				position: relative;
 				display: flex;
 				font-size: var(--font-size-body-medium);
 				margin-left: -16px;
@@ -100,6 +106,20 @@
 						width: auto;
 						vertical-align: bottom;
 					}
+				}
+
+				&.dot_mod {
+					padding-left: 8px;
+					&::before {
+						content: '';
+						position: absolute;
+						top: 9px;
+						left: 0;
+						width: 4px;
+						border-radius: 50%;
+						border-bottom: 4px solid #33363D;
+					}
+
 				}
 
 			}
@@ -139,6 +159,9 @@
 					align-items: flex-start;
 					justify-content: space-between;
 					gap: 8px;
+					.aic_list_r {
+						margin-left: auto;
+					}
 				}
 
 				.agrdo_group_sub {
@@ -154,6 +177,23 @@
 					}
 				}
 			}
+			&.dot_none {
+				> li {
+					padding-left: 0;
+					&::before {
+						content: none;
+					}
+				}
+			}
+		}
+
+
+		// agc_item_sub_txt
+		.agc_item_sub_txt {
+			margin-top: 16px;
+			margin-left: -4px;
+			font-size: var(--font-size-body-small);
+			color: var(--color-text-subtle);
 		}
 
 	}

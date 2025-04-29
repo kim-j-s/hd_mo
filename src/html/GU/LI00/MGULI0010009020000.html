@@ -1,0 +1,218 @@
+{{#> layout/default page-title="휴대폰 본인인증"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- s: popup_content_top -->
+		<div class="popup_content_top">
+			<h2 class="title_h2">
+				<strong><span class="point">필수</span> 고객 관리 및 가입설계를 위한 개인(신용)정보 처리 <span class="point">상세</span> 동의</strong>
+			</h2>
+		</div>
+		<!-- e: popup_content_top -->
+
+		<div class="info_gray">
+			<p class="info_text">
+				귀하는 개인(신용)정보의 수집 · 이용 및 조회, 제공에 관한 동의를 거부하실 수 있으며, 개인의 신용도 등을 평가하기 위한 목적 이외의 개인(신용)정보 제공 동의를 철회할 수 있습니다. 다만, 본 동의는 ‘고객정보 관리 및 가입설계'를 위해 필수적인 사항이므로 동의를 거부하시는 경우 관련 업무수행이 불가능합니다.
+			</p>
+		</div>
+
+		<div class="ag_group_wrap">
+
+			<div class="ag_group_top">
+				{{> cp/checkbox id="chk_group01" chk_class="agw_all" labelname="아래 항목 모두 동의합니다." ag_top=true}}
+			</div>
+			<div class="ag_group_cont">
+				<div class="badge_wrap">
+					<span class="hd_badge outline solid_pastel c_primary size_m">현대해상</span>
+				</div>
+				<div class="agc_item">
+					<div class="agc_item_top">
+						<div class="text">
+							<span class="num">1.</span>
+							<span class="txt">
+								수집·이용에 관한 사항
+								<span class="badge_wrap">
+									<span class="hd_badge outline solid_pastel c_secondary size_m">안심</span>
+								</span>
+							</span>
+						</div>
+						<button type="button" class="btn_link short_cut" aria-label="수집·이용에 관한 사항 자세히 보기">자세히</button>
+					</div>
+					<div class="agc_item_cont">
+						<ul class="aic_list">
+							<li>
+								<div class="agrdo_group">
+									<div class="aic_list_l">고유식별정보</div>
+									<div class="aic_list_r">
+										<div class="radio_group_wrap">
+											{{> cp/radio rd-class="sm" rd-id="rm11-1" rdip-class="agr_dept1 noag" name="rm11" labelname="미동의" }}
+											{{> cp/radio rd-class="sm" rd-id="rm11-2" rdip-class="agr_dept1 ag" name="rm11" labelname="동의" }}
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="agrdo_group">
+									<div class="aic_list_l">개인(신용)정보</div>
+									<div class="aic_list_r">
+										<div class="radio_group_wrap">
+											{{> cp/radio rd-class="sm" rd-id="rm12-1" rdip-class="agr_dept1 noag" name="rm12" labelname="미동의" }}
+											{{> cp/radio rd-class="sm" rd-id="rm12-2" rdip-class="agr_dept1 ag" name="rm12" labelname="동의" }}
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<p class="agc_item_sub_txt">
+						정보보호파트 승인 제90000279호(2024.11.19)
+					</p>
+				</div>
+			</div>
+
+			<div class="ag_group_cont">
+				<div class="badge_wrap">
+					<span class="hd_badge outline solid_pastel c_secondary size_m">SCI / NICE</span>
+				</div>
+				<div class="agc_item">
+					<div class="agc_item_top">
+						<div class="text dot_mod">
+							<span class="txt">개인(신용)정보</span>
+						</div>
+						<button type="button" class="btn_link short_cut" aria-label="개인(신용)정보 자세히 보기" onclick="openHDPopup(this,'pop_type02');">자세히</button>
+					</div>
+					<div class="agc_item_cont">
+						<ul class="aic_list dot_none">
+							<li>
+								<div class="agrdo_group">
+									<div class="aic_list_r">
+										<div class="radio_group_wrap">
+											{{> cp/radio rd-class="sm" rd-id="rm21-1" name="rm21" rdip-class="agr_dept1 noag" labelname="미동의" }}
+											{{> cp/radio rd-class="sm" rd-id="rm21-2" name="rm21" rdip-class="agr_dept1 ag" labelname="동의" }}
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="agc_item">
+					<div class="agc_item_top">
+						<div class="text dot_mod">
+							<span class="txt">고유식별정보</span>
+						</div>
+						<button type="button" class="btn_link short_cut" aria-label="고유식별정보 자세히 보기">자세히</button>
+					</div>
+					<div class="agc_item_cont">
+						<ul class="aic_list dot_none">
+							<li>
+								<div class="agrdo_group">
+									<div class="aic_list_r">
+										<div class="radio_group_wrap">
+											{{> cp/radio rd-class="sm" rd-id="rm22-1" name="rm22" rdip-class="agr_dept1 noag" labelname="미동의" }}
+											{{> cp/radio rd-class="sm" rd-id="rm22-2" name="rm22" rdip-class="agr_dept1 ag" labelname="동의" }}
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="agc_item">
+					<div class="agc_item_top">
+						<div class="text dot_mod">
+							<span class="txt">통신사 이용약관</span>
+						</div>
+						<button type="button" class="btn_link short_cut" aria-label="통신사 이용약관 자세히 보기">자세히</button>
+					</div>
+					<div class="agc_item_cont">
+						<ul class="aic_list dot_none">
+							<li>
+								<div class="agrdo_group">
+									<div class="aic_list_r">
+										<div class="radio_group_wrap">
+											{{> cp/radio rd-class="sm" rd-id="rm23-1" name="rm23" rdip-class="agr_dept1 noag" labelname="미동의" }}
+											{{> cp/radio rd-class="sm" rd-id="rm23-2" name="rm23" rdip-class="agr_dept1 ag" labelname="동의" }}
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="agc_item">
+					<div class="agc_item_top">
+						<div class="text dot_mod">
+							<span class="txt">서비스 이용약관</span>
+						</div>
+						<button type="button" class="btn_link short_cut" aria-label="서비스 이용약관 자세히 보기">자세히</button>
+					</div>
+					<div class="agc_item_cont">
+						<ul class="aic_list dot_none">
+							<li>
+								<div class="agrdo_group">
+									<div class="aic_list_r">
+										<div class="radio_group_wrap">
+											{{> cp/radio rd-class="sm" rd-id="rm24-1" name="rm24" rdip-class="agr_dept1 noag" labelname="미동의" }}
+											{{> cp/radio rd-class="sm" rd-id="rm24-2" name="rm24" rdip-class="agr_dept1 ag" labelname="동의" }}
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="agc_item">
+					<div class="agc_item_top">
+						<div class="text dot_mod">
+							<span class="txt">개인정보 제3자 제공 동의</span>
+						</div>
+						<button type="button" class="btn_link short_cut" aria-label="개인정보 제3자 제공 동의 자세히 보기">자세히</button>
+					</div>
+					<div class="agc_item_cont">
+						<ul class="aic_list dot_none">
+							<li>
+								<div class="agrdo_group">
+									<div class="aic_list_r">
+										<div class="radio_group_wrap">
+											{{> cp/radio rd-class="sm" rd-id="rm25-1" name="rm25" rdip-class="agr_dept1 noag" labelname="미동의" }}
+											{{> cp/radio rd-class="sm" rd-id="rm25-2" name="rm25" rdip-class="agr_dept1 ag" labelname="동의" }}
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+		<!-- // popup_content -->
+	</div>
+
+</div>
+
+<div class="popup_bottom">
+	<div class="btn_area">{{> cp/button type="1" size="1" b-text="다음"}}</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+<!-- s: 다른 인증방식 선택 -->
+{{#> popup/popup_bottom popup-id="pop_type02" popup-title="확인하실 약관을 선택해 주세요."}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="opt_select_list opt_case2">
+			<a href="#" target="_blank" class="option"><span class="text">SCI평가정보</span></a>
+			<a href="#" target="_blank" class="option"><span class="text">NICE평가정보</span></a>
+		</div>
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 다른 인증방식 선택 -->
+
+{{/ layout/default }}
