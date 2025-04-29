@@ -2257,6 +2257,9 @@
 .form_box + .form_group_wrap {
 	margin-top: 3.2rem;
 }
+.form_box > .btn_area {
+	margin: 2.4rem 0;
+}
 .input_text + .inp_checkbox {
 	margin-top: 1.6rem;
 }
@@ -2314,6 +2317,10 @@ ul + .form_group_wrap {
 .info_cont .table_wrap + .pop_title_h1 {
 	margin-top: 5.2rem;
 }
+.info_cont ul + h3 + h2,
+.info_cont .table_wrap + h2 {
+	margin-top: 4rem;
+}
 .info_cont ul + h3 + h3,
 .info_cont .table_wrap + h3 {
 	margin-top: 2.4rem;
@@ -2322,9 +2329,13 @@ ul + .form_group_wrap {
 .info_cont .table_wrap .table ~ * {
 	margin-top: 1.6rem;
 }
+.info_cont ul + h3 {
+	margin-top: 2rem;
+}
 .info_cont ul + h4 {
 	margin-top: 1.6rem;
 }
+.info_cont .img_area + ul,
 .info_cont .list_ty4 + .circle_list_ty2 {
 	margin-top: 2rem;
 }
@@ -2343,14 +2354,16 @@ ul + .form_group_wrap {
 .info_cont > p:first-child {
 	margin-top: 0;
 }
-.info_cont + .form_group_wrap {
+.info_cont + .form_group_wrap,
+.info_cont + .acd_item_ty2,
+.info_cont + .acd_item_ty7 {
 	margin-top: 3.2rem;
-}
-.info_cont + .acd_item_ty2 {
-	margin-top: 1.6rem;
 }
 .info_cont + .link_area {
 	margin-top: 1.6rem;
+}
+.info_cont .list_depth + .list_ty2 {
+	margin: 1.2rem 0 0 0.8rem;
 }
 .text_info_lg {
 	font-size: var(--font-size-heading-medium);
@@ -2504,42 +2517,124 @@ ul + .form_group_wrap {
 .insurance_payment_area {
 	position: relative;
 }
-.bann_wrap.bann_ty1 {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	gap: 1.2rem;
-	padding: 1.6rem 2.4rem;
-	background-color: var(--color-element-success-lighter);
-	border-radius: 2.4rem;
+/* 이용안내 */
+/* 인증방법 선택 */
+* + .cert_select_list {
+	margin-top: 5.2rem;
 }
-.bann_wrap.bann_ty1 .bann_cont .title {
-	font-size: var(--font-size-heading-xsmall);
+.cert_select_list > li + li {
+	margin-top: 1.6rem;
+}
+.cert_select_list .cert_select_item {
+	position: relative;
+	display: block;
+	padding: 1.9rem 0px;
+	border-radius: 1.6rem;
+	border: 1px solid var(--color-button-tertiary-border);
+	background: url(../images/icon/arrowRight_ty3.svg) no-repeat right 1.9rem center;
+}
+.cert_select_list .cert_select_item > .text {
+	position: relative;
+	display: block;
+	padding: 0 3.9rem 0 5.1rem;
+	font-size: var(--font-size-body-medium);
+	color: var(--gray-8003-e-4-a-58);
 	line-height: 2.4rem;
-	font-weight: 700;
 }
-.bann_wrap.bann_ty1 .bann_cont .cont {
-	margin-top: 0.4rem;
-	font-size: var(--font-size-body-small);
-	line-height: 2.1rem;
-	color: var(--color-text-subtle);
-}
-.bann_wrap.bann_ty1.co_ty2 {
-	background-color: var(--color-element-secondary-light-blue);
-}
-.bann_wrap.bann_ty1.co_ty3 {
-	background-color: var(--color-element-warning-lighter);
-}
-.bann_wrap.bann_ty2 {
-	background-color: var(--color-element-success-lighter);
-}
-.bann_wrap .logo_card_hundai {
-	width: 3.2rem;
-	height: 3.2rem;
+.cert_select_list .cert_select_item > .text::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 2.3rem;
+	width: 2.4rem;
+	height: 2.4rem;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
 	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 3.2rem auto;
+	background-position: center center;
 }
+.cert_select_list .cert_select_item > .text .tip_item {
+	--tl: 3.4rem;
+	position: absolute;
+	top: calc(100% + 0.6rem);
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	padding: 0 var(--tl) 0 var(--tl);
+}
+.cert_select_list .cert_select_item > .text .tip_item .tip_item_cont {
+	display: block;
+	padding: 0.8rem 1.6rem;
+	font-weight: 700;
+	font-size: var(--font-size-body-xsmall);
+	color: var(--color-text-primary-bold);
+	border-radius: var(--radius-medium1);
+	border: 1px solid var(--color-border-primary);
+	background-color: var(--color-element-primary-lighter);
+}
+.cert_select_list .cert_select_item > .text .tip_item .tip_item_cont::before {
+	content: "";
+	position: absolute;
+	top: -0.5rem;
+	z-index: 1;
+	left: calc(var(--tl) + 2.6rem);
+	width: 1.2rem;
+	height: 0.6rem;
+	border-left: 0.6rem solid transparent;
+	border-right: 0.6rem solid transparent;
+	border-bottom: 0.8rem solid var(--color-element-primary-lighter);
+}
+.cert_select_list .cert_select_item > .text .tip_item .tip_item_cont::after {
+	content: "";
+	position: absolute;
+	top: -0.7rem;
+	left: calc(var(--tl) + 2.6rem);
+	width: 1.2rem;
+	height: 0.6rem;
+	border-left: 0.6rem solid transparent;
+	border-right: 0.6rem solid transparent;
+	border-bottom: 0.8rem solid var(--color-border-primary);
+}
+.cert_select_list .cert_select_item.pin > .text::before {
+	background-image: url(../images/common/cert/icon_cert_pin.svg);
+}
+.cert_select_list .cert_select_item.bio > .text::before {
+	background-image: url(../images/common/cert/icon_cert_bio.svg);
+}
+.cert_select_list .cert_select_item.phone > .text::before {
+	background-image: url(../images/common/cert/icon_cert_phone.svg);
+}
+.cert_select_list .cert_select_item.kakao > .text::before {
+	background-image: url(../images/common/cert/icon_cert_kakao.svg);
+}
+.cert_select_list .cert_select_item.common_cert > .text::before {
+	background-image: url(../images/common/cert/icon_cert_common_cert.svg);
+}
+.cert_select_list .cert_select_item.fin_cert > .text::before {
+	background-image: url(../images/common/cert/icon_cert_fin_cert.svg);
+}
+/* PIN 인증 */
+.pin_enter {
+	position: relative;
+	height: 7.2rem;
+}
+.pin_enter + .btn_area {
+	margin-top: 1.6rem;
+}
+.pin_enter_error_msg {
+	margin-top: 0.8rem;
+	font-size: 0;
+	text-align: center;
+}
+.pin_enter_error_msg > .text {
+	display: inline-block;
+	padding-left: 2rem;
+	font-size: var(--font-size-label-medium);
+	color: var(--color-text-danger);
+	background: url(../images/icon/icon_error_red.svg) no-repeat left center/1.6rem auto;
+}
+/* PIN 인증 */
+/* 이용안내 */
 /* 마이 */
 /* 배경색 있는 상단 컨텐츠 영역 */
 .bg_top_cover {
@@ -2724,5 +2819,4 @@ ul + .form_group_wrap {
 .center_info .line1 + .list_ty5 {
 	margin-top: 0.8rem;
 }
-/* @import 'contents/MMYINAG10002010000.scss'; */
 /* 마이 */
