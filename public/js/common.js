@@ -393,6 +393,13 @@
 	// 		// numCase.find('img').attr('src', newFile + '_on.' + /[^.]+$/.exec(numSrc));
 	// 	});
 	// })
+
+
+
+	
+
+
+
 })();
 
 
@@ -615,6 +622,95 @@ $(function(){
 		}
 	});
 	// 간편정보 노출 방식
+
+
+	// 라디오 약관 동의
+	const $groupWrap = $('.ag_group_wrap');
+	const $allCheck = $groupWrap.find('.agw_all');
+
+	// 전체 하위 체크박스 제어
+	$allCheck.on('change', function() {
+		const isChecked = $(this).is(':checked');
+		$groupWrap.find('.agr_dept1.ag').prop('checked', isChecked);
+		$groupWrap.find('.agr_dept1.noag').prop('checked', !isChecked);
+		$groupWrap.find('.ags_sub_all, .ags_sub_chk').prop('checked', isChecked).prop('disabled', !isChecked);
+	});
+
+	// 전체 하위 체크박스 제어
+	$groupWrap.on('change', '.ags_sub_all', function() {
+		const isChecked = $(this).is(':checked');
+		const $agrdoGroupSub = $(this).closest('.agrdo_group_sub');
+		
+		// 해당 agrdo_group_sub의 하위 체크박스를 모두 체크/해제
+		// $agrdoGroupSub.find('.ags_sub_chk').prop('checked', isChecked).prop('disabled', !isChecked);
+		// $agrdoGroupSub.find('.ags_sub_chk').prop('checked', isChecked).prop('checked', !isChecked);
+
+		if (isChecked) {
+			console.log('체크됨');
+			$agrdoGroupSub.find('.ags_sub_chk').prop('checked', isChecked);
+			$agrdoGroupSub.prev('.agrdo_group').find('.agr_dept1.ag').prop('checked', true);
+		} else {
+			$agrdoGroupSub.find('.ags_sub_chk').prop('checked', isChecked);
+		}
+	});
+
+	// 하위 체크박스 상태 변경 시 전체 체크박스 상태 갱신
+	$groupWrap.on('change', '.ags_sub_chk', function() {
+		// console.log('서브 체크박스');
+		const $agrdoGroupSub = $(this).closest('.agrdo_group_sub');
+		const allSubChk = $agrdoGroupSub.find('.ags_sub_chk');
+		const isAllSubChecked = allSubChk.length === allSubChk.filter(':checked').length;
+
+		// 모든 하위 체크박스가 체크되면 전체 체크박스를 체크, 아니면 해제
+		$agrdoGroupSub.find('.ags_sub_all').prop('checked', isAllSubChecked);
+		// console.log('isAllSubChecked : ', isAllSubChecked);
+
+		if(isAllSubChecked == true) {
+			$agrdoGroupSub.prev('.agrdo_group').find('.agr_dept1.ag').prop('checked', true);
+		}
+	});
+
+	// 민감정보 라디오 선택 시 하위 체크박스 제어
+	$groupWrap.on('change', '.agr_dept1', function() {
+		const $this = $(this);
+		const $agrdoGroup = $this.closest('.agrdo_group');
+		const $subGroup = $agrdoGroup.next('.agrdo_group_sub');
+
+		if ($subGroup.length) {
+			if ($this.hasClass('noag') && $this.is(':checked')) {
+					$subGroup.find('input[type="checkbox"]').prop('checked', false).prop('disabled', true);
+			} else if ($this.hasClass('ag') && $this.is(':checked')) {
+					$subGroup.find('input[type="checkbox"]').prop('disabled', false).prop('checked', true);
+			}
+		}
+
+		updateAllCheckState();
+	});
+
+	// radio 상태를 기준으로 전체동의 체크박스 갱신
+	function updateAllCheckState() {
+		const totalAgr = $groupWrap.find('.agr_dept1.ag');
+		const totalNoAgr = $groupWrap.find('.agr_dept1.noag');
+		
+		let isAllAgreed = true;
+		totalAgr.each(function() {
+			if (!$(this).is(':checked')) {
+				isAllAgreed = false;
+				return false;
+			}
+		});
+
+		totalNoAgr.each(function() {
+			if ($(this).is(':checked')) {
+				isAllAgreed = false;
+				return false;
+			}
+		});
+
+		$groupWrap.find('.agw_all').prop('checked', isAllAgreed);
+	}
+
+	// 라디오 약관 동의
 
 });
 

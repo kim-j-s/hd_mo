@@ -149,6 +149,7 @@
 .list_ty4 {
   @include list-style(
     $li-padding: 0 0 0 8px,
+		$li-line-height: 150%,
     $li-font-size: var(--font-size-body-small),
     $li-color: var(--color-text-basic),
   ) {
@@ -172,6 +173,40 @@
 		& ~ li {
 			margin-top: 12px;
 		}
+	}
+}
+
+.list_ty5 {
+  @include list-style(
+    $li-padding: 0 0 0 10px,
+		$li-line-height: 150%,
+    $li-font-size: var(--font-size-body-xsmall),
+    $li-color: var(--color-text-information),
+		$li-dot-color: var(--color-text-information)
+  ) {
+    // ul.list-1에 대한 추가적인 스타일
+		// background-color: var(--color-primary);
+    > li {
+			&::before {
+				content: '';
+				position: absolute;
+				top: 8px;
+				left: 0;
+				width: 2px;
+				height: 2px;
+				border-radius: 50%;
+			}
+    }
+  }
+
+	> li {
+		& ~ li {
+			margin-top: 8px;
+		}
+	}
+
+	+ .info_gray {
+		margin-top: 52px;
 	}
 }
 
@@ -280,6 +315,10 @@
 		display:flex;
 		gap: 8px;
 		flex-wrap:wrap;
+	}
+
+	& + .title_h3 {
+		margin-top: 32px;
 	}
 }
 
