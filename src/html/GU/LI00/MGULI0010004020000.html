@@ -1,0 +1,59 @@
+{{#> layout/default page-title="PIN인증"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="process_info_area">
+			<div class="complete_info" aria-hidden="true" >
+				<lottie-player src="../../../json/lottie_info.json" background="transparent" speed="1" autoplay></lottie-player>
+			</div>
+			<h2 class="process_title">
+				<strong>
+				고객님이 등록한<br>
+				PIN번호가 없어요.
+				</strong>
+			</h2>
+		</div>
+
+		<div class="info_gray">
+			<ul class="list_depth">
+				<li>기존 PIN번호 사용자도 등록해 주셔야 합니다.</li>
+				<li>PIN번호의 등록, 변경 및 재설정을 위해서는 본인확인이 필요합니다.</li>
+				<li>PIN번호는 등록한 브라우저에서만 이용할 수 있습니다.</li>
+				<li>PC/휴대폰/인터넷 브라우저 등 사용환경이 다르거나 캐시 및 데이터를 삭제한 경우에는 PIN번호를 다시 등록해 주셔야 합니다.</li>
+			</ul>
+		</div>
+
+		<div class="btn_area center">
+			{{> cp/linkButton bl_class="short_cut sm" bl_text="다른 인증방식 선택" pop_id="pop_type02" }}
+		</div>
+
+	</div>
+
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">{{> cp/button type="1" size="1" b-text="PIN번호 등록"}}</div>
+</div>
+
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+<!-- s: 다른 인증방식 선택 -->
+{{#> popup/popup_bottom popup-id="pop_type02" popup-title="인증방법을 선택해 주세요."}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="opt_select_list opt_case3">
+			<div role="button" tabindex="0" class="option"><span class="text">PIN인증</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">생체인증</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">휴대폰인증</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">카카오인증</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">공동인증</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">금융인증</span></div>
+		</div>
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 다른 인증방식 선택 -->
+
+{{/ layout/default }}

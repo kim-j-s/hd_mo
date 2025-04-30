@@ -52,427 +52,621 @@
 	</head>
 	<body>
 		<!-- s: popup area -->
-		<ul class="special_contract_list">
-			<li>
-				<div class="check_box">
-					<span class="hd_badge solid_pastel c_secondary size_m">Best1</span>
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-1" />
-						<label for="agreement01-1" class="chk_label">
-							<span class="label_cont">상해간병비&middot;사망담보 특약</span>
-						</label>
+		<!-- s: Full 팝업 -->
+		<div class="popup_wrap full active" id="pop_full" role="dialog" aria-hidden="false">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_full');"></div>
+				<div class="popup_inner">
+					<div class="popup_head"><div class="popup_head_title"></div></div>
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="tab_wrap">
+								<div class="tab_wrap_list_ty1" role="tablist">
+									<button type="button" class="tab_btn active" role="tab" aria-selected="true" aria-controls="tabPanelcontract01" id="tabcontract01">추천</button>
+									<button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanelcontract02" id="tabcontract02">자기신체</button>
+									<button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanelcontract03" id="tabcontract03">자기차량</button>
+									<button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanelcontract04" id="tabcontract04">보장확대</button>
+								</div>
+								<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanelcontract01">
+									<ul class="special_contract_list">
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-1" />
+													<label for="agreement01-1" class="chk_label">
+														<span class="label_cont">상해간병비&middot;사망담보 특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type01');" title="상해간병비&middot;사망담보 특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-2" />
+													<label for="agreement01-2" class="chk_label">
+														<span class="label_cont">자녀사고피해지원특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type02');" title="자녀사고피해지원특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-3" />
+													<label for="agreement01-3" class="chk_label">
+														<span class="label_cont">음주&middot;무면허&middot;뺑소니사고 등 피해지원특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type03');" title="음주,무면허,뺑소니사고 등 피해지원특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-4" />
+													<label for="agreement01-4" class="chk_label">
+														<span class="label_cont">상급병실&middot;성형&middot;치아보철지원특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type04');" title="상급병실,성형,치아보철지원특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement02-5" />
+													<label for="agreement02-5" class="chk_label">
+														<span class="label_cont">법률지원특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type05');" title="법률지원특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-11" />
+													<label for="agreement01-11" class="chk_label">
+														<span class="label_cont">전기자동차 배터리 신품가액보상 특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type11');" title="전기자동차 배터리 신품가액보상 특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-12" />
+													<label for="agreement01-12" class="chk_label">
+														<span class="label_cont">전기자동차 초과수리비용 지원특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type12');" title="전기자동차 초과수리비용 지원특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement02-23" />
+													<label for="agreement02-23" class="chk_label">
+														<span class="label_cont">전기자동차 충전 중 위험보장 특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type23');" title="전기자동차 충전 중 위험보장 특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanelcontract02">
+									<ul class="special_contract_list">
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-6" />
+													<label for="agreement01-6" class="chk_label">
+														<span class="label_cont">반려동물 사고 지원금 특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type06');" title="반려동물 사고 지원금 특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement02-4" />
+													<label for="agreement02-4" class="chk_label">
+														<span class="label_cont">상급병실&middot;성형&middot;치아보철지원특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type04');" title="상급병실,성형,치아보철지원특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement02-1" />
+													<label for="agreement02-1" class="chk_label">
+														<span class="label_cont">상해간병비&middot;사망담보 특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type01');" title="상해간병비&middot;사망담보 특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement02-3" />
+													<label for="agreement02-3" class="chk_label">
+														<span class="label_cont">음주&middot;무면허&middot;뺑소니사고 등 피해지원특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type03');" title="음주,무면허,뺑소니사고 등 피해지원특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement02-2" />
+													<label for="agreement02-2" class="chk_label">
+														<span class="label_cont">자녀사고피해지원특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type02');" title="자녀사고피해지원특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanelcontract03">
+									<ul class="special_contract_list">
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-7" />
+													<label for="agreement01-7" class="chk_label">
+														<span class="label_cont">교통약자용품지원특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type07');" title="교통약자용품지원특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-8" />
+													<label for="agreement01-8" class="chk_label">
+														<span class="label_cont">렌트비용지원특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type08');" title="렌트비용지원특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-9" />
+													<label for="agreement01-9" class="chk_label">
+														<span class="label_cont">신차손해담보</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type09');" title="신차손해담보 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-10" />
+													<label for="agreement01-10" class="chk_label">
+														<span class="label_cont">자기차량손해 보장 확대</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type10');" title="자기차량손해 보장 확대 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement02-11" />
+													<label for="agreement02-11" class="chk_label">
+														<span class="label_cont">전기자동차 배터리 신품가액보상 특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type11');" title="전기자동차 배터리 신품가액보상 특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement02-12" />
+													<label for="agreement02-12" class="chk_label">
+														<span class="label_cont">전기자동차 초과수리비용 지원특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type12');" title="전기자동차 초과수리비용 지원특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-13" />
+													<label for="agreement01-13" class="chk_label">
+														<span class="label_cont">전손 시 대체차량 등록비용담보</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type13');" title="전손 시 대체차량 등록비용담보 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-14" />
+													<label for="agreement01-14" class="chk_label">
+														<span class="label_cont">차량운반비용담보</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type14');" title="차량운반비용담보 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab04" id="tabPanelcontract04">
+									<ul class="special_contract_list">
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-15" />
+													<label for="agreement01-15" class="chk_label">
+														<span class="label_cont">대물배상가입금액확장담보특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type15');" title="대물배상가입금액확장담보특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-5" />
+													<label for="agreement01-5" class="chk_label">
+														<span class="label_cont">법률지원특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type05');" title="법률지원특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-16" />
+													<label for="agreement01-16" class="chk_label">
+														<span class="label_cont">벌금비용제외특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type16');" title="벌금비용제외특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-17" />
+													<label for="agreement01-17" class="chk_label">
+														<span class="label_cont">변호사선임비용제외특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type17');" title="변호사선임비용제외특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-18" />
+													<label for="agreement01-18" class="chk_label">
+														<span class="label_cont">견인 서비스 확장 추가특약 I</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type18');" title="견인 서비스 확장 추가특약 I 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-19" />
+													<label for="agreement01-19" class="chk_label">
+														<span class="label_cont">다른 자동차 운전담보</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type19');" title="다른 자동차 운전담보 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-20" />
+													<label for="agreement01-20" class="chk_label">
+														<span class="label_cont">대리운전자위험담보</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type20');" title="대리운전자위험담보 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-21" />
+													<label for="agreement01-21" class="chk_label">
+														<span class="label_cont">보험대차운전중사고보상특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type21');" title="보험대차운전중사고보상특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-22" />
+													<label for="agreement01-22" class="chk_label">
+														<span class="label_cont">유상운송위험담보특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type22');" title="유상운송위험담보특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-23" />
+													<label for="agreement01-23" class="chk_label">
+														<span class="label_cont">전기자동차 충전 중 위험보장 특약</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type23');" title="전기자동차 충전 중 위험보장 특약 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+										<li>
+											<div class="check_box">
+												<div class="inp_checkbox">
+													<input type="checkbox" id="agreement01-24" />
+													<label for="agreement01-24" class="chk_label">
+														<span class="label_cont">분할납부</span>
+													</label>
+												</div>
+												<button type="button" class="question_mark_btn" aria-expanded="false" title="분할납부 팝업 오픈">
+													<i class="hd_icon popover_help"></i>
+													<span class="blind">도움말</span>
+												</button>
+											</div>
+											<div class="money">
+												<span>5,100</span>
+												원
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
 					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type01');" title="상해간병비&middot;사망담보 특약 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_full');"><span class="blind">팝업 닫기</span></button>
 				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-			<li>
-				<div class="check_box">
-					<span class="hd_badge solid_pastel c_secondary size_m">Best2</span>
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-2" />
-						<label for="agreement01-2" class="chk_label">
-							<span class="label_cont">자녀사고피해지원특약</span>
-						</label>
-					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type02');" title="자녀사고피해지원특약 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
-				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-			<li>
-				<div class="check_box">
-					<span class="hd_badge solid_pastel c_secondary size_m">Best3</span>
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-3" />
-						<label for="agreement01-3" class="chk_label">
-							<span class="label_cont">음주&middot;무면허&middot;뺑소니사고 등 피해지원특약</span>
-						</label>
-					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type03');" title="음주,무면허,뺑소니사고 등 피해지원특약 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
-				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-			<li>
-				<div class="check_box">
-					<span class="hd_badge solid_pastel c_secondary size_m">Best4</span>
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-4" />
-						<label for="agreement01-4" class="chk_label">
-							<span class="label_cont">상급병실&middot;성형&middot;치아보철지원특약</span>
-						</label>
-					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type04');" title="상급병실,성형,치아보철지원특약 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
-				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-			<li>
-				<div class="check_box">
-					<span class="hd_badge solid_pastel c_secondary size_m">Best5</span>
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-5" />
-						<label for="agreement01-5" class="chk_label">
-							<span class="label_cont">법률지원특약</span>
-						</label>
-					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type05');" title="법률지원특약 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
-				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-			<li>
-				<div class="check_box">
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-6" />
-						<label for="agreement01-6" class="chk_label">
-							<span class="label_cont">반려동물 사고 지원금 특약</span>
-						</label>
-					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type06');" title="반려동물 사고 지원금 특약 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
-				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-			<li>
-				<div class="check_box">
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-7" />
-						<label for="agreement01-7" class="chk_label">
-							<span class="label_cont">교통약자용품지원특약</span>
-						</label>
-					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type07');" title="교통약자용품지원특약 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
-				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-			<li>
-				<div class="check_box">
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-8" />
-						<label for="agreement01-8" class="chk_label">
-							<span class="label_cont">렌트비용지원특약</span>
-						</label>
-					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type08');" title="렌트비용지원특약 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
-				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-			<li>
-				<div class="check_box">
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-9" />
-						<label for="agreement01-9" class="chk_label">
-							<span class="label_cont">신차손해담보</span>
-						</label>
-					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type09');" title="신차손해담보 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
-				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-			<li>
-				<div class="check_box">
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-10" />
-						<label for="agreement01-10" class="chk_label">
-							<span class="label_cont">자기차량손해 보장 확대</span>
-						</label>
-					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type10');" title="자기차량손해 보장 확대 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
-				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-			<li>
-				<div class="check_box">
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-11" />
-						<label for="agreement01-11" class="chk_label">
-							<span class="label_cont">전기자동차 배터리 신품가액보상 특약</span>
-						</label>
-					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type11');" title="전기자동차 배터리 신품가액보상 특약 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
-				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-			<li>
-				<div class="check_box">
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-12" />
-						<label for="agreement01-12" class="chk_label">
-							<span class="label_cont">전기자동차 초과수리비용 지원특약</span>
-						</label>
-					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type12');" title="전기자동차 초과수리비용 지원특약 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
-				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-			<li>
-				<div class="check_box">
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-13" />
-						<label for="agreement01-13" class="chk_label">
-							<span class="label_cont">전손 시 대체차량 등록비용담보</span>
-						</label>
-					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type13');" title="전손 시 대체차량 등록비용담보 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
-				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-			<li>
-				<div class="check_box">
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-14" />
-						<label for="agreement01-14" class="chk_label">
-							<span class="label_cont">차량운반비용담보</span>
-						</label>
-					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type14');" title="차량운반비용담보 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
-				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-			<li>
-				<div class="check_box">
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-15" />
-						<label for="agreement01-15" class="chk_label">
-							<span class="label_cont">대물배상가입금액확장담보특약</span>
-						</label>
-					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type15');" title="대물배상가입금액확장담보특약 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
-				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-			<li>
-				<div class="check_box">
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-16" />
-						<label for="agreement01-16" class="chk_label">
-							<span class="label_cont">벌금비용제외특약</span>
-						</label>
-					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type16');" title="벌금비용제외특약 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
-				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-			<li>
-				<div class="check_box">
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-17" />
-						<label for="agreement01-17" class="chk_label">
-							<span class="label_cont">변호사선임비용제외특약</span>
-						</label>
-					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type17');" title="변호사선임비용제외특약 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
-				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-			<li>
-				<div class="check_box">
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-18" />
-						<label for="agreement01-18" class="chk_label">
-							<span class="label_cont">견인 서비스 확장 추가특약 I</span>
-						</label>
-					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type18');" title="견인 서비스 확장 추가특약 I 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
-				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-			<li>
-				<div class="check_box">
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-19" />
-						<label for="agreement01-19" class="chk_label">
-							<span class="label_cont">다른 자동차 운전담보</span>
-						</label>
-					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type19');" title="다른 자동차 운전담보 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
-				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-			<li>
-				<div class="check_box">
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-20" />
-						<label for="agreement01-20" class="chk_label">
-							<span class="label_cont">대리운전자위험담보</span>
-						</label>
-					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type20');" title="대리운전자위험담보 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
-				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-			<li>
-				<div class="check_box">
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-21" />
-						<label for="agreement01-21" class="chk_label">
-							<span class="label_cont">보험대차운전중사고보상특약</span>
-						</label>
-					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type21');" title="보험대차운전중사고보상특약 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
-				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-			<li>
-				<div class="check_box">
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-22" />
-						<label for="agreement01-22" class="chk_label">
-							<span class="label_cont">유상운송위험담보특약</span>
-						</label>
-					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type22');" title="유상운송위험담보특약 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
-				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-			<li>
-				<div class="check_box">
-					<div class="inp_checkbox">
-						<input type="checkbox" id="agreement01-23" />
-						<label for="agreement01-23" class="chk_label">
-							<span class="label_cont">전기자동차 충전 중 위험보장 특약</span>
-						</label>
-					</div>
-					<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'pop_type23');" title="전기자동차 충전 중 위험보장 특약 팝업 오픈">
-						<i class="hd_icon popover_help"></i>
-						<span class="blind">도움말</span>
-					</button>
-				</div>
-				<div class="money">
-					<span>5,100</span>
-					원
-				</div>
-			</li>
-		</ul>
+			</div>
+		</div>
+		<!-- e: Full 팝업 -->
 		<!-- s: 상해간병비,사망담보 특약 Bottom 팝업 -->
 		<div class="popup_wrap bottom" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="true">
 			<div class="popup_container">
