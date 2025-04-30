@@ -1004,20 +1004,36 @@ strong {
 	justify-content: end;
 	min-width: 12.2rem;
 }
+.ag_groups .ag_groups_top {
+	padding: 2rem;
+	border-radius: var(--radius-large2);
+	border: 1px solid var(--color-border-gray-light);
+}
+.ag_groups .ag_groups_top + .ag_group_wrap {
+	margin-top: 1.6rem;
+}
 .ag_group_wrap {
 	padding: 0 2rem;
 	border-radius: var(--radius-large2);
 	border: 1px solid var(--color-border-gray-light);
 }
+.ag_group_wrap + .ag_group_wrap {
+	margin-top: 1.6rem;
+}
 .ag_group_wrap .ag_group_top {
 	padding: 2.4rem 0;
 }
 .ag_group_wrap .ag_group_cont {
-	padding: 2.4rem 0 2.4rem 1.6rem;
+	padding: 2.4rem 0;
 	border-top: 1px solid var(--color-border-gray-light);
 }
+.ag_group_wrap .ag_group_cont .info_gray.agc_tig {
+	background-color: var(--color-input-surface-disabled);
+}
+.ag_group_wrap .ag_group_cont .info_gray + .agc_item {
+	margin-top: 1.6rem;
+}
 .ag_group_wrap .ag_group_cont > .badge_wrap {
-	margin-left: -1.6rem;
 	margin-bottom: 0.4rem;
 }
 .ag_group_wrap .agc_item + .agc_item {
@@ -1032,7 +1048,6 @@ strong {
 	display: -ms-flexbox;
 	display: flex;
 	font-size: var(--font-size-body-medium);
-	margin-left: -1.6rem;
 	padding-right: 7rem;
 }
 .ag_group_wrap .agc_item .agc_item_top > .text .num {
@@ -1070,6 +1085,7 @@ strong {
 }
 .ag_group_wrap .agc_item .agc_item_cont {
 	padding-top: 1.6rem;
+	padding-left: 1.6rem;
 }
 .ag_group_wrap .agc_item .aic_list > li {
 	position: relative;
@@ -1123,7 +1139,7 @@ strong {
 }
 .ag_group_wrap .agc_item .agc_item_sub_txt {
 	margin-top: 1.6rem;
-	margin-left: -0.4rem;
+	padding-left: 0.4rem;
 	font-size: var(--font-size-body-small);
 	color: var(--color-text-subtle);
 }
@@ -7463,6 +7479,9 @@ strong {
 [class^="title_h"] + .radio_group_wrap {
 	margin-top: 2rem;
 }
+[class^="title_h"] + .title_sub2 {
+	margin-top: 3.2rem;
+}
 .title_h1 {
 	font-size: var(--font-size-heading-xlarge);
 	color: var(--color-text-bolder);
@@ -7532,6 +7551,13 @@ strong {
 }
 .title_sub + .opt_select_wrap {
 	margin-top: 1.6rem;
+}
+.title_sub2 {
+	font-size: var(--font-size-body-medium);
+	color: var(--color-text-basic);
+}
+.title_sub2 + .ag_groups {
+	margin-top: 2.4rem;
 }
 .text_sub {
 	font-size: var(--font-size-body-medium);
@@ -7808,6 +7834,7 @@ strong {
 	margin-top: 3.2rem;
 }
 .info_gray + .checkbox_group_wrap,
+.info_gray + .ag_groups,
 .info_gray + .ag_group_wrap {
 	margin-top: 5.2rem;
 }

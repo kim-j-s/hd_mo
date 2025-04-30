@@ -228,3 +228,69 @@
 	}
 	
 }
+
+
+
+//안내 풍선
+.tip_item {
+	--tl: 34px;
+	position: absolute;
+	left: 0;
+	z-index: 1;
+	padding: 0 var(--tl) 0 var(--tl);
+	.tip_item_cont {
+		display: block;
+		padding: 8px 16px;
+		font-weight: 700;
+		font-size: var(--font-size-body-xsmall);					
+		color: var(--color-text-primary-bold);
+		border-radius: var(--radius-medium1);
+		border: 1px solid var(--color-border-primary);
+		background-color: var(--color-element-primary-lighter);
+		&::before {
+			content: '';
+			position: absolute;
+			z-index: 1;
+			left: calc(var(--tl) + 26px);
+			width: 12px;
+			height: 6px;
+			border-left: 6px solid transparent;
+			border-right: 6px solid transparent;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			left: calc(var(--tl) + 26px);
+			width: 12px;
+			height: 6px;
+			border-left: 6px solid transparent;
+			border-right: 6px solid transparent;
+		}
+	}
+	&.bottom {
+		top: calc(100% + 6px);
+		.tip_item_cont {
+			&::before {
+				top: -4px;
+				border-bottom: 8px solid var(--color-element-primary-lighter);
+			}
+			&::after {
+				top: -6px;
+				border-bottom: 8px solid var(--color-border-primary);
+			}
+		}
+	}
+	&.top {
+		bottom: calc(100% + 6px);
+		.tip_item_cont {
+			&::before {
+				bottom: -5px;
+				border-top: 8px solid var(--color-element-primary-lighter);
+			}
+			&::after {
+				bottom: -7px;
+				border-top: 8px solid var(--color-border-primary);
+			}
+		}
+	}
+}

@@ -632,6 +632,8 @@ $(function(){
 
 
 	// 라디오 약관 동의
+	/*
+
 	const $groupWrap = $('.ag_group_wrap');
 	const $allCheck = $groupWrap.find('.agw_all');
 
@@ -647,13 +649,9 @@ $(function(){
 	$groupWrap.on('change', '.ags_sub_all', function() {
 		const isChecked = $(this).is(':checked');
 		const $agrdoGroupSub = $(this).closest('.agrdo_group_sub');
-		
-		// 해당 agrdo_group_sub의 하위 체크박스를 모두 체크/해제
-		// $agrdoGroupSub.find('.ags_sub_chk').prop('checked', isChecked).prop('disabled', !isChecked);
-		// $agrdoGroupSub.find('.ags_sub_chk').prop('checked', isChecked).prop('checked', !isChecked);
 
 		if (isChecked) {
-			console.log('체크됨');
+			// console.log('체크됨');
 			$agrdoGroupSub.find('.ags_sub_chk').prop('checked', isChecked);
 			$agrdoGroupSub.prev('.agrdo_group').find('.agr_dept1.ag').prop('checked', true);
 		} else {
@@ -716,10 +714,226 @@ $(function(){
 
 		$groupWrap.find('.agw_all').prop('checked', isAllAgreed);
 	}
+	*/
 
 	// 라디오 약관 동의
 
+
+	// 라디오 약관 동의 - 250430
+	// 약관 동의 - 그룹별로 독립 제어
+	/*
+	$('.ag_groups .ag_group_wrap').each(function () {
+		const $groupWrap = $(this);
+		const $allCheck = $groupWrap.find('.agw_all');
+
+		// 전체 하위 라디오 제어
+		$allCheck.on('change', function () {
+			const isChecked = $(this).is(':checked');
+			$groupWrap.find('.agr_dept1.ag').prop('checked', isChecked);
+			$groupWrap.find('.agr_dept1.noag').prop('checked', !isChecked);
+			$groupWrap.find('.ags_sub_all, .ags_sub_chk').prop('checked', isChecked).prop('disabled', !isChecked);
+		});
+
+		// 하위 전체 체크 제어
+		$groupWrap.on('change', '.ags_sub_all', function () {
+			const isChecked = $(this).is(':checked');
+			const $agrdoGroupSub = $(this).closest('.agrdo_group_sub');
+
+			$agrdoGroupSub.find('.ags_sub_chk').prop('checked', isChecked);
+
+			if (isChecked) {
+				$agrdoGroupSub.prev('.agrdo_group').find('.agr_dept1.ag').prop('checked', true);
+			}
+		});
+
+		// 개별 체크 -> 전체 체크 상태 반영
+		$groupWrap.on('change', '.ags_sub_chk', function () {
+			const $agrdoGroupSub = $(this).closest('.agrdo_group_sub');
+			const allSubChk = $agrdoGroupSub.find('.ags_sub_chk');
+			const isAllSubChecked = allSubChk.length === allSubChk.filter(':checked').length;
+
+			$agrdoGroupSub.find('.ags_sub_all').prop('checked', isAllSubChecked);
+
+			if (isAllSubChecked) {
+				$agrdoGroupSub.prev('.agrdo_group').find('.agr_dept1.ag').prop('checked', true);
+			}
+		});
+
+		// 라디오 변경 -> 하위 체크박스 제어
+		$groupWrap.on('change', '.agr_dept1', function () {
+			const $this = $(this);
+			const $agrdoGroup = $this.closest('.agrdo_group');
+			const $subGroup = $agrdoGroup.next('.agrdo_group_sub');
+
+			if ($subGroup.length) {
+				if ($this.hasClass('noag') && $this.is(':checked')) {
+					$subGroup.find('input[type="checkbox"]').prop('checked', false).prop('disabled', true);
+				} else if ($this.hasClass('ag') && $this.is(':checked')) {
+					$subGroup.find('input[type="checkbox"]').prop('disabled', false).prop('checked', true);
+				}
+			}
+
+			updateAllCheckState();
+		});
+
+		// 그룹 내 전체 동의 상태 갱신
+		function updateAllCheckState() {
+			const totalAgr = $groupWrap.find('.agr_dept1.ag');
+			const totalNoAgr = $groupWrap.find('.agr_dept1.noag');
+
+			let isAllAgreed = true;
+
+			totalAgr.each(function () {
+				if (!$(this).is(':checked')) {
+					isAllAgreed = false;
+					return false;
+				}
+			});
+
+			totalNoAgr.each(function () {
+				if ($(this).is(':checked')) {
+					isAllAgreed = false;
+					return false;
+				}
+			});
+
+			$groupWrap.find('.agw_all').prop('checked', isAllAgreed);
+		}
+	});
+	*/
+
+
+	// 라디오 약관 동의 - 250430
+
+	$('.ag_groups').each(function () {
+		const $groups = $(this);
+		const $totalCheck = $groups.find('.ag_total');
+	
+		// 전체 그룹 체크 제어
+		$totalCheck.on('change', function () {
+			const isChecked = $(this).is(':checked');
+			$groups.find('.agw_all').prop('checked', isChecked).trigger('change'); // 각 그룹에 위임
+		});
+	
+		// 그룹 단위로 동작 유지
+		$groups.find('.ag_group_wrap').each(function () {
+			const $groupWrap = $(this);
+			const $allCheck = $groupWrap.find('.agw_all');
+	
+			// 그룹 전체 라디오 제어
+			$allCheck.on('change', function () {
+				const isChecked = $(this).is(':checked');
+				$groupWrap.find('.agr_dept1.ag').prop('checked', isChecked);
+				$groupWrap.find('.agr_dept1.noag').prop('checked', !isChecked);
+				$groupWrap.find('.ags_sub_all, .ags_sub_chk').prop('checked', isChecked).prop('disabled', !isChecked);
+	
+				updateTotalCheckState(); // 상위 전체동의 상태도 반영
+			});
+	
+			// 하위 전체 체크 제어
+			$groupWrap.on('change', '.ags_sub_all', function () {
+				const isChecked = $(this).is(':checked');
+				const $agrdoGroupSub = $(this).closest('.agrdo_group_sub');
+	
+				$agrdoGroupSub.find('.ags_sub_chk').prop('checked', isChecked);
+	
+				if (isChecked) {
+					$agrdoGroupSub.prev('.agrdo_group').find('.agr_dept1.ag').prop('checked', true);
+				}
+			});
+	
+			// 개별 체크 -> 전체 체크 상태 반영
+			$groupWrap.on('change', '.ags_sub_chk', function () {
+				const $agrdoGroupSub = $(this).closest('.agrdo_group_sub');
+				const allSubChk = $agrdoGroupSub.find('.ags_sub_chk');
+				const isAllSubChecked = allSubChk.length === allSubChk.filter(':checked').length;
+	
+				$agrdoGroupSub.find('.ags_sub_all').prop('checked', isAllSubChecked);
+	
+				if (isAllSubChecked) {
+					$agrdoGroupSub.prev('.agrdo_group').find('.agr_dept1.ag').prop('checked', true);
+				}
+			});
+	
+			// 라디오 변경 -> 하위 체크박스 제어
+			$groupWrap.on('change', '.agr_dept1', function () {
+				const $this = $(this);
+				const $agrdoGroup = $this.closest('.agrdo_group');
+				const $subGroup = $agrdoGroup.next('.agrdo_group_sub');
+	
+				if ($subGroup.length) {
+					if ($this.hasClass('noag') && $this.is(':checked')) {
+						$subGroup.find('input[type="checkbox"]').prop('checked', false).prop('disabled', true);
+					} else if ($this.hasClass('ag') && $this.is(':checked')) {
+						$subGroup.find('input[type="checkbox"]').prop('disabled', false).prop('checked', true);
+					}
+				}
+	
+				updateGroupCheckState();
+				updateTotalCheckState(); // 그룹 갱신 시 전체도 갱신
+			});
+	
+			// 그룹 단위 전체 동의 상태 갱신
+			function updateGroupCheckState() {
+				const totalAgr = $groupWrap.find('.agr_dept1.ag');
+				const totalNoAgr = $groupWrap.find('.agr_dept1.noag');
+	
+				let isAllAgreed = true;
+	
+				totalAgr.each(function () {
+					if (!$(this).is(':checked')) {
+						isAllAgreed = false;
+						return false;
+					}
+				});
+	
+				totalNoAgr.each(function () {
+					if ($(this).is(':checked')) {
+						isAllAgreed = false;
+						return false;
+					}
+				});
+	
+				$groupWrap.find('.agw_all').prop('checked', isAllAgreed);
+			}
+		});
+	
+		// 상위 전체 동의 체크 상태 갱신
+		function updateTotalCheckState() {
+			const allGroups = $groups.find('.ag_group_wrap');
+			const agreedGroups = allGroups.filter(function () {
+				const ag = $(this).find('.agr_dept1.ag');
+				const noag = $(this).find('.agr_dept1.noag');
+	
+				let isAgreed = true;
+	
+				ag.each(function () {
+					if (!$(this).is(':checked')) {
+						isAgreed = false;
+						return false;
+					}
+				});
+				noag.each(function () {
+					if ($(this).is(':checked')) {
+						isAgreed = false;
+						return false;
+					}
+				});
+				return isAgreed;
+			});
+	
+			const isAllAgreed = allGroups.length === agreedGroups.length;
+			$totalCheck.prop('checked', isAllAgreed);
+		}
+	});
+	
+
+
+
+
+
 });
+	
 
 
 $(window).resize(function(){
