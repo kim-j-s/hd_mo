@@ -6,402 +6,489 @@
 {{#> popup/popup_full popup-id="pop_full" popup-active=true }}
 	<div class="popup_cont">
 		<div class="popup_content">
-			<div class="info_gray pop_top">
-				<dl>
-					<dt>다이렉트보험료</dt>
-					<dd>876,543원</dd>
-				</dl>
-				<dl>
-					<dt>선택한 담보 0개</dt>
-					<dd class="point">0원</dd>
-				</dl>
+			<div class="pop_top">
+				<div class="info_gray">
+					<dl>
+						<dt>다이렉트보험료</dt>
+						<dd>876,543원</dd>
+					</dl>
+					<dl>
+						<dt>선택한 담보 0개</dt>
+						<dd class="point">0원</dd>
+					</dl>
+				</div>
 			</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+			<h2 class="pop_title_h1">부가담보</h2>
+			<div class="btn_area basic">
+				{{> cp/button type="3" size="5" b-text="부가담보 선택이 어려워 추천이 필요하다면?" btn-title="부가담보 추천 팝업 열기" rightIcon="arrowRightSvg" }}
+			</div>
 			<div class="tab_wrap">
-				<div class="tab_wrap_list_ty1" role="tablist">
-					{{>cp/tab_btn tb-text="추천" tb-id="contract01" tb-active=true}}
-					{{>cp/tab_btn tb-text="자기신체" tb-id="contract02"}}
-					{{>cp/tab_btn tb-text="자기차량" tb-id="contract03"}}
+				<div class="tab_wrap_list_ty1 tip_box" role="tablist">
+					{{>cp/tab_btn tb-text="추천" tb-id="contract01"}}
+					{{>cp/tab_btn tb-text="자기신체" tb-id="contract02" tb-active=true}}
+					{{>cp/tab_btn tb-text="자기차량 
+					<span class='tip_item top'>
+						<span class='tip_item_cont'>
+							새 차라면 신차전용손해담보를 가입해보세요.
+						</span>
+					</span>" tb-id="contract03"}}
 					{{>cp/tab_btn tb-text="보장확대" tb-id="contract04"}}
 				</div>
-				<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanelcontract01">
+				
+				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanelcontract01">
+					<h3 class="pop_title_h2">현대해상 다이렉트 고객이 많이 가입한 담보</h3>
 					<ul class="special_contract_list">
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-1" labelname="상해간병비&middot;사망담보 특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>15,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-1" labelname="상해간병비&middot;사망담보 특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type01" question_tit="상해간병비&middot;사망담보 특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>15,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type01" question_tit="상해간병비&middot;사망담보 특약" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-2" labelname="자녀사고피해지원특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-2" labelname="자녀사고피해지원특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type02" question_tit="자녀사고피해지원특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type02" question_tit="자녀사고피해지원특약" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-3" labelname="음주&middot;무면허&middot;뺑소니사고 등 피해지원특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-3" labelname="음주&middot;무면허&middot;뺑소니사고 등 피해지원특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type03" question_tit="음주,무면허,뺑소니사고 등 피해지원특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type03" question_tit="음주,무면허,뺑소니사고 등 피해지원특약" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-4" labelname="상급병실&middot;성형&middot;치아보철지원특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>15,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-4" labelname="상급병실&middot;성형&middot;치아보철지원특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type04" question_tit="상급병실,성형,치아보철지원특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>15,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type04" question_tit="상급병실,성형,치아보철지원특약" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement02-5" labelname="법률지원특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement02-5" labelname="법률지원특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type05" question_tit="법률지원특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type05" question_tit="법률지원특약" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-11" labelname="전기자동차 배터리 신품가액보상 특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-11" labelname="전기자동차 배터리 신품가액보상 특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type11" question_tit="전기자동차 배터리 신품가액보상 특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type11" question_tit="전기자동차 배터리 신품가액보상 특약" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-12" labelname="전기자동차 초과수리비용 지원특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-12" labelname="전기자동차 초과수리비용 지원특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type12" question_tit="전기자동차 초과수리비용 지원특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type12" question_tit="전기자동차 초과수리비용 지원특약" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement02-23" labelname="전기자동차 충전 중 위험보장 특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement02-23" labelname="전기자동차 충전 중 위험보장 특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type23" question_tit="전기자동차 충전 중 위험보장 특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type23" question_tit="전기자동차 충전 중 위험보장 특약" }}
+								</div>
 							</div>
 						</li>
 					</ul>
 				</div>
-				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanelcontract02">
+				<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanelcontract02">
+					<h3 class="pop_title_h2">나와 내 가족에 대한 보장을 확대하는 특약</h3>
 					<ul class="special_contract_list">
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-6" labelname="반려동물 사고 지원금 특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-6" labelname="반려동물 사고 지원금 특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type06" question_tit="반려동물 사고 지원금 특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type06" question_tit="반려동물 사고 지원금 특약" }}
+								</div>
+							</div>
+							<div class="btn_add">
+								{{> cp/button type="3" size="5" b-text="추가정보" btn-title="추가정보입력 팝업 열기" rightIcon="plusSvg" }}
+							</div>
+							<div class="info_gray">
+								<p>실속형</p>
+								<ul class="list_depth_ty2">
+									<li>바둑이 123456789012345</li>
+									<li>냐옹이 123456789054321</li>
+								</ul>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement02-4" labelname="상급병실&middot;성형&middot;치아보철지원특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box disabled">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement02-4" labelname="상급병실&middot;성형&middot;치아보철지원특약" disabled=true }}
 								</div>
-								{{> cp/button_question pop_id="pop_type04" question_tit="상급병실,성형,치아보철지원특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type04" question_tit="상급병실,성형,치아보철지원특약" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement02-1" labelname="상해간병비&middot;사망담보 특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement02-1" labelname="상해간병비&middot;사망담보 특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type01" question_tit="상해간병비&middot;사망담보 특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type01" question_tit="상해간병비&middot;사망담보 특약" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement02-3" labelname="음주&middot;무면허&middot;뺑소니사고 등 피해지원특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement02-3" labelname="음주&middot;무면허&middot;뺑소니사고 등 피해지원특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type03" question_tit="음주,무면허,뺑소니사고 등 피해지원특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type03" question_tit="음주,무면허,뺑소니사고 등 피해지원특약" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement02-2" labelname="자녀사고피해지원특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement02-2" labelname="자녀사고피해지원특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type02" question_tit="자녀사고피해지원특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type02" question_tit="자녀사고피해지원특약" }}
+								</div>
 							</div>
 						</li>
 					</ul>
 				</div>
 				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanelcontract03">
+					<h3 class="pop_title_h2">내 차에 대한 보장을 확대하는 특약</h3>
 					<ul class="special_contract_list">
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-7" labelname="교통약자용품지원특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-7" labelname="교통약자용품지원특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type07" question_tit="교통약자용품지원특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type07" question_tit="교통약자용품지원특약" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-8" labelname="렌트비용지원특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-8" labelname="렌트비용지원특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type08" question_tit="렌트비용지원특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type08" question_tit="렌트비용지원특약" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-9" labelname="신차손해담보" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-9" labelname="신차손해담보" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type09" question_tit="신차손해담보" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type09" question_tit="신차손해담보" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-10" labelname="자기차량손해 보장 확대" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-10" labelname="자기차량손해 보장 확대" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type10" question_tit="자기차량손해 보장 확대" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type10" question_tit="자기차량손해 보장 확대" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement02-11" labelname="전기자동차 배터리 신품가액보상 특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement02-11" labelname="전기자동차 배터리 신품가액보상 특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type11" question_tit="전기자동차 배터리 신품가액보상 특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type11" question_tit="전기자동차 배터리 신품가액보상 특약" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement02-12" labelname="전기자동차 초과수리비용 지원특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement02-12" labelname="전기자동차 초과수리비용 지원특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type12" question_tit="전기자동차 초과수리비용 지원특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type12" question_tit="전기자동차 초과수리비용 지원특약" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-13" labelname="전손 시 대체차량 등록비용담보" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-13" labelname="전손 시 대체차량 등록비용담보" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type13" question_tit="전손 시 대체차량 등록비용담보" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type13" question_tit="전손 시 대체차량 등록비용담보" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-14" labelname="차량운반비용담보" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-14" labelname="차량운반비용담보" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type14" question_tit="차량운반비용담보" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type14" question_tit="차량운반비용담보" }}
+								</div>
 							</div>
 						</li>
 					</ul>
 				</div>
 				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab04" id="tabPanelcontract04">
+					<h3 class="pop_title_h2">보장을 확대하는 특약</h3>
 					<ul class="special_contract_list">
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-15" labelname="대물배상가입금액확장담보특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-15" labelname="대물배상가입금액확장담보특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type15" question_tit="대물배상가입금액확장담보특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type15" question_tit="대물배상가입금액확장담보특약" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-5" labelname="법률지원특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-5" labelname="법률지원특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type05" question_tit="법률지원특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type05" question_tit="법률지원특약" }}
+								</div>
+							</div>
+							<div class="btn_add">
+								{{> cp/button type="3" size="5" b-text="추가정보" btn-title="추가정보입력 팝업 열기" rightIcon="plusSvg" }}
+							</div>
+							<div class="info_gray">
+								<p>기본형</p>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-16" labelname="벌금비용제외특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-16" labelname="벌금비용제외특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type16" question_tit="벌금비용제외특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type16" question_tit="벌금비용제외특약" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-17" labelname="변호사선임비용제외특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-17" labelname="변호사선임비용제외특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type17" question_tit="변호사선임비용제외특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type17" question_tit="변호사선임비용제외특약" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-18" labelname="견인 서비스 확장 추가특약 I" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-18" labelname="견인 서비스 확장 추가특약 I" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type18" question_tit="견인 서비스 확장 추가특약 I" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type18" question_tit="견인 서비스 확장 추가특약 I" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-19" labelname="다른 자동차 운전담보" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-19" labelname="다른 자동차 운전담보" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type19" question_tit="다른 자동차 운전담보" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type19" question_tit="다른 자동차 운전담보" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-20" labelname="대리운전자위험담보" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-20" labelname="대리운전자위험담보" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type20" question_tit="대리운전자위험담보" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type20" question_tit="대리운전자위험담보" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-21" labelname="보험대차운전중사고보상특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-21" labelname="보험대차운전중사고보상특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type21" question_tit="보험대차운전중사고보상특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type21" question_tit="보험대차운전중사고보상특약" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-22" labelname="유상운송위험담보특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-22" labelname="유상운송위험담보특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type22" question_tit="유상운송위험담보특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type22" question_tit="유상운송위험담보특약" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-23" labelname="전기자동차 충전 중 위험보장 특약" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-23" labelname="전기자동차 충전 중 위험보장 특약" }}
 								</div>
-								{{> cp/button_question pop_id="pop_type23" question_tit="전기자동차 충전 중 위험보장 특약" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="pop_type23" question_tit="전기자동차 충전 중 위험보장 특약" }}
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="check_box">
-								{{> cp/checkbox id="agreement01-24" labelname="분할납부" }}
-							</div>
-							<div class="money_box">
-								<div class="money">
-									<span>5,100</span>원
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/checkbox id="agreement01-24" labelname="분할납부" }}
 								</div>
-								{{> cp/button_question pop_id="" question_tit="분할납부" }}
+								<div class="money_box">
+									<div class="money">
+										<span>5,100</span>원
+									</div>
+									{{> cp/button_question pop_id="" question_tit="분할납부" }}
+								</div>
+							</div>
+							<div class="btn_add">
+								{{> cp/button type="3" size="5" b-text="추가정보" btn-title="추가정보입력 팝업 열기" rightIcon="plusSvg" }}
+							</div>
+							<div class="info_gray">
+								<p>기본형</p>
 							</div>
 						</li>
 					</ul>
@@ -409,6 +496,13 @@
 			</div>
 		</div>
 	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="확인"}}
+		</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
 {{/ popup/popup_full}}
 	 <!-- e: Full 팝업 -->
     	<!-- s: 상해간병비,사망담보 특약 Bottom 팝업 -->
