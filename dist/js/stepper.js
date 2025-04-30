@@ -7,7 +7,7 @@
 		let allStep = stepperInit(StepNum);
 
 		// 선택 이벤트
-		selectEvent();
+		//selectEvent();
 
 		// keypad 이벤트
 		keypadEnter();
@@ -173,7 +173,8 @@ function stepIng(num, allStep) {
 
 // 입력 값 저장 변수
 let birthInput = "";
-function keypadEnter() {
+// function keypadEnter(aaaa) {
+function keypadEnter(aaaa) {
 	let selectedIdx = null;
 
 	$(".keypad_btn").on("click", function () {
@@ -211,6 +212,11 @@ function keypadEnter() {
 		} else {
 			trgEle.removeClass("active");
 		}
+
+		// aaaa(num, alln, keypadEl)
+		// num = 현재 받고 있는 값, del 및 전체삭제 포함
+		// alln = 최종 = birthInput
+		// keypadEl = $(this).closest('.bi_keypad');
 
 		// if(getLng === 8) {
 		if (getLng === 8) {
