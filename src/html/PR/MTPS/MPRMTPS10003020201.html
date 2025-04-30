@@ -37,6 +37,58 @@
 				문자로 링크 받기 내용
 			</div>
 			<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
+				<!-- s: 25-04-30 수정 -->
+				<h3 class="title_h4">번호판 사진</h3>
+				<div class="file_upload_wrap_ty2">
+					<p class="text_sub">ECO 마일리지 특약 정산을 위한 사진을 등록해 주세요.</p>
+					<!-- s: 이미지 파일 붙는 영역 -->
+					<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+					<div class="file_attach_box">
+						<div class="file_thumbnail">
+							<img src="../../../images/common/img_file_shot.png" alt="등록 전 상태 이미지">
+						</div>
+					</div>
+					
+					<!-- 등록 후 이미지 (등록 전/후 따라 alt값 변경 필요) --> 
+					<!-- <div class="file_attach_box">
+						<div class="file_thumbnail">
+							<img src="../../../images/temp/img_carmera_temp.png" alt="등록된 계기판 이미지">
+						</div>
+						<button type="button" class="btn_file_delete">
+							<span>등록한 이미지 삭제하기</span>
+						</button>
+					</div> -->
+					<!-- e: 이미지 파일 붙는 영역 -->
+				
+					<!-- s: 이미지 파일 버튼 -->
+					<div class="btn_area center">
+						<div class="file_btn">
+							<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png">
+							<label for="file">
+								<span class="hd_btn hd_btn_ty_3 hd_btn_s_2">
+									<i class="hd_icon carmeraSvg2"></i>
+									사진 등록
+								</span>
+							</label>
+						</div>
+						<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_2">
+							<i class="hd_icon carmeraSvg"></i>
+							<span class="text">사진 촬영</span>
+						</button>
+					</div>
+					<!-- e: 이미지 파일 버튼 -->
+					
+					<div class="btn_area">
+					{{> cp/button type="2" size="2" b-text="사진 전송하기" disabled=true }}
+					</div>
+				
+					<ul class="list_ty2">
+						<li>사진촬영 기준일과 계기판의 최종 주행거리를 입력해주세요.</li>
+						<li>운행거리 증빙을 위한 계기판 사진은 ODO(총 운행거리 사진)만 인정되며 리셋된 트립 사진은 인정되지 않습니다.</li>
+						<li>최종 주행거리는 전산판독 시 활용되므로 계기판과 동일하게 입력해 주세요.</li>
+					</ul>
+				</div>
+
 				<h3 class="title_h4">계기판 사진</h3>
 				<div class="file_upload_wrap_ty2">
 					<p class="text_sub">ECO 마일리지 특약 정산을 위한 사진을 등록해 주세요.</p>
@@ -155,6 +207,7 @@
 					<!-- e: 조회 실패 Case -->
 				</div>
 				<!-- e: OCR 판독결과 -->
+				<!-- e: 25-04-30 수정 -->
 			</div>
 		</div>
 
