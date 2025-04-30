@@ -343,14 +343,27 @@ ul + .form_group_wrap {
 }
 
 
-
+.info_gray {
+    &.pop_top {
+        position: sticky;
+        top: 0;
+        dl {
+            dd {
+                font-weight: 700;
+            }
+        }
+    }
+}
 /* 특약리스트 */
 .special_contract_list {
+    border-top: 1px solid var(--color-divider-gray-light);
     li {
+        padding: 16px 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 8px;
+        border-bottom: 1px solid var(--color-divider-gray-light);
         .check_box {
             display: flex;
             align-items: center;
@@ -368,9 +381,6 @@ ul + .form_group_wrap {
                 line-height: 24px;
                 font-weight: 700;
             }
-        }
-        & + li {
-            margin-top: 20px;
         }
     }
 }
