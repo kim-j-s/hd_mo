@@ -99,6 +99,9 @@
 		& ~ li {
 			margin-top: 8px;
 		}
+		> .list_ty5 {
+			margin-top: 4px;
+		}
 	}
 
 	+ .table_wrap {
@@ -465,6 +468,15 @@
 				height: 3px;
 				border-radius: 50%;
 			}
+			&.st_none {
+				padding-left: 0;
+				&::before {
+					display: none;
+				}
+				ul {
+					margin: 12px 0 0 8px;
+				}
+			}
 			& ~ li {
 				margin-top: 12px;
 			}
@@ -554,9 +566,8 @@
 	}
 
 	& > li {		
-    margin: 0;
-    font-size: var(--font-size-body-small);
-
+		margin: 0;
+		font-size: var(--font-size-body-small);
 		&::before {
 			background-color: none;
 			content: '-';

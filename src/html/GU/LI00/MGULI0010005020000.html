@@ -1,30 +1,19 @@
 {{#> layout/default page-title="카카오페이 인증확인"}}
 
+<!-- s: 25-04-30 수정 -->
 <!-- s: Full 팝업 -->
-{{#> popup/popup_full popup-id="pop_type01" popup-active=true }}
+{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true }}
 <div class="popup_cont">
 	<div class="popup_content">
-		<div class="process_info_area">			
-			<h2 class="process_title kakao_case">
-				<strong>카카오톡으로<br> 인증을 요청했어요.</strong>
-			</h2>
-			<div class="process_desc">
-				카카오톡에서 인증 완료 후<br>
-				현재 화면으로 돌아와<br>
-				인증을 완료해 주세요.
-			</div>
-		</div>
+		<p class="pl_msg_top normal pl_ico_ty_case1">
+			<strong>010-1234-5678</strong>로<br>
+			카카오톡으로 인증을 요청했어요
+		</p>
+		<p class="pl_txt2">
+			카카오톡에서 인증 완료 후<br>
+			현재 화면으로 돌아와 인증을 완료해 주세요.
+		</p>
 
-		<div class="info_gray">
-			<ul class="list_depth">
-				<li>입력한 번호 : 010-1234-1234</li>
-			</ul>
-		</div>
-
-
-		<div class="btn_area center">
-			{{> cp/linkButton bl_class="short_cut" bl_text="다른 인증방식 선택" pop_id="pop_type02" }}
-		</div>
 
 
 		<!-- // popup_content -->
@@ -35,8 +24,10 @@
 <div class="popup_bottom">
 	<div class="btn_area">{{> cp/button type="1" size="1" b-text="인증 완료했어요"}}</div>
 </div>
-{{/ popup/popup_full}}
+{{/ popup/popup_bottom}}
 <!-- e: Full 팝업 -->
+<!-- e: 25-04-30 수정 -->
+
 
 <!-- s: 다른 인증방식 선택 -->
 {{#> popup/popup_bottom popup-id="pop_type02" popup-title="인증방법을 선택해 주세요."}}
