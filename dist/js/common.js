@@ -65,7 +65,9 @@
 	});
 
 	/* tag_item click */
-	$DOM.on("click", ".tag_item_wrap .tag_item", function () {});
+	$DOM.on("click", ".tag_item_wrap .tag_item", function () {
+		const $click = $(this);
+	});
 
 	/* Tooltip */
 	$DOM.on("click", ".tooltip_wrap button", function () {

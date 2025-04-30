@@ -39,6 +39,10 @@
 		&.card_item_wrap {
 			margin-top: 52px;
 		}
+
+		&.title_h3 {
+			margin-top: 52px;
+		}
 	}
 	
 	.card_item {
@@ -63,7 +67,7 @@
 			align-items: flex-start;
 			> .inp_checkbox,
 			> .inp_radio {
-				margin-top: 3px;
+				// margin-top: 3px;
 			}
 			.inner_cont {
 				flex: 1;
@@ -294,15 +298,15 @@
 			> li {
 				> * {
 					&:first-child {
-						flex: 1 1 0;
-						// min-width: 100px;
+						flex: none;
+						// flex: 1 1 0;
+						min-width: 100px;
 						max-width: 50%;
 						color: var(--color-text-subtle);
 					}
 					&:last-child {
 						text-align: right;
 						color: #000;
-
 					}
 				}
 
@@ -315,6 +319,13 @@
 					.point {
 						// font-size: 16px;
 						// line-height: 24px;
+						font-size: var(--font-size-body-large);
+					}
+				}
+
+				.price {
+					max-width: none;
+					strong {
 						font-size: var(--font-size-body-large);
 					}
 				}

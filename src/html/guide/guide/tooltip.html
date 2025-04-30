@@ -1,4 +1,5 @@
 {{#> layout/guide }}
+
 	<div class="guide_h1">Tooltip</div>
 	<div class="guide_h4">Defalut (Bottom)</div>
 
@@ -88,6 +89,37 @@
 			<p class="tooltip_desc">특정한 용도에 사용되는 자동차로서 이동진료차, 이동도서관차, 채혈차, 방송중계차, 혈액수송차, 검사측정차, 현금수송차, 방역차, 소독차, 이동우편차, 영화촬영차, 이동판매차, 충전차, 배전차, 발전차등 이와 유사한 형태로 사용되는 자동차 (단, 관련 장비가 차체에 부착된 경우에만 해당되며, 화물차에 장비를 싣고 다니는 경우에는 해당되지 않습니다.)</p>
 		{{/ cp/tooltip}}
 		교습용 차량입니까?{{#> cp/tooltip trigger-icon="popover_help" title="교습용 차량"}}<p class="tooltip_desc">차량이 인가된 자동차학원 또는 자동차학원 대표자가 소유하면서, 운전교습 및 도로주행교육 및 시험에 사용되는 자동차</p>{{/ cp/tooltip}}
+	</div>
+
+	<div class="guide_h4">말풍선 기본</div>
+	<div class="guide_box">
+		position: relative;
+		<span class='tip_item top'>
+			<span class='tip_item_cont'>
+				.tip_item { <br>
+					--tl: 100px; //풍선 위치<br>
+					.tip_item_cont { //화살표 위치<br>
+						&::after,
+						&::before {
+							left: calc(var(--tl) + 50%);
+						}<br>
+					}<br>
+				}
+			</span>
+		</span>
+		<span class='tip_item bottom'>
+			<span class='tip_item_cont'>
+				.tip_item { <br>
+					--tl: 100px; //풍선 위치<br>
+					.tip_item_cont { //화살표 위치<br>
+						&::after,
+						&::before {
+							left: calc(var(--tl) + 50%);
+						}<br>
+					}<br>
+				}
+			</span>
+		</span>
 	</div>
 
 {{/ layout/guide }}
