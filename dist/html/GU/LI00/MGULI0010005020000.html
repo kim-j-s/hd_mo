@@ -48,15 +48,20 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body>
+		<!-- s: 25-04-30 수정 -->
 		<!-- s: Full 팝업 -->
-		<div class="popup_wrap full active" id="pop_type01" role="dialog" aria-hidden="false">
+		<div class="popup_wrap bottom active" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="false">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
 				<div class="popup_inner">
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
 					<div class="popup_head"><div class="popup_head_title"></div></div>
+
 					<div class="popup_cont">
 						<div class="popup_content">
-							<div class="process_info_area">
+							<div class="process_info_area process_info_area_case02">
 								<h2 class="process_title kakao_case">
 									<strong>
 										카카오톡으로
@@ -79,7 +84,7 @@
 								</ul>
 							</div>
 
-							<div class="btn_area center">
+							<div class="btn_area center btn_area_space2">
 								<a href="javascript:void(0)" class="btn_link short_cut" role="button" onclick="openHDPopup(this,'pop_type02');">
 									<span class="text">다른 인증방식 선택</span>
 								</a>
@@ -101,6 +106,7 @@
 			</div>
 		</div>
 		<!-- e: Full 팝업 -->
+		<!-- e: 25-04-30 수정 -->
 
 		<!-- s: 다른 인증방식 선택 -->
 		<div class="popup_wrap bottom" id="pop_type02" role="dialog" aria-modal="true" aria-hidden="true">
