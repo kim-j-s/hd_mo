@@ -78,21 +78,48 @@
 
 
 
+.ag_groups {
+
+	.ag_groups_top {
+		padding: 20px;
+		border-radius: var(--radius-large2);
+		border: 1px solid var(--color-border-gray-light);
+		+ .ag_group_wrap {
+			margin-top: 16px;
+		}
+	}
+
+}
+
 .ag_group_wrap {
 	padding: 0 20px;
 	border-radius: var(--radius-large2);
 	border: 1px solid var(--color-border-gray-light);
+
+	& + .ag_group_wrap {
+		margin-top: 16px;
+	}
 
 	.ag_group_top {
 		padding: 24px 0;
 	}
 
 	.ag_group_cont {
-		padding: 24px 0 24px 16px;
+		// padding: 24px 0 24px 16px;
+		padding: 24px 0;
 		border-top: 1px solid var(--color-border-gray-light);
 
+		.info_gray {
+			&.agc_tig {
+				background-color: var(--color-input-surface-disabled);
+			}
+			+ .agc_item {
+				margin-top: 16px;
+			}
+		}
+
 		> .badge_wrap {
-			margin-left: -16px;
+			// margin-left: -16px;
 			margin-bottom: 4px;
 		}
 
@@ -109,7 +136,7 @@
 				position: relative;
 				display: flex;
 				font-size: var(--font-size-body-medium);
-				margin-left: -16px;
+				// margin-left: -16px;
 				padding-right: 70px;
 				.num {
 					flex: none;
@@ -151,6 +178,7 @@
 		// agc_item_cont
 		.agc_item_cont {
 			padding-top: 16px;
+			padding-left: 16px;
 		}
 
 		.aic_list {
@@ -207,7 +235,7 @@
 		// agc_item_sub_txt
 		.agc_item_sub_txt {
 			margin-top: 16px;
-			margin-left: -4px;
+			padding-left: 4px;
 			font-size: var(--font-size-body-small);
 			color: var(--color-text-subtle);
 		}
