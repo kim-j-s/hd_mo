@@ -708,3 +708,77 @@ strong {
 	}
 
 }
+
+
+.coverage_level_box {
+	margin-top: 4px;
+	
+	.level_list {
+		position: relative;
+		display: flex;
+		padding-top: 32px;
+		
+		&:before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background-color: var(--color-background-gray-subtle);
+		}
+		> li {
+			width: 25%;
+		}
+	}
+}
+
+
+
+.compare_rank_list {
+	& + .title_h3 {
+		margin-top: 52px;
+	}
+
+	> li {
+		.info_rank {
+			display: flex;
+			gap: 8px;
+
+			& + .info_bar {
+				margin-top: 4px;
+			}
+
+			.hd_badge {
+				flex: none;
+				width: 36px;
+			}
+			.desc {
+				font-size: var(--font-size-body-small);
+				line-height: 24px;
+				color: var(--color-text-subtle);
+			}
+		}
+		.info_bar {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+
+			.progress_bar {
+				flex: 1;
+			}
+			.percent {
+				flex: none;
+				width: 46px;
+
+				.hd_badge {
+					width: 100%;
+					text-align: center;
+				}
+			}
+		}
+		& + li {
+			padding-top: 12px;
+		}
+	}
+}
