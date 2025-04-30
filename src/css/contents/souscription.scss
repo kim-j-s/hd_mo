@@ -103,12 +103,17 @@ ul + .form_group_wrap {
         margin-top: 32px;
     }
 }
+.pop_title_h1 {
+    margin-bottom: 20px;
+    font-size: var(--font-size-heading-medium);
+    font-weight: 700;
+}
+.pop_title_h2 {
+    margin-bottom: 16px;
+    font-size: var(--font-size-heading-small);
+    font-weight: 700;
+}
 .info_cont {
-    .pop_title_h1 {
-        margin-bottom: 20px;
-        font-size: var(--font-size-heading-medium);
-        font-weight: 700;
-    }
     h2,
     .title_h2 {
         margin-bottom: 16px;
@@ -343,44 +348,79 @@ ul + .form_group_wrap {
 }
 
 
-.info_gray {
-    &.pop_top {
-        position: sticky;
-        top: 0;
+.pop_top {
+    // position: sticky;
+    // top: -16px;
+    // margin: -16px -24px 0;
+    // padding: 16px 24px 24px;
+    // background: #fff;
+    // z-index: 9999;
+    .info_gray {
         dl {
             dd {
                 font-weight: 700;
             }
         }
     }
+    & + .pop_title_h1 {
+        margin: 32px 0 12px;
+    }
+}
+.tab_wrap_list_ty1.tip_box {
+    position: relative;
+    margin-top: 32px;
+    .tip_item {
+        --tl: 0;
+        left: 40%;
+        bottom: calc(100% - 7px);
+        width: 250px;
+        transform: translateX(-50%);
+    }
+    .tip_item_cont {
+        padding: 4px 0;
+        &::after,
+        &::before {
+            left: 50%;
+        }
+    }
 }
 /* 특약리스트 */
 .special_contract_list {
     border-top: 1px solid var(--color-divider-gray-light);
-    li {
+    > li {
         padding: 16px 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 8px;
         border-bottom: 1px solid var(--color-divider-gray-light);
-        .check_box {
+        .check_flex_box {
             display: flex;
-            align-items: center;
+            justify-content: space-between;
             gap: 8px;
-        }
-        .money_box {
-            display: flex;
-            align-items: center;
-            min-width: 100px;
-            justify-content: end;
-            gap: 14px;
-            .money {
-                color: var(--color-text-primary);
-                font-size: var(--font-size-button-large);
-                line-height: 24px;
-                font-weight: 700;
+            .check_box {
+                display: flex;
+                align-items: center;
+                gap: 8px;
             }
+            .money_box {
+                display: flex;
+                min-width: 100px;
+                justify-content: end;
+                gap: 14px;
+                .money {
+                    color: var(--color-text-primary);
+                    font-size: var(--font-size-button-large);
+                    line-height: 24px;
+                    font-weight: 700;
+                }
+            }
+            &.disabled {
+                .money_box {
+                    .money {
+                        color: var(--color-text-disabled);
+                    }
+                }
+            }
+        }
+        .btn_add {
+            margin: 4px 0 16px 24px;
         }
     }
 }
