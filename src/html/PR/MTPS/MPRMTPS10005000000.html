@@ -14,10 +14,22 @@
 					</h2>
 				</div>
 				<!-- e: content_top -->
+				<h3 class="title_h1">
+					피보험자(자동차 소유자) 정보 선택
+				</h3>
+				<p>현재 가입하시려는 자동차에 대한 보험개발원 조회결과, 자동차 소유자 정보에 대한 확인이 필요합니다.</p>
 
-				<!-- s: 25-04-24 수정 -->
+				<div class="form_group_wrap">
+				<div class="radio_group_wrap column">
+					{{> cp/radio id="radio03-1" name="radio03_1" labelname="매매(명의이전 예정) - 신차, 중고차 구입 등" }}
+					{{> cp/radio id="radio03-2" name="radio03_1" labelname="공동명의" }}
+					{{> cp/radio id="radio03-3" name="radio03_2" labelname="리스 계약(피보험자=리스계약자)" }}
+					{{> cp/radio id="radio03-4" name="radio03_2" labelname="기타(그 외 사유 등) - 종교, 비영리법인 등" }}
+				</div>
+				<p>     </p>
+				</div>
 
-					<!-- s: 피보험자/계약자 동일 -->
+				<!-- s: 피보험자/계약자 동일 -->
 				<div class="form_box">
 					<h3 class="title_h3">피보험자/계약자 정보</h3>
 					<div class="info_gray">
@@ -74,9 +86,7 @@
 					<div class="checkbox_group_wrap column">
 						{{> cp/checkbox checkbox_class="rd_box question" id="checkbox01-13" label_class="chk_label_ty3" question="true" pop_id="pop_type03" labelname="자동차 계약에 <span class='point'>질권설정</span>(리스, 대출 등)이 필요한 경우 체크하세요.<br>통상적인 자동차보험 계약과는 무관합니다." }}
 					</div>
-				
-							{{> cp/button type="3" size="4" b-text="소득공제 및 기명피보험자 사망수익자 이정 안내" rightIcon="arrowRightSvg"}}
-						
+					{{> cp/button type="3" size="4" b-text="소득공제 및 기명피보험자 사망수익자 이정 안내" rightIcon="arrowRightSvg"}}
 				</div>
 				<!-- e: 피보험자/계약자 동일 -->
 				<!-- s: 피보험자 계피상이 -->
