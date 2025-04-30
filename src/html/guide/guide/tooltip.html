@@ -90,18 +90,33 @@
 		{{/ cp/tooltip}}
 		교습용 차량입니까?{{#> cp/tooltip trigger-icon="popover_help" title="교습용 차량"}}<p class="tooltip_desc">차량이 인가된 자동차학원 또는 자동차학원 대표자가 소유하면서, 운전교습 및 도로주행교육 및 시험에 사용되는 자동차</p>{{/ cp/tooltip}}
 	</div>
-
+	<div class="guide_h4">화살표 팝업</div>
+	<ul class="special_contract_list">
+		<li>
+			<div class="check_flex_box">
+				<div class="check_box">
+					{{> cp/checkbox id="agreement01-1" labelname="상해간병비&middot;사망담보 특약" }}
+				</div>
+				<div class="money_box">
+					<div class="money">
+						<span>15,100</span>원
+					</div>
+					{{> cp/button_question question-icon="arrow" pop_id="pop_type01" question_tit="상해간병비&middot;사망담보 특약" }}
+				</div>
+			</div>
+		</li>
+	</ul>
 	<div class="guide_h4">말풍선 기본</div>
 	<div class="guide_box">
 		position: relative;
 		<span class='tip_item top'>
 			<span class='tip_item_cont'>
 				.tip_item { <br>
-					--tl: 100px; //풍선 위치<br>
+					--tl: 40px; or left: 40px;//풍선 위치<br>
 					.tip_item_cont { //화살표 위치<br>
 						&::after,
 						&::before {
-							left: calc(var(--tl) + 50%);
+							left: calc(var(--tl) + 50%); or left: 50%;
 						}<br>
 					}<br>
 				}
@@ -110,11 +125,11 @@
 		<span class='tip_item bottom'>
 			<span class='tip_item_cont'>
 				.tip_item { <br>
-					--tl: 100px; //풍선 위치<br>
+					--tl: 40px; or left: 40px;//풍선 위치<br>
 					.tip_item_cont { //화살표 위치<br>
 						&::after,
 						&::before {
-							left: calc(var(--tl) + 50%);
+							left: calc(var(--tl) + 50%); or left: 50%;
 						}<br>
 					}<br>
 				}
