@@ -103,7 +103,7 @@
 						<div class="text dot_mod">
 							<span class="txt">고유식별정보</span>
 						</div>
-						<button type="button" class="btn_link short_cut" aria-label="고유식별정보 자세히 보기">자세히</button>
+						<button type="button" class="btn_link short_cut" aria-label="고유식별정보 자세히 보기" onclick="openHDPopup(this,'pop_type03');">자세히</button>
 					</div>
 					<div class="agc_item_cont">
 						<ul class="aic_list dot_none">
@@ -125,7 +125,7 @@
 						<div class="text dot_mod">
 							<span class="txt">통신사 이용약관</span>
 						</div>
-						<button type="button" class="btn_link short_cut" aria-label="통신사 이용약관 자세히 보기">자세히</button>
+						<button type="button" class="btn_link short_cut" aria-label="통신사 이용약관 자세히 보기" onclick="openHDPopup(this,'pop_type04');">자세히</button>
 					</div>
 					<div class="agc_item_cont">
 						<ul class="aic_list dot_none">
@@ -147,7 +147,7 @@
 						<div class="text dot_mod">
 							<span class="txt">서비스 이용약관</span>
 						</div>
-						<button type="button" class="btn_link short_cut" aria-label="서비스 이용약관 자세히 보기">자세히</button>
+						<button type="button" class="btn_link short_cut" aria-label="서비스 이용약관 자세히 보기" onclick="openHDPopup(this,'pop_type05');">자세히</button>
 					</div>
 					<div class="agc_item_cont">
 						<ul class="aic_list dot_none">
@@ -169,7 +169,7 @@
 						<div class="text dot_mod">
 							<span class="txt">개인정보 제3자 제공 동의</span>
 						</div>
-						<button type="button" class="btn_link short_cut" aria-label="개인정보 제3자 제공 동의 자세히 보기">자세히</button>
+						<button type="button" class="btn_link short_cut" aria-label="개인정보 제3자 제공 동의 자세히 보기" onclick="openHDPopup(this,'pop_type06');">자세히</button>
 					</div>
 					<div class="agc_item_cont">
 						<ul class="aic_list dot_none">
@@ -202,17 +202,69 @@
 {{/ popup/popup_full}}
 <!-- e: Full 팝업 -->
 
-<!-- s: 다른 인증방식 선택 -->
+<!-- s: 휴대폰 인증 약관 동의 외부 링크 - 개인(신용)정보 -->
 {{#> popup/popup_bottom popup-id="pop_type02" popup-title="확인하실 약관을 선택해 주세요."}}
 <div class="popup_cont">
 	<div class="popup_content">
 		<div class="opt_select_list opt_case2">
-			<a href="#" target="_blank" class="option"><span class="text">SCI평가정보</span></a>
-			<a href="#" target="_blank" class="option"><span class="text">NICE평가정보</span></a>
+			<a href="https://pcc.siren24.com/pcc_V3/agree_privacy.html" target="_blank" class="option"><span class="text">SCI평가정보</span></a>
+			<a href="https://cert.vno.co.kr/app/agree/agree_m_01.jsp" target="_blank" class="option"><span class="text">NICE평가정보</span></a>
 		</div>
 	</div>
 </div>
 {{/ popup/popup_bottom}}
-<!-- e: 다른 인증방식 선택 -->
+<!-- e: 휴대폰 인증 약관 동의 외부 링크 - 개인(신용)정보 -->
+
+<!-- s: 휴대폰 인증 약관 동의 외부 링크 - 고유식별정보 -->
+{{#> popup/popup_bottom popup-id="pop_type03" popup-title="확인하실 약관을 선택해 주세요."}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="opt_select_list opt_case2">
+			<a href="https://pcc.siren24.com/pcc_V3/agree_privacy.html" target="_blank" class="option"><span class="text">SCI평가정보</span></a>
+			<a href="https://cert.vno.co.kr/app/agree/agree_m_02.jsp" target="_blank" class="option"><span class="text">NICE평가정보</span></a>
+		</div>
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 휴대폰 인증 약관 동의 외부 링크 - 고유식별정보 -->
+
+<!-- s: 휴대폰 인증 약관 동의 외부 링크 - 통시사 이용약관 -->
+{{#> popup/popup_bottom popup-id="pop_type04" popup-title="확인하실 약관을 선택해 주세요."}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="opt_select_list opt_case2">
+			<a href="https://pcc.siren24.com/pcc_V3/agree_privacy.html" target="_blank" class="option"><span class="text">SCI평가정보</span></a>
+			<a href="https://cert.vno.co.kr/app/agree/agree_m_03.jsp" target="_blank" class="option"><span class="text">NICE평가정보</span></a>
+		</div>
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 휴대폰 인증 약관 동의 외부 링크 - 통시사 이용약관 -->
+
+<!-- s: 휴대폰 인증 약관 동의 외부 링크 - 서비스 이용약관 -->
+{{#> popup/popup_bottom popup-id="pop_type05" popup-title="확인하실 약관을 선택해 주세요."}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="opt_select_list opt_case2">
+			<a href="https://pcc.siren24.com/pcc_V3/agree_privacy.html" target="_blank" class="option"><span class="text">SCI평가정보</span></a>
+			<a href="https://cert.vno.co.kr/app/agree/agree_m_04.jsp" target="_blank" class="option"><span class="text">NICE평가정보</span></a>
+		</div>
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 휴대폰 인증 약관 동의 외부 링크 - 서비스 이용약관 -->
+
+<!-- s: 휴대폰 인증 약관 동의 외부 링크 - 개인정보 제3자 제공 동의 -->
+{{#> popup/popup_bottom popup-id="pop_type06" popup-title="확인하실 약관을 선택해 주세요."}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="opt_select_list opt_case2">
+			<a href="https://pcc.siren24.com/pcc_V3/agree_privacy.html" target="_blank" class="option"><span class="text">SCI평가정보</span></a>
+			<a href="https://cert.vno.co.kr/app/agree/agree_m_05.jsp" target="_blank" class="option"><span class="text">NICE평가정보</span></a>
+		</div>
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 휴대폰 인증 약관 동의 외부 링크 - 개인정보 제3자 제공 동의 -->
 
 {{/ layout/default }}
