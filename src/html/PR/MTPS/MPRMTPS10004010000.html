@@ -23,14 +23,12 @@
 					<i></i>
 				</div>
 				<div class="inner_cont">
-					<div role="button" class="card_link" tabindex="0">
-						<div class="item_top" id="card_chk1_1_cont">
-							<div class="title_info">
-								<div class="main_title">대물배상 2억 → <span class="point">5억</span></div>
-							</div>
-							<div class="desc">
-								최근에는 자동차가 고급화되고 외제차가 늘어나면서 <strong>5억원 이상</strong> 가입하는 분이 <strong>73%</strong>를 넘고 있습니다.
-							</div>
+					<div class="item_top" id="card_chk1_1_cont">
+						<div class="title_info">
+							<div class="main_title">대물배상 2억 → <span class="point">5억</span></div>
+						</div>
+						<div class="desc">
+							최근에는 자동차가 고급화되고 외제차가 늘어나면서 <strong>5억원 이상</strong> 가입하는 분이 <strong>73%</strong>에 달해요.
 						</div>
 					</div>
 
@@ -42,15 +40,65 @@
 							</div>
 						</li>
 					</ul>
-
-					<div class="add_status_box">
-
+					<div class="progress_bar_ty3">
+						<div class="progress_bar_per_cover">
+							<!-- s: 필요한 보장에 맞는 aria-label값 적용필요 -->
+							<div class="per_bar" role="img" tabindex="0" aria-label="대물배상 가입 통계">
+							<!-- e: 필요한 보장에 맞는 aria-label값 적용필요 -->
+								<span class="per_bar_dp dp_ty1" style="width:73%;"></span>
+								<span class="per_bar_dp dp_ty2" style="width:27%;"></span>
+							</div>
+							<div class="progress_bar_bottom">
+								<span class="pbb_left">5억 이상 가입률 <strong class="point">73%</strong></span>
+								<span class="pbb_right">5억 미만 가입률 <strong>27%</strong></span>
+							</div>
+							<div class="progress_bar_title">&lt;2023년 현대해상 가입 통계&gt;</div>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="btn_area">
-				{{> cp/button type="3" size="2" b-text="취소" }}
-				{{> cp/button type="1" size="2" b-text="확인" }}
+		</div>
+		<div class="card_item">
+			<div class="item_inner">
+				<div class="inp_checkbox">
+					<input type="checkbox" id="card_chk1_2" name="name1" aria-labelledby="card_chk1_2_cont">
+					<label for="card_chk1_2" class="chk_label"></label>
+					<i></i>
+				</div>
+				<div class="inner_cont">
+					<div class="item_top" id="card_chk1_2_cont">
+						<div class="title_info">
+							<div class="main_title">자기신체사고 3천 → <br><span class="point">자동차상해 5억</span></div>
+						</div>
+						<div class="desc">
+							사고 발생 시 가입 한도내에서 상해급수에 따른 보상이 아닌 치료비 전액과 위자료/휴업손해까지 보장! 과실상계 없는 자동차상해 추천드려요!  
+						</div>
+					</div>
+
+					<ul class="card_list_ty1">
+						<li>
+							<div class="title">추가보험료</div>
+							<div class="cont">
+								<strong class="text_body_large">21,980원</strong>
+							</div>
+						</li>
+					</ul>
+					<div class="progress_bar_ty3">
+						<div class="progress_bar_per_cover">
+							<!-- s: 필요한 보장에 맞는 aria-label값 적용필요 -->
+							<div class="per_bar" role="img" tabindex="0" aria-label="자동차상해, 자기신체사고 가입 통계">
+							<!-- e: 필요한 보장에 맞는 aria-label값 적용필요 -->
+								<span class="per_bar_dp dp_ty1" style="width:81%;"></span>
+								<span class="per_bar_dp dp_ty2" style="width:19%;"></span>
+							</div>
+							<div class="progress_bar_bottom">
+								<span class="pbb_left">자동차상해 가입률 <strong class="point">81%</strong></span>
+								<span class="pbb_right">자기신체사고 가입률 <strong>19%</strong></span>
+							</div>
+							<div class="progress_bar_title">&lt;2023년 현대해상 가입 통계&gt;</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -175,6 +223,14 @@
 
 <!-- s: 하단 고정 버튼 영역 -->
 <div class="popup_bottom">
+	<div class="total_price_display_ty1">
+		<p class="price_label">선택한 담보 <span>0</span>개</p>
+		<p class="price_val">
+			<strong>
+				<span class="primary">0</span>원
+			</strong>
+		</p>
+	</div>
 	<div class="btn_area">
 		{{> cp/button type="3" size="1" b-text="기존 담보 유지"}}
 		{{> cp/button type="1" size="1" b-text="추천담보로 변경"}}

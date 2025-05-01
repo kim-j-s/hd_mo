@@ -1,22 +1,23 @@
 // icon
 
 .updown {
-	--trangle-width: 20px;
-	--trangle-height: 12px;
-	--increase: #ff0000;
-	--decrease: #0000ff;
+	--trangle-width: 14px;
+	--trangle-height: 10px;
+	--increase: var(--color-text-point);
+	--decrease: #052B57;
 	display: inline-flex;
 	width: var(--trangle-width);
 	font-size: 0;
 	line-height: 0;
-	border-bottom: var(--trangle-height) solid;
 	border-left: calc(var(--trangle-width) / 2) solid transparent;
 	border-right: calc(var(--trangle-width) / 2) solid transparent;
 	&.increase {
 		border-bottom-color: var(--increase);
+		border-bottom: var(--trangle-height) solid;
 	}
 	&.decrease {
-		border-bottom-color: var(--decrease);
+		border-top-color: var(--decrease);
+		border-top: var(--trangle-height) solid;
 	}
 }
 
@@ -67,6 +68,15 @@
 		}
 		.openWindowSvg {
 			@include getSvg("icon/icon-open-window");
+		}
+		.mailSvg {
+			@include getSvg("icon/mail");
+		}
+		.documentSvg {
+			@include getSvg("icon/document");
+		}
+		.pictureSvg {
+			@include getSvg("icon/picture");
 		}
 	}
 }

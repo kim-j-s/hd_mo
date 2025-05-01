@@ -1767,7 +1767,7 @@
 }
 .guarantee_item .short_cut {
 	position: absolute;
-	top: 2.6rem;
+	top: 2.3rem;
 	right: 2rem;
 	z-index: 1;
 	display: none;
@@ -1788,6 +1788,7 @@
 }
 .guarantee_item.active .short_cut {
 	display: block;
+	line-height: 2.4rem;
 }
 .guarantee_container {
 	position: relative;
@@ -2826,6 +2827,46 @@ ul + .form_group_wrap {
 	background-image: url(../images/login/icon_service_04.svg);
 }
 /* 회원탈퇴 */
+.zoom_control {
+	text-align: right;
+}
+.zoom_control > .inner {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 0.8rem;
+}
+.zoom_control > .inner > .text {
+	font-size: var(--font-size-label-medium);
+}
+.zoom_control > .inner .zoom_control_btns {
+	font-size: 0;
+	border-radius: var(--radius-medium1);
+	border: 1px solid var(--color-button-tertiary-border);
+}
+.zoom_control > .inner .zoom_control_btns .zcb {
+	width: 4rem;
+	height: 3.2rem;
+	font-size: 0;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: transparent;
+}
+.zoom_control > .inner .zoom_control_btns .zcb + .zcb {
+	border-left: 1px solid var(--color-button-tertiary-border);
+}
+.zoom_control > .inner .zoom_control_btns .zcb.z_up {
+	background-image: url(../images/icon/icon_plus.svg);
+}
+.zoom_control > .inner .zoom_control_btns .zcb.z_down {
+	background-image: url(../images/icon/icon_minus.svg);
+}
+.zoom_content {
+	margin-top: 3.2rem;
+}
 /* 이용안내 */
 /* 마이 */
 /* 배경색 있는 상단 컨텐츠 영역 */
@@ -3011,4 +3052,68 @@ ul + .form_group_wrap {
 .center_info .line1 + .list_ty5 {
 	margin-top: 0.8rem;
 }
+/* 이용방법 */
+.my_info_flow > li {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	gap: 0.8rem;
+	margin-bottom: 2.6rem;
+	padding: 2.4rem 2rem;
+	border-radius: var(--radius-large2);
+	background-color: var(--color-surface-secondary-subtler);
+}
+.my_info_flow > li::after {
+	content: "";
+	position: absolute;
+	bottom: -2.1rem;
+	left: 50%;
+	width: 1.6rem;
+	height: 1.6rem;
+	background: url(../images/icon/arrowDown_ty2.svg) no-repeat center center/1.6rem auto;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+.my_info_flow > li:last-child::after {
+	content: none;
+}
+.my_info_flow > li .num {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: 2.4rem;
+	height: 2.4rem;
+	font-weight: 700;
+	font-size: var(--font-size-body-xsmall);
+	color: var(--color-text-subtle);
+	border-radius: 50%;
+	border: 1px solid #6d7882;
+}
+.my_info_flow > li .cont {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 0px;
+	flex: 1 1 0;
+}
+.my_info_flow > li .cont .tit {
+	display: block;
+	font-size: var(--font-size-heading-xsmall);
+}
+.my_info_flow > li .cont .desc {
+	padding-top: 1.2rem;
+	font-size: var(--font-size-body-medium);
+}
+/* 이용방법 */
 /* 마이 */

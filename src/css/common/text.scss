@@ -9,6 +9,14 @@
 		font-weight: 400;
 	}
 
+	&.normal {
+		font-weight: 400;
+	}
+
+	&.center {
+		text-align: center;
+	}
+
 	& + .btn_area.basic,
 	& + .title_sub {
 		margin-top: 8px;
@@ -74,6 +82,30 @@
 	.msg_error {
 		margin-left: 8px;
 		font-weight: 400;
+	}
+
+	&.ico_ty {
+		padding-left: 40px;
+		background-repeat: no-repeat;
+		background-position: left top;
+		background-size: 32px auto;
+		&.ico_ty_c01 {
+			background-image: url(../images/icon/heading/icon_h_t1.svg);
+		}
+		&.ico_ty_c02 {
+			background-image: url(../images/icon/heading/icon_h_t2.svg);
+		}
+		&.ico_ty_c03 {
+			background-image: url(../images/icon/heading/icon_h_t3.svg);
+		}
+		&.ico_ty_c04 {
+			background-image: url(../images/icon/heading/icon_h_t4.svg);
+		}
+		&.ico_ty_c05 {
+			background-image: url(../images/icon/heading/icon_h_t5.svg);
+		}
+
+
 	}
 }
 
@@ -151,15 +183,17 @@
 	font-size: var(--font-size-body-medium);
 	line-height: 24px;
 	color: var(--color-text-basic);
+
+	& + & {
+		margin-top: 12px;
+	}
 	
 	& + * {
 		margin-top: 24px;
 	}
 
-	& + .text_sub {
-		margin-top: 12px;
-	}
-
+	& + .radio_group_wrap,
+	& + .inp_checkbox,
 	& + .file_attach_box,
 	& + .btn_area {
 		margin-top: 16px;

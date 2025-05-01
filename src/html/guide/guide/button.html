@@ -84,14 +84,42 @@
 
 
 	<!-- 아이콘 버튼 -->
-	<div class="guide_h4">icon 형태 Button - 스타일 미정의 상태 - 구조는 사용</div>
+	<div class="guide_h4">icon 형태 Button</div>
 	<div class="guide_discription">
 		<p>- leftIcon, rightIcon속성에 svg 경로를 넣은 클래스를 지정한다.</p>
 		<p>- icon.scss 파일 내부에 아이콘 에셋을 불러오는 클래스를 생성하여 사용</p>
 	</div>
 
 	<!-- [Type - Icon] -->
-	<div class="guide_discription">[button size=1, icon size=24]</div>
+	<div class="guide_discription">icon 위치 적용 예시</div>
+	<div class="btn_area">
+		{{#> cp/button type="1" size="1" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
+		{{#> cp/button type="1" size="1" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
+		{{#> cp/button type="1" size="1" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
+	</div>
+	
+	<div class="guide_discription">icon 타입별 케이스 - type1</div>
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" rightIcon="downloadSvg" b-text="downloadSvg"}}
+		{{> cp/button type="1" size="1" rightIcon="arrowRightSvg" b-text="arrowRightSvg"}}
+	</div>
+	<div class="guide_discription">icon 타입별 케이스 - type2</div>
+	<div class="btn_area">
+		{{> cp/button type="2" size="1" rightIcon="downloadSvg" b-text="downloadSvg"}}
+		{{> cp/button type="2" size="1" rightIcon="arrowRightSvg" b-text="arrowRightSvg"}}
+		{{> cp/button type="2" size="1" rightIcon="cameraSvg" b-text="cameraSvg"}}
+	</div>
+	<div class="guide_discription">icon 타입별 케이스 - type3</div>
+	<div class="btn_area">
+		{{> cp/button type="3" size="1" rightIcon="downloadSvg" b-text="downloadSvg"}}
+		{{> cp/button type="3" size="1" rightIcon="arrowRightSvg" b-text="arrowRightSvg"}}
+		{{> cp/button type="3" size="1" rightIcon="openWindowSvg" b-text="openWindowSvg"}}
+		{{> cp/button type="3" size="1" rightIcon="mailSvg" b-text="mailSvg"}}
+		{{> cp/button type="3" size="1" rightIcon="documentSvg" b-text="documentSvg"}}
+		{{> cp/button type="3" size="1" rightIcon="pictureSvg" b-text="pictureSvg"}}
+	</div>
+
+	<!-- <div class="guide_discription">[button size=1, icon size=24]</div>
 	<div class="btn_area">
 	{{#> cp/button type="1" size="1" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
 	{{#> cp/button type="1" size="1" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
@@ -199,7 +227,7 @@
 	{{#> cp/button type="1" size="5" disabled="true" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
 	{{#> cp/button type="1" size="5" disabled="true" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
 	{{#> cp/button type="1" size="5" disabled="true" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
-	</div>
+	</div> -->
 
 
 
@@ -246,7 +274,10 @@
 	{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" pop_id="pop_type01" question_tit="가입금액 변경" }}
 	<div class="guide_discription">.new_open</div>
 	{{> cp/linkButton bl_class="new_open sm" bl_text="우리 아이 동물번호 찾기" blank="true" href="http://www.animal.go.kr" }}
+	<br>
 	{{> cp/linkButton bl_class="new_open" bl_text="우리 아이 동물번호 찾기" pop_id="pop_type01" question_tit="링크" }}
+	<br>
+	{{> cp/linkButton bl_class="new_open new_open_rd_box" bl_text="우리 아이 동물번호 찾기" blank="true" href="http://www.animal.go.kr" }}
 	
 	<div class="guide_discription">.prev_btn</div>
 	{{> cp/linkButton bl_class="prev_btn" bl_text="기본링크" bl_title="페이지 이동" }}
@@ -346,6 +377,9 @@
 	<div class="btn_area column">
 		{{> cp/button type="1" size="3" b-text="버튼명"}}
 		{{> cp/button type="2" size="3" b-text="버튼명"}}
+		<button type="button" class="hd_btn normal">
+			<span class="text">나중에 등록</span>
+		</button>
 	</div>
 
 
