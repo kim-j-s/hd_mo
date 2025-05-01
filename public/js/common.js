@@ -872,6 +872,25 @@ $(function(){
 				updateGroupCheckState();
 				updateTotalCheckState(); // 그룹 갱신 시 전체도 갱신
 			});
+
+			$groupWrap.on('change', '.agr_r_group', function () {
+				// console.log('1');
+				const $this = $(this);
+				if (!$this.is(':checked')) return;
+
+				const index = $this.closest('.inp_radio').index();
+				console.log(index);
+			
+				const $agGroupCont = $this.closest('.ag_group_cont');
+
+				$agGroupCont.find('.agc_item').each(function () {
+					$(this).find('.radio_group_wrap .inp_radio').eq(index).find('.agr_r_group').prop('checked', true);;
+				});
+
+				updateGroupCheckState();
+				updateTotalCheckState(); // 그룹 갱신 시 전체도 갱신
+
+			});
 	
 			// 그룹 단위 전체 동의 상태 갱신
 			function updateGroupCheckState() {
