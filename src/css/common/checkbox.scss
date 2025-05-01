@@ -1,6 +1,11 @@
 /* Checkbox */
 .inp_checkbox {
 	position: relative;
+
+	& + .file_attach_box {
+		margin-top: 16px;
+	}
+
 	input[type='checkbox']{
 		// overflow: hidden;
 		position: absolute;
@@ -8,6 +13,7 @@
 		height: 20px;
 		// clip: rect(0,0,0,0);
 		opacity: 0;
+		
 		
 		& + .chk_label {
 			position: relative;
@@ -24,12 +30,21 @@
 				.sub_g_txt {
 					display: block;
 					padding-top: 4px;
-					color: var(--color-text-subtle);
 					font-size: var(--font-size-label-small);
+					color: var(--color-text-subtle);
 				}
 				.cheking_color {
-					color: var(--color-text-disabled-on);
 					font-weight: 700;
+					color: var(--color-text-disabled-on);
+				}
+				.ess {
+					font-weight: 700;
+					color: var(--color-text-primary-bold);
+					&.ess_t1 {
+						position: relative;
+						top: -1px;
+						font-size: var(--font-size-heading-xxsmall);
+					}
 				}
 			}
 
@@ -197,7 +212,8 @@
 				}
 
 				> .label_cont {
-					color: var(--color-text-disabled);
+					// color: var(--color-text-disabled);
+					color: var(--color-text-basic);
 				}
 
 				&.more_add {

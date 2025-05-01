@@ -104,17 +104,24 @@
 		}
 	}
 
+	+ .title_h5 {
+		margin-top: 20px;
+	}
 	+ .table_wrap {
 		margin-top: 52px;
 	}
+	& + .radio_group_wrap {
+		margin-top: 16px;
+	}
+	
 }
 
 .list_ty3 {
   @include list-style(
     $li-padding: 0 0 0 8px,
 		$li-line-height: 150%,
-    $li-color: #33363D,
-		$li-dot-color: #33363D
+    $li-color: #1E2124,
+		$li-dot-color: #1E2124
   ) {
     // ul.list-1에 대한 추가적인 스타일
 		// background-color: var(--color-primary);
@@ -131,6 +138,10 @@
     }
   }
 
+	& + .tab_wrap {
+		margin-top: 32px;
+	}
+
 	> li {
 		& ~ li {
 			margin-top: 12px;
@@ -140,12 +151,16 @@
 		}
 	}
 
+	& + .file_attach_box,
+	& + .btn_area {
+		margin-top: 16px;
+	}
+	
+	+ .tab_wrap,
 	+ .table_wrap {
 		margin-top: 32px;
 	}
-	+ .btn_area {
-		margin-top: 16px;
-	}
+	
 
 }
 
@@ -662,6 +677,11 @@
 	li {
 		position: relative;
 		padding-left: 18px;
+
+		&:nth-child(n+10) {
+			padding-left: 24px;
+		}
+
 		&::before {
 			position: absolute;
 			top: 0;

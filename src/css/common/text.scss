@@ -9,6 +9,14 @@
 		font-weight: 400;
 	}
 
+	&.normal {
+		font-weight: 400;
+	}
+
+	&.center {
+		text-align: center;
+	}
+
 	& + .btn_area.basic,
 	& + .title_sub {
 		margin-top: 8px;
@@ -28,6 +36,10 @@
 	& + .radio_group_wrap {
 		margin-top: 20px;
 	}
+
+	& + .title_sub2 {
+		margin-top: 32px;
+	}
 }
 
 .title_h1 {
@@ -45,15 +57,18 @@
 	font-size: var(--font-size-heading-medium);
 	color: var(--color-text-bolder);
 
-	& + .radio_group_wrap_ty2,
-	& + .discount_item_box,
-	& + .info_box,
-	& + .info_gray.ty2,
-	& + .contact_list,
-	& + .table_wrap,
-	& + .opt_case4,
-	& + .list_ty3,
-	& + .file_upload_wrap {
+	& + * {
+	// & + .compare_rank_list,
+	// & + .tag_item_wrap,
+	// & + .radio_group_wrap_ty2,
+	// & + .discount_item_box,
+	// & + .info_box,
+	// & + .info_gray.ty2,
+	// & + .contact_list,
+	// & + .table_wrap,
+	// & + .opt_case4,
+	// & + .list_ty3,
+	// & + .file_upload_wrap {
 		margin-top: 20px;
 	}
 
@@ -68,6 +83,30 @@
 		margin-left: 8px;
 		font-weight: 400;
 	}
+
+	&.ico_ty {
+		padding-left: 40px;
+		background-repeat: no-repeat;
+		background-position: left top;
+		background-size: 32px auto;
+		&.ico_ty_c01 {
+			background-image: url(../images/icon/heading/icon_h_t1.svg);
+		}
+		&.ico_ty_c02 {
+			background-image: url(../images/icon/heading/icon_h_t2.svg);
+		}
+		&.ico_ty_c03 {
+			background-image: url(../images/icon/heading/icon_h_t3.svg);
+		}
+		&.ico_ty_c04 {
+			background-image: url(../images/icon/heading/icon_h_t4.svg);
+		}
+		&.ico_ty_c05 {
+			background-image: url(../images/icon/heading/icon_h_t5.svg);
+		}
+
+
+	}
 }
 
 .title_h4 {
@@ -77,6 +116,7 @@
 	& + .info_gray,
 	& + .radio_group_wrap_ty2,
 	& + .file_upload_wrap,
+	& + .table_wrap,
 	& + .list_ty3 {
 		margin-top: 16px;
 	}
@@ -91,9 +131,11 @@
 		margin-top: 24px;
 	}
 
+	& + .table_wrap,
 	& + .list_depth {
 		margin-top: 16px;
 	}
+	
 
 	& + .text_sub,
 	& + .view_img_list {
@@ -129,19 +171,29 @@
 	}
 }
 
+.title_sub2 {
+	font-size: var(--font-size-body-medium);
+	color: var(--color-text-basic);
+	+ .ag_groups {
+		margin-top: 24px;
+	}
+}
+
 .text_sub {
 	font-size: var(--font-size-body-medium);
 	line-height: 24px;
 	color: var(--color-text-basic);
+
+	& + & {
+		margin-top: 12px;
+	}
 	
 	& + * {
 		margin-top: 24px;
 	}
 
-	& + .text_sub {
-		margin-top: 12px;
-	}
-
+	& + .radio_group_wrap,
+	& + .inp_checkbox,
 	& + .file_attach_box,
 	& + .btn_area {
 		margin-top: 16px;

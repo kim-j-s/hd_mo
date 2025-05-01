@@ -98,6 +98,14 @@ strong {
 	}
 }
 
+.mt_16 {
+	margin-top: 16px !important;
+}
+
+.mt_40 {
+	margin-top: 40px !important;
+}
+
 .mb_zero {
 	margin-bottom: 0 !important;
 }
@@ -481,70 +489,74 @@ strong {
 			margin-top: 16px;
 		}
 	}
+}
 
-	// 이미지영역
-	.file_attach_box {
+// 이미지영역
+.file_attach_box {
+	position: relative;
+
+	& + [class^=list_ty]{
+		margin-top: 16px;
+	}
+	.file_thumbnail {
+		overflow: hidden;
 		position: relative;
-	
-		& + [class^=list_ty]{
-			margin-top: 16px;
-		}
-		.file_thumbnail {
-			overflow: hidden;
-			position: relative;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			height: 180px;
-			background-color: #fff;
-			font-size: 0;
-			line-height: 0;
-			border-radius: 16px;
-	
-			&:before {
-				content:'';
-				position: absolute;
-				top:0;
-				left: 0;
-				z-index: 1;
-				width: 100%;
-				height: 100%;
-				border: 1px solid rgba(0, 0, 0, 0.10);
-				border-radius: 16px;
-			}
-	
-			img {
-				position: relative;
-				max-width: 100%;
-				max-height: 100%;
-			}
-		}
-	
-		.btn_file_delete {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 180px;
+		background-color: #fff;
+		font-size: 0;
+		line-height: 0;
+		border-radius: 16px;
+
+		&:before {
+			content:'';
 			position: absolute;
-			top: 12px;
-			right: 12px;
-			width: 32px;
-			height: 32px;
-			border-radius: 100%;
-			background: rgba(0, 0, 0, 0.50);
-	
-			> span {
-				display: block;
-				width: 32px;
-				height: 32px;
-				font-size: 0;
-				line-height: 0;
-				background: url(../images/icon/icon_remove.svg) no-repeat center / 16px auto;
-			}
+			top:0;
+			left: 0;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			border: 1px solid rgba(0, 0, 0, 0.10);
+			border-radius: 16px;
+		}
+
+		img {
+			position: relative;
+			max-width: 100%;
+			max-height: 100%;
 		}
 	}
 
-	// 이미지버튼
-	.file_btn {
-		input[type=file]{
-			display: none;
+	.btn_file_delete {
+		position: absolute;
+		top: 12px;
+		right: 12px;
+		width: 32px;
+		height: 32px;
+		border-radius: 100%;
+		background: rgba(0, 0, 0, 0.50);
+
+		> span {
+			display: block;
+			width: 32px;
+			height: 32px;
+			font-size: 0;
+			line-height: 0;
+			background: url(../images/icon/icon_remove.svg) no-repeat center / 16px auto;
 		}
+	}
+
+	& + .btn_area {
+		margin-top: 16px;
+	}
+}
+
+// 이미지버튼
+.file_btn {
+	input[type=file]{
+		display: none;
 	}
 }
 
@@ -654,7 +666,8 @@ strong {
 		color: var(--color-text-basic);
 	}
 
-	+ .table_wrap {
+	+ .table_wrap,
+	+ .space_list_ty2 {
 		margin-top: 32px;
 	}
 	+ .btn_area,
@@ -683,6 +696,10 @@ strong {
 	&[class*=pl_ico_ty_] {
 		text-align: center;
 	}
+
+	&.normal {
+		font-weight: 400;
+	}
 }
 
 [class*=pl_ico_ty_] {
@@ -691,9 +708,11 @@ strong {
 	background-position: top center;
 	background-size: 32px auto;
 
-	& + .pl_txt1 {
+	& + .pl_txt1,
+	& + .pl_txt2 {
 		margin-top: 16px;
 	}
+	
 	& + [class^=list_ty]{
 		margin-top: 16px;
 	}
@@ -720,5 +739,186 @@ strong {
 	&.right {
 		text-align: right;
 	}
+}
 
+
+.coverage_level_box {
+	position: relative;
+	margin-top: 4px;
+	padding-bottom: 30px;
+
+	&:before {
+		position: absolute;
+		bottom:0;
+		left:0;
+		content:'부족';
+		padding: 2px 4px;
+		background-color: var(--color-border-secondary);
+		font-size: var(--font-size-label-xsmall);
+		color: #fff;
+		border-radius: var(--radius-small1);
+	}
+
+	&:after {
+		position: absolute;
+		bottom:0;
+		right:0;
+		content:'충분';
+		padding: 2px 4px;
+		background-color: var(--color-border-secondary);
+		font-size: var(--font-size-label-xsmall);
+		color: #fff;
+		border-radius: var(--radius-small1);
+	}
+	
+	.level_list {
+		position: relative;
+		display: flex;
+		margin: 0 4px;
+		padding-top: 32px;
+		
+		&:before {
+			content: '';
+			position: absolute;
+			bottom: 1px;
+			left: 0;
+			z-index: -1;
+			width: 100%;
+			height: 2px;
+			background-color: var(--color-background-gray-subtle);
+		}
+
+		> .level {
+			position: relative;
+			width: 25%;
+
+			&:before {
+				position: absolute;
+				top: -2px;
+				left: -4px;
+				content:'';
+				width: 8px;
+				height: 8px;
+				background: url(../images/icon/level_dot.svg) no-repeat center/8px auto;
+			}
+
+			&:after {
+				position: absolute;
+				top: -2px;
+				right: -4px;
+				content:'';
+				width: 8px;
+				height: 8px;
+				background: url(../images/icon/level_dot.svg) no-repeat center/8px auto;
+			}
+
+			&.on {
+				> span {
+					position: relative;
+					display: block;
+					width: 100%;
+					height: 4px;
+					background-color: var(--color-border-secondary);
+
+					&:before {
+						position: absolute;
+						top: -2px;
+						left: -4px;
+						z-index: 1;
+						content:'';
+						width: 8px;
+						height: 8px;
+						background: url(../images/icon/progressbar_dot.svg) no-repeat center/8px auto;
+					}
+
+					&:after {
+						position: absolute;
+						top: -2px;
+						right: -4px;
+						z-index: 1;
+						content:'';
+						width: 8px;
+						height: 8px;
+						background: url(../images/icon/progressbar_dot.svg) no-repeat center/8px auto;
+					}
+
+					> i {
+						position: absolute;
+						bottom: 6px;
+						left: calc(50% - 18px);
+						content:'';
+						width: 36px;
+						height: 36px;
+						background: url(../images/icon/car_jeep.svg) no-repeat center/ 36px auto;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+.compare_rank_list {
+	& + .title_h3 {
+		margin-top: 52px;
+	}
+
+	> li {
+		.info_rank {
+			display: flex;
+			gap: 8px;
+
+			& + .info_bar {
+				margin-top: 4px;
+			}
+
+			.hd_badge {
+				flex: none;
+				width: 36px;
+			}
+			.desc {
+				font-size: var(--font-size-body-small);
+				line-height: 24px;
+				color: var(--color-text-subtle);
+			}
+		}
+		.info_bar {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+
+			.progress_bar_ty2 {
+				flex: 1;
+			}
+			.percent {
+				flex: none;
+				width: 46px;
+
+				.hd_badge {
+					width: 100%;
+					text-align: center;
+				}
+			}
+		}
+		& + li {
+			padding-top: 12px;
+		}
+	}
+}
+
+
+// 증가, 감소
+.trend {
+	display: flex;
+	align-items: center;
+	gap: 3px;
+
+	&.up {
+		color: var(--color-text-point);
+	}
+
+	&.down {
+		color: var(--color-light-secondary-60);
+	}
 }

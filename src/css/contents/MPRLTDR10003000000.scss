@@ -187,6 +187,12 @@
 				.tit {
 					background-image: url(../images/content/mprl/img_MPRLTDR10003000000_02.svg);
 				}
+
+				&.ltct {
+					.tit {					
+						background-image: url(../images/content/ltct/img_MPRLTCT11003000000_02.svg);
+					}						
+				}
 			}
 			&.gic_02 {
 				.tit {
@@ -197,6 +203,13 @@
 				.tit {
 					background-image: url(../images/content/mprl/img_MPRLTDR10003000000_04.svg);
 				}
+
+				&.ltct {
+					.tit {
+						background-image: url(../images/content/ltct/img_MPRLTCT11003000000_03.svg);
+					}
+						
+				}
 			}
 
 		}
@@ -204,7 +217,7 @@
 
 	.short_cut {
 		position: absolute;
-		top: 26px;
+		top: 23px;
 		right: 20px;
 		z-index: 1;
 		display: none;
@@ -235,6 +248,7 @@
 		}
 		.short_cut {
 			display: block;
+			line-height: 24px;
 		}
 	}
 	// checked style 정의
@@ -690,3 +704,24 @@
 	}
 }
 
+.coverage_item_list_ty2 {
+	> .list {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		gap: 4px;
+
+		.item_title {
+			font-size: var(--font-size-label-medium);
+			line-height: 24px;
+		}
+		.item_bottom {
+			display: flex;
+			gap: 8px;
+		}
+
+		& ~ .list {
+			margin-top: 16px;
+		}
+	}
+}
