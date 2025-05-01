@@ -163,3 +163,50 @@
 
 }
 /* 회원탈퇴 */
+
+
+// 확대 축수
+.zoom_wrap {
+
+}
+.zoom_control {
+	text-align: right;
+	> .inner {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		> .text {
+			font-size: var(--font-size-label-medium);
+		}
+		.zoom_control_btns {
+			font-size: 0;
+			border-radius: var(--radius-medium1);
+			border: 1px solid var(--color-button-tertiary-border);
+			.zcb {
+				width: 40px;
+				height: 32px;
+				font-size: 0;
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-color: transparent;
+				+ .zcb {
+					border-left: 1px solid var(--color-button-tertiary-border);
+				}
+				&.z_up {
+					background-image: url(../images/icon/icon_plus.svg);
+					
+				}
+				&.z_down {
+					background-image: url(../images/icon/icon_minus.svg);
+				}
+
+				
+			}
+		}
+	}
+
+}
+
+.zoom_content {
+	margin-top: 32px;
+}

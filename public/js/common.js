@@ -945,6 +945,28 @@ $(function(){
 			$totalCheck.prop('checked', isAllAgreed);
 		}
 	});
+
+
+	// 큰글씨 모드
+	// 확대 버튼 클릭 이벤트
+	$('.z_up').on('click', function() {
+		const zContent = $(this).closest('.zoom_wrap').find('.zoom_content');
+		// var currentFontSize = parseFloat($('.zoom_content').css('zoom'));
+		var currentFontSize = parseFloat(zContent.css('zoom'));
+		var newFontSize = currentFontSize + 0.1;
+		zContent.css('zoom', newFontSize);
+	});
+
+	// 축소 버튼 클릭 이벤트
+	$('.z_down').on('click', function() {
+		const zContent = $(this).closest('.zoom_wrap').find('.zoom_content');
+		var currentFontSize = parseFloat(zContent.css('zoom'));
+		var newFontSize = currentFontSize - 0.1;
+		if (newFontSize >= 1) {
+			zContent.css('zoom', newFontSize);
+		}
+	});
+	// 큰글씨 모드
 	
 
 
