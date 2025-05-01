@@ -67,8 +67,22 @@
 
 	/* tag_item click */
 	$DOM.on('click', '.tag_item_wrap .tag_item', function(){
-		const $click = $(this);
+		const $this = $(this);
+		const idx = $this.index();
 
+		if($('.tag_item_move').length){
+			const $target = $('.tag_item_move').find('.tag_move').eq(idx);
+			const targetMargin = parseFloat($target.css('margin-top'));
+			const targetOffset = $target.position().top;
+			const fix_h = $(this).closest('.sticky_fix').height();
+			// console.log(targetOffset , targetMargin);
+
+			$('.tag_item').removeClass('active');
+			$this.addClass('active');
+			$this.closest('.popup_cont').animate({
+				scrollTop: targetOffset + targetMargin
+			}, 500);
+		}
 		
 	});
 
