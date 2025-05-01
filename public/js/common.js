@@ -613,8 +613,8 @@ $(function(){
 				targetOffsetTop = targetOffsetTop - 50
 			}
 
-			console.log('target 위치 : ' + targetOffsetTop);
-			console.log('컨텐츠 스크롤 위치 : ' + scrollTop);
+			// console.log('target 위치 : ' + targetOffsetTop);
+			// console.log('컨텐츠 스크롤 위치 : ' + scrollTop);
 
 			if (targetOffsetTop <= $headHeight + 30 && !$targetChild.hasClass('active')) {
 				// console.log('펴기');
