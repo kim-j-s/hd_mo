@@ -15,6 +15,23 @@
 			</div>
 			<!-- e: popup_content_top -->
 
+			<h3 class="title_h3">피보험자(미성년 자녀)</h3>
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">성명</div>
+					{{> cp/text inp-title="성명 입력"}}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">주민등록번호</div>
+					<div class="comp_wrap birth">
+						{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" value="250303" inp-title="주민등록번호 앞자리 입력" readonly=true }}
+						<span class="dash">-</span>
+						{{> cp/keypad7 case1=true kt="주민등록번호 뒤 7자리 입력"}}
+					</div>
+				</div>
+			</div>
+
+			<h3 class="title_h3">계약자</h3>
 			<div class="form_group_wrap">
 				<div class="form_line">
 					<div class="label_tit">성명</div>
