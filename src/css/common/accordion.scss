@@ -35,6 +35,42 @@
 				background-size: 24px auto;
 			}
 		}
+
+		&.active {
+			.preview {
+				display: none;
+			}
+		}
+
+		.picture_info_top {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 8px;
+
+			.status {
+				.badge_wrap {
+					& + .title {
+						margin-top: 2px;
+					}
+				}
+				.title {
+					font-size: var(--font-size-heading-small);
+					font-weight: 700;
+					color: var(--color-text-bolder);
+				}
+			}
+			.preview {
+				overflow: hidden;
+				border-radius: 10px;
+				
+				img {
+					display: block;
+					width: 52px;
+					height: 40px;
+				}
+			}
+		}
 	}
 
 	&.acd_item_ty1 {
