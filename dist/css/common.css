@@ -532,7 +532,8 @@ strong {
 	font-size: var(--font-size-body-medium);
 	color: var(--color-text-basic);
 }
-.process_info_area + .table_wrap {
+.process_info_area + .table_wrap,
+.process_info_area + .space_list_ty2 {
 	margin-top: 3.2rem;
 }
 .process_info_area + .btn_area,
@@ -2108,12 +2109,24 @@ strong {
 	display: inline-block;
 	padding-right: 1.8rem;
 	font-size: var(--font-size-button-medium);
-	line-height: 2.1rem;
 	background: url(../images/icon/icon_new_open.svg) no-repeat right center/1.6rem auto;
 }
 .btn_link.new_open.sm {
 	font-size: var(--font-size-button-small);
 	line-height: 1.8rem;
+}
+.btn_link.new_open.new_open_rd_box {
+	display: block;
+	text-align: center;
+	width: auto;
+	padding: 0.8rem;
+	border: 1px solid var(--color-button-tertiary-border);
+	background: none;
+}
+.btn_link.new_open.new_open_rd_box > .text {
+	display: inline-block;
+	padding-right: 1.8rem;
+	background: url(../images/icon/icon_new_open.svg) no-repeat right center/1.6rem auto;
 }
 .btn_link.price_btn {
 	position: relative;
@@ -3717,12 +3730,21 @@ strong {
 .inp_checkbox input[type="checkbox"] + .chk_label > .label_cont .sub_g_txt {
 	display: block;
 	padding-top: 0.4rem;
-	color: var(--color-text-subtle);
 	font-size: var(--font-size-label-small);
+	color: var(--color-text-subtle);
 }
 .inp_checkbox input[type="checkbox"] + .chk_label > .label_cont .cheking_color {
-	color: var(--color-text-disabled-on);
 	font-weight: 700;
+	color: var(--color-text-disabled-on);
+}
+.inp_checkbox input[type="checkbox"] + .chk_label > .label_cont .ess {
+	font-weight: 700;
+	color: var(--color-text-primary-bold);
+}
+.inp_checkbox input[type="checkbox"] + .chk_label > .label_cont .ess.ess_t1 {
+	position: relative;
+	top: -1px;
+	font-size: var(--font-size-heading-xxsmall);
 }
 .inp_checkbox input[type="checkbox"] + .chk_label::before {
 	content: "";
@@ -5209,6 +5231,9 @@ strong {
 .list_ty2 > li > .list_ty5 {
 	margin-top: 0.4rem;
 }
+.list_ty2 + .title_h5 {
+	margin-top: 2rem;
+}
 .list_ty2 + .table_wrap {
 	margin-top: 5.2rem;
 }
@@ -5218,10 +5243,10 @@ strong {
 	padding: 0 0 0 0.8rem;
 	font-size: var(--font-size-body-medium);
 	line-height: 150%;
-	color: #33363d;
+	color: #1e2124;
 }
 .list_ty3 > li::before {
-	background-color: #33363d;
+	background-color: #1e2124;
 }
 .list_ty3 > li::before {
 	content: "";
@@ -5240,11 +5265,12 @@ strong {
 .list_ty3 > li .list_depth_ty2 {
 	margin-top: 1.2rem;
 }
-.list_ty3 + .table_wrap {
-	margin-top: 3.2rem;
-}
 .list_ty3 + .btn_area {
 	margin-top: 1.6rem;
+}
+.list_ty3 + .tab_wrap,
+.list_ty3 + .table_wrap {
+	margin-top: 3.2rem;
 }
 .list_ty4 > li {
 	position: relative;
@@ -6160,6 +6186,15 @@ strong {
 	height: 1rem;
 	background: url(../images/icon/progressbar_dot.svg) no-repeat center/0.8rem auto;
 }
+.progress_bar.progress_bar_ty3 .progress_bar_bottom {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	gap: 0.8rem;
+}
 /* radio */
 /* Radio */
 .inp_radio {
@@ -6883,9 +6918,6 @@ strong {
 .opt_select_list.opt_case2 .option > .text .point {
 	color: var(--color-text-primary-bold);
 }
-.opt_select_list.opt_case2 .option.active {
-	color: blue;
-}
 .opt_select_list.opt_case2 .option.fixed > .text::after {
 	content: "입력";
 	display: inline-block;
@@ -6996,6 +7028,27 @@ strong {
 .opt_select_list.opt_case4 + .btn_area {
 	margin-top: 2.4rem;
 }
+.opt_select_list.opt_case5 > li .option {
+	display: block;
+	padding: 1.6rem 3.2rem 1.6rem 0;
+	border-top: 1px solid #e6e8ea;
+	background: url(../images/icon/arrowRight_ty3.svg) no-repeat center right/2.4rem auto;
+}
+.opt_select_list.opt_case5 > li .option .opi_t1 {
+	display: block;
+	font-size: var(--font-size-body-medium);
+}
+.opt_select_list.opt_case5 > li .option .opi_t2 {
+	display: block;
+	font-size: var(--font-size-body-small);
+	color: var(--color-text-subtle);
+}
+.opt_select_list.opt_case5 > li:last-child .option {
+	border-bottom: 1px solid #e6e8ea;
+}
+.opt_select_list.opt_case5 + .title_h3 {
+	margin-top: 4rem;
+}
 /* stepper */
 .stepper_list {
 	display: -webkit-box;
@@ -7094,6 +7147,9 @@ strong {
 }
 .space_list_ty3 > * + * {
 	margin-top: 3rem;
+}
+.space_list_ty4 > * + * {
+	margin-top: 5.2rem;
 }
 /* swiper */
 /* 예시 */
@@ -7401,6 +7457,12 @@ strong {
 .table_wrap + .opt_case4 {
 	margin-top: 1.6rem;
 }
+.table_wrap + .title_h5 {
+	margin-top: 2rem;
+}
+.table_wrap + .space_list_ty2 {
+	margin-top: 3.2rem;
+}
 .table_wrap + .title_h3 {
 	margin-top: 3.2rem;
 }
@@ -7590,6 +7652,27 @@ strong {
 	margin-left: 0.8rem;
 	font-weight: 400;
 }
+.title_h3.ico_ty {
+	padding-left: 4rem;
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: 3.2rem auto;
+}
+.title_h3.ico_ty.ico_ty_c01 {
+	background-image: url(../images/icon/heading/icon_h_t1.svg);
+}
+.title_h3.ico_ty.ico_ty_c02 {
+	background-image: url(../images/icon/heading/icon_h_t2.svg);
+}
+.title_h3.ico_ty.ico_ty_c03 {
+	background-image: url(../images/icon/heading/icon_h_t3.svg);
+}
+.title_h3.ico_ty.ico_ty_c04 {
+	background-image: url(../images/icon/heading/icon_h_t4.svg);
+}
+.title_h3.ico_ty.ico_ty_c05 {
+	background-image: url(../images/icon/heading/icon_h_t5.svg);
+}
 .title_h4 {
 	font-size: var(--font-size-heading-small);
 	color: var(--color-text-bolder);
@@ -7607,6 +7690,7 @@ strong {
 .title_h5 ~ .title_h5 {
 	margin-top: 2.4rem;
 }
+.title_h5 + .table_wrap,
 .title_h5 + .list_depth {
 	margin-top: 1.6rem;
 }
@@ -7966,8 +8050,15 @@ strong {
 .info_gray + .table_wrap {
 	margin-top: 2.4rem;
 }
+.info_gray + .tab_wrap {
+	margin-top: 2.4rem;
+}
+.info_gray + .tab_wrap.tab_wrap_ty2 {
+	margin-top: 3.2rem;
+}
 .info_gray + .info_cont,
 .info_gray + .title_h3,
+.info_gray + .title_h4,
 .info_gray + .btn_area.btn_area_space2,
 .info_gray + .form_group_wrap,
 .info_gray + .acd_item_ty2,
@@ -7978,12 +8069,6 @@ strong {
 .info_gray + .ag_groups,
 .info_gray + .ag_group_wrap {
 	margin-top: 5.2rem;
-}
-.info_gray + .tab_wrap {
-	margin-top: 2.4rem;
-}
-.info_gray + .tab_wrap.tab_wrap_ty2 {
-	margin-top: 3.2rem;
 }
 .info_gray .badge_wrap_ty2 {
 	display: -webkit-box;

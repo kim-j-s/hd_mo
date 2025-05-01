@@ -846,6 +846,24 @@ $(function () {
 				updateTotalCheckState(); // 그룹 갱신 시 전체도 갱신
 			});
 
+			$groupWrap.on("change", ".agr_r_group", function () {
+				// console.log('1');
+				const $this = $(this);
+				if (!$this.is(":checked")) return;
+
+				const index = $this.closest(".inp_radio").index();
+				console.log(index);
+
+				const $agGroupCont = $this.closest(".ag_group_cont");
+
+				$agGroupCont.find(".agc_item").each(function () {
+					$(this).find(".radio_group_wrap .inp_radio").eq(index).find(".agr_r_group").prop("checked", true);
+				});
+
+				updateGroupCheckState();
+				updateTotalCheckState(); // 그룹 갱신 시 전체도 갱신
+			});
+
 			// 그룹 단위 전체 동의 상태 갱신
 			function updateGroupCheckState() {
 				const totalAgr = $groupWrap.find(".agr_dept1.ag");
@@ -899,6 +917,27 @@ $(function () {
 			$totalCheck.prop("checked", isAllAgreed);
 		}
 	});
+
+	// 큰글씨 모드
+	// 확대 버튼 클릭 이벤트
+	$(".z_up").on("click", function () {
+		const zContent = $(this).closest(".zoom_wrap").find(".zoom_content");
+		// var currentFontSize = parseFloat($('.zoom_content').css('zoom'));
+		var currentFontSize = parseFloat(zContent.css("zoom"));
+		var newFontSize = currentFontSize + 0.1;
+		zContent.css("zoom", newFontSize);
+	});
+
+	// 축소 버튼 클릭 이벤트
+	$(".z_down").on("click", function () {
+		const zContent = $(this).closest(".zoom_wrap").find(".zoom_content");
+		var currentFontSize = parseFloat(zContent.css("zoom"));
+		var newFontSize = currentFontSize - 0.1;
+		if (newFontSize >= 1) {
+			zContent.css("zoom", newFontSize);
+		}
+	});
+	// 큰글씨 모드
 });
 
 $(window).resize(function () {
