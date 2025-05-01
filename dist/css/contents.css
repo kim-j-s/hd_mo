@@ -803,6 +803,7 @@
 	border-radius: var(--radius-large2);
 }
 .discount_item_box .item {
+	padding: 2.4rem 0 2.4rem 4.4rem;
 	background-repeat: no-repeat;
 	background-position: left top 3.2rem;
 	background-size: 3.2rem auto;
@@ -833,11 +834,6 @@
 }
 .discount_item_box .item.opt9 {
 	background-image: url(../images/content/mtps/icon_MPRMTPS10002010000_ty9.svg);
-}
-.discount_item_box .item > a {
-	display: block;
-	padding: 2.4rem 3.6rem 2.4rem 4.4rem;
-	background: url(../images/icon/arrowRight_ty4.svg) no-repeat right center;
 }
 .discount_item_box .item .cont {
 	font-size: var(--font-size-body-medium);
@@ -2005,6 +2001,9 @@
 .guarantee_detail .gd_item .gdi_content .gdi_content_list > li.ico_add.ico_add_ty5 .item {
 	background-image: url(../images/content/guarantee/icon_gil_05.svg);
 }
+.guarantee_detail .gd_item .gdi_content .gdi_content_list > li.ico_add.ico_add_ty6 .item {
+	background-image: url(../images/content/guarantee/icon_gil_06.svg);
+}
 .guarantee_detail .guarantee_detail_mini {
 	margin-top: 2.4rem;
 	display: -webkit-box;
@@ -2061,7 +2060,7 @@
 	flex: none;
 }
 .guarantee_detail .btn_area.gd_middle_ba {
-	margin-top: 2.4rem;
+	margin-top: 3.2rem;
 }
 .guarantee_detail .btn_area.gd_middle_ba + .coverage_item_wrap {
 	margin-top: 2.4rem;
@@ -2197,39 +2196,7 @@
 	gap: 0.8rem;
 }
 .coverage_item_list > .list ~ .list {
-	margin-top: 2rem;
-}
-/* 운전자보험 - 보험료 계산결과 */
-/* 자동차보험 | 6.보험료 계산결과 */
-.special_contract_list li {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: justify;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	gap: 0.8rem;
-}
-.special_contract_list li .check_box {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	gap: 0.8rem;
-}
-.special_contract_list li .money {
-	color: var(--color-text-primary);
-	font-size: var(--font-size-button-large);
-	line-height: 2.4rem;
-	font-weight: 700;
-}
-.special_contract_list li + li {
-	margin-top: 2rem;
+	margin-top: 1.6rem;
 }
 /* 청약 폼 */
 /* 청약 폼 */
@@ -2237,6 +2204,20 @@
 	padding-top: 12rem;
 	background: url(../images/common/bg_finish.png) no-repeat top center/auto 50%;
 	text-align: center;
+}
+.form_box + .form_box {
+	margin-top: 5.2rem;
+}
+.form_box .car_title_h1 {
+	margin-bottom: 2rem;
+	font-size: var(--font-size-heading-medium);
+	font-weight: 700;
+}
+.form_box > .radio_group_wrap {
+	margin-top: 3.2rem;
+}
+.form_box > .radio_group_wrap + p {
+	margin-top: 2.4rem;
 }
 .form_box .title_h3 {
 	margin-bottom: 2rem;
@@ -2247,18 +2228,27 @@
 .form_box .checkbox_group_wrap + .info_gray {
 	margin-top: 3.2rem;
 }
-.form_box .ex_text {
+.form_box .checkbox_group_wrap + .label_tit {
 	margin-top: 1.6rem;
-	font-size: var(--font-size-label-medium);
 }
-.form_box .ex_text + .form_group_wrap {
+.form_box .form_group_wrap + .form_group_wrap {
 	margin-top: 3.2rem;
 }
-.form_box + .form_group_wrap {
-	margin-top: 3.2rem;
+.form_box .form_group_wrap + .if_box {
+	margin-top: 1.6rem;
 }
 .form_box > .btn_area {
-	margin: 2.4rem 0;
+	margin-top: 4rem;
+}
+.form_box .radio_group_wrap + .checkbox_group_wrap {
+	margin-top: 1.6rem;
+}
+.info_text2 {
+	margin-top: 0.8rem;
+	padding-left: 2rem;
+	font-size: var(--font-size-label-medium);
+	color: var(--color-text-information);
+	background: url(../../images/icon/icon_login.svg) no-repeat center left/1.6rem auto;
 }
 .input_text + .inp_checkbox {
 	margin-top: 1.6rem;
@@ -2294,7 +2284,8 @@ ul + .form_group_wrap {
 	font-size: var(--font-size-heading-medium);
 	font-weight: 700;
 }
-.info_cont h2 {
+.info_cont h2,
+.info_cont .title_h2 {
 	margin-bottom: 1.6rem;
 	font-size: var(--font-size-heading-small);
 	font-weight: 700;
@@ -2310,7 +2301,9 @@ ul + .form_group_wrap {
 	font-weight: 700;
 }
 .info_cont ul + h2,
-.info_cont ol + h2 {
+.info_cont ol + h2,
+.info_cont ul + .title_h2,
+.info_cont ol + .title_h2 {
 	margin-top: 4rem;
 }
 .info_cont ul + h3 + .pop_title_h1,
@@ -2329,10 +2322,14 @@ ul + .form_group_wrap {
 .info_cont .table_wrap .table ~ * {
 	margin-top: 1.6rem;
 }
-.info_cont ul + h3 {
+.info_cont ul + h3,
+.info_cont ol + h3 {
 	margin-top: 2rem;
 }
-.info_cont ul + h4 {
+.info_cont ul + h4,
+.info_cont ol + h4,
+.info_cont ul + .table_wrap,
+.info_cont ol + .table_wrap {
 	margin-top: 1.6rem;
 }
 .info_cont .img_area + ul,
@@ -2364,6 +2361,16 @@ ul + .form_group_wrap {
 }
 .info_cont .list_depth + .list_ty2 {
 	margin: 1.2rem 0 0 0.8rem;
+}
+.info_cont .acd_item + .acd_item {
+	margin-top: 1.6rem;
+}
+.info_cont .acd_item p {
+	margin: 0 0 1.6rem;
+}
+.info_cont .acd_item .img_area + p,
+.info_cont .acd_item .btn_area + p {
+	margin-top: 3.2rem;
 }
 .text_info_lg {
 	font-size: var(--font-size-heading-medium);
@@ -2512,6 +2519,50 @@ ul + .form_group_wrap {
 }
 .travel_day dl dd {
 	text-align: center;
+}
+/* 특약리스트 */
+.special_contract_list li {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 0.8rem;
+}
+.special_contract_list li .check_box {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 0.8rem;
+}
+.special_contract_list li .money_box {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	min-width: 10rem;
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: end;
+	gap: 1.4rem;
+}
+.special_contract_list li .money_box .money {
+	color: var(--color-text-primary);
+	font-size: var(--font-size-button-large);
+	line-height: 2.4rem;
+	font-weight: 700;
+}
+.special_contract_list li + li {
+	margin-top: 2rem;
 }
 /* 운전자보험 - 보험료 결제 */
 .insurance_payment_area {
