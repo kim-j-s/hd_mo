@@ -203,3 +203,61 @@
 		}
 	}
 }
+
+
+/* 이용방법 */
+.my_info_flow {
+	> li {
+		position: relative;
+		display: flex;
+		align-items: flex-start;
+		gap: 8px;
+		margin-bottom: 26px;
+		padding: 24px 20px;
+		border-radius: var(--radius-large2);
+		background-color: var(--color-surface-secondary-subtler);
+		
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: -21px;
+			left: 50%;
+			width: 16px;
+			height: 16px;
+			background: url(../images/icon/arrowDown_ty2.svg) no-repeat center center / 16px auto;
+			transform: translateX(-50%);
+		}
+		&:last-child {
+			&::after {
+				content: none;
+			}
+		}
+
+		.num {
+			flex: none;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 24px;
+			height: 24px;
+			font-weight: 700;
+			font-size: var(--font-size-body-xsmall);
+			color: var(--color-text-subtle);
+			border-radius: 50%;
+			border: 1px solid #6D7882;
+		}
+		.cont {
+			flex: 1 1 0;
+			.tit {
+				display: block;
+				font-size: var(--font-size-heading-xsmall);
+			}
+			.desc {
+				padding-top: 12px;
+				font-size: var(--font-size-body-medium);
+			}
+		}
+	}
+}
+
+/* 이용방법 */
