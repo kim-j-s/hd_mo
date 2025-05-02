@@ -1,0 +1,109 @@
+{{#> layout/default page-title="내정보 확인/변경 | 마이페이지"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="내정보 확인/변경" h-back=true }}
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
+				<h2 class="title_h2">
+					김현대님 정보를
+					<br />
+					<strong>최신 정보</strong>
+					로 수정해주세요
+				</h2>
+			</div>
+			<!-- e: content_top -->
+
+			<div class="info_gray">
+				<ul class="list_ty3">
+					<li>보험계약의 내 정보도 같이 변경되니 정확하게 입력해 주세요.</li>
+				</ul>
+			</div>
+
+			<h3 class="title_h3">기본정보</h3>
+
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">휴대폰번호</div>
+					{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">이메일</div>
+					{{> cp/text type="email" inp-title="이메일주소 입력" }}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">주소</div>
+					<div class="radio_group_wrap" role="radiogroup">{{> cp/radio rd-class="rd_btn" rd-id="addSel_01" name="addSel" labelname="자택" data="sendpos='pos1'" }} {{> cp/radio rd-class="rd_btn" rd-id="addSel_02" name="addSel" labelname="직장" data="sendpos='pos2'" }}</div>
+					{{> cp/address ad_ph="주소를 입력해 주세요." case2=true}}
+				</div>
+			</div>
+
+			<div class="divider_ty1"></div>
+
+			<h3 class="title_h3">우편물 수령지</h3>
+
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">한번에 선택</div>
+					<div class="sa_wrap">
+						<div class="radio_group_wrap" role="radiogroup">{{> cp/radio rd-class="rd_btn" rd-id="paSel_01" rdip-class="sa_change" data="getpos='pos1'" name="paSel" labelname="모두 집" }} {{> cp/radio rd-class="rd_btn" rd-id="paSel_02" rdip-class="sa_change" data="getpos='pos2'" name="paSel" labelname="모두 직장" }}</div>
+						<div class="sa_change_place">
+							<ul class="scp_list">
+								<li>
+									<div class="scp_list_l">
+										<div class="line1">자동차보험</div>
+										<div class="line2">2025.01.01~2026.01.01</div>
+									</div>
+									<div class="scp_list_r">
+										<div class="radio_group_wrap">{{> cp/radio rd-class="sm" rd-id="radio01-1" name="radio01_1" data="getpos='pos1'" labelname="집" }} {{> cp/radio rd-class="sm" rd-id="radio01-2" name="radio01_1" data="getpos='pos2'" labelname="직장" }}</div>
+									</div>
+								</li>
+								<li>
+									<div class="scp_list_l">
+										<div class="line1">해외여행보험</div>
+										<div class="line2">2025.01.01~2026.01.01</div>
+									</div>
+									<div class="scp_list_r">
+										<div class="radio_group_wrap">{{> cp/radio rd-class="sm" rd-id="radio02-1" name="radio01_2" data="getpos='pos1'" labelname="집" }} {{> cp/radio rd-class="sm" rd-id="radio02-2" name="radio01_2" data="getpos='pos2'" labelname="직장" }}</div>
+									</div>
+								</li>
+								<li>
+									<div class="scp_list_l">
+										<div class="line1">운전자보험</div>
+										<div class="line2">2025.01.01~2026.01.01</div>
+									</div>
+									<div class="scp_list_r">
+										<div class="radio_group_wrap">{{> cp/radio rd-class="sm" rd-id="radio03-1" name="radio01_3" data="getpos='pos1'" labelname="집" }} {{> cp/radio rd-class="sm" rd-id="radio03-2" name="radio01_3" data="getpos='pos2'" labelname="직장" }}</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- s: 꼭 알아두세요 -->
+			{{#> cp/notice }}
+			<ul class="list_depth">
+				<li>화재보험의 목적물소재지(보장 대상이 되는 건물의 주소지) 변경은 계약담당자 또는 계약 담당지점으로 요청해 주세요.</li>
+				<li>변경된 휴대폰번호로 변경내역을 안내할 예정이에요.</li>
+			</ul>
+			{{/ cp/notice }}
+			<!-- e: 꼭 알아두세요 -->
+		</div>
+
+		<!-- // container -->
+	</div>
+
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">{{> cp/button type="1" size="2" b-text="본인인증 후 정보 변경하기"}}</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
+</div>
+
+<!-- s: popup area -->
+
+<!-- e: popup area -->
+
+{{/ layout/default }}

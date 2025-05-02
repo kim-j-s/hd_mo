@@ -1,0 +1,487 @@
+/* 자동차보험 | 운전자 정보 - 운전자 범위 선택 */
+@mixin activeState() {
+	&:before {
+		opacity: 1;
+	}
+
+	> span {
+		font-weight: 700;
+	}
+}
+
+@mixin activeImage($count) {
+	background-image: url(../images/content/mtps/img_rel_case#{$count}_on.svg);
+}
+
+.select_driver_range {
+	.driver_relationship_state {
+		// display: flex;
+		// align-items: flex-end;
+		// gap: 24px;
+	}
+
+	// .relationship_box {
+	// 	display: flex;
+	// 	flex-direction: column;
+	// 	gap: 24px;
+
+	// 	&:first-child {
+	// 		flex: 1;
+	// 		align-items: center;
+	// 	}
+
+	// 	.line {
+	// 		display: flex;
+	// 		justify-content: space-between;
+
+	// 		[class^=rel_case]{
+	// 			position: relative;
+	// 			padding: 0 13px;
+	// 			background-color: #FFF;
+	// 			text-align: center;
+	// 			border-radius: 20px;
+
+	// 			> span {
+	// 				display: block;
+	// 				padding: 8px 0;
+	// 				font-size: 14px;
+	// 				line-height: 21px;
+	// 				color: #3E4A58;
+	// 				border-radius: 20px;
+
+	// 				img {
+	// 					display: block;
+	// 					height: 44px;
+	// 					margin: 0 auto;
+	// 					margin-bottom: 4px;
+	// 				}
+	// 			}
+
+	// 			&.active {
+	// 				font-weight: 700;
+
+	// 				&:after {
+	// 					position: absolute;
+	// 					top:0;
+	// 					left: 0;
+	// 					content:'';
+	// 					width: 100%;
+	// 					height: 100%;
+	// 					border: 2px solid #F8633C;
+	// 					border-radius: 20px;
+	// 				}
+	// 			}
+	// 		}
+
+	// 		.rel_group {
+	// 			display: inline-flex;
+	// 			gap: 16px;
+
+	// 			.parent {
+	// 				display: flex;
+	// 				gap: 10px;
+	// 				background-color: #FFF;
+	// 				padding: 0 24px;
+
+	// 				i {
+	// 					max-width: 100px;
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// }
+}
+
+.driver_relationship_state {
+	margin: 32px -24px 0;
+	padding: 32px 24px;
+	background-color: #f5f5f5;
+	border-radius: 32px;
+}
+
+.relationship_box {
+	position: relative;
+	height: 312px;
+	overflow: hidden;
+
+	[class^="rel_case"] {
+		position: absolute;
+		z-index: 10;
+		display: flex;
+		background-color: #fff;
+		border-radius: 20px;
+
+		&:before {
+			content: "선택됨";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			font-size: 0;
+			border: 2px solid #f8633c;
+			border-radius: 20px;
+			opacity: 0;
+			transition: all 0.5s;
+		}
+
+		> span {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			min-width: 70px;
+			padding: 56px 13px 8px;
+			background-repeat: no-repeat;
+			background-size: auto 44px;
+			background-position: center 8px;
+			font-size: 14px;
+			text-align: center;
+			white-space: nowrap;
+			transition: background-image 0.5s;
+
+			&.ty2 {
+				padding-top: 52px;
+				min-width: 78px;
+				i {
+					font-style: normal;
+					font-size: var(--font-size-body-xsmall, 12px);
+					line-height: 120%;
+				}
+			}
+		}
+	}
+	.rel_case1 {
+		top: 0;
+		left: 0;
+		display: flex;
+		// justify-content: center;
+		justify-content: space-between;
+		gap: 10px;
+		// width: 256px;
+		width: calc(50% + 90px);
+		padding: 0 24px;
+
+		> span {
+			position: relative;
+			min-width: 99px;
+
+			&:after {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				z-index: 1;
+				width: 1px;
+				height: 100vh;
+				background-color: #d9d9d9;
+			}
+
+			&.ty1 {
+				background-image: url(../images/content/mtps/img_rel_case1.svg);
+			}
+
+			&.ty2 {
+				background-image: url(../images/content/mtps/img_rel_case1_2.svg);
+			}
+		}
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 152px;
+			left: 50%;
+			z-index: 1;
+			width: 1px;
+			height: 100vh;
+			background-color: #d9d9d9;
+		}
+	}
+	.rel_case2 {
+		top: 109px;
+		left: 30px;
+
+		> span {
+			width: 90px;
+			background-image: url(../images/content/mtps/img_rel_case2.svg);
+
+			&:before {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 100%;
+				left: 49%;
+				z-index: 1;
+				width: 1px;
+				height: 100vw;
+				background-color: #f5f5f5;
+			}
+
+			&:after {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 100%;
+				z-index: 1;
+				width: 100vw;
+				height: 1px;
+				background-color: #d9d9d9;
+			}
+
+			// &:after {
+			// 	content:'';
+			// 	display: block;
+			// 	position: absolute;
+			// 	top:-100vh;
+			// 	left: 50%;
+			// 	z-index: 1;
+			// 	width: 1px;
+			// 	height: 100vh;
+			// 	background-color: #D9D9D9;
+			// }
+		}
+	}
+	.rel_case3 {
+		top: 109px;
+		left: 50%;
+		margin-left: -28px;
+
+		> span {
+			width: 90px;
+			background-image: url(../images/content/mtps/img_rel_case3.svg);
+
+			&:before {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 100%;
+				left: 1px;
+				width: 100%;
+				height: 100vw;
+				background-color: #f5f5f5;
+			}
+
+			&:after {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 100%;
+				z-index: 1;
+				width: 100vw;
+				height: 1px;
+				background-color: #f5f5f5;
+			}
+		}
+	}
+	.rel_case4 {
+		top: 109px;
+		right: 0;
+
+		> span {
+			background-image: url(../images/content/mtps/img_rel_case4.svg);
+		}
+	}
+	.rel_case5 {
+		bottom: 0;
+		left: 30px;
+		justify-content: center;
+		width: calc(50% + 32px);
+
+		> span {
+			width: 196px;
+			background-image: url(../images/content/mtps/img_rel_case5.svg);
+		}
+	}
+	.rel_case6 {
+		bottom: 0;
+		right: 0;
+
+		> span {
+			background-image: url(../images/content/mtps/img_rel_case6.svg);
+		}
+	}
+
+	/* 활성화 상태 */
+	//본인만
+	&.pick1 {
+		.rel_case2 {
+			@include activeState;
+			> span {
+				@include activeImage(2);
+			}
+		}
+	}
+
+	//부부
+	&.pick2 {
+		.rel_case2 {
+			@include activeState;
+			> span {
+				@include activeImage(2);
+			}
+		}
+		.rel_case3 {
+			@include activeState;
+			> span {
+				@include activeImage(3);
+			}
+		}
+	}
+
+	//가족
+	&.pick3 {
+		.rel_case1 {
+			@include activeState;
+
+			> span {
+				&.ty1 {
+					@include activeImage(1);
+				}
+				&.ty2 {
+					@include activeImage(1_2);
+				}
+			}
+		}
+		.rel_case2 {
+			@include activeState;
+			> span {
+				@include activeImage(2);
+			}
+		}
+		.rel_case3 {
+			@include activeState;
+			> span {
+				@include activeImage(3);
+			}
+		}
+		.rel_case5 {
+			@include activeState;
+			> span {
+				@include activeImage(5);
+			}
+		}
+	}
+
+	//누구나
+	&.pick4 {
+		@for $count from 1 to 7 {
+			@if $count != 4 {
+				.rel_case#{$count} {
+					@include activeState;
+					& > span {
+						@if $count == 1 {
+							&.ty1 {
+								@include activeImage(1);
+							}
+							&.ty2 {
+								@include activeImage(1_2);
+							}
+						} @else {
+							background-image: url("../images/content/mtps/img_rel_case#{$count}_on.svg");
+						}
+					}
+				}
+			}
+		}
+	}
+
+	//임직원
+	&.pick5 {
+		.rel_case4 {
+			@include activeState;
+			> span {
+				@include activeImage(4);
+			}
+		}
+	}
+
+	//본인+1인
+	&.pick6 {
+		.rel_case2 {
+			@include activeState;
+			> span {
+				@include activeImage(2);
+			}
+		}
+		.rel_case6 {
+			@include activeState;
+			> span {
+				@include activeImage(6);
+			}
+		}
+	}
+
+	//부부+1인
+	&.pick7 {
+		.rel_case2 {
+			@include activeState;
+			> span {
+				@include activeImage(2);
+			}
+		}
+		.rel_case3 {
+			@include activeState;
+			> span {
+				@include activeImage(3);
+			}
+		}
+		.rel_case6 {
+			@include activeState;
+			> span {
+				@include activeImage(6);
+			}
+		}
+	}
+
+	//부부+자녀
+	&.pick8 {
+		.rel_case2 {
+			@include activeState;
+			> span {
+				@include activeImage(2);
+			}
+		}
+		.rel_case3 {
+			@include activeState;
+			> span {
+				@include activeImage(3);
+			}
+		}
+		.rel_case5 {
+			@include activeState;
+			> span {
+				@include activeImage(5);
+			}
+		}
+	}
+
+	//본인+자녀
+	&.pick9 {
+		.rel_case2 {
+			@include activeState;
+			> span {
+				@include activeImage(2);
+			}
+		}
+		.rel_case5 {
+			@include activeState;
+			> span {
+				@include activeImage(5);
+			}
+		}
+	}
+
+	//자녀
+	&.pick10 {
+		.rel_case5 {
+			@include activeState;
+			> span {
+				@include activeImage(5);
+			}
+		}
+	}
+}

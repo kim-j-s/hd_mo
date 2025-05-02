@@ -1,0 +1,244 @@
+<!---
+화면번호 : MPRMTPS10003020201
+경로 : 2.자동차 기본정보 > 2-3.보험기간 입력 > ECO마일리지 최종정보 등록안내 > 사진등록
+-->
+{{#> layout/default page-title="자동차 기본정보 | 상품"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-active=true }}
+<div class="popup_cont">
+	<!-- s: 25-04-22 수정 -->
+	<div class="popup_content">
+		<!-- s: popup_content_top -->
+		<div class="popup_content_top">
+			<h2 class="title_h2">
+				전계약 마일리지 특약 주행거리 등록 후
+				<strong>정산환급금을 확인</strong>
+				해보세요
+			</h2>
+		</div>
+		<!-- e: popup_content_top -->
+
+		<div class="info_gray">
+			<ul class="list_depth">
+				<li>
+					<strong>마일리지 정산 환급금이 발생한 경우 갱신에서 차감하여 계약을 체결</strong>
+					하실 수 있습니다.
+					<ul>
+						<li>예) 갱신 보험료 70만원, 마일리지 환급금 20만원 차감 이 용시, 신용카드로 50만원(70만원~20만원) 결제하시면 갱신계약 체결완료!</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<div class="tab_wrap">
+			<div class="tab_wrap_list_ty1" role="tablist">{{>cp/tab_btn tb-text="문자로 링크 받기" tb-id="01"}} {{>cp/tab_btn tb-text="직접 사진 등록" tb-id="02" tb-active=true}}</div>
+			<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">문자로 링크 받기 내용</div>
+			<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
+				<!-- s: 25-04-30 수정 -->
+				<h3 class="title_h4">번호판 사진</h3>
+				<div class="file_upload_wrap_ty2">
+					<p class="text_sub">ECO 마일리지 특약 정산을 위한 사진을 등록해 주세요.</p>
+					<!-- s: 이미지 파일 붙는 영역 -->
+					<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+					<div class="file_attach_box">
+						<div class="file_thumbnail">
+							<img src="../../../images/common/img_file_shot.png" alt="등록 전 상태 이미지" />
+						</div>
+					</div>
+
+					<!-- 등록 후 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+					<!-- <div class="file_attach_box">
+						<div class="file_thumbnail">
+							<img src="../../../images/temp/img_carmera_temp.png" alt="등록된 계기판 이미지">
+						</div>
+						<button type="button" class="btn_file_delete">
+							<span>등록한 이미지 삭제하기</span>
+						</button>
+					</div> -->
+					<!-- e: 이미지 파일 붙는 영역 -->
+
+					<!-- s: 이미지 파일 버튼 -->
+					<div class="btn_area center">
+						<div class="file_btn">
+							<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png" />
+							<label for="file">
+								<span class="hd_btn hd_btn_ty_3 hd_btn_s_2">
+									<i class="hd_icon carmeraSvg2"></i>
+									사진 등록
+								</span>
+							</label>
+						</div>
+						<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_2">
+							<i class="hd_icon carmeraSvg"></i>
+							<span class="text">사진 촬영</span>
+						</button>
+					</div>
+					<!-- e: 이미지 파일 버튼 -->
+
+					<div class="btn_area">{{> cp/button type="2" size="2" b-text="사진 전송하기" disabled=true }}</div>
+
+					<ul class="list_ty2">
+						<li>사진촬영 기준일과 계기판의 최종 주행거리를 입력해주세요.</li>
+						<li>운행거리 증빙을 위한 계기판 사진은 ODO(총 운행거리 사진)만 인정되며 리셋된 트립 사진은 인정되지 않습니다.</li>
+						<li>최종 주행거리는 전산판독 시 활용되므로 계기판과 동일하게 입력해 주세요.</li>
+					</ul>
+				</div>
+
+				<h3 class="title_h4">계기판 사진</h3>
+				<div class="file_upload_wrap_ty2">
+					<p class="text_sub">ECO 마일리지 특약 정산을 위한 사진을 등록해 주세요.</p>
+					<!-- s: 이미지 파일 붙는 영역 -->
+					<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+					<div class="file_attach_box">
+						<div class="file_thumbnail">
+							<img src="../../../images/common/img_file_shot.png" alt="등록 전 상태 이미지" />
+						</div>
+					</div>
+
+					<!-- 등록 후 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+					<!-- <div class="file_attach_box">
+						<div class="file_thumbnail">
+							<img src="../../../images/temp/img_carmera_temp.png" alt="등록된 계기판 이미지">
+						</div>
+						<button type="button" class="btn_file_delete">
+							<span>등록한 이미지 삭제하기</span>
+						</button>
+					</div> -->
+					<!-- e: 이미지 파일 붙는 영역 -->
+
+					<!-- s: 이미지 파일 버튼 -->
+					<div class="btn_area center">
+						<div class="file_btn">
+							<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png" />
+							<label for="file">
+								<span class="hd_btn hd_btn_ty_3 hd_btn_s_2">
+									<i class="hd_icon carmeraSvg2"></i>
+									사진 등록
+								</span>
+							</label>
+						</div>
+						<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_2">
+							<i class="hd_icon carmeraSvg"></i>
+							<span class="text">사진 촬영</span>
+						</button>
+					</div>
+					<!-- e: 이미지 파일 버튼 -->
+
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">기준일</div>
+							{{> cp/text cal=true value="2025.01.01" }}
+						</div>
+						<div class="form_line">
+							<div class="label_tit">최종주행거리</div>
+							{{> cp/text type="tel" class="comma" placeholder="숫자만" r-text="km" inp-title="최종주행거리 입력"}}
+						</div>
+					</div>
+
+					<div class="btn_area">{{> cp/button type="2" size="2" b-text="사진 전송하기" disabled=true }}</div>
+
+					<ul class="list_ty2">
+						<li>사진촬영 기준일과 계기판의 최종 주행거리를 입력해주세요.</li>
+						<li>운행거리 증빙을 위한 계기판 사진은 ODO(총 운행거리 사진)만 인정되며 리셋된 트립 사진은 인정되지 않습니다.</li>
+						<li>최종 주행거리는 전산판독 시 활용되므로 계기판과 동일하게 입력해 주세요.</li>
+					</ul>
+				</div>
+
+				<!-- s: OCR 판독결과 -->
+				<div class="card_item_wrap info_type">
+					<!-- s: 조회 성공 Case -->
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inner_cont">
+								<ul class="card_list_ty1">
+									<li>
+										<div class="title"><strong>확인결과</strong></div>
+										<div class="cont"><strong class="point">성공</strong></div>
+									</li>
+									<li>
+										<div class="title">기준일</div>
+										<div class="cont">2020.01.01</div>
+									</li>
+									<li>
+										<div class="title">최종주행거리</div>
+										<div class="cont">46,100Km</div>
+									</li>
+									<li>
+										<div class="title">마일리지 환급구간</div>
+										<div class="cont">12,000Km</div>
+									</li>
+									<li class="result">
+										<div class="title">예상환급금</div>
+										<div class="cont">
+											<strong class="point">50,430원</strong>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- e: 조회 성공 Case -->
+
+					<!-- s: 조회 실패 Case -->
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inner_cont">
+								<ul class="card_list_ty1">
+									<li>
+										<div class="title"><strong>확인결과</strong></div>
+										<div class="cont"><strong class="point">실패</strong></div>
+									</li>
+								</ul>
+								<ul class="list_ty1">
+									<li>계약상 차량번호와 전산판독된 차량번호가 일치하지 않습니다. 차량번호판 사진을 정확히 촬영하신 후 재등록해주세요.</li>
+									<li>입력하신 최종 주행거리와 전산판독된 계기판 주행거리가 일치하지 않습니다. 계기판 사진을 정확히 촬영하신 후 재등록 해주세요.</li>
+									<li>지속적으로 전산판독에 실패할 경우 다이렉트 콜센터(1566-6782)로 연락주시기 바랍니다.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- e: 조회 실패 Case -->
+				</div>
+				<!-- e: OCR 판독결과 -->
+				<!-- e: 25-04-30 수정 -->
+			</div>
+		</div>
+
+		<div class="info_gray">
+			<p class="info_text">
+				마일리지 특약 사진 등록없이도 갱신보험료 산출 및 계약체결이 가능합니다.
+				<br />
+				(전계약 마일리지 특약 정산은 만기일 +30일까지 진행하실 수 있습니다.)
+			</p>
+		</div>
+	</div>
+
+	<!-- s: 꼭 알아두세요 -->
+	{{#> cp/notice dp-active=true }}
+	<ul class="list_ty1">
+		<li>계기판(총주행거리 ODO표시)사진 1매 및 차량번호판 사진 1매가 필요합니다.</li>
+		<li>최종정보 등록 후 정산결과(환급여부)는 입력당일 문자로 안내됩니다.</li>
+		<li>
+			문자를 통해 송부하신 최종주행거리 정보는 전산판돈 후 자동정산 처리되며, 환급금 발생시 보험료계산화면에 차감금액으로 안내해 드립니다.
+			<br />
+			(사진 및 주행거리정보를 정확하게 입력해주세요)
+		</li>
+		<li>전산판독에 실패한 경우 수납방법에 따라 10일 이내 신용카드 부분취소 또는 계좌환급으로 정산하여 드립니다.(환급금 발생시)</li>
+		<li>관련 문의는 대표콜센터(1588-5656)로 연락주시기 바립니다.</li>
+	</ul>
+	{{/ cp/notice }}
+	<!-- e: 꼭 알아두세요 -->
+	<!-- e: 25-04-22 수정 -->
+</div>
+
+<div class="popup_bottom">
+	<!-- s: 25-04-22 수정 -->
+	<div class="btn_area">{{> cp/button type="1" size="2" b-text="확인" }}</div>
+	<div class="btn_area between">{{> cp/checkbox id="checkbox1" labelname="다시 보지 않기" }} {{> cp/button type="3" size="4" b-text="닫기"}}</div>
+	<!-- e: 25-04-22 수정 -->
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+{{/ layout/default }}

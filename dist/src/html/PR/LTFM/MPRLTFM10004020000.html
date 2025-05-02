@@ -1,0 +1,60 @@
+<!---
+화면번호 : MPRLTFM10004020000
+경로 : 보험료 확인 > 가입조건 변경
+-->
+{{#> layout/default page-title="보험료 확인 | 상품"}}
+
+<!-- s: Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="담보 변경" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<p class="title_sub">화재손해(주택)(건물)</p>
+		<div class="opt_select_wrap">
+			<span class="opt_select_wrap_live" aria-live="polite"></span>
+			<div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
+				<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+				<div class="opt_select opt_select_w1">
+					<input type="radio" name="r1" id="r1_s1" />
+					<label for="r1_s1">1억원</label>
+				</div>
+				<div class="opt_select opt_select_w1">
+					<input type="radio" name="r1" id="r1_s2" />
+					<label for="r1_s2">1억1천만원</label>
+				</div>
+				<div class="opt_select opt_select_w1">
+					<input type="radio" name="r1" id="r1_s3" checked />
+					<label for="r1_s3">1억2천만원</label>
+				</div>
+				<div class="opt_select opt_select_w1">
+					<input type="radio" name="r1" id="r1_s4" />
+					<label for="r1_s4">1억3천만원</label>
+				</div>
+				<div class="opt_select opt_select_w1">
+					<input type="radio" name="r1" id="r1_s5" />
+					<label for="r1_s5">1억4천만원</label>
+				</div>
+				<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+			</div>
+			<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_left" aria-label="이전 옵션"></button>
+			<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
+		</div>
+
+		{{#> cp/notice dp-active=true dp-title="보장내용을 확인해 보세요" }}
+		<!-- s: 25-04-25 수정 -->
+		<ul class="list_depth">
+			<li>
+				화재, 폭발, 파열로 인해 보험목적에 손해 및 소방손해,피난손해가 발생한 경우 특약가입금액 한도 실손보상
+				<br />
+				(잔존물제거비용 : 화재손해액의 10%한도 실손보상, ※화재손해보험금과 잔존물제거비용의 합계액은 특약가입금액 한도)
+			</li>
+		</ul>
+		<!-- e: 25-04-25 수정 -->
+		{{/ cp/notice }}
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">{{> cp/button type="1" size="2" b-text="가입 담보 변경하기" }}</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: Bottom 팝업 -->
+{{/ layout/default }}

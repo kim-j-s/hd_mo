@@ -1,0 +1,29 @@
+{{#> layout/guide }}
+<div class="guide_h1">달력</div>
+<div class="guide_h4">단일 선택 달력 - datepicker 인풋영역 선택</div>
+{{> cp/text cal=true placeholder="날짜를 선택하세요" }}
+
+<div class="guide_h4">단일 선택 달력 - datepicker 인풋영역 선택 - input 클래스 추가 시</div>
+<br />
+{{> cp/text cal=true inpclass="cc" }}
+
+<div class="guide_h4">단일 선택 달력 - readonly</div>
+
+{{> cp/text cal=true placeholder="날짜를 선택하세요" value="2025.04.09" readonly="true" }}
+
+<div class="guide_h4">단일 선택 달력 - disabled</div>
+{{> cp/text cal=true placeholder="날짜를 선택하세요" disabled="true"}}
+
+<div class="guide_h4" style="background-color: red; color: #fff">단일 선택 달력 - 버튼호출 - 미 사용 시 후 삭제 예정</div>
+<div class="" style="font-size: 16px">
+	<button type="button" class="btn popup_open" onclick="openHDPopup(this,'calendar');" title="Bottom 선택 팝업열기"><span>달력 호출</span></button>
+</div>
+
+<div class="guide_h4">기간 선택 달력</div>
+<div class="range_calrendar">{{> cp/text cal=true placeholder="날짜를 선택하세요" }} {{> cp/text cal=true placeholder="날짜를 선택하세요" }}</div>
+
+{{#> popup/popup_bottom popup-id="calendar" no-header=true }}
+<div class="popup_cont">
+	<div class="popup_content">{{> cp/calendar}}</div>
+</div>
+{{/ popup/popup_bottom}} {{/ layout/guide }}

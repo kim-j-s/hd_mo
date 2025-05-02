@@ -1,0 +1,151 @@
+{{#> layout/guide }}
+
+<div class="guide_h1">Tooltip</div>
+<div class="guide_h4">Defalut (Bottom)</div>
+
+<!-- 기본 툴팁 샘플 -->
+<div class="guide_discription">기본</div>
+{{#> cp/tooltip trigger-icon="popover_help"}}
+<p>툴팁샘플입니다.</p>
+{{/ cp/tooltip}}
+
+<div class="guide_discription">[툴팁내용 1줄일 때]</div>
+<div>
+	텍스트 텍스트 텍스트 텍스트텍스트
+	<br />
+	텍스트텍스트텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트 {{> cp/tooltip text="
+	<p>내용을 text속성으로 넣었습니다.</p>
+	" trigger-icon="popover_help"}}
+</div>
+
+<div class="guide_discription">[툴팁내용 여러 줄일 때]</div>
+<div>
+	{{#> cp/tooltip trigger-icon="popover_help" title="팝업타이틀"}}
+	<p>내용을 partial로 넣었습니다.</p>
+	<p>
+		내용입니다.
+		<br />
+		내용입니다.
+		<br />
+		내용입니다.
+		<br />
+		내용입니다.
+		<br />
+		내용입니다.
+	</p>
+	{{/ cp/tooltip}} 텍스트텍스트텍스트
+</div>
+
+<br />
+<br />
+
+<div>
+	<span class="tooltip_wrap_text">
+		텍스트 텍스트 텍스트 텍스트텍스트
+		<br />
+		텍스트텍스트텍스트텍스트 텍스트텍스트 {{#> cp/tooltip trigger-icon="popover_help" title="팝업타이틀" link="/example.html"}}
+		<p>내용을 partial로 넣었습니다.</p>
+		<p>
+			내용입니다.
+			<br />
+			내용입니다.
+			<br />
+			내용입니다.
+			<br />
+			내용입니다.
+			<br />
+			내용입니다.
+			<br />
+		</p>
+		{{/ cp/tooltip}} 텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트
+	</span>
+</div>
+
+<div class="guide_h4">Top (t-class="top")</div>
+<div>
+	<span>
+		텍스트 텍스트 텍스트 텍스트텍스트
+		<br />
+		텍스트텍스트텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트
+	</span>
+	{{> cp/tooltip t-class="top" text="
+	<p>position이 top일 때 팝업</p>
+	<p>내용을 text속성으로 넣었습니다.</p>
+	" trigger-icon="popover_help"}}
+</div>
+
+<br />
+<br />
+
+<div>
+	{{#> cp/tooltip t-class="top" trigger-icon="popover_help"}}test{{/ cp/tooltip}} 텍스트 텍스트 텍스트 텍스트텍스트
+	<br />
+	텍스트텍스트텍스트텍스트 텍스트텍스트 {{#> cp/tooltip t-class="top" trigger-icon="popover_help"}}
+	<p>position이 top일 때 팝업</p>
+	<p>내용을 partial로 넣었습니다.</p>
+	{{/ cp/tooltip}} 텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트 텍스트텍스트 {{#> cp/tooltip t-class="top" trigger-icon="popover_help"}}
+	<p>position이 top일 때 팝업</p>
+	<p>내용을 partial로 넣었습니다.</p>
+	{{/ cp/tooltip}}
+</div>
+
+<div class="guide_h4">타이틀 내부 툴팁</div>
+<div class="title_has_tooltip title_h5">
+	{{#> cp/tooltip trigger-icon="popover_help" t-class="top"}}테스트{{/ cp/tooltip}}차량이 특정용도 차량(이동진료차 등) {{#> cp/tooltip trigger-icon="popover_help" t-class="top"}}
+	<p class="tooltip_title">특정용도 차량</p>
+	<p class="tooltip_desc">특정한 용도에 사용되는 자동차로서 이동진료차, 이동도서관차, 채혈차, 방송중계차, 혈액수송차, 검사측정차, 현금수송차, 방역차, 소독차, 이동우편차, 영화촬영차, 이동판매차, 충전차, 배전차, 발전차등 이와 유사한 형태로 사용되는 자동차 (단, 관련 장비가 차체에 부착된 경우에만 해당되며, 화물차에 장비를 싣고 다니는 경우에는 해당되지 않습니다.)</p>
+	{{/ cp/tooltip}} 교습용 차량입니까?{{#> cp/tooltip trigger-icon="popover_help" title="교습용 차량"}}
+	<p class="tooltip_desc">차량이 인가된 자동차학원 또는 자동차학원 대표자가 소유하면서, 운전교습 및 도로주행교육 및 시험에 사용되는 자동차</p>
+	{{/ cp/tooltip}}
+</div>
+<div class="guide_h4">화살표 팝업</div>
+<ul class="special_contract_list">
+	<li>
+		<div class="check_flex_box">
+			<div class="check_box">{{> cp/checkbox id="agreement01-1" labelname="상해간병비&middot;사망담보 특약" }}</div>
+			<div class="money_box">
+				<div class="money">
+					<span>15,100</span>
+					원
+				</div>
+				{{> cp/button_question question-icon="arrow" pop_id="pop_type01" question_tit="상해간병비&middot;사망담보 특약" }}
+			</div>
+		</div>
+	</li>
+</ul>
+<div class="guide_h4">말풍선 기본</div>
+<div class="guide_box">
+	position: relative;
+	<span class="tip_item top">
+		<span class="tip_item_cont">
+			.tip_item {
+			<br />
+			--tl: 40px; or left: 40px;//풍선 위치
+			<br />
+			.tip_item_cont { //화살표 위치
+			<br />
+			&::after, &::before { left: calc(var(--tl) + 50%); or left: 50%; }
+			<br />
+			}
+			<br />
+			}
+		</span>
+	</span>
+	<span class="tip_item bottom">
+		<span class="tip_item_cont">
+			.tip_item {
+			<br />
+			--tl: 40px; or left: 40px;//풍선 위치
+			<br />
+			.tip_item_cont { //화살표 위치
+			<br />
+			&::after, &::before { left: calc(var(--tl) + 50%); or left: 50%; }
+			<br />
+			}
+			<br />
+			}
+		</span>
+	</span>
+</div>
+
+{{/ layout/guide }}

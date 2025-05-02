@@ -1,0 +1,197 @@
+/* 인증방법 선택 */
+* + .cert_select_list {
+	margin-top: 52px;
+}
+.cert_select_list {
+	> li {
+		+ li {
+			margin-top: 16px;
+		}
+	}
+	.cert_select_item {
+		position: relative;
+		display: block;
+		padding: 19px 0px;
+		border-radius: 16px;
+		border: 1px solid var(--color-button-tertiary-border);
+		background: url(../images/icon/arrowRight_ty3.svg) no-repeat right 19px center;
+
+		> .text {
+			position: relative;
+			display: block;
+			padding: 0 39px 0 51px;
+			font-size: var(--font-size-body-medium);
+			color: var(--gray-8003-e-4-a-58);
+			line-height: 24px;
+			&::before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 23px;
+				width: 24px;
+				height: 24px;
+				transform: translateY(-50%);
+				background-repeat: no-repeat;
+				background-position: center center;
+			}
+
+			.tip_item {
+				width: 100%;
+			}
+		}
+
+		&.pin {
+			> .text {
+				&::before {
+					background-image: url(../images/common/cert/icon_cert_pin.svg);
+				}
+			}
+		}
+		&.bio {
+			> .text {
+				&::before {
+					background-image: url(../images/common/cert/icon_cert_bio.svg);
+				}
+			}
+		}
+		&.phone {
+			> .text {
+				&::before {
+					background-image: url(../images/common/cert/icon_cert_phone.svg);
+				}
+			}
+		}
+		&.kakao {
+			> .text {
+				&::before {
+					background-image: url(../images/common/cert/icon_cert_kakao.svg);
+				}
+			}
+		}
+		&.common_cert {
+			> .text {
+				&::before {
+					background-image: url(../images/common/cert/icon_cert_common_cert.svg);
+				}
+			}
+		}
+		&.fin_cert {
+			> .text {
+				&::before {
+					background-image: url(../images/common/cert/icon_cert_fin_cert.svg);
+				}
+			}
+		}
+	}
+}
+
+/* PIN 인증 */
+.pin_enter {
+	position: relative;
+	height: 72px;
+	+ .btn_area {
+		margin-top: 16px;
+	}
+}
+
+.pin_enter_error_msg {
+	margin-top: 8px;
+	font-size: 0;
+	text-align: center;
+	> .text {
+		display: inline-block;
+		padding-left: 20px;
+		font-size: var(--font-size-label-medium);
+		color: var(--color-text-danger);
+		background: url(../images/icon/icon_error_red.svg) no-repeat left center / 16px auto;
+	}
+}
+/* PIN 인증 */
+
+/* 회원탈퇴 */
+//
+.miss_service_list {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 8px;
+	> li {
+		.item {
+			display: block;
+			height: 100%;
+			padding: 24px;
+			border-radius: 24px;
+			border: 1px solid var(--color-border-gray-light);
+			.text {
+				display: block;
+				padding-top: 40px;
+				font-size: var(--font-size-body-medium);
+				color: var(--color-text-bolder);
+				background-repeat: no-repeat;
+				background-position: left top;
+				background-size: 40px auto;
+			}
+			&.item_ty1 {
+				.text {
+					background-image: url(../images/login/icon_service_01.svg);
+				}
+			}
+			&.item_ty2 {
+				.text {
+					background-image: url(../images/login/icon_service_02.svg);
+				}
+			}
+			&.item_ty3 {
+				.text {
+					background-image: url(../images/login/icon_service_03.svg);
+				}
+			}
+			&.item_ty4 {
+				.text {
+					background-image: url(../images/login/icon_service_04.svg);
+				}
+			}
+		}
+	}
+}
+/* 회원탈퇴 */
+
+// 확대 축수
+.zoom_wrap {
+}
+.zoom_control {
+	text-align: right;
+	> .inner {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		> .text {
+			font-size: var(--font-size-label-medium);
+		}
+		.zoom_control_btns {
+			font-size: 0;
+			border-radius: var(--radius-medium1);
+			border: 1px solid var(--color-button-tertiary-border);
+			.zcb {
+				width: 40px;
+				height: 32px;
+				font-size: 0;
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-color: transparent;
+				+ .zcb {
+					border-left: 1px solid var(--color-button-tertiary-border);
+				}
+				&.z_up {
+					background-image: url(../images/icon/icon_plus.svg);
+				}
+				&.z_down {
+					background-image: url(../images/icon/icon_minus.svg);
+				}
+			}
+		}
+	}
+}
+
+.zoom_content {
+	margin-top: 32px;
+}

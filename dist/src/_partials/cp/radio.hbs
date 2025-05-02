@@ -1,0 +1,22 @@
+{{!-- 
+	id : id 배정
+	name : name 배정
+	labelname : label 배정
+--}}
+<div class="inp_radio {{#if rd-class}}{{{rd-class}}}{{/if}}">
+	<input type="radio"
+		id="{{rd-id}}"
+		name="{{name}}"
+		{{#if rdip-class}}class="{{rdip-class}}"{{/if}}
+		{{#if checked}}checked{{/if}}
+		{{#if disabled}}disabled{{/if}}
+		{{#if data}}data-{{{data}}}{{/if}}
+	>
+	<label for="{{rd-id}}">
+		<span class="label_cont">
+			{{{labelname}}}
+			{{#if labelcont}}<span class="sub_g_txt">{{{labelcont}}}</span>{{/if}}
+		</span>
+	</label>
+	{{#if @partial-block}}{{> @partial-block }}{{/if}}
+</div>

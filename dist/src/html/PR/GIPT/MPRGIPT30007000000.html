@@ -1,0 +1,80 @@
+<!---
+화면번호 : MPRGIPT30007000000
+경로 : 하이펫보험 > 계약자정보 입력
+-->
+{{#> layout/default page-title="계약자정보 입력 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="하이펫보험(1~3년)" h-back=true }}
+
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
+				<h2 class="title_h2">
+					계약자
+					<br />
+					<strong>정보를 입력</strong>
+					해주세요
+				</h2>
+			</div>
+			<!-- e: content_top -->
+
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">이름</div>
+					{{> cp/text value="김현대" inp-title="이름 입력" readonly=true }}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">주민등록번호</div>
+					<div class="comp_wrap birth">
+						{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" }}
+						<span class="dash">-</span>
+						<div class="id_pass_box">
+							{{> cp/text type="tel" minlength="1" maxlength="1" placeholder="●" inp-title="주민등록번호 뒷1자리 입력" no_del="flase" }}
+							<div class="id_pass">●●●●●●</div>
+						</div>
+					</div>
+				</div>
+				<div class="form_line">
+					<div class="label_tit">휴대폰번호</div>
+					{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" readonly=true }}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">이메일</div>
+					{{> cp/text placeholder="이메일을 입력하세요" inp-title="이메일 입력" }}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">우편물 수령지</div>
+					<div class="radio_group_wrap">{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt1" name="radio_address" labelname="집" checked=true }} {{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt2" name="radio_address" labelname="직장" }}</div>
+					{{> cp/address ad_ph="주소를 입력해 주세요." case2=true}}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">보험계약서류 수령방법</div>
+					<div class="radio_group_wrap">{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt3" name="radio_method1" labelname="모바일" checked=true }} {{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt4" name="radio_method1" labelname="이메일" }}</div>
+				</div>
+			</div>
+		</div>
+		<!-- s: 꼭 알아두세요 -->
+		{{#> cp/notice dp-active="active" }}
+		<ul class="list_ty1">
+			<li>입력한 정보로 개인정보도 함께 변경돼요.</li>
+			<li>보험계약서류를 보내드리니 정확하게 입력해주세요.</li>
+		</ul>
+		{{/ cp/notice }}
+		<!-- e: 꼭 알아두세요 -->
+	</div>
+
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			<!-- {{> cp/button type="1" size="2" b-text="이메일을 입력해주세요" disabled=true }} -->
+			{{> cp/button type="1" size="2" b-text="모두 입력했어요"}}
+		</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
+</div>
+
+<!-- s: popup area -->
+<!-- e: popup area -->
+
+{{/ layout/default }}

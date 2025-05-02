@@ -1,0 +1,21 @@
+{{!-- /**
+ * @name : notice
+ * @description : notice 컴포넌트
+ * @property
+ *  - dp-active : 활성화 상태
+ *  - dp-head-class : notice head 부분 class 배정
+ *  - dp-cont-class : notice cont 부분 class 배정
+ */
+ --}}
+<div class="bottom_fix_notice {{#if notice-class}}{{notice-class}}{{/if}}">
+	<div class="acd_item">
+		<div class="acd_head{{#if dp-active}} active{{/if}}{{#if dp-head-class}} {{dp-head-class}}{{/if}}">
+			<button type="button" class="acd_btn" {{#if dp-active}}aria-expanded="true"{{else}}aria-expanded="false"{{/if}}><span>{{#if dp-title}}{{dp-title}}{{else}}꼭 알아두세요{{/if}}</span></button>
+		</div>
+		<div class="acd_cont{{#if dp-cont-class}} {{dp-cont-class}}{{/if}}">
+			<div class="inner"{{#if dp-active}} style="display:block;"{{/if}}>
+				{{> @partial-block }}
+			</div>
+		</div>
+	</div>
+</div>
