@@ -2335,6 +2335,9 @@ ul + .form_group_wrap {
 	font-size: var(--font-size-heading-medium);
 	font-weight: 700;
 }
+.pop_title_h1 + .info_text {
+	margin-top: 0.8rem;
+}
 .pop_title_h2 {
 	margin-bottom: 1.6rem;
 	font-size: var(--font-size-heading-small);
@@ -2453,6 +2456,18 @@ ul + .form_group_wrap {
 }
 .info_text + .file_attach_box {
 	margin-top: 2rem;
+}
+.info_text + .btn_area {
+	margin: 0.8rem 0 3.2rem;
+}
+.info_text + .btn_area + .info_text {
+	margin-bottom: 3.2rem;
+}
+.info_text + .btn_area + .checkbox_group_wrap {
+	margin-top: 2rem;
+}
+.info_text + .special_contract_list {
+	margin-top: 3.2rem;
 }
 .info_gray + .btn_area {
 	margin-top: 1.6rem;
@@ -2619,15 +2634,9 @@ ul + .form_group_wrap {
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	gap: 0.8rem;
-}
-.special_contract_list > li .check_flex_box .check_box {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	align-items: flex-start;
 	gap: 0.8rem;
 }
 .special_contract_list > li .check_flex_box .money_box {
@@ -2651,6 +2660,28 @@ ul + .form_group_wrap {
 }
 .special_contract_list > li .btn_add {
 	margin: 0.4rem 0 1.6rem 2.4rem;
+}
+.special_contract_list.radio .check_flex_box .money_box {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	gap: 0;
+	text-align: right;
+}
+.special_contract_list.radio .check_flex_box .money_box .money {
+	color: var(--color-text-basic);
+}
+.special_contract_list.radio .check_flex_box .money_box .trend {
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: end;
+}
+.special_contract_list.radio .check_flex_box .money_box .trend:not(.up, .down) {
+	color: var(--color-text-disabled);
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: end;
 }
 /* 운전자보험 - 보험료 결제 */
 .insurance_payment_area {
