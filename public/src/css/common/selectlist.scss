@@ -1,0 +1,209 @@
+* {
+	& + .opt_select_list {
+		&.opt_case1 {
+			margin-top: 32px;
+		}
+		&.opt_case2 {
+			margin-top: 32px;
+		}
+	}
+}
+
+.opt_select_list {
+	// opt_case1
+	&.opt_case1 {
+		.option {
+			padding: 5px 0;
+			cursor: pointer;
+			> .text {
+				position: relative;
+				display: block;
+				padding: 23px 63px 23px 19px;
+				font-size: var(--font-size-body-medium);
+				color: #3E4A58;
+				line-height: 24px;
+				border-radius: 16px;
+				border: 1px solid #E1E3EA;
+				background: url(../images/icon/arrowRight_ty3.svg) no-repeat right 20px center ;
+			}
+
+			&.active {
+				> .text {
+					padding: 22px 62px 22px 18px;
+					border: 2px solid var(--color-border-primary);
+				}
+			}
+
+			& ~ .option {
+				margin-top: 12px;
+			}
+		}
+	
+	}
+	// opt_case2
+	&.opt_case2 {
+		.option {
+			display: block;
+			border-top: 1px solid #E6E8EA;
+			> .text {
+				display: block;
+				padding: 24px 30px 24px 0;
+				font-size: var(--font-size-body-medium);
+				background: url(../images/icon/arrowRight_ty3.svg) no-repeat center right / 24px auto;
+				.point {
+					color: var(--color-text-primary-bold);
+				}
+			}
+
+
+			&.active {
+			}
+			&.fixed {
+				> .text {
+					&::after {
+						content: '입력';
+						display: inline-block;
+						margin-left: 4px;
+						padding: 0 8px;
+						font-size: var(--font-size-label-small);
+						color: var(--color-text-subtle);
+						line-height: 20px;
+						border-radius: 8px;
+						background: var(--color-element-gray-lighter);
+					}
+				}
+			}
+			// & ~ .option {
+			// 	margin-top: 10px;
+			// }
+
+
+		}
+	
+	}
+	// opt_case3
+	&.opt_case3 {
+		margin: 0 -24px;
+		.option {
+			display: flex;
+			align-items: center;
+			padding: 0 24px;
+
+			> .text {
+				flex: 1;
+				position: relative;
+				display: block;
+				padding: 16px 0;
+				font-size: var(--font-size-body-medium);
+				color: var(--color-text-basic);
+				line-height: 24px;
+			}
+			> .desc {
+				padding: 16px 0;
+				font-size: var(--font-size-body-medium);
+				color: var(--color-text-basic);
+				line-height: 24px;
+			}
+
+			&.active {
+				background-color: var(--color-action-secondary-selected);
+				> .text {
+				}
+			}
+		}
+	
+	}
+	// opt_case4 {
+	&.opt_case4 {
+		.option {
+			display: block;
+			padding: 24px 0;
+			border-top: 1px solid #E6E8EA;
+			> .item {
+				display: flex;
+				align-items: flex-start;
+				justify-content: space-between;
+				gap: 0 8px;
+				font-size: var(--font-size-body-medium);
+				color: var(--color-text-basic);
+				.data_l {
+					display: flex;
+					flex-direction: column;
+					gap: 4px 0;
+					padding-top: 2px;
+					.name {
+						flex: none;
+						display: block;
+						font-size: var(--font-size-label-medium);
+					}
+					.date {
+						flex: none;
+						display: block;
+						font-size: var(--font-size-body-xsmall);
+						color: var(--color-text-subtle);
+					}
+
+				}
+				.data_r {
+					text-align: right;
+					.price {
+						display: block;
+						font-weight: 700;
+						font-size: var(--font-size-body-medium);
+						color: var(--color-text-primary-bold);
+					}
+
+				}
+			}
+			&:last-child {
+				border-bottom: 1px solid #E6E8EA;
+			}
+		}
+		a.option {
+			padding: 24px 32px 24px 0;
+			background: url(../images/icon/arrowRight_ty3.svg) no-repeat center right / 24px auto;
+		}
+
+		+ .info_gray {
+			margin-top: 16px;
+		}
+
+		+ .btn_area {
+			margin-top: 24px;
+		}
+	
+	}
+
+	// opt_case5 {
+	&.opt_case5 {
+		> li {
+			.option {
+				display: block;
+				padding: 16px 32px 16px 0;
+				border-top: 1px solid #E6E8EA;
+				background: url(../images/icon/arrowRight_ty3.svg) no-repeat center right / 24px auto;
+				.opi_t1 {
+					display: block;
+					font-size: var(--font-size-body-medium);
+					
+				}
+				.opi_t2 {
+					display: block;
+					font-size: var(--font-size-body-small);
+					color: var(--color-text-subtle);
+				}
+			}
+			&:last-child {
+				.option {
+					border-bottom: 1px solid #E6E8EA;
+				}
+			}
+		}
+
+		+ .title_h3 {
+			margin-top: 40px;
+		}
+	}
+}
+
+

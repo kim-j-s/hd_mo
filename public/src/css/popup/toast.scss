@@ -1,0 +1,25 @@
+.toast_wrap {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding: 10px;
+	visibility: hidden;
+	opacity:0;
+	transition: all .3s ease-in;
+	z-index: 1001;
+	&.active {
+		visibility: visible;
+		opacity:1;
+	}
+
+	.toast_msg {
+		display: block;
+		padding: 16px;
+		font-size: var(--font-size-label-medium);
+		line-height: 20px;
+		color: #E6EBF2;
+		text-align: center;
+		border-radius: var(--radius-medium3);
+		background-color: var(--color-element-gray-darker);
+	}
+}

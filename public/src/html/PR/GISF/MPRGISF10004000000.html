@@ -1,0 +1,216 @@
+{{#> layout/default page-title="보험료 확인 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="보험료 확인" h-back=true }}
+
+	<div id="container" class="container">
+		<div class="content">
+			<div class="guarantee_container detail_only">
+					<!-- s: guarantee_detail -->
+					<div class="guarantee_detail">
+						<div class="guarantee_detail_top">
+							<div class="gd_item">
+								<div class="rdo_box">
+									<input type="radio" name="d_r" id="d_r_01" aria-labelledby="d_rdo_01">
+									<label for="d_r_01"></label>
+								</div>
+								<div class="gdi_content" aria-labelledby="d_rdo_01">
+									<div class="badge_wrap">
+										<span class="hd_badge outline solid_pastel c_info size_m">40개 보장</span>
+									</div>
+									<p class="head_text">
+										개인 부담분
+										<span class="price">
+											<strong class="price_num">13,900</strong><span class="won">원</span>
+										</span>
+									</p>
+									<div class="gdi_info_list">
+										<dl>
+											<dt>정부부담분</dt>
+											<dd><strong class="point">12,700원</strong></dd>
+										</dl>
+										<dl>
+											<dt>지자체부담분</dt>
+											<dd><strong class="point">2,700원</strong></dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+
+							<div class="guarantee_detail_mini">
+								<div class="item_wrap">
+								<span class="i_data">
+									<span class="text">보험기간</span>
+									<strong class="data">2025.04.16~2026.04.16</strong>
+								</span>
+								<span class="i_data">
+									<span class="text">납입 방법</span>
+									<strong class="data">일시납</strong>
+								</span>
+								</div>
+							</div>
+						</div>
+
+						<!-- 간편정보 -->
+						<div class="simple_info_wrap">
+							<div class="simple_info_item">
+								<ul class="sii_list">
+									<li>
+										<span class="sii_list_l">보험료</span>
+										<span class="sii_list_r">
+											<strong class="price">24,900원</strong>
+										</span>
+									</li>
+									<li>
+										<span class="sii_list_l">
+											<span class="text">
+												보험기간
+											</span>
+										</span>
+										<span class="sii_list_r">
+											<span class="text">
+												<strong class="bold">2025.04.16~2026.04.16</strong>
+											</span>
+											<span class="pipe">
+												<strong class="bold">일시납</strong>
+											</span>
+										</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- 간편정보 -->
+						 
+						<div class="gd_middle_ba btn_area center">
+							{{> cp/button type="3" size="3" b-text="계산 결과 문자로 받기" popup="ex_popup_full" btn-title="전체 팝업"}}
+						</div>
+
+						<div class="coverage_item_wrap">
+							<ul class="coverage_item_list">
+								<li class="list">
+									<div class="item_title">풍수설해(지진)담보</div>
+									<div class="sub_txt_area">
+										{{> cp/linkButton bl_class="price_btn" bl_text="12,322 만원" pop_id="pop_type01" question_tit="가입금액 변경" }}
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<!-- s: 꼭 알아두세요 -->
+						{{#> cp/notice dp-active=true }}
+							<ul class="list_ty1">
+								<li>가입금액은 ㎡당 최대 백만원(풍수해·지진재해보험III 기준)으로 설정되어 있으며, 고객의 결정으로 일정범위(최소 50%~최대 150%)내에서 가입금액 조정이 가능합니다.</li>
+								<li>단, 가입금액은 만원 단위로 입력 가능하며, <span class="point">가입금액이 보험가액보다 낮은 경우 비례 보상 될 수 있습니다.</span></li>
+								<li>보험개시일은 가입일로부터 7일 후 부터 개시되며 보험기간은 1년입니다.</li>
+								<li>첫날 24시에 시작하여 마지막 날 24시에 종료됩니다.</li>
+							</ul>
+						{{/ cp/notice }}
+						<!-- e: 꼭 알아두세요 -->
+
+					</div>
+					<!-- e: guarantee_detail -->
+			</div>			
+		</div>
+	</div>
+
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="2" b-text="원하시는 보장을 선택해 주세요" disabled=true }}
+			<!-- {{> cp/button type="1" size="2" b-text="선택한 플랜으로 가입할게요" }} -->
+			<!-- {{> cp/button type="1" size="2" b-text="이대로 가입할게요" }} -->
+		</div>
+	</div>
+</div>
+
+<!-- s: popup area -->
+
+	<!-- s: 특약 팝업 -->
+	{{#> popup/popup_bottom popup-id="sp_pop" popup-title="다음 특약에 가입하시겠어요?" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="info_gray">
+				<h5 class="title_h3">가입할 담보</h5>
+				<ul class="list_depth">
+					<li>차대차사고차량시세하락손실지원(개인자가용)</li>
+					<li>차량유리교체비용지원(개인자가용, 연간1회한)</li>
+				</ul>
+			</div>
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">가입할 자동차번호</div>
+					{{> cp/text inp-title="자동차번호 입력" placeholder="자동차번호 입력" }}
+				</div>
+				<ul class="list_ty2">
+					<li>위 담보 가입 시 고객님 본인소유 개인 자가용(개인명의로 소유하거나 개인명의로 리스한 자동차) 차량정보가 필요합니다.</li>
+					<li>보험증권에 기재된 본인소유 해당 차량에 대해서만 보장됩니다.</li>
+				</ul>
+			</div>
+			<!-- e: popup_content_top -->
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="3" size="2" b-text="가입안함" }}
+			{{> cp/button type="1" size="2" b-text="특약 가입" }}
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: 특약 팝업 -->
+
+	<!-- s: 현대카드 결제 혜택 안내 팝업 -->
+	{{#> popup/popup_bottom popup-id="ex_popup_bottom" popup-title="현대카드 결제 혜택 안내" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="text_sub">현대카드로 1회차 보험료를 결제하면</div>
+			<ol class="circle_list">
+				<li>M포인트 100% 사용 가능(1회차 보험료만)</li>
+				<li>2회차 이후 계속보험료도 현대카드로 결제 가능</li>
+			</ol>
+			<ul class="list_ty4">
+				<li>
+					카드 승인액 한도 내 보유포인트 전액이 차감됩니다.<br>
+					(승인시점 기준 1,000P~3,000P 이용 가능)
+				</li>
+				<li>포인트는 1회차 보험료에 한해서만 사용됩니다.</li>
+				<li>결제대금은 포인트가 차감된 금액으로 청구됩니다.</li>
+				<li>
+					포인트 관련 상담 및 문의<br>
+					현대카드 고객센터(1577-6000)<br>
+					현대카드 홈페이지(www.hyunhaicard.com)
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="2" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: 현대카드 결제 혜택 안내 팝업 -->
+
+	<!-- s: Full 팝업(예시) -->
+	{{#> popup/popup_full popup-id="ex_popup_full" popup-title="팝업 타이틀" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<!-- s: popup_content_top -->
+			<div class="popup_content_top">
+				<h2 class="title_h2">
+					타이틀영역
+				</h2>
+			</div>
+			<!-- e: popup_content_top -->
+
+			버튼클릭시 출력되는 풀 팝업 예시입니다.
+		</div>
+	</div>
+	<div class="popup_bottom">		
+		<div class="btn_area">
+			{{> cp/button type="3" size="2" b-text="취소" }}
+			{{> cp/button type="1" size="2" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_full}}
+	<!-- e: Full 팝업(예시) -->
+
+<!-- e: popup area -->
+{{/ layout/default }}

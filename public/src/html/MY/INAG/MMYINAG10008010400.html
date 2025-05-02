@@ -1,0 +1,164 @@
+{{#> layout/default page-title="해약환급금 | 마이페이지"}}
+	
+
+	<!-- s: popup area -->
+
+	<!-- s: 환급금 조회 -->
+	{{#> popup/popup_full popup-id="pop_type01" popup-title="환급금 조회" popup-active=true}}
+	<div class="popup_cont">
+		<div class="popup_content">
+
+
+			<div class="tab_wrap">
+				<div class="tab_wrap_list_ty1" role="tablist">
+					{{>cp/tab_btn tb-text="환급금 계산" tb-id="ex01" tb-active=true}}
+					{{>cp/tab_btn tb-text="환급금 지급내역" tb-id="ex02"}}
+				</div>
+
+				<!-- s: 환급금 계산 -->
+				<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanelex01">
+					
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">환급금 구분</div>
+							<div class="radio_group_wrap_ty2" role="radiogroup">
+								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt1" name="radio_gt1" labelname="해지" checked=true }}
+								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt2" name="radio_gt1" labelname="만기" }}
+							</div>
+						</div>
+						<div class="form_line">
+							<div class="label_tit">청구일</div>
+							{{> cp/text cal=true value="2025.02.24" }}
+						</div>
+					</div>
+					<div class="btn_area">
+						{{> cp/button type="2" size="2" b-text="조회"}}
+					</div>
+
+					<!-- 조회 후 결과 -->
+
+
+					<div class="divider_ty1"></div>
+
+					<div class="info_gray">
+						<dl>
+							<dt>연금지급기간</dt>
+							<dd>2025.01.02~2053.01.02</dd>
+						</dl>
+						<dl>
+							<dt>수령형태</dt>
+							<dd>1,000,000,000원</dd>
+						</dl>
+						<dl>
+							<dt>총 납입적립보험료</dt>
+							<dd>10%혼합형</dd>
+						</dl>
+						<dl>
+							<dt>수령기간</dt>
+							<dd>30년</dd>
+						</dl>
+						<dl>
+							<dt>수령방법</dt>
+							<dd>매월</dd>
+						</dl>
+						<dl class="footer_dl">
+							<dt>예상 총 납입보험료</dt>
+							<dd class="point">11,685,930원</dd>
+						</dl>
+					</div>
+					<ul class="list_ty2">
+						<li>연금지급기간에 위 수령방법으로 회차별 기준 연금을 수령할 수 있습니다.</li>
+					</ul>
+
+
+					<div class="table_wrap">
+						<table class="table">
+							<caption>예상 총 연금합계 제공</caption>
+							<colgroup>
+								<col style="width:35%;">
+								<col style="width:65%;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">예상 총 연금합계</th>
+									<td>1,000,000,000원</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<ul class="opt_select_list opt_case4">
+						<li class="option">
+							<div class="item">
+								<div class="data_l">
+									<span class="name">1년차(확정)</span>
+									<span class="date">2029년(55세)</span>
+								</div>
+								<div class="data_r">
+									<span class="price">100,000,000원</span>
+								</div>
+							</div>
+						</li>
+						<li class="option">
+							<div class="item">
+								<div class="data_l">
+									<span class="name">2년차(미확정)</span>
+									<span class="date">2030년(56세)</span>
+								</div>
+								<div class="data_r">
+									<span class="price">100,000,000원</span>
+								</div>
+							</div>
+						</li>
+						<li class="option">
+							<div class="item">
+								<div class="data_l">
+									<span class="name">3년차(확정)</span>
+									<span class="date">2031년(57세)</span>
+								</div>
+								<div class="data_r">
+									<span class="price">100,000,000원</span>
+								</div>
+							</div>
+						</li>
+					</ul>
+
+					<div class="divider_ty1"></div>
+
+					<h3 class="title_h3">예상 연금 계산방법 안내</h3>
+					<ul class="list_ty3">
+						<li>기본연금은 수령방법에 따라 지급되며, 그 외 연금은 상품별 정해진 방법에 따라 지급됩니다. </li>
+						<li>유배당연금 증액·가산연금은 배당기준 및 적용이율에 따라 변동될 수 있습니다.</li>
+						<li>이번달 포함 미납(연체)보험료는 오늘 납입(부활)하며, 이후 보험료는 해당 납입에 내는 것을 가정합니다.</li>
+					</ul>
+
+
+					<!-- 조회 후 결과 -->
+
+
+				</div>
+				<!-- e: 환급금 계산 -->
+
+				<!-- s: 환급금 지급내역 -->
+				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanelex02">
+					환급금 지급내역
+				</div>
+				<!-- e: 환급금 지급내역 -->
+			</div>
+
+			
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="2" b-text="확인" }}
+		</div>
+
+
+	</div>
+	{{/ popup/popup_full}}
+	<!-- e: 환급금 조회 -->
+	 
+	<!-- e: popup area -->
+
+{{/ layout/default }}

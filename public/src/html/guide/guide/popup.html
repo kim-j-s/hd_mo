@@ -1,0 +1,647 @@
+{{#> layout/default page-title="팝업 | 가이드"}}
+<div id="wrap" class="wrap">
+	<style>
+		.g_line {
+			padding-bottom: 10px;
+			font-size: 700px;
+			font-size: 20px;
+			line-height: 28px;
+			border-bottom: 1px solid #000;
+		}
+		.g_dom {
+			margin: 20px 0;
+		}
+		.p_guide_wrap_b {
+			display: flex;
+			flex-flow: row wrap;
+			gap: 6px;
+			> * {
+				flex: none;
+			}
+		}
+	</style>
+	{{> layout/header h-title="popup" h-back=true }}
+	<div id="container" class="container">
+		<div class="content">
+			<div class="g_line">
+				선택된 정보 입력되는 케이스
+			</div>
+			<div class="g_dom">
+				<div class="hd_btn hd_btn_ty_2 hd_btn_s_5" role="button" tabindex="0" onclick="openHDPopup(this, 'pop_type05')">
+					<span>div로 만들어지는 케이스</span>
+				</div>
+			</div>
+
+			<div class="g_line">
+				일반 팝업 호출 케이스
+			</div>
+			<div class="g_dom">
+				<div class="p_guide_wrap_b">
+					{{> cp/button type="2" size="5" b-text="Full 팝업열기" popup="pop_type01" }}
+					{{> cp/button type="2" size="5" b-text="Layer 팝업열기" popup="pop_type02" }}
+					{{> cp/button type="2" size="5" b-text="Bottom 팝업열기1" popup="pop_type03" }}
+					{{> cp/button type="2" size="5" b-text="Bottom 팝업열기2" popup="pop_type03" }}
+				</div>
+			</div>			
+
+			<div class="g_line">
+				선택 목록 팝업 케이스
+			</div>
+			<div class="g_dom">
+				<div class="p_guide_wrap_b">
+					{{> cp/button type="2" size="5" b-text="Bottom 선택 팝업열기 유형 1" popup="pop_type05" b-title="상황별 타이틀 입력 필요"}}				
+					{{> cp/button type="2" size="5" b-text="Bottom 선택 팝업열기 유형 2" popup="search_list_bottom_ty1" b-title="상황별 타이틀 입력 필요"}}
+					{{> cp/button type="2" size="5" b-text="Bottom 선택 팝업열기 유형 3" popup="pop_type07" b-title="상황별 타이틀 입력 필요"}}
+					{{> cp/button type="2" size="5" b-text="Bottom 선택 팝업열기 유형 4" popup="search_list_bottom_ty3" b-title="상황별 타이틀 입력 필요"}}
+					{{> cp/button type="2" size="5" b-text="검색어 입력 후 리스트(Bottom 유형2)" popup="search_list_bottom_ty2" b-title="상황별 타이틀 입력 필요"}}
+				</div>
+			</div>
+
+			<div class="g_line">
+				옵션 선택 팝업 케이스
+			</div>
+			<div class="g_dom">
+				<div class="p_guide_wrap_b">
+					{{> cp/button type="2" size="5" b-text="Bottom 옵션 선택 팝업열기 유형 1" popup="pop_type08" b-title="상황별 타이틀 입력 필요"}}
+				</div>
+			</div>
+
+			<div class="g_line">은행/증권사, 카드사 선택 팝업 케이스</div>
+			<div class="g_dom">
+				<div class="p_guide_wrap_b">
+					{{> cp/button type="2" size="5" b-text="은행/증권사 선택 팝업" popup="bank_select_pop" b-title="상황별 타이틀 입력 필요"}}				
+					{{> cp/button type="2" size="5" b-text="카드사 선택 팝업" popup="card_select_pop" b-title="상황별 타이틀 입력 필요"}}
+				</div>
+			</div>
+
+			<div class="g_line">아이콘 버튼 팝업 호출</div>
+			<div class="g_dom">
+				<div class="p_guide_wrap_b">
+					{{> cp/button_question pop_id="pop_type03" question_tit="상해간병비&middot;사망담보 특약" }}
+				</div>
+			</div>
+
+			<div class="g_line">키패드 예시 - 추후 삭제 예정</div>
+			<div class="g_dom">
+				<div class="p_guide_wrap_b">
+					{{> cp/button type="2" size="5" b-text="키패드 예시" popup="p1" b-title="입력정보 케이스"}}
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+	<!-- 추후 적용 문구
+	선택목록 :
+	호출 버튼 : 이용구분 시 : 이용구분 선택목록 보기
+	호출 버튼 : 선택된 요소가 존재하는 경우 : 이용구분 선택목록 보기 : 선택된 요소명 선택됨 -> 선택됨은 sr_only로 처리
+	추후 적용 문구 -->
+	{{> layout/footer }}
+</div>
+
+<!-- s: popup area -->
+ <div class="popup_area">
+
+	<!-- s: Full 팝업 - 키패드 예시 - 추후 삭제 예정 -->
+	{{#> popup/popup_full popup-id="p1" popup-title="팝업 타이틀" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<!-- s: popup_content_top -->
+			<div class="popup_content_top">
+				<h2 class="title_h2">
+					<strong>고객정보 관리 및 가입 설계를 위해<br> 동의</strong>가 필요합니다.
+				</h2>
+			</div>
+			<!-- e: popup_content_top -->
+
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">피보험자(미성년 자녀) 이름 dsfsdf</div>
+					{{> cp/text inp-title="피보험자(미성년 자녀) 이름 입력"}}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">주민등록번호</div>
+					<div class="comp_wrap birth">
+						{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력"  }}
+						<span class="dash">-</span>
+						<div class="comp_wrap_keypad_call">
+							<button type="button" class="btn keypad_call" role="textbox" title="주민등록번호 뒷자리 입력"><span class="text">뒷자리</span></button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="divider_ty1"></div>
+
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">계약자 이름</div>
+					{{> cp/text placeholder="입력해주세요" inp-title="계약자 이름 입력"}}
+				</div>
+				<div class="form_line xxx">
+					<div class="label_tit">주민등록번호</div>
+					<div class="comp_wrap birth">
+						{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력"  }}
+						<span class="dash">-</span>
+						<div class="comp_wrap_keypad_call">
+							<div class="form_wrap form_key">
+								<div class="pin_area" title="주민등록번호 뒤7자리" role="textbox">
+									<strong class="ergAt dot_mark active"></strong>
+									<strong class="ergAt dot_mark active"></strong>
+									<strong class="ergAt dot_mark"></strong>
+									<strong class="ergAt dot_mark"></strong>
+									<strong class="ergAt dot_mark"></strong>
+									<strong class="ergAt dot_mark"></strong>
+									<strong class="ergAt dot_mark"></strong>
+									<input type="password" name="" id="" autocomplete="new-password" style="display: none;">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+		</div>
+	</div>
+	{{/ popup/popup_full}}
+	<!-- e: Full 팝업 - 키패드 예시 - 추후 삭제 예정 -->
+
+	<!-- s: Full 팝업 -->
+	{{#> popup/popup_full popup-id="pop_type01" popup-title="팝업 타이틀" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<!-- s: popup_content_top -->
+			<div class="popup_content_top">
+				<h2 class="title_h2">
+					타이틀영역
+			{{> cp/button type="2" size="5" b-text="Bottom 팝업열기1" popup="search_list_bottom_ty2" }}
+
+				</h2>
+			</div>
+			<!-- e: popup_content_top -->
+
+
+
+			
+			전체팝업 <br>
+			팝업내용입니다
+			<br />
+			내용
+			<!-- s: 꼭 알아두세요 -->
+			{{#> cp/notice }}
+			<ul class="list_depth">
+				<li>내용1</li>
+				<li>내용2</li>
+				<li>내용3</li>
+			</ul>
+			{{/ cp/notice }}
+			<!-- e: 꼭 알아두세요 -->
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="3" size="2" b-text="취소" }}
+			{{> cp/button type="1" size="2" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_full}}
+	<!-- e: Full 팝업 -->
+
+	<!-- s: Layer 팝업 -->
+	{{#> popup/popup_layer popup-id="pop_type02" popup-title="팝업 타이틀" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<!-- s: popup_content_top -->
+			<div class="popup_content_top">
+				<h2 class="title_h2">
+					타이틀영역
+				</h2>
+			</div>
+			<!-- e: popup_content_top -->
+			팝업내용입니다
+			<br />
+			내용
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="3" size="2" b-text="취소" }}
+			{{> cp/button type="1" size="2" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_layer}}
+	<!-- e: Layer 팝업 -->
+
+	<!-- s: Bottom 팝업 -->
+
+	<!-- s: pop_type03 -->
+	{{#> popup/popup_bottom popup-id="pop_type03" popup-title="팝업 타이틀" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<!-- s: popup_content_top -->
+			<div class="popup_content_top">
+				<h2 class="title_h2">
+					타이틀영역
+				</h2>
+			</div>
+			<!-- e: popup_content_top -->
+			팝업내용입니다
+			<br />
+			내용 팝업내용입니다
+			<br />
+			팝업내용입니다
+			<br />
+			내용 팝업내용입니다
+			<br />
+			내용 팝업내용입니다
+			<br />
+			내용 팝업내용입니다
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="2" size="2" b-text="확인" }}
+			{{> cp/button type="1" size="2" b-text="Bottom 팝업열기" popup="pop_type04" btn-title="Bottom 팝업열기" }}
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: pop_type03 -->
+
+	<!-- s: pop_type04 -->
+	{{#> popup/popup_bottom popup-id="pop_type04" no-header=true }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<!-- s: popup_content_top -->
+			<div class="popup_content_top">
+				<h2 class="title_h2">
+					타이틀영역
+				</h2>
+			</div>
+			<!-- e: popup_content_top -->
+			팝업내용입니다
+			<br />
+			내용 팝업내용입니다
+			<br />
+			팝업내용입니다
+			<br />
+			내용 팝업내용입니다
+			<br />
+			내용 팝업내용입니다
+			<br />
+			내용 팝업내용입니다
+			<br />
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="2" size="2" b-text="확인" }}
+			{{> cp/button type="1" size="2" b-text="Bottom 팝업열기" popup="pop_type05" btn-title="Bottom 팝업열기" }}
+		</div>
+	</div>
+	{{/ popup/popup_bottom}} 
+	<!-- e: pop_type04 -->
+
+	<!-- s: pop_type05 -->
+	{{#> popup/popup_bottom popup-id="pop_type05" popup-title="팝업 타이틀" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="opt_select_list opt_case1">
+				<div role="button" tabindex="0" class="option active" title="선택됨"><span class="text" tabindex="0">K7 Premier 2.5 GDI</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">K7 Premier 2.5 GDI</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">K7 Premier 2.5 GDI</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">K7 Premier 2.5 GDI</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">K7 Premier 2.5 GDI</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">K7 Premier 2.5 GDI</span></div>
+			</div>
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="2" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: pop_type05 -->	
+
+	<!-- s: pop_type07 -->
+	{{#> popup/popup_bottom popup-id="pop_type07" popup-title="팝업 타이틀"}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="opt_select_list opt_case3">
+				<div role="button" class="option active" title="선택됨" tabindex="0"><span class="text">항목 1</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">항목 2</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">항목 3</span></div>
+				<div role="button" tabindex="0" class="option">
+					<span class="text">항목 4</span>
+					<span class="desc"><strong>27,880원</strong></span>
+				</div>
+				<div role="button" tabindex="0" class="option">
+					<span class="text">항목 5</span>
+					<span class="desc"><strong>27,880원</strong></span>
+				</div>
+				<div role="button" tabindex="0" class="option">
+					<span class="text">항목 6</span>
+					<span class="desc"><strong>27,880원</strong></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: pop_type07 -->
+
+	<!-- s: 은행/증권사 선택 팝업 -->
+	{{#> popup/popup_bottom popup-id="bank_select_pop" popup-title="은행 선택"}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="tab_wrap">
+				<div class="tab_wrap_list_ty1 sticky_fix" role="tablist">{{>cp/tab_btn tb-text="은행" tb-id="01" tb-active=true}} {{>cp/tab_btn tb-text="증권사" tb-id="02"}}</div>
+				<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="은행선택탭" id="tabPanels01">
+					<ul class="select_list_ty_logo">
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_card_hundai"}}현대카드</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_ibk"}}기업은행</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_kb"}}KB국민은행</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_nh"}}농협은행</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_nh_region"}}지역농협</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_woori"}}우리은행</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_sc"}}SC은행</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_citi"}}씨티은행(한미)</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_jeonbuk"}}전북은행</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_jeju"}}제주은행</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_epost"}}우체국</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_hana"}}KEB하나은행</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_hana_old"}}KEB하나은행(구.외환은행)</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_shinhan"}}신한은행</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_mg"}}새마을금고</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_cu"}}신용협동조합</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_sh"}}수협</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_k"}}케이뱅크</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_kakaobank"}}카카오뱅크</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_toss"}}토스뱅크</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_busan"}}BNK부산은행</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_kyongnam"}}BNK경남은행</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_daegu"}}대구은행</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_kwangju"}}광주은행</span></button>
+					</ul>
+				</div>
+				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="증권사선택탭" id="tabPanel02">
+					<ul class="select_list_ty_logo">
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_stock_daishin"}}대신증권</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_stock_meritz"}}메리츠증권</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_stock_mirae"}}미래에셋증권</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_stock_samsung"}}삼성증권</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_stock_shinhan"}}신한금융투자</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_stock_sk"}}SK증권</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_stock_hmc"}}HMC투자증권</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_stock_yuanta"}}유안타증권</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_stock_ebest"}}이베스트투자증권</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_stock_hana"}}하나금융투자</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_stock_hi"}}하이투자증권</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_stock_korea"}}한국투자증권</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_stock_kb"}}KB증권</span></button>
+						<button class="item"><span class="text">{{> cp/icon iconClass="logo_stock_nh"}}NH투자증권</span></button>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">{{> cp/button type="1" size="2" b-text="확인"}}</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: 은행/증권사 선택 팝업 -->
+
+	<!-- s: 카드사 선택 팝업 -->
+	{{#> popup/popup_bottom popup-id="card_select_pop" popup-title="카드사 선택"}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<ul class="select_list_ty_logo">
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_card_hundai"}}현대카드</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_card_lotte"}}롯데카드</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_card_shinhan"}}신한카드</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_card_samsung"}}삼성카드</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_card_kb"}}국민카드</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_card_etc"}}기타</span></button>
+			</ul>
+		</div>
+		<div class="popup_bottom">
+			<div class="btn_area">{{> cp/button type="1" size="2" b-text="확인"}}</div>
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: 카드사 선택 팝업 -->
+
+	<!-- s: pop_type08 -->
+	{{#> popup/popup_bottom popup-id="pop_type08" popup-title="가입조건 변경"}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">보험/납입기간</div>
+					<div class="opt_select_wrap">
+						<span class="opt_select_wrap_live" aria-live="polite"></span>
+						<div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
+							<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+							<div class="opt_select opt_select_w1">
+								<input type="radio" name="r1" id="r1_s1">
+								<label for="r1_s1">1년 6개월</label>
+							</div>
+							<div class="opt_select opt_select_w1">
+								<input type="radio" name="r1" id="r1_s2">
+								<label for="r1_s2">2년</label>
+							</div>
+							<div class="opt_select opt_select_w1">
+								<input type="radio" name="r1" id="r1_s3">
+								<label for="r1_s3">3년</label>
+							</div>
+							<div class="opt_select opt_select_w1">
+								<input type="radio" name="r1" id="r1_s4" checked>
+								<label for="r1_s4">4년</label>
+							</div>
+							<div class="opt_select opt_select_w1">
+								<input type="radio" name="r1" id="r1_s5">
+								<label for="r1_s5">5년</label>
+							</div>
+							<div class="opt_select opt_select_w1">
+								<input type="radio" name="r1" id="r1_s6">
+								<label for="r1_s6">6년</label>
+							</div>
+							<div class="opt_select opt_select_w1">
+								<input type="radio" name="r1" id="r1_s7">
+								<label for="r1_s7">1억 5천만원</label>
+							</div>
+							<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+						</div>
+						<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_left" aria-label="이전 옵션"></button>
+						<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
+					</div>
+				</div>
+				<div class="form_line">
+					<div class="label_tit">납입방법</div>
+					<div class="radio_group_wrap" role="radiogroup">
+						{{> cp/radio rd-class="rd_btn" rd-id="radio01-1" name="radio01" labelname="매월 보험료 내기" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio01-2" name="radio01" labelname="1년치 한꺼번에 내기" }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="2" b-text="가입 조건을 변경합니다" }}
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: pop_type08 -->
+
+
+	<!-- s: Bottom 팝업(검색어 입력 후 리스트 유형1) -->
+	{{#> popup/popup_bottom popup-id="search_list_bottom_ty1" popup-title="팝업 타이틀" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			{{> cp/text inp-title="추가부속품 명을 입력해 보세요" placeholder="추가부속품 명을 입력해 보세요" inp-search=true}}
+			<div class="opt_select_list opt_case2">
+				<div role="button" tabindex="0" class="option active" title="선택됨"><span class="text"><span class="point">4륜</span> 구동</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">ABS</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">Around View Monitor 패키지(단품)</span></div>
+				<div role="button" class="option fixed" tabindex="0"><span class="text">Around View Monitor 패키지(직접입력)</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">ECM 사이드/룸미러</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">Head Up Display</span></div>
+			</div>
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="2" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: Bottom 팝업(검색어 입력 후 리스트 유형1) -->
+
+	<!-- s: Bottom 팝업(검색어 입력 후 리스트 유형2) -->
+	{{#> popup/popup_bottom popup-id="search_list_bottom_ty2" popup-title="추가부속품을 선택해 주세요"}}
+	<div class="popup_cont search_list_type">
+		<div class="popup_content">
+			<!-- s: popup_content_top -->
+			<div class="popup_content_top">
+				{{> cp/text inp-search=true placeholder="추가부속품 명을 입력해 보세요" inp-title="검색어 입력" }}
+			</div>
+			<!-- e: popup_content_top -->
+
+			<div class="search_reult_list_container">
+			<!-- 데이터가 없는 경우 no_data 클래스 추가
+			<div class="search_reult_list_container sr_list no_data">
+			-->
+				<ul class="search_reult_list">
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">4륜구동</span></a></li>
+					<!-- 검색시 스타일 예시 : 검색키워드 <i>태그로 강조 -->
+					<li class="search_reult_list_item"><a href="#"><span class="item_text"><i>Around</i> View Monitor 패키지(단품)</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text"><i>Around</i> View Monitor 패키지(직접입력)</span></a></li>
+					<!-- 입력 완료 케이스 예시(배지 추가됨) -->
+					<li class="search_reult_list_item"><a href="#"><span class="hd_badge outline solid_pastel c_success size_m">입력완료</span><span class="item_text">ECM 사이드/룸미러</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">Head Up Display</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">Smart Cruise Control</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">가죽시트</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">내비게이션(후방카메라)</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">루프캐리어/랙</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">리어스포일러</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">리프트게이트</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">머플러</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">배출가스 저감장치</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">사이드(커튼)에어백</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">서스펜션</span></a></li>
+					<!-- 목록 최하단 기타 항목 필수 -->
+					<li class="search_reult_list_item add_item"><a href="#"><span class="item_text">직접입력</span>{{#> cp/button type="3" size="5" rightIcon="plusSvg" popup="alert_d1"}}추가{{/ cp/button}}</a></li>
+					<li class="search_reult_list_item">
+						<div class="no_list_area">
+							{{> cp/icon iconClass="exclamationSvg"}}
+							<p>내역이 없어요</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: Bottom 팝업(검색어 입력 후 리스트 유형2) -->
+
+	<!-- s: Bottom 팝업(검색어 입력 후 리스트 유형1) -->
+	{{#> popup/popup_bottom popup-id="search_list_bottom_ty3" popup-title="팝업 타이틀" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="opt_select_list opt_case4">
+				<a href="#" class="option" role="button">
+					<div class="item">
+						<div class="data_l">
+							<span class="name">기본계약(상해사망)</span>
+							<span class="date">2021.01.15~2055.01.15</span>
+						</div>
+						<div class="data_r">
+							<span class="price">1억 5,000만원</span>
+						</div>
+					</div>
+				</a>
+				<a href="#" class="option" role="button">
+					<div class="item">
+						<div class="data_l">
+							<span class="name">기본계약(상해사망)</span>
+							<span class="date">2021.01.15~2055.01.15</span>
+						</div>
+						<div class="data_r">
+							<span class="price">1억 5,000만원</span>
+						</div>
+					</div>
+				</a>
+				<a href="#" class="option" role="button">
+					<div class="item">
+						<div class="data_l">
+							<span class="name">기본계약(상해사망)</span>
+							<span class="date">2021.01.15~2055.01.15</span>
+						</div>
+						<div class="data_r">
+							<span class="price">1억 5,000만원</span>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="2" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: Bottom 팝업(검색어 입력 후 리스트 유형1) -->
+
+	<!-- e: Bottom 팝업 -->
+
+</div>
+<!-- e: popup area -->
+<script>
+	$(document).ready(function(){
+		$('.swiper-container').each(function (idx, ele) {
+			const $swiperContainer = $(ele);
+
+			new Swiper($swiperContainer[0], {
+				slidesPerView: 'auto',
+				centeredSlides: true,
+				initialSlide: 2,
+				spaceBetween: 16,
+				observer: true,
+				navigation: {
+					nextEl: ".swiper-button-next",
+					prevEl: ".swiper-button-prev",
+				},
+				a11y: {
+					enabled: true,
+					prevSlideMessage: '이전 항목으로 이동',
+					nextSlideMessage: '다음 항목으로 이동',
+				},
+			});
+		});
+	});
+</script>
+
+{{/ layout/default }}

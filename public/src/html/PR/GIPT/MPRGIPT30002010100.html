@@ -1,0 +1,168 @@
+<!---
+화면번호 : MPRGIPT30002010100
+경로 :  상품 > 펫 > 하이펫보험 > 기본정보 입력 > 반려동물종류선택 > 검색어로 찾기 (case 1: 최초 진입시 화면)
+-->
+{{#> layout/default page-title="기본정보 입력 | 상품"}}
+
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-active=true popup-title="반려동물 종류 선택"}}
+<div class="popup_cont search_list_type2">
+	<div class="tab_wrap">
+		<div class="tab_wrap_list_ty1" role="tablist">
+			{{>cp/tab_btn tb-text="검색어로 찾기" tb-id="01" tb-active=true}}
+			{{>cp/tab_btn tb-text="초성으로 찾기" tb-id="02"}}
+		</div>
+
+		<!-- s: tab01.검색어로 찾기 Tab 내용 -->
+		<div class="tab_wrap_content has_scroll active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
+
+			<div class="search_inp_box">
+				{{> cp/text inp-search=true placeholder="품종 입력" inp-title="검색어 입력" }}
+				<div class="desc">
+					<p class="point">반려동물 종류와 나이에 따라 가입이 제한될 수 있어요.</p>
+					{{> cp/linkButton bl_class="short_cut" bl_text="가입이 어려운 경우" pop_id="helper_popup" question_tit="팝업 열림" }}
+				</div>
+			</div>
+
+			<!-- s: 자주찾는 품종 추천 리스트 -->
+			<!-- 최초 진입 시 노출 -->
+			<div class="suggestion_list_wrap">
+				<!-- s: 25-04-21 수정 -->
+				<div class="title_h4"><strong>자주 찾는 견종</strong></div>
+				<!-- e: 25-04-21 수정 -->
+				<div class="item_wrap">
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">말티즈</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">포메라니안</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">비숑프리제</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">치와와</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">말티푸</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">토이푸들</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">요크셔테리어</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">시츄</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">믹스견(5kg~15kg)</span></button>
+				</div>
+			</div>
+			<!-- 최초 진입 시 노출 -->
+			<!-- e: 자주찾는 품종 추천 리스트 -->
+			
+
+			<!-- s: 키워드 검색 결과 리스트 -->
+			<!-- s: 25-04-21 수정 -->
+			<div class="search_result_count">
+				<p>검색결과 <strong class="point">7</strong>건</p>
+			</div>
+			<!-- e: 25-04-21 수정 -->
+			<!-- s: 25-04-22 수정 -->
+			<div class="search_reult_list_container">
+			<!-- 데이터가 없는 경우 no_data 클래스 추가
+			<div class="search_reult_list_container no_data">
+			-->
+				<ul class="search_reult_list">
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">글렌 오브 이<i>말</i> 테리어</span></a></li>
+					<!-- 검색시 스타일 예시 : 검색키워드 <i>태그로 강조 -->
+					<li class="search_reult_list_item"><a href="#"><span class="item_text"><i>말</i> View Monitor 패키지(단품)</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text"><i>말</i>티폼(<i>말</i>티즈+포메라니안)</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text"><i>말</i>티푸</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">몰티즈(<i>말</i>티즈+요크셔테리어)</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">알라스칸 <i>말</i>라뮤트</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">알라스칸 <i>말</i>라뮤트 가나다라마바사 줄바꿈이 가능합니다. 계속 길어질 수 있습니다.</span></a></li>
+					<li class="search_reult_list_item">
+						<div class="no_list_area">
+							{{> cp/icon iconClass="exclamationSvg"}}
+							<p>내역이 없어요</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- e: 25-04-22 수정 -->
+			<!-- e: 키워드 검색 결과 리스트 -->
+		</div>
+		<!-- e: tab01.검색어로 찾기 Tab 내용 -->
+
+		<!-- s: tab02. 초성으로 찾기 Tab 내용 -->
+		<div class="tab_wrap_content has_scroll" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">			
+			<div class="search_inp_box">
+				<!-- s: 초성 버튼 리스트 -->
+				<ul class="keypad_wrap search_letter_btn_list">
+					<button type="button" class="keypad_chip_item">ㄱ</button>
+					<button type="button" class="keypad_chip_item">ㄴ</button>
+					<button type="button" class="keypad_chip_item">ㄷ</button>
+					<button type="button" class="keypad_chip_item">ㄹ</button>
+					<button type="button" class="keypad_chip_item">ㅁ</button>
+					<button type="button" class="keypad_chip_item">ㅂ</button>
+					<button type="button" class="keypad_chip_item">ㅅ</button>
+					<button type="button" class="keypad_chip_item">ㅇ</button>
+					<button type="button" class="keypad_chip_item">ㅈ</button>
+					<button type="button" class="keypad_chip_item">ㅊ</button>
+					<button type="button" class="keypad_chip_item">ㅋ</button>
+					<button type="button" class="keypad_chip_item">ㅌ</button>
+					<button type="button" class="keypad_chip_item">ㅍ</button>
+					<button type="button" class="keypad_chip_item">ㅎ</button>
+				</ul>
+				<!-- e: 초성 버튼 리스트 -->
+				<!-- s: 25-04-23 수정 -->
+				<div class="desc">
+					<p class="point">반려동물 종류와 나이에 따라 가입이 제한될 수 있어요.</p>
+					{{> cp/linkButton bl_class="short_cut" bl_text="가입이 어려운 경우" pop_id="helper_popup" question_tit="팝업 열림" }}
+				</div>
+				<!-- e: 25-04-23 수정 -->
+			</div>
+
+			<!-- s: 키워드 검색 결과 리스트 -->
+			<div class="search_reult_list_container">
+				<ul class="search_reult_list">
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">닥스훈트</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">달마시안</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">대니시 스웨디시 팜도그</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">댄디 딘몬트 테리어</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">더치 스마우스혼드</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">덩케르</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">도그 드보르도</span></a></li>
+					<li class="search_reult_list_item">
+						<div class="no_list_area">
+							{{> cp/icon iconClass="exclamationSvg"}}
+							<p>내역이 없어요</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- e: 키워드 검색 결과 리스트 -->
+		</div>
+		<!-- e: tab02.초성으로로 찾기 Tab 내용 -->
+
+	</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+<!-- s: popup area -->
+	<!-- s: 가입제한 안내 팝업 -->
+	{{#> popup/popup_bottom popup-id="helper_popup" popup-title="가입제한 안내"}}
+		<div class="popup_cont">
+			<div class="popup_content">
+				<p class="text_sub">아래의 경우에는 반려동물보험 가입이 어려워요.</p>
+				<div class="info_box ty2">
+					<ul class="list_ty1">
+						<li>판매점,브리더 등 매매를 목적으로 사육, 관리하는 반려동물</li>
+						<li>특수 목적<span class="point">*</span>의 반려동물
+							<ul class="list_ty2">
+								<li><span class="point">*</span>특수 목적 : 경찰, 구조, 군, 사냥 등 (단, 맹도견, 청도견 등 장애인 안내견 제외)</li>
+							</ul>
+						</li>
+						<li>흥행을 목적으로 사육,관리하는 반려동물</li>
+						<li>유기동물 보호센터 등에서 사육, 관리하는 반려동물</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="popup_bottom">
+			<div class="btn_area">
+				{{> cp/button type="1" size="2" b-text="확인했습니다" }}
+			</div>
+		</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: 가입제한 안내 팝업 -->
+
+<!-- e: popup area -->
+{{/ layout/default }}

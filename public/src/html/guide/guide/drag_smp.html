@@ -1,0 +1,285 @@
+{{#> layout/guide }}
+
+<div class="dmp_s"></div>
+
+<button class="show-btn">Show Bottom Sheet</button>
+
+<div class="dmp_s"></div>
+
+<div class="bottom-sheet">
+	<div class="overlay"></div>
+
+	<div class="content">
+		<div class="header">
+			<div class="drag-icon">
+				<span></span>
+			</div>
+		</div>
+
+		<div class="body">
+			<h2>Bottom Sheet Modal</h2>
+			<p>
+				Non autem repellat explicabo iusto, optio maxime maiores accusantium
+				blanditiis laborum aspernatur ea error amet repudiandae, id nemo
+				saepe sint delectus animi placeat laudantium et ducimus. Quo
+				sapiente, nemo repellat, blanditiis veritatis nesciunt magni itaque
+				vitae, tempora est asperiores excepturi accusantium officiis
+				aliquam. Non, totam quo nesciunt accusamus corrupti distinctio
+				repellendus et aut! Quae error eveniet, delectus asperiores rerum
+				ipsam velit totam deserunt, laboriosam praesentium illum, officiis
+				dignissimos accusantium quod earum eligendi sapiente at quidem modi
+				eum vitae! Tenetur cupiditate voluptas consectetur sint minima,
+				dolore id ullam error illo illum nihil laudantium quis voluptatibus
+				aspernatur, cum necessitatibus temporibus laboriosam praesentium.
+			</p>
+			<p>
+				Ipsum assumenda quam soluta, illum temporibus tempora? Magni soluta
+				temporibus quia incidunt sequi culpa modi illum quasi quisquam
+				possimus tempora quae, ad, omnis beatae obcaecati? Vero aspernatur
+				cupiditate, veniam temporibus quibusdam et rerum unde deserunt nisi
+				consequatur? Ipsum doloremque vel architecto neque repudiandae,
+				cupiditate, alias porro temporibus, maiores quaerat velit cum eius
+				perspiciatis? Dolorum illo recusandae atque aperiam eveniet? Quod
+				dolorum doloremque tenetur cum dignissimos odio dolor repudiandae
+				hic autem, saepe corporis vero eum voluptas eligendi maxime quia
+				repellat voluptatibus veniam deleniti est minima? Facere quod fugiat
+				asperiores officiis aperiam? Est omnis totam, iste nam qui porro sed
+				at atque!
+			</p>
+		</div>
+	</div>
+</div>
+
+
+<style>
+	/* Created by Tivotal */
+
+/* Google Fonts(Poppins) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* min-height: 100vh; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  background: #e3f2fd;
+}
+
+.show-btn {
+  padding: 15px 22px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: #4a98f7;
+  color: #fff;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  box-shadow: 0 10px 18px rgba(52, 87, 220, 0.18);
+  transition: 0.3s ease;
+}
+
+.show-btn:hover {
+  background: #2382f6;
+}
+
+.bottom-sheet {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s linear;
+}
+
+.bottom-sheet.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.bottom-sheet .content {
+  height: 50vh;
+  max-height: 100vh;
+  width: 100%;
+  max-width: 1150px;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+  position: relative;
+  transform: translateY(100%);
+  transition: 0.3s ease;
+}
+
+.bottom-sheet.show .content {
+  transform: translateY(0%);
+}
+
+.bottom-sheet.dragging .content {
+  transition: none;
+}
+
+.bottom-sheet.fullscreen .content {
+  border-radius: 0;
+}
+
+.bottom-sheet .content .header {
+  display: flex;
+  justify-content: center;
+}
+
+.bottom-sheet .content .header .drag-icon {
+  padding: 15px;
+  margin-top: -15px;
+  cursor: grab;
+  user-select: none;
+}
+
+.bottom-sheet .content .header .drag-icon span {
+  height: 4px;
+  width: 40px;
+  background: #000;
+  display: block;
+  border-radius: 50px;
+}
+
+.bottom-sheet .content .body {
+  height: 100%;
+  padding: 15px 0 40px;
+  overflow-y: auto;
+}
+
+/* .bottom-sheet .content .body::-webkit-scrollbar {
+  width: 0;
+} */
+
+.bottom-sheet .content .body h2 {
+  font-size: 1.8rem;
+}
+
+.bottom-sheet .content .body p {
+  font-size: 1.06rem;
+  margin-top: 20px;
+}
+
+.dmp_s {
+	background-color: #ddd;
+	height: 600px;
+}
+
+</style>
+
+<script>
+	/* Created by Tivotal */
+
+let btn = document.querySelector(".show-btn");
+let bottomSheet = document.querySelector(".bottom-sheet");
+let overlay = document.querySelector(".overlay");
+let content = document.querySelector(".content");
+let dragIcon = document.querySelector(".drag-icon");
+
+let isDragging = false,
+  startY,
+  startHeight;
+
+let updateHeight = (height) => {
+  //updating sheet height
+  content.style.height = `${height}vh`;
+
+  // if the sheet height is equal to 100 then toggling fullsceen class to bottom sheet
+  // bottomSheet.classList.toggle("fullscreen", height === 100);
+};
+
+let showSheet = () => {
+  bottomSheet.classList.add("show");
+
+  //updating sheet height with default height 50
+  // updateHeight(50);
+  updateHeight(100);
+
+	// 화면 잠금
+  document.body.style.overflow = "hidden";
+};
+
+let hideSheet = () => {
+  bottomSheet.classList.remove("show");
+  document.body.style.overflow = "auto";
+};
+
+let dragStart = (e) => {
+  isDragging = true;
+  bottomSheet.classList.add("dragging");
+  //recording intitial y position and sheet height
+  startY = e.pageY || e.touches?.[0].pageY;
+  startHeight = parseInt(content.style.height);
+};
+
+let dragging = (e) => {
+  //return if isDragging is false
+  if (!isDragging) return;
+
+  //calculating new height of sheet by using starty and start height
+  //calling updateHeight function with new height as argument
+
+  let delta = startY - (e.pageY || e.touches?.[0].pageY);
+  let newHeight = startHeight + (delta / window.innerHeight) * 100;
+
+  updateHeight(newHeight);
+};
+
+let dragStop = () => {
+	console.log('dragStop');
+  isDragging = false;
+  bottomSheet.classList.remove("dragging");
+
+	console.log('height : ', content.style.height);
+
+  //setting sheet height based on the sheet current height or position
+  let sheetHeight = parseInt(content.style.height);
+
+  sheetHeight < 25
+    ? hideSheet()
+    : sheetHeight > 75
+    ? updateHeight(80)
+    : updateHeight(50);
+
+  //if height is greater than 75 making sheet full screen else making it to 50vh
+};
+
+dragIcon.addEventListener("mousedown", dragStart);
+dragIcon.addEventListener("mousemove", dragging);
+document.addEventListener("mouseup", dragStop);
+
+dragIcon.addEventListener("touchstart", dragStart);
+dragIcon.addEventListener("touchmove", dragging);
+document.addEventListener("touchend", dragStop);
+
+btn.addEventListener("click", showSheet);
+overlay.addEventListener("click", hideSheet);
+
+</script>
+
+{{/ layout/guide }}

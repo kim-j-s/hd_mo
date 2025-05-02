@@ -1,0 +1,74 @@
+<style>
+  .guide_h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-top: 4px dashed green;
+  }
+  .guide_h1 ~ .guide_h1 {
+    margin-top: 80px;
+  }
+  .guide_h1::before {
+    content: '/* ';
+    color: green;
+  }
+  .guide_h1::after {
+    content: ' */';
+    color: green;
+  }
+  
+  .guide_h4 {
+    position: relative;
+    margin: 20px 0;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+  }
+  .guide_h4 ~ .guide_h4 {
+    margin-top: 60px;
+  }
+  .guide_h4::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 50%;
+    border-left: 2px solid #000;
+    transform: translateY(-50%);
+  }
+  .guide_h4::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 50%;
+    border-left: 2px solid #000;
+    transform: translateY(-50%);
+  }
+
+  .guide_dark_wrap {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 12px;
+    padding: 24px;
+    background-color: rgba(0, 0, 0, 0.3);    
+  }
+
+  .guide_discription {
+    margin-bottom: 5px;
+  }
+  .guide_discription ~ .guide_discription {
+    margin-top: 20px;
+  }
+  .guide_discription::before {
+    content:'·';
+    display: inline-block;
+    padding: 0 2px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+</style>

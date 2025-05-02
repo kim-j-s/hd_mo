@@ -1,0 +1,323 @@
+{{#> layout/default page-title="보험료 확인 | 상품"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_full" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- s: popup_content_top -->
+		<div class="popup_content_top">
+			<h2 class="title_h2">
+				자동차보험 <strong>담보와 할인특약</strong>을<br>
+				점검해보세요
+			</h2>
+		</div>
+		<!-- e: popup_content_top -->
+		 
+		<div class="tab_wrap">
+			<div class="tab_wrap_list_ty1" role="tablist">
+				{{>cp/tab_btn tb-text="담보점검" tb-id="01" tb-active=true}}
+				{{>cp/tab_btn tb-text="가입통계" tb-id="02"}}
+				{{>cp/tab_btn tb-text="할인특약체크" tb-id="03" }}
+			</div>
+			<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
+				<h3 class="title_h3">내 보장 수준</h3>
+				<div class="card_item_wrap">
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inner_cont">
+								<div class="item_top">
+									<div class="title_info">
+										<div class="main_title">보통</div>
+									</div>
+									<div class="desc">
+										전반적으로 안정적인 설계이지만<br>
+										일부 부족한 보장이 있을 수 있어요
+									</div>  
+								</div>
+							</div>
+						</div>
+						<!-- s: 보장수준에 맞는 aria-label값 적용필요 -->
+						<div class="coverage_level_box" role="img" aria-label="보장수준 보통">
+						<!-- e: 보장수준에 맞는 aria-label값 적용필요 -->
+							<ul class="level_list">
+								<li class="level">
+									<span><i></i></span>
+								</li>
+								<li class="level">
+									<span><i></i></span>
+								</li>
+								<li class="level">
+									<span><i></i></span>
+								</li>
+								<!-- s: 해당되는 보장수준 위치에 on클래스 추가 -->
+								<li class="level on">
+								<!-- e: 해당되는 보장수준 위치에 on클래스 추가 -->
+									<span><i></i></span>
+								</li>
+								<li class="level">
+									<span><i></i></span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<h3 class="title_h3">고보장 추천플랜</h3>
+				<div class="table_wrap">
+					<table class="table">
+						<caption>담보, 현재설계, 추천플랜 제공</caption>
+						<colgroup>
+							<col style="width:50%;">
+							<col style="width:25%;">
+							<col style="width:25%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">담보</th>
+								<th scope="col">현재설계</th>
+								<th scope="col">추천플랜</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									{{#> cp/checkbox id="checkbox1-1" labelname="대인배상Ⅱ" checked=true disabled=true }}
+									<div class="badge_wrap chk_lby2">
+										<span class="hd_badge outline solid_pastel c_success size_m">충분</span>
+									</div>
+									{{/ cp/checkbox }}
+								</td>
+								<td>무한</td>
+								<td class="recommend">무한</td>
+							</tr>
+							<tr>
+								<td>
+									{{#> cp/checkbox id="checkbox1-2" labelname="대인배상" checked=true }}
+									<div class="badge_wrap chk_lby2">
+										<span class="hd_badge outline solid_pastel c_danger size_m">부족</span>
+									</div>
+									{{/ cp/checkbox }}
+								</td>
+								<td>5억</td>
+								<td class="recommend">10억</td>
+							</tr>
+							<tr>
+								<td>
+									{{#> cp/checkbox id="checkbox1-3" labelname="자기신체손해/<br>자동차상해" }}
+									<div class="badge_wrap chk_lby2">
+										<span class="hd_badge outline solid_pastel c_danger size_m">부족</span>
+									</div>
+									{{/ cp/checkbox }}
+								</td>
+								<td>자상1억/3천</td>
+								<td class="recommend">자상1억/3천</td>
+							</tr>
+							<tr>
+								<td>
+									{{#> cp/checkbox id="checkbox1-4" labelname="무보험차상해" }}
+									<div class="badge_wrap chk_lby2">
+										<span class="hd_badge outline solid_pastel c_danger size_m">부족</span>
+									</div>
+									{{/ cp/checkbox }}
+								</td>
+								<td>2억</td>
+								<td class="recommend">5억</td>
+							</tr>
+							<tr>
+								<td>
+									{{#> cp/checkbox id="checkbox1-5" labelname="자기차량손해" checked=true disabled=true }}
+									<div class="badge_wrap chk_lby2">
+										<span class="hd_badge outline solid_pastel c_success size_m">충분</span>
+									</div>
+									{{/ cp/checkbox }}
+								</td>
+								<td>자기차량손해</td>
+								<td class="recommend">가입</td>
+							</tr>
+							<tr>
+								<td>
+									{{#> cp/checkbox id="checkbox1-6" labelname="긴급출동" }}
+									<div class="badge_wrap chk_lby2">
+										<span class="hd_badge outline solid_pastel c_danger size_m">부족</span>
+									</div>
+									{{/ cp/checkbox }}
+								</td>
+								<td>하이카10km</td>
+								<td class="recommend">하이카60km</td>
+							</tr>
+							<tr>
+								<td>
+									{{#> cp/checkbox id="checkbox1-7" labelname="물적사고할증기준금액" checked=true disabled=true }}
+									<div class="badge_wrap chk_lby2">
+										<span class="hd_badge outline solid_pastel c_success size_m">충분</span>
+									</div>
+									{{/ cp/checkbox }}
+								</td>
+								<td>200만원</td>
+								<td class="recommend">200만원</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="btn_area">
+					{{> cp/button type="2" size="2" b-text="추천플랜으로 한번에 변경"}}
+				</div>
+
+				<h3 class="title_h3">추천 부가담보</h3>
+				<div class="card_item_wrap">
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inp_checkbox">
+								<input type="checkbox" id="card_chk11" name="name1" aria-labelledby="card_chk11_cont">
+								<label for="card_chk11" class="chk_label"></label>
+								<i></i>
+							</div>
+							<div class="inner_cont">
+								<div class="item_top" id="card_chk11_cont">
+									<div class="title_info">
+										<div class="main_title">신차손해담보</div>
+									</div>
+									<div class="desc">
+										차량등록일로부터 6개월 이내만 가입가능한 특약입니다. 차량사고로 손해액이 70% 이상인 경우 보상 가능하며, 대체차량등록비도 지원해 드립니다.
+									</div>
+								</div>
+								<ul class="card_list_ty1">
+									<li class="result">
+										<div class="cont price">
+											<strong>24,450원</strong>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inp_checkbox">
+								<input type="checkbox" id="card_chk12" name="name1" aria-labelledby="card_ch1k2_cont">
+								<label for="card_chk12" class="chk_label"></label>
+								<i></i>
+							</div>
+							<div class="inner_cont">
+								<div class="item_top" id="card_chk12_cont">
+									<div class="title_info">
+										<div class="main_title">자녀사고피해지원특약</div>
+									</div>
+									<div class="desc">
+										만 18세 이하의 자녀가 있으신 경우 가입해 두세요. 피보험자동차의 사고 뿐만 아니라 보행 중 또는 스쿨존 내 사고 시에도 보상이 가능합니다.
+									</div>
+								</div>
+								<ul class="card_list_ty1">
+									<li class="result">
+										<div class="cont price">
+											<strong>24,450원</strong>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inp_checkbox">
+								<input type="checkbox" id="card_chk13" name="name1" aria-labelledby="card_chk13_cont">
+								<label for="card_chk13" class="chk_label"></label>
+								<i></i>
+							</div>
+							<div class="inner_cont">
+								<div class="item_top" id="card_chk13_cont">
+									<div class="title_info">
+										<div class="main_title">상급병실&middot;성형&middot;치아보철지원특약</div>
+									</div>
+									<div class="desc">
+										피보험자가 피보험자동차를 소유, 사용, 관리 중 발생한 피보험자동차의 사고로 상급병실(특실 포함) 입원 시 기준 병실과의 차액을 30일 500만원 한도로 보상하며 성형 및 치아보철 비용도 보상 가능해요.									</div>
+								</div>
+								<ul class="card_list_ty1">
+									<li class="result">
+										<div class="cont price">
+											<strong>24,450원</strong>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inp_checkbox">
+								<input type="checkbox" id="card_chk14" name="name1" aria-labelledby="card_chk14_cont">
+								<label for="card_chk14" class="chk_label"></label>
+								<i></i>
+							</div>
+							<div class="inner_cont">
+								<div class="item_top" id="card_chk14_cont">
+									<div class="title_info">
+										<div class="main_title">음주&middot;무면허&middot;뺑소니사고 등 피해지원특약</div>
+									</div>
+									<div class="desc">
+										피보험자가 음주&middot;무면허&middot;뺑소니사고를 당해 사망하거나 상해를 입은 경우 사망 3천만원, 10급 이상 장애 시 최대 3천만원을 보상받을 수 있습니다.									</div>
+								</div>
+								<ul class="card_list_ty1">
+									<li class="result">
+										<div class="cont price">
+											<strong>24,450원</strong>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inp_checkbox">
+								<input type="checkbox" id="card_chk15" name="name1" aria-labelledby="card_chk15_cont">
+								<label for="card_chk15" class="chk_label"></label>
+								<i></i>
+							</div>
+							<div class="inner_cont">
+								<div class="item_top" id="card_chk15_cont">
+									<div class="title_info">
+										<div class="main_title">법률비용지원특약</div>
+									</div>
+									<div class="desc">
+										신호위반, 중앙선침범 등으로 인한 벌금과 12대 중과실로 인한 형사합의금 등을 지원해 드립니다. 기본형/고급형/최고급형 중 선택 가입해 보세요.
+									</div>
+								</div>
+								<ul class="card_list_ty1">
+									<li class="result">
+										<div class="cont price">
+											<strong>24,450원</strong>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="btn_area">
+							{{> cp/button type="3" size="2" b-text="추가정보"}}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
+				가입통계 내용
+			</div>
+			<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel02">
+				할인특약체크 내용
+			</div>     
+		</div>
+	</div>
+</div>
+
+<!-- s: 하단 고정 버튼 영역 -->
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" b-text="확인"}}
+		<!-- {{> cp/button type="3" size="1" b-text="기존 담보 유지"}}
+		{{> cp/button type="1" size="1" b-text="1위 담보 선택"}} -->
+	</div>
+</div>
+<!-- s: 하단 고정 버튼 영역 -->
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+ 
+{{/ layout/default }}
