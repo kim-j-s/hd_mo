@@ -48,12 +48,18 @@
 			justify-content: space-between;
 			gap: 8px;
 
+			& + span {
+				position: absolute;
+				opacity: 0;
+				width: 0;
+				height: 0;
+			}
+
 			.status {
-				.badge_wrap {
-					& + .title {
-						margin-top: 2px;
-					}
-				}
+				display: flex;
+				flex-direction: column;
+				gap: 2px;
+				
 				.title {
 					font-size: var(--font-size-heading-small);
 					font-weight: 700;
@@ -164,21 +170,21 @@
 			.acd_btn {
 				position: relative;
 				width: 100%;
-				padding-right: 28px;
+				padding-right: 36px;
 				background-color: transparent;
 				font-weight: 700;
 				font-size: var(--font-size-heading-small);
 
 				&:after {
-						position: absolute;
-						top:4px;
-						right:0;
-						content: '';
-						width: 24px;
-						height: 24px;
-						background: url(../images/icon/arrowDown_ty3.svg) no-repeat center /24px auto;
-						box-sizing: border-box;
-						transition: all 0.3s;
+					position: absolute;
+					top: calc(50% - 12px);
+					right:0;
+					content: '';
+					width: 24px;
+					height: 24px;
+					background: url(../images/icon/arrowDown_ty3.svg) no-repeat center /24px auto;
+					box-sizing: border-box;
+					transition: all 0.3s;
 					}
 
 				&[aria-expanded="true"] {
