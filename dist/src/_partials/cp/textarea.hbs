@@ -1,0 +1,25 @@
+{{!-- 
+	name : name 배정
+ --}}
+<div class="textarea_wrap {{#if class}}{{class}}{{/if}}">
+	<textarea 
+		{{#if name}}name="{{name}}"{{/if}}
+		{{#if rows}}rows="{{rows}}"{{/if}}
+		{{#if cols}}cols="{{cols}}"{{/if}}
+		{{#if placeholder}}placeholder="{{placeholder}}"{{/if}}
+		{{#if disabled}}disabled{{/if}}
+		{{#if readonly}}readonly{{/if}}
+		{{#if minlength}}minlength="{{minlength}}"{{/if}}
+		{{#if maxlength}}maxlength="{{maxlength}}"{{/if}}
+	></textarea>
+	{{#if counter_tp1}}
+		<div class="counter">
+			<em>0</em> / 500 <span>byte</span>
+		</div>
+	{{/if}}
+	{{#if counter_tp2}}
+		<div class="counter">
+			<em>0</em> / 500 <span>자</span>
+		</div>
+	{{/if}}
+</div>

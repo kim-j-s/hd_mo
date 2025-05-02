@@ -1,0 +1,128 @@
+{{#> layout/default page-title="보험료 확인 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="예상환급금 안내" h-back=true }}
+
+	<div id="container" class="container">
+		<div class="content">
+			<div class="form_box">
+                <h3 class="title_h3">계약 기본 정보</h3>
+                <div class="info_gray">
+                    <h4 class="title_h4">다이렉트 운전자보험</h4>
+                    <dl>
+                        <dt>플랜종류</dt>
+                        <dd>고급형</dd>
+                    </dl>
+                    <dl>
+                        <dt>보험기간</dt>
+                        <dd>10년</dd>
+                    </dl>
+                    <dl>
+                        <dt>납입기간</dt>
+                        <dd>10년</dd>
+                    </dl>
+                    <dl>
+                        <dt>납입방법</dt>
+                        <dd>월납/120회</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="divider_ty1"></div>
+			<div class="form_box">
+                <h3 class="title_h3">총 납입보험료 및 만기환급금 예상 금액</h3>
+                <div class="info_gray">
+                    <dl>
+                        <dt>총 보험료</dt>
+                        <dd><span>2,868,000원</span></dd>
+                    </dl>
+                    <dl>
+                        <dt>예상만기환급금</dt>
+                        <dd><span>280,562</span>원</dd>
+                    </dl>
+                    <dl>
+                        <dt>환급률</dt>
+                        <dd>9.78%</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="divider_ty1"></div>
+			<div class="form_box">
+                <h3 class="title_h3">예상 해약환급금 (기간내 해지시)</h3>
+                <div class="form_group_wrap">
+                    <div class="form_line">
+                        {{> cp/selectitem si_ph="기간을 선택해 주세요" si_title="예상 해약환급금 선택" si_popup="pop_type01"}}
+                    </div>
+                </div>
+                <div class="info_gray">
+                    <dl>
+                        <dt>납입보험료</dt>
+                        <dd><span>71,700</span>원</dd>
+                    </dl>
+                    <dl>
+                        <dt>최저보증이율</dt>
+                        <dd>
+                            해약환급금 (<span>19,768</span>원)
+                            <span class="sub_text">환급률 (<span>27.57%</span>)</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            평균공시이율
+                            <span class="sub_text">(1.70%)</span>
+                        </dt>
+                        <dd>
+                            해약환급금 (<span>19,768</span>원)
+                            <span class="sub_text">환급률 (<span>27.57%</span>)</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            공시이율
+                            <span class="sub_text">(1.70%)최저보증이율</span>
+                        </dt>
+                        <dd>
+                            해약환급금 (<span>19,768</span>원)
+                            <span class="sub_text">환급률 (<span>27.57%</span>)</span>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+		</div>
+        <!-- s: 꼭 알아두세요 -->
+        {{#> cp/notice dp-active=true }}
+        <ul class="list_depth">
+            <li>공통 버전 업시 추가</li>
+        </ul>
+        {{/ cp/notice }}
+        <!-- e: 꼭 알아두세요 -->
+	</div>
+
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="확인했습니다" disabled=true }}
+			<!-- {{> cp/button type="1" size="1" b-text="선택한 플랜으로 가입할게요" }} -->
+		</div>
+	</div>
+</div>
+
+<!-- s: popup area -->
+
+    <!-- s: selpop -->
+    {{#> popup/popup_bottom popup-id="pop_type01" popup-title="예상 해약환급금"}}
+    <div class="popup_cont">
+        <div class="popup_content">
+            <div class="opt_select_list opt_case3">
+                <div role="button" tabindex="0" class="option active" title="선택됨"><span class="text">3개월</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">6개월</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">9개월</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">1년</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">3년</span></div>
+            </div>
+        </div>
+    </div>
+    {{/ popup/popup_bottom}}
+    <!-- e: selpop -->
+
+
+<!-- e: popup area -->
+
+{{/ layout/default }}

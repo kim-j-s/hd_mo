@@ -1,0 +1,500 @@
+{{#> layout/guide }}
+<div class="guide_h1">Input</div>
+
+<div class="guide_h4">Type - text</div>
+
+	<!-- Attribute -->
+	<div class="guide_discription">Default</div>
+	{{> cp/text placeholder="플레이스홀더" inp-title="Default" }}
+
+	<div class="guide_discription">Value</div>
+	{{> cp/text placeholder="플레이스홀더" value="입력한 값" inp-title="Value" }}
+
+	<div class="guide_discription">disabled</div>
+	{{> cp/text placeholder="플레이스홀더" disabled=true value="입력한 값" inp-title="disabled" }}
+	
+	<div class="guide_discription">Readonly</div>
+	{{> cp/text placeholder="플레이스홀더" readonly=true value="입력한 값" inp-title="Readonly" }}
+
+	<!-- Error -->
+	<div class="guide_discription">Error success</div>
+	{{> cp/text msg1="에러문구" inp-title="Error success"}}
+
+	<div class="guide_discription">Error fail</div>
+	{{> cp/text class="error" msg2="에러문구" inp-title="Error fail" }}
+
+	<div class="guide_discription">Error info</div>
+	{{> cp/text msg3="에러문구" inp-title="Error info" }}
+
+	<!-- Comma -->
+	<div class="guide_h4">Type - Comma</div>
+	<div class="guide_discription">default</div>
+	{{> cp/text type="tel" class="comma" r-text="km" inp-title="주행거리 입력"}}
+
+	<div class="guide_discription">금액 입력</div>
+	{{> cp/text type="tel" class="price" r-text="원" inp-title="금액입력"}}
+
+	<div class="guide_discription">combination</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">구입가격</div>
+			{{> cp/text  type="tel" class="price big" placeholder="숫자만" l-text="현재가격" r-text="만원" inp-title="구입가격 입력"}}
+		</div>
+	</div>
+	<div class="guide_discription">combination-readonly</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">구입가격</div>
+			{{> cp/text  type="tel" class="price big" placeholder="숫자만" l-text="현재가격" r-text="만원" inp-title="구입가격 입력" value="111,111" readonly=true }}
+		</div>
+	</div>
+	<div class="guide_discription">combination-disabled</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">구입가격</div>
+			{{> cp/text  type="tel" class="price big" placeholder="숫자만" l-text="현재가격" r-text="만원" inp-title="구입가격 입력" value="111,111" disabled=true }}
+		</div>
+	</div>
+
+
+	<!-- 생년월일 -->
+	<div class="guide_h4">Type - 생년월일</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">생년월일</div>
+			{{> cp/text class="birth_day" type="tel" placeholder="8자리 숫자 입력" placeholder="생년월일을 입력하세요" maxlength="8" inp-title="생년월일 입력" }}
+		</div>
+
+		<div class="form_line">
+			<div class="label_tit">생년월일/성별</div>
+			<div class="row">
+				{{> cp/text class="birth_day grow" type="tel" placeholder="8자리 숫자 입력" maxlength="8" inp-title="생년월일 입력" }}
+				<div class="radio_comb origin" role="radiogroup">	
+					{{> cp/radio rd-class="rd_btn" rd-id="radio_comb_g2_1" name="radio_g1" labelname="남" }}
+					{{> cp/radio rd-class="rd_btn" rd-id="radio_comb_g2_2" name="radio_g1" labelname="여"}}
+				</div>
+			</div>
+		</div>			
+	</div>
+
+	<!-- 휴대폰번호 -->
+	<div class="guide_h4">Type - 휴대폰번호</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">휴대폰번호</div>
+			{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+		</div>
+	</div>
+	<div class="guide_h4">Type - 휴대폰번호-readonly</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">휴대폰번호</div>
+			{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" value="- 1234 - 5678" readonly="true" }}
+		</div>
+	</div>
+	<div class="guide_h4">Type - 휴대폰번호-disabled</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">휴대폰번호</div>
+			{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" value="- 1234 - 5678" disabled="true" }}
+		</div>
+	</div>
+	<div class="guide_h4">Type - 휴대폰번호</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">휴대폰번호</div>
+			<div class="comp_wrap key_number">
+				{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+				{{> cp/button type="3" size="4" b-text="인증번호요청"}}
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- 카드번호 -->
+	<div class="guide_h4">Type - 카드</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">카드번호</div>
+			<div class="comp_wrap card">
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" inp-title="카드 마지막번째 4자리 입력" no_del="flase" }}
+			</div>
+		</div>
+	</div>
+
+	<div class="guide_h4">Type - 카드</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">카드번호</div>
+			<div class="comp_wrap card error">
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" inp-title="카드 마지막번째 4자리 입력" no_del="flase" }}
+			</div>
+		</div>
+	</div>
+
+	<div class="guide_h4">Type - 카드(readonly)</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">카드번호</div>
+			<div class="comp_wrap card">
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" value="2232" no_del="flase" readonly=true }}
+				<span class="dash">-</span>
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" inp-title="카드 마지막번째 4자리 입력" no_del="flase" }}
+			</div>
+		</div>
+	</div>
+	<div class="guide_h4">Type - 카드(disabled)</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">카드번호</div>
+			<div class="comp_wrap card">
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" value="2232" no_del="flase" disabled=true }}
+				<span class="dash">-</span>
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" inp-title="카드 마지막번째 4자리 입력" no_del="flase" }}
+			</div>
+		</div>
+	</div>
+	<div class="guide_h4">Type - 카드(error)</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">카드번호</div>
+			<div class="comp_wrap error card">
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" value="2232" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" inp-title="카드 마지막번째 4자리 입력" no_del="flase" }}
+			</div>
+		</div>
+	</div>
+
+	<!-- 주민등록번호 -->
+	<div class="guide_h4">Type - 주민등록번호</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">주민등록번호</div>
+			<div class="comp_wrap birth">
+				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" }}
+				<span class="dash">-</span>
+				{{> cp/text type="password" class="masking" minlength="7" maxlength="7" placeholder="뒷자리" inp-title="주민등록번호 뒷자리 입력" }}
+			</div>
+		</div>
+	</div>
+	<br><br>
+	<div class="guide_h4">Type - 주민등록번호 뒷자리만 입력</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">주민등록번호</div>
+			<div class="comp_wrap birth">
+				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" value="250303" inp-title="주민등록번호 앞자리 입력" readonly=true }}
+				<span class="dash">-</span>
+				{{> cp/text type="password" class="masking" minlength="7" maxlength="7" placeholder="뒷자리" inp-title="주민등록번호 뒷자리 입력" }}
+			</div>
+		</div>
+	</div>
+	<br><br>
+	<div class="guide_h4">Type - 주민등록번호 뒷자리 한자리만</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">주민등록번호</div>
+			<div class="comp_wrap birth">
+				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" }}
+				<span class="dash">-</span>
+				<div class="id_pass_box">
+					{{> cp/text type="tel" minlength="1" maxlength="1" placeholder="●" inp-title="주민등록번호 뒷1자리 입력" no_del="flase" }}
+					<div class="id_pass">
+						●●●●●●
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="guide_h4">Type - 주민등록번호 error</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">주민등록번호</div>
+			<div class="comp_wrap error birth">
+				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" }}
+				<span class="dash">-</span>
+				{{> cp/text type="password" class="masking" minlength="7" maxlength="7" placeholder="뒷자리" inp-title="주민등록번호 뒷자리 입력" }}
+			</div>
+		</div>
+	</div>
+	<br><br>
+
+	<div class="guide_h4">Type - 주민등록번호 - 보안키패드 호출 시 - 주민등록번호 - 입력 전</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">주민등록번호</div>
+			<div class="comp_wrap birth">
+				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" value="250303" inp-title="주민등록번호 앞자리 입력" readonly=true }}
+				<span class="dash">-</span>
+				{{> cp/keypad7 case1=true kt="주민등록번호 뒤 7자리 입력"}}
+			</div>
+		</div>
+	</div>
+
+	<div class="guide_h4">Type - 주민등록번호 - 보안키패드 호출 시 - 주민등록번호 - 입력 전</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">주민등록번호</div>
+			<div class="comp_wrap birth">
+				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력"  }}
+				<span class="dash">-</span>
+				{{> cp/keypad7 case1=true kt="주민등록번호 뒤 7자리 입력"}}
+			</div>
+		</div>
+	</div>
+
+	<div class="guide_h4">Type - 주민등록번호 - 보안키패드 호출 시 - 주민등록번호 - 입력 중</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">주민등록번호</div>
+			<div class="comp_wrap birth">
+				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력"  }}
+				<span class="dash">-</span>
+				{{> cp/keypad7 case2=true kt="주민등록번호 뒤 7자리 입력"}}
+			</div>
+		</div>
+	</div>
+
+	<div class="guide_h4">Type - 주민등록번호 - 보안키패드 호출 시 - 주민등록번호 - 입력 불가</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">주민등록번호</div>
+			<div class="comp_wrap birth">
+				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력"  }}
+				<span class="dash">-</span>
+				{{> cp/keypad7 case3=true kt="주민등록번호 뒤 7자리 입력"}}
+			</div>
+		</div>
+	</div>
+
+	<div class="guide_h4">Type - 주민등록번호 - 보안키패드 호출 시 - 주민등록번호 - 입력 불가</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">주민등록번호</div>
+			<div class="comp_wrap birth">
+				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력"  }}
+				<span class="dash">-</span>
+				{{> cp/keypad7 case3=true kt="주민등록번호 뒤 7자리 입력" disabled=true}}
+			</div>
+		</div>
+	</div>
+
+	<div class="guide_h4">Type - 주민등록번호 - 보안키패드 호출 시 - 주민등록번호</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">주민등록번호</div>
+			<div class="comp_wrap birth">
+				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력"  }}
+				<span class="dash">-</span>
+				{{> cp/keypad7 case1=true kt="주민등록번호 뒤 7자리 입력"}}
+			</div>
+		</div>
+	</div>
+
+	<div class="guide_h4">Type - 주민등록번호 - 보안키패드 호출 시 - 주민등록번호/외국인등록번호</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">주민등록번호/외국인등록번호</div>
+			<div class="comp_wrap birth">
+				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호(외국인등록번호) 앞자리 입력"  }}
+				<span class="dash">-</span>
+				{{> cp/keypad7 case1=true kt="주민등록번호(외국인등록번호) 뒷자리 입력"}}
+			</div>
+		</div>
+	</div>
+	<br><br>
+
+
+	<div class="guide_discription">인증번호</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">인증번호</div>
+			<div class="comp_wrap key_number">
+				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="숫자 6자리 입력" inp-title="인증번호 입력" r-text="00:00" }}
+				{{> cp/button type="3" size="4" b-text="시간연장"}}
+				{{> cp/button type="3" size="4" b-text="재요청"}}
+			</div>
+		</div>
+	</div>
+
+	<div class="guide_h4">Type - 왼쪽/오른쪽 입력 케이스</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">왼쪽 Case</div>
+			{{> cp/text type="tel" placeholder="숫자만" l-text="km" inp-title="최종주행거리 입력"}}
+		</div>
+		<div class="form_line">
+			<div class="label_tit">오른쪽 Case</div>
+			{{> cp/text type="tel" placeholder="숫자만" r-text="km" inp-title="최종주행거리 입력"}}
+		</div>
+	</div>
+
+
+	<!-- search -->
+	<!-- <div class="guide_h4">Type - search</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">search</div>
+			{{> cp/text placeholder="플레이스홀더" inp-title="search" }}
+		</div>
+	</div> -->
+	<!-- File -->
+	<div class="guide_h4">Type - file - 구조 사용 - 추후 디자인 반영 필요</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">파일 업로드</div>
+			{{> cp/file id="file" text="파일을 선택해주세요." }}
+		</div>
+	</div>
+	<div class="guide_discription">사진등록 버튼</div>
+	<div class="file_btn">
+		<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png">
+		<label for="file">
+			<span class="hd_btn hd_btn_ty_2 hd_btn_s_2">
+				<i class="hd_icon carmeraSvg"></i>
+				사진 등록
+			</span>
+		</label>
+	</div>
+	<div class="guide_discription">사진변경 버튼</div>
+	<div class="file_btn">
+		<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png">
+		<label for="file">
+			<span class="hd_btn hd_btn_ty_3 hd_btn_s_2">
+				<i class="hd_icon carmeraSvg2"></i>
+				사진 변경
+			</span>
+		</label>
+	</div>
+
+	<div class="guide_h1">label명 + type</div>
+	<div class="guide_h4">.form_group_wrap (간격 32px)</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">label명</div>
+			{{> cp/text placeholder="입력하세요" inp-title="이름 입력" }}
+			<div class="explain_text">정보 메시지</div>
+		</div>
+		<div class="form_line">
+			<div class="label_tit box">
+				<div>label명</div>
+				{{> cp/button type="3" size="5" b-text="button"}}
+			</div>
+			{{> cp/text placeholder="입력하세요" inp-title="이름 입력" }}
+		</div>
+		<div class="form_line">
+			<div class="label_tit box">
+				<div>label명</div>
+				{{> cp/linkButton bl_class="short_cut sm" bl_text="링크 팝업 버튼" pop_id="pop_type01" question_tit="링크" }}
+			</div>
+			{{> cp/text placeholder="입력하세요" inp-title="이름 입력" }}
+		</div>
+		<div class="row">
+			<div class="form_line grow">
+				<div class="label_tit">보험시작일</div>
+				{{> cp/text cal=true }}
+			</div>
+			<div class="form_line grow">
+				<div class="label_tit">보험종료일</div>
+				{{> cp/text cal=true }}
+			</div>
+		</div>
+		<div class="row">
+			<div class="form_line fix_w_case01">
+				<div class="label_tit">장착연도</div>
+				{{> cp/selectitem si_popup="select_option_ty1" si_ph="선택" si_title="장착연도 선택"}}
+			</div>
+			<div class="form_line grow">
+				<div class="label_tit">구입가격</div>
+					{{> cp/text type="tel" class="price" placeholder="숫자만" r-text="만원" inp-title="구입가격 입력"}}
+			</div>
+		</div>
+
+		<div class="form_line">
+			<div class="label_tit">자녀 생일</div>
+			<div class="row balance">
+				{{> cp/text class="birth_day" type="tel" placeholder="8자리 숫자 입력" maxlength="8" inp-title="생년월일 입력" }}
+				{{> cp/text class="price fix_w_case01 fit" type="tel" l-text="만" r-text="세" inp-title="자녀 만나이" no_del="true" value="20" readonly="true"}}
+			</div>
+		</div>
+	</div>
+
+	<div class="guide_h4">.form_list (간격 52px)</div>
+	<ul class="form_list">
+		<li>
+			<div class="form_group_wrap">
+				<p class="form_group_title title_h5">자동차관리법령에 따라 ‘승용캠핑카'로 구조변경(튜닝)한 차량입니까?</p>
+				<div class="info_box">승용캠핑카=승용 번호판(01-69, 100-699) & 등록 원부상 캠핑카 구조변경 내역 존재</div>
+				<div class="form_line">
+					<div class="radio_group_wrap" role="radiogroup">
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_05" name="radio_g3" labelname="예"}}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_06" name="radio_g3" labelname="아니오" checked=true}}
+					</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="form_group_wrap">
+				<p class="form_group_title title_h5">차량이 캠핑트레일러, 보트, 수상오토바이 등의 레저장비를 견인하는 자동차 입니까?</p>
+				<div class="info_box">레저장비를 견인하는 자동차는 레저장비견인 중 위험담보요율 적용으로 기본보험요율이 할증됩니다.</div>
+				<div class="form_line">
+					<div class="radio_group_wrap" role="radiogroup">
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_03" name="radio_g2" labelname="예"}}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_04" name="radio_g2" labelname="아니오" checked=true}}
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+
+	<div class="guide_h4">Type - 검색</div>
+	{{> cp/text inp-search=true placeholder="검색어를 입력하세요" inp-title="검색어 입력" }}
+	<div class="guide_h4">주소 검색 - 개발 확인용 예시 가이드</div>
+
+	
+
+	<style lang="scss">
+		.smp_dom {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 10px;
+			.r {
+				flex: none;
+				width: 100px;
+				button {
+					width: 100%;
+				}
+			}
+		}
+	</style>
+
+
+
+	{{/ layout/guide }}

@@ -1,0 +1,246 @@
+/**********************
+* Badge 
+* [category : badge_text, badge_number, badge_dot ]
+**********************/
+
+@mixin badge($font-color, $bg-colors, $border-color) {
+	color: $font-color;
+	background-color: $bg-colors;
+	border-color: $border-color;
+}
+
+.badge_wrap {
+	display: inline-flex;
+	flex-flow: row wrap;
+	gap: 8px;
+	width: 100%;
+}
+
+.hd_badge {
+	// flex: none;
+	padding: 0px var(--padding-3);
+	border-radius: var(--radius-small2);
+
+	&.size_l {
+		display: inline-block;
+		padding: 5px 8px;
+		font-size: var(--font-size-label-medium);
+		line-height: 20px;
+	}
+	&.size_m {
+		display: inline-block;
+		padding: 2px 8px;
+		font-size: var(--font-size-label-small);
+		line-height: 18px;
+	}
+
+	.pipe_line {
+		position: relative;
+		margin-left: 7px;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: -5px;
+			height: 12px;
+			border-left: 1px solid #000;
+			transform: translateY(-50%);
+		}
+	}
+
+	//variation
+	&.c_primary {
+		color: var(--color-text-primary);
+		border: 1px solid var(--color-border-primary);
+		&.solid_pastel {
+			color: var(--color-text-inverse-static);
+			background: var(--color-element-primary);
+			&.outline {
+				color: var(--color-text-primary);
+				border: 1px solid var(--color-border-primary-light);
+				background: var(--color-element-primary-lighter);
+			}
+		}
+		.pipe_line {
+			&::before {
+				border-left: 1px solid var(--color-border-primary-light);
+			}
+		}
+	}
+
+	&.c_secondary {
+		color: var(--color-text-secondary);
+		border: 1px solid var(--color-border-secondary);
+		&.solid_pastel {
+			color: var(--color-text-inverse-static);
+			background: var(--color-element-secondary);
+			&.outline {
+				color: var(--color-text-secondary);
+				border: 1px solid var(--color-border-secondary-light);
+				background: var(--color-element-secondary-light-blue);
+			}
+		}
+		.pipe_line {
+			&::before {
+				border-left: 1px solid var(--color-border-secondary-light);
+			}
+		}
+	}
+
+	&.c_tertiary {
+		color: var(--color-text-subtle);
+		border: 1px solid var(--color-element-gray-dark);
+		&.solid_pastel {
+			color: var(--color-text-basic-inverse);
+			background: var(--color-element-gray);
+			&.outline {
+				color: var(--color-text-subtle);
+				border: 1px solid var(--color-border-gray-light);
+				background: var(--color-element-gray-light);
+			}
+		}
+	}
+
+	&.c_point {
+		color: var(--color-text-point);
+		border: 1px solid var(--color-element-point);
+		&.solid_pastel {
+			color: var(--color-text-inverse-static);
+			background: var(--color-element-point);
+			&.outline {
+				color: var(--color-text-point);
+				border: 1px solid var(--color-border-point-light);
+				background: var(--color-element-point-lighter);
+			}
+		}
+	}
+
+	&.c_danger {
+		color: var(--color-text-danger);
+		border: 1px solid var(--color-element-danger);
+		&.solid_pastel {
+			color: var(--color-text-inverse-static);
+			background: var(--color-element-danger);
+			&.outline {
+				color: var(--color-text-danger);
+				border: 1px solid var(--color-border-danger-light);
+				background: var(--color-element-danger-lighter);
+			}
+		}
+	}
+
+	&.c_warning {
+		color: var(--color-text-warning);
+		border: 1px solid var(--color-border-warning);
+		&.solid_pastel {
+			color: var(--color-text-inverse-static);
+			border: 1px solid var(--color-element-warning);
+			background: var(--color-element-warning);
+			&.outline {
+				color: var(--color-text-warning);
+				border: 1px solid var(--color-border-warning-light);
+				background: var(--color-element-warning-lighter);
+			}
+		}
+	}
+
+	&.c_success {
+		color: var(--color-text-success);
+		border: 1px solid var(--color-border-success);
+		&.solid_pastel {
+			color: var(--color-text-inverse-static);
+			background: var(--color-element-success);
+			&.outline {
+				color: var(--color-text-success);
+				border: 1px solid var(--color-border-success-light);
+				background: var(--color-element-success-lighter);
+			}
+		}
+		.pipe_line {
+			&::before {
+				border-left: 1px solid var(--color-border-success-light);
+			}
+		}
+	}
+
+	&.c_info {
+		color: var(--color-text-information);
+		border: 1px solid var(--color-element-information);
+		&.solid_pastel {
+			color: var(--color-text-inverse-static);
+			background: var(--color-element-information);
+			&.outline {
+				color: var(--color-text-information);
+				border: 1px solid var(--color-border-information-light);
+				background: var(--color-element-information-lighter);
+			}
+		}
+	}
+
+	&.disabled {
+		color: var(--color-text-disabled);
+		border: 1px solid var(--color-element-disabled-dark);
+		&.solid_pastel {
+			color: var(--color-text-disabled-on);
+			border: 1px solid var(--color-element-disabled-light);
+			background: var(--color-element-disabled-light);
+			&.outline {
+				color: var(--color-text-disabled-on);
+				border: 1px solid var(--color-border-disabled);
+				background: var(--color-element-disabled-light);
+			}
+		}
+	}
+
+	&.class_type {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 44px;
+		height: 56px;
+		> .text {
+			display: block;
+			padding-top: 20px;
+			font-size: var(--font-size-label-small);
+			background-repeat: no-repeat;
+			background-position: top center;
+			background-size: 20px auto;
+		}
+		&.class_type01 {
+			border: 1px solid var(--color-border-primary-light);
+			background-color: var(--color-element-primary-lighter);
+			> .text {
+				color: var(--color-text-primary);
+				background-image: url(../images/icon/icon_badge_bg01.svg);
+			}
+		}
+		&.class_type02 {
+			border: 1px solid var(--color-border-secondary-light);
+			background-color: var(--color-element-secondary-light-blue);
+			> .text {
+				color: var(--color-text-secondary);
+				background-image: url(../images/icon/icon_badge_bg02.svg);
+			}
+		}
+		&.class_type03 {
+			border: 1px solid var(--color-border-success-light);
+			background-color: var(--color-element-success-lighter);
+			> .text {
+				color: var(--color-text-success);
+				background-image: url(../images/icon/icon_badge_bg03.svg);
+			}
+		}
+
+		&.class_type01.ltct {
+			> .text {
+				background-image: url(../images/content/ltct/git_l_01.svg);
+			}
+		}
+
+		&.class_type03.ltct {
+			> .text {
+				background-image: url(../images/content/ltct/git_l_03.svg);
+			}
+		}
+	}
+}

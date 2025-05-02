@@ -1,0 +1,73 @@
+/* Header Navigation */
+.nav_menu_wrap {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	// background: rgba(0,0,0,.5);
+	background-color: #fff;
+	visibility: hidden;
+	transition: all 0.3s ease;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.6);
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+
+	.nav_menu_inner {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		padding: 10px;
+		background-color: #fff;
+		transform: translateX(100%);
+		transition: transform 0.3s ease;
+	}
+
+	&.active {
+		visibility: visible;
+		opacity: 1;
+
+		&:before {
+			opacity: 1;
+		}
+
+		.nav_menu_inner {
+			transform: translateX(0);
+		}
+	}
+
+	.nav_menu_top {
+		flex: none;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 16px 0;
+		button {
+			width: 40px;
+			height: 24px;
+			text-align: center;
+		}
+		.allmenu_close {
+			&::before {
+				content: "메뉴 닫기";
+			}
+		}
+	}
+
+	.nav_menu_bottom {
+		flex: 1 1 0;
+		padding-top: 24px;
+		overflow: auto;
+	}
+}

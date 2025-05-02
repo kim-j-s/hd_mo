@@ -1,0 +1,353 @@
+<!---
+화면번호 : MPRMTPS10003020100
+경로 : 2.자동차 기본정보 > 2-2.자동차번호 입력 > 동일증권여부 (동일추가)
+-->
+{{#> layout/default page-title="자동차 기본정보 | 상품"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- s: popup_content_top -->
+		<div class="popup_content_top">
+			<h2 class="title_h2">
+				보유 차량 중 <strong>동일증권 가입대상</strong><br>
+				차량을 선택해 주세요
+			</h2>
+			<p class="title_sub">
+				자동차가 2대 이상인 경우, 보험계약의 종료일을 동일하게 일치시켜 하나의 보험증권으로 가입하는 것을 말합니다.<br>
+				만기일자가 동일하여 관리가 용이하며, 사고에 따른 할증이 전체 자동차 대수로 배분됩니다.
+			</p>
+
+			<div class="btn_area basic">
+				{{> cp/button type="3" size="5" b-text="동일증권 안내" popup="pop_type02" rightIcon="arrowRightSvg" }}
+			</div>
+		</div>
+		<!-- e: popup_content_top -->
+
+		<div class="bg_area sticky_fix">
+			<div class="card_item_wrap">
+				<div class="card_item">
+					<div class="item_inner">
+						<div class="inner_cont">
+							<div class="item_top" id="card_chk1_cont">
+								<div class="badge_wrap">
+									<span class="hd_badge outline solid_pastel c_info size_m">설계차량</span>
+								</div>
+								<div class="title_info">
+									<div class="main_title">321가**54</div>
+								</div>
+							</div>
+							<ul class="card_list_ty1">
+								<li>
+									<div class="title">보험기간</div>
+									<div class="cont">2020.01.01 ~ 2021.01.01</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- 동일동시 Case때만, 설계차량 영역 target 클래스 추가 -->
+					<div class="insurance_policyBox target">
+						<div class="insurance_date">
+							<div class="insurance_barbox">
+								<!-- s: 진행영역 -->
+								<!-- 
+									접근성 준수를 위해서 해당 구간은 약식 정보를 전달합니다.
+									전달정보는 aria-label="보험기간 365일" 형태로 제공됩니다.
+									ex) <span id="plnInagDay">365일</span> 일 경우 aria-label="보험기간 365일"
+									ex) <span id="plnInagDay">200일</span> 일 경우 aria-label="보험기간 200일"
+								-->
+								<div class="progress_box" role="img" aria-label="보험기간 365일">
+									<span id="plnIng" class="ing">
+										<span class="date" id="planCarTerm">
+											<span id="plnInagDay">365일</span>
+										</span>
+										<i class="start">시작일</i>
+										<i class="end">종료일</i>
+									</span>
+								</div>
+								<!-- e: 진행영역 -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab_wrap">
+			<div class="tab_wrap_list_ty1" role="tablist">
+				<!-- 동일동시 또는 동일추가 한케이스만 있는 경우 해당 비활성화될 탭 버튼에 disabled 적용 -->
+				{{>cp/tab_btn tb-text="동일동시" tb-id="01" disabled=true }}
+				{{>cp/tab_btn tb-text="동일추가" tb-id="02" tb-active=true }}
+			</div>
+
+			<!-- 동일동시 Tab 내용 -->
+			<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
+				<div class="card_item_wrap">
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inp_checkbox">
+								<input type="checkbox" id="card_chk1_1" name="name1" aria-labelledby="card_chk1_1_cont">
+								<label for="card_chk1_1" class="chk_label"></label>
+								<i></i>
+							</div>
+							<div class="inner_cont">
+								<!-- s: 25-04-29 수정 -->
+								<div role="button" class="card_link" tabindex="0">
+									<div class="item_top" id="card_chk1_1_cont">
+										<div class="badge_wrap">
+											<span class="hd_badge outline solid_pastel c_primary size_m">대상차량1</span>
+										</div>
+										<div class="title_info">
+											<div class="main_title">321가**54</div>
+										</div>
+									</div>
+								</div>
+								<!-- e: 25-04-29 수정 -->
+
+								<ul class="card_list_ty1">
+									<li>
+										<div class="title">할인할증등급</div>
+										<div class="cont">23Z/42.9%</div>
+									</li>
+									<li>
+										<div class="title">보험기간</div>
+										<div class="cont">2020.01.01 ~ 2021.01.01</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- s: 동일동시 Case, same 클래스 추가 -->
+						<div class="insurance_policyBox same">
+							<div class="insurance_date">
+								<div class="insurance_barbox">
+									<!-- s: 진행영역 -->
+									<div class="progress_box" role="img" aria-label="보험기간 365일">
+										<span id="plnIng" class="ing" style="margin-left:35%">
+											<span class="date" id="planCarTerm">
+												<span id="plnInagDay">365일</span>
+											</span>
+											<i class="start">시작일</i>
+											<i class="end">종료일</i>
+										</span>
+									</div>
+									<!-- e: 진행영역 -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inp_checkbox">
+								<input type="checkbox" id="card_chk1_2" name="name1" aria-labelledby="card_chk1_2_cont">
+								<label for="card_chk1_2" class="chk_label"></label>
+								<i></i>
+							</div>
+							<div class="inner_cont">
+								<!-- s: 25-04-29 수정 -->
+								<div role="button" class="card_link" tabindex="0">
+									<div class="item_top" id="card_chk1_2_cont">
+										<div class="badge_wrap">
+											<span class="hd_badge outline solid_pastel c_primary size_m">대상차량2</span>
+										</div>
+										<div class="title_info">
+											<div class="main_title">321가**54</div>
+										</div>
+									</div>
+								</div>
+								<!-- e: 25-04-29 수정 -->
+
+								<ul class="card_list_ty1">
+									<li>
+										<div class="title">할인할증등급</div>
+										<div class="cont">23Z/42.9%</div>
+									</li>
+									<li>
+										<div class="title">보험기간</div>
+										<div class="cont">2020.01.01 ~ 2021.01.01</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- s: 동일동시 Case, same 클래스 추가 -->
+						<div class="insurance_policyBox same">
+							<div class="insurance_date">
+								<div class="insurance_barbox">
+									<!-- s: 진행영역 -->
+									<div class="progress_box" role="img" aria-label="보험기간 365일">
+										<span id="plnIng" class="ing" style="margin-left:10%">
+											<span class="date" id="planCarTerm">
+												<span id="plnInagDay">365일</span>
+											</span>
+											<i class="start">시작일</i>
+											<i class="end">종료일</i>
+										</span>
+									</div>
+									<!-- e: 진행영역 -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- s: 선택안함 -->
+					<!-- s: 선택안함일 시, class 추가 -->
+					<div class="card_item non_chk">
+					<!-- e: 선택안함일 시, class 추가 -->
+						<div class="item_inner">
+							<div class="inp_checkbox">
+								<input type="checkbox" id="card_chk2_3" name="name1" aria-labelledby="card_chk2_3_cont">
+								<label for="card_chk2_3" class="chk_label"></label>
+								<i></i>
+							</div>
+							<div class="inner_cont">
+								<div class="item_top" id="card_chk2_3_cont">
+									<div class="title_info">
+										<div class="sub_title">선택안함</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- e: 선택안함 -->
+				</div>
+			</div>
+
+			<!-- 동일추가 Tab 내용 -->
+			<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
+				<div class="card_item_wrap">
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inp_radio">
+								<input type="radio" id="card_radio1_1" name="name1" aria-labelledby="card_radio1_1_cont">
+								<label for="card_radio1_1" class="chk_label"></label>
+								<i></i>
+							</div>
+							<div class="inner_cont">
+								<!-- s: 25-04-29 수정 -->
+								<div role="button" class="card_link" tabindex="0">
+									<div class="item_top" id="card_radio1_1_cont">
+										<div class="badge_wrap">
+											<span class="hd_badge outline solid_pastel c_primary size_m">대상차량1</span>
+										</div>
+										<div class="title_info">
+											<div class="main_title">321가**54</div>
+										</div>
+									</div>
+								</div>
+								<!-- e: 25-04-29 수정 -->
+								<ul class="card_list_ty1">
+									<li>
+										<div class="title">할인할증등급</div>
+										<div class="cont">23Z/42.9%</div>
+									</li>
+									<li>
+										<div class="title">보험기간</div>
+										<div class="cont">2020.01.01 ~ 2021.01.01</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="insurance_policyBox">
+							<div class="insurance_date">
+								<div class="insurance_barbox">
+									<!-- s: 진행영역 -->
+									<div class="progress_box" role="img" >
+										<span id="plnIng" class="ing" style="margin-left:40%;">
+											<span class="date" id="planCarTerm">
+												<span id="plnInagDay">365일</span>
+											</span>
+											<i class="start">시작일</i>
+											<i class="end">종료일</i>
+										</span>
+									</div>
+									<!-- e: 진행영역 -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inp_radio">
+								<input type="radio" id="card_radio1_2" name="name1" aria-labelledby="card_radio1_2_cont">
+								<label for="card_radio1_2" class="chk_label"></label>
+								<i></i>
+							</div>
+							<div class="inner_cont">
+								<!-- s: 25-04-29 수정 -->
+								<div role="button" class="card_link" tabindex="0">
+									<div class="item_top" id="card_radio1_2_cont">
+										<div class="badge_wrap">
+											<span class="hd_badge outline solid_pastel c_primary size_m">대상차량2</span>
+										</div>
+										<div class="title_info">
+											<div class="main_title">321가**54</div>
+										</div>
+									</div>
+								</div>
+								<!-- e: 25-04-29 수정 -->
+
+								<ul class="card_list_ty1">
+									<li>
+										<div class="title">할인할증등급</div>
+										<div class="cont">23Z/42.9%</div>
+									</li>
+									<li>
+										<div class="title">보험기간</div>
+										<div class="cont">2020.01.01 ~ 2021.01.01</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="insurance_policyBox">
+							<div class="insurance_date">
+								<div class="insurance_barbox">
+									<!-- s: 진행영역 -->
+									<div class="progress_box" role="img" aria-label="보험기간 365일">
+										<span id="plnIng" class="ing" style="margin-left:20%;">
+											<span class="date" id="planCarTerm">
+												<span id="plnInagDay">365일</span>
+											</span>
+											<i class="start">시작일</i>
+											<i class="end">종료일</i>
+										</span>
+									</div>
+									<!-- e: 진행영역 -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- s: 선택안함 -->
+					<!-- 선택안함일 시, non_chk 클래스 추가 -->
+					<div class="card_item non_chk">
+						<div class="item_inner">
+							<div class="inp_radio">
+								<input type="radio" id="card_radio2_3" name="name1" aria-labelledby="card_radio2_3_cont">
+								<label for="card_radio2_3" class="chk_label"></label>
+								<i></i>
+							</div>
+							<div class="inner_cont">
+								<div class="item_top" id="card_radio2_3_cont">
+									<div class="title_info">
+										<div class="sub_title">선택안함</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- e: 선택안함 -->
+				</div>
+			</div>
+		</div>
+	 </div>
+</div>
+
+<div class="popup_bottom">
+	<div class="btn_area">
+		<!-- {{> cp/button type="1" size="2" b-text="선택 중이에요" disabled=true }} -->
+		{{> cp/button type="1" size="2" b-text="동일증권으로"}}
+		<!-- {{> cp/button type="1" size="2" b-text="개별 가입하기"}} -->
+	</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+{{/ layout/default }}

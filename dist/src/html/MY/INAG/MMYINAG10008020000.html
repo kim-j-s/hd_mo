@@ -1,0 +1,146 @@
+{{#> layout/default page-title="해약환급금 | 마이페이지"}}
+
+<!-- s: popup area -->
+
+<!-- s: 환급금 조회 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-title="환급금 조회" popup-active=true}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="tab_wrap">
+			<div class="tab_wrap_list_ty1" role="tablist">{{>cp/tab_btn tb-text="환급금 계산" tb-id="ex01" }} {{>cp/tab_btn tb-text="환급금 지급내역" tb-id="ex02" tb-active=true}}</div>
+
+			<!-- s: 환급금 계산 -->
+			<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanelex01">환급금 계산</div>
+			<!-- e: 환급금 계산 -->
+
+			<!-- s: 환급금 지급내역 -->
+			<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanelex02">
+				<div class="btn_area">{{> cp/button type="3" size="3" b-text="환급금 지급내역서 확인"}}</div>
+
+				<div class="card_item_wrap">
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inner_cont">
+								<div class="item_top">
+									<div class="title_info">
+										<div class="main_title">중도환급금</div>
+									</div>
+									<div class="desc">지급일 2025.01.01</div>
+								</div>
+								<ul class="card_list_ty1">
+									<li>
+										<div class="title">지급지점</div>
+										<div class="cont">명동지점</div>
+									</li>
+									<li>
+										<div class="title">청구자</div>
+										<div class="cont">김*대</div>
+									</li>
+									<li>
+										<div class="title">관계</div>
+										<div class="cont">본인</div>
+									</li>
+									<li class="result">
+										<div class="title">지급금액</div>
+										<div class="cont">
+											<strong class="point">1,000,000,000원</strong>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inner_cont">
+								<div class="item_top">
+									<div class="title_info">
+										<div class="main_title tooltip_add">
+											예비특약추가납입 {{> cp/tooltip tw-class="rp" text="
+											<p>예비특약추가납입은 행복을다모은보험의 보험료예비특약 만기환급금입니다. 특약 만기일의 다음달 말일까지 만기환급금을 수령하지 않은 경우, 약관에 따라 갱신된 보험료예비특약의 추가적립보험료로 자동 납입되어 적립됩니다.</p>
+											" trigger-icon="popover_help"}}
+										</div>
+									</div>
+									<div class="desc">지급일 2025.01.01</div>
+								</div>
+								<ul class="card_list_ty1">
+									<li>
+										<div class="title">지급지점</div>
+										<div class="cont">명동지점</div>
+									</li>
+									<li>
+										<div class="title">청구자</div>
+										<div class="cont">김*대</div>
+									</li>
+									<li>
+										<div class="title">관계</div>
+										<div class="cont">본인</div>
+									</li>
+									<li class="result">
+										<div class="title">지급금액</div>
+										<div class="cont">
+											<strong class="point">1,000,000,000원</strong>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inner_cont">
+								<div class="item_top">
+									<div class="title_info">
+										<div class="main_title tooltip_add">
+											적립만기(예비특약) {{> cp/tooltip tw-class="rp" text="
+											<p>적립만기(예비특약) 시 만기환급금을 출금하지 않은 경우 「보험료예비특약 자동갱신 추가 특별약관」 제2조 제3항에 따라 만기환급금이 추가적립보험료로 전환되어 실제 지급되지 않습니다.</p>
+											" trigger-icon="popover_help"}}
+										</div>
+									</div>
+									<div class="desc">지급일 2025.01.01</div>
+								</div>
+								<ul class="card_list_ty1">
+									<li>
+										<div class="title">지급지점</div>
+										<div class="cont">명동지점</div>
+									</li>
+									<li>
+										<div class="title">청구자</div>
+										<div class="cont">김*대</div>
+									</li>
+									<li>
+										<div class="title">관계</div>
+										<div class="cont">본인</div>
+									</li>
+									<li class="result">
+										<div class="title">지급금액</div>
+										<div class="cont">
+											<strong class="point">1,000,000,000원</strong>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="no_list_area">
+						{{> cp/icon iconClass="exclamationSvg"}}
+						<p>내역이 없어요</p>
+					</div>
+				</div>
+			</div>
+			<!-- e: 환급금 지급내역 -->
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">{{> cp/button type="1" size="2" b-text="확인" }}</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: 환급금 조회 -->
+
+<!-- e: popup area -->
+
+{{/ layout/default }}

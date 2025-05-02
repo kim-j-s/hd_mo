@@ -1,0 +1,160 @@
+/* 자동차보험 | 기본 정보 */
+// progress
+.insurance_policyBox {
+	padding-top: 20px;
+
+	.insurance_barbox {
+		position: relative;
+
+		&:before {
+			position: absolute;
+			top: 13px;
+			left: 0;
+			z-index: -1;
+			content: "";
+			width: 100%;
+			height: 2px;
+			background-color: var(--color-border-gray-light);
+			border-radius: 4px;
+		}
+	}
+
+	// 동일동시
+	&.same {
+		.insurance_barbox {
+			&:before {
+				width: 50%;
+			}
+
+			&:after {
+				position: absolute;
+				top: 13px;
+				right: 0;
+				z-index: -1;
+				content: "";
+				width: 50%;
+				height: 2px;
+				background-image: url(../images/content/mtps/img_progress_border.svg);
+				border-radius: 4px;
+			}
+		}
+	}
+
+	// 설계차량
+	&.target {
+		.progress_box {
+			.ing {
+				i {
+					&.start {
+						&.left {
+							&:before {
+								left: -2px;
+								background-image: url(../images/icon/progressbar_dot_end.svg);
+								background-size: 9px auto;
+								transform: rotate(180deg);
+							}
+						}
+					}
+
+					&.end {
+						&:before {
+							right: 12px;
+							background-image: url(../images/icon/progressbar_dot.svg);
+							background-size: 8px auto;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.progress_box {
+	position: relative;
+	padding: 12px 0 21px;
+
+	.date {
+		position: absolute;
+		top: -20px;
+		left: 38%;
+		display: inline-block;
+		padding: 0 4px;
+		background-color: var(--color-border-gray-darker);
+		font-size: var(--font-size-label-xsmall);
+		line-height: 17px;
+		color: #fff;
+		border-radius: 8px;
+	}
+
+	.ing {
+		position: relative;
+		display: block;
+		width: 50%;
+		height: 4px;
+		background-color: var(--color-border-secondary);
+		text-align: center;
+
+		i {
+			position: absolute;
+			top: 7px;
+
+			display: block;
+			width: 37px;
+			// margin: 10px 0 0 -14px;
+			padding: 0 4px;
+			background-color: var(--color-border-secondary);
+			// background-color: red;
+			font-size: var(--font-size-label-xsmall);
+			line-height: 17px;
+			font-style: normal;
+			color: #fff;
+			white-space: nowrap;
+			border-radius: var(--radius-small1);
+
+			&:before {
+				position: absolute;
+				top: -10px;
+				content: "";
+				width: 10px;
+				height: 10px;
+				// background-color: var(--color-border-secondary);
+				background-repeat: no-repeat;
+				background-position: right center;
+				background-position: 8px auto;
+				background-image: url(../images/icon/progressbar_dot.svg);
+				filter: drop-shadow(0px 0px 2px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05))) drop-shadow(0px 1px 2px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)));
+			}
+
+			&.start {
+				left: -16px;
+				&:before {
+					left: 12px;
+				}
+
+				&.left {
+					left: 0;
+					&:before {
+						left: -2px;
+					}
+				}
+			}
+
+			&.end {
+				right: -16px;
+
+				&:before {
+					right: 12px;
+					background-image: url(../images/icon/progressbar_dot_end.svg);
+					background-size: 9px auto;
+				}
+
+				&.right {
+					right: 0;
+					&:before {
+						right: -2px;
+					}
+				}
+			}
+		}
+	}
+}

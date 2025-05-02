@@ -1,0 +1,460 @@
+{{#> layout/default page-title="보험료 확인 | 상품"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_full" popup-active=true }}
+<div class="popup_cont">
+	
+	<div class="sticky_fix">
+		<div class="bg_top_cover">
+			<div class="info_gray bg_etc01">
+				<div class="total car">
+					<dl>
+						<dt>기존 보험료</dt>
+						<dd><strong >912,345원</strong></dd>
+					</dl>
+					<dl>
+						<dt>변경된 보험료</dt>
+						<dd>
+							<strong class="point big">912,345원</strong>
+							<strong class="trend up"><span class="updown increase">증가</span>60,300원</strong>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<div class="tag_item_wrap">
+			<button type="button" class="tag_item size_m c_ty02 active"><span class="text">#대인배상</span></button>
+			<button type="button" class="tag_item size_m c_ty02"><span class="text">#대물배상</span></button>
+			<button type="button" class="tag_item size_m c_ty02"><span class="text">#자기신체사고/자동차상해</span></button>
+			<button type="button" class="tag_item size_m c_ty02"><span class="text">#무보험차상해</span></button>
+			<button type="button" class="tag_item size_m c_ty02"><span class="text">#자기차량손해</span></button>
+			<button type="button" class="tag_item size_m c_ty02"><span class="text">#긴급출동특약</span></button>
+		</div>
+	</div>
+	<div class="popup_content">
+		<div class="tag_item_move">
+			<h3 class="title_h3 tag_move">대인배상Ⅱ</h3>
+			<div class="radio_group_wrap_ty2 select_radio_item" role="radiogroup">
+				<div class="inp_radio rd_btn">
+					<input type="radio" id="radio_btn_gt1_1" name="radio_gt1" checked>
+					<label for="radio_btn_gt1_1">
+						<span class="label_cont">
+							<span class="hd_badge solid_pastel c_info size_m">기존선택</span>
+							<span class="option_box">
+								<span class="item">
+									<span class="opt_name">무한</span>
+								</span>
+								<strong>390,300원</strong>
+								<em class="trend">0원</em>
+							</span>
+						</span>
+					</label>
+				</div>
+				<div class="inp_radio rd_btn">
+					<input type="radio" id="radio_btn_gt1_2" name="radio_gt1">
+					<label for="radio_btn_gt1_2">
+						<span class="label_cont">
+							<span class="option_box">
+								<span class="item">
+									<span class="opt_name">미가입</span>
+								</span>
+								<strong>0원</strong>
+								<em class="trend down"><span class="updown decrease">감소</span>190,300원</em>
+							</span>
+						</span>
+					</label>
+				</div>
+			</div>
+
+			<h3 class="title_h3 tag_move">대물배상</h3>
+			<div class="radio_group_wrap_ty2 select_radio_item" role="radiogroup">
+				<div class="inp_radio rd_btn">
+					<input type="radio" id="radio_btn_gt2_1" name="radio_gt2" checked>
+					<label for="radio_btn_gt2_1">
+						<span class="label_cont">
+							<span class="hd_badge solid_pastel c_info size_m">기존선택</span>
+							<span class="option_box">
+								<span class="item">
+									<span class="opt_name">20억원</span>
+								</span>
+								<strong>390,300원</strong>
+								<em class="trend up"><span class="updown increase">증가</span>390,300원</em>
+							</span>
+						</span>
+					</label>
+				</div>
+				<div class="inp_radio rd_btn">
+					<input type="radio" id="radio_btn_gt2_2" name="radio_gt2">
+					<label for="radio_btn_gt2_2">
+						<span class="label_cont">
+							<span class="option_box">
+								<span class="item">
+									<span class="opt_name">10억원</span>
+								</span>
+								<strong>290,300원</strong>
+								<em class="trend up"><span class="updown increase">증가</span>90,300원</em>
+							</span>
+						</span>
+					</label>
+				</div>
+				<div class="inp_radio rd_btn">
+					<input type="radio" id="radio_btn_gt2_3" name="radio_gt2">
+					<label for="radio_btn_gt2_3">
+						<span class="label_cont">
+							<span class="option_box">
+								<span class="item">
+									<span class="opt_name">5억원</span>
+								</span>
+								<strong>100,500원</strong>
+								<em class="trend">0원</em>
+							</span>
+						</span>
+					</label>
+				</div>
+				<div class="inp_radio rd_btn">
+					<input type="radio" id="radio_btn_gt2_4" name="radio_gt2">
+					<label for="radio_btn_gt2_4">
+						<span class="label_cont">
+							<span class="option_box">
+								<span class="item">
+									<span class="opt_name">3억원</span>
+								</span>
+								<strong>290,300원</strong>
+								<em class="trend down"><span class="updown decrease">감소</span>90,300원</em>
+							</span>
+						</span>
+					</label>
+				</div>
+			</div>
+			<div class="btn_area center view_more">
+				{{> cp/button_more}}
+			</div>
+
+			<h3 class="title_h3 tag_move">자기신체사고/자동차상해</h3>
+			<div class="tab_wrap">
+				<div class="tab_wrap_list_ty1" role="tablist">
+					{{>cp/tab_btn tb-text="자기신체사고" tb-id="01" tb-active=true}}
+					<button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanel02" id="tab02">
+						자동차상해
+						<span class="hd_badge outline solid_pastel c_primary size_m">추천</span>
+					</button>
+				</div>
+
+				<!-- 자기신체사고 Case -->
+				<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
+					<div class="radio_group_wrap_ty2 select_radio_item" role="radiogroup">
+						<div class="inp_radio rd_btn">
+							<input type="radio" id="radio_btn_gt3_1" name="radio_gt3" checked>
+							<label for="radio_btn_gt3_1">
+								<span class="label_cont">
+									<span class="hd_badge solid_pastel c_info size_m">기존선택</span>
+									<span class="option_box">
+										<span class="item">
+											<span class="opt_name">사망/후유장애</span>
+											<span class="opt_actual"><strong>1억원</strong></span>
+										</span>
+										<span class="item">
+											<span class="opt_name">부상</span>
+											<span class="opt_actual"><strong>5천만원</strong></span>
+										</span>
+										<strong>80,300원</strong>
+										<em class="trend up"><span class="updown increase">증가</span>600원</em>
+									</span>
+								</span>
+							</label>
+						</div>
+						<div class="inp_radio rd_btn">
+							<input type="radio" id="radio_btn_gt3_2" name="radio_gt3">
+							<label for="radio_btn_gt3_2">
+								<span class="label_cont">
+									<span class="option_box">
+										<span class="item">
+											<span class="opt_name">사망/후유장애</span>
+											<span class="opt_actual"><strong>1억원</strong></span>
+										</span>
+										<span class="item">
+											<span class="opt_name">부상</span>
+											<span class="opt_actual"><strong>3천만원</strong></span>
+										</span>
+										<strong>7,200원</strong>
+										<em class="trend up"><span class="updown increase">증가</span>520원</em>
+									</span>
+								</span>
+							</label>
+						</div>
+						<div class="inp_radio rd_btn">
+							<input type="radio" id="radio_btn_gt3_3" name="radio_gt3">
+							<label for="radio_btn_gt3_3">
+								<span class="label_cont">
+									<span class="option_box">
+										<span class="item">
+											<span class="opt_name">사망/후유장애</span>
+											<span class="opt_actual"><strong>5천만원</strong></span>
+										</span>
+										<span class="item">
+											<span class="opt_name">부상</span>
+											<span class="opt_actual"><strong>5천만원</strong></span>
+										</span>
+										<strong>6,300원</strong>
+										<em>0원</em>
+									</span>
+								</span>
+							</label>
+						</div>
+						<div class="inp_radio rd_btn">
+							<input type="radio" id="radio_btn_gt3_4" name="radio_gt3">
+							<label for="radio_btn_gt3_4">
+								<span class="label_cont">
+									<span class="option_box">
+										<span class="item">
+											<span class="opt_name">사망/후유장애</span>
+											<span class="opt_actual"><strong>5천만원</strong></span>
+										</span>
+										<span class="item">
+											<span class="opt_name">부상</span>
+											<span class="opt_actual"><strong>5천만원</strong></span>
+										</span>
+										<strong>5,820원</strong>
+										<em class="trend down"><span class="updown decrease">감소</span>300원</em>
+									</span>
+								</span>
+							</label>
+						</div>
+					</div>
+					<div class="btn_area center view_more">
+						{{> cp/button_more}}
+					</div>
+				</div>
+
+				<!-- 자동차상해 Case -->
+				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
+					
+			<div class="radio_group_wrap_ty2 select_radio_item" role="radiogroup">
+				<div class="inp_radio rd_btn">
+					<input type="radio" id="radio_btn_gt2_1" name="radio_gt2" checked>
+					<label for="radio_btn_gt2_1">
+						<span class="label_cont">
+							<span class="hd_badge solid_pastel c_info size_m">기존선택</span>
+							<span class="option_box">
+								<span class="item">
+									<span class="opt_name">20억원</span>
+								</span>
+								<strong>390,300원</strong>
+								<em class="trend up"><span class="updown increase">증가</span>390,300원</em>
+							</span>
+						</span>
+					</label>
+				</div>
+				<div class="inp_radio rd_btn">
+					<input type="radio" id="radio_btn_gt2_2" name="radio_gt2">
+					<label for="radio_btn_gt2_2">
+						<span class="label_cont">
+							<span class="option_box">
+								<span class="item">
+									<span class="opt_name">10억원</span>
+								</span>
+								<strong>290,300원</strong>
+								<em class="trend up"><span class="updown increase">증가</span>90,300원</em>
+							</span>
+						</span>
+					</label>
+				</div>
+				<div class="inp_radio rd_btn">
+					<input type="radio" id="radio_btn_gt2_3" name="radio_gt2">
+					<label for="radio_btn_gt2_3">
+						<span class="label_cont">
+							<span class="option_box">
+								<span class="item">
+									<span class="opt_name">5억원</span>
+								</span>
+								<strong>100,500원</strong>
+								<em class="trend">0원</em>
+							</span>
+						</span>
+					</label>
+				</div>
+				<div class="inp_radio rd_btn">
+					<input type="radio" id="radio_btn_gt2_4" name="radio_gt2">
+					<label for="radio_btn_gt2_4">
+						<span class="label_cont">
+							<span class="option_box">
+								<span class="item">
+									<span class="opt_name">3억원</span>
+								</span>
+								<strong>290,300원</strong>
+								<em class="trend down"><span class="updown decrease">감소</span>90,300원</em>
+							</span>
+						</span>
+					</label>
+				</div>
+			</div>
+				</div>
+			</div>
+
+			<h3 class="title_h3 tag_move">무보험차상해</h3>
+			<div class="radio_group_wrap_ty2 select_radio_item" role="radiogroup">
+				<div class="inp_radio rd_btn">
+					<input type="radio" id="radio_btn_gt4_1" name="radio_gt4" checked>
+					<label for="radio_btn_gt4_1">
+						<span class="option_box">
+							<span class="item">
+								<span class="opt_actual"><strong>5억원</strong></span>
+							</span>
+							<strong>5,820원</strong>
+							<em class="trend">0원</em>
+						</span>
+					</label>
+				</div>
+				<div class="inp_radio rd_btn">
+					<input type="radio" id="radio_btn_gt4_2" name="radio_gt4">
+					<label for="radio_btn_gt4_2">
+						<span class="label_cont">
+							<span class="option_box">
+								<span class="item">
+									<span class="opt_actual"><strong>2억원</strong></span>
+								</span>
+								<strong>3,820원</strong>
+								<em class="trend down"><span class="updown decrease">감소</span>300원</em>
+							</span>
+						</span>
+					</label>
+				</div>
+				<div class="inp_radio rd_btn">
+					<input type="radio" id="radio_btn_gt4_3" name="radio_gt4">
+					<label for="radio_btn_gt4_3">
+						<span class="label_cont">
+							<span class="option_box">
+								<span class="item">
+									<span class="opt_name">미가입</span>
+								</span>
+								<strong>0원</strong>
+								<em class="trend down"><span class="updown decrease">감소</span>300원</em>
+							</span>
+						</span>
+					</label>
+				</div>
+			</div>
+
+			<h3 class="title_h3 tag_move">자기차량손해</h3>
+			<div class="radio_group_wrap_ty2 select_radio_item" role="radiogroup">
+				<div class="inp_radio rd_btn">
+					<input type="radio" id="radio_btn_gt5_1" name="radio_gt5" checked>
+					<label for="radio_btn_gt5_1">
+						<span class="option_box">
+							<span class="item">
+								<span class="opt_name">손해액의20%/<br>20만원~50만원</span>
+							</span>
+							<strong>5,820원</strong>
+							<em class="trend up"><span class="updown increase">증가</span>390,300원</em>
+						</span>
+					</label>
+				</div>
+				<div class="inp_radio rd_btn">
+					<input type="radio" id="radio_btn_gt5_2" name="radio_gt5">
+					<label for="radio_btn_gt5_2">
+						<span class="label_cont">
+							<span class="option_box">
+								<span class="item">
+									<span class="opt_name">손해액의20%/<br>30만원~100만원</span>
+								</span>
+								<strong>3,820원</strong>
+								<em class="trend down"><span class="updown decrease">감소</span>50,300원</em>
+							</span>
+						</span>
+					</label>
+				</div>
+				<div class="inp_radio rd_btn">
+					<input type="radio" id="radio_btn_gt5_3" name="radio_gt5">
+					<label for="radio_btn_gt5_3">
+						<span class="label_cont">
+							<span class="option_box">
+								<span class="item">
+									<span class="opt_name">손해액의30%/<br>30만원~100만원</span>
+								</span>
+								<strong>0원</strong>
+								<em class="trend">0원</em>
+							</span>
+						</span>
+					</label>
+				</div>
+				<div class="inp_radio rd_btn">
+					<input type="radio" id="radio_btn_gt5_4" name="radio_gt5">
+					<label for="radio_btn_gt5_4">
+						<span class="label_cont">
+							<span class="option_box">
+								<span class="item">
+									<span class="opt_name">손해액의30%/<br>50만원~200만원</span>
+								</span>
+								<strong>243,820원</strong>
+								<em class="trend down"><span class="updown decrease">감소</span>190,300원</em>
+							</span>
+						</span>
+					</label>
+				</div>
+				<div class="inp_radio rd_btn">
+					<input type="radio" id="radio_btn_gt5_5" name="radio_gt5">
+					<label for="radio_btn_gt5_5">
+						<span class="label_cont">
+							<span class="option_box">
+								<span class="item">
+									<span class="opt_name">미가입/미가입</span>
+								</span>
+								<strong>113,820원</strong>
+								<em class="trend down"><span class="updown decrease">감소</span>50,300원</em>
+							</span>
+						</span>
+					</label>
+				</div>
+			</div>
+			<div class="btn_area center view_more">
+				{{> cp/button_more}}
+			</div>
+
+			<h3 class="title_h3 tag_move">긴급출동특약</h3>
+			<div class="radio_group_wrap_ty2 select_radio_item" role="radiogroup">
+				<div class="inp_radio rd_btn">
+					<input type="radio" id="radio_btn_gt6_1" name="radio_gt6">
+					<label for="radio_btn_gt6_1">
+						<span class="label_cont">
+							<span class="hd_badge solid_pastel c_info size_m">기존선택</span>
+							<span class="option_box">
+								<span class="item">
+									<span class="opt_name">하이카(친환경100KM)</span>
+								</span>
+								<strong>10,300원</strong>
+								<em class="trend">0원</em>
+							</span>
+						</span>
+					</label>
+				</div>
+				<div class="inp_radio rd_btn">
+					<input type="radio" id="radio_btn_gt5_2" name="radio_gt6" checked>
+					<label for="radio_btn_gt5_2">
+						<span class="label_cont">
+							<span class="option_box">
+								<span class="item">
+									<span class="opt_name">미가입</span>
+								</span>
+								<strong>0원</strong>
+								<em class="trend down"><span class="updown decrease">감소</span>10,300원</em>
+							</span>
+						</span>
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- s: 하단 고정 버튼 영역 -->
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="3" size="1" b-text="취소"}}
+		{{> cp/button type="1" size="1" b-text="보험료 다시계산"}}
+	</div>
+</div>
+<!-- s: 하단 고정 버튼 영역 -->
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+{{/ layout/default }}

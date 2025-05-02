@@ -1,0 +1,44 @@
+<!---
+화면번호 : MPRMTPS10003000300
+경로 : 2.자동차 기본정보 > 2-1.보유차량 목록 > 만기알람
+-->
+{{#> layout/default page-title="자동차 기본정보 | 상품"}}
+
+<!-- s: Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="만기알람을 신청하세요"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- s: 25-04-21 수정 -->
+		<p class="text_sub">
+			갱신 가능한 일자에 등록한 휴대폰으로 관련 안내를 받을 수 있어요
+		</p>
+	
+		<div class="info_gray">
+			<div class="car_alarm_box">
+				<div class="info">111너**11</div> 
+				<div class="date">갱신보험료 계산 가능 예상일자 : 2025.12.31</div>
+			</div>
+		</div>
+		<!-- e: 25-04-21 수정 -->
+	 
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">휴대폰번호</div>
+				<!-- s: 25-04-14 수정 -->
+				{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+				<!-- e: 25-04-14 수정 -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="3" size="2" b-text="취소"}}
+		{{> cp/button type="1" size="2" b-text="신청하기"}}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: Bottom 팝업 -->
+ 
+{{/ layout/default }}

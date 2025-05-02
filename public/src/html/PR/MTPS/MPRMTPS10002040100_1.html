@@ -1,0 +1,137 @@
+<!---
+화면번호 : MPRMTPS10004010100_1
+경로 : 3.자동차 상세정보 > 3-1.자동차 상세정보 입력 > 차량정보와 부품정보 조회(case2)
+-->
+{{#> layout/default page-title="자동차 상세정보 | 상품"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">		
+		<!-- s: popup_content_top -->
+		<div class="popup_content_top">
+			<!-- s: 25-04-15 수정 -->
+			<h2 class="title_h2">
+				<strong>1234의 차량정보</strong>가<br />
+				조회되었습니다
+			</h2>
+			<!-- e: 25-04-15 수정 -->
+		</div>
+		<!-- e: popup_content_top -->
+
+		<p class="text_sub">일치하는 차량을 선택해주세요</p>
+
+		<!-- s: 25-04-15 수정 -->
+		<div class="card_item_wrap">
+			<div class="card_item">
+				<div class="item_inner">
+					<div class="inp_radio">
+						<input type="radio" id="card_radio1" name="name2" aria-labelledby="card_chk2_cont" />
+						<label for="card_radio1" class="chk_label"></label>
+						<i></i>
+					</div>
+					<div class="inner_cont" id="card_chk2_cont">
+						<ul class="card_list_ty1">
+							<li>
+								<div class="title">제조사</div>
+								<div class="cont">기아</div>
+							</li>
+							<li>
+								<div class="title">차명</div>
+								<div class="cont">K7 2.4GDI</div>
+							</li>
+							<li>
+								<div class="title">연식/배기량</div>
+								<div class="cont">
+									<span>2025</span>
+									년 /
+									<span>1,999</span>
+									cc
+								</div>
+							</li>							
+							<li>
+								<div class="title">세부모델</div>
+								<div class="cont">5인승, 프레스티지</div>
+							</li>
+							<li>
+								<div class="title">기본부속품</div>
+								<div class="cont">오토, 에어컨, P/S, ABS, AIR-D, IM</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="card_item">
+				<div class="item_inner">
+					<div class="inp_radio">
+						<input type="radio" id="card_radio2" name="name2" aria-labelledby="card_chk2_cont" />
+						<label for="card_radio2" class="chk_label"></label>
+						<i></i>
+					</div>
+					<div class="inner_cont" id="card_chk2_cont">
+						<ul class="card_list_ty1">
+							<li>
+								<div class="title">제조사</div>
+								<div class="cont">기아</div>
+							</li>
+							<li>
+								<div class="title">차명</div>
+								<div class="cont">K7 2.4GDI</div>
+							</li>
+							<li>
+								<div class="title">연식/배기량</div>
+								<div class="cont">
+									<span>2025</span>
+									년 /
+									<span>1,999</span>
+									cc
+								</div>
+							</li>
+							<li>
+								<div class="title">세부모델</div>
+								<div class="cont">5인승, 프레스티지</div>
+							</li>
+							<li>
+								<div class="title">기본부속품</div>
+								<div class="cont">오토, 에어컨, P/S, ABS, AIR-D, IM</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- e: 25-04-15 수정 -->
+
+		<div class="etc_area_ty1">
+			<p class="etc_title">차량 정보가 일치하지 않으면?</p>
+			<!-- s: 25-04-30 수정 -->
+			<!-- s: 25-04-21 수정 -->
+			<!-- s: 25-04-15 수정 -->
+			{{> cp/button type="3" size="3" b-text="차량정보 직접 선택하기" }}
+			<!-- e: 25-04-15 수정 -->
+			<!-- e: 25-04-21 수정 -->
+			<!-- e: 25-04-30 수정 -->
+		</div>
+	</div>
+</div>
+
+<div class="popup_bottom">
+
+	<!-- s: 체크박스 선택 후 표출될 버튼 케이스 -->
+	<div class="btn_area">		
+		{{> cp/button type="1" size="1" b-text="차량정보 일치해요"}}
+	</div>
+	<!-- e: 체크박스 선택 후 표출될 버튼 -->
+
+	<!-- s: 체크박스 선택 전 표출될 버튼 케이스 -->
+	<div class="btn_area">
+	{{> cp/button type="1" size="1" b-text="차량을 선택 중이에요" disabled="true"}}
+	</div>
+	<!-- e: 체크박스 선택 전 표출될 버튼 케이스 -->
+	
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+{{/ layout/default }}

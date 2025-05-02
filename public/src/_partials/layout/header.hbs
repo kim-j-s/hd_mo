@@ -1,0 +1,43 @@
+<div id="header" class="header">
+	<div class="header_inner{{#unless h-back}} history_back_none{{/unless}}">
+		{{#if main}}
+		{{!-- 메인 Case --}}
+			<h1 class="header_logo">
+				<a href="#"><img src="" alt="현대해상 다이렉트"></a>
+			</h1>
+			
+			<div class="right">
+				{{#unless hall}}
+					<button type="button" class="allmenu"><span class="blind">전체메뉴 열기</span></button>
+					{{> layout/nav }}
+				{{else}}
+					{{> @partial-block}}
+				{{/unless}}
+			</div>
+
+			{{!-- 서브 Case --}}
+			{{else}}
+				<div class="left">
+					{{#if h-back}}
+						<button type="button" class="back"><span class="blind">이전 페이지로 이동</span></button>
+					{{/if}}
+					{{#if h-home}}
+						<button type="button" class="home"><span class="blind">홈으로 이동</span></button>
+					{{/if}}
+				</div>
+
+				<div class="header_connect">
+					{{#if h-title}}
+						<h1 class="header_title">{{h-title}}</h1>
+					{{/if}}
+				</div>
+
+				{{#unless hall}}
+				<div class="right">
+						<button type="button" class="allmenu" title="전체메뉴 열기"></button>
+						{{> layout/nav }}
+				</div>
+				{{/unless}}
+			{{/if}}
+	</div>    
+</div>

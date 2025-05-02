@@ -1,0 +1,65 @@
+{{#> layout/default page-title="현재페이지 | 카테고리"}}
+
+<!-- s: popup area -->
+
+<!-- s: 가입조건 변경 팝업 -->
+{{#> popup/popup_bottom popup-id="pb1" popup-title="가입조건 변경" popup-active=true}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">보험/납입기간</div>
+				<div class="opt_select_wrap">
+					<span class="opt_select_wrap_live" aria-live="polite"></span>
+					<div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
+						<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="r1" id="r1_s1" />
+							<label for="r1_s1">1년 6개월</label>
+						</div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="r1" id="r1_s2" />
+							<label for="r1_s2">2년</label>
+						</div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="r1" id="r1_s3" />
+							<label for="r1_s3">3년</label>
+						</div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="r1" id="r1_s4" checked />
+							<label for="r1_s4">4년</label>
+						</div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="r1" id="r1_s5" />
+							<label for="r1_s5">5년</label>
+						</div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="r1" id="r1_s6" />
+							<label for="r1_s6">6년</label>
+						</div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="r1" id="r1_s7" />
+							<label for="r1_s7">1억 5천만원</label>
+						</div>
+						<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+					</div>
+					<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_left" aria-label="이전 옵션"></button>
+					<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
+				</div>
+			</div>
+			<div class="form_line">
+				<div class="label_tit">납입방법</div>
+				<div class="radio_group_wrap" role="radiogroup">{{> cp/radio rd-class="rd_btn" rd-id="radio01-1" name="radio01" labelname="매월 보험료 내기" }} {{> cp/radio rd-class="rd_btn" rd-id="radio01-2" name="radio01" labelname="1년치 한꺼번에 내기" }}</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">{{> cp/button type="1" size="2" b-text="가입 조건 변경하기"}}</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 가입조건 변경 팝업 -->
+
+<!-- e: popup area -->
+
+{{/ layout/default }}

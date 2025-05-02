@@ -1,0 +1,165 @@
+<!---
+화면번호 : MPRGIPT30002010100
+경로 :  공통 > 직업 검색 (case 1: 최초 진입시 화면)
+-->
+{{#> layout/default page-title="기본정보 입력 | 상품"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-active=true popup-title="직업 검색"}}
+<div class="popup_cont search_list_type2">
+	<div class="tab_wrap">
+		<div class="tab_wrap_list_ty1" role="tablist">{{>cp/tab_btn tb-text="검색어로 찾기" tb-id="01" tb-active=true}} {{>cp/tab_btn tb-text="분류로 찾기" tb-id="02"}}</div>
+
+		<!-- s: tab01. 검색어로 찾기 Tab 내용 -->
+		<div class="tab_wrap_content has_scroll active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
+			<div class="search_inp_box">{{> cp/text inp-search=true placeholder="검색어를 입력해 주세요." inp-title="검색어 입력" }}</div>
+
+			<!-- s: 자주찾는 품종 추천 리스트 -->
+			<div class="suggestion_list_wrap">
+				<div class="title_h4"><strong>자주 찾는 직업</strong></div>
+				<div class="item_wrap">
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">경영지원 사무직 관리자</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">전업주부</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">제품 생산관련 업체 사무직 관리자</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">대학생 및 대학원생</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">소규모 상점 경영 및 일선 관리 종사원</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">무직</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">영업 및 판매업체 관련 사무직 관리자</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">공무원(기술직, 특수직 제외)</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">중&middot;고등학교 교사</span></button>
+				</div>
+			</div>
+			<!-- e: 자주찾는 품종 추천 리스트 -->
+
+			<!-- s: 키워드 검색 결과 리스트 -->
+			<div class="search_result_count">
+				<p>
+					검색결과
+					<strong class="point">7</strong>
+					건
+				</p>
+			</div>
+			<!-- s: 25-04-22 수정 -->
+			<div class="search_reult_list_container">
+				<!-- 데이터가 없는 경우 no_data 클래스 추가
+			<div class="search_reult_list_container no_data">
+			-->
+				<ul class="search_reult_list">
+					<li class="search_reult_list_item">
+						<a href="#">
+							<span class="item_text">
+								가구
+								<i>제조</i>
+								원 및 수리원
+							</span>
+						</a>
+					</li>
+					<!-- 검색시 스타일 예시 : 검색키워드 <i>태그로 강조 -->
+					<li class="search_reult_list_item">
+						<a href="#">
+							<span class="item_text">
+								그 외
+								<i>제조</i>
+								관련 단순종사원
+							</span>
+						</a>
+					</li>
+					<li class="search_reult_list_item">
+						<a href="#">
+							<span class="item_text">
+								떡
+								<i>제조</i>
+								원
+							</span>
+						</a>
+					</li>
+					<li class="search_reult_list_item">
+						<a href="#">
+							<span class="item_text">
+								목제품
+								<i>제조</i>
+								관련 종사원(산업용 목재제품)
+							</span>
+						</a>
+					</li>
+					<li class="search_reult_list_item">
+						<a href="#">
+							<span class="item_text">
+								석유 및 천연가스
+								<i>제조</i>
+								관련 조작원
+							</span>
+						</a>
+					</li>
+					<li class="search_reult_list_item">
+						<a href="#">
+							<span class="item_text">
+								섬유
+								<i>제조</i>
+								기계조작원
+							</span>
+						</a>
+					</li>
+					<li class="search_reult_list_item">
+						<a href="#">
+							<span class="item_text">
+								시멘트 및 광물제품
+								<i>제조</i>
+								기 조작원
+							</span>
+						</a>
+					</li>
+					<li class="search_reult_list_item">
+						<a href="#">
+							<span class="item_text">
+								그 외
+								<i>제조</i>
+								관련 단순종사원
+							</span>
+						</a>
+					</li>
+					<li class="search_reult_list_item">
+						<div class="no_list_area">
+							{{> cp/icon iconClass="exclamationSvg"}}
+							<p>내역이 없어요</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- e: 25-04-22 수정 -->
+			<!-- e: 키워드 검색 결과 리스트 -->
+		</div>
+		<!-- e: tab01. 검색어로 찾기 Tab 내용 -->
+
+		<!-- s: tab02. 분류로 찾기 Tab 내용 -->
+		<div class="tab_wrap_content has_scroll" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
+			<div class="form_group_wrap">
+				<div class="form_line">{{> cp/selectitem si_ph="대분류를 선택해주세요." si_title="직업 대분류 선택" si_popup="pop_type02"}}</div>
+				<div class="form_line">{{> cp/selectitem si_ph="중분류를 선택해주세요." si_title="직업 정분류 선택" si_popup="pop_type02"}}</div>
+				<div class="form_line">{{> cp/selectitem si_ph="대분류를 선택해주세요." si_title="직업 소분류 선택" si_popup="pop_type02"}}</div>
+			</div>
+		</div>
+		<!-- e: tab02. 분류로 찾기 Tab 내용 -->
+	</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+<!-- s: popup area -->
+<!-- s: selpop -->
+{{#> popup/popup_bottom popup-id="pop_type02" popup-title="피보험자와 계약자 과계"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="opt_select_list opt_case3">
+			<div role="button" tabindex="0" class="option active" title="선택됨"><span class="text">관리직(사무직)</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">직업1</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">직업2</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">직업3</span></div>
+		</div>
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: selpop -->
+
+<!-- e: popup area -->
+{{/ layout/default }}
