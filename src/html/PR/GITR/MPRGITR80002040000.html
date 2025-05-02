@@ -5,7 +5,7 @@
 {{#> layout/default page-title="해외여행보험 | 상품"}}
 
 <!-- s: Full 팝업 -->
-{{#> popup/popup_full popup-id="pop_MPRGITR80002040000" popup-title="" popup-active=true }}
+{{#> popup/popup_full popup-id="pop_MPRGITR80002040000" popup-title="동반자정보입력" popup-active=true }}
 <div class="popup_cont">
 	<div class="popup_content">
 		<!-- s: popup_content_top -->
@@ -52,6 +52,22 @@
       <button type="button" class="btn_rd_close"><span class="blind">카드 삭제</span></button>
     </div>
     <div class="form_card_case">
+      {{> cp/selectitem si_class="select_item_case02 title_h4" si_ph="선택해주세요." si_title="관계 선택" si_item="부모님" si_popup="pop_select_rel" }}       
+      <div class="form_group_wrap mt_16">
+        <div class="form_line">
+          <div class="label_tit">생년월일/성별</div>
+          <div class="row">
+            {{> cp/text class="birth_day grow" type="tel" placeholder="8자리 숫자 입력" maxlength="8" inp-title="생년월일 입력" }}
+            <div class="radio_comb origin" role="radiogroup">	
+              {{> cp/radio rd-class="rd_btn" rd-id="radio_comb_g2_1" name="radio_g1" labelname="남" }}
+              {{> cp/radio rd-class="rd_btn" rd-id="radio_comb_g2_2" name="radio_g1" labelname="여"}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn_rd_close"><span class="blind">카드 삭제</span></button>
+    </div>
+    <div class="form_card_case">
       {{> cp/selectitem si_class="select_item_case02 title_h4" si_ph="선택해주세요." si_title="관계 선택" si_item="자녀" si_popup="pop_select_rel" }}       
       <div class="form_group_wrap mt_16">
         <div class="form_line">
@@ -66,14 +82,19 @@
         </div>
       </div>
       <button type="button" class="btn_rd_close"><span class="blind">카드 삭제</span></button>
-    </div>		
+    </div>
+    <div class="txt_center mt_16">
+    {{> cp/button type="3" size="3" b-text="추가" rightIcon="plusSvg" btn-title="동반자 추가"}}
+    </div>
 	</div>
 
 
   <!-- s: 꼭 알아두세요 -->
 	{{#> cp/notice dp-active="true" }}
 	<ul class="list_depth">
-		<li>부속명 및 가액이 일치하는 부속은 적용여부 선택 후 적용하기를 누르시면 됩니다. 단, 제조사 조회 결과로 적용된 부속은 수정할 수 없습니다. 부속품 내용이 일치하지 않거나, 차량 출고 이후 장착한 부속은 직접입력하시면 됩니다.</li>
+		<li>가족/동반인 가입 시 가족/동반인의 개인(신용)정보 수집·이용 동의 및 본인인증이 필요합니다.</li>
+		<li>본인 외 가족/동반인은 사망담보 가입을 할 수 없습니다</li>
+		<li>미성년자(만 19세 미만)는 계약자 본인의 자녀만 가입이 가능하며, 친권자 동의가 필요합니다.</li>
 	</ul>
 	{{/ cp/notice }}
 	<!-- e: 꼭 알아두세요 -->
@@ -82,7 +103,8 @@
 
 <div class="popup_bottom">
 	<div class="btn_area">
-		{{> cp/button type="1" size="1" b-text="취소"}}
+		{{> cp/button type="1" size="1" b-text="여행자 정보를 입력 중이에요" disabled="true"}}
+		<!-- {{> cp/button type="1" size="1" b-text="모두 입력했어요"}} -->
 	</div>
 </div>
 {{/ popup/popup_full}}
