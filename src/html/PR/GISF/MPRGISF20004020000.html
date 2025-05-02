@@ -1,0 +1,102 @@
+{{#> layout/default page-title="보험료 확인 | 상품"}}
+
+<!-- s: Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="변경할 담보 선택" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<p class="title_sub">건물</p>
+		<div class="opt_select_wrap">
+			<span class="opt_select_wrap_live" aria-live="polite"></span>
+			<div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
+				<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+				<div class="opt_select opt_select_w1">
+					<input type="radio" name="r1" id="r1_s1">
+					<label for="r1_s1">1천만원</label>
+				</div>
+				<div class="opt_select opt_select_w1">
+					<input type="radio" name="r1" id="r1_s2">
+					<label for="r1_s2">2천만원</label>
+				</div>
+				<div class="opt_select opt_select_w1">
+					<input type="radio" name="r1" id="r1_s3">
+					<label for="r1_s3">3천만원</label>
+				</div>
+				<div class="opt_select opt_select_w1">
+					<input type="radio" name="r1" id="r1_s4">
+					<label for="r1_s4">4천만원</label>
+				</div>
+				<div class="opt_select opt_select_w1">
+					<input type="radio" name="r1" id="r1_s5" checked>
+					<label for="r1_s5">5천만원</label>
+				</div>
+				<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+			</div>
+			<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_left" aria-label="이전 옵션"></button>
+			<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
+		</div>
+
+		{{#> cp/notice dp-title="보장내용을 확인해 보세요" }}
+		
+			<!-- 건물 -->
+			<ul class="list_depth">
+				<li>
+					토지에 정착하는 공작물 중 지붕과 기둥 또는 지붕과 벽이 있는것으로 주거, 작업, 저장등의 용도를 위하여 인공적으로 축조된 건조물 아래의 물건은 다른 약정이 없으면 보험의 목적에 포함됩니다.
+					<ul>
+						<li>건물의 부속물 : 피보험자 소유인 칸막이, 대문, 담, 곳간 및 이와 비슷한 것</li>
+						<li>건물의 부착물 : 피보험자 소유인 간판, 네온싸인, 안테나, 선전탑 및 이와 비슷한것</li>
+						<li>건물의 부속설비: 피보험자 소유인 전기, 가스, 난방, 냉방설비 및 이와 비슷한것</li>
+					</ul>
+				</li>
+			</ul>
+
+			<!-- 시설/집기, 기계/집기 -->
+			<!-- <ul class="list_depth">
+				<li>
+					기계 (공장 물건)
+					<ul>
+						<li>
+							물리량을 변경하거나 전달하는 유용한 장치 또는 연소장치, 냉동장치, 전해 장치 등 기계의 효용을 이용하여 전기적 또는 화학적 효과를 발생시키는 구조물<br>
+							예) 동력 기계, 작업 기계, 측정 기계, 변&middot;발전설비 등
+						</li>
+					</ul>
+				</li>
+				<li>
+					시설(일반 물건)
+					<ul>
+						<li>
+							사용용도 및 각종 영업해위에 적합하도록 건물 골조의 벽, 천정, 바닥 등에 치장설치하고 내&middot;외부 마감재나 조명시설 및 부대시설로서 건물의 구조체에 영향을 미치지 않고 재설치가 가능한 것
+						</li>
+					</ul>
+				</li>
+				<li>
+					집기 비품은 시설(일반 물건) 또는 기계(공장 물건) 가입금액에 포함됩니다.
+					<ul>
+						<li>집기비품: 일반적으로 건물에 고정되어 있지 않고 쉽게 움직임이 가능한 냉장고, 세탁기, 책상, 컴퓨터 등</li>
+					</ul>
+				</li>
+			</ul> -->
+		
+			<!-- 재고자산 -->
+			<!-- <ul class="list_depth">
+				<li>
+					원부재료, 재공품, 반제품, 제품, 부산물, 상품과 저장품 및 이와 비슷한 것
+				</li>
+			</ul> -->
+			
+			<!-- 야외간판 -->
+			<!-- <ul class="list_depth">
+				<li>
+					내용 수급필요
+				</li>
+			</ul> -->
+		{{/ cp/notice }}
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="가입 담보 변경하기" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: Bottom 팝업 -->
+{{/ layout/default }}
