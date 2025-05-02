@@ -1295,8 +1295,21 @@ strong {
 	justify-content: space-between;
 	gap: 0.8rem;
 }
-.acd_item .acd_head .picture_info_top .status .badge_wrap + .title {
-	margin-top: 0.2rem;
+.acd_item .acd_head .picture_info_top + span {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+.acd_item .acd_head .picture_info_top .status {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	gap: 0.2rem;
 }
 .acd_item .acd_head .picture_info_top .status .title {
 	font-size: var(--font-size-heading-small);
@@ -1399,14 +1412,14 @@ strong {
 .acd_item.acd_item_ty2 .acd_head .acd_btn {
 	position: relative;
 	width: 100%;
-	padding-right: 2.8rem;
+	padding-right: 3.6rem;
 	background-color: transparent;
 	font-weight: 700;
 	font-size: var(--font-size-heading-small);
 }
 .acd_item.acd_item_ty2 .acd_head .acd_btn:after {
 	position: absolute;
-	top: 0.4rem;
+	top: calc(50% - 1.2rem);
 	right: 0;
 	content: "";
 	width: 2.4rem;
