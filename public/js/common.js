@@ -1018,9 +1018,18 @@ $(function(){
 	});
 	// 큰글씨 모드
 	
-
-
-
+	//알릴고지 숫자 표기
+	$('ol.form_list > li').each(function (index) {
+		const $labels = $(this).find('> .form_group_wrap > .form_line > .label_tit'); // 여러 개일 수 있음
+		const num = (index + 1).toString().padStart(2, '0');
+		$labels.each(function (i) {
+			let numStr = num;
+			if ($labels.length > 1 && i > 0) {
+			  numStr += `-${i}`;
+			}
+			$(this).prepend(`<span class="num">${numStr} </span>`);
+		});
+	});
 
 
 });
