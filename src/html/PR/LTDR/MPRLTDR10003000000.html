@@ -1,488 +1,490 @@
 {{#> layout/default page-title="보험료 확인 | 상품"}}
 <div id="wrap" class="wrap">
 	{{> layout/header h-title="보험료 확인" h-back=true }}
+	
+	<form action="">
+		<div id="container" class="container">
+			<div class="content">
+				<div class="guarantee_container">
+					<!-- s: guarantee_container_left -->
+					<div class="guarantee_container_left">
+						<!-- s: live 처리 위치 -->
+						<div class="guarantee_top" aria-live="polite">
+							<div class="guarantee_top_item active">
+								<h2 class="title_h2">
+									자동차 사고,<br>
+									<strong>어디까지 보장</strong>을 받아야 할까요?
+								</h2>
+							</div>
+							<div class="guarantee_top_item">
+								<h2 class="title_h2">
+									<strong>월 35,200원</strong>을 선택할까요?
+								</h2>
+							</div>
+							<div class="guarantee_top_item">
+								<h2 class="title_h2">
+									<strong>월 23,900원</strong>을 선택할까요?
+								</h2>
+							</div>
+							<div class="guarantee_top_item">
+								<h2 class="title_h2">
+									<strong>월 9,500원</strong>을 선택할까요?
+								</h2>
+							</div>
+						</div>
+						<!-- e: live 처리 위치 -->
 
-	<div id="container" class="container">
-		<div class="content">
-			<div class="guarantee_container">
-				<!-- s: guarantee_container_left -->
-				<div class="guarantee_container_left">
-					<!-- s: live 처리 위치 -->
-					<div class="guarantee_top" aria-live="polite">
-						<div class="guarantee_top_item active">
-							<h2 class="title_h2">
-								자동차 사고,<br>
-								<strong>어디까지 보장</strong>을 받아야 할까요?
-							</h2>
+						<div class="guarantee_visuval">
+							<img src="../../../images/content/mprl/img_MPRLTDR10003000000_01.svg" alt="배경이미지" aria-hidden="true">
 						</div>
-						<div class="guarantee_top_item">
-							<h2 class="title_h2">
-								<strong>월 35,200원</strong>을 선택할까요?
-							</h2>
-						</div>
-						<div class="guarantee_top_item">
-							<h2 class="title_h2">
-								<strong>월 23,900원</strong>을 선택할까요?
-							</h2>
-						</div>
-						<div class="guarantee_top_item">
-							<h2 class="title_h2">
-								<strong>월 9,500원</strong>을 선택할까요?
-							</h2>
+
+						<div class="guarantee_list_wrap">
+							<div class="gtl_special">
+								{{> cp/linkButton bl_class="short_cut short_cut_icon short_cut_icon_ty1" bl_text="차량 손해도 보장받을 수 있는 특약" pop_id="sp_pop" }}
+							</div>
+							<div class="guarantee_choice_wrap">
+								<div class="guarantee_item" data-sendclass="01">
+									<div class="gi_radio">
+										<input type="radio" name="guarantee_item" id="gi_radio01" aria-labelledby="guarantee_item_top_01">
+										<label for="gi_radio01"></label>
+									</div>
+									<div class="guarantee_item_ev">
+										<div class="guarantee_item_top" id="guarantee_item_top_01">
+											<div class="git_l">
+												<span class="hd_badge class_type class_type01"><span class="text">고급</span></span>
+											</div>
+											<div class="git_r">
+												사고 후 치료와 재활까지도 꼼꼼하게 
+												<span class="git_r_sub">월 <span class="git_r_sub_point">35,000</span>원</span>
+											</div>
+										</div>
+										<div class="guarantee_item_cont">
+											<div class="gic_inner_top">
+												<div class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_primary size_m">고급</span>
+												</div>
+												<span class="text">60개 보장</span>
+											</div>	
+											<div class="gic_inner">
+												<div class="gic gic_01">
+													<strong class="tit">사고 후 치료와 재활까지도 꼼꼼하게</strong>
+													<p class="desc">입원, 통원 간병비와 상해 수술비 등 빠른 일상생활 복귀 보장을 더했습니다.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									{{> cp/linkButton bl_class="short_cut sm move_detail" bl_text="보장내용 자세히 보기" bl_title="슬라이드 이동" }}
+								</div>
+
+								<div class="guarantee_item" data-sendclass="02">
+									<div class="gi_radio">
+										<input type="radio" name="guarantee_item" id="gi_radio02" aria-labelledby="guarantee_item_top_02">
+										<label for="gi_radio02"></label>
+									</div>
+									<div class="guarantee_item_ev">
+										<div class="guarantee_item_top" id="guarantee_item_top_02">
+											<div class="git_l">
+												<span class="hd_badge class_type class_type02"><span class="text">표준</span></span>
+											</div>
+											<div class="git_r">
+												자동차 사고로 다쳤을 때 걱정 없게
+												<span class="git_r_sub">월 <span class="git_r_sub_point">23,900</span>원</span>
+											</div>
+										</div>
+										<div class="guarantee_item_cont">
+											<div class="gic_inner_top">
+												<div class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_secondary size_m">표준</span>
+												</div>
+												<span class="text">40개 보장</span>
+											</div>	
+											<div class="gic_inner">
+												<div class="gic gic_02">
+													<strong class="tit">자동차 사고로 다쳤을 때 걱정 없게</strong>
+													<p class="desc">자동차 사고 부상, 골절, 상처 봉합, 흉터 성형비용 보장을 더했습니다.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									{{> cp/linkButton bl_class="short_cut sm move_detail" bl_text="보장내용 자세히 보기" bl_title="슬라이드 이동" }}
+								</div>
+
+								<div class="guarantee_item" data-sendclass="03">
+									<div class="gi_radio">
+										<input type="radio" name="guarantee_item" id="gi_radio03" aria-labelledby="guarantee_item_top_03">
+										<label for="gi_radio03"></label>
+									</div>
+									<div class="guarantee_item_ev">
+										<div class="guarantee_item_top" id="guarantee_item_top_03">
+											<div class="git_l">
+												<span class="hd_badge class_type class_type03"><span class="text">기본</span></span>
+											</div>
+											<div class="git_r">
+												운전자 3대 필수 비용은 기본
+												<span class="git_r_sub">월 <span class="git_r_sub_point">9,500</span>원</span>
+											</div>
+										</div>
+										<div class="guarantee_item_cont">
+											<div class="gic_inner_top">
+												<div class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_success size_m">기본</span>
+												</div>
+												<span class="text">13개 보장</span>
+											</div>	
+											<div class="gic_inner">
+												<div class="gic gic_03">
+													<strong class="tit">운전자 3대 필수 비용은 기본</strong>
+													<p class="desc">자동차 사고 깁스, 중증 외상, 중대 화상을 보장을 더했습니다.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									{{> cp/linkButton bl_class="short_cut sm move_detail" bl_text="보장내용 자세히 보기" bl_title="슬라이드 이동" }}
+								</div>
+							</div>
 						</div>
 					</div>
-					<!-- e: live 처리 위치 -->
+					<!-- e: guarantee_container_left -->
 
-					<div class="guarantee_visuval">
-						<img src="../../../images/content/mprl/img_MPRLTDR10003000000_01.svg" alt="배경이미지" aria-hidden="true">
-					</div>
-
-					<div class="guarantee_list_wrap">
-						<div class="gtl_special">
-							{{> cp/linkButton bl_class="short_cut short_cut_icon short_cut_icon_ty1" bl_text="차량 손해도 보장받을 수 있는 특약" pop_id="sp_pop" }}
-						</div>
-						<div class="guarantee_choice_wrap">
-							<div class="guarantee_item" data-sendclass="01">
-								<div class="gi_radio">
-									<input type="radio" name="guarantee_item" id="gi_radio01" aria-labelledby="guarantee_item_top_01">
-									<label for="gi_radio01"></label>
-								</div>
-								<div class="guarantee_item_ev">
-									<div class="guarantee_item_top" id="guarantee_item_top_01">
-										<div class="git_l">
-											<span class="hd_badge class_type class_type01"><span class="text">고급</span></span>
-										</div>
-										<div class="git_r">
-											사고 후 치료와 재활까지도 꼼꼼하게 
-											<span class="git_r_sub">월 <span class="git_r_sub_point">35,000</span>원</span>
-										</div>
-									</div>
-									<div class="guarantee_item_cont">
-										<div class="gic_inner_top">
-											<div class="badge_wrap">
-												<span class="hd_badge outline solid_pastel c_primary size_m">고급</span>
-											</div>
-											<span class="text">60개 보장</span>
-										</div>	
-										<div class="gic_inner">
-											<div class="gic gic_01">
-												<strong class="tit">사고 후 치료와 재활까지도 꼼꼼하게</strong>
-												<p class="desc">입원, 통원 간병비와 상해 수술비 등 빠른 일상생활 복귀 보장을 더했습니다.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								{{> cp/linkButton bl_class="short_cut sm move_detail" bl_text="보장내용 자세히 보기" bl_title="슬라이드 이동" }}
-							</div>
-
-							<div class="guarantee_item" data-sendclass="02">
-								<div class="gi_radio">
-									<input type="radio" name="guarantee_item" id="gi_radio02" aria-labelledby="guarantee_item_top_02">
-									<label for="gi_radio02"></label>
-								</div>
-								<div class="guarantee_item_ev">
-									<div class="guarantee_item_top" id="guarantee_item_top_02">
-										<div class="git_l">
-											<span class="hd_badge class_type class_type02"><span class="text">표준</span></span>
-										</div>
-										<div class="git_r">
-											자동차 사고로 다쳤을 때 걱정 없게
-											<span class="git_r_sub">월 <span class="git_r_sub_point">23,900</span>원</span>
-										</div>
-									</div>
-									<div class="guarantee_item_cont">
-										<div class="gic_inner_top">
-											<div class="badge_wrap">
-												<span class="hd_badge outline solid_pastel c_secondary size_m">표준</span>
-											</div>
-											<span class="text">40개 보장</span>
-										</div>	
-										<div class="gic_inner">
-											<div class="gic gic_02">
-												<strong class="tit">자동차 사고로 다쳤을 때 걱정 없게</strong>
-												<p class="desc">자동차 사고 부상, 골절, 상처 봉합, 흉터 성형비용 보장을 더했습니다.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								{{> cp/linkButton bl_class="short_cut sm move_detail" bl_text="보장내용 자세히 보기" bl_title="슬라이드 이동" }}
-							</div>
-
-							<div class="guarantee_item" data-sendclass="03">
-								<div class="gi_radio">
-									<input type="radio" name="guarantee_item" id="gi_radio03" aria-labelledby="guarantee_item_top_03">
-									<label for="gi_radio03"></label>
-								</div>
-								<div class="guarantee_item_ev">
-									<div class="guarantee_item_top" id="guarantee_item_top_03">
-										<div class="git_l">
-											<span class="hd_badge class_type class_type03"><span class="text">기본</span></span>
-										</div>
-										<div class="git_r">
-											운전자 3대 필수 비용은 기본
-											<span class="git_r_sub">월 <span class="git_r_sub_point">9,500</span>원</span>
-										</div>
-									</div>
-									<div class="guarantee_item_cont">
-										<div class="gic_inner_top">
-											<div class="badge_wrap">
-												<span class="hd_badge outline solid_pastel c_success size_m">기본</span>
-											</div>
-											<span class="text">13개 보장</span>
-										</div>	
-										<div class="gic_inner">
-											<div class="gic gic_03">
-												<strong class="tit">운전자 3대 필수 비용은 기본</strong>
-												<p class="desc">자동차 사고 깁스, 중증 외상, 중대 화상을 보장을 더했습니다.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								{{> cp/linkButton bl_class="short_cut sm move_detail" bl_text="보장내용 자세히 보기" bl_title="슬라이드 이동" }}
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- e: guarantee_container_left -->
-
-				<!-- s: guarantee_container_right -->
-				<div class="guarantee_container_right">
-					<!-- s: guarantee_detail -->
-					<div class="guarantee_detail">
-						<div class="guarantee_detail_top">
-							<div class="splide_wrap splide_wrap_ty1" id="splide_wrap_ty1">
-								<div class="splide" role="group">
-									<div class="splide__track">
-										<ul class="splide__list">
-											<!-- s: 기본 -->											
-											<li class="splide__slide c1" tabindex="0" data-getclass="03">
-												<div class="gd_item">
-													<div class="rdo_box">
-														<input type="radio" name="d_r" id="d_r_01" aria-labelledby="d_rdo_01">
-														<label for="d_r_01"></label>
-													</div>
-													<div class="gdi_content" aria-labelledby="d_rdo_01">
-														<div class="badge_wrap">
-															<span class="hd_badge outline solid_pastel c_success size_m"><strong>기본</strong> <span class="pipe_line">13개 보장</span></span>
+					<!-- s: guarantee_container_right -->
+					<div class="guarantee_container_right">
+						<!-- s: guarantee_detail -->
+						<div class="guarantee_detail">
+							<div class="guarantee_detail_top">
+								<div class="splide_wrap splide_wrap_ty1" id="splide_wrap_ty1">
+									<div class="splide" role="group">
+										<div class="splide__track">
+											<ul class="splide__list">
+												<!-- s: 기본 -->											
+												<li class="splide__slide c1" tabindex="0" data-getclass="03">
+													<div class="gd_item">
+														<div class="rdo_box">
+															<input type="radio" name="d_r" id="d_r_01" aria-labelledby="d_rdo_01">
+															<label for="d_r_01"></label>
 														</div>
-														<p class="head_text">
-															운전자 3대 필수 비용은 기본
-															<span class="price">
-																<strong class="price_num">9,500</strong><span class="won">원</span>
-															</span>
-														</p>
-														<ul class="gdi_content_list">
-															<li class="ico_add ico_add_ty1">
-																<div class="item">																
-																		{{#> cp/linkButton bl_class="add_text_btn" pop_id="ex_popup_bottom" question_tit="할인 안내 팝업열기" }}
+														<div class="gdi_content" aria-labelledby="d_rdo_01">
+															<div class="badge_wrap">
+																<span class="hd_badge outline solid_pastel c_success size_m"><strong>기본</strong> <span class="pipe_line">13개 보장</span></span>
+															</div>
+															<p class="head_text">
+																운전자 3대 필수 비용은 기본
+																<span class="price">
+																	<strong class="price_num">9,500</strong><span class="won">원</span>
+																</span>
+															</p>
+															<ul class="gdi_content_list">
+																<li class="ico_add ico_add_ty1">
+																	<div class="item">																
+																			{{#> cp/linkButton bl_class="add_text_btn" pop_id="ex_popup_bottom" question_tit="할인 안내 팝업열기" }}
+																				<div class="txt">
+																					현대해상 자동차보험 가입 고객님<br>
+																					<strong class="point">매월 7% 할인</strong>을 해드려요
+																				</div>
+																			{{/ cp/linkButton}}
+																	</div>
+																</li>
+																<li class="ico_add ico_add_ty2">
+																	<div class="item">
+																		
+																			{{#> cp/linkButton bl_class="add_text_btn" pop_id="ex_popup_bottom" question_tit="할인 안내 팝업열기" }}
 																			<div class="txt">
-																				현대해상 자동차보험 가입 고객님<br>
-																				<strong class="point">매월 7% 할인</strong>을 해드려요
-																			</div>
-																		{{/ cp/linkButton}}
-																</div>
-															</li>
-															<li class="ico_add ico_add_ty2">
-																<div class="item">
-																	
-																		{{#> cp/linkButton bl_class="add_text_btn" pop_id="ex_popup_bottom" question_tit="할인 안내 팝업열기" }}
-																		<div class="txt">
-																			현대카드로 결제하고<br>
-																			<strong class="point">M포인트 100%</strong> 사용 해보세요
-																			</div>
-																		{{/ cp/linkButton}}																	
-																</div>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</li>
-											<!-- e: 기본 -->
-
-											<!-- s: 표준 -->
-											<li class="splide__slide c2" tabindex="0" data-getclass="02">
-												<div class="gd_item">
-													<div class="rdo_box">
-														<input type="radio" name="d_r" id="d_r_02" aria-labelledby="d_rdo_02">
-														<label for="d_r_02"></label>
-													</div>
-													<div class="gdi_content" aria-labelledby="d_rdo_02">
-														<div class="badge_wrap">
-															<span class="hd_badge outline solid_pastel c_secondary size_m"><strong>표준</strong> <span class="pipe_line">40개 보장</span></span>
+																				현대카드로 결제하고<br>
+																				<strong class="point">M포인트 100%</strong> 사용 해보세요
+																				</div>
+																			{{/ cp/linkButton}}																	
+																	</div>
+																</li>
+															</ul>
 														</div>
-														<p class="head_text">
-															자동차 사고로 다쳤을 때 걱정 없게
-															<span class="price">
-																<strong class="price_num">23,900</strong><span class="won">원</span>
-															</span>
-														</p>
-														<ul class="gdi_content_list">
-															<li class="ico_add ico_add_ty1">
-																<div class="item">																
-																		{{#> cp/linkButton bl_class="add_text_btn" pop_id="ex_popup_bottom" question_tit="할인 안내 팝업열기" }}
-																			<div class="txt">
-																				현대해상 자동차보험 가입 고객님<br>
-																				<strong class="point">매월 7% 할인</strong>을 해드려요
-																			</div>
-																		{{/ cp/linkButton}}
-																</div>
-															</li>
-															<li class="ico_add ico_add_ty2">
-																<div class="item">
-																	
-																		{{#> cp/linkButton bl_class="add_text_btn" pop_id="ex_popup_bottom" question_tit="할인 안내 팝업열기" }}
-																		<div class="txt">
-																			현대카드로 결제하고<br>
-																			<strong class="point">M포인트 100%</strong> 사용 해보세요
-																			</div>
-																		{{/ cp/linkButton}}																	
-																</div>
-															</li>
-														</ul>
 													</div>
-												</div>
-											</li>
-											<!-- e: 표준 -->
+												</li>
+												<!-- e: 기본 -->
 
-											<!-- s: 고급 -->
-											<li class="splide__slide c3" tabindex="0" data-getclass="01">
-												<div class="gd_item">
-													<div class="rdo_box">
-														<input type="radio" name="d_r" id="d_r_03" aria-labelledby="d_rdo_03">
-														<label for="d_r_03"></label>
-													</div>
-													<div class="gdi_content" aria-labelledby="d_rdo_03">
-														<div class="badge_wrap">
-															<span class="hd_badge outline solid_pastel c_primary size_m"><strong>고급</strong> <span class="pipe_line">60개 보장</span></span>
+												<!-- s: 표준 -->
+												<li class="splide__slide c2" tabindex="0" data-getclass="02">
+													<div class="gd_item">
+														<div class="rdo_box">
+															<input type="radio" name="d_r" id="d_r_02" aria-labelledby="d_rdo_02">
+															<label for="d_r_02"></label>
 														</div>
-														<p class="head_text">
-															사고 후 치료와 재활까지도 꼼꼼하게
-															<span class="price">
-																<strong class="price_num">35,200</strong><span class="won">원</span>
-															</span>
-														</p>
-														<ul class="gdi_content_list">
-															<li class="ico_add ico_add_ty1">
-																<div class="item">																
-																		{{#> cp/linkButton bl_class="add_text_btn" pop_id="ex_popup_bottom" question_tit="할인 안내 팝업열기" }}
+														<div class="gdi_content" aria-labelledby="d_rdo_02">
+															<div class="badge_wrap">
+																<span class="hd_badge outline solid_pastel c_secondary size_m"><strong>표준</strong> <span class="pipe_line">40개 보장</span></span>
+															</div>
+															<p class="head_text">
+																자동차 사고로 다쳤을 때 걱정 없게
+																<span class="price">
+																	<strong class="price_num">23,900</strong><span class="won">원</span>
+																</span>
+															</p>
+															<ul class="gdi_content_list">
+																<li class="ico_add ico_add_ty1">
+																	<div class="item">																
+																			{{#> cp/linkButton bl_class="add_text_btn" pop_id="ex_popup_bottom" question_tit="할인 안내 팝업열기" }}
+																				<div class="txt">
+																					현대해상 자동차보험 가입 고객님<br>
+																					<strong class="point">매월 7% 할인</strong>을 해드려요
+																				</div>
+																			{{/ cp/linkButton}}
+																	</div>
+																</li>
+																<li class="ico_add ico_add_ty2">
+																	<div class="item">
+																		
+																			{{#> cp/linkButton bl_class="add_text_btn" pop_id="ex_popup_bottom" question_tit="할인 안내 팝업열기" }}
 																			<div class="txt">
-																				현대해상 자동차보험 가입 고객님<br>
-																				<strong class="point">매월 7% 할인</strong>을 해드려요
-																			</div>
-																		{{/ cp/linkButton}}
-																</div>
-															</li>
-															<li class="ico_add ico_add_ty2">
-																<div class="item">
-																	
-																		{{#> cp/linkButton bl_class="add_text_btn" pop_id="ex_popup_bottom" question_tit="할인 안내 팝업열기" }}
-																		<div class="txt">
-																			현대카드로 결제하고<br>
-																			<strong class="point">M포인트 100%</strong> 사용 해보세요
-																			</div>
-																		{{/ cp/linkButton}}																	
-																</div>
-															</li>
-														</ul>
+																				현대카드로 결제하고<br>
+																				<strong class="point">M포인트 100%</strong> 사용 해보세요
+																				</div>
+																			{{/ cp/linkButton}}																	
+																	</div>
+																</li>
+															</ul>
+														</div>
 													</div>
-												</div>
-											</li>
-											<!-- e: 고급 -->
-										</ul>
+												</li>
+												<!-- e: 표준 -->
+
+												<!-- s: 고급 -->
+												<li class="splide__slide c3" tabindex="0" data-getclass="01">
+													<div class="gd_item">
+														<div class="rdo_box">
+															<input type="radio" name="d_r" id="d_r_03" aria-labelledby="d_rdo_03">
+															<label for="d_r_03"></label>
+														</div>
+														<div class="gdi_content" aria-labelledby="d_rdo_03">
+															<div class="badge_wrap">
+																<span class="hd_badge outline solid_pastel c_primary size_m"><strong>고급</strong> <span class="pipe_line">60개 보장</span></span>
+															</div>
+															<p class="head_text">
+																사고 후 치료와 재활까지도 꼼꼼하게
+																<span class="price">
+																	<strong class="price_num">35,200</strong><span class="won">원</span>
+																</span>
+															</p>
+															<ul class="gdi_content_list">
+																<li class="ico_add ico_add_ty1">
+																	<div class="item">																
+																			{{#> cp/linkButton bl_class="add_text_btn" pop_id="ex_popup_bottom" question_tit="할인 안내 팝업열기" }}
+																				<div class="txt">
+																					현대해상 자동차보험 가입 고객님<br>
+																					<strong class="point">매월 7% 할인</strong>을 해드려요
+																				</div>
+																			{{/ cp/linkButton}}
+																	</div>
+																</li>
+																<li class="ico_add ico_add_ty2">
+																	<div class="item">
+																		
+																			{{#> cp/linkButton bl_class="add_text_btn" pop_id="ex_popup_bottom" question_tit="할인 안내 팝업열기" }}
+																			<div class="txt">
+																				현대카드로 결제하고<br>
+																				<strong class="point">M포인트 100%</strong> 사용 해보세요
+																				</div>
+																			{{/ cp/linkButton}}																	
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</li>
+												<!-- e: 고급 -->
+											</ul>
+										</div>
+										<div class="splide_arrows">
+											<button type="button" class="swiper_button sbc_02 sbs_02 swiper_button_left" aria-label="이전 플랜 보기"></button>
+											<button type="button" class="swiper_button sbc_02 sbs_02 swiper_button_right" aria-label="다음 플랜 보기"></button>
+										</div>
 									</div>
-									<div class="splide_arrows">
-										<button type="button" class="swiper_button sbc_02 sbs_02 swiper_button_left" aria-label="이전 플랜 보기"></button>
-										<button type="button" class="swiper_button sbc_02 sbs_02 swiper_button_right" aria-label="다음 플랜 보기"></button>
+								</div>
+
+								<div class="guarantee_detail_mini">
+									<div class="item_wrap">
+									<span class="i_data">
+										<span class="text">보험/납입 기간</span>
+										<strong class="data">10년</strong>
+									</span>
+									<span class="i_data">
+										<span class="text">납입 방법</span>
+										<strong class="data">월납</strong>
+									</span>
+									</div>
+									<div class="modify_ba">
+										{{> cp/button type="3" size="5" b-text="변경" btn-title="가입조건 변경 팝업열기"}}
 									</div>
 								</div>
 							</div>
 
-							<div class="guarantee_detail_mini">
-								<div class="item_wrap">
-								<span class="i_data">
-									<span class="text">보험/납입 기간</span>
-									<strong class="data">10년</strong>
-								</span>
-								<span class="i_data">
-									<span class="text">납입 방법</span>
-									<strong class="data">월납</strong>
-								</span>
-								</div>
-								<div class="modify_ba">
-									{{> cp/button type="3" size="5" b-text="변경" btn-title="가입조건 변경 팝업열기"}}
+							<!-- 간편정보 -->
+							<div class="simple_info_wrap">
+								<div class="simple_info_item">
+									<ul class="sii_list">
+										<li>
+											<span class="sii_list_l">보험료</span>
+											<span class="sii_list_r">
+												<strong class="price">24,900원</strong>
+											</span>
+										</li>
+										<li>
+											<span class="sii_list_l">
+												<span class="text">
+													보장 범위 <strong class="bold">40개</strong>
+												</span>
+											</span>
+											<span class="sii_list_r">
+												<span class="text">
+													보험/납입기간 및 방법 <strong class="bold">10년</strong>
+												</span>
+												<span class="pipe">
+													<strong class="bold">월납</strong>
+												</span>
+											</span>
+										</li>
+									</ul>
 								</div>
 							</div>
-						</div>
-
-						<!-- 간편정보 -->
-						<div class="simple_info_wrap">
-							<div class="simple_info_item">
-								<ul class="sii_list">
-									<li>
-										<span class="sii_list_l">보험료</span>
-										<span class="sii_list_r">
-											<strong class="price">24,900원</strong>
-										</span>
-									</li>
-									<li>
-										<span class="sii_list_l">
-											<span class="text">
-												보장 범위 <strong class="bold">40개</strong>
-											</span>
-										</span>
-										<span class="sii_list_r">
-											<span class="text">
-												보험/납입기간 및 방법 <strong class="bold">10년</strong>
-											</span>
-											<span class="pipe">
-												<strong class="bold">월납</strong>
-											</span>
-										</span>
-									</li>
-								</ul>
+							<!-- 간편정보 -->
+							
+							<div class="gd_middle_ba btn_area">
+								{{> cp/button type="3" size="3" b-text="모든 플랜 한눈에 보기" popup="ex_popup_full" btn-title="전체 팝업"}}
+								{{> cp/button type="3" size="3" b-text="계산 결과 문자로 받기" popup="ex_popup_full" btn-title="전체 팝업"}}
 							</div>
-						</div>
-						<!-- 간편정보 -->
-						 
-						<div class="gd_middle_ba btn_area">
-							{{> cp/button type="3" size="3" b-text="모든 플랜 한눈에 보기" popup="ex_popup_full" btn-title="전체 팝업"}}
-							{{> cp/button type="3" size="3" b-text="계산 결과 문자로 받기" popup="ex_popup_full" btn-title="전체 팝업"}}
-						</div>
 
-						<div class="acc_group">
-							<div class="space_list_ty2">
-								<div class="acd_item acd_item_ty1">
-									{{#> cp/accordion ac-title="상세보기" aci="aci01" aclc="chk_label_ty2" acl="교통사고 났을 때 든든하게!"}}
+							<div class="acc_group">
+								<div class="space_list_ty2">
+									<div class="acd_item acd_item_ty1">
+										{{#> cp/accordion ac-title="상세보기" aci="aci01" aclc="chk_label_ty2" acl="교통사고 났을 때 든든하게!"}}
+											<ul class="coverage_item_list">
+												<li class="list">
+													<div class="item_title">교통상해후유장해(운전자)</div>
+													<div class="sub_txt_area">
+														{{> cp/linkButton bl_class="price_btn" bl_text="1천만원"  question_tit="가입조건변경" }}
+													</div>
+												</li>
+												<li class="list">
+													<div class="item_title">교통상해후유장해(운전자, 80%이상, 월지급형)</div>
+													<div class="sub_txt_area">
+														{{> cp/linkButton bl_class="price_btn" bl_text="1천만원"  question_tit="가입조건변경" }}
+														<div class="badge_wrap">
+															<span class="hd_badge outline solid_pastel c_secondary size_m">새로 나왔어요</span>
+														</div>
+													</div>
+												</li>
+												<li class="list">
+													<div class="item_title">교통상해사망(운전자)</div>
+													<div class="sub_txt_area">
+														{{> cp/linkButton bl_class="price_btn" bl_text="1천만원"  question_tit="가입조건변경" }}
+													</div>
+												</li>
+												<li class="list">
+													<div class="item_title">교통상해사망후유장해(대중교통이용중)</div>
+													<div class="sub_txt_area">
+														{{> cp/linkButton bl_class="price_btn" bl_text="1천만원"  question_tit="가입조건변경" }}
+														<div class="badge_wrap">
+															<span class="hd_badge outline solid_pastel c_warning size_m">보장을 확대 했어요</span>
+														</div>
+													</div>
+												</li>
+											</ul>
+										{{/ cp/accordion }}
+									</div>
+									<div class="acd_item acd_item_ty1">
+										{{#> cp/accordion ac-title="상세보기" aci="aci02" aclc="chk_label_ty2" acl="자동차사고로 다쳤을 때"}}
 										<ul class="coverage_item_list">
 											<li class="list">
-												<div class="item_title">교통상해후유장해(운전자)</div>
+												<div class="item_title">자동차사고부상Ⅱ(운전자)(1-2급)</div>
 												<div class="sub_txt_area">
 													{{> cp/linkButton bl_class="price_btn" bl_text="1천만원"  question_tit="가입조건변경" }}
 												</div>
 											</li>
 											<li class="list">
-												<div class="item_title">교통상해후유장해(운전자, 80%이상, 월지급형)</div>
+												<div class="item_title">자동차사고면허취소</div>
 												<div class="sub_txt_area">
-													{{> cp/linkButton bl_class="price_btn" bl_text="1천만원"  question_tit="가입조건변경" }}
+													{{> cp/linkButton bl_class="price_btn" bl_text="1백만원"  question_tit="가입조건변경" }}
 													<div class="badge_wrap">
 														<span class="hd_badge outline solid_pastel c_secondary size_m">새로 나왔어요</span>
 													</div>
 												</div>
 											</li>
 											<li class="list">
-												<div class="item_title">교통상해사망(운전자)</div>
+												<div class="item_title">자동차사고상해진단(최초진단,4주이상)(운전자)</div>
 												<div class="sub_txt_area">
 													{{> cp/linkButton bl_class="price_btn" bl_text="1천만원"  question_tit="가입조건변경" }}
-												</div>
-											</li>
-											<li class="list">
-												<div class="item_title">교통상해사망후유장해(대중교통이용중)</div>
-												<div class="sub_txt_area">
-													{{> cp/linkButton bl_class="price_btn" bl_text="1천만원"  question_tit="가입조건변경" }}
-													<div class="badge_wrap">
-														<span class="hd_badge outline solid_pastel c_warning size_m">보장을 확대 했어요</span>
-													</div>
 												</div>
 											</li>
 										</ul>
-									{{/ cp/accordion }}
-								</div>
-								<div class="acd_item acd_item_ty1">
-									{{#> cp/accordion ac-title="상세보기" aci="aci02" aclc="chk_label_ty2" acl="자동차사고로 다쳤을 때"}}
-									<ul class="coverage_item_list">
-										<li class="list">
-											<div class="item_title">자동차사고부상Ⅱ(운전자)(1-2급)</div>
-											<div class="sub_txt_area">
-												{{> cp/linkButton bl_class="price_btn" bl_text="1천만원"  question_tit="가입조건변경" }}
-											</div>
-										</li>
-										<li class="list">
-											<div class="item_title">자동차사고면허취소</div>
-											<div class="sub_txt_area">
-												{{> cp/linkButton bl_class="price_btn" bl_text="1백만원"  question_tit="가입조건변경" }}
-												<div class="badge_wrap">
-													<span class="hd_badge outline solid_pastel c_secondary size_m">새로 나왔어요</span>
+										{{/ cp/accordion }}
+									</div>
+									<div class="acd_item acd_item_ty1">
+										{{#> cp/accordion ac-title="상세보기" aci="aci03" aclc="chk_label_ty2" acl="빠른 일상 생활 복귀!"}}
+										<ul class="coverage_item_list">
+											<li class="list">
+												<div class="item_title">상해재활치료(연간 15회한, 급여 및 자동차보험적용)(급여적용)</div>
+												<div class="sub_txt_area">
+													{{> cp/linkButton bl_class="price_btn" bl_text="1만원"  question_tit="가입조건변경" }}
 												</div>
-											</div>
-										</li>
-										<li class="list">
-											<div class="item_title">자동차사고상해진단(최초진단,4주이상)(운전자)</div>
-											<div class="sub_txt_area">
-												{{> cp/linkButton bl_class="price_btn" bl_text="1천만원"  question_tit="가입조건변경" }}
-											</div>
-										</li>
-									</ul>
-									{{/ cp/accordion }}
-								</div>
-								<div class="acd_item acd_item_ty1">
-									{{#> cp/accordion ac-title="상세보기" aci="aci03" aclc="chk_label_ty2" acl="빠른 일상 생활 복귀!"}}
-									<ul class="coverage_item_list">
-										<li class="list">
-											<div class="item_title">상해재활치료(연간 15회한, 급여 및 자동차보험적용)(급여적용)</div>
-											<div class="sub_txt_area">
-												{{> cp/linkButton bl_class="price_btn" bl_text="1만원"  question_tit="가입조건변경" }}
-											</div>
-										</li>
-										<li class="list">
-											<div class="item_title">상해재활치료(연간 15회한, 급여 및 자동차보험적용)(자동차보험적용)</div>
-											<div class="sub_txt_area">
-												{{> cp/linkButton bl_class="price_btn" bl_text="1백만원"  question_tit="가입조건변경" }}
-											</div>
-										</li>
-									</ul>
-									{{/ cp/accordion }}
-								</div>
-								<div class="acd_item acd_item_ty1">
-									{{#> cp/accordion ac-title="상세보기" aci="aci04" aclc="chk_label_ty2" acl="운전자 3대 비용은 기본! <span class='sub_g_txt'>사고처리지원금 공탁금 50% 선지급 가능</span>"}}
-									<ul class="coverage_item_list">
-										<li class="list">
-											<div class="item_title">자동차사고벌금Ⅱ(대인)</div>
-											<div class="sub_txt_area">
-												{{> cp/linkButton bl_class="price_btn"  bl_text="3천만원"  question_tit="가입조건변경" }}
-											</div>
-										</li>
-										<li class="list">
-											<div class="item_title">자동차사고벌금(대물)</div>
-											<div class="sub_txt_area">
-												{{> cp/linkButton bl_class="price_btn" bl_text="5백만원"  question_tit="가입조건변경" }}
-											</div>
-										</li>
-										<li class="list">
-											<div class="item_title">자동차사고변호사선임비용Ⅲ(특정사고경찰조사포함Ⅱ)</div>
-											<div class="sub_txt_area">
-												{{> cp/linkButton bl_class="price_btn" bl_text="5억원"  question_tit="가입조건변경" }}
-											</div>
-										</li>
-										<li class="list">
-											<div class="item_title">자동차사고처리지원금X(사망)</div>
-											<div class="sub_txt_area">
-												{{> cp/linkButton bl_class="price_btn" bl_text="미가입"  question_tit="가입조건변경" }}
-											</div>
-										</li>
-										<li class="list">
-											<div class="item_title">자동차사고처리지원금X(중과실)</div>
-											<div class="sub_txt_area">
-												{{> cp/linkButton bl_class="price_btn" bl_text="1억 5천억원"  question_tit="가입조건변경" }}
-											</div>
-										</li>
-									</ul>
-									{{/ cp/accordion }}
+											</li>
+											<li class="list">
+												<div class="item_title">상해재활치료(연간 15회한, 급여 및 자동차보험적용)(자동차보험적용)</div>
+												<div class="sub_txt_area">
+													{{> cp/linkButton bl_class="price_btn" bl_text="1백만원"  question_tit="가입조건변경" }}
+												</div>
+											</li>
+										</ul>
+										{{/ cp/accordion }}
+									</div>
+									<div class="acd_item acd_item_ty1">
+										{{#> cp/accordion ac-title="상세보기" aci="aci04" aclc="chk_label_ty2" acl="운전자 3대 비용은 기본! <span class='sub_g_txt'>사고처리지원금 공탁금 50% 선지급 가능</span>"}}
+										<ul class="coverage_item_list">
+											<li class="list">
+												<div class="item_title">자동차사고벌금Ⅱ(대인)</div>
+												<div class="sub_txt_area">
+													{{> cp/linkButton bl_class="price_btn"  bl_text="3천만원"  question_tit="가입조건변경" }}
+												</div>
+											</li>
+											<li class="list">
+												<div class="item_title">자동차사고벌금(대물)</div>
+												<div class="sub_txt_area">
+													{{> cp/linkButton bl_class="price_btn" bl_text="5백만원"  question_tit="가입조건변경" }}
+												</div>
+											</li>
+											<li class="list">
+												<div class="item_title">자동차사고변호사선임비용Ⅲ(특정사고경찰조사포함Ⅱ)</div>
+												<div class="sub_txt_area">
+													{{> cp/linkButton bl_class="price_btn" bl_text="5억원"  question_tit="가입조건변경" }}
+												</div>
+											</li>
+											<li class="list">
+												<div class="item_title">자동차사고처리지원금X(사망)</div>
+												<div class="sub_txt_area">
+													{{> cp/linkButton bl_class="price_btn" bl_text="미가입"  question_tit="가입조건변경" }}
+												</div>
+											</li>
+											<li class="list">
+												<div class="item_title">자동차사고처리지원금X(중과실)</div>
+												<div class="sub_txt_area">
+													{{> cp/linkButton bl_class="price_btn" bl_text="1억 5천억원"  question_tit="가입조건변경" }}
+												</div>
+											</li>
+										</ul>
+										{{/ cp/accordion }}
+									</div>
 								</div>
 							</div>
-						</div>
 
-						<div class="btn_area center">
-							{{> cp/button type="3" size="3" b-text="예상 환급금 알아보기" popup="pop1" btn-title="전체 팝업"}}
-						</div>
+							<div class="btn_area center">
+								{{> cp/button type="3" size="3" b-text="예상 환급금 알아보기" popup="pop1" btn-title="전체 팝업"}}
+							</div>
 
+						</div>
+						<!-- e: guarantee_detail -->
 					</div>
-					<!-- e: guarantee_detail -->
-				 </div>
-				<!-- e: guarantee_container_right -->
+					<!-- e: guarantee_container_right -->
 
-			</div>			
+				</div>			
+			</div>
 		</div>
-	</div>
+	</form>
 
 	<div class="bottom_fix_wrap">
 		<div class="btn_area">
