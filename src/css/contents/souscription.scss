@@ -107,6 +107,9 @@ ul + .form_group_wrap {
     margin-bottom: 20px;
     font-size: var(--font-size-heading-medium);
     font-weight: 700;
+    & + .info_text {
+        margin-top: 8px;
+    }
 }
 .pop_title_h2 {
     margin-bottom: 16px;
@@ -239,6 +242,18 @@ ul + .form_group_wrap {
 	font-size: var(--font-size-body-medium);
     & + .file_attach_box {
         margin-top: 20px;
+    }
+    & + .btn_area {
+        margin: 8px 0 32px;
+        & + .info_text {
+            margin-bottom: 32px;
+        }
+        & + .checkbox_group_wrap {
+            margin-top: 20px;
+        }
+    }
+    & + .special_contract_list {
+        margin-top: 32px;
     }
 }
 .info_gray {
@@ -398,12 +413,9 @@ ul + .form_group_wrap {
         .check_flex_box {
             display: flex;
             justify-content: space-between;
+            align-items: flex-start;
             gap: 8px;
-            .check_box {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-            }
+           
             .money_box {
                 display: flex;
                 min-width: 100px;
@@ -426,6 +438,25 @@ ul + .form_group_wrap {
         }
         .btn_add {
             margin: 4px 0 16px 24px;
+        }
+    }
+    &.radio {
+        .check_flex_box {
+            .money_box {
+                flex-direction: column;
+                gap: 0;
+                text-align: right;
+                .money {
+                    color: var(--color-text-basic);
+                }
+                .trend {
+                    justify-content: end;
+                }
+                .trend:not(.up, .down) {
+                    color: var(--color-text-disabled);
+                    justify-content: end;
+                }
+            }
         }
     }
 }
