@@ -16,7 +16,7 @@
 				<!-- e: content_top -->
 
 
-					<!-- s: 피보험자/계약자 동일 -->
+				<!-- s: 피보험자/계약자 동일 -->
 				<div class="form_box">
 					<div class="form_group_wrap">
 						<div class="form_line">
@@ -29,7 +29,14 @@
 							<div class="comp_wrap birth">
 								{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" value="790101" inp-title="주민등록번호 앞자리 입력" readonly=true }}
 								<span class="dash">-</span>
-								{{> cp/text type="password" class="masking" minlength="7" maxlength="7" placeholder="뒷자리" value="1234567" inp-title="주민등록번호 뒷자리 입력" }}
+								<!-- s: 25-05-02 수정 -->
+								<div class="id_pass_box read_only">
+									{{> cp/text type="tel" minlength="1" maxlength="1" placeholder="●" inp-title="주민등록번호 뒷1자리 입력" value="1" no_del="flase" readonly=true }}
+									<div class="id_pass">
+										●●●●●●
+									</div>
+								</div>
+								<!-- e: 25-05-02 수정 -->
 							</div>
 						</div>						
 
