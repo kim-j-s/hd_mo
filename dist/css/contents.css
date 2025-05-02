@@ -2107,7 +2107,7 @@
 .simple_info_wrap {
 	position: sticky;
 	top: -2.4rem;
-	z-index: 1;
+	z-index: 10;
 	margin: 0 -2.4rem;
 	background: var(--color-surface-white-subtler, #fff);
 }
@@ -2161,6 +2161,24 @@
 	border-left: 1px solid var(--color-divider-gray-light);
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
+}
+.simple_info_wrap.ty2 .simple_info_item {
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.simple_info_wrap + .sticky.tag_item_wrap {
+	margin: 0 -2.4rem;
+	padding: 1.6rem 2.4rem;
+}
+.simple_info_wrap + .sticky.tag_item_wrap.active {
+	position: sticky;
+	z-index: 10;
+	padding-top: 0;
+	background-color: #fff;
+	-webkit-box-shadow: 0px var(--shadow-y-2, 6px) var(--shadow-blur-2, 8px) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
+	box-shadow: 0px var(--shadow-y-2, 6px) var(--shadow-blur-2, 8px) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
+	border-radius: 0px 0px var(--padding-6, 16px) var(--padding-6, 16px);
 }
 /* 간편정보 */
 .coverage_item_wrap {
@@ -2586,6 +2604,9 @@ ul + .form_group_wrap {
 /* 특약리스트 */
 .special_contract_list {
 	border-top: 1px solid var(--color-divider-gray-light);
+}
+.special_contract_list + .badge_wrap {
+	margin-top: 1.6rem;
 }
 .special_contract_list > li {
 	padding: 1.6rem 0;
