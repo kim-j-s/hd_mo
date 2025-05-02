@@ -614,27 +614,41 @@ $(function(){
 
 
 	// 간편정보 노출 방식
-	$('#container').on('scroll', function() {
+	$('#container, .popup_cont').on('scroll', function() {
 		const $headHeight = $('#header').outerHeight();
+		const $pop_headHeight = $('.popup_head').outerHeight();
+
+		// console.log('scroll!!');
 
 		if ($('.simple_info_wrap').length) {
 			const $target = $('.simple_info_wrap');
 			const targetOffsetTop = $target.offset().top;
 			const $targetChild = $('.simple_info_wrap').children('.simple_info_item');
 			const scrollTop = $('#container').scrollTop();
+			const pop_scrollTop = $('.popup_cont').scrollTop();
+			let new_headHeight = 0;
 
 			if($('.gd_middle_b').length){
 				targetOffsetTop = targetOffsetTop - 50
 			}
 
-			// console.log('target 위치 : ' + targetOffsetTop);
-			// console.log('컨텐츠 스크롤 위치 : ' + scrollTop);
+			if($('.popup_head').length){
+				new_headHeight = $pop_headHeight;
+			}else {
+				new_headHeight = $headHeight;
+			}
 
-			if (targetOffsetTop <= $headHeight + 30 && !$targetChild.hasClass('active')) {
+			console.log(new_headHeight);
+
+			console.log('target 위치 : ' + targetOffsetTop);
+			// console.log('컨텐츠 스크롤 위치 : ' + scrollTop);
+			// console.log('팝업 컨텐츠 스크롤 위치 : ' + pop_scrollTop);
+
+			if (targetOffsetTop <= new_headHeight + 30 && !$targetChild.hasClass('active')) {
 				// console.log('펴기');
 				$targetChild.addClass('active');
 				$targetChild.stop().slideDown(300);
-			} else if (targetOffsetTop > $headHeight + 30 && $targetChild.hasClass('active')) {
+			} else if (targetOffsetTop > new_headHeight + 30 && $targetChild.hasClass('active')) {
 				// console.log('접기');
 				$target.removeAttr('style').removeClass('active');
 				$targetChild.removeClass('active');
