@@ -91,6 +91,67 @@
 			}
 		}
 	}
+
+	&.select_item_case02 {
+		cursor: pointer;
+		.si_item {
+			position: relative;
+			width: fit-content;
+			min-height: 24px;
+			padding: 0 24px 0 0;
+			font-size: var(--font-size-heading-small);
+			word-break: break-all;
+			background: transparent url(../images/icon/arrowDown_ty3.svg) no-repeat right center / 18px auto;
+			+ .si_stat {
+				position: absolute;
+				width: 1px;
+				height: 1px;
+				overflow: hidden;
+				white-space: nowrap;
+				clip: rect(0, 0, 0, 0);
+				clip-path: inset(50%);
+			}
+			&:empty {
+				&::before {
+					content: attr(data-placeholder);
+					display: block;
+					min-height: 24px;
+					color: var(--color-text-disabled);				
+				}
+				+ .si_stat {
+					display: none;
+				}
+			}
+			&::after {
+				display: none;
+			}
+		}
+
+		&.title_h4 {
+			.si_item {
+				font-size: var(--font-size-heading-small);
+				font-weight: 700;
+			}
+		}
+
+		&[aria-disabled="true"] {
+			pointer-events: none;
+			.si_item {
+				background-color: transparent;
+				&:empty {
+					&::before {
+						color: var(--color-text-disabled-on);					
+					}
+				}
+				&::after {
+					border: none;
+				}
+			}
+		}
+
+	}
+
+
 	&:focus {
 		outline: none;
 	}
