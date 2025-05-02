@@ -72,15 +72,16 @@
 		if ($(".tag_item_move").length) {
 			const $target = $(".tag_item_move").find(".tag_move").eq(idx);
 			const targetMargin = parseFloat($target.css("margin-top"));
+			const simpleHeight = $(".simple_info_wrap").height();
 			const targetOffset = $target.position().top;
 			const fix_h = $(this).closest(".sticky_fix").height();
-			// console.log(targetOffset , targetMargin);
+			console.log(targetOffset, targetMargin);
 
 			$(".tag_item").removeClass("active");
 			$this.addClass("active");
 			$this.closest(".popup_cont").animate(
 				{
-					scrollTop: targetOffset + targetMargin,
+					scrollTop: targetOffset + targetMargin + simpleHeight + fix_h,
 				},
 				500,
 			);
@@ -597,6 +598,8 @@ $(function () {
 	$("#container, .popup_cont").on("scroll", function () {
 		const $headHeight = $("#header").outerHeight();
 		const $pop_headHeight = $(".popup_head").outerHeight();
+		const scrollTop = $("#container").scrollTop();
+		const pop_scrollTop = $(".popup_cont").scrollTop();
 
 		// console.log('scroll!!');
 
@@ -604,8 +607,6 @@ $(function () {
 			const $target = $(".simple_info_wrap");
 			const targetOffsetTop = $target.offset().top;
 			const $targetChild = $(".simple_info_wrap").children(".simple_info_item");
-			const scrollTop = $("#container").scrollTop();
-			const pop_scrollTop = $(".popup_cont").scrollTop();
 			let new_headHeight = 0;
 			let simpleHeight = $(".simple_info_wrap").find(".simple_info_item").height();
 
@@ -643,6 +644,20 @@ $(function () {
 					$(".tag_item_wrap.sticky").removeClass("active");
 				}
 			}
+		}
+
+		if ($(".tag_item_wrap.sticky").length) {
+			$(".tag_item_move .tag_move").each(function (idx) {
+				const $target = $(this);
+				const targetTop = $target.position().top;
+				const targetHeight = $target.height();
+				const simpleHeight = $(".simple_info_wrap").height();
+
+				if (pop_scrollTop >= targetTop + targetHeight + simpleHeight) {
+					$(".tag_item").removeClass("active");
+					$(".tag_item").eq(idx).addClass("active");
+				}
+			});
 		}
 	});
 	// 간편정보 노출 방식
