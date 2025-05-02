@@ -1,0 +1,66 @@
+{{#> layout/default page-title="신청기간 입력 | 카테고리"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="" h-back=true }}
+		<div id="container" class="container">
+			<div class="content">
+
+				<!-- s: content_top -->
+				<div class="content_top">
+					<h2 class="title_h2">
+						<strong>신청기간</strong>을<br>
+						입력해주세요
+					</h2>
+				</div>
+				<!-- e: content_top -->
+
+				<div class="info_gray">
+					<dl>
+						<dt>자동차번호</dt>
+						<dd>18루**22</dd>
+					</dl>
+				</div>
+
+				<div class="form_group_wrap">
+					<div class="row">
+						<div class="form_line grow">
+							<div class="label_tit">시작일(00시)</div>
+							{{> cp/text cal=true }}
+						</div>
+						<div class="form_line grow">
+							<div class="label_tit">종료일(24시)</div>
+							{{> cp/text cal=true }}
+						</div>
+					</div>
+					<ul class="list_ty2">
+						<li>신청기간 시작일의 00시부터 종료일 24시까지 변경내용의 효력이 발생합니다.</li>
+						<li>신청기간은 시작일로부터 <strong class="point">-일</strong>입니다.</li>
+					</ul>
+				</div>
+
+				<!-- s: 꼭 알아두세요 -->
+				{{#> cp/notice dp-active=true }}
+					<ul class="list_depth">
+						<li>신청일 당일은 가입이 불가능하며, 가입기간은 최소 1일~최대 60일입니다.</li>
+					</ul>
+				{{/ cp/notice }}
+				<!-- e: 꼭 알아두세요 -->
+			</div>
+
+			<!-- // container -->
+		</div>
+
+		<!-- s: 하단 고정 버튼 영역 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="2" b-text="다음" disabled=true }}
+			</div>
+		</div>
+		<!-- s: 하단 고정 버튼 영역 -->
+
+	</div>
+
+	<!-- s: popup area -->
+	 
+	<!-- e: popup area -->
+
+{{/ layout/default }}
