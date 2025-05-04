@@ -2005,7 +2005,6 @@ strong {
 	-ms-flex-align: center;
 	align-items: center;
 	gap: 0.4rem;
-	line-height: initial;
 }
 .hd_btn svg {
 	fill: #ffffff;
@@ -2021,7 +2020,7 @@ strong {
 	border-radius: var(--radius-medium4);
 	background-color: var(--color-button-primary-fill);
 	color: #fff;
-	border: 0;
+	border: 1px solid var(--color-button-primary-fill);
 }
 .hd_btn_ty_1:focus {
 	background-color: var(--color-button-primary-fill);
@@ -2070,15 +2069,14 @@ strong {
 .hd_btn:disabled {
 	background-color: var(--color-button-disabled-fill);
 	color: var(--color-text-disabled-on);
-	border: 0;
+	border: 1px solid var(--color-button-disabled-fill);
 }
 /**
   * Button Size - s_1(CTA&primary) s_2(lg) s_3(md), s_4(sm), s_5(xs)
   */
 .hd_btn_s_1 {
 	min-width: 9.8rem;
-	height: var(--button-size-cta);
-	padding: 0px var(--padding-8);
+	padding: 1.7rem var(--padding-8) 1.8rem var(--padding-8);
 	border-radius: var(--radius-medium4);
 	font-size: var(--font-size-button-cta-bold);
 	font-weight: 700;
@@ -2093,8 +2091,7 @@ strong {
 }
 .hd_btn_s_2 {
 	min-width: 9rem;
-	height: var(--button-size-large);
-	padding: 0 var(--padding-7);
+	padding: 1.1rem var(--padding-7);
 	border-radius: var(--radius-medium2);
 	font-size: var(--font-size-button-large-bold);
 	font-weight: 700;
@@ -2105,8 +2102,7 @@ strong {
 }
 .hd_btn_s_3 {
 	min-width: 7.8rem;
-	height: var(--button-size-medium);
-	padding: 0 var(--padding-4);
+	padding: 0.8rem var(--padding-4) 0.9rem var(--padding-4);
 	border-radius: var(--radius-medium2);
 	font-size: var(--font-size-button-medium-bold);
 	line-height: 150%;
@@ -2118,8 +2114,7 @@ strong {
 }
 .hd_btn_s_4 {
 	min-width: 6.4rem;
-	height: var(--button-size-small);
-	padding: 0 var(--padding-5);
+	padding: 0.6rem var(--padding-5);
 	border-radius: var(--radius-medium1);
 	font-size: var(--font-size-button-small-bold);
 	font-weight: 700;
@@ -2131,8 +2126,7 @@ strong {
 .hd_btn_s_5 {
 	gap: 0.2rem;
 	min-width: 4.8rem;
-	height: var(--button-size-xsmall);
-	padding: 0 var(--padding-4);
+	padding: 0.2rem var(--padding-4);
 	border-radius: var(--radius-small3);
 	font-size: var(--font-size-button-xsmall-bold);
 	font-weight: 700;
@@ -2140,6 +2134,14 @@ strong {
 .hd_btn_s_5 .hd_icon {
 	width: 1.6rem;
 	height: 1.6rem;
+}
+.hd_btn > .text {
+	display: block;
+}
+.hd_btn .hd_icon {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
 }
 .hd_btn_ty_3 {
 	font-weight: 400;

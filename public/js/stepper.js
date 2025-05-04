@@ -4,36 +4,65 @@ const $stepper = {
 	allStep: 0,
 	fnCallback: null,
 
-	stepperInit: function(callback) {
+	// 개발용
+	// stepperInit: function(callback) {
+	// 개발용
+	// 퍼블용
+	stepperInit: function(callback, startIdx = 0) {
+	// 퍼블용
 		if(typeof callback === 'function') {
 			$stepper.fnCallback = callback;
 		}
+		// 개발용
+		// if( $('.bi_wrap').length ) {
+		// 	const totalStepCount = $('.opts_area').length;
+		// 	$stepper.allStep = totalStepCount;
+		// 	$('.stepper_wrap').find('.stepper').attr('aria-label', `${totalStepCount}단계 중 ${1}단계`);
+		// 	$('.bi_wrap').attr('data-now', 0);
+	
+		// 	// 선택된 항목 활성화
+		// 	$stepper.motionEvent(null, 0);
+	
+		// 	// stepIng 호출
+		// 	$stepper.stepIng(0, totalStepCount);
 
-		if( $('.bi_wrap').length ) {
+		// 	// 선택 이벤트
+		// 	$stepper.selectEvent();
+
+		// 	// keypad 이벤트
+		// 	$stepper.keypadEnter();
+
+		// 	// 선택 된 요소의 스텝으로 이동
+		// 	$stepper.moveStep();
+
+		// 	// 전체 스텝 수 반환
+		// 	return totalStepCount;
+		// }
+		// return 0;
+		// 개발용
+
+		// 퍼블용
+		if ($('.bi_wrap').length) {
 			const totalStepCount = $('.opts_area').length;
 			$stepper.allStep = totalStepCount;
-			$('.stepper_wrap').find('.stepper').attr('aria-label', `${totalStepCount}단계 중 ${1}단계`);
-			$('.bi_wrap').attr('data-now', 0);
 	
-			// 선택된 항목 활성화
-			$stepper.motionEvent(null, 0);
+			const validIdx = Math.max(0, Math.min(startIdx, totalStepCount - 1));
 	
-			// stepIng 호출
-			$stepper.stepIng(0, totalStepCount);
-
-			// 선택 이벤트
+			$('.stepper_wrap').find('.stepper').attr('aria-label', `${totalStepCount}단계 중 ${validIdx + 1}단계`);
+			$('.bi_wrap').attr('data-now', validIdx);
+	
+			$stepper.motionEvent(null, validIdx);
+			$stepper.stepIng(validIdx, totalStepCount);
 			$stepper.selectEvent();
-
-			// keypad 이벤트
 			$stepper.keypadEnter();
-
-			// 선택 된 요소의 스텝으로 이동
 			$stepper.moveStep();
-
-			// 전체 스텝 수 반환
+	
 			return totalStepCount;
 		}
 		return 0;
+		// 퍼블용
+
+
 	},
 
 	// 선택 이벤트
