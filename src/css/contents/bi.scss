@@ -34,27 +34,65 @@
 					background-color: #273884;
 					transition: width var(--t-time);
 					.motion {
-						animation: bounce 0.8s linear infinite;
+						position: absolute;
+						right: -20px;
+						bottom: 8px;
+						width: 44px;
+						height: 32px;
+						transition: right var(--t-time);
 						&.car {
+							background: url(../images/content/bi/icon_spm_car.svg) no-repeat center center;
+							animation: bounce 0.8s linear infinite;
+						}
+						&.health {
+							background: url(../images/content/bi/icon_spm_health.svg) no-repeat center center;
+							animation: bounce 0.8s linear infinite;
+						}
+						&.child_tooth {							
+							background: url(../images/content/bi/icon_spm_child_tooth.svg) no-repeat center center;
+							transform-origin: bottom center;
+							animation: bounce2 2.5s linear infinite;
+						}
+						&.home {
+							background: url(../images/content/bi/icon_spm_home.svg) no-repeat center center;
+							animation: bounce 0.8s linear infinite;
+						}
+						&.travel {
+							background: url(../images/content/bi/icon_spm_travel.svg) no-repeat center center;
+							animation: bounce 0.8s linear infinite;
+						}
+						&.visit {
+							background: url(../images/content/bi/icon_spm_visit.svg) no-repeat center center;
+							animation: bounce 0.8s linear infinite;
+						}
+						&.golf {
+							background: url(../images/content/bi/icon_spm_golf.svg) no-repeat center center;
+							animation: bounce 0.8s linear infinite;
+						}
+						&.pension {
+							background: url(../images/content/bi/icon_spm_pension.svg) no-repeat center center;
+							animation: bounce 0.8s linear infinite;
+						}
+						&.dog {
+							background: url(../images/content/bi/icon_spm_dog.svg) no-repeat center center;
+							animation: bounce 0.8s linear infinite;
+						}
+						&.cat {
+							background: url(../images/content/bi/icon_spm_cat.svg) no-repeat center center;
+							animation: bounce 0.8s linear infinite;
+						}
+						
+						
+						&::after {
+							content: '';
 							position: absolute;
-							right: -20px;
-							bottom: 8px;
-							width: 44px;
-							height: 32px;
-							background: url(../images/content/bi/car.svg) no-repeat center center;
-							transition: right var(--t-time);
-							
-							&::after {
-								content: '';
-								position: absolute;
-								top: 0;
-								right: -8px;
-								width: 16px;
-								height: 16px;
-								background: url(../images/content/bi/car_star.svg) no-repeat center center;
-								opacity: 0;
-								transition: all var(--t-time);
-							}
+							top: 0;
+							right: -8px;
+							width: 16px;
+							height: 16px;
+							background: url(../images/content/bi/end_star.svg) no-repeat center center;
+							opacity: 0;
+							transition: all var(--t-time);
 						}
 					}
 					&.start {
@@ -66,12 +104,18 @@
 					}
 					&.end {
 						.motion {
-							&.car {
-								right: 0;
-								&::after {
-									opacity: 1;
-								}
+							right: 0;
+							&::after {
+								opacity: 1;
 							}
+							// &.car {
+							// }
+							// &.car {
+							// 	right: 0;
+							// 	&::after {
+							// 		opacity: 1;
+							// 	}
+							// }
 						}
 					}
 				}
@@ -213,6 +257,13 @@
 			overflow-x: scroll;
 		}
 	}
+	.bit_btn_scrollx {
+		display: flex;
+		gap: 4px; 
+		margin-top: 8px;
+		overflow-x: scroll;
+		white-space: nowrap;
+	}
 }
 
 /* 기조정보 상단 노출 영역 */
@@ -344,6 +395,19 @@
 		bottom: 8px;
 	}
 }
+@keyframes bounce2 {
+	0% {
+		transform: rotate(5deg);
+	}
+	50%{
+		transform: rotate(-5deg);
+	}
+	100%{
+		transform: rotate(5deg);
+	}
+}
+
+
 
 
 
