@@ -57,6 +57,7 @@
 							<P class="bit_inner_text">
 								보장받으실 분의<br>
 								<span class="bold">생년월일</span>을 알려주세요.
+								<small class="sub_txt">0~79세까지 가입할 수 있어요.</small>
 							</P>
 						</div>
 						<!-- 생년월일 -->
@@ -64,7 +65,7 @@
 						<!-- 성별 -->
 						<div class="bit_inner active" data-pickitem="step5">
 							<P class="bit_inner_text">
-								운전자의 <span class="bold">성별</span>을 알려주시면<br>
+								<span class="bold">성별</span>을 알려주시면<br>
 								보험료를 알아볼께요
 							</P>
 						</div>
@@ -95,28 +96,34 @@
 							<div class="inp_radio rd_btn_s1">
 								<input type="radio" id="radio11" name="radio1" onchange=""/>
 								<label for="radio11">
-									<span class="label_cont">본인</span>
+									<span class="label_cont">일본</span>
 								</label>
 							</div>
 							<div class="inp_radio rd_btn_s1">
 								<input type="radio" id="radio12" name="radio1" />
 								<label for="radio12">
-									<span class="label_cont">부모님</span>
+									<span class="label_cont">베트남</span>
 								</label>
 							</div>
 							<div class="inp_radio rd_btn_s1">
 								<input type="radio" id="radio13" name="radio1" />
 								<label for="radio13">
-									<span class="label_cont">배우자</span>
+									<span class="label_cont">유럽</span>
 								</label>
 							</div>
 							<div class="inp_radio rd_btn_s1">
 								<input type="radio" id="radio14" name="radio1" />
 								<label for="radio14">
-									<span class="label_cont">자녀</span>
+									<span class="label_cont">태국</span>
 								</label>
 							</div>
-							<button type="button" class="hd_btn direct_select_btn" title="직업 선택 팝업 오픈">
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio15" name="radio1" />
+								<label for="radio15">
+									<span class="label_cont">미국</span>
+								</label>
+							</div>
+							<button type="button" class="hd_btn direct_select_btn" title="여행 국가 선택 팝업 오픈">
 								<span class="text">직접 선택</span>
 							</button>
 						</div>
@@ -125,36 +132,83 @@
 
 					<!-- 기간 -->
 					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step2">
-						<div class="opts_area_item">
+						
+						<div class="opts_area_item etc_c_1">
+							<div class="oai_block">
+								<div class="info_gray">
+									{{#> cp/checkbox id="sd1" label_class="chk_label_ty3" checkbox_class="msg_display" labelname="출발까지 4시간 넘게 남았어요."}}
+									<span class='tip_item top'>
+										<span class='tip_item_cont'>
+											<div class="word1">비행기가 늦게 떠도 보장받아요!</div>
+											<div class="word2">출발 지연 보상은 어려워요</div>
+										</span>
+									</span>
+									{{/ cp/checkbox}}
+								</div>
+							</div>
 							<div class="inp_radio rd_btn_s1">
 								<input type="radio" id="radio21" name="radio2" />
 								<label for="radio21">
-									<span class="label_cont">자가용</span>
+									<span class="label_cont">2박3일</span>
 								</label>
 							</div>
 							<div class="inp_radio rd_btn_s1">
 								<input type="radio" id="radio22" name="radio2" />
 								<label for="radio22">
-									<span class="label_cont">영업용</span>
+									<span class="label_cont">4박5일</span>
 								</label>
 							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio23" name="radio2" />
+								<label for="radio23">
+									<span class="label_cont">5박6일</span>
+								</label>
+							</div>
+							<button type="button" class="hd_btn direct_select_btn" title="여행 기간 선택 팝업 오픈">
+								<span class="text">직접 선택</span>
+							</button>
 						</div>
 					</div>
 					<!-- 기간 -->
 
 					<!-- 대상 -->
 					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step3">
+						
 						<div class="opts_area_item">
 							<div class="inp_radio rd_btn_s1">
-								<input type="radio" id="radio21" name="radio2" />
-								<label for="radio21">
-									<span class="label_cont">자가용</span>
+								<input type="radio" id="radio21" name="radio3" />
+								<label for="radio31">
+									<span class="label_cont">혼자</span>
 								</label>
 							</div>
 							<div class="inp_radio rd_btn_s1">
-								<input type="radio" id="radio22" name="radio2" />
-								<label for="radio22">
-									<span class="label_cont">영업용</span>
+								<input type="radio" id="radio32" name="radio3" />
+								<label for="radio32">
+									<span class="label_cont">아이와</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio33" name="radio3" />
+								<label for="radio33">
+									<span class="label_cont">배우자와</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio34" name="radio3" />
+								<label for="radio34">
+									<span class="label_cont">부모님과</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio35" name="radio3" />
+								<label for="radio35">
+									<span class="label_cont">가족 모두와</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio36" name="radio3" />
+								<label for="radio36">
+									<span class="label_cont">그 외</span>
 								</label>
 							</div>
 						</div>
@@ -193,14 +247,14 @@
 					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step5">
 						<div class="opts_area_item">
 							<div class="inp_radio rd_btn_s1">
-								<input type="radio" id="radio31" name="radio3" />
-								<label for="radio31">
+								<input type="radio" id="radio31" name="radio4" />
+								<label for="radio41">
 									<span class="label_cont">남성</span>
 								</label>
 							</div>
 							<div class="inp_radio rd_btn_s1">
-								<input type="radio" id="radio32" name="radio3" />
-								<label for="radio32">
+								<input type="radio" id="radio42" name="radio4" />
+								<label for="radio42">
 									<span class="label_cont">여성</span>
 								</label>
 							</div>
@@ -218,7 +272,7 @@
 <script>
 $(document).ready(function() {
   // $stepper.stepperInit();
-	$stepper.stepperInit(null, 0);
+	$stepper.stepperInit(null, 1);
 });
 </script>
 

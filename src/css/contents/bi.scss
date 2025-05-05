@@ -291,7 +291,7 @@
 	justify-content: flex-end;
 	height: 100%;
 	margin: 16px 0 0 0;
-	overflow: hidden;
+	// overflow: hidden;
 	.opts_area {
 		position: absolute;
 		left: 0;
@@ -325,6 +325,15 @@
 				flex-direction: column;
 				gap: 40px 0;
 			}
+
+			&.etc_c_1 {
+				padding-top: 30px;
+			}
+		}
+
+		.oai_block {
+			flex: none;
+			width: 100%;
 		}
 
 		.inp_radio {
@@ -503,3 +512,41 @@
 	};
 }
 
+
+
+
+.msg_display {
+
+	input {
+		+ label {
+			+ .tip_item {
+				.word1 {
+					display: none;
+				}
+				.word2 {
+					display: block;
+				}
+			}
+		}
+		&:checked {
+			+ label {
+				+ .tip_item {
+					.word1 {
+						display: block;
+					}
+					.word2 {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	.tip_item {
+		left: -54px;
+		&.top {
+			bottom: calc(100% + 10px);
+		}
+	}
+
+}
