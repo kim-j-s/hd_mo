@@ -179,9 +179,11 @@
 .bi_top {
 	.bit {
 		position: relative;
-		height: 110px;
-		padding-top: 16px;
+		// height: 110px;
+		height: 136px;
+		// padding-top: 16px;
 		// down to up
+		// bit_inner
 		&_inner {
 			position: absolute;
 			top: 0;
@@ -190,32 +192,41 @@
 			opacity: 1;
 			visibility: visible;
 			transition: var(--t-time);
+			// bit_inner_text
 			&_text {
+				padding-top: 16px;
 				font-size: 24px;
-				line-height: 34px;					
-			}
-			.sub_text {
-				position: relative;
-				display: inline-block;
-				margin-top: 8px;
-				padding-right: 22px;
-				font-size: 14px;
-				color: #464C53;
-				line-height: 22px;
-				&::after {
-					content: '';
-					position: absolute;
-					top: 1px;
-					right: 0;
-					width: 20px;
-					height: 20px;
-					border-radius: 5px;
-					background-repeat: no-repeat;
-					background-position: center center;
-					background-image: url(../images/content/bi/ico_i_mark.svg);
-					background-color: rgba($color: #33363D, $alpha: 0.6);
+				// line-height: 34px;
+				line-height: 1.4;
+				.sub_txt {
+					display: block;
+					padding-top: 8px;
+					font-size: var(--font-size-body-small);
+					color: var(--color-text-subtle);
 				}
 			}
+			// .sub_text {
+			// 	position: relative;
+			// 	display: inline-block;
+			// 	margin-top: 8px;
+			// 	padding-right: 22px;
+			// 	font-size: 14px;
+			// 	color: #464C53;
+			// 	line-height: 22px;
+			// 	&::after {
+			// 		content: '';
+			// 		position: absolute;
+			// 		top: 1px;
+			// 		right: 0;
+			// 		width: 20px;
+			// 		height: 20px;
+			// 		border-radius: 5px;
+			// 		background-repeat: no-repeat;
+			// 		background-position: center center;
+			// 		background-image: url(../images/content/bi/ico_i_mark.svg);
+			// 		background-color: rgba($color: #33363D, $alpha: 0.6);
+			// 	}
+			// }
 			&.active {
 				top: 30px;
 				opacity: 0;
@@ -379,6 +390,9 @@
 	}
 	&.job {
 		background-image: url(../images/content/bi/ico_stepper_job.svg);
+	}
+	&.country {
+		background-image: url(../images/content/bi/ico_stepper_country.svg);
 	}
 	
 	&:empty {
