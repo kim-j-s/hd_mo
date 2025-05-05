@@ -216,27 +216,74 @@
 	transition: width var(--t-time);
 }
 .bi_wrap .stepper_wrap .stepper .pgs .pgs_per .motion {
-	-webkit-animation: bounce 0.8s linear infinite;
-	animation: bounce 0.8s linear infinite;
-}
-.bi_wrap .stepper_wrap .stepper .pgs .pgs_per .motion.car {
 	position: absolute;
 	right: -2rem;
 	bottom: 0.8rem;
 	width: 4.4rem;
 	height: 3.2rem;
-	background: url(../images/content/bi/car.svg) no-repeat center center;
 	-webkit-transition: right var(--t-time);
 	transition: right var(--t-time);
 }
-.bi_wrap .stepper_wrap .stepper .pgs .pgs_per .motion.car::after {
+.bi_wrap .stepper_wrap .stepper .pgs .pgs_per .motion.car {
+	background: url(../images/content/bi/icon_spm_car.svg) no-repeat center center;
+	-webkit-animation: bounce 0.8s linear infinite;
+	animation: bounce 0.8s linear infinite;
+}
+.bi_wrap .stepper_wrap .stepper .pgs .pgs_per .motion.health {
+	background: url(../images/content/bi/icon_spm_health.svg) no-repeat center center;
+	-webkit-animation: bounce 0.8s linear infinite;
+	animation: bounce 0.8s linear infinite;
+}
+.bi_wrap .stepper_wrap .stepper .pgs .pgs_per .motion.child_tooth {
+	background: url(../images/content/bi/icon_spm_child_tooth.svg) no-repeat center center;
+	-webkit-transform-origin: bottom center;
+	transform-origin: bottom center;
+	-webkit-animation: bounce2 2.5s linear infinite;
+	animation: bounce2 2.5s linear infinite;
+}
+.bi_wrap .stepper_wrap .stepper .pgs .pgs_per .motion.home {
+	background: url(../images/content/bi/icon_spm_home.svg) no-repeat center center;
+	-webkit-animation: bounce 0.8s linear infinite;
+	animation: bounce 0.8s linear infinite;
+}
+.bi_wrap .stepper_wrap .stepper .pgs .pgs_per .motion.travel {
+	background: url(../images/content/bi/icon_spm_travel.svg) no-repeat center center;
+	-webkit-animation: bounce 0.8s linear infinite;
+	animation: bounce 0.8s linear infinite;
+}
+.bi_wrap .stepper_wrap .stepper .pgs .pgs_per .motion.visit {
+	background: url(../images/content/bi/icon_spm_visit.svg) no-repeat center center;
+	-webkit-animation: bounce 0.8s linear infinite;
+	animation: bounce 0.8s linear infinite;
+}
+.bi_wrap .stepper_wrap .stepper .pgs .pgs_per .motion.golf {
+	background: url(../images/content/bi/icon_spm_golf.svg) no-repeat center center;
+	-webkit-animation: bounce 0.8s linear infinite;
+	animation: bounce 0.8s linear infinite;
+}
+.bi_wrap .stepper_wrap .stepper .pgs .pgs_per .motion.pension {
+	background: url(../images/content/bi/icon_spm_pension.svg) no-repeat center center;
+	-webkit-animation: bounce 0.8s linear infinite;
+	animation: bounce 0.8s linear infinite;
+}
+.bi_wrap .stepper_wrap .stepper .pgs .pgs_per .motion.dog {
+	background: url(../images/content/bi/icon_spm_dog.svg) no-repeat center center;
+	-webkit-animation: bounce 0.8s linear infinite;
+	animation: bounce 0.8s linear infinite;
+}
+.bi_wrap .stepper_wrap .stepper .pgs .pgs_per .motion.cat {
+	background: url(../images/content/bi/icon_spm_cat.svg) no-repeat center center;
+	-webkit-animation: bounce 0.8s linear infinite;
+	animation: bounce 0.8s linear infinite;
+}
+.bi_wrap .stepper_wrap .stepper .pgs .pgs_per .motion::after {
 	content: "";
 	position: absolute;
 	top: 0;
 	right: -0.8rem;
 	width: 1.6rem;
 	height: 1.6rem;
-	background: url(../images/content/bi/car_star.svg) no-repeat center center;
+	background: url(../images/content/bi/end_star.svg) no-repeat center center;
 	opacity: 0;
 	-webkit-transition: all var(--t-time);
 	transition: all var(--t-time);
@@ -244,10 +291,10 @@
 .bi_wrap .stepper_wrap .stepper .pgs .pgs_per.start .motion.car {
 	right: -4rem;
 }
-.bi_wrap .stepper_wrap .stepper .pgs .pgs_per.end .motion.car {
+.bi_wrap .stepper_wrap .stepper .pgs .pgs_per.end .motion {
 	right: 0;
 }
-.bi_wrap .stepper_wrap .stepper .pgs .pgs_per.end .motion.car::after {
+.bi_wrap .stepper_wrap .stepper .pgs .pgs_per.end .motion::after {
 	opacity: 1;
 }
 .bi_wrap .stepper_wrap .stm_btn {
@@ -309,8 +356,7 @@
 }
 .bi_top .bit {
 	position: relative;
-	height: 11rem;
-	padding-top: 1.6rem;
+	height: 13.6rem;
 }
 .bi_top .bit_inner {
 	position: absolute;
@@ -323,30 +369,15 @@
 	transition: var(--t-time);
 }
 .bi_top .bit_inner_text {
+	padding-top: 1.6rem;
 	font-size: 2.4rem;
-	line-height: 3.4rem;
+	line-height: 1.4;
 }
-.bi_top .bit_inner .sub_text {
-	position: relative;
-	display: inline-block;
-	margin-top: 0.8rem;
-	padding-right: 2.2rem;
-	font-size: 1.4rem;
-	color: #464c53;
-	line-height: 2.2rem;
-}
-.bi_top .bit_inner .sub_text::after {
-	content: "";
-	position: absolute;
-	top: 1px;
-	right: 0;
-	width: 2rem;
-	height: 2rem;
-	border-radius: 0.5rem;
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-image: url(../images/content/bi/ico_i_mark.svg);
-	background-color: rgba(51, 54, 61, 0.6);
+.bi_top .bit_inner_text .sub_txt {
+	display: block;
+	padding-top: 0.8rem;
+	font-size: var(--font-size-body-small);
+	color: var(--color-text-subtle);
 }
 .bi_top .bit_inner.active {
 	top: 3rem;
@@ -392,6 +423,16 @@
 	padding: 0 2rem;
 	overflow-x: scroll;
 }
+.bi_top .bit_btn_scrollx {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	gap: 0.4rem;
+	margin: 0.8rem -2rem 0 -2rem;
+	padding: 0 2rem;
+	overflow-x: scroll;
+	white-space: nowrap;
+}
 /* 기조정보 상단 노출 영역 */
 /* 기조정보 선택 영역 */
 .bi_opts_wrap {
@@ -411,7 +452,6 @@
 	justify-content: flex-end;
 	height: 100%;
 	margin: 1.6rem 0 0 0;
-	overflow: hidden;
 }
 .bi_opts_wrap .opts_area {
 	position: absolute;
@@ -458,7 +498,22 @@
 	flex-direction: column;
 	gap: 4rem 0;
 }
+.bi_opts_wrap .opts_area .opts_area_item.etc_c_1 {
+	padding-top: 3rem;
+}
+.bi_opts_wrap .opts_area .oai_block {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+	width: 100%;
+}
 .bi_opts_wrap .opts_area .inp_radio {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+	width: calc(50% - 0.6rem);
+}
+.bi_opts_wrap .opts_area .direct_select_btn {
 	-webkit-box-flex: 0;
 	-ms-flex: none;
 	flex: none;
@@ -513,6 +568,27 @@
 .selected_case.gender {
 	background-image: url(../images/content/bi/ico_stepper_gender.svg);
 }
+.selected_case.job {
+	background-image: url(../images/content/bi/ico_stepper_job.svg);
+}
+.selected_case.country {
+	background-image: url(../images/content/bi/ico_stepper_country.svg);
+}
+.selected_case.period {
+	background-image: url(../images/content/bi/ico_stepper_period.svg);
+}
+.selected_case.dog {
+	background-image: url(../images/content/bi/ico_stepper_dog.svg);
+}
+.selected_case.sex {
+	background-image: url(../images/content/bi/ico_stepper_sex.svg);
+}
+.selected_case.reg {
+	background-image: url(../images/content/bi/ico_stepper_reg.svg);
+}
+.selected_case.cat {
+	background-image: url(../images/content/bi/ico_stepper_cat.svg);
+}
 .selected_case:empty {
 	width: 0;
 	padding: 0.9rem 0;
@@ -542,6 +618,34 @@
 	}
 	100% {
 		bottom: 0.8rem;
+	}
+}
+@-webkit-keyframes bounce2 {
+	0% {
+		-webkit-transform: rotate(5deg);
+		transform: rotate(5deg);
+	}
+	50% {
+		-webkit-transform: rotate(-5deg);
+		transform: rotate(-5deg);
+	}
+	100% {
+		-webkit-transform: rotate(5deg);
+		transform: rotate(5deg);
+	}
+}
+@keyframes bounce2 {
+	0% {
+		-webkit-transform: rotate(5deg);
+		transform: rotate(5deg);
+	}
+	50% {
+		-webkit-transform: rotate(-5deg);
+		transform: rotate(-5deg);
+	}
+	100% {
+		-webkit-transform: rotate(5deg);
+		transform: rotate(5deg);
 	}
 }
 .birth_date_field {
@@ -634,6 +738,24 @@
 }
 .bi_keypad_item .keypad_btn.keypad_btn_delall {
 	font-size: 1.6rem;
+}
+.msg_display input + label + .tip_item .word1 {
+	display: none;
+}
+.msg_display input + label + .tip_item .word2 {
+	display: block;
+}
+.msg_display input:checked + label + .tip_item .word1 {
+	display: block;
+}
+.msg_display input:checked + label + .tip_item .word2 {
+	display: none;
+}
+.msg_display .tip_item {
+	left: -5.4rem;
+}
+.msg_display .tip_item.top {
+	bottom: calc(100% + 1rem);
 }
 /* 자동완성 */
 .autocomplete_wrap {

@@ -1,0 +1,214 @@
+{{#> layout/default page-title="기본정보입력 | 레저/연금/골프"}}
+<div id="wrap" class="wrap">
+{{> layout/header h-title="다이렉트 골프보험" h-back=true }}
+
+	<form action="" class="bi_form">
+		<div class="bi_wrap">
+
+			<div class="stepper_wrap">
+				<div class="stepper" role="img">
+					<div class="pgs">
+						<span class="pgs_per" style="width: 0%;"><span class="motion golf"></span></span>
+					</div>
+				</div>
+				<button type="button" class="stm_btn stm_l" onclick="$stepper.stepBack();">이전 단계</button>
+				<button type="button" class="stm_btn stm_r" onclick="$stepper.stepNext();">다음 단계</button>
+			</div>
+			
+			
+			<div class="bi_stepper">
+				<div class="bi_top">
+					<!-- bit -->
+					<div class="bit">
+
+						<!-- 성별 -->
+						<div class="bit_inner active" data-pickitem="step1">
+							<P class="bit_inner_text">
+								고객님의 <span class="bold">성별</span>을 알려주세요
+							</P>
+						</div>
+						<!-- 성별 -->
+
+						<!-- 생년월일 -->
+						<div class="bit_inner active" data-pickitem="step2">
+							<P class="bit_inner_text">
+								고객님의 <span class="bold">생년월일</span>을 알려주세요.
+								<small class="sub_txt">19~80세까지 가입하실 수 있어요.</small>
+							</P>
+						</div>
+						<!-- 생년월일 -->
+
+						<!-- 보장기간 -->
+						<div class="bit_inner active" data-pickitem="step3">
+							<P class="bit_inner_text">
+								언제부터 <span class="bold">보장</span>받고 싶으세요?
+							</P>
+						</div>
+						<!-- 보장기간 -->
+
+						<!-- 기간 -->
+						<div class="bit_inner active" data-pickitem="step4">
+							<P class="bit_inner_text">
+								보장받을 기간을 선택해주세요<br>
+								이제 <span class="bold">보험료</span>를 알아볼께요
+							</P>
+						</div>
+						<!-- 기간 -->
+
+					</div>
+					<!-- bit -->
+
+					<!-- bit_history -->
+					<div class="bit_history">
+						<div class="bit_history_inner">
+							<button type="button" class="selected_case step1 gender" title="성별 수정">oo</button>
+							<button type="button" class="selected_case step2 birth" title="생년월일 수정">oo</button>
+							<button type="button" class="selected_case step3 period" title="보장기간 수정">oo</button>
+							<button type="button" class="selected_case step4 date" title="기간 수정">oo</button>
+						</div>
+					</div>
+					<!-- bit_history -->
+
+				</div>
+
+
+				<div class="bi_opts_wrap">
+					<!-- 성별 -->
+					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step1">
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio41" name="radio4" />
+								<label for="radio41">
+									<span class="label_cont">남성</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio42" name="radio4" />
+								<label for="radio42">
+									<span class="label_cont">여성</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- 성별 -->
+
+					<!-- 생년월일 -->
+					<div class="opts_area active" tabindex="0" aria-label="생년월일 8자리를 입력하시면 다음단계로 이동합니다." data-pickitem="step2">
+						<div class="opts_area_item column">
+							<div class="birth_date_field" aria-live="polite"></div>
+							<div class="bi_keypad">
+								<div class="bi_keypad_item">
+									<button type="button" class="keypad_btn">1</button>
+									<button type="button" class="keypad_btn">2</button>
+									<button type="button" class="keypad_btn">3</button>
+									<button type="button" class="keypad_btn keypad_btn_del" aria-label="지우기"></button>
+								</div>
+								<div class="bi_keypad_item">
+									<button type="button" class="keypad_btn">4</button>
+									<button type="button" class="keypad_btn">5</button>
+									<button type="button" class="keypad_btn">6</button>
+									<button type="button" class="keypad_btn keypad_btn_delall">전체삭제</button>
+								</div>
+								<div class="bi_keypad_item">
+									<button type="button" class="keypad_btn">7</button>
+									<button type="button" class="keypad_btn">8</button>
+									<button type="button" class="keypad_btn">9</button>
+									<button type="button" class="keypad_btn">0</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 생년월일 -->
+
+					<!-- 보장기간 -->
+					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step3">
+						
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio21" name="radio2" />
+								<label for="radio21">
+									<span class="label_cont">지금 바로</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio22" name="radio2" />
+								<label for="radio22">
+									<span class="label_cont">내일</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio23" name="radio2" />
+								<label for="radio23">
+									<span class="label_cont">이번 주말</span>
+								</label>
+							</div>
+							<button type="button" class="hd_btn direct_select_btn" title="보장 시작일 선택 팝업 오픈">
+								<span class="text">직접 선택</span>
+							</button>
+						</div>
+					</div>
+					<!-- 보장기간 -->
+
+					<!-- 기간 -->
+					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step4">
+						
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio21" name="radio3" />
+								<label for="radio31">
+									<span class="label_cont">1개월</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio32" name="radio3" />
+								<label for="radio32">
+									<span class="label_cont">3개월</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio33" name="radio3" />
+								<label for="radio33">
+									<span class="label_cont">6개월</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio34" name="radio3" />
+								<label for="radio34">
+									<span class="label_cont">9개월</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio35" name="radio3" />
+								<label for="radio35">
+									<span class="label_cont">12개월</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- 기간 -->
+
+					
+
+					
+				</div>
+			</div>
+
+
+		</div>
+	</form>
+</div>
+
+<script>
+$(document).ready(function() {
+  // $stepper.stepperInit();
+	$stepper.stepperInit(null, 0);
+});
+</script>
+
+
+<!-- s: popup area -->
+	 
+<!-- e: popup area -->
+
+
+{{/ layout/default }}
