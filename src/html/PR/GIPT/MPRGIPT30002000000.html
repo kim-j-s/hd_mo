@@ -1,70 +1,74 @@
-{{#> layout/default page-title="기초 정보 입력 | 운전자보험"}}
+{{#> layout/default page-title="기본정보입력 | 하이펫보험"}}
 <div id="wrap" class="wrap">
-{{> layout/header h-title="운전자보험" h-back=true }}
+{{> layout/header h-title="하이펫보험(1~3년)" h-back=true }}
 
 	<form action="" class="bi_form">
 		<div class="bi_wrap">
+
 			<div class="stepper_wrap">
 				<div class="stepper" role="img">
 					<div class="pgs">
-						<span class="pgs_per" style="width: 0%;"><span class="motion car"></span></span>
+						<span class="pgs_per" style="width: 0%;"><span class="motion dog"></span></span>
 					</div>
 				</div>
 				<button type="button" class="stm_btn stm_l" onclick="$stepper.stepBack();">이전 단계</button>
 				<button type="button" class="stm_btn stm_r" onclick="$stepper.stepNext();">다음 단계</button>
-			</div>
+			</div>			
 			
 			<div class="bi_stepper">
 				<div class="bi_top">
 					<!-- bit -->
 					<div class="bit">
-						<!-- 운전자 -->
+
+						<!-- 품종 -->
 						<div class="bit_inner" data-pickitem="step1">
 							<P class="bit_inner_text">
-								<span class="bold">누구를 위한</span> 보험인가요?
+								소중한 우리아이는<br>
+								<strong>어떤 견종</strong>인가요?
 							</P>
 							<div class="bit_btn_scrollx">
-								{{> cp/linkButton bl_class="short_cut sm rd_box" bl_text="최근 계산 내역" }}
 								{{> cp/linkButton bl_class="short_cut sm rd_box" bl_text="보장내용 자세히 보기" role_b=true }}
 							</div>
 						</div>
-						<!-- 운전자 -->
-						<!-- 용도 -->
+						<!-- 품종 -->
+
+						<!-- 성별 -->
 						<div class="bit_inner active" data-pickitem="step2">
 							<P class="bit_inner_text">
-								<span class="bold">운전하시는 용도가</span> 무엇인가요?
+								아이의<br>
+								<strong>성별</strong>은 무엇인가요?
 							</P>
-							<div class="bit_btn_scrollx">
-								{{> cp/linkButton bl_class="short_cut sm rd_box" bl_text="본인이 아닌 다른 사람의 보험을 가입하는 방법" role_b=true }}
-							</div>
 						</div>
-						<!-- 용도 -->
+						<!-- 성별 -->
+
 						<!-- 생년월일 -->
 						<div class="bit_inner active" data-pickitem="step3">
 							<P class="bit_inner_text">
-								운전자의 <span class="bold">생년월일 8자리</span>를<br>
-								알려주세요
+								아이의<br>
+								<span class="bold">생년월일</span>을 알려주세요.
+								<small class="sub_txt">생후 61일~만 10세까지 가입할 수 있어요.</small>
 							</P>
 						</div>
 						<!-- 생년월일 -->
-						<!-- 성별 -->
+						 
+						<!-- 등록 -->
 						<div class="bit_inner active" data-pickitem="step4">
 							<P class="bit_inner_text">
-								운전자의 <span class="bold">성별</span>을 알려주시면<br>
-								보험료를 알아볼께요
+								<span class="bold">동물등록</span>을 하셨는지 알려주시면 보험료를 알아볼께요
 							</P>
 						</div>
-						<!-- 성별 -->
+						<!-- 등록 -->
+
 					</div>
 					<!-- bit -->
 
 					<!-- bit_history -->
 					<div class="bit_history">
 						<div class="bit_history_inner">
-							<button type="button" class="selected_case step1 person" title="대상 수정"></button>
-							<button type="button" class="selected_case step2 car" title="용도 수정"></button>
-							<button type="button" class="selected_case step3 birth" title="생년월일 수정"></button>
-							<button type="button" class="selected_case step4 gender" title="성별 수정"></button>
+							<button type="button" class="selected_case step1 dog" title="견종 수정">sss</button>
+							<button type="button" class="selected_case step2 sex" title="성별 수정">sss</button>
+							<button type="button" class="selected_case step3 birth" title="생년월일 수정">sss</button>
+							<button type="button" class="selected_case step4 reg" title="등록여부 수정">sss</button>
 						</div>
 					</div>
 					<!-- bit_history -->
@@ -73,55 +77,65 @@
 
 
 				<div class="bi_opts_wrap">
-					<!-- 운전자 -->
+
+					<!-- 견종 -->
 					<div class="opts_area" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step1">
 						<div class="opts_area_item">
 							<div class="inp_radio rd_btn_s1">
 								<input type="radio" id="radio11" name="radio1" />
 								<label for="radio11">
-									<span class="label_cont">본인</span>
+									<span class="label_cont">말티즈</span>
 								</label>
 							</div>
 							<div class="inp_radio rd_btn_s1">
 								<input type="radio" id="radio12" name="radio1" />
 								<label for="radio12">
-									<span class="label_cont">부모님</span>
+									<span class="label_cont">포메라니안</span>
 								</label>
 							</div>
 							<div class="inp_radio rd_btn_s1">
 								<input type="radio" id="radio13" name="radio1" />
 								<label for="radio13">
-									<span class="label_cont">배우자</span>
+									<span class="label_cont">비숑프리제</span>
 								</label>
 							</div>
 							<div class="inp_radio rd_btn_s1">
 								<input type="radio" id="radio14" name="radio1" />
 								<label for="radio14">
-									<span class="label_cont">자녀</span>
+									<span class="label_cont">치와와</span>
 								</label>
 							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio15" name="radio1" />
+								<label for="radio15">
+									<span class="label_cont">말티푸</span>
+								</label>
+							</div>
+							<button type="button" class="hd_btn direct_select_btn" title="반려동물 종류 선택 팝업 오픈">
+								<span class="text">직접 선택</span>
+							</button>
 						</div>
 					</div>
-					<!-- 운전자 -->
+					<!-- 견종 -->
 
-					<!-- 용도 -->
+					<!-- 성별 -->
 					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step2">
 						<div class="opts_area_item">
 							<div class="inp_radio rd_btn_s1">
 								<input type="radio" id="radio21" name="radio2" />
 								<label for="radio21">
-									<span class="label_cont">자가용</span>
+									<span class="label_cont">남아</span>
 								</label>
 							</div>
 							<div class="inp_radio rd_btn_s1">
 								<input type="radio" id="radio22" name="radio2" />
 								<label for="radio22">
-									<span class="label_cont">영업용</span>
+									<span class="label_cont">여아</span>
 								</label>
 							</div>
 						</div>
 					</div>
-					<!-- 용도 -->
+					<!-- 성별 -->
 
 					<!-- 생년월일 -->
 					<div class="opts_area active" tabindex="0" aria-label="생년월일 8자리를 입력하시면 다음단계로 이동합니다." data-pickitem="step3">
@@ -151,24 +165,31 @@
 					</div>
 					<!-- 생년월일 -->
 
-					<!-- 성별 -->
+					<!-- 등록여부 -->
 					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step4">
-						<div class="opts_area_item">
+						
+						<div class="opts_area_item etc_c_1">
 							<div class="inp_radio rd_btn_s1">
 								<input type="radio" id="radio31" name="radio3" />
 								<label for="radio31">
-									<span class="label_cont">남성</span>
+									<span class="label_cont">등록안함</span>
 								</label>
 							</div>
 							<div class="inp_radio rd_btn_s1">
 								<input type="radio" id="radio32" name="radio3" />
 								<label for="radio32">
-									<span class="label_cont">여성</span>
+									<span class="label_cont">등록함</span>
 								</label>
+								<span class='tip_item top etc_c_1'>
+									<span class='tip_item_cont'>
+										동물등록 시 매월 5% 할인
+									</span>
+								</span>
 							</div>
 						</div>
 					</div>
-					<!-- 성별 -->
+					<!-- 등록여부 -->
+					
 				</div>
 			</div>
 
@@ -187,44 +208,6 @@ $(document).ready(function() {
 
 <!-- s: popup area -->
 
-<!-- s: 가입이 어려운 경우 -->
-{{#> popup/popup_bottom popup-id="pop1" popup-title="가입제한 안내" }}
-<div class="popup_cont">
-	<div class="popup_content">
-		<p class="text_sub">아래의 경우에는 운전자보험 가입이 어려워요.</p>
-		<div class="info_gray">
-			<ul class="list_depth">
-				<li>만 19~76세까지 가입 가능합니다.</li>
-			</ul>
-		</div>
-	</div>
-</div>
-<div class="popup_bottom">
-	<div class="btn_area">
-		{{> cp/button type="1" size="2" b-text="확인" }}
-	</div>
-</div>
-{{/ popup/popup_bottom}}
-<!-- e: 가입이 어려운 경우 -->
-
-<!-- s: 유효성 체크 -->
-{{#> popup/popup_layer popup-id="pop2" popup-title=""}}
-<div class="popup_cont">
-	<div class="popup_content">
-		<p class="pl_txt1">
-			다이렉트운전자보험은 만 19~76세까지 가입 가능합니다.
-			<br><br>
-			다시 확인해주세요.
-		</p>
-	</div>
-</div>
-<div class="popup_bottom">
-	<div class="btn_area">
-		{{> cp/button type="1" size="2" b-text="확인" }}
-	</div>
-</div>
-{{/ popup/popup_layer}}
-<!-- e: 유효성 체크 -->
 	 
 <!-- e: popup area -->
 
