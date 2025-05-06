@@ -9,7 +9,7 @@
   z-index: 9000 !important;
   width: 100%;
   padding: 42px 20px 40px 20px;
-  border: 1px solid #000;
+  // border: 1px solid #000;
   border-radius: 30px 30px 0 0;
   background: #FFFFFF !important;
 }
@@ -189,52 +189,27 @@
 
 
 /* 단일방식 - 직접 구현 */
-.calendar {
+.calendar_range {
 
   /* 머리 */
-  .calendar_top {
-    position: relative;
-    .calendar_change_btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      border: 1px solid var(--color-border-gray-light);
-      font-size: 0;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: 20px auto;
-      &.ccb_prev {
-        left: 8px;
-        background-image: url(../images/icon/arrowLeft_ty1.svg);        
-      }
-      &.ccb_next {
-        right: 8px;
-        background-image: url(../images/icon/arrowRight_ty4.svg);
-      }
-    }
-    .calendar_title {
-      font-weight: 700;
-      font-size: var(--font-size-heading-small);
-      line-height: 32px;
+  .calendar_range_dp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .drd_day {
+      flex: 1 1 0;
       text-align: center;
-      .calendar_title_dp {
-
-        &.calendar_month {
-          padding-left: 12px;
-        }
-      }
     }
-    
-
   }
   /* 머리 */
 
+  .calendar_range_inner {
+    overflow: auto;
+  }
+
   /* 몸 */
   .calendar_cont {
-    padding-top: 12px;
+    padding-top: 24px;
   }
 
   .calendar_tbl {
@@ -244,6 +219,12 @@
       border-spacing: 0;
       margin: 0 auto;
       table-layout: fixed;
+      thead {
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        font-size: 0;
+      }
       tbody {
         td {
           border: 3px solid #fff;
@@ -261,14 +242,23 @@
             border-right: none;
           }
           .day_default {
-            &.day_disabled {
+            // &.day_disabled {
+            //   color: var(--color-text-disabled);
+            // }
+            &:disabled {
               color: var(--color-text-disabled);
+            }
+            > .text {
+              position: relative;
+              z-index: 1;
             }
           }
         }
         tr {
           td {
-            a, span {
+            button, 
+            a, 
+            span {
               display: inline-flex;
               flex-direction: column;
               align-items: center;
@@ -277,7 +267,8 @@
               height: 48px;
               font-size: var(--font-size-label-medium);
               line-height: 1;
-              border: none
+              border: none;
+              background-color: transparent;
             }
           }
         }
@@ -307,6 +298,8 @@
           margin-top: 1px;
         }
       }
+
+
       .day_active {
         position: relative;
         color: var(--color-text-inverse-static);
@@ -315,7 +308,7 @@
           position: absolute;
           top: 50%;
           left: 50%;
-          z-index: -1;
+          // z-index: -1;
           width: 40px;
           height: 40px;
           border-radius: 50%;
@@ -323,6 +316,12 @@
           transform: translate(-50%, -50%);
         }
       }
+
+      .ing {
+        background-color: red;
+      }
+
+
 
       td a.day_default {
         position: relative;
