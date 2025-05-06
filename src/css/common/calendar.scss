@@ -189,21 +189,28 @@
 
 
 /* 단일방식 - 직접 구현 */
+/* 머리 */
+.calendar_range_dp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // margin: 0 -24px;
+  padding: 0 24px;
+  box-shadow: 0px 1px 2px 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)), 0px 0px 2px 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
+  .drd_day {
+    flex: 1 1 0;
+    padding: 3px 0;
+    font-size: var(--font-size-label-small);
+    color: var(--color-text-subtle);
+    text-align: center;
+  }
+}
+/* 머리 */
+
 .calendar_range {
 
-  /* 머리 */
-  .calendar_range_dp {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    .drd_day {
-      flex: 1 1 0;
-      text-align: center;
-    }
-  }
-  /* 머리 */
-
   .calendar_range_inner {
+    padding: 0 24px;
     overflow: auto;
   }
 
@@ -227,7 +234,6 @@
       }
       tbody {
         td {
-          border: 3px solid #fff;
           border-top: none;
           border-bottom: none;
           padding: 0;
@@ -242,20 +248,19 @@
             border-right: none;
           }
           .day_default {
-            // &.day_disabled {
-            //   color: var(--color-text-disabled);
-            // }
             &:disabled {
               color: var(--color-text-disabled);
             }
             > .text {
               position: relative;
-              z-index: 1;
+              z-index: 2;
             }
           }
         }
         tr {
           td {
+            height: 46px;
+            padding: 1px 0;
             button, 
             a, 
             span {
@@ -264,7 +269,7 @@
               align-items: center;
               justify-content: center;
               width: 100%;
-              height: 48px;
+              height: 44px;
               font-size: var(--font-size-label-medium);
               line-height: 1;
               border: none;
@@ -279,46 +284,85 @@
       }
       .day_today {
         position: relative;
-        &:before {
-          content: "";
-          position: absolute;
-          bottom: 14px;
-          left: 50%;
-          width: 4px;
-          height: 4px;
-          border-radius: 50%;
-          background-color: var(--color-element-point);
-          transform: translateX(-50%);
-        }
-        &::after {
-          content: '';
-          display: block;
-          width: 100%;
-          height: 4px;
-          margin-top: 1px;
+        > .text {
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            top: calc(50% + 8px);
+            left: 50%;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: var(--color-element-point);
+            transform: translateX(-50%);
+          }
         }
       }
 
 
       .day_active {
         position: relative;
-        color: var(--color-text-inverse-static);
         &::after {
           content: "";
           position: absolute;
           top: 50%;
           left: 50%;
-          // z-index: -1;
-          width: 40px;
-          height: 40px;
+          z-index: 1;
+          width: 44px;
+          height: 44px;
           border-radius: 50%;
           background-color: var(--color-action-secondary-active);
           transform: translate(-50%, -50%);
         }
+        > .text {
+          color: var(--color-text-inverse-static);
+        }
+        
       }
 
-      .ing {
-        background-color: red;
+      .start_day {
+        &.start_day_fix {
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 50%;
+            background-color: var(--color-action-secondary-selected);
+          }
+          > .text {
+            &::before {
+              content: '시작일';
+              font-size: 0;
+            }
+          }
+        }
+        
+      }
+      .end_day {
+        &.end_day_fix {
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 50%;
+            background-color: var(--color-action-secondary-selected);
+          }
+          > .text {
+            &::before {
+              content: '종료일';
+              font-size: 0;
+            }
+          }
+        }
+      }
+
+      .between {
+        background-color: var(--color-action-secondary-selected);
       }
 
 
@@ -338,3 +382,41 @@
 
 
 
+/* 기간선택 */
+.date_select_area {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0 -24px;
+  // padding: 0 24px;
+  overflow: auto;
+
+  .calendar_range {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-bottom: 16px;
+    // padding: 0 24px;
+    overflow: auto;
+  }
+
+  .dsa_bottom {
+    flex: none;
+    // margin: 0 -24px;
+    padding: 20px 24px 0 24px;
+    border-radius: var(--radius-large2) var(--radius-large2) 0 0;
+    box-shadow: 0px var(--shadow-y-minus2, -6px) var(--shadow-blur-2, 8px) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
+
+    .dsa_date {
+      padding-left: 28px;
+
+      font-size: var(--font-size-body-medium);
+      background: url(../images/icon/icon_date.svg) no-repeat left top 2px / 20px auto;
+      + .form_group_wrap {
+        margin-top: 16px;
+      }
+    }
+  }
+
+}
+/* 기간선택 */

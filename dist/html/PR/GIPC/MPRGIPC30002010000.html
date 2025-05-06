@@ -40,7 +40,7 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>해외여행보험 | 상품 - 현대해상 다이렉트</title>
+		<title>골프보험 | 상품 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -56,7 +56,7 @@
 					<div class="draggable" aria-hidden="true">
 						<div class="move"></div>
 					</div>
-					<div class="popup_head"><div class="popup_head_title">여행기간 선택</div></div>
+					<div class="popup_head"><div class="popup_head_title">보장 시작일 선택</div></div>
 
 					<div class="popup_cont">
 						<div class="date_select_area">
@@ -505,25 +505,13 @@
 							</div>
 
 							<div class="dsa_bottom">
-								<div class="dsa_date">2025.03.12~2025.03.21(9박 10일)</div>
 								<div class="form_group_wrap">
-									<div class="row">
-										<div class="form_line grow">
-											<div class="label_tit">출발시간</div>
-											<div class="select_item select_item_case01" role="button" tabindex="0" title="출발시간 팝업 오픈" onclick="openHDPopup(this,'pop1');">
-												<div class="select_item_inner">
-													<div class="si_item" data-placeholder="시간 선택"></div>
-													<span class="si_stat">선택됨</span>
-												</div>
-											</div>
-										</div>
-										<div class="form_line grow">
-											<div class="label_tit">도착시간</div>
-											<div class="select_item select_item_case01" role="button" tabindex="0" title="도착시간 팝업 오픈" onclick="openHDPopup(this,'pop2');">
-												<div class="select_item_inner">
-													<div class="si_item" data-placeholder="시간 선택"></div>
-													<span class="si_stat">선택됨</span>
-												</div>
+									<div class="form_line grow">
+										<div class="label_tit">시간</div>
+										<div class="select_item select_item_case01" role="button" tabindex="0" title="출발시간 선택 팝업 오픈" onclick="openHDPopup(this,'pop1');">
+											<div class="select_item_inner">
+												<div class="si_item" data-placeholder="시간 선택"></div>
+												<span class="si_stat">선택됨</span>
 											</div>
 										</div>
 									</div>
@@ -534,7 +522,7 @@
 					<div class="popup_bottom">
 						<div class="btn_area">
 							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2" disabled>
-								<span class="text">출발시간을 선택 중이에요</span>
+								<span class="text">보장 시작일을 선택 중이에요</span>
 							</button>
 						</div>
 					</div>
@@ -579,41 +567,6 @@
 		</div>
 		<!-- e: 출발시간 선택 -->
 
-		<!-- s: 도착시간 선택 -->
-		<div class="popup_wrap bottom" id="pop2" role="dialog" aria-modal="true" aria-hidden="true">
-			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop2');"></div>
-				<div class="popup_inner">
-					<div class="draggable" aria-hidden="true">
-						<div class="move"></div>
-					</div>
-					<div class="popup_head"><div class="popup_head_title">도착시간 선택</div></div>
-
-					<div class="popup_cont">
-						<div class="popup_content">
-							<div class="opt_select_list opt_case3">
-								<div role="button" tabindex="0" class="option active" title="선택됨"><span class="text">오전 0시</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">오전 1시</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">오전 2시</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">오전 3시</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">오전 4시</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">오전 5시</span></div>
-							</div>
-						</div>
-					</div>
-					<div class="popup_bottom">
-						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
-								<span class="text">확인</span>
-							</button>
-						</div>
-					</div>
-					<button type="button" class="popup_close" onclick="closeHDPopup('pop2');"><span class="blind">팝업 닫기</span></button>
-				</div>
-			</div>
-		</div>
-		<!-- e: 도착시간 선택 -->
-
 		<script>
 			$(document).ready(function () {
 				let startDayIndex = null; // 현재 선택된 start_day 인덱스
@@ -624,85 +577,10 @@
 
 					// 날짜 클릭 이벤트
 					calendarRangeItem.find("tbody button.day_default:not([disabled])").on("click", function () {
-						var clickedTd = $(this).closest("td");
-						var clickedTr = clickedTd.closest("tr");
-						var clickedTdIndex = clickedTd.index();
-						var clickedTrIndex = clickedTr.index();
-						var clickedItemIndex = itemIndex; // calendar_range_item의 인덱스
-						var finalIndex = (clickedItemIndex + 1) * 100 + (clickedTrIndex + 1) * 10 + (clickedTdIndex + 1); // 최종 인덱스 계산
-
-						// 최초 클릭이 아니면 start_day와 end_day 상태 처리
-						if (startDayIndex === null) {
-							// 첫 번째 클릭: start_day 부여
-							$(this).addClass("day_active start_day");
-							startDayIndex = finalIndex; // 첫 번째 클릭된 인덱스를 start_day로 설정
-						} else {
-							if ($(this).hasClass("start_day")) {
-								// 이미 start_day가 부여된 버튼 클릭시 아무 동작 하지 않음
-								return;
-							}
-
-							if (endDayIndex === null) {
-								if (finalIndex > startDayIndex) {
-									// end_day 부여
-									$(this).addClass("day_active end_day");
-
-									$(".start_day").addClass("start_day_fix");
-									$(".end_day").addClass("end_day_fix");
-
-									endDayIndex = finalIndex; // end_day 인덱스 설정
-
-									// start_day와 end_day가 모두 설정된 후, 해당 범위의 버튼에 'between' 클래스를 부여
-									markInProgressRange(startDayIndex, endDayIndex);
-								} else if (finalIndex < startDayIndex) {
-									// start_day가 더 큰 값이어야 하므로 start_day 변경
-									$(".start_day").removeClass("day_active start_day");
-									$(this).addClass("day_active start_day");
-									startDayIndex = finalIndex; // 새로운 start_day 설정
-									endDayIndex = null; // 이전의 end_day를 초기화
-									$(".between").removeClass("between"); // 이전의 'between' 클래스 초기화
-								}
-							} else {
-								// start_day와 end_day가 모두 설정된 후에는 새로 클릭된 날짜가 start_day로 설정됨
-								// 기존의 start_day, end_day 상태 초기화
-								$(".start_day").removeClass("day_active start_day");
-								$(".end_day").removeClass("day_active end_day");
-								$(".between").removeClass("between"); // 'between' 클래스 초기화
-								$(".start_day_fix").removeClass("start_day_fix");
-								$(".end_day_fix").removeClass("end_day_fix");
-
-								// 새로 클릭된 날짜를 start_day로 설정
-								$(this).addClass("day_active start_day");
-								startDayIndex = finalIndex; // 새로운 start_day 설정
-								endDayIndex = null; // 이전의 end_day를 초기화
-							}
-						}
+						$(".start_day").removeClass("day_active start_day");
+						$(this).addClass("day_active start_day");
 					});
 				});
-
-				// start_day와 end_day 사이의 범위에 'ing' 클래스 부여
-				function markInProgressRange(startIndex, endIndex) {
-					$(".calendar_range_item").each(function (itemIndex) {
-						var calendarRangeItem = $(this);
-
-						// 각 td 요소 순회
-						calendarRangeItem.find("tbody td").each(function () {
-							var td = $(this);
-							// var tdButton = td.find('button.day_default:not([disabled])');
-							var tdButton = td.find("button.day_default");
-							if (tdButton.length > 0) {
-								var tdIndex = td.index();
-								var trIndex = td.closest("tr").index();
-								var finalIndex = (itemIndex + 1) * 100 + (trIndex + 1) * 10 + (tdIndex + 1); // 각 날짜의 인덱스 계산
-
-								// 선택된 범위 내의 버튼에 'ing' 클래스 부여
-								if (finalIndex > startIndex && finalIndex < endIndex) {
-									tdButton.addClass("between");
-								}
-							}
-						});
-					});
-				}
 			});
 		</script>
 	</body>
