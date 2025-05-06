@@ -1,0 +1,231 @@
+{{#> layout/default page-title="기초 정보 입력 | 운전자보험"}}
+<div id="wrap" class="wrap">
+{{> layout/header h-title="운전자보험" h-back=true }}
+
+	<form action="" class="bi_form">
+		<div class="bi_wrap">
+			<div class="stepper_wrap">
+				<div class="stepper" role="img">
+					<div class="pgs">
+						<span class="pgs_per" style="width: 0%;"><span class="motion car"></span></span>
+					</div>
+				</div>
+				<button type="button" class="stm_btn stm_l" onclick="$stepper.stepBack();">이전 단계</button>
+				<button type="button" class="stm_btn stm_r" onclick="$stepper.stepNext();">다음 단계</button>
+			</div>
+
+			
+			<div class="bi_stepper">
+				<div class="bi_top">
+					<!-- bit -->
+					<div class="bit">
+
+						<!-- 제조사 -->
+						<div class="bit_inner" data-pickitem="step1">
+							<P class="bit_inner_text">
+								<span class="bold">제조사</span>를<br>
+								선택해 주세요
+							</P>
+							<div class="bit_btn_scrollx">
+								<button type="button" class="btn_link short_cut sm rd_box search_type">
+									<span class="text">자동차명 검색</span>
+								</button>
+							</div>
+						</div>
+						<!-- 제조사 -->
+
+						<!-- 자동차명 -->
+						<div class="bit_inner active" data-pickitem="step2">
+							<P class="bit_inner_text">
+								<span class="bold">자동차명</span>을<br>
+								선택해 주세요
+							</P>
+							<div class="bit_btn_scrollx">
+								{{> cp/linkButton bl_class="short_cut sm rd_box" bl_text="본인이 아닌 다른 사람의 보험을 가입하는 방법" role_b=true }}
+							</div>
+						</div>
+						<!-- 자동차명 -->
+
+						<!-- 등록연도 -->
+						<div class="bit_inner active" data-pickitem="step3">
+							<P class="bit_inner_text">
+								<span class="bold">등록연도</span>를<br>
+								선택해 주세요
+							</P>
+							<div class="bit_btn_scrollx">
+								<button type="button" class="btn_link short_cut sm rd_box">
+									<span class="text">차량연식/최초등록일 안내</span>
+								</button>
+							</div>
+						</div>
+						<!-- 등록연도 -->
+
+						<!-- 세부차명 -->
+						<div class="bit_inner active" data-pickitem="step4">
+							<P class="bit_inner_text">
+								<span class="bold">세부차명</span>을<br>
+								선택해 주세요
+							</P>
+						</div>
+						<!-- 세부차명 -->
+
+						<!-- 세부형식 -->
+						<div class="bit_inner active" data-pickitem="step5">
+							<P class="bit_inner_text">
+								<span class="bold">세부형식</span>을<br>
+								선택해 주세요
+							</P>
+						</div>
+						<!-- 세부형식 -->
+
+					</div>
+					<!-- bit -->
+
+					<!-- bit_history -->
+					<div class="bit_history">
+						<div class="bit_history_inner">
+							<button type="button" class="selected_case step1 maker" title="제조사 수정">dd</button>
+							<button type="button" class="selected_case step2 car" title="자동차명 수정">dd</button>
+							<button type="button" class="selected_case step1 date" title="등록연도 수정">dd</button>
+							<button type="button" class="selected_case step3 detail1" title="세부차명 수정">dd</button>
+							<button type="button" class="selected_case step4 detail2" title="세부형식 수정">dd</button>
+						</div>
+					</div>
+					<!-- bit_history -->
+
+				</div>
+
+
+				<div class="bi_opts_wrap">
+
+					<!-- 제조사 -->
+					<div class="opts_area" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step1">
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio11" name="radio1" onchange=""/>
+								<label for="radio11">
+									<span class="label_cont">본인</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio12" name="radio1" />
+								<label for="radio12">
+									<span class="label_cont">부모님</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio13" name="radio1" />
+								<label for="radio13">
+									<span class="label_cont">배우자</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio14" name="radio1" />
+								<label for="radio14">
+									<span class="label_cont">자녀</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- 제조사 -->
+
+					<!-- 자동차명 -->
+					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step2">
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio21" name="radio2" />
+								<label for="radio21">
+									<span class="label_cont">자가용</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio22" name="radio2" />
+								<label for="radio22">
+									<span class="label_cont">영업용</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- 자동차명 -->
+
+					<!-- 등록연도 -->
+					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step3">
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio31" name="radio3" />
+								<label for="radio31">
+									<span class="label_cont">남성</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio32" name="radio3" />
+								<label for="radio32">
+									<span class="label_cont">여성</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- 등록연도 -->
+
+					<!-- 세부차명 -->
+					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step4">
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio41" name="radio4" />
+								<label for="radio41">
+									<span class="label_cont">남성</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio42" name="radio4" />
+								<label for="radio42">
+									<span class="label_cont">여성</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- 세부차명 -->
+
+					<!-- 세부형식 -->
+					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step5">
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio51" name="radio5" />
+								<label for="radio51">
+									<span class="label_cont">남성</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio52" name="radio5" />
+								<label for="radio52">
+									<span class="label_cont">여성</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- 세부형식 -->
+
+
+				</div>
+			</div>
+
+
+		</div>
+	</form>
+</div>
+
+<script>
+$(document).ready(function() {
+  // $stepper.stepperInit();
+	$stepper.stepperInit(null, 0);
+});
+</script>
+
+
+<!-- s: popup area -->
+
+	 
+<!-- e: popup area -->
+
+
+{{/ layout/default }}
