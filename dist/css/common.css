@@ -2167,6 +2167,22 @@ strong {
 	width: 100%;
 	text-align: left;
 }
+.hd_btn.reset {
+	background-color: transparent;
+}
+.hd_btn.reset > .text {
+	display: block;
+	padding-right: 1.8rem;
+	font-size: var(--font-size-button-small);
+	background: url(../images/icon/icon_reset_ty2.svg) no-repeat right center/1.6rem auto;
+}
+.hd_btn.reset:disabled {
+	border: none;
+}
+.hd_btn.reset:disabled > .text {
+	color: var(--color-text-disabled);
+	background-image: url(../images/icon/icon_reset_ty2_disable.svg);
+}
 /**
   * Link Button(링크버튼)
   */
@@ -2280,6 +2296,9 @@ strong {
 .btn_link.short_cut.rd_box > .text {
 	padding-right: 1.8rem;
 	background: url(../images/icon/arrowRight_ty4.svg) no-repeat right center/1.6rem auto;
+}
+.btn_link.short_cut.search_type > .text {
+	background-image: url(../images/icon/icon_search.svg);
 }
 .btn_link.new_open {
 	display: inline-block;
@@ -6718,6 +6737,12 @@ strong {
 	-webkit-transition: border-color 0.3s;
 	transition: border-color 0.3s;
 }
+.inp_radio[class*="rd_btn"] input[type="radio"] + label .sm_txt {
+	display: block;
+	margin-top: 0.4rem;
+	color: var(--color-text-subtle);
+	font-size: var(--font-size-body-small);
+}
 .inp_radio[class*="rd_btn"] input[type="radio"]:checked + label:after {
 	border: 0.2rem solid var(--color-border-primary);
 }
@@ -6762,6 +6787,13 @@ strong {
 .inp_radio.rd_btn_s2 input[type="radio"] + label > span {
 	font-size: var(--font-size-button-medium);
 	line-height: 2.1rem;
+}
+.inp_radio.rd_btn_s3 input[type="radio"] + label {
+	min-height: 8.9rem;
+	border-radius: var(--radius-medium3);
+}
+.inp_radio.rd_btn_s3 input[type="radio"] + label > span {
+	text-align: left;
 }
 .inp_radio.rd_img {
 	--count: 100% / 3;
@@ -6829,6 +6861,38 @@ strong {
 }
 .inp_radio.rd_img input[type="radio"]:checked + label .label_cont {
 	color: var(--color-text-basic);
+}
+.inp_radio.logo_add input[type="radio"] + label::before {
+	content: "";
+	position: static;
+	display: inline-block;
+	width: 3.2rem;
+	height: 3.2rem;
+	margin-right: 1.2rem;
+	border: none;
+	border-radius: var(--radius-small3);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 2.4rem auto;
+	background-color: var(--color-surface-gray-subtler);
+}
+.inp_radio.logo_add.la_1 label::before {
+	background-image: url(../images/content/bi/icon_brand_hyundai.svg);
+}
+.inp_radio.logo_add.la_2 label::before {
+	background-image: url(../images/content/bi/icon_brand_kia.svg);
+}
+.inp_radio.logo_add.la_3 label::before {
+	background-image: url(../images/content/bi/icon_brand_renault.svg);
+}
+.inp_radio.logo_add.la_4 label::before {
+	background-image: url(../images/content/bi/icon_brand_gm.svg);
+}
+.inp_radio.logo_add.la_5 label::before {
+	background-image: url(../images/content/bi/icon_brand_kgm.svg);
+}
+.inp_radio.logo_add.la_6 label::before {
+	background-image: url(../images/content/bi/icon_brand_global.svg);
 }
 .radio_comb {
 	min-width: 11.4rem;
@@ -7209,6 +7273,11 @@ strong {
 }
 .select_item.select_item_case02[aria-disabled="true"] .si_item::after {
 	border: none;
+}
+.select_item.si_ellipsis .si_item {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 .select_item:focus {
 	outline: none;
@@ -8438,6 +8507,25 @@ strong {
 .tip_item.top .tip_item_cont::after {
 	bottom: -0.7rem;
 	border-top: 0.8rem solid var(--color-border-primary);
+}
+.tip_item.etc_c_1 {
+	width: 100%;
+	bottom: calc(100% + 1rem);
+	padding: 0;
+	text-align: center;
+}
+.tip_item.etc_c_1 .tip_item_cont {
+	padding: 0.8rem 1rem;
+}
+.tip_item.etc_c_1 .tip_item_cont::before {
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+.tip_item.etc_c_1 .tip_item_cont::after {
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
 }
 /* infobox */
 /* info box */
