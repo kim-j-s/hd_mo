@@ -58,7 +58,7 @@
 			.status {
 				display: flex;
 				flex-direction: column;
-				gap: 2px;
+				gap: 4px;
 				
 				.title {
 					font-size: var(--font-size-heading-small);
@@ -489,7 +489,6 @@
 
 	}
 
-
 	&.acd_item_ty7 {
 		border-radius: var(--radius-large2);
 		border: 1px solid var(--color-border-gray-light);
@@ -594,6 +593,32 @@
 
 		& > .hd_badge {
 			line-height: 20px;
+		}
+	}
+		
+	&.disabled {
+		.acd_head {
+			.acd_btn {
+				.title {
+					color: var(--color-text-disabled);
+				}
+			}
+		}
+		.acd_cont {
+			.file_attach_box {
+				.file_thumbnail {
+					&:after {
+						position: absolute;
+						top: 0;
+						left: 0;
+						content:'';
+						width: 100%;
+						height: 100%;
+						background: rgba(255, 255, 255, 0.75);
+						border-radius: 16px;
+					}
+				}
+			}
 		}
 	}
 }
