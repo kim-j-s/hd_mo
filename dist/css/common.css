@@ -4333,7 +4333,7 @@ strong {
 	filter: grayscale(100%);
 }
 .inp_checkbox.rd_box {
-	padding: var(--padding-card-large);
+	padding: var(--padding-card-large) 2rem;
 	-webkit-box-flex: 1;
 	-ms-flex: 1;
 	flex: 1;
@@ -5393,6 +5393,9 @@ strong {
 .form_group_wrap .form_line .label_tit + .address_item {
 	margin-top: 0;
 }
+.form_group_wrap .form_line .label_tit .tooltip_wrap {
+	vertical-align: top;
+}
 .form_group_wrap .form_line .btn_area {
 	margin-top: 1.6rem;
 }
@@ -6102,9 +6105,6 @@ strong {
 	font-size: var(--font-size-body-small);
 	color: var(--color-text-subtle);
 }
-.number_list > li strong {
-	display: block;
-}
 .circle_list {
 	margin-top: 1.2rem;
 	counter-reset: circle 0;
@@ -6120,7 +6120,8 @@ strong {
 .circle_list > li ~ li {
 	margin-top: 1.2rem;
 }
-.circle_list > li strong {
+.circle_list > li > strong {
+	display: block;
 	margin-top: 0.4rem;
 	font-size: var(--font-size-body-xsmall);
 	color: var(--color-text-subtle);
@@ -7988,7 +7989,7 @@ strong {
 	margin-top: 3.2rem;
 }
 .table_wrap + .title_h3 {
-	margin-top: 3.2rem;
+	margin-top: 5.2rem;
 }
 .table_wrap .title_h3 {
 	margin-bottom: 2rem;
@@ -8389,13 +8390,14 @@ strong {
 	height: 2rem;
 	text-align: left;
 	font-size: 0;
+	line-height: 0;
 }
 .tooltip_wrap .tooltip_head {
 	position: relative;
 	display: inline-block;
 	width: 2rem;
 	height: 2rem;
-	line-height: 0;
+	vertical-align: top;
 }
 .tooltip_wrap .tooltip_head button {
 	position: relative;
