@@ -1,0 +1,247 @@
+{{#> layout/default page-title="기초 정보 입력 | 주택상해화재보험"}}
+<div id="wrap" class="wrap">
+{{> layout/header h-title="주택상해화재보험" h-back=true }}
+
+	<form action="" class="bi_form">
+		<div class="bi_wrap">
+			<div class="stepper_wrap">
+				<div class="stepper" role="img">
+					<div class="pgs">
+						<span class="pgs_per" style="width: 0%;"><span class="motion home"></span></span>
+					</div>
+				</div>
+				<button type="button" class="stm_btn stm_l" onclick="$stepper.stepBack();">이전 단계</button>
+				<button type="button" class="stm_btn stm_r" onclick="$stepper.stepNext();">다음 단계</button>
+			</div>
+			
+			<div class="bi_stepper">
+				<div class="bi_top">
+					<!-- bit -->
+					<div class="bit">
+
+						<!-- 생년월일 -->
+						<div class="bit_inner active" data-pickitem="step1">
+							<P class="bit_inner_text">
+								고객님의 <span class="bold">생년월일</span>을 알려주세요.
+							</P>
+							<div class="bit_inner_sub_text">
+								가입이 어려운 경우
+								{{> cp/tooltip text="<p>오피스텔, 펜션, 고시원 등으로 사용 시에는 인터넷을 통한 가입이 불가합니다.</p>" trigger-icon="popover_help"}}
+							</div>
+							<div class="bit_btn_scrollx">
+								{{> cp/linkButton bl_class="short_cut sm rd_box" bl_text="최근 계산 내역" }}
+								<button type="button" class="btn_link short_cut sm rd_box">
+									<span class="text">보장내용 자세히 보기</span>
+								</button>
+							</div>
+						</div>
+						<!-- 생년월일 -->
+
+						<!-- 성별 -->
+						<div class="bit_inner active" data-pickitem="step2">
+							<P class="bit_inner_text">
+								고객님의 <span class="bold">성별</span>을 알려주세요
+							</P>
+						</div>
+						<!-- 성별 -->
+
+
+						<!-- 주택유형 -->
+						<div class="bit_inner" data-pickitem="step3">
+							<P class="bit_inner_text">
+								<span class="bold">가입하실 주택</span>이 무엇인가요?
+							</P>
+						</div>
+						<!-- 주택유형 -->
+
+						<!-- 명의 -->
+						<div class="bit_inner active" data-pickitem="step4">
+							<P class="bit_inner_text">
+								<span class="bold">고객님 명의</span>의 주택인가요?
+							</P>
+							<div class="bit_btn_scrollx">
+								<button type="button" class="btn_link short_cut sm rd_box">
+									<span class="text">주택 거주 형태별 보장 안내</span>
+								</button>
+							</div>
+						</div>
+						<!-- 명의 -->
+
+					</div>
+					<!-- bit -->
+
+					<!-- bit_history -->
+					<div class="bit_history">
+						<div class="bit_history_inner">
+							<button type="button" class="selected_case step1 birth" title="생년월일 수정"></button>
+							<button type="button" class="selected_case step2 gender" title="성별 수정"></button>
+							<button type="button" class="selected_case step3 home" title="주택유형 수정"></button>
+							<button type="button" class="selected_case step4 person" title="명의 수정"></button>
+						</div>
+					</div>
+					<!-- bit_history -->
+
+				</div>
+
+
+				<div class="bi_opts_wrap">
+
+					<!-- 생년월일 -->
+					<div class="opts_area" tabindex="0" aria-label="생년월일 8자리를 입력하시면 다음단계로 이동합니다." data-pickitem="step1">
+						<div class="opts_area_item column">
+							<div class="birth_date_field" aria-live="polite"></div>
+							<div class="bi_keypad">
+								<div class="bi_keypad_item">
+									<button type="button" class="keypad_btn">1</button>
+									<button type="button" class="keypad_btn">2</button>
+									<button type="button" class="keypad_btn">3</button>
+									<button type="button" class="keypad_btn keypad_btn_del" aria-label="지우기"></button>
+								</div>
+								<div class="bi_keypad_item">
+									<button type="button" class="keypad_btn">4</button>
+									<button type="button" class="keypad_btn">5</button>
+									<button type="button" class="keypad_btn">6</button>
+									<button type="button" class="keypad_btn keypad_btn_delall">전체삭제</button>
+								</div>
+								<div class="bi_keypad_item">
+									<button type="button" class="keypad_btn">7</button>
+									<button type="button" class="keypad_btn">8</button>
+									<button type="button" class="keypad_btn">9</button>
+									<button type="button" class="keypad_btn">0</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 생년월일 -->
+
+					<!-- 성별 -->
+					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step2">
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio11" name="radio1" />
+								<label for="radio11">
+									<span class="label_cont">남성</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio12" name="radio1" />
+								<label for="radio12">
+									<span class="label_cont">여성</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- 성별 -->
+
+					<!-- 주택유형 -->
+					<div class="opts_area" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step3">
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s3 full">
+								<input type="radio" id="radio21" name="radio2" />
+								<label for="radio21">
+									<span class="label_cont">
+										아파트, 주상복합
+										<small class="sm_txt">5층 이상 공동 주택</small>
+									</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s3 full">
+								<input type="radio" id="radio22" name="radio2" />
+								<label for="radio22">
+									<span class="label_cont">
+										연립, 다세대
+										<small class="sm_txt">소유권이 분리된 4층 이하의 공동 주택</small>
+									</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s3 full">
+								<input type="radio" id="radio23" name="radio2" />
+								<label for="radio23">
+									<span class="label_cont">
+										단독, 다가구
+										<small class="sm_txt">소유권이 분리되지 않은 주택</small>
+									</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- 주택유형 -->
+
+					<!-- 용도 -->
+					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step4">
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s3">
+								<input type="radio" id="radio31" name="radio3" />
+								<label for="radio31">
+									<span class="label_cont">
+										자가 소유
+										<small class="sm_txt">실제 거주 중</small>
+									</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s3">
+								<input type="radio" id="radio32" name="radio3" />
+								<label for="radio32">
+									<span class="label_cont">
+										임차인
+										<small class="sm_txt">전세 또는 월세로 거주</small>
+									</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s3">
+								<input type="radio" id="radio33" name="radio3" />
+								<label for="radio33">
+									<span class="label_cont">
+										자가 소유
+										<small class="sm_txt">임차 중</small>
+									</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- 용도 -->
+
+					
+
+					
+				</div>
+			</div>
+
+
+		</div>
+	</form>
+</div>
+
+<script>
+$(document).ready(function() {
+  // $stepper.stepperInit();
+	$stepper.stepperInit(null, 0);
+});
+</script>
+
+
+<!-- s: popup area -->
+
+<!-- s: 유효성 체크 -->
+{{#> popup/popup_layer popup-id="pop1" popup-title=""}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<p class="pl_txt1">
+			다이렉트주택화재상해보험은 만 20~80세까지 가입 가능합니다.
+			<br><br>
+			다시 확인해주세요.
+		</p>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_layer}}
+<!-- e: 유효성 체크 -->
+	 
+<!-- e: popup area -->
+
+
+{{/ layout/default }}
