@@ -1,24 +1,22 @@
-{{#> layout/default page-title="취소정보확인 | 마이페이지"}}
+{{#> layout/default page-title="해지정보확인 | 마이페이지"}}
 	<div id="wrap" class="wrap">
-		{{> layout/header h-title="취소정보확인" h-back=true }}
+		{{> layout/header h-title="해지정보확인" h-back=true }}
 		<div id="container" class="container">
 			<div class="content">
 
 				<!-- s: content_top -->
 				<div class="content_top">
 					<h2 class="title_h2">
-						<strong>취소정보와 보험료</strong>를<br>
+						<strong>해지정보와 보험료</strong>를<br>
 						확인해주세요
 					</h2>
 				</div>
 				<!-- e: content_top -->
 
-				<h3 class="title_h3">취소정보</h3>
+				<h3 class="title_h3">해지정보(잔여기간 취소)</h3>
 				<div class="table_wrap">
 					<table class="table">
-						<!-- s: 25-05-07 수정 -->
-						<caption>자동차번호,  , 가입일(시간) 제공</caption>
-						<!-- e: 25-05-07 수정 -->
+						<caption>자동차번호, 보험기간, 취소일시, 취소일(시간) 제공</caption>
 						<colgroup>
 							<col style="width:35%;">
 							<col style="width:65%;">
@@ -29,16 +27,18 @@
 								<td>18루**22</td>
 							</tr>
 							<tr>
-								<!-- s: 25-05-07 수정 -->
 								<th scope="row">보험기간</th>
 								<td>
 									2025.01.22 00시 14분 ~ <br>
 									2025.01.24 24시 00분
-								</td>
-								<!-- e: 25-05-07 수정 -->
+								</td> 
 							</tr>
 							<tr>
-								<th scope="row">가입일(시간)</th>
+								<th scope="row">취소일시</th>
+								<td>2025.04.29 20시</td>
+							</tr>
+							<tr>
+								<th scope="row">취소일(시간)</th>
 								<td>9일 20시간</td>
 							</tr>
 						</tbody>
@@ -65,9 +65,8 @@
 				</div>
 
 				<div class="space_list_ty2">
-					<!-- s: 25-05-07 수정 -->
-					{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-1" label_class="chk_label_ty3" labelname="<strong class='ess ess_t1'>필수</strong> 취소는 보험 시작일시 전까지만 신청가능합니다."}}
-					<!-- e: 25-05-07 수정 -->
+					{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-1" label_class="chk_label_ty3" labelname="<strong class='ess ess_t1'>필수</strong> 보험기간이 12시간 이내인 경우에는 해약환급금이 없으며, 보험기간이 12시간 초과인 경우에는 기본 12시간 공제 후 잔여 시간만 환급처리됩니다."}}
+					{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-1" label_class="chk_label_ty3" labelname="<strong class='ess ess_t1'>필수</strong> 환급보험료는 조회시점을 기준으로 확인되는 보험료로 현재 시간 기준으로 계산된 경과보험료를 제외한 나머지 금액을 시간단위로 환급됩니다."}}
 				</div>
 			</div>
 		</div>
@@ -75,9 +74,7 @@
 		<!-- s: 하단 고정 버튼 영역 -->
 		<div class="bottom_fix_wrap">
 			<div class="btn_area">
-				<!-- s: 25-05-07 수정 -->
 				{{> cp/button type="1" size="1" b-text="다음" disabled=true}}
-				<!-- e: 25-05-07 수정 -->
 			</div>
 		</div>
 		<!-- s: 하단 고정 버튼 영역 -->
