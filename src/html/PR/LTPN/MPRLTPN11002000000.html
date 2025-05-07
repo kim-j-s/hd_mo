@@ -39,7 +39,7 @@
 						<div class="bit_inner active" data-pickitem="step2">
 							<P class="bit_inner_text">
 								고객님의 <span class="bold">생년월일</span>을 알려주세요.
-								<small class="sub_txt">0~79세까지 가입할 수 있어요.</small>
+								<small class="sub_txt">0~75세까지 가입하실 수 있어요.</small>
 							</P>
 						</div>
 						<!-- 생년월일 -->
@@ -177,6 +177,25 @@ $(document).ready(function() {
 
 <!-- s: popup area -->
 
+<!-- s: 유효성 체크 -->
+{{#> popup/popup_layer popup-id="pop_alert" popup-title="" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<p class="pl_txt1 pl_ico_ty_case1">
+			<!--연월일 숫자 유효성 체크-->
+			생년월일 방식을 다시 확인해주세요.
+			<!--제한 나이 유효성 체크-->
+			<!-- 0~75세까지 가입하실 수 있어요. -->
+		</p>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_layer}}
+<!-- e: 유효성 체크 -->
 	 
 <!-- e: popup area -->
 
