@@ -1,0 +1,302 @@
+{{#> layout/default page-title="기초 정보 입력 | 다이렉트 풍수해·지진재해보험(소상공인)"}}
+<div id="wrap" class="wrap">
+{{> layout/header h-title="주택상해화재보험" h-back=true }}
+
+	<form action="" class="bi_form">
+		<div class="bi_wrap">
+			<div class="stepper_wrap">
+				<div class="stepper" role="img">
+					<div class="pgs">
+						<span class="pgs_per" style="width: 0%;"><span class="motion home"></span></span>
+					</div>
+				</div>
+				<button type="button" class="stm_btn stm_l" onclick="$stepper.stepBack();">이전 단계</button>
+				<button type="button" class="stm_btn stm_r" onclick="$stepper.stepNext();">다음 단계</button>
+			</div>
+			
+			<div class="bi_stepper">
+				<div class="bi_top">
+					<!-- bit -->
+					<div class="bit">
+
+						<!-- 생년월일 -->
+						<div class="bit_inner active" data-pickitem="step1">
+							<P class="bit_inner_text">
+								고객님의 <span class="bold">생년월일</span>을 알려주세요.
+							</P>
+							<div class="bit_inner_sub_text">
+								법인사업자는 다이렉트 PC홈페이지에서 가입할 수 있습니다.<br/>
+								가입이 어려운 경우
+								{{> cp/button_question pop_id="pop_info" question_tit="가입제한 안내 팝업 열기" }}
+							</div>
+							<div class="bit_btn_scrollx">
+								<button type="button" class="btn_link short_cut sm rd_box">
+									<span class="text">보장내용 자세히 보기</span>
+								</button>
+							</div>
+						</div>
+						<!-- 생년월일 -->
+
+						<!-- 성별 -->
+						<div class="bit_inner active" data-pickitem="step2">
+							<P class="bit_inner_text">
+								고객님의 <span class="bold">성별</span>을 알려주세요
+							</P>
+						</div>
+						<!-- 성별 -->
+
+						<!-- 주택유형 -->
+						<div class="bit_inner" data-pickitem="step">
+							<P class="bit_inner_text">
+								<span class="bold">건물 형태를 선택</span>해주세요
+							</P>
+							<div class="bit_btn_scrollx">
+								<button type="button" class="btn_link short_cut sm rd_box" onclick="openHDPopup(this,'pop_type01');">
+									<span class="text">건물 형태 구분 안내</span>
+								</button>
+							</div>
+						</div>
+						<!-- 주택유형 -->
+
+						<!-- 소유 구분 -->
+						<div class="bit_inner" data-pickitem="step">
+							<P class="bit_inner_text">								
+								<span class="bold">고객님 명의</span>의 사업장인가요?
+							</P>
+						</div>
+						<!-- 소유 구분 -->
+
+					</div>
+					<!-- bit -->
+
+					<!-- bit_history -->
+					<div class="bit_history">
+						<div class="bit_history_inner">
+							<button type="button" class="selected_case step1 birth" title="생년월일 수정"></button>
+							<button type="button" class="selected_case step2 gender" title="성별 수정"></button>
+							<button type="button" class="selected_case step3 home" title="건물형태 수정"></button>
+							<button type="button" class="selected_case step4 person" title="명의정보 수정"></button>
+						</div>
+					</div>
+					<!-- bit_history -->
+
+				</div>
+
+
+				<div class="bi_opts_wrap">
+
+					<!-- 생년월일 -->
+					<div class="opts_area" tabindex="0" aria-label="생년월일 8자리를 입력하시면 다음단계로 이동합니다." data-pickitem="step1">
+						<div class="opts_area_item column">
+							<div class="birth_date_field" aria-live="polite"></div>
+							<div class="bi_keypad">
+								<div class="bi_keypad_item">
+									<button type="button" class="keypad_btn">1</button>
+									<button type="button" class="keypad_btn">2</button>
+									<button type="button" class="keypad_btn">3</button>
+									<button type="button" class="keypad_btn keypad_btn_del" aria-label="지우기"></button>
+								</div>
+								<div class="bi_keypad_item">
+									<button type="button" class="keypad_btn">4</button>
+									<button type="button" class="keypad_btn">5</button>
+									<button type="button" class="keypad_btn">6</button>
+									<button type="button" class="keypad_btn keypad_btn_delall">전체삭제</button>
+								</div>
+								<div class="bi_keypad_item">
+									<button type="button" class="keypad_btn">7</button>
+									<button type="button" class="keypad_btn">8</button>
+									<button type="button" class="keypad_btn">9</button>
+									<button type="button" class="keypad_btn">0</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 생년월일 -->
+
+					<!-- 성별 -->
+					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step2">
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio11" name="radio1" />
+								<label for="radio11">
+									<span class="label_cont">남성</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio12" name="radio1" />
+								<label for="radio12">
+									<span class="label_cont">여성</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- 성별 -->
+
+					<!-- 건물형태 -->
+					<div class="opts_area" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step3">
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio21" name="radio2" />
+								<label for="radio11">
+									<span class="label_cont">일반</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio22" name="radio2" />
+								<label for="radio12">
+									<span class="label_cont">공장</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- 건물형태 -->
+
+					<!-- 소유 구분 -->
+					<div class="opts_area" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step4">
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio31" name="radio1" />
+								<label for="radio11">
+									<span class="label_cont">자가 소유</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio32" name="radio1" />
+								<label for="radio12">
+									<span class="label_cont">임차</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- 소유 구분 -->
+				</div>
+			</div>
+
+
+		</div>
+	</form>
+</div>
+
+<script>
+$(document).ready(function() {
+  // $stepper.stepperInit();
+	$stepper.stepperInit(null, 0);
+});
+</script>
+
+
+<!-- s: popup area -->
+
+ <!-- s: 중요 유의사항 Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="ex_popup_bottom" popup-title="풍수해보험 보장 개시 안내" popup-active="true"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<ul class="list_ty3">
+			<li>풍수해∙지진재보험(소상공인)은 <strong>가입일 기준 7일 후 보험이 개시됩니다.</strong></li>
+			<li>기상청 기상특보 발령 후 보험가입을 하시면 보상이 되지 않습니다.</li>
+		</ul>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 중요 유의사항 Bottom 팝업 -->
+
+<!-- s: 가입제한 안내 Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_info" popup-title="가입제한 안내" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="info_cont">
+			<p class="mb_32">아래의 경우는 풍수해보험 가입이 어려워요</p>
+
+			<div class="info_gray">
+				<ul class="list_depth">
+					<li>법률상 소상공인이 아니면 가입이 어렵습니다.
+						<ul>
+							<li>소상공인이란? 「소상공인 보호 및 지원에 관한 법률」상 상시 근로자 5인 미만 사업자입니다. (제조업, 건설업, 운수업, 광업의 경우는 상시근로자 10인 미만)</li>
+						</ul>
+					</li>
+					<li>지하소재물건 및 옥외 간판(건물 벽체와 분리된 입간판)의 경우 가입이 제외됩니다.</li>	
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area right">{{> cp/button type="1" size="2" b-text="확인" }}</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 가입제한 안내 Bottom 팝업 -->
+
+
+<!-- s: 유효성 체크 -->
+{{#> popup/popup_layer popup-id="pop_alert" popup-title=""}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<p class="pl_txt1 pl_ico_ty_case1">
+			풍수해·지진재해보험(소상공인)은 만 19~99세까지 가입 가능합니다.
+			<br>
+			다시 확인해주세요.
+		</p>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_layer}}
+<!-- e: 유효성 체크 -->
+
+<!-- s: 건물형태 구분 안내 Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="건물 형태 구분 안내" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="info_cont">
+			<h2 class="">공장</h2>
+			<ul class="list_ty3">
+				<li>
+					아래와 같은 작업을 하는 공장 또는 작업장
+					<ol class="circle_list_ty2">
+						<li>제조 또는 가공 작업</li>
+						<li>기계, 기구 류의 수리 또는 개조 작업</li>
+						<li>광석, 광유 및 천연가스 채취 작업</li>
+						<li>동물의 도축 및 해체 작업, 종자 선별, 곡물 정선, 세탁 작업, 가스 충전 작업, 물품의 포장 작업, 폐기물처리 등의 작업을 하는 곳</li>
+					</ol>			
+				</li>
+			</ul>
+
+			<h2 class="">일반</h2>
+			<ul class="list_ty3">
+				<li>
+					주택과 공장을 제외한 모든 물건						
+				</li>				
+			</ul>
+
+			<h2 class="">주택</h2>
+			<ul class="list_ty3">
+				<li>
+					아파트, 연립주택, 다세대주택, 다가구주택, 단독주택과 같이 주택으로만 쓰이는 건물					
+				</li>
+				<li>
+					주택은 풍수해∙지진재해보험 (주택)으로 가입 가능
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인"}}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 건물형태 구분 안내 Bottom 팝업 -->
+	 
+<!-- e: popup area -->
+
+
+{{/ layout/default }}

@@ -34,8 +34,11 @@
 
 				{{#unless hall}}
 				<div class="right">
-						<button type="button" class="allmenu" title="전체메뉴 열기"></button>
-						{{> layout/nav }}
+					{{#if h-ins}}
+						<button type="button" class="insChk" onclick="openHDPopup(this,'pop_insChk');"><span class="blind">계약변경 팝업 열기</span></button>
+					{{/if}}
+					<button type="button" class="allmenu" title="전체메뉴 열기"></button>
+					{{> layout/nav }}
 				</div>
 				{{/unless}}
 			{{/if}}
