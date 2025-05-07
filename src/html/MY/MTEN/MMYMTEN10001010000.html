@@ -1,85 +1,79 @@
 {{#> layout/default page-title="신청방법 안내 | 마이페이지"}}
-	<div id="wrap" class="wrap">
-		{{> layout/header h-title="신청방법 안내" h-back=true }}
-		<div id="container" class="container">
-			<div class="content">
 
-				<div class="space_list_ty4">
-					<div class="item">
-						<h3 class="title_h3">자동차번호 확정</h3>
-						<p class="text_sub">
-							차대번호로 자동차 보험을 가입하신 경우 피보험자 명의로 등록하신 자동차번호로 확정하실 수 있습니다.
-						</p>
-					</div>
+<!-- s: 25-05-07 수정 -->
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-active=true popup-id="pop_type01" popup-title="신청방법 안내" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="space_list_ty4">
+			<div class="item">
+				<h3 class="title_h3">자동차번호 확정</h3>
+				<p class="text_sub">
+					차대번호로 자동차 보험을 가입하신 경우 피보험자 명의로 등록하신 자동차번호로 확정하실 수 있습니다.
+				</p>
+			</div>
 
-					<div class="item">
-						<h3 class="title_h3">이용안내</h3>
-						<ul class="list_ty3">
-							<li>이용대상 : 인터넷으로 가입한 다이렉트 자동차보험을 유지 중인 계약자</li>
-							<li>이용시간 : 365일 24시간</li>
-							<li>대상보종 : 개인용 및 개인소유 업무용</li>
-						</ul>
-						
-					</div>
-
-					<div class="item">
-						<h3 class="title_h3">이용방법</h3>
-						<ol class="my_info_flow">
-							<li>
-								<span class="num">01</span>
-								<div class="cont">
-									<strong class="tit">계약 선택</strong>
-									<p class="desc">인터넷으로 가입한 다이렉트 자동차보험을 유지 중인 계약자</p>
-								</div>
-							</li>
-							<li>
-								<span class="num">02</span>
-								<div class="cont">
-									<strong class="tit">변경정보 입력</strong>
-									<p class="desc">자동차번호와 변경 기준일을 입력해주세요.</p>
-								</div>
-							</li>
-							<li>
-								<span class="num">03</span>
-								<div class="cont">
-									<strong class="tit">변경정보 확인</strong>
-									<p class="desc">변경정보를 확인한 후 전자서명을 진행해주세요.</p>
-								</div>
-							</li>
-							<li>
-								<span class="num">04</span>
-								<div class="cont">
-									<strong class="tit">완료</strong>
-									<p class="desc">신청이 완료되면 변경 기분일에 맞춰 자동차번호 확정/변경이 적용됩니다.</p>
-								</div>
-							</li>
-						</ol>
-
-					</div>
-
-
-				</div>
-
+			<div class="item">
+				<h3 class="title_h3">이용안내</h3>
+				<ul class="list_ty3">
+					<li>이용대상 : 인터넷으로 가입한 다이렉트 자동차보험을 유지 중인 계약자</li>
+					<li>이용시간 : 365일 24시간</li>
+					<li>대상보종 : 개인용 및 개인소유 업무용</li>
+				</ul>
 				
-				
+			</div>
+
+			<div class="item">
+				<h3 class="title_h3">이용방법</h3>
+				<ol class="my_info_flow">
+					<li>
+						<span class="num">01</span>
+						<div class="cont">
+							<strong class="tit">계약 정보</strong>
+							<p class="desc">인터넷으로 가입한 다이렉트 자동차보험을 유지 중인 계약자</p>
+						</div>
+					</li>
+					<li>
+						<span class="num">02</span>
+						<div class="cont">
+							<strong class="tit">변경정보 입력</strong>
+							<p class="desc">자동차번호와 변경 기준일을 입력해주세요.</p>
+						</div>
+					</li>
+					<li>
+						<span class="num">03</span>
+						<div class="cont">
+							<strong class="tit">변경정보 확인</strong>
+							<p class="desc">변경정보를 확인한 후 전자서명을 진행해주세요.</p>
+						</div>
+					</li>
+					<li>
+						<span class="num">04</span>
+						<div class="cont">
+							<strong class="tit">완료</strong>
+							<p class="desc">신청이 완료되면 변경 기분일에 맞춰 자동차번호 확정/변경이 적용됩니다.</p>
+						</div>
+					</li>
+				</ol>
 
 			</div>
 
-			<!-- // container -->
-		</div>
-
-		<!-- s: 하단 고정 버튼 영역 -->
-		<div class="bottom_fix_wrap">
-			<div class="btn_area">
-				{{> cp/button type="1" size="2" b-text="다음"}}
+			<div class="item">
+				<h3 class="title_h3">유의사항</h3>
+				<ul class="list_ty3">
+					<li>기타 문의사항은 현대해상다이렉트 고객센터(1588-5656, 평일 09:00~18:00)로 연락해주세요.</li>
+				</ul>
 			</div>
 		</div>
-		<!-- s: 하단 고정 버튼 영역 -->
-
 	</div>
-
-	<!-- s: popup area -->
-	 
-	<!-- e: popup area -->
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="다음"}}
+	</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+<!-- e: 25-05-07 수정 -->
 
 {{/ layout/default }}
