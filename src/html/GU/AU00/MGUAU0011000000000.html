@@ -1,0 +1,69 @@
+{{#> layout/default page-title="간편비밀번호 발급/관리 | 이용안내"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="타이틀" h-back=true }}
+		<div id="container" class="container">
+			<div class="content">
+				<!-- s: content_top -->
+				<div class="content_top">
+					<h2 class="title_h2">
+						<strong>
+							간편비밀번호를<br>
+							등록/삭제 하실 수 있어요
+						</strong>
+					</h2>
+					<p class="text_sub">6자리 숫자로 간편하게 로그인, 인증해보세요.</p>
+				</div>
+				<!-- e: content_top -->
+
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">이름</div>
+						{{> cp/text inp-title="이름 입력" placeholder="입력해 주세요" }}
+					</div>
+		
+					<div class="form_line">
+						<div class="label_tit">주민등록번호/외국인등록번호</div>
+						<div class="comp_wrap birth">
+							{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호(외국인등록번호) 앞자리 입력" }}
+							<span class="dash">-</span>
+							<div class="id_pass_box">
+								{{> cp/text type="tel" minlength="1" maxlength="1" placeholder="●" inp-title="주민등록번호(외국인등록번호) 뒷1자리 입력" no_del="flase" }}
+								<div class="id_pass">
+									●●●●●●
+								</div>
+							</div>
+						</div>
+					</div>
+		
+				</div>
+				
+				<!-- s: 꼭 알아두세요 -->
+				{{#> cp/notice }}
+					<ul class="list_depth">
+						<li>간편비밀번호는 등록한 브라우저에서만 이용할 수 있습니다.</li>
+						<li>PC/휴대폰/인터넷 브라우저 등 사용환경이 다르거나 캐시 및 데이터를 삭제한 경우에는 간편비밀번호를 다시 등록해 주셔야 합니다.</li>
+						<li>등록하신 간편비밀번호를 잊어버리신 경우, 간편하게 등록하여 다시 이용하실 수 있습니다.</li>
+					</ul>
+				{{/ cp/notice }}
+				<!-- e: 꼭 알아두세요 -->
+			</div>
+
+			<!-- // container -->
+		</div>
+
+		<!-- s: 하단 고정 버튼 영역 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="3" size="2" b-text="삭제"}}
+				{{> cp/button type="1" size="2" b-text="등록"}}
+			</div>
+		</div>
+		<!-- s: 하단 고정 버튼 영역 -->
+
+	</div>
+
+	<!-- s: popup area -->
+	 
+	<!-- e: popup area -->
+
+{{/ layout/default }}
