@@ -1,0 +1,233 @@
+{{#> layout/default page-title="자동차 상세정보 | 상품"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-title="건축물대장 조회" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+
+		<form action="" class="bi_form">
+			<div class="bi_wrap">
+				<div class="stepper_wrap">
+					<div class="stepper" role="img">
+						<div class="pgs">
+							<span class="pgs_per" style="width: 0%;"><span class="motion home"></span></span>
+						</div>
+					</div>
+					<button type="button" class="stm_btn stm_l" onclick="$stepper.stepBack();">이전 단계</button>
+					<button type="button" class="stm_btn stm_r" onclick="$stepper.stepNext();">다음 단계</button>
+				</div>
+				
+				<div class="bi_stepper">
+					<div class="bi_top">
+						<!-- bit -->
+						<div class="bit">
+	
+							<!-- 동 선택 -->
+							<div class="bit_inner active" data-pickitem="step1">
+								<P class="bit_inner_text">
+									<!-- 동/층/호로 구성된 아파트 경우 -->
+									<span class="bold">가입하시려는 주택</span>이<br>
+									몇 동에 있나요?
+									<!-- 동/층/호로 구성된 아파트 경우 -->
+									<!-- 단독주택 경우 -->
+									<!-- 
+									<span class="bold">몇 동</span>에<br>
+									살고 계신가요?
+									 -->
+									<!-- 단독주택 경우 -->
+									<span class="sub_txt">단독 건물/주택은 동 구분이 없어요</span>
+								</P>
+							</div>
+							<!-- 동 선택 -->
+	
+	
+							<!-- 층 선택 -->
+							<div class="bit_inner" data-pickitem="step3">
+								<P class="bit_inner_text">
+									<!-- 동/층/호로 구성된 아파트 경우 -->
+									<span class="bold">몇 층</span>에 있나요?
+									<!-- 동/층/호로 구성된 아파트 경우 -->
+									 <!-- 단독주택 경우 -->
+									<!-- 
+									<span class="bold">몇 층</span>에 살고 계신가요?
+									-->
+									 <!-- 단독주택 경우 -->
+									 <span class="sub_txt">건물 전체일 경우 아무 층이나 선택해도 됩니다.</span>
+								</P>
+							</div>
+							<!-- 층 선택 -->
+	
+							<!-- 호 선택 -->
+							<div class="bit_inner active" data-pickitem="step4">
+								<P class="bit_inner_text">
+									<!-- 동/층/호로 구성된 아파트 경우 -->
+									<span class="bold">몇 호</span>실인가요?
+									<!-- 동/층/호로 구성된 아파트 경우 -->
+									<!-- 단독주택 경우 -->
+									<!-- 
+									건출물대장에서 <span class="bold">호실 정보</span>를<br>
+									<span class="bold">조회</span> 할 수 없습니다.
+									-->
+									<!-- 단독주택 경우 -->
+								</P>
+								<div class="bit_btn_scrollx">
+									<button type="button" class="btn_link short_cut sm rd_box">
+										<span class="text">주택 거주 형태별 보장 안내</span>
+									</button>
+								</div>
+							</div>
+							<!-- 호 선택 -->
+	
+						</div>
+						<!-- bit -->
+	
+						<!-- bit_history -->
+						<div class="bit_history">
+							<div class="bit_history_inner">
+								<button type="button" class="selected_case step1 building" title="동 수정">DD</button>
+								<button type="button" class="selected_case step2 floor" title="층 수정">DD</button>
+								<button type="button" class="selected_case step3 room" title="호 수정">DD</button>
+							</div>
+						</div>
+						<!-- bit_history -->
+	
+					</div>
+	
+	
+					<div class="bi_opts_wrap">
+	
+						<!-- 동 -->
+						<div class="opts_area" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step1">
+							<div class="opts_area_item">
+								<div class="inp_radio rd_btn_s1">
+									<input type="radio" id="radio11" name="radio1" />
+									<label for="radio11">
+										<span class="label_cont">101동</span>
+									</label>
+								</div>
+								<div class="inp_radio rd_btn_s1">
+									<input type="radio" id="radio12" name="radio1" />
+									<label for="radio12">
+										<span class="label_cont">102동</span>
+									</label>
+								</div>
+								<div class="inp_radio rd_btn_s1">
+									<input type="radio" id="radio13" name="radio1" />
+									<label for="radio13">
+										<span class="label_cont">103동</span>
+									</label>
+								</div>
+								<div class="inp_radio rd_btn_s1">
+									<input type="radio" id="radio14" name="radio1" />
+									<label for="radio14">
+										<span class="label_cont">104동</span>
+									</label>
+								</div>
+								<!-- 단독주택 경우 -->
+								<div class="inp_radio rd_btn_s1 full">
+									<input type="radio" id="radio14" name="radio1" />
+									<label for="radio14">
+										<span class="label_cont">해당 사항 없음</span>
+									</label>
+								</div>
+								<!-- 단독주택 경우 -->
+							</div>
+						</div>
+						<!-- 동 -->
+	
+						<!-- 층 -->
+						<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step2">
+							<div class="opts_area_item">
+								<div class="inp_radio rd_btn_s3 full">
+									<input type="radio" id="radio21" name="radio2" />
+									<label for="radio21">
+										<span class="label_cont">
+											아파트, 주상복합
+											<small class="sm_txt">5층 이상 공동 주택</small>
+										</span>
+									</label>
+								</div>
+								<div class="inp_radio rd_btn_s3 full">
+									<input type="radio" id="radio22" name="radio2" />
+									<label for="radio22">
+										<span class="label_cont">
+											연립, 다세대
+											<small class="sm_txt">소유권이 분리된 4층 이하의 공동 주택</small>
+										</span>
+									</label>
+								</div>
+								<div class="inp_radio rd_btn_s3 full">
+									<input type="radio" id="radio23" name="radio2" />
+									<label for="radio23">
+										<span class="label_cont">
+											단독, 다가구
+											<small class="sm_txt">소유권이 분리되지 않은 주택</small>
+										</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<!-- 층 -->
+	
+						<!-- 호 -->
+						<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step3">
+							<div class="opts_area_item">
+								<div class="inp_radio rd_btn_s3">
+									<input type="radio" id="radio31" name="radio3" />
+									<label for="radio31">
+										<span class="label_cont">
+											자가 소유
+											<small class="sm_txt">실제 거주 중</small>
+										</span>
+									</label>
+								</div>
+								<div class="inp_radio rd_btn_s3">
+									<input type="radio" id="radio32" name="radio3" />
+									<label for="radio32">
+										<span class="label_cont">
+											임차인
+											<small class="sm_txt">전세 또는 월세로 거주</small>
+										</span>
+									</label>
+								</div>
+								<div class="inp_radio rd_btn_s3">
+									<input type="radio" id="radio33" name="radio3" />
+									<label for="radio33">
+										<span class="label_cont">
+											자가 소유
+											<small class="sm_txt">임차 중</small>
+										</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<!-- 호 -->
+	
+						
+	
+						
+					</div>
+				</div>
+	
+	
+			</div>
+		</form>
+		
+
+
+
+
+	</div>
+
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+<script>
+$(document).ready(function() {
+	// $stepper.stepperInit();
+	$stepper.stepperInit(null, 2);
+});
+</script>
+
+{{/ layout/default }}
