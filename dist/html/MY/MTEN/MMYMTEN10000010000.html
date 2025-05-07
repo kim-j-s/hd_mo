@@ -60,6 +60,7 @@
 					</div>
 
 					<div class="right">
+						<button type="button" class="insChk" onclick="openHDPopup(this,'pop_insChk');"><span class="blind">계약변경 팝업 열기</span></button>
 						<button type="button" class="allmenu" title="전체메뉴 열기"></button>
 						<div class="nav_menu_wrap" aria-hidden="true">
 							<div class="nav_menu_inner">
@@ -159,13 +160,15 @@
 					</div>
 
 					<!-- s: 꼭 알아두세요 -->
+					<!-- s: 25-05-07 수정 -->
 					<div class="bottom_fix_notice">
 						<div class="acd_item">
-							<div class="acd_head">
-								<button type="button" class="acd_btn" aria-expanded="false"><span>꼭 알아두세요</span></button>
+							<div class="acd_head active">
+								<button type="button" class="acd_btn" aria-expanded="true"><span>꼭 알아두세요</span></button>
 							</div>
 							<div class="acd_cont">
-								<div class="inner">
+								<div class="inner" style="display: block">
+									<!-- e: 25-05-07 수정 -->
 									<ul class="list_depth">
 										<li>인터넷으로 가입한 다이렉트 상품(개인용 및 개인소유 업무용)에 한해 계약변경이 가능합니다.</li>
 										<li>하이플래너, 대리점 및 전화 상담직원을 통해 가입하신 고객님께서는 현대해상홈페이지(m.hi.co.kr) 또는 대표 콜센터(1588-5656)를 통해 계약변경을 진행하실 수 있습니다.</li>
@@ -176,13 +179,153 @@
 					</div>
 					<!-- e: 꼭 알아두세요 -->
 				</div>
-
-				<!-- // container -->
 			</div>
 		</div>
 
+		<!-- s: 25-05-07 수정 -->
 		<!-- s: popup area -->
+		<!-- s: Full 팝업 -->
+		<div class="popup_wrap full" id="pop_insChk" role="dialog" aria-hidden="true">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_insChk');"></div>
+				<div class="popup_inner">
+					<div class="popup_head"><div class="popup_head_title">자동차 계약변경</div></div>
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="space_list_ty4">
+								<div class="item">
+									<h3 class="title_h3 ico_ty ico_ty_c01">자동차정보 변경</h3>
+									<ul class="opt_select_list opt_case5">
+										<li>
+											<div class="option" role="button" tabindex="0">
+												<span class="opi_t1">자동차번호 확정</span>
+											</div>
+										</li>
+										<li>
+											<div class="option" role="button" tabindex="0">
+												<span class="opi_t1">자동차번호 변경</span>
+											</div>
+										</li>
+										<li>
+											<div class="option" role="button" tabindex="0">
+												<span class="opi_t1">자동차 변경(차량대체)</span>
+											</div>
+										</li>
+										<li>
+											<div class="option" role="button" tabindex="0">
+												<span class="opi_t1">부속추가</span>
+											</div>
+										</li>
+									</ul>
+								</div>
 
+								<div class="item">
+									<h3 class="title_h3 ico_ty ico_ty_c02">운전자정보 변경</h3>
+									<ul class="opt_select_list opt_case5">
+										<li>
+											<div class="option" role="button" tabindex="0">
+												<span class="opi_t1">단기운전자 신청</span>
+											</div>
+										</li>
+										<li>
+											<div class="option" role="button" tabindex="0">
+												<span class="opi_t1">단기운전자 변경</span>
+											</div>
+										</li>
+										<li>
+											<div class="option" role="button" tabindex="0">
+												<span class="opi_t1">운전자범위/연령 변경</span>
+											</div>
+										</li>
+										<li>
+											<div class="option" role="button" tabindex="0">
+												<span class="opi_t1">가입경력인정 신청/변경</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+
+								<div class="item">
+									<h3 class="title_h3 ico_ty ico_ty_c03">담보/특약 변경</h3>
+									<ul class="opt_select_list opt_case5">
+										<li>
+											<div class="option" role="button" tabindex="0">
+												<span class="opi_t1">담보/특약 변경</span>
+											</div>
+										</li>
+										<li>
+											<div class="option" role="button" tabindex="0">
+												<span class="opi_t1">안전운전 할인특약 가입</span>
+											</div>
+										</li>
+										<li>
+											<div class="option" role="button" tabindex="0">
+												<span class="opi_t1">Eco마일리지 할인특약 가입</span>
+											</div>
+										</li>
+										<li>
+											<div class="option" role="button" tabindex="0">
+												<span class="opi_t1">Eco마일리지 할인특약 사진등록(최초)</span>
+											</div>
+										</li>
+										<li>
+											<div class="option" role="button" tabindex="0">
+												<span class="opi_t1">Eco마일리지 할인특약 사진등록(최종)</span>
+											</div>
+										</li>
+										<li>
+											<div class="option" role="button" tabindex="0">
+												<span class="opi_t1">Eco마일리지 할인특약 사진등록(대체)</span>
+											</div>
+										</li>
+										<li>
+											<div class="option" role="button" tabindex="0">
+												<span class="opi_t1">효도하는 자녀 할인특약 가입</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+
+								<div class="item">
+									<h3 class="title_h3 ico_ty ico_ty_c04">계약취소/해지</h3>
+									<ul class="opt_select_list opt_case5">
+										<li>
+											<div class="option" role="button" tabindex="0">
+												<span class="opi_t1">자동차보험 개시전 취소</span>
+											</div>
+										</li>
+										<li>
+											<div class="option" role="button" tabindex="0">
+												<span class="opi_t1">자동차보험 양도/말소해지</span>
+											</div>
+										</li>
+										<li>
+											<div class="option" role="button" tabindex="0">
+												<span class="opi_t1">타임쉐어자동차보험 취소</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+
+								<div class="item">
+									<h3 class="title_h3 ico_ty ico_ty_c05">기타</h3>
+									<ul class="opt_select_list opt_case5">
+										<li>
+											<div class="option" role="button" tabindex="0">
+												<span class="opi_t1">계약체결 전자서명(개인)</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_insChk');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: Full 팝업 -->
 		<!-- e: popup area -->
+		<!-- e: 25-05-07 수정 -->
 	</body>
 </html>
