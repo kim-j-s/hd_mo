@@ -102,7 +102,7 @@
 									</p>
 									<div class="bit_btn_scrollx">
 										<button type="button" class="btn_link short_cut sm rd_box">
-											<span class="text">보장내용 자세히 보기</span>
+											<span class="text">자세한 보장 내용이 궁금하다면</span>
 										</button>
 									</div>
 								</div>
@@ -135,7 +135,7 @@
 								<div class="bit_inner active" data-pickitem="step4">
 									<p class="bit_inner_text">
 										<span class="bold">동물등록</span>
-										을 하셨는지 알려주시면 보험료를 알아볼께요
+										을 하셨는지 알려주시면 보험료를 알아볼게요
 									</p>
 								</div>
 								<!-- 등록 -->
@@ -145,10 +145,10 @@
 							<!-- bit_history -->
 							<div class="bit_history">
 								<div class="bit_history_inner">
-									<button type="button" class="selected_case step1 dog" title="견종 수정">sss</button>
-									<button type="button" class="selected_case step2 sex" title="성별 수정">sss</button>
-									<button type="button" class="selected_case step3 birth" title="생년월일 수정">sss</button>
-									<button type="button" class="selected_case step4 reg" title="등록여부 수정">sss</button>
+									<button type="button" class="selected_case step1 dog" title="견종 수정"></button>
+									<button type="button" class="selected_case step2 sex" title="성별 수정"></button>
+									<button type="button" class="selected_case step3 birth" title="생년월일 수정"></button>
+									<button type="button" class="selected_case step4 reg" title="등록여부 수정"></button>
 								</div>
 							</div>
 							<!-- bit_history -->
@@ -278,6 +278,34 @@
 
 		<!-- s: popup area -->
 
+		<!-- s: 유효성 체크 -->
+		<div class="popup_wrap layer" id="pop_alert" role="dialog" aria-hidden="true">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_alert');"></div>
+				<div class="popup_inner">
+					<div class="popup_head"><div class="popup_head_title"></div></div>
+					<div class="popup_cont">
+						<div class="popup_content">
+							<p class="pl_txt1 pl_ico_ty_case1">
+								<!--연월일 숫자 유효성 체크-->
+								생년월일 방식을 다시 확인해주세요.
+								<!--제한 나이 유효성 체크-->
+								<!-- 생후 61일~만 10세까지 가입할 수 있어요. -->
+							</p>
+						</div>
+					</div>
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">확인</span>
+							</button>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_alert');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: 유효성 체크 -->
 		<!-- e: popup area -->
 	</body>
 </html>

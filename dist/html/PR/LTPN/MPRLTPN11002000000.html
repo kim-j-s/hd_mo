@@ -114,7 +114,7 @@
 										고객님의
 										<span class="bold">생년월일</span>
 										을 알려주세요.
-										<small class="sub_txt">0~79세까지 가입할 수 있어요.</small>
+										<small class="sub_txt">0~75세까지 가입하실 수 있어요.</small>
 									</p>
 								</div>
 								<!-- 생년월일 -->
@@ -248,6 +248,35 @@
 		</script>
 
 		<!-- s: popup area -->
+
+		<!-- s: 유효성 체크 -->
+		<div class="popup_wrap layer" id="pop_alert" role="dialog" aria-hidden="true">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_alert');"></div>
+				<div class="popup_inner">
+					<div class="popup_head"><div class="popup_head_title"></div></div>
+					<div class="popup_cont">
+						<div class="popup_content">
+							<p class="pl_txt1 pl_ico_ty_case1">
+								<!--연월일 숫자 유효성 체크-->
+								생년월일 방식을 다시 확인해주세요.
+								<!--제한 나이 유효성 체크-->
+								<!-- 0~75세까지 가입하실 수 있어요. -->
+							</p>
+						</div>
+					</div>
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">확인</span>
+							</button>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_alert');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: 유효성 체크 -->
 
 		<!-- e: popup area -->
 	</body>
