@@ -1,16 +1,3 @@
-$(function () {
-
-	// 좌우 더미 엘리먼트 사이즈 조정
-  function setDmpWidth() {
-    const winWidth = $(window).width();
-    const $item = $('.opt_select_wrap .opt_select:not(.opt_select_dmp)').first();
-    const itemWidth = $item.outerWidth(); // 98
-		const itemGap = 16;
-		const dmpWidth = (winWidth / 2) - ((itemWidth / 2) + itemGap);
-
-    $('.opt_select_wrap .opt_select_dmp').css('width', dmpWidth + 'px');
-  }
-
 	// 초기 진입 세팅
 	function initOptSelectUI() {
 		$('.opt_select_wrap').each(function () {
@@ -39,6 +26,21 @@ $(function () {
 			}
 		});
 	}
+
+$(function () {
+
+	// 좌우 더미 엘리먼트 사이즈 조정
+  function setDmpWidth() {
+    const winWidth = $(window).width();
+    const $item = $('.opt_select_wrap .opt_select:not(.opt_select_dmp)').first();
+    const itemWidth = $item.outerWidth(); // 98
+		const itemGap = 16;
+		const dmpWidth = (winWidth / 2) - ((itemWidth / 2) + itemGap);
+
+    $('.opt_select_wrap .opt_select_dmp').css('width', dmpWidth + 'px');
+  }
+
+
 
 	// 좌우 버튼 제어
 	function initOptSelectScrollButtons() {
