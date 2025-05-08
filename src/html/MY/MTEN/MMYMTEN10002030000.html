@@ -1,0 +1,53 @@
+{{#> layout/default page-title="자동차번호 확정/변경 | 마이페이지"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="자동차번호 확정/변경" h-back=true }}
+		<div id="container" class="container">
+			<div class="content">
+
+				<!-- s: content_top -->
+				<div class="content_top">
+					<h2 class="title_h2">
+						<strong>확정/변경할 정보를<br> 입력해주세요</strong>
+					</h2>
+				</div>
+				<!-- e: content_top -->
+
+				<div class="info_gray">
+					<dl>
+						<dt>차대번호</dt>
+						<dd>324EWLJ324LKJ234J324</dd>
+					</dl>
+				</div>
+
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">확정/변경 자동차번호</div>
+						{{> cp/text placeholder="123가4567(띄어쓰기 없이)" maxlength="9"}}
+					</div>
+					<div class="form_line">
+						<div class="label_tit">변경 기준일</div>
+						{{> cp/text cal=true }}
+					</div>
+				</div>
+				<ul class="list_ty2">
+					<li>변경기준일의 00시부터 보험종료일 24시까지 변경내용의 효력이 발생합니다.</li>
+					<li>무번호확정인 경우, 책임개시일 또는 차량대체일을 입력해주세요.</li>
+					<li>변경기준일의 00시부터 보험종료일 24시까지 변경내용의 효력이 발생합니다.</li>
+					<li>자동차번호 변경인 경우, 변경등록일을 입력해주세요.</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- s: 하단 고정 버튼 영역 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="2" b-text="다음" disabled=true}}
+			</div>
+		</div>
+		<!-- s: 하단 고정 버튼 영역 -->
+	</div>
+
+	<!-- s: popup area -->
+	<!-- e: popup area -->
+
+{{/ layout/default }}
