@@ -122,16 +122,17 @@
 
 		if (!isDisabled && !isReadonly) {
 			if(val){
-				$del.show();
+				// $del.show();
+				$wrap.addClass('active');
 			}else {
+				// $del.hide();
 				$wrap.removeClass('active');
-				$del.hide();
 			}
 		}
 		
-    $('.input_text .inp').removeClass('active').children('.del').hide();
-    $wrap.addClass('active');
-    $del.show();
+    // $('.input_text .inp').removeClass('active').children('.del').hide();
+    // $wrap.addClass('active');
+    // $del.show();
 
     // (this.value) ? $wrap.addClass('active'):$wrap.removeClass('active');
 
@@ -152,9 +153,18 @@
 				newVal = 0;
 
 		setTimeout(() => {
-			$del.hide();
-			$wrap.removeClass('active');
+			// $del.hide();
+			// $wrap.removeClass('active');
+			if (!$wrap.find('.del').is(':focus') ) {
+				console.log('포커스 아닌 상태');
+				$wrap.removeClass('active');
+			} else {
+				console.log('포커스 상태');
+			}			
 		}, 100);
+		$wrap.find('.del').on('blur', function(){
+			$(this).closest('.inp').removeClass('active');
+		});
 
 		// 전화번호
 		if($this.closest('.input_text').hasClass('phone')){
@@ -172,10 +182,10 @@
     const $this = $(this);
     e.preventDefault();
 	
-	setTimeout(() => {
-		$this.hide();
-		$this.siblings('input').val('').focus();
-	}, 100);
+		setTimeout(() => {
+			// $this.hide();
+			$this.siblings('input').val('').focus();
+		}, 100);
 
 		if($this.closest('.comp_wrap').hasClass('phone')){
 			$this.siblings('input').removeClass('isVal');
