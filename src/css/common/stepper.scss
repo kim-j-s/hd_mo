@@ -85,7 +85,35 @@
 			background: url(../images/icon/arrowDown_ty4.svg) no-repeat center / 17px auto;
 		}
 	}
-
+	&.certify {
+		li {
+			font-size: var(--font-size-body-medium);
+			background-size: 24px auto;
+			background-position: 20px 24px;
+			background-repeat: no-repeat;
+			.inner {
+				&::before {
+					counter-increment: number 1;
+					content: 'STEP 0' counter(number);
+					position: static;
+					display: block;
+					width: auto;
+					height: auto;
+					border: none;
+					border-radius: 0;
+					font-size: var(--font-size-body-small);
+					color: var(--color-text-subtle);
+					font-weight: 700;
+				}
+			}
+			&.pc {
+				background-image: url(../images/common/cert/icon_step_pc.svg);
+			}
+			&.phone {
+				background-image: url(../images/common/cert/icon_step_phone.svg);
+			}
+		}
+	}
 }
 
 
