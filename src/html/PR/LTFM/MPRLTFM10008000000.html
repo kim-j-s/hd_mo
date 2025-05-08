@@ -72,7 +72,7 @@
 					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">카드사</div>
-							{{> cp/selectitem si_ph="카드사 선택" si_title="카드사 선택" si_popup="pop_type01"}}
+							{{> cp/selectitem si_ph="카드사 선택" si_title="카드사 선택" }}
 							<!-- s: KB카드 선택 시 노출 -->
 							{{> cp/checkbox id="checkbox1" labelname="앱카드 결제" }}
 							<!-- e: KB카드 선택 시 노출 -->
@@ -114,10 +114,9 @@
 											<div class="item_top" id="card_chk1_cont">
 												<div class="text">
 													현대카드 M포인트 사용
-													<button type="button" class="question_mark_btn" onclick="openHDPopup(this,'pop_type04');" title="현대카드 M포인트 사용 팝업 오픈">
-														<i class="hd_icon popover_help"></i>
-														<span class="blind">도움말</span>
-													</button>
+													<!-- s: 25-05-08 -->
+													{{> cp/button_question question-icon="arrow" pop_id="pop_type04" question_tit="현대카드 결제 혜택 안내" }}
+													<!-- e: 25-05-08 -->
 												</div>
 												<div class="desc">(최소 1,000P부터 30,000P까지 이용 가능)</div>
 											</div>
@@ -135,7 +134,7 @@
 					<div class="banner_slide_wrap">
 						<div id="card_reward_banner_wrap" class="swiper"> 
 							<div class="swiper-wrapper">
-								<a class="swiper-slide bann_wrap bann_ty1 co_ty2">			
+								<a class="swiper-slide bann_wrap bann_ty1 co_ty2" href="#">			
 									<div class="inner">
 										<span class="logo">{{> cp/icon iconClass="logo_card_shinhan"}}</span>		
 										<div class="bann_cont">
@@ -146,7 +145,7 @@
 										</div>
 									</div>
 								</a>
-								<a class="swiper-slide bann_wrap bann_ty1">
+								<a class="swiper-slide bann_wrap bann_ty1" href="#">
 									<div class="inner">
 										<span class="logo">{{> cp/icon iconClass="logo_card_hundai"}}</span>
 										<div class="bann_cont">
@@ -158,7 +157,7 @@
 										</div>
 									</div>
 								</a>			
-								<a class="swiper-slide bann_wrap bann_ty1 co_ty3">			
+								<a class="swiper-slide bann_wrap bann_ty1 co_ty3" href="#">			
 									<div class="inner">
 										<span class="logo">{{> cp/icon iconClass="logo_card_samsung"}}</span>		
 										<div class="bann_cont">
@@ -179,47 +178,7 @@
 					<!-- e: 25-05-08 수정 -->
 					<!-- e: 카드 혜택 안내 배너 -->	
 					
-					<div class="divider_ty1"></div>
-					<h3 class="title_h4">2회차 이후 결제 정보 입력</h3>
-					<!-- s: 카드사 선택 전 -->
-					{{> cp/checkbox checkbox_class="rd_box" id="checkbox04-9" label_class="chk_label_ty3" labelname="1회차 보험료 결제 계좌와 동일합니다" }}			
-					<div class="form_group_wrap">
-						<div class="form_line">
-							<div class="label_tit">은행</div>
-							{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" si_popup="pop_type01"}}
-						</div>
-						<div class="form_line">
-							<div class="label_tit">계좌번호</div>
-							{{> cp/text placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
-						</div>
-						<div class="form_line">
-							<div class="label_tit">매월 자동이체일</div>
-							{{> cp/selectitem si_ph="매월 자동이체일 선택" si_item="5일" si_title="매월 자동이체일 선택" si_popup="pop_type03"}}
-						</div>
-					</div>
-					<!-- e: 카드사 선택 전 -->
-					<!-- s: 카드사 선택 후 -->
-					<div class="radio_group_wrap" role="radiogroup">
-						{{> cp/radio rd-class="rd_btn" rd-id="radio_card1" name="radio01" labelname="현대카드로 결제" checked=true }}
-						{{> cp/radio rd-class="rd_btn" rd-id="radio_card2" name="radio01" labelname="계좌이체로 결제" }}
-					</div>
-					<!-- e: 카드사 선택 후 -->
-
-					<div class="info_gray">
-						<dl>
-							<dt>납입 기간</dt>
-							<dd>10년</dd>
-						</dl>
-						<dl>
-							<dt>납입 방법</dt>
-							<dd>매월</dd>
-						</dl>
-					</div>
-					
-					<div class="checkbox_group_wrap column">
-						{{> cp/checkbox labelname="만기환급금 입금 계좌 동의" ag_more=true id="agree01" checkbox_class="rd_box" }}
-						{{> cp/checkbox labelname="자동이체 약관 동의" ag_more=true id="agree02" checkbox_class="rd_box" }}
-					</div>
+					<!-- 25-05-08 2회차 탭 아래로 이동 -->
 				</div>
 
 				<!-- 계좌이체 -->
@@ -228,7 +187,7 @@
 					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">은행</div>
-							{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" si_popup="pop_type01"}}
+							{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" }}
 						</div>
 						<div class="form_line">
 							<div class="label_tit">계좌번호</div>
@@ -240,40 +199,7 @@
 						</div>
 					</div>
 					
-					<div class="divider_ty1"></div>
-					<h3 class="title_h4">2회차 이후 결제 정보 입력</h3>
-		
-					{{> cp/checkbox checkbox_class="rd_box" id="checkbox04-9" label_class="chk_label_ty3" labelname="1회차 보험료 결제 계좌와 동일합니다" }}			
-					<div class="form_group_wrap">
-						<div class="form_line">
-							<div class="label_tit">은행</div>
-							{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" si_popup="pop_type01"}}
-						</div>
-						<div class="form_line">
-							<div class="label_tit">계좌번호</div>
-							{{> cp/text placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
-						</div>
-						<div class="form_line">
-							<div class="label_tit">매월 자동이체일</div>
-							{{> cp/selectitem si_ph="매월 자동이체일 선택" si_item="5일" si_title="매월 자동이체일 선택" si_popup="pop_type03"}}
-						</div>
-					</div>
-					
-					<div class="info_gray">
-						<dl>
-							<dt>납입 기간</dt>
-							<dd>10년</dd>
-						</dl>
-						<dl>
-							<dt>납입 방법</dt>
-							<dd>매월</dd>
-						</dl>
-					</div>
-					
-					<div class="checkbox_group_wrap column">
-						{{> cp/checkbox labelname="만기환급금 입금 계좌 동의" ag_more=true id="agree01" checkbox_class="rd_box" }}
-						{{> cp/checkbox labelname="자동이체 약관 동의" ag_more=true id="agree02" checkbox_class="rd_box" }}
-					</div>
+					<!-- 25-05-08 2회차 탭 아래로 이동 -->
 				</div>
 
 				<!-- 간편결제 -->
@@ -329,42 +255,53 @@
 						</ul>
 						{{/ cp/accordion }}
 					</div>
-					
-					<div class="divider_ty1"></div>
-					<h3 class="title_h4">2회차 이후 결제 정보 입력</h3>
-					<div class="form_group_wrap">
-						<div class="form_line">
-							<div class="label_tit">은행</div>
-							{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" si_popup="pop_type01"}}
-						</div>
-						<div class="form_line">
-							<div class="label_tit">계좌번호</div>
-							{{> cp/text placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
-						</div>
-						<div class="form_line">
-							<div class="label_tit">매월 자동이체일</div>
-							{{> cp/selectitem si_ph="매월 자동이체일 선택" si_item="5일" si_title="매월 자동이체일 선택" si_popup="pop_type03"}}
-						</div>
-					</div>
-					 
-					<div class="info_gray">
-						<dl>
-							<dt>납입 기간</dt>
-							<dd>10년</dd>
-						</dl>
-						<dl>
-							<dt>납입 방법</dt>
-							<dd>매월</dd>
-						</dl>
-					</div>
-					
-					<div class="checkbox_group_wrap column">
-						{{> cp/checkbox labelname="만기환급금 입금 계좌 동의" ag_more=true id="agree01" checkbox_class="rd_box" }}
-						{{> cp/checkbox labelname="자동이체 약관 동의" ag_more=true id="agree02" checkbox_class="rd_box" }}
-					</div>
+					<!-- 25-05-08 2회차 탭 아래로 이동 -->
 				</div>
 			</div>
 			<!-- e: 25-04-22 수정 -->
+			<!-- s: 05-05-08 2회차 결제 이동 -->
+			<div class="divider_ty1"></div>
+			<h3 class="title_h4">2회차 이후 결제 정보 입력</h3>
+			<!-- s: 카드사(현대카드) 선택 시 -->
+			<div class="radio_group_wrap" role="radiogroup">
+				{{> cp/radio rd-class="rd_btn" rd-id="radio_card1" name="radio01" labelname="현대카드로 결제" checked=true }}
+				{{> cp/radio rd-class="rd_btn" rd-id="radio_card2" name="radio01" labelname="계좌이체로 결제" }}
+			</div>
+			<!-- e: 카드사(현대카드) 선택 시 -->
+			<!-- s: 이체 선택 시 -->		
+			{{> cp/checkbox checkbox_class="rd_box" id="checkbox04-9" label_class="chk_label_ty3" labelname="1회차 보험료 결제 계좌와 동일합니다" }}		
+			<!-- e: 이체 선택 시 -->	
+			<!-- s: 카드사(현대카드) 선택 외 -->		
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">은행</div>
+					{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" }}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">계좌번호</div>
+					{{> cp/text placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">매월 자동이체일</div>
+					{{> cp/selectitem si_ph="매월 자동이체일 선택" si_item="5일" si_title="매월 자동이체일 선택" si_popup="pop_type03"}}
+				</div>
+			</div>
+			<!-- e: 카드사(현대카드) 선택 외 -->
+			<div class="info_gray">
+				<dl>
+					<dt>납입 기간</dt>
+					<dd>10년</dd>
+				</dl>
+				<dl>
+					<dt>납입 방법</dt>
+					<dd>매월</dd>
+				</dl>
+			</div>
+			<div class="checkbox_group_wrap column">
+				{{> cp/checkbox labelname="만기환급금 입금 계좌 동의" ag_more=true id="agree01" checkbox_class="rd_box" }}
+				{{> cp/checkbox labelname="자동이체 약관 동의" ag_more=true id="agree02" checkbox_class="rd_box" }}
+			</div>
+			<!-- e: 05-05-08 2회차 결제 이동 -->
 		</div>
 	</div>
 

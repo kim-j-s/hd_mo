@@ -241,10 +241,11 @@
 							</div>
 
 							<!-- s: 카드 혜택 안내 배너 -->
+							<!-- s: 25-05-08 수정 -->
 							<div class="banner_slide_wrap">
 								<div id="card_reward_banner_wrap" class="swiper">
 									<div class="swiper-wrapper">
-										<div class="swiper-slide bann_wrap bann_ty1 co_ty2">
+										<a class="swiper-slide bann_wrap bann_ty1 co_ty2" href="#">
 											<div class="inner">
 												<span class="logo"><i class="hd_icon logo_card_shinhan"></i></span>
 												<div class="bann_cont">
@@ -252,8 +253,8 @@
 													<div class="desc">신한카드로 결제하면 포인트 100% 사용가능</div>
 												</div>
 											</div>
-										</div>
-										<div class="swiper-slide bann_wrap bann_ty1">
+										</a>
+										<a class="swiper-slide bann_wrap bann_ty1" href="#">
 											<div class="inner">
 												<span class="logo"><i class="hd_icon logo_card_hundai"></i></span>
 												<div class="bann_cont">
@@ -265,8 +266,8 @@
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="swiper-slide bann_wrap bann_ty1 co_ty3">
+										</a>
+										<a class="swiper-slide bann_wrap bann_ty1 co_ty3" href="#">
 											<div class="inner">
 												<span class="logo"><i class="hd_icon logo_card_samsung"></i></span>
 												<div class="bann_cont">
@@ -274,13 +275,14 @@
 													<div class="desc">삼성카드로 결제하면 포인트 100% 사용가능</div>
 												</div>
 											</div>
-										</div>
+										</a>
 									</div>
 								</div>
 								<div class="swiper-pagination sp_ty1"></div>
 								<button class="swiper_button sbc_03 sbs_01 swiper_button_left"></button>
 								<button class="swiper_button sbc_03 sbs_01 swiper_button_right" aria-label="다음" disabled></button>
 							</div>
+							<!-- e: 25-05-08 수정 -->
 							<!-- e: 카드 혜택 안내 배너 -->
 						</div>
 
@@ -834,11 +836,12 @@
 		<!-- e: popup area -->
 	</body>
 </html>
-
+<!-- s: 25-05-08 수정 -->
 <script>
 	$(document).ready(function () {
 		var bannerSwiper = new Swiper("#card_reward_banner_wrap", {
 			slidesPerView: 1,
+			updateOnWindowResize: true,
 			navigation: {
 				nextEl: ".swiper_button_left",
 				prevEl: ".swiper_button_right",
@@ -859,3 +862,4 @@
 		});
 	});
 </script>
+<!-- e: 25-05-08 수정 -->
