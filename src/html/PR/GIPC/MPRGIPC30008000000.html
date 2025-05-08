@@ -1,6 +1,5 @@
 <!---
-화면번호 : MPRGIPT30011000000
-경로 : 상품 > 하이펫보험 > 보험료결제
+경로 : 상품 > 골프보험 > 보험료결제
 -->
 {{#> layout/default page-title="보험료 결제 | 상품"}}
 <div id="wrap" class="wrap">
@@ -215,12 +214,10 @@
 					</div>
 					<div class="info_gray ty2">
 						<h4 class="title_h4">카카오페이 고객센터</h4>
-						<!-- s: 25-04-29 수정 -->
 						<div class="badge_wrap_ty2">
 							<div class="cont_tel">1644-7405</div>
 							<span class="hd_badge c_info size_m">평일 9시 ~ 18시</span>
 						</div>
-						<!-- e: 25-04-29 수정 -->
 					</div>
 					<!-- e: 카카오페이 -->
 				
@@ -243,12 +240,10 @@
 					</div>
 					<div class="info_gray ty2">
 						<h4 class="title_h4">네이버페이 고객센터</h4>
-						<!-- s: 25-04-29 수정 -->
 						<div class="badge_wrap_ty2">
 							<div class="cont_tel">1588-3819</div>
 							<span class="hd_badge c_info size_m">평일 9시 ~ 18시</span>
 						</div>
-						<!-- e: 25-04-29 수정 -->
 					</div>					
 					<!-- e: 네이버페이 -->
 
@@ -270,49 +265,6 @@
 					<!-- e: 토스페이 -->
 				</div>
 			</div>
-			<!-- s: 05-05-08 2회차 결제 추가 -->
-			<div class="divider_ty1"></div>
-			<h3 class="title_h4">2회차 이후 결제 정보 입력</h3>
-			<!-- s: 카드사(현대카드) 선택 시 -->
-			<div class="radio_group_wrap" role="radiogroup">
-				{{> cp/radio rd-class="rd_btn" rd-id="radio_card1" name="radio01" labelname="현대카드로 결제" checked=true }}
-				{{> cp/radio rd-class="rd_btn" rd-id="radio_card2" name="radio01" labelname="계좌이체로 결제" }}
-			</div>
-			<!-- e: 카드사(현대카드) 선택 시 -->
-			<!-- s: 이체 선택 시 -->		
-			{{> cp/checkbox checkbox_class="rd_box" id="checkbox04-9" label_class="chk_label_ty3" labelname="1회차 보험료 결제 계좌와 동일합니다" }}		
-			<!-- e: 이체 선택 시 -->	
-			<!-- s: 카드사(현대카드) 선택 외 -->		
-			<div class="form_group_wrap">
-				<div class="form_line">
-					<div class="label_tit">은행</div>
-					{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" }}
-				</div>
-				<div class="form_line">
-					<div class="label_tit">계좌번호</div>
-					{{> cp/text placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
-				</div>
-				<div class="form_line">
-					<div class="label_tit">매월 자동이체일</div>
-					{{> cp/selectitem si_ph="매월 자동이체일 선택" si_item="5일" si_title="매월 자동이체일 선택" si_popup="bank_day_select"}}
-				</div>
-			</div>
-			<!-- e: 카드사(현대카드) 선택 외 -->
-			<div class="info_gray">
-				<dl>
-					<dt>납입 기간</dt>
-					<dd>10년</dd>
-				</dl>
-				<dl>
-					<dt>납입 방법</dt>
-					<dd>매월</dd>
-				</dl>
-			</div>
-			<div class="checkbox_group_wrap column">
-				{{> cp/checkbox labelname="만기환급금 입금 계좌 동의" ag_more=true id="agree01" checkbox_class="rd_box" }}
-				{{> cp/checkbox labelname="자동이체 약관 동의" ag_more=true id="agree02" checkbox_class="rd_box" }}
-			</div>
-			<!-- e: 05-05-08 2회차 결제 추가 -->
 		</div>
 	</div>
 
@@ -325,6 +277,7 @@
 </div>
 
 <!-- s: popup area -->
+
 <!-- s: 카드 할부 팝업 -->
 {{#> popup/popup_bottom popup-id="card_period_select" popup-title="카드 할부"}}
 <div class="popup_cont">
@@ -342,23 +295,6 @@
 </div>
 {{/ popup/popup_bottom}}
 <!-- e: 카드 할부 팝업 -->
-<!-- s: 25-05-08 매월 자동이체일 팝업 -->
-{{#> popup/popup_bottom popup-id="bank_day_select" popup-title="매월 자동이체일"}}
-<div class="popup_cont">
-	<div class="popup_content">
-		<div class="opt_select_list opt_case3">
-			<div role="button" tabindex="0" class="option active" title="선택됨"><span class="text">1일</span></div>
-			<div role="button" tabindex="0" class="option"><span class="text">5일</span></div>
-			<div role="button" tabindex="0" class="option"><span class="text">10일</span></div>
-			<div role="button" tabindex="0" class="option"><span class="text">15일</span></div>
-			<div role="button" tabindex="0" class="option"><span class="text">20일</span></div>
-			<div role="button" tabindex="0" class="option"><span class="text">25일</span></div>
-			<div role="button" tabindex="0" class="option"><span class="text">말일</span></div>
-		</div>
-	</div>
-</div>
-{{/ popup/popup_bottom}}
-<!-- e: 25-05-08 매월 자동이체일 팝업 -->
 <!-- s: 현대카드 결제 혜택 안내 팝업 -->
 {{#> popup/popup_bottom popup-id="pop_type04" popup-title="현대카드 결제 혜택 안내" }}
 <div class="popup_cont">
@@ -390,7 +326,6 @@
 </div>
 {{/ popup/popup_bottom}}
 <!-- e: 현대카드 결제 혜택 안내 팝업 -->
-
 
 <!-- e: popup area -->
 {{/ layout/default }}
