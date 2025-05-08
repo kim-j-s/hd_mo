@@ -223,3 +223,44 @@
 .zoom_content {
 	margin-top: 32px;
 }
+
+.certify_box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 24px;
+	font-size: var(--font-size-heading-xsmall);
+	text-align: center;
+	font-weight: 700;
+	> div {
+		&::before {
+			content:'';
+			display: block;
+			width: 64px;
+			height: 64px;
+			background-size: 64px auto;
+		}
+		&.pc {
+			&::before {
+				background-image: url(../images/common/cert/icon_cert_copy1.svg);
+			}
+		}
+		&.phone {
+			&::before {
+				background-image: url(../images/common/cert/icon_cert_phone.svg);
+			}
+		}
+		&.arrow {
+			&::before {
+				width: 24px;
+				height: 24px;
+				background-image: url(../images/common/cert/icon_arrow_right.svg);
+				background-size: 24px auto;
+				
+			}
+		}
+	}
+	& +.form_group_wrap {
+		margin-top: 16px;
+	}
+}

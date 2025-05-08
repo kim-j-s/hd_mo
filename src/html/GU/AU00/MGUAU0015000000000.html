@@ -1,0 +1,94 @@
+{{#> layout/default page-title="공동인증서 복사(PC→스마트폰)"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="공동인증서 복사(PC→스마트폰)" h-back=true }}
+		<div id="container" class="container">
+			<div class="content">
+				<!-- s: content_top -->
+				<div class="content_top">
+					<h2 class="title_h2">
+						<strong>PC에 저장된 공동인증서를 <br>스마트폰으로 복사할 수 있어요.</strong>
+					</h2>
+				</div>
+				<!-- e: content_top -->
+				<div class="certify_box">
+					<div class="pc">
+						PC
+					</div>
+					<div class="arrow"><div class="sr_only">에서</div></div>
+					<div class="phone">
+						스마트폰
+					</div>
+					<div class="sr_only">으로 복사하기</div>
+				</div>
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">인증번호</div>
+						<div class="comp_wrap card">
+							{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="인증번호 첫번째 4자리 입력" no_del="flase" }}
+							<span class="dash">-</span>
+							{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="인증번호 중간 4자리 입력" no_del="flase" }}
+							<span class="dash">-</span>
+							{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="인증번호 마지막 4자리 입력" no_del="flase" }}
+						</div>
+					</div>
+				</div>
+				<div class="btn_area center">
+					{{> cp/button type="3" size="4" b-text="인증번호 재발급"}}
+				</div>
+				<div class="info_cont">
+					<h2 class="pop_title_h1">이용절차</h2>
+					<ol class="step_list_container certify">
+						<li class="phone">
+							<div class="inner">
+								인증번호 발급
+							</div>
+						</li>
+						<li class="pc">
+							<div class="inner">
+								인증센터 메뉴에서 공동인증서 복사(PC→스마트폰)을 선택
+							</div>
+						</li>
+						<li class="pc">
+							<div class="inner">
+								복사할 공동인증서 선택 후 비밀번호 입력
+							</div>
+						</li>
+						<li class="pc">
+							<div class="inner">
+								PC화면에서 인증번호 12자리를 입력
+							</div>
+						</li>
+						<li class="phone">
+							<div class="inner">
+								[공동인증서 가져오기] 누르면 복사 완료
+							</div>
+						</li>			
+					</ol>
+				</div>
+				<!-- s: 꼭 알아두세요 -->
+				{{#> cp/notice dp-active=true }}
+					<ul class="list_depth">
+						<li>
+							PC에서 복사한 공동인증서가 스마트폰에서 바로 확인되지 않을 경우, 현대해상 앱을 삭제한 후 다시 설치해 주세요.
+						</li>
+					</ul>
+				{{/ cp/notice }}
+				<!-- e: 꼭 알아두세요 -->
+			</div>
+			<!-- // container -->
+		</div>
+
+		<!-- s: 하단 고정 버튼 영역 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="2" b-text="공동인증서 가져오기"}}
+			</div>
+		</div>
+		<!-- s: 하단 고정 버튼 영역 -->
+	</div>
+
+	<!-- s: popup area -->
+	 
+	<!-- e: popup area -->
+
+{{/ layout/default }}
