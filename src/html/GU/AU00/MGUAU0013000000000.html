@@ -1,0 +1,59 @@
+{{#> layout/default page-title="금융인증서 등록/해지 | 인증센터"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="금융인증서 등록/해지" h-back=true }}
+		<div id="container" class="container">
+			<div class="content">
+				<!-- s: content_top -->
+				<div class="content_top">
+					<h2 class="title_h2">
+						<strong>
+							금융인증서 등록/변경을 위해<br>
+							정보를 입력해 주세요.
+						</strong>
+					</h2>
+				</div>
+				<!-- e: content_top -->
+
+				<div class="form_group_wrap">
+		
+					<div class="form_line">
+						<div class="label_tit">주민등록번호/외국인등록번호</div>
+						<div class="comp_wrap birth">
+							{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호(외국인등록번호) 앞자리 입력" }}
+							<span class="dash">-</span>
+							{{> cp/keypad7 case1=true kt="주민등록번호(외국인등록번호) 뒷자리 입력"}}
+						</div>
+					</div>
+				</div>
+
+
+				 
+				<!-- s: 꼭 알아두세요 -->
+				{{#> cp/notice }}
+					<ul class="list_depth">
+						<li>최초 1회 금융인증을 등록한 후 로그인에 이용할 수 있습니다.</li>
+						<li>재발급/변경 등으로 금융인증이 변경된 경우 재등록이 필요합니다.</li>
+					</ul>
+				{{/ cp/notice }}
+				<!-- e: 꼭 알아두세요 -->
+			</div>
+
+			<!-- // container -->
+		</div>
+
+		<!-- s: 하단 고정 버튼 영역 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="3" size="2" b-text="해지"}}
+				{{> cp/button type="1" size="2" b-text="등록"}}
+			</div>
+		</div>
+		<!-- s: 하단 고정 버튼 영역 -->
+
+	</div>
+
+	<!-- s: popup area -->
+	 
+	<!-- e: popup area -->
+
+{{/ layout/default }}
