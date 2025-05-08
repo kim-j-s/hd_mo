@@ -1,0 +1,118 @@
+{{#> layout/default page-title="변경정보 확인 | 마이페이지"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="변경정보 확인" h-back=true }}
+		<div id="container" class="container">
+			<div class="content">
+
+				<!-- s: content_top -->
+				<div class="content_top">
+					<h2 class="title_h2">
+						<!-- 변경일 경우 -->
+						<strong>3일&rarr;2일</strong> 변경된 보험기간과 보험료를 확인해주세요
+
+						<!-- 취소일 경우 -->
+						<!-- <strong>취소할 내용</strong>이 맞는지<br>
+						확인해주세요 -->
+					</h2>
+				</div>
+				<!-- e: content_top -->
+
+				<!-- s: 변경 Case -->
+				<h3 class="title_h3">변경내용</h3>
+				<div class="table_wrap">
+					<table class="table">
+						<caption>자동차번호, 변경 전 신청기간, 변경 후 신청기간 제공</caption>
+						<colgroup>
+							<col style="width:35%;">
+							<col style="width:65%;">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">자동차번호</th>
+								<td>18루**22</td>
+							</tr>
+							<tr>
+								<th scope="row">변경 전 신청기간</th>
+								<td>2024.08.21~2024.08.23(3일)</td>
+							</tr>
+							<tr>
+								<th scope="row">변경 후 신청기간</th>
+								<td>2024.08.21~2024.08.22(2일)</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- e: 변경 Case -->
+
+				<!-- s: 취소 Case -->
+				<!-- <h3 class="title_h3">취소내용</h3>
+				<div class="table_wrap">
+					<table class="table">
+						<caption>자동차번호, 취소기간 제공</caption>
+						<colgroup>
+							<col style="width:35%;">
+							<col style="width:65%;">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">자동차번호</th>
+								<td>18루**22</td>
+							</tr>
+							<tr>
+								<th scope="row">취소기간</th>
+								<td>2024.08.21~2024.08.23(3일)</td>
+							</tr>
+						</tbody>
+					</table>
+				</div> -->
+				<!-- e: 취소 Case -->
+
+				<h3 class="title_h3">보험료</h3>
+				<div class="table_wrap">
+					<table class="table">
+						<caption>변경 전 보험료, 변경 후 보험료, 환급 보험료 제공</caption>
+						<colgroup>
+							<col style="width:35%;">
+							<col style="width:65%;">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">변경 전 보험료</th>
+								<td>15,000원</td>
+							</tr>
+							<tr>
+								<th scope="row">변경 후 보험료</th>
+								<td>30,000원</td>
+							</tr>
+							<tr>
+								<th scope="row">환급 보험료</th>
+								<td>
+									<strong class="point">-15,000원</strong>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="space_list_ty2">
+					{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-1" label_class="chk_label_ty3" labelname="<strong class='ess ess_t1'>필수</strong> 단기운전자 확대특약의 변경내용과 보험료를 확인했습니다."}}
+					<!-- 취소 Case -->
+					<!-- {{> cp/checkbox checkbox_class="rd_box" id="checkbox01-1" label_class="chk_label_ty3" labelname="<strong class='ess ess_t1'>필수</strong> 단기운전자 확대특약의 취소내용과 보험료를 확인했습니다."}} -->
+				</div>
+			</div>
+		</div>
+
+		<!-- s: 하단 고정 버튼 영역 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="1" b-text="다음" disabled=true}}
+			</div>
+		</div>
+		<!-- s: 하단 고정 버튼 영역 -->
+	</div>
+
+	<!-- s: popup area -->
+	 
+	<!-- e: popup area -->
+
+{{/ layout/default }}

@@ -23,19 +23,20 @@
 						</dl>
 					</div>
 					<div class="info_top_cont">
-						<!-- 월 보험료 -->
+						<!-- case:월납 -->
 						<dl>
 							<dt>월 보험료</dt>
 							<dd>200,000원</dd>
 						</dl>
-						<!-- 연 보험료 -->
+						<!-- case: 연납 
 						<dl>
 							<dt>연 보험료</dt>
 							<dd>2,400,000원</dd>
-						</dl>
+						</dl> -->
 						<dl>
-							<dt>총</dt>
-							<dd>24,000,000</dd>
+							<dt>총 보험료</dt>
+							<dd>24,000,000원
+							</dd>
 						</dl>
 					</div>
 				</div>
@@ -132,18 +133,18 @@
 					<div class="banner_slide_wrap">
 						<div id="card_reward_banner_wrap" class="swiper"> 
 							<div class="swiper-wrapper">
-								<div class="swiper-slide bann_wrap bann_ty1 co_ty2">			
+								<a class="swiper-slide bann_wrap bann_ty1 co_ty2">			
 									<div class="inner">
 										<span class="logo">{{> cp/icon iconClass="logo_card_shinhan"}}</span>		
 										<div class="bann_cont">
 											<div class="title">신한카드로 결제해 보세요</div>
 											<div class="desc">
 												신한카드로 결제하면 포인트 100% 사용가능
-										</div>		
+											</div>		
+										</div>
 									</div>
-								</div>
-								</div>
-								<div class="swiper-slide bann_wrap bann_ty1">
+								</a>
+								<a class="swiper-slide bann_wrap bann_ty1">
 									<div class="inner">
 										<span class="logo">{{> cp/icon iconClass="logo_card_hundai"}}</span>
 										<div class="bann_cont">
@@ -154,8 +155,8 @@
 											</div>
 										</div>
 									</div>
-								</div>			
-								<div class="swiper-slide bann_wrap bann_ty1 co_ty3">			
+								</a>			
+								<a class="swiper-slide bann_wrap bann_ty1 co_ty3">			
 									<div class="inner">
 										<span class="logo">{{> cp/icon iconClass="logo_card_samsung"}}</span>		
 										<div class="bann_cont">
@@ -165,7 +166,7 @@
 											</div>		
 										</div>
 									</div>
-								</div>
+								</a>
 							</div>	
 						</div>
 						<div class="swiper-pagination sp_ty1"></div>
@@ -173,8 +174,8 @@
 						<button class="swiper_button sbc_03 sbs_01 swiper_button_right" aria-label="다음" disabled></button>
 					</div>
 					<!-- e: 카드 혜택 안내 배너 -->	
-					
-				</div>
+				</div>	
+			
 
 				<!-- 계좌이체 -->
 				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
@@ -306,7 +307,6 @@
 
 <!-- s: popup area -->
 
-
 <!-- s: 카드 할부 팝업 -->
 {{#> popup/popup_bottom popup-id="card_period_select" popup-title="카드 할부"}}
 <div class="popup_cont">
@@ -377,11 +377,11 @@
 <!-- e: popup area -->
 {{/ layout/default }}
 
-
 <script>
 	$(document).ready(function(){
 		var bannerSwiper = new Swiper('#card_reward_banner_wrap', {
 					slidesPerView: 1,
+					updateOnWindowResize:true,
 					navigation: {
 						nextEl: ".swiper_button_left",
 						prevEl: ".swiper_button_right",
