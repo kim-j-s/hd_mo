@@ -156,11 +156,8 @@
 			// $del.hide();
 			// $wrap.removeClass('active');
 			if (!$wrap.find('.del').is(':focus') ) {
-				console.log('포커스 아닌 상태');
 				$wrap.removeClass('active');
-			} else {
-				console.log('포커스 상태');
-			}			
+			}	
 		}, 100);
 		$wrap.find('.del').on('blur', function(){
 			$(this).closest('.inp').removeClass('active');

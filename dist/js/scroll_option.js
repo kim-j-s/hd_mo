@@ -1,3 +1,32 @@
+// 초기 진입 세팅
+function initOptSelectUI() {
+	$(".opt_select_wrap").each(function () {
+		const $wrap = $(this);
+		const $inner = $wrap.find(".opt_select_inner");
+		const $checked = $inner.find("input[type=radio]:checked");
+
+		// 1. opt_select_dmp 넓이 계산 및 적용
+		const winWidth = $(window).width();
+		const $item = $inner.find(".opt_select:not(.opt_select_dmp)").first();
+		const itemWidth = $item.outerWidth();
+		const itemGap = 16;
+		const dmpWidth = winWidth / 2 - (itemWidth / 2 + itemGap);
+		$inner.find(".opt_select_dmp").css("width", dmpWidth + "px");
+
+		// 2. checked 요소 중앙 정렬
+		if ($checked.length) {
+			const $item = $checked.closest(".opt_select");
+			const innerWidth = $inner.outerWidth();
+			const itemOffset = $item.position().left;
+			const itemWidth = $item.outerWidth();
+			const scrollTo = $inner.scrollLeft() + itemOffset - innerWidth / 2 + itemWidth / 2;
+
+			$inner.scrollLeft(scrollTo);
+			$inner.addClass("active");
+		}
+	});
+}
+
 $(function () {
 	// 좌우 더미 엘리먼트 사이즈 조정
 	function setDmpWidth() {
@@ -8,35 +37,6 @@ $(function () {
 		const dmpWidth = winWidth / 2 - (itemWidth / 2 + itemGap);
 
 		$(".opt_select_wrap .opt_select_dmp").css("width", dmpWidth + "px");
-	}
-
-	// 초기 진입 세팅
-	function initOptSelectUI() {
-		$(".opt_select_wrap").each(function () {
-			const $wrap = $(this);
-			const $inner = $wrap.find(".opt_select_inner");
-			const $checked = $inner.find("input[type=radio]:checked");
-
-			// 1. opt_select_dmp 넓이 계산 및 적용
-			const winWidth = $(window).width();
-			const $item = $inner.find(".opt_select:not(.opt_select_dmp)").first();
-			const itemWidth = $item.outerWidth();
-			const itemGap = 16;
-			const dmpWidth = winWidth / 2 - (itemWidth / 2 + itemGap);
-			$inner.find(".opt_select_dmp").css("width", dmpWidth + "px");
-
-			// 2. checked 요소 중앙 정렬
-			if ($checked.length) {
-				const $item = $checked.closest(".opt_select");
-				const innerWidth = $inner.outerWidth();
-				const itemOffset = $item.position().left;
-				const itemWidth = $item.outerWidth();
-				const scrollTo = $inner.scrollLeft() + itemOffset - innerWidth / 2 + itemWidth / 2;
-
-				$inner.scrollLeft(scrollTo);
-				$inner.addClass("active");
-			}
-		});
 	}
 
 	// 좌우 버튼 제어

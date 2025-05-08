@@ -123,16 +123,17 @@
 
 			if (!isDisabled && !isReadonly) {
 				if (val) {
-					$del.show();
+					// $del.show();
+					$wrap.addClass("active");
 				} else {
+					// $del.hide();
 					$wrap.removeClass("active");
-					$del.hide();
 				}
 			}
 
-			$(".input_text .inp").removeClass("active").children(".del").hide();
-			$wrap.addClass("active");
-			$del.show();
+			// $('.input_text .inp').removeClass('active').children('.del').hide();
+			// $wrap.addClass('active');
+			// $del.show();
 
 			// (this.value) ? $wrap.addClass('active'):$wrap.removeClass('active');
 
@@ -153,9 +154,15 @@
 				newVal = 0;
 
 			setTimeout(() => {
-				$del.hide();
-				$wrap.removeClass("active");
+				// $del.hide();
+				// $wrap.removeClass('active');
+				if (!$wrap.find(".del").is(":focus")) {
+					$wrap.removeClass("active");
+				}
 			}, 100);
+			$wrap.find(".del").on("blur", function () {
+				$(this).closest(".inp").removeClass("active");
+			});
 
 			// 전화번호
 			if ($this.closest(".input_text").hasClass("phone")) {
@@ -174,7 +181,7 @@
 			e.preventDefault();
 
 			setTimeout(() => {
-				$this.hide();
+				// $this.hide();
 				$this.siblings("input").val("").focus();
 			}, 100);
 
@@ -832,8 +839,7 @@ $(function () {
 	});
 	*/
 
-	// 라디오 약관 동의 - 250430
-
+	// 라디오 약관 동의
 	$(".ag_groups").each(function () {
 		const $groups = $(this);
 		const $totalCheck = $groups.find(".ag_total");
@@ -855,6 +861,7 @@ $(function () {
 				$groupWrap.find(".agr_dept1.ag").prop("checked", isChecked);
 				$groupWrap.find(".agr_dept1.noag").prop("checked", !isChecked);
 				$groupWrap.find(".ags_sub_all, .ags_sub_chk").prop("checked", isChecked).prop("disabled", !isChecked);
+				$groupWrap.find(".agr_dept2").prop("checked", isChecked);
 
 				updateTotalCheckState(); // 상위 전체동의 상태도 반영
 			});
@@ -902,6 +909,24 @@ $(function () {
 				updateTotalCheckState(); // 그룹 갱신 시 전체도 갱신
 			});
 
+			// ag_group_cont 하위 체크박스 제어
+			$groupWrap.on("change", ".agr_dept2", function () {
+				const $this = $(this);
+				// const $agrdoGroup = $this.closest('.agrdo_group');
+				// const $subGroup = $agrdoGroup.next('.agrdo_group_sub');
+
+				// if ($subGroup.length) {
+				// 	if ($this.is(':checked')) {
+				// 		$subGroup.find('input[type="checkbox"]').prop('checked', false).prop('disabled', true);
+				// 	} else if (!$this.is(':checked')) {
+				// 		$subGroup.find('input[type="checkbox"]').prop('disabled', false).prop('checked', true);
+				// 	}
+				// }
+
+				updateGroupCheckState();
+				updateTotalCheckState(); // 그룹 갱신 시 전체도 갱신
+			});
+
 			$groupWrap.on("change", ".agr_r_group", function () {
 				// console.log('1');
 				const $this = $(this);
@@ -924,6 +949,7 @@ $(function () {
 			function updateGroupCheckState() {
 				const totalAgr = $groupWrap.find(".agr_dept1.ag");
 				const totalNoAgr = $groupWrap.find(".agr_dept1.noag");
+				const totalDpt2 = $groupWrap.find(".agr_dept2");
 
 				let isAllAgreed = true;
 
@@ -941,6 +967,14 @@ $(function () {
 					}
 				});
 
+				totalDpt2.each(function () {
+					if (!$(this).is(":checked")) {
+						// console.log('단위체크중?');
+						isAllAgreed = false;
+						return false;
+					}
+				});
+
 				$groupWrap.find(".agw_all").prop("checked", isAllAgreed);
 			}
 		});
@@ -951,18 +985,28 @@ $(function () {
 			const agreedGroups = allGroups.filter(function () {
 				const ag = $(this).find(".agr_dept1.ag");
 				const noag = $(this).find(".agr_dept1.noag");
+				const dpt2 = $(this).find(".agr_dept2");
 
 				let isAgreed = true;
 
 				ag.each(function () {
 					if (!$(this).is(":checked")) {
 						isAgreed = false;
+						//console.log('ag : ' + isAgreed);
 						return false;
 					}
 				});
 				noag.each(function () {
 					if ($(this).is(":checked")) {
 						isAgreed = false;
+						//console.log('noag : ' + isAgreed);
+						return false;
+					}
+				});
+				dpt2.each(function () {
+					if (!$(this).is(":checked")) {
+						isAgreed = false;
+						//console.log('확인중? : ' + isAgreed);
 						return false;
 					}
 				});
@@ -970,9 +1014,12 @@ $(function () {
 			});
 
 			const isAllAgreed = allGroups.length === agreedGroups.length;
+			console.log("체크 : " + allGroups.length + " : ", +agreedGroups.length);
 			$totalCheck.prop("checked", isAllAgreed);
+			console.log("$totalCheck : " + $totalCheck);
 		}
 	});
+	// 라디오 약관 동의
 
 	// 큰글씨 모드
 	// 확대 버튼 클릭 이벤트

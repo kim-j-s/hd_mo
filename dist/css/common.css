@@ -4885,6 +4885,9 @@ strong {
 	border-radius: inherit;
 	border: none;
 }
+.input_text .inp.active .del {
+	display: block;
+}
 .input_text input {
 	position: relative;
 	display: block;
@@ -6208,6 +6211,9 @@ strong {
 .circle_list_ty2 {
 	counter-reset: circle 0;
 }
+.circle_list_ty2 + .title_h3 {
+	margin-top: 5.2rem;
+}
 .circle_list_ty2 > li {
 	position: relative;
 	padding-left: 2rem;
@@ -6233,25 +6239,27 @@ strong {
 .circle_list_ty2 > li::before {
 	position: absolute;
 	top: 1.05rem;
-	left: 0.4em;
+	left: 0;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 	counter-increment: circle 1;
 	content: counter(circle);
 	font-size: 0.65em;
+	min-width: 1.3rem;
+	text-align: center;
 }
 .circle_list_ty2 > li::after {
 	content: "";
 	position: absolute;
-	top: 1rem;
+	top: 1.1rem;
 	left: 0;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 	display: inline-block;
 	border: 1px solid var(--color-icon-gray-light);
 	border-radius: 50%;
-	width: 0.9em;
-	height: 0.9em;
+	width: 1.3rem;
+	height: 1.3rem;
 }
 .circle_list_ty2 > li ol {
 	margin-top: 0.8rem;
@@ -8387,6 +8395,10 @@ strong {
 .text_sub + * {
 	margin-top: 2.4rem;
 }
+.text_sub + .title_h3 {
+	margin-top: 5.2rem;
+}
+.text_sub + .circle_list_ty2,
 .text_sub + .card_item_wrap,
 .text_sub + .radio_group_wrap,
 .text_sub + .inp_checkbox,
@@ -8395,6 +8407,7 @@ strong {
 .text_sub + .btn_area {
 	margin-top: 1.6rem;
 }
+.text_sub + .circle_list_ty2.basic,
 .text_sub + .card_item_wrap.basic,
 .text_sub + .radio_group_wrap.basic,
 .text_sub + .inp_checkbox.basic,
