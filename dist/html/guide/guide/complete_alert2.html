@@ -40,123 +40,44 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>현대해상 다이렉트</title>
+		<title>팝업 | 가이드 - 현대해상 다이렉트</title>
 
-		<link rel="stylesheet" href="guide.css" />
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
 		<link rel="stylesheet" href="../../../css/contents.css" />
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
-	<body class="guide_body">
-		<div class="guide_h1">타이틀</div>
-		<div class="guide_discription">email 자동완성</div>
+	<body>
+		<!-- s: alert2 -->
+		<div class="popup_wrap comfirm active" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="false">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
+				<div class="popup_inner">
+					<div class="popup_head"></div>
 
-		<div class="form_group_wrap">
-			<div class="form_line">
-				<div class="label_tit">email</div>
-				<div class="input_text">
-					<div class="inp">
-						<input type="email" class="email_auto" placeholder="입력하세요" title="이름 입력" />
-						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+					<div class="popup_cont">
+						<div class="popup_content">
+							<!-- info Case -->
+							<div class="info_comfirm">
+								<p class="info_text">
+									alert 내용 입력
+									<br />
+									alert 내용 입력
+								</p>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-
-			<div class="form_line">
-				<div class="label_tit">email2</div>
-				<div class="input_text">
-					<div class="inp">
-						<input type="email" class="email_auto" placeholder="입력하세요" title="이름 입력" />
-						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">확인</span>
+							</button>
+						</div>
 					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
-
-		<!-- MPRMTPS10002030600 -->
-
-		<script>
-			// autoEmail();
-
-			// auto Email
-			// function autoEmail() {
-			// 	console.log('??');
-			// 	var $autoCont = $('.mail_list_cont');
-			// 	var $autoEmail = $('.email_auto');
-			// 	var $autoDomain = $('.mail_list a');
-			// 	var etcWord = '직접선택';
-			// 	var domains = [
-			// 		"konai.com",
-			// 		"naver.com",
-			// 		"nate.com",
-			// 		"gmail.com",
-			// 		"hotmail.com",
-			// 		"daum.net",
-			// 		"yahoo.co.kr"
-			// 	];
-			// 	$autoEmail.on('keyup', function () {
-			// 		value = $(this).val();
-			// 		if (value.indexOf("@") != -1) {
-			// 			value = value.split("@")[0];
-			// 			var mailList = '';
-			// 			var typing = "<li><a href='#'>" + etcWord + "</a></li>";
-			// 			for (i = 0; i < domains.length; i++) {
-			// 				mailList += "<li><a href='#'>" + value + "<span class='mark'>@" + domains[i] + "</span></a></li>";
-			// 			}
-			// 			listhtml = "<div class='mail_list_cont on'><ul class='mail_list'>" + typing + mailList + "</ul></div>";
-			// 			// $(this).closest('.email-wrap').find('.mail_list_cont').remove();
-			// 			$(this).closest('.input_text').find('.mail_list_cont').remove();
-			// 			$(this).closest('.inp').after(listhtml);
-			// 			$autoEmail.addClass('on');
-			// 		} else {
-			// 			console.log('sdfsdf');
-			// 			$(this).closest('.input_text').find('.mail_list_cont').remove();
-			// 			displayList();
-			// 		}
-			// 	});
-
-			// 	$(document).on('click', '.mail_list li a', function (e) {
-			// 		e.preventDefault();
-			// 		var value = $(this).html();
-			// 		if (value == etcWord) {
-			// 			$('.mail_list_cont').addClass('dp-none');
-			// 			$(this).closest('.input-text').find('input').focus();
-			// 		} else {
-			// 			$(this).closest('.input-text').find('input').val(value);
-			// 			displayList();
-			// 		}
-			// 	});
-
-			// 	emailDisplay();
-
-			// 	function displayList() {
-			// 		$autoEmail.removeClass('on');
-			// 		$('.mail_list_cont').removeClass('on');
-			// 	}
-
-			// 	function emailDisplay() {
-			// 		$(document).on('mouseenter focus', '.mail_list a', function () {
-			// 			$autoEmail.addClass('on');
-			// 			$('.mail_list_cont').addClass('on');
-			// 		});
-
-			// 		$(document).on('blur', '.mail_list > li a:last, .mail_list > li', function () {
-			// 			displayList();
-			// 		});
-
-			// 		$autoEmail.on('blur', function () {
-			// 			setTimeout(function () {
-			// 				if (!$('.mail_list a').is(':focus')) {
-			// 					displayList();
-			// 				}
-			// 			}, 100);
-			// 		});
-			// 	}
-			// }
-		</script>
-
-		<!-- s: popup area -->
-		<!-- e: popup area -->
+		<!-- e: alert2 -->
 	</body>
 </html>

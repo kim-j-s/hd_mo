@@ -1079,6 +1079,100 @@ $(function(){
 	});
 
 
+
+ //이메일 자동완성
+	function autoCompleteEmail() {
+		let $inputContainer = $(".input_text");
+		let $inputEmail = $("input.email_auto");
+		let $autoCont = $(".mail_list_cont");
+		let $mailList = $(".mail_list");
+	
+		const etcWord = "직접입력";
+		const domainArr = [
+			"konai.com",
+			"naver.com",
+			"nate.com",
+			"gmail.com",
+			"hotmail.com",
+			"daum.net",
+			"yahoo.co.kr"
+		];
+	
+		$inputEmail.on("keyup", function () {
+			removeAutoCont();
+			const $selfThis = $(this);
+			const value = $selfThis.val();
+			const listhtml = "<div class='mail_list_cont'><ul class='mail_list' tabindex='0'></ul></div>";
+			$(this).closest(".inp").after(listhtml);
+			$inputContainer = $(this).closest(".input_text");
+			$autoCont = $inputContainer.find(".mail_list_cont");
+			$mailList = $(".mail_list");
+	
+			$mailList.on("focusout", function (e) {
+				detectFocus(e);
+			});
+	
+			if (value.includes("@") || value.length < 3) {
+				removeAutoCont();
+				return;
+			}
+	
+			if (value.length >= 3) {
+				showAutoCont(value,$selfThis);
+			}
+		});
+	
+		//유틸 함수 영역
+		function showAutoCont(value,_self) {
+			const $etcItem = $("<li><a href='#'>" + etcWord + "</a></li>");
+			$mailList.append($etcItem);
+			$etcItem.on("click", function () {
+				removeAutoCont();
+			});
+	
+			domainArr.forEach(domain => {
+				const $listItem = $(`<li><a href='#'>` + value + `<span class='mark'>@` + domain + `</span></a></li>`);
+				$listItem.on("click", function () {
+					const item = $(this).text();
+					_self.val(item);
+					removeAutoCont();
+				});
+				$mailList.append($listItem);
+			});
+	
+			$autoCont.addClass("on");
+		}
+	
+		function removeAutoCont() {
+			if ($autoCont.length > 0) {
+				$autoCont.remove();
+			}
+		}
+	
+		function detectFocus(e) {
+			setTimeout(() => {
+				const target = $(document.activeElement);
+				if ($inputContainer.length && !$inputContainer.is(target) && $inputContainer.has(target).length == 0) {
+					removeAutoCont();
+				}
+			}, 0);
+		}
+	
+		//이벤트 리스너 영역
+		$(document).on("click", function (e) {
+			const target = $(e.target)[0];
+			const isEmailContainer = $inputEmail.is(target) || $inputEmail.has(target).length > 0 || $autoCont.is(target) || $autoCont.has(target).length > 0;
+			if (!isEmailContainer) removeAutoCont();
+		});
+	
+		$inputEmail.on("blur", function (e) {
+			detectFocus(e);
+		});
+	}
+
+	autoCompleteEmail();
+
+
 });
 	
 
