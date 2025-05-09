@@ -40,123 +40,79 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>현대해상 다이렉트</title>
+		<title>공동인증서 복사(스마트폰→PC) - 현대해상 다이렉트</title>
 
-		<link rel="stylesheet" href="guide.css" />
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
 		<link rel="stylesheet" href="../../../css/contents.css" />
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
-	<body class="guide_body">
-		<div class="guide_h1">타이틀</div>
-		<div class="guide_discription">email 자동완성</div>
-
-		<div class="form_group_wrap">
-			<div class="form_line">
-				<div class="label_tit">email</div>
-				<div class="input_text">
-					<div class="inp">
-						<input type="email" class="email_auto" placeholder="입력하세요" title="이름 입력" />
-						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+	<body>
+		<!-- s: Full 팝업 -->
+		<div class="popup_wrap full active" id="pop_type01" role="dialog" aria-hidden="false">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
+				<div class="popup_inner">
+					<div class="popup_head"><div class="popup_head_title">복사할 공동인증서 선택</div></div>
+					<div class="popup_cont">
+						<div class="popup_content">
+							<!-- s: 공동인증서 있을때 -->
+							<!-- s: popup_content_top -->
+							<div class="popup_content_top">
+								<h2 class="title_h2">
+									<strong>스마트폰에서 발급받은인증번호를 PC 화면에 입력해 주세요.</strong>
+								</h2>
+							</div>
+							<!-- e: popup_content_top -->
+							<div class="certify_box">
+								<div class="phone">스마트폰</div>
+								<div class="arrow"><div class="sr_only">에서</div></div>
+								<div class="pc">PC</div>
+								<div class="sr_only">로 복사하기</div>
+							</div>
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">인증번호</div>
+									<div class="comp_wrap card">
+										<div class="input_text">
+											<div class="inp">
+												<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="인증번호 첫번째 4자리 입력" />
+											</div>
+										</div>
+										<span class="dash">-</span>
+										<div class="input_text">
+											<div class="inp">
+												<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="인증번호 중간 4자리 입력" />
+											</div>
+										</div>
+										<span class="dash">-</span>
+										<div class="input_text">
+											<div class="inp">
+												<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="인증번호 마지막 4자리 입력" />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="btn_area center">
+								<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_4">
+									<span class="text">인증번호 재발급</span>
+								</button>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
 
-			<div class="form_line">
-				<div class="label_tit">email2</div>
-				<div class="input_text">
-					<div class="inp">
-						<input type="email" class="email_auto" placeholder="입력하세요" title="이름 입력" />
-						<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
+								<span class="text">확인</span>
+							</button>
+						</div>
 					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
-
-		<!-- MPRMTPS10002030600 -->
-
-		<script>
-			// autoEmail();
-
-			// auto Email
-			// function autoEmail() {
-			// 	console.log('??');
-			// 	var $autoCont = $('.mail_list_cont');
-			// 	var $autoEmail = $('.email_auto');
-			// 	var $autoDomain = $('.mail_list a');
-			// 	var etcWord = '직접선택';
-			// 	var domains = [
-			// 		"konai.com",
-			// 		"naver.com",
-			// 		"nate.com",
-			// 		"gmail.com",
-			// 		"hotmail.com",
-			// 		"daum.net",
-			// 		"yahoo.co.kr"
-			// 	];
-			// 	$autoEmail.on('keyup', function () {
-			// 		value = $(this).val();
-			// 		if (value.indexOf("@") != -1) {
-			// 			value = value.split("@")[0];
-			// 			var mailList = '';
-			// 			var typing = "<li><a href='#'>" + etcWord + "</a></li>";
-			// 			for (i = 0; i < domains.length; i++) {
-			// 				mailList += "<li><a href='#'>" + value + "<span class='mark'>@" + domains[i] + "</span></a></li>";
-			// 			}
-			// 			listhtml = "<div class='mail_list_cont on'><ul class='mail_list'>" + typing + mailList + "</ul></div>";
-			// 			// $(this).closest('.email-wrap').find('.mail_list_cont').remove();
-			// 			$(this).closest('.input_text').find('.mail_list_cont').remove();
-			// 			$(this).closest('.inp').after(listhtml);
-			// 			$autoEmail.addClass('on');
-			// 		} else {
-			// 			console.log('sdfsdf');
-			// 			$(this).closest('.input_text').find('.mail_list_cont').remove();
-			// 			displayList();
-			// 		}
-			// 	});
-
-			// 	$(document).on('click', '.mail_list li a', function (e) {
-			// 		e.preventDefault();
-			// 		var value = $(this).html();
-			// 		if (value == etcWord) {
-			// 			$('.mail_list_cont').addClass('dp-none');
-			// 			$(this).closest('.input-text').find('input').focus();
-			// 		} else {
-			// 			$(this).closest('.input-text').find('input').val(value);
-			// 			displayList();
-			// 		}
-			// 	});
-
-			// 	emailDisplay();
-
-			// 	function displayList() {
-			// 		$autoEmail.removeClass('on');
-			// 		$('.mail_list_cont').removeClass('on');
-			// 	}
-
-			// 	function emailDisplay() {
-			// 		$(document).on('mouseenter focus', '.mail_list a', function () {
-			// 			$autoEmail.addClass('on');
-			// 			$('.mail_list_cont').addClass('on');
-			// 		});
-
-			// 		$(document).on('blur', '.mail_list > li a:last, .mail_list > li', function () {
-			// 			displayList();
-			// 		});
-
-			// 		$autoEmail.on('blur', function () {
-			// 			setTimeout(function () {
-			// 				if (!$('.mail_list a').is(':focus')) {
-			// 					displayList();
-			// 				}
-			// 			}, 100);
-			// 		});
-			// 	}
-			// }
-		</script>
-
-		<!-- s: popup area -->
-		<!-- e: popup area -->
+		<!-- e: Full 팝업 -->
 	</body>
 </html>

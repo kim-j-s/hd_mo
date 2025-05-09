@@ -1228,6 +1228,9 @@ strong {
 .ag_group_wrap .ag_group_cont .title_sub {
 	margin-top: 1.6rem;
 }
+.ag_group_wrap .ag_group_cont .agw_foot {
+	margin-top: 3.2rem;
+}
 .ag_group_wrap .agc_item + .agc_item {
 	margin-top: 3.2rem;
 }
@@ -6211,8 +6214,11 @@ strong {
 .circle_list_ty2 {
 	counter-reset: circle 0;
 }
-.circle_list_ty2 + .title_h3 {
+.circle_list_ty2 + [class^="title_h"] {
 	margin-top: 5.2rem;
+}
+.circle_list_ty2 + .text_sub {
+	margin-top: 3.2rem;
 }
 .circle_list_ty2 > li {
 	position: relative;
@@ -6312,11 +6318,25 @@ strong {
 .circle_list_ty2 > li ul strong + li {
 	margin-top: 0.8rem;
 }
+.circle_list_ty2 > li dl {
+	margin-top: 0.8rem;
+}
+.circle_list_ty2 > li dl dt,
+.circle_list_ty2 > li dl dd {
+	font-size: var(--font-size-body-xsmall);
+	color: var(--color-text-information);
+}
+.circle_list_ty2 > li dl dd {
+	margin-top: 0.4rem;
+}
 .clause_list {
 	counter-reset: number 0;
 }
 .clause_list > li {
 	font-size: var(--font-size-body-medium);
+}
+.clause_list > li strong {
+	font-size: var(--font-size-heading-medium);
 }
 .clause_list > li strong::before {
 	counter-increment: number 1;
@@ -8390,7 +8410,7 @@ strong {
 	color: var(--color-text-basic);
 }
 .text_sub + .text_sub {
-	margin-top: 1.2rem;
+	margin-top: 1.6rem;
 }
 .text_sub + * {
 	margin-top: 2.4rem;

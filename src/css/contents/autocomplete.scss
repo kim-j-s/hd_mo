@@ -36,3 +36,41 @@
 	}
 
 }
+
+
+/**
+* 이메일 자동완성
+**/
+
+.mail_list_cont {
+	position: absolute;
+	top: 56px;
+	left: 0;
+	z-index: 1;
+	display: none;
+	width: 100%;
+	padding: 24px;
+	border-radius: var(--number-10);
+	border: 1px solid var(--color-border-gray-light);
+	background-color: var(--color-background-gray-subtler);
+	&.on {
+		display: block;
+	}
+}
+.mail_list {
+	max-height: 200px;
+	overflow: auto;
+	> li {
+		padding: 12px 0;
+		> a {			
+			display: block;
+			font-size: var(--font-size-body-medium);
+			line-height: 24px;
+			color: var(--color-text-subtle);
+			.mark {
+				color: var(--color-text-primary);
+			}
+		}
+	}
+
+}

@@ -871,6 +871,40 @@
 .autocomplete_list > li + li {
 	margin-top: 2.4rem;
 }
+/**
+* 이메일 자동완성
+**/
+.mail_list_cont {
+	position: absolute;
+	top: 5.6rem;
+	left: 0;
+	z-index: 1;
+	display: none;
+	width: 100%;
+	padding: 2.4rem;
+	border-radius: var(--number-10);
+	border: 1px solid var(--color-border-gray-light);
+	background-color: var(--color-background-gray-subtler);
+}
+.mail_list_cont.on {
+	display: block;
+}
+.mail_list {
+	max-height: 20rem;
+	overflow: auto;
+}
+.mail_list > li {
+	padding: 1.2rem 0;
+}
+.mail_list > li > a {
+	display: block;
+	font-size: var(--font-size-body-medium);
+	line-height: 2.4rem;
+	color: var(--color-text-subtle);
+}
+.mail_list > li > a .mark {
+	color: var(--color-text-primary);
+}
 /* 자동차보험 - 고객정보 */
 .main_title {
 	font-size: var(--font-size-heading-medium);
@@ -3220,7 +3254,31 @@ ul + .form_group_wrap {
 .certify_box + .form_group_wrap {
 	margin-top: 1.6rem;
 }
+.certify_box + .info_cont {
+	margin-top: 3.2rem;
+}
 /* 간편비밀번호 팝업 */
+.pin_info {
+	position: relative;
+	margin-top: 3rem;
+	padding-bottom: 5.8rem;
+}
+.pin_info .pin_enter_error_msg {
+	display: none;
+	position: absolute;
+	text-align: left;
+	bottom: 0.8rem;
+	left: 0;
+}
+.pin_info .pin_enter_error_msg .text {
+	background-position: left top;
+}
+.pin_enter.pass_join {
+	height: auto;
+}
+.pin_enter.pass_join .error + .pin_info .pin_enter_error_msg {
+	display: block;
+}
 .simple_pw_area {
 	padding-bottom: 22.2rem;
 }
