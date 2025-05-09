@@ -79,6 +79,85 @@
 
 
 	.nmc_top {
-		
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 16px 24px;
 	}
+
+
+	.nmc_direct_menu {
+		display: flex;
+		align-items: flex-start;
+		padding: 24px 0;
+		background-color: var(--color-surface-primary-subtler);
+		> li {
+			flex: 1 1 0;
+			a {
+				display: block;
+				.text {
+					position: relative;
+					display: block;
+					padding-top: 36px;
+					font-size: var(--font-size-label-small);
+					text-align: center;
+					background-repeat: no-repeat;
+					background-position: top center;
+					background-size: 32px auto;
+				}
+			}
+			+ li {
+				a {
+					&::before {
+						content: '';
+						position: absolute;
+						top: 0;
+						left: 0;
+						height: 100%;
+						border-left: 1px solid var(--color-border-inverse);
+					}
+				}
+			}
+			&.ty1 {
+				a {
+					.text {
+						background-image: url(../images/header/icon_nmc_direct1.svg);
+					}
+				}
+			}
+			&.ty2 {
+				a {
+					.text {
+						background-image: url(../images/header/icon_nmc_direct2.svg);
+					}
+				}
+			}
+			&.ty3 {
+				a {
+					.text {
+						background-image: url(../images/header/icon_nmc_direct3.svg);
+					}
+				}
+			}
+			&.ty4 {
+				a {
+					.text {
+						background-image: url(../images/header/icon_nmc_direct4.svg);
+					}
+				}
+			}
+			&.ty5 {
+				a {
+					.text {
+						background-image: url(../images/header/icon_nmc_direct5.svg);
+					}
+				}
+			}
+		}
+
+	}
+
+
+
+
 }

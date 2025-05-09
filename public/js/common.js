@@ -646,7 +646,7 @@ $(function(){
 		const scrollTop = $('#container').scrollTop();
 		const pop_scrollTop = $('.popup_cont').scrollTop();
 
-		console.log('scroll!! : '+ scrollTop);
+		// console.log('scroll!! : '+ scrollTop);
 
 		if ($('.simple_info_wrap').length) {
 			const $target = $('.simple_info_wrap');
@@ -655,7 +655,7 @@ $(function(){
 			let new_headHeight = 0;
 			let simpleHeight = $('.simple_info_wrap').find('.simple_info_item').height();
 
-			console.log('기준 위치 : ', targetOffsetTop);
+			// console.log('기준 위치 : ', targetOffsetTop);
 
 			if($('.gd_middle_b').length){
 				targetOffsetTop = targetOffsetTop - 50
