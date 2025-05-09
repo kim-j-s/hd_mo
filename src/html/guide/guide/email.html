@@ -8,95 +8,95 @@
 		<div class="label_tit">email</div>
 		{{> cp/text type="email" inpclass="email_auto" placeholder="입력하세요" inp-title="이름 입력" }}
 	</div>
+
+
+	<div class="form_line">
+		<div class="label_tit">email2</div>
+		{{> cp/text type="email" inpclass="email_auto" placeholder="입력하세요" inp-title="이름 입력" }}
+	</div>
 </div>
 
 <!-- MPRMTPS10002030600 -->
 
-
-
 <script>
-
-	autoEmail();
+	// autoEmail();
 
 	// auto Email
-	function autoEmail() {
-		console.log('??');
-		var $autoCont = $('.mail-list-cont');
-		var $autoEmail = $('.email_auto');
-		var $autoDomain = $('.mail-list a');
-		var etcWord = '직접선택';
-		var domains = [
-			"konai.com",
-			"naver.com",
-			"nate.com",
-			"gmail.com",
-			"hotmail.com",
-			"daum.net",
-			"yahoo.co.kr"
-		];
-		$autoEmail.on('keyup', function () {
-			value = $(this).val();
-			if (value.indexOf("@") != -1) {
-				value = value.split("@")[0];
-				var mailList = '';
-				var typing = "<li><a href='#'>" + etcWord + "</a></li>";
-				for (i = 0; i < domains.length; i++) {
-					mailList += "<li><a href='#'>" + value + "@" + domains[i] + "</a></li>";
-				}
-				listhtml = "<div class='mail-list-cont on'><ul class='mail-list'>" + typing + mailList + "</ul></div>";
-				// $(this).closest('.email-wrap').find('.mail-list-cont').remove();
-				$(this).closest('.input_text').find('.mail-list-cont').remove();
-				$(this).closest('.inp').after(listhtml);
-				$autoEmail.addClass('on');
-			} else {
-				console.log('sdfsdf');
-				$(this).closest('.input_text').find('.mail-list-cont').remove();
-				displayList();
-			}
-		});
+	// function autoEmail() {
+	// 	console.log('??');
+	// 	var $autoCont = $('.mail_list_cont');
+	// 	var $autoEmail = $('.email_auto');
+	// 	var $autoDomain = $('.mail_list a');
+	// 	var etcWord = '직접선택';
+	// 	var domains = [
+	// 		"konai.com",
+	// 		"naver.com",
+	// 		"nate.com",
+	// 		"gmail.com",
+	// 		"hotmail.com",
+	// 		"daum.net",
+	// 		"yahoo.co.kr"
+	// 	];
+	// 	$autoEmail.on('keyup', function () {
+	// 		value = $(this).val();
+	// 		if (value.indexOf("@") != -1) {
+	// 			value = value.split("@")[0];
+	// 			var mailList = '';
+	// 			var typing = "<li><a href='#'>" + etcWord + "</a></li>";
+	// 			for (i = 0; i < domains.length; i++) {
+	// 				mailList += "<li><a href='#'>" + value + "<span class='mark'>@" + domains[i] + "</span></a></li>";
+	// 			}
+	// 			listhtml = "<div class='mail_list_cont on'><ul class='mail_list'>" + typing + mailList + "</ul></div>";
+	// 			// $(this).closest('.email-wrap').find('.mail_list_cont').remove();
+	// 			$(this).closest('.input_text').find('.mail_list_cont').remove();
+	// 			$(this).closest('.inp').after(listhtml);
+	// 			$autoEmail.addClass('on');
+	// 		} else {
+	// 			console.log('sdfsdf');
+	// 			$(this).closest('.input_text').find('.mail_list_cont').remove();
+	// 			displayList();
+	// 		}
+	// 	});
 
-		$(document).on('click', '.mail-list li a', function (e) {
-			e.preventDefault();
-			var value = $(this).html();
-			if (value == etcWord) {
-				$('.mail-list-cont').addClass('dp-none');
-				$(this).closest('.input-text').find('input').focus();
-			} else {
-				$(this).closest('.input-text').find('input').val(value);
-				displayList();
-			}
-		});
+	// 	$(document).on('click', '.mail_list li a', function (e) {
+	// 		e.preventDefault();
+	// 		var value = $(this).html();
+	// 		if (value == etcWord) {
+	// 			$('.mail_list_cont').addClass('dp-none');
+	// 			$(this).closest('.input-text').find('input').focus();
+	// 		} else {
+	// 			$(this).closest('.input-text').find('input').val(value);
+	// 			displayList();
+	// 		}
+	// 	});
 
-		emailDisplay();
+	// 	emailDisplay();
 
-		function displayList() {
-			$autoEmail.removeClass('on');
-			$('.mail-list-cont').removeClass('on');
-		}
+	// 	function displayList() {
+	// 		$autoEmail.removeClass('on');
+	// 		$('.mail_list_cont').removeClass('on');
+	// 	}
 
-		function emailDisplay() {
-			$(document).on('mouseenter focus', '.mail-list a', function () {
-				$autoEmail.addClass('on');
-				$('.mail-list-cont').addClass('on');
-			});
+	// 	function emailDisplay() {
+	// 		$(document).on('mouseenter focus', '.mail_list a', function () {
+	// 			$autoEmail.addClass('on');
+	// 			$('.mail_list_cont').addClass('on');
+	// 		});
 
-			$(document).on('blur', '.mail-list > li a:last, .mail-list > li', function () {
-				displayList();
-			});
+	// 		$(document).on('blur', '.mail_list > li a:last, .mail_list > li', function () {
+	// 			displayList();
+	// 		});
 
-			$autoEmail.on('blur', function () {
-				setTimeout(function () {
-					if (!$('.mail-list a').is(':focus')) {
-						displayList();
-					}
-				}, 100);
-			});
-		}
-	}
+	// 		$autoEmail.on('blur', function () {
+	// 			setTimeout(function () {
+	// 				if (!$('.mail_list a').is(':focus')) {
+	// 					displayList();
+	// 				}
+	// 			}, 100);
+	// 		});
+	// 	}
+	// }
 </script>
-
-
-
 
 <!-- s: popup area -->
 <!-- e: popup area -->
