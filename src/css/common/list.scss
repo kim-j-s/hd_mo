@@ -767,8 +767,12 @@
 .circle_list_ty2  {
 	counter-reset: circle 0;
 
-	& + .title_h3{
+	& + [class^=title_h]{
 		margin-top: 52px;
+	}
+
+	& + .text_sub {
+		margin-top: 32px;
 	}
 
 	& > li {
@@ -881,6 +885,18 @@
 				margin-top: 8px;
 			}
 		}
+
+		dl {
+			margin-top: 8px;
+
+			dt, dd {
+				font-size: var(--font-size-body-xsmall);
+				color: var(--color-text-information);
+			}
+			dd {
+				margin-top: 4px;
+			}
+		}
 	}
 
 }
@@ -890,6 +906,7 @@
 	> li {
 		font-size: var(--font-size-body-medium);
 		strong {
+			font-size: var(--font-size-heading-medium);
 			&::before {
 				counter-increment: number 1;
 				content: '제' counter(number) '조 ';
