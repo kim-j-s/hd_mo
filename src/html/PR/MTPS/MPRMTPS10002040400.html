@@ -6,14 +6,12 @@
 
 <!-- s: Bottom 팝업 -->
 <!-- s: 25-04-22 수정 -->
-{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="블랙박스 <small>정보를 입력해 주세요</small>"}}
+{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="블랙박스<small>정보를 입력해 주세요</small>"}}
 <!-- e: 25-04-22 수정 -->
 <div class="popup_cont">
 	<div class="popup_content">
 		<!-- s: 수정모드 진입시 버튼 출력 -->
-		<div class="etc_btn_area right">
-			{{> cp/button type="3" size="5" rightIcon="deleteSvg" b-text="삭제" popup="alert_d1"}}
-		</div>
+		<div class="etc_btn_area right">{{> cp/button type="3" size="5" rightIcon="deleteSvg" b-text="삭제" popup="alert_d1"}}</div>
 		<!-- e: 수정모드 진입시 버튼 출력 -->
 		<div class="form_group_wrap">
 			<div class="form_line">
@@ -27,60 +25,76 @@
 				</div>
 				<div class="form_line grow">
 					<div class="label_tit">구입가격</div>
-						{{> cp/text type="tel" class="price" placeholder="숫자만" r-text="만원" inp-title="구입가격 입력"}}
+					{{> cp/text type="tel" class="price" placeholder="숫자만" r-text="만원" inp-title="구입가격 입력"}}
 				</div>
 			</div>
-			<!-- s: 25-05-09 수정 -->
-			<!-- s: 첨단안전장치만 있는 Case -->
-			<!-- <div class="row">
-				<div class="form_line grow">
-					<div class="label_tit">구입가격</div>
-						{{> cp/text type="tel" class="price" placeholder="숫자만" r-text="만원" inp-title="구입가격 입력"}}
-				</div>
-			</div> -->
-			<!-- e: 첨단안전장치만 있는 Case -->
-			<!-- e: 25-05-09 수정 -->
-			<div class="form_line">
-				{{> cp/text type="tel" class="price big" placeholder="숫자만" l-text="현재가격" r-text="만원" inp-title="현재가격 입력"}}
-			</div>
+			<div class="form_line">{{> cp/text type="tel" class="price big" placeholder="숫자만" l-text="현재가격" r-text="만원" inp-title="현재가격 입력"}}</div>
 		</div>
 	</div>
 </div>
 
 <div class="popup_bottom">
-		<!-- s: 버튼 활성화 -->
-		<div class="btn_area">
-			{{> cp/button type="1" size="1" b-text="부품정보 저장하기"}}
-		</div>
-		 <!-- e: 버튼 활성화 -->
-
-		<!-- s: 버튼 비활성화 -->
-		<div class="btn_area">
-			{{> cp/button type="1" size="1" b-text="장착연도를 선택 중이에요" disabled=true}}
-		</div>
-		<!-- e: 버튼 비활성화 -->
-	
+	<!-- s: 25-05-12 수정 -->
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" b-text="세부명칭을 입력 중이에요" disabled=true}}
+		<!-- {{> cp/button type="1" size="1" b-text="장착연도를 선택 중이에요" disabled=true}} -->
+		<!-- {{> cp/button type="1" size="1" b-text="부품정보 저장하기"}} -->
+	</div>
+	<!-- e: 25-05-12 수정 -->
 </div>
-
 {{/ popup/popup_bottom}}
-<!-- e: Bottom 팝업 -->
 
-<!-- s: popup area -->
-	<!-- s: select popup(장착연도 선택) -->
-	{{#> popup/popup_bottom popup-id="select_option_ty1" popup-title="장착연도 선택"}}
-		<div class="popup_cont">
-			<div class="popup_content">
-				<div class="opt_select_list opt_case3">
-					<div role="button" tabindex="0" class="option"><span class="text">2020</span></div>
-					<div role="button" tabindex="0" class="option"><span class="text">2020</span></div>
-					<div role="button" tabindex="0" class="option"><span class="text">2020</span></div>
-					<div role="button" tabindex="0" class="option"><span class="text">2020</span></div>
-					<div role="button" tabindex="0" class="option"><span class="text">2020</span></div>
-					<div role="button" tabindex="0" class="option"><span class="text">2020</span></div>
+<!-- s: 25-05-12 수정 -->
+<!-- s: 첨단안전장치만 있는 Case -->
+{{#> popup/popup_bottom popup-id="pop_type02" popup-active=true popup-title="차선이탈 경고장치 정보 입력" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- s: 수정모드 진입시 버튼 출력 -->
+		<div class="etc_btn_area right">{{> cp/button type="3" size="5" rightIcon="deleteSvg" b-text="삭제" popup="alert_d1"}}</div>
+		<!-- e: 수정모드 진입시 버튼 출력 -->
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">세부명칭</div>
+				{{> cp/text placeholder="추가부품명 입력" inp-title="세부명칭 입력"}}
+			</div>
+			<div class="row">
+				<div class="form_line grow">
+					<div class="label_tit">구입가격</div>
+						{{> cp/text type="tel" class="price" placeholder="숫자만" r-text="만원" inp-title="구입가격 입력"}}
 				</div>
 			</div>
+			<div class="form_line">{{> cp/text type="tel" class="price big" placeholder="숫자만" l-text="현재가격" r-text="만원" inp-title="현재가격 입력"}}</div>
 		</div>
-		{{/ popup/popup_bottom}}
+	</div>
+</div>
+
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" b-text="구매가격을 입력 중이에요" disabled=true}}
+		<!-- {{> cp/button type="1" size="1" b-text="부품정보 저장하기"}} -->
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 첨단안전장치만 있는 Case -->
+<!-- e: 25-05-12 수정 -->
+<!-- e: Bottom 팝업 -->
+
+	<!-- s: popup area -->
+	<!-- s: select popup(장착연도 선택) -->
+	{{#> popup/popup_bottom popup-id="select_option_ty1" popup-title="장착연도 선택"}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="opt_select_list opt_case3">
+				<div role="button" tabindex="0" class="option"><span class="text">2020</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">2020</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">2020</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">2020</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">2020</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">2020</span></div>
+			</div>
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
 	<!-- e: select popup(장착연도 선택) -->
 
 	<!-- s: Layer 팝업('삭제' 버튼 클릭시) -->
@@ -92,13 +106,10 @@
 		</div>
 	</div>
 	<div class="popup_bottom">
-		<div class="btn_area">
-			{{> cp/button type="3" size="2" b-text="아니오" }}
-			{{> cp/button type="1" size="2" b-text="예" }}
-		</div>
+		<div class="btn_area">{{> cp/button type="3" size="2" b-text="아니오" }} {{> cp/button type="1" size="2" b-text="예" }}</div>
 	</div>
 	{{/ popup/popup_layer}}
 	<!-- e: Layer 팝업('삭제' 버튼 클릭시) -->
-<!-- e: popup area -->
+	<!-- e: popup area -->
 
-{{/ layout/default }}
+	{{/ layout/default }}

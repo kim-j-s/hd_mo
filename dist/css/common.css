@@ -162,10 +162,18 @@ strong {
 	flex: 1;
 }
 .wrap .container_form {
-	overflow-y: auto;
 	-webkit-box-flex: 1;
 	-ms-flex: 1;
 	flex: 1;
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	overflow-y: auto;
 }
 .wrap.wrap_ty2 .header {
 	-webkit-transition: background-color 0.3s ease-in-out;
@@ -899,7 +907,7 @@ strong {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
-.header .header_inner .left {
+.header .header_inner .header_left {
 	position: absolute;
 	left: 1.5rem;
 	display: -webkit-box;
@@ -909,7 +917,7 @@ strong {
 	-ms-flex-align: center;
 	align-items: center;
 }
-.header .header_inner .right {
+.header .header_inner .header_right {
 	position: absolute;
 	top: 1.2rem;
 	right: 1.6rem;
@@ -921,13 +929,13 @@ strong {
 	align-items: center;
 	gap: 0.8rem;
 }
-.header .header_inner .right .allmenu_open {
+.header .header_inner .header_right .allmenu_open {
 	width: 3.2rem;
 	height: 3.2rem;
 	font-size: 0;
 	background: url(../images/header/icon_hamburger.svg) no-repeat center center/3.2rem auto;
 }
-.header .header_inner .right .insChk {
+.header .header_inner .header_right .insChk {
 	width: 3.2rem;
 	height: 3.2rem;
 	background: url(../images/icon/icon_insurance_check.svg) no-repeat center/3.2rem auto;
@@ -1049,7 +1057,7 @@ strong {
 .nav_menu_wrap .nav_menu_top .nmt_btn.allmenu_close {
 	background-image: url(../images/header/icon_menu_close.svg);
 }
-.nav_menu_wrap .nav_menu_bottom {
+.nav_menu_wrap .nav_menu_content {
 	-webkit-box-flex: 1;
 	-ms-flex: 1 1 0px;
 	flex: 1 1 0;
@@ -2107,9 +2115,6 @@ strong {
 .hd_btn_ty_1:focus {
 	background-color: var(--color-button-primary-fill);
 }
-.hd_btn_ty_1:hover {
-	background-color: var(--color-button-primary-fill-hover);
-}
 .hd_btn_ty_1:active {
 	background-color: var(--color-button-primary-fill-pressed);
 }
@@ -2120,10 +2125,6 @@ strong {
 }
 .hd_btn_ty_2:focus {
 	background-color: var(--color-button-secondary-fill);
-}
-.hd_btn_ty_2:hover {
-	background-color: var(--color-button-secondary-fill-hover);
-	color: var(--color-text-primary);
 }
 .hd_btn_ty_2:active {
 	background-color: var(--color-button-secondary-fill-pressed);
@@ -2136,10 +2137,6 @@ strong {
 }
 .hd_btn_ty_3:focus {
 	background: var(--color-button-tertiary-fill);
-}
-.hd_btn_ty_3:hover {
-	border: 1px solid var(--color-button-tertiary-border);
-	background: var(--color-button-tertiary-fill-hover);
 }
 .hd_btn_ty_3:active {
 	border: 1px solid var(--color-button-tertiary-border);
@@ -2417,9 +2414,6 @@ strong {
 	-ms-flex-negative: 0;
 	flex-shrink: 0;
 }
-.btn_link.price_btn:hover {
-	background-color: var(--color-button-text-fill-hover);
-}
 .btn_link.price_btn_non {
 	position: relative;
 	height: 100%;
@@ -2430,17 +2424,10 @@ strong {
 	-ms-flex-negative: 0;
 	flex-shrink: 0;
 }
-.btn_link.price_btn_non:hover {
-	background-color: var(--color-button-text-fill-hover);
-}
 .btn_link.prev_btn {
 	padding-left: 2rem;
 	font-size: var(--font-size-button-medium);
 	background: url(../images/icon/icon_prev.svg) no-repeat left center;
-}
-.btn_link:hover {
-	background-color: var(--color-button-text-fill-hover);
-	border-radius: var(--radius-xxsamll);
 }
 .btn_link:active {
 	background-color: var(--color-button-text-fill-pressed);
@@ -2929,10 +2916,6 @@ strong {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-}
-.keypad_wrap .keypad_chip_item:hover {
-	border: 1px solid var(--color-button-tertiary-border);
-	background: var(--color-button-tertiary-fill-hover);
 }
 .keypad_wrap .keypad_chip_item:active {
 	border: 1px solid var(--color-button-tertiary-border);
