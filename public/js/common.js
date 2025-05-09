@@ -1123,11 +1123,11 @@ $(function(){
 			removeAutoCont();
 			const $selfThis = $(this);
 			const value = $selfThis.val();
-			const listhtml = "<div class='mail_list_cont'><ul class='mail_list' tabindex='0'></ul></div>";
+			const listhtml = "<div class='mail_list_cont' tabindex='0'><ul class='mail_list' tabindex='0'></ul></div>";
 			$(this).closest(".inp").after(listhtml);
 			$inputContainer = $(this).closest(".input_text");
 			$autoCont = $inputContainer.find(".mail_list_cont");
-			$mailList = $(".mail_list");
+			$mailList =  $inputContainer.find(".mail_list");
 	
 			$mailList.on("focusout", function (e) {
 				detectFocus(e);
@@ -1143,7 +1143,7 @@ $(function(){
 			}
 		});
 	
-		//유틸 함수 영역
+		//메서드 영역
 		function showAutoCont(value,_self) {
 			const $etcItem = $("<li><a href='#'>" + etcWord + "</a></li>");
 			$mailList.append($etcItem);
@@ -1181,7 +1181,7 @@ $(function(){
 	
 		//이벤트 리스너 영역
 		$(document).on("click", function (e) {
-			const target = $(e.target)[0];
+			const target = $(e.target);
 			const isEmailContainer = $inputEmail.is(target) || $inputEmail.has(target).length > 0 || $autoCont.is(target) || $autoCont.has(target).length > 0;
 			if (!isEmailContainer) removeAutoCont();
 		});
