@@ -3,12 +3,17 @@
         $WIN = $(window),
         wHeight = $WIN.height();
 
-  /* 전체메뉴 */
-  $DOM.on('click', '.header .right [class^=allmenu]', function(){
+
+
+
+  /* 전체메뉴 열기 */
+  $DOM.on('click', '.header .header_right .allmenu_open', function() {
+		console.log('열기');
     const $this = $(this),
           $nav = $this.closest('.header_inner').find('.nav_menu_wrap');
 
     // if($nav.css('visibility') == 'hidden'){
+		/* 전체팝업 열기 */
 		if(!$nav.hasClass('active')){
 			$('body').addClass('scroll_lock');
 				$nav.addClass('active');
@@ -23,17 +28,31 @@
 			// const at = document.activeElement;
 			// const name = at.className;
 			// $('.nav_menu_bottom').text(name);
-    }else {
-      $('.header .allmenu').focus();
-			$nav.find('.nav_menu_inner').removeAttr('tabindex');
-			$('.header_inner').find('*').not('.nav_menu_wrap, .right, .right *').attr('aria-hidden', 'false');
-			$('.right .allmenu').attr('aria-hidden', 'false');
-			$('.wrap').children().not('.header').attr('aria-hidden', 'false');
-      $nav.removeClass('active').attr('aria-hidden', 'true');
-			$('body').removeClass('scroll_lock');
-			$('.wrap').removeAttr('aria-hidden');
-    }
+    } 
   });
+	/* 전체메뉴 열기 */
+
+	/* 전체메뉴 닫기 */
+	$DOM.on('click', '.header .header_right .allmenu_close', function() {
+		console.log('닫기');
+    const $this = $(this),
+          $nav = $this.closest('.header_inner').find('.nav_menu_wrap');
+
+					$('.header .allmenu_open').focus();
+					$nav.find('.nav_menu_inner').removeAttr('tabindex');
+					$('.header_inner').find('*').not('.nav_menu_wrap, .header_right, .header_right *').attr('aria-hidden', 'false');
+					$('.header_right .allmenu_open').attr('aria-hidden', 'false');
+					$('.wrap').children().not('.header').attr('aria-hidden', 'false');
+					$nav.removeClass('active').attr('aria-hidden', 'true');
+					$('body').removeClass('scroll_lock');
+					$('.wrap').removeAttr('aria-hidden');
+  });
+	/* 전체메뉴 닫기 */
+
+
+
+
+
 
 
   /* Accordion */   
@@ -621,13 +640,13 @@ $(function(){
 
 
 	// 간편정보 노출 방식
-	$('#container, .popup_cont').on('scroll', function() {
+	$('#container, .popup_cont, .container_form').on('scroll', function() {
 		const $headHeight = $('#header').outerHeight();
 		const $pop_headHeight = $('.popup_head').outerHeight();
 		const scrollTop = $('#container').scrollTop();
 		const pop_scrollTop = $('.popup_cont').scrollTop();
 
-		// console.log('scroll!!');
+		console.log('scroll!! : '+ scrollTop);
 
 		if ($('.simple_info_wrap').length) {
 			const $target = $('.simple_info_wrap');
@@ -635,6 +654,8 @@ $(function(){
 			const $targetChild = $('.simple_info_wrap').children('.simple_info_item');
 			let new_headHeight = 0;
 			let simpleHeight = $('.simple_info_wrap').find('.simple_info_item').height();
+
+			console.log('기준 위치 : ', targetOffsetTop);
 
 			if($('.gd_middle_b').length){
 				targetOffsetTop = targetOffsetTop - 50
