@@ -1,0 +1,51 @@
+{{#> layout/default page-title="공동인증서 복사(스마트폰→PC)"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-active=true popup-title="복사할 공동인증서 선택" }}
+<div class="popup_cont">
+	<div class="popup_content">
+        <!-- s: 공동인증서 있을때 -->
+		<!-- s: popup_content_top -->
+		<div class="popup_content_top">
+			<h2 class="title_h2">
+				<strong>스마트폰에서 발급받은인증번호를 PC 화면에 입력해 주세요.</strong>
+			</h2>
+		</div>
+		<!-- e: popup_content_top -->
+        <div class="certify_box">
+            <div class="phone">
+                스마트폰
+            </div>
+            <div class="arrow"><div class="sr_only">에서</div></div>
+            <div class="pc">
+                PC
+            </div>
+            <div class="sr_only">로 복사하기</div>
+        </div>
+        <div class="form_group_wrap">
+            <div class="form_line">
+                <div class="label_tit">인증번호</div>
+                <div class="comp_wrap card">
+                    {{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="인증번호 첫번째 4자리 입력" no_del="flase" }}
+                    <span class="dash">-</span>
+                    {{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="인증번호 중간 4자리 입력" no_del="flase" }}
+                    <span class="dash">-</span>
+                    {{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="인증번호 마지막 4자리 입력" no_del="flase" }}
+                </div>
+            </div>
+        </div>
+        <div class="btn_area center">
+            {{> cp/button type="3" size="4" b-text="인증번호 재발급"}}
+        </div>
+	</div>
+
+</div>
+
+<div class="popup_bottom">
+	<div class="btn_area">{{> cp/button type="1" size="1" b-text="확인"}}</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+
+{{/ layout/default }}
