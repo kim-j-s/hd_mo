@@ -77,26 +77,48 @@
 				}
 			</style>
 			<div id="header" class="header">
-				<div class="header_inner">
-					<div class="left">
-						<button type="button" class="back"><span class="blind">이전 페이지로 이동</span></button>
+				<div class="header_inner history_back_none">
+					<div class="header_left">
+						<button type="button" class="history_back"><span class="text">이전 페이지로 이동</span></button>
 					</div>
 
 					<div class="header_connect">
 						<h1 class="header_title">popup</h1>
 					</div>
 
-					<div class="right">
-						<button type="button" class="allmenu" title="전체메뉴 열기"></button>
+					<div class="header_right">
+						<button type="button" class="allmenu_open"><span class="text">전체메뉴 열기</span></button>
 						<div class="nav_menu_wrap" aria-hidden="true">
 							<div class="nav_menu_inner">
 								<div class="nav_menu_top">
-									<button type="button"><span class="blind">홈으로 이동</span></button>
-									<button type="button" class="allmenu_close"><span class="blind">전체메뉴 닫기</span></button>
+									<a href="#" class="nmt_btn go_home"><span class="text">홈으로 이동</span></a>
+									<button type="button" class="nmt_btn allmenu_close"><span class="text">전체메뉴 닫기</span></button>
 								</div>
-								<div class="nav_menu_bottom">
-									<div class="nav_content">전체메뉴 내용</div>
-									<div class="nav_link">기타 링크</div>
+								<div class="nav_menu_content">
+									<!-- s: 로그인 전 -->
+									<div class="nmc_top">
+										<div class="nmc_top_l">
+											<button type="button"><span class="text"></span></button>
+										</div>
+										<div class="nmc_top_r">
+											<a href="#" class="mem_btn member_join"><span class="text">회원가입</span></a>
+										</div>
+									</div>
+									<!-- e: 로그인 전 -->
+
+									<!-- s: 로그인 후 -->
+									<div class="nmc_top">
+										<div class="nmc_top_l">
+											<span class="login_hello">
+												<strong>현대</strong>
+												님 반갑습니다
+											</span>
+										</div>
+										<div class="nmc_top_r">
+											<button type="button" class="mem_btn member_logout"><span class="text">로그아웃</span></button>
+										</div>
+									</div>
+									<!-- e: 로그인 후 -->
 								</div>
 							</div>
 						</div>

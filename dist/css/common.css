@@ -162,10 +162,18 @@ strong {
 	flex: 1;
 }
 .wrap .container_form {
-	overflow-y: auto;
 	-webkit-box-flex: 1;
 	-ms-flex: 1;
 	flex: 1;
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	overflow-y: auto;
 }
 .wrap.wrap_ty2 .header {
 	-webkit-transition: background-color 0.3s ease-in-out;
@@ -839,6 +847,25 @@ strong {
 .trend.down {
 	color: var(--color-light-secondary-60);
 }
+.info_alert_cont {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: var(--gap-5);
+}
+.info_alert_cont .info_cont p {
+	margin: 0;
+}
 /* common 인증, 로딩 등 */
 /* header */
 .header .header_inner {
@@ -858,9 +885,10 @@ strong {
 	min-height: 5.6rem;
 	padding: 1.2rem 1.6rem;
 }
-.header .header_inner .back {
-	width: 2.4rem;
-	height: 2.4rem;
+.header .header_inner .history_back {
+	width: 3.2rem;
+	height: 3.2rem;
+	font-size: 0;
 	background: url(../images/icon/arrowLeft_ty1.svg) no-repeat center/2.4rem auto;
 }
 .header .header_inner .header_connect {
@@ -868,7 +896,7 @@ strong {
 	-ms-flex: 1;
 	flex: 1;
 	width: 100%;
-	padding: 0 8rem 0 5.2rem;
+	padding: 0 3.6rem;
 }
 .header .header_inner .header_connect .header_title {
 	overflow: hidden;
@@ -879,7 +907,7 @@ strong {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
-.header .header_inner .left {
+.header .header_inner .header_left {
 	position: absolute;
 	left: 1.5rem;
 	display: -webkit-box;
@@ -889,7 +917,7 @@ strong {
 	-ms-flex-align: center;
 	align-items: center;
 }
-.header .header_inner .right {
+.header .header_inner .header_right {
 	position: absolute;
 	top: 1.2rem;
 	right: 1.6rem;
@@ -901,17 +929,13 @@ strong {
 	align-items: center;
 	gap: 0.8rem;
 }
-.header .header_inner .right .allmenu {
+.header .header_inner .header_right .allmenu_open {
 	width: 3.2rem;
 	height: 3.2rem;
-	text-align: center;
-	color: #fff;
-	background-color: blue;
+	font-size: 0;
+	background: url(../images/header/icon_hamburger.svg) no-repeat center center/3.2rem auto;
 }
-.header .header_inner .right .allmenu::before {
-	content: "메뉴열기";
-}
-.header .header_inner .right .insChk {
+.header .header_inner .header_right .insChk {
 	width: 3.2rem;
 	height: 3.2rem;
 	background: url(../images/icon/icon_insurance_check.svg) no-repeat center/3.2rem auto;
@@ -980,7 +1004,6 @@ strong {
 	-ms-flex-direction: column;
 	flex-direction: column;
 	height: 100%;
-	padding: 1rem;
 	background-color: #fff;
 	-webkit-transform: translateX(100%);
 	transform: translateX(100%);
@@ -1016,17 +1039,25 @@ strong {
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	padding: 1.6rem 0;
+	min-height: 5.6rem;
+	padding: 1.2rem 1.6rem;
 }
-.nav_menu_wrap .nav_menu_top button {
-	width: 4rem;
-	height: 2.4rem;
-	text-align: center;
+.nav_menu_wrap .nav_menu_top .nmt_btn {
+	width: 3.2rem;
+	height: 3.2rem;
+	font-size: 0;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 3.2rem auto;
+	background-color: transparent;
 }
-.nav_menu_wrap .nav_menu_top .allmenu_close::before {
-	content: "메뉴 닫기";
+.nav_menu_wrap .nav_menu_top .nmt_btn.go_home {
+	background-image: url(../images/header/icon_home.svg);
 }
-.nav_menu_wrap .nav_menu_bottom {
+.nav_menu_wrap .nav_menu_top .nmt_btn.allmenu_close {
+	background-image: url(../images/header/icon_menu_close.svg);
+}
+.nav_menu_wrap .nav_menu_content {
 	-webkit-box-flex: 1;
 	-ms-flex: 1 1 0px;
 	flex: 1 1 0;
@@ -2084,9 +2115,6 @@ strong {
 .hd_btn_ty_1:focus {
 	background-color: var(--color-button-primary-fill);
 }
-.hd_btn_ty_1:hover {
-	background-color: var(--color-button-primary-fill-hover);
-}
 .hd_btn_ty_1:active {
 	background-color: var(--color-button-primary-fill-pressed);
 }
@@ -2097,10 +2125,6 @@ strong {
 }
 .hd_btn_ty_2:focus {
 	background-color: var(--color-button-secondary-fill);
-}
-.hd_btn_ty_2:hover {
-	background-color: var(--color-button-secondary-fill-hover);
-	color: var(--color-text-primary);
 }
 .hd_btn_ty_2:active {
 	background-color: var(--color-button-secondary-fill-pressed);
@@ -2113,10 +2137,6 @@ strong {
 }
 .hd_btn_ty_3:focus {
 	background: var(--color-button-tertiary-fill);
-}
-.hd_btn_ty_3:hover {
-	border: 1px solid var(--color-button-tertiary-border);
-	background: var(--color-button-tertiary-fill-hover);
 }
 .hd_btn_ty_3:active {
 	border: 1px solid var(--color-button-tertiary-border);
@@ -2394,9 +2414,6 @@ strong {
 	-ms-flex-negative: 0;
 	flex-shrink: 0;
 }
-.btn_link.price_btn:hover {
-	background-color: var(--color-button-text-fill-hover);
-}
 .btn_link.price_btn_non {
 	position: relative;
 	height: 100%;
@@ -2407,17 +2424,10 @@ strong {
 	-ms-flex-negative: 0;
 	flex-shrink: 0;
 }
-.btn_link.price_btn_non:hover {
-	background-color: var(--color-button-text-fill-hover);
-}
 .btn_link.prev_btn {
 	padding-left: 2rem;
 	font-size: var(--font-size-button-medium);
 	background: url(../images/icon/icon_prev.svg) no-repeat left center;
-}
-.btn_link:hover {
-	background-color: var(--color-button-text-fill-hover);
-	border-radius: var(--radius-xxsamll);
 }
 .btn_link:active {
 	background-color: var(--color-button-text-fill-pressed);
@@ -2906,10 +2916,6 @@ strong {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-}
-.keypad_wrap .keypad_chip_item:hover {
-	border: 1px solid var(--color-button-tertiary-border);
-	background: var(--color-button-tertiary-fill-hover);
 }
 .keypad_wrap .keypad_chip_item:active {
 	border: 1px solid var(--color-button-tertiary-border);
@@ -8190,6 +8196,9 @@ strong {
 }
 .table_wrap .table td .btn_link {
 	padding-left: 0;
+}
+.table_wrap .table td.bg_point {
+	background-color: var(--color-surface-primary-subtler);
 }
 .table_wrap .table .ta_l {
 	text-align: left !important;
