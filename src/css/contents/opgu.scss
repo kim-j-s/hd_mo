@@ -271,8 +271,35 @@
 }
 
 
-
 /* 간편비밀번호 팝업 */
+.pin_info {
+	position: relative;
+	margin-top: 30px;
+	padding-bottom: 58px;
+	.pin_enter_error_msg {
+		display: none;
+		position: absolute;
+		text-align: left;
+		bottom: 8px;
+		left: 0;
+		.text {
+			background-position: left top;
+		}
+	}
+}
+.pin_enter {
+	&.pass_join {
+		height: auto;
+		.error {
+			& + .pin_info {
+				.pin_enter_error_msg {
+					display: block;
+				}
+			}
+		}
+	
+	}
+}
 .simple_pw_area {
 	padding-bottom: 222px;
 
