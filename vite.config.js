@@ -64,7 +64,7 @@ const getContexts = dir => {
 }
 
 const pageData = getContexts('src');
-console.log(getEntries('src'));
+// console.log(getEntries('src'));
 export default defineConfig({
 // export default {
   root: 'src',
@@ -115,8 +115,8 @@ export default defineConfig({
       ],
       context(pagePath) {
         // console.log('test2---');
-        console.log(pageData);
-        console.log(pagePath);
+        // console.log(pageData);
+        // console.log(pagePath);
         return pageData[pagePath];
       },
       helpers, // helpers 등록

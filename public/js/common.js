@@ -1110,7 +1110,6 @@ $(function(){
 	
 		const etcWord = "직접입력";
 		const domainArr = [
-			"konai.com",
 			"naver.com",
 			"nate.com",
 			"gmail.com",
@@ -1145,14 +1144,15 @@ $(function(){
 	
 		//메서드 영역
 		function showAutoCont(value,_self) {
-			const $etcItem = $("<li><a href='#'>" + etcWord + "</a></li>");
+			// const $etcItem = $("<li><a href='#'>" + etcWord + "</a></li>");
+			const $etcItem = $("<li><button type='button' class='text'>" + etcWord + "</button></li>");
 			$mailList.append($etcItem);
 			$etcItem.on("click", function () {
 				removeAutoCont();
 			});
 	
 			domainArr.forEach(domain => {
-				const $listItem = $(`<li><a href='#'>` + value + `<span class='mark'>@` + domain + `</span></a></li>`);
+				const $listItem = $(`<li><button type='button' class='text'>` + value + `<span class='mark'>@` + domain + `</span></button></li>`);
 				$listItem.on("click", function () {
 					const item = $(this).text();
 					_self.val(item);
