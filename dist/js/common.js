@@ -17,9 +17,9 @@
 
 			setTimeout(function () {
 				$nav.find(".nav_menu_inner").attr("tabindex", "0").focus();
-				$(".right .allmenu").attr("aria-hidden", "true");
+				$(".header_right .allmenu").attr("aria-hidden", "true");
 				$nav.attr("aria-hidden", "false");
-				$(".header_inner").find("*").not(".nav_menu_wrap, .right, .right *").attr("aria-hidden", "true");
+				$(".header_inner").find("*").not(".nav_menu_wrap, .header_right, .header_right *").attr("aria-hidden", "true");
 				$(".wrap").children().not(".header").attr("aria-hidden", "true");
 			}, 400);
 			// const at = document.activeElement;
