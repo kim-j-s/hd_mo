@@ -1119,23 +1119,26 @@ $(function(){
 
 
 
- //이메일 자동완성
+	//이메일 자동완성
 	function autoCompleteEmail() {
 		let $inputContainer = $(".input_text");
 		let $inputEmail = $("input.email_auto");
 		let $autoCont = $(".mail_list_cont");
 		let $mailList = $(".mail_list");
-	
+
 		const etcWord = "직접입력";
 		const domainArr = [
 			"naver.com",
-			"nate.com",
-			"gmail.com",
-			"hotmail.com",
+			"hanmail.net",
 			"daum.net",
-			"yahoo.co.kr"
+			"kakao.com",
+			"korea.kr",
+			"korea.com",
+			"dreamwiz.com",
+			"yahoo.co.kr",
+			"hi.co.kr",
 		];
-	
+
 		$inputEmail.on("keyup", function () {
 			removeAutoCont();
 			const $selfThis = $(this);
@@ -1145,30 +1148,24 @@ $(function(){
 			$inputContainer = $(this).closest(".input_text");
 			$autoCont = $inputContainer.find(".mail_list_cont");
 			$mailList =  $inputContainer.find(".mail_list");
-	
+
 			$mailList.on("focusout", function (e) {
 				detectFocus(e);
 			});
-	
+
 			if (value.includes("@") || value.length < 3) {
 				removeAutoCont();
 				return;
 			}
-	
+
 			if (value.length >= 3) {
 				showAutoCont(value,$selfThis);
 			}
 		});
-	
+
 		//메서드 영역
 		function showAutoCont(value,_self) {
-			// const $etcItem = $("<li><a href='#'>" + etcWord + "</a></li>");
-			const $etcItem = $("<li><button type='button' class='text'>" + etcWord + "</button></li>");
-			$mailList.append($etcItem);
-			$etcItem.on("click", function () {
-				removeAutoCont();
-			});
-	
+
 			domainArr.forEach(domain => {
 				const $listItem = $(`<li><button type='button' class='text'>` + value + `<span class='mark'>@` + domain + `</span></button></li>`);
 				$listItem.on("click", function () {
@@ -1177,17 +1174,24 @@ $(function(){
 					removeAutoCont();
 				});
 				$mailList.append($listItem);
+				
 			});
-	
+
+			const $etcItem = $("<li><button type='button' class='text'>" + etcWord + "</button></li>");
+			$mailList.append($etcItem);
+			$etcItem.on("click", function () {
+				removeAutoCont();
+			});
+
 			$autoCont.addClass("on");
 		}
-	
+
 		function removeAutoCont() {
 			if ($autoCont.length > 0) {
 				$autoCont.remove();
 			}
 		}
-	
+
 		function detectFocus(e) {
 			setTimeout(() => {
 				const target = $(document.activeElement);
@@ -1196,14 +1200,14 @@ $(function(){
 				}
 			}, 0);
 		}
-	
+
 		//이벤트 리스너 영역
 		$(document).on("click", function (e) {
 			const target = $(e.target);
 			const isEmailContainer = $inputEmail.is(target) || $inputEmail.has(target).length > 0 || $autoCont.is(target) || $autoCont.has(target).length > 0;
 			if (!isEmailContainer) removeAutoCont();
 		});
-	
+
 		$inputEmail.on("blur", function (e) {
 			detectFocus(e);
 		});
