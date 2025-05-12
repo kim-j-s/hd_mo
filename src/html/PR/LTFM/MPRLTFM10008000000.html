@@ -57,8 +57,10 @@
 			<div class="tab_wrap">
 				<div class="tab_wrap_list_ty1" role="tablist">
 					{{>cp/tab_btn tb-text="신용(앱)카드" tb-id="01" tb-active=true}}
-					{{>cp/tab_btn tb-text="계좌이체" tb-id="02"}}
-					{{>cp/tab_btn tb-text="간편결제" tb-id="03"}}
+					<!-- s: 25-05-12 탭순서 변경 -->
+					{{>cp/tab_btn tb-text="간편결제" tb-id="02"}}
+					{{>cp/tab_btn tb-text="즉시이체" tb-id="03"}}
+					<!-- e: 25-05-12 탭순서 변경 -->
 				</div>
 
 				<!-- 신용(앱)카드 -->
@@ -181,29 +183,10 @@
 					<!-- 25-05-08 2회차 탭 아래로 이동 -->
 				</div>
 
-				<!-- 계좌이체 -->
-				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
-					<h3 class="title_h4">계좌 정보 입력</h3>
-					<div class="form_group_wrap">
-						<div class="form_line">
-							<div class="label_tit">은행</div>
-							{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" }}
-						</div>
-						<div class="form_line">
-							<div class="label_tit">계좌번호</div>
-							{{> cp/text placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
-							<ul class="list_ty2">
-								<li>계약자 명의 계좌만 입력 가능합니다.</li>
-								<li>즉시 이체 가능 시간 : 09:00 ~ 21:50</li>
-							</ul>
-						</div>
-					</div>
-					
-					<!-- 25-05-08 2회차 탭 아래로 이동 -->
-				</div>
-
+				
+				<!-- s: 25-05-12 탭순서 변경 -->
 				<!-- 간편결제 -->
-				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel02">
+				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
 					<h3 class="title_h4">간편 결제 정보 입력</h3>
 					<div class="radio_group_wrap" role="radiogroup">
 						{{> cp/radio rd-class="rd_btn icon_pay_ty1" rd-id="radio_btn_g1" name="radio_g1" labelname="카카오페이" checked=true }}
@@ -257,6 +240,27 @@
 					</div>
 					<!-- 25-05-08 2회차 탭 아래로 이동 -->
 				</div>
+				<!-- 계좌이체 -->
+				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel03">
+					<h3 class="title_h4">계좌 정보 입력</h3>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">은행</div>
+							{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" }}
+						</div>
+						<div class="form_line">
+							<div class="label_tit">계좌번호</div>
+							{{> cp/text placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
+							<ul class="list_ty2">
+								<li>계약자 명의 계좌만 입력 가능합니다.</li>
+								<li>즉시 이체 가능 시간 : 09:00 ~ 21:50</li>
+							</ul>
+						</div>
+					</div>
+					<!-- 25-05-08 2회차 탭 아래로 이동 -->
+				</div>
+
+				<!-- e: 25-05-12 탭순서 변경 -->
 			</div>
 			<!-- e: 25-04-22 수정 -->
 			<!-- s: 05-05-08 2회차 결제 이동 -->
@@ -387,8 +391,8 @@
 					slidesPerView: 1,
 					updateOnWindowResize:true,
 					navigation: {
-						nextEl: ".swiper_button_left",
-						prevEl: ".swiper_button_right",
+						prevEl: ".swiper_button_left", //25-05-12
+						nextEl: ".swiper_button_right", //25-05-12
 					},
 					a11y: {
 						enabled: true,

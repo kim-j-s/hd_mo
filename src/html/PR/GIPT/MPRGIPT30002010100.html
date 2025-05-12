@@ -20,7 +20,9 @@
 			<div class="search_inp_box">
 				{{> cp/text inp-search=true placeholder="품종 입력" inp-title="검색어 입력" }}
 				<div class="desc">
-					<p class="point">반려동물 종류와 나이에 따라 가입이 제한될 수 있어요.</p>
+					<!-- s: 25-05-12 수정 -->
+					<p class="point">아이의 품종과 나이에 따라 가입이 제한될 수 있어요.</p>
+					<!-- e: 25-05-12 수정 -->
 					{{> cp/linkButton bl_class="short_cut" bl_text="가입이 어려운 경우" pop_id="helper_popup" question_tit="팝업 열림" }}
 				</div>
 			</div>
@@ -103,7 +105,9 @@
 				<!-- e: 초성 버튼 리스트 -->
 				<!-- s: 25-04-23 수정 -->
 				<div class="desc">
-					<p class="point">반려동물 종류와 나이에 따라 가입이 제한될 수 있어요.</p>
+					<!-- s: 25-05-12 수정 -->
+					<p class="point">아이의 품종과 나이에 따라 가입이 제한될 수 있어요.</p>
+					<!-- e: 25-05-12 수정 -->
 					{{> cp/linkButton bl_class="short_cut" bl_text="가입이 어려운 경우" pop_id="helper_popup" question_tit="팝업 열림" }}
 				</div>
 				<!-- e: 25-04-23 수정 -->
@@ -138,21 +142,23 @@
 
 <!-- s: popup area -->
 	<!-- s: 가입제한 안내 팝업 -->
-	{{#> popup/popup_bottom popup-id="helper_popup" popup-title="가입제한 안내"}}
+	{{#> popup/popup_bottom popup-id="helper_popup" popup-title="가입 제한 대상 반려동물 안내"}}
 		<div class="popup_cont">
 			<div class="popup_content">
 				<p class="text_sub">아래의 경우에는 반려동물보험 가입이 어려워요.</p>
 				<div class="info_box ty2">
+					<!-- s: 25-05-12 수정 -->
 					<ul class="list_ty1">
 						<li>판매점,브리더 등 매매를 목적으로 사육, 관리하는 반려동물</li>
 						<li>특수 목적<span class="point">*</span>의 반려동물
 							<ul class="list_ty2">
-								<li><span class="point">*</span>특수 목적 : 경찰, 구조, 군, 사냥 등 (단, 맹도견, 청도견 등 장애인 안내견 제외)</li>
+								<li><span class="point">*</span>특수 목적: 경찰, 구조, 군, 사냥 등 (단, 맹도견, 청도견 등 장애인 안내견 제외)</li>
 							</ul>
 						</li>
 						<li>흥행을 목적으로 사육,관리하는 반려동물</li>
 						<li>유기동물 보호센터 등에서 사육, 관리하는 반려동물</li>
 					</ul>
+					<!-- e: 25-05-12 수정 -->
 				</div>
 			</div>
 		</div>
