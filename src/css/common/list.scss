@@ -779,24 +779,8 @@
 		position: relative;
 		padding-left: 20px;
 		font-size: var(--font-size-body-small);
-		line-height: 1.5;
 
-		& ~ li {
-			margin-top: 8px;
-		}
-
-		strong {
-			display: block;
-			margin-top: 4px;
-			font-size: var(--font-size-body-xsmall);
-			color: var(--color-text-subtle);
-			font-weight: 400;
-
-			&.txt_information {
-				color: var(--color-text-information);
-			}
-		}
-
+		& ~ li,
 		ul + strong {
 			margin-top: 8px;
 		}
@@ -826,7 +810,15 @@
 			width: 13px;
 			height: 13px;
 		}
-
+		p {
+			margin-top: 4px;
+			color: var(--color-text-subtle);
+			font-size: var(--font-size-body-xsmall);
+			& + ul, 
+			& + ol {
+				margin-top: 8px;
+			}
+		}
 		ol {
 			margin-top: 8px;
 			counter-reset: number 0;
@@ -849,7 +841,6 @@
 					width: 11px;
 					height: 18px;
 				}	
-
 				& + li {
 					margin-top: 8px;
 				}
@@ -879,11 +870,14 @@
 				& + li {
 					margin-top: 8px;
 				}
+				strong {
+					& + ul,
+					& + ol {
+						margin-top: 4px;
+					}
+				}
 			}
 
-			strong + li {
-				margin-top: 8px;
-			}
 		}
 
 		dl {
