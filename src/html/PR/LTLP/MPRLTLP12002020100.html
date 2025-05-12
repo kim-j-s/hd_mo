@@ -1,0 +1,140 @@
+{{#> layout/default page-title="기본정보 입력 | 상품"}}
+
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-active=true popup-title="반려동물 종류 선택"}}
+<div class="popup_cont search_list_type2">
+	<div class="tab_wrap">
+		<div class="tab_wrap_list_ty1" role="tablist">
+			{{>cp/tab_btn tb-text="검색어로 찾기" tb-id="01" tb-active=true}}
+			{{>cp/tab_btn tb-text="초성으로 찾기" tb-id="02"}}
+		</div>
+
+		<!-- s: tab01.검색어로 찾기 Tab 내용 -->
+		<div class="tab_wrap_content has_scroll active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
+
+			<div class="search_inp_box">
+				{{> cp/text inp-search=true placeholder="품종 입력" inp-title="검색어 입력" }}
+				<div class="desc">
+					<p class="point">아이의 품종과 나이에 따라 가입이 제한될 수 있어요.</p>
+					{{> cp/linkButton bl_class="short_cut" bl_text="가입이 어려운 경우" question_tit="팝업 열림" }}
+				</div>
+			</div>
+
+			<!-- s: 자주찾는 품종 추천 리스트 -->
+			<!-- 최초 진입 시 노출: case1.고양이-->
+			<div class="suggestion_list_wrap">
+				<div class="title_h4"><strong>자주 찾는 묘종</strong></div>
+				<div class="item_wrap">
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">코리안숏헤어</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">페르시안</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">러시안블루</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">샴</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">터키시앙고라</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">스코티쉬폴드</span></button>
+				</div>
+			</div>
+			<!-- 최초 진입 시 노출: case2.강아지-->
+			<!-- <div class="suggestion_list_wrap">
+				<div class="title_h4"><strong>자주 찾는 견종</strong></div>
+				<div class="item_wrap">
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">말티즈</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">포메라니안</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">비숑프리제</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">치와와</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">말티푸</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">토이푸들</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">요크셔테리어</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">시츄</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">믹스견(5kg~15kg)</span></button>
+				</div>
+			</div> -->
+			<!-- e: 자주찾는 품종 추천 리스트 -->
+			
+
+			<!-- s: 키워드 검색 결과 리스트 -->
+			<div class="search_result_count">
+				<p>검색결과 <strong class="point">7</strong>건</p>
+			</div>
+			<div class="search_reult_list_container">
+			<!-- 데이터가 없는 경우 no_data 클래스 추가
+			<div class="search_reult_list_container no_data">
+			-->
+				<ul class="search_reult_list">
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">글렌 오브 이<i>말</i> 테리어</span></a></li>
+					<!-- 검색시 스타일 예시 : 검색키워드 <i>태그로 강조 -->
+					<li class="search_reult_list_item"><a href="#"><span class="item_text"><i>말</i> View Monitor 패키지(단품)</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text"><i>말</i>티폼(<i>말</i>티즈+포메라니안)</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text"><i>말</i>티푸</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">몰티즈(<i>말</i>티즈+요크셔테리어)</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">알라스칸 <i>말</i>라뮤트</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">알라스칸 <i>말</i>라뮤트 가나다라마바사 줄바꿈이 가능합니다. 계속 길어질 수 있습니다.</span></a></li>
+					<li class="search_reult_list_item">
+						<div class="no_list_area">
+							{{> cp/icon iconClass="exclamationSvg"}}
+							<p>내역이 없어요</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- e: 키워드 검색 결과 리스트 -->
+		</div>
+		<!-- e: tab01.검색어로 찾기 Tab 내용 -->
+
+		<!-- s: tab02. 초성으로 찾기 Tab 내용 -->
+		<div class="tab_wrap_content has_scroll" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">			
+			<div class="search_inp_box">
+				<!-- s: 초성 버튼 리스트 -->
+				<ul class="keypad_wrap search_letter_btn_list">
+					<button type="button" class="keypad_chip_item">ㄱ</button>
+					<button type="button" class="keypad_chip_item">ㄴ</button>
+					<button type="button" class="keypad_chip_item">ㄷ</button>
+					<button type="button" class="keypad_chip_item">ㄹ</button>
+					<button type="button" class="keypad_chip_item">ㅁ</button>
+					<button type="button" class="keypad_chip_item">ㅂ</button>
+					<button type="button" class="keypad_chip_item">ㅅ</button>
+					<button type="button" class="keypad_chip_item">ㅇ</button>
+					<button type="button" class="keypad_chip_item">ㅈ</button>
+					<button type="button" class="keypad_chip_item">ㅊ</button>
+					<button type="button" class="keypad_chip_item">ㅋ</button>
+					<button type="button" class="keypad_chip_item">ㅌ</button>
+					<button type="button" class="keypad_chip_item">ㅍ</button>
+					<button type="button" class="keypad_chip_item">ㅎ</button>
+				</ul>
+				<!-- e: 초성 버튼 리스트 -->
+				<div class="desc">
+					<p class="point">아이의 품종과 나이에 따라 가입이 제한될 수 있어요.</p>
+					{{> cp/linkButton bl_class="short_cut" bl_text="가입이 어려운 경우" question_tit="팝업 열림" }}
+				</div>
+			</div>
+
+			<!-- s: 키워드 검색 결과 리스트 -->
+			<div class="search_reult_list_container">
+				<ul class="search_reult_list">
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">닥스훈트</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">달마시안</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">대니시 스웨디시 팜도그</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">댄디 딘몬트 테리어</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">더치 스마우스혼드</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">덩케르</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">도그 드보르도</span></a></li>
+					<li class="search_reult_list_item">
+						<div class="no_list_area">
+							{{> cp/icon iconClass="exclamationSvg"}}
+							<p>내역이 없어요</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- e: 키워드 검색 결과 리스트 -->
+		</div>
+		<!-- e: tab02.초성으로로 찾기 Tab 내용 -->
+
+	</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+<!-- s: popup area -->	
+<!-- e: popup area -->
+{{/ layout/default }}
