@@ -40,7 +40,7 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>가입설계동의 - 현대해상 다이렉트</title>
+		<title>기본정보 입력 | 상품 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -49,109 +49,51 @@
 	</head>
 	<body>
 		<!-- s: popup area -->
-
-		<!-- s: Full 팝업 -->
-		<div class="popup_wrap full active" id="pop_type01" role="dialog" aria-hidden="false">
+		<!-- s: 가입제한 안내 팝업 -->
+		<div class="popup_wrap bottom active" id="helper_popup" role="dialog" aria-modal="true" aria-hidden="false">
 			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('helper_popup');"></div>
 				<div class="popup_inner">
-					<div class="popup_head"><div class="popup_head_title"></div></div>
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head"><div class="popup_head_title">가입 제한 대상 반려동물 안내</div></div>
+
 					<div class="popup_cont">
 						<div class="popup_content">
-							<!-- s: popup_content_top -->
-							<div class="popup_content_top">
-								<h2 class="title_h2">
-									<strong>고객정보 관리 및 가입설계를 위해</strong>
-									<br />
-									동의가 필요합니다
-								</h2>
-							</div>
-							<!-- e: popup_content_top -->
-
-							<h3 class="title_h3">피보험자(미성년 자녀)</h3>
-							<div class="form_group_wrap">
-								<div class="form_line">
-									<div class="label_tit">성명</div>
-									<div class="input_text">
-										<div class="inp">
-											<input type="text" title="성명 입력" />
-											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-										</div>
-									</div>
-								</div>
-								<div class="form_line">
-									<div class="label_tit">주민등록번호</div>
-									<div class="comp_wrap birth">
-										<div class="input_text">
-											<div class="inp">
-												<input type="tel" placeholder="앞자리" value="250303" minlength="6" maxlength="6" readonly title="주민등록번호 앞자리 입력" />
-												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-											</div>
-										</div>
-										<span class="dash">-</span>
-										<!-- s: 25-05-13 수정 -->
-										<div class="comp_wrap_keypad_call form_key" tabindex="0" title="주민등록번호 뒤 7자리 입력">
-											<div class="pin_area default">
-												뒷자리
-												<input type="password" name="" id="" readonly="true" autocomplete="new-password" title="숫자 입력" />
-											</div>
-										</div>
-										<!-- e: 25-05-13 수정 -->
-									</div>
-								</div>
-							</div>
-
-							<h3 class="title_h3">계약자</h3>
-							<div class="form_group_wrap">
-								<div class="form_line">
-									<div class="label_tit">성명</div>
-									<div class="input_text">
-										<div class="inp">
-											<input type="text" title="성명 입력" />
-											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-										</div>
-									</div>
-								</div>
-								<div class="form_line">
-									<div class="label_tit">주민등록번호</div>
-									<div class="comp_wrap birth">
-										<div class="input_text">
-											<div class="inp">
-												<input type="tel" placeholder="앞자리" value="250303" minlength="6" maxlength="6" readonly title="주민등록번호 앞자리 입력" />
-												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-											</div>
-										</div>
-										<span class="dash">-</span>
-										<!-- s: 25-05-13 수정 -->
-										<div class="comp_wrap_keypad_call form_key" tabindex="0" title="주민등록번호 뒤 7자리 입력">
-											<div class="pin_area default">
-												뒷자리
-												<input type="password" name="" id="" readonly="true" autocomplete="new-password" title="숫자 입력" />
-											</div>
-										</div>
-										<!-- e: 25-05-13 수정 -->
-									</div>
-								</div>
+							<p class="text_sub">아래의 경우에는 반려동물보험 가입이 어려워요.</p>
+							<div class="info_box ty2">
+								<ul class="list_ty1">
+									<li>판매점,브리더 등 매매를 목적으로 사육, 관리하는 반려동물</li>
+									<li>
+										특수 목적
+										<span class="point">*</span>
+										의 반려동물
+										<ul class="list_ty2">
+											<li>
+												<span class="point">*</span>
+												특수 목적: 경찰, 구조, 군, 사냥 등 (단, 맹도견, 청도견 등 장애인 안내견 제외)
+											</li>
+										</ul>
+									</li>
+									<li>흥행을 목적으로 사육, 관리하는 반려동물</li>
+									<li>유기동물 보호센터 등에서 사육, 관리하는 반려동물</li>
+								</ul>
 							</div>
 						</div>
 					</div>
 					<div class="popup_bottom">
 						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2" disabled>
-								<span class="text">동의를 위해 정보를 입력하세요</span>
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">확인했어요</span>
 							</button>
-							<!-- <button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2" >
-						
-							<span class="text">정보를 입력했습니다</span>
-						
-						</button> -->
 						</div>
 					</div>
-					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
+					<button type="button" class="popup_close" onclick="closeHDPopup('helper_popup');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
-		<!-- e: Full 팝업 -->
+		<!-- e: 가입제한 안내 팝업 -->
 
 		<!-- e: popup area -->
 	</body>
