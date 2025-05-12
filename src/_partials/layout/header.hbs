@@ -30,9 +30,13 @@
 				<button type="button" class="insChk" onclick="openHDPopup(this,'pop_insChk');"><span class="text">계약변경 팝업 열기</span></button>
 			{{/if}}
 			{{!-- 계약변경 팝업 호출 버튼 --}}
+			{{#unless no-nav}}
 			<button type="button" class="allmenu_open"><span class="text">전체메뉴 열기</span></button>
+			{{/unless}}
 			{{!-- s: 전체메뉴 --}}
+			{{#unless no-nav}}
 			{{> layout/nav2 }}
+			{{/unless}}
 			{{!-- e: 전체메뉴 --}}
 		</div>
 
