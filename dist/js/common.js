@@ -1034,6 +1034,23 @@ $(function () {
 	});
 	// 라디오 약관 동의
 
+	/* 광고성 정보의 수신동의 - 개별 Case */
+	$(".sep_chk_box").on("change", ".sep_sub_chk", function () {
+		const $agrdoGroupSub = $(this).closest(".sep_chk_box");
+		const allSubChk = $agrdoGroupSub.find(".sep_sub_chk");
+		const isAllSubChecked = allSubChk.length === allSubChk.filter(":checked").length;
+
+		$agrdoGroupSub.find(".sep_sub_all").prop("checked", isAllSubChecked);
+	});
+
+	$(".sep_chk_box").on("change", ".sep_sub_all", function () {
+		const isChecked = $(this).is(":checked");
+		const $agrdoGroupSub = $(this).closest(".sep_chk_box");
+
+		$agrdoGroupSub.find(".sep_sub_chk").prop("checked", isChecked);
+	});
+	/* 광고성 정보의 수신동의 - 개별 Case */
+
 	// 큰글씨 모드
 	// 확대 버튼 클릭 이벤트
 	$(".z_up").on("click", function () {
