@@ -379,8 +379,8 @@
 					<div class="tab_wrap">
 						<div class="tab_wrap_list_ty1" role="tablist">
 							<button type="button" class="tab_btn active" role="tab" aria-selected="true" aria-controls="tabPanel01" id="tab01">신용(앱)카드</button>
-							<button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanel02" id="tab02">계좌이체</button>
-							<button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanel03" id="tab03">간편결제</button>
+							<button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanel02" id="tab02">간편결제</button>
+							<button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanel03" id="tab03">즉시이체</button>
 						</div>
 
 						<!-- 신용(앱)카드 -->
@@ -523,37 +523,8 @@
 							<!-- e: 카드 혜택 안내 배너 -->
 						</div>
 
-						<!-- 계좌이체 -->
-						<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
-							<h3 class="title_h4">계좌 정보 입력</h3>
-							<div class="form_group_wrap">
-								<div class="form_line">
-									<div class="label_tit">은행</div>
-									<div class="select_item select_item_case01" role="button" tabindex="0" title="은행 선택">
-										<div class="select_item_inner">
-											<div class="si_item" data-placeholder="은행 선택"></div>
-											<span class="si_stat">선택됨</span>
-										</div>
-									</div>
-								</div>
-								<div class="form_line">
-									<div class="label_tit">계좌번호</div>
-									<div class="input_text">
-										<div class="inp">
-											<input type="text" placeholder="계좌번호 입력" title="계좌번호 입력" />
-											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-										</div>
-									</div>
-									<ul class="list_ty2">
-										<li>계약자 명의 계좌만 입력할 수 있어요.</li>
-										<li>즉시 이체 가능 시간 : 09:00 ~ 21:50</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-
 						<!-- 간편결제 -->
-						<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel03">
+						<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
 							<h3 class="title_h4">간편 결제 정보 입력</h3>
 							<div class="radio_group_wrap" role="radiogroup">
 								<div class="inp_radio rd_btn icon_pay_ty1">
@@ -578,11 +549,11 @@
 
 							<!-- s: 카카오페이 -->
 							<div class="acd_item acd_item_ty4">
-								<div class="acd_head">
-									<button type="button" class="acd_btn" aria-expanded="false"><span>꼭 알아두세요</span></button>
+								<div class="acd_head active">
+									<button type="button" class="acd_btn" aria-expanded="true"><span>꼭 알아두세요</span></button>
 								</div>
 								<div class="acd_cont">
-									<div class="inner">
+									<div class="inner" style="display: block">
 										<ul class="list_ty1">
 											<li>카카오페이에 등록된 카드소유자(계좌 예금주)는 보험계약자와 동일해야합니다.</li>
 											<li>카카오페이로 결제하신 경우, 카드결제내역 및 계좌출금내역은 카카오페이에서 확인 가능합니다.</li>
@@ -609,11 +580,11 @@
 
 							<!-- s: 네이버페이 -->
 							<div class="acd_item acd_item_ty4">
-								<div class="acd_head">
-									<button type="button" class="acd_btn" aria-expanded="false"><span>꼭 알아두세요</span></button>
+								<div class="acd_head active">
+									<button type="button" class="acd_btn" aria-expanded="true"><span>꼭 알아두세요</span></button>
 								</div>
 								<div class="acd_cont">
-									<div class="inner">
+									<div class="inner" style="display: block">
 										<ul class="list_ty1">
 											<li>네이버페이는 네이버 아이디로 별도 앱 설치 없이 신용카드 또는 은행계좌 정보를 등록해 네이버페이 비밀번호로 결제할 수 있는 간편결제 서비스입니다.</li>
 											<li>결제 가능한 신용카드 : 신한, 삼성, 현대, BC, 국민, 하나, 롯데, NH농협, 씨티, 카카오뱅크</li>
@@ -639,11 +610,11 @@
 
 							<!-- s: 토스페이 -->
 							<div class="acd_item acd_item_ty4">
-								<div class="acd_head">
-									<button type="button" class="acd_btn" aria-expanded="false"><span>꼭 알아두세요</span></button>
+								<div class="acd_head active">
+									<button type="button" class="acd_btn" aria-expanded="true"><span>꼭 알아두세요</span></button>
 								</div>
 								<div class="acd_cont">
-									<div class="inner">
+									<div class="inner" style="display: block">
 										<ul class="list_ty1">
 											<li>계약자 본인 명의의 토스 앱이 설치된 스마트폰만 결제가 가능합니다.</li>
 											<li>관련 문의는 토스 고객센터(1599-4905)로 연락해주세요.</li>
@@ -658,6 +629,34 @@
 								</div>
 							</div>
 							<!-- e: 토스페이 -->
+						</div>
+						<!-- 즉시이체 -->
+						<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel03">
+							<h3 class="title_h4">계좌 정보 입력</h3>
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">은행</div>
+									<div class="select_item select_item_case01" role="button" tabindex="0" title="은행 선택">
+										<div class="select_item_inner">
+											<div class="si_item" data-placeholder="은행 선택"></div>
+											<span class="si_stat">선택됨</span>
+										</div>
+									</div>
+								</div>
+								<div class="form_line">
+									<div class="label_tit">계좌번호</div>
+									<div class="input_text">
+										<div class="inp">
+											<input type="text" placeholder="계좌번호 입력" title="계좌번호 입력" />
+											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+										</div>
+									</div>
+									<ul class="list_ty2">
+										<li>계약자 명의 계좌만 입력할 수 있어요.</li>
+										<li>즉시 이체 가능 시간 : 09:00 ~ 21:50</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="divider_ty1"></div>
@@ -872,8 +871,8 @@
 			slidesPerView: 1,
 			updateOnWindowResize: true,
 			navigation: {
-				nextEl: ".swiper_button_left",
-				prevEl: ".swiper_button_right",
+				prevEl: ".swiper_button_left",
+				nextEl: ".swiper_button_right",
 			},
 			a11y: {
 				enabled: true,

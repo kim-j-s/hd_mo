@@ -384,8 +384,10 @@
 					<div class="tab_wrap">
 						<div class="tab_wrap_list_ty1" role="tablist">
 							<button type="button" class="tab_btn active" role="tab" aria-selected="true" aria-controls="tabPanel01" id="tab01">신용(앱)카드</button>
-							<button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanel02" id="tab02">계좌이체</button>
-							<button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanel03" id="tab03">간편결제</button>
+							<!-- s: 25-05-12 탭순서 변경 -->
+							<button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanel02" id="tab02">간편결제</button>
+							<button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanel03" id="tab03">즉시이체</button>
+							<!-- e: 25-05-12 탭순서 변경 -->
 						</div>
 
 						<!-- 신용(앱)카드 -->
@@ -544,39 +546,9 @@
 							<!-- 25-05-08 2회차 탭 아래로 이동 -->
 						</div>
 
-						<!-- 계좌이체 -->
-						<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
-							<h3 class="title_h4">계좌 정보 입력</h3>
-							<div class="form_group_wrap">
-								<div class="form_line">
-									<div class="label_tit">은행</div>
-									<div class="select_item select_item_case01" role="button" tabindex="0" title="은행 선택">
-										<div class="select_item_inner">
-											<div class="si_item" data-placeholder="은행 선택"></div>
-											<span class="si_stat">선택됨</span>
-										</div>
-									</div>
-								</div>
-								<div class="form_line">
-									<div class="label_tit">계좌번호</div>
-									<div class="input_text">
-										<div class="inp">
-											<input type="text" placeholder="계좌번호 입력" title="계좌번호 입력" />
-											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-										</div>
-									</div>
-									<ul class="list_ty2">
-										<li>계약자 명의 계좌만 입력 가능합니다.</li>
-										<li>즉시 이체 가능 시간 : 09:00 ~ 21:50</li>
-									</ul>
-								</div>
-							</div>
-
-							<!-- 25-05-08 2회차 탭 아래로 이동 -->
-						</div>
-
+						<!-- s: 25-05-12 탭순서 변경 -->
 						<!-- 간편결제 -->
-						<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel02">
+						<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
 							<h3 class="title_h4">간편 결제 정보 입력</h3>
 							<div class="radio_group_wrap" role="radiogroup">
 								<div class="inp_radio rd_btn icon_pay_ty1">
@@ -668,6 +640,37 @@
 							</div>
 							<!-- 25-05-08 2회차 탭 아래로 이동 -->
 						</div>
+						<!-- 계좌이체 -->
+						<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel03">
+							<h3 class="title_h4">계좌 정보 입력</h3>
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">은행</div>
+									<div class="select_item select_item_case01" role="button" tabindex="0" title="은행 선택">
+										<div class="select_item_inner">
+											<div class="si_item" data-placeholder="은행 선택"></div>
+											<span class="si_stat">선택됨</span>
+										</div>
+									</div>
+								</div>
+								<div class="form_line">
+									<div class="label_tit">계좌번호</div>
+									<div class="input_text">
+										<div class="inp">
+											<input type="text" placeholder="계좌번호 입력" title="계좌번호 입력" />
+											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+										</div>
+									</div>
+									<ul class="list_ty2">
+										<li>계약자 명의 계좌만 입력 가능합니다.</li>
+										<li>즉시 이체 가능 시간 : 09:00 ~ 21:50</li>
+									</ul>
+								</div>
+							</div>
+							<!-- 25-05-08 2회차 탭 아래로 이동 -->
+						</div>
+
+						<!-- e: 25-05-12 탭순서 변경 -->
 					</div>
 					<!-- e: 25-04-22 수정 -->
 					<!-- s: 05-05-08 2회차 결제 이동 -->
@@ -884,8 +887,8 @@
 			slidesPerView: 1,
 			updateOnWindowResize: true,
 			navigation: {
-				nextEl: ".swiper_button_left",
-				prevEl: ".swiper_button_right",
+				prevEl: ".swiper_button_left", //25-05-12
+				nextEl: ".swiper_button_right", //25-05-12
 			},
 			a11y: {
 				enabled: true,
