@@ -121,10 +121,22 @@
 								<div class="label_tit">기타 차종</div>
 								{{> cp/text placeholder="입력해 주세요" inp-title="기타 차종 입력"}}
 							</div>
-							<div class="checkbox_group_wrap column mt_16">
-								{{> cp/checkbox checkbox_class="rd_box" id="checkbox04-9" label_class="chk_label_ty3" labelname="<span class='point'>[선택]</span> 피보험자가 이륜자동차 운전 중에 발생한 상해사고는 보험에서 보상되지 않습니다. 이륜자동차 운전중 상해 부담보 특별약관이 자동가입됩니다." }}
-								{{> cp/checkbox checkbox_class="rd_box" id="checkbox04-9" label_class="chk_label_ty3" labelname="<span class='point'>[필수]</span> 피보험자가 이륜자동차 운전 중에 발생한 상해사고는 보험에서 보상되지 않습니다. 이륜자동차 운전중 상해 부담보 특별약관이 자동가입됩니다." }}
+							<!-- s: 25-05-13 -->
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<!-- s: 이륜자동차 외 선택 시 -->
+									<div class="checkbox_group_wrap column">
+										{{> cp/checkbox checkbox_class="rd_box" id="checkbox02-1-12" label_class="chk_label_ty3" labelname="<strong class='disabled_on'>선택</strong> 피보험자가 이륜자동차 운전 중에 발생한 상해사고는 보험에서 보상되지 않습니다. 이륜자동차 운전중 상해 부담보 특별약관이 자동가입됩니다." }}
+									</div>
+									<!-- e: 이륜자동차 외 선택 시  -->
+									<!-- s: 이륜자동차 선택 시  -->
+									<div class="checkbox_group_wrap column">
+										{{> cp/checkbox checkbox_class="rd_box" id="checkbox02-1-12" label_class="chk_label_ty3" labelname="<strong class='point'>필수</strong> 피보험자가 이륜자동차 운전 중에 발생한 상해사고는 보험에서 보상되지 않습니다. 이륜자동차 운전중 상해 부담보 특별약관이 자동가입됩니다." }}
+									</div>
+									<!-- e: 이륜자동차 선택 시  -->
+								</div>
 							</div>
+							<!-- e: 25-05-13 -->
 						</div>
 					</div>
 				</li>
@@ -230,7 +242,9 @@
 		<!-- s: 하단 고정 버튼 영역 -->
 		<div class="bottom_fix_wrap">
 			<div class="btn_area">
-				{{> cp/button type="1" size="2" b-text="중요한 사항을 확인해 주세요" disabled=true }}
+				<!-- s: 25-05-13 -->
+				{{> cp/button type="1" size="1" b-text="중요한 사항을 확인해 주세요" disabled=true }}
+				<!-- e: 25-05-13 -->
 				<!-- {{> cp/button type="1" size="1" b-text="모두 확인했습니다"}} -->
 			</div>
 		</div>

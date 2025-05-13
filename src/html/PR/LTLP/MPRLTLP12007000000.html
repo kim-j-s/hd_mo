@@ -1,0 +1,110 @@
+{{#> layout/default page-title="가입 전 알릴 사항 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="가입 전 알릴 사항" }}
+
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
+				<h2 class="title_h2">
+					<strong>가입 전 보호자님에 대해<br>알려주세요</strong>
+				</h2>
+                <div class="title_sub">
+                    사실 그대로 알려주셔야 향후 보상처리에 불이익이 없어요.
+                </div>
+			</div>
+			<!-- e: content_top -->
+			<ol class="form_list">
+				<li>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">
+								현재 운전을 하십니까?
+							</div>
+							<div class="radio_group_wrap" role="radiogroup">
+								{{> cp/radio rd-class="rd_btn" rd-id="notification02_01" name="notification02" labelname="예" }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification02_02" name="notification02" labelname="아니오" checked=true }}
+							</div>
+						</div>
+					</div>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">
+								운전하시는 차종을 모두 선택해주세요.
+							</div>
+                            <div class="info_gray">
+                                <dl>
+                                    <dt>승용차</dt>
+                                    <dd>영업용, 자가용</dd>
+                                </dl>
+                                <dl>
+                                    <dt>화물차</dt>
+                                    <dd>영업용</dd>
+                                </dl>
+                                <dl>
+                                    <dt>그 외 차종</dt>
+                                    <dd>건설기계</dd>
+                                </dl>
+                            </div>
+							<div class="btn_area">
+                                <!-- {{> cp/button type="3" size="3" b-text="자동차 선택" btn-title="팝업 열림" }} -->
+                                {{> cp/button type="3" size="3" b-text="자동차 변경" btn-title="팝업 열림" }}
+                            </div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">
+								고객님의 직업을 입력해 주세요.
+							</div>
+                            <div class="info_gray">
+                                <dl>
+                                    <dt>근무처</dt>
+                                    <dd>현대해상</dd>
+                                </dl>
+                                <dl>
+                                    <dt>근무지역</dt>
+                                    <dd>서울</dd>
+                                </dl>
+                                <dl>
+                                    <dt>업종</dt>
+                                    <dd>보험업</dd>
+                                </dl>
+                                <dl>
+                                    <dt>맡으신 업무</dt>
+                                    <dd>사무관리</dd>
+                                </dl>
+                            </div>
+							<div class="btn_area">
+                                <!-- {{> cp/button type="3" size="3" b-text="직업 선택" btn-title="팝업 열림" }} -->
+                                {{> cp/button type="3" size="3" b-text="직업 변경" btn-title="팝업 열림" }}
+                            </div>
+						</div>
+					</div>
+				</li>
+			</ol>
+			<!-- s: 꼭 알아두세요 -->
+			{{#> cp/notice dp-active="active" }}
+			<ul class="list_ty1">
+				<li>보험계약 체결 당시 위 질문들에 대하여 사실대로 알리지 않거나 사실과 다르게 알린 경우에는 보험가입이 거절될 수 있으며, 특히 그 내용이 ‘중요한 사항’에 해당하는 경우 회사는 보험약관에 따라 이 보험계약을 일방적으로 해지할 수 있고, 이미 보험사고가 발생했더라도 보험금 지급을 거절하는 등 보장이 제한될 수 있습니다.</li>
+				<li>보험계약 체결 후 직업 또는 직무가 변경된 사실(예: 사무관리  현장관리)을 지체 없이 회사에 알리지 않은 경우 계약 해지 등 알릴 의무 위반에 따른 불이익이 발생할 수 있습니다.</li>
+			</ul>
+			{{/ cp/notice }}
+			<!-- e: 꼭 알아두세요 -->
+		</div>
+	</div>
+
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="중요 사항을 확인 중이에요" disabled=true }}
+			<!-- {{> cp/button type="1" size="1" b-text="모두 확인했어요" }} -->
+		</div>
+	</div>
+</div>
+
+<!-- s: popup area -->
+<!-- e: popup area -->
+
+{{/ layout/default }}
