@@ -35,7 +35,9 @@
            
                 <div class="form_line">
                     <div class="label_tit">휴대폰번호</div>
-                    {{> cp/text class="phone" type="tel" placeholder="'-'없이 숫자만 입력" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+                    <!-- s: 25-05-13 수정 -->
+                    {{> cp/text class="phone" type="tel" placeholder="'-'없이 입력" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+                    <!-- e: 25-05-13 수정 -->
                 </div>
             </div>
             <!-- e: 25-04-24 수정 -->
@@ -49,14 +51,16 @@
 		<div class="btn_area">{{> cp/button type="1" size="1" b-text="기존 계약을 확인할게요"}}</div>
         <!-- e: 버튼 활성화 -->
 
+       <!-- s: 25-05-13 수정 -->
        <!-- s: 버튼 비활성화 -->
         <!-- 미입력건 존재시 인풋 순서기준으로 placeholder메시지 출력 
-        -이름을 입력해주세요.
-        -주민등록번호를 입력해주세요
-        -휴대폰번호를 입력해주세요.
+        -이름을 입력 중이에요
+        -주민등록번호를 입력 중이에요
+        -휴대폰번호를 입력 중이에요
         -->
-       <div class="btn_area">{{> cp/button type="1" size="1" b-text="이름을 입력해주세요" disabled=true}}</div>
+       <div class="btn_area">{{> cp/button type="1" size="1" b-text="이름을 입력 중이에요" disabled=true}}</div>
        <!-- e: 버튼 비활성화 -->
+       <!-- e: 25-05-13 수정 --> 
 
 
     </div>
