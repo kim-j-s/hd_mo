@@ -1,7 +1,4 @@
-<!---
-화면번호 : MPRGIPT30009000000
-경로 : 하이펫보험 > 가입 전 알릴 사항
--->
+
 {{#> layout/default page-title="가입 전 알릴 사항 | 상품"}}
 <div id="wrap" class="wrap">
 	{{> layout/header h-title="가입 전 알릴 사항" }}
@@ -24,7 +21,7 @@
 					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">
-								현재 치료 중 또는 경과 관찰 중의 질병 또는 상해가 있나요? 또, 과거 3개월 이내에 동물병원에서 예방 목적 이외의 진찰을 받은 적이 있나요?<!-- 25-05-02 -->
+								애완/반려 이외의 목적으로 양육하고 있으신가요?
 							</div>
 							<div class="radio_group_wrap" role="radiogroup">
 								{{> cp/radio rd-class="rd_btn" rd-id="notification01_01" name="notification01" labelname="예" }}
@@ -37,7 +34,7 @@
 					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">
-								지금까지 선천성 이상이 있다(또한 의심이 있다)고 진단을 받은 적이 있나요?<!-- 25-05-02 -->
+								현재 치료 중 또는 경과 관찰 중인 질병 또는 상해가 있거나 최근 3개월 이내에 동물병원에서 예방 목적 이외의 진료를 받은 적이 있나요?
 							</div>
 							<div class="radio_group_wrap" role="radiogroup">
 								{{> cp/radio rd-class="rd_btn" rd-id="notification02_01" name="notification02" labelname="예" }}
@@ -50,12 +47,10 @@
 					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">
-								과거부터 현재까지 아래의 병으로 진단되거나 증상이 있거나 의심 소견을 받은 적이 있나요?<!-- 25-05-02 -->
+								과거부터 현재까지 아래의 병으로 진단되거나 증상이 있거나 의심 소견을 받은 적이 있나요?
 							</div>
 							<div class="info_gray">
-								<!-- s: 25-05-13 -->
 								<ol class="number_list">
-								<!-- e: 25-05-13 -->
 									<!-- s: 강아지 case -->
 									<li>내장질환 : 심장질환, 만성신부전증, 간기능부전, 간경변, 담도계질환, 간문맥전신단락증(PSS), 만성췌장염, 췌장분비부전(EPI), 거대식도질환, 비뇨기계결석, 기관협착(기관허탈)</li>
 									<li>호르몬 질환 (내분비질환) : 부신피질기능저하증, 부신피질기능항진증, 당뇨병, 갑상선질환</li>
@@ -64,7 +59,7 @@
 									<li>혈액 질환 : 면역매개성용혈성빈혈(IMHA), 면역매개성혈소판감소증(IMT), 기타 응고계질환</li>
 									<li>관절질환 : 슬개골탈구, 고관절형성부전(고관절이형성), 대퇴골두무혈성괴사증(LCPD)</li>
 									<li>기타 질환 : 악성종양(암), 유선종양, 지방종이나 몸에 혹, 심장사상충증, 선천 및 후천장애, 아토피(만성피부염)</li>
-									<!-- e: 강아지 case -->
+									<!-- s: 강아지 case -->
 									<!-- s: 고양이 case -->
 									<li>내장질환 : 심장질환, 만성신장병, 간경변, 거대식도질환, 거대결장질환, 전염성복막염(FIP), 방광염, 간문맥전신단락증, 결석, 고양이 하부요로기계 증후군(FULTD)</li>
 									<li>호르몬 질환 (내분비질환) : 당뇨병, 부신피질기능저하증, 부신피질기능항진증, 갑상선질환</li>
@@ -73,7 +68,7 @@
 									<li>혈액 질환 : 고양이 면역결핍바이러스 감염증(FIV), 고양이 백혈병바이러스 감염증(FeLV), 고양이범백혈구감소증, 면역매개성빈혈, 면역매개성혈소판감소증</li>
 									<li>관절질환 : 추간판탈출증(디스크)</li>
 									<li>기타 질환 : 악성종양, 모낭충증, 심장사상충감염, 외이염, 알러지, 아토피, 치주질환, 고양이 코로나바이러스 감염증, 고양이 칼리시바이러스 감염증, 고양이 바이러스성 비기관지염</li>
-									<!-- e: 고양이 case -->
+									<!-- s: 고양이 case -->
 								</ol>
 							</div>
 							<div class="radio_group_wrap" role="radiogroup">
@@ -87,7 +82,10 @@
 					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">
-								똑같은 품종의 반려동물을 2마리 이상 키우고 있나요?<!-- 25-05-02 -->
+								현재 계속해서 복용(사용)하고 있는 의약품*이 있나요?
+								<div class="star_list">
+									<span>심장사상충, 벼룩, 진드기 등의 <span class="point">예방약 및 영양제는 제외</span></span>
+								</div>
 							</div>
 							<div class="radio_group_wrap" role="radiogroup">
 								{{> cp/radio rd-class="rd_btn" rd-id="notification04_01" name="notification04" labelname="예" }}
@@ -100,7 +98,7 @@
 					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">
-								현재 다른 반려동물보험 등에 가입하고 있나요?<!-- 25-05-02 -->
+								현재 다른 반려동물보험 등에 가입하고 있나요?
 							</div>
 							<div class="radio_group_wrap" role="radiogroup">
 								{{> cp/radio rd-class="rd_btn" rd-id="notification05_01" name="notification05" labelname="예" }}
@@ -109,16 +107,12 @@
 						</div>
 					</div>
 				</li>
+				<!-- s: 반려견의료비 확장보장(슬관절, 고관절 탈구) 가입 관련 -->
 				<li>
 					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">
-								반려동물을 애완/반려 이외의 목적*으로 양육하고 있나요?<!-- 25-05-02 -->
-							</div>
-							<div class="info_gray">
-								<!-- s: 25-05-13 -->
-								<p class="info_text">매매, 특수임무(경찰견, 구조견, 군견, 수색견), 스포츠(투견, 경주견, 사냥견), 유기동물 보호시설에서 사육&middot;관리 등 특수목적으로 사육·관리 여부</p>
-								<!-- e: 25-05-13 -->
+								과거부터 현재까지 슬관절탈구, 고관절탈구, 슬관절형성부전, 고관절형성부전, 무혈성골두괴사(LCPD) 또는 이들과 유사한 질병 또는 상해로 진단이나 의심소견을 받은 적이 있나요?
 							</div>
 							<div class="radio_group_wrap" role="radiogroup">
 								{{> cp/radio rd-class="rd_btn" rd-id="notification06_01" name="notification06" labelname="예" }}
@@ -127,11 +121,13 @@
 						</div>
 					</div>
 				</li>
+				<!-- e: 반려견의료비 확장보장(슬관절, 고관절 탈구) 가입 관련 -->
+				<!-- s: 반려견, 반려묘의료비 확장보장(치과및구강질환) 가입 관련 -->
 				<li>
 					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">
-								반려동물의 소유주가 수의사(수의사보조원 포함) 또는 보험 모집인으로 종사하고 있나요?<!-- 25-05-02 -->
+								과거부터 현재까지 구강 내 질환 또는 치과질환으로 진단되거나 의심소견을 받은 적이 있나요?
 							</div>
 							<div class="radio_group_wrap" role="radiogroup">
 								{{> cp/radio rd-class="rd_btn" rd-id="notification07_01" name="notification07" labelname="예" }}
@@ -140,28 +136,70 @@
 						</div>
 					</div>
 				</li>
+				<!-- e: 반려견, 반려묘의료비 확장보장(치과및구강질환) 가입 관련 -->
+				<li>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">
+								반려동물이 현재 일상적인 관리나 예방접종을 받고 있는 동물병원이 있나요?
+							</div>
+							<div class="info_gray">
+								<p class="info_text">동물병원이 아닌 가정에서 예방접종 및 진료/처치 등을 직접 해서 동물병원 기록이 없는 경우 가입이 거절될 수 있습니다.</p>
+							</div>
+							<div class="radio_group_wrap" role="radiogroup">
+								{{> cp/radio rd-class="rd_btn" rd-id="notification08_01" name="notification08_02" labelname="예" }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification08_02" name="notification08" labelname="아니오" checked=true }}
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">
+								병원정보 입력
+							</div>
+							
+							<div class="form_group_wrap">
+								<div class="row">
+									<div class="form_line grow">
+										<div class="label_tit">
+											시/도
+										</div>
+										{{> cp/selectitem si_popup="select_option_ty1" si_ph="선택" si_title="시/도 선택"}}
+									</div>
+									<div class="form_line grow">
+										<div class="label_tit">
+											군/구
+										</div>
+										{{> cp/selectitem si_popup="select_option_ty1" si_ph="선택" si_title="군/구 선택"}}
+									</div>
+								</div>
+								<div class="form_line">
+									<div class="label_tit">동물병원명</div>
+									{{> cp/text placeholder="병원명 입력" inp-title="동물병원명 입력" }}
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
 			</ol>
-			<!-- s: 25-05-07 수정 -->
 			<!-- s: 꼭 알아두세요 -->
 			{{#> cp/notice dp-active=true }}
 			<ul class="list_ty1">
-				<li>보험 가입에 필요한 내용입니다. 사실대로 선택해주세요.</li>
-				<li>알릴사항을 사실대로 알리지 않은 경우 보험금의 지급이 거절 또는 보험계약이 해지될 수 있습니다.</li>
-				<li>최초가입 전 진단 또는 치료를 받은 질병 관련 보험금은 지급해 드리지 않습니다.</li>
+				<li>위 질문들에 대해 사실대로 알리지 않거나 사실과 다르게 알린 경우에는 보험 가입이 거절될 수 있으며, 특히 그 내용이 ‘중요한 사항’에 해당하는 경우 회사는 보험약관에 따라 이 보험계약을 일방적으로 해지할 수 있고, 이미 보험사고가 발생했더라도 보험금 지급을 거절하는 등 보장이 제한될 수 있습니다.</li>
 			</ul>
 			{{/ cp/notice }}
 			<!-- e: 꼭 알아두세요 -->
-			<!-- e: 25-05-07 수정 -->
 		</div>
 	</div>
-	<!-- s: 25-05-13 -->
+
 	<div class="bottom_fix_wrap">
 		<div class="btn_area">
 			{{> cp/button type="1" size="1" b-text="중요 사항을 확인 중이에요" disabled=true }}
 			<!-- {{> cp/button type="1" size="1" b-text="모두 확인했어요" }} -->
 		</div>
 	</div>
-	<!-- e: 25-05-13 -->
 </div>
 
 <!-- s: popup area -->
