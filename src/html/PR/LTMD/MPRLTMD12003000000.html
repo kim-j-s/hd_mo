@@ -9,6 +9,7 @@
 					<!-- s: guarantee_detail -->
 					<div class="guarantee_detail">
 						<div class="guarantee_detail_top">
+							<!-- 본인(계피동일), 미성년자녀 Case -->
 							<div class="gd_item">
 								<div class="gdi_content" aria-labelledby="d_rdo_01">
 									<div class="badge_wrap">
@@ -20,6 +21,26 @@
 											<strong class="price_num">19,460</strong><span class="won">원</span>
 										</span>
 									</p>
+								</div>
+							</div>
+							<!-- 태아 Case -->
+							<div class="gd_item">
+								<div class="gdi_content" aria-labelledby="d_rdo_01">
+									<div class="badge_wrap">
+										<span class="hd_badge outline solid_pastel c_info size_m">5개 보장</span>
+									</div>
+									<!-- 문구 없을 시, no_text 클래스 추가 -->
+									<p class="head_text no_text">
+										<span class="price">
+											<strong class="price_num">19,460</strong><span class="won">원</span>
+										</span>
+									</p>
+									<div class="head_desc_text">
+										출생 후 보험료 <strong class="price_num">19,460<span class="won">원</span></strong>
+									</div>
+									<div class="btn_area basic">
+										{{> cp/button type="3" size="5" b-text="출생일 기준 보험료 변동 안내" rightIcon="arrowRightSvg" popup="pop_type02" }}
+									</div>
 								</div>
 							</div>
 
@@ -88,8 +109,8 @@
 									{{/ cp/accordion }}
 								</div>
 								<div class="acd_item acd_item_ty2">
-									{{#> cp/accordion ac-title="비급여의료비" acl="빠른 일상 생활 복귀!" ac-active=true }}
-									<ul class="coverage_item_list">
+									{{#> cp/accordion ac-title="비급여의료비" ac-desc="통원회당 20만원 한도, 자기부담금 30%" ac-active=true }}
+									<ul class="coverage_item_list_ty2">
 										<li class="list">
 											<div class="item_title">상해비급여실손의료비(갱신형)</div>
 											<div class="sub_txt_area">
@@ -143,7 +164,7 @@
 
 	<div class="bottom_fix_wrap">
 		<div class="btn_area">
-			{{> cp/button type="1" size="1" b-text="이대로 가입할래요" }}
+			{{> cp/button type="1" size="1" b-text="이대로 가입할래요" popup="pop_type03" }}
 		</div>
 	</div>
 </div>
@@ -176,6 +197,44 @@
 	</div>
 	{{/ popup/popup_bottom}}
 	<!-- e: 의료급여수급권자 신청 안내 -->
+
+	<!-- s: 출생일 기준 보험료 변동 안내 -->
+	{{#> popup/popup_bottom popup-id="pop_type02" popup-title="출생일 기준 보험료 변동 안내" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<ul class="list_ty3">
+				<li>출생 전에는 태아 위험과 관련한 보험료를 적용하며, 출생 후 보험료는 출생예정일을 기준으로 산정됩니다.</li>
+				<li>출생 후 성별에 따라 보험료를 정산합니다. 또한 예정일보다 일찍 또는 늦게 태어난 경우에도 보험료 정산(환급 또는 추징)이 발생합니다. </li>
+				<li>출생예정일에 맞춰 알림톡으로 자녀 등록 안내드릴 예정이오니, 자녀 이름과 주민등록번호 등록을 통해 보험료를 안내 받으시기 바랍니다. </li>
+			</ul>
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="2" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: 출생일 기준 보험료 변동 안내 -->
+
+	<!-- s: 실손+어린이보험 동시 가입 안내 -->
+	{{#> popup/popup_bottom popup-id="pop_type03" popup-title="[실손+어린이보험] 동시 가입 안내" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<ul class="list_ty3">
+				<li><strong class="point">3대 진단비(암, 뇌, 심장), 화상, 골절진단, 후유장해 등의 추가 보장까지 함께 보장</strong>받기를 원하는 고객님께서는 아래 [태아플랜 동시 가입]을 클릭하시면 <strong class="point">굿앤굿어린이보험 태아플랜과 실손의료비보험을 함께 가입</strong>하실 수 있습니다!</li>
+				<li>실손의료비보험 단독 가입 진행을 원하시는 고객님은 아래 [실손보험 단독 가입]을 클릭해주세요. </li>
+			</ul>
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="3" size="2" b-text="실손보험 단독 가입" }}
+			{{> cp/button type="1" size="2" b-text="태아플랜 동시가입" }}
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: 실손+어린이보험 동시 가입 안내 -->
 
 <!-- e: popup area -->
 {{/ layout/default }}
