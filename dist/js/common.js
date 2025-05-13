@@ -1093,7 +1093,7 @@ $(function () {
 		let $mailList = $(".mail_list");
 
 		const etcWord = "직접입력";
-		const domainArr = ["naver.com", "nate.com", "gmail.com", "hotmail.com", "daum.net", "yahoo.co.kr"];
+		const domainArr = ["naver.com", "hanmail.net", "daum.net", "kakao.com", "korea.kr", "korea.com", "dreamwiz.com", "yahoo.co.kr", "hi.co.kr"];
 
 		$inputEmail.on("keyup", function () {
 			removeAutoCont();
@@ -1121,13 +1121,6 @@ $(function () {
 
 		//메서드 영역
 		function showAutoCont(value, _self) {
-			// const $etcItem = $("<li><a href='#'>" + etcWord + "</a></li>");
-			const $etcItem = $("<li><button type='button' class='text'>" + etcWord + "</button></li>");
-			$mailList.append($etcItem);
-			$etcItem.on("click", function () {
-				removeAutoCont();
-			});
-
 			domainArr.forEach(domain => {
 				const $listItem = $(`<li><button type='button' class='text'>` + value + `<span class='mark'>@` + domain + `</span></button></li>`);
 				$listItem.on("click", function () {
@@ -1136,6 +1129,12 @@ $(function () {
 					removeAutoCont();
 				});
 				$mailList.append($listItem);
+			});
+
+			const $etcItem = $("<li><button type='button' class='text'>" + etcWord + "</button></li>");
+			$mailList.append($etcItem);
+			$etcItem.on("click", function () {
+				removeAutoCont();
 			});
 
 			$autoCont.addClass("on");
