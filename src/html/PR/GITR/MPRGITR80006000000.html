@@ -4,16 +4,18 @@
 	<div id="container" class="container">
 		<div class="content">
 			<!-- s: content_top -->
+			<!-- s: 25-05-14 수정 -->
 			<div class="content_top">
 				<h2 class="title_h2">
-					피보험자(가족/동반인) 정보를 입력해주세요
+					<strong>피보험자(가족/동반인) 정보</strong>를 입력해주세요
 				</h2>
 				<!-- s: 미성년자 단독 -->
 				<!-- <h2 class="title_h2">
-					피보험자(자녀) 정보를 입력해주세요
+					<strong>피보험자(자녀) 정보</strong>를 입력해주세요
 				</h2> -->
 				<!-- e: 미성년자 단독 -->
 			</div>
+			<!-- e: 25-05-14 수정 -->
 			<!-- e: content_top -->
 
 			<div class="form_box">
@@ -25,8 +27,9 @@
 					</div>
 					<div class="form_line">
 						<div class="label_tit">영문이름</div>
-						{{> cp/text type="text" placeholder="여권 영문이름 입력(예: KIM HYUN DAI)" maxlength="" inp-title="영문이름 입력"
-						readonly=true }}
+						<!-- s: 25-05-14 수정 -->
+						{{> cp/text type="text" placeholder="여권 영문이름 입력(예: KIM HYUN DAI)" maxlength="" inp-title="영문이름 입력"}}
+						<!-- e: 25-05-14 수정 -->
 						<ul class="list_ty2">
 							<li>여권 영문이름과 달라도 보상 여부와는 무관해요.</li>
 						</ul>
@@ -43,8 +46,10 @@
 					</div>
 					<div class="form_line">
 						<div class="label_tit">휴대폰번호</div>
+						<!-- s: 25-05-14 수정 -->
 						{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" value="- 1234 -
-						5678" inp-title="휴대폰번호" readonly=true }}
+						5678" inp-title="휴대폰번호" }}
+						<!-- e: 25-05-14 수정 -->
 						<div class="btn_area">
 							{{#> cp/button type="3" size="2"}}인증하기{{/ cp/button}}
 						</div>
@@ -61,8 +66,9 @@
 					</div>
 					<div class="form_line">
 						<div class="label_tit">영문이름</div>
-						{{> cp/text type="text" placeholder="여권 영문이름 입력(예: KIM HYUN DAI)" maxlength="" inp-title="영문이름 입력"
-						readonly=true }}
+						<!-- s: 25-05-14 수정 -->
+						{{> cp/text type="text" placeholder="여권 영문이름 입력(예: KIM HYUN DAI)" maxlength="" inp-title="영문이름 입력"}}
+						<!-- e: 25-05-14 수정 -->
 						<ul class="list_ty2">
 							<li>여권 영문이름과 달라도 보상 여부와는 무관해요.</li>
 						</ul>
@@ -92,8 +98,9 @@
 					</div>
 					<div class="form_line">
 						<div class="label_tit">영문이름</div>
-						{{> cp/text type="text" placeholder="여권 영문이름 입력(예: KIM HYUN DAI)" maxlength="" inp-title="영문이름 입력"
-						readonly=true }}
+						<!-- s: 25-05-14 수정 -->
+						{{> cp/text type="text" placeholder="여권 영문이름 입력(예: KIM HYUN DAI)" maxlength="" inp-title="영문이름 입력" }}
+						<!-- e: 25-05-14 수정 -->
 						<ul class="list_ty2">
 							<li>여권 영문이름과 달라도 보상 여부와는 무관해요.</li>
 						</ul>
@@ -122,8 +129,9 @@
 					</div>
 					<div class="form_line">
 						<div class="label_tit">영문이름</div>
-						{{> cp/text type="text" placeholder="여권 영문이름 입력(예: KIM HYUN DAI)" maxlength="" inp-title="영문이름 입력"
-						readonly=true }}
+						<!-- s: 25-05-14 수정 -->
+						{{> cp/text type="text" placeholder="여권 영문이름 입력(예: KIM HYUN DAI)" maxlength="" inp-title="영문이름 입력"}}
+						<!-- e: 25-05-14 수정 -->
 						<ul class="list_ty2">
 							<li>여권 영문이름과 달라도 보상 여부와는 무관해요.</li>
 						</ul>
@@ -164,18 +172,22 @@
 			<h3 class="title_h3">장애인전용보험전환특약 대상 여부</h3>
 			<div class="form_group_wrap">
 				<div class="form_line">
+					<!-- s: 25-05-14 수정 -->
 					<div class="label_tit">
-						「소득세법에서 규정한 장애인 전용보험전환특약 가입대상인가요? (피보험자가 소득세법에서 규정한 장애인인 경우 가입이 가능하며, 특약 가입 시 입증 서류가 필요합니다.)
+						「소득세법」에서 규정한 장애인 전용보험전환특약 가입대상인가요? (피보험자가 「소득세법」에서 규정한 장애인인 경우 가입이 가능하며, 특약 가입 시 입증 서류가 필요합니다.)
 					</div>
+					<!-- e: 25-05-14 수정 -->
 					<div class="radio_group_wrap" role="radiogroup">
 						{{> cp/radio rd-class="rd_btn" rd-id="checktype03_01" name="checktype03" labelname="예" }}
 						{{> cp/radio rd-class="rd_btn" rd-id="checktype03_02" name="checktype03" labelname="아니요" }}
 					</div>
 				</div>
 				<div class="form_line">
+					<!-- s: 25-05-14 수정 -->
 					<div class="label_tit">
-						장애 유형 선택
+						장애 유형
 					</div>
+					<!-- e: 25-05-14 수정 -->
 					<div class="radio_group_wrap" role="radiogroup">
 						{{> cp/radio rd-class="rd_btn" rd-id="checktype04_01" name="checktype04" labelname="영구 장애" }}
 						{{> cp/radio rd-class="rd_btn" rd-id="checktype04_02" name="checktype04" labelname="한시 장애" }}
@@ -185,10 +197,12 @@
 					<div class="label_tit">
 						장애 기간
 					</div>
+					<!-- s: 25-05-14 수정 -->
 					<div class="range_calrendar">
-						{{> cp/text cal=true placeholder="날짜를 선택하세요" }}
-						{{> cp/text cal=true placeholder="날짜를 선택하세요" }}
+						{{> cp/text cal=true placeholder="날짜 선택" }}
+						{{> cp/text cal=true placeholder="날짜 선택" }}
 					</div>
+					<!-- e: 25-05-14 수정 -->
 				</div>
 			</div>
 			<div class="file_upload_wrap">
@@ -242,16 +256,18 @@
 			</div>
 			<!-- e: 미성년자 단독 - 장애인전용보험전환특약 가입대상여부 확인 -->
 			
+			<!-- s: 25-05-14 삭제 -->
 			<!-- s: 25-05-07 수정 -->
 			<!-- s: 꼭 알아두세요 -->
-			{{#> cp/notice dp-active="active" }}
+			<!-- {{#> cp/notice dp-active="active" }}
 			<ul class="list_depth">
 				<li>입력한 정보로 개인정보도 함께 변경돼요.</li>
 				<li>보험계약서류를 보내드리니 정확하게 입력해주세요.</li>
 			</ul>
-			{{/ cp/notice }}
+			{{/ cp/notice }} -->
 			<!-- e: 꼭 알아두세요 -->
 			<!-- e: 25-05-07 수정 -->
+			<!-- s: 25-05-14 삭제 -->
 		</div>
 	</div>
 
