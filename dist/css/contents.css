@@ -2045,20 +2045,12 @@
 	margin: 0;
 }
 .guarantee_container.detail_only .guarantee_detail_mini {
-	-webkit-box-pack: start;
-	-ms-flex-pack: start;
-	justify-content: flex-start;
+	width: 100%;
 	margin: 0;
-}
-.guarantee_container.detail_only .guarantee_detail_mini .item_wrap {
-	margin: 1.6rem 0 0 1.6rem;
-}
-.guarantee_container.detail_only .guarantee_detail_mini .item_wrap .i_data {
-	display: block;
+	padding: 1.6rem 1.6rem 0;
 }
 .guarantee_container.detail_only .guarantee_detail_mini .item_wrap .i_data + .i_data {
 	margin: 0;
-	padding-top: 0.4rem;
 }
 .guarantee_container.active .guarantee_container_left {
 	position: absolute;
@@ -2117,7 +2109,7 @@
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	gap: 0.2rem;
+	gap: 0.4rem;
 }
 .gdi_info_list dl dt,
 .gdi_info_list dl dd {
@@ -2170,6 +2162,9 @@
 	padding-top: 0.8rem;
 	font-size: var(--font-size-body-medium);
 }
+.guarantee_detail .gd_item .gdi_content .head_text.no_text .price {
+	padding-top: 0;
+}
 .guarantee_detail .gd_item .gdi_content .head_text .price {
 	display: block;
 	padding-top: 0.8rem;
@@ -2183,6 +2178,8 @@
 .guarantee_detail .gd_item .gdi_content .head_text .price .won {
 	display: inline-block;
 	vertical-align: middle;
+	padding-left: 0.2rem;
+	font-weight: 700;
 	font-size: var(--font-size-body-large);
 }
 .guarantee_detail .gd_item .gdi_content .head_text + .gdi_content_list {
@@ -2263,50 +2260,48 @@
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	width: -webkit-fit-content;
-	width: -moz-fit-content;
-	width: fit-content;
-	margin-left: auto;
-	margin-right: auto;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	width: 100%;
+	padding: 0 1.6rem;
 	gap: var(--gap-5);
 }
 .guarantee_detail .guarantee_detail_mini .item_wrap {
-	width: -webkit-fit-content;
-	width: -moz-fit-content;
-	width: fit-content;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	gap: 0.4rem 1.2rem;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
 }
 .guarantee_detail .guarantee_detail_mini .i_data {
-	width: -webkit-fit-content;
-	width: -moz-fit-content;
-	width: fit-content;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	gap: 0.8rem;
 	position: relative;
 	padding-left: 0.8rem;
-	padding-top: 0.2rem;
 	font-size: var(--font-size-body-small);
 	color: var(--color-text-subtle);
 }
 .guarantee_detail .guarantee_detail_mini .i_data .data {
-	padding-left: 0.6rem;
 	font-weight: 700;
 }
 .guarantee_detail .guarantee_detail_mini .i_data::before {
 	content: "";
 	position: absolute;
-	top: 1.2rem;
+	top: 1rem;
 	left: 0;
 	width: 0.2rem;
 	height: 0.2rem;
 	background-color: var(--color-icon-information);
 	border-radius: 50%;
-}
-.guarantee_detail .guarantee_detail_mini .i_data + .i_data {
-	margin-left: var(--gap-4);
 }
 .guarantee_detail .guarantee_detail_mini .modify_ba {
 	-webkit-box-flex: 0;
@@ -2483,6 +2478,9 @@
 	justify-content: space-between;
 	gap: 0.4rem;
 }
+.coverage_item_list_ty2 > .list ~ .list {
+	margin-top: 1.6rem;
+}
 .coverage_item_list_ty2 > .list .item_title {
 	font-size: var(--font-size-label-medium);
 	line-height: 2.4rem;
@@ -2493,8 +2491,11 @@
 	display: flex;
 	gap: 0.8rem;
 }
-.coverage_item_list_ty2 > .list ~ .list {
-	margin-top: 1.6rem;
+.coverage_item_list_ty2 > .list .sub_txt_area {
+	padding-top: 0;
+}
+.acc_group + .form_group_wrap {
+	margin-top: 3.2rem;
 }
 /* 청약 폼 */
 /* 청약 폼 */
@@ -2595,6 +2596,9 @@ ul + .form_group_wrap {
 .pop_title_h1 + p {
 	margin-top: 1.2rem;
 }
+.pop_title_h1 + .table_wrap {
+	margin-top: 2rem;
+}
 .pop_title_h2 {
 	font-size: var(--font-size-heading-small);
 	font-weight: 700;
@@ -2608,6 +2612,9 @@ ul + .form_group_wrap {
 }
 .pop_title_h2 + p {
 	margin-top: 1.2rem;
+}
+.pop_title_h2 + .table_wrap {
+	margin-top: 1.6rem;
 }
 .pop_title_h3 {
 	font-size: var(--font-size-heading-xsmall);
@@ -2699,7 +2706,11 @@ ul + .form_group_wrap {
 	margin-top: 1.6rem;
 }
 .info_cont ul + .table_wrap,
-.info_cont ol + .table_wrap {
+.info_cont ul + ul,
+.info_cont ul + ol,
+.info_cont ol + .table_wrap,
+.info_cont ol + ul,
+.info_cont ol + ol {
 	margin-top: 1.6rem;
 }
 .info_cont ul + p,
