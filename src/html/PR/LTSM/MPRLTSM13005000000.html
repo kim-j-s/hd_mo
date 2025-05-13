@@ -10,10 +10,6 @@
 					<div class="guarantee_detail">
 						<div class="guarantee_detail_top">
 							<div class="gd_item">
-								<div class="rdo_box">
-									<input type="radio" name="d_r" id="d_r_01" aria-labelledby="d_rdo_01">
-									<label for="d_r_01"></label>
-								</div>
 								<div class="gdi_content" aria-labelledby="d_rdo_01">
 									<div class="badge_wrap">
 										<span class="hd_badge outline solid_pastel c_info size_m">5개 보장</span>
@@ -24,16 +20,6 @@
 											<strong class="price_num">19,460</strong><span class="won">원</span>
 										</span>
 									</p>
-									<div class="gdi_info_list">
-										<dl>
-											<dt>정부부담분</dt>
-											<dd><strong class="point">12,700원</strong></dd>
-										</dl>
-										<dl>
-											<dt>지자체부담분</dt>
-											<dd><strong class="point">2,700원</strong></dd>
-										</dl>
-									</div>
 								</div>
 							</div>
 
@@ -78,13 +64,13 @@
 						<!-- 간편정보 -->
 						 
 						<div class="gd_middle_ba btn_area center">
-							{{> cp/button type="3" size="3" b-text="계산 결과 문자로 받기" popup="ex_popup_full" btn-title="전체 팝업"}}
+							{{> cp/button type="3" size="3" b-text="계산 결과 문자로 받기" popup="pop_type01" }}
 						</div>
 						
 						<div class="acc_group">
 							<div class="space_list_ty2">
 								<div class="acd_item acd_item_ty2">
-									{{#> cp/accordion ac-title="급여의료비" cont-class="" ac-active=true }}
+									{{#> cp/accordion ac-title="급여의료비" ac-active=true }}
 									<ul class="coverage_item_list_ty2">
 										<li class="list">
 											<div class="item_title">상해급여실손의료비(갱신형)</div>
@@ -102,7 +88,7 @@
 									{{/ cp/accordion }}
 								</div>
 								<div class="acd_item acd_item_ty2">
-									{{#> cp/accordion ac-title="비급여의료비" cont-class="" ac-active=true }}
+									{{#> cp/accordion ac-title="비급여의료비" acl="빠른 일상 생활 복귀!" ac-active=true }}
 									<ul class="coverage_item_list">
 										<li class="list">
 											<div class="item_title">상해비급여실손의료비(갱신형)</div>
@@ -163,5 +149,33 @@
 </div>
 
 <!-- s: popup area -->
+
+	<!-- s: Bottom 팝업 -->
+	<!-- s: 의료급여수급권자 신청 안내 -->
+	{{#> popup/popup_bottom popup-id="pop_type01" popup-title="의료급여수급권자 신청 안내" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<!-- s: popup_content_top -->
+			<div class="popup_content_top">
+				<p class="text_sub">실손보험 가입 후 고객센터(1899-6782)를 통해 의료급여수급권자 신청을 진행해주세요.</p>
+			</div>
+			<!-- e: popup_content_top -->
+			
+			<div class="info_gray">
+				<ul class="list_ty3">
+					<li>신청 전 의료급여증명서를 미리 준비해 주세요.</li>
+					<li>의료급여수급권자 대상 5% 보험료 할인이 됩니다.</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="2" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: 의료급여수급권자 신청 안내 -->
+
 <!-- e: popup area -->
 {{/ layout/default }}
