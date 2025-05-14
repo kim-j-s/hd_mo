@@ -24,44 +24,56 @@
 		</div>
 
 	</div>
-
 	<!-- s: popup area -->
 
 
-	{{#> popup/popup_full popup-id="totalSearch" popup-title="" }}
+	{{#> popup/popup_full popup-class="menu_search_popup" popup-id="totalSearch" popup-title="" }}
 	<div class="popup_cont">
-		<div class="popup_content">
-			<!-- s: popup_content_top -->
-			<div class="popup_content_top">
-				<h2 class="title_h2">
-					타이틀영역
-			{{> cp/button type="2" size="5" b-text="Bottom 팝업열기1" popup="search_list_bottom_ty2" }}
+		<div class="popup_content msp_content">
 
-				</h2>
+			<div class="msp_content_top">
+				{{> cp/text inp-search=true placeholder="상품부터 메뉴까지" inp-title="메뉴 검색 입력" }}
 			</div>
-			<!-- e: popup_content_top -->
-				
-			전체팝업 <br>
-			팝업내용입니다
-			<br />
-			내용
-			<!-- s: 꼭 알아두세요 -->
-			{{#> cp/notice }}
-			<ul class="list_depth">
-				<li>내용1</li>
-				<li>내용2</li>
-				<li>내용3</li>
-			</ul>
-			{{/ cp/notice }}
-			<!-- e: 꼭 알아두세요 -->
+
+
+			<!-- s: 검색 전 노출 화면 -->
+			<div class="suggestion_list_wrap">
+				<div class="title_h4"><strong>자주 찾는 메뉴</strong></div>
+				<div class="item_wrap">
+					<button type="button" class="tag_item size_m c_ty02"><span class="text">자동차보험 계약변경</span></button>
+					<button type="button" class="tag_item size_m c_ty02"><span class="text">자동차 사고/고장 접수안내</span></button>
+					<button type="button" class="tag_item size_m c_ty02"><span class="text">보험금청구</span></button>
+					<button type="button" class="tag_item size_m c_ty02"><span class="text">개인정보변경</span></button>
+					<button type="button" class="tag_item size_m c_ty02"><span class="text">여행보험 계약변경</span></button>
+				</div>
+			</div>
+			<div class="suggestion_list_wrap">
+				<div class="title_h4"><strong>인기상품</strong></div>
+				<div class="item_wrap">
+					<button type="button" class="tag_item size_m c_ty02"><span class="text">자동차보험</span></button>
+					<button type="button" class="tag_item size_m c_ty02"><span class="text">운전자보험</span></button>
+					<button type="button" class="tag_item size_m c_ty02"><span class="text">펫보험</span></button>
+					<button type="button" class="tag_item size_m c_ty02"><span class="text">어린이보험</span></button>
+					<button type="button" class="tag_item size_m c_ty02"><span class="text">여행보험</span></button>
+				</div>
+			</div>
+			<!-- e: 검색 전 노출 화면 -->
+
+
+			
+			<div class="banner_box">
+				<!-- s: 25-05-13 수정 -->
+				<a href="#">
+					<img src="../../../images/event/banner1.png" alt="가입 리뷰 작성 이벤트 안내 배너 마케팅 관련 요건 및 정책 확인 후 상세 정의 필요합니다.">
+				</a>
+				<!-- e: 25-05-13 수정 -->
+			</div>
+
+
+
 		</div>
 	</div>
-	<div class="popup_bottom">
-		<div class="btn_area">
-			{{> cp/button type="3" size="1" b-text="취소" }}
-			{{> cp/button type="1" size="1" b-text="확인" }}
-		</div>
-	</div>
+	
 	{{/ popup/popup_full}}
 
 	
