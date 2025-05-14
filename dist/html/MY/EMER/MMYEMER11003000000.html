@@ -50,7 +50,7 @@
 	<body>
 		<!-- s: popup area -->
 
-		<!-- s: 고장출동 신청 -->
+		<!-- s: 고장출동 신청 팝업 -->
 		<div class="popup_wrap full active" id="pop_type01" role="dialog" aria-hidden="false">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
@@ -59,38 +59,33 @@
 					<div class="popup_cont">
 						<div class="popup_content">
 							<!-- 비로그인 상태 접속 -->
-							<p class="text_sub">
-								출동 신청을 하려면 계약정보 확인이 필요해요.
-								<br />
-								보험에 가입한 자동차 번호를 입력해주세요.
-							</p>
+							<p class="text_sub">출동 신청이 접수되면 입력하신 휴대폰번호로 안내해드려요.</p>
 
 							<div class="form_group_wrap">
 								<div class="form_line">
-									<div class="label_tit">자동차번호</div>
-									<div class="input_text">
+									<div class="label_tit">휴대폰번호</div>
+									<div class="input_text phone">
+										<div class="int_txt left">010</div>
 										<div class="inp">
-											<input type="text" placeholder="예) 123가4567(띄어쓰기 없이)" title="자동차번호 입력" />
+											<input type="tel" placeholder="-없이 입력하세요" maxlength="8" title="휴대폰번호 입력" />
 											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 										</div>
 									</div>
 								</div>
 							</div>
 
-							<!-- 로그인 상태 접속 -->
-							<p class="text_sub">출동 신청할 계약정보를 선택해주세요.</p>
+							<h3 class="title_h5">신청 서비스 선택(택1)</h3>
 							<ul class="special_contract_list radio">
 								<li>
 									<div class="check_flex_box">
 										<div class="check_box">
 											<div class="inp_radio">
-												<input type="radio" id="select_radio01-1" name="select_radio01" checked />
+												<input type="radio" id="select_radio01-1" name="select_radio01" />
 												<label for="select_radio01-1">
-													<span class="label_cont">더 뉴 SM6 2.0 LPe</span>
+													<span class="label_cont">배터리 충전</span>
 												</label>
 											</div>
 										</div>
-										<div class="cont">123가**34</div>
 									</div>
 								</li>
 								<li>
@@ -99,31 +94,84 @@
 											<div class="inp_radio">
 												<input type="radio" id="select_radio01-2" name="select_radio01" />
 												<label for="select_radio01-2">
-													<span class="label_cont">싼타페 R2.0(TM)</span>
+													<span class="label_cont">비상급유(경유)</span>
 												</label>
 											</div>
 										</div>
-										<div class="cont">12부**24</div>
+									</div>
+								</li>
+								<li>
+									<div class="check_flex_box">
+										<div class="check_box">
+											<div class="inp_radio">
+												<input type="radio" id="select_radio01-3" name="select_radio01" />
+												<label for="select_radio01-3">
+													<span class="label_cont">비상급유(휘발유)</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="check_flex_box">
+										<div class="check_box">
+											<div class="inp_radio">
+												<input type="radio" id="select_radio01-4" name="select_radio01" checked />
+												<label for="select_radio01-4">
+													<span class="label_cont">잠금장치 해제</span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="form_group_wrap">
+										<div class="form_line">
+											<div class="label_tit">피보험자 생년월일(법인고객은 접수자 생년월일)</div>
+											<div class="input_text birth_day">
+												<div class="inp">
+													<input type="tel" placeholder="8자리 숫자 입력" maxlength="8" title="생년월일 입력" />
+													<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="check_flex_box">
+										<div class="check_box">
+											<div class="inp_radio">
+												<input type="radio" id="select_radio01-5" name="select_radio01" />
+												<label for="select_radio01-5">
+													<span class="label_cont">타이어펑크 수리 및 교체</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="check_flex_box">
+										<div class="check_box">
+											<div class="inp_radio">
+												<input type="radio" id="select_radio01-6" name="select_radio01" />
+												<label for="select_radio01-6">
+													<span class="label_cont">긴급견인</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="check_flex_box">
+										<div class="check_box">
+											<div class="inp_radio">
+												<input type="radio" id="select_radio01-7" name="select_radio01" />
+												<label for="select_radio01-7">
+													<span class="label_cont">전기차 방전 시 견인</span>
+												</label>
+											</div>
+										</div>
 									</div>
 								</li>
 							</ul>
-
-							<!-- s: 꼭 알아두세요 -->
-							<div class="bottom_fix_notice">
-								<div class="acd_item">
-									<div class="acd_head active">
-										<button type="button" class="acd_btn" aria-expanded="true"><span>꼭 알아두세요</span></button>
-									</div>
-									<div class="acd_cont">
-										<div class="inner" style="display: block">
-											<ul class="list_depth">
-												<li>현재 유지 중인 계약에 대해 조회 및 신청이 가능하며, 서비스 이용 횟수 초과 시 신청이 제한됩니다.</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- e: 꼭 알아두세요 -->
 						</div>
 					</div>
 					<div class="popup_bottom">
@@ -137,9 +185,9 @@
 				</div>
 			</div>
 		</div>
-		<!-- e: 고장출동 신청 -->
+		<!-- e: 고장출동 신청 팝업 -->
 
-		<!-- s: 계약 조회 팝업 -->
+		<!-- s: 정상신청 시 노출 팝업 -->
 		<div class="popup_wrap bottom" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="true">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
@@ -147,7 +195,7 @@
 					<div class="draggable" aria-hidden="true">
 						<div class="move"></div>
 					</div>
-					<div class="popup_head"><div class="popup_head_title">고장출동 신청</div></div>
+					<div class="popup_head"><div class="popup_head_title">배터리충전</div></div>
 
 					<div class="popup_cont">
 						<div class="popup_content">
@@ -155,34 +203,33 @@
 							<h3 class="title_h3 normal txt_center">
 								입력하신 정보로
 								<br />
-								<strong>2건의 계약이 조회</strong>
-								됐어요
+								<strong>고장출동을 신청</strong>
+								합니다
 							</h3>
 							<div class="info_gray ty2">
-								<p class="info_text">대표 고객센터(1588-5656)로 고장출동을 접수해주세요.</p>
+								<dl>
+									<dt>휴대폰 번호</dt>
+									<dd>010-****-1234</dd>
+								</dl>
+								<dl>
+									<dt>신청서비스</dt>
+									<dd>배터리충전</dd>
+								</dl>
 							</div>
-
-							<!-- 계약 없는 Case -->
-							<!-- <h3 class="title_h3 normal txt_center">
-									<strong>신청 가능한 계약이 없습니다</strong>
-								</h3>
-								<div class="info_gray ty2">
-									<p class="info_text">계약을 확인하려면 대표 고객센터(1588-5656)로 문의해주세요.</p>
-								</div> -->
 						</div>
 					</div>
 					<div class="popup_bottom">
 						<div class="btn_area">
-							<a href="tel:1588-5656" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
-								<span class="text">대표 고객센터에 전화하기</span>
-							</a>
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">확인</span>
+							</button>
 						</div>
 					</div>
 					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
-		<!-- e: 계약 조회 팝업 -->
+		<!-- e: 정상신청 시 노출 팝업 -->
 
 		<!-- e: popup area -->
 	</body>
