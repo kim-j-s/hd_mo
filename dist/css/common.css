@@ -104,33 +104,6 @@ strong {
 	-ms-flex-pack: end;
 	justify-content: flex-end;
 }
-.mt_4 {
-	margin-top: 0.4rem !important;
-}
-.mt_16 {
-	margin-top: 1.6rem !important;
-}
-.mt_32 {
-	margin-top: 3.2rem !important;
-}
-.mt_40 {
-	margin-top: 4rem !important;
-}
-.mt_52 {
-	margin-top: 5.2rem !important;
-}
-.mb_zero {
-	margin-bottom: 0 !important;
-}
-.mb_16 {
-	margin-bottom: 1.6rem !important;
-}
-.mb_24 {
-	margin-bottom: 2.4rem !important;
-}
-.mb_32 {
-	margin-bottom: 3.2rem !important;
-}
 .wrap {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -1273,6 +1246,71 @@ strong {
 	font-size: var(--font-size-body-medium);
 	border-bottom: 1px solid #e6e8ea;
 }
+/* 전체 검색 팝업 */
+.msp_content_top {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+}
+.msp_wrap_cont {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 0px;
+	flex: 1 1 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	padding-bottom: 2.8rem;
+}
+.msp_wrap_cont .msp_in_cont {
+	margin-top: 5.2rem;
+}
+.msp_wrap_cont .msp_in_cont ~ .msp_in_cont {
+	margin-top: 3.2rem;
+}
+.msp_wrap_cont .msp_slw_title {
+	margin-bottom: 1.2rem;
+	font-size: var(--font-size-heading-xxsmall);
+	color: var(--color-text-bolder);
+}
+.msp_wrap_cont .msp_sc_list > li {
+	border-top: 1px solid #e6e8ea;
+}
+.msp_wrap_cont .msp_sc_list > li:last-child {
+	border-bottom: 1px solid #e6e8ea;
+}
+.msp_wrap_cont .msp_sc_list > li > a {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding: 1.6rem 0;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	gap: 0 0.8rem;
+}
+.msp_wrap_cont .msp_sc_list > li > a .name {
+	font-size: var(--font-size-body-medium);
+}
+.msp_wrap_cont .msp_sc_list > li > a .date {
+	font-size: var(--font-size-body-small);
+	color: var(--color-text-disabled);
+}
+.msp_wrap_cont .mwc_footer_banner {
+	margin-top: auto;
+	padding-top: 1.6rem;
+	font-size: 0;
+}
+.msp_wrap_cont .mwc_footer_banner a {
+	display: block;
+}
+/* 전체 검색 팝업 */
 /* address button */
 .address_item {
 	cursor: pointer;
@@ -2387,7 +2425,6 @@ strong {
 }
 .hd_btn_ty_3 .text {
 	font-weight: 400;
-	line-height: 1.8rem;
 }
 .hd_btn:disabled {
 	background-color: var(--color-button-disabled-fill);
@@ -8590,7 +8627,7 @@ strong {
 .title_h3 .light {
 	font-weight: 400;
 }
-.title_h3 .msg_error {
+.title_h3 [class^="msg_"] {
 	margin-left: 0.8rem;
 	font-weight: 400;
 }

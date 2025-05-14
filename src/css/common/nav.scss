@@ -323,3 +323,64 @@
 
 
 }
+
+/* 전체 검색 팝업 */
+.msp_wrap {
+
+}
+.msp_content_top {
+	flex: none;
+}
+
+.msp_wrap_cont {
+	flex: 1 1 0;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 28px;
+
+	.msp_in_cont {
+		margin-top: 52px;
+		~ .msp_in_cont {
+			margin-top: 32px;
+		}
+	}
+
+	.msp_slw_title {
+		margin-bottom: 12px;
+		font-size: var(--font-size-heading-xxsmall);
+		color: var(--color-text-bolder);
+	}
+
+	.msp_sc_list {
+		> li {
+			border-top: 1px solid #E6E8EA;
+			&:last-child {
+				border-bottom: 1px solid #E6E8EA;
+			}
+			> a {
+				display: flex;
+				padding: 16px 0;
+				align-items: center;
+				justify-content: space-between;
+				gap: 0 8px;
+				.name {
+					font-size: var(--font-size-body-medium);
+				}
+				.date {
+					font-size: var(--font-size-body-small);
+					color: var(--color-text-disabled);
+				}
+			}
+		}
+	}
+
+	.mwc_footer_banner {
+		margin-top: auto;
+		padding-top: 16px;
+		font-size: 0;
+		a {
+			display: block;
+		}
+	}
+}
+/* 전체 검색 팝업 */
