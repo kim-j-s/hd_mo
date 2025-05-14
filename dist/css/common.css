@@ -1273,6 +1273,72 @@ strong {
 	font-size: var(--font-size-body-medium);
 	border-bottom: 1px solid #e6e8ea;
 }
+/* 전체 검색 팝업 */
+.msp_wrap_top {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+	padding-bottom: 5.2rem;
+}
+.msp_wrap_cont {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 0px;
+	flex: 1 1 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	overflow: auto;
+}
+.msp_wrap_cont .msp_in_cont ~ .msp_in_cont {
+	margin-top: 3.2rem;
+}
+.msp_wrap_cont .msp_slw_title {
+	margin-bottom: 1.2rem;
+	font-size: var(--font-size-heading-xxsmall);
+	color: var(--color-text-bolder);
+}
+.msp_wrap_cont .msp_sc_list > li {
+	border-top: 1px solid #e6e8ea;
+}
+.msp_wrap_cont .msp_sc_list > li:last-child {
+	border-bottom: 1px solid #e6e8ea;
+}
+.msp_wrap_cont .msp_sc_list > li > a {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding: 1.6rem 0;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	gap: 0 0.8rem;
+}
+.msp_wrap_cont .msp_sc_list > li > a .name {
+	font-size: var(--font-size-body-medium);
+}
+.msp_wrap_cont .msp_sc_list > li > a .date {
+	font-size: var(--font-size-body-small);
+	color: var(--color-text-disabled);
+}
+.mwc_footer_banner {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+	padding-top: 1.6rem;
+	padding-bottom: 2.8rem;
+	font-size: 0;
+}
+.mwc_footer_banner a {
+	display: block;
+}
+/* 전체 검색 팝업 */
 /* address button */
 .address_item {
 	cursor: pointer;
@@ -6144,7 +6210,6 @@ strong {
 	font-size: var(--font-size-body-medium);
 	font-style: normal;
 	font-weight: 400;
-	line-height: 150%;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -6182,6 +6247,13 @@ strong {
 	justify-content: space-between;
 }
 .search_reult_list_container ul.search_reult_list li.add_item a::after {
+	content: none;
+}
+.search_reult_list_container ul.search_reult_list.all_srla li a i {
+	font-weight: 700;
+	color: var(--color-text-primary-bold);
+}
+.search_reult_list_container ul.search_reult_list.all_srla li a::after {
 	content: none;
 }
 .search_reult_list_container.no_data {
