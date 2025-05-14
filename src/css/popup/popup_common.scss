@@ -23,6 +23,12 @@
 		pointer-events: auto;
 	}
 
+	/* 전체메뉴 검색 팝업 zindex 1500 */
+	&.menu_search_popup {
+		z-index: 1500;
+	}
+	/* 전체메뉴 검색 팝업 zindex 1500 */
+
 	.popup_container {
 		display: flex;
 		align-items: center;
@@ -78,6 +84,11 @@
 					// padding-bottom: 24px;
 
 					.popup_content_top {
+
+						p {
+
+						}
+
 						& + * {
 							margin-top: 32px;
 						}
@@ -221,11 +232,17 @@
 
 			.pl_txt1 {
 				font-size: var(--font-size-body-medium);
+				& + .info_cont {
+					margin-top: 32px;
+				}
 			}
 
 			.pl_txt2 {
 				font-size: var(--font-size-body-medium);
 				text-align: center;
+				& + .info_cont {
+					margin-top: 32px;
+				}
 			}
 		}
 	}

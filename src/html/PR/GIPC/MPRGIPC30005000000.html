@@ -44,7 +44,9 @@
 
 						<div class="form_line">
 							<div class="label_tit">휴대폰번호</div>
-							{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+							<!-- s: 25-05-14 수정 -->
+							{{> cp/text class="phone" type="tel" placeholder="-없이 입력" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+							<!-- e: 25-05-14 수정 -->
 						</div>
 
 						<div class="form_line">
@@ -62,10 +64,12 @@
 								{{> cp/radio rd-class="rd_btn" rd-id="addSel01_01" name="addSel01" labelname="집" }}
 								{{> cp/radio rd-class="rd_btn" rd-id="addSel01_02" name="addSel01" labelname="직장" }}
 							</div>
+							<!-- s: 25-05-14 수정 -->
 							<!-- case: 입력 전-->
-							{{> cp/address ad_ph="주소를 입력해 주세요." case1=true}}
+							{{> cp/address ad_ph="주소 검색" case1=true}}
 							<!-- case: 입력 후-->
-							{{> cp/address ad_ph="주소를 입력해 주세요." case2=true}} 
+							{{> cp/address ad_ph="주소 검색" case2=true}} 
+							<!-- e: 25-05-14 수정 -->
 						</div>
 					
 						<div class="form_line">

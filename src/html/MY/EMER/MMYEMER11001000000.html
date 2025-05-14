@@ -1,0 +1,83 @@
+{{#> layout/default page-title="자동차 사고접수/고장출동 신청 | 마이페이지"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="자동차 사고접수/고장출동 신청" }}
+		<div id="container" class="container">
+			<div class="content">
+				<h3 class="title_h3">
+					자동차사고가 났어요
+				</h3>
+				<p class="text_sub">자동차 운행 중 사고로 <strong class="point">사고처리가 필요</strong>한 경우</p>
+
+				<div class="card_item_wrap">
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inner_cont">
+
+								<ul class="card_list_ty2">
+									<li>
+										<div class="title">모바일 화면에서 접수</div>
+										<div class="btn_area basic">
+											{{> cp/button type="3" size="5" b-text="홈페이지 접수하기" rightIcon="openWindowSvg" popup="pop_type01" atag="true"}}
+										</div>
+									</li>
+									<li>
+										<div class="title">고객센터 (1588-5656) → ARS ②번</div>
+										<div class="btn_area basic">
+											{{> cp/linkButton bl_class="short_cut sm rd_box" bl_text="고객센터 전화걸기" href="tel:1588-5656" }}
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<h3 class="title_h3">
+					내 자동차가 고장났어요!
+				</h3>
+				<p class="text_sub">견인, 구난, 급유, 배터리 충전, 타이어 교체 등이 필요한 경우</p>
+
+				<div class="card_item_wrap">
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inner_cont">
+
+								<ul class="card_list_ty2">
+									<li>
+										<div class="title">모바일 화면에서 접수</div>
+										<div class="btn_area basic">
+											{{> cp/button type="3" size="5" b-text="홈페이지 접수하기" rightIcon="openWindowSvg" popup="pop_type01" }}
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- s: popup area -->
+
+	<!-- s: 자동차 사고 접수 -->
+	{{#> popup/popup_layer popup-id="pop_type01" popup-title="자동차 사고 접수"}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<p class="pl_txt1">
+				<strong>현대해상 홈페이지로 이동</strong>할게요
+			</p>
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_layer}}
+	<!-- e: 자동차 사고 접수 -->
+	 
+	<!-- e: popup area -->
+
+{{/ layout/default }}
