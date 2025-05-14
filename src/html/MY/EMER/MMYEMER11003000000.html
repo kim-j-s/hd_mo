@@ -1,0 +1,155 @@
+{{#> layout/default page-title="자동차 사고접수/고장출동 신청 | 마이페이지"}}
+
+<!-- s: popup area -->
+
+<!-- s: 고장출동 신청 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-title="고장출동 신청" popup-active="active"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- 비로그인 상태 접속 -->
+		<p class="text_sub">
+			출동 신청이 접수되면 입력하신 휴대폰번호로 안내해드려요.
+		</p>
+
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">휴대폰번호</div>
+				{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+			</div>
+		</div>
+		
+		<h3 class="title_h5">신청 서비스 선택(택1)</h3>
+		<ul class="special_contract_list radio">
+			<li>
+				<div class="check_flex_box">
+					<div class="check_box">
+						<div class="inp_radio">
+							<input type="radio" id="select_radio01-1" name="select_radio01" />
+							<label for="select_radio01-1">
+								<span class="label_cont">배터리 충전</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="check_flex_box">
+					<div class="check_box">
+						<div class="inp_radio">
+							<input type="radio" id="select_radio01-2" name="select_radio01" />
+							<label for="select_radio01-2">
+								<span class="label_cont">비상급유(경유)</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="check_flex_box">
+					<div class="check_box">
+						<div class="inp_radio">
+							<input type="radio" id="select_radio01-3" name="select_radio01" />
+							<label for="select_radio01-3">
+								<span class="label_cont">비상급유(휘발유)</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="check_flex_box">
+					<div class="check_box">
+						<div class="inp_radio">
+							<input type="radio" id="select_radio01-4" name="select_radio01" checked />
+							<label for="select_radio01-4">
+								<span class="label_cont">잠금장치 해제</span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">피보험자 생년월일(법인고객은 접수자 생년월일)</div>
+						{{> cp/text class="birth_day" type="tel" placeholder="8자리 숫자 입력" maxlength="8" inp-title="생년월일 입력" }}
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="check_flex_box">
+					<div class="check_box">
+						<div class="inp_radio">
+							<input type="radio" id="select_radio01-5" name="select_radio01" />
+							<label for="select_radio01-5">
+								<span class="label_cont">타이어펑크 수리 및 교체</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="check_flex_box">
+					<div class="check_box">
+						<div class="inp_radio">
+							<input type="radio" id="select_radio01-6" name="select_radio01" />
+							<label for="select_radio01-6">
+								<span class="label_cont">긴급견인</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="check_flex_box">
+					<div class="check_box">
+						<div class="inp_radio">
+							<input type="radio" id="select_radio01-7" name="select_radio01" />
+							<label for="select_radio01-7">
+								<span class="label_cont">전기차 방전 시 견인</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" b-text="다음" disabled=true }}
+	</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: 고장출동 신청 팝업 -->
+
+<!-- s: 정상신청 시 노출 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="배터리충전"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- 계약 조회 Case -->
+		<h3 class="title_h3 normal txt_center">
+			입력하신 정보로<br>
+			<strong>고장출동을 신청</strong>합니다
+		</h3>
+		<div class="info_gray ty2">
+			<dl>
+				<dt>휴대폰 번호</dt>
+				<dd>010-****-1234</dd>
+			</dl>
+			<dl>
+				<dt>신청서비스</dt>
+				<dd>배터리충전</dd>
+			</dl>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 정상신청 시 노출 팝업 -->
+
+<!-- e: popup area -->
+
+{{/ layout/default }}
