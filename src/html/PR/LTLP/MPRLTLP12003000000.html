@@ -235,9 +235,6 @@
 											<span class="text">
 												보험/납입기간 <strong class="bold">15년</strong>
 											</span>
-											<span class="pipe">
-												<strong class="bold">월납</strong>
-											</span>
 										</span>
 									</li>
 								</ul>
@@ -271,7 +268,7 @@
 											{{> cp/checkbox labelname="반려견통원의료비확장보장(치과및구강질환)(갱신형)담보" ag_more2=true id="checkbox01-2" }}
 										</li>
 										<li class="list">
-											{{#> cp/checkbox labelname="반려견입원의료비확장보장(슬관절,고관절 탈구)(갱신형)담보" ag_more2=true id="checkbox01-3" }}
+											{{#> cp/checkbox labelname="반려견입원의료비확장보장(슬관절,고관절 탈구)(갱신형)담보" ag_more2=true id="checkbox01-3" disabled=true }}
 											<div class="chk_lby2">
 												<div class="badge_wrap">
 													<span class="hd_badge outline solid_pastel c_secondary size_m">새로 나왔어요</span>
@@ -280,7 +277,7 @@
 											{{/ cp/checkbox }}
 										</li>
 										<li class="list">
-											{{> cp/checkbox labelname="반려견통원의료비확장보장(슬관절,고관절 탈구)(갱신형)담보" ag_more2=true id="checkbox01-4" }}											
+											{{> cp/checkbox labelname="반려견통원의료비확장보장(슬관절,고관절 탈구)(갱신형)담보" ag_more2=true id="checkbox01-4" disabled=true }}											
 										</li>
 									</ul>
 									{{/ cp/accordion }}
@@ -288,53 +285,76 @@
 
 								<div class="acd_item acd_item_ty1">
 									{{#> cp/accordion ac-active=true ac-title="상세보기" aci="checkbox02" aclc="chk_label_ty2" acl="검사부터 처치까지 빈틈 없이"}}
-										<ul class="coverage_item_list_ty2">											
+										<ul class="coverage_item_list">											
 											<li class="list">
-												<div class="item_title">반려견의료비확장보장(MRI/CT)(연간1회한)(갱신형)담보</div>
-													{{> cp/linkButton bl_class="price_btn" bl_text="100만원" question_tit="가입금액 변경" }}
+												{{#> cp/checkbox labelname="반려견의료비확장보장(MRI/CT)(연간1회한)(갱신형)담보" id="checkbox02-1" }}
+													<div class="chk_lby2">
+														{{> cp/linkButton bl_text="15만원" size="1" bl_class="price_btn" question_tit="담보안내 팝업열기"}}
+													</div>
+												{{/ cp/checkbox }}
 											</li>
 											<li class="list">
-												<div class="item_title">반려견의료비확장보장(특정처치(이물제거))(연간2회한)(갱신형)담보</div>
-													{{> cp/linkButton bl_class="price_btn" bl_text="200만원" question_tit="담보안내 팝업열기" }}
+												{{#> cp/checkbox labelname="반려견의료비확장보장(특정처치(이물제거))(연간2회한)(갱신형)담보" id="checkbox02-2" }}
+													<div class="chk_lby2">
+														{{> cp/linkButton bl_text="200만원" size="1" bl_class="price_btn" question_tit="담보안내 팝업열기"}}
+													</div>
+												{{/ cp/checkbox }}
 											</li>
 											<li class="list">
-												<div class="item_title">반려견의료비확장보장(특정약물치료)(연간6회한)(갱신형)담보</div>
-													{{> cp/linkButton bl_class="price_btn" bl_text="10만원" question_tit="담보안내 팝업열기" }}
-											</li>
+												{{#> cp/checkbox labelname="반려견의료비확장보장(특정약물치료)(연간6회한)(갱신형)담보" id="checkbox02-3" }}
+													<div class="chk_lby2">
+														{{> cp/linkButton bl_text="10만원" size="1" bl_class="price_btn" question_tit="담보안내 팝업열기"}}
+													</div>
+												{{/ cp/checkbox }}
+											</li>									
 										</ul>
 									{{/ cp/accordion }}
 								</div>
 
 								<div class="acd_item acd_item_ty2">
 									{{#> cp/accordion ac-title="피해 보상 또는 반려동물이 사망했을 때" cont-class="" ac-active=true }}
-										<ul class="coverage_item_list_ty2">
-											<div class="list">
-												{{> cp/checkbox labelname="반려견사망위로금(갱신형)담보" id="checkbox03-1" }}
-												{{> cp/linkButton bl_text="15만원" size="1" bl_class="price_btn" question_tit="담보안내 팝업열기"}}
-											</div>	
-											<div class="list">
-												{{> cp/checkbox labelname="반려견배상책임II(갱신형)담보" id="checkbox03-2" }}
-												{{> cp/linkButton bl_text="1,000만원" size="1" bl_class="price_btn" question_tit="담보안내 팝업열기"}}
-											</div>
+										<ul class="coverage_item_list">
+											<li class="list">
+												{{#> cp/checkbox labelname="반려견사망위로금(갱신형)담보" id="checkbox03-1" }}
+													<div class="chk_lby2">
+														{{> cp/linkButton bl_text="15만원" size="1" bl_class="price_btn" question_tit="담보안내 팝업열기"}}
+													</div>
+												{{/ cp/checkbox }}
+											</li>
+											<li class="list">
+												{{#> cp/checkbox labelname="반려견배상책임II(갱신형)담보" id="checkbox03-2" }}
+													<div class="chk_lby2">
+														{{> cp/linkButton bl_text="1,000만원" size="1" bl_class="price_btn" question_tit="담보안내 팝업열기"}}
+													</div>
+												{{/ cp/checkbox }}
+											</li>										
 										</ul>
 									{{/ cp/accordion }}
 								</div>
 							
 								<div class="acd_item acd_item_ty2">
 									{{#> cp/accordion ac-title="보호자를 위한 보장" cont-class="" ac-active=true }}
-										<ul class="coverage_item_list_ty2">
+										<ul class="coverage_item_list">
 											<li class="list">
 												<div class="item_title">기본계약(상해후유장해(80%이상))담보</div>
+													<div class="sub_txt_area">
 													{{> cp/linkButton bl_class="price_btn" bl_text="1,000만원" question_tit="담보안내 팝업열기" }}
+													</div>
 											</li>
-											<div class="list">
-												{{> cp/checkbox labelname="반려동물돌봄비(상해입원일당(1-10일))담보" id="checkbox04-1" }}
-												{{> cp/linkButton bl_text="미가입" size="1" bl_class="price_btn" question_tit="담보안내 팝업열기"}}
-											</div>	
-											<div class="list">
-												{{> cp/checkbox labelname="응급실내원진료비(응급)담보" id="checkbox04-2" }}
-												{{> cp/linkButton bl_text="미가입" size="1" bl_class="price_btn" question_tit="담보안내 팝업열기"}}
-											</div>
+											<li class="list">
+												{{#> cp/checkbox labelname="반려동물돌봄비(상해입원일당(1-10일))담보" id="checkbox04-1" }}
+													<div class="chk_lby2">
+														{{> cp/linkButton bl_text="미가입" size="1" bl_class="price_btn_non" question_tit="담보안내 팝업열기"}}
+													</div>
+												{{/ cp/checkbox }}
+											</li>		
+											<li class="list">
+												{{#> cp/checkbox labelname="응급실내원진료비(응급)담보" id="checkbox04-2" }}
+													<div class="chk_lby2">
+														{{> cp/linkButton bl_text="미가입" size="1" bl_class="price_btn_non" question_tit="담보안내 팝업열기"}}
+													</div>
+												{{/ cp/checkbox }}
+											</li>
 										</ul>
 									{{/ cp/accordion }}
 								</div>
