@@ -212,11 +212,24 @@
   .calendar_range_inner {
     padding: 0 24px;
     overflow: auto;
+		.calendar_range_item {
+			.calendar_cont {
+				padding-top: 8px;
+			}
+			& ~ .calendar_range_item {
+				.calendar_cont {
+					padding-top: 10px;
+				}
+			}
+		}
   }
 
   /* 몸 */
   .calendar_cont {
-    padding-top: 24px;
+		.yymm {
+			display: block;
+			// padding-bottom: 10px;
+		}
   }
 
   .calendar_tbl {
@@ -227,10 +240,11 @@
       margin: 0 auto;
       table-layout: fixed;
       thead {
-        height: 0;
-        padding: 0;
-        overflow: hidden;
-        font-size: 0;
+				th {
+ 					padding: 7px 0;
+					font-size: var(--font-size-label-small);
+					color: var(--color-text-subtle);
+				}
       }
       tbody {
         td {
@@ -249,7 +263,8 @@
           }
           .day_default {
             &:disabled {
-              color: var(--color-text-disabled);
+              // color: var(--color-text-disabled);
+							color: transparent;
             }
             > .text {
               position: relative;
@@ -339,6 +354,17 @@
             }
           }
         }
+
+				&.day_today {
+					&.day_active {
+						> .text {
+							&::after {
+								background-color: var(--color-element-inverse-static);
+							}
+						}
+					}
+
+				}
         
       }
       .end_day {
