@@ -3,6 +3,64 @@
 	{{> layout/header h-title="자동차 사고접수/고장출동 신청" }}
 	<div id="container" class="container">
 		<div class="content">
+
+			<div class="tab_wrap">
+				<div class="tab_wrap_list_ty1" role="tablist">
+					{{>cp/tab_btn tb-text="사고접수" tb-class="tab_btn_block" tb-id="ex01" tb-active=true}}
+					{{>cp/tab_btn tb-text="고장접수" tb-class="tab_btn_block" tb-id="ex02"}}
+				</div>
+				<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanelex01">
+					
+					<ol class="my_info_flow">
+						<li>
+							<span class="num">01</span>
+							<div class="cont">
+								<strong class="tit">사고접수</strong>
+								<ul class="list_ty3">
+									<li>모바일 화면에서 접수</li>
+									<li>고객센터 (1588-5656) → ARS ②번</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<span class="num">02</span>
+							<div class="cont">
+								<strong class="tit">사고내용 조사 및 피해물/피해자 확인</strong>
+							</div>
+						</li>
+						<li>
+							<span class="num">03</span>
+							<div class="cont">
+								<strong class="tit">보험금 청구 필요서류 제출</strong>
+								<p class="desc">
+									가입기간 시작일과 종료일을 입력해주세요.<br>
+									당일은 가입이 불가능하며, 최소 1일~최대 60일까지 가입 가능합니다.
+								</p>
+							</div>
+						</li>
+						<li>
+							<span class="num">04</span>
+							<div class="cont">
+								<strong class="tit">보험금 신청</strong>
+								<p class="desc">대인/대물배상의 경우 합의 포함</p>
+							</div>
+						</li>
+						<li>
+							<span class="num">05</span>
+							<div class="cont">
+								<strong class="tit">보험금 지급</strong>
+							</div>
+						</li>
+					</ol>
+				</div>
+				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanelex02">
+					tab inner 2
+				</div>
+				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanelex02">
+					tab inner 3
+				</div>
+			</div>
+
 			<h3 class="title_h3">
 				자동차사고가 났어요
 			</h3>
@@ -24,29 +82,6 @@
 									<div class="title">고객센터 (1588-5656) → ARS ②번</div>
 									<div class="btn_area basic">
 										{{> cp/linkButton bl_class="short_cut sm rd_box" bl_text="고객센터 전화걸기" href="tel:1588-5656" }}
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<h3 class="title_h3">
-				내 자동차가 고장났어요!
-			</h3>
-			<p class="text_sub">견인, 구난, 급유, 배터리 충전, 타이어 교체 등이 필요한 경우</p>
-
-			<div class="card_item_wrap">
-				<div class="card_item">
-					<div class="item_inner">
-						<div class="inner_cont">
-
-							<ul class="card_list_ty2">
-								<li>
-									<div class="title">모바일 화면에서 접수</div>
-									<div class="btn_area basic">
-										{{> cp/button type="3" size="5" b-text="홈페이지 접수하기" rightIcon="openWindowSvg" popup="pop_type01" }}
 									</div>
 								</li>
 							</ul>
