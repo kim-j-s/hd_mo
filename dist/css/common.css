@@ -557,9 +557,6 @@ strong {
 .invalid_msg + .info_gray {
 	margin-top: 2rem;
 }
-.form_box + .form_box {
-	margin-top: 5.2rem;
-}
 .process_info_area {
 	text-align: center;
 }
@@ -3733,8 +3730,14 @@ strong {
 	padding: 0 2.4rem;
 	overflow: auto;
 }
-.calendar_range .calendar_cont {
-	padding-top: 2.4rem;
+.calendar_range .calendar_range_inner .calendar_range_item .calendar_cont {
+	padding-top: 0.8rem;
+}
+.calendar_range .calendar_range_inner .calendar_range_item ~ .calendar_range_item .calendar_cont {
+	padding-top: 1rem;
+}
+.calendar_range .calendar_cont .yymm {
+	display: block;
 }
 .calendar_range .calendar_tbl > table {
 	width: 100%;
@@ -3743,11 +3746,10 @@ strong {
 	margin: 0 auto;
 	table-layout: fixed;
 }
-.calendar_range .calendar_tbl > table thead {
-	height: 0;
-	padding: 0;
-	overflow: hidden;
-	font-size: 0;
+.calendar_range .calendar_tbl > table thead th {
+	padding: 0.7rem 0;
+	font-size: var(--font-size-label-small);
+	color: var(--color-text-subtle);
 }
 .calendar_range .calendar_tbl > table tbody td {
 	border-top: none;
@@ -3764,7 +3766,7 @@ strong {
 	border-right: none;
 }
 .calendar_range .calendar_tbl > table tbody td .day_default:disabled {
-	color: var(--color-text-disabled);
+	color: transparent;
 }
 .calendar_range .calendar_tbl > table tbody td .day_default > .text {
 	position: relative;
@@ -3849,6 +3851,9 @@ strong {
 .calendar_range .calendar_tbl > table .start_day.start_day_fix > .text::before {
 	content: "시작일";
 	font-size: 0;
+}
+.calendar_range .calendar_tbl > table .start_day.day_today.day_active > .text::after {
+	background-color: var(--color-element-inverse-static);
 }
 .calendar_range .calendar_tbl > table .end_day.end_day_fix::before {
 	content: "";
@@ -5768,6 +5773,9 @@ strong {
 }
 .form_group_wrap .form_line .label_tit .tooltip_wrap {
 	vertical-align: top;
+}
+.form_group_wrap .form_line .label_tit .tooltip_wrap .tooltip_panel {
+	top: calc(100% + 3.2rem);
 }
 .form_group_wrap .form_line .btn_area {
 	margin-top: 1.6rem;
@@ -8816,6 +8824,7 @@ strong {
 /* Tooltip */
 .tooltip_wrap {
 	position: relative;
+	z-index: 1;
 	display: inline;
 	vertical-align: sub;
 	width: 2rem;
@@ -8883,7 +8892,7 @@ strong {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	position: absolute;
-	width: calc(100vw - 4rem);
+	width: calc(100vw - 4.8rem);
 	z-index: 11;
 	top: calc(100% + 0.9rem);
 	border-radius: var(--radius-medium1, 12px);
