@@ -42,10 +42,9 @@
 							<span class="num">03</span>
 							<div class="cont">
 								<strong class="tit">보험금 청구 필요서류 제출</strong>
-								<p class="desc">
-									가입기간 시작일과 종료일을 입력해주세요.<br>
-									당일은 가입이 불가능하며, 최소 1일~최대 60일까지 가입 가능합니다.
-								</p>
+								<div class="btn_area basic">
+									{{> cp/button type="3" size="5" b-text="필요서류 안내" rightIcon="arrowRightSvg"}}
+								</div>
 							</div>
 						</li>
 						<li>
@@ -70,35 +69,6 @@
 					tab inner 3
 				</div>
 			</div>
-
-			<h3 class="title_h3">
-				자동차사고가 났어요
-			</h3>
-			<p class="text_sub">자동차 운행 중 사고로 <strong class="point">사고처리가 필요</strong>한 경우</p>
-
-			<div class="card_item_wrap">
-				<div class="card_item">
-					<div class="item_inner">
-						<div class="inner_cont">
-
-							<ul class="card_list_ty2">
-								<li>
-									<div class="title">모바일 화면에서 접수</div>
-									<div class="btn_area basic">
-										{{> cp/button type="3" size="5" b-text="홈페이지 접수하기" rightIcon="openWindowSvg" popup="pop_type01" atag="true"}}
-									</div>
-								</li>
-								<li>
-									<div class="title">고객센터 (1588-5656) → ARS ②번</div>
-									<div class="btn_area basic">
-										{{> cp/linkButton bl_class="short_cut sm rd_box" bl_text="고객센터 전화걸기" href="tel:1588-5656" }}
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 
@@ -117,7 +87,9 @@
 	</div>
 	<div class="popup_bottom">
 		<div class="btn_area">
-			{{> cp/button type="1" size="1" b-text="확인" }}
+			<a href="https://qa.hi.co.kr/serviceAction.do" class="hd_btn hd_btn_ty_1 hd_btn_s_2" target="_blank">
+				<span class="text">확인</span>
+			</a>
 		</div>
 	</div>
 	{{/ popup/popup_layer}}
