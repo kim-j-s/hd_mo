@@ -3,47 +3,53 @@
 	// height: 48px;
 
 	.header_inner {
-		position: relative;
 		flex: 1;
+		position: relative;
 		display: flex;
-		align-items: center;
+		// align-items: center;
+		align-items: flex-start;
 		justify-content: space-between;
 		min-height: 56px;
 		padding: 12px 16px;
 
-		.history_back {
-			width: 32px;
-			height: 32px;
-			font-size: 0;
-			background: url(../images/icon/arrowLeft_ty1.svg) no-repeat center / 24px auto;
-		}
-
 		.header_connect {
-			flex: 1;
-			width: 100%;
-			padding: 0 36px;
+			flex: 1 1 0;
+			// width: 100%;
+			padding: 3px 4px 0 4px;
+			// padding: 0 36px;
 
 			.header_title {
-				overflow: hidden;
-				font-size: min(5vw, 18px);
-				line-height: 32px;
 				font-weight: 700;
-				color: #3e4a58;
-				white-space: nowrap;
-				text-overflow: ellipsis;
+				// font-size: min(5vw, 18px);
+				font-size: min(5vw, var(--font-size-heading-small));
+				color: var(--color-text-bolder);
+				overflow: hidden;
 			}
 		}
 
 		.header_left {
-			position: absolute;
-			left: 15px;
-			display: flex;
-			align-items: center;
+			flex: none;
+			> button {
+				background-color: transparent;
+			}
+			.history_back {
+				width: 32px;
+				height: 32px;
+				font-size: 0;
+				background: url(../images/icon/arrowLeft_ty1.svg) no-repeat center / 24px auto;
+			}
+			.btn_go_home {
+				width: 32px;
+				height: 32px;
+				font-size: 0;
+				background-image: url(../images/header/icon_home.svg);
+			}
 		}
 		.header_right {
-			position: absolute;
-			top: 12px;
-			right: 16px;
+			// position: absolute;
+			// top: 12px;
+			// right: 16px;
+			flex: none;
 			display: flex;
 			align-items: center;
 			gap: 8px;
@@ -63,6 +69,27 @@
 				height: 32px;
 				font-size: 0;
 				background: url(../images/icon/icon_insurance_check.svg) no-repeat center / 32px auto;
+			}
+			.btn_chatbot {
+				width: 32px;
+				height: 32px;
+				font-size: 0;
+				background: url(../images/header/icon_chatbot.svg) no-repeat center center / 32px auto;
+			}
+			.h_step_dp {
+				position: relative;
+				width: 32px;
+				height: 32px;
+				background: url(../images/header/icon_car_step.svg) no-repeat center center / 32px auto;
+				.text {
+					position: absolute;
+					top: 6px;
+					left: 50%;
+					font-weight: 700;
+					font-size: var(--font-size-label-xsmall);
+					color: var(--color-text-primary-bold);
+					transform: translateX(-50%);
+				}
 			}
 		}
 	}

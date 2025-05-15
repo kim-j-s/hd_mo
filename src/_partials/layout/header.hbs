@@ -14,7 +14,7 @@
 			<button type="button" class="history_back"><span class="text">이전 페이지로 이동</span></button>
 		{{/unless}}
 		{{#if h-home}}
-			<button type="button" class="home"><span class="text">홈으로 이동</span></button>
+			<button type="button" class="btn_go_home"><span class="text">홈으로 이동</span></button>
 		{{/if}}
 		</div>
 
@@ -25,6 +25,18 @@
 		{{/if}}
 
 		<div class="header_right">
+			{{!-- 자동차 스텝 --}}
+			{{#if h-carstep}}
+				<span class="h_step_dp">
+					<span class="text">{{h-carstep}}</span>
+				</span>
+			{{/if}}
+			{{!-- 자동차 스텝 --}}
+			{{!-- 챗봇 호출 버튼 --}}
+			{{#if h-chatbot}}
+				<a href="javascript:void(0)" class="btn_chatbot" title="새창열림"><span class="text">챗봇상담</span></a>
+			{{/if}}
+			{{!-- 챗봇 호출 버튼 --}}
 			{{!-- 계약변경 팝업 호출 버튼 --}}
 			{{#if h-ins}}
 				<button type="button" class="insChk" onclick="openHDPopup(this,'pop_insChk');"><span class="text">계약변경 팝업 열기</span></button>
