@@ -4,9 +4,9 @@
 	border-radius: var(--radius-large2);
 	background: var(--color-surface-secondary-subtler);
 
-	& + &.ty2 {
-		margin-top: 52px;
-	}
+	// & + &.ty2 {
+	// 	margin-top: 52px;
+	// }
 
 	& + [class^=list_ty]{
 		margin-top: 16px;
@@ -19,7 +19,7 @@
 	&.ty2 {
 		background: var(--color-surface-information-subtler);
 	}
-
+	& + .info_gray,
 	& + .list_ty2 {
 		margin-top: 16px;
 	}
@@ -48,8 +48,12 @@
 	
 	& + .checkbox_group_wrap,
 	& + .ag_groups,
-	& + .ag_group_wrap {
+	& + .ag_groups,
+	& + .call_box {
 		margin-top: 52px;
+		p + .info_gray {
+			margin-top: 12px;
+		}
 	}
 
 	.badge_wrap_ty2 {
@@ -234,4 +238,5 @@
 			}
 		}
 	}
+
 }

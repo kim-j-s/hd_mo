@@ -1,10 +1,11 @@
 /* Textarea */
 .textarea_wrap {
 	textarea {
+		display: block;
 		width: 100%;
-		padding: 12px 16px;
-		font-size: 16px;
-		line-height: 24px;
+		padding: var(--padding-6);
+		font-size: var(--font-size-label-medium);
+		min-height: 114px;
 		resize: none;
 		border: var(--border-width-variable-regular) solid var(--color-input-border);
 		background: var(--color-input-surface);
@@ -19,14 +20,18 @@
 			color: var(--color-text-disabled-on);
 			background-color: var(--color-input-surface-disabled);
 		}
-
+		&:placeholder {
+			color: var(--color-text-disabled);
+		}
 	}
 
 	.counter {
-		font-size: 14px;
-		line-height: 20px;
+		margin-top: 8px;
+		font-size: var(--font-size-body-small);
 		text-align: right;
-		padding-right: 8px;
+		em {
+			color: var(--color-text-primary);
+		}
 	}
 
 	&.byte_check {
