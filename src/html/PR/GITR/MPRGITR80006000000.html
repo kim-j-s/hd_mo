@@ -29,15 +29,6 @@
 						{{> cp/text type="text" placeholder="이름 입력" inp-title="이름 입력" }}
 					</div>
 					<div class="form_line">
-						<div class="label_tit">영문이름</div>
-						<!-- s: 25-05-14 수정 -->
-						{{> cp/text type="text" placeholder="여권 영문이름 입력(예: KIM HYUN DAI)" inp-title="영문이름 입력"}}
-						<!-- e: 25-05-14 수정 -->
-						<ul class="list_ty2">
-							<li>여권 영문이름과 달라도 보상 여부와는 무관해요.</li>
-						</ul>
-					</div>
-					<div class="form_line">
 						<div class="label_tit">주민등록번호</div>
 						<div class="comp_wrap birth">
 							{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" value="790101" readonly=true }}
@@ -52,11 +43,20 @@
 						<!-- s: 25-05-14 수정 -->
 						{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" value="- 1234 - 5678" inp-title="휴대폰번호" }}
 						<!-- e: 25-05-14 수정 -->
-						<div class="btn_area">
-							{{> cp/button type="3" size="2" b-text="인증하기"}}
-						</div>
+					</div>
+					<div class="form_line">
+						<div class="label_tit">영문이름</div>
+						<!-- s: 25-05-14 수정 -->
+						{{> cp/text type="text" placeholder="여권 영문이름 입력(예: KIM HYUN DAI)" inp-title="영문이름 입력"}}
+						<!-- e: 25-05-14 수정 -->
+						<ul class="list_ty2">
+							<li>여권 영문이름과 달라도 보상 여부와는 무관해요.</li>
+						</ul>
 					</div>
 				</div>
+			</div>
+			<div class="btn_area">
+				{{> cp/button type="3" size="2" b-text="인증하기"}}
 			</div>
 			<div class="divider_ty1"></div>
 			<div class="form_box">
