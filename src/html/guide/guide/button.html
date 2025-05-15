@@ -107,9 +107,13 @@
 	<!-- [Type - Icon] -->
 	<div class="guide_discription">icon 위치 적용 예시</div>
 	<div class="btn_area acddee">
-		{{#> cp/button type="1" size="1" leftIcon="downloadSvg"}}left icon{{/ cp/button}}
-		{{#> cp/button type="1" size="1" rightIcon="arrowRightSvg"}}right icon{{/ cp/button}}
-		{{#> cp/button type="1" size="1" leftIcon="downloadSvg" rightIcon="arrowRightSvg"}}both icon{{/ cp/button}}
+		{{> cp/button type="1" size="1" leftIcon="downloadSvg" b-text="left icon"}}
+		{{> cp/button type="1" size="1" rightIcon="arrowRightSvg" b-text="right icon"}}
+		{{> cp/button type="1" size="1" leftIcon="downloadSvg" rightIcon="arrowRightSvg" b-text="both icon"}}
+		<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1 between">
+			<span class="text">between icon</span>
+			<i class="hd_icon downloadSvg"></i>
+		</button>
 	</div>
 	
 	<div class="guide_discription">icon 타입별 케이스 - type1</div>
@@ -131,6 +135,8 @@
 		{{> cp/button type="3" size="1" rightIcon="mailSvg" b-text="mailSvg"}}
 		{{> cp/button type="3" size="1" rightIcon="documentSvg" b-text="documentSvg"}}
 		{{> cp/button type="3" size="1" rightIcon="pictureSvg" b-text="pictureSvg"}}
+		{{> cp/button type="3" size="1" rightIcon="pdfSvg" b-text="pdfSvg"}}
+		{{> cp/button type="3" size="1" rightIcon="docSvg" b-text="docSvg"}}
 	</div>
 
 	
@@ -379,8 +385,8 @@
 		{{> cp/button type="2" size="3" b-text="버튼명"}}
 		{{> cp/button type="2" size="3" b-text="버튼명"}}
 		{{> cp/button type="2" size="3" b-text="버튼명"}}
-		{{> cp/button type="2" size="3" b-text="버튼명"}}
-		{{> cp/button type="2" size="3" b-text="버튼명"}}
+		{{> cp/button type="2" size="3" b-text="버튼명" class="full"}}
+		{{> cp/button type="2" size="3" b-text="버튼명" class="half"}}
 	</div>
 	
 	<div class="guide_discription">row (.btn_area.ty3)</div>
@@ -391,6 +397,7 @@
 		{{> cp/button type="3" size="3" b-text="버튼명"}}
 		{{> cp/button type="3" size="3" b-text="버튼명"}}
 		{{> cp/button type="3" size="3" b-text="버튼명" class="full"}}
+		{{> cp/button type="3" size="3" b-text="버튼명" class="half"}}
 	</div>
 
 	<div class="guide_discription">row (.btn_area.basic)</div>
