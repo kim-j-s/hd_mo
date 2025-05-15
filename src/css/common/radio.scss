@@ -241,3 +241,38 @@
 		background-image: url(../images/logo/pay_toss.svg);
 	}
 }
+
+
+.star_item {
+	display: flex;
+	justify-content: center;
+	.start_radio {
+	  direction: rtl; // 별을 오른쪽부터 왼쪽으로 찍기 위해
+	  display: inline-flex;
+	  gap: 4px;
+	
+	  input {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+	  }
+	
+	  label {
+		display: inline-block;
+		width: 32px;
+		height: 32px;
+		background: url('../images/icon/star.svg') no-repeat center / contain;
+		cursor: pointer;
+	  }
+	
+	  input:checked ~ label {
+		background-image: url('../images/icon/star_on.svg');
+	  }
+	}
+	& + .form_group_wrap {
+		margin-top: 32px;
+	}
+}
