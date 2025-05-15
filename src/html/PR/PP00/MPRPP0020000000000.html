@@ -1,59 +1,109 @@
 
 {{#> layout/default page-title="계약자정보 입력 | 상품"}}
-<div id="wrap" class="wrap">
-	{{> layout/header h-title="피보험자/계약자정보" }}
-</div>
-
 <!-- s: popup area -->
  <!-- s: 전문금융소비자 정보 Full 팝업 -->
-{{#> popup/popup_full popup-active=true popup-id="pop_type03" popup-title="전문금융소비자 정보" }}
+{{#> popup/popup_full popup-active=true popup-id="pop_type03" popup-title="계약자 정보 추가 입력" }}
 <div class="popup_cont">
 	<div class="popup_content">
 		<!-- s: popup_content_top -->
 		<div class="popup_content_top">
         	<h2 class="title_h2">
-				<!-- s: 25-05-14 -->
-				<strong>전문금융소비자</strong>인 경우, <br><strong>확인</strong>이 필요합니다.
-				<!-- e: 25-05-14 -->
+				이번 거래 관련해 <strong>추가로 <br>확인해주세요</strong>
 			</h2>
 		</div>
 		<!-- e: popup_content_top -->
          <div class="form_group_wrap">
             <div class="form_line">
-                <div class="label_tit">단체(회사)명</div>
-                {{> cp/text value="현대해상손해보험" inp-title="단체(회사)명 입력" }}
+                <div class="label_tit">직장명</div>
+                {{> cp/text placeholder="입력해주세요" inp-title="직장명 입력" }}
             </div>
-			<div class="form_line">
-                <div class="label_tit">전문금융소비자 세부 항목 선택</div>
-                <div class="radio_group_wrap_ty2" role="radiogroup">
-                    {{> cp/radio rd-class="rd_btn" rd-id="sel01_01" name="sel01" labelname="지자체, 단체" }}
-                    {{> cp/radio rd-class="rd_btn" rd-id="sel01_02" name="sel01" labelname="보험모집종사자" }}
-                    {{> cp/radio rd-class="rd_btn" rd-id="sel01_03" name="sel01" labelname="기타" }}
-                </div>
+            <div class="form_line">
+                <div class="label_tit">직장 연락처</div>
+                {{> cp/text placeholder="입력해주세요" inp-title="직장 연락처 입력" }}
+            </div>
+            <div class="form_line">
+                <div class="label_tit">부서</div>
+                {{> cp/text placeholder="입력해주세요" inp-title="부서 입력" }}
+            </div>
+            <div class="form_line">
+                <div class="label_tit">직위</div>
+                {{> cp/text placeholder="입력해주세요" inp-title="직위 입력" }}
+            </div>
+            <div class="form_line">
+                <div class="label_tit">직장 주소</div>
+                {{> cp/text placeholder="입력해주세요" inp-title="직장 주소 입력" }}
+            </div>
+            <div class="form_line">
+                <div class="label_tit">자금출처</div>
+				{{> cp/selectitem si_ph="자금출처 선택" si_title="자금출처 선택" si_popup="pop_type01"}}
+                {{> cp/text placeholder="기타 자금출처를 입력해 주세요" inp-title="기타 자금출처 입력" }}
+            </div>
+            <div class="form_line">
+                <div class="label_tit">거래목적</div>
+				{{> cp/selectitem si_ph="거래목적 선택" si_title="거래목적 선택" si_popup="pop_type02"}}
+                {{> cp/text placeholder="기타 거래목적을 입력해 주세요" inp-title="기타 거래목적 입력" }}
             </div>
         </div>
-		<!-- s: 25-05-07 수정 -->
-        <!-- s: 꼭 알아두세요 -->
-		{{#> cp/notice dp-active=true }}
-			<ul class="list_ty1">
-				<!-- s: 25-05-14 -->
-				<li>「금융소비자 보호에 관한 법률」 제17조제1항에 따라 보험계약자의 일반&middot;전문금융소비자 여부를 확인하기 위한 절차입니다.</li>
-				<!-- e: 25-05-14 -->
-				<li>필요시 이를 확인할 수 있는 증빙자료 제출을 요구할 수 있으며, 전문금융소비자가 일반금융소비자와 동일한 대우를 받고자 하는 경우 전환신청이 가능합니다.</li>
-			</ul>
-        {{/ cp/notice }}
-        <!-- e: 꼭 알아두세요 -->
-		<!-- e: 25-05-07 수정 -->
 	</div>
 </div>
 <div class="popup_bottom">
 	<div class="btn_area">
-		{{> cp/button type="1" size="1" b-text="정보를 입력 중이에요" disabled=true }}
-		<!-- {{> cp/button type="1" size="1" b-text="모든 정보를 입력했어요"}} -->
+		{{> cp/button type="3" size="1" b-text="취소"  }}
+		{{> cp/button type="1" size="1" b-text="입력 완료"}}
 	</div>
 </div>
 {{/ popup/popup_full}}
 <!-- e: 전문금융소비자 정보 Full 팝업 -->
+
+    <!-- s: selpop -->
+    {{#> popup/popup_bottom popup-id="pop_type01" popup-title="자금출처"}}
+    <div class="popup_cont">
+        <div class="popup_content">
+            <div class="opt_select_list opt_case3">
+                <div role="button" tabindex="0" class="option"><span class="text">사업소득</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">부동산 임대소득</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">부동산 양도소득</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">금융소득(이자 및 배당) </span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">근로소득</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">연금소득</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">퇴직소득</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">상속&middot;증여</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">일시 재산양도로 인한 소득</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">해당없음</span></div>
+                <div role="button" tabindex="0" class="option active" title="선택됨"><span class="text">기타</span></div>
+            </div>
+        </div>
+    </div>
+    {{/ popup/popup_bottom}}
+    <!-- e: selpop -->
+    <!-- s: selpop -->
+    {{#> popup/popup_bottom popup-id="pop_type02" popup-title="거래목적"}}
+    <div class="popup_cont">
+        <div class="popup_content">
+            <div class="opt_select_list opt_case3">
+                <div role="button" tabindex="0" class="option"><span class="text">보장&middot;재해</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">보장&middot;암 및 중대질병</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">보장&middot;사망</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">보장&middot;재계약</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">보장&middot;기타</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">저축&middot;결혼/주택자금</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">저축&middot;자녀양육비(학자금포함)</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">저축&middot;노후준비</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">저축&middot;증여/상속</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">저축&middot;기타</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">대출&middot;주택구입</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">대출&middot;전세자금마련</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">대출&middot;생활자금</span></div>
+                <div role="button" tabindex="0" class="option active" title="선택됨"><span class="text">기타</span></div>
+            </div>
+        </div>
+    </div>
+    {{/ popup/popup_bottom}}
+    <!-- e: selpop -->
+
+
 <!-- e: popup area -->
 
 {{/ layout/default }}
+
+
