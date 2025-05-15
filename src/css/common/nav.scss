@@ -250,16 +250,14 @@
 				width: 12px;
 				height: 12px;
 				transform: translateY(-50%);
-				> input {
-					position: absolute;
-					opacity: 0;
-					&:checked {
-						+ label {
-							background-image: url(../images/icon/icon_star_on.svg);
-						}
+
+				&[aria-checked="true"] {
+					> .text {
+						background-image: url(../images/icon/icon_star_on.svg);
 					}
 				}
-				> label {
+
+				> .text {
 					position: relative;
 					display: block;
 					width: 12px;
@@ -274,7 +272,6 @@
 						left: -3px;
 						width: 18px;
 						height: 18px;
-						// background: blue;
 					}
 				}
 			}

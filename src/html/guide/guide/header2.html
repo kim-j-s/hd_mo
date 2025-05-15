@@ -1,98 +1,47 @@
-{{#> layout/default page-title="계약조회 | 마이페이지"}}
+{{#> layout/default page-title="현재페이지 | 뎁스 페이지"}}
 	<div id="wrap" class="wrap">
-		{{> layout/header h-title="계약조회"  h-ins="pop_insChk" }}
+		{{> layout/header h-title="타이틀" h-ins="pop_insChk" }}
 		<div id="container" class="container">
 			<div class="content">
-
-				<p class="text_sub">
-					대상 계약을 선택해주세요.
-				</p>
-
-				<div class="card_item_wrap">
-					<div class="card_item">
-						<div class="item_inner">
-							<div class="inner_cont">
-								<div role="button" class="card_link" tabindex="0">
-									<div class="item_top">
-										<div class="title_info">
-											<div class="main_title">324EWLJ324LKJ234J324</div>
-										</div>
-										<div class="desc">Hicar개인용(CM)</div>
-									</div>
-								</div>
-								<ul class="card_list_ty1">
-									<li>
-										<div class="title">자동차명</div>
-										<div class="cont">더뉴싼타페 2.5터보</div>
-									</li>
-									<li>
-										<div class="title">보험기간</div>
-										<div class="cont">2020.01.01 ~ 2021.01.01</div>
-									</li>
-									<li>
-										<div class="title">계약자</div>
-										<div class="cont">김*대</div>
-									</li>
-									<li>
-										<div class="title">피보험자</div>
-										<div class="cont">김*대</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="card_item">
-						<div class="item_inner">
-							<div class="inner_cont">
-								<div role="button" class="card_link" tabindex="0">
-									<div class="item_top">
-										<div class="title_info">
-											<div class="main_title">324EWLJ324LKJ234J324</div>
-										</div>
-										<div class="desc">Hicar개인용(CM)</div>
-									</div>
-								</div>
-								<ul class="card_list_ty1">
-									<li>
-										<div class="title">자동차명</div>
-										<div class="cont">더뉴싼타페 2.5터보</div>
-									</li>
-									<li>
-										<div class="title">보험기간</div>
-										<div class="cont">2020.01.01 ~ 2021.01.01</div>
-									</li>
-									<li>
-										<div class="title">계약자</div>
-										<div class="cont">김*대</div>
-									</li>
-									<li>
-										<div class="title">피보험자</div>
-										<div class="cont">김*대</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="btn_area center view_more">
-						{{> cp/button_more}}
-					</div>
+				<!-- s: content_top -->
+				<div class="content_top">
+					<h2 class="title_h2">
+						<strong>헤더 1</strong>
+					</h2>
+					<p class="text_sub">text_sub</p>
 				</div>
-
+				<!-- e: content_top -->
+				 
+				<div style="height:400px; background-color: #f8f8f8;"></div>
+				<div style="height:400px; background-color: #ddd;"></div>
+				
 				<!-- s: 꼭 알아두세요 -->
-				<!-- s: 25-05-07 수정 -->
-				{{#> cp/notice dp-active=true }}
-				<!-- e: 25-05-07 수정 -->
+				{{#> cp/notice }}
 					<ul class="list_depth">
-						<li>인터넷으로 가입한 다이렉트 상품(개인용 및 개인소유 업무용)에 한해 계약변경이 가능합니다.</li>
-						<li>하이플래너, 대리점 및 전화 상담직원을 통해 가입하신 고객님께서는 현대해상홈페이지(m.hi.co.kr) 또는 대표 콜센터(1588-5656)를 통해 계약변경을 진행하실 수 있습니다.</li>
+						<li>내용1</li>
+						<li>내용2</li>
+						<li>내용3</li>
 					</ul>
 				{{/ cp/notice }}
 				<!-- e: 꼭 알아두세요 -->
+
+				<!-- // content -->
+			</div>
+
+			<!-- // container -->
+		</div>
+
+		<!-- s: 하단 고정 버튼 영역 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="3" size="1" b-text="취소"}}
+				{{> cp/button type="1" size="1" b-text="확인"}}
 			</div>
 		</div>
+		<!-- s: 하단 고정 버튼 영역 -->
+
 	</div>
 
-	<!-- s: 25-05-07 수정 -->
 	<!-- s: popup area -->
 	<!-- s: Full 팝업 -->
 	{{#> popup/popup_full popup-id="pop_insChk" popup-title="자동차 계약변경"}}
@@ -129,7 +78,6 @@
 				<div class="item">
 					<h3 class="title_h3 ico_ty ico_ty_c02">운전자정보 변경</h3>
 					<ul class="opt_select_list opt_case5">
-						<!-- s: 25-05-15 수정 -->
 						<li>
 							<div class="option" role="button" tabindex="0">
 								<span class="opi_t1">단기운전자 확대특약 신청</span>
@@ -140,7 +88,6 @@
 								<span class="opi_t1">단기운전자 확대특약 변경</span>
 							</div>
 						</li>
-						<!-- e: 25-05-15 수정 -->
 						<li>
 							<div class="option" role="button" tabindex="0">
 								<span class="opi_t1">운전자범위/연령 변경</span>
@@ -167,7 +114,6 @@
 								<span class="opi_t1">안전운전 할인특약 가입</span>
 							</div>
 						</li>
-						<!-- s: 25-05-15 수정 -->
 						<li>
 							<div class="option" role="button" tabindex="0">
 								<span class="opi_t1">효도하는 자녀 할인특약 가입</span>
@@ -178,11 +124,9 @@
 								<span class="opi_t1">ECO마일리지 특약 가입</span>
 							</div>
 						</li>
-						<!-- e: 25-05-15 수정 -->
 					</ul>
 				</div>
 
-				<!-- s: 25-05-15 수정 -->
 				<div class="item">
 					<h3 class="title_h3 ico_ty ico_ty_c04">특약 사진등록</h3>
 					<ul class="opt_select_list opt_case5">
@@ -203,12 +147,9 @@
 						</li>
 					</ul>
 				</div>
-				<!-- e: 25-05-15 수정 -->
 
 				<div class="item">
-					<!-- s: 25-05-15 수정 -->
 					<h3 class="title_h3 ico_ty ico_ty_c05">계약취소/해지</h3>
-					<!-- e: 25-05-15 수정 -->
 					<ul class="opt_select_list opt_case5">
 						<li>
 							<div class="option" role="button" tabindex="0">
@@ -229,9 +170,7 @@
 				</div>
 
 				<div class="item">
-					<!-- s: 25-05-15 수정 -->
 					<h3 class="title_h3 ico_ty ico_ty_c06">기타</h3>
-					<!-- e: 25-05-15 수정 -->
 					<ul class="opt_select_list opt_case5">
 						<li>
 							<div class="option" role="button" tabindex="0">
@@ -250,6 +189,5 @@
 	{{/ popup/popup_full}}
 	<!-- e: Full 팝업 -->
 	<!-- e: popup area -->
-	<!-- e: 25-05-07 수정 -->
 
 {{/ layout/default }}

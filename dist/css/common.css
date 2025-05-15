@@ -846,58 +846,58 @@ strong {
 /* common 인증, 로딩 등 */
 /* header */
 .header .header_inner {
-	position: relative;
 	-webkit-box-flex: 1;
 	-ms-flex: 1;
 	flex: 1;
+	position: relative;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	align-items: flex-start;
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
 	min-height: 5.6rem;
 	padding: 1.2rem 1.6rem;
 }
-.header .header_inner .history_back {
+.header .header_inner .header_connect {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 0px;
+	flex: 1 1 0;
+	padding: 0.3rem 0.4rem 0 0.4rem;
+}
+.header .header_inner .header_connect .header_title {
+	font-weight: 700;
+	font-size: min(5vw, var(--font-size-heading-small));
+	color: var(--color-text-bolder);
+	overflow: hidden;
+}
+.header .header_inner .header_left {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+}
+.header .header_inner .header_left > button {
+	background-color: transparent;
+}
+.header .header_inner .header_left .history_back {
 	width: 3.2rem;
 	height: 3.2rem;
 	font-size: 0;
 	background: url(../images/icon/arrowLeft_ty1.svg) no-repeat center/2.4rem auto;
 }
-.header .header_inner .header_connect {
-	-webkit-box-flex: 1;
-	-ms-flex: 1;
-	flex: 1;
-	width: 100%;
-	padding: 0 3.6rem;
-}
-.header .header_inner .header_connect .header_title {
-	overflow: hidden;
-	font-size: min(5vw, 1.8rem);
-	line-height: 3.2rem;
-	font-weight: 700;
-	color: #3e4a58;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-}
-.header .header_inner .header_left {
-	position: absolute;
-	left: 1.5rem;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
+.header .header_inner .header_left .btn_go_home {
+	width: 3.2rem;
+	height: 3.2rem;
+	font-size: 0;
+	background-image: url(../images/header/icon_home.svg);
 }
 .header .header_inner .header_right {
-	position: absolute;
-	top: 1.2rem;
-	right: 1.6rem;
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -917,6 +917,28 @@ strong {
 	height: 3.2rem;
 	font-size: 0;
 	background: url(../images/icon/icon_insurance_check.svg) no-repeat center/3.2rem auto;
+}
+.header .header_inner .header_right .btn_chatbot {
+	width: 3.2rem;
+	height: 3.2rem;
+	font-size: 0;
+	background: url(../images/header/icon_chatbot.svg) no-repeat center center/3.2rem auto;
+}
+.header .header_inner .header_right .h_step_dp {
+	position: relative;
+	width: 3.2rem;
+	height: 3.2rem;
+	background: url(../images/header/icon_car_step.svg) no-repeat center center/3.2rem auto;
+}
+.header .header_inner .header_right .h_step_dp .text {
+	position: absolute;
+	top: 0.6rem;
+	left: 50%;
+	font-weight: 700;
+	font-size: var(--font-size-label-xsmall);
+	color: var(--color-text-primary-bold);
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
 }
 /* footer */
 /* Footer */
@@ -7186,6 +7208,7 @@ strong {
 	-ms-flex-align: stretch;
 	align-items: stretch;
 	gap: 1.2rem;
+	margin-bottom: 2.4rem;
 }
 .radio_group_wrap_ty2 .inp_radio {
 	-ms-flex-preferred-size: calc(50% - 0.6rem);
@@ -7196,6 +7219,9 @@ strong {
 }
 .radio_group_wrap_ty2 + .info_gray {
 	margin-top: 2.4rem;
+}
+.radio_group_wrap_ty2 + .table {
+	margin-top: 1.6rem;
 }
 .radio_group_wrap_ty3 {
 	width: 100%;
@@ -8568,7 +8594,6 @@ strong {
 	text-align: right;
 	word-break: break-all;
 }
-.table_wrap .table.table_v_mid th,
 .table_wrap .table.table_v_mid td {
 	vertical-align: middle;
 }
@@ -9212,15 +9237,8 @@ strong {
 }
 .info_gray + .checkbox_group_wrap,
 .info_gray + .ag_groups,
-.info_gray + .ag_groups,
-.info_gray + .call_box {
+.info_gray + .ag_group_wrap {
 	margin-top: 5.2rem;
-}
-.info_gray + .checkbox_group_wrap p + .info_gray,
-.info_gray + .ag_groups p + .info_gray,
-.info_gray + .ag_groups p + .info_gray,
-.info_gray + .call_box p + .info_gray {
-	margin-top: 1.2rem;
 }
 .info_gray .badge_wrap_ty2 {
 	display: -webkit-box;
@@ -9393,4 +9411,10 @@ strong {
 }
 .info_gray .info_top_cont dl dt {
 	min-width: 8rem;
+}
+.call_box {
+	margin-top: 5.2rem;
+}
+.call_box .info_text + .info_gray {
+	margin-top: 1.2rem;
 }
