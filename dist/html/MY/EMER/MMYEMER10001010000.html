@@ -330,6 +330,7 @@
 							<button type="button" class="tab_btn tab_btn_block active" role="tab" aria-selected="true" aria-controls="tabPanelex01" id="tabex01">사고접수</button>
 							<button type="button" class="tab_btn tab_btn_block" role="tab" aria-selected="false" aria-controls="tabPanelex02" id="tabex02">고장접수</button>
 						</div>
+
 						<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanelex01">
 							<ol class="my_info_flow">
 								<li>
@@ -340,10 +341,10 @@
 											<li>
 												모바일 화면에서 접수
 												<div class="btn_area basic">
-													<a href="#" class="hd_btn hd_btn_ty_3 hd_btn_s_5" onclick="openHDPopup(this,'pop_type01');">
+													<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5" onclick="openHDPopup(this,'pop_type01');">
 														<span class="text">홈페이지 접수하기</span>
 														<i class="hd_icon openWindowSvg"></i>
-													</a>
+													</button>
 												</div>
 											</li>
 											<li>
@@ -379,7 +380,9 @@
 									<span class="num">04</span>
 									<div class="cont">
 										<strong class="tit">보험금 신청</strong>
-										<p class="desc">대인/대물배상의 경우 합의 포함</p>
+										<ul class="list_ty3">
+											<li>대인/대물배상의 경우 합의 포함</li>
+										</ul>
 									</div>
 								</li>
 								<li>
@@ -389,9 +392,65 @@
 									</div>
 								</li>
 							</ol>
+
+							<!-- s: 꼭 알아두세요 -->
+							<div class="bottom_fix_notice">
+								<div class="acd_item">
+									<div class="acd_head active">
+										<button type="button" class="acd_btn" aria-expanded="true"><span>꼭 알아두세요</span></button>
+									</div>
+									<div class="acd_cont">
+										<div class="inner" style="display: block">
+											<ul class="list_depth">
+												<li>
+													사고과실 판정은 과실기준도표를 기준으로 산정하며 실제 적용되는 과실은 사고현장, 사고형태, 자동차파손/상태, 경찰서 조사내용 등에 따라 변경될 수 있습니다.
+													<div class="btn_area basic">
+														<a href="https://accident.knia.or.kr/" class="btn_link short_cut sm" target="_blank" title="새창에서 열기" title="새창으로 열림">
+															<span class="text">과실기준도표 확인</span>
+														</a>
+													</div>
+												</li>
+												<li>사고조사 후 보험금을 지급해드리며, 보험금 지급 후에도 추가 보험금 청구, 구상환입, 판결 등의 사유로 보험금 지급 이 변경될 수 있습니다.</li>
+												<li>보상처리 관련 내용은 담당자에게 문의해주세요.</li>
+												<li>
+													보험계약자 등은 해당 사고 건에 대해 보험회사에 소속된 손해사정사 또는 보험회사와 위탁계약이 체결된 손해사정 업자 외에 별도로 손해사정사를 선임할 수 있으며 그 비용 부담은 아래와 같습니다.(「보험업감독규정」 제9-16조)
+
+													<ol class="circle_list">
+														<li>
+															<strong>보험회사 부담</strong>
+															<ul>
+																<li>손해사정이 착수되기 이전에 보험계약자 등이 보험회 사에게 손해사정사의 선임의사를 통보해 동의를 얻은 때</li>
+																<li>정당한 사유 없이 보험회사가 보험사고 통보를 받은 날 부터 7일이 지나도 손해사정에 착수하지 않은 때</li>
+															</ul>
+														</li>
+														<li>
+															<strong>보험계약자 등 부담</strong>
+															<ul>
+																<li>보험회사가 고용 또는 선임한 손해사정사가 사정한 결 과에 보험계약자 등이 승복하지 않은 때</li>
+																<li>보험계약자 등이 보험회사와는 별도로 손해사정사를 선임하고자 할 때</li>
+															</ul>
+														</li>
+													</ol>
+												</li>
+												<li>보험계약자 등이 따로 손해사정사를 선임하지 않은 경우 보험회사에 소속된 손해사정사 또는 보험회사와 위탁계약 이 체결된 손해사정업자가 손해사정을 하게 됩니다.</li>
+												<li>
+													신속한 접수를 위한 필수 정보는 아래와 같습니다.
+													<ul>
+														<li>자동차번호, 피보험자 정보(연락처, 주민등록번호)</li>
+														<li>사고발생 시간, 장소</li>
+														<li>자동차 운전자 정보(연락처, 주민등록번호)</li>
+														<li>상대 운전자 정보(연락처, 주민등록번호)</li>
+														<li>정비업체 및 치료 병원(확정 시)</li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- e: 꼭 알아두세요 -->
 						</div>
-						<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanelex02">tab inner 2</div>
-						<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanelex02">tab inner 3</div>
+						<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanelex02">고장접수 내용</div>
 					</div>
 				</div>
 			</div>
@@ -415,7 +474,7 @@
 					</div>
 					<div class="popup_bottom">
 						<div class="btn_area">
-							<a href="https://qa.hi.co.kr/serviceAction.do" class="hd_btn hd_btn_ty_1 hd_btn_s_2" target="_blank">
+							<a href="https://qa.hi.co.kr/serviceAction.do" class="hd_btn hd_btn_ty_1 hd_btn_s_2" target="_blank" title="새창으로 열림">
 								<span class="text">확인</span>
 							</a>
 						</div>
