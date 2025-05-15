@@ -7,15 +7,15 @@
  *  - class : 링크버튼 class
  * 	- title : 버튼설명(표시될 링크 툴팁)
  *  - size : 버튼사이즈[1(기본적용), 2, 3, 4,]
- *  - target : target속성(_blank의 경우 title='새창에서 열기'로 적용됨)
- *  - blank : 새창에서 열기 여부(true일 경우 title='새창에서 열기'로 적용됨)
+ *  - target : target속성(_blank의 경우 title='새창열림'으로 적용됨)
+ *  - blank : 새창열림 여부(true일 경우 title='새창열림'으로 적용됨)
  */
  --}}
 <a href="{{#if href}}{{href}}{{else}}javascript:void(0){{/if}}"
     {{#if bl_id}} id="{{bl_id}}"{{/if}} class="btn_link{{#if size}} btn_link_s_{{size}}{{/if}}{{#if bl_class}} {{bl_class}}{{/if}}"
     {{#if pop_id}} role="button" onclick="openHDPopup(this,'{{{pop_id}}}');"
     {{else}}
-        {{#if blank}} target="_blank" title="새창에서 열기"{{/if}}
+        {{#if blank}} target="_blank" title="새창열림"{{/if}}
         {{#if bl_title}} title="{{bl_title}}"{{/if}}
     {{/if}}
     {{#if role_b}} role="button"{{/if}}

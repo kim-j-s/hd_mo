@@ -56,55 +56,26 @@
 					<div class="popup_head"><div class="popup_head_title">사고사진</div></div>
 					<div class="popup_cont">
 						<div class="popup_content">
-							<div class="bg_swiper_area">
-								<div class="banner_slide_wrap">
-									<div id="card_reward_banner_wrap" class="swiper">
+							<div class="bg_swiper_wrap">
+								<!-- <div class="inner"> -->
+								<div class="image_rolling_wrap">
+									<div class="swiper">
 										<div class="swiper-wrapper">
-											<a class="swiper-slide bann_wrap bann_ty1 co_ty2" href="#">
-												<div class="inner">
-													<span class="logo"><i class="hd_icon logo_card_shinhan"></i></span>
-													<div class="bann_cont">
-														<div class="title">신한카드로 결제해 보세요</div>
-														<div class="desc">신한카드로 결제하면 포인트 100% 사용가능</div>
-													</div>
-												</div>
-											</a>
-											<a class="swiper-slide bann_wrap bann_ty1" href="#">
-												<div class="inner">
-													<span class="logo"><i class="hd_icon logo_card_hundai"></i></span>
-													<div class="bann_cont">
-														<div class="title">현대카드로 결제해 보세요</div>
-														<div class="desc">
-															M포인트 100% 사용가능
-															<br />
-															계속보험료 결제 가능
+											<div class="swiper-slide">
+												<img src="../../../images/temp/img_carmera_temp.png" alt="등록한 차량번호판 이미지" />
+											</div>
+											<!-- <div class="swiper-slide">
+															<img src="../../../images/temp/img_certify_card_temp.png" alt="등록한 차량번호판 이미지">
 														</div>
-													</div>
-												</div>
-											</a>
-											<a class="swiper-slide bann_wrap bann_ty1 co_ty3" href="#">
-												<div class="inner">
-													<span class="logo"><i class="hd_icon logo_card_samsung"></i></span>
-													<div class="bann_cont">
-														<div class="title">삼성카드로 결제해 보세요</div>
-														<div class="desc">삼성카드로 결제하면 포인트 100% 사용가능</div>
-													</div>
-												</div>
-											</a>
+														<div class="swiper-slide">
+															<img src="../../../images/temp/img_carmera_temp.png" alt="등록한 차량번호판 이미지">
+														</div> -->
 										</div>
 									</div>
 									<div class="swiper-pagination sp_ty1"></div>
-									<button class="swiper_button sbc_03 sbs_01 swiper_button_left"></button>
-									<button class="swiper_button sbc_03 sbs_01 swiper_button_right" aria-label="다음" disabled></button>
 								</div>
+								<!-- </div> -->
 							</div>
-						</div>
-					</div>
-					<div class="popup_bottom">
-						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
-								<span class="text">다음</span>
-							</button>
 						</div>
 					</div>
 					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
@@ -114,3 +85,33 @@
 		<!-- e: Full 팝업 -->
 	</body>
 </html>
+<script>
+	$(document).ready(function () {
+		$(".image_rolling_wrap").each(function (idx) {
+			const $swiperContainer = $(this).find(".swiper");
+			const $pagination = $(this).find(".swiper-pagination");
+			const $nextBtn = $(this).find(".swiper_button_right");
+			const $prevBtn = $(this).find(".swiper_button_left");
+
+			new Swiper($swiperContainer[0], {
+				slidesPerView: 1,
+				updateOnWindowResize: true,
+				loop: false,
+				observer: true,
+				watchOverflow: false,
+				navigation: {
+					nextEl: $nextBtn[0],
+					prevEl: $prevBtn[0],
+				},
+				pagination: {
+					el: $pagination[0],
+					clickable: true,
+					type: "bullets",
+					renderBullet: function (index, className) {
+						return `<span class="${className}" aria-label="사고사진${index + 1}번으로 이동"></span>`;
+					},
+				},
+			});
+		});
+	});
+</script>
