@@ -194,7 +194,7 @@
 			}
 		}
 
-  }).on('click', '.inp > .del', function(e){
+  }).on('click', '.inp > .del:not(.del_not)', function(e){
     const $this = $(this);
     e.preventDefault();
 	
