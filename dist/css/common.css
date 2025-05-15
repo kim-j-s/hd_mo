@@ -1220,14 +1220,10 @@ strong {
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
-.nav_menu_wrap .nmc_recent_search .nrs_items .item_bookmark > input {
-	position: absolute;
-	opacity: 0;
-}
-.nav_menu_wrap .nmc_recent_search .nrs_items .item_bookmark > input:checked + label {
+.nav_menu_wrap .nmc_recent_search .nrs_items .item_bookmark[aria-checked="true"] > .text {
 	background-image: url(../images/icon/icon_star_on.svg);
 }
-.nav_menu_wrap .nmc_recent_search .nrs_items .item_bookmark > label {
+.nav_menu_wrap .nmc_recent_search .nrs_items .item_bookmark > .text {
 	position: relative;
 	display: block;
 	width: 1.2rem;
@@ -1236,7 +1232,7 @@ strong {
 	border: none;
 	background: url(../images/icon/icon_star.svg) no-repeat center center/1.2rem auto;
 }
-.nav_menu_wrap .nmc_recent_search .nrs_items .item_bookmark > label::after {
+.nav_menu_wrap .nmc_recent_search .nrs_items .item_bookmark > .text::after {
 	content: "";
 	position: absolute;
 	top: -0.3rem;
