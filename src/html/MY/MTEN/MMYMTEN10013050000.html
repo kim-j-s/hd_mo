@@ -1,0 +1,109 @@
+{{#> layout/default page-title="가입정보 확인 | 상품"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="" }}
+		<div id="container" class="container">
+			<div class="content">
+				<!-- s: content_top -->
+				<div class="content_top">
+					<h2 class="title_h2">
+						<strong>변경내용을</strong><br> 확인해주세요
+					</h2>
+				</div>
+				<!-- e: content_top -->
+
+				<div class="space_list_ty4">
+					<div class="item">
+						<h3 class="title_h3">변경내용</h3>
+						<div class="table_wrap">
+							<table class="table">
+								<caption>특약가입일, 주행거리 기준일, 주행거리 제공</caption>
+								<colgroup>
+									<col style="width:35%;">
+									<col style="width:65%;">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">특약가입일</th>
+										<td>2025.04.10</td>
+									</tr>
+									<tr>
+										<th scope="row">주행거리 기준일</th>
+										<td>2025.03.20</td>
+									</tr>
+									<tr>
+										<th scope="row">주행거리</th>
+										<td>35,000Km</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="item">
+						<h3 class="title_h3">보험료 환급금 대체사용 여부 선택</h3>
+						<div class="checkbox_group_wrap column">
+							{{> cp/checkbox checkbox_class="rd_box" id="checkbox01" label_class="chk_label_ty3" labelname="보험료 환급금 대체사용 특약" labelcont="보험료 환급금 대체사용 특약가입시 ECO마일리지특약과 월별 안전운전점수 평가 후환급 추가특약에서 환급금이 발생한 경우 갱신보험료에서 차감결제하실 수 있습니다." }}
+						</div>
+					</div>
+					<div class="item">
+						<h3 class="title_h3">후할인 특약(마일리지) 환급계좌 입력</h3>
+						<div class="form_group_wrap">
+							<div class="form_line">
+								<div class="label_tit">은행</div>
+								{{> cp/selectitem si_ph="선택해주세요." si_title="은행 선택"}}
+							</div>
+							<div class="form_line">
+								<div class="label_tit">계좌번호</div>
+								{{> cp/text type="tel" placeholder="숫자만 입력" inp-title="계좌번호 입력"}}
+								<ul class="list_ty2">
+									<li><strong>김*대(계약자)님의 본인 계좌만 이용 가능합니다.</strong></li>
+								</ul>
+							</div>
+						</div>
+						<div class="checkbox_group_wrap column space2">
+							{{> cp/checkbox checkbox_class="rd_box" id="checkbox01" label_class="chk_label_ty3" labelname="<strong class='ess ess_t1'>필수</strong> 주행거리 기준일, 주행거리, 마일리지 환급 계좌를 확인하였습니다." }}
+						</div>
+					</div>
+				</div>
+
+				
+
+				
+
+				
+
+				<!-- s: 꼭 알아두세요 -->
+				{{#> cp/notice }}
+					<ul class="list_depth">
+						<li>중도가입시 보험료 할인은 가입일로부터 보험종료일까지 일할 계산되어 적용됩니다.</li>
+						<li>
+							실제운행한 '연간환산 주행거리'에 따라 보험료를 환급해드립니다.<br>
+							-단, 하이카서비스등 일부 특약의 보험료는 할인적용에서 제외</li>
+						<li>사진 방식으로 마일리지특약에 가입한 경우 운행정보확인장치 방식(커넥티드 마일리지)으로 변경할 수 없습니다.</li>
+						<li>마일리지 환급금은 갱신계약 대체보험료로 사용하실 수 있으며, 미사용시 수납방법에 따라 카드부분취소 또는 계좌환급으로 정산하여 드립니다.</li>
+						<li>보험계약변경 완료를 위해서는 계약자의 전자서명이 필요합니다.</li>
+					</ul>
+				{{/ cp/notice }}
+				<!-- e: 꼭 알아두세요 -->
+
+				<!-- // content -->
+			</div>
+
+			<!-- // container -->
+		</div>
+
+		<!-- s: 하단 고정 버튼 영역 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="1" b-text="전자서명"}}
+			</div>
+		</div>
+		<!-- s: 하단 고정 버튼 영역 -->
+
+		{{> layout/footer }}
+	</div>
+
+	<!-- s: popup area -->
+	 
+	<!-- e: popup area -->
+
+{{/ layout/default }}
