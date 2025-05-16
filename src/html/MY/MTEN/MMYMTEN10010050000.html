@@ -1,0 +1,295 @@
+{{#> layout/default page-title="자동차보험 계약변경 | 마이페이지"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="변경내용 확인" h-ins="pop_insChk" }}
+		<div id="container" class="container">
+			<div class="content">
+
+				<!-- s: content_top -->
+				<div class="content_top">
+					<h2 class="title_h2">
+            <strong>변경내용과 보험료</strong>를<br />
+            확인해주세요
+					</h2>
+				</div>
+				<!-- e: content_top -->				
+
+				<div class="info_cont">
+          <h2 class="pop_title_h1">기준일</h2>
+          <div class="table_wrap">
+            <table class="table">
+              <caption>변경기준일 안내</caption>
+              <colgroup>
+                <col style="width:40%;">
+                <col style="width:60%;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">변경 기준일</th>
+                  <td class="point"><strong>2025.02.07 00시</strong></td>
+                </tr>                
+              </tbody>
+            </table>
+          </div>
+          <ul class="list_ty2">
+            <li>담보/특약 <strong class="point">변경 효력은 변경 기준일의 00시부터 발생</strong>합니다.
+            </li>
+          </ul>
+
+
+          <h2 class="pop_title_h1">변경 내용</h2>
+          <div class="table_wrap">
+            <table class="table table_v_mid">
+              <caption>변경내용 안내-대물배상,부가담보,대인배상,자동차상해,자기신체사고,무보험차상해,자기차량손해,긴급출동특약,물적사고할증기준</caption>
+              <colgroup>
+                <col style="width:33.3333%;">
+                <col style="width:33.3333%;">
+                <col style="width:33.3333%;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">구분</th>
+                  <th scope="col">변경 전</th>
+                  <th scope="col">변경 후</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>대물배상</td>
+                  <td>10억원</td>
+                  <td class="point">1억원</td>
+                </tr>
+                <tr>
+                  <td>부가담보</td>
+                  <td>자기차량손해보장확대특약<br />대물배상가입금액확장담보특약</td>
+                  <td>
+                    자기차량손해보장확대특약<br />
+                    대물배상가입금액확장담보특약<br />
+                    <strong class="point">상급병실·성형·치아보철지원특약<br />
+                    상해간병비ㆍ사망담보특약<br />
+                    음주·무면허·뺑소니사고 등 피해지원특약<br />
+                    자녀사고피해지원특약</strong>
+                  </td>
+                </tr>
+                <tr>
+                  <td>대인배상Ⅰ</td>
+                  <td colspan="2">가입</td>
+                </tr>
+                <tr>
+                  <td>대인배상Ⅱ</td>
+                  <td colspan="2">무한</td>
+                </tr>
+                <tr>
+                  <td>자동차상해/<br />자기신체사고</td>
+                  <td colspan="2">자동차상해<br />10억원/5억원</td>
+                </tr>
+                <tr>
+                  <td>무보험차 상해</td>
+                  <td colspan="2">2억원</td>
+                </tr>
+                <tr>
+                  <td>자기차량손해</td>
+                  <td colspan="2">손해액의20%<br />20만원~50만원</td>
+                </tr>
+                <tr>
+                  <td>긴급출동특약</td>
+                  <td colspan="2">하이카서비스 10km</td>
+                </tr>
+                <tr>
+                  <td>물적사고 할증기준</td>
+                  <td colspan="2">200만원</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <h2 class="pop_title_h1">보험료</h2>
+          <div class="table_wrap">
+            <table class="table">
+              <caption>캡션값</caption>
+              <colgroup>
+                <col style="width:40%;">
+                <col style="width:60%;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">변경 전 보험료</th>
+                  <td>543,770원</td>
+                </tr>                
+                <tr>
+                  <th scope="row">변경 후 보험료</th>
+                  <td>576,970원</td>
+                </tr>                
+                <tr>
+                  <th scope="row">차액 보험료</th>
+                  <td class="point"><strong>33,200원</strong></td>
+                </tr>                
+              </tbody>
+            </table>
+          </div>
+
+          <div class="checkbox_group_wrap">
+            {{> cp/checkbox checkbox_class="rd_box" id="checkbox01" label_class="chk_label_ty3 check_hide" labelname="<strong class='point'>필수</strong> 계약변경 기준일, 변경 전/후 내용 및 보험료를 확인했습니다." }}
+          </div>
+  
+			  </div>
+     
+        
+      </div>
+    </div>
+
+		<!-- s: 하단 고정 버튼 영역 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="1" b-text="다음" disabled=true }}
+			</div>
+		</div>
+		<!-- s: 하단 고정 버튼 영역 -->
+	</div>
+  <!-- s: popup area -->
+	<!-- s: Full 팝업 -->
+	{{#> popup/popup_full popup-id="pop_insChk" popup-title="자동차 계약변경"}}
+	<div class="popup_cont">
+		<div class="popup_content">
+
+			<div class="space_list_ty4">
+				<div class="item">
+					<h3 class="title_h3 ico_ty ico_ty_c01">자동차정보 변경</h3>
+					<ul class="opt_select_list opt_case5">
+						<li>
+							<div class="option" role="button" tabindex="0">
+								<span class="opi_t1">자동차번호 확정</span>
+							</div>
+						</li>
+						<li>
+							<div class="option" role="button" tabindex="0">
+								<span class="opi_t1">자동차번호 변경</span>
+							</div>
+						</li>
+						<li>
+							<div class="option" role="button" tabindex="0">
+								<span class="opi_t1">자동차 변경(차량대체)</span>
+							</div>
+						</li>
+						<li>
+							<div class="option" role="button" tabindex="0">
+								<span class="opi_t1">부속추가</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="item">
+					<h3 class="title_h3 ico_ty ico_ty_c02">운전자정보 변경</h3>
+					<ul class="opt_select_list opt_case5">
+						<li>
+							<div class="option" role="button" tabindex="0">
+								<span class="opi_t1">단기운전자 확대특약 신청</span>
+							</div>
+						</li>
+						<li>
+							<div class="option" role="button" tabindex="0">
+								<span class="opi_t1">단기운전자 확대특약 변경</span>
+							</div>
+						</li>
+						<li>
+							<div class="option" role="button" tabindex="0">
+								<span class="opi_t1">운전자범위/연령 변경</span>
+							</div>
+						</li>
+						<li>
+							<div class="option" role="button" tabindex="0">
+								<span class="opi_t1">가입경력인정 신청/변경</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="item">
+					<h3 class="title_h3 ico_ty ico_ty_c03">담보/특약 변경</h3>
+					<ul class="opt_select_list opt_case5">
+						<li>
+							<div class="option" role="button" tabindex="0">
+								<span class="opi_t1">담보/특약 변경</span>
+							</div>
+						</li>
+						<li>
+							<div class="option" role="button" tabindex="0">
+								<span class="opi_t1">안전운전 할인특약 가입</span>
+							</div>
+						</li>
+						<li>
+							<div class="option" role="button" tabindex="0">
+								<span class="opi_t1">효도하는 자녀 할인특약 가입</span>
+							</div>
+						</li>
+						<li>
+							<div class="option" role="button" tabindex="0">
+								<span class="opi_t1">ECO마일리지 특약 가입</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="item">
+					<h3 class="title_h3 ico_ty ico_ty_c04">특약 사진등록</h3>
+					<ul class="opt_select_list opt_case5">
+						<li>
+							<div class="option" role="button" tabindex="0">
+								<span class="opi_t1">ECO마일리지 특약 사진등록(최초)</span>
+							</div>
+						</li>
+						<li>
+							<div class="option" role="button" tabindex="0">
+								<span class="opi_t1">ECO마일리지 특약 사진등록(최종)</span>
+							</div>
+						</li>
+						<li>
+							<div class="option" role="button" tabindex="0">
+								<span class="opi_t1">ECO마일리지 특약 사진등록(대체)</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="item">
+					<h3 class="title_h3 ico_ty ico_ty_c05">계약취소/해지</h3>
+					<ul class="opt_select_list opt_case5">
+						<li>
+							<div class="option" role="button" tabindex="0">
+								<span class="opi_t1">자동차보험 개시전 취소</span>
+							</div>
+						</li>
+						<li>
+							<div class="option" role="button" tabindex="0">
+								<span class="opi_t1">자동차보험 양도/말소해지</span>
+							</div>
+						</li>
+						<li>
+							<div class="option" role="button" tabindex="0">
+								<span class="opi_t1">타임쉐어자동차보험 취소</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="item">
+					<h3 class="title_h3 ico_ty ico_ty_c06">기타</h3>
+					<ul class="opt_select_list opt_case5">
+						<li>
+							<div class="option" role="button" tabindex="0">
+								<span class="opi_t1">계약체결 전자서명(개인)</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+      			
+		</div>
+	</div>
+	{{/ popup/popup_full}}
+	<!-- e: Full 팝업 -->
+	<!-- e: popup area -->
+
+{{/ layout/default }}
