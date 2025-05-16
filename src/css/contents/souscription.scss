@@ -380,6 +380,11 @@ ul + .form_group_wrap {
             width: 100%;
         }
     }
+
+		& + [class^=bann_text_wrap],
+		& + & {
+			margin-top: 32px;
+		}
 }
 .pop_title_h1 {
     & + .info_text {
@@ -645,4 +650,39 @@ ul + .form_group_wrap {
 					
 				}
     }
+}
+
+.link_flex_box {
+	display: block;
+	padding-right: 36px;
+	background:url(../images/icon/icon_new_open.svg) no-repeat right center/24px auto;
+
+	&.call {
+		background-image: url(../images/icon/icon_call.svg);
+	}
+
+	.link_item {
+		padding-left: 44px;
+		background-repeat: no-repeat;
+		background-position: left center;
+		background-size: 32px auto;
+
+		.top {
+			font-size: var(--font-size-body-medium);
+			color: var(--color-text-basic);
+			& + .cont {
+				margin-top: 4px;
+			}
+		}
+		.cont {
+			font-size: var(--font-size-body-small);
+			color: var(--color-text-subtle);
+		}
+
+		@for $i from 1 through 5 {
+			&.ty#{$i}{
+				background-image: url(../images/content/clrq/icon_clrq_charge0#{$i}.svg);
+			}
+		}
+	}
 }

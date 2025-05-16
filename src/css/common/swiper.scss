@@ -146,6 +146,10 @@
 	.swiper-pagination {
 		top: auto;
 		bottom: -32px;
+
+		&.swiper-pagination-lock {
+			display: block;
+		}
 	}
 	.swiper-pagination-bullet{
 		&:only-child {
@@ -158,21 +162,25 @@
 		z-index: 10;
 		
 		&_left {
-			left: 0;
+			left: -20px;
 		}
 		&_right {
-			right: 0;
+			right: -20px;
+		}
+
+		&.swiper-button-lock {
+			display: none;
 		}
 	}
 	
 	/* swiper-navigation */
-	.swiper-button-disabled {
-		&[aria-disabled=true] {
-			opacity: 0;
-			pointer-events: none;
-			visibility: hidden;
-		}
-	}
+	// .swiper-button-disabled {
+	// 	&[aria-disabled=true] {
+	// 		opacity: 0;
+	// 		pointer-events: none;
+	// 		visibility: hidden;
+	// 	}
+	// }
 }
 
 

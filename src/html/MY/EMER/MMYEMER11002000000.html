@@ -6,7 +6,7 @@
 {{#> popup/popup_full popup-id="pop_type01" popup-title="고장출동 신청" popup-active="active"}}
 <div class="popup_cont">
 	<div class="popup_content">
-		<!-- 비로그인 상태 접속 -->
+		<!-- s: 비로그인 상태 접속 -->
 		<p class="text_sub">
 			출동 신청을 하려면 계약정보 확인이 필요해요.
 			<br />
@@ -19,8 +19,14 @@
 				{{> cp/text placeholder="예) 123가4567(띄어쓰기 없이)" inp-title="자동차번호 입력"}}
 			</div>
 		</div>
+		<!-- s: 25-05-16 수정 -->
+		<div class="btn_area">
+			{{> cp/button type="3" size="3" b-text="로그인으로 자동입력할게요" rightIcon="arrowRightSvg" atag=true }}
+		</div>
+		<!-- e: 25-05-16 수정 -->
+		<!-- e: 비로그인 상태 접속 -->
 
-		<!-- 로그인 상태 접속 -->
+		<!-- s: 로그인 상태 접속 -->
 		<p class="text_sub">출동 신청할 계약정보를 선택해주세요.</p>
 		<ul class="special_contract_list radio">
 			<li>
@@ -58,12 +64,12 @@
 		</ul>
 		{{/ cp/notice }}
 		<!-- e: 꼭 알아두세요 -->
+		<!-- e: 로그인 상태 접속 -->
 	</div>
 </div>
 <div class="popup_bottom">
 	<div class="btn_area">
 		{{> cp/button type="1" size="1" b-text="다음" disabled=true }}
-
 	</div>
 </div>
 {{/ popup/popup_full}}
