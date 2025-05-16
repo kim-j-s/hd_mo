@@ -844,6 +844,159 @@ strong {
 	margin: 0;
 }
 /* common 인증, 로딩 등 */
+.c_loading {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1500;
+	width: 100%;
+	height: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+.c_loading.cl_ty2 {
+	background-color: rgba(0, 0, 0, 0.75);
+}
+.c_loading.cl_ty2 .ci_content {
+	color: var(--color-text-bolder-inverse);
+}
+.c_loading.cl_ty3 {
+	background-color: rgba(255, 255, 255, 0.75);
+}
+.c_loading .cl_inner {
+	padding: 0 2.4rem;
+}
+.c_loading .ci_balls {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: end;
+	-ms-flex-align: end;
+	align-items: flex-end;
+	height: 5.2rem;
+	font-size: 0;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+.c_loading .ci_balls .ci_balls_bi {
+	display: inline-block;
+	margin: 0 0.2rem;
+	width: 1.6rem;
+	height: 1.6rem;
+	border-radius: 50%;
+	background-color: var(--color-graphic-brand);
+}
+.c_loading .ci_balls .ci_balls_bi {
+	-webkit-animation: bounceColor 3.2s ease-in-out infinite;
+	animation: bounceColor 3.2s ease-in-out infinite;
+}
+.c_loading .ci_balls .ci_balls_bi:nth-child(2) {
+	-webkit-animation-delay: 0.2s;
+	animation-delay: 0.2s;
+}
+.c_loading .ci_balls .ci_balls_bi:nth-child(3) {
+	-webkit-animation-delay: 0.4s;
+	animation-delay: 0.4s;
+}
+.c_loading .ci_content {
+	padding-top: 3.2rem;
+	text-align: center;
+}
+.c_loading .ci_content .ci_content_tit {
+	display: block;
+	font-size: var(--font-size-heading-large);
+}
+.c_loading .ci_content .ci_content_desc {
+	padding-top: 1.2rem;
+	font-size: var(--font-size-body-large);
+	word-break: keep-all;
+}
+@-webkit-keyframes bounceColor {
+	/* 1차 점프 + 색상 전환 */
+	0% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		background-color: var(--color-graphic-brand);
+	}
+	16% {
+		-webkit-transform: translateY(-2.5rem);
+		transform: translateY(-2.5rem);
+	}
+	33% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		background-color: var(--color-graphic-accent-blue-subtler);
+	}
+	/* 2차 점프 + 색상 전환 */
+	50% {
+		-webkit-transform: translateY(-2.5rem);
+		transform: translateY(-2.5rem);
+	}
+	67% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		background-color: var(--color-graphic-accent-yellow);
+	}
+	/* 3차 점프 + 색상 전환 */
+	84% {
+		-webkit-transform: translateY(-2.5rem);
+		transform: translateY(-2.5rem);
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		background-color: var(--color-graphic-brand);
+	}
+}
+@keyframes bounceColor {
+	/* 1차 점프 + 색상 전환 */
+	0% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		background-color: var(--color-graphic-brand);
+	}
+	16% {
+		-webkit-transform: translateY(-2.5rem);
+		transform: translateY(-2.5rem);
+	}
+	33% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		background-color: var(--color-graphic-accent-blue-subtler);
+	}
+	/* 2차 점프 + 색상 전환 */
+	50% {
+		-webkit-transform: translateY(-2.5rem);
+		transform: translateY(-2.5rem);
+	}
+	67% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		background-color: var(--color-graphic-accent-yellow);
+	}
+	/* 3차 점프 + 색상 전환 */
+	84% {
+		-webkit-transform: translateY(-2.5rem);
+		transform: translateY(-2.5rem);
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		background-color: var(--color-graphic-brand);
+	}
+}
 /* header */
 .header .header_inner {
 	-webkit-box-flex: 1;
