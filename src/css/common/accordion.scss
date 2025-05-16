@@ -19,6 +19,9 @@
 	& + .info_gray {
 		margin-top: 16px;
 	}
+	& + .pop_title_h1 {
+	  margin-top: 52px;
+	}
 }
 
 /** Accordion **/
@@ -349,6 +352,27 @@
 		.sub_text {
 			display: block;
 			font-size: var(--font-size-body-small);
+		}
+		
+		.list_depth {
+			> li {
+				font-size: var(--font-size-body-small);
+				&::before {
+					width: 2px;
+					height: 2px;
+					background-color: #6D7882;
+				}
+				ul {
+					margin-top: 8px;
+					> li {
+						font-size: var(--font-size-body-xsmall);
+						color: var(--color-text-subtle);
+						&  li {
+							margin-top: 8px;
+						}
+					}
+				}
+			}
 		}
 
 	}
