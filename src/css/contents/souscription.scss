@@ -163,35 +163,31 @@ ul + .form_group_wrap {
     & + .info_text {
         margin-top: 8px;
     }
-    & + .pop_title_h2,
-    & + h3 {
-        margin-top: 20px;
+    & + p {
+        margin-top: 12px;
     }
     & + ul, 
     & + ol {
         margin-top: 16px;
     }
-    & + p {
-        margin-top: 12px;
-    }
+    & + .pop_title_h2,
+    & + h3,
     & + .table_wrap,
-    & + .banner_box {
+    & + .banner_box,
+    & + .acd_item,
+    & + .form_group_wrap {
         margin-top: 20px;
     }
 }
 .pop_title_h2 {
     font-size: var(--font-size-heading-small);
     font-weight: 700;
-    & + h3 {
-        margin-top: 16px;
-    }
-    & + ul, 
-    & + ol {
-        margin-top: 16px;
-    }
     & + p {
         margin-top: 12px;
     }
+    & + h3,
+    & + ul, 
+    & + ol,
     & + .table_wrap {
         margin-top: 16px;
     }
@@ -201,7 +197,7 @@ ul + .form_group_wrap {
 	font-size: var(--font-size-heading-xsmall);
 	font-weight: 700;
 	& + p {
-			margin-top: 12px;
+		margin-top: 12px;
 	}
 }
 
@@ -210,9 +206,7 @@ ul + .form_group_wrap {
     .title_h2 {
         font-size: var(--font-size-heading-small);
         font-weight: 700;
-        & + h3 {
-            margin-top: 16px;
-        }
+        & + h3,
         & + ul, 
         & + ol {
             margin-top: 16px;
@@ -362,6 +356,9 @@ ul + .form_group_wrap {
     text-align: center;
 }
 .table_wrap {
+    & + .pop_title_h1 {
+        margin-top: 52px;
+    }
     & + .list_ty1 {
         margin-top: 16px;
     }
@@ -380,6 +377,11 @@ ul + .form_group_wrap {
             width: 100%;
         }
     }
+
+		& + [class^=bann_text_wrap],
+		& + & {
+			margin-top: 32px;
+		}
 }
 .pop_title_h1 {
     & + .info_text {
@@ -645,4 +647,39 @@ ul + .form_group_wrap {
 					
 				}
     }
+}
+
+.link_flex_box {
+	display: block;
+	padding-right: 36px;
+	background:url(../images/icon/icon_new_open.svg) no-repeat right center/24px auto;
+
+	&.call {
+		background-image: url(../images/icon/icon_call.svg);
+	}
+
+	.link_item {
+		padding-left: 44px;
+		background-repeat: no-repeat;
+		background-position: left center;
+		background-size: 32px auto;
+
+		.top {
+			font-size: var(--font-size-body-medium);
+			color: var(--color-text-basic);
+			& + .cont {
+				margin-top: 4px;
+			}
+		}
+		.cont {
+			font-size: var(--font-size-body-small);
+			color: var(--color-text-subtle);
+		}
+
+		@for $i from 1 through 5 {
+			&.ty#{$i}{
+				background-image: url(../images/content/clrq/icon_clrq_charge0#{$i}.svg);
+			}
+		}
+	}
 }
