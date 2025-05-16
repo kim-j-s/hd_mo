@@ -3,296 +3,202 @@
 	{{> layout/header h-title="질병/상해/단체보험 처리현황조회" }}
 	<div id="container" class="container">
 		<div class="content">
-			<div class="btn popup_open btn_select" role="button" tabindex="0" title="Bottom 선택 팝업열기" onclick="openHDPopup(this,'select_option_ty1');">
-				<span>본인</span>
+			<!-- s: content_top -->
+			<div class="content_top">
+				<h2 class="title_h2">
+					보험금 지급 후<br>
+					<strong>사고처리가 종결됐어요</strong>
+				</h2>
+				<strong></strong>
+				<!-- 케이스별 -->
+				<!--  
+				<h2 class="title_h2">
+					<strong>보험금 청구가 접수</strong>됐어요
+				</h2>
+				<h2 class="title_h2">
+					사고접수를 마쳤어요<br>
+					이제 <strong>필요한 절차를 진행</strong>할게요
+				</h2>
+				<h2 class="title_h2">
+					<strong>서류심사 중</strong>이에요
+				</h2>
+				<h2 class="title_h2">
+					<strong>현장심사 중</strong>이에요
+				</h2>
+				<h2 class="title_h2">
+					마지막으로 <strong>보험금 지급여부를 결정</strong>하고 있어요
+				</h2>
+				<h2 class="title_h2">
+					보험금 지급 후 <strong>사고처리가 종결</strong>됐어요
+				</h2>
+				<h2 class="title_h2">
+					해당 사고는 <strong>보험금 지급 없이 사고처리가 종결</strong>됐습니다
+				</h2>
+				-->
+				<!-- 케이스별 -->
 			</div>
-			<div class="btn_area column">
-				{{> cp/button type="2" size="2" b-text="조회"}}
+			<!-- e: content_top -->
+			<h3 class="title_h3">청구내역</h3>
+			<div class="table_wrap">
+				<table class="table">
+					<caption>접수번호, 사고유형, 사고일, 접수일, 접수내용, 사고장소 제공</caption>
+					<colgroup>
+						<col style="width:40%;">
+						<col style="width:60%;">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">접수번호</th>
+							<td>1411069292</td>
+						</tr>
+						<tr>
+							<th scope="row">사고유형</th>
+							<td>절도</td>
+						</tr>
+						<tr>
+							<th scope="row">사고일</th>
+							<td>2023.03.01</td>
+						</tr>
+						<tr>
+							<th scope="row">접수일</th>
+							<td>2023.03.01</td>
+						</tr>
+						<tr>
+							<th scope="row">접수내용</th>
+							<td>비고</td>
+						</tr>
+						<tr>
+							<th scope="row">사고장소</th>
+							<td>서울시 강남구 역삼동 67-3 GS타워 앞</td>
+						</tr>
+						<!-- 접수유형->질병 -->
+						<tr>
+							<th scope="row">치료병원</th>
+							<td>가톨릭대학교은평성모병원</td>
+						</tr>
+						<!-- 접수유형->질병 -->
+					</tbody>
+				</table>
 			</div>
-			  
+			<div class="btn_area ty2">
+				{{> cp/button type="3" size="3" b-text="서류 사진보기"}}
+				{{> cp/button type="3" size="3" b-text="서류 팩스 수신 조회"}}
+			</div>
+
 			<div class="divider_ty1"></div>
+			<h3 class="title_h3">
+				지급내역
+				{{#> cp/tooltip tw-class="lp" title="지급내역 안내" trigger-icon="popover_help"}}
+				<p>오후 6시 이후에 지급이 확정되면, 보험금은 다음날(영업일 기준)에 송금돼요.</p>
+				{{/ cp/tooltip}}
+			</h3>
 			<div class="card_item_wrap">
-				<!-- 본인 청구 건/본인 외 청구 건/미성년자녀 청구 건 Case -->
 				<div class="card_item">
 					<div class="item_inner">
 						<div class="inner_cont">
-							<div role="button" class="card_link" tabindex="0" onclick="openHDPopup(this,'pop_type01');">
-								<div class="item_top">
-									<div class="badge_wrap">
-										<span class="hd_badge outline solid_pastel c_primary size_m">신규</span>
-									</div>
-									<div class="title_info">
-										<div class="main_title">집앞계단에서 넘어져서 타박상</div>
-									</div>
-								</div>
-							</div>
-							<ul class="card_list_ty1">
-								<li>
-									<div class="title">접수번호</div>
-									<div class="cont">담당자 배정전</div>
-								</li>
-								<li>
-									<div class="title">상태</div>
-									<div class="cont">진행중</div>
-								</li>
-								<li>
-									<div class="title">접수일/추가접수일</div>
-									<div class="cont">2023.03.04</div>
-								</li>
-								<li>
-									<div class="title">치료받은 분</div>
-									<div class="cont">하*카</div>
-								</li>
-								<li>
-									<div class="title">상품명</div>
-									<div class="cont">무배당퍼펙트N종합보험(Hi1502)</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<!-- 본인이 피해자인 건 Case -->
-				<div class="card_item">
-					<div class="item_inner">
-						<div class="inner_cont">
-							<div role="button" class="card_link" tabindex="0" onclick="openHDPopup(this,'pop_type01');">
-								<div class="item_top">
-									<div class="badge_wrap">
-										<span class="hd_badge outline solid_pastel c_secondary size_m">추가</span>
-									</div>
-									<div class="title_info">
-										<div class="main_title">부비동염</div>
-									</div>
-								</div>
-							</div>
-							<ul class="card_list_ty1">
-								<li>
-									<div class="title">접수번호</div>
-									<div class="cont">2011441879</div>
-								</li>
-								<li>
-									<div class="title">상태</div>
-									<div class="cont">종결</div>
-								</li>
-								<li>
-									<div class="title">접수일/추가접수일</div>
-									<div class="cont">2023.03.04</div>
-								</li>
-								<li>
-									<div class="title">치료받은 분</div>
-									<div class="cont">하*카</div>
-								</li>
-								<li>
-									<div class="title">상품명</div>
-									<div class="cont">무배당퍼펙트N종합보험(Hi1502)</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<!-- 단체보험 Case -->
-				<div class="card_item">
-					<div class="item_inner">
-						<div class="inner_cont">
+
 							<div role="button" class="card_link" tabindex="0">
 								<div class="item_top">
-									<div class="badge_wrap">
-										<span class="hd_badge outline solid_pastel c_warning size_m">단체</span>
-										<span class="hd_badge outline solid_pastel c_secondary size_m">추가</span>
-									</div>
 									<div class="title_info">
-										<div class="main_title">부비동염</div>
+										<div class="main_title">무배당퍼펙트N종합보험(Hi1502)</div>
 									</div>
 								</div>
 							</div>
+
 							<ul class="card_list_ty1">
 								<li>
-									<div class="title">접수번호</div>
-									<div class="cont">2011441879</div>
+									<div class="title">계약번호</div>
+									<div class="cont">LO151****190</div>
 								</li>
 								<li>
-									<div class="title">상태</div>
-									<div class="cont">종결</div>
+									<div class="title">지급일</div>
+									<div class="cont">2023.03.02</div>
 								</li>
 								<li>
-									<div class="title">접수일/추가접수일</div>
-									<div class="cont">2023.03.04</div>
-								</li>
-								<li>
-									<div class="title">치료받은 분</div>
-									<div class="cont">하*카</div>
-								</li>
-								<li>
-									<div class="title">단체명</div>
-									<div class="cont">㈜현대해상화재보험</div>
+									<div class="title">지급액</div>
+									<div class="cont">3,100,100원</div>
 								</li>
 							</ul>
 						</div>
 					</div>
 				</div>
+				<div class="card_item">
+					<div class="item_inner">
+						<div class="inner_cont">
+							<div class="item_top">
+								<div class="title_info">
+									<div class="main_title">무배당퍼펙트N종합보험(Hi1502)</div>
+								</div>
+							</div>
+							<ul class="card_list_ty1">
+								<li>
+									<div class="title">계약번호</div>
+									<div class="cont">LO151****190</div>
+								</li>
+								<li>
+									<div class="title">지급일</div>
+									<div class="cont">2023.03.02</div>
+								</li>
+								<li>
+									<div class="title">지급액</div>
+									<div class="cont">3,100,100원</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="no_list_area">
+					{{> cp/icon iconClass="exclamationSvg"}}
+					<p>보험금 지급내역이 없어요</p>
+					<span class="desc tac">
+						현재 보상절차를 진행 중이거나<br>
+						보험금 지급 없이 사고처리가 종결된 건은 조회되지 않아요.
+					</span>
+				</div>
+			</div>
+			<div class="btn_area ty2">
+				{{> cp/button type="3" size="3" b-text="보험금지급 안내문 받기"}}
 			</div>
 
-			<div class="no_list_area">
-				{{> cp/icon iconClass="exclamationSvg"}}
-				<p>조회 가능한 내역이 없어요</p>
-				<span class="desc">자세한 내용은 아래 [꼭 알아두세요]를 참고해주세요.</span>
+			<div class="divider_ty1"></div>
+			<h3 class="title_h3">담당자</h3>
+			<div class="table_wrap">
+				<table class="table">
+					<caption>담당자 연락처 제공</caption>
+					<colgroup>
+						<col style="width:40%;">
+						<col style="width:60%;">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">하이상(보상처리팀)</th>
+							<td>010-1234-1234</td>
+						</tr>
+						<!-- s: 담당자 미지정 시 노출 -->
+						<tr>
+							<th scope="row">지정안함</th>
+							<td>-</td>
+						</tr>
+						<!-- e: 담당자 미지정 시 노출 -->
+					</tbody>
+				</table>
 			</div>
 
-			<!-- 배너 노출영역 -->
-			<div class="banner_box">
-				<a href="#">
-					<img src="../../../images/event/banner5.png" alt="보장 분석 배너 보장분석 관련 요건 및 정책 확인 후 상세 정의 필요합니다.">
-				</a>
-			</div>
-			<div class="banner_box">
-				<a href="#">
-					<img src="../../../images/event/banner6.png" alt="상품 안내 배너 상품 관련 요건 및 정책 확인 후 상세 정의 필요합니다.">
-				</a>
-			</div>
-	
-			<!-- s: 꼭 알아두세요 -->
-			{{#> cp/notice dp-active=true }}
-				<ul class="list_depth">
-					<li>최초 접수일 기준으로 5년 이내 접수된 건만 확인 가능합니다.</li>
-					<li>자세한 진행내용은 보상담당자 배정 후에 조회할 수 있습니다. </li>
-					<li>접수한 내역이 조회되지 않으면 보상담당자에게 문의해주세요.</li>
-					<li>계약자가 만 14세 미만인 경우, 조회대상을 ‘친권자’로 선택하면 조회할 수 있습니다.</li>
-				</ul>
-			{{/ cp/notice }}
-			<!-- e: 꼭 알아두세요 -->
 		</div>
 	</div>
+
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="목록d" }}
+		</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
+
 </div>
-	 
+
 <!-- s: popup area -->
-<!-- s: 조회대상 선택 팝업 -->
-{{#> popup/popup_bottom popup-id="select_option_ty1" popup-title="조회대상"}}
-<div class="popup_cont">
-	<div class="popup_content">
-		<div class="opt_select_list opt_case3">
-			<div role="button" tabindex="0" class="option active" title="선택됨"><span class="text">본인</span></div>
-			<div role="button" tabindex="0" class="option"><span class="text">본인(단체보험)</span></div>
-			<div role="button" tabindex="0" class="option"><span class="text">본인 외(본인이 계약자인 경우)</span></div>
-			<div role="button" tabindex="0" class="option"><span class="text">본인 외(본인이 친권자로 등록된 경우)</span></div>
-		</div>
-	</div>
-</div>
-{{/ popup/popup_bottom}}
-<!-- e: 조회대상 선택 팝업 -->
- 
-<!-- s: 접수내역 선택 팝업 -->
-{{#> popup/popup_bottom popup-id="pop_type01" popup-title="접수내역 선택"}}
-<div class="popup_cont">
-	<div class="popup_content">
-		<div class="card_item_wrap">
-			<div class="card_item">
-				<div class="item_inner">
-					<div class="inner_cont">
-						<div role="button" class="card_link" tabindex="0">
-							<div class="item_top">
-								<div class="badge_wrap">
-									<span class="hd_badge outline solid_pastel c_secondary size_m">추가접수</span>
-								</div>
-								<div class="title_info">
-									<div class="main_title">일반상해</div>
-								</div>
-							</div>
-						</div>
-						<ul class="card_list_ty1">
-							<li>
-								<div class="title">상태</div>
-								<div class="cont">진행중</div>
-							</li>
-							<li>
-								<div class="title">접수일</div>
-								<div class="cont">2023.03.04</div>
-							</li>
-							<li>
-								<div class="title">사고일</div>
-								<div class="cont">2023.03.04</div>
-							</li>
-							<li>
-								<div class="title">의료기관</div>
-								<div class="cont">현대정형외과의원</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="card_item">
-				<div class="item_inner">
-					<div class="inner_cont">
-						<div role="button" class="card_link" tabindex="0">
-							<div class="item_top">
-								<div class="badge_wrap">
-									<span class="hd_badge outline solid_pastel c_secondary size_m">추가접수</span>
-								</div>
-								<div class="title_info">
-									<div class="main_title">일반상해</div>
-								</div>
-							</div>
-						</div>
-						<ul class="card_list_ty1">
-							<li>
-								<div class="title">상태</div>
-								<div class="cont">진행중</div>
-							</li>
-							<li>
-								<div class="title">접수일</div>
-								<div class="cont">2023.03.03</div>
-							</li>
-							<li>
-								<div class="title">사고일</div>
-								<div class="cont">2023.03.01</div>
-							</li>
-							<li>
-								<div class="title">의료기관</div>
-								<div class="cont">현대정형외과의원</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- 질병의 경우 항목명 변경 노출 Case -->
-			<div class="card_item">
-				<div class="item_inner">
-					<div class="inner_cont">
-						<div role="button" class="card_link" tabindex="0">
-							<div class="item_top">
-								<div class="badge_wrap">
-									<span class="hd_badge outline solid_pastel c_primary size_m">신규접수</span>
-								</div>
-								<div class="title_info">
-									<div class="main_title">일반상해</div>
-								</div>
-							</div>
-						</div>
-						<ul class="card_list_ty1">
-							<li>
-								<div class="title">상태</div>
-								<div class="cont">진행중</div>
-							</li>
-							<li>
-								<div class="title">접수일</div>
-								<div class="cont">2023.03.04</div>
-							</li>
-							<li>
-								<div class="title">내원일</div>
-								<div class="cont">2023.03.04</div>
-							</li>
-							<li>
-								<div class="title">의료기관</div>
-								<div class="cont">현대정형외과의원</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-{{/ popup/popup_bottom}}
-<!-- e: 접수내역 선택 팝업 -->
+
 <!-- e: popup area -->
 
 {{/ layout/default }}
