@@ -13,9 +13,9 @@ https://kim-j-s.github.io/hd_mo/dist/index.html
 - tooltip : 10
 - nav : 100
 - popup(bottom, layer, full 공통) : 1000
-- loading : 미정
+- loading : 1500
 - pageTop : 미정
-- toast : 미정
+- toast : 1001
 
 ## 스타일 토큰 관련
 
