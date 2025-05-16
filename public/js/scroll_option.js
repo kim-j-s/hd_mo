@@ -178,7 +178,6 @@ const $scrollOption = {
 
 			// 터치 끝
 			$inner.on("touchend", function () {
-				console.log(1111)
 				
 				const $wrap = $(this).closest(".opt_select_wrap");
 				
