@@ -12,26 +12,13 @@
 				</h2>
 			</div>
 			<!-- e: content_top -->
-
 			<div class="bg_top_cover ty2">
 				<div class="info_gray bg_etc01">
-					<div class="total">
+					<div class="total"><!-- 25-05-09 -->
 						<dl>
 							<dt>결제하실 금액</dt>
 							<dd>
-								<strong class="big">42,500원</strong>
-							</dd>
-						</dl>
-					</div>
-					<div class="info_top_cont">
-						<dl>
-							<dt>할인 전 보험료</dt>
-							<dd>50,000원</dd>
-						</dl>
-						<dl>
-							<dt>할인금액</dt>
-							<dd>-7,500원
-								<div class="sub_text">동물등록할인(5%), 유기동물입양할인(3%), 다펫할인(5%)</div>
+								<strong class="big">12,910원</strong>
 							</dd>
 						</dl>
 					</div>
@@ -45,7 +32,7 @@
 						<li>
 							<span class="sii_list_l">결제하실 금액</span>
 							<span class="sii_list_r">
-								<strong class="price">42,500원</strong>
+								<strong class="price">12,910원</strong>
 							</span>
 						</li>
 					</ul>
@@ -94,77 +81,49 @@
 						</div>
 						<div class="form_line">
 							<div class="label_tit">카드 할부</div>
-							{{> cp/selectitem si_ph="개월 수 선택" si_title="카드 할부 선택" si_popup="card_period_select"}}
+							{{> cp/selectitem si_item="일시불" si_title="카드 할부 선택" si_popup="card_period_select"}}
 							<ul class="list_ty2">
-								<li>계약자 명의의 국내발급 카드로만 결제할 수 있어요. (법인, 가족카드 불가)</li>
+								<li>계약자 명의의 국내발급 카드로만 결제가 가능합니다. (법인, 가족카드 불가)</li>
 							</ul>
 						</div>
 						<!-- s: 현대카드 선택 시, 노출 -->
-						<div class="form_line">						
-							<div class="checkbox_group_wrap column">
-								<div class="inp_checkbox rd_box">
-									<input type="checkbox" id="checkbox01-9" />
-									<label for="checkbox01-9" class="chk_label chk_label_ty3">
-										<span class="label_cont">
-											현대카드 M포인트 사용 
-											{{> cp/button_question question-icon="arrow" pop_id="pop_type04" question_tit="현대카드 결제 혜택 안내" }}
-											<span class="sub_g_txt">(최소 1,000P부터 30,000P까지 이용 가능)</span>
-										</span>
-									</label>
+						<div class="form_line">
+							<div class="card_item_wrap">
+								<div class="card_item">
+									<div class="item_inner">
+										<div class="inp_checkbox">
+											<input type="checkbox" id="card_chk1" name="name1" aria-labelledby="card_chk1_cont">
+											<label for="card_chk1" class="chk_label"></label>
+											<i></i>
+										</div>
+										<div class="inner_cont">
+											<div class="item_top" id="card_chk1_cont">
+												<div class="text">
+													현대카드 M포인트 사용
+													{{> cp/button_question question-icon="arrow" pop_id="pop_type04" question_tit="현대카드 M포인트 이용 안내 팝업" }}
+												</div>
+												<div class="desc">(최소 1,000P부터 30,000P까지 이용 가능)</div>
+											</div>
+										</div>
+									</div>
 								</div>
-							</div>							
-
+							</div>
 						</div>
 						<!-- e: 현대카드 선택 시, 노출 -->
 					</div>
 
-					<!-- s: 카드 혜택 안내 배너 -->
-					<div class="banner_slide_wrap">
-						<div id="card_reward_banner_wrap" class="swiper"> 
-							<div class="swiper-wrapper">
-								<a class="swiper-slide bann_wrap bann_ty1 co_ty2" href="#">			
-									<div class="inner">
-										<span class="logo">{{> cp/icon iconClass="logo_card_shinhan"}}</span>		
-										<div class="bann_cont">
-											<div class="title">신한카드로 결제해 보세요</div>
-											<div class="desc">
-												신한카드로 결제하면 포인트 100% 사용가능
-											</div>		
-										</div>
-									</div>
-								</a>
-								<a class="swiper-slide bann_wrap bann_ty1" href="#">
-									<div class="inner">
-										<span class="logo">{{> cp/icon iconClass="logo_card_hundai"}}</span>
-										<div class="bann_cont">
-											<div class="title">현대카드로 결제해 보세요</div>
-											<div class="desc">
-												M포인트 100% 사용가능<br>
-												계속보험료 결제 가능
-											</div>
-										</div>
-									</div>
-								</a>			
-								<a class="swiper-slide bann_wrap bann_ty1 co_ty3" href="#">
-									<div class="inner">
-										<span class="logo">{{> cp/icon iconClass="logo_card_samsung"}}</span>		
-										<div class="bann_cont">
-											<div class="title">삼성카드로 결제해 보세요</div>
-											<div class="desc">
-												삼성카드로 결제하면 포인트 100% 사용가능
-											</div>		
-										</div>
-									</div>
-								</a>
-							</div>	
-						</div>
-						<div class="swiper-pagination sp_ty1"></div>
-						<button class="swiper_button sbc_03 sbs_01 swiper_button_left"></button>
-						<button class="swiper_button sbc_03 sbs_01 swiper_button_right" aria-label="다음" disabled></button>
+					<!-- s: 꼭 알아두세요 -->
+					<div class="acd_item acd_item_ty4">
+						{{#> cp/accordion ac-title="이용안내" ac-active=true }}
+							<ul class="list_depth">
+								<li>보험계약변경 완료를 위해서는 계약자의 전자서명이 필요합니다.</li>
+								<li>신용카드사의 정책에 따라 최소 결제금액에 제한이 있을 수 있습니다.</li>
+								<li>최근 카드정보 불러오기는 이전 계약체결동의 내역에 따라 최근 결제이력을 자동으로 불러오는 기능입니다.</li>
+							</ul>
+						{{/ cp/accordion }}
 					</div>
-					<!-- e: 카드 혜택 안내 배너 -->	
-				</div>	
-			
+					<!-- e: 꼭 알아두세요 -->
+				</div>
 
 				<!-- 간편결제 -->
 				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
@@ -174,8 +133,8 @@
 						{{> cp/radio rd-class="rd_btn icon_pay_ty2" rd-id="radio_btn_g2" name="radio_g1" labelname="네이버페이" }}
 						{{> cp/radio rd-class="rd_btn icon_pay_ty3" rd-id="radio_btn_g3" name="radio_g1" labelname="토스 페이" }}
 					</div>
+
 					
-					<!-- s: 25-05-16 -->
 					<!-- s: 카카오페이 -->
 					<div class="acd_item acd_item_ty4">
 						{{#> cp/accordion ac-title="Kakao Pay 이용안내" ac-active=true }}
@@ -243,7 +202,6 @@
 						{{/ cp/accordion }}
 					</div>
 					<!-- e: 토스페이 -->
-					<!-- e: 25-05-16 -->
 				</div>
 				<!-- 즉시이체 -->
 				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel03">
@@ -261,48 +219,17 @@
 								<li>즉시 이체 가능 시간 : 09:00 ~ 21:50</li>
 							</ul>
 						</div>
-					</div>					
+					</div>	
+					<!-- s: 꼭 알아두세요 -->
+					<div class="acd_item acd_item_ty4">
+						{{#> cp/accordion ac-title="이용안내" ac-active=true }}
+							<ul class="list_depth">
+								<li>보험계약변경 완료를 위해서는 계약자의 전자서명이 필요합니다.</li>
+							</ul>
+						{{/ cp/accordion }}
+					</div>
+					<!-- e: 꼭 알아두세요 -->			
 				</div>
-			</div>
-			<div class="divider_ty1"></div>
-			<h3 class="title_h4">2회차 이후 결제 정보 입력</h3>
-			<!-- s: 카드사(현대카드) 선택 시 -->
-			<div class="radio_group_wrap" role="radiogroup">
-				{{> cp/radio rd-class="rd_btn" rd-id="radio_card1" name="radio01" labelname="현대카드로 결제" checked=true }}
-				{{> cp/radio rd-class="rd_btn" rd-id="radio_card2" name="radio01" labelname="계좌이체로 결제" }}
-			</div>
-			<!-- e: 카드사(현대카드) 선택 시 -->
-			<!-- s: 이체 선택 시 -->		
-			{{> cp/checkbox checkbox_class="rd_box" id="checkbox04-9" label_class="chk_label_ty3" labelname="1회차 보험료 결제 계좌와 동일합니다" }}		
-			<!-- e: 이체 선택 시 -->	
-			<!-- s: 카드사(현대카드) 선택 외 -->		
-			<div class="form_group_wrap">
-				<div class="form_line">
-					<div class="label_tit">은행</div>
-					{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" }}
-				</div>
-				<div class="form_line">
-					<div class="label_tit">계좌번호</div>
-					{{> cp/text placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
-				</div>
-				<div class="form_line">
-					<div class="label_tit">매월 자동이체일</div>
-					{{> cp/selectitem si_ph="매월 자동이체일 선택" si_item="5일" si_title="매월 자동이체일 선택" si_popup="bank_day_select"}}
-				</div>
-			</div>
-			<!-- e: 카드사(현대카드) 선택 외 -->
-			<div class="info_gray">
-				<dl>
-					<dt>납입 기간</dt>
-					<dd>10년</dd>
-				</dl>
-				<dl>
-					<dt>납입 방법</dt>
-					<dd>매월</dd>
-				</dl>
-			</div>
-			<div class="checkbox_group_wrap column">
-				{{> cp/checkbox labelname="자동이체 약관 동의" ag_more=true id="agree02" checkbox_class="rd_box" }}
 			</div>
 		</div>
 	</div>
@@ -316,6 +243,8 @@
 </div>
 
 <!-- s: popup area -->
+
+
 <!-- s: 카드 할부 팝업 -->
 {{#> popup/popup_bottom popup-id="card_period_select" popup-title="카드 할부"}}
 <div class="popup_cont">
@@ -386,30 +315,8 @@
 <!-- e: popup area -->
 {{/ layout/default }}
 
-<!-- s: 25-05-08 수정 -->
+
 <script>
 	$(document).ready(function(){
-		var bannerSwiper = new Swiper('#card_reward_banner_wrap', {
-					slidesPerView: 1,
-					updateOnWindowResize:true,
-					navigation: {
-						prevEl: ".swiper_button_left", 
-						nextEl: ".swiper_button_right", 
-					},
-					a11y: {
-						enabled: true,
-						prevSlideMessage: '이전 항목으로 이동',
-						nextSlideMessage: '다음 항목으로 이동',
-					},
-					pagination: {
-						el: '.swiper-pagination',
-						clickable: true,
-						type: 'bullets',
-						renderBullet: function (index, className) {
-							return `<span class="${className}" aria-label="배너${index + 1}번으로 이동"></span>`;
-						},
-					}				
-				});
 		});
 </script>
-<!-- e: 25-05-08 수정 -->
