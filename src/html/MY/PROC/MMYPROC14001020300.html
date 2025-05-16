@@ -1,0 +1,70 @@
+{{#> layout/default page-title="질병/상해/단체보험 처리현황 | 마이페이지"}}
+
+	<!-- s: Full 팝업 -->
+	{{#> popup/popup_full popup-id="pop_type01" popup-title="서류 상세" popup-active=true}}
+	<div class="popup_cont">
+		<div class="popup_content">
+
+			<div class="bg_swiper_wrap">
+				<!-- <div class="inner"> -->
+					<div class="image_rolling_wrap">
+						<div class="swiper"> 
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="../../../images/temp/img_car_temp.png" alt="등록한 서류 상세 이미지">
+								</div>
+								<div class="swiper-slide">
+									<img src="../../../images/temp/img_carmera_temp.png" alt="등록한 서류 상세 이미지">
+								</div>
+								<div class="swiper-slide">
+									<img src="../../../images/temp/img_car_temp.png" alt="등록한 서류 상세 이미지">
+								</div>
+							</div>
+						</div>
+						<div class="swiper-pagination sp_ty1"></div>
+						<button class="swiper_button sbc_01 sbs_02 swiper_button_left"></button>
+						<button class="swiper_button sbc_01 sbs_02 swiper_button_right" aria-label="다음" disabled></button>
+					</div>
+				<!-- </div> -->
+			</div>
+		</div>
+	</div>
+	{{/ popup/popup_full}}
+	<!-- e: Full 팝업 -->
+
+{{/ layout/default }}
+
+<script>
+	$(document).ready(function(){
+		$('.image_rolling_wrap').each(function (idx) {
+			const $swiperContainer = $(this).find('.swiper');
+			const $pagination = $(this).find('.swiper-pagination');
+			const $nextBtn = $(this).find('.swiper_button_right');
+			const $prevBtn = $(this).find('.swiper_button_left');
+
+			new Swiper($swiperContainer[0], {
+				slidesPerView: 1,
+				updateOnWindowResize:true,
+				loop: false,
+				observer: true,
+				navigation: {
+					nextEl: ".swiper_button_right",
+					prevEl: ".swiper_button_left",
+				},
+				a11y: {
+					enabled: true,
+					prevSlideMessage: '이전 항목으로 이동',
+					nextSlideMessage: '다음 항목으로 이동',
+				},
+				pagination: {
+					el: $pagination[0],
+					clickable: true,
+					type: 'bullets',
+					renderBullet: function (index, className) {
+						return `<span class="${className}" aria-label="사고사진${index + 1}번으로 이동"></span>`;
+					},
+				}
+			});
+		});
+	});
+</script>
