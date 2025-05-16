@@ -40,7 +40,7 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>출동서비스 신청 완료 | 마이페이지 - 현대해상 다이렉트</title>
+		<title>질병/상해/단체보험 처리현황 | 마이페이지 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -48,57 +48,76 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body>
-		<!-- s: 25-05-16 수정 -->
-		<!-- s: 출동서비스 신청 완료 팝업 -->
+		<!-- s: Full 팝업 -->
 		<div class="popup_wrap full active" id="pop_type01" role="dialog" aria-hidden="false">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
 				<div class="popup_inner">
-					<div class="popup_head"><div class="popup_head_title"></div></div>
+					<div class="popup_head"><div class="popup_head_title">서류 상세</div></div>
 					<div class="popup_cont">
 						<div class="popup_content">
-							<div class="process_info_area">
-								<div class="complete_info" aria-hidden="true">
-									<lottie-player src="../../../json/lottie_complete2.jso" background="transparent" speed="1" autoplay></lottie-player>
+							<div class="bg_swiper_wrap">
+								<!-- <div class="inner"> -->
+								<div class="image_rolling_wrap">
+									<div class="swiper">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide">
+												<img src="../../../images/temp/img_car_temp.png" alt="등록한 서류 상세 이미지" />
+											</div>
+											<div class="swiper-slide">
+												<img src="../../../images/temp/img_carmera_temp.png" alt="등록한 서류 상세 이미지" />
+											</div>
+											<div class="swiper-slide">
+												<img src="../../../images/temp/img_car_temp.png" alt="등록한 서류 상세 이미지" />
+											</div>
+										</div>
+									</div>
+									<div class="swiper-pagination sp_ty1"></div>
+									<button class="swiper_button sbc_01 sbs_02 swiper_button_left"></button>
+									<button class="swiper_button sbc_01 sbs_02 swiper_button_right" aria-label="다음" disabled></button>
 								</div>
-								<h2 class="process_title">
-									<strong>고장출동 신청이 접수됐어요</strong>
-								</h2>
-								<div class="process_desc">
-									안심하고 조금만 기다려주세요.
-									<br />
-									현대해상이 달려갈게요.
-								</div>
+								<!-- </div> -->
 							</div>
-
-							<div class="info_gray">
-								<h4 class="title_h4">109조**33(Hicar개인용(CM))</h4>
-								<dl>
-									<dt>휴대폰번호</dt>
-									<dd>010-****-1234</dd>
-								</dl>
-								<dl>
-									<dt>신청서비스</dt>
-									<dd>배터리 충전</dd>
-								</dl>
-							</div>
-						</div>
-					</div>
-					<div class="popup_bottom">
-						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
-								<span class="text">홈으로</span>
-							</button>
 						</div>
 					</div>
 					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
-		<!-- e: 출동서비스 신청 완료 팝업 -->
-		<!-- e: 25-05-16 수정 -->
-
-		<!-- s: popup area -->
-		<!-- e: popup area -->
+		<!-- e: Full 팝업 -->
 	</body>
 </html>
+<script>
+	$(document).ready(function () {
+		$(".image_rolling_wrap").each(function (idx) {
+			const $swiperContainer = $(this).find(".swiper");
+			const $pagination = $(this).find(".swiper-pagination");
+			const $nextBtn = $(this).find(".swiper_button_right");
+			const $prevBtn = $(this).find(".swiper_button_left");
+
+			new Swiper($swiperContainer[0], {
+				slidesPerView: 1,
+				updateOnWindowResize: true,
+				loop: false,
+				observer: true,
+				navigation: {
+					nextEl: ".swiper_button_right",
+					prevEl: ".swiper_button_left",
+				},
+				a11y: {
+					enabled: true,
+					prevSlideMessage: "이전 항목으로 이동",
+					nextSlideMessage: "다음 항목으로 이동",
+				},
+				pagination: {
+					el: $pagination[0],
+					clickable: true,
+					type: "bullets",
+					renderBullet: function (index, className) {
+						return `<span class="${className}" aria-label="사고사진${index + 1}번으로 이동"></span>`;
+					},
+				},
+			});
+		});
+	});
+</script>
