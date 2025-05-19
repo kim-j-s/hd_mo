@@ -4702,6 +4702,9 @@ strong {
 	top: -1px;
 	font-size: var(--font-size-heading-xxsmall);
 }
+.inp_checkbox input[type="checkbox"] + .chk_label > .label_cont .ess.ess_t1.off {
+	color: var(--color-text-disabled-on);
+}
 .inp_checkbox input[type="checkbox"] + .chk_label::before {
 	content: "";
 	position: absolute;
@@ -5900,6 +5903,9 @@ strong {
 	}
 }
 /* Form group */
+.form_group_wrap + .form_group_wrap.space2 {
+	margin-top: 1.6rem;
+}
 .form_group_wrap + *:not(.divider_ty1, .divider_ty2) {
 	margin-top: 5.2rem;
 }
@@ -8170,10 +8176,35 @@ strong {
 .opt_select_list.opt_case3 .option.active {
 	background-color: var(--color-action-secondary-selected);
 }
+.opt_select_list.opt_case4.align_center .option .item {
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.opt_select_list.opt_case4.align_end .option .item {
+	-webkit-box-align: end;
+	-ms-flex-align: end;
+	align-items: flex-end;
+}
 .opt_select_list.opt_case4 .option {
 	display: block;
-	padding: 2.4rem 0;
+	padding: 1.6rem 0;
 	border-top: 1px solid #e6e8ea;
+}
+.opt_select_list.opt_case4 .option .name {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+	display: block;
+	font-size: var(--font-size-label-medium);
+}
+.opt_select_list.opt_case4 .option .date {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+	display: block;
+	font-size: var(--font-size-body-xsmall);
+	color: var(--color-text-subtle);
 }
 .opt_select_list.opt_case4 .option > .item {
 	display: -webkit-box;
@@ -8198,22 +8229,6 @@ strong {
 	-ms-flex-direction: column;
 	flex-direction: column;
 	gap: 0.4rem 0;
-	padding-top: 0.2rem;
-}
-.opt_select_list.opt_case4 .option > .item .data_l .name {
-	-webkit-box-flex: 0;
-	-ms-flex: none;
-	flex: none;
-	display: block;
-	font-size: var(--font-size-label-medium);
-}
-.opt_select_list.opt_case4 .option > .item .data_l .date {
-	-webkit-box-flex: 0;
-	-ms-flex: none;
-	flex: none;
-	display: block;
-	font-size: var(--font-size-body-xsmall);
-	color: var(--color-text-subtle);
 }
 .opt_select_list.opt_case4 .option > .item .data_r {
 	text-align: right;
@@ -8224,12 +8239,15 @@ strong {
 	font-size: var(--font-size-body-medium);
 	color: var(--color-text-primary-bold);
 }
+.opt_select_list.opt_case4 .option .item + .item {
+	margin-top: 0.4rem;
+}
 .opt_select_list.opt_case4 .option:last-child {
 	border-bottom: 1px solid #e6e8ea;
 }
 .opt_select_list.opt_case4 a.option {
-	padding: 2.4rem 3.2rem 2.4rem 0;
-	background: url(../images/icon/arrowRight_ty3.svg) no-repeat center right/2.4rem auto;
+	padding: 1.6rem 3.2rem 1.6rem 0;
+	background: url(../images/icon/arrowRight_ty3.svg) no-repeat right 1.6rem;
 }
 .opt_select_list.opt_case4 + .info_gray {
 	margin-top: 1.6rem;
