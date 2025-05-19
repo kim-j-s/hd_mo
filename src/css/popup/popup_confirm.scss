@@ -54,14 +54,23 @@
 					.info_text {
 						&+.list_ty2 {
 							margin-top: 16px;
-
-							li {
-								padding: 0;
-
-								&::before {
-									position: static;
-									margin-right: 4px;
-								}
+						}
+					}
+					.list_ty2,
+					.list_depth {
+						> li {
+							padding: 0;
+							&::before {
+								display: inline-block;
+								position: static;
+								margin-right: 4px;
+							}
+						}
+					}
+					.list_depth {
+						> li {
+							&::before {
+								transform: translateY(-100%);
 							}
 						}
 					}
