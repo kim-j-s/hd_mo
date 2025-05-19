@@ -141,7 +141,7 @@
 			color: #fff;
 		}
 
-		.note+td {
+		.note + td {
 			text-align: center;
 		}
 
@@ -198,6 +198,30 @@
 		}
 		.bigo2:empty {
 			background-color: transparent;
+		}
+		.bigo2.ing {
+			background-color: #f8633c;
+		}
+		.bigo2.ing::after {
+			display: block;
+			content: "기획 정의중";
+		}
+		.bigo2.design {
+			background-color: #cca700;
+		}
+		.bigo2.design::after {
+			display: block;
+			content: "디자인 확인 필요";
+		}
+		.del {
+			text-decoration: line-through;
+			background: #aaa !important;
+		}
+		.del .end_date {
+			background: #aaa !important;
+		}
+		.del .bigo2::after {
+			content: "삭제";
 		}
 
 		tbody tr:nth-child(2n) {
