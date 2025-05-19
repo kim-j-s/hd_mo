@@ -141,22 +141,15 @@
 
 		if (!isDisabled && !isReadonly) {
 			if(val){
-				// $del.show();
 				$wrap.addClass('active');
 			}else {
-				// $del.hide();
 				$wrap.removeClass('active');
 			}
 		}
-		
-    // $('.input_text .inp').removeClass('active').children('.del').hide();
-    // $wrap.addClass('active');
-    // $del.show();
-
-    // (this.value) ? $wrap.addClass('active'):$wrap.removeClass('active');
 
 		//전화번호
-		if($this.closest('.input_text').hasClass('phone')){
+		// if($this.closest('.input_text').hasClass('phone')){
+		if( $this.closest('.input_text').hasClass('phone') && !$this.prop('readonly') && !$this.prop('disabled') ){
 			if(val){
 				const newVal = val.replace(/ - /g, '');
 				$this.attr('maxlength', 8);
@@ -172,8 +165,6 @@
 				newVal = 0;
 
 		setTimeout(() => {
-			// $del.hide();
-			// $wrap.removeClass('active');
 			if (!$wrap.find('.del').is(':focus') ) {
 				$wrap.removeClass('active');
 			}	
@@ -183,7 +174,8 @@
 		});
 
 		// 전화번호
-		if($this.closest('.input_text').hasClass('phone')){
+		// if($this.closest('.input_text').hasClass('phone')){
+		if( $this.closest('.input_text').hasClass('phone') && !$this.prop('readonly') && !$this.prop('disabled') ){
 			$this.attr('maxlength', 14);
 			if(val){
 				val = val.replace(/[^0-9]/g, '');
@@ -580,6 +572,7 @@ $(function(){
 			}
 		}
 	});
+	
 	// 달력 호출
 	$.datepicker.setDefaults({
 		dateFormat: 'yy.mm.dd',
@@ -629,9 +622,7 @@ $(function(){
 			$input.attr("readonly", false); // readonly 속성 제거
 		}, 500);
 	});
-
 	prograssBar();
-
 	// 달력 호출
 
 	
@@ -710,178 +701,6 @@ $(function(){
 
 
 	// 라디오 약관 동의
-	/*
-
-	const $groupWrap = $('.ag_group_wrap');
-	const $allCheck = $groupWrap.find('.agw_all');
-
-	// 전체 하위 체크박스 제어
-	$allCheck.on('change', function() {
-		const isChecked = $(this).is(':checked');
-		$groupWrap.find('.agr_dept1.ag').prop('checked', isChecked);
-		$groupWrap.find('.agr_dept1.noag').prop('checked', !isChecked);
-		$groupWrap.find('.ags_sub_all, .ags_sub_chk').prop('checked', isChecked).prop('disabled', !isChecked);
-	});
-
-	// 전체 하위 체크박스 제어
-	$groupWrap.on('change', '.ags_sub_all', function() {
-		const isChecked = $(this).is(':checked');
-		const $agrdoGroupSub = $(this).closest('.agrdo_group_sub');
-
-		if (isChecked) {
-			// console.log('체크됨');
-			$agrdoGroupSub.find('.ags_sub_chk').prop('checked', isChecked);
-			$agrdoGroupSub.prev('.agrdo_group').find('.agr_dept1.ag').prop('checked', true);
-		} else {
-			$agrdoGroupSub.find('.ags_sub_chk').prop('checked', isChecked);
-		}
-	});
-
-	// 하위 체크박스 상태 변경 시 전체 체크박스 상태 갱신
-	$groupWrap.on('change', '.ags_sub_chk', function() {
-		// console.log('서브 체크박스');
-		const $agrdoGroupSub = $(this).closest('.agrdo_group_sub');
-		const allSubChk = $agrdoGroupSub.find('.ags_sub_chk');
-		const isAllSubChecked = allSubChk.length === allSubChk.filter(':checked').length;
-
-		// 모든 하위 체크박스가 체크되면 전체 체크박스를 체크, 아니면 해제
-		$agrdoGroupSub.find('.ags_sub_all').prop('checked', isAllSubChecked);
-		// console.log('isAllSubChecked : ', isAllSubChecked);
-
-		if(isAllSubChecked == true) {
-			$agrdoGroupSub.prev('.agrdo_group').find('.agr_dept1.ag').prop('checked', true);
-		}
-	});
-
-	// 민감정보 라디오 선택 시 하위 체크박스 제어
-	$groupWrap.on('change', '.agr_dept1', function() {
-		const $this = $(this);
-		const $agrdoGroup = $this.closest('.agrdo_group');
-		const $subGroup = $agrdoGroup.next('.agrdo_group_sub');
-
-		if ($subGroup.length) {
-			if ($this.hasClass('noag') && $this.is(':checked')) {
-					$subGroup.find('input[type="checkbox"]').prop('checked', false).prop('disabled', true);
-			} else if ($this.hasClass('ag') && $this.is(':checked')) {
-					$subGroup.find('input[type="checkbox"]').prop('disabled', false).prop('checked', true);
-			}
-		}
-
-		updateAllCheckState();
-	});
-
-	// radio 상태를 기준으로 전체동의 체크박스 갱신
-	function updateAllCheckState() {
-		const totalAgr = $groupWrap.find('.agr_dept1.ag');
-		const totalNoAgr = $groupWrap.find('.agr_dept1.noag');
-		
-		let isAllAgreed = true;
-		totalAgr.each(function() {
-			if (!$(this).is(':checked')) {
-				isAllAgreed = false;
-				return false;
-			}
-		});
-
-		totalNoAgr.each(function() {
-			if ($(this).is(':checked')) {
-				isAllAgreed = false;
-				return false;
-			}
-		});
-
-		$groupWrap.find('.agw_all').prop('checked', isAllAgreed);
-	}
-	*/
-
-	// 라디오 약관 동의
-
-
-	// 라디오 약관 동의 - 250430
-	// 약관 동의 - 그룹별로 독립 제어
-	/*
-	$('.ag_groups .ag_group_wrap').each(function () {
-		const $groupWrap = $(this);
-		const $allCheck = $groupWrap.find('.agw_all');
-
-		// 전체 하위 라디오 제어
-		$allCheck.on('change', function () {
-			const isChecked = $(this).is(':checked');
-			$groupWrap.find('.agr_dept1.ag').prop('checked', isChecked);
-			$groupWrap.find('.agr_dept1.noag').prop('checked', !isChecked);
-			$groupWrap.find('.ags_sub_all, .ags_sub_chk').prop('checked', isChecked).prop('disabled', !isChecked);
-		});
-
-		// 하위 전체 체크 제어
-		$groupWrap.on('change', '.ags_sub_all', function () {
-			const isChecked = $(this).is(':checked');
-			const $agrdoGroupSub = $(this).closest('.agrdo_group_sub');
-
-			$agrdoGroupSub.find('.ags_sub_chk').prop('checked', isChecked);
-
-			if (isChecked) {
-				$agrdoGroupSub.prev('.agrdo_group').find('.agr_dept1.ag').prop('checked', true);
-			}
-		});
-
-		// 개별 체크 -> 전체 체크 상태 반영
-		$groupWrap.on('change', '.ags_sub_chk', function () {
-			const $agrdoGroupSub = $(this).closest('.agrdo_group_sub');
-			const allSubChk = $agrdoGroupSub.find('.ags_sub_chk');
-			const isAllSubChecked = allSubChk.length === allSubChk.filter(':checked').length;
-
-			$agrdoGroupSub.find('.ags_sub_all').prop('checked', isAllSubChecked);
-
-			if (isAllSubChecked) {
-				$agrdoGroupSub.prev('.agrdo_group').find('.agr_dept1.ag').prop('checked', true);
-			}
-		});
-
-		// 라디오 변경 -> 하위 체크박스 제어
-		$groupWrap.on('change', '.agr_dept1', function () {
-			const $this = $(this);
-			const $agrdoGroup = $this.closest('.agrdo_group');
-			const $subGroup = $agrdoGroup.next('.agrdo_group_sub');
-
-			if ($subGroup.length) {
-				if ($this.hasClass('noag') && $this.is(':checked')) {
-					$subGroup.find('input[type="checkbox"]').prop('checked', false).prop('disabled', true);
-				} else if ($this.hasClass('ag') && $this.is(':checked')) {
-					$subGroup.find('input[type="checkbox"]').prop('disabled', false).prop('checked', true);
-				}
-			}
-
-			updateAllCheckState();
-		});
-
-		// 그룹 내 전체 동의 상태 갱신
-		function updateAllCheckState() {
-			const totalAgr = $groupWrap.find('.agr_dept1.ag');
-			const totalNoAgr = $groupWrap.find('.agr_dept1.noag');
-
-			let isAllAgreed = true;
-
-			totalAgr.each(function () {
-				if (!$(this).is(':checked')) {
-					isAllAgreed = false;
-					return false;
-				}
-			});
-
-			totalNoAgr.each(function () {
-				if ($(this).is(':checked')) {
-					isAllAgreed = false;
-					return false;
-				}
-			});
-
-			$groupWrap.find('.agw_all').prop('checked', isAllAgreed);
-		}
-	});
-	*/
-
-
-	// 라디오 약관 동의
 	$('.ag_groups').each(function () {
 		const $groups = $(this);
 		const $totalCheck = $groups.find('.ag_total');
@@ -954,16 +773,6 @@ $(function(){
 			// ag_group_cont 하위 체크박스 제어
 			$groupWrap.on('change', '.agr_dept2', function () {
 				const $this = $(this);
-				// const $agrdoGroup = $this.closest('.agrdo_group');
-				// const $subGroup = $agrdoGroup.next('.agrdo_group_sub');
-	
-				// if ($subGroup.length) {
-				// 	if ($this.is(':checked')) {
-				// 		$subGroup.find('input[type="checkbox"]').prop('checked', false).prop('disabled', true);
-				// 	} else if (!$this.is(':checked')) {
-				// 		$subGroup.find('input[type="checkbox"]').prop('disabled', false).prop('checked', true);
-				// 	}
-				// }
 	
 				updateGroupCheckState();
 				updateTotalCheckState(); // 그룹 갱신 시 전체도 갱신
@@ -1212,8 +1021,21 @@ $(function(){
 			detectFocus(e);
 		});
 	}
-
 	autoCompleteEmail();
+
+
+
+	// 진입 시 
+	$('.input_text').each(function() {
+		if( $(this).hasClass('phone') && $(this).hasClass('readonly') ){
+			const $inp = $(this).children('.inp').find('input');
+			let val = $inp.val();
+			console.log(val);
+			val = val.replace(/[^0-9]/g, '');
+			newVal = ' - ' + val.replace(/(\d{4})(?=\d)/g, '$1 - ');
+			$inp.val(newVal).addClass('isVal');
+		}
+	});
 
 
 });
