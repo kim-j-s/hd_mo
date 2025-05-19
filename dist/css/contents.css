@@ -1104,6 +1104,9 @@
 	background-color: var(--color-border-gray-light);
 	border-radius: 0.4rem;
 }
+.insurance_policyBox .insurance_barbox.ty2:before {
+	z-index: 0;
+}
 .insurance_policyBox.same .insurance_barbox:before {
 	width: 50%;
 }
@@ -1207,6 +1210,79 @@
 .progress_box .ing i.end.right:before {
 	right: -0.2rem;
 }
+.progress_box_ty2 {
+	position: relative;
+	padding: 1.2rem 0 2.1rem;
+}
+.progress_box_ty2 .date {
+	position: absolute;
+	top: -2rem;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	display: inline-block;
+	padding: 0 0.4rem;
+	background-color: var(--color-border-gray-darker);
+	font-size: var(--font-size-label-xsmall);
+	line-height: 1.7rem;
+	color: #fff;
+	border-radius: 0.8rem;
+}
+.progress_box_ty2 i {
+	position: absolute;
+	top: 0.8rem;
+	display: block;
+	width: 3.7rem;
+	padding: 0 0.4rem;
+	background-color: var(--color-border-secondary);
+	font-size: var(--font-size-label-xsmall);
+	line-height: 1.7rem;
+	font-style: normal;
+	color: #fff;
+	white-space: nowrap;
+	border-radius: var(--radius-small1);
+}
+.progress_box_ty2 i:before {
+	position: absolute;
+	top: -1.1rem;
+	content: "";
+	width: 1rem;
+	height: 1rem;
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-position: 0.8rem auto;
+	background-image: url(../images/icon/progressbar_dot.svg);
+	-webkit-filter: drop-shadow(0px 0px 0.2rem var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05))) drop-shadow(0px 1px 0.2rem var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)));
+	filter: drop-shadow(0px 0px 0.2rem var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05))) drop-shadow(0px 1px 0.2rem var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)));
+}
+.progress_box_ty2 i.start {
+	left: 0;
+	top: 2rem;
+}
+.progress_box_ty2 i.start:before {
+	left: -0.2rem;
+}
+.progress_box_ty2 i.newStart {
+	left: -1.6rem;
+}
+.progress_box_ty2 i.newStart:before {
+	left: 1.2rem;
+}
+.progress_box_ty2 i.end {
+	right: 0;
+}
+.progress_box_ty2 i.end:before {
+	right: -0.2rem;
+}
+.progress_box_ty2 .ing {
+	position: absolute;
+	display: block;
+	width: 50%;
+	height: 0.4rem;
+	background-color: var(--color-border-secondary);
+	text-align: center;
+	right: 0;
+}
 .car_type_option {
 	gap: 1rem;
 }
@@ -1280,6 +1356,7 @@
 .car_input_box .car_number_input .inp input {
 	height: auto;
 	padding: 1rem 3.3rem 1rem 1.4rem;
+	font-size: var(--font-size-heading-medium);
 	line-height: 3rem;
 	text-align: center;
 }
@@ -2629,35 +2706,31 @@ ul + .form_group_wrap {
 .pop_title_h1 + .info_text {
 	margin-top: 0.8rem;
 }
-.pop_title_h1 + .pop_title_h2,
-.pop_title_h1 + h3 {
-	margin-top: 2rem;
+.pop_title_h1 + p {
+	margin-top: 1.2rem;
 }
 .pop_title_h1 + ul,
 .pop_title_h1 + ol {
 	margin-top: 1.6rem;
 }
-.pop_title_h1 + p {
-	margin-top: 1.2rem;
-}
+.pop_title_h1 + .pop_title_h2,
+.pop_title_h1 + h3,
 .pop_title_h1 + .table_wrap,
-.pop_title_h1 + .banner_box {
+.pop_title_h1 + .banner_box,
+.pop_title_h1 + .acd_item,
+.pop_title_h1 + .form_group_wrap {
 	margin-top: 2rem;
 }
 .pop_title_h2 {
 	font-size: var(--font-size-heading-small);
 	font-weight: 700;
 }
-.pop_title_h2 + h3 {
-	margin-top: 1.6rem;
-}
-.pop_title_h2 + ul,
-.pop_title_h2 + ol {
-	margin-top: 1.6rem;
-}
 .pop_title_h2 + p {
 	margin-top: 1.2rem;
 }
+.pop_title_h2 + h3,
+.pop_title_h2 + ul,
+.pop_title_h2 + ol,
 .pop_title_h2 + .table_wrap {
 	margin-top: 1.6rem;
 }
@@ -2674,11 +2747,9 @@ ul + .form_group_wrap {
 	font-weight: 700;
 }
 .info_cont h2 + h3,
-.info_cont .title_h2 + h3 {
-	margin-top: 1.6rem;
-}
 .info_cont h2 + ul,
 .info_cont h2 + ol,
+.info_cont .title_h2 + h3,
 .info_cont .title_h2 + ul,
 .info_cont .title_h2 + ol {
 	margin-top: 1.6rem;
@@ -2817,6 +2888,9 @@ ul + .form_group_wrap {
 	font-size: var(--font-size-heading-medium);
 	text-align: center;
 }
+.table_wrap + .pop_title_h1 {
+	margin-top: 5.2rem;
+}
 .table_wrap + .list_ty1 {
 	margin-top: 1.6rem;
 }
@@ -2832,6 +2906,10 @@ ul + .form_group_wrap {
 .banner_box a img {
 	display: block;
 	width: 100%;
+}
+.banner_box + [class^="bann_text_wrap"],
+.banner_box + .banner_box {
+	margin-top: 3.2rem;
 }
 .pop_title_h1 + .info_text + .btn_area {
 	margin: 0.8rem 0 3.2rem;
@@ -3098,6 +3176,46 @@ ul + .form_group_wrap {
 }
 .special_contract_list.radio .check_flex_box + .form_group_wrap {
 	margin: 1.6rem 0 0 28px;
+}
+.link_flex_box {
+	display: block;
+	padding-right: 3.6rem;
+	background: url(../images/icon/icon_new_open.svg) no-repeat right center/2.4rem auto;
+}
+.link_flex_box.call {
+	background-image: url(../images/icon/icon_call.svg);
+}
+.link_flex_box .link_item {
+	padding-left: 4.4rem;
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 3.2rem auto;
+}
+.link_flex_box .link_item .top {
+	font-size: var(--font-size-body-medium);
+	color: var(--color-text-basic);
+}
+.link_flex_box .link_item .top + .cont {
+	margin-top: 0.4rem;
+}
+.link_flex_box .link_item .cont {
+	font-size: var(--font-size-body-small);
+	color: var(--color-text-subtle);
+}
+.link_flex_box .link_item.ty1 {
+	background-image: url(../images/content/clrq/icon_clrq_charge01.svg);
+}
+.link_flex_box .link_item.ty2 {
+	background-image: url(../images/content/clrq/icon_clrq_charge02.svg);
+}
+.link_flex_box .link_item.ty3 {
+	background-image: url(../images/content/clrq/icon_clrq_charge03.svg);
+}
+.link_flex_box .link_item.ty4 {
+	background-image: url(../images/content/clrq/icon_clrq_charge04.svg);
+}
+.link_flex_box .link_item.ty5 {
+	background-image: url(../images/content/clrq/icon_clrq_charge05.svg);
 }
 /* 운전자보험 - 보험료 결제 */
 .insurance_payment_area {
@@ -3697,6 +3815,20 @@ ul + .form_group_wrap {
 }
 .my_info_flow > li .cont .btn_area {
 	margin-top: 0.8rem;
+}
+.my_info_flow > li .frame_list {
+	padding-top: 1.6rem;
+}
+.my_info_flow > li .frame_list .file_attach_box .file_thumbnail {
+	background-color: transparent;
+}
+.frame_list > li > .tit {
+	display: block;
+	padding-bottom: 0.8rem;
+	font-size: var(--font-size-heading-xxsmall);
+}
+.frame_list > li + li {
+	margin-top: 2rem;
 }
 /* 이용방법 */
 /* 마이 */

@@ -385,6 +385,9 @@ strong {
 	font-size: var(--font-size-body-small);
 	color: var(--color-text-disabled-on);
 }
+.no_list_area .desc.tac {
+	text-align: center;
+}
 [class*="file_upload_wrap"] {
 	padding: var(--padding-card-medium) var(--padding-card-small);
 	background: var(--color-surface-information-subtler);
@@ -1866,8 +1869,29 @@ strong {
 	padding-top: 1.6rem;
 	border-top: 1px solid var(--color-divider-gray-light);
 }
+.acd_item .acd_cont .inner .list_depth > li {
+	font-size: var(--font-size-body-small);
+}
+.acd_item .acd_cont .inner .list_depth > li::before {
+	width: 0.2rem;
+	height: 0.2rem;
+	background-color: var(--color-icon-information);
+}
+.acd_item .acd_cont .inner .list_depth > li ul {
+	margin-top: 0.8rem;
+}
+.acd_item .acd_cont .inner .list_depth > li ul > li {
+	font-size: var(--font-size-body-xsmall);
+	color: var(--color-text-subtle);
+}
+.acd_item .acd_cont .inner .list_depth > li ul > li li {
+	margin-top: 0.8rem;
+}
 .acd_item + .info_gray {
 	margin-top: 1.6rem;
+}
+.acd_item + .pop_title_h1 {
+	margin-top: 5.2rem;
 }
 /** Accordion **/
 .acd_item .acd_head .acd_btn[class*="acd_ico_"] {
@@ -2978,6 +3002,10 @@ strong {
 	width: 0;
 	height: 0;
 	font-size: 0;
+}
+.btn_select + .btn_select,
+.btn_select + .btn_area {
+	margin-top: 1.6rem;
 }
 .btn {
 	position: relative;
@@ -4136,14 +4164,16 @@ strong {
 .card_item_wrap + * {
 	margin-top: 1.6rem;
 }
-.card_item_wrap + *.list_top_wrap {
-	margin-top: 5.2rem;
-}
-.card_item_wrap + *.card_item_wrap {
-	margin-top: 5.2rem;
-}
+.card_item_wrap + *.list_top_wrap,
+.card_item_wrap + *.card_item_wrap,
 .card_item_wrap + *.title_h3 {
 	margin-top: 5.2rem;
+}
+.card_item_wrap + *.banner_box {
+	margin-top: 3.2rem;
+}
+.card_item_wrap + *.banner_box {
+	margin-top: 3.2rem;
 }
 .card_item_wrap .card_item {
 	position: relative;
@@ -4289,6 +4319,9 @@ strong {
 	font-size: var(--font-size-body-small);
 	color: var(--color-text-information);
 }
+.card_item_wrap .card_item .item_top .title_info + .badge_wrap {
+	margin-top: 0.4rem;
+}
 .card_item_wrap .card_item .item_top .text {
 	font-size: var(--font-size-label-large);
 	line-height: 2.4rem;
@@ -4330,6 +4363,11 @@ strong {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
+}
+.card_item_wrap .card_item .item_cont ul.align_top {
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	align-items: flex-start;
 }
 .card_item_wrap .card_item .item_cont ul .txt_l {
 	font-size: var(--font-size-body-small);
@@ -5868,7 +5906,7 @@ strong {
 	}
 }
 /* Form group */
-.form_group_wrap + * {
+.form_group_wrap + *:not(.divider_ty1, .divider_ty2) {
 	margin-top: 5.2rem;
 }
 .form_group_wrap > * ~ .row {
@@ -5877,6 +5915,7 @@ strong {
 .form_group_wrap + .info_gray,
 .form_group_wrap + .bann_wrap,
 .form_group_wrap + .banner_slide_wrap,
+.form_group_wrap + .checkbox_group_wrap.space2,
 .form_group_wrap + .opt_case4 {
 	margin-top: 3.2rem;
 }
@@ -6043,6 +6082,9 @@ strong {
 	margin-top: 1.6rem;
 }
 .form_group_wrap .list_ty2 {
+	margin-top: 1.6rem;
+}
+.form_group_wrap .list_ty2 + .info_gray.ty2 {
 	margin-top: 1.6rem;
 }
 .range_calrendar {
@@ -6949,6 +6991,11 @@ strong {
 }
 .bottom_fix_notice .acd_cont .inner .list_depth > li {
 	font-size: var(--font-size-body-small);
+}
+.bottom_fix_notice .acd_cont .inner .list_depth > li::before {
+	height: 0.2rem;
+	width: 0.2rem;
+	background-color: var(--color-icon-information);
 }
 .bottom_fix_notice .acd_cont .inner .list_depth > li > ul > li {
 	color: var(--color-text-subtle);
@@ -8035,6 +8082,8 @@ strong {
 .select_item[aria-disabled="true"] .si_item::after {
 	border: 1px solid var(--color-input-border-disabled);
 }
+.select_item + .select_item,
+.select_item + .btn_area,
 .select_item + .inp_checkbox {
 	margin-top: 1.6rem;
 }
@@ -8487,6 +8536,9 @@ strong {
 	top: auto;
 	bottom: -3.2rem;
 }
+.image_rolling_wrap .swiper-pagination.swiper-pagination-lock {
+	display: block;
+}
 .image_rolling_wrap .swiper-pagination-bullet:only-child {
 	display: inline-block !important;
 }
@@ -8496,15 +8548,13 @@ strong {
 	z-index: 10;
 }
 .image_rolling_wrap .swiper_button_left {
-	left: 0;
+	left: -2rem;
 }
 .image_rolling_wrap .swiper_button_right {
-	right: 0;
+	right: -2rem;
 }
-.image_rolling_wrap .swiper-button-disabled[aria-disabled="true"] {
-	opacity: 0;
-	pointer-events: none;
-	visibility: hidden;
+.image_rolling_wrap .swiper_button.swiper-button-lock {
+	display: none;
 }
 /* splide css */
 .splide_wrap {
@@ -8710,7 +8760,8 @@ strong {
 .table_wrap + .title_h5 {
 	margin-top: 2rem;
 }
-.table_wrap + .space_list_ty2 {
+.table_wrap + .space_list_ty2,
+.table_wrap + .checkbox_group_wrap {
 	margin-top: 3.2rem;
 }
 .table_wrap + .title_h3 {
@@ -9045,42 +9096,36 @@ strong {
 	line-height: 2.4rem;
 	color: var(--color-text-basic);
 }
-.text_sub + .my_info_flow,
-.text_sub + .set_value_box,
-.text_sub + .text_sub {
-	margin-top: 1.6rem;
-}
 .text_sub + * {
 	margin-top: 2.4rem;
 }
 .text_sub + .title_h3 {
 	margin-top: 5.2rem;
 }
+.text_sub + .list_ty3 {
+	margin-top: 3.2rem;
+}
+.text_sub + .my_info_flow,
+.text_sub + .set_value_box,
+.text_sub + .text_sub {
+	margin-top: 1.6rem;
+}
 .text_sub + .circle_list_ty2,
+.text_sub + .circle_list,
+.text_sub + .view_img_list,
+.text_sub + .form_group_wrap,
 .text_sub + .card_item_wrap,
 .text_sub + .radio_group_wrap,
 .text_sub + .inp_checkbox,
 .text_sub + .file_attach_box,
-.text_sub + .card_item_wrap,
+.text_sub + .card_item_wrap {
+	margin-top: 1.6rem;
+}
 .text_sub + .btn_area {
 	margin-top: 1.6rem;
 }
-.text_sub + .circle_list_ty2.basic,
-.text_sub + .card_item_wrap.basic,
-.text_sub + .radio_group_wrap.basic,
-.text_sub + .inp_checkbox.basic,
-.text_sub + .file_attach_box.basic,
-.text_sub + .card_item_wrap.basic,
 .text_sub + .btn_area.basic {
 	margin-top: 0.4rem;
-}
-.text_sub + .circle_list,
-.text_sub + .view_img_list {
-	margin-top: 1.6rem;
-}
-.text_sub + .list_ty3,
-.text_sub + .form_group_wrap {
-	margin-top: 3.2rem;
 }
 /* textarea */
 /* Textarea */
@@ -9422,7 +9467,8 @@ strong {
 .info_gray + .btn_area.btn_area_space2,
 .info_gray + .form_group_wrap,
 .info_gray + .acd_item_ty2,
-.info_gray + .acd_item_ty7 {
+.info_gray + .acd_item_ty7,
+.info_gray + .banner_box.ty2 {
 	margin-top: 3.2rem;
 }
 .info_gray + .checkbox_group_wrap,

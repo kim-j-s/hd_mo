@@ -48,46 +48,55 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body>
-		<div id="wrap" class="wrap">
-			<div id="container" class="container">
-				<div class="content">
-					<div class="process_info_area">
-						<div class="complete_info" aria-hidden="true">
-							<lottie-player src="../../../json/lottie_complete2.jso" background="transparent" speed="1" autoplay></lottie-player>
-						</div>
-						<h2 class="process_title">
-							<strong>고장출동 신청이 접수됐어요</strong>
-						</h2>
-						<div class="process_desc">
-							안심하고 조금만 기다려주세요.
-							<br />
-							현대해상이 달려갈게요.
-						</div>
-					</div>
+		<!-- s: 25-05-16 수정 -->
+		<!-- s: 출동서비스 신청 완료 팝업 -->
+		<div class="popup_wrap full active" id="pop_type01" role="dialog" aria-hidden="false">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
+				<div class="popup_inner">
+					<div class="popup_head"><div class="popup_head_title"></div></div>
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="process_info_area">
+								<div class="complete_info" aria-hidden="true">
+									<lottie-player src="../../../json/lottie_complete2.jso" background="transparent" speed="1" autoplay></lottie-player>
+								</div>
+								<h2 class="process_title">
+									<strong>고장출동 신청이 접수됐어요</strong>
+								</h2>
+								<div class="process_desc">
+									안심하고 조금만 기다려주세요.
+									<br />
+									현대해상이 달려갈게요.
+								</div>
+							</div>
 
-					<div class="info_gray">
-						<h4 class="title_h4">109조**33(Hicar개인용(CM))</h4>
-						<dl>
-							<dt>휴대폰번호</dt>
-							<dd>010-****-1234</dd>
-						</dl>
-						<dl>
-							<dt>신청서비스</dt>
-							<dd>배터리 충전</dd>
-						</dl>
+							<div class="info_gray">
+								<h4 class="title_h4">109조**33(Hicar개인용(CM))</h4>
+								<dl>
+									<dt>휴대폰번호</dt>
+									<dd>010-****-1234</dd>
+								</dl>
+								<dl>
+									<dt>신청서비스</dt>
+									<dd>배터리 충전</dd>
+								</dl>
+							</div>
+						</div>
 					</div>
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
+								<span class="text">홈으로</span>
+							</button>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
-			<!-- s: 하단 고정 버튼 영역 -->
-			<div class="bottom_fix_wrap">
-				<div class="btn_area">
-					<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
-						<span class="text">홈으로</span>
-					</button>
-				</div>
-			</div>
-			<!-- s: 하단 고정 버튼 영역 -->
 		</div>
+		<!-- e: 출동서비스 신청 완료 팝업 -->
+		<!-- e: 25-05-16 수정 -->
 
 		<!-- s: popup area -->
 		<!-- e: popup area -->
