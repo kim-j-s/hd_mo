@@ -266,17 +266,21 @@
 			</div>
 			<div class="divider_ty1"></div>
 			<h3 class="title_h4">2회차 이후 결제 정보 입력</h3>
-			<!-- s: 카드사(현대카드) 선택 시 -->
-			<div class="radio_group_wrap" role="radiogroup">
-				{{> cp/radio rd-class="rd_btn" rd-id="radio_card1" name="radio01" labelname="현대카드로 결제" checked=true }}
-				{{> cp/radio rd-class="rd_btn" rd-id="radio_card2" name="radio01" labelname="계좌이체로 결제" }}
-			</div>
-			<!-- e: 카드사(현대카드) 선택 시 -->
-			<!-- s: 이체 선택 시 -->		
-			{{> cp/checkbox checkbox_class="rd_box" id="checkbox04-9" label_class="chk_label_ty3" labelname="1회차 보험료 결제 계좌와 동일합니다" }}		
-			<!-- e: 이체 선택 시 -->	
-			<!-- s: 카드사(현대카드) 선택 외 -->		
+			<!-- s: 25-05-19 수정 -->
+		
 			<div class="form_group_wrap">
+				<!-- s: 1회차를 현대카드로 선택시에만 출력 -->
+				<div class="form_line">
+					<div class="radio_group_wrap" role="radiogroup">
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_card1" name="radio01" labelname="현대카드로 결제" checked=true }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_card2" name="radio01" labelname="계좌이체로 결제" }}
+					</div>
+				</div>
+				<!-- e: 1회차를 현대카드로 선택시에만 출력 -->
+				
+				<div class="form_line">
+				{{> cp/checkbox checkbox_class="rd_box" id="checkbox04-9" label_class="chk_label_ty3" labelname="1회차 보험료 결제 계좌와 동일합니다" }}		
+				</div>
 				<div class="form_line">
 					<div class="label_tit">은행</div>
 					{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" }}
@@ -290,7 +294,9 @@
 					{{> cp/selectitem si_ph="매월 자동이체일 선택" si_item="5일" si_title="매월 자동이체일 선택" si_popup="bank_day_select"}}
 				</div>
 			</div>
-			<!-- e: 카드사(현대카드) 선택 외 -->
+			<!-- e: 25-05-19 수정 -->
+
+
 			<div class="info_gray">
 				<dl>
 					<dt>납입 기간</dt>

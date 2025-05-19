@@ -45,11 +45,13 @@
                     {{> cp/text value="말티푸" inp-title="품종 입력" readonly=true }}
                 </div>
                 <div class="form_line">
-                    <div class="label_tit">중성화 수술을 했나요?</div>
-                    <div class="radio_group_wrap" role="radiogroup">
-                        {{> cp/radio rd-class="rd_btn" rd-id="notification02_01" name="notification02" labelname="예" }}
-                        {{> cp/radio rd-class="rd_btn" rd-id="notification02_02" name="notification02" labelname="아니오" }}
-                    </div>
+									<div class="label_tit">중성화 수술을 했나요?</div>
+									<div class="radio_group_wrap" role="radiogroup">
+										{{> cp/radio rd-class="rd_btn" rd-id="notification02_01" name="notification02" labelname="예" }}
+										<!-- s: 25-05-19 수정 -->
+										{{> cp/radio rd-class="rd_btn" rd-id="notification02_02" name="notification02" labelname="아니요" }}
+										<!-- e: 25-05-19 수정 -->
+									</div>
                 </div>
 			</div>
 
@@ -112,14 +114,22 @@
 			<!-- Case2. 동물등록 Y인 경우 -->
 			<div class="divider_ty1"></div>
 			<h3 class="title_h3">할인 정보</h3>
-            <div class="checkbox_group_wrap col_link">
-                {{> cp/checkbox id="checkbox01-1" label_class="chk_label_ty3" labelname="동물보호관리시스템에 동물등록을 했어요.<br>(5% 할인)" }}
-                {{> cp/linkButton bl_class="short_cut" bl_text="동물등록 우대 할인" role_b=true question_tit="동물등록 우대 할인" }}
+			<!-- s: 25-05-19 수정 -->
+			<div class="checkbox_group_wrap">
+				{{#> cp/checkbox labelname="동물보호관리시스템에 동물등록을 했어요.<br>(5% 할인)"  id="checkbox01-1" label_class="chk_label_ty3" }}
+				<div class="chk_lby2">
+					{{> cp/linkButton bl_class="short_cut" bl_text="동물등록 우대 할인" role_b=true question_tit="동물등록 우대 할인" }} 
+				</div>
+				{{/ cp/checkbox }}
 			</div>
-            <div class="checkbox_group_wrap col_link">
-                {{> cp/checkbox id="checkbox01-1" label_class="chk_label_ty3" labelname="오늘 기준 3년 전에 입양한 유기동물이에요.<br>(3% 할인)" }}
-                {{> cp/linkButton bl_class="short_cut" bl_text="동물등록 우대 할인" role_b=true question_tit="유기동물 우대 할인" }}
+			<div class="checkbox_group_wrap">
+				{{#> cp/checkbox id="checkbox01-2" label_class="chk_label_ty3" labelname="오늘 기준 3년 전에 입양한 유기동물이에요.<br>(3% 할인)" }}
+				<div class="chk_lby2">
+					{{> cp/linkButton bl_class="short_cut" bl_text="유기동물 우대 할인" role_b=true question_tit="유기동물 우대 할인" }} 
+				</div>
+				{{/ cp/checkbox }}
 			</div>
+			<!-- e: 25-05-19 수정 -->
 
 			<div class="checkbox_group_wrap column">
 				{{#> cp/checkbox checkbox_class="rd_box" id="checkbox01" label_class="chk_label_ty3" labelname="반려동물 정보를 정확히 입력했어요" }}
