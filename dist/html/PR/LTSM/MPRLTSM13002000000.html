@@ -56,7 +56,7 @@
 					</div>
 
 					<div class="header_connect">
-						<h1 class="header_title">다이렉트원스탑실손보험(전환용)</h1>
+						<h1 class="header_title">다이렉트 원스탑실손보험(전환용)</h1>
 					</div>
 
 					<div class="header_right">
@@ -342,21 +342,6 @@
 					</div>
 					<!-- e: content_top -->
 
-					<!-- s: 간편정보 -->
-					<div class="simple_info_wrap">
-						<div class="simple_info_item">
-							<ul class="sii_list">
-								<li>
-									<span class="sii_list_l">결제하실 금액</span>
-									<span class="sii_list_r">
-										<strong class="price">24,900원</strong>
-									</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<!-- e: 간편정보 -->
-
 					<div class="tab_wrap">
 						<div class="tab_wrap_list_ty1" role="tablist">
 							<button type="button" class="tab_btn active" role="tab" aria-selected="true" aria-controls="tabPanel01" id="tab01">본인</button>
@@ -365,7 +350,7 @@
 
 						<!-- 본인 탭 -->
 						<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
-							<h3 class="title_h4">피보험자/계약자</h3>
+							<h3 class="title_h3">피보험자/계약자</h3>
 							<div class="form_group_wrap">
 								<div class="form_line">
 									<div class="label_tit">주민등록번호</div>
@@ -405,7 +390,7 @@
 								<div class="form_line">
 									<div class="radio_group_wrap_ty2" role="radiogroup">
 										<div class="inp_radio rd_btn">
-											<input type="radio" id="radio_btn_gt1" name="radio_gt1" checked />
+											<input type="radio" id="radio_btn_gt1" name="radio_gt1" />
 											<label for="radio_btn_gt1">
 												<span class="label_cont">배우자</span>
 											</label>
@@ -433,7 +418,7 @@
 							</div>
 
 							<div class="form_group_wrap">
-								<h3 class="title_h4">피보험자(보장 받으실 분)</h3>
+								<h3 class="title_h3">피보험자(보장 받으실 분)</h3>
 								<div class="form_group_wrap">
 									<div class="form_line">
 										<div class="label_tit">주민등록번호</div>
@@ -454,13 +439,52 @@
 												<div class="id_pass">●●●●●●</div>
 											</div>
 										</div>
-										<div class="form_line">
-											<div class="label_tit">이름</div>
-											<div class="input_text">
-												<div class="inp">
-													<input type="text" placeholder="입력해주세요" title="이름 입력" />
-													<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-												</div>
+									</div>
+
+									<div class="form_line">
+										<div class="label_tit">이름</div>
+										<div class="input_text">
+											<div class="inp">
+												<input type="text" placeholder="입력해주세요" title="이름 입력" />
+												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+											</div>
+										</div>
+										<a href="javascript:void(0)" class="btn_link short_cut">
+											<span class="text">계약자 피보험자가 다를 때 가입 안내</span>
+										</a>
+									</div>
+
+									<div class="form_line">
+										<div class="label_tit space_between">
+											미성년 자녀 직업 정보
+											<a href="javascript:void(0)" class="btn_link short_cut sm" role="button" onclick="openHDPopup(this,'pop_02');">
+												<span class="text">미성년 자녀의 보험 가입 안내</span>
+											</a>
+										</div>
+										<div class="radio_group_wrap_ty2" role="radiogroup">
+											<div class="inp_radio rd_btn">
+												<input type="radio" id="radio_btn_gt1" name="radio_gt1" />
+												<label for="radio_btn_gt1">
+													<span class="label_cont">미취학아동</span>
+												</label>
+											</div>
+											<div class="inp_radio rd_btn">
+												<input type="radio" id="radio_btn_gt2" name="radio_gt1" />
+												<label for="radio_btn_gt2">
+													<span class="label_cont">초,중,고등학생</span>
+												</label>
+											</div>
+											<div class="inp_radio rd_btn">
+												<input type="radio" id="radio_btn_gt3" name="radio_gt1" />
+												<label for="radio_btn_gt3">
+													<span class="label_cont">대학생 및 대학원생</span>
+												</label>
+											</div>
+											<div class="inp_radio rd_btn">
+												<input type="radio" id="radio_btn_gt4" name="radio_gt1" />
+												<label for="radio_btn_gt4">
+													<span class="label_cont">기타</span>
+												</label>
 											</div>
 										</div>
 									</div>
@@ -468,7 +492,7 @@
 							</div>
 
 							<div class="divider_ty1"></div>
-							<h3 class="title_h4">계약자(보험료를 납입하실 분)</h3>
+							<h3 class="title_h3">계약자(보험료를 납입하실 분)</h3>
 							<div class="form_group_wrap">
 								<div class="form_line">
 									<div class="label_tit">주민등록번호</div>
@@ -522,7 +546,7 @@
 		<!-- s: popup area -->
 
 		<!-- s: 실손보험(전환용) 가입 안내 팝업 -->
-		<div class="popup_wrap bottom" id="pop_01" role="dialog" aria-modal="true" aria-hidden="true">
+		<div class="popup_wrap bottom active" id="pop_01" role="dialog" aria-modal="true" aria-hidden="false">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_01');"></div>
 				<div class="popup_inner">
@@ -533,22 +557,22 @@
 
 					<div class="popup_cont">
 						<div class="popup_content">
-							<div class="text_head">
-								<ul class="list_ty3">
-									<li>
-										가입가능시간 : 평일 00:00 ~ 23:30
-										<br />
-										(단, 3세대 실손 중 해약환급금이 발생하는 경우 평일 9:00~16:30까지만 가입이 가능합니다.)
-									</li>
-									<li>고객님의 계약 상태에 따라 원스탑 실손전환 서비스 이용이 어려울 수 있습니다.</li>
-								</ul>
-							</div>
+							<ul class="list_ty3">
+								<li>
+									가입가능시간 : 평일 00:00 ~ 23:30
+									<br />
+									(단, 3세대 실손 중 해약환급금이 발생하는 경우 평일 9:00~16:30까지만 가입이 가능합니다.)
+								</li>
+								<li>고객님의 계약 상태에 따라 원스탑 실손전환 서비스 이용이 어려울 수 있습니다.</li>
+							</ul>
 
-							<div class="info_gray ty2">
-								<div class="title_h4">상담문의: 현대해상 실손전환센터</div>
-								<div class="badge_wrap_ty2">
-									<div class="cont_tel">1588-8291</div>
-									<span class="hd_badge c_info size_m">평일 9:30~17:30</span>
+							<div class="info_cont">
+								<div class="info_gray ty2">
+									<h4>상담문의: 현대해상 실손전환센터</h4>
+									<div class="badge_wrap_ty2">
+										<div class="cont_tel">1588-8291</div>
+										<span class="hd_badge c_info size_m">평일 9:30~17:30</span>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -567,9 +591,9 @@
 		<!-- e: 실손보험(전환용) 가입 안내 팝업 -->
 
 		<!-- s: 미성년 자녀의 보험 가입 안내 팝업 -->
-		<div class="popup_wrap bottom" id="pop_01" role="dialog" aria-modal="true" aria-hidden="true">
+		<div class="popup_wrap bottom" id="pop_02" role="dialog" aria-modal="true" aria-hidden="true">
 			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_01');"></div>
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_02');"></div>
 				<div class="popup_inner">
 					<div class="draggable" aria-hidden="true">
 						<div class="move"></div>
@@ -593,7 +617,7 @@
 							</button>
 						</div>
 					</div>
-					<button type="button" class="popup_close" onclick="closeHDPopup('pop_01');"><span class="blind">팝업 닫기</span></button>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_02');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
