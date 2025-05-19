@@ -1,15 +1,22 @@
-{{#> layout/default page-title="신청정보 변경 | 마이페이지"}}
+<!-- s: 25-05-19 수정 -->
+{{#> layout/default page-title="단기운전자 확대특약 변경/취소 | 마이페이지"}}
+<!-- e: 25-05-19 수정 -->
 	<div id="wrap" class="wrap">
-		{{> layout/header h-title="신청정보 변경" }}
+		<!-- s: 25-05-19 수정 -->
+		{{> layout/header h-title="단기운전자 확대특약 변경/취소" }}
+		<!-- e: 25-05-19 수정 -->
+
+		<!-- s: 25-05-19 수정 -->
 		<div id="container" class="container">
 			<div class="content">
 
 				<!-- s: content_top -->
 				<div class="content_top">
 					<h2 class="title_h2">
-						<strong>신청기간</strong>을<br>
+						<strong>종료 기간</strong>을<br>
 						변경해주세요
 					</h2>
+					<p class="title_sub"><strong>종료일을 오늘~종료하루전</strong>까지 변경하여 현재 이용중인 단기운전자 확대기간을 단축할 수 있습니다.</p>
 				</div>
 				<!-- e: content_top -->
 
@@ -18,34 +25,33 @@
 						<dt>자동차번호</dt>
 						<dd>109조**33</dd>
 					</dl>
+					 <dl>
+						<dt>시작/종료일시</dt>
+						<dd>2025.04.30 00시<br/>~2025.05.02 24시</dd>
+					</dl>
 				</div>
 
 				<div class="form_group_wrap">
-					<div class="row">
-						<div class="form_line grow">
-							<div class="label_tit">시작일(00시)</div>
-							{{> cp/text cal=true placeholder="날짜를 선택하세요" value="2024.08.21" readonly="true" }}
-						</div>
-						<div class="form_line grow">
-							<div class="label_tit">종료일(24시)</div>
-							{{> cp/text cal=true }}
-						</div>
+					<div class="form_line">
+						<div class="label_tit">종료일(24시)</div>
+						{{> cp/text cal=true }}
 					</div>
 				</div>
 				<ul class="list_ty2">
-					<li>취소되는 보험기간은 <strong class="point">1일</strong>입니다.</li>
+					<li>취소되는 보험기간은 <strong class="point">-일</strong>입니다.</li>
 				</ul>
 
 				<!-- s: 꼭 알아두세요 -->
-				{{#> cp/notice dp-active=true }}
+				<!-- {{#> cp/notice dp-active=true }}
 					<ul class="list_depth">
 						<li>시작일이 지난 경우, 특약의 종료일을 오늘~종료 하루전까지로 변경하여 이용기간을 단축할 수 있습니다.</li>
 						<li>신청기간 확대를 원하시는 경우 늘어난 일정만큼 단기운전자 확대 특약 신청 메뉴에서 가입해주세요.</li>
 					</ul>
-				{{/ cp/notice }}
+				{{/ cp/notice }} -->
 				<!-- e: 꼭 알아두세요 -->
 			</div>
 		</div>
+		<!-- e: 25-05-19 수정 -->
 
 		<!-- s: 하단 고정 버튼 영역 -->
 		<div class="bottom_fix_wrap">
