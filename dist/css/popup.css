@@ -433,12 +433,19 @@
 .popup_wrap.confirm .popup_container .popup_inner .popup_cont .info_text + .list_ty2 {
 	margin-top: 1.6rem;
 }
-.popup_wrap.confirm .popup_container .popup_inner .popup_cont .info_text + .list_ty2 li {
+.popup_wrap.confirm .popup_container .popup_inner .popup_cont .list_ty2 > li,
+.popup_wrap.confirm .popup_container .popup_inner .popup_cont .list_depth > li {
 	padding: 0;
 }
-.popup_wrap.confirm .popup_container .popup_inner .popup_cont .info_text + .list_ty2 li::before {
+.popup_wrap.confirm .popup_container .popup_inner .popup_cont .list_ty2 > li::before,
+.popup_wrap.confirm .popup_container .popup_inner .popup_cont .list_depth > li::before {
+	display: inline-block;
 	position: static;
 	margin-right: 0.4rem;
+}
+.popup_wrap.confirm .popup_container .popup_inner .popup_cont .list_depth > li::before {
+	-webkit-transform: translateY(-100%);
+	transform: translateY(-100%);
 }
 .msg_icon.info_confirm {
 	padding-top: 4.8rem;
