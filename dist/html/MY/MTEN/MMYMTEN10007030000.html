@@ -40,7 +40,7 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>취소/해지정보확인 | 마이페이지 - 현대해상 다이렉트</title>
+		<title>운전자범위/연령변경 | 마이페이지 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -56,10 +56,11 @@
 					</div>
 
 					<div class="header_connect">
-						<h1 class="header_title">취소/해지정보확인</h1>
+						<h1 class="header_title">운전자범위/연령변경</h1>
 					</div>
 
 					<div class="header_right">
+						<button type="button" class="insChk" onclick="openHDPopup(this,'pop_insChk');"><span class="text">계약변경 팝업 열기</span></button>
 						<button type="button" class="allmenu_open"><span class="text">전체메뉴 열기</span></button>
 						<div class="nav_menu_wrap" aria-hidden="true">
 							<div class="nav_menu_inner">
@@ -336,111 +337,67 @@
 					<!-- s: content_top -->
 					<div class="content_top">
 						<h2 class="title_h2">
-							<strong>해지정보와 보험료</strong>
-							를
+							<strong>변경 기준일</strong>
+							을
 							<br />
-							확인해주세요
+							<strong>선택</strong>
+							해주세요
 						</h2>
 					</div>
 					<!-- e: content_top -->
 
-					<h3 class="title_h3">
-						해지정보(잔여기간 취소)
-						<div class="tooltip_wrap">
-							<div class="tooltip_head">
-								<button type="button" class="open trigger_btn" aria-expanded="false">
-									<i class="hd_icon popover_help"></i>
-									<span class="blind">툴팁 열기</span>
-								</button>
-							</div>
-							<div class="tooltip_panel" role="tooltip">
-								<div class="inner">
-									<p class="inner_title" aria-describedby="title">잔여기간 취소 안내</p>
-									<div class="inner_contents">
-										<p>
-											보험개시가 된 경우,
-											<strong>미경과된 시간단위 잔여기간에 대해 환급처리</strong>
-											할 수 있습니다.
-										</p>
-									</div>
+					<div class="info_gray">
+						<dl>
+							<dt>자동차번호</dt>
+							<dd>18루**22</dd>
+						</dl>
+						<dl>
+							<dt>보험기간</dt>
+							<dd>2025.04.30~2025.05.02</dd>
+						</dl>
+					</div>
 
-									<button type="button" class="close"><span class="blind">툴팁 닫기</span></button>
+					<div class="info_cont">
+						<div class="form_group_wrap">
+							<div class="form_line">
+								<div class="label_tit">시작일(00시)</div>
+								<div class="input_text calendar">
+									<div class="inp">
+										<input type="tel" class="inp_picker" placeholder="날짜를 선택하세요" value="2024.08.21" title="날짜를 입력해주세요" />
+										<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+										<button type="button" class="btn calendar_call" title="날짜 선택"></button>
+									</div>
 								</div>
 							</div>
-						</div>
-					</h3>
-					<div class="table_wrap">
-						<table class="table">
-							<caption>자동차번호, 보험기간, 취소일시, 취소일(시간) 제공</caption>
-							<colgroup>
-								<col style="width: 35%" />
-								<col style="width: 65%" />
-							</colgroup>
-							<tbody>
-								<tr>
-									<th scope="row">자동차번호</th>
-									<td>18루**22</td>
-								</tr>
-								<tr>
-									<th scope="row">보험기간</th>
-									<td>
-										2025.01.22 00시 14분 ~
-										<br />
-										2025.01.24 24시 00분
-									</td>
-								</tr>
-								<tr>
-									<th scope="row">취소일시</th>
-									<td>2025.04.29 20시</td>
-								</tr>
-								<tr>
-									<th scope="row">취소일(시간)</th>
-									<td>9일 20시간</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+							<ul class="list_ty2">
+								<li>변경기준일의 00시부터 보험종료일 24시까지 변경내용의 효력이 발생합니다.</li>
+							</ul>
 
-					<h3 class="title_h3">보험료</h3>
-					<div class="table_wrap">
-						<table class="table">
-							<caption>환급 보험료 제공</caption>
-							<colgroup>
-								<col style="width: 35%" />
-								<col style="width: 65%" />
-							</colgroup>
-							<tbody>
-								<tr>
-									<th scope="row">환급 보험료</th>
-									<td>
-										<strong class="point">15,000원</strong>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-
-					<div class="space_list_ty2">
-						<div class="inp_checkbox rd_box">
-							<input type="checkbox" id="checkbox01-1" />
-							<label for="checkbox01-1" class="chk_label chk_label_ty3">
-								<span class="label_cont">
-									<strong class="ess ess_t1">필수</strong>
-									보험기간이
-									<strong class="point">12시간 이내인 경우에는 해약환급금이 없으며,</strong>
-									보험기간이 12시간 초과인 경우에는 기본 12시간 공제 후 잔여 시간만 환급처리됩니다.
-								</span>
-							</label>
-						</div>
-						<div class="inp_checkbox rd_box">
-							<input type="checkbox" id="checkbox01-1" />
-							<label for="checkbox01-1" class="chk_label chk_label_ty3">
-								<span class="label_cont">
-									<strong class="ess ess_t1">필수</strong>
-									환급보험료는 조회시점을 기준으로 확인되는 보험료로
-									<strong class="point">현재 시간 기준으로 계산된 경과보험료를 제외한 나머지 금액을 시간단위로 환급됩니다.</strong>
-								</span>
-							</label>
+							<div class="info_gray ty2">
+								<div class="insurance_policyBox">
+									<div class="insurance_date">
+										<div class="insurance_barbox ty2">
+											<!-- s: 진행영역 -->
+											<!-- 
+														접근성 준수를 위해서 해당 구간은 약식 정보를 전달합니다.
+														전달정보는 aria-label="변경기간 365일" 형태로 제공됩니다.
+														ex) <span id="plnInagDay">200일</span> 일 경우 aria-label="보험기간 200일"
+													-->
+											<div class="progress_box_ty2" role="img" aria-label="변경기간 220일">
+												<i class="start">시작일</i>
+												<span id="plnIng" class="ing">
+													<span class="date" id="planCarTerm">
+														<span id="plnInagDay">220일</span>
+													</span>
+													<i class="newStart">기준일</i>
+													<i class="end right">종료일</i>
+												</span>
+											</div>
+											<!-- e: 진행영역 -->
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -456,9 +413,7 @@
 			</div>
 			<!-- s: 하단 고정 버튼 영역 -->
 		</div>
-
 		<!-- s: popup area -->
-
 		<!-- s: 자동차 배서 메뉴 -->
 		<!-- s: 자동차 계약변경 -->
 		<div class="popup_wrap full" id="pop_insChk" role="dialog" aria-hidden="true">

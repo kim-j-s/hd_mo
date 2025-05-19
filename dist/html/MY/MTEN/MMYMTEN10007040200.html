@@ -40,7 +40,7 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>팝업 | 가이드 - 현대해상 다이렉트</title>
+		<title>운전자범위/연령변경 | 마이페이지 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -48,20 +48,36 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body>
-		<!-- s: alert -->
-		<div class="popup_wrap comfirm active" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="false">
+		<!-- s: popup area -->
+		<div class="popup_wrap bottom active" id="ex_popup_bottom" role="dialog" aria-modal="true" aria-hidden="false">
 			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('ex_popup_bottom');"></div>
 				<div class="popup_inner">
-					<div class="popup_head"></div>
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head"><div class="popup_head_title">보험가입경력 인정 안내</div></div>
 
 					<div class="popup_cont">
 						<div class="popup_content">
-							<p class="info_text">
-								alert 내용 입력
-								<br />
-								alert 내용 입력
+							<p class="text_sub">
+								자동차보험
+								<strong>가입경력이 3년 미만인 운전자</strong>
+								가 운전범위에 포함된 경우, 가입경력인정제도를 통해 향후
+								<strong>보험료를 절감</strong>
+								할 수 있습니다.
 							</p>
+							<ul class="list_ty3">
+								<li>자동차보험 가입시 운전범위에 따라 기명피보험자 이외의 운전자(가족, 지정1인 등)를 가입경력인정자로 등록하시면 해당 운전자가 향후 본인명의로 자동차보험을 가입할 때 가입경력을 인정받아 보험료를 절감할 수 있습니다.</li>
+								<li>
+									가입경력인정자 등록방법: 보험가입 완료 후 자동차 계약변경-
+									<strong>[가입경력인정자 신청 입력]</strong>
+									메뉴를 통해 등록하실 수 있습니다.
+								</li>
+								<li>운전범위에 따라 최대 2명까지 홈페이지 및 다이렉트 콜센터(1588-5656)을 통해 등록가능하며, 홈페이지 등록시 계약자의 전자서명 또는 휴대폰직접서명이 필요합니다.</li>
+								<li>과거 관공서 및 법인체에서 운전직으로 근무한 경력이나, 군에서 운전관련특기로 복무한 경력이 있을 경우, 보험가입 시 해당 증명서 제출을 통해 가입경력을 인정 받으실 수 있습니다.</li>
+								<li>다이렉트 콜센터(1588-5656)를 통해 증명서(운전직: 재직증명서 / 군경력: 병무청 발행 병적기록표 등) 제출시 계약체결 후에도 가입경력 인정이 가능합니다.</li>
+							</ul>
 						</div>
 					</div>
 					<div class="popup_bottom">
@@ -71,9 +87,10 @@
 							</button>
 						</div>
 					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('ex_popup_bottom');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
-		<!-- e: alert -->
+		<!-- e: popup area -->
 	</body>
 </html>
