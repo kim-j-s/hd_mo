@@ -1027,7 +1027,7 @@ $(function(){
 
 	// 진입 시 
 	$('.input_text').each(function() {
-		if( $(this).hasClass('readonly') && $(this).hasClass('readonly') ){
+		if( $(this).hasClass('phone') && $(this).hasClass('readonly') ){
 			const $inp = $(this).children('.inp').find('input');
 			let val = $inp.val();
 			console.log(val);
