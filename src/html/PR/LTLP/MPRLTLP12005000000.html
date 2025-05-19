@@ -39,16 +39,22 @@
 				</div>
 				<div class="form_line">
 					<div class="label_tit">휴대폰번호</div>
-					{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" readonly=true }}
+					<!-- s: 25-05-19 수정 -->
+					{{> cp/text class="phone" type="tel" placeholder="-없이 입력" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+					<!-- e: 25-05-19 수정 -->
 				</div>
 				<div class="form_line">
 					<div class="label_tit">이메일</div>
 					<!-- s: 05-05-12 수정 -->
-					{{> cp/text type="email" inpclass="email_auto" placeholder="이메일을 입력하세요" inp-title="이메일 입력" }}
+					<!-- s: 25-05-19 수정 -->
+					{{> cp/text type="email" inpclass="email_auto" placeholder="이메일 입력" inp-title="이메일 입력" }}
+					<!-- e: 25-05-19 수정 -->
 					<!-- e: 05-05-12 수정 -->
 				</div>
 				<div class="form_line">
-					<div class="label_tit">우편물 수령지</div>
+					<!-- s: 25-05-19 수정 -->
+					<div class="label_tit">주소</div>
+					<!-- e: 25-05-19 수정 -->
 					<div class="radio_group_wrap">
 						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt1" name="radio_address" labelname="집" checked=true }}
 						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt2" name="radio_address" labelname="직장" }}

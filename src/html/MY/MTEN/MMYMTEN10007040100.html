@@ -1,0 +1,99 @@
+{{#> layout/default page-title="운전자범위/연령변경 | 마이페이지"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="운전자범위/연령변경" }}
+		<div id="container" class="container">
+			<div class="content">
+				<!-- s: content_top -->
+				<div class="content_top">
+					<h2 class="title_h2">
+						변경할 운전자 범위를 <br>선택해주세요
+					</h2>
+					<div class="btn_area basic">
+						{{> cp/button type="3" size="5" b-text="가입경력인정제도 안내" rightIcon="arrowRightSvg" popup="ex_popup_bottom"}}
+					</div>
+				</div>
+				<!-- e: content_top -->
+				
+				<div class="info_gray">
+					<dl>
+						<dt>운전자 연령범위</dt>
+						<dd>만 48세 이상 부부한정</dd>
+					</dl>
+				</div>
+				<div class="select_driver_range">
+					<div class="radio_group_wrap_ty2" role="radiogroup">
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt1" name="radio_gt1" labelname="본인만" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt2" name="radio_gt1" labelname="부부" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt3" name="radio_gt1" labelname="가족" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt4" name="radio_gt1" labelname="누구나" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt5" name="radio_gt1" labelname="임직원" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt6" name="radio_gt1" labelname="본인+1인" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt7" name="radio_gt1" labelname="부부+1인" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt8" name="radio_gt1" labelname="부부+자녀" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt9" name="radio_gt1" labelname="본인+자녀" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt10" name="radio_gt1" labelname="자녀" }}
+					</div>
+					
+					<div class="driver_relationship_state">
+						<div class="relationship_box">
+							<div class="rel_case1">
+								<span class="ty1">나의 부모</span>
+								<span class="ty2">배우자의 부모</span>
+							</div>
+							<div class="rel_case2">
+								<span>김*대님</span>
+							</div>
+							<div class="rel_case3">
+								<span>배우자</span>
+							</div>
+							<div class="rel_case4">
+								<span class="ty2">임직원<i>개인사업자<br />전용</i></span>
+							</div>
+							<div class="rel_case5">
+								<span>자녀와 자녀의 배우자</span>
+							</div>
+							<div class="rel_case6">
+								<span class="ty2">지정1인</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- s: 하단 고정 버튼 영역 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="1" b-text="선택 중이에요" disabled=true }}
+				<!-- {{> cp/button type="1" size="1" b-text="본인만으로" }} -->
+			</div>
+		</div>
+		<!-- s: 하단 고정 버튼 영역 -->
+	</div>
+
+	<!-- s: popup area -->
+    <!-- s: 자동차 배서 메뉴 -->
+	{{> pages/pop1 }}
+	<!-- e: 자동차 배서 메뉴 -->
+	 
+	<!-- s: 자녀한정 선택 시, 변경불가 alert -->
+	{{#> popup/popup_comfirm popup-active=true popup-id="pop_type01" no-header=true }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<p class="info_text">자녀운전자한정특약은 홈페이지에서 변경하실 수 없습니다.</p>
+            <ul class="list_ty2">
+                <li>피보험자 본인은 운전범위에 해당되지 않습니다.</li>
+                <li>피보험자가 기준인 일부 특약에 가입하실 수 없습니다.</li>
+                <li>운전범위 변경을 원하시는 경우 대표콜센터(1588-5656)로 연락주시기 바랍니다.</li>
+            </ul>
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="2" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_comfirm}}
+	<!-- e: 자녀한정 선택 시, 변경불가 alert -->
+	<!-- e: popup area -->
+{{/ layout/default }}
