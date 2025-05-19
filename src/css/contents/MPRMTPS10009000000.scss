@@ -12,10 +12,22 @@
 			height: calc(100% - 32px);
 			border-left: 1px solid #CDD1D5;
 		}
+		[class ^="title_"] {
+			&.side_b {
+				padding-right: 60px;
+			}
+		}
+		> .sic_modify {
+			position: absolute;
+			top: 3px;
+			right: 0;
+
+		}
 	}
 
 	.summary_ii_top {
-		padding-left: 40px;
+		padding: 1px 0 1px 40px;
+		//  padding-left: 40px;
 		background-repeat: no-repeat;
 		background-position: left top;
 		background-size: 32px auto;
@@ -39,6 +51,11 @@
 			background-image: url(../images/content/mtps/icon_MPRMTPS10009000000_06.svg);
 		}
 
+		+ .summary_ii_cont {
+			margin-top: 16px;
+		}
+
+
 	}
 
 	.summary_ii_cont {
@@ -46,7 +63,38 @@
 		padding-left: 40px;
 	}
 
+	.sic_cont_inner {
+		position: relative;
+		+ .sic_cont_inner {
+			margin-top: 40px;
+		}
+		.title_h4 {
+			+ .sic_list {
+				margin-top: 16px;
+			}
+		}
+		> .sic_modify {
+			position: absolute;
+			top: 1px;
+			right: 0;
+		}
+	}
+
 	.sic_list {
+		> li {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+			font-size: var(--font-size-body-small);		
+			+ li {
+				margin-top: 16px;
+			}
+		}
+		.sic_list_l {
+			color: var(--color-text-subtle);
+		}
+		.sic_list_r {
+		}
 
 	}
 }
