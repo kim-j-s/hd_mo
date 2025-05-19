@@ -1,0 +1,72 @@
+{{#> layout/default page-title="계피상이 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-back=true h-title="피보험자 가입 내용 확인" no-nav=true }}
+
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
+				<h2 class="title_h2">
+					<strong>피보험자</strong>(보장받으실 분)의<br/>
+					<strong>가입 내용 확인</strong>이 필요합니다.
+				</h2>
+			</div>
+			<!-- e: content_top -->
+			<div class="info_cont">			
+				<div class="title_h3">피보험자(보장 받으실 분)</div>
+
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">주민등록번호</div>
+						<div class="comp_wrap birth">
+							{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" value="890101" }}
+							<span class="dash">-</span>
+							<div class="id_pass_box">
+								{{> cp/text type="tel" minlength="1" maxlength="1" inp-title="주민등록번호 뒷1자리 입력" value="1" no_del="flase" }}
+								<div class="id_pass">
+									●●●●●●
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form_line">
+						<div class="label_tit">이름</div>
+						{{> cp/text placeholder="입력해주세요" value="김현대" }}
+					</div>
+
+					<div class="form_line">
+						<div class="label_tit">휴대폰번호</div>
+						<div class="comp_wrap key_number">
+							{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+							{{> cp/button type="3" size="4" b-text="인증번호요청"}}
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- s: 꼭 알아두세요 -->
+			{{#> cp/notice dp-active=true }}
+				<ul class="list_depth">
+					<li>다른사람 보험가입(계약자와 피보험자가 다른 경우) 진행 시, 관련법률에 따라 피보험자의 보험가입 동의가 필요합니다.</li>
+					<li>계약체결 및 변경, 해지와 환급금 수령 권한 등이 계약자에게 있으므로 신중하게 진행해주세요.</li>
+					<li>피보험자 동의는 5분 이내에 완료되어야 합니다.</li>
+				</ul>
+			{{/ cp/notice }}
+			<!-- e: 꼭 알아두세요 -->
+		</div>
+	</div>
+
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="동의 및 인증하기" popup="pop_01" }}
+		</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
+</div>
+
+<!-- s: popup area -->
+<!-- e: popup area -->
+{{/ layout/default }}

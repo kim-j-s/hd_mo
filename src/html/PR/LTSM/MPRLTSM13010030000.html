@@ -1,0 +1,71 @@
+{{#> layout/default page-title="계피상이 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="피보험자 가입 내용 확인" }}
+
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
+				<h2 class="title_h2">
+					<strong>피보험자</strong>(보장받으실 분)의<br/>
+					<strong>가입 내용 확인</strong>이 필요합니다.
+				</h2>
+			</div>
+			<!-- e: content_top -->
+			<div class="info_cont">			
+				<div class="title_h3">피보험자(보장 받으실 분)</div>
+
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">주민등록번호</div>
+						<div class="comp_wrap birth">
+							{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" value="890101" readonly=true }}
+							<span class="dash">-</span>
+							<div class="id_pass_box">
+								<div class="id_pass">●●●●●●●</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form_line">
+						<div class="label_tit">이름</div>
+						{{> cp/text placeholder="플레이스홀더" readonly=true value="김현대" inp-title="Readonly" }}
+					</div>
+					
+					<div class="form_line">
+						<div class="label_tit">계약자와의 관계</div>
+						<div class="radio_group_wrap_ty2" role="radiogroup">
+							{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt1" name="radio_gt1" labelname="배우자" checked=true }}
+						</div>
+					</div>
+
+					<div class="form_line">
+						<div class="label_tit">휴대폰번호</div>
+						<div class="comp_wrap key_number">
+							{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+							{{> cp/button type="3" size="4" b-text="인증번호요청"}}
+						</div>
+						<ul class="list_ty2">
+							<li>피보험자의 스마트폰만 이용 가능합니다.</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="정보를 입력 중이에요" disabled=true }}
+			<!-- {{> cp/button type="1" size="1" b-text="확인 요청 알림톡(문자) 발송" }} -->
+		</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
+</div>
+
+<!-- s: popup area -->
+<!-- e: popup area -->
+{{/ layout/default }}
