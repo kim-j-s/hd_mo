@@ -1885,11 +1885,40 @@
 	border-top: 1px solid var(--color-divider-gray-light);
 }
 /* 자동차보험 - 입력정보 요약 */
+.sii_wrap {
+	padding-bottom: 6rem;
+}
+.sii_wrap .tag_item_wrap {
+	padding-bottom: 3.2rem;
+	background-color: #fff;
+}
+.sii_wrap .tag_item_wrap.sticky {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+.sii_wrap .tag_item_wrap.sticky::before {
+	content: "";
+	position: absolute;
+	top: -1.6rem;
+	left: -1.6rem;
+	width: calc(100% + 3.2rem);
+	height: 1.6rem;
+	background-color: #fff;
+}
+.summary_ii {
+	--sili-space: 5.2rem;
+	overflow: hidden;
+}
 .summary_ii > li {
 	position: relative;
+	padding-bottom: var(--sili-space);
 }
-.summary_ii > li + li {
-	margin-top: 5.2rem;
+.summary_ii > li:last-child {
+	padding-bottom: 0;
+}
+.summary_ii > li:last-child::after {
+	content: none;
 }
 .summary_ii > li::before {
 	content: "";
@@ -1898,6 +1927,14 @@
 	left: 1.6rem;
 	height: calc(100% - 3.2rem);
 	border-left: 1px solid #cdd1d5;
+}
+.summary_ii > li::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 1.6rem;
+	height: var(--sili-space);
+	border-left: 1px solid #fff;
 }
 .summary_ii > li [class^="title_"].side_b {
 	padding-right: 6rem;
@@ -1934,6 +1971,9 @@
 .summary_ii .summary_ii_top + .summary_ii_cont {
 	margin-top: 1.6rem;
 }
+.summary_ii .summary_ii_top.active {
+	background-color: blue;
+}
 .summary_ii .summary_ii_cont {
 	position: relative;
 	padding-left: 4rem;
@@ -1962,13 +2002,25 @@
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
+	gap: 0.8rem;
 	font-size: var(--font-size-body-small);
 }
 .summary_ii .sic_list > li + li {
 	margin-top: 1.6rem;
 }
 .summary_ii .sic_list .sic_list_l {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+	max-width: 13rem;
 	color: var(--color-text-subtle);
+	word-break: keep-all;
+}
+.summary_ii .sic_list .sic_list_r {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 0px;
+	flex: 1 1 0;
+	text-align: right;
 }
 /* 운전자보험 - 보험료확인 */
 /* 운전자보험 | 보험료확인 */
@@ -2952,7 +3004,8 @@ ul + .form_group_wrap {
 }
 .info_cont + .form_group_wrap,
 .info_cont + .acd_item_ty2,
-.info_cont + .acd_item_ty7 {
+.info_cont + .acd_item_ty7,
+.info_cont + .info_gray {
 	margin-top: 3.2rem;
 }
 .info_cont + .link_area {
