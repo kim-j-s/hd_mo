@@ -1,0 +1,95 @@
+{{#> layout/default page-title="해외여행보험 기간연장 | 마이페이지"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="해외여행보험 기간연장" }}
+		<div id="container" class="container">
+			<div class="content">
+				<div class="content_top">
+					<div class="info_gray">
+						<p class="info_text">보험기간 종료일은 현재 보험기간 종료일 이후로 선택 가능합니다.</p>
+					</div>
+				</div>
+					
+				<!-- s: 보험기간(변경 전) -->
+				<div class="form_box">
+					<h3 class="title_h3">보험기간(변경 전)</h3>
+					<div class="form_group_wrap">
+						<div class="info_gray">
+							<h4 class="title_h4">무배당현대해상다이렉트H건강보험(Hi2301)</h4>
+							<dl>
+								<dt>보험기간</dt>
+								<dd class="point"><strong>2025.01.01 08시<br/>~2025.01.13 16시</strong></dd>
+							</dl>
+							<dl>
+								<dt>계약번호</dt>
+								<dd>F2023****761</dd>
+							</dl>
+							<dl>
+								<dt>계약자</dt>
+								<dd>김*대</dd>
+							</dl>
+							<dl>
+								<dt>보험료</dt>
+								<dd>49,900원</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<!-- e: 보험기간(변경 전) -->
+
+				<!-- s: 보험기간(변경 후) -->
+				<div class="form_box">
+					<h3 class="title_h3">보험기간(변경 후)</h3>
+					<div class="form_group_wrap">
+						<div class="row">
+							<div class="form_line grow">
+								<div class="label_tit">시작일</div>
+								{{> cp/text cal=true disabled=true value="2025.01.01"}}
+							</div>
+							<div class="form_line grow">
+								<div class="label_tit">종료일</div>
+								{{> cp/text cal=true value="2025.01.05" }}
+							</div>
+						</div>
+						<ul class="list_ty2">
+							<li>보험기간 변경 시 날짜만 변경이 가능합니다.(시간 변경불가)</li>
+						</ul>
+					</div>
+				</div>
+				<!-- e: 보험기간(변경 후) -->
+
+				<!-- s: 혹시, 보험사고가 있었나요? -->
+				<div class="form_box">
+					<h3 class="title_h3">혹시, 보험사고가 있었나요?</h3>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">보험기간 중 보험금 지급사유가 이미 발생한 경우, 보험기간을 연장할 수 없습니다.</div>
+							<div class="radio_group_wrap" role="radiogroup">
+									{{> cp/radio rd-class="rd_btn" rd-id="checktype01_01" name="checktype01" labelname="예" }}
+									{{> cp/radio rd-class="rd_btn" rd-id="checktype01_02" name="checktype01" labelname="아니요" }}
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- e: 혹시, 보험사고가 있었나요? -->
+
+				<!-- s: 꼭 알아두세요 -->
+				{{#> cp/notice dp-active=true }}
+					<ul class="list_depth">
+						<li>연장된 기간에 따라 보험료가 추가 발생할 수 있습니다.</li>
+						<li>해외여행보험 기간 연장은 최초 보험개시일로부터 최대 3개월까지 가능합니다.</li>
+						<li>보험기간 중 보험금 지급사유와 관련된 사고가 이미 발생한 경우 보험기간을 연장할 수 없습니다.</li>
+						<li>보험사고가 발생한 경우 다이렉트 고객센터(1899-6782, 평일 09:00~18:00)로 문의해 주세요.(해외에서 전화걸 때: +82-2-2628-2000)</li>
+					</ul>
+				{{/ cp/notice }}
+				<!-- e: 꼭 알아두세요 -->
+			</div>
+		</div>
+		
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="1" b-text="다음"  }}
+			</div>
+		</div>
+	</div>
+
+{{/ layout/default }}

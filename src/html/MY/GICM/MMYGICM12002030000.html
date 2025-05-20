@@ -1,0 +1,73 @@
+{{#> layout/default page-title="보험료결제 | 마이페이지"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="보험료결제" }}
+		<div id="container" class="container">
+			<div class="content">
+				<!-- s: content_top -->
+				<div class="content_top">					
+						<div class="bg_top_cover ty2">
+							<div class="info_gray bg_etc01">
+								<div class="total">
+									<dl>
+										<dt>결제할 보험료</dt>
+										<dd>
+											<strong class="big">10,900원</strong>
+										</dd>
+									</dl>
+								</div>
+								<div class="info_top_cont">
+									<dl>
+										<dt>변경 전 보험료</dt>
+										<dd>39,000원</dd>
+									</dl>
+									<dl>
+										<dt>변경 후 보험료</dt>
+										<dd>49,900원</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+				</div>
+				<!-- e: content_top -->
+			
+				<!-- s: 결제할 보험료가 있는 경우 노출 -->
+				<div class="form_box">
+					<div class="info_gray">
+						<p class="info_text">계약자 김현대님의 카드만 이용할 수 있어요.<br/>(해외발급, 법인, 가족카드 이용 불가)</p>
+					</div>
+					<h3 class="title_h3">신용카드 정보 입력</h3>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">카드사</div>
+							{{> cp/selectitem si_ph="카드사 선택" si_title="카드사 선택" }}
+						</div>
+						<div class="form_line">
+							<div class="label_tit">카드번호</div>
+							<div class="comp_wrap card">
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" no_del="flase" }}
+								<span class="dash">-</span>
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="flase" }}
+								<span class="dash">-</span>
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
+								<span class="dash">-</span>
+								{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" inp-title="카드 마지막번째 4자리 입력" no_del="flase" }}
+							</div>
+						</div>
+						<div class="form_line">
+							<div class="label_tit">유효기간</div>
+							{{> cp/text placeholder="MMYY" minlength="4" maxlength="4" inp-title="유효기간 입력" }}
+						</div>
+					</div>
+				</div>
+				<!-- e: 결제할 보험료가 있는 경우 노출 -->
+			</div>
+		</div>
+		
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="1" b-text="전자 서명하기"  }}
+			</div>
+		</div>
+	</div>
+
+{{/ layout/default }}
