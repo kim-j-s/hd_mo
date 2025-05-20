@@ -1,0 +1,89 @@
+{{#> layout/default page-title="해지일자선택 | 마이페이지"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="해지일자선택" }}
+		<div id="container" class="container">
+			<div class="content">
+				<!-- s: content_top -->
+				<div class="content_top">
+					<h2 class="title_h2">
+						해지일자를 선택한 후 <strong>마일리지<br/>정산 유무</strong>를 <strong>선택</strong>해주세요
+					</h2>
+				</div>
+				<!-- e: content_top -->
+
+				<div class="info_cont">
+					<div class="card_item_wrap">
+						<div class="card_item">
+							<div class="item_inner">
+								<div class="inp_radio">
+									<input type="radio" id="card_radio1" name="name1" aria-labelledby="card_radio1_cont">
+									<label for="card_radio1" class="chk_label"></label>
+									<i></i>
+								</div>
+								<div class="inner_cont">
+									<div class="item_top" id="card_radio1_cont">
+										<div class="title_info">
+											<div class="main_title">18루**22<br/>Hicar개인용(CM)</div>
+										</div>
+									</div>
+
+									<ul class="card_list_ty1">
+										<li>
+											<div class="title">등록일지(해지일자)</div>
+											<div class="cont">2025.05.08</div>
+										</li>
+										<li>
+											<div class="title">등록구분</div>
+											<!-- s: 양도인경우 -->
+											<div class="cont">앙도</div>
+											<!-- e: 양도인경우 -->
+
+											<!-- s: 말소인경우 -->
+											<!--<div class="cont">말소</div>-->
+											<!-- e: 말소인경우 -->
+										</li>
+										<li>
+											<div class="title">소유주</div>
+											<!-- s: 양도인경우 -->
+											<div class="cont">하*현</div>
+											<!-- e: 양도인경우 -->
+
+											<!-- s: 말소인경우 -->
+											<!--<div class="cont">-</div>-->
+											<!-- e: 말소인경우 -->
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<ul class="list_ty2">
+						<li>해지대상 차량의 <strong class="point">최근 등록변경 사항</strong>입니다. 다른 날짜로 해지가 필요하신 경우 대표콜센터(1588-5656)로 연락주시기 바랍니다.</li>
+						<li>해지일자 착오시 의무보험 미가입 과태료가 부과될 수 있으니 유의하시기 바랍니다.</li>
+					</ul>
+				</div>
+			
+				<!-- s: 선택 후 노출되는 데이터 영역 -->
+				<div class="info_gray">
+					<p class="info_text">계약해지 대상기간은 양도/말소일 2025.05.08로부터 <strong class="point">13일</strong>입니다.</p>
+				</div>
+				<!-- e: 선택 후 노출되는 데이터 영역 -->
+			</div>
+		</div>
+
+		<!-- s: 하단 고정 버튼 영역 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="3" size="1" b-text="마일리지 정산안함" disabled=true}}
+				{{> cp/button type="1" size="1" b-text="마일리지 해지정산" disabled=true}}
+
+				<!-- s: 선택 후 버튼 활성화 처리 -->
+				<!-- {{> cp/button type="3" size="1" b-text="마일리지 정산안함"}}
+				{{> cp/button type="1" size="1" b-text="마일리지 해지정산"}} -->
+				<!-- e: 선택 후 버튼 활성화 처리 -->
+			</div>
+		</div>
+		<!-- s: 하단 고정 버튼 영역 -->
+
+	</div>
+{{/ layout/default }}

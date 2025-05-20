@@ -1,0 +1,63 @@
+{{#> layout/default page-title="주행거리정보입력(커넥티드) | 마이페이지"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="주행거리정보입력(커넥티드)" }}
+		<div id="container" class="container">
+			<div class="content">
+				<!-- s: content_top -->
+				<div class="content_top">
+					<h2 class="title_h2">
+						<strong>주행거리정보</strong>를<br/><strong>확인</strong>해주세요
+					</h2>
+				</div>
+				<!-- e: content_top -->
+			
+        <div class="table_wrap">
+					<h3 class="title_h3">커넥티드 마일리지 제조사 조회결과</h3>
+					<table class="table table_c">
+						<caption>구분, 조회일자, 주행거리 제공</caption>
+						<colgroup>
+							<col style="width:30%;">
+							<col style="width:35%;">
+							<col style="width:35%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">구분</th>
+								<th scope="col">조회일자</th>
+								<th scope="col">주행거리</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>최초 주행거리</td>
+								<td>2023.08.26</td>
+								<td>23,086Km</td>
+							</tr>
+							<tr>
+								<td>해지 주행거리</td>
+								<td>2024.07.19</td>
+								<td>39,822Km</td>
+								<!-- s: 커넥티드_조회실패 -->
+								<!-- <td class="point">조회실패</td> -->
+								<!-- e: 커넥티드_조회실패 -->
+							</tr>
+							
+						</tbody>
+					</table>
+				</div>
+
+        <ul class="list_ty2">
+          <li>해지 주행거리는 현재시점의 제조사 조회결과이며, 해지일 기준 --45일~+30일 기간에 표함되어야 합니다.</li>
+        </ul>
+			</div>
+		</div>
+		
+    <!-- s: 하단 고정 버튼 영역 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="1" b-text="다음"  }}
+			</div>
+		</div>
+    <!-- e: 하단 고정 버튼 영역 -->
+	</div>
+{{/ layout/default }}
