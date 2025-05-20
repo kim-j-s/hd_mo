@@ -17,6 +17,7 @@
 								<!-- 문구 없을 시, no_text 클래스 추가 -->
 								<p class="head_text">
 									월 보험료(1년 만기)
+									<!-- 연 보험료(1년 만기)-->
 									<span class="price">
 										<strong class="price_num">40,580</strong><span class="won">원</span>
 									</span>
@@ -42,9 +43,10 @@
 						<div class="simple_info_item">
 							<ul class="sii_list">
 								<li>
-									<span class="sii_list_l">보험료</span>
+									<span class="sii_list_l">월 보험료</span>
+									<!-- <span class="sii_list_l">연 보험료</span> -->
 									<span class="sii_list_r">
-										<strong class="price">19,460원</strong>
+										<strong class="price">40,580원</strong>
 									</span>
 								</li>
 								<li>
@@ -72,15 +74,15 @@
 						<div class="space_list_ty2">
 							<div class="acd_item acd_item_ty2">
 								{{#> cp/accordion ac-title="급여의료비" ac-active=true }}
-								<ul class="coverage_item_list_ty2">
+								<ul class="coverage_item_list">
 									<li class="list">
-										<div class="item_title">상해급여실손의료비(갱신형)</div>
+										<div class="item_title_ty2">상해급여실손의료비(갱신형)<strong>1,995원</strong></div>
 										<div class="sub_txt_area">
 											{{> cp/linkButton bl_class="price_btn" bl_text="5천만원" role_b=true question_tit="가입조건변경" }}
 										</div>
 									</li>
 									<li class="list">
-										<div class="item_title">질병급여실손의료비(갱신형)</div>
+										<div class="item_title_ty2">질병급여실손의료비(갱신형)<strong>17,756원</strong></div>
 										<div class="sub_txt_area">
 											{{> cp/linkButton bl_class="price_btn" bl_text="5천만원" role_b=true question_tit="가입조건변경" }}
 										</div>
@@ -89,24 +91,24 @@
 								{{/ cp/accordion }}
 							</div>
 							<div class="acd_item acd_item_ty2">
-								{{#> cp/accordion ac-title="비급여의료비" acl="빠른 일상 생활 복귀!" ac-active=true }}
+								{{#> cp/accordion ac-title="비급여의료비" ac-active=true }}
 								<ul class="coverage_item_list">
 									<li class="list">
-										<div class="item_title">상해비급여실손의료비(갱신형)</div>
+										<div class="item_title_ty2">상해비급여실손의료비(갱신형)<strong>1,739원</strong></div>
 										<div class="sub_txt_area">
 											{{> cp/linkButton bl_class="price_btn" bl_text="5천만원" role_b=true question_tit="가입조건변경" }}
 										</div>
 									</li>
 									<li class="list">
-										<div class="item_title">질병비급여실손의료비(갱신형)</div>
+										<div class="item_title_ty2">질병비급여실손의료비(갱신형)<strong>13,597원</strong></div>
 										<div class="sub_txt_area">
 											{{> cp/linkButton bl_class="price_btn" bl_text="5천만원" role_b=true question_tit="가입조건변경" }}
 										</div>
 									</li>
 									<li class="list">
-										<div class="item_title">3대비급여실손의료비(갱신형)</div>
+										<div class="item_title_ty2">3대비급여실손의료비(갱신형)<strong>12,383원</strong></div>
 										<div class="sub_txt_area">
-											{{> cp/linkButton bl_class="price_btn" bl_text="3백5십만원" role_b=true question_tit="가입조건변경" }}
+											{{> cp/linkButton bl_class="price_btn" bl_text="5천만원" role_b=true question_tit="가입조건변경" }}
 										</div>
 									</li>
 								</ul>
@@ -119,8 +121,8 @@
 						<div class="form_line">
 							<div class="label_tit">의료급여수급권자 여부</div>
 							<div class="radio_group_wrap" role="radiogroup">
-								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_g1" name="radio_g1" labelname="대상" checked=true }}
-								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_g2" name="radio_g1" labelname="비대상" }}
+								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_g1" name="radio_g1" labelname="대상" }}
+								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_g2" name="radio_g1" labelname="비대상" checked=true }}
 							</div>
 						</div>
 					</div>
