@@ -1,0 +1,36 @@
+<!---
+화면번호 : MMYLOAN10002020000
+경로 : 보험계약대출 신청 > 대출신청금액입력 > 이중출금 안내 
+-->
+{{#> layout/default page-title="이중출금 안내  | 상품"}}
+
+<!-- s: Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="만기알람을 신청하세요"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- s: .popup_content_top -->
+		<div class="popup_content_top">
+				<ul class="list_ty3">
+				<li>대출이자가 자동이체로 빠져나갈 예정이에요.</li>
+				<li>지금 대출(상환) 시 이자가 이중출금되며, 이중출금된 금액은 <strong class="point">2일 (영업일 기준) 후 자동이체계좌로 돌려받아요.</strong></li>
+				<li>이 대출 건의 대출(상환)을 취소하려면 [취소]를 눌러주세요. </li>
+			</ul>
+		</div>
+		<!-- e: .popup_content_top -->
+
+		<div class="checkbox_group_wrap">
+			{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-1" label_class="chk_label_ty3" labelname="이중출금 안내를 확인했어요." }}
+		</div>
+	</div>
+</div>
+
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="3" size="2" b-text="취소"}}
+		{{> cp/button type="1" size="2" b-text="다음"}}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: Bottom 팝업 -->
+ 
+{{/ layout/default }}
