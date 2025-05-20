@@ -451,9 +451,6 @@
 			return;
 		}
 
-		// $this.closest('.position_event_tab').find('.tag_item').removeClass('active');
-		// $this.addClass('active');
-
 		const posInfo = $point.offset().top;
 
 		if ($this.closest('.popup_cont').length) {
@@ -465,6 +462,10 @@
 				scrollTop: posInfo - (popupContTop + $wrapHeight)
 			}, 500, function () {
 				pe = true; // 애니메이션 끝난 후 다시 열림
+				setTimeout(function () {
+					$this.closest('.position_event_tab').find('.tag_item').removeClass('active');
+					$this.addClass('active');
+				}, 10);
 			});
 		} else {
 			pe = true; // 조건 미충족 시도라도 열어둠
@@ -1057,40 +1058,45 @@ $(function(){
 	});
 
 
-	// $(window).on('scroll', function () {
-  //   const scrollTop = $(window).scrollTop();
-
-  //   $sections.each(function (i) {
-  //     const $section = $(this);
-  //     const sectionTop = $section.offset().top - offsetGap;
-  //     const sectionBottom = sectionTop + $section.outerHeight();
-
-  //     if (scrollTop >= sectionTop && scrollTop < sectionBottom) {
-  //       $tabs.removeClass('active');
-  //       $tabs.eq(i).addClass('active');
-  //       return false; // 첫 번째 조건만 만족하면 반복 중단
-  //     }
-  //   });
-  // });
-
 
 	// 범용 전체 팝업 내 스크롤 이벤트
 	$('.popup_cont').on('scroll', function(){
 
 		// 현재 스크롤 위치
-		if ( $('.position_event_wrap').length ) {
-			// console.log('가능');
-			const $this = $(this),
-					scrollTop = $this.scrollTop();
-	
-			console.log('스크롤 : ' + scrollTop);
+		if (!$('.position_event_wrap').length) return;
 
-			if($('.position_event_tab').length) {
+		const $this = $(this);
+		const scrollTop = $this.scrollTop();
 
+		// 기준 위치값 계산 요소
+		const $popupContent = $('.popup_content');
+		const popupContTop = $popupContent.position().top;
+		const $wrapHeight = $('.tag_item_wrap').outerHeight();
 
+		const baseOffset = popupContTop + $wrapHeight;
+
+		const $points = $('.position_event_content .pec_point');
+		let activeIdx = -1;
+
+		const $tagItem = $('.position_event_tab .tag_item');
+
+		$points.each(function (index) {
+			const pointTop = $(this).offset().top;
+			const targetScroll = pointTop - baseOffset;
+
+			if (scrollTop >= targetScroll) {
+				activeIdx = index; // 조건을 만족하는 가장 마지막 인덱스를 저장
 			}
+		});
+
+		if (activeIdx !== -1) {
+			// console.log('현재 인덱스:', activeIdx);
+			$tagItem.removeClass('active');
+			$tagItem.eq(activeIdx).addClass('active');
 		}
 	});
+
+	// 500
   
 
 

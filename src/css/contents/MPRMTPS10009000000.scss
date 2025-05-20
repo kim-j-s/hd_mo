@@ -1,4 +1,5 @@
 .sii_wrap {
+	padding-bottom: 60px;
 	.tag_item_wrap {
 		padding-bottom: 32px;
 		background-color: #fff;
@@ -25,10 +26,17 @@
 }
 
 .summary_ii {
+	--sili-space: 52px;
+	overflow: hidden;
 	> li {
 		position: relative;
-		+ li {
-			margin-top: 52px;
+		// padding-bottom: 52px;
+		padding-bottom: var(--sili-space);
+		&:last-child {
+			padding-bottom: 0;
+			&::after {
+				content: none;
+			}
 		}
 		&::before {
 			content: '';
@@ -37,6 +45,14 @@
 			left: 16px;
 			height: calc(100% - 32px);
 			border-left: 1px solid #CDD1D5;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 16px;
+			height: var(--sili-space);
+			border-left: 1px solid #fff;
 		}
 		[class ^="title_"] {
 			&.side_b {
@@ -79,6 +95,12 @@
 
 		+ .summary_ii_cont {
 			margin-top: 16px;
+		}
+
+
+		&.active {
+			background-color: blue;
+
 		}
 
 
