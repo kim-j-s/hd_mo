@@ -191,8 +191,7 @@
     e.preventDefault();
 	
 		setTimeout(() => {
-			// $this.hide();
-			$this.siblings('input').val('').focus();
+			$this.siblings('input').val('').trigger("input").focus();
 		}, 100);
 
 		if($this.closest('.comp_wrap').hasClass('phone')){
@@ -434,8 +433,44 @@
 	// })
 
 
+	// 위치 이벤트
+	let pe = true; // 초기엔 true로 시작해야 클릭이 가능함
+	$DOM.on('click', '.position_event_tab .tag_item', function () {
+		if (!pe) return;
 
-	
+		pe = false; // 클릭되면 바로 잠금 (중복 클릭 방지)
+
+		const $this = $(this),
+					$target = $this.closest('.position_event_wrap').find('.position_event_content'),
+					idx = $this.index();
+
+		const $point = $target.find('.pec_point').eq(idx);
+		if (!$point.length) {
+			pe = true; // 타겟 없으면 다시 풀어줌
+			return;
+		}
+
+		const posInfo = $point.offset().top;
+
+		if ($this.closest('.popup_cont').length) {
+			const $popupContent = $('.popup_content');
+			const popupContTop = $popupContent.position().top;
+			const $wrapHeight = $this.closest('.tag_item_wrap').outerHeight();
+
+			$('.popup_cont').stop().animate({
+				scrollTop: posInfo - (popupContTop + $wrapHeight)
+			}, 500, function () {
+				pe = true; // 애니메이션 끝난 후 다시 열림
+				setTimeout(function () {
+					$this.closest('.position_event_tab').find('.tag_item').removeClass('active');
+					$this.addClass('active');
+				}, 10);
+			});
+		} else {
+			pe = true; // 조건 미충족 시도라도 열어둠
+		}
+	});
+
 
 
 
@@ -602,14 +637,6 @@ $(function(){
 		}
 	});
 
-	// $(".inp_picker:not([readonly])").datepicker({
-	// 	disabled: false  // 기본값 override
-	// });
-
-	// $(".calendar_call").on("click", function () {
-	// 	$(this).siblings(".inp_picker").datepicker("show"); // 정확한 input만 targeting
-	// });
-
 	$(".inp_picker").datepicker();
 
 
@@ -626,10 +653,6 @@ $(function(){
 	// 달력 호출
 
 	
-	
-
-
-
 	// 간편정보 노출 방식
 	$('#container, .popup_cont, .container_form').on('scroll', function() {
 		const $headHeight = $('#header').outerHeight();
@@ -872,7 +895,6 @@ $(function(){
 		}
 	});
 	// 라디오 약관 동의
-
 	
 	/* 광고성 정보의 수신동의 - 개별 Case */
 	$(".sep_chk_box").on("change", '.sep_sub_chk', function () {
@@ -925,8 +947,6 @@ $(function(){
 			$(this).prepend(`<span class="num">${numStr} </span>`);
 		});
 	});
-
-
 
 	//이메일 자동완성
 	function autoCompleteEmail() {
@@ -1024,8 +1044,7 @@ $(function(){
 	autoCompleteEmail();
 
 
-
-	// 진입 시 
+	// 진입 시 전화번호 포맷 - readonly만 적용
 	$('.input_text').each(function() {
 		if( $(this).hasClass('phone') && $(this).hasClass('readonly') ){
 			const $inp = $(this).children('.inp').find('input');
@@ -1038,6 +1057,49 @@ $(function(){
 	});
 
 
+
+	// 범용 전체 팝업 내 스크롤 이벤트
+	$('.popup_cont').on('scroll', function(){
+
+		// 현재 스크롤 위치
+		if (!$('.position_event_wrap').length) return;
+
+		const $this = $(this);
+		const scrollTop = $this.scrollTop();
+
+		// 기준 위치값 계산 요소
+		const $popupContent = $('.popup_content');
+		const popupContTop = $popupContent.position().top;
+		const $wrapHeight = $('.tag_item_wrap').outerHeight();
+
+		const baseOffset = popupContTop + $wrapHeight;
+
+		const $points = $('.position_event_content .pec_point');
+		let activeIdx = -1;
+
+		const $tagItem = $('.position_event_tab .tag_item');
+
+		$points.each(function (index) {
+			const pointTop = $(this).offset().top;
+			const targetScroll = pointTop - baseOffset;
+
+			if (scrollTop >= targetScroll) {
+				activeIdx = index; // 조건을 만족하는 가장 마지막 인덱스를 저장
+			}
+		});
+
+		if (activeIdx !== -1) {
+			// console.log('현재 인덱스:', activeIdx);
+			$tagItem.removeClass('active');
+			$tagItem.eq(activeIdx).addClass('active');
+		}
+	});
+
+	// 500
+  
+
+
+	// ready
 });
 	
 

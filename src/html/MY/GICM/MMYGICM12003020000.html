@@ -1,0 +1,123 @@
+{{#> layout/default page-title="일반보험 계약취소 | 마이페이지"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="일반보험 계약취소" }}
+		<div id="container" class="container">
+			<div class="content">
+				<div class="form_box">
+                    <div class="info_gray">
+                        <h4 class="title_h4">다이렉트 해외여행보험</h4>
+                        <dl>
+                            <dt>계약번호</dt>
+                            <dd>F2023****761</dd>
+                        </dl>
+                        <dl>
+                            <dt>보험기간</dt>
+                            <dd>2025.01.01 08시<br/>~2025.01.13 16시</dd>
+                        </dl>
+                        <dl>
+                            <dt>가입유형</dt>
+                            <dd>개인형</dd>
+                        </dl>
+                        <dl>
+                            <dt>보험료</dt>
+                            <dd><strong class="point">49,900원</strong></dd>
+                        </dl>
+                        <dl>
+                            <dt>결제방법</dt>
+                            <dd>신용카드/일시불</dd>
+                        </dl>
+                    </div>
+                    <h3 class="title_h3">계약취소 정보</h3>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">이름</div>
+							{{> cp/text type="text" placeholder="입력해주세요" inp-title="이름 입력" }}
+						</div>
+						<div class="form_line">
+							<div class="label_tit">주민등록번호</div>
+							<div class="comp_wrap birth">
+								{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" }}
+								<span class="dash">-</span>
+								<div class="id_pass_box">
+									<div class="id_pass">
+										●●●●●●●
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form_line">
+							<div class="label_tit">휴대폰번호</div>
+							{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+						</div>
+						<div class="form_line">
+							<div class="label_tit">이메일</div>
+							{{> cp/text type="email" inpclass="email_auto" placeholder="이메일을 입력하세요" inp-title="이메일 입력" }}
+						</div>
+                    </div>
+                    <h3 class="title_h3">환급계좌 입력</h3>
+                    <div class="info_gray">
+                        <p class="info_text">계약자 김현대님의 계좌만 이용할 수 있어요.</p>
+                    </div>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">은행</div>
+							{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" }}
+						</div>
+						<div class="form_line">
+							<div class="label_tit">계좌번호</div>
+                            <div class="comp_wrap key_number">
+                                {{> cp/text type="tel" placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
+                                {{> cp/button type="3" size="4" b-text="계좌확인" popup="pop_type01" }}
+                            </div>
+						</div>
+						<div class="form_line">
+							<div class="label_tit">예금주</div>
+							<!-- s: 25-05-21 -->
+							{{> cp/text type="text" placeholder="입력해주세요" inp-title="예금주 입력" value="김현대" readonly=true }}
+							<!-- e: 25-05-21 -->
+						</div>
+					</div>	
+                </div>
+            </div>
+		</div>
+
+		<!-- s: 조회 내역이 없는 경우에만 노출 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="1" b-text="계약취소 신청하기"  popup="pop_type02" }}
+			</div>
+		</div>
+		<!-- e: 조회 내역이 없는 경우에만 노출 -->
+	</div>
+
+	{{#> popup/popup_confirm popup-id="pop_type01" no-header=true }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<!-- info Case -->
+            <div class="popup_confirm">
+                <p class="info_text">예금주 확인이 어려워요.<br>은행 및 계좌번호를 다시 입력해주세요.</p>
+            </div>			
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="2" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_confirm}}
+	{{#> popup/popup_confirm popup-id="pop_type02" no-header=true }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<!-- info Case -->
+            <div class="popup_confirm">
+                <p class="info_text">[계좌확인]을 눌러 진행해 주세요.</p>
+            </div>			
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="2" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_confirm}}
+{{/ layout/default }}
