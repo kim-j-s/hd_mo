@@ -191,8 +191,7 @@
     e.preventDefault();
 	
 		setTimeout(() => {
-			// $this.hide();
-			$this.siblings('input').val('').focus();
+			$this.siblings('input').val('').trigger("input").focus();
 		}, 100);
 
 		if($this.closest('.comp_wrap').hasClass('phone')){
