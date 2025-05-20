@@ -1,11 +1,25 @@
 .sii_wrap {
 	.tag_item_wrap {
+		padding-bottom: 32px;
 		background-color: #fff;
 		&.sticky {
 			position: sticky;
 			top: 0;
 			z-index: 1;
+			&::before {
+				content: '';
+				position: absolute;
+				top: -16px;
+				left: -16px;
+				width: calc(100% + 32px);
+				height: 16px;
+				background-color: #fff;
+			}
 		}
+
+		// + .summary_ii {
+		// 	padding-top: 32px;
+		// }
 	}
 
 }
