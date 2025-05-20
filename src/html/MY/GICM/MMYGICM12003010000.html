@@ -1,0 +1,84 @@
+{{#> layout/default page-title="일반보험 계약취소 | 마이페이지"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="일반보험 계약취소" }}
+		<div id="container" class="container">
+			<div class="content">
+				<div class="content_top">
+					<div class="info_gray">
+						<p class="info_text">현대해상 다이렉트 일반보험 중 보험시작일 이전(보험개시 전) 계약만 취소 가능합니다.</p>
+					</div>
+				</div>
+
+				<!-- s: 계약 목록 -->
+				<div class="card_item_wrap">
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inner_cont">
+								<div role="button" class="card_link" tabindex="0">
+									<div class="item_top">
+										<div class="title_info">
+											<div class="main_title">다이렉트 해외여행보험</div>
+										</div>
+									</div>
+								</div>
+								<ul class="card_list_ty1">
+									<li>
+										<div class="title">보험기간</div>
+										<div class="cont">2025.01.01~2025.01.05</div>
+									</li>
+									<li>
+										<div class="title">보험료</div>
+										<div class="cont">39,000원</div>
+									</li>
+									<li>
+										<div class="title">계약자</div>
+										<div class="cont">김*대</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- e: 계약 목록 -->
+
+				<!-- s: 조회 내역이 없는 경우 -->
+				<div class="no_list_area">
+					{{> cp/icon iconClass="exclamationSvg"}}
+					<p>내역이 없어요</p>
+				</div>
+				<!-- e: 조회 내역이 없는 경우 -->
+
+				<!-- s: 꼭 알아두세요 -->
+				{{#> cp/notice dp-active=true }}
+					<ul class="list_depth">
+						<li>이용대상
+							<ul>
+								<li>다이렉트 해외여행보험 인터넷 가입 계약자</li>
+							</ul>
+						</li>
+						<li>이용조건
+							<ul>
+								<li>본인명의 신용카드</li>
+							</ul>
+						</li>
+						<li>연장된 기간에 따라 보험료가 추가 발생할 수 있습니다.</li>
+						<li>해외여행보험의 보험기간 연장은 최초 보험개시일로부터 최대 3개월까지 가능합니다.</li>
+						<li>보험가입 후 현재까지 보험금 지급사유와 관련된 사고가 이미 발생한 경우 보험기간을 연장할 수 없습니다.</li>
+						<li>현대해상 하이플래너를 통해 가입한 보험은 담당 플래너 또는 대표콜센터(1588-5656)로 문의해 주세요.</li>
+						<li>보험가입기간 3개월을 초과하여 해외에 체류하는 경우, 다이렉트 고객센터(1899-6782, 평일 09:00~18:00)로 문의해 주세요.(해외에서 전화걸 때: +82-2-2628-2000)</li>
+					</ul>
+				{{/ cp/notice }}
+				<!-- e: 꼭 알아두세요 -->
+			</div>
+		</div>
+
+		<!-- s: 조회 내역이 없는 경우에만 노출 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="1" b-text="홈으로"  }}
+			</div>
+		</div>
+		<!-- e: 조회 내역이 없는 경우에만 노출 -->
+	</div>
+
+{{/ layout/default }}
