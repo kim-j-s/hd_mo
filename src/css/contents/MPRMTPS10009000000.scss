@@ -1,3 +1,15 @@
+.sii_wrap {
+	.tag_item_wrap {
+		background-color: #fff;
+		&.sticky {
+			position: sticky;
+			top: 0;
+			z-index: 1;
+		}
+	}
+
+}
+
 .summary_ii {
 	> li {
 		position: relative;
@@ -85,15 +97,21 @@
 			display: flex;
 			align-items: flex-start;
 			justify-content: space-between;
-			font-size: var(--font-size-body-small);		
+			gap: 8px;
+			font-size: var(--font-size-body-small);
 			+ li {
 				margin-top: 16px;
 			}
 		}
 		.sic_list_l {
+			flex: none;
+			max-width: 130px;
 			color: var(--color-text-subtle);
+			word-break: keep-all;
 		}
 		.sic_list_r {
+			flex: 1 1 0;
+			text-align: right;
 		}
 
 	}

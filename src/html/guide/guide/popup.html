@@ -117,25 +117,6 @@
 
 			<div class="form_group_wrap">
 				<div class="form_line">
-					<div class="label_tit">피보험자(미성년 자녀) 이름 dsfsdf</div>
-					{{> cp/text inp-title="피보험자(미성년 자녀) 이름 입력"}}
-				</div>
-				<div class="form_line">
-					<div class="label_tit">주민등록번호</div>
-					<div class="comp_wrap birth">
-						{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" }}
-						<span class="dash">-</span>
-						<div class="comp_wrap_keypad_call">
-							<button type="button" class="btn keypad_call" role="textbox" title="주민등록번호 뒷자리 입력"><span class="text">뒷자리</span></button>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="divider_ty1"></div>
-
-			<div class="form_group_wrap">
-				<div class="form_line">
 					<div class="label_tit">계약자 이름</div>
 					{{> cp/text placeholder="입력해주세요" inp-title="계약자 이름 입력"}}
 				</div>
@@ -144,20 +125,7 @@
 					<div class="comp_wrap birth">
 						{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" }}
 						<span class="dash">-</span>
-						<div class="comp_wrap_keypad_call">
-							<div class="form_wrap form_key">
-								<div class="pin_area" title="주민등록번호 뒤7자리" role="textbox" tabindex="0">
-									<strong class="ergAt dot_mark active"></strong>
-									<strong class="ergAt dot_mark active"></strong>
-									<strong class="ergAt dot_mark"></strong>
-									<strong class="ergAt dot_mark"></strong>
-									<strong class="ergAt dot_mark"></strong>
-									<strong class="ergAt dot_mark"></strong>
-									<strong class="ergAt dot_mark"></strong>
-									<input type="password" name="" id="" autocomplete="new-password" style="display: none;">
-								</div>
-							</div>
-						</div>
+						{{> cp/keypad7 case1=true kt="주민등록번호 뒤 7자리 입력"}}
 					</div>
 				</div>
 			</div>
