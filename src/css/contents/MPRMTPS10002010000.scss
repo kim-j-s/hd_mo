@@ -46,13 +46,11 @@
 		color: var(--color-text-basic);
 	}
 
-
 	// 자동차 소유 정보 입력영역
 	.input_item_wrap {
 		overflow: hidden;
 		border-radius: 16px;
 		box-shadow: 0 0 2px 0 var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)), 0 4px 8px 0 var(--color-alpha-shadow2, rgba(0, 0, 0, 0.08));
-
 
 		.acd_item {
 			position: relative;
@@ -176,6 +174,23 @@
 			}
 		}
 	}
+
+	.comp_wrap {
+		> * {
+			flex-basis: 50%;
+			&.dash {
+				flex: none;
+			}
+		}
+
+		.input_text {
+			.del {
+				width: 24px;
+				background-position: right 6px center;
+				background-size: 20px auto;
+			}
+		}
+	}
 }
 
 // 특약 리스트
@@ -186,9 +201,9 @@
 	border-radius: var(--radius-large2);
 
 	.item {
-		padding: 24px 0 24px 44px;
+		padding: 16px 0 16px 44px;
 		background-repeat: no-repeat;
-		background-position: left top 32px;
+		background-position: left center;
 		background-size: 32px auto;
 
 		@for $i from 1 through 9 {
