@@ -61,33 +61,42 @@
 					</div>
 				</li>
 				<li>
+					<!-- s: 25-05-21 수정 -->
 					<div class="form_group_wrap">
 						<div class="form_line">
-							<div class="label_tit">
-								고객님<span class="point">(자녀)</span>의 직업을 입력해 주세요.<!-- 25-05-02 -->
-							</div>
+								<div class="label_tit">
+									고객님<span class="point">(자녀)</span>의 직업을 입력해 주세요.<!-- 25-05-02 -->
+								</div>
 
-							<div class="form_line">
-								<div class="label_tit">근무처</div>
-								{{> cp/text inp-title="근무처 입력" value="미취학아동" readonly="true" }}
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">근무처</div>
+									{{> cp/text inp-title="근무처 입력" value="미취학아동" readonly="true" }}
+								</div>
 							</div>
-							<div class="form_line">
-								<div class="label_tit">근무 지역</div>
-								{{> cp/text inp-title="근무지역 입력" value="미취학아동" readonly="true" }}
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">근무 지역</div>
+									{{> cp/text inp-title="근무지역 입력" value="미취학아동" readonly="true" }}
+								</div>
 							</div>
-							<div class="form_line">
-								<div class="label_tit">업종</div>
-								{{> cp/text inp-title="업종 입력" value="미취학아동" readonly="true" }}
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">업종</div>
+									{{> cp/text inp-title="업종 입력" value="미취학아동" readonly="true" }}
+								</div>
 							</div>
-							<div class="form_line">
-								<div class="label_tit">취급하는 업무</div>
-								{{> cp/text inp-title="취급업무 입력" value="미취학아동" readonly="true" }}
-							</div>
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">취급하는 업무</div>
+									{{> cp/text inp-title="취급업무 입력" value="미취학아동" readonly="true" }}
+								</div>
 						</div>
 						<ul class="list_ty2">
 							<li>보험계약 체결 당시 직업 또는 직무를 사실대로 알리지 않거나 보험계약 체결 후 직업 또는 직무가 변경된 사실(예 : 사무관리↔현장관리)을 지체없이 회사에 알리지 않은 경우 계약 해지 등 알릴 의무 위반에 따른 불이익이 발생할 수 있습니다.</li>
 						</ul>
 					</div>
+					<!-- e: 25-05-21 수정 -->
 				</li>
 
 				<li>
@@ -95,8 +104,8 @@
 						<div class="form_line">
 							<div class="label_tit">현재 운전을 하시나요?</div><!-- 25-05-02 -->
 							<div class="radio_group_wrap" role="radiogroup">
-								{{> cp/radio rd-class="rd_btn" rd-id="notification01_01" name="notification01" labelname="예" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="notification01_02" name="notification01" labelname="아니요"}}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification04_01" name="notification04" labelname="예" }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification04_02" name="notification04" labelname="아니요"}}
 							</div>
 						</div>
 					</div>
@@ -121,9 +130,9 @@
 								<div class="label_tit">기타 차종</div>
 								{{> cp/text placeholder="입력해 주세요" inp-title="기타 차종 입력"}}
 							</div>
+							<!-- s: 25-05-21 수정 -->
 							<!-- s: 25-05-19 수정 -->
 							<!-- s: 25-05-13 -->
-							<div class="form_group_wrap space2">
 								<div class="form_line">
 									<!-- s: 이륜자동차 외 선택 시 -->
 									<div class="checkbox_group_wrap column">
@@ -136,9 +145,9 @@
 									</div>
 									<!-- e: 이륜자동차 선택 시  -->
 								</div>
-							</div>
 							<!-- e: 25-05-13 -->
-							 <!-- e: 25-05-19 수정 -->
+							<!-- e: 25-05-19 수정 -->
+							<!-- e: 25-05-21 수정 -->
 						</div>
 					</div>
 				</li>
@@ -148,8 +157,8 @@
 						<div class="form_line">
 							<div class="label_tit">원동기장치 자전거(전동킥보드, 전동이륜평행차, 전동기의 동력만으로 움직일 수 있는 자전거 등 개인형 이동장치를 포함)를 사용하십니까?(다만, 전동휠체어, 의료용 스쿠터 등 보행보조용 의자차는 제외합니다)</div><!-- e: 25-05-02 -->
 							<div class="radio_group_wrap" role="radiogroup">
-								{{> cp/radio rd-class="rd_btn" rd-id="notification01_01" name="notification01" labelname="예" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="notification01_02" name="notification01" labelname="아니요"}}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification06_01" name="notification06" labelname="예" }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification06_02" name="notification06" labelname="아니요"}}
 							</div>
 						</div>
 						<ul class="list_ty2">
@@ -163,14 +172,13 @@
 					</div>
 				</li>
 
-
 				<li>
 					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">최근 1년 이내에 아래와 같은 취미를 자주 반복적으로 하고 있거나 관련 자격증이 있습니까?</div><!-- e: 25-05-02 -->
 							<div class="radio_group_wrap" role="radiogroup">
-								{{> cp/radio rd-class="rd_btn" rd-id="notification01_01" name="notification01" labelname="예" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="notification01_02" name="notification01" labelname="아니오" }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification07_01" name="notification07" labelname="예" }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification07_02" name="notification07" labelname="아니오" }}
 							</div>
 						</div>
 						<ul class="list_ty2">
@@ -189,9 +197,17 @@
 						<div class="form_line">
 							<div class="label_tit">부업 또는 겸업, 계절적으로 종사하는 업무가 있습니까?</div><!-- e: 25-05-02 -->
 							<div class="radio_group_wrap" role="radiogroup">
-								{{> cp/radio rd-class="rd_btn" rd-id="notification01_01" name="notification01" labelname="예" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="notification01_02" name="notification01" labelname="아니요"}}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification08_01" name="notification08" labelname="예" }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification08_02" name="notification08" labelname="아니요"}}
 							</div>
+							<!-- s: 25-05-21 수정 -->
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">기타 차종</div>
+									{{> cp/text placeholder="입력해 주세요" inp-title="기타 차종 입력"}}
+								</div>
+							</div>
+							<!-- e: 25-05-21 수정 -->
 						</div>
 					</div>
 				</li>
@@ -202,8 +218,8 @@
 						<div class="form_line">
 							<div class="label_tit">향후 3개월 전쟁지역, 미개척지(열대/한대), 등반산악지대와 같은 해외위험지역으로 출국할 예정이 있습니까?</div><!-- e: 25-05-02 -->
 							<div class="radio_group_wrap" role="radiogroup">
-								{{> cp/radio rd-class="rd_btn" rd-id="notification01_01" name="notification01" labelname="예" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="notification01_02" name="notification01" labelname="아니요"}}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification09_01" name="notification09" labelname="예" }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification09_02" name="notification09" labelname="아니요"}}
 							</div>
 						</div>
 					</div>
@@ -215,8 +231,8 @@
 						<div class="form_line">
 							<div class="label_tit">다른 보험회사(우체국보험 및 각종 공제계약 판매사 포함)에 생명보험, 손해보험, 제 3보험 또는 각종 공제계약을 가입하고 있습니까?</div><!-- e: 25-05-02 -->
 							<div class="radio_group_wrap" role="radiogroup">
-								{{> cp/radio rd-class="rd_btn" rd-id="notification01_01" name="notification01" labelname="예" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="notification01_02" name="notification01" labelname="아니요"}}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification10_01" name="notification10" labelname="예" }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification10_02" name="notification10" labelname="아니요"}}
 							</div>
 						</div>
 						<ul class="list_ty2">

@@ -1,0 +1,30 @@
+{{#> layout/default page-title="기본정보입력 | 저축보험"}}
+
+<!-- s: popup area -->
+
+<!-- s: 월 납입금액 입력 -->
+{{#> popup/popup_bottom popup-id="search_list_bottom_ty3" popup-title="저축금액 입력" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">금액</div>
+				{{> cp/text type="tel" class="price" placeholder="최소 100~최대 1억" r-text="만원" inp-title="저축금액 입력"}}
+			</div>
+		</div>
+
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="입력 중이에요" disabled=true }}
+		<!-- {{> cp/button type="1" size="2" b-text="입력했어요" }} -->
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 월 납입금액 입력 -->
+	 
+<!-- e: popup area -->
+
+
+{{/ layout/default }}
