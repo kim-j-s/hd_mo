@@ -30,9 +30,9 @@
 			font-weight: 700;
 			color: var(--color-text-basic);
 
-			&:before {
+			&:before { 
 				position: absolute;
-				bottom: -1px;
+				bottom: 0;
 				left: 0;
 				z-index: 10;
 				content:'';
@@ -96,7 +96,7 @@
 	}
 }
 
-.tab_scroll_box {
+[class^=tab_scroll_box] {
 	overflow-x: auto;
 	margin: 0 -24px;
 	padding: 0 24px;
@@ -106,22 +106,21 @@
 			position: relative;
 			display: inline-flex;
 			align-items: center;
-			
-			&:after {
-				position: absolute;
-				bottom: -1px;
-				left: -24px;
-				content:'';
-				width: calc(100vw + 96px);
-				height: 1px;
-				background-color: var(--color-border-gray-light);
-			}
+			white-space: nowrap;
 		}
 	}
+}
+
+.tab_scroll_box_ty1 {
+	border-bottom: 1px solid var(--color-border-gray-light);
+
 	.tab_wrap_list_ty1 {
 		margin: 0;
+		border-bottom: 0;
+		
 		.tab_btn {
-			padding: 12px 16px;
+			min-width: 64px;
+			padding: 12px 8px;
 			flex: none;
 		}
 	}
