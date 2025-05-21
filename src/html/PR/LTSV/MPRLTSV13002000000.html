@@ -1,0 +1,232 @@
+{{#> layout/default page-title="기본정보입력 | 저축보험"}}
+<div id="wrap" class="wrap">
+{{> layout/header h-title="저축보험" }}
+
+	<form action="" class="bi_form">
+		<div class="bi_wrap">
+
+			<div class="stepper_wrap">
+				<div class="stepper" role="img">
+					<div class="pgs">
+						<span class="pgs_per" style="width: 0%;"><span class="motion pension"></span></span>
+					</div>
+				</div>
+				<button type="button" class="stm_btn stm_l" onclick="$stepper.stepBack();">이전 단계</button>
+				<button type="button" class="stm_btn stm_r" onclick="$stepper.stepNext();">다음 단계</button>
+			</div>
+			
+			
+			<div class="bi_stepper">
+				<div class="bi_top">
+					<!-- bit -->
+					<div class="bit">
+
+						<!-- 생년월일 -->
+						<div class="bit_inner active" data-pickitem="step1">
+							<P class="bit_inner_text">
+								여유자금을 알차게 활용하실 분의<br />
+								<span class="bold">생년월일</span>을 알려주세요.
+								<small class="sub_txt">19~99세까지 가입하실 수 있어요.</small>
+							</P>
+							<div class="bit_btn_scrollx">
+								<button type="button" class="btn_link short_cut sm rd_box">
+									<span class="text">보장내용 자세히 보기</span>
+								</button>
+							</div>
+						</div>
+						<!-- 생년월일 -->
+
+						<!-- 성별 -->
+						<div class="bit_inner" data-pickitem="step2">
+							<P class="bit_inner_text">
+								<strong>성별</strong>을 알려주세요
+							</P>
+						</div>
+						<!-- 성별 -->
+
+            <!-- 납입금액 -->
+          <div class="bit_inner active" data-pickitem="step3">
+            <P class="bit_inner_text">
+              <span class="bold">저축금액</span>을 알려주세요<br>
+              <small class="sub_txt">일시납만 가능해요.</small>
+            </P>
+          </div>
+          <!-- 납입금액 -->
+
+          <!-- 직업 -->
+          <div class="bit_inner active" data-pickitem="step3">
+            <P class="bit_inner_text">
+              <span class="bold">어떤 일</span>을 하시나요?<br >
+              만기에 얼마 받을지 알아볼게요
+            </P>
+          </div>
+          <!-- 직업 -->
+
+					</div>
+					<!-- bit -->
+
+					<!-- bit_history -->
+					<div class="bit_history">
+						<div class="bit_history_inner">
+							<button type="button" class="selected_case step1 birth" title="생년월일 수정"></button>
+							<button type="button" class="selected_case step2 gender" title="성별 수정"></button>
+							<button type="button" class="selected_case step3 won" title="납입액 수정"></button>
+							<button type="button" class="selected_case step4 job" title="직업 수정"></button>              
+						</div>
+					</div>
+					<!-- bit_history -->
+				</div>
+
+				<div class="bi_opts_wrap">
+
+					<!-- 생년월일 -->
+					<div class="opts_area active" tabindex="0" aria-label="생년월일 8자리를 입력하시면 다음단계로 이동합니다." data-pickitem="step1">
+						<div class="opts_area_item column">
+							<div class="birth_date_field" aria-live="polite"></div>
+							<div class="bi_keypad">
+								<div class="bi_keypad_item">
+									<button type="button" class="keypad_btn">1</button>
+									<button type="button" class="keypad_btn">2</button>
+									<button type="button" class="keypad_btn">3</button>
+									<button type="button" class="keypad_btn keypad_btn_del" aria-label="지우기"></button>
+								</div>
+								<div class="bi_keypad_item">
+									<button type="button" class="keypad_btn">4</button>
+									<button type="button" class="keypad_btn">5</button>
+									<button type="button" class="keypad_btn">6</button>
+									<button type="button" class="keypad_btn keypad_btn_delall">전체삭제</button>
+								</div>
+								<div class="bi_keypad_item">
+									<button type="button" class="keypad_btn">7</button>
+									<button type="button" class="keypad_btn">8</button>
+									<button type="button" class="keypad_btn">9</button>
+									<button type="button" class="keypad_btn">0</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 생년월일 -->
+
+					<!-- 성별 -->
+					<div class="opts_area" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step2">
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio21" name="radio2" />
+								<label for="radio21">
+									<span class="label_cont">남성</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio22" name="radio2" />
+								<label for="radio22">
+									<span class="label_cont">여성</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- 성별 -->
+
+					<!-- 납입액 -->
+					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step3">
+						
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio31" name="radio3" />
+								<label for="radio31">
+									<span class="label_cont">1천만원</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio32" name="radio3" />
+								<label for="radio32">
+									<span class="label_cont">3천만원</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio33" name="radio3" />
+								<label for="radio33">
+									<span class="label_cont">5천만원</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio34" name="radio3" />
+								<label for="radio34">
+									<span class="label_cont">7천만원</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio35" name="radio3" />
+								<label for="radio35">
+									<span class="label_cont">1억원</span>
+								</label>
+							</div>
+							<button type="button" class="hd_btn direct_select_btn" title="월 납입금액 입력 팝업 오픈">
+								<span class="text">직접 입력</span>
+							</button>
+						</div>
+					</div>
+					<!-- 납입액 -->
+
+          <!-- 직업 -->
+					<div class="opts_area" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step4">
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio41" name="radio4" />
+								<label for="radio41">
+									<span class="label_cont">회사원</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio42" name="radio4" />
+								<label for="radio42">
+									<span class="label_cont">경영지원<br />사무직관리자</span>
+								</label>
+							</div>
+              <div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio43" name="radio4" />
+								<label for="radio43">
+									<span class="label_cont">전업주부</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio44" name="radio4" />
+								<label for="radio44">
+									<span class="label_cont">제조업 사무직</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio45" name="radio4" />
+								<label for="radio45">
+									<span class="label_cont">자영업</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio46" name="radio4" />
+								<label for="radio46">
+									<span class="label_cont">직접 선택</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- 직업 -->
+					
+				</div>
+			</div>
+
+		</div>
+	</form>
+</div>
+
+<script>
+$(document).ready(function() {
+  // $stepper.stepperInit();
+	$stepper.stepperInit(null, 0);
+});
+</script>
+
+
+<!-- s: popup area -->	 
+<!-- e: popup area -->
+
+
+{{/ layout/default }}
