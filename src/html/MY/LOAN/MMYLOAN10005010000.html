@@ -1,0 +1,81 @@
+{{#> layout/default page-title="대출신청내역 | 마이페이지"}}
+
+	<!-- s: Full 팝업 -->
+	{{#> popup/popup_full popup-id="pop_type01" popup-title="대출신청내역 상세" popup-active=true}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="table_wrap">
+				<h2 class="title_h3"><strong>대출신청내역</strong></h2>
+				<table class="table">
+					<caption>실제 지급금액, 대출신청금액, 기존 대출정산이자, 예수금, 인지세, 누적대출금액, 잔여대출가능금액, 예상 월이자, 대출금 받을 계좌, 이자납입계좌, 예금주, 이자납입일 제공</caption>
+					<colgroup>
+						<col style="width:40%;">
+						<col style="width:60%;">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row" class="point">실제 지급금액</th>
+							<td class="point">11,000,000원</td>
+						</tr>
+						<tr>
+							<th scope="row" class="point">대출신청금액</th>
+							<td class="point">12,000,000원</td>
+						</tr>
+						<!-- s: 기대출정산이자, 예수금, 인지세가 0원인 경우 항목 비노출 -->
+						<tr>
+							<th scope="row">기존 대출정산이자</th>
+							<td>-1,000,000원</td>
+						</tr>
+						<tr>
+							<th scope="row">예수금</th>
+							<td>0원</td>
+						</tr>
+						<tr>
+							<th scope="row">인지세</th>
+							<td>0원</td>
+						</tr>
+						<!-- e: 기대출정산이자, 예수금, 인지세가 0원인 경우 항목 비노출 -->
+						<tr>
+							<th scope="row">누적대출금액</th>
+							<td>21,000,000원</td>
+						</tr>
+						<tr>
+							<th scope="row">잔여대출가능금액</th>
+							<td>1,000,000원</td>
+						</tr>
+						<tr>
+							<th scope="row">예상 월이자</th>
+							<td>85,270원</td>
+						</tr>
+						<tr>
+							<th scope="row">대출금 받을 계좌</th>
+							<td>국민은행 1234****1234</td>
+						</tr>
+						<tr>
+							<th scope="row">이자납입계좌</th>
+							<td>국민은행 1234****1234</td>
+						</tr>
+						<tr>
+							<th scope="row">예금주</th>
+							<td>김*대</td>
+						</tr>
+						<tr>
+							<th scope="row">이자납입일</th>
+							<td>매월 20일</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_full}}
+	<!-- e: Full 팝업 -->
+
+{{/ layout/default }}
