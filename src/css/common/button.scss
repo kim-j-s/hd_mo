@@ -439,7 +439,7 @@
 		&.short_cut_icon {
 			display: block;
 			width: 100%;
-			padding: 20px;
+			padding: var(--padding-6) var(--padding-7);
 			border-radius: var(--radius-medium4);
 			background-color: var(--color-surface-secondary-subtler);
 			background-image: none;
@@ -463,6 +463,18 @@
 					background-size: 24px auto;
 					background-color: #fff;
 					transform: translateY(-50%);
+				}
+				dl {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					dt {
+						.sub_text {
+							display: block;
+							color: var(--color-text-subtle);
+							font-size: var(--font-size-body-xsmall);
+						}
+					}
 				}
 			}
 			&.short_cut_icon_ty1 {
@@ -490,6 +502,16 @@
 				> .text {
 					&::before {
 						background-image: url(../images/content/guarantee/icon_gtl_pet.svg);
+					}
+				}
+			}
+			&.short_cut_icon_ty5 {
+				padding: var(--padding-6) var(--padding-5);
+				> .text {
+					padding-left: 44px;
+					padding-right: 28px;
+					&::before {
+						background-image: url(../images/content/guarantee/icon_gtl_money.svg);
 					}
 				}
 			}

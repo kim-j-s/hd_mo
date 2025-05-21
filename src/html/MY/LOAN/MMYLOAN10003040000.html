@@ -1,0 +1,53 @@
+{{#> layout/default page-title="대출고객 자동이체 신청 동의 | 마이페이지"}}
+
+	<!-- s: Full 팝업 -->
+	{{#> popup/popup_full popup-id="pop_type01" popup-title="" popup-active=true}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<!-- s: popup_content_top -->
+			<div class="popup_content_top">
+				<h2 class="title_h2">					
+					<strong><span class="point">필수</span> 보험계약대출 체결/이행에 관한 확인사항</strong>
+				</h2>
+			</div>
+			<!-- e: popup_content_top -->
+			
+			<div class="ag_groups">
+				<div class="ag_group_wrap">
+					<div class="ag_group_top">
+						{{> cp/checkbox id="chk_group01" chk_class="agw_all" label_class="chk_label_ty2" labelname="아래 항목 모두 동의합니다."}}
+					</div>
+					<div class="ag_group_cont">
+						<div class="agc_item">
+							<ul class="space_list_ty2 chk_list">
+								<li>
+									{{> cp/checkbox id="chk_group0100" chk_class="agr_dept2" label_class="chk_label_ty3" labelname="1. 보험계약대출 약정서" ag_more=true}}
+								</li>
+								<li>
+									{{> cp/checkbox id="chk_group0101" chk_class="agr_dept2" label_class="chk_label_ty3" labelname="2. 보험계약대출 상품설명서" ag_more=true}}
+								</li>
+								<li>
+									{{> cp/checkbox id="chk_group0102" chk_class="agr_dept2" label_class="chk_label_ty3" labelname="3. 연금보험 보험계약대출 이용 시 꼭 알아두세요" ag_more=true}}
+								</li>
+								<li>
+									{{> cp/checkbox id="chk_group0103" chk_class="agr_dept2" label_class="chk_label_ty3" labelname="4. 보장부분 보험계약대출 이용 시 꼭 알아두세요" ag_more=true}}
+								</li>
+								<li>
+									{{> cp/checkbox id="chk_group0104" chk_class="agr_dept2" label_class="chk_label_ty3" labelname="5. 보험계약대출 주의사항" ag_more=true}}
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="다음" }}
+		</div>
+	</div>
+	{{/ popup/popup_full}}
+	<!-- e: Full 팝업 -->
+
+{{/ layout/default }}
