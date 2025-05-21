@@ -1,0 +1,152 @@
+{{#> layout/default page-title="자동이체 신청/변경 | 마이페이지"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="자동이체 신청/변경" }}
+		<div id="container" class="container">
+			<div class="content">
+				<div class="form_box">
+                    <div class="info_gray">
+                        <p class="info_text">계약자 본인명의 계좌로만 변경할 수 있습니다.<br>(단, 평생계좌 등 일부 계좌는 이용 불가)
+                        </p>
+                    </div>
+                    <h3 class="title_h3">자동이체계좌(변경 전)</h3>
+                    
+                    <div class="acd_item acd_item_ty2">
+                        <div class="acd_head">
+                            <button type="button" class="acd_btn" aria-expanded="false">
+                                <span class="picture_info_top">
+                                    <span class="status">
+                                        <span class="title">국민은행 1234*****1234</span>
+                                    </span>
+                                    <span class="preview" aria-hidden="true">
+                                        <span class="badge_wrap">
+                                            <span class="hd_badge outline solid_pastel c_success size_l">5일</span>
+                                        </span>
+                                    </span>
+                                </span>
+                                <span>상세보기</span>
+                            </button>
+                        </div>
+                        <div class="acd_cont">
+                            <div class="inner">
+                                <ul class="card_list_ty1">
+                                    <li>
+                                        <div class="title">상품명</div>
+                                        <div class="cont">무배당현대해상다이렉트H건강보험(Hi2301)</div>
+                                    </li>
+                                    <li>
+                                        <div class="title">계약자</div>
+                                        <div class="cont">김*대</div>
+                                    </li>
+                                    <li>
+                                        <div class="title">피보험자</div>
+                                        <div class="cont">김*대 외 1명</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="title_h3">자동이체계좌(변경 후)</h3>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">계좌</div>
+							{{> cp/selectitem si_ph="국민은행/12341234132/김현대" si_title="계좌 선택" si_popup="my_bank_select"}}
+						</div>
+                        <!-- s: 직접입력 선택 -->
+						<div class="form_line">
+							<div class="label_tit">은행</div>
+							{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" }}
+						</div>
+						<div class="form_line">
+							<div class="label_tit">계좌번호</div>
+                            <div class="comp_wrap key_number">
+                                {{> cp/text type="tel" placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
+                                {{> cp/button type="3" size="4" b-text="계좌확인" popup="pop_type01" }}
+                            </div>
+						</div>
+						<div class="form_line">
+							<div class="label_tit">예금주</div>
+							{{> cp/text type="text" placeholder="입력해주세요" inp-title="예금주 입력" value="김현대" readonly=true }}
+						</div>
+                        <!-- e: 직접입력 선택 -->
+						<div class="form_line">
+							<div class="label_tit">자동이체일</div>
+							{{> cp/selectitem si_ph="5일" si_title="자동이체일 선택" si_popup="bank_day_select" }}
+						</div>
+					</div>	
+                </div>
+				<!-- s: 꼭 알아두세요 -->
+				{{#> cp/notice dp-active=true }}
+					<ul class="list_depth">
+						<li>자동이체 계좌는 계약자 본인명의 계좌만 가능합니다.</li>
+						<li>은행의 연결계좌(증권사 연결 CMA 계좌 등) 및 출금이 불가능한 계좌(평생계좌, 맞춤계좌 등)는 자동이체계좌로 등록할 수 없으니 유의해 주세요.</li>
+						<li>이체일에 보험료가 납입되지 않은 경우 5일, 10일, 20일, 25일, 30일 기준으로 재청구됩니다.</li>
+						<li>이체일이 같은 여러 개의 자동이체 청구가 있는 경우 출금 우선 순위 및 시간은 각 은행이 정한 기준에 따르며, 잔액 부족으로 이체되지 못한 건에 대한 책임은 본인에게 있습니다.</li>
+					</ul>
+				{{/ cp/notice }}
+				<!-- e: 꼭 알아두세요 -->
+            </div>
+		</div>
+
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="1" b-text="다음"  popup="pop_type02" }}
+			</div>
+		</div>
+	</div>
+
+    {{#> popup/popup_bottom popup-id="my_bank_select" popup-title="계좌 선택"}}
+    <div class="popup_cont">
+        <div class="popup_content">
+            <div class="opt_select_list opt_case3">
+                <div role="button" tabindex="0" class="option active" title="선택됨"><span class="text">국민은행/12341234132/김현대</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">직접입력</span></div>
+            </div>
+        </div>
+    </div>
+    {{/ popup/popup_bottom}}
+
+    {{#> popup/popup_bottom popup-id="bank_day_select" popup-title="매월 자동이체일"}}
+    <div class="popup_cont">
+        <div class="popup_content">
+            <div class="opt_select_list opt_case3">
+                <div role="button" tabindex="0" class="option active" title="선택됨"><span class="text">5일</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">10일</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">20일</span></div>
+                <div role="button" tabindex="0" class="option"><span class="text">25일</span></div>
+            </div>
+        </div>
+    </div>
+    {{/ popup/popup_bottom}}
+    
+	{{#> popup/popup_confirm popup-id="pop_type01" no-header=true }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<!-- info Case -->
+            <div class="popup_confirm">
+                <p class="info_text">예금주가 확인되지 않습니다.</p>
+            </div>			
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="2" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_confirm}}
+	{{#> popup/popup_confirm popup-id="pop_type02" no-header=true }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<!-- info Case -->
+            <div class="popup_confirm">
+                <p class="info_text">[계좌확인]을 눌러 진행해 주세요.</p><!-- 계좌 미확인 -->
+                <p class="info_text">일부 계약과 이자납입계좌 및 이자납입일이 같습니다. 이자납입계좌 또는 이자납입일을 변경해 주세요.</p><!-- 모두 중복 시 -->
+            </div>			
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="2" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_confirm}}
+{{/ layout/default }}

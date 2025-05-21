@@ -15,6 +15,51 @@
 	&.bg_etc01 {
 		background-color: var(--color-surface-white-subtle);
 	}
+
+	&[class*="icon_"]{
+		margin-top:64px;
+		padding: 16px 20px;
+		border-radius: 16px;
+		.title_sub {
+			min-height: 32px;
+			position: relative;
+			padding-left: calc(32px + 12px);
+			display:flex;
+			align-items: center;
+			&::before {
+				content:"";
+				display: inline-flex;
+				position: absolute;
+				top:0;
+				left:0;
+				width:32px; 
+				height:32px;
+				padding:4px;
+				background-color: var(--color-surface-white-subtle);
+				background-repeat: no-repeat;				
+				background-position: center center;
+				background-size: 24px auto;
+				border-radius: 12px;			
+			}
+			span {
+				color:var(--color-text-basic);
+			}
+		}
+		&.icon_call {
+			.title_sub {
+				&::before {
+					background-image: url(../images/icon/icon_call_fill.svg);	
+				}
+			}
+		}
+		&.icon_call_check {
+			.title_sub {
+				&::before {
+					background-image: url(../images/icon/icon_call_check.svg);	
+				}
+			}
+		}
+	}
 	
 	&.ty2 {
 		background: var(--color-surface-information-subtler);
