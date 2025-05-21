@@ -53,24 +53,23 @@
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
 				<div class="popup_inner">
-					<div class="popup_head"><div class="popup_head_title">재난배상책임의무대상 일련번호 조회</div></div>
+					<div class="popup_head"><div class="popup_head_title">가스사고배상책임 관리번호 조회</div></div>
 					<div class="popup_cont">
 						<div class="popup_content">
 							<div class="tab_wrap">
 								<div class="tab_scroll_box_ty1">
 									<div class="tab_wrap_list_ty1 scroll" role="tablist">
-										<button type="button" class="tab_btn tab_btn_block" role="tab" aria-selected="false" aria-controls="tabPanel01" id="tab01">주소+상호+업종로 조회</button>
-										<button type="button" class="tab_btn tab_btn_block active" role="tab" aria-selected="true" aria-controls="tabPanel02" id="tab02">고유번호(일련번호)로 조회</button>
+										<button type="button" class="tab_btn tab_btn_block active" role="tab" aria-selected="true" aria-controls="tabPanel01" id="tab01">고유번호(가입관리코드)로 조회</button>
+										<button type="button" class="tab_btn tab_btn_block" role="tab" aria-selected="false" aria-controls="tabPanel02" id="tab02">상호(목적물 시설명)로 조회</button>
 									</div>
 								</div>
 
-								<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">주소+상호+업종로 조회 내용</div>
-								<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
+								<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
 									<div class="form_group_wrap">
 										<div class="form_line_ty2">
 											<div class="input_text inp_mi">
 												<div class="inp">
-													<input type="text" placeholder="C로 시작하는 고유번호(가입관리)코드 입력" title="C로 시작하는 고유번호(가입관리)코드 입력" />
+													<input type="text" placeholder="D-GAS로 시작하는 고유번호(가입관리)코드 입력" minlength="2" title="D-GAS로 시작하는 고유번호(가입관리)코드 입력" />
 													<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 												</div>
 											</div>
@@ -97,16 +96,16 @@
 												<div class="inner_cont">
 													<div class="item_top" id="card_chk1_1_cont">
 														<div class="title_info">
-															<div class="sub_title">C2205036193</div>
-															<div class="main_title">교촌치킨 강남역점</div>
+															<div class="sub_title">D-GAS000000010001</div>
+															<div class="main_title">코원에너지서비즈(주)</div>
 														</div>
-														<div class="desc">일반음식점</div>
+														<div class="desc">재난의무보험대상</div>
 													</div>
 
 													<ul class="card_list_ty1">
 														<li>
-															<div class="title">총면적</div>
-															<div class="cont">000097㎡</div>
+															<div class="title">업태</div>
+															<div class="cont">전기가스외</div>
 														</li>
 														<li>
 															<div class="title">주소</div>
@@ -118,7 +117,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel03">사업자등록번호 내용</div>
+								<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">상호(목적물 시설명)로 조회</div>
 							</div>
 						</div>
 					</div>
@@ -141,6 +140,60 @@
 		<!-- e: full 팝업 -->
 
 		<!-- s: popup area -->
+		<!-- s: 시·도 선택 팝업 -->
+		<div class="popup_wrap bottom" id="pop_type01_1" role="dialog" aria-modal="true" aria-hidden="true">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01_1');"></div>
+				<div class="popup_inner">
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head"><div class="popup_head_title">시·도 선택</div></div>
+
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="opt_select_list opt_case3">
+								<div role="button" tabindex="0" class="option active" title="선택됨"><span class="text">서울특별시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">항목 2</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">항목 3</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">항목 4</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">항목 5</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">항목 6</span></div>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01_1');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: 시·도 선택 팝업 -->
+		<!-- s: 시·군·구 선택 팝업 -->
+		<div class="popup_wrap bottom" id="pop_type01_2" role="dialog" aria-modal="true" aria-hidden="true">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01_2');"></div>
+				<div class="popup_inner">
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head"><div class="popup_head_title">시·군·구 선택</div></div>
+
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="opt_select_list opt_case3">
+								<div role="button" tabindex="0" class="option active" title="선택됨"><span class="text">강남구</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">항목 2</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">항목 3</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">항목 4</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">항목 5</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">항목 6</span></div>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01_2');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: 시·군·구 선택 팝업 -->
 		<!-- e: popup area -->
 	</body>
 </html>
