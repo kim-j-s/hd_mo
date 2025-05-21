@@ -98,9 +98,9 @@
 		margin-top: 16px;
 	}
 
-	& + .btn_area {
-		margin-top: 12px;
-	}
+	// & + .btn_area {
+	// 	margin-top: 12px;
+	// }
 
 	&.ty2 {
 		.hd_btn {
@@ -435,7 +435,21 @@
 			font-weight: 700;
 			background-size: 24px auto;
 		}
-
+		&.long {
+			display: block;
+			width: 100%;
+			padding: var(--padding-3) var(--padding-6);
+			border-radius: var(--radius-medium2);
+			border: 1px solid var(--color-button-tertiary-border);
+			background: transparent;
+			&.tac {
+				text-align: center;
+			}
+			> .text {
+				padding-right: 24px;
+				background: url(../images/icon/arrowRight_ty4.svg) no-repeat right center / 20px auto;
+			}
+		}
 		&.short_cut_icon {
 			display: block;
 			width: 100%;
@@ -1030,3 +1044,11 @@
 /* swiper button */
 
 
+.hashtag_item {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: var(--gap-3);
+	.hd_btn_s_4 {
+		border-radius: var(--radius-medium4);
+	}
+}
