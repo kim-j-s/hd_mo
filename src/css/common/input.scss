@@ -506,16 +506,98 @@
 		margin-top: 16px;
 	}
 
-	.form_line {
-		& + .info_box {
-			margin-top:32px;
+	
+
+	[class^=form_line] {
+		.label_tit {
+			font-size: var(--font-size-label-medium);
+			line-height: 150%;
+			margin-bottom: var(--padding-3);
+			// .question_mark_btn {
+			// 	transform: translateY(5px);
+			// }
+			&.box {
+				display: flex;
+				justify-content: space-between;
+				align-items: end;
+			}
+
+			& + .address_item {
+				margin-top: 0;
+			}
+
+			.tooltip_wrap {
+				vertical-align: top;
+				.tooltip_panel {
+					top: calc(100% + 32px);
+				}
+			}
 		}
 
-		.input_text + .btn_link.short_cut{
+		.input_text + .btn_link.short_cut,
+		.form_line,
+		.btn_area {
 			margin-top: 16px;
 		}
+		.inp_checkbox {
+			& + .radio_group_wrap {
+				margin-top: 16px;
+			}
+		}
+		.explain_text {
+			position: relative;
+			display: inline-block;
+			padding-left: 20px;
+			margin-top: var(--padding-3);
+			color: var(--color-text-information);
+			font-size: var(--font-size-label-medium);
+			line-height: 150%;
+			letter-spacing: var(--typo-letter-spacing-0);
 
+			&::before {
+				content: "";
+				position: absolute;
+				top: calc(50% - 8px);
+				left:0;
+				width: 16px;
+				height: 16px;
+				background: url(../images/icon/info_ty2.svg) no-repeat center/contain;
+			}
+		}
+
+		.line_group {
+			display: flex;
+			gap: 12px;
+
+			.line {
+				flex: 1;
+			}
+		}
+		button.full {
+			width: 100%;
+		}
+		.select_item {
+			& + .input_text {
+				margin-top: 16px;
+			}
+		}
+
+		& + .info_box,
+		& ~ .form_line,
+		& ~ .extra_area {
+			margin-top: 32px;
+		}
 	}
+
+	> .form_line_ty2 {
+		& + .form_line_ty2 {
+			margin-top: 16px;
+		}
+		& + .row {
+			margin-top: 16px;
+		}
+	}
+	
 	.info_box + .btn_area{
 		margin-top:16px;
 	}
@@ -550,7 +632,7 @@
 		&.balance {
 			& > * { width: 50%;}
 		}
-		
+
 		& + .form_line {
 			margin-top: 16px;
 		} 
@@ -583,86 +665,6 @@
 
 	.extra_area ~ .form_line {
 		margin-top: 32px;
-	}
-
-	.form_line {
-		.label_tit {
-			font-size: var(--font-size-label-medium);
-			line-height: 150%;
-			margin-bottom: var(--padding-3);
-			// .question_mark_btn {
-			// 	transform: translateY(5px);
-			// }
-			&.box {
-				display: flex;
-				justify-content: space-between;
-				align-items: end;
-			}
-
-			& + .address_item {
-				margin-top: 0;
-			}
-
-			.tooltip_wrap {
-				vertical-align: top;
-				.tooltip_panel {
-					top: calc(100% + 32px);
-				}
-			}
-		}
-		.btn_area {
-			margin-top: 16px;
-		}
-		.inp_checkbox {
-			& + .radio_group_wrap {
-				margin-top: 16px;
-			}
-		}
-		.explain_text {
-			position: relative;
-			display: inline-block;
-			padding-left: 20px;
-			margin-top: var(--padding-3);
-			color: var(--color-text-information);
-			font-size: var(--font-size-label-medium);
-			line-height: 150%;
-			letter-spacing: var(--typo-letter-spacing-0);
-
-			&::before {
-				content: "";
-				position: absolute;
-				top: calc(50% - 8px);
-				left:0;
-				width: 16px;
-				height: 16px;
-				background: url(../images/icon/info_ty2.svg) no-repeat center/contain;
-			}
-		}
-
-		& ~ .form_line,
-		& ~ .extra_area {
-			margin-top: 32px;
-		}
-
-		.line_group {
-			display: flex;
-			gap: 12px;
-
-			.line {
-				flex: 1;
-			}
-		}
-		button.full {
-			width: 100%;
-		}
-		.form_line {
-			margin-top: 16px;
-		} 
-		.select_item {
-			& + .input_text {
-				margin-top: 16px;
-			}
-		}
 	}
 	.list_ty2 {
 		margin-top: 16px;

@@ -6,7 +6,7 @@
 		<div class="popup_content">
 
 			<div class="tab_wrap">
-				<div class="tab_scroll_box">
+				<div class="tab_scroll_box_ty1">
 					<div class="tab_wrap_list_ty1 scroll" role="tablist">
 						{{>cp/tab_btn tb-text="주소+상호+업종로 조회" tb-class="tab_btn_block" tb-id="01" tb-active=true}}
 						{{>cp/tab_btn tb-text="고유번호(일련번호)로 조회" tb-class="tab_btn_block" tb-id="02"}}
@@ -15,17 +15,23 @@
 
 				<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
 					<div class="form_group_wrap">
-						<div class="form_line">
+						<div class="form_line_ty2">
 							<div class="label_tit">업종 선택</div>
 							<div class="radio_group_wrap" role="radiogroup">
-								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_g1" name="radio_g1" labelname="음식업" checked=true }}
-								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_g2" name="radio_g1" labelname="숙박업" }}
+								{{> cp/radio rd-class="rd_btn_s4" rd-id="radio_btn_g1" name="radio_g1" labelname="음식업" checked=true }}
+								{{> cp/radio rd-class="rd_btn_s4" rd-id="radio_btn_g2" name="radio_g1" labelname="숙박업" }}
 							</div>
 						</div>
+						<div class="form_line_ty2">
+							{{> cp/selectitem si_class="select_item_case01_mi" si_ph="시·도 선택" si_title="선택" si_popup="pop_type01_1"}}
+						</div>
+						<div class="form_line_ty2">
+							{{> cp/selectitem si_class="select_item_case01_mi" si_ph="시·군·구 선택" si_title="선택" si_popup="pop_type01_2"}}
+						</div>
+						<div class="form_line_ty2">
+							{{> cp/text class="inp_mi" placeholder="상호명 (2글자 이상) 입력" inp-title="상호명 입력" minlength="2" }}
+						</div>
 					</div>
-					{{> cp/selectitem si_class="select_item_case01_mi" si_ph="시·도 선택" si_title="선택" si_popup="pop_type01_1"}}
-					{{> cp/selectitem si_class="select_item_case01_mi" si_ph="시·군·구 선택" si_title="선택" si_popup="pop_type01_2"}}
-					{{> cp/text class="inp_mi" placeholder="상호명 (2글자 이상) 입력" inp-title="상호명 입력" minlength="2" }}
 					<div class="btn_area">
 						{{> cp/button type="2" size="2" b-text="조회"}}
 					</div>
@@ -45,8 +51,8 @@
 								<div class="inner_cont">
 									<div class="item_top" id="card_chk1_1_cont">
 										<div class="title_info">
-											<div class="sub_title">MU112013400181</div>
-											<div class="main_title">치킨매니아</div>
+											<div class="sub_title">C2205036193</div>
+											<div class="main_title">교촌치킨 강남역점</div>
 										</div>
 										<div class="desc">일반음식점</div>
 									</div>
@@ -59,35 +65,6 @@
 										<li>
 											<div class="title">주소</div>
 											<div class="cont">서울특별시 강남구 수서동 광평로39길 3-0 동익아파트 802동 801호</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="card_item">
-							<div class="item_inner">
-								<div class="inp_checkbox">
-									<input type="checkbox" id="card_chk1_2" name="name1" aria-labelledby="card_chk1_2_cont">
-									<label for="card_chk1_2" class="chk_label"></label>
-									<i></i>
-								</div>
-								<div class="inner_cont">
-									<div class="item_top" id="card_chk1_2_cont">
-										<div class="title_info">
-											<div class="sub_title">MU112013729989</div>
-											<div class="main_title">치킨마을</div>
-										</div>
-										<div class="desc">일반음식점</div>
-									</div>
-				
-									<ul class="card_list_ty1">
-										<li>
-											<div class="title">총면적</div>
-											<div class="cont">000327㎡</div>
-										</li>
-										<li>
-											<div class="title">주소</div>
-											<div class="cont">서울특별시 강남구 역삼동 논현로509-0 송암빌딩</div>
 										</li>
 									</ul>
 								</div>
