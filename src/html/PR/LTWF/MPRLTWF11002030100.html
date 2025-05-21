@@ -1,27 +1,23 @@
 {{#> layout/default page-title="기초정보 입력 | 상품"}}
 
 	<!-- s: full 팝업 -->
-	{{#> popup/popup_full popup-id="pop_type01" popup-active=true popup-title="다중이용시설 일련번호 조회" }}
+	{{#> popup/popup_full popup-id="pop_type01" popup-active=true popup-title="재난배상책임의무대상 일련번호 조회" }}
 	<div class="popup_cont">
 		<div class="popup_content">
 
 			<div class="tab_wrap">
 				<div class="tab_scroll_box">
 					<div class="tab_wrap_list_ty1 scroll" role="tablist">
-						{{>cp/tab_btn tb-text="주소+상호로 조회" tb-class="tab_btn_block" tb-id="01"}}
-						{{>cp/tab_btn tb-text="고유번호(일련번호)" tb-class="tab_btn_block" tb-id="02"}}
-						{{>cp/tab_btn tb-text="사업자등록번호" tb-class="tab_btn_block" tb-id="03" tb-active=true}}
+						{{>cp/tab_btn tb-text="주소+상호+업종로 조회" tb-class="tab_btn_block" tb-id="01"}}
+						{{>cp/tab_btn tb-text="고유번호(일련번호)로 조회" tb-class="tab_btn_block" tb-id="02" tb-active=true}}
 					</div>
 				</div>
 
 				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
-					주소+상호로 조회 내용
+					주소+상호+업종로 조회 내용
 				</div>
-				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
-					고유번호(일련번호) 내용
-				</div>
-				<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel03">      
-					{{> cp/text class="inp_mi" placeholder="사업자등록번호 입력" inp-title="사업자등록번호 입력" }}
+				<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
+					{{> cp/text class="inp_mi" placeholder="C로 시작하는 고유번호(가입관리)코드 입력" inp-title="고유번호(가입관리)코드 입력" }}
 					<div class="btn_area">
 						{{> cp/button type="2" size="2" b-text="조회"}}
 					</div>
@@ -90,6 +86,9 @@
 							</div>
 						</div>
 					</div>
+				</div>
+				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel03">                
+					사업자등록번호 내용
 				</div>
 			</div>
 		</div>

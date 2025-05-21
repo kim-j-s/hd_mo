@@ -97,31 +97,24 @@
 }
 
 .tab_scroll_box {
+	position: relative;
 	overflow-x: auto;
 	margin: 0 -24px;
-	padding: 0 24px;
 
 	[class^=tab_wrap_list] {
 		&.scroll {
-			position: relative;
 			display: inline-flex;
 			align-items: center;
-			
-			&:after {
-				position: absolute;
-				bottom: -1px;
-				left: -24px;
-				content:'';
-				width: calc(100vw + 96px);
-				height: 1px;
-				background-color: var(--color-border-gray-light);
-			}
+			white-space: nowrap;
+			padding: 0 24px;
 		}
 	}
+
 	.tab_wrap_list_ty1 {
 		margin: 0;
 		.tab_btn {
-			padding: 12px 16px;
+			min-width: 64px;
+			padding: 12px 8px;
 			flex: none;
 		}
 	}
