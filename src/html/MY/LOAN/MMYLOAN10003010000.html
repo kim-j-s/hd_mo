@@ -1,0 +1,140 @@
+{{#> layout/default page-title="보험계약대출 신청 | 마이페이지"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="보험계약대출 신청" }}
+	<div id="container" class="container">
+		<div class="content">
+			<div class="content_top">
+				<div class="bg_top_cover">
+					<div class="info_gray bg_etc01">
+						<dl>
+							<dt>보장보험료 합계</dt>
+							<dd class="point">
+								<strong class="big">1,155,150원</strong>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+
+			<div class="space_list_ty4">
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">대출금 받을 계좌 
+							{{#> cp/tooltip trigger-icon="popover_help" title="대출금 받을 계좌 안내"}}
+							<p>최근 2년 이내 이체 실적이 3회 이상인 계약자 본인명의 계좌만 선택할 수 있어요.</p>
+							{{/ cp/tooltip}}
+						</div>
+						{{> cp/selectitem si_ph="국민은행 1234******1234" si_title="계좌 선택" si_popup="my_bank_select"}}
+						<!-- s: CASE. 계좌 디폴트 선택 시 - 대출금지급가능 계좌가 1개인 경우 -->
+						<!-- {{> cp/text type="text" placeholder="입력해주세요" inp-title="대출금 받을 계좌 입력" value="국민은행 1234******1234" disabled=true }} -->
+						<!-- e: CASE. 계좌 디폴트 선택 시 - 대출금지급가능 계좌가 1개인 경우 -->
+					</div>
+					<div class="form_line">
+						<div class="label_tit">이자납입계좌
+							{{#> cp/tooltip trigger-icon="popover_help" title="이자납입계좌"}}
+							<p>본인명의 계좌만 등록할 수 있어요.</p>
+							{{/ cp/tooltip}}
+						</div>
+						<div class="space_list_ty1">
+							{{> cp/checkbox id="checkbox01-1" label_class="" labelname="대출금 받을 계좌와 같아요." }}
+							<!-- 대출금지급가능 계좌 동일여부 체크 해제 시 -->
+							{{> cp/selectitem si_ph="국민은행 1234******1234" si_title="계좌 선택" si_popup="my_bank_select"}}
+							<!-- 대출금지급가능 계좌 동일여부 체크 해제 시 -->
+						</div>
+					</div>
+
+					<!-- s: 직접입력 선택 시 노출 -->
+					<div class="form_line">
+						<div class="form_line">
+							<div class="label_tit">은행</div>
+							{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" }}
+						</div>
+						<div class="form_line">
+							<div class="label_tit">계좌번호</div>
+							<div class="comp_wrap key_number">
+									{{> cp/text type="tel" placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
+									{{> cp/button type="3" size="4" b-text="계좌확인" popup="pop_type01" }}
+							</div>
+						</div>
+					</div>
+					<!-- e: 직접입력 선택 시 노출 -->
+					<div class="form_line">
+						<div class="label_tit">예금주</div>
+						{{> cp/text type="text" placeholder="입력해주세요" inp-title="예금주 입력" value="[계좌확인]을 눌러 예금주 입력" readonly=true }}
+					</div>
+					<div class="form_line">
+						<div class="label_tit">이자납입일</div>
+						{{> cp/selectitem si_ph="이자납입일 선택" si_item="5일" si_title="이자납입일 선택" si_popup="bank_day_select"}}
+					</div>
+				</div>
+				
+				<div class="checkbox_group_wrap">
+					{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-1" label_class="chk_label_ty3" labelname="등록한 연락처로 이자미납 안내문을 보내드려요.<br/>우편으로도 받아보시겠어요?" }}
+				</div>
+
+			</div>
+			
+			
+
+			<!-- s: 꼭 알아두세요 -->
+			{{#> cp/notice dp-active=true }}
+				<ul class="list_depth">
+					<li>대출금 받을 계좌는 보험료 또는 대출이자 자동이체계좌 중 최근 2년 이내 이체 실적이 3회 이상인 계약자 본인명의 계좌만 등록할 수 있습니다.</li>
+					<li>본인명의의 휴대폰이 없거나 거래내역이 없는 본인명의 신규 계좌로 대출금을 받고 싶은 경우, 대출상담 고객센터(1588-5655)나 고객지원팀으로 문의해주세요.</li>
+					<li>가상계좌, 펀드계좌, 신탁계좌로는 대출금 수령이 제한될 수 있으며, 출금이 불가능한 계좌(평생계좌, 맞춤계좌 등)는 이자납입계좌로 등록할 수 없습니다.</li>
+					<li>「통신사기피해환급법」에 따라 홈페이지, 모바일웹, 모바일앱을 통해 대출신청을 하는 경우 추가 인증이 필요합니다.</li>
+					<li>「통신사기피해환급법」에 따라 인터넷 금융거래 시, 다음에 해당하는 이상금융거래로 판단될 경우 인터넷으로 대출 신청이 제한됩니다.</li>
+					<li>아래 경우에 대출을 신청하려면 대출상담 고객센터(1588-5655)를 통해 추가 본인확인을 하셔야 합니다.
+						<ul>
+							<li>중국/동남아 IP 접속 건</li>
+							<li>당일 3백만원 이상 금융거래 후, 추가 신청 건</li>
+						</ul>
+					</li>
+					<li>현대해상에 등록된 휴대폰번호와 인증 시 사용하는 휴대폰번호가 다르면 휴대폰인증이 완료되지 않습니다. 인증받을 휴대폰번호로 고객정보를 변경해주세요.</li>
+					<li>대출상환은 홈페이지, 모바일웹, 모바일앱, 대출상담 고객센터, 고객지원팀을 통해서 가능합니다.</li>
+					<li>대출이자는 대출신청 시 선택한 자동이체계좌에서 자동 납입됩니다. </li>
+					<li>대출시점에 대출이자가 자동이체 청구 중(영업일 기준 자동이체일 1~2일 전)일 경우 대출(상환)을 하면 이자가 이중출금되며, 이중출금 시에는 영업일 기준 2일 후 자동이체계좌로 자동 환급됩니다.</li>
+					
+				</ul>
+			{{/ cp/notice }}
+			<!-- e: 꼭 알아두세요 -->
+		</div>
+	</div>
+
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="다음" }}
+		</div>
+	</div>
+	<!-- e: 하단 고정 버튼 영역 -->
+</div>
+	 
+<!-- s: popup area -->
+{{#> popup/popup_bottom popup-id="my_bank_select" popup-title="계좌 선택"}}
+<div class="popup_cont">
+		<div class="popup_content">
+				<div class="opt_select_list opt_case3">
+						<div role="button" tabindex="0" class="option active" title="선택됨"><span class="text">국민은행/12341234132/김현대</span></div>
+						<div role="button" tabindex="0" class="option"><span class="text">직접입력</span></div>
+				</div>
+		</div>
+</div>
+{{/ popup/popup_bottom}}
+
+{{#> popup/popup_bottom popup-id="bank_day_select" popup-title="이자납입일"}}
+<div class="popup_cont">
+		<div class="popup_content">
+				<div class="opt_select_list opt_case3">
+						<div role="button" tabindex="0" class="option active" title="선택됨"><span class="text">5일</span></div>
+						<div role="button" tabindex="0" class="option"><span class="text">10일</span></div>
+						<div role="button" tabindex="0" class="option"><span class="text">20일</span></div>
+						<div role="button" tabindex="0" class="option"><span class="text">25일</span></div>
+				</div>
+		</div>
+</div>
+{{/ popup/popup_bottom}}
+
+<!-- e: popup area -->
+
+{{/ layout/default }}
