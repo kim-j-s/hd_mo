@@ -21,7 +21,7 @@
 /* Common */
 body {
 	overflow: hidden;
-	color: #1e2124;
+	color: var(--color-text-basic);
 }
 html {
 	scroll-behavior: smooth;
@@ -2737,7 +2737,7 @@ strong {
 	height: 2rem;
 }
 .hd_btn_s_4 {
-	min-width: 6.4rem;
+	min-width: 5.4rem;
 	padding: 0.6rem var(--padding-5);
 	border-radius: var(--radius-medium1);
 	font-size: var(--font-size-button-small-bold);
@@ -5559,6 +5559,11 @@ strong {
 	font-size: var(--font-size-heading-medium);
 	font-weight: 700;
 }
+.input_text.big.phone .int_txt {
+	padding-top: 0;
+	font-size: var(--font-size-heading-medium);
+	font-weight: 700;
+}
 .input_text + .btn_area,
 .input_text + .checkbox_group_wrap {
 	margin-top: 1.6rem;
@@ -7548,6 +7553,13 @@ strong {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-box-align: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
 	gap: 1.2rem;
 }
 .radio_group_wrap_ty3 .inp_radio {
@@ -9331,7 +9343,8 @@ strong {
 .text_sub + .radio_group_wrap,
 .text_sub + .inp_checkbox,
 .text_sub + .file_attach_box,
-.text_sub + .card_item_wrap {
+.text_sub + .card_item_wrap,
+.text_sub + .info_cont {
 	margin-top: 1.6rem;
 }
 .text_sub + .btn_area {
