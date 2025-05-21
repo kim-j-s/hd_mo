@@ -8,6 +8,10 @@
 		flex: 1 1 0;
 
 		&.select_item_case01 {
+			& + .select_item_case01 {
+				margin-top: 0;
+			}
+
 			.select_item_inner {
 				height: 100%;
 				.si_item {
@@ -17,9 +21,13 @@
 				}
 			}
 
+			&.select_item_case01_sm {
+				& + .select_item_case01_sm {
+					margin-top: 0;
+				}
+			}
 		}
 
-		& + .select_item_case01_sm,
 		& + .select_item {
 			margin-top: 0;
 		}
@@ -84,7 +92,7 @@
 		&.select_item_case01_mi {
 			min-height: 21px;
 
-			& + & {
+			& + .select_item_case01_sm {
 				margin-top: 16px;
 			}
 
@@ -106,7 +114,7 @@
 		&.select_item_case01_sm {
 			min-height: 18px;
 
-			& + & {
+			& + .select_item_case01_sm {
 				margin-top: 16px;
 			}
 
