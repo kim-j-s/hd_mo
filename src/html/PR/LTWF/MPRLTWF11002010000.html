@@ -1,0 +1,75 @@
+{{#> layout/default page-title="기초정보 입력 | 상품"}}
+
+	<!-- s: full 팝업 -->
+	{{#> popup/popup_full popup-id="pop_type01" popup-active=true popup-title="업종 선택" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<!-- s: popup_content_top -->
+			<div class="popup_content_top">
+				<h2 class="title_h2">
+					<strong>사업장의 업종</strong>을 선택해 주세요. 
+				</h2>
+			</div>
+			<!-- e: popup_content_top -->
+
+			{{> cp/selectitem si_ph="선택" si_item="근린생활시설" si_title="사업장 업종 중분류 선택 팝업 호출" si_popup="pop_type02"}}
+			{{> cp/selectitem si_ph="선택" si_title="사업장 업종 대분류 선택 팝업 호출" si_popup="pop_type03"}}
+			<div class="info_gray">
+				<h3 class="title_h3">업종 설명</h3>
+				<p class="info_text">음식류를 조리, 판매하는 곳으로서 음주행위가 허용되지 않는 곳 / 다방, 제과점, 건강원, 방앗간, 아이스크림전문점, 커피전문점 등 / 고속도로 휴게소 : 음식점 면적이 90% 이상인 경우 / 선식가게 : 조리 및 가공 작업이 있을 경우.</p>
+			
+				<ul class="list_depth">
+					<li>
+						가입불가
+						<ul>
+							<li>어린이실내놀이시설(키즈카페등)</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="확인" disabled=true}}
+		</div>
+	</div>
+	{{/ popup/popup_full}}
+	<!-- e: full 팝업 -->
+
+	<!-- s: popup area -->
+	<!-- s: 대분류 선택 팝업 -->
+	{{#> popup/popup_bottom popup-id="pop_type02" popup-title="대분류 선택"}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="opt_select_list opt_case3">
+				<div role="button" tabindex="0" class="option active" title="선택됨"><span class="text">근린생활시설</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">항목 2</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">항목 3</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">항목 4</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">항목 5</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">항목 6</span></div>
+			</div>
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: 대분류 선택 팝업 -->
+	<!-- s: 중분류 선택 팝업 -->
+	{{#> popup/popup_bottom popup-id="pop_type03" popup-title="중분류 선택"}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="opt_select_list opt_case3">
+				<div role="button" tabindex="0" class="option active" title="선택됨"><span class="text">휴게음식점</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">항목 2</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">항목 3</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">항목 4</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">항목 5</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">항목 6</span></div>
+			</div>
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: 중분류 선택 팝업 -->
+	<!-- e: popup area -->
+
+{{/ layout/default }}
