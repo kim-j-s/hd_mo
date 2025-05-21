@@ -21,13 +21,16 @@ class HD_Popup {
 	}
 
 	init() {
-		if ($(".wrap").attr("aria-hidden") == undefined || $(".wrap").attr("aria-hidden") == "false") {
+		
+
+		if($(".wrap").attr("aria-hidden")==undefined || $(".wrap").attr("aria-hidden")=='false'){
 			$(".wrap").attr("aria-hidden", "true");
-			$(".wrap").attr("inert", "");
+			$(".wrap").attr("inert",'');
 		}
 
-		console.log(this.$target.find(".popup_head_title"));
+		console.log(this.$target.find(".popup_head_title"))
 
+		
 		//popup active
 		this.isOpen = true;
 		$("body").css("overscroll-behavior", "contain");
@@ -55,7 +58,7 @@ class HD_Popup {
 		if (this.$header) this.$header.attr("tabindex", 0);
 		if (this.$content) this.$content.attr("tabindex", 0);
 
-		const hasTitle = this.$header && this.$header.text().trim() !== "";
+		const hasTitle = this.$header&&this.$header.text().trim() !=='';
 		const focusTarget = hasTitle ? this.$header : this.$content;
 		this.focusMove(focusTarget);
 	}
@@ -83,7 +86,8 @@ class HD_Popup {
 			if (this.isOpen && activePopups.length > 0) {
 				activePopups.attr("aria-hidden", "true");
 				activePopups.find(".popup_inner").attr("aria-hidden", "true");
-			} else if (!this.isOpen && activePopups.length > 0) {
+
+			} else if (!this.isOpen && activePopups.length > 0) {				
 				this.$target.attr("aria-hidden", "true");
 				this.$target.find(".popup_inner").attr("aria-hidden", "true");
 			}
@@ -108,20 +112,18 @@ class HD_Popup {
 			$($prevPopup).attr("aria-hidden", "false");
 			$($prevPopup).find(".popup_inner").attr("aria-hidden", "false");
 
-			const hasTitle = $prevHeader && $prevHeader.text().trim() !== "";
+			const hasTitle = $prevHeader&&$prevHeader.text().trim() !=='';
 			const focusTarget = hasTitle ? $prevHeader : $prevContent;
-			focusTarget.attr("data-returnTarget", true);
+			focusTarget.attr("data-returnTarget",true);
 			this.focusMove(focusTarget);
 
 			//팝업을 동적으로 생성하는 케이스에서만 사용
-			if (window.popupGroup) {
-				setTimeout(() => {
-					this.$target.remove();
-				}, 1000);
+			if(window.popupGroup) {
+				setTimeout(()=>{ this.$target.remove()},1000);
 			}
 		} else {
 			$(".wrap").attr("aria-hidden", "false");
-			$(".wrap").removeAttr("inert");
+			$(".wrap").removeAttr('inert');
 			$("body").css("overscroll-behavior", "auto");
 			$("body").removeClass("scroll_lock");
 
@@ -129,43 +131,43 @@ class HD_Popup {
 				this.$triggerEl.focus();
 
 				//팝업을 동적으로 생성하는 케이스에서만 사용
-				if (window.popupGroup) {
-					setTimeout(() => {
-						this.$target.remove();
-					}, 0);
-				}
+				if(window.popupGroup) {
+					setTimeout(()=>{ this.$target.remove()},0)	
+				}		
 			}, 400);
 		}
 	}
 }
 
 function openPop($triggerEl, target) {
+
 	let delayTime = 0;
 
 	//팝업을 동적으로 생성하는 케이스에서만 사용
-	if (window.popupGroup) {
+	if(window.popupGroup) {
 		//popup dom을 동적으로 body에 add
 		attachPopup(target);
 		delayTime = 0.5;
 	}
 	const myPopup = new HD_Popup($triggerEl, target);
-	setTimeout(() => {
-		myPopup.init();
-	}, delayTime);
+	setTimeout(() => {myPopup.init();},delayTime);	
 }
 
+
+
 //동적 append 테스트용 함수
-function attachPopup(newPopup) {
-	const popupArea = $(".popup_area");
+function attachPopup (newPopup) {
+	const popupArea = $('.popup_area');
 	popupArea.append(window.popupGroup[newPopup]);
 }
+
+
 
 /*****************/
 /* 팝업을 호출하는 페이지에 붙이는 함수 */
 /*****************/
 
-{
-	/* <script>
+{/* <script>
 	window.onload = function(){	
 	//팝업 DOM을 string으로 저장
 	window.popupGroup = {};
@@ -227,8 +229,10 @@ function attachPopup(newPopup) {
 			</div>`;
 
 	}
-</script> */
-}
+</script> */}
+
+
+
 
 /* Toast 팝업 */
 let toastTimer = null;
