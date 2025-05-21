@@ -511,14 +511,14 @@ function prograssBar(){
 function tabScroll(){
 	let scrollPosition = 0;
 
-	$('.tab_scroll_box').on('scroll', function() {
+	$('[class^=tab_scroll_box]').on('scroll', function() {
 		scrollPosition = $(this).scrollLeft();
 		// $('#scroll_position span').text(scrollPosition);
 	});
 
-	$('.tab_scroll_box .tab_btn').on('click', function(){
+	$('[class^=tab_scroll_box] .tab_btn').on('click', function(){
 		const $this = $(this),
-					$scrollBox = $this.closest('.tab_scroll_box')
+					$scrollBox = $this.closest('[class^=tab_scroll_box]')
 					$scrollList = $scrollBox.children('.scroll');
 
 		const btn_offset = $this.offset().left - 20,
