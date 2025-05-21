@@ -40,7 +40,7 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>기본정보입력 | 연금보험 - 현대해상 다이렉트</title>
+		<title>자동이체 신청/변경 | 마이페이지 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -56,7 +56,7 @@
 					</div>
 
 					<div class="header_connect">
-						<h1 class="header_title">연금보험</h1>
+						<h1 class="header_title">자동이체 신청/변경</h1>
 					</div>
 
 					<div class="header_right">
@@ -86,15 +86,15 @@
 
 									<!-- s: 로그인 후 -->
 									<!-- 
-									<div class="nmc_top">
-										<div class="nmc_top_l">
-											<span class="login_hello"><strong>현대</strong>님 반갑습니다</span>
-										</div>
-										<div class="nmc_top_r">
-											<button type="button" class="mem_btn member_logout"><span class="text">로그아웃</span></button>
-										</div>
-									</div>
-									-->
+											<div class="nmc_top">
+												<div class="nmc_top_l">
+													<span class="login_hello"><strong>현대</strong>님 반갑습니다</span>
+												</div>
+												<div class="nmc_top_r">
+													<button type="button" class="mem_btn member_logout"><span class="text">로그아웃</span></button>
+												</div>
+											</div>
+											-->
 									<!-- e: 로그인 후 -->
 
 									<ul class="nmc_direct_menu">
@@ -331,218 +331,170 @@
 					</div>
 				</div>
 			</div>
-			<form action="" class="bi_form">
-				<div class="bi_wrap">
-					<div class="stepper_wrap">
-						<div class="stepper" role="img">
-							<div class="pgs">
-								<span class="pgs_per" style="width: 0%"><span class="motion pension"></span></span>
-							</div>
+			<div id="container" class="container">
+				<div class="content">
+					<!-- s: 계약 목록 -->
+					<div class="all_checking">
+						<div class="inp_checkbox">
+							<input type="checkbox" id="checkbox2" />
+							<label for="checkbox2" class="chk_label">
+								<span class="label_cont">
+									총
+									<strong class="point">2</strong>
+									건 전체 선택
+								</span>
+							</label>
 						</div>
-						<button type="button" class="stm_btn stm_l" onclick="$stepper.stepBack();">이전 단계</button>
-						<button type="button" class="stm_btn stm_r" onclick="$stepper.stepNext();">다음 단계</button>
 					</div>
-
-					<div class="bi_stepper">
-						<div class="bi_top">
-							<!-- bit -->
-							<!-- s: 25-05-21 수정 -->
-							<div class="bit bit_etc1">
-								<!-- e: 25-05-21 수정 -->
-
-								<!-- s: 25-05-19 수정 -->
-
-								<!-- 생년월일 -->
-								<div class="bit_inner active" data-pickitem="step1">
-									<p class="bit_inner_text">
-										든든한 노후를 맞이하실 분의
-										<br />
-										<span class="bold">생년월일</span>
-										을 알려주세요.
-										<small class="sub_txt">0~75세까지 가입하실 수 있어요.</small>
-									</p>
-									<div class="bit_btn_scrollx">
-										<button type="button" class="btn_link short_cut sm rd_box">
-											<span class="text">보장내용 자세히 보기</span>
-										</button>
-									</div>
+					<div class="card_item_wrap">
+						<div class="card_item">
+							<div class="item_inner">
+								<div class="inp_checkbox">
+									<input type="checkbox" id="card_chk1" name="name1" aria-labelledby="card_chk1_cont" />
+									<label for="card_chk1" class="chk_label"></label>
+									<i></i>
 								</div>
-								<!-- 생년월일 -->
-
-								<!-- 성별 -->
-								<div class="bit_inner" data-pickitem="step2">
-									<p class="bit_inner_text">
-										<strong>성별</strong>
-										을 알려주세요
-									</p>
-								</div>
-								<!-- 성별 -->
-								<!-- e: 25-05-19 수정 -->
-
-								<!-- 연금액 -->
-								<div class="bit_inner active" data-pickitem="step3">
-									<p class="bit_inner_text">
-										매달 얼마를 낼까요?
-										<br />
-										<span class="bold">노후 연금액</span>
-										을 알아볼께요
-									</p>
-								</div>
-								<!-- 연금액 -->
-							</div>
-							<!-- bit -->
-
-							<!-- bit_history -->
-							<div class="bit_history">
-								<div class="bit_history_inner">
-									<!-- s: 25-05-19 수정 -->
-									<button type="button" class="selected_case step1 birth" title="생년월일 수정"></button>
-									<button type="button" class="selected_case step2 gender" title="성별 수정"></button>
-									<!-- e: 25-05-19 수정 -->
-									<button type="button" class="selected_case step3 won" title="연금액 수정"></button>
-								</div>
-							</div>
-							<!-- bit_history -->
-						</div>
-
-						<div class="bi_opts_wrap">
-							<!-- s: 25-05-19 수정 -->
-
-							<!-- 생년월일 -->
-							<div class="opts_area active" tabindex="0" aria-label="생년월일 8자리를 입력하시면 다음단계로 이동합니다." data-pickitem="step1">
-								<div class="opts_area_item column">
-									<div class="birth_date_field" aria-live="polite"></div>
-									<div class="bi_keypad">
-										<div class="bi_keypad_item">
-											<button type="button" class="keypad_btn">1</button>
-											<button type="button" class="keypad_btn">2</button>
-											<button type="button" class="keypad_btn">3</button>
-											<button type="button" class="keypad_btn keypad_btn_del" aria-label="지우기"></button>
-										</div>
-										<div class="bi_keypad_item">
-											<button type="button" class="keypad_btn">4</button>
-											<button type="button" class="keypad_btn">5</button>
-											<button type="button" class="keypad_btn">6</button>
-											<button type="button" class="keypad_btn keypad_btn_delall">전체삭제</button>
-										</div>
-										<div class="bi_keypad_item">
-											<button type="button" class="keypad_btn">7</button>
-											<button type="button" class="keypad_btn">8</button>
-											<button type="button" class="keypad_btn">9</button>
-											<button type="button" class="keypad_btn">0</button>
+								<div class="inner_cont">
+									<div role="button" class="card_link" tabindex="0">
+										<div class="item_top" id="card_chk1_cont">
+											<div class="title_info">
+												<div class="main_title">무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(Hi2301)</div>
+											</div>
 										</div>
 									</div>
+									<ul class="card_list_ty1">
+										<li>
+											<div class="title">대출일</div>
+											<div class="cont">2025.02.19</div>
+										</li>
+										<li>
+											<div class="title">대출잔액</div>
+											<div class="cont">10,000,000원</div>
+										</li>
+										<li>
+											<div class="title">이체일</div>
+											<div class="cont">10일</div>
+										</li>
+										<li>
+											<div class="title">납입계좌</div>
+											<div class="cont">국민은행 1234****1234</div>
+										</li>
+									</ul>
 								</div>
 							</div>
-							<!-- 생년월일 -->
-
-							<!-- 성별 -->
-							<div class="opts_area" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step2">
-								<div class="opts_area_item">
-									<div class="inp_radio rd_btn_s1">
-										<input type="radio" id="radio11" name="radio1" />
-										<label for="radio11">
-											<span class="label_cont">남성</span>
-										</label>
+						</div>
+						<div class="card_item">
+							<div class="item_inner">
+								<div class="inp_checkbox">
+									<input type="checkbox" id="card_chk2" name="name1" aria-labelledby="card_chk2_cont" />
+									<label for="card_chk2" class="chk_label"></label>
+									<i></i>
+								</div>
+								<div class="inner_cont">
+									<div role="button" class="card_link" tabindex="0">
+										<div class="item_top" id="card_chk2_cont">
+											<div class="title_info">
+												<div class="main_title">무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(Hi2301)</div>
+											</div>
+										</div>
 									</div>
-									<div class="inp_radio rd_btn_s1">
-										<input type="radio" id="radio12" name="radio1" />
-										<label for="radio12">
-											<span class="label_cont">여성</span>
-										</label>
-									</div>
+									<ul class="card_list_ty1">
+										<li>
+											<div class="title">대출일</div>
+											<div class="cont">2025.02.19</div>
+										</li>
+										<li>
+											<div class="title">대출잔액</div>
+											<div class="cont">10,000,000원</div>
+										</li>
+										<li>
+											<div class="title">이체일</div>
+											<div class="cont">10일</div>
+										</li>
+										<li>
+											<div class="title">납입계좌</div>
+											<div class="cont">국민은행 1234****1234</div>
+										</li>
+									</ul>
 								</div>
 							</div>
-							<!-- 성별 -->
-							<!-- e: 25-05-19 수정 -->
+						</div>
+					</div>
+					<!-- e: 계약 목록 -->
 
-							<!-- 연금액 -->
-							<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step3">
-								<div class="opts_area_item">
-									<div class="inp_radio rd_btn_s1">
-										<input type="radio" id="radio31" name="radio3" />
-										<label for="radio31">
-											<span class="label_cont">5만원</span>
-										</label>
-									</div>
-									<div class="inp_radio rd_btn_s1">
-										<input type="radio" id="radio32" name="radio3" />
-										<label for="radio32">
-											<span class="label_cont">20만원</span>
-										</label>
-									</div>
-									<div class="inp_radio rd_btn_s1">
-										<input type="radio" id="radio33" name="radio3" />
-										<label for="radio33">
-											<span class="label_cont">
-												50만원
-												<br />
-												(최대 세액공제)
-											</span>
-										</label>
-									</div>
-									<div class="inp_radio rd_btn_s1">
-										<input type="radio" id="radio34" name="radio3" />
-										<label for="radio34">
-											<span class="label_cont">100만원</span>
-										</label>
-									</div>
-									<div class="inp_radio rd_btn_s1">
-										<input type="radio" id="radio35" name="radio3" />
-										<label for="radio35">
-											<span class="label_cont">150만원</span>
-										</label>
-									</div>
-									<button type="button" class="hd_btn direct_select_btn" title="월 납입금액 입력 팝업 오픈">
-										<span class="text">직접 입력</span>
-									</button>
+					<!-- s: 조회 내역이 없는 경우 -->
+					<div class="no_list_area">
+						<i class="hd_icon exclamationSvg"></i>
+						<p>납입계좌 변경이 가능한 보험이 없어요</p>
+						<p class="desc tac">
+							혹시 급여이체로 납입하시나요?
+							<br />
+							이 경우는 아래 ‘꼭 알아두세요’를 참고해주세요.
+						</p>
+					</div>
+					<div class="btn_area">
+						<a href="javascript:void(0)" class="btn_link short_cut short_cut_icon short_cut_icon_ty5" title="보험계약대출 신청 페이지로 이동">
+							<span class="text">
+								<dl>
+									<dt>
+										바로 대출가능한 금액
+										<span class="sub_text">(2025.02.20 기준)</span>
+									</dt>
+									<dd>
+										<strong>1,500,000원</strong>
+									</dd>
+								</dl>
+							</span>
+						</a>
+					</div>
+					<!-- e: 조회 내역이 없는 경우 -->
+
+					<!-- s: 꼭 알아두세요 -->
+					<div class="bottom_fix_notice">
+						<div class="acd_item">
+							<div class="acd_head active">
+								<button type="button" class="acd_btn" aria-expanded="true"><span>꼭 알아두세요</span></button>
+							</div>
+							<div class="acd_cont">
+								<div class="inner" style="display: block">
+									<ul class="list_depth">
+										<li>
+											이용대상
+											<ul>
+												<li>보험계약대출 거래 계약자만 이용할 수 있습니다.</li>
+												<li>
+													계약자 본인명의 계좌만 이용 가능합니다.
+													<ul>
+														<li>단, 평생계좌 등 일부 계좌는 이용 불가</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li>
+											변경 시 유의사항
+											<ul>
+												<li>이자납입방법이 급여이체인 경우 현대해상 다이렉트 홈페이지와 모바일앱을 통해 자동이체를 신청하거나 변경할 수 없습니다. 고객님이 재직 중이신 사업장의 관련 부서에 문의해주세요.</li>
+												<li>자세한 내용은 인터넷 고객센터(02-2116-1004)로 문의해주세요.</li>
+											</ul>
+										</li>
+									</ul>
 								</div>
 							</div>
-							<!-- 연금액 -->
 						</div>
 					</div>
-				</div>
-			</form>
-		</div>
-
-		<script>
-			$(document).ready(function () {
-				// $stepper.stepperInit();
-				$stepper.stepperInit(null, 0);
-			});
-		</script>
-
-		<!-- s: popup area -->
-
-		<!-- s: 유효성 체크 -->
-		<div class="popup_wrap layer" id="pop_alert" role="dialog" aria-hidden="true">
-			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_alert');"></div>
-				<div class="popup_inner">
-					<div class="popup_head"><div class="popup_head_title"></div></div>
-					<div class="popup_cont">
-						<div class="popup_content">
-							<p class="pl_txt1 pl_ico_ty_case1">
-								<!--연월일 숫자 유효성 체크-->
-								생년월일 방식을 다시 확인해주세요.
-								<!--제한 나이 유효성 체크-->
-								<!-- 0~75세까지 가입하실 수 있어요. -->
-							</p>
-						</div>
-					</div>
-					<div class="popup_bottom">
-						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
-								<span class="text">확인</span>
-							</button>
-						</div>
-					</div>
-					<button type="button" class="popup_close" onclick="closeHDPopup('pop_alert');"><span class="blind">팝업 닫기</span></button>
+					<!-- e: 꼭 알아두세요 -->
 				</div>
 			</div>
-		</div>
-		<!-- e: 유효성 체크 -->
 
-		<!-- e: popup area -->
+			<!-- s: 조회 내역이 없는 경우에만 노출 -->
+			<div class="bottom_fix_wrap">
+				<div class="btn_area">
+					<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
+						<span class="text">홈으로</span>
+					</button>
+				</div>
+			</div>
+			<!-- e: 조회 내역이 없는 경우에만 노출 -->
+		</div>
 	</body>
 </html>

@@ -40,50 +40,97 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>현대해상 다이렉트</title>
+		<title>대출신청내역 | 마이페이지 - 현대해상 다이렉트</title>
 
-		<link rel="stylesheet" href="guide.css" />
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
 		<link rel="stylesheet" href="../../../css/contents.css" />
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
-	<body class="guide_body">
-		<div class="guide_h1">space_list</div>
-
-		<div class="guide_h4">space_list_ty1 컨텐츠 상하 간격 12px</div>
-		<ul class="space_list_ty1">
-			<li>리스트 타입 1</li>
-			<li>리스트 타입 1</li>
-			<li>리스트 타입 1</li>
-		</ul>
-
-		<div class="guide_h4">space_list_ty2 컨텐츠 상하 간격 16px</div>
-		<ul class="space_list_ty2">
-			<li>리스트 타입 2</li>
-			<li>리스트 타입 2</li>
-			<li>리스트 타입 2</li>
-		</ul>
-
-		<div class="guide_h4">space_list_ty3 컨텐츠 상하 간격 20px</div>
-		<ul class="space_list_ty3">
-			<li>리스트 타입 3</li>
-			<li>리스트 타입 3</li>
-			<li>리스트 타입 3</li>
-		</ul>
-
-		<div class="guide_h4">space_list_ty4 컨텐츠 상하 간격 52px</div>
-		<ul class="space_list_ty4">
-			<li>리스트 타입 4</li>
-			<li>리스트 타입 4</li>
-			<li>리스트 타입 4</li>
-		</ul>
-
-		<div class="guide_h4">space_list_ty5 컨텐츠 상하 간격 32px</div>
-		<ul class="space_list_ty5">
-			<li>리스트 타입 5</li>
-			<li>리스트 타입 5</li>
-			<li>리스트 타입 5</li>
-		</ul>
+	<body>
+		<!-- s: Full 팝업 -->
+		<div class="popup_wrap full active" id="pop_type01" role="dialog" aria-hidden="false">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
+				<div class="popup_inner">
+					<div class="popup_head"><div class="popup_head_title">대출신청내역 상세</div></div>
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="table_wrap">
+								<h2 class="title_h3"><strong>대출신청내역</strong></h2>
+								<table class="table">
+									<caption>실제 지급금액, 대출신청금액, 기존 대출정산이자, 예수금, 인지세, 누적대출금액, 잔여대출가능금액, 예상 월이자, 대출금 받을 계좌, 이자납입계좌, 예금주, 이자납입일 제공</caption>
+									<colgroup>
+										<col style="width: 40%" />
+										<col style="width: 60%" />
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row" class="point">실제 지급금액</th>
+											<td class="point">11,000,000원</td>
+										</tr>
+										<tr>
+											<th scope="row" class="point">대출신청금액</th>
+											<td class="point">12,000,000원</td>
+										</tr>
+										<!-- s: 기대출정산이자, 예수금, 인지세가 0원인 경우 항목 비노출 -->
+										<tr>
+											<th scope="row">기존 대출정산이자</th>
+											<td>-1,000,000원</td>
+										</tr>
+										<tr>
+											<th scope="row">예수금</th>
+											<td>0원</td>
+										</tr>
+										<tr>
+											<th scope="row">인지세</th>
+											<td>0원</td>
+										</tr>
+										<!-- e: 기대출정산이자, 예수금, 인지세가 0원인 경우 항목 비노출 -->
+										<tr>
+											<th scope="row">누적대출금액</th>
+											<td>21,000,000원</td>
+										</tr>
+										<tr>
+											<th scope="row">잔여대출가능금액</th>
+											<td>1,000,000원</td>
+										</tr>
+										<tr>
+											<th scope="row">예상 월이자</th>
+											<td>85,270원</td>
+										</tr>
+										<tr>
+											<th scope="row">대출금 받을 계좌</th>
+											<td>국민은행 1234****1234</td>
+										</tr>
+										<tr>
+											<th scope="row">이자납입계좌</th>
+											<td>국민은행 1234****1234</td>
+										</tr>
+										<tr>
+											<th scope="row">예금주</th>
+											<td>김*대</td>
+										</tr>
+										<tr>
+											<th scope="row">이자납입일</th>
+											<td>매월 20일</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
+								<span class="text">확인</span>
+							</button>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: Full 팝업 -->
 	</body>
 </html>
