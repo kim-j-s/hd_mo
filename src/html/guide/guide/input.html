@@ -414,7 +414,7 @@
 	</div>
 
 	<div class="guide_h1">label명 + type</div>
-	<div class="guide_h4">.form_group_wrap (간격 32px)</div>
+	<div class="guide_h4">.form_group_wrap > .form_line (간격 32px)</div>
 	<div class="form_group_wrap">
 		<div class="form_line">
 			<div class="label_tit">label명</div>
@@ -467,6 +467,38 @@
 			<div class="label_tit">자금출처</div>
 			{{> cp/selectitem si_ph="자금출처 선택" si_title="자금출처 선택" si_popup="pop_type01"}}
 			{{> cp/text placeholder="기타 자금출처를 입력해 주세요" inp-title="기타 자금출처 입력" }}
+		</div>
+	</div>
+	<div class="guide_h4">.form_group_wrap > .form_line_ty2 (간격 16px)</div>
+	<div class="form_group_wrap">
+		<div class="form_line_ty2">
+			<div class="label_tit">label명</div>
+			{{> cp/text placeholder="입력하세요" inp-title="이름 입력" }}
+			<div class="explain_text">정보 메시지</div>
+		</div>
+		<div class="form_line_ty2">
+			<div class="label_tit box">
+				<div>label명</div>
+				{{> cp/button type="3" size="5" b-text="button"}}
+			</div>
+			{{> cp/text placeholder="입력하세요" inp-title="이름 입력" }}
+		</div>
+		<div class="form_line_ty2">
+			<div class="label_tit box">
+				<div>label명</div>
+				{{> cp/linkButton bl_class="short_cut sm" bl_text="링크 팝업 버튼" pop_id="pop_type01" question_tit="링크" }}
+			</div>
+			{{> cp/text placeholder="입력하세요" inp-title="이름 입력" }}
+		</div>
+		<div class="row">
+			<div class="form_line_ty2 grow">
+				<div class="label_tit">보험시작일</div>
+				{{> cp/text cal=true }}
+			</div>
+			<div class="form_line_ty2 grow">
+				<div class="label_tit">보험종료일</div>
+				{{> cp/text cal=true }}
+			</div>
 		</div>
 	</div>
 
