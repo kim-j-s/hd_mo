@@ -117,68 +117,21 @@
                         <div class="btn_area">
                             {{> cp/linkButton bl_class="short_cut long" bl_text="보험계약대출 체결•이행을 위한 개인(신용)정보 처리 상세 동의서" pop_id="sp_pop" bl_title="팝업 열림" }}
                         </div>
-                        <!-- s: 꼭 알아두세요 -->
-                        {{#> cp/notice dp-active=true }}
-                            <ul class="list_depth">
-                                <li>보험계약대출 조회 시, 최근 5년 이내 대출 유지계약과 날짜별 거래내역을 조회할 수 있어요.</li>
-                                <li>보험계약대출 유지계약 조회 시, 상품명을 선택하면 해당 계약의 상세내용을 조회할 수 있어요.</li>
-                                <li>보험계약대출 연체 여부는 은행 정산작업에 따라 실제 이체일보다 2~3일 후에 반영되므로, 정산작업 중에는 연체 여부가 ‘처리중’으로 표시될 수 있어요.</li>
-                                <li>자세한 내용은 인터넷 고객센터(02-2116-1004)로 문의해주세요.</li>
-                            </ul>
-                        {{/ cp/notice }}
-                        <!-- e: 꼭 알아두세요 -->
                     </div>
                     <div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanelex02">
-                        <h3 class="title_h3">연금저축손해보험하이라이프노후웰스보험(Hi1004)</h3>
-                        <div class="table_wrap">
-                            <table class="table">
-                                <caption>대출이율, 대출잔액 제공</caption>
-                                <colgroup>
-                                    <col style="width:30%;">
-                                    <col style="width:70%;">
-                                </colgroup>
-                                <tbody>				
-                                    <tr>
-                                        <th scope="row">대출이율</th>
-                                        <td><strong class="point">4.92%</strong></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">대출잔액</th>
-                                        <td>1,400,000원</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="divider_ty1"></div>
-                        <h3 class="title_h3">대출이자 납입계좌</h3>
-                        <div class="table_wrap">
-                            <table class="table">
-                                <caption>예금주, 출금계좌, 자동이체일 제공</caption>
-                                <colgroup>
-                                    <col style="width:30%;">
-                                    <col style="width:70%;">
-                                </colgroup>
-                                <tbody>				
-                                    <tr>
-                                        <th scope="row">예금주</th>
-                                        <td>김*대</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">출금계좌</th>
-                                        <td>국민은행 1234****1234</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">자동이체일</th>
-                                        <td>15일</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="selectitem_wrap row_ty1">
+                            {{> cp/selectitem si_class="select_item_case01_mi" si_ph="선택해주세요." si_title="조회기간 선택" si_item="2024.03.19~2025.03.19
+                            " si_popup="pop_type01"}}
+                            {{> cp/selectitem si_class="select_item_case01_mi" si_ph="선택해주세요." si_title="대상 선택
+                            " si_item="전체" si_popup="pop_type02"}}
                         </div>
                         <div class="btn_area">
-                            {{> cp/button type="3" size="3" b-text="납입가능이자 조회" btn-title="납입가능이자 조회 팝업 열기" }}
+                            {{> cp/button type="2" size="2" b-text="조회"}}
                         </div>
                         <div class="divider_ty1"></div>
-                        <h3 class="title_h3">대출이자 납입계좌</h3>
+                        <div class="search_result_count">
+                            <p>총 <strong class="point">7</strong>건</p>
+                        </div>
                         <ul class="opt_select_list opt_case4 align_center">
                             <li class="option">  
                                 <div class="item flex_st">
@@ -244,17 +197,27 @@
                         <div class="btn_area center view_more">
                             {{> cp/button_more}}
                         </div>
-                        <div class="divider_ty1"></div>
-                        <h3 class="title_h3">어떤 서비스가 필요하세요?</h3>
-                        <div class="hashtag_item">
-                            {{> cp/button type="3" size="4" b-text="#개인정보 변경" }}
-                            {{> cp/button type="3" size="4" b-text="#계약조회" }}
-                            {{> cp/button type="3" size="4" b-text="#보험계약대출 신청" }}
-                            {{> cp/button type="3" size="4" b-text="#보험계약대출 상환" }}
-                            {{> cp/button type="3" size="4" b-text="#보험계약대출 증명서" }}
+                        <!-- s: 조회 내역이 없는 경우 -->
+                        <div class="no_list_area">
+                            {{> cp/icon iconClass="exclamationSvg"}}
+                            <p>대출 거래내역이 없어요</p>
+                            <p class="desc tac">
+                                아래 바로 대출가능한 금액을 참고해보세요.
+                            </p>
                         </div>
+                        <!-- e: 조회 내역이 없는 경우 -->
                     </div>
                 </div>
+                <!-- s: 꼭 알아두세요 -->
+                {{#> cp/notice dp-active=true }}
+                    <ul class="list_depth">
+                        <li>보험계약대출 조회 시, 최근 5년 이내 대출 유지계약과 날짜별 거래내역을 조회할 수 있어요.</li>
+                        <li>보험계약대출 유지계약 조회 시, 상품명을 선택하면 해당 계약의 상세내용을 조회할 수 있어요.</li>
+                        <li>보험계약대출 연체 여부는 은행 정산작업에 따라 실제 이체일보다 2~3일 후에 반영되므로, 정산작업 중에는 연체 여부가 ‘처리중’으로 표시될 수 있어요.</li>
+                        <li>자세한 내용은 인터넷 고객센터(02-2116-1004)로 문의해주세요.</li>
+                    </ul>
+                {{/ cp/notice }}
+                <!-- e: 꼭 알아두세요 -->
 			</div>
 		</div>
 
