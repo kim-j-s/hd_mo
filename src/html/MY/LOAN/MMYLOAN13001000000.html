@@ -136,12 +136,32 @@
                             <li class="option">  
                                 <div class="item flex_st">
                                     <div class="badge_wrap">
-                                        <span class="hd_badge outline solid_pastel c_success size_m">이자</span>
+                                        <span class="hd_badge outline solid_pastel c_warning size_m">정산</span>
                                     </div>
                                     <span class="date">2025.02.16</span>
                                 </div>
                                 <div class="item">
-                                    <div class="data_l"><span class="name">146회차</span></div>
+                                    <div class="data_l"><span class="name">L20078****922</span></div>
+                                    <div class="data_r"><span class="price">28,756원</span></div>
+                                </div>
+                                <div class="item">
+                                    <div class="data_l"><span class="date">대출잔액</span></div>
+                                    <div class="data_r"><span class="date">1,400,000원</span></div>
+                                </div>
+                                <div class="item">
+                                    <div class="data_l"><span class="date">즉시이체</span></div>
+                                    <div class="data_r"><span class="date">2025.01.16~2025.02.16(22일)</span></div>
+                                </div>
+                            </li>
+                            <li class="option">  
+                                <div class="item flex_st">
+                                    <div class="badge_wrap">
+                                        <span class="hd_badge outline solid_pastel c_primary size_m">대출</span>
+                                    </div>
+                                    <span class="date">2025.02.16</span>
+                                </div>
+                                <div class="item">
+                                    <div class="data_l"><span class="name">L20078****922</span></div>
                                     <div class="data_r"><span class="price">28,756원</span></div>
                                 </div>
                                 <div class="item">
@@ -161,7 +181,7 @@
                                     <span class="date">2025.02.16</span>
                                 </div>
                                 <div class="item">
-                                    <div class="data_l"><span class="name">146회차</span></div>
+                                    <div class="data_l"><span class="name">L20078****922</span></div>
                                     <div class="data_r"><span class="price">28,756원</span></div>
                                 </div>
                                 <div class="item">
@@ -176,12 +196,12 @@
                             <li class="option">  
                                 <div class="item flex_st">
                                     <div class="badge_wrap">
-                                        <span class="hd_badge outline solid_pastel c_warning size_m">정산</span>
+                                        <span class="hd_badge outline solid_pastel c_success size_m">이자</span>
                                     </div>
                                     <span class="date">2025.02.16</span>
                                 </div>
                                 <div class="item">
-                                    <div class="data_l"><span class="name">146회차</span></div>
+                                    <div class="data_l"><span class="name">L20078****922</span></div>
                                     <div class="data_r"><span class="price">28,756원</span></div>
                                 </div>
                                 <div class="item">
@@ -230,4 +250,58 @@
 		<!-- e: 조회 내역이 없는 경우에만 노출 -->
 	</div>
 
+<!-- s: 조회조건 - 날짜 선택 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="조회조건"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">조회기간</div>
+				<div class="range_calrendar">
+					{{> cp/text placeholder="날짜를 선택하세요" value="2024.03.19" }}
+					{{> cp/text placeholder="날짜를 선택하세요" value="2025.03.19" readonly=true }}
+				</div>
+                <div class="btn_area basic">
+                    {{> cp/button type="3" size="4" b-text="1개월" }}
+                    {{> cp/button type="3" size="4" b-text="3개월" }}
+                    {{> cp/button type="3" size="4" b-text="6개월" }}
+                    {{> cp/button type="3" size="4" b-text="1년" }}
+                    {{> cp/button type="3" size="4" b-text="3년" }}
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 조회조건 - 날짜 선택 팝업 -->
+<!-- s: 조회조건 - 날짜 선택 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type02" popup-title="조회조건"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">대상</div>
+				
+                <div class="radio_group_wrap_ty3" role="radiogroup">
+                    {{> cp/radio rd-class="rd_btn" rd-id="loan01_01" name="loan01" labelname="전체" checked=true   }}
+                    {{> cp/radio rd-class="rd_btn" rd-id="loan01_02" name="loan01" labelname="대출" }}
+                    {{> cp/radio rd-class="rd_btn" rd-id="loan01_02" name="loan01" labelname="상환" }}
+                    {{> cp/radio rd-class="rd_btn" rd-id="loan01_02" name="loan01" labelname="이자" }}
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 조회조건 - 날짜 선택 팝업 -->
 {{/ layout/default }}
