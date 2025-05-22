@@ -205,6 +205,10 @@
 	font-size: 1.6rem;
 	overflow: hidden;
 }
+.bi_wrap .bottom_fix_wrap {
+	padding-left: 0;
+	padding-right: 0;
+}
 .bi_wrap .stepper_wrap {
 	position: relative;
 	height: 7.2rem;
@@ -257,6 +261,11 @@
 }
 .bi_wrap .stepper_wrap .stepper .pgs .pgs_per .motion.home {
 	background: url(../images/content/bi/icon_spm_home.svg) no-repeat center center;
+	-webkit-animation: bounce 0.8s linear infinite;
+	animation: bounce 0.8s linear infinite;
+}
+.bi_wrap .stepper_wrap .stepper .pgs .pgs_per .motion.store {
+	background: url(../images/content/bi/icon_spm_store.svg) no-repeat center center;
 	-webkit-animation: bounce 0.8s linear infinite;
 	animation: bounce 0.8s linear infinite;
 }
@@ -524,6 +533,27 @@
 	flex-direction: column;
 	gap: 1.6rem 0;
 }
+.bi_opts_wrap .opts_area .opts_area_item.column.ty2 {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: column;
+	flex-flow: column;
+	gap: 2.4rem 0;
+}
+.bi_opts_wrap .opts_area .opts_area_item.column .inp_radio {
+	width: 100%;
+}
+.bi_opts_wrap .opts_area .opts_area_item.column .checkbox_group_wrap {
+	gap: var(--gap-7);
+}
+.bi_opts_wrap .opts_area .opts_area_item.column .radio_group_wrap {
+	gap: var(--gap-7);
+}
+.bi_opts_wrap .opts_area .opts_area_item.column .divider_ty2 {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+}
 .bi_opts_wrap .opts_area .opts_area_item.etc_c_1 {
 	padding-top: 6rem;
 }
@@ -670,6 +700,12 @@
 }
 .selected_case.floor {
 	background-image: url(../images/content/bi/icon_stepper_floor.svg);
+}
+.selected_case.store {
+	background-image: url(../images/content/bi/icon_stepper_store.svg);
+}
+.selected_case.insurance {
+	background-image: url(../images/content/bi/icon_stepper_insurance.svg);
 }
 .selected_case:empty {
 	width: 0;
