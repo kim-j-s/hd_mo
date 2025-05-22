@@ -9,8 +9,26 @@
  * @returns {void}
  */
 function openHDPopup($triggerEl, target) {
+	if (!$triggerEl) {
+		console.error("$triggerEl 필수");
+		return false;
+	}
+
 	if (target == undefined || target == null) {
 		console.log("오픈할 팝업 타겟이 없습니다.");
+		return false;
+	}
+
+	let $trigger;
+
+	//$trigger 타입 유효성 체크
+	if (typeof $triggerEl === "string" || $triggerEl instanceof HTMLElement) {
+		$trigger = $($triggerEl);
+	} else if ($triggerEl instanceof jQuery) {
+		// jQuery 객체인 경우
+		$trigger = $triggerEl;
+	} else {
+		console.error("$triggerEl 타입을 확인하세요.");
 		return false;
 	}
 
@@ -25,12 +43,12 @@ function openHDPopup($triggerEl, target) {
 	let $header = $target.find(".popup_head_title").length > 0 ? $target.find(".popup_head_title") : null;
 	let $content = $target.find(".popup_cont").length > 0 ? $target.find(".popup_cont") : null;
 
-	const getOpenerId = $($triggerEl).attr("triggerId");
+	const getOpenerId = $($trigger).attr("triggerId");
 	let openerId;
 
 	if (!getOpenerId) {
 		openerId = generateUUID();
-		$($triggerEl).attr("triggerId", openerId);
+		$($trigger).attr("triggerId", openerId);
 	} else {
 		openerId = getOpenerId;
 	}
@@ -53,7 +71,10 @@ function openHDPopup($triggerEl, target) {
 	}
 
 	$target.attr("aria-hidden", "false");
-	$target.find(".popup_inner").attr("tabindex", 0).attr("aria-hidden", "false");
+	$target.find(".popup_inner").attr({
+		tabindex: 0,
+		"aria-hidden": "false",
+	});
 
 	if ($header) $header.attr("tabindex", 0);
 	if ($content) $content.attr("tabindex", 0);
@@ -86,10 +107,15 @@ function openHDPopup($triggerEl, target) {
  * closeHDPopup
  * - popup ui를 제거하는 함수(접근성 대응)
  * @param {string} target [필수]close할 popup id
- * @param {object} [returnTarget] [선택]팝업이 닫힌 뒤에 포커스할 엘리먼트(하단에 다른 팝업이 존재할 경우 사용x)
+ * @param {object} [returnTarget] [선택]팝업이 닫힌 뒤에 포커스할 엘리먼트
  * @returns {void}
  */
 function closeHDPopup(target, returnTarget = null) {
+	if (!target) {
+		console.error("close할 팝업 id를 지정해주세요");
+		return false;
+	}
+
 	let $target = $("#" + target);
 	const $opener = $('[triggerId="' + $target.attr("opner") + '"]');
 	const $triggerEl = returnTarget || $opener;
@@ -98,14 +124,11 @@ function closeHDPopup(target, returnTarget = null) {
 	//하단에 다른 팝업이 열려있는 경우, 가장 최근 팝업으로 focus강제 이동
 	const $prevPopup = $(".popup_wrap.active:last");
 	if ($prevPopup.length > 0) {
-		const $prevHeader = $($prevPopup).find(".popup_head_title").length > 0 ? $($prevPopup).find(".popup_head_title") : null;
-		const $prevContent = $($prevPopup).find(".popup_cont").length > 0 ? $($prevPopup).find(".popup_cont") : null;
-
 		$($prevPopup).attr("aria-hidden", "false");
 		$($prevPopup).find(".popup_inner").attr("aria-hidden", "false");
 
-		const focusTarget = $prevHeader || $prevContent;
-		focusTarget.attr("data-returnTarget", true);
+		const focusTarget = $($triggerEl);
+		// focusTarget.attr("data-returnTarget", true);
 
 		// ios 스크린리더가 dom의 변경사항을 인식하도록 상태변경
 		focusTarget.css("display", "none");
