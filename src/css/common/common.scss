@@ -127,7 +127,8 @@ strong {
 		display: flex;
 		flex-direction: column;
 		flex: 1;
-		padding: 24px 24px 64px;
+		padding: var(--padding-6) var(--padding-8) 64px;
+		// padding: var(--padding-6) var(--padding-8) var(--padding-12);
 
 		.content {
 			flex: 1;
@@ -218,6 +219,13 @@ strong {
 	.btn_area {
 		gap: 8px;
 	}
+	.info_gray {
+		&.basic {
+			&+.btn_area {
+				margin-top:12px;
+			}
+		}
+	}
 }
 .bottom_fix_wrap_ty2 {
 	padding: 0 24px 32px;
@@ -239,7 +247,7 @@ strong {
 		// content_top + * 은 기본적으로 32px 간격을 두고 있음
 		// 예외 간격은 별도 처리
 		& + * {
-			margin-top: 32px;
+			margin-top: var(--gap-8);
 		}
 		
 
@@ -282,8 +290,8 @@ strong {
 	background: #FFF;
 
 	.price_label {
-		color: var(--color-text-subtle, #464C53);
-		font-size: var(--font-size-body-small, 14px);
+		color: var(--color-text-subtle);
+		font-size: var(--font-size-body-small);
 		line-height: 150%;	
 	}
 
@@ -382,7 +390,7 @@ strong {
 		font-weight: 700;
 		color: var(--color-text-bolder);
 		& ~ dt {
-			margin-top: 24px;
+			margin-top: var(--gap-9);
 		}
 	}
 	dd {
@@ -390,9 +398,16 @@ strong {
 	}
 }
 
+.sticky_fix {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	background-color: #fff;
+}
+
 .bg_area {
 	margin: 0 -24px;
-	padding: 32px 24px;
+	padding: var(--padding-8);
 	background-color: var(--color-background-gray-subtler);
 
 	& + .tab_wrap {
@@ -411,13 +426,6 @@ strong {
 			}
 		}
 	}
-}
-
-.sticky_fix {
-	position: sticky;
-	top: 0;
-	z-index: 10;
-	background-color: #fff;
 }
 
 .img_area {
@@ -473,12 +481,13 @@ strong {
 
 // 파일등록
 [class*='file_upload_wrap']{
-	padding: var(--padding-card-medium) var(--padding-card-small);
+	padding: var(--padding-8) var(--padding-7);
 	background: var(--color-surface-information-subtler);
 	border-radius: var(--radius-large2);
 
+	& + .info_gray,
 	& + .info_type {
-		margin-top: 52px;
+		margin-top: var(--gap-11);
 	}
 
 	.title_h3 {
@@ -503,10 +512,10 @@ strong {
 		font-size: var(--font-size-body-medium);
 	}
 	.btn_area {
-		margin-top: 16px;
+		margin-top: var(--gap-5);
 
 		& + [class^=list_ty]{
-			margin-top: 16px;
+			margin-top: var(--gap-5);
 		}
 	}
 }
@@ -516,11 +525,11 @@ strong {
 	position: relative;
 
 	& + [class^=list_ty]{
-		margin-top: 16px;
+		margin-top: var(--gap-5);
 	}
 
 	& + .btn_area {
-		margin-top: 16px;
+		margin-top: var(--gap-5);
 	}
 
 	.file_thumbnail {
@@ -530,10 +539,11 @@ strong {
 		align-items: center;
 		justify-content: center;
 		height: 180px;
+		padding: var(--padding-5);
 		background-color: #fff;
 		font-size: 0;
 		line-height: 0;
-		border-radius: 16px;
+		border-radius: var(--radius-medium3);
 
 		// background-image: url("../images/frame/bg_image_frame_tl.svg"), url("../images/frame/bg_image_frame_tr.svg"), url("../images/frame/bg_image_frame_bl.svg"), url("../images/frame/bg_image_frame_br.svg");
 		// background-position: top 14px left 14px, top 14px right 14px, bottom 14px left 14px, bottom 14px right 14px;
@@ -621,8 +631,8 @@ strong {
 }
 
 .file_upload_wrap_ty2 {
-	background-color: #fff;
-	border: 1px solid #E1E3EA;
+	background-color: var(--color-surface-white-subtle);
+	border: 1px solid var(--color-border-gray-light);
 
 	.btn_area{
 		&.center {
@@ -633,7 +643,7 @@ strong {
 	}
 
 	& + [class^=title_h] {
-		margin-top: 52px;
+		margin-top: var(--gap-11);
 	}
 }
 
