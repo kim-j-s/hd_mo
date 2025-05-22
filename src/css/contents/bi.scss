@@ -25,6 +25,11 @@
 	padding: 0 20px;
 	font-size: 16px;
 	overflow: hidden;
+
+	.bottom_fix_wrap {
+		padding-left: 0;
+		padding-right: 0;
+	}
 	
 	.stepper_wrap {
 		position: relative;
@@ -68,6 +73,10 @@
 						}
 						&.home {
 							background: url(../images/content/bi/icon_spm_home.svg) no-repeat center center;
+							animation: bounce 0.8s linear infinite;
+						}
+						&.store {
+							background: url(../images/content/bi/icon_spm_store.svg) no-repeat center center;
 							animation: bounce 0.8s linear infinite;
 						}
 						&.travel {
@@ -330,6 +339,34 @@
 			&.column {
 				flex-direction: column;
 				gap: 16px 0;
+
+				&.ty2 {
+					flex-flow: column;
+					gap: 24px 0;
+				}
+
+				.inp_radio {
+					width: 100%;
+				}
+
+				.checkbox_group_wrap {
+					gap: var(--gap-7);
+				}
+				.radio_group_wrap {
+					gap: var(--gap-7);
+					& + .checkbox_group_wrap {
+						// padding-top: var(--gap-7);
+						// border-top: 1px solid red;
+					}
+				}
+				.divider_ty2 {
+					flex:none;
+				}
+
+				.item_box {
+					display: flex;
+					flex-direction: column;
+				}
 			}
 
 			&.etc_c_1 {
@@ -485,6 +522,14 @@
 	// 층
 	&.floor {
 		background-image: url(../images/content/bi/icon_stepper_floor.svg);
+	}
+	// 음식점
+	&.store {
+		background-image: url(../images/content/bi/icon_stepper_store.svg);
+	}
+	// 보험
+	&.insurance {
+		background-image: url(../images/content/bi/icon_stepper_insurance.svg);
 	}
 	
 	

@@ -1,0 +1,250 @@
+{{#> layout/default page-title="기초 정보 입력 | 사업장화재보험"}}
+<div id="wrap" class="wrap">
+{{> layout/header h-title="다이렉트 H사업장화재보험" }}
+
+	<form action="" class="bi_form">
+		<div class="bi_wrap">
+			<div class="stepper_wrap">
+				<div class="stepper" role="img">
+					<div class="pgs">
+						<span class="pgs_per" style="width: 0%;"><span class="motion store"></span></span>
+					</div>
+				</div>
+				<button type="button" class="stm_btn stm_l" onclick="$stepper.stepBack();">이전 단계</button>
+				<button type="button" class="stm_btn stm_r" onclick="$stepper.stepNext();">다음 단계</button>
+			</div>
+			
+			<div class="bi_stepper">
+				<div class="bi_top">
+					<!-- bit -->
+					<div class="bit">
+
+						<!-- 사업장의 업종 -->
+						<div class="bit_inner active" data-pickitem="step1">
+							<p class="bit_inner_text">
+								<span class="bold">사업장</span>의 <span class="bold">업종</span>을 선택해주세요
+							</p>
+							<div class="bit_btn_scrollx">
+								<button type="button" class="btn_link short_cut sm rd_box">
+									<span class="text">최근 계산 내역</span>
+								</button>
+								<button type="button" class="btn_link short_cut sm rd_box">
+									<span class="text">보장내용 자세히 보기</span>
+								</button>
+							</div>
+						</div>
+						<!-- 사업장의 업종 -->
+
+						<!-- 가입할 보험 -->
+						<div class="bit_inner" data-pickitem="step3">
+							<p class="bit_inner_text">
+								<span class="bold">가입할 보험</span>을<br>
+								모두 선택해주세요
+							</p>
+						</div>
+						<!-- 가입할 보험 -->
+					</div>
+					<!-- bit -->
+
+					<!-- bit_history -->
+					<div class="bit_history">
+						<div class="bit_history_inner">
+							<button type="button" class="selected_case step1 store" title="사업장의 업종 수정">1</button>
+							<button type="button" class="selected_case step2 insurance" title="가입할 보험 수정">1</button>
+						</div>
+					</div>
+					<!-- bit_history -->
+
+				</div>
+
+				<div class="bi_opts_wrap">
+
+					<!-- 사업장의 업종 -->
+					<div class="opts_area" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step1">
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio11" name="radio1" />
+								<label for="radio11">
+									<span class="label_cont">일반음식점</span>
+								</label>
+							</div>
+							<!-- <div class="inp_radio rd_btn_s1" onclick="openHDPopup(this, 'pop_type01')"> -->
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio12" name="radio1" />
+								<label for="radio12">
+									<span class="label_cont">휴게음식점</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio13" name="radio1" />
+								<label for="radio13">
+									<span class="label_cont">오락실/PC방</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio14" name="radio1" />
+								<label for="radio14">
+									<span class="label_cont">일반학원/독서실</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio15" name="radio1" />
+								<label for="radio15">
+									<span class="label_cont">여관/모텔</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio16" name="radio1" />
+								<label for="radio16">
+									<span class="label_cont">직접 선택</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- 사업장의 업종 -->
+
+					<!-- 가입할 보험 -->
+					<div class="opts_area active" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step2">
+						<div class="opts_area_item">
+							<div class="item_box">
+								<div>
+									<div class="radio_group_wrap" role="radiogroup">
+										<div class="inp_radio lg">
+											<input type="radio" id="radio21" name="radio2" />
+											<label for="radio21">
+												<span class="label_cont">
+													의무 가입 대상 아님
+												</span>
+												<span class="sub_g_txt">또는 다른 의무 보험 가입이 필요할 때</span>
+											</label>
+										</div>
+										<div class="inp_radio lg">
+											<input type="radio" id="radio22" name="radio2" />
+											<label for="radio22">
+												<span class="label_cont">
+													다중이용업소 의무 대상
+												</span>
+												<span class="sub_g_txt">관할 소방서에서 가입 안내를 받으신 경우</span>
+											</label>
+										</div>
+										<div class="inp_radio lg">
+											<input type="radio" id="radio23" name="radio2" />
+											<label for="radio23">
+												<span class="label_cont">
+													재난배상책임 의무 대상
+												</span>
+												<span class="sub_g_txt">지자체에서 가입 안내를 받으신 경우</span>
+											</label>
+										</div>
+									</div>
+									<div class="divider_ty2"></div>
+									<div class="checkbox_group_wrap">
+										{{> cp/checkbox label_class="chk_label_ty3" id="checkbox1" labelname="가스사고배상책임 의무 대상" label_cont="가스안전공사에서 가입 안내를 받으신 경우" }}
+									</div>
+								</div>
+				
+								<div class="bottom_fix_wrap">
+									<div class="btn_area">
+										{{> cp/button type="1" size="1" b-text="가입할 사업장 정보를 입력할게요" }}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 가입할 보험 -->				
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+<script>
+$(document).ready(function() {
+  // $stepper.stepperInit();
+	$stepper.stepperInit(null, 0);
+});
+</script>
+
+
+<!-- s: popup area -->
+
+ <!-- s: 중요 유의사항 Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="ex_popup_bottom" popup-title="가입 불가능한 경우 안내"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<p class="text_sub">
+			다음과 같은 경우 다이렉트 사업장화재보험 가입이 어렵습니다.
+		</p>
+		<div class="info_gray">
+			<ul class="list_depth">
+				<li>법인사업자</li>
+				<li>1급 이외의 건물</li>
+				<li>건물 11층 이상, 연면적 2,000㎡ 이상 등의 특수 건물</li>
+				<li>정상 영업 상태가 아닌 경우(휴업 중, 인테리어 공사 중)</li>
+				<li>건물주(임대인)의 임대 목적 가입</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 중요 유의사항 Bottom 팝업 -->
+
+<!-- s: 업종 상세 설명 Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="업종 상세 설명"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<p class="text_sub">선택하신 업종이 맞는지 확인해 주세요</p>
+		<div class="info_gray">
+			<h3 class="title_h3">휴게음식점</h3>
+			<p class="info_text">
+				음식류를 조리, 판매하는 곳으로서 음주행위가 허용되지 않는 곳 / 다방, 제과점, 건강원, 방앗간, 아이스크림전문점, 커피전문점 등 / 고속도로 휴게소 : 음식점 면적이 90% 이상인 경우 / 선식가게 : 조리 및 가공 작업이 있을 경우.
+			</p>
+			<ul class="list_depth">
+				<li>
+					가입불가
+					<ul>
+						<li>어린이실내놀이시설(키즈카페등)</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="3" size="2" b-text="다시 선택" }}
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 업종 상세 설명 Bottom 팝업 -->
+
+
+<!-- s: 유효성 체크 -->
+{{#> popup/popup_layer popup-id="pop1" popup-title=""}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<p class="pl_txt1 pl_ico_ty_case1">
+			풍수해·지진재해보험(주택용)은 만 19~99세까지 가입 가능합니다.
+			<br>
+			다시 확인해주세요.
+		</p>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_layer}}
+<!-- e: 유효성 체크 -->
+	 
+<!-- e: popup area -->
+
+
+{{/ layout/default }}
