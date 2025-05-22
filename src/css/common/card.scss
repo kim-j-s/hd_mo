@@ -47,15 +47,8 @@
 			margin-top: 32px;
 		}
 	}
-	
-	.card_item {
-		position: relative;
-		padding: var(--padding-8) var(--padding-7);
-		border: 1px solid var(--color-border-gray-light);
-		border-radius: 24px;
-		background: rgba(255, 255, 255, 0.9);
-		backdrop-filter: blur(8px);
-		&.active {
+	&.focusin {
+		.card_item:focus-within  {
 			&::after {
 				content:"";
 				position: absolute;
@@ -69,6 +62,14 @@
 				transition: border-color 0.2s ease;
 			}
 		}
+	}
+	.card_item {
+		position: relative;
+		padding: var(--padding-8) var(--padding-7);
+		border: 1px solid var(--color-border-gray-light);
+		border-radius: 24px;
+		background: rgba(255, 255, 255, 0.9);
+		backdrop-filter: blur(8px);
 
 		& ~ .card_item {
 			margin-top: 16px;
