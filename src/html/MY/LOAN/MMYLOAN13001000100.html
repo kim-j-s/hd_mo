@@ -1,7 +1,7 @@
-{{#> layout/default page-title="질병/상해/단체보험 처리현황 | 마이페이지"}}
+{{#> layout/default page-title="보험계약대출 거래내역조회 | 마이페이지"}}
 
 <!-- s: Full 팝업 -->
-{{#> popup/popup_full popup-id="pop_type01" popup-title="팩스 수신내역 조회" popup-active=true}}
+{{#> popup/popup_full popup-id="pop_type01" popup-title="납입가능이자 조회" popup-active=true}}
 	<div class="popup_cont">
 		<div class="popup_content">
 			{{> cp/selectitem si_ph="선택해주세요." si_title="날짜 선택" si_popup="pop_type02" si_item="2024.03.19~2025.03.19" }}
@@ -14,55 +14,126 @@
 
 			<!-- 조회 후, 결과가 있는 경우 -->
 			<div class="table_wrap">
+				<h2 class="title_h3">정산이자</h2>
 				<table class="table">
-					<caption>내 팩스번호, 사고내용, 사고일, 운전자/접수자, 사고장소</caption>
+					<caption>계산기간, 적용기간, 이자금액 제공</caption>
 					<colgroup>
 						<col style="width:40%;">
 						<col style="width:60%;">
 					</colgroup>
 					<tbody>
 						<tr>
-							<th scope="row">내 팩스번호</th>
-							<td>0212312345</td>
+							<th scope="row">계산기간</th>
+							<td>2024.12.30~2025.01.22</td>
 						</tr>
 						<tr>
-							<th scope="row">팩스 받은 날</th>
-							<td>2023.03.01</td>
+							<th scope="row">적용기간</th>
+							<td>24일</td>
 						</tr>
 						<tr>
-							<th scope="row">현대해상 팩스번호</th>
-							<td>0212341243</td>
+							<th scope="row">이자금액</th>
+							<td>9,573원</td>
+						</tr>
+					</tbody>
+				</table>
+				<h2 class="title_h3">미납이자금액(2010.10.01 이전)</h2>
+				<table class="table">
+					<caption>계산기간, 적용기간, 이자금액 제공</caption>
+					<colgroup>
+						<col style="width:40%;">
+						<col style="width:60%;">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">계산기간</th>
+							<td>-</td>
 						</tr>
 						<tr>
-							<th scope="row">매수</th>
-							<td>5매</td>
+							<th scope="row">적용기간</th>
+							<td>0일</td>
 						</tr>
 						<tr>
-							<th scope="row">담당자</th>
-							<td>하이현</td>
+							<th scope="row">이자금액</th>
+							<td>0원</td>
+						</tr>
+					</tbody>
+				</table>
+				<h2 class="title_h3">미납이자금액(2010.10.01 이후)</h2>
+				<table class="table">
+					<caption>계산기간, 적용기간, 이자금액 제공</caption>
+					<colgroup>
+						<col style="width:40%;">
+						<col style="width:60%;">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">계산기간</th>
+							<td>-</td>
 						</tr>
 						<tr>
-							<th scope="row">받은 부서</th>
-							<td>장기손사지원파트</td>
+							<th scope="row">적용기간</th>
+							<td>0일</td>
 						</tr>
 						<tr>
-							<th scope="row">열람일</th>
-							<td>2023.03.01</td>
+							<th scope="row">이자금액</th>
+							<td>0원</td>
+						</tr>
+					</tbody>
+				</table>
+				<h2 class="title_h3">예수금</h2>
+				<table class="table">
+					<caption>계산기간, 적용기간, 이자금액 제공</caption>
+					<colgroup>
+						<col style="width:40%;">
+						<col style="width:60%;">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">계산기간</th>
+							<td>-</td>
 						</tr>
 						<tr>
-							<th scope="row">처리일</th>
-							<td>2023.03.01</td>
+							<th scope="row">적용기간</th>
+							<td>0일</td>
+						</tr>
+						<tr>
+							<th scope="row">이자금액</th>
+							<td>0원</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 
+            <h2 class="title_h3">납입 금액정보</h2>
+
+            <div class="info_gray">
+                <dl>
+                    <dt>이자합계</dt>
+                    <dd><strong class="point">9,573원</strong></dd>
+                </dl>
+                <dl>
+                    <dt>대출잔액</dt>
+                    <dd>4,500,000원</dd>
+                </dl>
+                <dl class="footer_dl">
+                    <dt>납입금액</dt>
+                    <dd class="point">4,509,573원</dd>
+                </dl>
+            </div>
 			<!-- 조회 후, 결과가 없는 경우 -->
-			<div class="no_list_area">
+			<!-- <div class="no_list_area">
 				{{> cp/icon iconClass="exclamationSvg"}}
-				<p>보낸 내역이 없어요</p>
-				<span class="desc">오늘 기준 최대 2일까지 조회되는 점 참고해주세요.</span>
-			</div>
+				<p>납입가능이자가 없어요</p>
+			</div> -->
+            <!-- s: 꼭 알아두세요 -->
+            {{#> cp/notice dp-active=true }}
+                <ul class="list_depth">
+                    <li>미납이자액이 있을 경우, 2010년 10월 1일부터 연체이자가 폐지됨에 따라 2010년 10월 1일 이전과 이후 내역으로 미납이자액이 구분되어 조회됩니다.</li>
+                    <li>미납이자액(2010년 10월 1일 이후)은 매월 이자납입 후의 대출잔액과 합산된 금액을 기준으로 합산 시점으로부터 경과된 일수에 따라 이자금액이 산정됩니다.</li>
+                    <li>2010년 10월 1일 이후 미납이자가 있을 경우 매월 발생되는 이자금액은 변경될 수 있습니다.</li>
+                </ul>
+            {{/ cp/notice }}
+            <!-- e: 꼭 알아두세요 -->
 		</div>
 	</div>
 	<div class="popup_bottom">
@@ -78,18 +149,18 @@
 {{#> popup/popup_bottom popup-id="pop_type02" popup-title="조회조건"}}
 <div class="popup_cont">
 	<div class="popup_content">
-		<div class="form_group_wrap">
-			<div class="form_line">
-				<div class="label_tit">팩스 보낸 날</div>
-				<div class="range_calrendar">
-					{{> cp/text cal=true placeholder="날짜를 선택하세요" value="2024.03.19" }}
-					{{> cp/text cal=true placeholder="날짜를 선택하세요" value="2024.03.19" readonly=true }}
-				</div>
-			</div>
-		</div>
-		<ul class="list_ty2">
-			<li>오늘 기준 2일 이내만 조회 가능</li>
-		</ul>
+        <div class="form_group_wrap">
+            <div class="row">
+                <div class="form_line grow">
+                    <div class="label_tit">정산시작일</div>
+                    {{> cp/text cal=true value="2024.01.22" readonly=true }}
+                </div>
+                <div class="form_line grow">
+                    <div class="label_tit">기준일</div>
+                    {{> cp/text cal=true  value="2025.01.22" }}
+                </div>
+            </div>
+        </div>
 	</div>
 </div>
 <div class="popup_bottom">
@@ -99,36 +170,5 @@
 </div>
 {{/ popup/popup_bottom}}
 <!-- e: 조회조건 - 날짜 선택 팝업 -->
-
-
-<!-- s: 조회조건 - 조회대상 선택 팝업 -->
-{{#> popup/popup_bottom popup-id="pop_type03" popup-title="조회조건"}}
-<div class="popup_cont">
-	<div class="popup_content">
-		<div class="form_group_wrap">
-			<div class="form_line">
-				<div class="label_tit">조회대상</div>
-				<div class="radio_group_wrap_ty2" role="radiogroup">
-					{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_g1" name="radio_g1" labelname="내 팩스번호" checked=true }}
-					{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_g2" name="radio_g1" labelname="접수번호" }}
-					{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_g3" name="radio_g1" labelname="현대해상 팩스번호" }}
-				</div>
-				<!-- s: 선택한 radio버튼에 따라 title값 변경 필요 -->
-				<!-- 내 팩스번호, 접수번호 Case -->
-				{{> cp/text placeholder="- 없이 입력" inp-title="내 팩스번호 입력" }}
-				<!-- 현대해상 팩스번호 Case -->
-				<!-- {{> cp/text inp-title="현대해상 팩스번호 입력" }} -->
-				<!-- e: 선택한 radio버튼에 따라 title값 변경 필요 -->
-			</div>
-		</div>
-	</div>
-</div>
-<div class="popup_bottom">
-	<div class="btn_area">
-		{{> cp/button type="1" size="2" b-text="확인" }}
-	</div>
-</div>
-{{/ popup/popup_bottom}}
-<!-- e: 조회조건 - 조회대상 선택 팝업 -->
 
 {{/ layout/default }}

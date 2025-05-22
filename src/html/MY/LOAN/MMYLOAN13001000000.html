@@ -48,7 +48,7 @@
                                         </ul>
                                         
                                         <div class="btn_area">
-                                            {{> cp/linkButton bl_class="short_cut long tac" bl_text="개인정보처리 동의 여부 : 동의(2025.02.19)" pop_id="sp_pop" bl_title="팝업 열림" }}
+                                            {{> cp/linkButton bl_class="short_cut long tac" bl_text="개인정보처리 동의 여부 : 동의(2025.02.19)" pop_id="pop_type03" bl_title="팝업 열림" }}
                                         </div>
                                     </div>
                                 </div>
@@ -115,7 +115,7 @@
                         </div>
                         <!-- e: 조회 내역이 없는 경우 -->
                         <div class="btn_area">
-                            {{> cp/linkButton bl_class="short_cut long" bl_text="보험계약대출 체결•이행을 위한 개인(신용)정보 처리 상세 동의서" pop_id="sp_pop" bl_title="팝업 열림" }}
+                            {{> cp/linkButton bl_class="short_cut long" bl_text="보험계약대출 체결•이행을 위한 개인(신용)정보 처리 상세 동의서" bl_title="팝업 열림" }}
                         </div>
                     </div>
                     <div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanelex02">
@@ -249,6 +249,24 @@
 		<!-- e: 조회 내역이 없는 경우에만 노출 -->
 	</div>
 
+<!-- s: 개인정보처리 동의여부 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type03" popup-title="개인정보처리 동의여부"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="info_cont">
+			<ul class="list_depth">
+                <li>보험계약대출 체결/이행 등을 위한 개인(신용)정보 수집·이용 및 제3자 제공에 관한 동의 여부와 날짜입니다.</li>
+            </ul>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 개인정보처리 동의여부 팝업 -->
 <!-- s: 조회조건 - 날짜 선택 팝업 -->
 {{#> popup/popup_bottom popup-id="pop_type01" popup-title="조회조건"}}
 <div class="popup_cont">

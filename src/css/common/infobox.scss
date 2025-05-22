@@ -93,7 +93,7 @@
 	& + .title_h4,
 	& + .btn_area.btn_area_space2,
 	& + .form_group_wrap,
-	& + .acd_item_ty2,
+	& + .acd_item_ty2,//0429변경사항(피그마위치:운전자-청약내용확인)
 	& + .acd_item_ty7,
 	& + .select_driver_range,
 	& + .banner_box.ty2 {
@@ -175,7 +175,9 @@
 		gap: 8px;
 		width: 100%;
 		font-size: var(--font-size-body-small);
-
+		&.middle {
+			align-items: center;
+		}
 		& + ul {
 			margin-top: var(--gap-5);
 		}
@@ -188,7 +190,7 @@
 			text-align: right;
 
 			.big {
-				font-size: var(--font-size-body-large);
+				font-size: var(--font-size-heading-medium);
 			}
 			.rise {
 				justify-content: flex-end;
@@ -224,6 +226,12 @@
 					font-weight: 400;
 					text-decoration: line-through;
 				}
+			}
+
+			& + .footer_dl {
+				border:0;
+				padding-top: 0;
+				margin-top: 16px;
 			}
 		}
 	}
