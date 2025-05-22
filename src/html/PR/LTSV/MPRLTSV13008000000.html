@@ -1,0 +1,73 @@
+{{#> layout/default page-title="보험료 결제 | 저축보험"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="보험료 결제" }}
+
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
+				<h2 class="title_h2">
+					보험료를 <strong>결제하면</strong><br>
+					<strong>가입이 완료</strong>돼요
+				</h2>
+			</div>
+			<!-- e: content_top -->
+
+			<div class="bg_top_cover ty2">
+				<div class="info_gray bg_etc01">
+					<div class="total">
+						<dl>
+							<dt>결제하실 금액은</dt>
+							<dd>
+								<strong class="big point">50,000,000원</strong> 이에요.
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+
+      <div class="info_cont">
+        <ul class="space_list_ty4">
+          <li>
+            <div class="form_group_wrap">
+              <div class="form_line">
+                <div class="form_group_wrap">
+                  <div class="form_line">
+                    <div class="label_tit">은행</div>
+                    {{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" }}
+                  </div>
+                </div>
+                <div class="form_group_wrap">
+                  <div class="form_line">
+                      <div class="label_tit">계좌번호</div>
+                      {{> cp/text placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
+                      <ul class="list_ty2">
+                        <li>계약자 명의 계좌만 입력할 수 있어요.</li>
+                        <li>즉시이체 가능시간: 09:00~21:50</li>
+                      </ul>
+                  </div>
+                </div>
+              </div>  
+            </div>
+          </li>
+          <li>
+            <div class="checkbox_group_wrap">
+              {{> cp/checkbox checkbox_class="rd_box" id="checkbox01-13" labelname="만기환급금 입금 계좌 동의" ag_more=true }}
+            </div>  
+          </li>
+        </ul>
+      </div>
+		</div>
+	</div>
+
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="결제 정보를 입력 중이에요" disabled=true }}
+			<!-- {{> cp/button type="1" size="1" b-text="보험료 결제하고 가입하기" }} -->
+		</div>
+	</div>
+</div>
+
+<!-- s: popup area -->
+<!-- e: popup area -->
+{{/ layout/default }}
