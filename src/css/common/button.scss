@@ -552,6 +552,30 @@
 			}
 		}
 
+		&.toggle {
+			display: inline-flex;
+			align-items: center;
+			background-image: none;
+			padding:0 2px;
+			font-size:var(--font-size-button-large);
+			&::after {
+				content:"";
+				display: inline-flex;
+				width:20px;
+				height:20px;
+				background: url(../images/icon/arrowDown_ty3.svg) no-repeat center center / 20px auto;
+				transform: rotate(180deg);
+			}
+			&.active {
+				&::after {
+						transform: rotate(0deg);
+				}
+			}
+			
+		}
+
+		
+
 
 	}
 
