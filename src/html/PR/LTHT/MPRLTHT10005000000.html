@@ -161,9 +161,11 @@
 								{{> cp/checkbox checkbox_class="rd_check_btn lg" id="checkbox08-1-11" label_class="chk_label_ty5" labelname="기타" }}
 						</div>
 							<div class="form_group_wrap">
+								<!--s: 25-05-22 수정 -->
+								<div class="form_line">
 									<div class="label_tit">기타 차종</div>
 									{{> cp/text placeholder="입력해 주세요" inp-title="기타 차종 입력"}}
-								<div class="form_line">
+								
 									<!-- s: 이륜자동차 외 선택 시 -->
 									<div class="checkbox_group_wrap column">
 										{{> cp/checkbox checkbox_class="rd_box" id="checkbox08-1-12" label_class="chk_label_ty3" labelname="<strong class='disabled_on'>선택</strong> 피보험자가 이륜자동차 운전 중에 발생한 상해사고는 보험에서 보상되지 않습니다. 이륜자동차 운전중 상해 부담보 특별약관이 자동가입됩니다." }}
@@ -175,6 +177,7 @@
 									</div>
 									<!-- e: 이륜자동차 선택 시  -->
 								</div>
+								<!--e: 25-05-22 수정 -->
 							</div>
 						</div>
 					</div>
@@ -214,14 +217,15 @@
 				<li>
 					<div class="form_group_wrap">
 						<div class="form_line">
-							<div class="label_tit">
-								음주를 하시나요?
-							</div>
-							<div class="radio_group_wrap" role="radiogroup">
-								{{> cp/radio rd-class="rd_btn" rd-id="notification10_01" name="notification10" labelname="예" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="notification10_02" name="notification10" labelname="아니오" checked=true }}
-							</div>
-							<div class="form_group_wrap">
+							<!-- s: 25-05-22 수정 -->
+								<div class="label_tit">
+									음주를 하시나요?
+								</div>
+								<div class="radio_group_wrap" role="radiogroup">
+									{{> cp/radio rd-class="rd_btn" rd-id="notification10_01" name="notification10" labelname="예" }}
+									{{> cp/radio rd-class="rd_btn" rd-id="notification10_02" name="notification10" labelname="아니오" checked=true }}
+								</div>
+								<div class="form_group_wrap">
 									<div class="form_line">
 											<div class="label_tit">음주 횟수 (1주일 기준)</div>
 											{{> cp/text type="tel" class="price" maxlength="1" r-text="회" placeholder="숫자만 입력" inp-title="음주 횟수 입력"}}
@@ -230,7 +234,8 @@
 											<div class="label_tit">음주량 (1회당/소주 기준)</div>
 											{{> cp/text type="tel" class="price" maxlength="2" r-text="병" placeholder="숫자만 입력" inp-title="음주량 입력"}}
 									</div>
-							</div>
+								</div>
+							<!-- e: 25-05-22 수정 -->
 						</div>
 					</div>
 				</li>
@@ -244,14 +249,18 @@
 								{{> cp/radio rd-class="rd_btn" rd-id="notification11_01" name="notification11" labelname="예" }}
 								{{> cp/radio rd-class="rd_btn" rd-id="notification11_02" name="notification11" labelname="아니오" checked=true }}
 							</div>
-									<div class="form_line">
-											<div class="label_tit">흡연량 (1일)</div>
-											{{> cp/text type="tel" class="price" maxlength="1" r-text="개피" placeholder="숫자만 입력" inp-title="음주 횟수 입력"}}
-									</div>
-									<div class="form_line">
-											<div class="label_tit">흡연 기간</div>
-											{{> cp/text type="tel" class="price" maxlength="2" r-text="년" placeholder="숫자만 입력" inp-title="음주량 입력"}}
-									</div>
+							<!--s: 25-05-22 수정 -->
+							<div class="form_group_wrap">
+								<div class="form_line">
+										<div class="label_tit">흡연량 (1일)</div>
+										{{> cp/text type="tel" class="price" maxlength="1" r-text="개피" placeholder="숫자만 입력" inp-title="음주 횟수 입력"}}
+								</div>
+								<div class="form_line">
+										<div class="label_tit">흡연 기간</div>
+										{{> cp/text type="tel" class="price" maxlength="2" r-text="년" placeholder="숫자만 입력" inp-title="음주량 입력"}}
+								</div>
+							</div>
+							<!--e: 25-05-22 수정 -->
 						</div>
 					</div>
 				</li>

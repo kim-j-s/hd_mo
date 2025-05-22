@@ -1,0 +1,143 @@
+{{#> layout/default page-title="청약내용 확인 | 저축보험"}}
+<div id="wrap" class="wrap">{{> layout/header h-title="청약내용 확인" }}</div>
+<!-- s: popup area -->
+
+<!-- s: 가입 내용 상세 full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-active=true popup-title="가입 내용 자세히 보기" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="tab_wrap">
+			<div class="tab_wrap_list_ty1" role="tablist">
+        {{>cp/tab_btn tb-text="계약 내용" tb-id="01" tb-active=true}}
+        {{>cp/tab_btn tb-text="계약자 정보" tb-id="02"}}
+        {{>cp/tab_btn tb-text="담보 내용" tb-id="03"}}
+      </div>
+			<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
+				<div class="table_wrap">
+					<table class="table">
+						<caption>보험상품, 플랜종류, 보험기간, 납입주기, 피보험자, 계약자, 계약번호, 보험증권 수령방법, 총보험료, 만기환급금, 환급률 정보 제공</caption>
+						<colgroup>
+							<col style="width: 35%" />
+							<col style="width: 65%" />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">보험상품</th>
+								<td>무배당현대해상다이렉트저축보험(Hi2504)</td>
+							</tr>
+							<tr>
+								<th scope="row">보험기간</th>
+								<td>2025.03.24~2026.03.24</td>
+							</tr>
+							<tr>
+								<th scope="row">납입주기</th>
+								<td>일시납</td>
+							</tr>
+							<tr>
+								<th scope="row">피보험자</th>
+								<td>김*대 (790101-1******)</td>
+							</tr>
+							<tr>
+								<th scope="row">계약자</th>
+								<td>김*대 (790101-1******)</td>
+							</tr>
+							<tr>
+								<th scope="row">계약번호</th>
+								<td>L12345678901</td>
+							</tr>
+							<tr>
+								<th scope="row">보험증권 받는 방법</th>
+								<td>이메일(hyu****@naver.com)</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="info_gray">
+					<dl>
+						<dt>총 보험료</dt>
+						<dd><strong class="point">50,000,000원</strong></dd>						
+					</dl>
+					<dl>
+						<dt>만기환급금</dt>
+						<dd>
+							<strong class="point">51,615,300원</strong>
+						</dd>
+					</dl>
+					<dl>
+						<dt>환급률</dt>
+						<dd><strong class="point">103.23%</strong></dd>	
+					</dl>
+				</div>
+			</div>
+
+			<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
+				<div class="info_cont">
+					<div class="table_wrap">
+						<table class="table">
+							<caption>게약자, 계약자 주소, 연락처, 이메일 정보 제공</caption>
+							<colgroup>
+								<col style="width: 35%" />
+								<col style="width: 65%" />
+							</colgroup>
+							<tbody>
+                <tr>
+									<th scope="row">계약자</th>
+									<td>김*대(790101-1******)</td>
+								</tr>
+								<tr>
+									<th scope="row">주소</th>
+									<td>(04535) 서울 중구 명동2길 20, *****</td>
+								</tr>
+								<tr>
+									<th scope="row">연락처</th>
+									<td>010-****-5678</td>
+								</tr>
+								<tr>
+									<th scope="row">이메일</th>
+									<td>hyu****@naver.com</td>
+								</tr>
+								<tr>
+									<th scope="row">직업</th>
+									<td>회사 사무직 종사자</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>					
+				</div>
+			</div>
+
+			<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel03">
+				<div class="table_wrap">
+					<table class="table">
+						<caption>담보명, 가입금액 제공</caption>
+						<colgroup>
+							<col style="width: 75%" />
+							<col style="width: 25%" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">담보명</th>
+								<th scope="col">가입금액</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>상해사망담보</td>
+								<td>100만원</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">{{> cp/button type="1" size="1" b-text="확인"}}</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: 가입 내용 상세 full 팝업 -->
+
+<!-- e: popup area -->
+
+{{/ layout/default }}

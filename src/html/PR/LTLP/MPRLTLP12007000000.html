@@ -22,20 +22,26 @@
 							<div class="label_tit">
 								고객님의 직업을 입력해 주세요.
 							</div>
+							<!-- s: 25-05-22 수정 -->
 							<div class="form_group_wrap">
 								<div class="form_line">
 									<div class="label_tit">근무처</div>
 									{{> cp/text placeholder="예) 사무실, 공장" inp-title="근무처 입력"}}
 								</div>
+							</div>
+							<div class="form_group_wrap">
 								<div class="form_line">
 									<div class="label_tit">근무 지역</div>
 									{{> cp/text placeholder="예) 서울시, 경기도" inp-title="근무 지역 입력"}}
 								</div>
+							</div>
+							<div class="form_group_wrap">
 								<div class="form_line">
 									<div class="label_tit">취급하는 업무</div>
 									{{> cp/text placeholder="실제 하는 일 자세히 입력" inp-title="취급하는 업무 입력"}}
 								</div>
 							</div>
+							<!-- e: 25-05-22 수정 -->
 							<ul class="list_ty2">
 								<li>
 									보험계약 체결 당시 직업 또는 직무를 사실대로 알리지 않거나 보험계약 체결 후 직업 또는 직무가 변경된 사실 (예: 사무관리⥊현장관리)을 지체없이 회사에 알리지 않은 경우 계약
@@ -58,9 +64,7 @@
 								{{> cp/radio rd-class="rd_btn" rd-id="notification02_01" name="notification02" labelname="예" }}
 								{{> cp/radio rd-class="rd_btn" rd-id="notification02_02" name="notification02" labelname="아니오"}}
 							</div>
-							<!-- <div class="checkbox_group_wrap column">
-								{{> cp/checkbox checkbox_class="rd_box" id="checkbox02-1-12" label_class="chk_label_ty3" labelname="<strong class='disabled_on'>선택</strong> 피보험자가 이륜자동차 운전 중에 발생한 상해사고는 보험에서 보상되지 않습니다. 이륜자동차 운전중 상해 부담보 특별약관이 자동가입됩니다." }}
-							</div> -->
+							<!-- <div class="checkbox_group_wrap column">{{> cp/checkbox checkbox_class="rd_box" id="checkbox02-1-12" label_class="chk_label_ty3" labelname="<strong class='disabled_on'>선택</strong> 피보험자가 이륜자동차 운전 중에 발생한 상해사고는 보험에서 보상되지 않습니다. 이륜자동차 운전중 상해 부담보 특별약관이 자동가입됩니다." }}</div> -->
 						</div>
 					</div>
 					<div class="form_group_wrap">
@@ -83,12 +87,12 @@
 								{{> cp/checkbox checkbox_class="rd_check_btn lg" id="checkbox02-1-10" label_class="chk_label_ty5" labelname="농기계" }}
 								{{> cp/checkbox checkbox_class="rd_check_btn lg" id="checkbox02-1-11" label_class="chk_label_ty5" labelname="기타" }}
 							</div>
+							<!-- s: 25-05-22 수정 -->
 							<div class="form_group_wrap">
-								<div class="label_tit">기타 차종</div>
-								{{> cp/text placeholder="입력해 주세요" inp-title="기타 차종 입력"}}
-							</div>
-							<div class="form_group_wrap space2">
 								<div class="form_line">
+									<div class="label_tit">기타 차종</div>
+									{{> cp/text placeholder="입력해 주세요" inp-title="기타 차종 입력"}}
+
 									<!-- s: 이륜자동차 외 선택 시 -->
 									<div class="checkbox_group_wrap column">
 										{{> cp/checkbox checkbox_class="rd_box" id="checkbox02-1-12" label_class="chk_label_ty3"
@@ -105,6 +109,8 @@
 									<!-- e: 이륜자동차 선택 시  -->
 								</div>
 							</div>
+							<!-- e: 25-05-22 수정 -->
+
 						</div>
 					</div>
 				</li>

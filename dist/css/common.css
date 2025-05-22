@@ -250,8 +250,8 @@ strong {
 	background: #fff;
 }
 .total_price_display_ty1 .price_label {
-	color: var(--color-text-subtle, #464c53);
-	font-size: var(--font-size-body-small, 14px);
+	color: var(--color-text-subtle);
+	font-size: var(--font-size-body-small);
 	line-height: 150%;
 }
 .total_price_display_ty1 .price_val {
@@ -448,6 +448,7 @@ strong {
 	-ms-flex-pack: center;
 	justify-content: center;
 	height: 18rem;
+	padding: var(--padding-5);
 	background-color: #fff;
 	font-size: 0;
 	line-height: 0;
@@ -2485,6 +2486,61 @@ strong {
 	height: 100%;
 	background: rgba(255, 255, 255, 0.75);
 	border-radius: 1.6rem;
+}
+.acd_item.acd_item_ty8 .acd_head {
+	position: relative;
+}
+.acd_item.acd_item_ty8 .acd_head .acd_btn {
+	position: relative;
+	width: 100%;
+	padding-right: 3.6rem;
+	background-color: transparent;
+	font-size: var(--font-size-heading-small);
+}
+.acd_item.acd_item_ty8 .acd_head .acd_btn:after {
+	position: absolute;
+	top: calc(50% - 1.2rem);
+	right: 0;
+	content: "";
+	width: 2.4rem;
+	height: 2.4rem;
+	background: url(../images/icon/arrowDown_ty3.svg) no-repeat center/2.4rem auto;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.acd_item.acd_item_ty8 .acd_head .acd_btn[aria-expanded="true"]:after {
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.acd_item.acd_item_ty8 .acd_head .acd_btn dl {
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.acd_item.acd_item_ty8 .acd_head.active + .acd_cont {
+	margin-top: 2rem;
+	padding: 2rem 0 0;
+}
+.acd_item.acd_item_ty8 .acd_head.active + .acd_cont::before {
+	opacity: 1;
+}
+.acd_item.acd_item_ty8 .acd_cont {
+	position: relative;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.acd_item.acd_item_ty8 .acd_cont::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	border-bottom: 1px solid var(--color-divider-gray-light);
+	opacity: 0;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
 }
 /* button */
 /**********************
@@ -6180,6 +6236,9 @@ strong {
 .form_group_wrap > .form_line_ty2 + .row {
 	margin-top: 1.6rem;
 }
+.form_group_wrap .form_group_wrap > .form_line ~ .form_line {
+	margin-top: 1.6rem;
+}
 .form_group_wrap .info_box + .btn_area {
 	margin-top: 1.6rem;
 }
@@ -9873,6 +9932,11 @@ strong {
 	width: 100%;
 	font-size: var(--font-size-body-small);
 }
+.info_gray dl.middle {
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
 .info_gray dl + ul {
 	margin-top: var(--gap-5);
 }
@@ -9885,7 +9949,7 @@ strong {
 	text-align: right;
 }
 .info_gray dl dd .big {
-	font-size: var(--font-size-body-large);
+	font-size: var(--font-size-heading-medium);
 }
 .info_gray dl dd .rise {
 	-webkit-box-pack: end;
@@ -9922,6 +9986,11 @@ strong {
 	font-size: var(--font-size-body-small);
 	font-weight: 400;
 	text-decoration: line-through;
+}
+.info_gray dl.footer_dl + .footer_dl {
+	border: 0;
+	padding-top: 0;
+	margin-top: 1.6rem;
 }
 .info_gray .car_alarm_box {
 	display: -webkit-box;
