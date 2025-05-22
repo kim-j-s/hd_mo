@@ -1,0 +1,45 @@
+{{#> layout/default page-title="가입경력인정자 정보 | 마이페이지"}}
+
+<!-- s: Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="가입경력인정자 정보"}}
+<div class="popup_cont">
+		<div class="popup_content">
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">피보험자와의 관계</div>
+					{{> cp/text type="tel" placeholder="플레이스홀더" value="01012345678" inp-title="휴대폰번호 입력" }}
+				</div>			
+				<div class="form_line">
+					<div class="label_tit">이름</div>
+					{{> cp/text type="text" placeholder="이름 입력" inp-title="이름 입력" }}
+				</div>	
+				<div class="form_line">
+					<div class="label_tit">주민등록번호/외국인등록번호</div>
+					<div class="comp_wrap birth">
+						{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호(외국인등록번호) 앞자리 입력" }}
+						<span class="dash">-</span>
+						{{> cp/keypad7 case1=true kt="주민등록번호(외국인등록번호) 뒷자리 입력"}}
+					</div>
+				</div>		
+				<div class="form_line">
+					<div class="label_tit">휴대폰번호</div>
+					{{> cp/text class="phone" type="tel" placeholder="-없이 입력" maxlength="8" l-text="010" inp-title="휴대폰번호 입력"  }}
+					<div class="checkbox_group_wrap column">
+						{{> cp/checkbox checkbox_class="rd_box" id="checkbox04-12ess" label_class="chk_label_ty3" labelname="<strong class='ess ess_t1'>필수</strong> 고객정보 관리 및 가입설계를 위한 개인(신용)정보 처리 동의" }}
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" b-text="확인" disabled=true}}
+		<!-- s: 필수값 입력 후 버튼 활성화 처리 -->
+		<!-- {{> cp/button type="1" size="1" b-text="확인"}} -->
+		<!-- e: 필수값 입력 후 버튼 활성화 처리 -->
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: Bottom 팝업 -->
+{{/ layout/default }}
