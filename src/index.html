@@ -27961,7 +27961,8 @@
 				$(".end_date").each(function () {
 					const endDateText = $(this).text().trim();
 					// console.log('마감 날짜:', endDateText);
-					const endDate = new Date("20" + endDateText.replace(/-/g, "/"));
+					// const endDate = new Date("20" + endDateText.replace(/-/g, "/"));
+					const endDate = new Date(endDateText.replace(/-/g, "/"));
 					const $tr = $(this).closest("tr");
 					const $completeTd = $tr.find(".complete");
 
