@@ -1303,15 +1303,15 @@
 .car_type_option {
 	gap: 1rem;
 }
-.car_type_option input[type="radio"] label {
-	border-radius: 1.6rem;
+.car_type_option .inp_radio.rd_btn_s1 input[type="radio"] + label {
+	padding: var(--padding-7) var(--padding-6);
 }
-.car_type_option input[type="radio"]:checked + label:after {
-	border-radius: 1.6rem;
+.car_type_option .inp_radio.rd_btn_s1 input[type="radio"]:checked + label:after {
+	border-radius: var(--radius-medium3);
 }
 .car_type_option .label_cont {
 	width: 100%;
-	padding: 1.6rem 0 1.6rem 4.4rem;
+	padding-left: 4.4rem;
 	background-repeat: no-repeat;
 	background-size: 3.2rem auto;
 	background-position: 0 center;
@@ -1352,16 +1352,8 @@
 	background: -webkit-gradient(linear, left top, right top, from(rgb(5, 43, 87)), color-stop(50%, rgb(107, 150, 199)), to(rgb(5, 43, 87)));
 	background: linear-gradient(90deg, rgb(5, 43, 87) 0%, rgb(107, 150, 199) 50%, rgb(5, 43, 87) 100%);
 	border-radius: 1.9rem;
-	-webkit-box-shadow:
-		1.5px 1.5px 0px 0px #fff,
-		-1.5px -1.5px 0px 0px rgba(136, 136, 136, 0.4),
-		var(--shadow-y-1, 1px) 0.4rem 0.8rem 0px rgba(0, 0, 0, 0.3),
-		0.4rem 0.4rem 0.4rem 0px rgba(0, 0, 0, 0.2);
-	box-shadow:
-		1.5px 1.5px 0px 0px #fff,
-		-1.5px -1.5px 0px 0px rgba(136, 136, 136, 0.4),
-		var(--shadow-y-1, 1px) 0.4rem 0.8rem 0px rgba(0, 0, 0, 0.3),
-		0.4rem 0.4rem 0.4rem 0px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0px var(--shadow-y-2, 6px) var(--shadow-blur-2, 8px) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
+	box-shadow: 0px var(--shadow-y-2, 6px) var(--shadow-blur-2, 8px) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
 }
 .car_input_box .car_number_input .inp {
 	padding: 1.2rem 0 1.2rem 4rem;
