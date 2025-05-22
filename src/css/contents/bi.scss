@@ -325,7 +325,6 @@
 			display: flex;
 			flex-flow: row wrap;
 			gap: 12px;
-			// margin-bottom: 24px;
 			padding-bottom: 24px;
 			overflow: auto;
 			opacity: 1;
@@ -357,8 +356,9 @@
 			}
 
 			&.oai_lock {
-				// overflow: hidden;
-				overflow: initial;
+				overflow: hidden;
+				height: 100%;
+				padding-bottom: var(--padding-6);
 			}
 
 			&.etc_c_1 {
@@ -379,7 +379,7 @@
 				.cont {
 					flex: 1;
 					overflow: auto;
-					margin-bottom: var(--gap-7);
+					padding-bottom: var(--gap-7);
 
 					& + .bottom_fix_wrap {
 						padding-top: var(--gap-4);
@@ -389,9 +389,9 @@
 
 				.bottom_fix_wrap {
 					flex: none;
+					padding: 0;
 					// position: sticky;
 					// bottom: 0;
-					// padding: 0;
 				}
 
 				.inp_radio {
