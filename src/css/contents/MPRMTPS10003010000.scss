@@ -1,19 +1,25 @@
 // 자동차번호 입력
 .car_type_option {
 	gap: 10px;
-	input[type=radio]{
-		label {
-			border-radius: 16px;
-		}
-		&:checked + label {
-			&:after {
-				border-radius: 16px;
+
+	.inp_radio {
+		&.rd_btn_s1 {
+			input[type=radio]{
+				& + label {
+					padding: var(--padding-7) var(--padding-6);
+				}
+				&:checked + label {
+					&:after {
+						border-radius: var(--radius-medium3);
+					}
+				}
 			}
 		}
 	}
+
 	.label_cont {
 		width: 100%;
-		padding: 16px 0 16px 44px;
+		padding-left: 44px;
 		background-repeat: no-repeat;
 		background-size: 32px auto;
 		background-position: 0 center;
@@ -66,8 +72,9 @@
 			height: 100%;background: #052B57;
 			background: linear-gradient(90deg, rgba(5, 43, 87, 1) 0%, rgba(107, 150, 199, 1) 50%, rgba(5, 43, 87, 1) 100%);
 			border-radius: 19px;
-			box-shadow: 1.5px 1.5px 0px 0px #FFF, -1.5px -1.5px 0px 0px rgba(136, 136, 136, 0.40), var(--shadow-y-1, 1px) 4px 8px 0px rgba(0, 0, 0, 0.30), 4px 4px 4px 0px rgba(0, 0, 0, 0.20);
-		}
+			box-shadow: 0px var(--shadow-y-2, 6px) var(--shadow-blur-2, 8px) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
+			// box-shadow: 1.5px 1.5px 0px 0px #FFF, -1.5px -1.5px 0px 0px rgba(136, 136, 136, 0.40), var(--shadow-y-1, 1px) 4px 8px 0px rgba(0, 0, 0, 0.30), 4px 4px 4px 0px rgba(0, 0, 0, 0.20);
+		} 
 
 		.inp {
 			padding: 12px 0 12px 40px;

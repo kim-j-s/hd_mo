@@ -55,6 +55,20 @@
 		border-radius: 24px;
 		background: rgba(255, 255, 255, 0.9);
 		backdrop-filter: blur(8px);
+		&.active {
+			&::after {
+				content:"";
+				position: absolute;
+				top: -1px;
+				left: -1px;
+				z-index: -1;
+				width: calc(100% + 2px);
+				height: calc(100% + 2px);
+				border: 2px solid #F8633C;
+				border-radius: 24px;
+				transition: border-color 0.2s ease;
+			}
+		}
 
 		& ~ .card_item {
 			margin-top: 16px;
@@ -320,7 +334,7 @@
 					}
 					&:last-child {
 						text-align: right;
-						color: #000;
+						color: var(--color-text-basic);
 					}
 				}
 
@@ -374,6 +388,17 @@
 
 				.btn_area {
 					margin-top: 0;
+				}
+			}
+		}
+
+		.card_cont {
+			margin-top:16px;
+			padding-top:16px;
+			border-top: 1px solid #e1e3ea;
+			.comp_wrap.key_number {
+				& + .btn_area {
+					margin-top:12px
 				}
 			}
 		}
