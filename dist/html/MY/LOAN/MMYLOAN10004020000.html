@@ -40,7 +40,7 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>대출신청내역 | 마이페이지 - 현대해상 다이렉트</title>
+		<title>신청정보 확인 | 마이페이지 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -53,69 +53,98 @@
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
 				<div class="popup_inner">
-					<div class="popup_head"><div class="popup_head_title">대출신청내역 상세</div></div>
+					<div class="popup_head"><div class="popup_head_title">계약별 대출신청정보 상세</div></div>
 					<div class="popup_cont">
 						<div class="popup_content">
 							<div class="table_wrap">
-								<!-- s: 25-05-23 -->
-								<h2 class="title_h3">대출신청내역</h2>
-								<!-- e: 25-05-23 -->
+								<h2 class="title_h3">연금저축손해보험노후웰스보험(Hi904)기본플랜</h2>
 								<table class="table">
-									<caption>실제 지급금액, 대출신청금액, 기존 대출정산이자, 예수금, 인지세, 누적대출금액, 잔여대출가능금액, 예상 월이자, 대출금 받을 계좌, 이자납입계좌, 예금주, 이자납입일 제공</caption>
+									<caption>보험기간, 대출이율, 변동여부, 신청기준, 기존대출금액, 대출신청금액, 보장부분대출금액, 잔여대출가능금액 제공</caption>
+									<colgroup>
+										<col style="width: 42%" />
+										<col style="width: 58%" />
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">보험기간</th>
+											<td>2025.01.15~2027.01.14</td>
+										</tr>
+										<tr>
+											<th scope="row" class="point">대출이율</th>
+											<td class="point">4.30%</td>
+										</tr>
+										<tr>
+											<th scope="row">변동여부</th>
+											<td>금리연동형</td>
+										</tr>
+										<tr>
+											<th scope="row">신청기준</th>
+											<td>보험계약대출이율</td>
+										</tr>
+										<tr>
+											<th scope="row">기존대출금액</th>
+											<td>1,000,000원</td>
+										</tr>
+										<tr>
+											<th scope="row" class="point">대출신청금액</th>
+											<td class="point">1,000,000원</td>
+										</tr>
+										<tr>
+											<th scope="row">
+												보장부분대출금액
+												<div class="tooltip_wrap">
+													<div class="tooltip_head">
+														<button type="button" class="open trigger_btn" aria-expanded="false">
+															<i class="hd_icon popover_help"></i>
+															<span class="blind">툴팁 열기</span>
+														</button>
+													</div>
+													<div class="tooltip_panel" role="tooltip">
+														<div class="inner">
+															<p class="inner_title" aria-describedby="title">보장부분대출금액 안내</p>
+															<div class="inner_contents">
+																<p>‘보장부분 대출금액'은 보장해약환급금의 대출금액으로, '전체 대출금액'에 포함돼요.</p>
+															</div>
+
+															<button type="button" class="close"><span class="blind">툴팁 닫기</span></button>
+														</div>
+													</div>
+												</div>
+											</th>
+											<td>0원</td>
+										</tr>
+										<tr>
+											<th scope="row">잔여대출가능금액</th>
+											<td>3,500,000원</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="divider_ty1"></div>
+							<div class="table_wrap">
+								<h2 class="title_h3">연금저축손해보험노후웰스보험(Hi904)기본플랜</h2>
+								<table class="table">
+									<caption>보험기간, 대출이율, 변동여부, 신청기준 제공</caption>
 									<colgroup>
 										<col style="width: 40%" />
 										<col style="width: 60%" />
 									</colgroup>
 									<tbody>
 										<tr>
-											<th scope="row" class="point">실제 지급금액</th>
-											<td class="point">11,000,000원</td>
+											<th scope="row">보험기간</th>
+											<td>2025.01.15~2027.01.14</td>
 										</tr>
 										<tr>
-											<th scope="row" class="point">대출신청금액</th>
-											<td class="point">12,000,000원</td>
-										</tr>
-										<!-- s: 기대출정산이자, 예수금, 인지세가 0원인 경우 항목 비노출 -->
-										<tr>
-											<th scope="row">기존 대출정산이자</th>
-											<td>-1,000,000원</td>
+											<th scope="row" class="point">대출이율</th>
+											<td class="point">4.30%</td>
 										</tr>
 										<tr>
-											<th scope="row">예수금</th>
-											<td>0원</td>
+											<th scope="row">변동여부</th>
+											<td>금리연동형</td>
 										</tr>
 										<tr>
-											<th scope="row">인지세</th>
-											<td>0원</td>
-										</tr>
-										<!-- e: 기대출정산이자, 예수금, 인지세가 0원인 경우 항목 비노출 -->
-										<tr>
-											<th scope="row">누적대출금액</th>
-											<td>21,000,000원</td>
-										</tr>
-										<tr>
-											<th scope="row">잔여대출가능금액</th>
-											<td>1,000,000원</td>
-										</tr>
-										<tr>
-											<th scope="row">예상 월이자</th>
-											<td>85,270원</td>
-										</tr>
-										<tr>
-											<th scope="row">대출금 받을 계좌</th>
-											<td>국민은행 1234****1234</td>
-										</tr>
-										<tr>
-											<th scope="row">이자납입계좌</th>
-											<td>국민은행 1234****1234</td>
-										</tr>
-										<tr>
-											<th scope="row">예금주</th>
-											<td>김*대</td>
-										</tr>
-										<tr>
-											<th scope="row">이자납입일</th>
-											<td>매월 20일</td>
+											<th scope="row">신청기준</th>
+											<td>보험계약대출이율</td>
 										</tr>
 									</tbody>
 								</table>
