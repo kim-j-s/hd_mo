@@ -5,6 +5,12 @@
 	<div class="guide_discription">height 40</div>
 	{{> cp/selectitem si_class="select_item_case01_sm" si_ph="은행 선택" si_title="은행 선택" si_popup="pop_type01"}}
 
+	<div class="guide_h4">선택 버튼 - 은행 선택 팝업 호출 - 은행만</div>
+	{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" si_popup="pop_type02"}}
+
+	<div class="guide_h4">선택 버튼 - 은행 선택 팝업 호출 - 은행/증권사</div>
+	{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" si_popup="pop_type01"}}
+
 	<div class="guide_h4">선택 버튼 - 은행 선택 팝업 호출 - 선택 전</div>
 	{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" si_popup="pop_type01"}}
 
@@ -80,8 +86,40 @@
 			</div>
 		</div>
 	</div>
-	<div class="popup_bottom">
-		<div class="btn_area">{{> cp/button type="1" size="2" b-text="확인"}}</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: pop_type01 -->
+
+	<!-- s: pop_type01 -->
+	{{#> popup/popup_bottom popup-id="pop_type02" popup-title="은행 선택"}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<ul class="select_list_ty_logo">
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_card_hundai"}}현대카드</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_ibk"}}기업은행</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_kb"}}KB국민은행</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_nh"}}농협은행</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_nh_region"}}지역농협</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_woori"}}우리은행</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_sc"}}SC은행</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_citi"}}씨티은행(한미)</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_jeonbuk"}}전북은행</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_jeju"}}제주은행</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_epost"}}우체국</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_hana"}}KEB하나은행</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_hana_old"}}KEB하나은행(구.외환은행)</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_shinhan"}}신한은행</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_mg"}}새마을금고</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_cu"}}신용협동조합</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_sh"}}수협</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_k"}}케이뱅크</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_kakaobank"}}카카오뱅크</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_toss"}}토스뱅크</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_busan"}}BNK부산은행</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_kyongnam"}}BNK경남은행</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_daegu"}}대구은행</span></button>
+				<button class="item"><span class="text">{{> cp/icon iconClass="logo_bank_kwangju"}}광주은행</span></button>
+			</ul>
+		</div>
 	</div>
 	{{/ popup/popup_bottom}}
 	<!-- e: pop_type01 -->

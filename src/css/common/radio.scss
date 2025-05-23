@@ -138,6 +138,7 @@
 		}
 	}
 }
+
 .radio_group_link {
 	display: flex;
 	justify-content: space-between;
@@ -146,6 +147,7 @@
 		margin-top: 12px;
 	}
 }
+
 .radio_group_wrap {
 	display: flex;
 	flex-flow: row wrap;
@@ -172,18 +174,16 @@
 		}
 	}
 
-	&.column {
-		flex-direction: column;
-		gap: 12px;
-	}
-
 	&_ty2 {
 		width: 100%;
 		display: flex;
 		flex-flow: row wrap;
 		align-items: stretch;
 		gap: 12px;
-		margin-bottom: 24px;
+
+		& + * {
+			margin-bottom: 24px;
+		}
 
 		.inp_radio {
 			flex-basis: calc(50% - 6px);
@@ -200,18 +200,6 @@
 		}
 		& + .table {
 			margin-top: 16px;
-		}
-	}
-
-	&_ty3 {
-		width: 100%;
-		display: flex;
-		flex-flow: row wrap;
-		align-items: stretch;
-		gap: 12px;
-
-		.inp_radio {
-			flex-basis: calc(50% - 6px);
 		}
 	}
 	
@@ -246,6 +234,29 @@
 	}
 	.icon_pay_ty3 {
 		background-image: url(../images/logo/pay_toss.svg);
+	}
+}
+
+
+
+.radio_group_wrap.column {
+	flex-direction: column;
+	gap: 0;
+
+	.inp_radio {
+		& + .inp_radio {
+			margin-top: var(--gap-6);
+		}
+	}
+	.inp_radio.lg {
+		& ~ .lg {
+			margin-top: var(--gap-7);
+		}
+	}
+	.inp_radio.sm {
+		& ~ .sm {
+			margin-top: var(--gap-5);
+		}
 	}
 }
 
