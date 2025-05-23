@@ -132,6 +132,14 @@ strong {
 
 		.content {
 			flex: 1;
+			
+			& > * {
+				&:first-child {
+					&.content_ty1 {
+						margin-top: -16px;
+					}
+				}
+			}
 		}
 	}
 
@@ -160,16 +168,20 @@ strong {
 		}
 
 		.content {
-			padding: 24px 24px 32px;
+			padding: var(--padding-6) var(--padding-8) var(--gap-8);
 			background-color: #ffffff;		
 		}
 
 		.content_ty1 {
 			background: var(--color-surface-secondary-subtler);
+
+			& + .content_ty2 {
+				padding-top: var(--padding-9);
+			}
 		}
 		
 		.content_ty2{			
-			padding: 40px 24px;
+			padding: var(--gap-9) var(--padding-8);
 
 			.card_item_wrap + .total_price_display_ty1 {
 				margin-top: 16px;
@@ -249,7 +261,6 @@ strong {
 		& + * {
 			margin-top: var(--gap-8);
 		}
-		
 
 		.title_h2 + .btn_area {
 			margin-top: 8px;
@@ -258,6 +269,22 @@ strong {
 			margin-top: 8px;
 			color: var(--color-text-subtle);
 			font-size: var(--font-size-body-small);
+		}
+
+		&.space_between {
+			* {
+				margin-top: 0;
+			}
+		}
+	}
+
+	.content_ty1 {
+		margin: 0 -24px;
+		padding: var(--padding-6) var(--padding-8) var(--padding-9);
+		background-color: var(--color-surface-secondary-subtler);
+
+		& + .content_top {
+			margin-top: var(--gap-8);
 		}
 	}
 }

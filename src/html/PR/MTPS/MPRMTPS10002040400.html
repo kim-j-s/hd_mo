@@ -50,7 +50,9 @@
 <div class="popup_cont">
 	<div class="popup_content">
 		<!-- s: 수정모드 진입시 버튼 출력 -->
-		<div class="etc_btn_area right">{{> cp/button type="3" size="5" rightIcon="deleteSvg" b-text="삭제" popup="alert_d1"}}</div>
+		<!-- s: 25-05-23 수정 -->
+		<div class="etc_btn_area right">{{> cp/button type="3" size="4" rightIcon="deleteSvg" b-text="삭제" popup="alert_d1"}}</div>
+		<!-- e: 25-05-23 수정 -->
 		<!-- e: 수정모드 진입시 버튼 출력 -->
 		<div class="form_group_wrap">
 			<div class="form_line">
@@ -63,12 +65,24 @@
 						{{> cp/text type="tel" class="price" placeholder="숫자만" r-text="만원" inp-title="구입가격 입력"}}
 				</div>
 			</div>
-			<div class="form_line">{{> cp/text type="tel" class="price big" placeholder="숫자만" l-text="현재가격" r-text="만원" inp-title="현재가격 입력"}}</div>
+			<!-- s: 25-05-23 수정 -->
+			<!-- 삭제 <div class="form_line">{{> cp/text type="tel" class="price big" placeholder="숫자만" l-text="현재가격" r-text="만원" inp-title="현재가격 입력"}}</div> -->
+			<!-- e: 25-05-23 수정 -->
 		</div>
 	</div>
 </div>
 
 <div class="popup_bottom">
+	<!-- s: 25-05-23 수정 -->
+	<div class="total_price_display_ty1">
+		<p class="price_label">현재가격</p>
+		<p class="price_val">
+			<strong>
+				<span class="point">50만원</span>
+			</strong>
+		</p>
+	</div>
+	<!-- e: 25-05-23 수정 -->
 	<div class="btn_area">
 		{{> cp/button type="1" size="2" b-text="구매가격을 입력 중이에요" disabled=true}}
 		<!-- {{> cp/button type="1" size="2" b-text="부품정보 저장하기"}} -->
