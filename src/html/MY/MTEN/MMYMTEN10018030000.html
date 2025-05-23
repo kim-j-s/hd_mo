@@ -1,0 +1,86 @@
+{{#> layout/default page-title="보험료 결제 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="$메뉴명$" }}
+
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
+				<h2 class="title_h2">
+					<strong>취소정보</strong> 와 <strong>보험료</strong>를<br>
+					확인해주세요
+				</h2>
+			</div>
+			<!-- e: content_top -->
+			<h2 class="pop_title_h1">취소정보</h2>
+            <div class="table_wrap">
+                <table class="table">
+                    <caption>자동차번호, 보험기간, 계약자, 피보험자, 결제수단, 환급 보험료	 제공</caption>
+                    <colgroup>
+                        <col style="width: 30%" />
+                        <col style="width: 70%" />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">자동차번호</th>
+                            <td>18루**22</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">보험기간</th>
+                            <td>2024.08.21~2025.08.21</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">계약자</th>
+                            <td>조*기</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">피보험자</th>
+                            <td>조*기</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">결제수단</th>
+                            <td>신용카드</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">환급 보험료</th>
+                            <td>768,693원</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="checkbox_group_wrap">
+                {{> cp/checkbox checkbox_class="rd_box" id="checkbox01-1" label_class="chk_label_ty3" labelname="<strong class='ess ess_t1'>확인</strong> <strong class='point'>의무보험 미가입시 과태료가 발생</strong>할 수 있으므로 취소 전 대상여부를 꼭 확인해주세요." }}
+            </div>
+			
+            <!-- s: 꼭 알아두세요 -->
+            {{#> cp/notice dp-active="active"}}
+                <ul class="list_depth">
+                    <li>자동차보험 계약은 관련법상 의무보험을 포함하고 있습니다. 취소전 해당차량에 대한 다른 보험 가입여부를 꼭 확인하시기 바랍니다.</li>
+                </ul>
+            {{/ cp/notice }}
+            <!-- e: 꼭 알아두세요 -->
+		</div>
+	</div>
+
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="다음" }}
+		</div>
+	</div>
+</div>
+
+<!-- s: popup area -->
+
+
+	<!-- s: 자동차 배서 메뉴 -->
+	{{> pages/pop1 }}
+	<!-- e: 자동차 배서 메뉴 -->
+
+<!-- e: popup area -->
+{{/ layout/default }}
+
+
+<script>
+	$(document).ready(function(){
+		});
+</script>

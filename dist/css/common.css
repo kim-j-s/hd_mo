@@ -194,7 +194,7 @@ strong {
 }
 /* _하단 고정버튼 영역 */
 .bottom_fix_wrap {
-	padding: 1.2rem 2.4rem 1.6rem;
+	padding: var(--padding-5) var(--padding-8) var(--padding-6);
 }
 .bottom_fix_wrap .banner_box {
 	margin-bottom: 1.2rem;
@@ -1946,48 +1946,6 @@ strong {
 .acd_item .acd_head.active .preview {
 	display: none;
 }
-.acd_item .acd_head .picture_info_top {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-webkit-box-pack: justify;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
-	gap: 0.8rem;
-}
-.acd_item .acd_head .picture_info_top + span {
-	position: absolute;
-	opacity: 0;
-	width: 0;
-	height: 0;
-}
-.acd_item .acd_head .picture_info_top .status {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	gap: 0.4rem;
-}
-.acd_item .acd_head .picture_info_top .status .title {
-	font-size: var(--font-size-heading-small);
-	font-weight: 700;
-	color: var(--color-text-bolder);
-}
-.acd_item .acd_head .picture_info_top .preview {
-	overflow: hidden;
-	border-radius: 1rem;
-}
-.acd_item .acd_head .picture_info_top .preview img {
-	display: block;
-	width: 5.2rem;
-	height: 4rem;
-}
 .acd_item.acd_item_ty1 {
 	border-radius: var(--radius-large2);
 	border: 1px solid var(--color-border-gray-light);
@@ -2541,6 +2499,60 @@ strong {
 	opacity: 0;
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
+}
+.acd_item.acd_item_ty8 .acd_cont + dl {
+	margin-top: 1.6rem;
+}
+.picture_info_item {
+	padding: 2.4rem 2rem;
+	background-color: var(--color-surface-white-subtler);
+	border-radius: var(--radius-large2);
+	border: 1px solid var(--color-border-gray-light);
+}
+.picture_info_top {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	gap: 0.8rem;
+}
+.picture_info_top + span {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+.picture_info_top .status {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	gap: 0.4rem;
+}
+.picture_info_top .status .title {
+	font-size: var(--font-size-heading-small);
+	font-weight: 700;
+	color: var(--color-text-bolder);
+}
+.picture_info_top .preview {
+	overflow: hidden;
+	border-radius: 1rem;
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+}
+.picture_info_top .preview img {
+	display: block;
+	width: 5.2rem;
+	height: 4rem;
 }
 /* button */
 /**********************
@@ -4333,6 +4345,142 @@ strong {
 	margin-top: 1.6rem;
 }
 /* 기간선택 */
+/* 단일방식 - 직접 구현 */
+.calendar {
+	/* 머리 */
+	/* 머리 */
+	/* 몸 */
+	/* 몸 */
+}
+.calendar .calendar_top {
+	position: relative;
+}
+.calendar .calendar_top .calendar_change_btn {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 3.2rem;
+	height: 3.2rem;
+	border-radius: 50%;
+	border: 1px solid var(--color-border-gray-light);
+	font-size: 0;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 2rem auto;
+}
+.calendar .calendar_top .calendar_change_btn.ccb_prev {
+	left: 0.8rem;
+	background-image: url(../images/icon/arrowLeft_ty1.svg);
+}
+.calendar .calendar_top .calendar_change_btn.ccb_next {
+	right: 0.8rem;
+	background-image: url(../images/icon/arrowRight_ty4.svg);
+}
+.calendar .calendar_top .calendar_title {
+	font-weight: 700;
+	font-size: var(--font-size-heading-small);
+	line-height: 3.2rem;
+	text-align: center;
+}
+.calendar .calendar_top .calendar_title .calendar_title_dp.calendar_month {
+	padding-left: 1.2rem;
+}
+.calendar .calendar_cont {
+	padding-top: 1.2rem;
+}
+.calendar .calendar_tbl > table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin: 0 auto;
+	table-layout: fixed;
+}
+.calendar .calendar_tbl > table tbody td {
+	border: 0.3rem solid #fff;
+	border-top: none;
+	border-bottom: none;
+	padding: 0;
+}
+.calendar .calendar_tbl > table tbody td:nth-child(1) {
+	border-left: none;
+}
+.calendar .calendar_tbl > table tbody td:nth-child(1) .day_default {
+	color: var(--color-text-danger);
+}
+.calendar .calendar_tbl > table tbody td:nth-child(7) {
+	border-right: none;
+}
+.calendar .calendar_tbl > table tbody td .day_default.day_disabled {
+	color: var(--color-text-disabled);
+}
+.calendar .calendar_tbl > table tbody tr td a,
+.calendar .calendar_tbl > table tbody tr td span {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: 100%;
+	height: 4.8rem;
+	font-size: var(--font-size-label-medium);
+	line-height: 1;
+	border: none;
+}
+.calendar .calendar_tbl > table .day_default {
+	margin: 0 auto;
+}
+.calendar .calendar_tbl > table .day_today {
+	position: relative;
+}
+.calendar .calendar_tbl > table .day_today:before {
+	content: "";
+	position: absolute;
+	bottom: 1.4rem;
+	left: 50%;
+	width: 0.4rem;
+	height: 0.4rem;
+	border-radius: 50%;
+	background-color: var(--color-element-point);
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+.calendar .calendar_tbl > table .day_today::after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 0.4rem;
+	margin-top: 1px;
+}
+.calendar .calendar_tbl > table .day_active {
+	position: relative;
+	color: var(--color-text-inverse-static);
+}
+.calendar .calendar_tbl > table .day_active::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: -1;
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+	background-color: var(--color-action-secondary-active);
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+.calendar .calendar_tbl > table td a.day_default {
+	position: relative;
+	z-index: 1;
+}
 /* card */
 /* Card*/
 .card_item_wrap + .card_item_wrap {
@@ -4365,6 +4513,21 @@ strong {
 	border-radius: 2.4rem;
 	-webkit-transition: border-color 0.2s ease;
 	transition: border-color 0.2s ease;
+}
+.card_item_wrap.ty2 .card_item .card_link::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+}
+.card_item_wrap.ty2 .card_item.disabled .card_link .item_top .title_info .main_title {
+	background-image: none;
+}
+.card_item_wrap.ty2 .card_item.disabled2 .card_list_ty1 li > *:last-child {
+	color: #6d7882;
 }
 .card_item_wrap .card_item {
 	position: relative;
@@ -4440,11 +4603,11 @@ strong {
 }
 .card_item_wrap .card_item .card_link .item_top .title_info .main_title {
 	padding-right: 3rem;
-	background: url(../images/icon/arrowRight_ty3.svg) no-repeat right center/2rem auto;
+	background: url(../images/icon/arrowRight_ty3.svg) no-repeat right 0.35rem/2rem auto;
 }
 .card_item_wrap .card_item .card_link[aria-disabled="true"] .item_top .title_info .main_title {
 	cursor: not-allowed;
-	background: url(../images/icon/arrowRight_disabled_ty2.svg) no-repeat right center/2rem auto;
+	background: url(../images/icon/arrowRight_disabled_ty2.svg) no-repeat right 0.35rem/2rem auto;
 }
 .card_item_wrap .card_item .item_top {
 	display: -webkit-box;
@@ -4886,12 +5049,6 @@ strong {
 .inp_checkbox input[type="checkbox"] + .chk_label > .label_cont .badge_wrap {
 	vertical-align: bottom;
 }
-.inp_checkbox input[type="checkbox"] + .chk_label > .label_cont .sub_g_txt {
-	display: block;
-	padding-top: 0.4rem;
-	font-size: var(--font-size-label-small);
-	color: var(--color-text-subtle);
-}
 .inp_checkbox input[type="checkbox"] + .chk_label > .label_cont .cheking_color {
 	font-weight: 700;
 	color: var(--color-text-disabled-on);
@@ -4907,6 +5064,12 @@ strong {
 }
 .inp_checkbox input[type="checkbox"] + .chk_label > .label_cont .ess.ess_t1.off {
 	color: var(--color-text-disabled-on);
+}
+.inp_checkbox input[type="checkbox"] + .chk_label .sub_g_txt {
+	display: block;
+	padding-top: 0.4rem;
+	font-size: var(--font-size-label-small);
+	color: var(--color-text-subtle);
 }
 .inp_checkbox input[type="checkbox"] + .chk_label::before {
 	content: "";
@@ -4938,7 +5101,7 @@ strong {
 	font-weight: 700;
 	font-size: var(--font-size-heading-small);
 }
-.inp_checkbox input[type="checkbox"] + .chk_label.chk_label_ty2 > .label_cont .sub_g_txt {
+.inp_checkbox input[type="checkbox"] + .chk_label.chk_label_ty2 .sub_g_txt {
 	display: block;
 	padding-top: 0.4rem;
 	font-weight: 400;
@@ -4956,7 +5119,7 @@ strong {
 .inp_checkbox input[type="checkbox"] + .chk_label.chk_label_ty3 > .label_cont {
 	font-size: var(--font-size-label-large);
 }
-.inp_checkbox input[type="checkbox"] + .chk_label.chk_label_ty3 > .label_cont .sub_g_txt {
+.inp_checkbox input[type="checkbox"] + .chk_label.chk_label_ty3 .sub_g_txt {
 	font-size: var(--font-size-label-medium);
 }
 .inp_checkbox input[type="checkbox"] + .chk_label.chk_label_ty4 {
@@ -7252,6 +7415,12 @@ strong {
 .bottom_fix_notice .acd_cont .inner .list_depth > li .btn_area {
 	margin-top: 0.4rem;
 }
+.bottom_fix_notice .acd_cont .inner .list_depth > li .btn_area .btn_link.short_cut {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+	width: auto;
+}
 .bottom_fix_notice .acd_cont .inner .list_depth > li .circle_list {
 	margin-top: 1.2rem;
 }
@@ -9195,6 +9364,14 @@ strong {
 .table_wrap .table td.v_mid {
 	vertical-align: middle;
 }
+.table_wrap .table th .tooltip_wrap,
+.table_wrap .table td .tooltip_wrap {
+	vertical-align: baseline;
+}
+.table_wrap .table th .tooltip_wrap .tooltip_head.active::after,
+.table_wrap .table td .tooltip_wrap .tooltip_head.active::after {
+	top: calc(100% - 0.9rem);
+}
 .table_wrap .table th {
 	vertical-align: top;
 	padding: 1.2rem 0.8rem;
@@ -9473,6 +9650,9 @@ strong {
 }
 .text_sub + .btn_area.basic {
 	margin-top: 0.4rem;
+}
+.text_sub + .bg_top_cover {
+	margin-top: 1.6rem;
 }
 /* textarea */
 /* Textarea */
