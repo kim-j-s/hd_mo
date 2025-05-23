@@ -1,5 +1,19 @@
 {{#> layout/guide }}
 	<div class="guide_h1">달력</div>
+
+	<div class="guide_h4">단일 달력 호출</div>
+	<button type="button" onclick="openHDPopup(this,'calendar');">달력 나와라</button>
+
+	<!-- popup-active=true -->
+	{{#> popup/popup_bottom popup-id="calendar" no-header=true }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			{{> cp/calendar}}
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+
+	
 	<div class="guide_h4">단일 선택 달력 - datepicker 인풋영역 선택</div>
 	{{> cp/text cal=true placeholder="날짜를 선택하세요" }}
 
@@ -23,7 +37,7 @@
 		{{> cp/text cal=true placeholder="날짜를 선택하세요" }}
 	</div>
 
-
+	
 
 
 
