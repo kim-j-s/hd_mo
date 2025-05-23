@@ -1,0 +1,78 @@
+{{#> layout/default page-title="회원가입 | 이용안내"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="회원가입" no-nav=true }}
+		<div id="container" class="container">
+			<div class="content">
+				<!-- s: content_top -->
+				<div class="content_top">
+					<h2 class="title_h2">
+						<strong>회원가입을 위해</strong>을 위해<br> <strong>고객님의 정보</strong>를 입력해주세요
+					</h2>
+				</div>
+				<!-- e: content_top -->
+
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">이름</div>
+						{{> cp/text placeholder="입력하세요" inp-title="이름 입력" }}
+					</div>
+
+					<div class="form_line">
+						<div class="label_tit">주민등록번호</div>
+						<div class="comp_wrap birth">
+							{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" }}
+							<span class="dash">-</span>
+							{{> cp/keypad7 case1=true kt="주민등록번호 뒤 7자리 입력"}}
+						</div>
+					</div>
+
+					<div class="form_line">
+						<div class="label_tit">휴대폰번호</div>
+						{{> cp/text class="phone" type="tel" placeholder="-없이 입력" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+					</div>
+
+					<div class="form_line">
+						<div class="label_tit">이메일</div>
+						{{> cp/text type="email" inpclass="email_auto" placeholder="이메일 입력" inp-title="이메일 입력" }}
+					</div>
+
+				</div>
+				
+				<!-- s: 꼭 알아두세요 -->
+				{{#> cp/notice }}
+					<ul class="list_depth">
+						<li>실명확인은 NICE 평가정보를 통해 진행됩니다.</li>
+						<li>
+							실명확인이 안되는 경우 NICE아이디에서 실명 등록을 진행해주세요.
+							<div class="btn_area">
+								{{> cp/linkButton bl_class="short_cut sm" bl_text="실명등록 바로가기" }}
+							</div>
+						</li>
+						<li>
+							「주민등록법」에 따라 타인의 주민등록번호를 부정 사용하는 자는 3년 이하의 징역 또는 3천만원 이하의 벌금에 처해질 수 있습니다.
+						</li>
+					</ul>
+				{{/ cp/notice }}
+				<!-- e: 꼭 알아두세요 -->
+
+				<!-- // content -->
+			</div>
+
+			<!-- // container -->
+		</div>
+
+		<!-- s: 하단 고정 버튼 영역 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="1" b-text="다음"}}
+			</div>
+		</div>
+		<!-- s: 하단 고정 버튼 영역 -->
+
+	</div>
+
+	<!-- s: popup area -->
+	 
+	<!-- e: popup area -->
+
+{{/ layout/default }}
