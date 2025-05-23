@@ -105,17 +105,17 @@
 
 					<!-- 가입할 보험 -->
 					<div class="opts_area active" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step2">
-						<div class="opts_area_item">
+						<div class="opts_area_item oai_lock">
 							<div class="item_box">
-								<div>
+								<div class="cont">
 									<div class="radio_group_wrap" role="radiogroup">
 										<div class="inp_radio lg">
 											<input type="radio" id="radio21" name="radio2" />
 											<label for="radio21">
 												<span class="label_cont">
 													의무 가입 대상 아님
+													<span class="sub_g_txt">또는 다른 의무 보험 가입이 필요할 때</span>
 												</span>
-												<span class="sub_g_txt">또는 다른 의무 보험 가입이 필요할 때</span>
 											</label>
 										</div>
 										<div class="inp_radio lg">
@@ -123,8 +123,8 @@
 											<label for="radio22">
 												<span class="label_cont">
 													다중이용업소 의무 대상
+													<span class="sub_g_txt">관할 소방서에서 가입 안내를 받으신 경우</span>
 												</span>
-												<span class="sub_g_txt">관할 소방서에서 가입 안내를 받으신 경우</span>
 											</label>
 										</div>
 										<div class="inp_radio lg">
@@ -132,14 +132,22 @@
 											<label for="radio23">
 												<span class="label_cont">
 													재난배상책임 의무 대상
+													<span class="sub_g_txt">지자체에서 가입 안내를 받으신 경우</span>
 												</span>
-												<span class="sub_g_txt">지자체에서 가입 안내를 받으신 경우</span>
 											</label>
 										</div>
 									</div>
 									<div class="divider_ty2"></div>
 									<div class="checkbox_group_wrap">
-										{{> cp/checkbox label_class="chk_label_ty3" id="checkbox1" labelname="가스사고배상책임 의무 대상" label_cont="가스안전공사에서 가입 안내를 받으신 경우" }}
+										<div class="inp_checkbox">
+											<input type="checkbox" id="checkbox1">
+											<label for="checkbox1" class="chk_label chk_label_ty3">
+												<span class="label_cont">
+													가스사고배상책임 의무 대상
+													<span class="sub_g_txt">가스안전공사에서 가입 안내를 받으신 경우</span>
+												</span>
+											</label>
+										</div>
 									</div>
 								</div>
 				
