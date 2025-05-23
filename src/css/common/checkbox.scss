@@ -462,12 +462,6 @@
 	gap: 12px;
 	width: 100%;
 
-	&.column {
-		flex-direction: column;
-		gap: 16px;
-		width: 100%;
-	}
-
 	&.ty2 {
 		display: flex;
 		flex-flow: row wrap;
@@ -485,5 +479,26 @@
 
 	& + .car_type_option {
 		margin-top: var(--gap-11);
+	}
+}
+
+.checkbox_group_wrap.column {
+	flex-direction: column;
+	gap: 0;
+
+	.inp_checkbox {
+		& + .inp_checkbox {
+			margin-top: var(--gap-6);
+		}
+	}
+	.inp_checkbox.lg {
+		& ~ .lg {
+			margin-top: var(--gap-7);
+		}
+	}
+	.inp_checkbox.sm {
+		& ~ .sm {
+			margin-top: var(--gap-5);
+		}
 	}
 }
