@@ -2,7 +2,8 @@
 	<div class="guide_h1">달력</div>
 
 	<div class="guide_h4">단일 달력 호출</div>
-	<button type="button" onclick="openHDPopup(this,'calendar');">달력 나와라</button>
+	<!-- <button type="button" onclick="openHDPopup(this,'calendar');">달력 나와라</button> -->
+	{{> cp/button type="2" size="5" b-text="단일 선택 달력" popup="calendar" }}
 
 	<!-- popup-active=true -->
 	{{#> popup/popup_bottom popup-id="calendar" no-header=true }}
@@ -37,7 +38,107 @@
 		{{> cp/text cal=true placeholder="날짜를 선택하세요" }}
 	</div>
 
-	
+
+
+
+	<script>
+	$(document).ready(function() {
+
+		$(document).on('click', '.day_default', function(){
+			$(this).closest('.calendar_single').find('.day_active').removeClass('day_active');
+			$(this).addClass('day_active');
+		});
+
+
+	});
+	</script>	
+
+
+
+	<script>
+
+	function renderCalendar(year, month, todayDate = new Date()) {
+		$('.calendar_tbl tbody').empty();
+
+		const firstDay = new Date(year, month - 1, 1).getDay();
+		const lastDate = new Date(year, month, 0).getDate();
+
+		const todayYear = todayDate.getFullYear();
+		const todayMonth = todayDate.getMonth() + 1; // 0-based → 1-based
+		const todayDay = todayDate.getDate();
+
+		let day = 1;
+		let html = '';
+
+		for (let i = 0; i < 6; i++) {
+			let row = '<tr>';
+			for (let j = 0; j < 7; j++) {
+				if (i === 0 && j < firstDay) {
+					row += `<td><button type="button" class="day_default" disabled><span class="text"></span></button></td>`;
+				} else if (day > lastDate) {
+					row += `<td><button type="button" class="day_default" disabled><span class="text"></span></button></td>`;
+				} else {
+					// 오늘 날짜 여부 확인
+					let isToday = (year === todayYear && month === todayMonth && day === todayDay);
+					let className = isToday ? 'day_default day_today' : 'day_default';
+
+					row += `<td><button type="button" class="${className}"><span class="text">${day}</span></button></td>`;
+					day++;
+				}
+			}
+			row += '</tr>';
+			html += row;
+
+			if (day > lastDate) break;
+		}
+
+		$('.calendar_tbl tbody').append(html);
+	}
+
+
+	$(document).on('click', '.ccb_prev', function(){
+		// 현재 연도와 월 가져오기
+		let year = parseInt($('.calendar_year .text').text(), 10);
+		let month = parseInt($('.calendar_month .text').text(), 10);
+
+		// 이전 달 계산
+		month -= 1;
+		if (month === 0) {
+			year -= 1;
+			month = 12;
+		}
+
+		// 새로운 연도와 월 텍스트 갱신
+		$('.calendar_year .text').text(year);
+		$('.calendar_month .text').text(month);
+
+		// 달력 생성 함수 호출
+		renderCalendar(year, month);
+	});
+
+	$(document).on('click', '.ccb_next', function(){
+		// 현재 연도와 월 가져오기
+		let year = parseInt($('.calendar_year .text').text(), 10);
+		let month = parseInt($('.calendar_month .text').text(), 10);
+
+		// 다음 달 계산
+		month += 1;
+		if (month === 13) {
+			year += 1;
+			month = 1;
+		}
+
+		// 연도와 월 텍스트 갱신
+		$('.calendar_year .text').text(year);
+		$('.calendar_month .text').text(month);
+
+		// 달력 생성 함수 호출
+		renderCalendar(year, month);
+	});
+
+
+
+	</script>
 
 
 
