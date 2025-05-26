@@ -209,7 +209,6 @@
 		// 		outline: 1px dashed gray;
 		// 	}
 		// }
-
 		&:disabled {
 			& + .chk_label {
 				&::before {
@@ -255,6 +254,7 @@
 				}
 			}
 		}
+
 
 		&:checked {
 			& + .chk_label {
@@ -326,6 +326,12 @@
 					&::before {
 						background:  var(--color-element-gray-lighter) url(../images/icon/check_ty5.svg) no-repeat center / 12px auto;
 						border: 1px solid var(--color-border-gray-light);
+					}
+					&.chk_label_ty2,
+					&.chk_label_ty3 {
+						&::before {
+							background-size: 16px auto;
+						}
 					}
 					
 					&.chk_label_ty4 {
