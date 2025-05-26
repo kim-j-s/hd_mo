@@ -52,8 +52,10 @@
 		<div class="guide_h1">달력</div>
 
 		<div class="guide_h4">단일 달력 호출</div>
-		<button type="button" onclick="openHDPopup(this,'calendar');">달력 나와라</button>
-
+		<!-- <button type="button" onclick="openHDPopup(this,'calendar');">달력 나와라</button> -->
+		<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openHDPopup(this,'calendar');">
+			<span class="text">단일 선택 달력</span>
+		</button>
 		<!-- popup-active=true -->
 		<div class="popup_wrap bottom" id="calendar" role="dialog" aria-modal="true" aria-hidden="true">
 			<div class="popup_container">
@@ -66,17 +68,17 @@
 
 					<div class="popup_cont">
 						<div class="popup_content">
-							<div class="calendar">
+							<div class="calendar calendar_single">
 								<div class="calendar_top">
-									<a class="calendar_change_btn ccb_prev" title="이전 달"></a>
-									<a class="calendar_change_btn ccb_next" title="다음 달 "></a>
+									<button type="button" class="calendar_change_btn ccb_prev" title="이전 달"></button>
+									<button type="button" class="calendar_change_btn ccb_next" title="다음 달"></button>
 									<div class="calendar_title">
 										<span class="calendar_title_dp calendar_year">
 											<span class="text">2025</span>
 											년
 										</span>
 										<span class="calendar_title_dp calendar_month">
-											<span class="text">4</span>
+											<span class="text">5</span>
 											월
 										</span>
 									</div>
@@ -88,60 +90,130 @@
 											<caption class="blind">달력</caption>
 											<thead>
 												<tr>
+													<th scope="col">일</th>
 													<th scope="col">월</th>
 													<th scope="col">화</th>
 													<th scope="col">수</th>
 													<th scope="col">목</th>
 													<th scope="col">금</th>
 													<th scope="col">토</th>
-													<th scope="col">일</th>
 												</tr>
 											</thead>
 											<tbody>
 												<tr>
-													<td><span class="day_default day_disabled">30</span></td>
-													<td><span class="day_default day_disabled">31</span></td>
-													<td><a href="" class="day_default">1</a></td>
-													<td><a href="" class="day_default">2</a></td>
-													<td><a href="" class="day_default">3</a></td>
-													<td><a href="" class="day_default">4</a></td>
-													<td><a href="" class="day_default day_today">5</a></td>
+													<td>
+														<button type="button" class="day_default" disabled><span class="text">27</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default" disabled><span class="text">28</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default" disabled><span class="text">29</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default" disabled><span class="text">30</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">1</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">2</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">3</span></button>
+													</td>
 												</tr>
 												<tr>
-													<td><a href="" class="day_default">6</a></td>
-													<td><a href="" class="day_default">7</a></td>
-													<td><a href="" class="day_default day_active">8</a></td>
-													<td><a href="" class="day_default">9</a></td>
-													<td><a href="" class="day_default">10</a></td>
-													<td><a href="" class="day_default">11</a></td>
-													<td><a href="" class="day_default">12</a></td>
+													<td>
+														<button type="button" class="day_default"><span class="text">4</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">5</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default day_today"><span class="text">6</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">7</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">8</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">9</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">10</span></button>
+													</td>
 												</tr>
 												<tr>
-													<td><a href="" class="day_default">13</a></td>
-													<td><a href="" class="day_default">14</a></td>
-													<td><a href="" class="day_default">15</a></td>
-													<td><a href="" class="day_default">16</a></td>
-													<td><a href="" class="day_default">17</a></td>
-													<td><a href="" class="day_default">18</a></td>
-													<td><a href="" class="day_default">19</a></td>
+													<td>
+														<button type="button" class="day_default"><span class="text">11</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">12</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">13</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">14</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">15</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">16</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">17</span></button>
+													</td>
 												</tr>
 												<tr>
-													<td><a href="" class="day_default">20</a></td>
-													<td><a href="" class="day_default">21</a></td>
-													<td><a href="" class="day_default">22</a></td>
-													<td><a href="" class="day_default">23</a></td>
-													<td><a href="" class="day_default">24</a></td>
-													<td><a href="" class="day_default">25</a></td>
-													<td><a href="" class="day_default">26</a></td>
+													<td>
+														<button type="button" class="day_default"><span class="text">18</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">19</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">20</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">21</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">22</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">23</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">24</span></button>
+													</td>
 												</tr>
 												<tr>
-													<td><a href="" class="day_default">27</a></td>
-													<td><a href="" class="day_default">28</a></td>
-													<td><a href="" class="day_default">29</a></td>
-													<td><span class="day_default day_disabled">30</span></td>
-													<td><span class="day_default day_disabled">31</span></td>
-													<td><span class="day_default day_disabled">1</span></td>
-													<td><span class="day_default day_disabled">2</span></td>
+													<td>
+														<button type="button" class="day_default"><span class="text">25</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">26</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">27</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">28</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">29</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">30</span></button>
+													</td>
+													<td>
+														<button type="button" class="day_default"><span class="text">31</span></button>
+													</td>
 												</tr>
 											</tbody>
 										</table>
@@ -210,5 +282,94 @@
 				</div>
 			</div>
 		</div>
+
+		<script>
+			$(document).ready(function () {
+				$(document).on("click", ".day_default", function () {
+					$(this).closest(".calendar_single").find(".day_active").removeClass("day_active");
+					$(this).addClass("day_active");
+				});
+			});
+		</script>
+
+		<script>
+			function renderCalendar(year, month, todayDate = new Date()) {
+				$(".calendar_tbl tbody").empty();
+
+				const firstDay = new Date(year, month - 1, 1).getDay();
+				const lastDate = new Date(year, month, 0).getDate();
+
+				const todayYear = todayDate.getFullYear();
+				const todayMonth = todayDate.getMonth() + 1; // 0-based → 1-based
+				const todayDay = todayDate.getDate();
+
+				let day = 1;
+				let html = "";
+
+				for (let i = 0; i < 6; i++) {
+					let row = "<tr>";
+					for (let j = 0; j < 7; j++) {
+						if (i === 0 && j < firstDay) {
+							row += `<td><button type="button" class="day_default" disabled><span class="text"></span></button></td>`;
+						} else if (day > lastDate) {
+							row += `<td><button type="button" class="day_default" disabled><span class="text"></span></button></td>`;
+						} else {
+							// 오늘 날짜 여부 확인
+							let isToday = year === todayYear && month === todayMonth && day === todayDay;
+							let className = isToday ? "day_default day_today" : "day_default";
+
+							row += `<td><button type="button" class="${className}"><span class="text">${day}</span></button></td>`;
+							day++;
+						}
+					}
+					row += "</tr>";
+					html += row;
+
+					if (day > lastDate) break;
+				}
+
+				$(".calendar_tbl tbody").append(html);
+			}
+
+			$(document).on("click", ".ccb_prev", function () {
+				// 현재 연도와 월 가져오기
+				let year = parseInt($(".calendar_year .text").text(), 10);
+				let month = parseInt($(".calendar_month .text").text(), 10);
+
+				// 이전 달 계산
+				month -= 1;
+				if (month === 0) {
+					year -= 1;
+					month = 12;
+				}
+
+				// 새로운 연도와 월 텍스트 갱신
+				$(".calendar_year .text").text(year);
+				$(".calendar_month .text").text(month);
+
+				// 달력 생성 함수 호출
+				renderCalendar(year, month);
+			});
+
+			$(document).on("click", ".ccb_next", function () {
+				// 현재 연도와 월 가져오기
+				let year = parseInt($(".calendar_year .text").text(), 10);
+				let month = parseInt($(".calendar_month .text").text(), 10);
+
+				// 다음 달 계산
+				month += 1;
+				if (month === 13) {
+					year += 1;
+					month = 1;
+				}
+
+				// 연도와 월 텍스트 갱신
+				$(".calendar_year .text").text(year);
+				$(".calendar_month .text").text(month);
+
+				// 달력 생성 함수 호출
+				renderCalendar(year, month);
+			});
+		</script>
 	</body>
 </html>
