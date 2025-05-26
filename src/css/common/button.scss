@@ -144,7 +144,8 @@
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-	gap: 4px;
+	// gap: 4px;
+	gap: var(--gap-2);
 	line-height: 150%;
 	// line-height:initial;
 
@@ -167,7 +168,7 @@
 		background-color: var(--color-button-primary-fill);
 		color: #fff;
 		// border: 0;
-		border: 1px solid var(--color-button-primary-fill);
+		border: var(--border-width-static-regular) solid var(--color-button-primary-fill);
 
 		&:focus {
 			background-color: var(--color-button-primary-fill);
@@ -182,7 +183,7 @@
 	}
 	&_ty_2 {
 		background-color: var(--color-button-secondary-fill);
-		border: 1px solid var(--color-button-secondary-border);
+		border: var(--border-width-static-regular) solid var(--color-button-secondary-border);
 		color: var(--color-text-primary-bold);
 
 		&:focus {
@@ -195,12 +196,12 @@
 		&:active,
 		&.active {
 			background-color: var(--color-button-secondary-fill-pressed);
-			border: 1px solid var(--color-text-primary);
+			border: var(--border-width-static-regular) solid var(--color-text-primary);
 		}
 	}
 	&_ty_3 {
 		color: var(--color-text-basic);
-		border: 1px solid var(--color-button-tertiary-border);
+		border: var(--border-width-static-regular) solid var(--color-button-tertiary-border);
 		// background: var(--color-button-tertiary-fill, rgba(255, 255, 255, 0.00));
 		background: var(--color-button-tertiary-fill, rgba(255, 255, 255, 0.00));
 
@@ -208,12 +209,12 @@
 			background: var(--color-button-tertiary-fill);
 		}		
 		// &:hover {
-		// 	border: 1px solid var(--color-button-tertiary-border);
+		// 	border: var(--border-width-static-regular) solid var(--color-button-tertiary-border);
 		// 	background: var(--color-button-tertiary-fill-hover);
 		// }
 		&:active,
 		&.active {
-			border: 1px solid var(--color-button-tertiary-border);
+			border: var(--border-width-static-regular) solid var(--color-button-tertiary-border);
 			background: var(--color-button-tertiary-fill-pressed);
 		}
 
@@ -230,7 +231,7 @@
 		background-color: var(--color-button-disabled-fill);
 		color: var(--color-text-disabled-on);
 		// border: 0;
-		border: 1px solid var(--color-button-disabled-fill);
+		border: var(--border-width-static-regular) solid var(--color-button-disabled-fill);
 	}
 
 	&.between {
@@ -347,7 +348,7 @@
 		padding: 23px 16px;
 		font-size: var(--font-size-button-large);
 		border-radius: var(--radius-medium3);
-		border: 1px solid var(--color-border-gray-light);
+		border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 		> .text {
 			display: block;
 			width: 100%;
@@ -486,7 +487,7 @@
 			width: 100%;
 			padding: var(--padding-3) var(--padding-6);
 			border-radius: var(--radius-medium2);
-			border: 1px solid var(--color-button-tertiary-border);
+			border: var(--border-width-static-regular) solid var(--color-button-tertiary-border);
 			background: transparent;
 			&.tac {
 				text-align: center;
@@ -580,7 +581,7 @@
 		&.rd_box {
 			padding: 2px 10px;
 			border-radius: var(--radius-small3);
-			border: 1px solid var(--color-button-tertiary-border);
+			border: var(--border-width-static-regular) solid var(--color-button-tertiary-border);
 			// background: var(--color-button-tertiary-fill);
 			background: transparent;
 			> .text {
@@ -611,7 +612,7 @@
 			text-align: center;
 			width: auto;
 			padding: 8px;
-			border: 1px solid var(--color-button-tertiary-border);
+			border: var(--border-width-static-regular) solid var(--color-button-tertiary-border);
 			background: none;
 			> .text {
 				display: inline-block;
@@ -689,7 +690,7 @@
 // selectbox btn
 .btn_select {
 	flex-shrink: 1;
-	border: 1px solid #000;
+	border: var(--border-width-static-regular) solid #000;
 	background-color: #fff;
 
 	&[aria-disabled="true"] {
@@ -707,7 +708,7 @@
 		font-size: 16px;
 		line-height: 24px;		
 		border-radius: 16px;
-		border: 1px solid #ddd;
+		border: var(--border-width-static-regular) solid #ddd;
 		box-sizing: border-box;
 		appearance: none;
 		cursor: pointer;
@@ -965,7 +966,7 @@
 	width: 32px;
 	height: 32px;
 	background: url(../images/icon/close_ty1.svg) no-repeat center / 16px auto;
-	border: 1px solid var(--color-border-gray-light);
+	border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 	border-radius: 100%;
 }
 
@@ -981,14 +982,14 @@
 		&:disabled {
 			background: var(--color-button-secondary-fill);
 			color: var(--color-text-primary-bold);
-			border: 1px solid var(--color-button-secondary-border);
+			border: var(--border-width-static-regular) solid var(--color-button-secondary-border);
 		}
 	}
 	&.hd_btn_ty_3 {
 		&:disabled {
 			background: var(--color-button-tertiary-fill);
 			color: var(--color-text-basic);
-			border: 1px solid var(--color-button-tertiary-border);
+			border: var(--border-width-static-regular) solid var(--color-button-tertiary-border);
 		}
 	}
 }
@@ -1021,7 +1022,7 @@
 	}
 
 	&.sbc_01 {
-		border: 1px solid var(--color-border-gray-light);
+		border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 		&[aria-disabled="true"],
 		&:disabled {
 			border-color: var(--color-action-disabled);
@@ -1029,7 +1030,7 @@
 		}
 	}
 	&.sbc_02 {
-		border: 1px solid var(--color-border-gray-light);
+		border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 		background-color: #e5e5e5;
 		&[aria-disabled="true"],
 		&:disabled {
@@ -1039,7 +1040,7 @@
 	}
 
 	&.sbc_03 {
-		border: 1px solid var(--color-border-gray-light);
+		border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 		background-color: rgba(0, 0, 0, 0.10);
 
 		&[aria-disabled="true"],
@@ -1055,7 +1056,7 @@
 	}
 
 	&.sbc_04 {
-		border: 1px solid var(--color-border-gray-light);
+		border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 		background-color: #FFF;
 
 		&[aria-disabled="true"],
