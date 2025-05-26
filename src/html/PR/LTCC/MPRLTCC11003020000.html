@@ -1,0 +1,86 @@
+{{#> layout/default page-title="보험료 확인 | 상품"}}
+
+<!-- s: Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="변경할 가입조건 선택" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="form_group_wrap">		
+			<div class="form_line">
+				<div class="label_tit">보험/납입기간</div>
+				<div class="opt_select_wrap">
+					<span class="opt_select_wrap_live" aria-live="polite"></span>
+					<div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
+						<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+						
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="opt1" id="opt1_1" checked>
+							<label for="opt1_1">10년</label>
+						</div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="opt1" id="opt1_2">
+							<label for="opt1_2">15년</label>
+						</div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="opt1" id="opt1_3">
+							<label for="opt1_3">20년</label>
+						</div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="opt1" id="opt1_4">
+							<label for="opt1_4">30년</label>
+						</div>
+						<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+					</div>
+					<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_left" aria-label="이전 옵션"></button>
+					<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
+				</div>
+			</div>
+			<div class="form_line">
+				<div class="label_tit">납입방법</div>
+				<div class="radio_group_wrap" role="radiogroup">
+					{{> cp/radio rd-class="rd_btn" rd-id="rd_opt2_1" name="rd_opt2" labelname="매월 보험료 내기" checked=true }}
+					{{> cp/radio rd-class="rd_btn" rd-id="rd_opt2_2" name="rd_opt2" labelname="1년치 한꺼번에 내기" }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		<!-- s: 25-04-30 수정 -->
+		{{> cp/button type="1" size="2" b-text="확인" }}
+		<!-- e: 25-04-30 수정 -->
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: Bottom 팝업 -->
+
+<script>
+	$(document).ready(function(){
+		$('.swiper-container').each(function (idx, ele) {
+			const $swiperContainer = $(ele);
+			const slideNum = $swiperContainer.find('.swiper-slide').length,
+						newNum = Math.round(slideNum / 2) - 1;
+			// console.log(newNum);
+
+			const swiper = new Swiper($swiperContainer[0], {
+				slidesPerView: 'auto',
+				centeredSlides: true,
+				initialSlide: newNum,
+				spaceBetween: 16,
+				observer: true,
+				navigation: {
+					nextEl: ".swiper-button-next",
+					prevEl: ".swiper-button-prev",
+				},
+				a11y: {
+					enabled: true,
+					prevSlideMessage: '이전 항목으로 이동',
+					nextSlideMessage: '다음 항목으로 이동',
+				},
+			});
+		});
+
+	});
+</script>
+ 
+{{/ layout/default }}
