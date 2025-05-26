@@ -168,6 +168,22 @@
 				.progress_bar_ty3 {
 					margin-top: 16px;
 				}
+
+				.checkbox_group_wrap {
+					&.column {
+						.inp_checkbox {
+							input {
+								&:checked {
+									& + .label {
+										&:before {
+											background-size: 20px auto;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 
 			.inp_radio,
@@ -194,6 +210,12 @@
 						border-radius: 24px;
 						transition: border-color .2s ease;
 					}
+
+					& + .chk_label_ty4 {
+						&:before {
+							background-size: 16px auto;
+						}
+					}
 				}
 			}
 		}
@@ -204,7 +226,7 @@
 				.title_info {
 					.main_title {
 						padding-right: 30px;
-						background: url(../images/icon/arrowRight_ty3.svg) no-repeat right 3.5px / 20px auto;
+						background: url(../images/icon/arrowRight_ty3.svg) no-repeat right top 3.5px / 20px auto;
 					}
 				}
 			}
@@ -213,7 +235,7 @@
 					.title_info {
 						.main_title {
 							cursor: not-allowed;
-							background: url(../images/icon/arrowRight_disabled_ty2.svg) no-repeat right 3.5px / 20px auto;
+							// background: url(../images/icon/arrowRight_disabled_ty2.svg) no-repeat right 3.5px / 20px auto;
 						}
 					}
 				}
@@ -259,11 +281,12 @@
 					}
 					.badge_wrap {
 						display: inline;
-						padding-left: 4px;
+						// padding-left: 4px;
 						vertical-align: top;
 
 						.hd_badge {
 							vertical-align: middle;
+							font-weight: 400;
 						}
 					}
 
@@ -424,7 +447,7 @@
 					font-weight: 700;
 				}
 				.point_b {
-					font-size: var(--font-size-body-large);
+					// font-size: var(--font-size-body-large);
 					color: var(--color-text-primary-bold);
 					font-weight: 700;
 				}
@@ -479,14 +502,13 @@
 			border-top: 1px solid var(--color-divider-gray-light);
 		}
 		.checkbox_group_wrap {
-			gap:16px;
 			.inp_checkbox {
 				width: 100%;
+				mask-type: 0;
 			}
 		}
 		.item_info {
 			dt {
-
 				font-size: var(--font-size-body-small);
 			}
 			dd {
@@ -561,7 +583,7 @@
 						// padding-right: 24px;
 						.main_title {
 							padding-right: 30px;
-							background: url(../images/icon/arrowRight_disabled_ty2.svg) no-repeat right bottom / 24px auto;
+							// background: url(../images/icon/arrowRight_disabled_ty2.svg) no-repeat right bottom / 20px auto;
 						}
 					}
 				}

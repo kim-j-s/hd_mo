@@ -95,7 +95,8 @@
 			const simpleHeight = $('.simple_info_wrap').height();
 			const targetOffset = $target.position().top;
 			const fix_h = $(this).closest('.sticky_fix').height();
-			console.log(targetOffset , targetMargin);
+			// console.log(targetOffset , targetMargin);
+			console.log(simpleHeight);
 
 			$('.tag_item').removeClass('active');
 			$this.addClass('active');
@@ -1100,6 +1101,60 @@ $(function(){
 
 
 	// ready
+
+	//MY - 대출신청금액입력 MMYLOAN10002010000 접고 펼치기 
+	$('.bottom_panel').each(function () {
+		const $bottomPanel = $(this);
+		const $btnToggle = $bottomPanel.find('.bottom_panel_toggle');
+		const $itemHiddens = $bottomPanel.find('.item_hidden');
+
+		// 초기 설정
+		$btnToggle.attr('aria-expanded', 'false');
+		$itemHiddens.attr('aria-hidden', 'true');
+
+		$btnToggle.on('click', function () {
+			togglePanel($bottomPanel, $btnToggle, $itemHiddens);
+		});
+
+		function togglePanel($panel, $button, $items) {
+			const isExpanded = $panel.hasClass('active');
+		
+			// 상태 토글
+			$panel.toggleClass('active', !isExpanded);
+			$button.attr('aria-expanded', !isExpanded);
+			$button.text(!isExpanded ? '접기' : '펼치기');
+			$items.attr('aria-hidden', !!isExpanded);
+			!isExpanded ? $items.slideDown() : $items.slideUp();
+
+			const eventNamespace = '.focusLoop';
+			$panel.off('keydown' + eventNamespace); // 기존 이벤트 제거
+
+			if (isExpanded) return; // 접히는 상태일 때만 포커스 트랩 적용하지 않음
+
+			// 포커스 트랩 설정 (펼쳐질 때만)
+			const $focusable = $panel.find('a, button, [tabindex="0"], input, textarea, select').filter(':visible');
+			if ($focusable.length === 0) return;
+
+			const $first = $focusable.first();
+			const $last = $focusable.last();
+
+			$panel.on('keydown' + eventNamespace, function (e) {
+				if (e.key !== 'Tab') return;
+
+				const $active = $(document.activeElement);
+				if (e.shiftKey && $active.is($first)) {
+					e.preventDefault();
+					$last.focus();
+				} else if (!e.shiftKey && $active.is($last)) {
+					e.preventDefault();
+					$first.focus();
+				}
+			});
+		}
+	});
+
+	
+
 });
 	
 

@@ -1,0 +1,49 @@
+.bottom_panel{
+	width:100%;
+	background-color: var(--color-surface-white-subtle);		
+	.item_hidden {
+		display: none;
+		overflow: hidden;
+	}
+
+	.bottom_panel_toggle {
+		display: inline-flex;
+		align-items: center;
+		background-image: none;
+		margin-bottom:16px;
+		padding:0 2px;
+		font-size:var(--font-size-button-large);
+		&::after {
+			content:"";
+			display: inline-flex;
+			width:20px;
+			height:20px;
+			background: url(../images/icon/arrowDown_ty3.svg) no-repeat center center / 20px auto;
+			transform: rotate(-180deg);
+		}
+	}
+
+	.bottom_panel_cont {
+		.info_gray {	
+			&.bg_etc01 {
+				margin-top:0;	
+				padding:0;
+			}
+			&:not(.bg_etc01) {
+				margin-top: 32px;
+			}	 
+		}
+	}
+
+	&.active {
+		position: fixed;
+		bottom:0;
+		left:0;
+		.bottom_panel_toggle {
+			&::after {
+				transform: rotate(0deg);
+			}
+		}
+	}
+}
+
