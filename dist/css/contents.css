@@ -2676,13 +2676,11 @@
 	display: none;
 	width: 100%;
 	overflow: hidden;
+	padding: var(--padding-7) var(--padding-8);
 	border-radius: 0px 0px var(--padding-6, 16px) var(--padding-6, 16px);
 	background: var(--color-surface-white-subtler, #fff);
 	-webkit-box-shadow: 0px var(--shadow-y-2, 6px) var(--shadow-blur-2, 8px) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
 	box-shadow: 0px var(--shadow-y-2, 6px) var(--shadow-blur-2, 8px) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
-}
-.simple_info_wrap .simple_info_item .sii_list {
-	padding: 0 2.4rem;
 }
 .simple_info_wrap .simple_info_item .sii_list > li {
 	display: -webkit-box;
@@ -2694,10 +2692,11 @@
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	padding: 2rem 0;
 	font-size: var(--font-size-body-small);
 }
 .simple_info_wrap .simple_info_item .sii_list > li + li {
+	margin-top: var(--gap-5);
+	padding-top: var(--gap-5);
 	border-top: 1px solid var(--color-divider-gray-light);
 }
 .simple_info_wrap .simple_info_item .sii_list > li .bold {
@@ -2719,6 +2718,35 @@
 	border-left: 1px solid var(--color-divider-gray-light);
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
+}
+.simple_info_wrap .simple_info_item .acd_item_ty6 .acd_head .acd_btn {
+	padding: 0 3.2rem 0 0;
+}
+.simple_info_wrap .simple_info_item .acd_item_ty6 .acd_head .acd_btn:before {
+	right: 0;
+}
+.simple_info_wrap .simple_info_item .acd_item_ty6 .acd_cont .info_gray {
+	padding-bottom: 0;
+}
+.simple_info_wrap .simple_info_item .acd_item_ty6 .acd_cont .info_gray.bg_etc01 {
+	padding: 0;
+}
+.simple_info_wrap .simple_info_item .acd_item_ty6 .acd_cont .info_gray.bg_etc01 dl {
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.simple_info_wrap .simple_info_item .acd_item_ty6 + .acd_item_ty6 .acd_head .acd_btn {
+	margin-top: var(--gap-5);
+}
+.simple_info_wrap .simple_info_item .acd_item_ty6 + .acd_item_ty6 .acd_head.active {
+	padding-top: var(--gap-5);
+}
+.simple_info_wrap .simple_info_item .acd_item_ty6 + .acd_item_ty6 .acd_head.active + .acd_cont > .info_gray {
+	padding-bottom: 0;
+}
+.simple_info_wrap .simple_info_item .acd_item_ty6 + .acd_item_ty6 .acd_head + .acd_cont .info_gray dl {
+	margin-top: var(--gap-5);
 }
 .simple_info_wrap.ty2 .simple_info_item {
 	border-radius: 0;
@@ -2881,7 +2909,10 @@
 	margin-top: 1.6rem;
 }
 .form_box > .btn_area {
-	margin-top: 4rem;
+	margin-top: var(--gap-8);
+}
+.form_box > .btn_area + .title_h3 {
+	margin-top: var(--gap-8);
 }
 .form_box .radio_group_wrap + .checkbox_group_wrap {
 	margin-top: 1.6rem;
@@ -2942,9 +2973,6 @@ ul + .form_group_wrap {
 .text_lg {
 	font-size: var(--font-size-body-large);
 }
-[class^="title_h"] + .info_cont {
-	margin-top: 3.2rem;
-}
 .pop_title_h1 {
 	font-size: var(--font-size-heading-medium) !important;
 	font-weight: 700;
@@ -2987,33 +3015,39 @@ ul + .form_group_wrap {
 .pop_title_h3 + p {
 	margin-top: 1.2rem;
 }
+.info_cont .text_sub {
+	margin-top: var(--gap-7);
+}
 .info_cont h2,
 .info_cont .title_h2 {
 	font-size: var(--font-size-heading-small);
 	font-weight: 700;
 }
+.info_cont h2 + .table_wrap,
 .info_cont h2 + h3,
 .info_cont h2 + ul,
 .info_cont h2 + ol,
+.info_cont .title_h2 + .table_wrap,
 .info_cont .title_h2 + h3,
 .info_cont .title_h2 + ul,
 .info_cont .title_h2 + ol {
-	margin-top: 1.6rem;
+	margin-top: var(--gap-5);
 }
 .info_cont h2 + p,
 .info_cont .title_h2 + p {
-	margin-top: 1.2rem;
+	margin-top: var(--gap-4);
 }
 .info_cont h3 {
 	font-size: var(--font-size-heading-xsmall);
 	font-weight: 700;
 }
 .info_cont h3 + h4 {
+	margin-top: var(--gap-5);
 	margin-bottom: 1.2rem;
 }
 .info_cont h3 + ul,
 .info_cont h3 + ol {
-	margin-top: 1.6rem;
+	margin-top: var(--gap-5);
 }
 .info_cont h3 + p {
 	margin-top: 1.2rem;
@@ -3043,12 +3077,12 @@ ul + .form_group_wrap {
 .info_cont ol + .title_h2,
 .info_cont ul + h2,
 .info_cont ul + .title_h2 {
-	margin-top: 4rem;
+	margin-top: var(--gap-9);
 }
 .info_cont p + h3,
 .info_cont ol + h3,
 .info_cont ul + h3 {
-	margin-top: 2.4rem;
+	margin-top: var(--gap-5);
 }
 .info_cont p + h4,
 .info_cont ol + h4,
@@ -3075,17 +3109,17 @@ ul + .form_group_wrap {
 .info_cont .table_wrap .table ~ * {
 	margin-top: 1.6rem;
 }
-.info_cont ul + .table_wrap,
 .info_cont ul + ul,
 .info_cont ul + ol,
-.info_cont ol + .table_wrap,
 .info_cont ol + ul,
 .info_cont ol + ol {
-	margin-top: 1.6rem;
+	margin-top: var(--gap-5);
 }
+.info_cont ul + .table_wrap,
 .info_cont ul + p,
+.info_cont ol + .table_wrap,
 .info_cont ol + p {
-	margin-top: 1.2rem;
+	margin-top: var(--gap-4);
 }
 .info_cont p {
 	font-size: var(--font-size-body-medium);
@@ -3355,18 +3389,21 @@ ul + .form_group_wrap {
 }
 .tab_wrap_list_ty1.tip_box .tip_item {
 	--tl: 0;
-	left: 40%;
+	left: 50%;
 	bottom: calc(100% - 0.7rem);
 	width: 25rem;
 	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
+	-webkit-box-shadow: 0 var(--shadow-y-2) var(--shadow-blur-2) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
+	box-shadow: 0 var(--shadow-y-2) var(--shadow-blur-2) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
+	border-radius: var(--radius-medium1);
 }
 .tab_wrap_list_ty1.tip_box .tip_item_cont {
 	padding: 0.4rem 0;
 }
 .tab_wrap_list_ty1.tip_box .tip_item_cont::after,
 .tab_wrap_list_ty1.tip_box .tip_item_cont::before {
-	left: 50%;
+	left: calc(50% - 0.6rem);
 }
 /* 특약리스트 */
 .special_contract_list {
@@ -3376,7 +3413,7 @@ ul + .form_group_wrap {
 	margin-top: 1.6rem;
 }
 .special_contract_list > li {
-	padding: 1.6rem 0;
+	padding: var(--padding-6) 0;
 	border-bottom: 1px solid var(--color-divider-gray-light);
 }
 .special_contract_list > li .check_flex_box {
@@ -3389,7 +3426,16 @@ ul + .form_group_wrap {
 	-webkit-box-align: start;
 	-ms-flex-align: start;
 	align-items: flex-start;
-	gap: 0.8rem;
+	gap: var(--gap-3);
+}
+.special_contract_list > li .check_flex_box .check_box {
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+.special_contract_list > li .check_flex_box .check_box .label_cont .badge_wrap {
+	width: auto;
+	vertical-align: middle;
 }
 .special_contract_list > li .check_flex_box .money_box {
 	display: -webkit-box;
@@ -3416,6 +3462,9 @@ ul + .form_group_wrap {
 }
 .special_contract_list > li .btn_add {
 	margin: 0.4rem 0 1.6rem 2.4rem;
+}
+.special_contract_list > li .info_gray {
+	margin-top: var(--gap-5);
 }
 .special_contract_list.radio .check_flex_box .money_box {
 	-webkit-box-orient: vertical;

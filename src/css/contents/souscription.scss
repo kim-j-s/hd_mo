@@ -211,6 +211,9 @@ ul + .form_group_wrap {
 }
 
 .info_cont {
+	.text_sub {
+		margin-top: var(--gap-7);
+	}
 	h2,
 	.title_h2 {
 		font-size: var(--font-size-heading-small);
@@ -230,11 +233,12 @@ ul + .form_group_wrap {
 		font-size: var(--font-size-heading-xsmall);
 		font-weight: 700;
 		& + h4 {
+			margin-top: var(--gap-5);
 			margin-bottom: 12px;
 		}
 		& + ul,
 		& + ol {
-			margin-top: 16px;
+			margin-top: var(--gap-5);
 		}
 		& + p {
 			margin-top: 12px;
@@ -273,7 +277,7 @@ ul + .form_group_wrap {
 		}
 
 		& + h3 {
-			margin-top: 24px;
+			margin-top: var(--gap-5);
 		}
 
 		& + h4 {
@@ -306,13 +310,13 @@ ul + .form_group_wrap {
 	}
 	ul,
 	ol {
-		& + .table_wrap,
 		& + ul,
 		& + ol {
-			margin-top: 16px;
+			margin-top: var(--gap-5);
 		}
+		& + .table_wrap,
 		& + p {
-			margin-top: 12px;
+			margin-top: var(--gap-4);
 		}
 	}
 
@@ -610,19 +614,24 @@ ul + .form_group_wrap {
 	margin-top: 32px;
 	.tip_item {
 		--tl: 0;
-		left: 40%;
+		// left: 40%;
+		left: 50%;
 		bottom: calc(100% - 7px);
 		width: 250px;
 		transform: translateX(-50%);
+		box-shadow: 0 var(--shadow-y-2) var(--shadow-blur-2) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
+		border-radius: var(--radius-medium1);
 	}
 	.tip_item_cont {
 		padding: 4px 0;
 		&::after,
 		&::before {
-			left: 50%;
+			left: calc(50% - 6px);
 		}
 	}
 }
+
+
 /* 특약리스트 */
 .special_contract_list {
 	border-top: 1px solid var(--color-divider-gray-light);
@@ -632,19 +641,32 @@ ul + .form_group_wrap {
 	}
 
 	> li {
-		padding: 16px 0;
+		padding: var(--padding-6)  0;
 		border-bottom: 1px solid var(--color-divider-gray-light);
+
 		.check_flex_box {
 			display: flex;
 			justify-content: space-between;
 			align-items: flex-start;
-			gap: 8px;
+			gap: var(--gap-3);
+
+			.check_box {
+				flex: 1;
+
+				.label_cont {
+					.badge_wrap {
+						width: auto;
+						vertical-align: middle;
+					}
+				}
+			}
 
 			.money_box {
 				display: flex;
 				min-width: 100px;
 				justify-content: end;
 				gap: 14px;
+
 				.money {
 					color: var(--color-text-primary);
 					font-size: var(--font-size-button-large);
@@ -666,6 +688,10 @@ ul + .form_group_wrap {
 		}
 		.btn_add {
 			margin: 4px 0 16px 24px;
+		}
+
+		.info_gray {
+			margin-top: var(--gap-5);
 		}
 	}
 	&.radio {
