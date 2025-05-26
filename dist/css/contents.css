@@ -2881,7 +2881,10 @@
 	margin-top: 1.6rem;
 }
 .form_box > .btn_area {
-	margin-top: 4rem;
+	margin-top: var(--gap-8);
+}
+.form_box > .btn_area + .title_h3 {
+	margin-top: var(--gap-8);
 }
 .form_box .radio_group_wrap + .checkbox_group_wrap {
 	margin-top: 1.6rem;
@@ -2942,9 +2945,6 @@ ul + .form_group_wrap {
 .text_lg {
 	font-size: var(--font-size-body-large);
 }
-[class^="title_h"] + .info_cont {
-	margin-top: 3.2rem;
-}
 .pop_title_h1 {
 	font-size: var(--font-size-heading-medium) !important;
 	font-weight: 700;
@@ -2974,6 +2974,7 @@ ul + .form_group_wrap {
 .pop_title_h2 + p {
 	margin-top: 1.2rem;
 }
+.pop_title_h2 + .pop_title_h3,
 .pop_title_h2 + h3,
 .pop_title_h2 + ul,
 .pop_title_h2 + ol,
@@ -2987,22 +2988,27 @@ ul + .form_group_wrap {
 .pop_title_h3 + p {
 	margin-top: 1.2rem;
 }
+.pop_title_h3 + .form_group_wrap {
+	margin-top: 1.6rem;
+}
 .info_cont h2,
 .info_cont .title_h2 {
 	font-size: var(--font-size-heading-small);
 	font-weight: 700;
 }
+.info_cont h2 + .table_wrap,
 .info_cont h2 + h3,
 .info_cont h2 + ul,
 .info_cont h2 + ol,
+.info_cont .title_h2 + .table_wrap,
 .info_cont .title_h2 + h3,
 .info_cont .title_h2 + ul,
 .info_cont .title_h2 + ol {
-	margin-top: 1.6rem;
+	margin-top: var(--gap-5);
 }
 .info_cont h2 + p,
 .info_cont .title_h2 + p {
-	margin-top: 1.2rem;
+	margin-top: var(--gap-4);
 }
 .info_cont h3 {
 	font-size: var(--font-size-heading-xsmall);
@@ -3039,11 +3045,14 @@ ul + .form_group_wrap {
 }
 .info_cont p + h2,
 .info_cont p + .title_h2,
+.info_cont p + .pop_title_h2,
 .info_cont ol + h2,
 .info_cont ol + .title_h2,
+.info_cont ol + .pop_title_h2,
 .info_cont ul + h2,
-.info_cont ul + .title_h2 {
-	margin-top: 4rem;
+.info_cont ul + .title_h2,
+.info_cont ul + .pop_title_h2 {
+	margin-top: var(--gap-9);
 }
 .info_cont p + h3,
 .info_cont ol + h3,
@@ -3063,17 +3072,25 @@ ul + .form_group_wrap {
 .info_cont .table_wrap + .pop_title_h1 {
 	margin-top: 5.2rem;
 }
+.info_cont .table_wrap + .pop_title_h2,
 .info_cont .table_wrap + h2 {
 	margin-top: 4rem;
 }
+.info_cont .table_wrap + .pop_title_h3,
 .info_cont .table_wrap + h3 {
 	margin-top: 2.4rem;
 }
 .info_cont .table_wrap + h4 {
 	margin-top: 2rem;
 }
+.info_cont .table_wrap .title_h4 + .table {
+	margin-top: 0.4rem;
+}
 .info_cont .table_wrap .table ~ * {
 	margin-top: 1.6rem;
+}
+.info_cont .table_wrap .table + .title_h4 {
+	margin-top: 0.8rem;
 }
 .info_cont ul + .table_wrap,
 .info_cont ul + ul,
@@ -3115,6 +3132,7 @@ ul + .form_group_wrap {
 .info_cont + .info_gray {
 	margin-top: 3.2rem;
 }
+.info_cont + .list_ty2,
 .info_cont + .checkbox_group_wrap {
 	margin-top: 5.2rem;
 }
