@@ -104,13 +104,15 @@
 
 	&.ty2 {
 		.hd_btn {
-			flex-basis: calc(50% - 10px);
+			flex-basis: calc(50% - 8px);
 
 			&.full {
 				flex-basis: 100%;
 			}
 			&.half {
-				flex-basis: calc(50% - 5px);
+				flex-basis: calc(50% - 4px);
+				// flex: 1 1 calc(50% - 4px);
+				// width: calc(50% - 4px);
 			}
 		}
 	}
@@ -368,6 +370,47 @@
 				background-image: url(../images/icon/icon_reset_ty2_disable.svg);
 			}
 		}
+	}
+
+	&.hd_btn_attach {
+		display: flex;
+		flex-direction: column;
+		align-self: center;
+		padding: 0 var(--padding-6);
+		border-radius: var(--radius-medium1);
+		border: var(--border-width-static-regular) solid var(--color-button-tertiary-border);
+		background-color: var(--color-button-tertiary-fill);
+		overflow: hidden;
+		&.hd_btn_attach_s1 {
+			height: var(--button-size-medium);
+		}
+		&.hd_btn_attach_s2 {
+			height: var(--button-size-xlarge);
+		}
+		.hba_line1 {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			.hba_classi {
+				font-size: var(--font-size-button-medium);
+			}
+			.hd_icon {
+				width: 20px;
+				height: 20px;
+			}			
+		}
+		.hba_line2 {
+			flex: none;
+			display: block;
+			width: 100%;
+			font-size: var(--font-size-body-xsmall);
+			text-align: left;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+		
 	}
 
 
