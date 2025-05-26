@@ -48,7 +48,11 @@
 		}
 	}
 	> .btn_area {
-		margin-top: 40px;
+		margin-top: var(--gap-8);
+
+		& + .title_h3 {
+			margin-top: var(--gap-8);
+		}
 	}
 	.radio_group_wrap {
 		& + .checkbox_group_wrap {
@@ -161,11 +165,6 @@ ul + .form_group_wrap {
 .text_lg {
 	font-size: var(--font-size-body-large);
 }
-[class^="title_h"] {
-	& + .info_cont {
-		margin-top: 32px;
-	}
-}
 
 .pop_title_h1 {
 	font-size: var(--font-size-heading-medium) !important;
@@ -216,13 +215,15 @@ ul + .form_group_wrap {
 	.title_h2 {
 		font-size: var(--font-size-heading-small);
 		font-weight: 700;
+		
+		& + .table_wrap,
 		& + h3,
 		& + ul,
 		& + ol {
-			margin-top: 16px;
+			margin-top: var(--gap-5);
 		}
 		& + p {
-			margin-top: 12px;
+			margin-top: var(--gap-4);
 		}
 	}
 	h3 {
@@ -268,7 +269,7 @@ ul + .form_group_wrap {
 	ul {
 		& + h2,
 		& + .title_h2 {
-			margin-top: 40px;
+			margin-top: var(--gap-9);
 		}
 
 		& + h3 {
