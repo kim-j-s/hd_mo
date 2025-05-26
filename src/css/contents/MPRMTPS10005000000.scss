@@ -94,23 +94,23 @@
 }
 
 .driver_relationship_state {
-	margin: 32px -24px 0;
-	padding: 32px 24px;
+	margin: var(--gap-8) -24px 0;
+	padding: var(--padding-9) var(--padding-8);
 	background-color: #F5F5F5;
-	border-radius: 32px;
+	border-radius: var(--radius-xlarge2);
 }
 
 .relationship_box {
 	position: relative;
-	height: 312px;
+	height: 323px;
 	overflow: hidden;
 
 	[class^=rel_case]{
 		position: absolute;
 		z-index: 10;
 		display: flex;
-		background-color: #fff;
-		border-radius: 20px;
+		background-color: var(--color-action-white);
+		border-radius: var(--radius-large1);
 
 		&:before {
 			content: '선택됨';
@@ -122,8 +122,8 @@
 			width: 100%;
 			height: 100%;
 			font-size: 0;
-			border: 2px solid #F8633C;
-			border-radius: 20px;
+			border: var(--border-width-static-medium) solid var(--color-border-primary);
+			border-radius: var(--radius-large1);
 			opacity: 0;
 			transition: all .5s;
 		}
@@ -133,23 +133,23 @@
 			flex-direction: column;
 			justify-content: center;
 			min-width: 70px;
-			padding: 56px 13px 8px;
+			padding: 56px 13px var(--padding-3);
 			background-repeat: no-repeat;
 			background-size: auto 44px;
 			background-position: center 8px;
-			font-size: 14px;
+			font-size: var(--font-size-body-small);
 			text-align: center;
 			white-space: nowrap;
 			transition: background-image .5s;
 
+			i {
+				font-style: normal;
+				font-size: var(--font-size-body-xsmall);
+			}
+
 			&.ty2 {
-				padding-top: 52px;
+				// padding-top: 52px;
 				min-width: 78px;
-				i {
-					font-style: normal;
-					font-size: var(--font-size-body-xsmall, 12px);
-					line-height:120%;
-				}
 			}			
 		}
 	}
@@ -159,7 +159,7 @@
 		display: flex;
 		// justify-content: center;
 		justify-content: space-between;
-		gap: 10px;
+		gap: var(--gap-3);
 		// width: 256px;
 		width: calc(50% + 90px);
 		padding: 0 24px;
@@ -193,7 +193,7 @@
 			content:'';
 			display: block;
 			position: absolute;
-			top: 152px;
+			top: 162px;
 			left: 50%;
 			z-index: 1;
 			width: 1px;
@@ -253,7 +253,8 @@
 
 		> span {
 			width: 90px;
-				background-image:url(../images/content/mtps/img_rel_case3.svg);
+			min-height: 103px;
+			background-image:url(../images/content/mtps/img_rel_case3.svg);
 
 			&:before {
 				content:'';
