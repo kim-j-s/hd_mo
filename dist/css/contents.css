@@ -4103,3 +4103,51 @@ ul + .form_group_wrap {
 }
 /* 이용방법 */
 /* 마이 */
+/* MY - 대출신청금액입력 */
+.bottom_panel {
+	width: 100%;
+	background-color: var(--color-surface-white-subtle);
+}
+.bottom_panel .item_hidden {
+	display: none;
+	overflow: hidden;
+}
+.bottom_panel .bottom_panel_toggle {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	background-image: none;
+	margin-bottom: 1.6rem;
+	padding: 0 0.2rem;
+	font-size: var(--font-size-button-large);
+}
+.bottom_panel .bottom_panel_toggle::after {
+	content: "";
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	width: 2rem;
+	height: 2rem;
+	background: url(../images/icon/arrowDown_ty3.svg) no-repeat center center/2rem auto;
+	-webkit-transform: rotate(-180deg);
+	transform: rotate(-180deg);
+}
+.bottom_panel .bottom_panel_cont .info_gray.bg_etc01 {
+	margin-top: 0;
+	padding: 0;
+}
+.bottom_panel .bottom_panel_cont .info_gray:not(.bg_etc01) {
+	margin-top: 3.2rem;
+}
+.bottom_panel.active {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+.bottom_panel.active .bottom_panel_toggle::after {
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
