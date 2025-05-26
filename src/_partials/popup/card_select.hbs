@@ -1,0 +1,64 @@
+{{!-- 
+	popup-id : id 배정
+--}}
+<div class="popup_wrap bottom{{#if popup-class}} {{popup-class}}{{/if}}{{#if popup-active}} active{{/if}}"{{#if popup-id}} id="{{popup-id}}"{{/if}}{{#if close-btn}}{{/if}} role="dialog" aria-modal="true" {{#if popup-active}}aria-hidden="false"{{else}}aria-hidden="true"{{/if}} >
+	<div class="popup_container">
+		<div class="popup_dim" aria-hidden="true"{{#if popup-id}} onclick="closeHDPopup('{{popup-id}}');"{{/if}}></div>
+		<div class="popup_inner{{#if in-class}} {{in-class}}{{/if}}">
+			{{!-- <div class="draggable" aria-grabbed="false" aria-dropeffect="close" tabindex="0" aria-label="드래그 하여 닫기"> --}}
+			<div class="draggable" aria-hidden="true">
+				<div class="move"></div>
+			</div>
+			<div class="popup_head">{{#unless no-header}}<div class="popup_head_title">{{{popup-title}}}</div>{{/unless}}</div>
+			<div class="popup_cont">
+				<div class="popup_content">
+					<ul class="select_list_ty_card">
+						<li>
+							<button class="item">
+								<span class="text">{{> cp/icon iconClass="logo_card_hundai"}}현대카드</span>
+								<span class="able_opt_wrap">
+									<span class="able_opt able_opt_appcard">앱카드<span class="sr_only">사용가능</span></span>
+									<span class="able_opt able_opt_point">포인트<span class="sr_only">사용가능</span></span>
+								</span>
+							</button>
+						</li>
+						<li>
+							<button class="item">
+								<span class="text">{{> cp/icon iconClass="logo_card_lotte"}}롯데카드</span>
+								<span class="able_opt_wrap">
+									<span class="able_opt able_opt_point">포인트<span class="sr_only">사용가능</span></span>
+								</span>
+							</button>
+						</li>
+						<li>
+							<button class="item">
+								<span class="text">{{> cp/icon iconClass="logo_card_shinhan"}}신한카드</span>
+								<span class="able_opt_wrap">
+									<span class="able_opt able_opt_point">포인트<span class="sr_only">사용가능</span></span>
+								</span>
+							</button>
+						</li>
+						<li>
+							<button class="item">
+								<span class="text">{{> cp/icon iconClass="logo_card_samsung"}}삼성카드</span>
+							</button>
+						</li>
+						<li>
+							<button class="item">
+								<span class="text">{{> cp/icon iconClass="logo_card_kb"}}국민카드</span>
+							</button>
+						</li>
+						<li>
+							<button class="item">
+								<span class="text">{{> cp/icon iconClass="logo_card_etc"}}기타</span>
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+			{{#unless close-btn}}
+				<button type="button" class="popup_close"{{#if popup-id}} onclick="closeHDPopup('{{popup-id}}');"{{/if}}><span class="blind">팝업 닫기</span></button>
+			{{/unless}}
+		</div>
+	</div>
+</div>
