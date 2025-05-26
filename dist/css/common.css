@@ -2684,16 +2684,16 @@ strong {
 	margin-top: 1.6rem;
 }
 .btn_area.ty2 .hd_btn {
-	-ms-flex-preferred-size: calc(50% - 1rem);
-	flex-basis: calc(50% - 1rem);
+	-ms-flex-preferred-size: calc(50% - 0.8rem);
+	flex-basis: calc(50% - 0.8rem);
 }
 .btn_area.ty2 .hd_btn.full {
 	-ms-flex-preferred-size: 100%;
 	flex-basis: 100%;
 }
 .btn_area.ty2 .hd_btn.half {
-	-ms-flex-preferred-size: calc(50% - 0.5rem);
-	flex-basis: calc(50% - 0.5rem);
+	-ms-flex-preferred-size: calc(50% - 0.4rem);
+	flex-basis: calc(50% - 0.4rem);
 }
 .btn_area.ty3 .hd_btn {
 	-ms-flex-preferred-size: calc(33.3% - 1rem);
@@ -2902,6 +2902,59 @@ strong {
 .hd_btn.reset:disabled > .text {
 	color: var(--color-text-disabled);
 	background-image: url(../images/icon/icon_reset_ty2_disable.svg);
+}
+.hd_btn.hd_btn_attach {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-ms-flex-item-align: center;
+	align-self: center;
+	padding: 0 var(--padding-6);
+	border-radius: var(--radius-medium1);
+	border: var(--border-width-static-regular) solid var(--color-button-tertiary-border);
+	background-color: var(--color-button-tertiary-fill);
+	overflow: hidden;
+}
+.hd_btn.hd_btn_attach.hd_btn_attach_s1 {
+	height: var(--button-size-medium);
+}
+.hd_btn.hd_btn_attach.hd_btn_attach_s2 {
+	height: var(--button-size-xlarge);
+}
+.hd_btn.hd_btn_attach .hba_line1 {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	width: 100%;
+}
+.hd_btn.hd_btn_attach .hba_line1 .hba_classi {
+	font-size: var(--font-size-button-medium);
+}
+.hd_btn.hd_btn_attach .hba_line1 .hd_icon {
+	width: 2rem;
+	height: 2rem;
+}
+.hd_btn.hd_btn_attach .hba_line2 {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+	display: block;
+	width: 100%;
+	font-size: var(--font-size-body-xsmall);
+	text-align: left;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 /**
   * Link Button(링크버튼)
@@ -5532,53 +5585,114 @@ strong {
 }
 .hd_icon {
 	display: inline-block;
-	background-size: contain;
-	background-repeat: no-repeat;
 	width: 2.4rem;
 	height: 2.4rem;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.hd_icon.downloadSvg {
+	background-image: url(../images/icon/download_ty1.svg);
+}
+.hd_icon.arrowRightSvg {
+	background-image: url(../images/icon/arrowRight_ty1.svg);
+}
+.hd_icon.downloadSvg {
+	background-image: url(../images/icon/download_ty2.svg);
+}
+.hd_icon.arrowRightSvg {
+	background-image: url(../images/icon/arrowRight_ty2.svg);
+}
+.hd_icon.cameraSvg {
+	background-image: url(../images/icon/camera.svg);
+}
+.hd_icon.downloadSvg {
+	background-image: url(../images/icon/download_ty3.svg);
+}
+.hd_icon.arrowRightSvg {
+	background-image: url(../images/icon/arrowRight_ty3.svg);
+}
+.hd_icon.openWindowSvg {
+	background-image: url(../images/icon/icon-open-window.svg);
+}
+.hd_icon.mailSvg {
+	background-image: url(../images/icon/mail.svg);
+}
+.hd_icon.documentSvg {
+	background-image: url(../images/icon/document.svg);
+}
+.hd_icon.pictureSvg {
+	background-image: url(../images/icon/picture.svg);
+}
+.hd_icon.pdfSvg {
+	background-image: url(../images/icon/icon_pdf.svg);
+}
+.hd_icon.docSvg {
+	background-image: url(../images/icon/icon_doc.svg);
+}
+.hd_icon.jpgSvg {
+	background-image: url(../images/icon/icon_jpg.svg);
+}
+.hd_icon.pngSvg {
+	background-image: url(../images/icon/icon_png.svg);
+}
+.hd_icon.gifSvg {
+	background-image: url(../images/icon/icon_gif.svg);
+}
+.hd_icon.bmpSvg {
+	background-image: url(../images/icon/icon_png.svg);
 }
 /**
 * 아이콘 에셋
 */
-.hd_btn_ty_1 .downloadSvg {
-	background-image: url(../images/icon/download_ty1.svg);
+/*
+.hd_btn {
+	&_ty_1 {
+		.downloadSvg {
+			@include getSvg("icon/download_ty1");
+		}
+		.arrowRightSvg {
+			@include getSvg("icon/arrowRight_ty1");
+		}
+	}
+	&_ty_2 {
+		.downloadSvg {
+			@include getSvg("icon/download_ty2");
+		}
+		.arrowRightSvg {
+			@include getSvg("icon/arrowRight_ty2");
+		}
+		.cameraSvg {
+			@include getSvg("icon/camera");
+		}
+	}
+	&_ty_3 {
+		.downloadSvg {
+			@include getSvg("icon/download_ty3");
+		}
+		.arrowRightSvg {
+			@include getSvg("icon/arrowRight_ty3");
+		}
+		.openWindowSvg {
+			@include getSvg("icon/icon-open-window");
+		}
+		.mailSvg {
+			@include getSvg("icon/mail");
+		}
+		.documentSvg {
+			@include getSvg("icon/document");
+		}
+		.pictureSvg {
+			@include getSvg("icon/picture");
+		}
+		.pdfSvg {
+			@include getSvg("icon/icon_pdf");
+		}
+		.docSvg {
+			@include getSvg("icon/icon_doc");
+		}
+	}
 }
-.hd_btn_ty_1 .arrowRightSvg {
-	background-image: url(../images/icon/arrowRight_ty1.svg);
-}
-.hd_btn_ty_2 .downloadSvg {
-	background-image: url(../images/icon/download_ty2.svg);
-}
-.hd_btn_ty_2 .arrowRightSvg {
-	background-image: url(../images/icon/arrowRight_ty2.svg);
-}
-.hd_btn_ty_2 .cameraSvg {
-	background-image: url(../images/icon/camera.svg);
-}
-.hd_btn_ty_3 .downloadSvg {
-	background-image: url(../images/icon/download_ty3.svg);
-}
-.hd_btn_ty_3 .arrowRightSvg {
-	background-image: url(../images/icon/arrowRight_ty3.svg);
-}
-.hd_btn_ty_3 .openWindowSvg {
-	background-image: url(../images/icon/icon-open-window.svg);
-}
-.hd_btn_ty_3 .mailSvg {
-	background-image: url(../images/icon/mail.svg);
-}
-.hd_btn_ty_3 .documentSvg {
-	background-image: url(../images/icon/document.svg);
-}
-.hd_btn_ty_3 .pictureSvg {
-	background-image: url(../images/icon/picture.svg);
-}
-.hd_btn_ty_3 .pdfSvg {
-	background-image: url(../images/icon/icon_pdf.svg);
-}
-.hd_btn_ty_3 .docSvg {
-	background-image: url(../images/icon/icon_doc.svg);
-}
+*/
 .hd_btn:disabled .downloadSvg {
 	background-image: url(../images/icon/download_disabled.svg);
 }
@@ -7347,8 +7461,8 @@ strong {
 .number_list.big > li p {
 	font-size: var(--font-size-body-medium);
 }
-.number_list.big > li ol,
-.number_list.big > li ul {
+.number_list.big > li > ol,
+.number_list.big > li > ul {
 	margin-top: 1.6rem;
 }
 .number_list.big > li img {
@@ -9330,6 +9444,7 @@ strong {
 }
 .tab_wrap_list_ty1 .tab_btn .hd_badge {
 	margin-left: 0.4rem;
+	vertical-align: top;
 }
 .tab_wrap_list_ty1 .tab_btn.active {
 	font-weight: 700;
