@@ -66,11 +66,11 @@
 				</div>
 			</div>
 
-			<div class="g_line">은행/증권사, 카드사 선택 팝업 케이스</div>
+			<div class="g_line">은행/증권사, 신용카드 선택 팝업 케이스</div>
 			<div class="g_dom">
 				<div class="p_guide_wrap_b">
 					{{> cp/button type="2" size="5" b-text="은행/증권사 선택 팝업" popup="bank_select_pop" b-title="상황별 타이틀 입력 필요"}}				
-					{{> cp/button type="2" size="5" b-text="카드사 선택 팝업" popup="card_select_pop" b-title="상황별 타이틀 입력 필요"}}
+					{{> cp/button type="2" size="5" b-text="신용카드 선택 팝업" popup="card_select" b-title="상황별 타이틀 입력 필요"}}
 				</div>
 			</div>
 
@@ -377,23 +377,7 @@
 	<!-- e: 은행/증권사 선택 팝업 -->
 
 	<!-- s: 카드사 선택 팝업 -->
-	{{#> popup/popup_bottom popup-id="card_select_pop" popup-title="카드사 선택"}}
-	<div class="popup_cont">
-		<div class="popup_content">
-			<ul class="select_list_ty_logo">
-				<button class="item"><span class="text">{{> cp/icon iconClass="logo_card_hundai"}}현대카드</span></button>
-				<button class="item"><span class="text">{{> cp/icon iconClass="logo_card_lotte"}}롯데카드</span></button>
-				<button class="item"><span class="text">{{> cp/icon iconClass="logo_card_shinhan"}}신한카드</span></button>
-				<button class="item"><span class="text">{{> cp/icon iconClass="logo_card_samsung"}}삼성카드</span></button>
-				<button class="item"><span class="text">{{> cp/icon iconClass="logo_card_kb"}}국민카드</span></button>
-				<button class="item"><span class="text">{{> cp/icon iconClass="logo_card_etc"}}기타</span></button>
-			</ul>
-		</div>
-		<div class="popup_bottom">
-			<div class="btn_area">{{> cp/button type="1" size="2" b-text="확인"}}</div>
-		</div>
-	</div>
-	{{/ popup/popup_bottom}}
+	{{> popup/card_select popup-id="card_select" popup-title="신용카드 선택" }}
 	<!-- e: 카드사 선택 팝업 -->
 
 	<!-- s: pop_type08 -->

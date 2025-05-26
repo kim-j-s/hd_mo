@@ -473,7 +473,15 @@
 	gap: 12px 24px;
 	width: 100%;
 	flex-wrap: wrap;
+	padding-bottom: var(--gap-7);
+	> li {
+		width: calc(50% - 12px);
+		.item {
+			width: 100%;
+		}
+	}
 
+	/* 은행선택 로고 추가 후 수정 필요 */
 	.item {
 		width: calc(50% - 12px);
 		height: 48px;
@@ -491,9 +499,61 @@
 			position: relative;
 		}
 	}
+	/* 은행선택 로고 추가 후 수정 필요 */
 
 
 	.hd_icon {
+		width: 32px;
+		height: 32px;
+	}
+}
+
+/* 카드사 선택 목록 */
+.select_list_ty_card {
+	padding-bottom: var(--gap-7);
+	> li {
+		+ li {
+			margin-top: var(--gap-4,);
+		}
+	}
+	.item {
+		display: flex;
+		align-items: center;
+		gap: var(--gap-4);
+		width: 100%;
+		padding: var(--padding-3) 0px;
+		font-size: var(--font-size-body-medium);
+		.text {
+			flex: 1 1 0;
+			display: flex;
+			align-items: center;
+			gap: var(--gap-4);
+		}
+		.able_opt_wrap {
+			flex: none;
+			display: flex;
+			align-items: center;
+			gap: var(--gap-3);
+		}
+		.able_opt {
+			flex: none;
+			padding-left: 22px;
+			font-size: var(--font-size-label-small);
+			background-repeat: no-repeat;
+			background-position: left center;
+			background-size: 20px auto;
+			&.able_opt_appcard {
+				background-image: url(../images/logo/bg_card_appcard.svg);
+			}
+			&.able_opt_point {
+				background-image: url(../images/logo/bg_card_point.svg);
+			}
+		}
+	}
+
+
+	.hd_icon {
+		flex: none;
 		width: 32px;
 		height: 32px;
 	}
