@@ -86,7 +86,8 @@
 			const simpleHeight = $(".simple_info_wrap").height();
 			const targetOffset = $target.position().top;
 			const fix_h = $(this).closest(".sticky_fix").height();
-			console.log(targetOffset, targetMargin);
+			// console.log(targetOffset , targetMargin);
+			console.log(simpleHeight);
 
 			$(".tag_item").removeClass("active");
 			$this.addClass("active");

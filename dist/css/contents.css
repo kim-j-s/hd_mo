@@ -1517,17 +1517,20 @@
 .view_img_list > li > .name {
 	font-size: var(--font-size-label-medium);
 }
+.view_img_list + .title_h5 {
+	margin-top: var(--gap-9);
+}
 /* 자동차보험 - 운전자정보 */
 /* 자동차보험 | 운전자 정보 - 운전자 범위 선택 */
 .driver_relationship_state {
-	margin: 3.2rem -2.4rem 0;
-	padding: 3.2rem 2.4rem;
+	margin: var(--gap-8) -2.4rem 0;
+	padding: var(--padding-9) var(--padding-8);
 	background-color: #f5f5f5;
-	border-radius: 3.2rem;
+	border-radius: var(--radius-xlarge2);
 }
 .relationship_box {
 	position: relative;
-	height: 31.2rem;
+	height: 32.3rem;
 	overflow: hidden;
 	/* 활성화 상태 */
 }
@@ -1537,8 +1540,8 @@
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	background-color: #fff;
-	border-radius: 2rem;
+	background-color: var(--color-action-white);
+	border-radius: var(--radius-large1);
 }
 .relationship_box [class^="rel_case"]:before {
 	content: "선택됨";
@@ -1550,8 +1553,8 @@
 	width: 100%;
 	height: 100%;
 	font-size: 0;
-	border: 0.2rem solid #f8633c;
-	border-radius: 2rem;
+	border: var(--border-width-static-medium) solid var(--color-border-primary);
+	border-radius: var(--radius-large1);
 	opacity: 0;
 	-webkit-transition: all 0.5s;
 	transition: all 0.5s;
@@ -1568,24 +1571,22 @@
 	-ms-flex-pack: center;
 	justify-content: center;
 	min-width: 7rem;
-	padding: 5.6rem 1.3rem 0.8rem;
+	padding: 5.6rem 1.3rem var(--padding-3);
 	background-repeat: no-repeat;
 	background-size: auto 4.4rem;
 	background-position: center 0.8rem;
-	font-size: 1.4rem;
+	font-size: var(--font-size-body-small);
 	text-align: center;
 	white-space: nowrap;
 	-webkit-transition: background-image 0.5s;
 	transition: background-image 0.5s;
 }
-.relationship_box [class^="rel_case"] > span.ty2 {
-	padding-top: 5.2rem;
-	min-width: 7.8rem;
-}
-.relationship_box [class^="rel_case"] > span.ty2 i {
+.relationship_box [class^="rel_case"] > span i {
 	font-style: normal;
-	font-size: var(--font-size-body-xsmall, 12px);
-	line-height: 120%;
+	font-size: var(--font-size-body-xsmall);
+}
+.relationship_box [class^="rel_case"] > span.ty2 {
+	min-width: 7.8rem;
 }
 .relationship_box .rel_case1 {
 	top: 0;
@@ -1596,7 +1597,7 @@
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	gap: 1rem;
+	gap: var(--gap-3);
 	width: calc(50% + 9rem);
 	padding: 0 2.4rem;
 }
@@ -1625,7 +1626,7 @@
 	content: "";
 	display: block;
 	position: absolute;
-	top: 15.2rem;
+	top: 16.2rem;
 	left: 50%;
 	z-index: 1;
 	width: 1px;
@@ -1669,6 +1670,7 @@
 }
 .relationship_box .rel_case3 > span {
 	width: 9rem;
+	min-height: 10.3rem;
 	background-image: url(../images/content/mtps/img_rel_case3.svg);
 }
 .relationship_box .rel_case3 > span:before {
@@ -2730,7 +2732,7 @@
 .simple_info_wrap + .sticky.tag_item_wrap.active {
 	position: sticky;
 	z-index: 10;
-	padding-top: 0;
+	padding-top: 1rem;
 	background-color: #fff;
 	-webkit-box-shadow: 0px var(--shadow-y-2, 6px) var(--shadow-blur-2, 8px) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
 	box-shadow: 0px var(--shadow-y-2, 6px) var(--shadow-blur-2, 8px) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
