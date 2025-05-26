@@ -687,60 +687,7 @@
 	
 }
 
-// selectbox btn
-.btn_select {
-	flex-shrink: 1;
-	border: var(--border-width-static-regular) solid #000;
-	background-color: #fff;
 
-	&[aria-disabled="true"] {
-		color: #fff;
-		background-color: gray;
-	}
-
-		position: relative;
-		display: flex;
-		align-items: center;
-		width: 100%;
-		height: 56px;
-		padding: 16px;
-		padding-right: 40px;
-		font-size: 16px;
-		line-height: 24px;		
-		border-radius: 16px;
-		border: var(--border-width-static-regular) solid #ddd;
-		box-sizing: border-box;
-		appearance: none;
-		cursor: pointer;
-
-		&:after {
-			content: "";
-			position: absolute;
-			top: 50%;
-			right: 16px;
-			width: 12px;
-			height: 12px;
-			background: url(../images/icon/arrowDown_ty2_2.svg) no-repeat center/contain;
-			transform: translateY(-50%);
-		}
-
-	&.active {
-		> span {
-			&:after {
-				content: "선택됨";
-				position: absolute;
-				width: 0;
-				height: 0;
-				font-size: 0;
-			}
-		}
-	}
-
-	& + &,
-	& + .btn_area {
-		margin-top: 16px;
-	}
-}
 
 // icon button
 .btn {
