@@ -7,6 +7,7 @@
 
 <!-- s: Full 팝업 -->
 {{#> popup/popup_full popup-id="pop_type01" popup-active=true popup-title="직업 검색"}}
+<!-- <div class="popup_cont search_list_type2"> -->
 <div class="popup_cont search_list_type2">
 	<div class="tab_wrap">
 		<div class="tab_wrap_list_ty1" role="tablist">
@@ -15,9 +16,10 @@
 		</div>
 
 		<!-- s: tab01. 검색어로 찾기 Tab 내용 -->
-		<div class="tab_wrap_content has_scroll active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
+		<div class="tab_wrap_content has_scroll active" role="tabpanel" tabindex="0" aria-labelledby="tab01"
+			id="tabPanel01">
 			<div class="search_inp_box">
-				{{> cp/text inp-search=true placeholder="검색어를 입력해 주세요." inp-title="검색어 입력" }}			
+				{{> cp/text inp-search=true placeholder="검색어를 입력해 주세요." inp-title="검색어 입력" }}
 			</div>
 
 			<!-- s: 자주찾는 품종 추천 리스트 -->
@@ -44,7 +46,7 @@
 			</div>
 			<!-- s: 25-04-22 수정 -->
 			<div class="search_reult_list_container">
-			<!-- 데이터가 없는 경우 no_data 클래스 추가
+				<!-- 데이터가 없는 경우 no_data 클래스 추가
 			<div class="search_reult_list_container no_data">
 			-->
 				<ul class="search_reult_list">
@@ -52,10 +54,13 @@
 					<!-- 검색시 스타일 예시 : 검색키워드 <i>태그로 강조 -->
 					<li class="search_reult_list_item"><a href="#"><span class="item_text">그 외 <i>제조</i>관련 단순종사원</span></a></li>
 					<li class="search_reult_list_item"><a href="#"><span class="item_text">떡<i>제조</i>원</span></a></li>
-					<li class="search_reult_list_item"><a href="#"><span class="item_text">목제품 <i>제조</i>관련 종사원(산업용 목재제품)</span></a></li>
-					<li class="search_reult_list_item"><a href="#"><span class="item_text">석유 및 천연가스<i>제조</i> 관련 조작원</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">목제품 <i>제조</i>관련 종사원(산업용
+								목재제품)</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">석유 및 천연가스<i>제조</i> 관련 조작원</span></a>
+					</li>
 					<li class="search_reult_list_item"><a href="#"><span class="item_text">섬유<i>제조</i> 기계조작원</span></a></li>
-					<li class="search_reult_list_item"><a href="#"><span class="item_text">시멘트 및 광물제품 <i>제조</i>기 조작원</span></a></li>
+					<li class="search_reult_list_item"><a href="#"><span class="item_text">시멘트 및 광물제품 <i>제조</i>기 조작원</span></a>
+					</li>
 					<li class="search_reult_list_item"><a href="#"><span class="item_text">그 외 <i>제조</i>관련 단순종사원</span></a></li>
 					<li class="search_reult_list_item">
 						<div class="no_list_area">
@@ -64,7 +69,7 @@
 						</div>
 					</li>
 				</ul>
-				
+
 			</div>
 			<!-- e: 25-04-22 수정 -->
 			<!-- e: 키워드 검색 결과 리스트 -->
@@ -79,7 +84,7 @@
 				</div>
 				<div class="form_line">
 					{{> cp/selectitem si_ph="중분류를 선택해주세요." si_title="직업 정분류 선택" si_popup="pop_type02"}}
-				</div>			
+				</div>
 				<div class="form_line">
 					{{> cp/selectitem si_ph="대분류를 선택해주세요." si_title="직업 소분류 선택" si_popup="pop_type02"}}
 				</div>
@@ -89,24 +94,31 @@
 
 	</div>
 </div>
+<!-- s: 25-05-27 수정 -->
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" b-text="확인" disabled=true }}
+	</div>
+</div>
+<!-- e: 25-05-27 수정 -->
 {{/ popup/popup_full}}
 <!-- e: Full 팝업 -->
 
 <!-- s: popup area -->
-		<!-- s: selpop -->
-		{{#> popup/popup_bottom popup-id="pop_type02" popup-title="피보험자와 계약자 과계"}}
-		<div class="popup_cont">
-			<div class="popup_content">
-				<div class="opt_select_list opt_case3">
-					<div role="button" tabindex="0" class="option active" title="선택됨"><span class="text">관리직(사무직)</span></div>
-					<div role="button" tabindex="0" class="option"><span class="text">직업1</span></div>
-					<div role="button" tabindex="0" class="option"><span class="text">직업2</span></div>
-					<div role="button" tabindex="0" class="option"><span class="text">직업3</span></div>
-				</div>
-			</div>
+<!-- s: selpop -->
+{{#> popup/popup_bottom popup-id="pop_type02" popup-title="피보험자와 계약자 과계"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="opt_select_list opt_case3">
+			<div role="button" tabindex="0" class="option active" title="선택됨"><span class="text">관리직(사무직)</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">직업1</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">직업2</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">직업3</span></div>
 		</div>
-		{{/ popup/popup_bottom}}
-		<!-- e: selpop -->
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: selpop -->
 
 <!-- e: popup area -->
 {{/ layout/default }}

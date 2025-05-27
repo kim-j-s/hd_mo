@@ -53,102 +53,106 @@
 				</div>
 			</div>
 
-			<!-- Case1. 동물등록 N인 경우 -->
-			<div class="dp_case">
-				<div class="divider_ty1"></div>
-				<h3 class="title_h3">반려동물 사진</h3>
-				<!-- s: 25-04-22 수정 -->
-				<div class="file_upload_wrap">
-				<!-- e: 25-04-22 수정 -->
-					<h3 class="title_h3">앞모습 전체 사진 등록</h3>
+			<div class="reg_case">
+				<!-- Case1. 동물등록 N인 경우 -->
+				<div class="dp_case">
+					<div class="divider_ty1"></div>
+					<h3 class="title_h3">반려동물 사진</h3>
+					<!-- s: 25-04-22 수정 -->
+					<div class="file_upload_wrap">
+					<!-- e: 25-04-22 수정 -->
+						<h3 class="title_h3">앞모습 전체 사진 등록</h3>
 
-					<!-- s: 이미지 파일 붙는 영역 -->
-					<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
-					<div class="file_attach_box">
-						<div class="file_thumbnail">
-							<img src="../../../images/content/gipt/img_animal_certificate_before.png" alt="예시 이미지">
+						<!-- s: 이미지 파일 붙는 영역 -->
+						<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+						<div class="file_attach_box">
+							<div class="file_thumbnail">
+								<img src="../../../images/content/gipt/img_animal_certificate_before.png" alt="예시 이미지">
+							</div>
 						</div>
-					</div>
-					
-					<!-- 등록 후 이미지 (등록 전/후 따라 alt값 변경 필요) --> 
-					<!-- <div class="file_attach_box">
-						<div class="file_thumbnail">
-							<img src="../../../images/temp/img_carmera_temp.png" alt="등록된 반려동물 이미지">
-						</div>
-						<button type="button" class="btn_file_delete">
-							<span>등록한 이미지 삭제하기</span>
-						</button>
-					</div> -->
-					<!-- e: 이미지 파일 붙는 영역 -->
-
-					<ul class="list_ty2">
-						<li>최근 3개월 이내의 사진을 올려주세요.</li>
-						<!-- s: 25-05-13 수정 -->
-						<li>10MB 이하의 jpg, jpeg, gif, png 파일만 등록할 수 있어요.</li>
-						<!-- e: 25-05-13 수정 -->
-					</ul>
-
-					<!-- s: 이미지 파일 버튼 -->
-					<div class="btn_area center">
-						<!-- 등록 전 노출 -->
-						<div class="file_btn">
-							<!-- s: 25-04-22 수정 -->
-							<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png">
-							<!-- e: 25-04-22 수정 -->
-							<label for="file">
-								<span class="hd_btn hd_btn_ty_2 hd_btn_s_2">
-									<i class="hd_icon carmeraSvg"></i>
-									사진 등록
-								</span>
-							</label>
-						</div>
-						<!-- 등록 후 노출 -->
-						<!-- <div class="file_btn">
-							<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png">
-							<label for="file">
-								<span class="hd_btn hd_btn_ty_3 hd_btn_s_2">
-									<i class="hd_icon carmeraSvg2"></i>
-									사진 변경
-								</span>
-							</label>
+						
+						<!-- 등록 후 이미지 (등록 전/후 따라 alt값 변경 필요) --> 
+						<!-- <div class="file_attach_box">
+							<div class="file_thumbnail">
+								<img src="../../../images/temp/img_carmera_temp.png" alt="등록된 반려동물 이미지">
+							</div>
+							<button type="button" class="btn_file_delete">
+								<span>등록한 이미지 삭제하기</span>
+							</button>
 						</div> -->
-					</div>
-					<!-- e: 이미지 파일 버튼 -->
-				</div>
-			</div>
-			
-			<!-- Case2. 동물등록 Y인 경우 -->
-			<div class="dp_case">
-				<div class="divider_ty1"></div>
-				<h3 class="title_h3">할인 정보</h3>
-				<!-- s: 25-05-26 수정 -->
-				<!-- prettier-ignore -->
-				<p class="text_sub">동물보호관리시스템에 동물등록을 했어요.(<span class="point">5%</span> 할인)</p>
-				<!-- e: 25-05-26 수정 -->
-				<div class="btn_area basic">
-					<!-- s: 25-05-02 수정 -->
-					{{> cp/linkButton bl_class="short_cut" bl_text="동물등록 우대 할인" role_b=true question_tit="동물등록 우대 할인" }}
-					<!-- e: 25-05-02 수정 -->
-				</div>
+						<!-- e: 이미지 파일 붙는 영역 -->
 
-				<div class="checkbox_group_wrap column">
-					{{#> cp/checkbox checkbox_class="rd_box" id="checkbox01" label_class="chk_label_ty3" labelname="반려동물 정보를 정확히 입력했어요" }}
-					<div class="chk_lby">
 						<ul class="list_ty2">
-							<!-- s: 25-05-14 수정 -->
-							<li>
-								<strong>입력된 반려동물의 정보(품종/생년월일/성별/이름)가 정확한지 확인해주세요.<br>(동물등록증이 있다면 동물등록증에 등록된 정보와 일치하는지 확인해주세요.)</strong>
-							</li>
-							<!-- s: 25-05-26 수정 -->
-							<!-- prettier-ignore -->
-							<li>제출한 사진 및 서류가 정확하지 않을 경우 추후 보상에 <strong class="point">불이익</strong>이 있거나, <strong class="point">보험료 추징</strong>이 발생할 수도 있습니다.</li>
-							<!-- e: 25-05-26 수정 -->
-							<!-- e: 25-05-14 수정 -->
+							<li>최근 3개월 이내의 사진을 올려주세요.</li>
+							<!-- s: 25-05-13 수정 -->
+							<li>10MB 이하의 jpg, jpeg, gif, png 파일만 등록할 수 있어요.</li>
+							<!-- e: 25-05-13 수정 -->
 						</ul>
+
+						<!-- s: 이미지 파일 버튼 -->
+						<div class="btn_area center">
+							<!-- 등록 전 노출 -->
+							<div class="file_btn">
+								<!-- s: 25-04-22 수정 -->
+								<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png">
+								<!-- e: 25-04-22 수정 -->
+								<label for="file">
+									<span class="hd_btn hd_btn_ty_2 hd_btn_s_2">
+										<i class="hd_icon carmeraSvg"></i>
+										사진 등록
+									</span>
+								</label>
+							</div>
+							<!-- 등록 후 노출 -->
+							<!-- <div class="file_btn">
+								<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png">
+								<label for="file">
+									<span class="hd_btn hd_btn_ty_3 hd_btn_s_2">
+										<i class="hd_icon carmeraSvg2"></i>
+										사진 변경
+									</span>
+								</label>
+							</div> -->
+						</div>
+						<!-- e: 이미지 파일 버튼 -->
 					</div>
-					{{/ cp/checkbox}}
+				</div>
+				
+				<!-- Case2. 동물등록 Y인 경우 -->
+				<div class="dp_case">
+					<div class="divider_ty1"></div>
+					<h3 class="title_h3">할인 정보</h3>
+					<!-- s: 25-05-26 수정 -->
+					<!-- prettier-ignore -->
+					<p class="text_sub">동물보호관리시스템에 동물등록을 했어요.(<span class="point">5%</span> 할인)</p>
+					<!-- e: 25-05-26 수정 -->
+					<div class="btn_area basic">
+						<!-- s: 25-05-02 수정 -->
+						{{> cp/linkButton bl_class="short_cut" bl_text="동물등록 우대 할인" role_b=true question_tit="동물등록 우대 할인" }}
+						<!-- e: 25-05-02 수정 -->
+					</div>
 				</div>
 			</div>
+
+			<div class="checkbox_group_wrap column">
+				{{#> cp/checkbox checkbox_class="rd_box" id="checkbox01" label_class="chk_label_ty3" labelname="반려동물 정보를 정확히 입력했어요" }}
+				<div class="chk_lby">
+					<ul class="list_ty2">
+						<!-- s: 25-05-14 수정 -->
+						<li>
+							<strong>입력된 반려동물의 정보(품종/생년월일/성별/이름)가 정확한지 확인해주세요.<br>(동물등록증이 있다면 동물등록증에 등록된 정보와 일치하는지 확인해주세요.)</strong>
+						</li>
+						<!-- s: 25-05-26 수정 -->
+						<!-- prettier-ignore -->
+						<li>제출한 사진 및 서류가 정확하지 않을 경우 추후 보상에 <strong class="point">불이익</strong>이 있거나, <strong class="point">보험료 추징</strong>이 발생할 수도 있습니다.</li>
+						<!-- e: 25-05-26 수정 -->
+						<!-- e: 25-05-14 수정 -->
+					</ul>
+				</div>
+				{{/ cp/checkbox}}
+			</div>
+
+
 		</div>
 	</div>
 
