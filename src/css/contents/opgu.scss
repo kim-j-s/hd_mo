@@ -99,6 +99,32 @@
 				}
 			}
 		}
+		// 1회용 간편번호
+		&.dispose {
+			> .text {
+				&::before {
+					background-image: url(../images/common/cert/icon_cert_dispose.svg);
+				}
+			}
+		}
+		// 휴대폰 직접서명
+		&.phone_direct_sign {
+			> .text {
+				&::before {
+					background-image: url(../images/common/cert/icon_cert_phone_direct_sign.svg);
+				}
+			}
+		}
+		// 네이버인증
+		&.naver_cert {
+			> .text {
+				&::before {
+					background-image: url(../images/common/cert/icon_cert_naver_cert.svg);
+				}
+			}
+		}
+
+		
 	}
 }
 
@@ -307,11 +333,63 @@
 
 /* 전자서명 */
 .ele_sign {
-
-	display: flex;
 	margin-top: var(--gap-8);
 	padding: var(--padding-5) var(--padding-7) var(--padding-8) var(--padding-7);
 	border-radius: var(--radius-large2);
 	border: var(--border-width-variable-regular) solid var(--color-border-gray-light);
 	background: var(--color-surface-white-subtle);
+	.ele_sign_canvas_wrap {
+		.ele_sign_canvas_wrap_top {
+			position: relative;
+			padding-top: calc(var(--padding-8) + calc(var(--padding-1)));
+			.hd_btn {
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+
+			.ele_sign_canvas {
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 160px;
+				border-radius: var(--radius-medium3);
+				background-color: var(--color-surface-secondary-subtler);
+				.esc_msg {
+					display: block;
+					font-size: var(--font-size-body-large);
+					color: var(--color-text-disabled);
+				}
+				
+				canvas {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					border-radius: var(--radius-medium3);
+				}
+			}
+		}
+
+		.ele_sign_canvas_wrap_cont {
+			padding-top: var(--gap-5);
+			.title_h6 {
+				+ .es_cn_list {
+					margin-top: var(--gap-3);
+				}
+			}
+		}
+
+		.es_cn_list {
+			li {
+				font-size: var(--font-size-body-xsmall);
+				color: var(--color-text-subtle);
+			}
+		}
+
+		
+
+	}
 }

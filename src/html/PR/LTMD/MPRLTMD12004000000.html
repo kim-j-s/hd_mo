@@ -1,0 +1,177 @@
+{{#> layout/default page-title="피보험자/계약자 정보 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="피보험자/계약자 정보" }}
+
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
+				<!-- prettier-ignore -->
+				<h2 class="title_h2">
+					가입하시는 고객님의 <strong>정보를 입력</strong>해주세요
+				</h2>
+			</div>
+			<!-- e: content_top -->
+			<div class="form_box">			
+				<div class="title_h3">연락처 정보</div>
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">휴대폰번호</div>
+							{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" value="- 1234 - 5678" readonly="true"}}
+					</div>
+
+					<div class="form_line">
+						<div class="label_tit">이메일</div>
+						{{> cp/text type="email" inpclass="email_auto" inp-title="이메일 입력" placeholder="입력해 주세요" }}
+					</div>
+
+					<div class="form_line">
+						<div class="label_tit">우편물 받는 곳</div>
+						<div class="radio_group_wrap" role="radiogroup">
+							{{> cp/radio rd-class="rd_btn" rd-id="addSel01_01" name="addSel01" labelname="집" checked=true }}
+							{{> cp/radio rd-class="rd_btn" rd-id="addSel01_02" name="addSel01" labelname="직장" }}
+						</div>
+						{{> cp/address ad_ph="주소를 입력해 주세요." case2=true}}
+					</div>
+				</div>
+			</div>
+
+			<div class="divider_ty1"></div>
+
+			<div class="form_box">
+				<h3 class="title_h3">필수 확인 사항</h3>
+				<div class="form_group_wrap">
+
+					<div class="form_line">
+						<div class="label_tit box">
+							<div>
+								자녀가 피보험자로 가입하는 보험에 대해 공동 친권자의 동의를 받으셨나요? 
+								{{> cp/tooltip text="<p>이혼이나 사별 등으로 공동 친권자가 없을 경우 [아니요]를 선택해주세요.</p>" trigger-icon="popover_help"}}
+							</div>
+						</div>
+						<div class="radio_group_wrap" role="radiogroup">
+							{{> cp/radio rd-class="rd_btn" rd-id="receiveSel03_01" name="receiveSel03" labelname="예" }}
+							{{> cp/radio rd-class="rd_btn" rd-id="receiveSel03_02" name="receiveSel03" labelname="아니요" }}
+						</div>
+						<div class="form_line">
+						{{> cp/text placeholder="공동 친권자 성명(배우자)" inp-title="공동 친권자 성명 입력" }}
+						</div>
+					</div>
+
+					<div class="form_line">
+						<div class="label_tit">보험증권 받는 방법을 선택해주세요.</div>
+						<div class="radio_group_wrap" role="radiogroup">
+							{{> cp/radio rd-class="rd_btn" rd-id="receiveSel01_01" name="receiveSel01" labelname="모바일" }}
+							{{> cp/radio rd-class="rd_btn" rd-id="receiveSel01_02" name="receiveSel01" labelname="이메일" }}
+						</div>
+					</div>
+
+					<div class="form_line">
+						<div class="label_tit box">
+							<div>전문금융소비자 여부를 확인해주세요.</div>
+							{{> cp/linkButton bl_class="short_cut sm" bl_text="구분 안내" question_tit="전문금융소비자" }}
+						</div>
+						<div class="radio_group_wrap" role="radiogroup">
+							{{> cp/radio rd-class="rd_btn" rd-id="qs_item01_01" name="qs_item01" labelname="일반금융소비자" }}
+							{{> cp/radio rd-class="rd_btn" rd-id="qs_item01_02" name="qs_item01" labelname="전문금융소비자" }}
+						</div>
+					</div>
+					<ul class="list_ty2">
+						<li>
+							「금융소비자 보호에 관한 법률」 제17조 제1항에 따라 보험계약자의 일반ㆍ전문금융소비자 여부를 확인하는 절차입니다.
+						</li>
+					</ul>
+
+					<div class="form_line">
+						<div class="label_tit box">
+							<div>해외금융계좌 신고 대상자인가요?</div>
+							{{> cp/linkButton bl_class="short_cut sm" bl_text="대상자 안내" question_tit="해외금융계좌대상여부" }}
+						</div>
+						<div class="radio_group_wrap" role="radiogroup">
+							{{> cp/radio rd-class="rd_btn" rd-id="qs_item01_01" name="qs_item01" labelname="예" }}
+							{{> cp/radio rd-class="rd_btn" rd-id="qs_item01_02" name="qs_item01" labelname="아니요" }}
+						</div>
+					</div>
+					<ul class="list_ty2">
+						<li>
+							해외금융계좌 신고제도에 따라 외국의 국적, 시민권, 영주권 등을 보유하거나 외국에 납세의무를 지닌 경우 [예] 를 체크해주세요.
+						</li>
+					</ul>	
+				
+
+				<div class="checkbox_group_wrap column">
+					{{> cp/checkbox checkbox_class="rd_box question" id="checkbox01-1" label_class="chk_label_ty3 check_hide"
+					labelname="이 금융 거래의 실제 소유자입니다." labelcont="「특정금융정보법」에 따라 금융기관과의 거래를 위해 고객의 신원이 실제 소유자임을 확인하고 있습니다." }}
+					{{> cp/checkbox checkbox_class="rd_box question" id="checkbox01-2" label_class="chk_label_ty3 check_hide"
+					labelname="보험수익자 지정/변경 약정에 동의합니다." labelcont="계약자 사망시 상속인 등 승계인이 보험(만기, 사망, 기타)수익자 지정, 변경권을 행사합니다." }}
+					{{> cp/checkbox checkbox_class="rd_box question" id="checkbox01-3" label_class="chk_label_ty3 check_hide"
+					labelname="통신수단을 이용한 계약해지에 동의합니다." labelcont="보험계약자가 체결한 계약을 해지하고자 하는 경우, 통신수단(전화)을 이용할 수 있습니다. 단, 금융사고 예방 등을
+					위해 회사가 정한 규정에 의해 일부 제한될 수 있음을 꼭 알아두세요." }}
+				</div>
+				<div class="info_gray">
+					<dl>
+						<dt>
+							사망보험수익자
+						</dt>
+						<dd>
+							법정상속인
+						</dd>
+					</dl>
+					<dl>
+						<dt>
+							보험금 대리청구인 지정
+						</dt>
+						<dd>
+							미지정
+						</dd>
+					</dl>
+				</div>
+				</div>
+
+			</div>
+
+			<!-- s: 꼭 알아두세요 -->
+			{{#> cp/notice dp-active=true }}
+				<ul class="list_depth">
+					<li>입력하신 휴대폰/이메일로 보험계약서류(보험증권, 청약서, 약관 등)를 발송해드립니다. 연락처 정보를 정확히 확인해 주세요.</li>
+					<li>개인정보는 입력하신 정보로 업데이트 되오니 이 점 유의하시기 바랍니다.</li>
+					<li>휴대폰 번호 수정이 필요한 경우 고객정보 입력 단계에서 재입력해 주세요.</li>
+				</ul>
+			{{/ cp/notice }}
+			<!-- e: 꼭 알아두세요 -->
+		</div>
+	</div>
+
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="정보를 입력해 주세요" disabled=true }}
+			<!-- {{> cp/button type="1" size="1" b-text="모두 입력했습니다." }} -->
+		</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
+</div>
+
+<!-- s: popup area -->
+<!-- s: 피보험자 가입 내용 확인 진행 안내 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_01" popup-title="피보험자 가입 내용 확인 진행 안내" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="info_cont">
+			<p>
+				지금까지 입력하신 정보로 청약이 진행됩니다. 추후 정보 변경을 원하실 경우 처음부터 진행이 필요합니다.
+				다음 단계인 <strong class="point">[피보험자 가입 내용 확인]</strong>을 진행하시겠습니까? 
+			</p>			
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="3" size="2" b-text="아니요" }}
+		{{> cp/button type="1" size="2" b-text="예" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 피보험자 가입 내용 확인 진행 안내 팝업 -->
+<!-- e: popup area -->
+{{/ layout/default }}

@@ -1,0 +1,40 @@
+{{#> layout/default page-title="고객정보 확인 | 마이페이지"}}
+
+<!-- s: Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="고객정보 확인"}}
+<div class="popup_cont">
+		<div class="popup_content">
+			<div class="popup_content_top">
+				<h2 class="title_h3 center">
+					<span class="light">가입경력인정을 위한<br> 동의가 필요합니다</span> 
+				</h2>
+			</div>
+			<ul class="list_ty3">
+				<!-- prettier-ignore -->
+				<li>인정대상자의 휴대폰번호를 정확하게 확인하신 후 <strong class="point">[동의 요청]을 누르시면 동의 진행이 가능한 URL을 김*현, 호*현님께 동의문자를 전송</strong>해 드립니다.</li>
+				<!-- prettier-ignore -->
+				<li>인정대상자 동의처리는 신청 전/후 모두 가능합니다. (단, 동의문자는 신청완료 후 24시간 동안 유효합니다)</li>
+			</ul>
+		
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">김*현 인정대상자 휴대폰번호</div>
+					{{> cp/text type="tel" placeholder="플레이스홀더" value="010 - **** - 5678" inp-title="휴대폰번호 입력" }}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">호*현 인정대상자 휴대폰번호</div>
+					{{> cp/text type="tel" placeholder="플레이스홀더" value="010 - **** - 5678" inp-title="휴대폰번호 입력" }}
+				</div>
+			</div>
+		</div>
+</div>
+
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="3" size="1" b-text="다시 입력" }}
+		{{> cp/button type="1" size="1" b-text="동의 요청" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: Bottom 팝업 -->
+{{/ layout/default }}

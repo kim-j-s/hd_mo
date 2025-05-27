@@ -4,66 +4,29 @@
 {{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="고객정보 확인"}}
 <div class="popup_cont">
 		<div class="popup_content">
-			<!-- s: Case1) 고객정보 없을 때 현업확인 후 반영유무 확인 후 적용 예정 -->
 			<div class="popup_content_top">
 				<h2 class="title_h3 center">
-					<span class="light">현재, <strong>하이현</strong>님은 현대해상 고객으로 등록되어 있지 않습니다</span> 
+					<!-- prettier-ignore -->
+					<span class="light">현재, <strong>하*현</strong>님은 현대해상 고객으로<br> 등록되어 있지 않습니다</span> 
 				</h2>
 			</div>
+
 			<ul class="list_ty3">
-				<li>가입경력인정자 하이현님의 회원가입을 진행하신 후 다시 신청해주세요.</li>
+				<li>가입경력인정대상자 하*현님의 회원가입을 진행하신 후 다시 신청해주세요</li>
 				<li>현대해상 다이렉트 홈페이지, 모바일웹, 모바일앱에서 회원가입을 진행할 수 있습니다.</li>
 				<li>회원가입 URL를 공유하시고 회원가입을 요청해주세요.</li>
 			</ul>
-			<!-- e: Case1) 고객정보 없을 때 현업확인 후 반영유무 확인 후 적용 예정 -->
 
-			<!-- s: Case2) 휴대폰번호 불일치 현업확인 후 반영유무 확인 후 적용 예정 -->
-			<div class="popup_content_top">
-				<h2 class="title_h3 center">
-					<span class="light">현재, <strong>하이현</strong>의 휴대폰번호가 고객정보와 일치하지 않습니다</span> 
-				</h2>
-				<h2 class="title_h3">
-					<strong><span class="point">하이현</span>님의 가입설계를 위한 동의가 필요합니다</strong>
-				</h2>
-			</div>
-			<ul class="list_ty3">
-				<li>가입경력인정자 하이현님의 휴대폰번호를 변경하신 후 다시 신청해주세요. </li>
-				<li>현대해상 다이렉트 홈페이지, 모바일웹, 모바일앱 [My > 개인정보 변경]에서 진행할 수 있습니다.</li>
-				<li>개인정보 변경URL를 공유하시고 정보 변경을 요청해주세요.</li>
-			</ul>
-			<!-- e: Case2) 휴대폰번호 불일치 현업확인 후 반영유무 확인 후 적용 예정 -->
-
-			<!-- s: Case3) 유효한 가설동의가 없을 때 -->
-			<div class="popup_content_top">
-				<h2 class="title_h3 center">
-					<span class="light"><strong>하이현</strong>의 가입설계를 위한 동의가 필요합니다</span> 
-				</h2>
-			</div>
-			<ul class="list_ty3">
-				<li>인정자의 휴대폰번호를 정확하게 확인하신 후 <strong class="point">[동의 요청]을 누르시면 동의 진행이 가능한 URL을 하이대님께 카카오톡 알림톡으로 전송</strong>해 드립니다. </li>
-				<li>카카오톡 알림톡 수신 불가로 확인될 경우 문자메시지로 대체발송됩니다</li>
-				<li>인정자의 동의 완료 여부를 확인하신 후  다시 가입경력인정자 신청을 진행해주세요. </li>
-			</ul>
-		
-			<div class="form_group_wrap">
-				<div class="form_line">
-					<div class="label_tit">인정자 휴대폰번호</div>
-					{{> cp/text type="tel" placeholder="플레이스홀더" value="01012345678" inp-title="휴대폰번호 입력" }}
-				</div>
-			</div>
-			<!-- s: Case1) 고객정보 없을 때 현업확인 후 반영유무 확인 후 적용 예정 -->
+			<div class="btn_area ty4">
+				{{> cp/button type="3" size="3" rightIcon="shareSvg" b-text="회원가입 URL 공유"}}
+			</div>	
 			
 		</div>
 </div>
 
 <div class="popup_bottom">
 	<div class="btn_area">
-		{{> cp/button type="3" size="1" b-text="다시 입력" }}
 		{{> cp/button type="1" size="1" b-text="닫기" }}
-		<!-- s: Case3) 유효한 가설동의가 없을 때 -->
-		<!--{{> cp/button type="3" size="1" b-text="다시 입력" }}
-		{{> cp/button type="1" size="1" b-text="동의 요청" }}-->
-		<!-- e: Case3) 유효한 가설동의가 없을 때 -->
 	</div>
 </div>
 {{/ popup/popup_bottom}}

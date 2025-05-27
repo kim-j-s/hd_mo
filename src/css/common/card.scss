@@ -59,7 +59,7 @@
 	}
 
 	&.focusin {
-		.card_item:focus-within  {
+		.card_item:not(.disabled):focus-within  {
 			&::after {
 				content:"";
 				position: absolute;
@@ -539,6 +539,7 @@
 
 			* {
 				color: var(--color-text-disabled-on) !important;
+				background-color: var(--color-surface-gray-subtler);
 			}
 			
 			.item_top {

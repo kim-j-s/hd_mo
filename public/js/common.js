@@ -192,7 +192,10 @@
     e.preventDefault();
 	
 		setTimeout(() => {
-			$this.siblings('input').val('').trigger("input").focus();
+			// $this.siblings('input').val('').trigger("input").focus();
+			const $input = $this.siblings("input");
+			$input.val("").focus();
+			$input[0].dispatchEvent(new Event("input", { bubbles: true }));
 		}, 100);
 
 		if($this.closest('.comp_wrap').hasClass('phone')){

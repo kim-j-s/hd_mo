@@ -111,6 +111,9 @@
 	+ .title_h5 {
 		margin-top: 20px;
 	}
+	& + .banner_box {
+		margin-top: 32px;
+	}
 	& + .title_h3,
 	+ .table_wrap {
 		margin-top: 52px;
@@ -169,7 +172,8 @@
 	
 	+ .tab_wrap,
 	+ .table_wrap,
-	+ .info_cont {
+	+ .info_cont,
+	+ .btn_area.ty4 {
 		margin-top: 32px;
 	}
 	
@@ -291,17 +295,17 @@
 
 	.has_scroll.active{
 		flex:1;
-		max-height: inherit;
 		display: flex;
 		flex-direction: column;
-		overflow-y:hidden;
+		max-height: inherit;
+		overflow-y: hidden;
 	}
 
 	.search_inp_box {
 		display: flex;
 		flex-direction: column;
-		gap:12px;
-		margin-bottom: 52px;
+		gap: var(--gap-4);
+		margin-bottom: var(--gap-11);
 
 		.desc {
 			& > * + * {
@@ -662,15 +666,13 @@
 			) 
 		}
 	}
+	& + .info_gray {
+		margin-top: 16px;
+	}
 }
 
 //레벨2부터 사용하는 depth_list
 .list_depth_ty2 {
-
-	* {
-		line-height: 1.5;
-	}
-
 	.sub_title {
 		font-size: var(--font-size-body-small);
 		line-height: 1.5;
@@ -683,8 +685,6 @@
 	li {
 		padding-left: 8px;
 		position: relative;
-		line-height: 1.5 !important;
-
 		&::before {
 			content: '';
 			position: absolute;
@@ -806,7 +806,7 @@
 			counter-increment: number 1;
 			content: counter(number) '. ';
 		}
-		p {
+		> p {
 			font-size: var(--font-size-body-small);
 			color: var(--color-text-subtle);
 		}
@@ -823,18 +823,75 @@
 			& + li {
 				margin-top: 40px;
 			}
-			p {
+			> p {
 				font-size: var(--font-size-body-medium);
 			}
 			> ol,
 			> ul {
 				margin-top: 16px;
+				> li {
+					& + li {
+						margin-top: 16px;
+					}
+				}
 			}
-			img {
-				display: block;
+			.img_box {
+				margin-top: 12px;
+				> img {
+					display: block;
+					width: 100%;
+				}
+			}
+			.info_gray {
+				.img_box {
+					margin-top: 8px;
+					& + .title_h4,
+					& + ul {
+						margin-top: 16px;
+					}
+				}
+				& + .pop_title_h3{
+					margin-top: 24px;
+				}
 			}
 			.form_group_wrap {
 				margin-bottom: 16px;
+			}
+			.list_checking {
+				margin-top: 12px;
+			}
+		}
+	}
+	.text_star1,
+	.text_star2 {
+		&::before {
+			display: inline-block;
+		}
+		&::after {
+			display: none;
+		}
+	}
+	.list_depth_ty2 {
+	
+		li {
+			padding-left: 8px;
+			position: relative;
+		}
+	
+		& > li {		
+			margin: 0;
+			font-size: var(--font-size-body-small);
+			&::before {
+				position: absolute;
+				top:0;
+				left: 0;
+				content: '-';
+				width: 0;
+				height: 0;
+				background-color: none;
+			}
+			& ~ li {
+				margin-top: 8px;
 			}
 		}
 	}
@@ -1103,5 +1160,45 @@
 
 	& > span + span {
 		margin-top: 4px;
+	}
+}
+.text_star1,
+.text_star2 {
+	&::before,
+	&::after {
+		display: inline-block;
+		content:'*';
+		color: var(--color-text-primary-bold);
+	}
+	&::before {
+		display: none;
+	}
+}
+.text_star2 {
+	&::before,
+	&::after {
+		content:'**';
+	}
+}
+.list_checking {
+	padding: var(--padding-8) var(--padding-7);
+	border: var(--border-width-static-regular) solid var(--color-border-gray-light);
+	border-radius: var(--radius-large2);
+	.circle_list {
+		li {
+			margin-bottom: 16px;
+			padding-bottom: 16px;
+			border-bottom: var(--border-width-static-regular) solid var(--color-border-gray-light);
+			&:last-child {
+				margin-bottom: 0;
+				padding-bottom: 0;
+				border-bottom: 0;
+			}
+		}
+	}
+	.radio_group_wrap {
+		margin-top: 12px;
+		justify-content: end;
+		gap: var(--gap-6);
 	}
 }

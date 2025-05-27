@@ -24,18 +24,19 @@
 
 			<!-- s: 자주찾는 품종 추천 리스트 -->
 			<div class="suggestion_list_wrap">
-				<div class="title_h4"><strong>자주 찾는 직업</strong></div>
+				<!-- s: 25-05-27 수정 -->
+				<h3 class="title_h3"><strong>자주 찾는 직업</strong></h3>
 				<div class="item_wrap">
-					<button type="button" class="tag_item size_m c_ty01"><span class="text">경영지원 사무직 관리자</span></button>
-					<button type="button" class="tag_item size_m c_ty01"><span class="text">전업주부</span></button>
-					<button type="button" class="tag_item size_m c_ty01"><span class="text">제품 생산관련 업체 사무직 관리자</span></button>
-					<button type="button" class="tag_item size_m c_ty01"><span class="text">대학생 및 대학원생</span></button>
-					<button type="button" class="tag_item size_m c_ty01"><span class="text">소규모 상점 경영 및 일선 관리 종사원</span></button>
-					<button type="button" class="tag_item size_m c_ty01"><span class="text">무직</span></button>
-					<button type="button" class="tag_item size_m c_ty01"><span class="text">영업 및 판매업체 관련 사무직 관리자</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">회사 사무직 종사자</span></button>
 					<button type="button" class="tag_item size_m c_ty01"><span class="text">공무원(기술직, 특수직 제외)</span></button>
-					<button type="button" class="tag_item size_m c_ty01"><span class="text">중&middot;고등학교 교사</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">중고등학교 교사</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">초등학교 교사</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">전업주부</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">소규모상점경영 및 일선 관리 종사원</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">대학생 및 대학원생</span></button>
+					<button type="button" class="tag_item size_m c_ty01"><span class="text">무직</span></button>
 				</div>
+				<!-- e: 25-05-27 수정 -->
 			</div>
 			<!-- e: 자주찾는 품종 추천 리스트 -->
 
@@ -80,13 +81,19 @@
 		<div class="tab_wrap_content has_scroll" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
 			<div class="form_group_wrap">
 				<div class="form_line">
-					{{> cp/selectitem si_ph="대분류를 선택해주세요." si_title="직업 대분류 선택" si_popup="pop_type02"}}
+					<!-- s: 25-05-27 수정 -->
+					{{> cp/selectitem si_ph="대분류를 선택해주세요." si_title="직업 대분류 선택 팝업 호출" si_popup="pop_type02"}}
+					<!-- e: 25-05-27 수정 -->
 				</div>
 				<div class="form_line">
-					{{> cp/selectitem si_ph="중분류를 선택해주세요." si_title="직업 정분류 선택" si_popup="pop_type02"}}
+					<!-- s: 25-05-27 수정 -->
+					{{> cp/selectitem si_ph="중분류를 선택해주세요." si_title="직업 정분류 선택 팝업 호출" si_popup="pop_type02" disabled=true }}
+					<!-- e: 25-05-27 수정 -->
 				</div>
 				<div class="form_line">
-					{{> cp/selectitem si_ph="대분류를 선택해주세요." si_title="직업 소분류 선택" si_popup="pop_type02"}}
+					<!-- s: 25-05-27 수정 -->
+					{{> cp/selectitem si_ph="대분류를 선택해주세요." si_title="직업 소분류 선택 팝업 호출" si_popup="pop_type02" disabled=true }}
+					<!-- e: 25-05-27 수정 -->
 				</div>
 			</div>
 		</div>
@@ -106,14 +113,23 @@
 
 <!-- s: popup area -->
 <!-- s: selpop -->
-{{#> popup/popup_bottom popup-id="pop_type02" popup-title="피보험자와 계약자 과계"}}
+<!-- s: 25-05-27 수정 -->
+{{#> popup/popup_bottom popup-id="pop_type02" popup-title="대분류"}}
+<!-- e: 25-05-27 수정 -->
 <div class="popup_cont">
 	<div class="popup_content">
 		<div class="opt_select_list opt_case3">
-			<div role="button" tabindex="0" class="option active" title="선택됨"><span class="text">관리직(사무직)</span></div>
-			<div role="button" tabindex="0" class="option"><span class="text">직업1</span></div>
-			<div role="button" tabindex="0" class="option"><span class="text">직업2</span></div>
-			<div role="button" tabindex="0" class="option"><span class="text">직업3</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">관리직(사무직)</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">전문가 및 관련 종사자</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">사무 종사자</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">서비스종사자</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">판매 종사자</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">농림어업 숙련 종사자</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">기능원 및 관련 기능 종사자</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">장치·기계조작 및 조립 종사자</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">단순노무종사자</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">군인</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">주부학생및기타비경제활동인구</span></div>
 		</div>
 	</div>
 </div>

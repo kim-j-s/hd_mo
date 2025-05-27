@@ -3029,6 +3029,7 @@ ul + .form_group_wrap {
 	margin-top: 1.6rem;
 }
 .pop_title_h3 {
+	display: block;
 	font-size: var(--font-size-heading-xsmall);
 	font-weight: 700;
 }
@@ -3060,18 +3061,23 @@ ul + .form_group_wrap {
 .info_cont .title_h2 + p {
 	margin-top: var(--gap-4);
 }
+.info_cont .pop_title_h3,
 .info_cont h3 {
 	font-size: var(--font-size-heading-xsmall);
 	font-weight: 700;
 }
+.info_cont .pop_title_h3 + h4,
 .info_cont h3 + h4 {
 	margin-top: var(--gap-5);
 	margin-bottom: 1.2rem;
 }
+.info_cont .pop_title_h3 + ul,
+.info_cont .pop_title_h3 + ol,
 .info_cont h3 + ul,
 .info_cont h3 + ol {
 	margin-top: var(--gap-5);
 }
+.info_cont .pop_title_h3 + p,
 .info_cont h3 + p {
 	margin-top: 1.2rem;
 }
@@ -3085,6 +3091,12 @@ ul + .form_group_wrap {
 }
 .info_cont h4 + p {
 	margin-top: 0.8rem;
+}
+.info_cont h4 + .table_wrap {
+	margin-top: 1.6rem;
+}
+.info_cont h4 + .table_wrap.type_mini {
+	margin-top: 1.2rem;
 }
 .info_cont .text_head + .info_gray {
 	margin-top: 3.2rem;
@@ -3105,8 +3117,11 @@ ul + .form_group_wrap {
 .info_cont ul + .pop_title_h2 {
 	margin-top: var(--gap-9);
 }
+.info_cont p + .pop_title_h3,
 .info_cont p + h3,
+.info_cont ol + .pop_title_h3,
 .info_cont ol + h3,
+.info_cont ul + .pop_title_h3,
 .info_cont ul + h3 {
 	margin-top: var(--gap-5);
 }
@@ -3133,6 +3148,9 @@ ul + .form_group_wrap {
 }
 .info_cont .table_wrap + h4 {
 	margin-top: 2rem;
+}
+.info_cont .table_wrap.type_mini + h4 {
+	margin-top: 1.6rem;
 }
 .info_cont .table_wrap .title_h4 + .table {
 	margin-top: 0.4rem;
@@ -3166,6 +3184,11 @@ ul + .form_group_wrap {
 .info_cont p + .table_wrap,
 .info_cont p + .info_gray {
 	margin-top: 1.6rem;
+}
+.info_cont p + ul.type_mini,
+.info_cont p + .table_wrap.type_mini,
+.info_cont p + .info_gray.type_mini {
+	margin-top: 1.2rem;
 }
 .info_cont p + .form_group_wrap {
 	margin-top: 3.2rem;
@@ -3756,6 +3779,15 @@ ul + .form_group_wrap {
 .cert_select_list .cert_select_item.copy1 > .text::before {
 	background-image: url(../images/common/cert/icon_cert_copy1.svg);
 }
+.cert_select_list .cert_select_item.dispose > .text::before {
+	background-image: url(../images/common/cert/icon_cert_dispose.svg);
+}
+.cert_select_list .cert_select_item.phone_direct_sign > .text::before {
+	background-image: url(../images/common/cert/icon_cert_phone_direct_sign.svg);
+}
+.cert_select_list .cert_select_item.naver_cert > .text::before {
+	background-image: url(../images/common/cert/icon_cert_naver_cert.svg);
+}
 /* PIN 인증 */
 .pin_enter {
 	position: relative;
@@ -3920,14 +3952,58 @@ ul + .form_group_wrap {
 }
 /* 전자서명 */
 .ele_sign {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
 	margin-top: var(--gap-8);
 	padding: var(--padding-5) var(--padding-7) var(--padding-8) var(--padding-7);
 	border-radius: var(--radius-large2);
 	border: var(--border-width-variable-regular) solid var(--color-border-gray-light);
 	background: var(--color-surface-white-subtle);
+}
+.ele_sign .ele_sign_canvas_wrap .ele_sign_canvas_wrap_top {
+	position: relative;
+	padding-top: calc(var(--padding-8) + (var(--padding-1)));
+}
+.ele_sign .ele_sign_canvas_wrap .ele_sign_canvas_wrap_top .hd_btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.ele_sign .ele_sign_canvas_wrap .ele_sign_canvas_wrap_top .ele_sign_canvas {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	height: 16rem;
+	border-radius: var(--radius-medium3);
+	background-color: var(--color-surface-secondary-subtler);
+}
+.ele_sign .ele_sign_canvas_wrap .ele_sign_canvas_wrap_top .ele_sign_canvas .esc_msg {
+	display: block;
+	font-size: var(--font-size-body-large);
+	color: var(--color-text-disabled);
+}
+.ele_sign .ele_sign_canvas_wrap .ele_sign_canvas_wrap_top .ele_sign_canvas canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: var(--radius-medium3);
+}
+.ele_sign .ele_sign_canvas_wrap .ele_sign_canvas_wrap_cont {
+	padding-top: var(--gap-5);
+}
+.ele_sign .ele_sign_canvas_wrap .ele_sign_canvas_wrap_cont .title_h6 + .es_cn_list {
+	margin-top: var(--gap-3);
+}
+.ele_sign .ele_sign_canvas_wrap .es_cn_list li {
+	font-size: var(--font-size-body-xsmall);
+	color: var(--color-text-subtle);
 }
 /* 이용안내 */
 /* 마이 */
