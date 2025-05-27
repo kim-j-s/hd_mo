@@ -63,6 +63,10 @@
 	&.ty2 {
 		background: var(--color-surface-information-subtler);
 	}
+
+	& + .text_sub_ty2 {
+		margin-top: var(--gap-8);
+	}
 	& + .list_depth,
 	& + .info_gray,
 	& + .inp_checkbox,
@@ -74,7 +78,7 @@
 	& + .table_wrap {
 		margin-top: 24px;
 	}
-
+	& + .all_checking,
 	& + .tab_wrap {
 		margin-top: var(--gap-8);
 
@@ -95,7 +99,7 @@
 	& + .acd_item_ty7,
 	& + .select_driver_range,
 	& + .banner_box.ty2 {
-		margin-top: 32px;
+		margin-top: var(--gap-8);
 	}
 	
 	& + .checkbox_group_wrap,
@@ -143,6 +147,10 @@
 			margin-top: 0;
 		}
 
+		& + .list_depth {
+			margin-top: var(--gap-4);
+		}
+
 		& + .list_ty3 {
 			margin-top: 16px;
 		}
@@ -163,6 +171,14 @@
 	.info_text {
 		& + ul {
 			margin-top: var(--gap-4);
+		}
+	}
+
+	.list_depth {
+		& + .footer_dl {
+			margin-top: var(--gap-6);
+			padding-top: var(--gap-6);
+			border-top: 1px solid var(--color-border-gray-light);
 		}
 	}
 
@@ -192,7 +208,8 @@
 			.big {
 				font-size: var(--font-size-heading-medium);
 			}
-			.rise {
+			.rise,
+			.trend {
 				justify-content: flex-end;
 			}
 		}
@@ -212,6 +229,7 @@
 		}
 		&.footer_dl {
 			align-items: center;
+			
 
 			dd {
 				font-size: var(--font-size-body-large);

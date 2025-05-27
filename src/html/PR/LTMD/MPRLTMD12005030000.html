@@ -1,0 +1,52 @@
+{{#> layout/default page-title="가입 전 알릴 사항 | 상품"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_MPRLTMD12005030000" popup-title="전화 심사 안내" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="popup_content_top">
+			<div class="process_info_area">
+				<div class="complete_info" aria-hidden="true">
+					<lottie-player src="../../../json/lottie_info.jso" background="transparent" speed="1" autoplay></lottie-player>
+				</div>
+				<h2 class="process_title">
+					<strong>
+					적합성 검증을 위해<br /> 전화 심사가 필요해요
+					</strong>
+				</h2>
+				<p class="process_desc">
+					통화 가능한 시간대를 선택하신 후<br />전화 심사를 요청해 주세요.
+				</p>
+			</div>
+		</div>
+		<div class="info_cont">	
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">연락 받을 휴대 전화 번호</div>
+					{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}					
+				</div>
+				<div class="form_line">
+					<div class="label_tit">통화 가능한 시간대 모두 선택(평일 기준)</div>
+					<div class="checkbox_group_wrap">
+							{{> cp/checkbox checkbox_class="rd_check_btn" id="checkbox01-1" label_class="chk_label_ty5" labelname="09:00 ~ 12:00" }}
+							{{> cp/checkbox checkbox_class="rd_check_btn text_center" id="checkbox01-2" label_class="chk_label_ty5" labelname="13:00 ~ 15:00" }}
+							{{> cp/checkbox checkbox_class="rd_check_btn text_center" id="checkbox01-3" label_class="chk_label_ty5" labelname="15:00 ~ 17:00" }}
+							{{> cp/checkbox checkbox_class="rd_check_btn text_center" id="checkbox01-4" label_class="chk_label_ty5" labelname="17:00 ~ 18:00" }}
+					</div>
+				</div>					
+			</div>
+		</div>
+	</div>
+
+</div>
+<div class="popup_bottom">
+	<div class="btn_area column">
+		{{> cp/button type="1" size="1" b-text="전화심사 요청하기" }}
+		{{> cp/button type="3" size="1" b-text="홈으로 이동하기" }}
+	</div>
+</div>
+
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+{{/ layout/default }}
