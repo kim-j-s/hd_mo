@@ -1,0 +1,350 @@
+{{#> layout/default page-title="기초 정보 입력 | 실손의료비보험"}}
+<div id="wrap" class="wrap">
+{{> layout/header h-title="다이렉트실손의료비보장보험" }}
+
+	<form action="" class="bi_form">
+		<div class="bi_wrap">
+			<div class="stepper_wrap">
+				<div class="stepper" role="img">
+					<div class="pgs">
+						<span class="pgs_per" style="width: 0%;"><span class="motion health_loss"></span></span>
+					</div>
+				</div>
+				<button type="button" class="stm_btn stm_l" onclick="$stepper.stepBack();">이전 단계</button>
+				<button type="button" class="stm_btn stm_r" onclick="$stepper.stepNext();">다음 단계</button>
+			</div>
+			
+			<div class="bi_stepper">
+				<div class="bi_top">
+					<!-- bit -->
+					<div class="bit">
+            
+						<!-- 피보험자 -->
+						<div class="bit_inner" data-pickitem="step1">
+							<!-- prettier-ignore -->
+							<p class="bit_inner_text">
+								<span class="bold">보장 받으실 분</span>이 누구인가요?
+							</p>
+              <div class="bit_inner_sub_text">
+								가입이 어려운 경우
+								{{> cp/tooltip text="<p>추가안내 컨텐츠가 있을 경우, 제공하지 않으면 제거</p>" trigger-icon="popover_help"}}
+							</div>
+							<div class="bit_btn_scrollx">
+                <button type="button" class="btn_link short_cut sm rd_box">
+									<span class="text">최근 계산 내역</span>
+								</button>
+								<button type="button" class="btn_link short_cut sm rd_box">
+									<span class="text">보장내용 자세히 보기</span>
+								</button>
+							</div>
+						</div>
+						<!-- 피보험자 -->		
+
+            <!-- 생년월일 -->
+						<div class="bit_inner active" data-pickitem="step2">
+
+              <!-- s: 계피동일 case -->
+							<!-- prettier-ignore -->
+							<p class="bit_inner_text">고객님의<br />
+								<span class="bold">생년월일</span>을 알려주세요
+							</p>
+              <!-- e: 계피동일 case -->
+
+              <!-- s: 미성년 case -->
+							<!-- prettier-ignore -->
+							<!-- <p class="bit_inner_text">자녀분의<br />
+								<span class="bold">생년월일</span>을 알려주세요
+							</p> -->
+              <!-- e: 미성년 case -->
+
+              <!-- s: 태아 case -->
+							<!-- prettier-ignore -->
+							<!-- <p class="bit_inner_text"><span class="bold">고객님(산모)</span>의<br/>
+								<span class="bold">출산예정일</span>을 알려주세요
+							</p> -->
+              <!-- e: 태아 case -->
+						</div>
+						<!-- 생년월일 -->			
+
+						<!-- 성별 -->
+						<div class="bit_inner active" data-pickitem="step3">				
+						
+              <!-- s: 계피동일 case -->
+							<!-- prettier-ignore -->
+							<p class="bit_inner_text">
+								고객님의 <span class="bold">성별</span>을 알려주세요
+							</p>
+              <!-- e: 계피동일 case -->
+
+              <!-- s: 미성년 case -->
+							<!-- prettier-ignore -->
+							<!-- <p class="bit_inner_text">자녀분의
+								<span class="bold">성별</span>을 알려주세요
+							</p> -->
+              <!-- e: 미성년 case -->
+
+              <!-- s: 태아 case -->
+							<!-- prettier-ignore -->
+							<!-- <p class="bit_inner_text"><span class="bold">고객님(산모)</span>의<br/>
+								<span class="bold">생년월일</span>을 알려주세요
+							</p> -->
+              <!-- e: 태아 case -->
+
+            </div>
+						<!-- 성별 -->
+
+            <!-- 직업 -->
+						<div class="bit_inner" data-pickitem="step4">
+              <!-- s: 계피동일,태아 case -->
+							<!-- prettier-ignore -->
+							<p class="bit_inner_text">
+								<span class="bold">하시는 일</span>을 알려주시면<br />
+                보험료를 알아볼게요
+							</p>
+              <!-- e: 계피동일,태아 case -->
+
+              <!-- s: 미성년 case -->
+							<!-- prettier-ignore -->
+							<!-- <p class="bit_inner_text">
+                자녀분의 <span class="bold">직업</span>을 알려주시면<br />
+                보험료를 알아볼게요
+							</p> -->
+              <!-- e: 미성년 case -->
+              
+						</div>
+						<!-- 직업 -->		
+						
+					</div>
+					<!-- bit -->
+
+					<!-- bit_history -->
+					<div class="bit_history">
+						<div class="bit_history_inner">
+							<button type="button" class="selected_case step1 person" title="피보험자 수정">d</button>
+							<button type="button" class="selected_case step2 birth" title="생년월일 수정">d</button>
+              <!-- s: 태아 case -->
+              <!-- <button type="button" class="selected_case step2 pregnant" title="출산예정일 수정">d</button> -->
+              <!-- e: 태아 case -->
+							<button type="button" class="selected_case step3 gender" title="성별 수정">d</button>
+							<button type="button" class="selected_case step4 job" title="직업 수정">d</button>
+						</div>
+					</div>
+					<!-- bit_history -->
+
+				</div>
+
+
+				<div class="bi_opts_wrap">
+
+          <!-- step1. 피보험자 -->
+					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step1">
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio11" name="radio1" />
+								<label for="radio11">
+									<span class="label_cont">본인
+                    <small class="sm_txt">만 19세~59세까지</small>
+                  </span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio12" name="radio1" />
+								<label for="radio12">
+									<span class="label_cont">미성년 자녀
+                    <small class="sm_txt">만 18세 이하만 가능해요</small>
+                  </span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio13" name="radio1" />
+								<label for="radio13">
+									<span class="label_cont">태아
+                    <small class="sm_txt">엄마만 가입 가능해요</small>
+                  </span>
+								</label>
+							</div>
+						</div>
+					</div>
+
+          <!-- step2. 생년월일 -->
+					<div class="opts_area active" tabindex="0" aria-label="생년월일 8자리를 입력하시면 다음단계로 이동합니다." data-pickitem="step2">
+						<div class="opts_area_item column">
+							<div class="birth_date_field" aria-live="polite"></div>
+							<div class="bi_keypad">
+								<div class="bi_keypad_item">
+									<button type="button" class="keypad_btn">1</button>
+									<button type="button" class="keypad_btn">2</button>
+									<button type="button" class="keypad_btn">3</button>
+									<button type="button" class="keypad_btn keypad_btn_del" aria-label="지우기"></button>
+								</div>
+								<div class="bi_keypad_item">
+									<button type="button" class="keypad_btn">4</button>
+									<button type="button" class="keypad_btn">5</button>
+									<button type="button" class="keypad_btn">6</button>
+									<button type="button" class="keypad_btn keypad_btn_delall">전체삭제</button>
+								</div>
+								<div class="bi_keypad_item">
+									<button type="button" class="keypad_btn">7</button>
+									<button type="button" class="keypad_btn">8</button>
+									<button type="button" class="keypad_btn">9</button>
+									<button type="button" class="keypad_btn">0</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+          <!-- step3. 성별(계피동일,미성년 case) -->
+					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step3">
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio31" name="radio3" />
+								<label for="radio31">
+									<span class="label_cont">남성</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio32" name="radio3" />
+								<label for="radio32">
+									<span class="label_cont">여성</span>
+								</label>
+							</div>
+						</div>
+					</div>
+
+          <!-- step3. 생년월일(태아 case) -->
+					<!-- <div class="opts_area active" tabindex="0" aria-label="생년월일 8자리를 입력하시면 다음단계로 이동합니다." data-pickitem="step3">
+						<div class="opts_area_item column">
+							<div class="birth_date_field" aria-live="polite"></div>
+							<div class="bi_keypad">
+								<div class="bi_keypad_item">
+									<button type="button" class="keypad_btn">1</button>
+									<button type="button" class="keypad_btn">2</button>
+									<button type="button" class="keypad_btn">3</button>
+									<button type="button" class="keypad_btn keypad_btn_del" aria-label="지우기"></button>
+								</div>
+								<div class="bi_keypad_item">
+									<button type="button" class="keypad_btn">4</button>
+									<button type="button" class="keypad_btn">5</button>
+									<button type="button" class="keypad_btn">6</button>
+									<button type="button" class="keypad_btn keypad_btn_delall">전체삭제</button>
+								</div>
+								<div class="bi_keypad_item">
+									<button type="button" class="keypad_btn">7</button>
+									<button type="button" class="keypad_btn">8</button>
+									<button type="button" class="keypad_btn">9</button>
+									<button type="button" class="keypad_btn">0</button>
+								</div>
+							</div>
+						</div>
+					</div> -->
+
+
+					<!-- step4. 직업 -->
+					<div class="opts_area" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step4">
+						<div class="opts_area_item">
+              <!-- s: 계피동일 case -->
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio41" name="radio4" />
+								<label for="radio41">
+									<span class="label_cont">회사원</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio42" name="radio4" />
+								<label for="radio42">
+									<span class="label_cont">경영지원<br/>사무직관리자</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio43" name="radio4" />
+								<label for="radio43">
+									<span class="label_cont">전업주부</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio44" name="radio4" />
+								<label for="radio44">
+									<span class="label_cont">제조업 사무직</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio45" name="radio4" />
+								<label for="radio45">
+									<span class="label_cont">자영업</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio46" name="radio4" />
+								<label for="radio46">
+									<span class="label_cont">직접 선택</span>
+								</label>
+							</div>
+              <!-- e: 계피동일 case -->
+
+              <!-- s: 미성년 case -->
+              <!-- <div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio41" name="radio4" />
+								<label for="radio41">
+									<span class="label_cont">미취학 아동</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio42" name="radio4" />
+								<label for="radio42">
+									<span class="label_cont">초·중·고생</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio43" name="radio4" />
+								<label for="radio43">
+									<span class="label_cont">대학생 및 대학원생</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio44" name="radio4" />
+								<label for="radio44">
+									<span class="label_cont">기타</span>
+								</label>
+							</div> -->
+              <!-- e: 미성년 case -->
+
+						</div>
+					</div>
+					<!-- 직업 -->					
+				</div>
+			</div>
+
+		</div>
+	</form>
+</div>
+
+<!-- s: popup area -->
+ 
+<!-- s: 유효성체크 -->
+{{#> popup/popup_layer popup-id="pop1" popup-title="" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<p class="pl_txt1 pl_ico_ty_case1">
+			실손의료비보장보험은 만 19세에서 59세까지만 가입 가능합니다. 다시 확인 해주세요.
+      <!-- 만19세 이하의 미성년 자녀만 가입 가능합니다. -->
+      <!-- 출산예정일은 오늘 보다 과거 일자를 입력할 수 없습니다. 다시 확인해주세요. -->
+		</p>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_layer}}
+<!-- e: 유효성체크 -->
+	 
+<!-- e: popup area -->
+
+<script>
+	$(document).ready(function() {
+		$stepper.stepperInit(null, 0);
+	});
+</script>
+
+{{/ layout/default }}
