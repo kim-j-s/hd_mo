@@ -222,10 +222,10 @@
 
 		th,td {
 			vertical-align: middle;
-			padding: var(--padding-2) var(--padding-2);
+			padding: var(--padding-2) var(--padding-3);
 			color: var(--color-text-subtle);
 			font-size: var(--font-size-body-xsmall);
-			background-color: transparent !important;
+			background: var(--color-surface-white-subtle);
 		}
 
 		thead th {
@@ -235,6 +235,21 @@
 		tbody th {
 			text-align: left;
 			font-weight: normal;
+		}
+		td {
+			.sub_text {
+				& + .number_list {
+					margin-top: 8px;
+				}
+			}
+			.number_list {
+				li {
+					font-size: var(--font-size-body-xsmall);
+					ul {
+						margin-top: 4px;
+					}
+				}
+			}
 		}
 	}
 }
