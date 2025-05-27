@@ -1,0 +1,86 @@
+{{#> layout/default page-title="보험 가입 내역 | 상품"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_MPRLTMD12003040000" popup-title="보험 가입 내역" popup-active=true }}
+<div class="popup_cont">
+	<!-- s: popup_content -->
+	<div class="popup_content">
+		<!-- s: popup_content_top -->
+		<div class="popup_content_top">
+			<h2 class="title_h2">
+				<strong>다른 보험회사의 상세 가입 내역을 입력해주세요</strong>
+			</h2>
+		</div>
+		<!-- e: popup_content_top -->
+    <div class="form_group_wrap">
+      <div class="form_card_case">
+        <h3 class="title_h4">가입 내역</h3>
+        <div class="form_group_wrap">
+          <div class="form_line">
+            <div class="label_tit">보험사</div>
+            {{> cp/selectitem si_ph="선택" si_title="보험사 선택" si_popup="pop_type01"}}
+          </div>
+          <div class="form_line">
+            <div class="label_tit">가입 건수</div>
+            {{> cp/text type="tel" class="price" maxlength="3" r-text="건" placeholder="숫자만 입력" inp-title="가입 건수 입력"}}
+          </div>
+          <div class="form_line">
+            <div class="label_tit">보험료(원)</div>
+            {{> cp/text type="tel" class="price" maxlength="3" r-text="원" placeholder="숫자만 입력" inp-title="보험료 입력"}}
+          </div>
+        </div>
+        <button type="button" class="btn_rd_close"><span class="blind">가입내역 입력 닫기</span></button>
+      </div>
+      <div class="form_card_case">
+        <h3 class="title_h4">가입 내역</h3>
+        <div class="form_group_wrap">
+          <div class="form_line">
+            <div class="label_tit">보험사</div>
+            {{> cp/selectitem si_ph="선택" si_title="보험사 선택" si_popup="pop_type01"}}
+          </div>
+          <div class="form_line">
+            <div class="label_tit">가입 건수</div>
+            {{> cp/text type="tel" class="price" maxlength="3" r-text="건" placeholder="숫자만 입력" inp-title="가입 건수 입력"}}
+          </div>
+          <div class="form_line">
+            <div class="label_tit">보험료(원)</div>
+            {{> cp/text type="tel" class="price" maxlength="3" r-text="원" placeholder="숫자만 입력" inp-title="보험료 입력"}}
+          </div>
+        </div>
+        <button type="button" class="btn_rd_close"><span class="blind">가입내역 입력 닫기</span></button>
+      </div>
+      <div class="btn_area center btn_area_space2">
+        {{> cp/button type="3" size="3" b-text="보험사 추가" rightIcon="plusSvg" btn-title="보험사 추가" }}
+      </div>
+      <ul class="list_ty2">
+        <li>최대 4건까지 입력할 수 있어요.</li>
+      </ul>
+    </div>
+		
+	</div>
+</div>
+
+<div class="popup_bottom">
+	<div class="btn_area">{{> cp/button type="1" size="1" b-text="확인"}}</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+
+<!-- s: popup area -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="보험사 선택"}}
+<div class="popup_cont">
+  <div class="popup_content">
+    <div class="opt_select_list opt_case3">
+      <div role="button" tabindex="0" class="option active" title="선택됨"><span class="text">보험사1</span></div>
+      <div role="button" tabindex="0" class="option"><span class="text">보험사2</span></div>
+      <div role="button" tabindex="0" class="option"><span class="text">보험사3</span></div>
+      <div role="button" tabindex="0" class="option"><span class="text">보험사4</span></div>
+    </div>
+  </div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: popup area -->
+
+
+{{/ layout/default }}
