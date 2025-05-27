@@ -102,7 +102,8 @@
 
 						& + .bg_area {
 							&.sticky_fix {
-								top: -32px;
+								// top: -32px;
+								top: -16px;
 							}
 
 							& + .tab_wrap {
@@ -160,12 +161,17 @@
 				}
 				.pop_top {
 					&.sticky_fix {
-							padding: 16px 0;
-							margin: -16px -24px;
-							top: -16px;
-							.info_gray {
-								margin:0 24px;
-							}
+						padding: 0 var(--padding-8) var(--padding-6);
+						// padding: 16px 0;
+						margin: -16px -24px 0;
+						top: -16px;
+						.info_gray {
+							// margin:0 var(--padding-8);
+						}
+
+						& + * {
+							margin-top: -16px;
+						}
 					}
 				}
 			}
