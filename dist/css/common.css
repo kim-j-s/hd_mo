@@ -9622,7 +9622,7 @@ strong {
 	top: calc(100% - 0.9rem);
 }
 .table_wrap .table th {
-	vertical-align: top;
+	vertical-align: middle;
 	padding: var(--padding-5) var(--padding-3);
 	font-size: var(--font-size-heading-xxsmall);
 	text-align: left;
@@ -10405,10 +10405,12 @@ strong {
 .info_gray dl + dl {
 	margin-top: 1.6rem;
 }
-.info_gray dl.footer_dl {
+.info_gray dl + .footer_dl {
 	margin-top: var(--gap-6);
 	padding-top: var(--gap-6);
 	border-top: 1px solid var(--color-border-gray-light);
+}
+.info_gray dl.footer_dl {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
@@ -10432,6 +10434,9 @@ strong {
 	border: 0;
 	padding-top: 0;
 	margin-top: 1.6rem;
+}
+.info_gray dl.footer_dl + dl:not(.footer_dl) dt {
+	line-height: 2.4rem;
 }
 .info_gray .car_alarm_box {
 	display: -webkit-box;
