@@ -184,11 +184,12 @@
 
 		.acd_head {
 			position: relative;
-			padding: 24px 20px;
+			padding: var(--padding-8) var(--padding-7);
 
 			.acd_btn {
 				position: relative;
 				width: 100%;
+				min-height: 32px;
 				padding-right: 36px;
 				background-color: transparent;
 				font-weight: 700;
@@ -196,11 +197,11 @@
 
 				&:after {
 					position: absolute;
-					top: calc(50% - 12px);
+					top: calc(50% - 16px);
 					right:0;
 					content: '';
-					width: 24px;
-					height: 24px;
+					width: 32px;
+					height: 32px;
 					background: url(../images/icon/arrowDown_ty3.svg) no-repeat center /24px auto;
 					box-sizing: border-box;
 					transition: all 0.3s;
@@ -223,7 +224,9 @@
 
 			&.active {
 				& + .acd_cont {
-					padding: 16px 20px 24px;
+					margin-top: -8px;
+					padding: var(--gap-5) var(--padding-7) var(--padding-8);
+
 					&::before {
 						opacity: 1;
 					}
@@ -262,6 +265,22 @@
 
 			.space_list_ty5 .title_h5 {
 				margin:16px 0;
+			}
+
+			.list_depth {
+				> li {
+					font-size: var(--font-size-body-medium);
+					ul {
+						margin-top: 8px;
+						> li {
+							font-size: var(--font-size-body-small);
+							color: var(--color-text-basic);
+							&  li {
+								margin-top: 8px;
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -545,7 +564,7 @@
 
 		.acd_head {
 			position: relative;
-			padding: 24px 20px;
+			padding: var(--padding-8) var(--padding-7);
 
 			.acd_btn {
 				position: absolute;
@@ -589,7 +608,7 @@
 
 			&.active {
 				& + .acd_cont {
-					padding: 16px 20px 24px;
+					padding: var(--gap-5) var(--padding-7) var(--padding-8);
 					&::before {
 						opacity: 1;
 					}
