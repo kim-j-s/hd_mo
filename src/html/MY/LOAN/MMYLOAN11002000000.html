@@ -1,0 +1,352 @@
+{{#> layout/default page-title="보험계약대출 신청 | 마이페이지"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="보험계약대출 상환" }}
+	<div id="container" class="container">
+		<div class="content">
+            <div class="tab_wrap">
+                <div class="tab_wrap_list_ty1" role="tablist">
+                    {{>cp/tab_btn tb-text="원금+이자상환" tb-class="" tb-id="ex01" tb-active=true}}
+                    {{>cp/tab_btn tb-text="이자만 납입" tb-class="" tb-id="ex02"}}
+                </div>
+                <div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanelex01">
+                    <!-- s: form_box  -->
+                    <div class="form_box">
+                        <p class="text_sub">입력한 원금에 이자가 합산돼요.</p>
+                        <div class="form_group_wrap">
+                            <div class="info_gray">
+                                <dl class="middle">
+                                    <dt>대출원금</dt>
+                                    <dd class="point">
+                                        <strong class="big">1,250만원</strong>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+
+                        <div class="form_group_wrap">
+                            <div class="form_line">
+                                <div class="label_tit">원금상환금액</div>
+                                <div class="comp_wrap key_number">
+                                    {{> cp/text class="price" type="tel" placeholder="5만원 이상 입력" inp-text="만원" inp-title="대출신청금액 입력" }}
+                                    {{> cp/button type="3" size="4" b-text="전액"}}
+                                </div>					
+                                <div class="btn_area basic">
+                                    {{> cp/button type="3" size="4" b-text="5만원"}}
+                                    {{> cp/button type="3" size="4" b-text="10만"}}
+                                    {{> cp/button type="3" size="4" b-text="50만"}}
+                                    {{> cp/button type="3" size="4" b-text="100만"}}
+                                    {{> cp/button type="3" size="4" b-text="정정"}}
+                                </div>
+                                <ul class="list_ty2">
+                                    <li>상환일 기준 대출이율이 높은 보험계약순으로 선택되어 자동 계산돼요.</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <!-- s: 계약별로 직접 입력 -->
+                        <div class="form_group_wrap space_list_ty2">
+                            <div class="info_gray">
+                                <dl>
+                                    <dt>계약별로 직접 입력</dt>
+                                    <dd>{{> cp/checkbox id="switch_check3" label_class="switch_check lg" role="switch" aria-checked="true" }}</dd>
+                                </dl>						
+                            </div>
+                            <!-- s: 계약별로 직접 입력 선택인 경우 대출 가능 계약 목록 노출 -->
+                            <div class="card_item_wrap focusin">
+                                <div class="card_item">
+                                    <div class="item_inner">
+                                        <div class="inner_cont">
+                                            <div class="item_top">
+                                                <div class="title_info">
+                                                    <div class="main_title">무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(Hi2501)</div>
+                                                </div>
+                                            </div>
+                                            <!-- s: card_list_ty1 -->
+                                            <ul class="card_list_ty1">
+                                                <li>
+                                                    <div class="title">대출이율</div>
+                                                    <div class="cont"><strong class="point">3.4%</strong></div>
+                                                </li>
+                                                <li>
+                                                    <div class="title">대출원금</div>
+                                                    <div class="cont">50만원</div>
+                                                </li>
+                                                <li>
+                                                    <div class="title">대출이자</div>
+                                                    <div class="cont">100,000원</div>
+                                                </li>
+                                                <li class="result">
+                                                    <div class="title">원금+이자</div>
+                                                    <div class="cont">
+                                                        <strong class="point">600,000만원</strong>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <!-- e: card_list_ty1 -->
+                                            
+                                            <div class="card_cont">
+                                                <div class="form_group_wrap">
+                                                    <div class="form_line">
+                                                        <div class="label_tit">원금상환금액</div>
+                                                        <div class="comp_wrap key_number">
+                                                            {{> cp/text class="price" type="tel" placeholder="5만원 이상 입력" inp-text="만원" inp-title="대출신청금액 입력" }}
+                                                            {{> cp/button type="3" size="4" b-text="전액"}}
+                                                        </div>					
+                                                        <div class="btn_area basic">
+                                                            {{> cp/button type="3" size="4" b-text="5만원"}}
+                                                            {{> cp/button type="3" size="4" b-text="10만"}}
+                                                            {{> cp/button type="3" size="4" b-text="50만"}}
+                                                            {{> cp/button type="3" size="4" b-text="100만"}}
+                                                            {{> cp/button type="3" size="4" b-text="정정"}}
+                                                        </div>
+                                                        <div class="btn_area basic">
+                                                            {{> cp/linkButton bl_class="short_cut" bl_text="이 대출은 신용정보 집중 대상이에요" pop_id="pop_type01" question_tit="신용정보 집중 대상 대출 안내" }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- s: CASE. 상환 신청 불가 -->
+                                <div class="card_item disabled">
+                                    <div class="item_inner">
+                                        <div class="inner_cont">
+                                            <div class="item_top">
+                                                <div class="title_info">
+                                                    <div class="main_title">무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(Hi2501)</div>
+                                                </div>
+                                            </div>
+                                            <!-- s: card_list_ty1 -->
+                                            <ul class="card_list_ty1">
+                                                <li>
+                                                    <div class="title">대출이율</div>
+                                                    <div class="cont"><strong class="point">3.4%</strong></div>
+                                                </li>
+                                                <li>
+                                                    <div class="title">대출원금</div>
+                                                    <div class="cont">50만원</div>
+                                                </li>
+                                                <li>
+                                                    <div class="title">대출이자</div>
+                                                    <div class="cont">100,000원</div>
+                                                </li>
+                                                <li class="result">
+                                                    <div class="title">원금+이자</div>
+                                                    <div class="cont">
+                                                        <strong class="point">600,000만원</strong>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <!-- e: card_list_ty1 -->
+                                            
+                                            <div class="card_cont">
+                                                <div class="form_group_wrap">
+                                                    <div class="form_line">
+                                                        <div class="label_tit">원금상환금액</div>
+                                                        <div class="comp_wrap key_number">
+                                                            {{> cp/text class="price" type="tel" placeholder="5만원 이상 입력" inp-text="만원" inp-title="대출신청금액 입력" disabled=true }}
+                                                            {{> cp/button type="3" size="4" b-text="전액" disabled=true }}
+                                                        </div>					
+                                                        <div class="btn_area basic">
+                                                            {{> cp/button type="3" size="4" b-text="5만원" disabled=true}}
+                                                            {{> cp/button type="3" size="4" b-text="10만" disabled=true}}
+                                                            {{> cp/button type="3" size="4" b-text="50만" disabled=true}}
+                                                            {{> cp/button type="3" size="4" b-text="100만" disabled=true}}
+                                                            {{> cp/button type="3" size="4" b-text="정정" disabled=true}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- e: CASE. 상환 신청 불가 -->
+                            </div>
+                            <!-- e: 계약별로 직접 입력 선택인 경우 대출 계약 목록 노출 -->
+                        </div>
+                        <!-- e: 계약별로 직접 입력 -->
+                    </div>
+                    <!-- e: form_box  -->
+                </div>
+                
+                <div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanelex02">
+                    <!-- s: form_box  -->
+                    <div class="form_box">
+                        <div class="info_gray">
+                            <dl class="middle">
+                                <dt>대출이자</dt>
+                                <dd class="point">
+                                    <strong class="big">120,500원</strong>
+                                </dd>
+                            </dl>
+                        </div>
+
+                        <div class="all_checking">
+                            {{> cp/checkbox id="checkbox2" labelname="총 <strong class='point'>2</strong>건 전체 선택" }}
+                        </div>
+                        <!-- s: 계약별로 이자 납입 가능 계약 목록 노출 -->
+                        <div class="card_item_wrap focusin">
+                            <div class="card_item">
+                                <div class="item_inner">
+                                    <div class="inp_checkbox">
+                                        <input type="checkbox" id="card_chk1" name="name1" aria-labelledby="card_chk1_cont">
+                                        <label for="card_chk1" class="chk_label"></label>
+                                        <i></i>
+                                    </div>
+                                    <div class="inner_cont">
+                                        <div class="item_top" id="card_chk1_cont">
+                                            <div class="title_info">
+                                                <div class="main_title">무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(Hi2501)</div>
+                                            </div>
+                                        </div>
+                                        <!-- s: card_list_ty1 -->
+                                        <ul class="card_list_ty1">
+                                            <li>
+                                                <div class="title">대출이율</div>
+                                                <div class="cont"><strong class="point">3.4%</strong></div>
+                                            </li>
+                                            <li>
+                                                <div class="title">대출원금</div>
+                                                <div class="cont">50만원</div>
+                                            </li>
+                                            <li>
+                                                <div class="title">대출이자</div>
+                                                <div class="cont">100,000원</div>
+                                            </li>
+                                        </ul>
+                                        <!-- e: card_list_ty1 -->
+                                    </div>
+                                </div>
+                                <div class="btn_area basic">
+                                    {{> cp/linkButton bl_class="short_cut" bl_text="이 대출은 신용정보 집중 대상이에요" pop_id="pop_type01" question_tit="신용정보 집중 대상 대출 안내" }}
+                                </div>
+                            </div>
+                            <!-- s: CASE. 상환 신청 불가 -->
+                            <div class="card_item disabled">
+                                <div class="item_inner">
+                                    <div class="inp_checkbox">
+                                        <input type="checkbox" id="card_chk1" name="name1" aria-labelledby="card_chk1_cont">
+                                        <label for="card_chk1" class="chk_label"></label>
+                                        <i></i>
+                                    </div>
+                                    <div class="inner_cont">
+                                        <div class="item_top" id="card_chk2_cont">
+                                            <div class="title_info">
+                                                <div class="main_title">무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(Hi2501)</div>
+                                            </div>
+                                        </div>
+                                        <!-- s: card_list_ty1 -->
+                                        <ul class="card_list_ty1">
+                                            <li>
+                                                <div class="title">대출이율</div>
+                                                <div class="cont"><strong class="point">3.4%</strong></div>
+                                            </li>
+                                            <li>
+                                                <div class="title">대출원금</div>
+                                                <div class="cont">50만원</div>
+                                            </li>
+                                            <li>
+                                                <div class="title">대출이자</div>
+                                                <div class="cont">100,000원</div>
+                                            </li>
+                                        </ul>
+                                        <!-- e: card_list_ty1 -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- e: CASE. 상환 신청 불가 -->
+                        </div>
+                        <!-- e: 계약별로 이자 납입 가능 계약 목록 노출 -->
+                    </div>
+                    <!-- e: form_box  -->
+                     
+                    <!-- s: 조회 내역이 없는 경우 -->
+                    <div class="no_list_area">
+                        {{> cp/icon iconClass="exclamationSvg"}}
+                        <p>이자 납입이 가능한 내역이 없어요</p>
+                        <p class="desc tac">
+                            상환할 보험계약대출 건을 다시 확인해주세요.
+                        </p>
+                    </div>
+                    <!-- e: 조회 내역이 없는 경우 -->
+                </div>
+            </div>
+
+			<!-- s: 꼭 알아두세요 -->
+			{{#> cp/notice dp-active=true }}
+				<ul class="list_depth">
+					<li>대출이자가 자동이체 청구 중(영업일 기준 자동이체일 1~2일 전)일 경우 상환(대출) 시 이자가 이중출금되며, 이중출금 시에는 영업일 기준 2일 후 자동이체 계좌로 자동 환급됩니다.</li>
+					<li>업무처리 중이거나 2010년 4월 1일 이후 가입한 계약이 미납해지(실효)가 된 경우 대출상환, 이자납입 처리가 되지 않으며, 자동이체 청구도 제외됩니다.</li>
+					<li>미납해지된 기간 동안 대출이자는 보험계약대출 이율보다 낮은 해약환급금 적용이율로 계산되며, 계약이 부활될 경우에는 보험계약대출 이율이 다시 적용됩니다.</li>
+					<li>자세한 내용은 인터넷 고객센터(02-2116-1004) 또는 대출상담 고객센터(1588-5655)로 문의해주세요.</li>
+				</ul>
+			{{/ cp/notice }}
+			<!-- e: 꼭 알아두세요 -->
+		</div>
+	</div>
+
+        
+	<!-- s: 하단 고정 버튼 영역 -->  
+	<div class="bottom_fix_wrap bottom_panel">
+        <!-- s: 원금 + 이자에서만 노출 -->
+		<div class="btn_area center">
+			{{> cp/linkButton bl_class="short_cut bottom_panel_toggle" aria-controls="bottom_panel_cont" bl_text="펼치기" }}
+		</div>
+        <!-- e: 원금 + 이자에서만 노출 -->	
+		<div class="bottom_panel_cont" id="bottom_panel_cont">
+			<div class="info_gray bg_etc01">
+				<div class="total">
+					<dl> 
+						<dt>예상 출금금액(원금+이자)</dt>
+						<dd>
+							<strong class="big point">610,000원</strong>
+						</dd>
+					</dl> 
+				</div>
+                <!-- s: 원금 + 이자에서만 노출 -->
+				<div class="info_top_cont item_hidden">
+					<dl>
+						<dt>원금상환금액</dt>
+						<dd>600,000원</dd>
+					</dl>
+					<dl>
+						<dt>대출이자</dt>
+						<dd>10,000원</dd>
+					</dl>
+				</div>	
+                <!-- e: 원금 + 이자에서만 노출 -->		
+			</div>
+		</div>         
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="다음" onclick="console.log('버튼이 클릭되었습니다!')"}}
+		</div>
+	</div>
+	<!-- e: 원금 + 이자 하단 고정 버튼 영역 -->
+
+
+</div>
+	 
+<!-- s: popup area -->  
+<!-- s: pop_type01 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="신용정보 집중 대상 대출 안내" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<ul class="list_depth">
+			<li>「신용정보업 감독규정」 개정에 따라 2019년 7월 10일 이후 새로 가입한 보험계약에서 대출신청 시, 신용정보 제공에 동의해야 신청할 수 있어요. </li>
+			<li>또한 해당 정보는 한국신용정보원에 집중되어 다른 금융기관 등에 공유되고, 다른 금융기관 대출의 DSR(총부채원리금상환비율) 산정 시 해당 보험계약대출의 '이자상환액'이 포함돼요.</li>
+		</ul>
+	</div>
+</div>
+<div class="popup_bottom">
+	
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: pop_type01 -->
+<!-- e: popup area -->
+
+{{/ layout/default }}
