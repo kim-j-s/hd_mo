@@ -653,7 +653,7 @@ $(function () {
 			const targetOffsetTop = $target.offset().top;
 			const $targetChild = $(".simple_info_wrap").children(".simple_info_item");
 			let new_headHeight = 0;
-			let simpleHeight = $(".simple_info_wrap").find(".simple_info_item").height();
+			let simpleHeight = $(".simple_info_wrap").find(".simple_info_item").innerHeight();
 
 			// console.log('기준 위치 : ', targetOffsetTop);
 
@@ -678,7 +678,7 @@ $(function () {
 
 				if ($(".tag_item_wrap.sticky").length) {
 					$(".tag_item_wrap.sticky")
-						.css("top", simpleHeight - 30)
+						.css("top", simpleHeight - 50)
 						.addClass("active");
 				}
 			} else if (targetOffsetTop > new_headHeight + 30 && $targetChild.hasClass("active")) {

@@ -4,8 +4,8 @@
 
 	input[type='radio']{
 		position: absolute;
-		width: 16px;
-		height: 16px;
+		width: 20px;
+		height: 20px;
 		opacity: 0;
 		
 		& + label {
@@ -16,7 +16,7 @@
 
 			> .label_cont {
 				display: block;
-				font-size: var(--font-size-label-large);
+				font-size: var(--font-size-label-medium);
 			}
 			.sub_g_txt {
 				display: block;
@@ -31,7 +31,7 @@
 				left: 0;
 				width: 20px;
 				height: 20px;
-				border: 1px solid var(--color-border-gray-dark);
+				border: var(--border-width-static-regular) solid var(--color-border-gray-dark);
 				border-radius: 100%;
 			}
 			
@@ -53,7 +53,7 @@
 			& + label {
 				&::before {
 					background: var(--color-element-primary) url(../images/icon/check_ty1.svg) no-repeat center center / 14px auto;
-					border: 1px solid var(--color-element-primary);
+					border: var(--border-width-static-regular) solid var(--color-element-primary);
 				}
 			}
 
@@ -79,7 +79,7 @@
 			&:disabled {
 				& + label {
 					&::before {
-						border: 1px solid var(--color-border-disabled);
+						border: var(--border-width-static-regular) solid var(--color-border-disabled);
 						background-color: var(--color-element-gray-lighter);
 						background-image: url(../images/icon/check_ty5.svg);
 					}
@@ -116,11 +116,11 @@
 	}
 	&.sm {
 		input[type='radio']{
+			width: 16px;
+			height: 16px;
+
 			& + label {
 				padding-left: 24px;
-				> .label_cont {
-					font-size: var(--font-size-label-medium);
-				}
 				&::before {
 					top: 2px;
 					width: 16px;

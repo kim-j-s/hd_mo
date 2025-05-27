@@ -668,7 +668,7 @@ $(function(){
 			const targetOffsetTop = $target.offset().top;
 			const $targetChild = $('.simple_info_wrap').children('.simple_info_item');
 			let new_headHeight = 0;
-			let simpleHeight = $('.simple_info_wrap').find('.simple_info_item').height();
+			let simpleHeight = $('.simple_info_wrap').find('.simple_info_item').innerHeight();
 
 			// console.log('기준 위치 : ', targetOffsetTop);
 
@@ -685,14 +685,14 @@ $(function(){
 			// console.log('target 위치 : ' + targetOffsetTop);
 			// console.log('컨텐츠 스크롤 위치 : ' + scrollTop);
 			// console.log('팝업 컨텐츠 스크롤 위치 : ' + pop_scrollTop);
-
+ 
 			if (targetOffsetTop <= new_headHeight + 30 && !$targetChild.hasClass('active')) {
 				// console.log('펴기');
 				$targetChild.addClass('active');
 				$targetChild.stop().slideDown(300);
 
 				if($('.tag_item_wrap.sticky').length){
-					$('.tag_item_wrap.sticky').css('top', simpleHeight - 30).addClass('active');
+					$('.tag_item_wrap.sticky').css('top', simpleHeight - 50).addClass('active');
 				}
 
 			} else if (targetOffsetTop > new_headHeight + 30 && $targetChild.hasClass('active')) {

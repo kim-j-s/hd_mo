@@ -27,15 +27,12 @@
 			<div class="tab_wrap">
 				<div class="tab_wrap_list_ty1 tip_box" role="tablist">
 					{{>cp/tab_btn tb-text="추천" tb-id="contract01"}}
-					{{>cp/tab_btn tb-text="자기신체" tb-id="contract02" tb-active=true}}
-					{{>cp/tab_btn tb-text="자기차량 
-					<!--  s: 25-05-16 배서에는 툴팁제거 -->
-					<span class='tip_item top'>
+					{{>cp/tab_btn tb-text="자기신체" tb-id="contract02"}}
+					{{>cp/tab_btn tb-text="자기차량<span class='tip_item top'>
 						<span class='tip_item_cont'>
 							새 차라면 신차전용손해담보를 가입해보세요.
 						</span>
-					</span>" tb-id="contract03"}}
-					<!--  e: 25-05-16 배서에는 툴팁제거 -->
+					</span>" tb-id="contract03" tb-active=true}}
 					{{>cp/tab_btn tb-text="보장확대" tb-id="contract04"}}
 				</div>
 				
@@ -154,7 +151,18 @@
 						<li>
 							<div class="check_flex_box">
 								<div class="check_box">
-									{{> cp/checkbox id="agreement01-6" labelname="반려동물 사고 지원금 특약" }}
+									<div class="inp_checkbox">
+										<input type="checkbox" id="agreement01-6">
+										<label for="agreement01-6" class="chk_label">
+											<span class="label_cont">
+												반려동물 사고 지원금 특약
+												<!-- 반려동물 사고 -->
+												<span class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_info size_m">추가정보입력</span>
+												</span>
+											</span>
+										</label>
+									</div>
 								</div>
 								<div class="money_box">
 									<div class="money">
@@ -163,9 +171,10 @@
 									{{> cp/button_question question-icon="arrow" pop_id="pop_type06" question_tit="반려동물 사고 지원금 특약" }}
 								</div>
 							</div>
-							<div class="btn_add">
+							<!-- s: 25-05-26 수정 -->
+							<!-- <div class="btn_add">
 								{{> cp/button type="3" size="5" b-text="추가정보" btn-title="추가정보입력 팝업 열기" rightIcon="plusSvg" }}
-							</div>
+							</div> -->
 							<div class="info_gray">
 								<p>실속형</p>
 								<ul class="list_depth_ty2">
@@ -173,6 +182,7 @@
 									<li>냐옹이 123456789054321</li>
 								</ul>
 							</div>
+							<!-- e: 25-05-26 수정 -->
 						</li>
 						<li>
 							<div class="check_flex_box disabled">

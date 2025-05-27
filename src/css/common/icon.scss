@@ -21,13 +21,69 @@
 	}
 }
 
+@mixin getSvg($fileName) {
+	background-image: url(../images/#{$fileName}.svg);
+}
+
 //SVG아이콘 컴포넌트
 .hd_icon {
 	display: inline-block;
+	width: 24px;
+	height: 24px;
 	background-size: contain;
 	background-repeat: no-repeat;
-	width:24px;
-	height:24px;
+	&.downloadSvg {
+		@include getSvg("icon/download_ty1");
+	}
+	&.arrowRightSvg {
+		@include getSvg("icon/arrowRight_ty1");
+	}
+	&.downloadSvg {
+		@include getSvg("icon/download_ty2");
+	}
+	&.arrowRightSvg {
+		@include getSvg("icon/arrowRight_ty2");
+	}
+	&.cameraSvg {
+		@include getSvg("icon/camera");
+	}
+	&.downloadSvg {
+		@include getSvg("icon/download_ty3");
+	}
+	&.arrowRightSvg {
+		@include getSvg("icon/arrowRight_ty3");
+	}
+	&.openWindowSvg {
+		@include getSvg("icon/icon-open-window");
+	}
+	&.mailSvg {
+		@include getSvg("icon/mail");
+	}
+	&.documentSvg {
+		@include getSvg("icon/document");
+	}
+	&.pictureSvg {
+		@include getSvg("icon/picture");
+	}
+	&.pdfSvg {
+		@include getSvg("icon/icon_pdf");
+	}
+	&.docSvg {
+		@include getSvg("icon/icon_doc");
+	}
+	
+	&.jpgSvg {
+		@include getSvg("icon/icon_jpg");
+	}
+	&.pngSvg {
+		@include getSvg("icon/icon_png");
+	}
+	&.gifSvg {
+		@include getSvg("icon/icon_gif");
+	}
+	&.bmpSvg {
+		@include getSvg("icon/icon_png");
+	}
 }
 
 /**
@@ -39,6 +95,7 @@
 	background-image: url(../images/#{$fileName}.svg);
 }
 
+/*
 .hd_btn {
 	&_ty_1 {
 		.downloadSvg {
@@ -86,6 +143,7 @@
 		}
 	}
 }
+*/
 
 //추후 btn_sample클래스명 변경시 위의 .btn그룹으로 편입 예정
 .hd_btn {
