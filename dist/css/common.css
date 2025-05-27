@@ -3180,59 +3180,6 @@ strong {
 	background: var(--color-button-text-fill);
 	color: var(--color-text-disabled);
 }
-.btn_select {
-	-ms-flex-negative: 1;
-	flex-shrink: 1;
-	border: var(--border-width-static-regular) solid #000;
-	background-color: #fff;
-	position: relative;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	width: 100%;
-	height: 5.6rem;
-	padding: 1.6rem;
-	padding-right: 4rem;
-	font-size: 1.6rem;
-	line-height: 2.4rem;
-	border-radius: 1.6rem;
-	border: var(--border-width-static-regular) solid #ddd;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	cursor: pointer;
-}
-.btn_select[aria-disabled="true"] {
-	color: #fff;
-	background-color: gray;
-}
-.btn_select:after {
-	content: "";
-	position: absolute;
-	top: 50%;
-	right: 1.6rem;
-	width: 1.2rem;
-	height: 1.2rem;
-	background: url(../images/icon/arrowDown_ty2_2.svg) no-repeat center/contain;
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
-}
-.btn_select.active > span:after {
-	content: "선택됨";
-	position: absolute;
-	width: 0;
-	height: 0;
-	font-size: 0;
-}
-.btn_select + .btn_select,
-.btn_select + .btn_area {
-	margin-top: 1.6rem;
-}
 .btn {
 	position: relative;
 }
@@ -3285,7 +3232,7 @@ strong {
 	position: relative;
 	width: 2.4rem;
 	height: 2.4rem;
-	color: #1e2124;
+	color: var(--color-text-basic);
 	background-color: #ffffff;
 }
 .infoButton .hd_icon {
@@ -7468,6 +7415,9 @@ strong {
 .number_list.big > li img {
 	display: block;
 }
+.number_list.big > li .form_group_wrap {
+	margin-bottom: 1.6rem;
+}
 .circle_list {
 	counter-reset: circle 0;
 }
@@ -7492,7 +7442,7 @@ strong {
 }
 .circle_list > li::before {
 	position: absolute;
-	top: 1.05rem;
+	top: 1.1rem;
 	left: 0;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
