@@ -1,0 +1,82 @@
+{{#> layout/default page-title="가입 내용 확인 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="가입 내용 확인" }}
+
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
+        <!-- prettier-ignore -->
+				<h2 class="title_h2">
+          계약의 주요 <strong>내용</strong>을<br />
+					모두 <strong>확인</strong>하셨나요?
+				</h2>
+			</div>
+			<!-- e: content_top -->
+			<div class="info_gray">
+				<h4 class="title_h4">다이렉트H사업장화재보험</h4>
+				<dl>
+					<dt>계약자</dt>
+					<dd>김*대 (910101-1******)</dd>
+				</dl>
+				<dl>
+					<dt>피보험자</dt>
+					<dd>김*대 (910101-1******)</dd>
+				</dl>
+				<dl>
+					<dt>보험기간</dt>
+					<dd>2025-01-01~2035-01-01</dd>
+				</dl>
+				<dl class="footer_dl">
+					<dt>월 보험료</dt>
+          <!-- prettier-ignore -->
+					<dd class="point">
+						<span>23,900</span>원
+					</dd>
+				</dl>
+			</div>
+			<div class="btn_area">{{> cp/button type="3" size="3" b-text="가입 내용 자세히 보기"}}</div>
+
+      <div class="info_gray mg_ty2">
+        <!-- prettier-ignore -->
+				<p class="info_text">
+					<strong class="point">필수</strong>
+					위 내용은 청약내용을 요약한 것으로 아래 버튼을 선택하여 자세한 내용을 확인해주세요.
+					<strong class="point">설명 내용을 제대로 이해하지 못한 상태에서 확인했다고 하는 경우 추후 분쟁에서 소비자에게 불리하게 작용</strong>
+					할 수 있으니 꼼꼼하게 확인해주세요.
+				</p>
+			</div>
+			
+			<div class="acd_item acd_item_ty2">
+				{{#> cp/accordion ac-title="계약 주요 사항을 모두 확인하였습니다." cont-class="" ac-active=true }}
+					{{> cp/checkbox labelname="청약서류" ag_more=true id="checkbox01-1" checked=true disabled=true }}
+					{{> cp/checkbox labelname="보험상품 약관" ag_more=true id="checkbox01-2" checked=true disabled=true }}
+					{{> cp/checkbox labelname="상품설명서 주요 내용" ag_more=true id="checkbox01-3" }} 
+				{{/ cp/accordion }}
+			</div>
+
+			<!-- s: 꼭 알아두세요 -->
+			{{#> cp/notice dp-active="active" }}
+			<ul class="list_ty1">
+				<li>청약서/상품설명서, 보험상품 약관을 읽고 확인하신 경우, 회사는 약관을 전달하고 상품의 중요 내용을 설명한 것으로 간주합니다.</li>
+				<li>또한, 본인이 가입하는 보험계약의 예금자보호여부 및 보호한도에 대하여 이해했음을 확인합니다.</li>
+				<li>가입완료 후 고객님이 가입하신 특약만 포함된 맞춤형약관이 추가 발송됩니다.(알림톡/문자 및 이메일)</li>
+				<li>보험계약 후 청약에 대한 철회 신청 및 각종 계약에 대한 변경은 현대해상 홈페이지(www.hi.co.kr)에서 할 수 있으며, 다이렉트 고객센터(1899-6782)를 통해서도 문의할 수 있습니다.</li>
+			</ul>
+			{{/ cp/notice }}
+			<!-- e: 꼭 알아두세요 -->
+		</div>
+	</div>
+
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="계약서류를 차례대로 확인할게요" }}
+			<!-- {{> cp/button type="1" size="1" b-text="모두 확인했어요" }} -->
+		</div>
+	</div>
+</div>
+
+<!-- s: popup area -->
+<!-- e: popup area -->
+
+{{/ layout/default }}
