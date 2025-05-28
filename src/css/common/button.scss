@@ -47,6 +47,7 @@
 
 	&.column {
 		flex-direction: column;
+		gap: var(--gap-3);
 		.hd_btn {
 			flex-basis: auto;
 		}
@@ -134,8 +135,10 @@
 		margin-top: 32px;
 	}
 
-	&:has(button.hd_btn_s_4, button.hd_btn_s_5){
-		gap: 4px;
+	&:not(.column){
+		&:has(button.hd_btn_s_4, button.hd_btn_s_5){
+			gap: 4px;
+		}
 	}
 }
 
