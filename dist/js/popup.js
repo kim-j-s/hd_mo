@@ -126,6 +126,7 @@ function closeHDPopup(target, returnTarget = null) {
 	if ($prevPopup.length > 0) {
 		$($prevPopup).attr("aria-hidden", "false");
 		$($prevPopup).find(".popup_inner").attr("aria-hidden", "false");
+		//To-Do : prevPopup inert on/off 기능 추가해야함
 
 		const focusTarget = $($triggerEl);
 		// focusTarget.attr("data-returnTarget", true);

@@ -397,6 +397,16 @@
 		}
 	});
 
+	$DOM.ready(function () {
+		const target = $('.radio_comb input[type="radio"]:checked');
+		target.each(function () {
+			const parentCont = $(this).closest(".radio_comb");
+			if (parentCont.length > 0) {
+				parentCont.removeClass("origin").addClass("active");
+			}
+		});
+	});
+
 	// 수령지 일괄 선택
 	$DOM.on("change", ".sa_change", function () {
 		var $wrap = $(this).closest(".sa_wrap");
