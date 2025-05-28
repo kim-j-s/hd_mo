@@ -345,77 +345,6 @@ strong {
 /* 개발에서 제어하는 부분 */
 
 
-
-/* info_box */
-.info_box {
-	padding: var(--padding-card-medium) var(--padding-card-small);
-	background-color: var(--color-surface-secondary-subtler);
-	font-size: var(--font-size-body-medium);
-	line-height: 24px;
-	color: var(--color-text-basic);
-	border-radius: 16px;
-
-	.btn_area {
-		margin-top: 20px;
-	}
- 
-	& + .form_group_wrap {
-		margin-top: var(--gap-8);
-
-		& + .chk_group_wrap {
-			margin-top: var(--gap-8);
-		}
-	}
-	& + .chk_group_wrap {
-		margin-top: var(--gap-11);
-	}
-
-	& + .list_ty2 {
-		margin-top: var(--gap-5);
-	}
-
-	[class^='title_h']{
-		& + [class^='list_']{
-			margin-top: var(--gap-5);
-		}
-
-		& + .file_attach_box {
-			margin-top: var(--gap-4);
-		}
-	}
-
-	.img_area {
-		& + * {
-			margin-top: var(--gap-5);
-		}
-	}
-}
-
-.info_box {
-	&.ty2 {
-		.list_ty1 > li {
-			font-size: var(--font-size-body-medium);
-		}
-
-		.list_ty1 > li ~ li {
-			margin-top: 12px;
-		}
-
-		.list_ty2 {
-			padding-left: var(--padding-3);
-
-			& > li {
-				font-size: var(--font-size-body-small);
-			}
-		}
-	}
-
-	.title {
-		font-weight: 700;
-		margin-bottom: 12px;
-	}
-}
-
 .info_help_list {
 	dt {
 		margin-bottom: 12px;
@@ -718,7 +647,6 @@ strong {
 		}
 	}
 
-	& + .info_box,
 	& + .info_gray { 
 		margin-top:20px;
 	}
@@ -779,18 +707,22 @@ strong {
 		}
 	}
 
-	+ .table_wrap,
-	+ .space_list_ty2 {
-		margin-top: 32px;
-	}
-	+ .btn_area,
-	+ .info_gray {
-		margin-top: 52px;
+	// margin-top 52
+	+ .btn_area {
+		margin-top: var(--gap-11);
 	}
 
+	// margin-top 32;
+	+ .info_gray,
+	+ .table_wrap,
+	+ .space_list_ty2 {
+		margin-top: var(--gap-8);
+	}
+
+	// margin-top 16;
 	&.process_info_area_case02 {
 		+ .info_gray {
-			margin-top: 16px;
+		margin-top: var(--gap-5);
 		}
 	}
 	
