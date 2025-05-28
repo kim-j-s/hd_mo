@@ -744,6 +744,33 @@
 			color: var(--color-text-basic);
 		}
 	}
+
+	// btn btn_toggle
+	&.btn_toggle {
+		display: inline-block;
+		font-size: var(--font-size-button-medium);
+		background-color: transparent;
+
+		.text {
+			position: relative;
+			display: block;
+			padding-right: 16px;
+
+			&:before {
+				content:'펼치기';
+			}
+
+			&:after {
+				content:'';
+				position: absolute;
+				top: calc(50% - 8px);
+				right: 0;
+				width: 16px;
+				height: 16px;
+				background: url(../images/icon/arrowDown_ty3.svg) no-repeat right center / 16px auto;
+			}
+		}
+	}
 }
 
 .infoButton {

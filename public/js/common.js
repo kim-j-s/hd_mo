@@ -49,10 +49,18 @@
   });
 	/* 전체메뉴 닫기 */
 
+	$DOM.on('click', '.acd_item .btn_toggle', function(){
 
+		const $this = $(this),
+					$parent = $this.closest('.acd_item'),
+					$item = $this.closest('.acd_item').children('.tg_item');
 
-
-
+		if(!$item.hasClass('active')){
+			$item.addClass('active').focus();
+		}else {
+			$item.removeClass('active');
+		}
+	})
 
 
   /* Accordion */   
