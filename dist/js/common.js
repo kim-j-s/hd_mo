@@ -133,6 +133,7 @@
 	$DOM.on("click", ".tag_item_wrap .tag_item", function () {
 		const $this = $(this);
 		const idx = $this.index();
+		const positionVal = null;
 
 		if ($(".tag_item_move").length) {
 			const $target = $(".tag_item_move").find(".tag_move").eq(idx);
@@ -155,6 +156,10 @@
 				},
 				500,
 			);
+
+			if ($(".btn_toggle").length) {
+				posiionVal = targetOffset + targetMargin + simpleHeight + fix_h;
+			}
 		}
 	});
 
