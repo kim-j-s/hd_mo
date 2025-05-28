@@ -92,10 +92,19 @@
 		}
 	});
 
+	$DOM.on('click', '.acd_item .btn_toggle', function(){
 
+		const $this = $(this),
+					$parent = $this.closest('.acd_item'),
+					$item = $this.closest('.acd_item').children('.tg_item');
 
-
-
+		if(!$item.hasClass('active')){
+			$item.addClass('active');
+			$item.find('.select_radio_item .rd_btn:first-child input').focus();
+		}else {
+			$item.removeClass('active');
+		}
+	})
 
 
   /* Accordion */   
@@ -735,7 +744,12 @@ $(function(){
 			if (targetOffsetTop <= new_headHeight + 30 && !$targetChild.hasClass('active')) {
 				// console.log('펴기');
 				$targetChild.addClass('active');
-				$targetChild.stop().slideDown(300);
+
+				if(!$target.hasClass('ty2')){
+					$targetChild.stop().slideDown(300);
+				}else {
+					$targetChild.stop().show();
+				}
 
 				if($('.tag_item_wrap.sticky').length){
 					$('.tag_item_wrap.sticky').css('top', simpleHeight - 50).addClass('active');
@@ -745,7 +759,12 @@ $(function(){
 				// console.log('접기');
 				$target.removeAttr('style').removeClass('active');
 				$targetChild.removeClass('active');
-				$targetChild.stop().slideUp(300);
+
+				if(!$target.hasClass('ty2')){
+					$targetChild.stop().slideUp(300);
+				}else {
+					$targetChild.stop().hide();
+				}
 
 				if($('.tag_item_wrap.sticky').length){
 					$('.tag_item_wrap.sticky').removeClass('active');

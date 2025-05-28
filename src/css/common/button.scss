@@ -47,6 +47,7 @@
 
 	&.column {
 		flex-direction: column;
+		gap: var(--gap-3);
 		.hd_btn {
 			flex-basis: auto;
 		}
@@ -134,8 +135,10 @@
 		margin-top: 32px;
 	}
 
-	&:has(button.hd_btn_s_4, button.hd_btn_s_5){
-		gap: 4px;
+	&:not(.column){
+		&:has(button.hd_btn_s_4, button.hd_btn_s_5){
+			gap: 4px;
+		}
 	}
 }
 
@@ -739,6 +742,33 @@
 		.btn_more_view_now {
 			font-weight: 700;
 			color: var(--color-text-basic);
+		}
+	}
+
+	// btn btn_toggle
+	&.btn_toggle {
+		display: inline-block;
+		font-size: var(--font-size-button-medium);
+		background-color: transparent;
+
+		.text {
+			position: relative;
+			display: block;
+			padding-right: 16px;
+
+			&:before {
+				content:'펼치기';
+			}
+
+			&:after {
+				content:'';
+				position: absolute;
+				top: calc(50% - 8px);
+				right: 0;
+				width: 16px;
+				height: 16px;
+				background: url(../images/icon/arrowDown_ty3.svg) no-repeat right center / 16px auto;
+			}
 		}
 	}
 }

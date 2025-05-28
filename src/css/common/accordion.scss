@@ -733,6 +733,46 @@
 			}
 		}
 	}
+
+	&.acd_tg {
+		&_bottom {
+			.tg_item {
+				.select_radio_item {
+					.rd_btn {
+						&:nth-child(n+5){
+							display: none;
+						}
+					}
+				}
+
+				&.active {
+					.select_radio_item {
+						.rd_btn {
+							&:nth-child(n+5){
+								display: block;
+							}
+						}
+					}
+
+					& + .btn_area {
+						.btn_toggle {
+							.text {
+								&:before {
+									content: '접기'
+								}
+								&:after {
+									transform: rotate(-180deg);
+								}
+							}
+						}
+					}
+				}
+			}
+			.btn_area {
+				margin: var(--gap-5) 0 0;
+			}
+		}
+	}
 }
 
 .picture_info_item {
