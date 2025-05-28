@@ -582,12 +582,6 @@
 						<th colspan="13">
 							<div class="inner">
 								<span class="title_text">Common</span>
-								<span class="rate">
-									<span class="rate_total"></span>
-									<span class="rate_complete"></span>
-									<span class="rate_late"></span>
-									<span class="rate_per"></span>
-								</span>
 							</div>
 						</th>
 					</tr>
@@ -12952,7 +12946,18 @@
 
 
 
-
+		$('.bigo').each(function(){
+			const $this = $(this);
+			const $thisText = $this.text();
+			if( $thisText === '공통' ) {
+				if( $this.closest('tr').find('.link a').text() == '' ) {
+					// $this.css('background', 'green');
+					$this.closest('tr').addClass('no_count');
+				}
+			}
+		})
+		
+		
 		// 수정내역 확인 목록
 		let today = new Date();
 		let year = today.getFullYear().toString().slice(-2);
