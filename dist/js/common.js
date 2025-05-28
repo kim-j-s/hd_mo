@@ -53,7 +53,7 @@
 
 		if (!$item.hasClass("active")) {
 			$item.addClass("active");
-			$item.find(".select_radio_item .rd_btn:first-child input").focus();
+			$item.find(".select_radio_item .rd_btn:nth-child(5) input").focus();
 		} else {
 			$item.removeClass("active");
 		}
