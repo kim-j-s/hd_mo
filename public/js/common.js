@@ -54,11 +54,10 @@
 		const $this = $(this),
 					$parent = $this.closest('.acd_item'),
 					$item = $this.closest('.acd_item').children('.tg_item');
-		
-		$item.find('.select_radio_item .rd_btn:first-child input').focus();
 
 		if(!$item.hasClass('active')){
 			$item.addClass('active');
+			$item.find('.select_radio_item .rd_btn:first-child input').focus();
 		}else {
 			$item.removeClass('active');
 		}
