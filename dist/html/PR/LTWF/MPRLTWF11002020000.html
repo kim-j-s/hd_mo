@@ -59,9 +59,9 @@
 							<div class="tab_wrap">
 								<div class="tab_scroll_box_ty1">
 									<div class="tab_wrap_list_ty1 scroll" role="tablist">
-										<button type="button" class="tab_btn tab_btn_block active" role="tab" aria-selected="true" aria-controls="tabPanel01" id="tab01">주소+상호로 조회</button>
-										<button type="button" class="tab_btn tab_btn_block" role="tab" aria-selected="false" aria-controls="tabPanel02" id="tab02">고유번호(일련번호)</button>
-										<button type="button" class="tab_btn tab_btn_block" role="tab" aria-selected="false" aria-controls="tabPanel03" id="tab03">사업자등록번호</button>
+										<button type="button" class="tab_btn active" role="tab" aria-selected="true" aria-controls="tabPanel01" id="tab01">주소+상호로 조회</button>
+										<button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanel02" id="tab02">고유번호(일련번호)</button>
+										<button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanel03" id="tab03">사업자등록번호</button>
 									</div>
 								</div>
 
@@ -89,74 +89,111 @@
 											<span class="text">조회</span>
 										</button>
 									</div>
-
-									<!-- 조회 결과 -->
-									<div class="divider_ty1"></div>
-
-									<h3 class="title_h3">조회 결과</h3>
-									<div class="card_item_wrap">
-										<div class="card_item">
-											<div class="item_inner">
-												<div class="inp_checkbox">
-													<input type="checkbox" id="card_chk1_1" name="name1" aria-labelledby="card_chk1_1_cont" />
-													<label for="card_chk1_1" class="chk_label"></label>
-													<i></i>
-												</div>
-												<div class="inner_cont">
-													<div class="item_top" id="card_chk1_1_cont">
-														<div class="title_info">
-															<div class="sub_title">MU112013400181</div>
-															<div class="main_title">치킨매니아</div>
-														</div>
-														<div class="desc">일반음식점</div>
-													</div>
-
-													<ul class="card_list_ty1">
-														<li>
-															<div class="title">총면적</div>
-															<div class="cont">000097㎡</div>
-														</li>
-														<li>
-															<div class="title">주소</div>
-															<div class="cont">서울특별시 강남구 수서동 광평로39길 3-0 동익아파트 802동 801호</div>
-														</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="card_item">
-											<div class="item_inner">
-												<div class="inp_checkbox">
-													<input type="checkbox" id="card_chk1_2" name="name1" aria-labelledby="card_chk1_2_cont" />
-													<label for="card_chk1_2" class="chk_label"></label>
-													<i></i>
-												</div>
-												<div class="inner_cont">
-													<div class="item_top" id="card_chk1_2_cont">
-														<div class="title_info">
-															<div class="sub_title">MU112013729989</div>
-															<div class="main_title">치킨마을</div>
-														</div>
-														<div class="desc">일반음식점</div>
-													</div>
-
-													<ul class="card_list_ty1">
-														<li>
-															<div class="title">총면적</div>
-															<div class="cont">000327㎡</div>
-														</li>
-														<li>
-															<div class="title">주소</div>
-															<div class="cont">서울특별시 강남구 역삼동 논현로509-0 송암빌딩</div>
-														</li>
-													</ul>
+								</div>
+								<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
+									<div class="form_group_wrap">
+										<div class="form_line_ty2">
+											<div class="input_text inp_mi">
+												<div class="inp">
+													<input type="text" placeholder="MU로 시작하는 고유번호(일련번호) 입력" title="고유번호(일련번호) 입력" />
+													<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 												</div>
 											</div>
 										</div>
 									</div>
+									<div class="btn_area">
+										<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_2">
+											<span class="text">조회</span>
+										</button>
+									</div>
 								</div>
-								<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">고유번호(일련번호) 내용</div>
-								<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel03">사업자등록번호 내용</div>
+								<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel03">
+									<div class="form_group_wrap">
+										<div class="form_line_ty2">
+											<div class="input_text inp_mi">
+												<div class="inp">
+													<input type="text" placeholder="사업자등록번호 입력" title="사업자등록번호 입력" />
+													<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="btn_area">
+										<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_2">
+											<span class="text">조회</span>
+										</button>
+									</div>
+								</div>
+							</div>
+
+							<!-- 조회 결과 -->
+							<!-- 
+										숨김 처리 시 hidden 클래스로 add/remove 처리
+										<div class="hidden"> 
+										-->
+							<div>
+								<div class="divider_ty1"></div>
+								<h3 class="title_h3">조회 결과</h3>
+								<div class="card_item_wrap">
+									<div class="card_item">
+										<div class="item_inner">
+											<div class="inp_checkbox">
+												<input type="checkbox" id="card_chk1_1" name="name1" aria-labelledby="card_chk1_1_cont" />
+												<label for="card_chk1_1" class="chk_label"></label>
+												<i></i>
+											</div>
+											<div class="inner_cont">
+												<div class="item_top" id="card_chk1_1_cont">
+													<div class="title_info">
+														<div class="sub_title">MU112013400181</div>
+														<div class="main_title">치킨매니아</div>
+													</div>
+													<div class="desc">일반음식점</div>
+												</div>
+
+												<ul class="card_list_ty1">
+													<li>
+														<div class="title">총면적</div>
+														<div class="cont">000097㎡</div>
+													</li>
+													<li>
+														<div class="title">주소</div>
+														<div class="cont">서울특별시 강남구 수서동 광평로39길 3-0 동익아파트 802동 801호</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="card_item">
+										<div class="item_inner">
+											<div class="inp_checkbox">
+												<input type="checkbox" id="card_chk1_2" name="name1" aria-labelledby="card_chk1_2_cont" />
+												<label for="card_chk1_2" class="chk_label"></label>
+												<i></i>
+											</div>
+											<div class="inner_cont">
+												<div class="item_top" id="card_chk1_2_cont">
+													<div class="title_info">
+														<div class="sub_title">MU112013729989</div>
+														<div class="main_title">치킨마을</div>
+													</div>
+													<div class="desc">일반음식점</div>
+												</div>
+
+												<ul class="card_list_ty1">
+													<li>
+														<div class="title">총면적</div>
+														<div class="cont">000327㎡</div>
+													</li>
+													<li>
+														<div class="title">주소</div>
+														<div class="cont">서울특별시 강남구 역삼동 논현로509-0 송암빌딩</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

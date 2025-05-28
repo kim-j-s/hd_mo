@@ -322,9 +322,58 @@
 }
 
 /* 전체 검색 팝업 */
-.msp_wrap {
+.menu_search_popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1500;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.3s;
+	pointer-events: none;
+
+	&.active {
+		visibility: visible;
+		opacity: 1;
+		pointer-events: auto;
+		.msp_inner {
+			transform: translateX(0);
+		}
+	}
+}
+
+.msp_inner {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	background-color: var(--color-background-white);
+	transform: translateX(100%);
+	transition: transform 0.3s ease;
+}
+
+.msp_inner_top {
+	flex: none;
+	display: flex;
+	justify-content: flex-end;
+	padding: var(--gap-4) var(--padding-6);
 
 }
+
+.msp_wrap {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	padding: var(--padding-6) var(--padding-8) var(--padding-12);
+	font-size: 14px;
+	overflow-y: auto;
+}
+
+
 .msp_wrap_top {
 	flex: none;
 	padding-bottom: 52px;
@@ -376,8 +425,8 @@
 
 .mwc_footer_banner {
 	flex: none;
-	padding-top: 16px;
-	padding-bottom: 28px;
+	padding-top: var(--gap-8);
+	// padding-bottom: 28px;
 	font-size: 0;
 	a {
 		display: block;
@@ -386,5 +435,14 @@
 			width: 100%;
 		}
 	}
+}
+
+.menu_search_popup_close {
+	// position: absolute;
+	// top: 14px;
+	// right: 24px;
+	width: 32px;
+	height: 32px;
+	background: url(../images/icon/close_ty1.svg) no-repeat center / 24px auto;
 }
 /* 전체 검색 팝업 */

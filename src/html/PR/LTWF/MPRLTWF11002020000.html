@@ -8,9 +8,9 @@
 			<div class="tab_wrap">
 				<div class="tab_scroll_box_ty1">
 					<div class="tab_wrap_list_ty1 scroll" role="tablist">
-						{{>cp/tab_btn tb-text="주소+상호로 조회" tb-class="tab_btn_block" tb-id="01" tb-active=true}}
-						{{>cp/tab_btn tb-text="고유번호(일련번호)" tb-class="tab_btn_block" tb-id="02"}}
-						{{>cp/tab_btn tb-text="사업자등록번호" tb-class="tab_btn_block" tb-id="03"}}
+						{{>cp/tab_btn tb-text="주소+상호로 조회" tb-id="01" tb-active=true}}
+						{{>cp/tab_btn tb-text="고유번호(일련번호)" tb-id="02"}}
+						{{>cp/tab_btn tb-text="사업자등록번호" tb-id="03"}}
 					</div>
 				</div>
 
@@ -21,10 +21,36 @@
 					<div class="btn_area">
 						{{> cp/button type="2" size="2" b-text="조회"}}
 					</div>
+				</div>
+				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
+					<div class="form_group_wrap">
+						<div class="form_line_ty2">
+							{{> cp/text class="inp_mi" placeholder="MU로 시작하는 고유번호(일련번호) 입력" inp-title="고유번호(일련번호) 입력" }}
+						</div>
+					</div>
+					<div class="btn_area">
+						{{> cp/button type="2" size="2" b-text="조회"}}
+					</div>
+				</div>
+				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel03">                
+					<div class="form_group_wrap">
+						<div class="form_line_ty2">
+							{{> cp/text class="inp_mi" placeholder="사업자등록번호 입력" inp-title="사업자등록번호 입력" }}
+						</div>
+					</div>
+					<div class="btn_area">
+						{{> cp/button type="2" size="2" b-text="조회"}}
+					</div>
+				</div>
+			</div>
 
-					<!-- 조회 결과 -->
+			<!-- 조회 결과 -->
+				<!-- 
+				숨김 처리 시 hidden 클래스로 add/remove 처리
+				<div class="hidden"> 
+				-->
+				<div>
 					<div class="divider_ty1"></div>
-
 					<h3 class="title_h3">조회 결과</h3>
 					<div class="card_item_wrap">
 						<div class="card_item">
@@ -87,13 +113,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
-					고유번호(일련번호) 내용
-				</div>
-				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel03">                
-					사업자등록번호 내용
-				</div>
-			</div>
+				
 		</div>
 	</div>
 	<div class="popup_bottom">
