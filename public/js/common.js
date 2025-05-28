@@ -692,7 +692,12 @@ $(function(){
 			if (targetOffsetTop <= new_headHeight + 30 && !$targetChild.hasClass('active')) {
 				// console.log('펴기');
 				$targetChild.addClass('active');
-				$targetChild.stop().slideDown(300);
+
+				if(!$target.hasClass('ty2')){
+					$targetChild.stop().slideDown(300);
+				}else {
+					$targetChild.stop().show();
+				}
 
 				if($('.tag_item_wrap.sticky').length){
 					$('.tag_item_wrap.sticky').css('top', simpleHeight - 50).addClass('active');
@@ -702,7 +707,12 @@ $(function(){
 				// console.log('접기');
 				$target.removeAttr('style').removeClass('active');
 				$targetChild.removeClass('active');
-				$targetChild.stop().slideUp(300);
+
+				if(!$target.hasClass('ty2')){
+					$targetChild.stop().slideUp(300);
+				}else {
+					$targetChild.stop().hide();
+				}
 
 				if($('.tag_item_wrap.sticky').length){
 					$('.tag_item_wrap.sticky').removeClass('active');
