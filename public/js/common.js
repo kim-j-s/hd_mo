@@ -92,20 +92,6 @@
 		}
 	});
 
-	$DOM.on('click', '.acd_item .btn_toggle', function(){
-
-		const $this = $(this),
-					$parent = $this.closest('.acd_item'),
-					$item = $this.closest('.acd_item').children('.tg_item');
-
-		if(!$item.hasClass('active')){
-			$item.addClass('active');
-			$item.find('.select_radio_item .rd_btn:nth-child(5) input').focus();
-		}else {
-			$item.removeClass('active');
-		}
-	})
-
 
   /* Accordion */   
   $DOM.on('click', '.acd_item .acd_head .acd_btn', function(){
@@ -136,25 +122,48 @@
     }
   });
 
+	/* 펼치기/접히기 */
+	$DOM.on('click', '.acd_item .btn_toggle', function(){
+		const $this = $(this),
+					$parent = $this.closest('.acd_item'),
+					$item = $this.closest('.acd_item').children('.tg_item');
+
+		if(!$item.hasClass('active')){
+			$item.addClass('active');
+			$item.find('.select_radio_item .rd_btn:nth-child(5) input').focus();
+		}else {
+			$item.removeClass('active');
+		}
+	})
+
 	/* tag_item click */
 	$DOM.on('click', '.tag_item_wrap .tag_item', function(){
 		const $this = $(this);
 		const idx = $this.index();
+		const positionVal = null;
 
 		if($('.tag_item_move').length){
 			const $target = $('.tag_item_move').find('.tag_move').eq(idx);
 			const targetMargin = parseFloat($target.css('margin-top'));
-			const simpleHeight = $('.simple_info_wrap').height();
+			// const simpleHeight = $('.simple_info_wrap').height();
+			// const targetOffset = $target.position().top;
+			const simpleHeight = 122;
 			const targetOffset = $target.position().top;
-			const fix_h = $(this).closest('.sticky_fix').height();
+			const fix_h = $(this).closest('.sticky').height();
+			
+			// console.log($target + ' : ' + targetOffset);
 			// console.log(targetOffset , targetMargin);
-			console.log(simpleHeight);
 
 			$('.tag_item').removeClass('active');
 			$this.addClass('active');
+
 			$this.closest('.popup_cont').animate({
 				scrollTop: targetOffset + targetMargin + simpleHeight + fix_h
 			}, 500);
+
+			if($('.btn_toggle').length){
+				posiionVal = targetOffset + targetMargin + simpleHeight + fix_h;
+			}
 		}
 	});
 
@@ -402,9 +411,15 @@
 		}
 	});
 
-
-
-
+	$DOM.ready(function(){
+		const target = $('.radio_comb input[type="radio"]:checked');
+		target.each(function(){
+			const parentCont = $(this).closest('.radio_comb');
+			if(parentCont.length > 0){
+				parentCont.removeClass('origin').addClass('active');
+			}
+		});
+	});
 
 	// 수령지 일괄 선택
 	$DOM.on('change', '.sa_change', function() {
@@ -1218,14 +1233,21 @@ $(function(){
 		}
 	});
 
-	
 
+	// 펼치기/접히기 - 담보한번에변경하기(MPRMTPS10004001000)
+	$('.acd_tg_bottom').each(function(){
+		const $this = $(this),
+					$item = $this.find('.select_radio_item'),
+					$btn = $item.find('.rd_btn');
+		let btnLength = $btn.length;
+
+		if(btnLength <= 4){
+			$this.find('.btn_area').remove();
+		}
+	});
 });
 	
-
 
 $(window).resize(function(){
 	// prograssBar();
 })
-
-

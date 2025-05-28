@@ -1,0 +1,46 @@
+{{#> layout/default page-title="계약 체결 전 확인사항 | 상품"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="계약 체결 전 확인사항" }}
+		<div id="container" class="container">
+			<div class="content">
+				<!-- s: content_top -->
+				<div class="content_top">
+          <!-- prettier-ignore -->
+					<h2 class="title_h2">
+						가입 전 <strong>확인 사항을 꼼꼼히 읽고</strong> 확인해 주세요
+					</h2>					
+				</div>
+				<!-- e: content_top -->
+
+				<div class="checkbox_group_wrap column">
+          {{> cp/checkbox checkbox_class="rd_box" id="chk01" labelname="고객님이 운영하시는 사업장은 건물 <strong class='point'>지상 2층~ 지상 2층</strong>에 위치한 <strong class='point'>500㎡ 면적</strong>의 <strong class='point'>일반음식점</strong>입니다." }}
+          {{> cp/checkbox checkbox_class="rd_box" id="chk02" labelname="고객님의 사업장 주소는 <strong class='point'>서울 강남구 강남대로112길11</strong>입니다." }}
+          {{> cp/checkbox checkbox_class="rd_box" id="chk03" labelname="고객님의 사업장이 속한 건물은 <strong class='point'>급수 1급(철골철근콘크리트조 / 슬라브지붕 / 철근콘크리트벽)</strong>이며, <strong class='point'>1991년</strong>에 건축되었습니다." }}
+          {{#> cp/checkbox checkbox_class="rd_box" id="chk04" labelname="고객님의 사업장과 <strong class='point'>동일 방화구역 내 입주한 업종</strong>은 모두 <strong class='point'>2종</strong>이며, 이중 가장 위험도가 높은 <strong class='point'>일반음식점 기준</strong>으로 <strong class='point'>요율</strong> 적용됩니다." labelcont="(이웃 업종을 변경하시려면 2단계:추가정보 페이지에서 수정 해주세요.)"}}
+            <div class="chk_lby">
+              <ul class="list_ty2">
+                <li>일반음식점(가입 업종)</li>
+                <li>휴게음식점(이웃 업종)</li>
+                <li>노래연습장(이웃 업종)</li>
+              </ul>
+            </div>
+          {{/ cp/checkbox}}
+          {{> cp/checkbox checkbox_class="rd_box" id="chk05" labelname="보험 가입 후, 고객님의 사업장 <strong class='point'>정보 변경사항은 즉시 콜센터로 연락</strong>하여 변경해 주시기 바랍니다. 추후 <strong class='point'>계약 정보와 실제 정보가 상이한 경우 고지의무 및 통지의무 미이행으로 인한 불이익</strong>이 있을 수 있습니다." }}
+        </div>
+
+			</div>
+		</div>
+
+		<!-- s: 하단 고정 버튼 영역 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="1" b-text="중요 사항을 확인 중이에요" disabled=true }}
+				<!-- {{> cp/button type="1" size="1" b-text="모두 확인 했습니다." }} -->
+			</div>
+		</div>
+		<!-- s: 하단 고정 버튼 영역 -->
+	</div>
+
+	<!-- s: popup area -->
+	<!-- e: popup area -->
+{{/ layout/default }}

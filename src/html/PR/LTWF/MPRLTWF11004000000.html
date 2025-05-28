@@ -1,0 +1,598 @@
+
+{{#> layout/default page-title="보험료 확인 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="보험료 확인" }}
+
+	<div id="container" class="container">
+		<div class="content">
+			<div class="guarantee_container detail_only">
+					<!-- s: guarantee_detail -->
+					<div class="guarantee_detail">
+						<div class="guarantee_detail_top">
+							<div class="gd_item">
+								<div class="gdi_content" aria-labelledby="d_rdo_01">
+									<div class="badge_wrap">
+										<span class="hd_badge outline solid_pastel c_info size_m">16개 보장</span>
+									</div>
+									<p class="head_text no_text">
+										<!-- prettier-ignore -->
+										<span class="price">
+											<strong class="price_num">31,940</strong><span class="won">원</span>
+										</span>
+									</p>
+								</div>
+							</div>
+
+							<div class="guarantee_detail_mini">
+								<div class="item_wrap">
+									<span class="i_data">
+										<span class="text">보험/납입 기간</span>
+										<strong class="data">3년</strong>
+									</span>
+									<span class="i_data">
+										<span class="text">납입 방법</span>
+										<strong class="data">월납</strong>
+									</span>
+								</div>
+								<div class="modify_ba">
+									{{> cp/button type="3" size="5" b-text="변경" btn-title="가입조건 변경 팝업열기"}}
+								</div>
+							</div>
+						</div>
+
+						<!-- 간편정보 -->
+						<div class="simple_info_wrap">
+							<div class="simple_info_item">
+								<ul class="sii_list">
+									<li>
+										<span class="sii_list_l">보험료</span>
+										<span class="sii_list_r">
+											<strong class="price">31,940원</strong>
+										</span>
+									</li>
+									<li>
+										<span class="sii_list_l">
+											<span class="text">보장 범위</span>
+											<strong class="bold">16개</strong>
+										</span>
+										<span class="sii_list_r">
+											<span class="text">
+												보험기간 및 납입방법  <strong class="bold">3년</strong>
+											</span>
+											<span class="pipe">
+												<strong class="bold">월납</strong>
+											</span>
+										</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- 간편정보 -->
+						 
+						<div class="gd_middle_ba btn_area center">
+							{{> cp/button type="3" size="3" b-text="계산 결과 문자로 받기" popup="pop_type01" }}
+						</div>
+						
+						<div class="acc_group">
+							<div class="space_list_ty2">
+
+								<div class="acd_item acd_item_ty1">
+									{{#> cp/accordion ac-active=true ac-title="상세보기" aci="aci01" aclc="chk_label_ty2" acl="화재손해"}}
+									<ul class="coverage_item_list">
+										<li class="list">
+											<div class="item_title">화재손해(건물)</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1억원" question_tit="가입금액 변경" }}
+											</div>
+										</li>
+										
+										<li class="list">
+											<div class="item_title">화재손해(내부시설)</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="3천만원" question_tit="가입금액 변경" }}
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">화재손해(집기비품)</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" question_tit="가입금액 변경" }}
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">화재손해(상품/반제품)</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" question_tit="가입금액 변경" }}
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">건물복구비용지원(화재) </div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="2천만원" question_tit="가입금액 변경" }}
+											</div>
+
+										</li>
+										<li class="list">
+											<div class="item_title">시설수리비용지원(화재)</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="3백만원" question_tit="가입금액 변경" }}
+											</div>
+										</li>
+									</ul>
+									{{/ cp/accordion }}
+								</div>
+
+								<div class="acd_item acd_item_ty1">
+									{{#> cp/accordion ac-active=true ac-title="상세보기" aci="aci02" aclc="chk_label_ty2" acl="배상책임"}}
+									<ul class="coverage_item_list">
+										<li class="list">
+											<div class="item_title">화재배상책임Ⅱ</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1억원" question_tit="가입금액 변경" }}
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">시설소유·관리자배상책임(화재배상제외)</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn_non" bl_text="미가입" question_tit="가입금액 변경" }}
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">음식물배상책임</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn_non" bl_text="미가입" question_tit="가입금액 변경" }}
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">가스사고배상책임</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn_non" bl_text="미가입" question_tit="가입금액 변경" }}
+											</div>
+										</li>
+									</ul>
+									{{/ cp/accordion }}
+								</div>
+
+								<div class="acd_item acd_item_ty1">
+									{{#> cp/accordion ac-active=true ac-title="상세보기" aci="aci03" aclc="chk_label_ty2" acl="재물손해"}}
+									<ul class="coverage_item_list">
+										<li class="list">
+											<div class="item_title">풍수재손해(비특수건물)</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1억원" question_tit="가입금액 변경" }}
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">항공기·차량손해</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1억5천만원" question_tit="가입금액 변경" }}
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">붕괴ㆍ침강ㆍ사태손해</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1억5천만원" question_tit="가입금액 변경" }}
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">구내폭발파열손해</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1억5천만원" question_tit="가입금액 변경" }}
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">급배수설비누출로인한손해(일반)</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn_non" bl_text="미가입" question_tit="가입금액 변경" }}
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">냉동ㆍ냉장물손해</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" question_tit="가입금액 변경" }}
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">위조지폐손해</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="5백만원" question_tit="가입금액 변경" }}
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">도난손해</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" question_tit="가입금액 변경" }}
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">유리손해</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1백만원" question_tit="가입금액 변경" }}
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">점포휴업손해</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" question_tit="가입금액 변경" }}
+											</div>
+										</li>
+									</ul>
+									{{/ cp/accordion }}
+								</div>
+
+							</div>
+						</div>
+
+						<!-- s: 꼭 알아두세요 -->
+						{{#> cp/notice dp-active=true }}
+							<ul class="list_ty4">
+								<li>화재배상책임Ⅱ, 재난배상책임 담보는 종업원을 담보하지 않습니다.</li>
+								<li>풍수재손해(비특수건물) 담보는 자연재해위험등급 침수/강풍 4급 이내 건물만 가입 가능하며, 지진이 보상되지 않습니다.</li>
+								<li>배상책임보장특약(학원및교습소배상책임보장, 이미용사배상책임보장 ,시설소유관리자배상책임보장 등)은 피보험시설 내에 설치된 엘리베이터로 생긴 재물 손해에 대한 배상책임은 보상하지 않습니다.</li>
+								<li>점포휴업손해 담보의 약정복구기간은 1개월입니다.</li>
+								<li>화재손해 담보 가입금액 한도
+									<ul class="list_depth_ty2 subtle">
+										<li>유흥주점, 단란주점, 노래연습장, 오락실/PC방 업종 : 화재손해 담보 가입금액의 합계 8억까지 가입 가능</li>
+										<li>세탁소 업종 : 화재손해 담보 가입금액의 합계 5억까지 가입 가능</li>
+									</ul>
+								</li>
+							</ul>
+						{{/ cp/notice }}
+						<!-- e: 꼭 알아두세요 -->
+					</div>
+					<!-- e: guarantee_detail -->
+			</div>			
+		</div>
+	</div>
+
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="이대로 가입할래요"}}
+		</div>
+	</div>
+</div>
+
+<!-- s: popup area -->
+
+<!-- s: 가스사고배상책임 팝업 -->
+{{#> popup/popup_full popup-id="pop01" popup-title="추가 정보 입력" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		
+		<div class="form_box">			
+			<div class="title_h3">가스사고배상책임</div>
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">사용 업종</div>
+					{{> cp/selectitem si_ph="선택" si_item="선택" si_title="사용 업종 선택 팝업 호출" si_popup="pop01_combo"}}
+				</div>
+
+				<div class="form_line">
+					<div class="label_tit">가스 종류</div>
+					<div class="radio_group_wrap" role="radiogroup">
+						{{> cp/radio rd-class="rd_btn" rd-id="pop01_select_g_1_01" name="pop01_select_g_1" labelname="LPG(액화가스)" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="pop01_select_g_1_02" name="pop01_select_g_1" labelname="LNG(도시가스)" }}
+					</div>
+				</div>
+
+				<div class="form_line">
+					<div class="label_tit">가입관리코드 의무 여부</div>
+					<div class="radio_group_wrap" role="radiogroup">
+						{{> cp/radio rd-class="rd_btn" rd-id="pop01_select_g_2_01" name="pop01_select_g_2" labelname="예" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="pop01_select_g_2_02" name="pop01_select_g_2" labelname="아니요" checked=true }}
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" b-text="확인" disabled=true}}
+	</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: 가스사고배상책임 팝업 -->
+
+<!-- s: popup area -->
+<!-- s: 가스사고배상책임 하위 팝업 -->
+{{#> popup/popup_bottom popup-id="pop01_combo" popup-title="사용 업종 선택"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="opt_select_list opt_case3">
+			<div role="button" tabindex="0" class="option"><span class="text">항목 1</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 2</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 3</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 4</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 5</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 6</span></div>
+		</div>
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 가스사고배상책임 하위 팝업 -->
+
+
+
+<!-- s: 음식물배상책임 팝업 -->
+{{#> popup/popup_full popup-id="pop02" popup-title="추가 정보 입력" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		
+		<div class="form_box">			
+			<div class="title_h3">음식물배상책임</div>
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">음식점 업종</div>
+					{{> cp/selectitem si_ph="선택" si_item="선택" si_title="사용 업종 선택 팝업 호출" si_popup="pop02_combo"}}
+					<ul class="list_ty2">
+						<li>회 센터, 스시 부페, 횟집(초장집), 건설현장급식소, 도시락전문업 및 출장 부페 는 가입 불가합니다.</li>
+						<li>학교, 회사, 결혼예식장, 병원 등으로 일정한 구내시설에서 단체급식이 행해지는 곳은 가입 불가합니다.</li>
+						<li>연간매출액 3.3㎡ 당 300만원 미만, 연간매출액 2천만원 미만 또는 100억원 초과 업종은 가입 불가합니다.</li>
+						<li>연간매출액을 정확히 입력해주세요. 향후 보상 시 실제 확인된 매출액과 차이가 발생하는 경우, 보험료 추징 및 보험금 지급 시 비례 보상 등의 문제가 발생할 수 있습니다.</li>
+						<li>보상한도액 : [대인] 1인당 3천만원, 1사고당 1억원 [대물] 1사고당 1백만원, 연간 1천만원 한도 [자기부담금] 10만원</li>
+					</ul>
+				</div>
+
+				<div class="form_line">
+					<div class="label_tit">연간매출액(직전 년도 기준)</div>
+					{{> cp/text type="tel" class="price" r-text="천원" inp-title="금액입력" placeholder="숫자만 입력"}}
+					<ul class="list_ty2">
+						<li>
+							연간매출액 2천만원 미만, 100억원 초과 업종은 가입 불가합니다.
+						</li>
+						<li>
+							연간매출액을 정확히 입력해주세요. 향후 보상 시 실제 확인된 매출액과 차이가 발생하는 경우, 보험료 추징 및 보험금 지급 시 비례 보상 등의 문제가 발생할 수 있습니다.
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" b-text="확인" disabled=true}}
+	</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: 음식물배상책임 팝업 -->
+
+<!-- s: 음식물배상책임 하위 팝업01 -->
+{{#> popup/popup_bottom popup-id="pop02_combo" popup-title="음식점 업종 선택"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="opt_select_list opt_case3">
+			<div role="button" tabindex="0" class="option"><span class="text">항목 1</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 2</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 3</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 4</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 5</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 6</span></div>
+		</div>
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 음식물배상책임 하위 팝업01 -->
+
+<!-- s: 음식물배상책임 하위 팝업02 -->
+{{#> popup/popup_layer popup-id="pop02_alert" }}
+<div class="popup_cont">
+	<div class="popup_content">
+			<div class="msg_icon mi_info"></div>
+			<p class="pl_txt1">다음과 같은 경우 음식물배상책임 담보에 가입하실 수 없습니다</p>
+			<ul class="list_ty4">
+				<li>연간 매출액이 2천만원 이하이거나, 100억을 초과하는 경우</li>
+				<li>평당 매출액 300만원 이하인 경우</li>
+			</ul>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_layer}}
+<!-- e: 음식물배상책임 하위 팝업02 -->
+
+
+
+<!-- s: 시설소유·관리자배상책임(재난배상책임 제외) 팝업 -->
+{{#> popup/popup_full popup-id="pop03" popup-title="추가 정보 입력" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		
+		<div class="form_box">			
+			<div class="title_h3">시설소유·관리자배상책임(재난배상책임 제외)</div>
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">실제 영위 업종</div>
+					{{> cp/selectitem si_ph="선택" si_item="선택" si_title="사용 업종 선택 팝업 호출" si_popup="pop03_combo"}}
+					<ul class="list_ty2">
+						<li> 어린이놀이시설은 별도 가입이 필요합니다.</li>
+						<li>전문 주점이란? 캬바레, 싸롱, 디스코텍, 록까페, 단란주점 등</li>
+					</ul>
+				</div>
+
+				<div class="form_line">
+					<div class="label_tit">사용 면적</div>
+					{{> cp/text type="tel" class="price" r-text="m²" inp-title="면적 입력" placeholder="숫자만 입력"}}
+					<ul class="list_ty2">
+						<li>
+							'승강기/세차기/광고판'으로 인한 배상책임사고시 보장되지 않습니다.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" b-text="확인" disabled=true}}
+	</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: 시설소유·관리자배상책임(재난배상책임 제외) 팝업 -->
+
+<!-- s: 시설소유·관리자배상책임(재난배상책임 제외) 하위 팝업 -->
+{{#> popup/popup_bottom popup-id="pop03_combo" popup-title="업종 선택"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="opt_select_list opt_case3">
+			<div role="button" tabindex="0" class="option"><span class="text">항목 1</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 2</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 3</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 4</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 5</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 6</span></div>
+		</div>
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 시설소유·관리자배상책임(재난배상책임 제외) 하위 팝업 -->
+
+
+
+
+<!-- s: 시설소유·관리자배상책임(화재배상책임 제외) 팝업 -->
+{{#> popup/popup_full popup-id="pop04" popup-title="추가 정보 입력" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		
+		<div class="form_box">			
+			<div class="title_h3">시설소유·관리자배상책임(화재배상책임 제외)</div>
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">실제 영위 업종</div>
+					{{> cp/selectitem si_ph="선택" si_item="선택" si_title="사용 업종 선택 팝업 호출" si_popup="pop04_combo"}}
+					<ul class="list_ty2">
+						<li> 어린이놀이시설은 별도 가입이 필요합니다.</li>
+						<li>전문 주점이란? 캬바레, 싸롱, 디스코텍, 록까페, 단란주점 등</li>
+					</ul>
+				</div>
+
+				<div class="form_line">
+					<div class="label_tit">사용 면적</div>
+					{{> cp/text type="tel" class="price" r-text="m²" inp-title="면적 입력" placeholder="숫자만 입력"}}
+					<ul class="list_ty2">
+						<li>
+							'승강기/세차기/광고판'으로 인한 배상책임사고시 보장되지 않습니다.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" b-text="확인" disabled=true}}
+	</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: 시설소유·관리자배상책임(화재배상책임 제외) 팝업 -->
+
+<!-- s: 시설소유·관리자배상책임(화재배상책임 제외) 하위 팝업 -->
+{{#> popup/popup_bottom popup-id="pop04_combo" popup-title="업종 선택"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="opt_select_list opt_case3">
+			<div role="button" tabindex="0" class="option"><span class="text">항목 1</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 2</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 3</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 4</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 5</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 6</span></div>
+		</div>
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 시설소유·관리자배상책임(화재배상책임 제외) 하위 팝업 -->
+
+
+
+<!-- s: 학원 교습소배상책임(화재배상책임 제외) 팝업 -->
+{{#> popup/popup_full popup-id="pop05" popup-title="추가 정보 입력" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		
+		<div class="form_box">			
+			<div class="title_h3">학원 교습소배상책임(화재배상책임 제외)</div>
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">가입 대상</div>
+					{{> cp/selectitem si_ph="선택" si_item="선택" si_title="사용 업종 선택 팝업 호출" si_popup="pop05_combo"}}            
+				</div>
+
+				<div class="form_line">
+					<div class="label_tit">학생 인원수</div>
+					{{> cp/text type="tel" class="price" r-text="명" inp-title="학생 인원수 입력" placeholder="숫자만 입력"}}
+					<ul class="list_ty2">
+						<li>'승강기/세차기/광고판'으로 인한 배상책임사고시 보장되지 않습니다.</li>
+						<li>학생수는 10명 이상만 가입 가능합니다.</li>
+						<li>기숙사형 학원은 가입 불가합니다.</li>              
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" b-text="확인" disabled=true}}
+	</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: 학원 교습소배상책임(화재배상책임 제외) 팝업 -->
+
+<!-- s: 학원 교습소배상책임(화재배상책임 제외) 하위 팝업 -->
+{{#> popup/popup_bottom popup-id="pop05_combo" popup-title="대상 선택"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="opt_select_list opt_case3">
+			<div role="button" tabindex="0" class="option"><span class="text">항목 1</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 2</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 3</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 4</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 5</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 6</span></div>
+		</div>
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 학원 교습소배상책임(화재배상책임 제외) 하위 팝업 -->
+
+
+
+
+<!-- s: 의약품배상책임 팝업 -->
+{{#> popup/popup_full popup-id="pop06" popup-title="추가 정보 입력" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		
+		<div class="form_box">			
+			<div class="title_h3">의약품배상책임</div>
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">약사 인원수</div>
+					{{> cp/text type="tel" class="price" r-text="명" inp-title="약사 인원수 입력" placeholder="숫자만 입력"}}
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" b-text="확인" disabled=true}}
+	</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: 의약품배상책임 팝업 -->
+
+<!-- e: popup area -->
+{{/ layout/default }}
