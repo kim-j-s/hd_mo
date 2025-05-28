@@ -53,29 +53,32 @@
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
 				<div class="popup_inner">
-					<div class="popup_head"><div class="popup_head_title">업종 선택</div></div>
+					<div class="popup_head"><div class="popup_head_title">동일건물 이웃업종 선택</div></div>
 					<div class="popup_cont">
 						<div class="popup_content">
 							<!-- s: popup_content_top -->
 							<div class="popup_content_top">
-								<!-- s: 25-05-28 수정 -->
 								<!-- prettier-ignore -->
 								<h2 class="title_h2">
-											<strong>사업장의 업종</strong>을 선택해 주세요. 
+						          동일 방화 구역 내 <strong>이웃 사업장의 업종</strong>을 모두 선택해 주세요. 
 										</h2>
-								<!-- e: 25-05-28 수정 -->
+								<p class="title_sub">
+									같은 업종이 여러 개일 경우 하나만 선택하세요.
+									<br />
+									동일 방화구역 내 이웃사업장의 업종에 따라 적용되는 보험료율이 달라질 수 있습니다.
+								</p>
 							</div>
 							<!-- e: popup_content_top -->
 
-							<div class="select_item select_item_case01" role="button" tabindex="0" title="사업장 업종 중분류 선택 팝업 호출" onclick="openHDPopup(this,'pop_type02');">
+							<div class="select_item select_item_case01" role="button" tabindex="0" title="이웃 업종 대분류 선택 팝업 호출" onclick="openHDPopup(this,'pop_type02');">
 								<div class="select_item_inner">
-									<div class="si_item" data-placeholder="선택">근린생활시설</div>
+									<div class="si_item" data-placeholder="대분류">선택</div>
 									<span class="si_stat">선택됨</span>
 								</div>
 							</div>
-							<div class="select_item select_item_case01" role="button" tabindex="0" title="사업장 업종 대분류 선택 팝업 호출" onclick="openHDPopup(this,'pop_type03');">
+							<div class="select_item select_item_case01" role="button" tabindex="0" title="이웃 업종 중분류 선택 팝업 호출" onclick="openHDPopup(this,'pop_type03');">
 								<div class="select_item_inner">
-									<div class="si_item" data-placeholder="선택"></div>
+									<div class="si_item" data-placeholder="중분류"></div>
 									<span class="si_stat">선택됨</span>
 								</div>
 							</div>
@@ -89,6 +92,55 @@
 										<ul>
 											<li>어린이실내놀이시설(키즈카페등)</li>
 										</ul>
+									</li>
+								</ul>
+							</div>
+
+							<div class="btn_area">
+								<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_2">
+									<span class="text">선택 추가</span>
+								</button>
+							</div>
+
+							<div class="divider_ty1"></div>
+
+							<h3 class="title_h3">선택된 이웃 업종</h3>
+							<!-- 선택된 업종이 없을 때 empty 메시지 -->
+							<!-- <div class="search_reult_list_container no_data">
+						        <div class="no_list_area">
+						          <i class="hd_icon exclamationSvg"></i>          <p>선택된 이웃 업종이 없습니다.</p>
+						        </div>
+						       </div> -->
+
+							<!-- 이웃 업종을 추가했을 때 리스트 -->
+							<div class="search_reult_list_container">
+								<ul class="search_reult_list">
+									<li class="search_reult_list_item space_between">
+										<div class="item_inner">
+											<p>세탁소(드라이클리닝)</p>
+											<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5" onclick="openHDPopup(this,'alert_d1');">
+												<span class="text">삭제</span>
+												<i class="hd_icon deleteSvg"></i>
+											</button>
+										</div>
+									</li>
+									<li class="search_reult_list_item space_between">
+										<div class="item_inner">
+											<p>세탁소(드라이클리닝)</p>
+											<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5" onclick="openHDPopup(this,'alert_d1');">
+												<span class="text">삭제</span>
+												<i class="hd_icon deleteSvg"></i>
+											</button>
+										</div>
+									</li>
+									<li class="search_reult_list_item space_between">
+										<div class="item_inner">
+											<p>체력단련시설, 종합오락운동시설, 기타운동시설</p>
+											<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5" onclick="openHDPopup(this,'alert_d1');">
+												<span class="text">삭제</span>
+												<i class="hd_icon deleteSvg"></i>
+											</button>
+										</div>
 									</li>
 								</ul>
 							</div>
