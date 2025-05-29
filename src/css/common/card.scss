@@ -581,8 +581,9 @@
 
 		//비활성화 + 선택 예외 케이스
 		&.selected {
-			background-color: #fff;
-			
+			&:not(.disabled) {
+				background-color: #fff;
+			}
 			.inp_checkbox {
 				input[type=checkbox]:checked {
 					& ~ i {
