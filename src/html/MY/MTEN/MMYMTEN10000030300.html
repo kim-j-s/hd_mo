@@ -1,0 +1,76 @@
+{{#> layout/default page-title="보험료 결제 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="$메뉴명$" }}
+
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
+				<h2 class="title_h2">
+					<!-- s: 25-05-29 수정 -->
+					환급 보험료 <strong>확인</strong> 후<br>
+					<!-- e: 25-05-29 수정 -->
+					<strong>전자서명을 진행</strong>해주세요
+				</h2>
+			</div>
+			<!-- e: content_top -->
+			 
+			<div class="info_gray">
+				<dl>
+					<dt>환급받으실 금액</dt>
+					<dd>24,900원</dd>
+				</dl>
+			</div>
+			
+			<!-- s: 현금환급 -->
+			<h2 class="pop_title_h1">환급계좌 입력</h2>
+			<div class="form_group_wrap">
+					<div class="form_line">
+							<div class="label_tit">은행</div>
+							{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" }}
+					</div>
+					<div class="form_line">
+							<div class="label_tit">계좌번호</div>
+							{{> cp/text placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
+							<ul class="list_ty2">
+									<li><strong>김*대(계약자)님의 본인 계좌만 이용 가능합니다.</strong></li>
+							</ul>
+					</div>
+			</div>
+			<!-- e: 현금환급 -->	
+
+			<!-- s: 꼭 알아두세요 -->
+			{{#> cp/notice dp-active="active"}}
+				<ul class="list_depth">
+					<li>환급보험료는 입력하신 계약자의 계좌로 지급됩니다.<br>(은행 거래중지시간 등으로 미지급시 대표콜센터(1588-5656)로 연락주시기 바랍니다.) </li>
+					<li>보험계약변경 완료를 위해서는 계약자의 전자서명이 필요합니다.</li>
+				</ul>
+			{{/ cp/notice }}
+			<!-- e: 꼭 알아두세요 -->
+		</div>
+	</div>
+
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			<!-- s: 25-05-29 수정 -->
+			{{> cp/button type="1" size="1" b-text="전자서명" }}
+			<!-- e: 25-05-29 수정 -->
+		</div>
+	</div>
+</div>
+
+<!-- s: popup area -->
+
+
+	<!-- s: 자동차 배서 메뉴 -->
+	{{> pages/pop1 }}
+	<!-- e: 자동차 배서 메뉴 -->
+
+<!-- e: popup area -->
+{{/ layout/default }}
+
+
+<script>
+	$(document).ready(function(){
+		});
+</script>
