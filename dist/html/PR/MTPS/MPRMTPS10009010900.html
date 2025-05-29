@@ -1,7 +1,3 @@
-<!---
-화면번호 : PRLT10003000100
-경로 : 2.자동차 기본정보 > 2-1.보유차량 목록 > 최근 보험료 계산 내역
--->
 <!doctype html>
 <html lang="ko">
 	<head>
@@ -44,7 +40,7 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>자동차 기본정보 | 상품 - 현대해상 다이렉트</title>
+		<title>오프라인 연락 | 마이페이지 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -52,115 +48,66 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body>
-		<!-- s: Bottom 팝업 -->
-		<div class="popup_wrap bottom active" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="false">
+		<!-- s: Full 팝업 -->
+		<div class="popup_wrap full active" id="pop_type01" role="dialog" aria-hidden="false">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
 				<div class="popup_inner">
-					<div class="draggable" aria-hidden="true">
-						<div class="move"></div>
-					</div>
-					<div class="popup_head"><div class="popup_head_title">최근 보험료를 계산한 내역입니다</div></div>
-
+					<div class="popup_head"><div class="popup_head_title">다이렉트 설계 제한 안내</div></div>
 					<div class="popup_cont">
 						<div class="popup_content">
-							<div class="popup_content_top">
-								<!-- s: 25-05-29 삭제 -->
-								<!-- prettier-ignore -->
-								<p class="text_sub">
-										최근 25일 간 보험료를 계산한 내역이에요.<br>
-										목록에서 선택해 이어서 진행할 수 있어요.
-									</p>
-								<!-- e: 25-05-29 삭제 -->
+							<div class="process_info_area">
+								<div class="complete_info" aria-hidden="true">
+									<lottie-player src="../../../json/lottie_info.jso" background="transparent" speed="1" autoplay></lottie-player>
+								</div>
+								<h2 class="process_title">
+									<strong>무엇을 도와드릴까요?</strong>
+								</h2>
 							</div>
 
-							<!-- s: 25-04-16 수정 -->
-							<div class="card_item_wrap">
-								<div class="card_item">
-									<div class="item_inner">
-										<div class="inner_cont">
-											<!-- s: 25-04-29 수정 -->
-											<div role="button" class="card_link" tabindex="0">
-												<div class="item_top">
-													<div class="title_info">
-														<div class="main_title">111너**11</div>
-													</div>
-												</div>
+							<div class="form_box space1">
+								<div class="form_group_wrap">
+									<div class="form_line">
+										<div class="label_tit">휴대폰번호</div>
+										<div class="input_text">
+											<div class="inp">
+												<input type="tel" placeholder="플레이스홀더" value="010 - **** - 5678" title="휴대폰번호 입력" />
+												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 											</div>
-											<!-- e: 25-04-29 수정 -->
-											<ul class="card_list_ty1">
-												<li>
-													<div class="title">설계일시</div>
-													<div class="cont">2020.01.01 00:00:00</div>
-												</li>
-												<li>
-													<div class="title">Step3</div>
-													<div class="cont">추가할인특약단계</div>
-												</li>
-												<li>
-													<div class="title">보험기간</div>
-													<div class="cont">2020.01.01 ~ 2021.01.01</div>
-												</li>
-												<li>
-													<div class="title">보험료</div>
-													<div class="cont">계산전</div>
-												</li>
-											</ul>
+										</div>
+										<div class="btn_area">
+											<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_2">
+												<span class="text">상담전화 신청</span>
+											</button>
 										</div>
 									</div>
 								</div>
-								<div class="card_item">
-									<div class="item_inner">
-										<div class="inner_cont">
-											<!-- s: 25-04-29 수정 -->
-											<div role="button" class="card_link" tabindex="0">
-												<div class="item_top">
-													<div class="title_info">
-														<div class="main_title">111너**11</div>
-													</div>
-												</div>
-											</div>
-											<!-- e: 25-04-29 수정 -->
-											<ul class="card_list_ty1">
-												<li>
-													<div class="title">설계일시</div>
-													<div class="cont">2020.01.01 00:00:00</div>
-												</li>
-												<li>
-													<div class="title">Step3</div>
-													<div class="cont">추가할인특약단계</div>
-												</li>
-												<li>
-													<div class="title">보험기간</div>
-													<div class="cont">2020.01.01 ~ 2021.01.01</div>
-												</li>
-												<li>
-													<div class="title">보험료</div>
-													<div class="cont">계산전</div>
-												</li>
-											</ul>
-										</div>
+								<div class="checkbox_group_wrap column">
+									<div class="inp_checkbox rd_box">
+										<input type="checkbox" id="checkbox04-17" />
+										<label for="checkbox04-17" class="chk_label chk_label_ty3 check_hide">
+											<span class="label_cont">상담 전화를 위한 연락처 수집 이용에 동의합니다. 수집 정보는 상담 목적 외 용도로 이용되지 않습니다.</span>
+										</label>
 									</div>
 								</div>
 							</div>
-							<!-- e: 25-04-16 수정 -->
+						</div>
+					</div>
 
-							<!-- s: 25-05-08 수정 -->
-							<!-- s: 25-05-29 삭제 -->
-							<!--<div class="btn_area center view_more">
-									<button type="button" class="btn btn_more_view">
-										<span class="text">
-											더보기 <span class="counter"><strong class="btn_more_view_now">1</strong> / 2</span>
-										</span>
-									</button>		</div> -->
-							<!-- e: 25-05-29 삭제 -->
-							<!-- e: 25-05-08 수정 -->
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_1">
+								<span class="text">홈으로</span>
+							</button>
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
+								<span class="text">바로 전화하기</span>
+							</button>
 						</div>
 					</div>
 					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
-		<!-- e: Bottom 팝업 -->
+		<!-- e: Full 팝업 -->
 	</body>
 </html>
