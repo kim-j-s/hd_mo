@@ -1,0 +1,67 @@
+{{#> layout/default page-title="피보험자/계약자 정보 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="피보험자/계약자 정보" }}
+
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
+				<!-- prettier-ignore -->
+				<h2 class="title_h2">
+					계약자(피보험자)<br/>
+					<strong>정보를 입력</strong>해주세요
+				</h2>
+			</div>
+			<!-- e: content_top -->
+			<div class="form_box">			
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">휴대폰번호</div>
+							{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" value="- 1234 - 1234" readonly="true"}}
+					</div>
+					<div class="form_line">
+						<div class="label_tit">이메일</div>
+						{{> cp/text type="email" inpclass="email_auto" inp-title="이메일 입력" placeholder="이메일 입력" }}
+					</div>
+					<div class="form_line">
+						<div class="label_tit">주소</div>
+						<div class="radio_group_wrap" role="radiogroup">
+							{{> cp/radio rd-class="rd_btn" rd-id="addSel01_01" name="addSel01" labelname="집" }}
+							{{> cp/radio rd-class="rd_btn" rd-id="addSel01_02" name="addSel01" labelname="직장" }}
+						</div>
+						{{> cp/address ad_ph="주소를 입력해 주세요." case2=true}}
+					</div>
+          <div class="form_line">
+						<div class="label_tit">보험계약서류 받는 방법</div>
+						<div class="radio_group_wrap" role="radiogroup">
+							{{> cp/radio rd-class="rd_btn" rd-id="receiveSel01_01" name="receiveSel01" labelname="모바일" checked=true }}
+							{{> cp/radio rd-class="rd_btn" rd-id="receiveSel01_02" name="receiveSel01" labelname="이메일" }}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- s: 꼭 알아두세요 -->
+			{{#> cp/notice dp-active=true }}
+				<ul class="list_depth">
+					<li>입력한 정보로 개인정보도 함께 변경돼요.</li>
+					<li>보험계약서류를 보내드리니 정확하게 입력해주세요.</li>
+				</ul>
+			{{/ cp/notice }}
+			<!-- e: 꼭 알아두세요 -->
+		</div>
+	</div>
+
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="입력 중이에요" disabled=true }}
+			<!-- {{> cp/button type="1" size="1" b-text="모두 입력했어요" }} -->
+		</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
+</div>
+
+<!-- s: popup area -->
+<!-- e: popup area -->
+{{/ layout/default }}
