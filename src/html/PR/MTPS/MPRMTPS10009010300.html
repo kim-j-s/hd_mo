@@ -1,0 +1,41 @@
+{{#> layout/default page-title="오프라인 연락 | 마이페이지"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-active=true popup-title="다이렉트 설계 제한 안내" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="process_info_area">
+			<div class="complete_info" aria-hidden="true">
+				<lottie-player src="../../../json/lottie_error.jso" background="transparent" speed="1" autoplay></lottie-player>
+			</div>
+			<h2 class="process_title">
+				<!-- prettier-ignore -->
+				<strong>김*대 고객님,<br>가입을 잠시 중단합니다.</strong>
+			</h2>
+			<!-- prettier-ignore -->
+			<div class="process_desc">고객님, 설계하신 조건으로 가입이 불가능합니다. 다만 아래의 조건으로 설계를 변경하시면 계산/가입을 계속 진행할 수 있습니다.<br><br>변경된 조건으로 재계산을 원하시면 설계가이드 확인 후 해당 버튼을 선택해주세요.</div>
+		</div>
+		
+		<div class="form_box space1">
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">휴대폰번호</div>
+					{{> cp/text type="tel" placeholder="플레이스홀더" value="010 - **** - 5678" inp-title="휴대폰번호 입력" }}
+				</div>
+			</div>
+			<div class="checkbox_group_wrap column">
+				{{> cp/checkbox checkbox_class="rd_box" id="checkbox04-17" label_class="chk_label_ty3 check_hide" labelname="상담 전화를 위한 연락처 수집 이용에 동의합니다. 수집 정보는 상담 목적 외 용도로 이용되지 않습니다."}}
+			</div>
+		</div>				
+	</div>
+</div>
+
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="3" size="1" b-text="홈으로" }}
+		{{> cp/button type="1" size="1" b-text="전화 상담 신청" }}
+	</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+{{/ layout/default }}
