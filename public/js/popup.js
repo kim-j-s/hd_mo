@@ -9,10 +9,11 @@
  * @returns {void}
  */
 function openHDPopup($triggerEl, target) {
-	if (!$triggerEl) {
-		console.error("$triggerEl 필수");
-		return false;
-	}
+
+	// if (!$triggerEl) {
+	// 	console.error("$triggerEl 필수");
+	// 	return false;
+	// }
 
 	if (target == undefined || target == null) {
 		console.log("오픈할 팝업 타겟이 없습니다.");
@@ -28,14 +29,15 @@ function openHDPopup($triggerEl, target) {
 		// jQuery 객체인 경우
 		$trigger = $triggerEl;
 	} else {
-		console.error("$triggerEl 타입을 확인하세요.");
-		return false;
+		// console.error("$triggerEl 타입을 확인하세요.");
+		// return false;
+		$trigger = document.body;
 	}
 
 	// s: 퍼블테스트용 (개발단에서는 삭제해주세요.)
-	if (window.popupGroup) {
-		attachPopup(target);
-	}
+	// if (window.popupGroup) {
+	// 	attachPopup(target);
+	// }
 	// e: 퍼블테스트용 (개발단에서는 삭제해주세요.)
 
 	let $target = $("#" + target);
@@ -131,7 +133,6 @@ function closeHDPopup(target, returnTarget = null) {
 		//To-Do : prevPopup inert on/off 기능 추가해야함
 
 		const focusTarget = $($triggerEl);
-		// focusTarget.attr("data-returnTarget", true);
 
 		// ios 스크린리더가 dom의 변경사항을 인식하도록 상태변경
 		focusTarget.css("display", "none");
@@ -151,11 +152,11 @@ function closeHDPopup(target, returnTarget = null) {
 		}, 350);
 
 		// s: 퍼블테스트용 (개발단에서는 삭제해주세요.)
-		if (window.popupGroup) {
-			setTimeout(() => {
-				$target.remove();
-			}, 1000);
-		}
+		// if (window.popupGroup) {
+		// 	setTimeout(() => {
+		// 		$target.remove();
+		// 	}, 1000);
+		// }
 		// e: 퍼블테스트용 (개발단에서는 삭제해주세요.)
 
 		// s: 개발에서는 이 구문을 주석 해제 바랍니다.
@@ -171,11 +172,11 @@ function closeHDPopup(target, returnTarget = null) {
 			$triggerEl.attr("tabindex", 0).focus();
 
 			// s: 퍼블테스트용 (개발단에서는 삭제해주세요.)
-			if (window.popupGroup) {
-				setTimeout(() => {
-					$target.remove();
-				}, 400);
-			}
+			// if (window.popupGroup) {
+			// 	setTimeout(() => {
+			// 		$target.remove();
+			// 	}, 400);
+			// }
 			// e: 퍼블테스트용 (개발단에서는 삭제해주세요.)
 
 			// s: 개발에서는 이 구문을 주석 해제 바랍니다.
@@ -186,10 +187,10 @@ function closeHDPopup(target, returnTarget = null) {
 }
 
 //동적 append 함수(퍼블 테스트용)
-function attachPopup(newPopup) {
-	const popupArea = $(".popup_area");
-	popupArea.append(window.popupGroup[newPopup]);
-}
+// function attachPopup(newPopup) {
+// 	const popupArea = $(".popup_area");
+// 	popupArea.append(window.popupGroup[newPopup]);
+// }
 
 // UUID생성
 function generateUUID() {
