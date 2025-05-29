@@ -1,0 +1,50 @@
+{{#> layout/default page-title="네이버 안전운전 점수 조회(아이디) | 상품"}}
+
+<!-- s: 네이버 안전운전 점수 조회(ID) bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="네이버 안전운전 점수 조회"}}
+    <div class="popup_cont">
+        <div class="popup_content">
+            <!-- s: popup_content_top -->
+            <div class="popup_content_top">
+                <p class="text_sub">점수 조회를 위해 네이버 아이디를 입력해주세요</p>
+            </div>
+            <!-- e: popup_content_top -->
+            <div class="info_gray">
+                <dl>
+                    <dt>안전운전 점수</dt>
+                    <dd>네이버 가입정보가 확인되지 않았습니다.</dd>
+                </dl>
+                <dl>
+                    <dt>특약가능여부</dt>
+                    <dd>불가</dd>
+                </dl>
+                <dl>
+                    <dt>조회결과</dt>
+                    <dd>-</dd>
+                </dl>
+            </div>
+            <ul class="list_ty2">
+                <li>고객님(피보험자)의 휴대번호와 네이버 아이디(ID)로 안전운전점수를 조회합니다.</li>
+                <li>조회결과(안전운전점수)는 조회시점에 따라 변경될 수 있습니다.</li>
+                <li>피보험자의 다른 네이버 아이디(ID)로도 조회가 가능합니다.</li>
+            </ul>
+            
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">네이버 아이디(ID)</div>
+                    {{> cp/text placeholder="네이버회원 아이디(ID) 입력" inp-title="네이버 아이디(ID) 입력" }}
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="popup_bottom">
+        <div class="btn_area">
+            {{> cp/button type="1" size="2" b-text="점수 조회하기" disabled=true }}
+            <!-- s: 아이디 입력 후 활성화 -->
+            <!-- {{> cp/button type="1" size="2" b-text="점수 조회하기"}} -->
+            <!-- e: 아이디 입력 후 활성화 -->
+        </div>
+    </div>
+    {{/ popup/popup_bottom}}
+<!-- e: 네이버 안전운전 점수 조회(ID) bottom 팝업 -->
+{{/ layout/default }}
