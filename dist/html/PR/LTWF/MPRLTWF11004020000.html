@@ -40,51 +40,84 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>현대해상 다이렉트</title>
+		<title>보험료 확인 | 상품 - 현대해상 다이렉트</title>
 
-		<link rel="stylesheet" href="guide.css" />
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
 		<link rel="stylesheet" href="../../../css/contents.css" />
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
-	<body class="guide_body">
-		<div class="guide_h1">Textarea</div>
+	<body>
+		<!-- s: Bottom 팝업 -->
+		<div class="popup_wrap bottom active" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="false">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
+				<div class="popup_inner">
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head"><div class="popup_head_title">변경할 담보 선택</div></div>
 
-		<div class="guide_discription">Defalut</div>
-		<div class="textarea_wrap">
-			<textarea name="textarea1" rows="3" title="주소지 입력"></textarea>
-		</div>
-		<div class="guide_discription">disabled</div>
-		<div class="textarea_wrap">
-			<textarea name="textarea2" rows="3" disabled title="주소지 입력"></textarea>
-		</div>
-		<div class="guide_discription">readonly</div>
-		<div class="textarea_wrap">
-			<textarea name="textarea3" rows="3" readonly title="주소지 입력"></textarea>
-		</div>
-		<br />
-		<br />
-		<br />
-		<br />
+					<div class="popup_cont">
+						<div class="popup_content">
+							<p class="title_sub">화재손해(건물)</p>
+							<div class="opt_select_wrap">
+								<span class="opt_select_wrap_live" aria-live="polite"></span>
+								<div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
+									<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r1" id="r1_s1" />
+										<label for="r1_s1">5천만원</label>
+									</div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r1" id="r1_s2" />
+										<label for="r1_s2">6천만원</label>
+									</div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r1" id="r1_s3" checked />
+										<label for="r1_s3">7천만원</label>
+									</div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r1" id="r1_s4" />
+										<label for="r1_s4">8천만원</label>
+									</div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r1" id="r1_s5" />
+										<label for="r1_s5">5천만원</label>
+									</div>
+									<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+								</div>
+								<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_left" aria-label="이전 옵션"></button>
+								<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
+							</div>
 
-		<div class="guide_h4">Byte Check</div>
-		<div class="textarea_wrap byte_check">
-			<textarea name="textarea111"></textarea>
-			<div class="counter">
-				<em>0</em>
-				/
-				<span>byte</span>
+							<div class="bottom_fix_notice">
+								<div class="acd_item">
+									<div class="acd_head">
+										<button type="button" class="acd_btn" aria-expanded="false"><span>보장내용을 확인해 보세요</span></button>
+									</div>
+									<div class="acd_cont">
+										<div class="inner">
+											<ul class="list_depth">
+												<li>토지에 정착하는 공작물 중 지붕과 기둥 또는 지붕과 벽이 있는것으로 주거, 작업, 저장등의 용도를 위하여 인공적으로 축조된 건조물 아래의 물건은 다른 약정이 없으면 보험의 목적에 포함됩니다.</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">가입 담보 변경하기</span>
+							</button>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
+				</div>
 			</div>
 		</div>
-		<div class="guide_h4">글자수 Check</div>
-		<div class="textarea_wrap length_check">
-			<textarea name="textarea222"></textarea>
-			<div class="counter">
-				<em>0</em>
-				/
-				<span>글자</span>
-			</div>
-		</div>
+		<!-- e: Bottom 팝업 -->
 	</body>
 </html>
