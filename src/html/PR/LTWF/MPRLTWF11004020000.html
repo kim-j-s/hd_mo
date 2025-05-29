@@ -1,0 +1,54 @@
+{{#> layout/default page-title="보험료 확인 | 상품"}}
+
+<!-- s: Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="변경할 담보 선택" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<p class="title_sub">화재손해(건물)</p>
+		<div class="opt_select_wrap">
+			<span class="opt_select_wrap_live" aria-live="polite"></span>
+			<div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
+				<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+				<div class="opt_select opt_select_w1">
+					<input type="radio" name="r1" id="r1_s1">
+					<label for="r1_s1">5천만원</label>
+				</div>
+				<div class="opt_select opt_select_w1">
+					<input type="radio" name="r1" id="r1_s2">
+					<label for="r1_s2">6천만원</label>
+				</div>
+				<div class="opt_select opt_select_w1">
+					<input type="radio" name="r1" id="r1_s3" checked   >
+					<label for="r1_s3">7천만원</label>
+				</div>
+				<div class="opt_select opt_select_w1">
+					<input type="radio" name="r1" id="r1_s4">
+					<label for="r1_s4">8천만원</label>
+				</div>
+				<div class="opt_select opt_select_w1">
+					<input type="radio" name="r1" id="r1_s5">
+					<label for="r1_s5">5천만원</label>
+				</div>
+				<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+			</div>
+			<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_left" aria-label="이전 옵션"></button>
+			<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
+		</div>
+
+		{{#> cp/notice dp-title="보장내용을 확인해 보세요" }}
+			<ul class="list_depth">
+				<li>
+					토지에 정착하는 공작물 중 지붕과 기둥 또는 지붕과 벽이 있는것으로 주거, 작업, 저장등의 용도를 위하여 인공적으로 축조된 건조물 아래의 물건은 다른 약정이 없으면 보험의 목적에 포함됩니다.
+				</li>
+			</ul>
+		{{/ cp/notice }}
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="가입 담보 변경하기" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: Bottom 팝업 -->
+{{/ layout/default }}

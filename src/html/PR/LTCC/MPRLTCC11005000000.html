@@ -2,13 +2,17 @@
 <div id="wrap" class="wrap">
 	{{> layout/header h-title="가입 전 알릴 사항" }}
 
+	<!-- s: 25-05-29 수정 -->
 	<div id="container" class="container">
 		<div class="content">
 			<!-- s: content_top -->
 			<div class="content_top">
-				<!-- prettier-ignore -->
-				<h2 class="title_h2">보험 가입 전 <strong>중요한 사항</strong>에 대한<br/><strong>확인</strong>이 필요해요</h2>				
-				<p class="title_sub">사실대로 알리지 않은 경우, 보험금 지급이 거절되거나 계약이 해지될 수 있습니다.</p>
+				<h2 class="title_h2">
+					보험가입에 <strong>중요한 사항</strong>에 대한 <strong>확인</strong>이 필요합니다.
+				</h2>
+				<p class="title_sub">
+					사실대로 알리지 않은 경우, 보험금 지급이 거절되거나 계약이 해지될 수 있습니다.
+				</p>
 			</div>
 			<!-- e: content_top -->
 			
@@ -21,7 +25,7 @@
 							</div>
 							<div class="radio_group_wrap" role="radiogroup">
 								{{> cp/radio rd-class="rd_btn" rd-id="notification01_01" name="notification01" labelname="예" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="notification01_02" name="notification01" labelname="아니요" checked=true }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification01_02" name="notification01" labelname="아니오" checked=true }}
 							</div>
 							<div class="info_gray">
 								<ol class="list_depth">
@@ -41,7 +45,7 @@
 							</div>
 							<div class="radio_group_wrap" role="radiogroup">
 								{{> cp/radio rd-class="rd_btn" rd-id="notification02_01" name="notification02" labelname="예" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="notification02_02" name="notification02" labelname="아니요" checked=true }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification02_02" name="notification02" labelname="아니오" checked=true }}
 							</div>
 							<div class="info_gray">
 								<ol class="list_depth">
@@ -60,7 +64,7 @@
 							</div>
 							<div class="radio_group_wrap" role="radiogroup">
 								{{> cp/radio rd-class="rd_btn" rd-id="notification03_01" name="notification03" labelname="예" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="notification03_02" name="notification03" labelname="아니요" checked=true }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification03_02" name="notification03" labelname="아니오" checked=true }}
 							</div>
 							<div class="info_gray">
 								<p class="info_text">추가검사(재검사)란 검사 결과 이상 소견이 확인되어 보다 정확한 진단을 위해 시행한 검사를 의미하며, 병증에 대한 치료 필요없이 유지되는 상태에서 시행되는 정기검사 또는 추적관찰은 포함하지 않습니다.</p>
@@ -76,7 +80,7 @@
 							</div>
 							<div class="radio_group_wrap" role="radiogroup">
 								{{> cp/radio rd-class="rd_btn" rd-id="notification04_01" name="notification04" labelname="예" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="notification04_02" name="notification04" labelname="아니요" checked=true }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification04_02" name="notification04" labelname="아니오" checked=true }}
 							</div>
 							<div class="info_gray">
 								<p class="info_text">여기서 '계속하여'란 같은 원인으로 치료 시작 후, 완료일까지 실제 치료, 투약받은 일수를 말합니다.</p>
@@ -92,7 +96,7 @@
 							</div>
 							<div class="radio_group_wrap" role="radiogroup">
 								{{> cp/radio rd-class="rd_btn" rd-id="notification05_01" name="notification05" labelname="예" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="notification05_02" name="notification05" labelname="아니요" checked=true }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification05_02" name="notification05" labelname="아니오" checked=true }}
 							</div>
 							<div class="info_gray">
 								<p class="info_text">10대 질병: 암, 백혈병, 고혈압, 협심증, 심근경색, 심장판막증, 간경화증, 뇌졸중증(뇌출혈, 뇌경색), 당뇨병, 에이즈/HIV보균</p>
@@ -104,29 +108,28 @@
 					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">
-								고객님의 직업은 무엇인가요?
+								최근 1년 이내 아래와 같은 취미를 자주 반복적으로 하고 있거나 관련 자격증이 있으신가요?
 							</div>
-							<div class="form_group_wrap">
-								<div class="form_line">
-									<div class="label_tit">근무처</div>
-									{{> cp/text placeholder="예) 사무실, 공장" inp-title="근무처 입력"}}
-								</div>
+							<div class="radio_group_wrap" role="radiogroup">
+								{{> cp/radio rd-class="rd_btn" rd-id="notification06_01" name="notification06" labelname="예" }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification06_02" name="notification06" labelname="아니오" checked=true }}
 							</div>
-							<div class="form_group_wrap">
-								<div class="form_line">
-									<div class="label_tit">근무 지역</div>
-									{{> cp/text placeholder="예) 서울시, 경기도" inp-title="근무 지역 입력"}}
-								</div>
+							<div class="info_gray">
+								<p class="info_text">스쿠버다이빙, 스카이다이빙, 행글라이딩, 패러글라이딩, 수상스키, 래프팅, 자동차, 오토바이 경주, 번지점프, 제트스키, 빙벽, 암벽등반</p>
+              </div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">
+								향후 3개월 전쟁지역, 미개척지(열대/한대), 등반산악지대와 같은 해외위험지역으로 출국할 예정이신가요?
 							</div>
-							<div class="form_group_wrap">
-								<div class="form_line">
-									<div class="label_tit">취급하는 업무</div>
-									{{> cp/text placeholder="실제 하는 일 자세히 입력" inp-title="취급하는 업무 입력"}}
-								</div>
+							<div class="radio_group_wrap" role="radiogroup">
+								{{> cp/radio rd-class="rd_btn" rd-id="notification07_01" name="notification07" labelname="예" }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification07_02" name="notification07" labelname="아니오" checked=true }}
 							</div>
-							<ul class="list_ty2">
-								<li>보험계약 체결 당시 직업 또는 직무를 사실대로 알리지 않거나 보험계약 체결 후 직업 또는 직무가 변경된 사실 (예: 사무관리⥊현장관리)을 지체 없이 회사에 알리지 않은 경우 계약 해지 등 알릴 의무 위반에 따른 불이익이 발생할 수 있습니다.</li>
-							</ul>
 						</div>
 					</div>
 				</li>
@@ -138,7 +141,7 @@
 							</div>
 							<div class="radio_group_wrap" role="radiogroup">
 								{{> cp/radio rd-class="rd_btn" rd-id="notification08_01" name="notification08" labelname="예" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="notification08_02" name="notification08" labelname="아니요" checked=true }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification08_02" name="notification08" labelname="아니오" checked=true }}
 							</div>
 						</div>
 					</div>
@@ -159,6 +162,7 @@
 								{{> cp/checkbox checkbox_class="rd_check_btn lg" id="checkbox08-1-11" label_class="chk_label_ty5" labelname="기타" }}
 						</div>
 							<div class="form_group_wrap">
+								
 								<div class="form_line">
 									<div class="label_tit">기타 차종</div>
 									{{> cp/text placeholder="입력해 주세요" inp-title="기타 차종 입력"}}
@@ -174,23 +178,21 @@
 									</div>
 									<!-- e: 이륜자동차 선택 시  -->
 								</div>
+								
 							</div>
 						</div>
 					</div>
-				</li>				
+				</li>
 				<li>
 					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">
-								최근 1년 이내 아래와 같은 취미를 자주 반복적으로 하고 있거나 관련 자격증이 있으신가요?
+								원동기장치 자전거를 사용하시나요?<br>(전동킥보드, 전동이륜평행차, 전동기의 동력만으로 움직일 수 있는 자전거 등 개인형 이동장치를 포함합니다. 단, 전동휠체어, 의료용 스쿠터 등 보행보조용 의자차는 제외합니다.)
 							</div>
 							<div class="radio_group_wrap" role="radiogroup">
-								{{> cp/radio rd-class="rd_btn" rd-id="notification06_01" name="notification06" labelname="예" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="notification06_02" name="notification06" labelname="아니요" checked=true }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification09_01" name="notification09" labelname="예" }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification09_02" name="notification09" labelname="아니오" checked=true }}
 							</div>
-							<div class="info_gray">
-								<p class="info_text">스쿠버다이빙, 스카이다이빙, 행글라이딩, 패러글라이딩, 수상스키, 래프팅, 자동차, 오토바이 경주, 번지점프, 제트스키, 빙벽, 암벽등반</p>
-              </div>
 						</div>
 					</div>
 				</li>
@@ -202,7 +204,7 @@
 							</div>
 							<div class="radio_group_wrap" role="radiogroup">
 								{{> cp/radio rd-class="rd_btn" rd-id="notification10_01" name="notification10" labelname="예" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="notification10_02" name="notification10" labelname="아니요" checked=true }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification10_02" name="notification10" labelname="아니오" checked=true }}
 							</div>
 							<div class="form_group_wrap">
 								<div class="form_line">
@@ -212,21 +214,80 @@
 							</div>
 						</div>
 					</div>
-				</li>		
+				</li>
+				<li>
+					<div class="form_group_wrap">
+						<div class="form_line">
+								<div class="label_tit">
+									음주를 하시나요?
+								</div>
+								<div class="radio_group_wrap" role="radiogroup">
+									{{> cp/radio rd-class="rd_btn" rd-id="notification10_01" name="notification10" labelname="예" }}
+									{{> cp/radio rd-class="rd_btn" rd-id="notification10_02" name="notification10" labelname="아니오" checked=true }}
+								</div>
+								<div class="form_group_wrap">
+									<div class="form_line">
+											<div class="label_tit">음주 횟수 (1주일 기준)</div>
+											{{> cp/text type="tel" class="price" maxlength="1" r-text="회" placeholder="숫자만 입력" inp-title="음주 횟수 입력"}}
+									</div>
+									<div class="form_line">
+											<div class="label_tit">음주량 (1회당/소주 기준)</div>
+											{{> cp/text type="tel" class="price" maxlength="2" r-text="병" placeholder="숫자만 입력" inp-title="음주량 입력"}}
+									</div>
+								</div>
+						</div>
+					</div>
+				</li>
 				<li>
 					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">
-								향후 3개월 전쟁지역, 미개척지(열대/한대), 등반산악지대와 같은 해외위험지역으로 출국할 예정이신가요?
+								흡연을 하시나요?
 							</div>
 							<div class="radio_group_wrap" role="radiogroup">
-								{{> cp/radio rd-class="rd_btn" rd-id="notification07_01" name="notification07" labelname="예" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="notification07_02" name="notification07" labelname="아니요" checked=true }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification11_01" name="notification11" labelname="예" }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification11_02" name="notification11" labelname="아니오" checked=true }}
+							</div>
+							<div class="form_group_wrap">
+								<div class="form_line">
+										<div class="label_tit">흡연량 (1일)</div>
+										{{> cp/text type="tel" class="price" maxlength="1" r-text="개피" placeholder="숫자만 입력" inp-title="음주 횟수 입력"}}
+								</div>
+								<div class="form_line">
+										<div class="label_tit">흡연 기간</div>
+										{{> cp/text type="tel" class="price" maxlength="2" r-text="년" placeholder="숫자만 입력" inp-title="음주량 입력"}}
+								</div>
 							</div>
 						</div>
 					</div>
 				</li>
-					<li>
+				<li>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">
+								고객님의 직업은 무엇인가요?
+							</div>
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">근무처</div>
+									{{> cp/text placeholder="예) 사무실, 공장" inp-title="근무처 입력"}}
+								</div>
+								<div class="form_line">
+									<div class="label_tit">근무 지역</div>
+									{{> cp/text placeholder="예) 서울시, 경기도" inp-title="근무 지역 입력"}}
+								</div>
+								<div class="form_line">
+									<div class="label_tit">취급하는 업무</div>
+									{{> cp/text placeholder="실제 하는 일 자세히 입력" inp-title="취급하는 업무 입력"}}
+								</div>
+							</div>
+							<ul class="list_ty2">
+								<li>보험계약 체결 당시 직업 또는 직무를 사실대로 알리지 않거나 보험계약 체결 후 직업 또는 직무가 변경된 사실 (예: 사무관리⥊현장관리)을 지체없이 회사에 알리지 않은 경우 계약 해지 등 알릴 의무 위반에 따른 불이익이 발생할 수 있습니다.</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li>
 					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">
@@ -241,53 +302,6 @@
 						</div>
 					</div>
 				</li>
-				<li>
-					<div class="form_group_wrap">
-						<div class="form_line">
-							<div class="label_tit">
-								음주를 하시나요?
-							</div>
-							<div class="radio_group_wrap" role="radiogroup">
-								{{> cp/radio rd-class="rd_btn" rd-id="notification10_01" name="notification10" labelname="예" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="notification10_02" name="notification10" labelname="아니요" checked=true }}
-							</div>
-							<div class="form_group_wrap">
-								<div class="form_line">
-										<div class="label_tit">음주 횟수 (1주일 기준)</div>
-										{{> cp/text type="tel" class="price" maxlength="1" r-text="회" placeholder="숫자만 입력" inp-title="음주 횟수 입력"}}
-								</div>
-								<div class="form_line">
-										<div class="label_tit">음주량 (1회당/소주 기준)</div>
-										{{> cp/text type="tel" class="price" maxlength="2" r-text="병" placeholder="숫자만 입력" inp-title="음주량 입력"}}
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="form_group_wrap">
-						<div class="form_line">
-							<div class="label_tit">
-								흡연을 하시나요?
-							</div>
-							<div class="radio_group_wrap" role="radiogroup">
-								{{> cp/radio rd-class="rd_btn" rd-id="notification11_01" name="notification11" labelname="예" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="notification11_02" name="notification11" labelname="아니요" checked=true }}
-							</div>
-							<div class="form_group_wrap">
-								<div class="form_line">
-										<div class="label_tit">흡연량 (1일)</div>
-										{{> cp/text type="tel" class="price" maxlength="1" r-text="개피" placeholder="숫자만 입력" inp-title="음주 횟수 입력"}}
-								</div>
-								<div class="form_line">
-										<div class="label_tit">흡연 기간</div>
-										{{> cp/text type="tel" class="price" maxlength="2" r-text="년" placeholder="숫자만 입력" inp-title="음주량 입력"}}
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>			
-				
 				<li>
 					<div class="form_group_wrap">
 						<div class="form_line">
@@ -308,7 +322,6 @@
 					</div>
 				</li>
 				<li>
-					<!-- s: 25-05-28 수정 -->
 					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">
@@ -316,63 +329,63 @@
 							</div>
 							<div class="radio_group_wrap" role="radiogroup">
 								{{> cp/radio rd-class="rd_btn" rd-id="notification16_01" name="notification16" labelname="예" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="notification16_02" name="notification16" labelname="아니요" checked=true }}
+								{{> cp/radio rd-class="rd_btn" rd-id="notification16_02" name="notification16" labelname="아니오" checked=true }}
 							</div>
 							<div class="info_gray">
 								<p class="info_text">사실대로 선택해주세요. 알릴의무를 위반하는 경우, 보험금의 지급 거절 또는 보험 계약이 해지될 수 있습니다.</p>
 							</div>
-					
-							<div class="form_card_wrap">
-								<div class="form_card_case">
-									<h3 class="title_h4">가입 내역</h3>
-									<div class="form_group_wrap">
-										<div class="form_line">
-											<div class="label_tit">보험사</div>
-											{{> cp/selectitem si_ph="선택" si_title="보험사 선택" si_popup="pop_type02"}}
-										</div>
-										<div class="form_line">
-											<div class="label_tit">가입 건수</div>
-											{{> cp/text type="tel" class="price" maxlength="3" r-text="건" placeholder="숫자만 입력" inp-title="가입 건수 입력"}}
-										</div>
-										<div class="form_line">
-											<div class="label_tit">보험료(원)</div>
-											{{> cp/text type="tel" class="price" maxlength="3" r-text="원" placeholder="숫자만 입력" inp-title="보험료 입력"}}
-										</div>
-									</div>
-									<button type="button" class="btn_rd_close"><span class="blind">가입내역 입력 닫기</span></button>
-								</div>
-								<div class="form_card_case">
-									<h3 class="title_h4">가입 내역</h3>
-									<div class="form_group_wrap">
-										<div class="form_line">
-											<div class="label_tit">보험사</div>
-											{{> cp/selectitem si_ph="선택" si_title="보험사 선택" si_popup="pop_type02"}}
-										</div>
-										<div class="form_line">
-											<div class="label_tit">가입 건수</div>
-											{{> cp/text type="tel" class="price" maxlength="3" r-text="건" placeholder="숫자만 입력" inp-title="가입 건수 입력"}}
-										</div>
-										<div class="form_line">
-											<div class="label_tit">보험료(원)</div>
-											{{> cp/text type="tel" class="price" maxlength="3" r-text="원" placeholder="숫자만 입력" inp-title="보험료 입력"}}
-										</div>
-									</div>
-									<button type="button" class="btn_rd_close"><span class="blind">가입내역 입력 닫기</span></button>
-								</div>
-							</div>
-							<div class="btn_area center btn_area_space2">
-								{{> cp/button type="3" size="3" b-text="보험사 추가" }}
-							</div>
-							<ul class="list_ty2">
-								<li>최대 4건까지 입력할 수 있어요.</li>
-							</ul>
 						</div>
+					
+						<div class="form_card_wrap">
+							<div class="form_card_case">
+								<h3 class="title_h4">가입 내역</h3>
+								<div class="form_group_wrap">
+									<div class="form_line">
+										<div class="label_tit">보험사</div>
+										{{> cp/selectitem si_ph="선택" si_title="보험사 선택" si_popup="pop_type02"}}
+									</div>
+									<div class="form_line">
+										<div class="label_tit">가입 건수</div>
+										{{> cp/text type="tel" class="price" maxlength="3" r-text="건" placeholder="숫자만 입력" inp-title="가입 건수 입력"}}
+									</div>
+									<div class="form_line">
+										<div class="label_tit">보험료(원)</div>
+										{{> cp/text type="tel" class="price" maxlength="3" r-text="원" placeholder="숫자만 입력" inp-title="보험료 입력"}}
+									</div>
+								</div>
+								<button type="button" class="btn_rd_close"><span class="blind">가입내역 입력 닫기</span></button>
+							</div>
+							<div class="form_card_case">
+								<h3 class="title_h4">가입 내역</h3>
+								<div class="form_group_wrap">
+									<div class="form_line">
+										<div class="label_tit">보험사</div>
+										{{> cp/selectitem si_ph="선택" si_title="보험사 선택" si_popup="pop_type02"}}
+									</div>
+									<div class="form_line">
+										<div class="label_tit">가입 건수</div>
+										{{> cp/text type="tel" class="price" maxlength="3" r-text="건" placeholder="숫자만 입력" inp-title="가입 건수 입력"}}
+									</div>
+									<div class="form_line">
+										<div class="label_tit">보험료(원)</div>
+										{{> cp/text type="tel" class="price" maxlength="3" r-text="원" placeholder="숫자만 입력" inp-title="보험료 입력"}}
+									</div>
+								</div>
+								<button type="button" class="btn_rd_close"><span class="blind">가입내역 입력 닫기</span></button>
+							</div>
+						</div>
+						<div class="btn_area center btn_area_space2">
+							{{> cp/button type="3" size="3" b-text="보험사 추가" }}
+						</div>
+						<ul class="list_ty2">
+							<li>최대 4건까지 입력할 수 있어요.</li>
+						</ul>
 					</div>
-					<!-- e: 25-05-28 수정 -->
 				</li>
 			</ol>
 		</div>
 	</div>
+	<!-- e: 25-05-29 수정 -->
 
 	<div class="bottom_fix_wrap">
 		<div class="btn_area">
