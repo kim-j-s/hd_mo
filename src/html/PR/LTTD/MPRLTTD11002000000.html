@@ -1,0 +1,264 @@
+{{#> layout/default page-title="기초 정보 입력 | 주택상해화재보험"}}
+<div id="wrap" class="wrap">
+{{> layout/header h-title="다이렉트오토바이운전자보험" }}
+
+	<form action="" class="bi_form">
+		<div class="bi_wrap">
+			<div class="stepper_wrap">
+				<div class="stepper" role="img">
+					<div class="pgs">
+						<span class="pgs_per" style="width: 0%;"><span class="motion motorcycle"></span></span>
+					</div>
+				</div>
+				<button type="button" class="stm_btn stm_l" onclick="$stepper.stepBack();">이전 단계</button>
+				<button type="button" class="stm_btn stm_r" onclick="$stepper.stepNext();">다음 단계</button>
+			</div>
+			
+			<div class="bi_stepper">
+				<div class="bi_top">
+					<!-- bit -->
+					<div class="bit">
+
+						<!--  용도 -->
+						<div class="bit_inner active" data-pickitem="step1">
+							<!-- prettier-ignore -->							
+							<p class="bit_inner_text">
+								<span class="bold">일상생활</span>이나 <span class="bold">출퇴근 용도</span>로<br>운전을 하시나요?
+							</p>
+							<div class="bit_btn_scrollx">
+								{{> cp/linkButton bl_class="short_cut sm rd_box" bl_text="최근 계산 내역" }}
+								<button type="button" class="btn_link short_cut sm rd_box">
+									<span class="text">보장내용 자세히 보기</span>
+								</button>
+							</div>
+						</div>
+						<!-- 용도 -->
+
+						<!-- 생년월일 -->
+						<div class="bit_inner active" data-pickitem="step2">
+							<!-- prettier-ignore -->
+							<p class="bit_inner_text">
+								운전자의 <span class="bold">생년월일</span>을<br> 알려주세요
+							</p>
+						</div>
+						<!-- 생년월일 -->
+						 
+						<!-- 성별 -->
+						<div class="bit_inner active" data-pickitem="step3">
+							<!-- prettier-ignore -->
+							<p class="bit_inner_text">
+								운전자의 <span class="bold">성별</span>을<br> 알려주세요
+							</p>
+						</div>
+						<!-- 성별 -->
+
+						<!-- 직업 -->
+						<div class="bit_inner" data-pickitem="step4">
+							<!-- prettier-ignore -->
+							<p class="bit_inner_text">
+								<span class="bold">하시는 일</span>을 알려주시면<br> 보험료를 알아볼게요
+							</p>
+						</div>
+						<!-- 주택유형 -->
+					</div>
+					<!-- bit -->
+
+					<!-- bit_history -->
+					<div class="bit_history">
+						<div class="bit_history_inner">
+							<button type="button" class="selected_case step1 car" title="운전용도 수정"></button>
+							<button type="button" class="selected_case step2 birth" title="생년월일 수정"></button>
+							<button type="button" class="selected_case step3 gender" title="성별 수정"></button>
+							<button type="button" class="selected_case step4 job" title="직업 수정"></button>
+					
+						</div>
+					</div>
+					<!-- bit_history -->
+
+				</div>
+
+
+				<div class="bi_opts_wrap">
+
+					<!-- 용도 -->
+					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step1">
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio1" name="radio1" />
+								<label for="radio1">
+									<span class="label_cont">네
+										<small class="sm_txt">자가용</small>
+									</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio2" name="radio1" />
+								<label for="radio2">
+									<span class="label_cont">아니요
+										<small class="sm_txt">영업용 (노란 번호판)</small>
+									</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- 용도 -->
+
+					<!-- 생년월일 -->
+					<div class="opts_area" tabindex="0" aria-label="생년월일 8자리를 입력하시면 다음단계로 이동합니다." data-pickitem="step2">
+						<div class="opts_area_item column">
+							<div class="birth_date_field" aria-live="polite"></div>
+							<div class="bi_keypad">
+								<div class="bi_keypad_item">
+									<button type="button" class="keypad_btn">1</button>
+									<button type="button" class="keypad_btn">2</button>
+									<button type="button" class="keypad_btn">3</button>
+									<button type="button" class="keypad_btn keypad_btn_del" aria-label="지우기"></button>
+								</div>
+								<div class="bi_keypad_item">
+									<button type="button" class="keypad_btn">4</button>
+									<button type="button" class="keypad_btn">5</button>
+									<button type="button" class="keypad_btn">6</button>
+									<button type="button" class="keypad_btn keypad_btn_delall">전체삭제</button>
+								</div>
+								<div class="bi_keypad_item">
+									<button type="button" class="keypad_btn">7</button>
+									<button type="button" class="keypad_btn">8</button>
+									<button type="button" class="keypad_btn">9</button>
+									<button type="button" class="keypad_btn">0</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 생년월일 -->
+
+					<!-- 성별 -->
+					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step3">
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio4" name="radio4" />
+								<label for="radio4">
+									<span class="label_cont">남성</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio5" name="radio4" />
+								<label for="radio5">
+									<span class="label_cont">여성</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- 성별 -->
+
+					<!-- 용도 -->
+					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step4">
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s3">
+								<input type="radio" id="radio31" name="radio5" />
+								<label for="radio31">
+									<span class="label_cont">회사원</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s3">
+								<input type="radio" id="radio32" name="radio5" />
+								<label for="radio32">
+									<span class="label_cont">경영지원<br>사무직 관리자</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s3">
+								<input type="radio" id="radio33" name="radio5" />
+								<label for="radio33">
+									<span class="label_cont">전업주부</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s3">
+								<input type="radio" id="radio34" name="radio5" />
+								<label for="radio34">
+									<span class="label_cont">제조업 사무직</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s3">
+								<input type="radio" id="radio35" name="radio5" />
+								<label for="radio35">
+									<span class="label_cont">자영업</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s3">
+								<input type="radio" id="radio36" name="radio5" />
+								<label for="radio36">
+									<span class="label_cont">직접 선택</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- 용도 -->
+
+					
+
+					
+				</div>
+			</div>
+
+
+		</div>
+	</form>
+</div>
+
+<script>
+$(document).ready(function() {
+  // $stepper.stepperInit();
+	$stepper.stepperInit(null, 0);
+});
+</script>
+
+<!-- s: popup area -->
+{{#> layout/default page-title="계약자정보 입력 | 상품"}}
+<!-- s: 온라인 가입 불가 안내 Full 팝업 -->
+{{#> popup/popup_full popup-active=false popup-id="pop_type03" popup-title="온라인 가입 불가 안내" }}                    
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="process_info_area">
+				<div class="complete_info" aria-hidden="true">
+					<lottie-player src="../../../json/lottie_info.jso" background="transparent" speed="1" autoplay></lottie-player>
+				</div>
+				<h2 class="process_title">
+					<strong>죄송합니다</strong><br>
+					영업용 오토바이운전자 보험은 온라인으로 가입할 수 없습니다.
+				</h2>
+			</div>
+		
+			<div class="call_box">
+				<p class="info_text">자세한 사항은 다이렉트 고객센터로 문의해 주세요.</p>
+				<div class="info_gray ty2">
+						<div class="center_info">
+							<h4 class="title_h4">현대해상 다이렉트 고객센터</h4>
+							<div class="line1">
+								<div class="line1_item">
+										<strong class="tel">1899-6782</strong>
+								</div>
+								<div class="line1_item">
+										<span class="cit">평일 9시30분~ 17시30분</span>
+								</div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="확인"}}
+	</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: 온라인 가입 불가 안내 Full 팝업 -->
+
+<!-- e: popup area -->
+
+{{/ layout/default }}
+
+	 
+<!-- e: popup area -->
+
+
+{{/ layout/default }}
