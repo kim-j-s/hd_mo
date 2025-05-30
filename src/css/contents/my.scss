@@ -1,18 +1,19 @@
 /* 배경색 있는 상단 컨텐츠 영역 */
 .bg_top_cover {
 	margin: -24px -24px 0 -24px;
-	padding: 24px;
+	padding: var(--padding-8);
 	background-color: var(--color-surface-secondary-subtler);
 	
 	&.ty2 {
-		background-color: #FEEDE7;
+		background-color: var(--color-surface-primary-subtler);
 	}
 	+ .opt_case4,
 	+ .info_cont,
 	+ .info_cont,
 	+ .card_item_wrap,
 	+ .acd_item {
-		margin-top: 32px;
+		// margin-top: var(--gap-8);
+		margin-top: var(--gap-8);
 	}
 	& + .tag_item_wrap {
 		margin: 0 -24px;
@@ -26,22 +27,25 @@
 /* 계약상세 */
 .cd_top_wrap {
 	margin: -24px -24px 0 -24px;
-	padding: 24px;
+	padding: var(--padding-8);
 	background-color: var(--color-surface-secondary-subtler);
 	.cd_top {
-		padding: 24px;
+		// padding: var(--padding-8);
+		padding: var(--padding-8);
 		border-radius: var(--radius-large2);
 		background-color: var(--color-surface-white-subtle);
 		.badge_wrap {
 			+ .cd_top_name {
-				margin-top: 8px;
+				// margin-top: var(--gap-3);
+				margin-top: var(--gap-3);
 			}	
 		}
 		.cd_top_name {
 			font-size: var(--font-size-body-medium);			
 		}
 		.cd_price {
-			margin-top: 8px;
+			// margin-top: var(--gap-3);
+			margin-top: var(--gap-3);
 			font-weight: 700;
 			.word {
 				display: inline-block;
@@ -55,7 +59,7 @@
 			}
 		}
 		.progress_bar {
-			margin-top: 16px;
+			margin-top: var(--gap-5);
 		}
 	}
 }
@@ -63,7 +67,7 @@
 
 .cd_top_wrap {
 	+ .tab_wrap {
-		margin-top: 24px;
+		margin-top: var(--gap-7);
 	}
 }
 
@@ -78,14 +82,14 @@
 	border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 	> li {
 		+ li {
-			margin-top: 16px;
+			margin-top: var(--gap-5);
 			padding-top: 16px;
 			border-top: 1px solid var(--color-border-gray-light);
 		}
 		.item {
 			display: flex;
 			align-items: center;
-			gap: 16px;
+			gap: var(--gap-5);
 			min-height: 40px;
 			&::before {
 				content: '';
@@ -136,11 +140,9 @@
 			img {
 				// width: 100%;
 			}
-
-
 		}
 		+ .item {
-			margin-top: 40px;
+			margin-top: var(--gap-9);
 		}
 	}
 }
@@ -149,7 +151,7 @@
 
 
 .sa_change_place {
-	margin-top: 16px;
+	margin-top: var(--gap-5);
 }
 .scp_list {
 	padding: 0 24px;
@@ -208,7 +210,7 @@
 			}
 		}
 		+ .list_ty5 {
-			margin-top: 8px;
+			margin-top: var(--gap-3);
 		}
 	}
 }
@@ -266,10 +268,10 @@
 				font-size: var(--font-size-body-medium);
 			}
 			.list_ty3 {
-				margin-top: 16px;
+				margin-top: var(--gap-5);
 			}
 			.btn_area {
-				margin-top: 8px;
+				margin-top: var(--gap-3);
 			}
 		}
 
