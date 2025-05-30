@@ -37,19 +37,17 @@
 						<!-- 국가 -->
 						 
 						<!-- 기간 -->
+						<!-- s: 25-05-30 수정 -->
 						<div class="bit_inner active" data-pickitem="step2">
 							<!-- s: 25-05-26 수정 -->
 							<!-- prettier-ignore -->
 							<p class="bit_inner_text">
-								얼마나 <span class="bold">다녀오실 예정</span>이신가요?
+								<span class="bold">출발일</span>과 <span class="bold">도착일</span>을 알려주세요
+								<small class="sub_txt">3개월 이상 머무실 경우 해외장기체류보험으로 가입하세요</small>
 							</p>
-							<!-- e: 25-05-26 수정 -->
-							<div class="bit_btn_scrollx">
-								<button type="button" class="btn_link short_cut sm rd_box">
-									<span class="text">본인이 아닌 다른 사람의 보험을 가입하는 방법</span>
-								</button>
-							</div>
+							<!-- e: 25-05-26 수정 -->						
 						</div>
+						<!-- e: 25-05-30 수정 -->
 						<!-- 기간 -->
 
 						<!-- 대상 -->
@@ -69,7 +67,11 @@
 							<!-- s: 25-05-26 수정 -->
 							<!-- prettier-ignore -->
 							<p class="bit_inner_text">
+								<!-- case1(단독) -->
 								보장받으실 분의<br>
+								<!-- s: 25-05-30 수정-->
+								<!-- case2(다수) : 계약하실 분의-->
+								<!-- e: 25-05-30 수정-->
 								<span class="bold">생년월일</span>을 알려주세요.
 								<small class="sub_txt">0~79세까지 가입할 수 있어요.</small>
 							</p>
@@ -80,13 +82,13 @@
 						<!-- 성별 -->
 						<!-- s: 25-05-07 수정 -->
 						<div class="bit_inner active" data-pickitem="step5">
-							<!-- s: 25-05-26 수정 -->
+							<!-- s: 25-05-30 수정 -->
 							<!-- prettier-ignore -->
 							<p class="bit_inner_text">
-								<span class="bold">성별</span>을 알려주시면<br>
+								<span class="bold">성별</span>을 알려주세요<br>
 								보험료를 알아볼게요
 							</p>
-							<!-- e: 25-05-26 수정 -->
+							<!-- e: 25-05-30 수정 -->
 						</div>
 						<!-- e: 25-05-07 수정 -->
 						<!-- 성별 -->
@@ -97,11 +99,11 @@
 					<!-- bit_history -->
 					<div class="bit_history">
 						<div class="bit_history_inner">
-							<button type="button" class="selected_case step1 country" title="국가 수정"></button>
-							<button type="button" class="selected_case step2 date" title="기간 수정"></button>
-							<button type="button" class="selected_case step3 person" title="대상 수정"></button>
-							<button type="button" class="selected_case step4 birth" title="생년월일 수정"></button>
-							<button type="button" class="selected_case step5 gender" title="성별 수정"></button>
+							<button type="button" class="selected_case step1 country" title="국가 수정">ㅇ</button>
+							<button type="button" class="selected_case step2 date" title="기간 수정">ㅇ</button>
+							<button type="button" class="selected_case step3 person" title="대상 수정">ㅇ</button>
+							<button type="button" class="selected_case step4 birth" title="생년월일 수정">ㅇ</button>
+							<button type="button" class="selected_case step5 gender" title="성별 수정">ㅇ</button>
 						</div>
 					</div>
 					<!-- bit_history -->
@@ -151,46 +153,30 @@
 					<!-- 국가 -->
 
 					<!-- 기간 -->
+					<!-- s: 25-05-30 수정 -->
 					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step2">
 						
 						<div class="opts_area_item etc_c_1">
-							<div class="oai_block">
-								<div class="info_gray">
-									{{#> cp/checkbox id="sd1" label_class="chk_label_ty3" checkbox_class="msg_display" labelname="출발까지 4시간 넘게 남았어요."}}
-									<span class='tip_item top'>
-										<span class='tip_item_cont'>
-											<div class="word1">비행기가 늦게 떠도 보장받아요!</div>
-											<div class="word2">출발 지연 보상은 어려워요</div>
-										</span>
-									</span>
-									{{/ cp/checkbox}}
-								</div>
-							</div>
 							<div class="inp_radio rd_btn_s1">
 								<input type="radio" id="radio21" name="radio2" />
 								<label for="radio21">
-									<span class="label_cont">2박3일</span>
+									<p></p>
+									<!--날짜 선택 후-->
+									<span class="label_cont">2025.05.13 09시 출발</span>
 								</label>
 							</div>
 							<div class="inp_radio rd_btn_s1">
 								<input type="radio" id="radio22" name="radio2" />
 								<label for="radio22">
-									<span class="label_cont">4박5일</span>
+									<!--날짜 선택 전-->
+									<span class="label_cont">도착일시</span>
 								</label>
 							</div>
-							<div class="inp_radio rd_btn_s1">
-								<input type="radio" id="radio23" name="radio2" />
-								<label for="radio23">
-									<span class="label_cont">5박6일</span>
-								</label>
-							</div>
-							<button type="button" class="hd_btn direct_select_btn" title="여행 기간 선택 팝업 오픈">
-								<span class="text">직접 선택</span>
-							</button>
 						</div>
 					</div>
+					<!-- e: 25-05-30 수정 -->
 					<!-- 기간 -->
-
+				
 					<!-- 대상 -->
 					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step3">
 						
@@ -204,7 +190,9 @@
 							<div class="inp_radio rd_btn_s1">
 								<input type="radio" id="radio32" name="radio3" />
 								<label for="radio32">
-									<span class="label_cont">아이와</span>
+									<!-- s: 25-05-30 수정 -->
+									<span class="label_cont">부부+자녀와</span>
+									<!-- e: 25-05-30 수정 -->
 								</label>
 							</div>
 							<div class="inp_radio rd_btn_s1">
