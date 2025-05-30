@@ -1,0 +1,58 @@
+<!---
+화면번호 : PRDR10003020000
+경로 : 보험료 확인 > 가입조건 변경
+-->
+{{#> layout/default page-title="보험료 확인 | 상품"}}
+
+<!-- s: Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="변경할 담보 선택" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<p class="text_sub">교통상해후유장해(운전자)</p>
+		<div class="opt_select_wrap">
+			<span class="opt_select_wrap_live" aria-live="polite"></span>
+			<div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
+				<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+				<div class="opt_select opt_select_w1">
+					<input type="radio" name="r1" id="r1_s1">
+					<label for="r1_s1">5천만원</label>
+				</div>
+				<div class="opt_select opt_select_w1">
+					<input type="radio" name="r1" id="r1_s2">
+					<label for="r1_s2">4천만원</label>
+				</div>
+				<div class="opt_select opt_select_w1">
+					<input type="radio" name="r1" id="r1_s3" checked>
+					<label for="r1_s3">3천만원</label>
+				</div>
+				<div class="opt_select opt_select_w1">
+					<input type="radio" name="r1" id="r1_s4">
+					<label for="r1_s4">2천만원</label>
+				</div>
+				<div class="opt_select opt_select_w1">
+					<input type="radio" name="r1" id="r1_s5">
+					<label for="r1_s5">1천만원</label>
+				</div>
+				<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+			</div>
+			<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_left" aria-label="이전 옵션"></button>
+			<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
+		</div>
+
+		{{#> cp/notice dp-title="보장내용을 확인해 보세요" }}
+			<ul clas="list_depth">
+				<li>
+					보장 내용
+				</li>
+			</ul>
+		{{/ cp/notice }}
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="가입 담보 변경하기" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: Bottom 팝업 -->
+{{/ layout/default }}
