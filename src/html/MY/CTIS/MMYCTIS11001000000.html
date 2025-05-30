@@ -1,0 +1,143 @@
+{{#> layout/default page-title="계약조회 | 마이페이지"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="소득공제용보험료납입증명서" }}
+		<div id="container" class="container">
+			<div class="content">
+				<p class="text_sub">
+					발급할 계약을 선택해주세요.
+				</p>
+                <div class="selectitem_wrap">
+                    {{> cp/selectitem si_class="select_item_case01_mi" si_ph="선택해주세요." si_title="조회기간 선택" si_item="2024.03~2025.03" si_popup="pop_type01"}}
+                </div>
+                <div class="btn_area">
+                    {{> cp/button type="2" size="2" b-text="조회"}}
+                </div>
+                <div class="divider_ty1"></div>
+				<div class="card_item_wrap ty3">
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inner_cont">
+								<div role="button" class="card_link" tabindex="0">
+									<div class="item_top">
+										<div class="title_info">
+											<div class="main_title">무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(Hi2501)
+                                            </div>
+										</div>
+									</div>
+								</div>
+								<ul class="card_list_ty1">
+									<li>
+										<div class="title">계약번호</div>
+										<div class="cont">L2021****123</div>
+									</li>
+									<li>
+										<div class="title">보험기간</div>
+										<div class="cont">2021.06.01~2031.06.01</div>
+									</li>
+									<li>
+										<div class="title">연간보험료</div>
+										<div class="cont">2,400,000원</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inner_cont">
+								<div role="button" class="card_link" tabindex="0">
+									<div class="item_top">
+										<div class="title_info">
+											<div class="main_title">무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(Hi2501)
+                                            </div>
+										</div>
+									</div>
+								</div>
+								<ul class="card_list_ty1">
+									<li>
+										<div class="title">계약번호</div>
+										<div class="cont">L2021****123</div>
+									</li>
+									<li>
+										<div class="title">보험기간</div>
+										<div class="cont">2021.06.01~2031.06.01</div>
+									</li>
+									<li>
+										<div class="title">연간보험료</div>
+										<div class="cont">2,400,000원</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div class="btn_area center view_more">
+						{{> cp/button_more}}
+					</div>
+				</div>
+
+				<!-- s: 조회 내역이 없는 경우 -->
+				<div class="no_list_area">
+					{{> cp/icon iconClass="exclamationSvg"}}
+
+					<p>발급 가능한 보험증권이 없어요</p>
+                    <p class="desc tac">
+                        혹시 계약자와 피보험자가 다른가요?<br>
+                        이 경우 피보험자는 보험증권을 발급할 수 없어요.
+                    </p>
+				</div>
+				<!-- e: 조회 내역이 없는 경우 -->
+				<!-- s: 꼭 알아두세요 -->
+				{{#> cp/notice dp-active=true }}
+					<ul class="list_depth">
+						<li>이용대상 및 조건 
+                            <ul>
+                                <li>인터넷 가입 계약자만 이용할 수 있습니다.</li>
+                                <li>생명, 상해, 화재, 도난, 기타 손해를 담보하는 가계성 보험에 해당해야 발급할 수 있습니다.</li>
+                                <li>만기환급금이 총 납입보험료를 초과하지 않아야 합니다.</li>
+                            </ul>
+                        </li>
+						<li>발급 시 유의사항
+                            <ul>
+                                <li>팝업이 차단돼 있을 경우 증명서가 보이지 않을 수 있습니다. 팝업 차단을 해제하고 다시 발급해주세요.</li>
+                                <li>자세한 내용은 대표 고객센터(1588-5656, 평일 09:00~18:00)로 문의해주세요.</li>
+                            </ul>
+                        </li>
+					</ul>
+				{{/ cp/notice }}
+			</div>
+		</div>
+		<!-- s: 조회 내역이 없는 경우에만 노출 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="1" b-text="홈으로"  }}
+			</div>
+		</div>
+		<!-- e: 조회 내역이 없는 경우에만 노출 -->
+	</div>
+
+	<!-- s: popup area -->
+<!-- s: 조회조건 - 날짜 선택 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="조회 기간 입력"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">기간</div>
+				<div class="range_calrendar">
+					{{> cp/text cal=true placeholder="날짜를 선택하세요" value="2024.03" }}
+					{{> cp/text cal=true placeholder="날짜를 선택하세요" value="2024.03" readonly=true }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 조회조건 - 날짜 선택 팝업 -->
+	<!-- e: popup area -->
+{{/ layout/default }}

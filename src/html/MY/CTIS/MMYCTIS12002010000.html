@@ -1,0 +1,47 @@
+{{#> layout/default page-title="발급조건 | 마이페이지"}}
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="발급조건" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="form_group_wrap">
+			<div class="form_line">
+                <div class="label_tit">증명서 표기 주소</div>
+                <div class="radio_group_wrap column" role="radiogroup">
+                    {{> cp/radio rd-class="lg" rd-id="sel01_01" name="sel01" labelname="집: 서울시 동대문구 왕산로 ****"  checked=true }}
+                    {{> cp/radio rd-class="lg" rd-id="sel01_02" name="sel01" labelname="직장: 부산 강서구 녹산산단382로14번가길*******************" }}
+                </div>
+            </div>
+			<div class="form_line">
+                <div class="label_tit">발행양식</div>
+                <div class="radio_group_wrap" role="radiogroup">
+                    {{> cp/radio rd-class="rd_btn" rd-id="sel03_01" name="sel03" labelname="합산증명서"  checked=true }}
+                    {{> cp/radio rd-class="rd_btn" rd-id="sel03_02" name="sel03" labelname="월별증명서" }}
+                </div>
+            </div>
+			<div class="form_line">
+                <div class="label_tit">발급방법</div>
+                <div class="radio_group_wrap" role="radiogroup">
+                    {{> cp/radio rd-class="rd_btn" rd-id="sel02_01" name="sel02" labelname="저장" }}
+                    {{> cp/radio rd-class="rd_btn" rd-id="sel02_02" name="sel02" labelname="이메일" }}
+                    {{> cp/radio rd-class="rd_btn" rd-id="sel02_03" name="sel02" labelname="팩스" }}
+                </div>
+				<!-- s: 이메일, 팩스 선택 출력-->
+				<div class="form_group_wrap">
+					<div class="form_line">
+					<!-- 이메일 선택 -->
+					{{> cp/text type="email" inpclass="email_auto" placeholder="이메일 입력" inp-title="이메일 입력" }}
+					<!-- 팩스 선택 -->
+					{{> cp/text type="tel" value="" placeholder="숫자만 입력" inp-title="팩스번호 입력" }}
+					</div>
+				</div>
+				<!-- e: 이메일, 팩스 선택 출력-->
+            </div>
+        </div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="증명서 발급하기" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+{{/ layout/default}}

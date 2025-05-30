@@ -794,7 +794,7 @@ $(function(){
 				const targetHeight = $target.height();
 				const simpleHeight = $('.simple_info_wrap').height();
 
-				if( pop_scrollTop >= targetTop + targetHeight + simpleHeight ){
+				if( pop_scrollTop + 100 >= targetTop + targetHeight + simpleHeight ){
 					$('.tag_item').removeClass('active');
           $('.tag_item').eq(idx).addClass('active');
 				}

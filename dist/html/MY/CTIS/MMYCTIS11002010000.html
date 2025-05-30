@@ -40,7 +40,7 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>신청정보 확인 | 마이페이지 - 현대해상 다이렉트</title>
+		<title>발급조건 | 마이페이지 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -48,113 +48,71 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body>
-		<!-- s: Full 팝업 -->
-		<div class="popup_wrap full active" id="pop_type01" role="dialog" aria-hidden="false">
+		<div class="popup_wrap bottom active" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="false">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
 				<div class="popup_inner">
-					<div class="popup_head"><div class="popup_head_title">계약별 대출신청정보 상세</div></div>
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head"><div class="popup_head_title">발급조건</div></div>
+
 					<div class="popup_cont">
 						<div class="popup_content">
-							<div class="table_wrap">
-								<h2 class="title_h3">연금저축손해보험노후웰스보험(Hi904)기본플랜</h2>
-								<table class="table">
-									<caption>보험기간, 대출이율, 변동여부, 신청기준, 기존대출금액, 대출신청금액, 보장부분대출금액, 잔여대출가능금액 제공</caption>
-									<colgroup>
-										<col style="width: 42%" />
-										<col style="width: 58%" />
-									</colgroup>
-									<tbody>
-										<tr>
-											<th scope="row">보험기간</th>
-											<td>2025.01.15~2027.01.14</td>
-										</tr>
-										<tr>
-											<th scope="row" class="point">대출이율</th>
-											<td class="point">4.30%</td>
-										</tr>
-										<tr>
-											<th scope="row">변동여부</th>
-											<td>금리연동형</td>
-										</tr>
-										<tr>
-											<th scope="row">신청기준</th>
-											<td>보험계약대출이율</td>
-										</tr>
-										<tr>
-											<th scope="row">기존대출금액</th>
-											<td>1,000,000원</td>
-										</tr>
-										<tr>
-											<th scope="row" class="point">대출신청금액</th>
-											<td class="point">1,000,000원</td>
-										</tr>
-										<tr>
-											<th scope="row">
-												보장부분대출금액
-												<div class="tooltip_wrap">
-													<div class="tooltip_head">
-														<button type="button" class="open trigger_btn" aria-expanded="false">
-															<i class="hd_icon popover_help"></i>
-															<span class="blind">툴팁 열기</span>
-														</button>
-													</div>
-													<div class="tooltip_panel" role="tooltip">
-														<div class="inner">
-															<p class="inner_title" aria-describedby="title">보장부분대출금액 안내</p>
-															<div class="inner_contents">
-																<p>‘보장부분 대출금액'은 보장해약환급금의 대출금액으로, '전체 대출금액'에 포함돼요.</p>
-															</div>
-
-															<button type="button" class="close"><span class="blind">툴팁 닫기</span></button>
-														</div>
-													</div>
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">증명서 표기 주소</div>
+									<div class="radio_group_wrap column" role="radiogroup">
+										<div class="inp_radio">
+											<input type="radio" id="sel01_01" name="sel01" />
+											<label for="sel01_01">
+												<span class="label_cont">집: 서울시 동대문구 왕산로 ****</span>
+											</label>
+										</div>
+										<div class="inp_radio">
+											<input type="radio" id="sel01_02" name="sel01" />
+											<label for="sel01_02">
+												<span class="label_cont">직장: 부산 강서구 녹산산단382로14번가길*******************</span>
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="form_line">
+									<div class="label_tit">발급방법</div>
+									<div class="radio_group_wrap" role="radiogroup">
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="sel02_01" name="sel02" />
+											<label for="sel02_01">
+												<span class="label_cont">저장</span>
+											</label>
+										</div>
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="sel02_02" name="sel02" />
+											<label for="sel02_02">
+												<span class="label_cont">이메일</span>
+											</label>
+										</div>
+									</div>
+									<!-- s: 이메일 선택 -->
+									<div class="form_group_wrap">
+										<div class="form_line">
+											<div class="input_text">
+												<div class="inp">
+													<input type="email" class="email_auto" placeholder="이메일 입력" title="이메일 입력" />
+													<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 												</div>
-											</th>
-											<td>0원</td>
-										</tr>
-										<tr>
-											<th scope="row">잔여대출가능금액</th>
-											<td>3,500,000원</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<div class="divider_ty1"></div>
-							<div class="table_wrap">
-								<h2 class="title_h3">연금저축손해보험노후웰스보험(Hi904)기본플랜</h2>
-								<table class="table">
-									<caption>보험기간, 대출이율, 변동여부, 신청기준 제공</caption>
-									<colgroup>
-										<col style="width: 40%" />
-										<col style="width: 60%" />
-									</colgroup>
-									<tbody>
-										<tr>
-											<th scope="row">보험기간</th>
-											<td>2025.01.15~2027.01.14</td>
-										</tr>
-										<tr>
-											<th scope="row" class="point">대출이율</th>
-											<td class="point">4.30%</td>
-										</tr>
-										<tr>
-											<th scope="row">변동여부</th>
-											<td>금리연동형</td>
-										</tr>
-										<tr>
-											<th scope="row">신청기준</th>
-											<td>보험계약대출이율</td>
-										</tr>
-									</tbody>
-								</table>
+											</div>
+										</div>
+									</div>
+									<!-- e: 이메일 선택 -->
+								</div>
 							</div>
 						</div>
 					</div>
 					<div class="popup_bottom">
 						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
-								<span class="text">확인</span>
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">증명서 발급하기</span>
 							</button>
 						</div>
 					</div>
@@ -162,6 +120,5 @@
 				</div>
 			</div>
 		</div>
-		<!-- e: Full 팝업 -->
 	</body>
 </html>

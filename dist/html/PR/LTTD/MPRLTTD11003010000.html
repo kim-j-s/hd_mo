@@ -1,6 +1,3 @@
-<!---
-화면번호 없음. 해외여행보험 보험료계산 진입시 출력되는 팝업(설계서 7페이지)
--->
 <!doctype html>
 <html lang="ko">
 	<head>
@@ -43,7 +40,7 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>해외여행보험 | 상품 - 현대해상 다이렉트</title>
+		<title>보험료 확인 | 상품 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -59,29 +56,95 @@
 					<div class="draggable" aria-hidden="true">
 						<div class="move"></div>
 					</div>
-					<div class="popup_head"><div class="popup_head_title">동반자정보 불러오기 안내</div></div>
+					<div class="popup_head"><div class="popup_head_title">변경할 가입조건 선택</div></div>
 
 					<div class="popup_cont">
 						<div class="popup_content">
-							<h3 class="title_h3 txt_center">다른 분들과 함께 여행하시나요?</h3>
-							<div class="info_cont">
-								<p>
-									<strong>이전에 현대해상 해외여행보험을 이용하셨었다면</strong>
-									최근 가입내역으로
-									<strong class="point">같이 가는 분들의 정보를 쉽게</strong>
-									불러올 수 있어요.
-								</p>
-								<p>로그인 후 이용해 보시겠어요?</p>
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">보험기간(년)</div>
+									<div class="opt_select_wrap">
+										<span class="opt_select_wrap_live" aria-live="polite"></span>
+										<div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
+											<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+											<div class="opt_select opt_select_w1">
+												<input type="radio" name="r1" id="r1_s1" />
+												<label for="r1_s1">3년</label>
+											</div>
+											<div class="opt_select opt_select_w1">
+												<input type="radio" name="r1" id="r1_s2" />
+												<label for="r1_s2">5년</label>
+											</div>
+											<div class="opt_select opt_select_w1">
+												<input type="radio" name="r1" id="r1_s3" checked />
+												<label for="r1_s3">7년</label>
+											</div>
+											<div class="opt_select opt_select_w1">
+												<input type="radio" name="r1" id="r1_s4" />
+												<label for="r1_s4">10년</label>
+											</div>
+											<div class="opt_select opt_select_w1">
+												<input type="radio" name="r1" id="r1_s5" />
+												<label for="r1_s5">15년</label>
+											</div>
+											<div class="opt_select opt_select_w1">
+												<input type="radio" name="r1" id="r1_s6" />
+												<label for="r1_s6">20년</label>
+											</div>
+											<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+										</div>
+										<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_left" aria-label="이전 옵션"></button>
+										<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
+									</div>
+								</div>
+								<div class="form_line">
+									<div class="label_tit">납입기간(년)</div>
+									<div class="opt_select_wrap">
+										<span class="opt_select_wrap_live" aria-live="polite"></span>
+										<div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
+											<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+											<div class="opt_select opt_select_w1">
+												<input type="radio" name="r2" id="r2_s1" />
+												<label for="r2_s1">3년</label>
+											</div>
+											<div class="opt_select opt_select_w1">
+												<input type="radio" name="r2" id="r2_s2" checked />
+												<label for="r2_s2">5년</label>
+											</div>
+											<div class="opt_select opt_select_w1">
+												<input type="radio" name="r2" id="r2_s3" />
+												<label for="r2_s3">7년</label>
+											</div>
+											<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+										</div>
+										<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_left" aria-label="이전 옵션"></button>
+										<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
+									</div>
+								</div>
+								<div class="form_line">
+									<div class="label_tit">납입방법</div>
+									<div class="radio_group_wrap" role="radiogroup">
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="radio01-1" name="radio01" checked />
+											<label for="radio01-1">
+												<span class="label_cont">매월 보험료 내기</span>
+											</label>
+										</div>
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="radio01-2" name="radio01" />
+											<label for="radio01-2">
+												<span class="label_cont">1년치 한꺼번에 내기</span>
+											</label>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 					<div class="popup_bottom">
 						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_2">
-								<span class="text">로그인</span>
-							</button>
 							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
-								<span class="text">나중에</span>
+								<span class="text">가입 조건 변경하기</span>
 							</button>
 						</div>
 					</div>
