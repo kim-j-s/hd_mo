@@ -16,54 +16,11 @@
 				<!-- e: content_top -->
 
 
-					<!-- s: 피보험자/계약자 동일 -->
+				<!-- s: 25-05-30 수정 -->
+				<!-- s: 피보험자/계약자 동일 -->
 				<div class="form_box">
+					<h3 class="title_h3">기본 정보</h3>
 					<div class="form_group_wrap">
-						<div class="form_line">
-							<div class="label_tit">이름</div>
-							<!-- s: 25-05-12 수정 -->
-							{{> cp/text type="text" inp-title="이름 입력" value="김현대" disabled="true"}}
-							<!-- e: 25-05-12 수정 -->
-						</div>
-
-						<div class="form_line">
-							<div class="label_tit">주민등록번호</div>
-							<div class="comp_wrap birth">
-								{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" value="910228" inp-title="주민등록번호 앞자리 입력" readonly=true }}
-								<span class="dash">-</span>
-								<!-- s: 25-05-02 수정 -->
-								<div class="id_pass_box read_only">
-									{{> cp/text type="tel" minlength="1" maxlength="1" placeholder="●" inp-title="주민등록번호 뒷1자리 입력" value="1" no_del="flase" readonly=true }}
-									<div class="id_pass">
-										●●●●●●
-									</div>
-								</div>
-								<!-- e: 25-05-02 수정 -->
-							</div>
-						</div>
-
-						<!-- s: 신분증 정보 입력 영역 -->
-						 <div class="form_line">
-							<div class="label_tit">본인확인용 신분증</div>
-							<div class="radio_group_wrap" role="radiogroup">
-								{{> cp/radio rd-class="rd_btn" rd-id="ci_ty01" name="ci_select" labelname="주민등록증" checked=true }}
-								{{> cp/radio rd-class="rd_btn" rd-id="ci_ty02" name="ci_select" labelname="운전면허증" }}
-							</div>
-							<div class="form_line">
-								<div class="label_tit">발급일</div>
-								{{> cp/text type="text" maxlength="8" inp-title="발급일입력" placeholder="연월일 8자리 숫자 입력"}}
-							</div>
-							<div class="form_line">
-								<div class="label_tit">면허증 번호</div>
-								{{> cp/text type="text" maxlength="12" inp-title="면허증번호입력" placeholder="12자리 숫자 입력"}}
-							</div>
-						</div>
-						
-
-						
-						<!-- e: 신분증 정보 입력 영역 -->
-						
-
 						<div class="form_line">
 							<div class="label_tit">휴대폰번호</div>
 							<!-- s: 25-05-14 수정 -->
@@ -81,6 +38,24 @@
 							<!-- e: 25-05-12 수정 -->
 							<!-- s: 25-05-14 수정 -->
 						</div>
+
+						<!-- s: 신분증 정보 입력 영역 -->
+						<div class="form_line">
+							<div class="label_tit">본인확인용 신분증</div>
+							<div class="radio_group_wrap" role="radiogroup">
+								{{> cp/radio rd-class="rd_btn" rd-id="ci_ty01" name="ci_select" labelname="주민등록증" checked=true }}
+								{{> cp/radio rd-class="rd_btn" rd-id="ci_ty02" name="ci_select" labelname="운전면허증" }}
+							</div>
+							<div class="form_line">
+								<div class="label_tit">발급일</div>
+								{{> cp/text type="text" maxlength="8" inp-title="발급일입력" placeholder="연월일 8자리 숫자 입력"}}
+							</div>
+							<div class="form_line">
+								<div class="label_tit">면허증 번호</div>
+								{{> cp/text type="text" maxlength="12" inp-title="면허증번호입력" placeholder="12자리 숫자 입력"}}
+							</div>
+						</div>
+						<!-- e: 신분증 정보 입력 영역 -->
 					
 						<div class="form_line">
 							<div class="label_tit">주소</div>
@@ -106,7 +81,13 @@
 							<!-- e: 25-05-16 수정 -->
 							<!-- e: 25-05-14 수정 -->
 						</div>
-					
+					</div>
+				</div>
+
+				<div class="divider_ty1"></div>
+				<div class="form_box">
+					<h3 class="title_h3">필수 확인 사항</h3>
+					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">보험계약서류 받는 방법</div>
 							<div class="radio_group_wrap" role="radiogroup">
@@ -114,9 +95,6 @@
 								{{> cp/radio rd-class="rd_btn" rd-id="receiveSel01_02" name="receiveSel" labelname="이메일" }}
 							</div>
 						</div>
-
-
-
 						<div class="form_line">
 							<!-- s: 25-05-14 -->
 							<div class="label_tit box">
@@ -136,8 +114,6 @@
 								「금융소비자 보호에 관한 법률」 제17조 제1항에 따라 보험계약자의 일반ㆍ전문금융소비자 여부를 확인하는 절차입니다.
 							</li>
 						</ul>
-
-
 						<div class="form_line">
 							<!-- s: 25-05-14 -->
 							<div class="label_tit box">
@@ -160,6 +136,8 @@
 					</div>
 				</div>
 				<!-- e: 피보험자/계약자 동일 -->
+				<!-- e: 25-05-30 수정 -->
+
 
 				<!-- s: 25-05-07 수정 -->
 				<!-- s: 꼭 알아두세요 -->
