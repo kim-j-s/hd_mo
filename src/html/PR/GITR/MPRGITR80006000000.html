@@ -23,6 +23,8 @@
 					<!-- e: 인증완료 시 안내문구 -->
 				</h3>
 				<!-- e: 25-05-14 수정 -->
+
+				<!-- s: 25-05-30 수정 -->
 				<div class="form_group_wrap">
 					<div class="form_line">
 						<div class="label_tit">이름</div>
@@ -56,11 +58,16 @@
 						</ul>
 					</div>
 				</div>
+				<!-- e: 25-05-30 수정 -->
 			</div>
 			<div class="btn_area">
-				{{> cp/button type="3" size="2" b-text="인증하기"}}
+				<!-- s: 25-05-30 수정 -->
+				{{> cp/button type="2" size="2" b-text="인증하기"}}
+				<!-- e: 25-05-30 수정 -->
 			</div>
+
 			<div class="divider_ty1"></div>
+
 			<div class="form_box">
 				<!-- s: 25-05-14 수정 -->
 				<h3 class="title_h3">자녀1<!-- s: 자녀등록 전 안내문구 -->
@@ -71,19 +78,12 @@
 					<!-- e: 자녀등록 후 안내문구 -->
 				</h3>
 				<!-- e: 25-05-14 수정 -->
+
+				<!-- s: 25-05-30 수정 -->
 				<div class="form_group_wrap">
 					<div class="form_line">
 						<div class="label_tit">이름</div>
 						{{> cp/text type="text" placeholder="이름 입력" inp-title="이름 입력" }}
-					</div>
-					<div class="form_line">
-						<div class="label_tit">영문이름</div>
-						<!-- s: 25-05-14 수정 -->
-						{{> cp/text type="text" placeholder="여권 영문이름 입력(예: KIM HYUN DAI)" inp-title="영문이름 입력"}}
-						<!-- e: 25-05-14 수정 -->
-						<ul class="list_ty2">
-							<li>여권 영문이름과 달라도 보상 여부와는 무관해요.</li>
-						</ul>
 					</div>
 					<div class="form_line">
 						<div class="label_tit">주민등록번호</div>
@@ -95,12 +95,22 @@
 							{{> cp/keypad7 case1=true kt="주민등록번호 뒤 7자리 입력"}}
 							<!-- e: 25-05-14 수정 -->
 							<!-- e: 25-05-20 수정 -->
-						</div>
+						</div>						
+					</div>
+					<div class="form_line">
+						<div class="label_tit">영문이름</div>
+						<!-- s: 25-05-14 수정 -->
+						{{> cp/text type="text" placeholder="여권 영문이름 입력(예: KIM HYUN DAI)" inp-title="영문이름 입력"}}
+						<!-- e: 25-05-14 수정 -->
+						<ul class="list_ty2">
+							<li>여권 영문이름과 달라도 보상 여부와는 무관해요.</li>
+						</ul>
 						<div class="btn_area">
-							{{> cp/button type="3" size="2" b-text="자녀 등록하기"}}
+							{{> cp/button type="2" size="2" b-text="자녀 등록하기"}}
 						</div>
 					</div>
 				</div>
+				<!-- e: 25-05-30 수정 -->
 			</div>
 
 			<div class="divider_ty1"></div>
@@ -117,17 +127,11 @@
 				</h3>
 				<!-- e: 25-05-14 수정 -->
 
+				<!-- s: 25-05-30 수정 -->
 				<div class="form_group_wrap">
 					<div class="form_line">
 						<div class="label_tit">이름</div>
 						{{> cp/text type="text" placeholder="이름 입력" inp-title="이름 입력" }}
-					</div>
-					<div class="form_line">
-						<div class="label_tit">영문이름</div>
-						{{> cp/text type="text" placeholder="여권 영문이름 입력(예: KIM HYUN DAI)" inp-title="영문이름 입력" }}
-						<ul class="list_ty2">
-							<li>여권 영문이름과 달라도 보상 여부와는 무관해요.</li>
-						</ul>
 					</div>
 					<div class="form_line">
 						<div class="label_tit">주민등록번호</div>
@@ -137,12 +141,20 @@
 							<!-- s: 25-05-20 수정 -->
 							{{> cp/keypad7 case1=true kt="주민등록번호 뒤 7자리 입력"}}
 							<!-- e: 25-05-20 수정 -->
-						</div>
+						</div>			
+					</div>			
+					<div class="form_line">
+						<div class="label_tit">영문이름</div>
+						{{> cp/text type="text" placeholder="여권 영문이름 입력(예: KIM HYUN DAI)" inp-title="영문이름 입력" }}
+						<ul class="list_ty2">
+							<li>여권 영문이름과 달라도 보상 여부와는 무관해요.</li>
+						</ul>
 						<div class="btn_area">
-							{{> cp/button type="3" size="2" b-text="자녀 등록하기"}}
+							{{> cp/button type="2" size="2" b-text="자녀 등록하기"}}
 						</div>
 					</div>
 				</div>
+				<!-- e: 25-05-30 수정 -->
 			</div>
 
 			<!-- s: 미성년자 단독 -->
@@ -177,6 +189,8 @@
 
 			<!-- s: 공동 친권자 동의 여부 확인 항목 -->
 
+
+			<!-- s: 25-05-30 수정 -->
 			<!-- s: 25-05-14 수정 -->
 			<div class="form_box space2">
 				<div class="form_group_wrap">
@@ -185,30 +199,35 @@
 							자녀가 피보험자로 가입하는 보험에 대해 공동 친권자의 동의를 받으셨나요?
 							{{> cp/tooltip text="<p>이혼이나 사별 등으로 공동 친권자가 없을 경우 [아니요]를 눌러주세요. </p>" trigger-icon="popover_help"}}
 						</div>
-						<div class="radio_group_wrap" role="radiogroup">
-							{{> cp/radio rd-class="rd_btn" rd-id="checktype01_01" name="checktype01" labelname="예" }}
-							{{> cp/radio rd-class="rd_btn" rd-id="checktype01_02" name="checktype01" labelname="아니요" }}
-						</div>					
-					</div>
-					<div class="form_line">
-						<div class="label_tit">공동 친권자 이름(배우자)</div>
-						{{> cp/text type="text" placeholder="공동 친권자 이름(배우자)" inp-title="공동 친권자 이름(배우자) 입력" }}
+						<div class="form_group_wrap">
+							<div class="radio_group_wrap" role="radiogroup">
+								{{> cp/radio rd-class="rd_btn" rd-id="checktype01_01" name="checktype01" labelname="예" }}
+								{{> cp/radio rd-class="rd_btn" rd-id="checktype01_02" name="checktype01" labelname="아니요" }}
+							</div>					
+							<div class="form_line">
+								<div class="label_tit">공동 친권자 이름(배우자)</div>
+								{{> cp/text type="text" placeholder="공동 친권자 이름(배우자)" inp-title="공동 친권자 이름(배우자) 입력" }}
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 			<!-- e: 25-05-14 수정 -->
+			<!-- e: 25-05-30 수정 -->
 
 		</div>
 	</div>
 
 	<!-- s: 하단 고정 버튼 영역 -->
 	<div class="bottom_fix_wrap">
+		<!-- s: 25-05-30 수정 -->
 		<div class="btn_area">
 			<!-- s: 25-05-14 수정 -->
-			{{> cp/button type="1" size="1" b-text="피보험자 정보를 입력 중이예요" disabled=true }}
+			{{> cp/button type="1" size="1" b-text="입력 중이예요" disabled=true }}
 			<!-- e: 25-05-14 수정 -->
-			<!-- {{> cp/button type="1" size="1" b-text="모두 입력 했습니다." }} -->
+			<!-- {{> cp/button type="1" size="1" b-text="모두 입력했어요" }} -->
 		</div>
+		<!-- e: 25-05-30 수정 -->
 	</div>
 	<!-- s: 하단 고정 버튼 영역 -->
 </div>

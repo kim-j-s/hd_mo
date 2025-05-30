@@ -98,6 +98,7 @@
 			color: var(--color-text-disabled-on);
 		}
 	}
+	
 }
 
 .progress_bar_ty2 {
@@ -134,6 +135,19 @@
 			width: 10px;
 			height: 10px;
 			background: url(../images/icon/progressbar_dot.svg) no-repeat center / 8px auto;
+		}
+	}
+	.text_item {
+		margin-top: 8px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: var(--font-size-body-xsmall);
+		color: var(--color-text-subtle);
+	}
+	&.danger {
+		.per_bar_dp {
+			background-color: var(--color-border-danger);
 		}
 	}
 }
@@ -185,5 +199,62 @@
 		font-size: var(--font-size-body-small);
 		color: var(--color-text-subtle);
 		text-align: center;
+	}
+}
+
+.progress_bar_ty4 {
+	.progress_bar_per {
+		position: relative;
+		border-radius: 50px;
+		
+		.per_bar {
+			position: relative;
+			height: 2px;
+			border-radius: 4px;
+			background-color: var(--color-element-gray-light);
+		}
+	}
+	.per_bar_dp {
+		position: absolute;
+		top: -1px;
+		left: 0;
+		width: 0;
+		height: 4px;
+		font-size: var(--font-size-body-xsmall);
+		color: var(--color-text-point);
+		line-height: 16px;
+		border-radius: 4px;
+		background-color: var(--color-border-danger);
+		white-space: nowrap;
+		transition: width 1.3s ease;
+
+		&:after {
+			position: absolute;
+			top: -2px;
+			right: -2px;
+			content:'';
+			width: 8px;
+			height: 8px;
+			background: var(--color-surface-white);
+			border-radius: 50%;
+			border: 1px solid var(--color-border-danger);
+		}
+	}
+	.text_item {
+		margin-top: 6px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: var(--font-size-body-xsmall);
+		color: var(--color-text-subtle);
+	}
+	&.sufficient {
+		.per_bar_dp {
+			background-color: var(--color-border-secondary);
+			&:after {
+				border-color: var(--color-border-secondary);
+			}
+
+		}
 	}
 }
