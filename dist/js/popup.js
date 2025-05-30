@@ -9,11 +9,6 @@
  * @returns {void}
  */
 function openHDPopup($triggerEl, target) {
-	// if (!$triggerEl) {
-	// 	console.error("$triggerEl 필수");
-	// 	return false;
-	// }
-
 	if (target == undefined || target == null) {
 		console.log("오픈할 팝업 타겟이 없습니다.");
 		return false;
@@ -22,24 +17,16 @@ function openHDPopup($triggerEl, target) {
 	let $trigger;
 
 	//$trigger 타입 유효성 체크
-	if (typeof $triggerEl === "string" || $triggerEl instanceof HTMLElement) {
+	if (typeof $triggerEl == "string" || $triggerEl instanceof HTMLElement) {
 		$trigger = $($triggerEl);
 	} else if ($triggerEl instanceof jQuery) {
 		// jQuery 객체인 경우
 		$trigger = $triggerEl;
 	} else {
-		// console.error("$triggerEl 타입을 확인하세요.");
-		// return false;
 		$trigger = document.body;
 	}
 
-	// s: 퍼블테스트용 (개발단에서는 삭제해주세요.)
-	// if (window.popupGroup) {
-	// 	attachPopup(target);
-	// }
-	// e: 퍼블테스트용 (개발단에서는 삭제해주세요.)
-
-	let $target = $("#" + target);
+	const $target = $("#" + target);
 
 	let $header = $target.find(".popup_head_title").length > 0 ? $target.find(".popup_head_title") : null;
 	let $content = $target.find(".popup_cont").length > 0 ? $target.find(".popup_cont") : null;
@@ -117,10 +104,21 @@ function closeHDPopup(target, returnTarget = null) {
 		return false;
 	}
 
-	let $target = $("#" + target);
+	const $target = $("#" + target);
+	let $returnTarget;
 	const $opener = $('[triggerId="' + $target.attr("opner") + '"]');
-	const $triggerEl = returnTarget || $opener;
 	$target.removeClass("active");
+
+	//returnTarget 타입 유효성 체크
+	if (returnTarget) {
+		if (typeof returnTarget == "string" || returnTarget instanceof HTMLElement) {
+			$returnTarget = $(returnTarget);
+		} else if (returnTarget instanceof jQuery) {
+			$returnTarget = returnTarget;
+		}
+	}
+
+	const $triggerEl = returnTarget || $opener;
 
 	//하단에 다른 팝업이 열려있는 경우, 가장 최근 팝업으로 focus강제 이동
 	const $prevPopup = $(".popup_wrap.active:last");
@@ -147,18 +145,6 @@ function closeHDPopup(target, returnTarget = null) {
 			$target.attr("aria-hidden", "true");
 			$target.find(".popup_inner").attr("aria-hidden", "true");
 		}, 350);
-
-		// s: 퍼블테스트용 (개발단에서는 삭제해주세요.)
-		// if (window.popupGroup) {
-		// 	setTimeout(() => {
-		// 		$target.remove();
-		// 	}, 1000);
-		// }
-		// e: 퍼블테스트용 (개발단에서는 삭제해주세요.)
-
-		// s: 개발에서는 이 구문을 주석 해제 바랍니다.
-		// setTimeout(()=>{ $target.remove()},1000);
-		// e: 개발에서는 이 구문을 주석 해제 바랍니다.
 	} else {
 		$(".wrap").attr("aria-hidden", "false");
 		$(".wrap").removeAttr("inert");
@@ -167,27 +153,9 @@ function closeHDPopup(target, returnTarget = null) {
 
 		setTimeout(() => {
 			$triggerEl.attr("tabindex", 0).focus();
-
-			// s: 퍼블테스트용 (개발단에서는 삭제해주세요.)
-			// if (window.popupGroup) {
-			// 	setTimeout(() => {
-			// 		$target.remove();
-			// 	}, 400);
-			// }
-			// e: 퍼블테스트용 (개발단에서는 삭제해주세요.)
-
-			// s: 개발에서는 이 구문을 주석 해제 바랍니다.
-			// setTimeout(()=>{ $target.remove()},1000);
-			// e: 개발에서는 이 구문을 주석 해제 바랍니다.
 		}, 350);
 	}
 }
-
-//동적 append 함수(퍼블 테스트용)
-// function attachPopup(newPopup) {
-// 	const popupArea = $(".popup_area");
-// 	popupArea.append(window.popupGroup[newPopup]);
-// }
 
 // UUID생성
 function generateUUID() {

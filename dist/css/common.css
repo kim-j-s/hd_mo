@@ -226,6 +226,9 @@ strong {
 .content .content_top + * {
 	margin-top: var(--gap-8);
 }
+.content .content_top + .text_sub {
+	margin-top: 1.2rem;
+}
 .content .content_top .title_h2 + .btn_area {
 	margin-top: 0.8rem;
 }
@@ -5012,7 +5015,7 @@ strong {
 	padding-right: 3rem;
 	background: url(../images/icon/arrowRight_disabled_ty2.svg) no-repeat right bottom/2.4rem auto;
 }
-.card_item_wrap .card_item.selected {
+.card_item_wrap .card_item.selected:not(.disabled) {
 	background-color: #fff;
 }
 .card_item_wrap .card_item.selected .inp_checkbox input[type="checkbox"]:checked ~ i {
@@ -5945,23 +5948,23 @@ strong {
 .i_logo_247 {
 	background-image: url("../images/logo/i_logo_247.svg");
 }
-.i_logo_0008 {
-	background-image: url("../images/logo/i_logo_0008.svg");
+.i_logo_367 {
+	background-image: url("../images/logo/i_logo_367.svg");
 }
-.i_logo_0009 {
-	background-image: url("../images/logo/i_logo_0009.svg");
+.i_logo_368 {
+	background-image: url("../images/logo/i_logo_368.svg");
 }
-.i_logo_0005 {
-	background-image: url("../images/logo/i_logo_0005.svg");
+.i_logo_366 {
+	background-image: url("../images/logo/i_logo_366.svg");
 }
-.i_logo_0004 {
-	background-image: url("../images/logo/i_logo_0004.svg");
+.i_logo_365 {
+	background-image: url("../images/logo/i_logo_365.svg");
 }
-.i_logo_0002 {
-	background-image: url("../images/logo/i_logo_0002.svg");
+.i_logo_381 {
+	background-image: url("../images/logo/i_logo_381.svg");
 }
-.i_logo_0000 {
-	background-image: url("../images/logo/i_logo_0000.svg");
+.i_logo_000 {
+	background-image: url("../images/logo/i_logo_000.svg");
 }
 /********
 * 기타 아이콘
@@ -6138,27 +6141,32 @@ strong {
 .input_text input::placeholder {
 	color: var(--color-text-disabled);
 }
-.input_text input:-moz-read-only {
-	background-color: var(--color-input-surface-disabled);
-}
-.input_text input:read-only {
-	background-color: var(--color-input-surface-disabled);
-}
-.input_text input:-moz-read-only + .del {
-	display: none !important;
-}
-.input_text input:read-only + .del {
-	display: none !important;
-}
-.input_text input:disabled {
-	color: var(--color-text-disabled-on) !important;
-	background-color: var(--color-input-surface-disabled);
-}
 .input_text input:focus {
 	outline: none;
 }
-.input_text.readonly,
+.input_text.readonly:not(.big),
 .input_text.disabled {
+	background-color: var(--color-input-surface-disabled);
+}
+.input_text.readonly:not(.big):-moz-read-only,
+.input_text.disabled:-moz-read-only {
+	background-color: var(--color-input-surface-disabled);
+}
+.input_text.readonly:not(.big):read-only,
+.input_text.disabled:read-only {
+	background-color: var(--color-input-surface-disabled);
+}
+.input_text.readonly:not(.big):-moz-read-only + .del,
+.input_text.disabled:-moz-read-only + .del {
+	display: none !important;
+}
+.input_text.readonly:not(.big):read-only + .del,
+.input_text.disabled:read-only + .del {
+	display: none !important;
+}
+.input_text.readonly:not(.big):disabled,
+.input_text.disabled:disabled {
+	color: var(--color-text-disabled-on) !important;
 	background-color: var(--color-input-surface-disabled);
 }
 .input_text.disabled .int_txt {
@@ -6697,6 +6705,9 @@ strong {
 }
 .form_group_wrap .row + .form_line {
 	margin-top: 1.6rem;
+}
+.form_group_wrap .row + .total_price_display_ty1 {
+	margin: 3.2rem 0 0;
 }
 .form_group_wrap .column {
 	display: -webkit-box;
@@ -8420,6 +8431,18 @@ strong {
 	-ms-flex-align: center;
 	align-items: center;
 	padding: var(--padding-3) var(--number-6);
+}
+.inp_radio[class*="rd_btn"] input[type="radio"] + label.ty2 {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	align-items: start;
 }
 .inp_radio[class*="rd_btn"] input[type="radio"] + label:before {
 	content: none;
@@ -10652,6 +10675,19 @@ strong {
 }
 .info_gray .btn_area {
 	margin-top: var(--gap-5);
+}
+.info_gray .top_item_info {
+	font-size: var(--font-size-body-small);
+	color: var(--color-text-subtle);
+}
+.info_gray .top_item_info .tit {
+	margin: 0.4rem 0 0.8rem;
+	display: block;
+	font-size: var(--font-size-heading-small);
+	color: var(--color-text-bolder);
+}
+.info_gray .top_item_info + .footer_dl {
+	margin-top: 1.2rem;
 }
 .info_gray .info_text + ul {
 	margin-top: var(--gap-4);
