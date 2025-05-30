@@ -995,23 +995,10 @@ strong {
 	}
 }
 
-
-.ico_title_ty1 {
-	text-align: center;
-
-	.title_h2 {
-		margin-top: var(--gap-4);
-	}
-
-	& + .info_gray {
-		margin-top: var(--gap-8);
-	}
-}
-
 //icon
-[class^=ico_title_ty]{
-
-	.icon {
+[class^=ico_top_ty]{
+	.ico {
+		display: block;
 		width: 64px;
 		height: 64px;
 		margin: 0 auto;
@@ -1021,5 +1008,8 @@ strong {
 		&.app_intd {
 			background-image:url(../images/temp/icon_title_ltht_01.svg);
 		}
+	}
+	& + [class^=title_h]{
+		margin-top: var(--gap-4);
 	}
 }

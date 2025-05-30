@@ -50,6 +50,9 @@ strong {
 .primary_bold {
 	color: var(--color-text-primary-bold);
 }
+.danger {
+	color: var(--color-text-danger);
+}
 .bold {
 	font-weight: 700;
 }
@@ -829,24 +832,19 @@ strong {
 .info_alert_cont .info_cont p {
 	margin: 0;
 }
-.ico_title_ty1 {
-	text-align: center;
-}
-.ico_title_ty1 .title_h2 {
-	margin-top: var(--gap-4);
-}
-.ico_title_ty1 + .info_gray {
-	margin-top: var(--gap-8);
-}
-[class^="ico_title_ty"] .icon {
+[class^="ico_top_ty"] .ico {
+	display: block;
 	width: 6.4rem;
 	height: 6.4rem;
 	margin: 0 auto;
 	background-repeat: no-repeat;
 	background-size: 6.4rem auto;
 }
-[class^="ico_title_ty"] .icon.app_intd {
+[class^="ico_top_ty"] .ico.app_intd {
 	background-image: url(../images/temp/icon_title_ltht_01.svg);
+}
+[class^="ico_top_ty"] + [class^="title_h"] {
+	margin-top: var(--gap-4);
 }
 /* common 인증, 로딩 등 */
 .blockUI,
@@ -4035,6 +4033,37 @@ strong {
 .bann_text_wrap_ty2 + .list_top_wrap {
 	margin-top: 5.2rem;
 }
+.bann_text_wrap_ty3 {
+	display: block;
+	padding: 2rem 2.4rem;
+	background: var(--color-element-secondary-light-blue);
+	border-radius: 2.4rem;
+}
+.bann_text_wrap_ty3 .text {
+	display: block;
+	padding-left: 4.4rem;
+	font-size: var(--font-size-body-medium);
+	font-weight: 500;
+	color: #2b3541;
+	background: url(../images/icon/banner/icon_heart_plus.svg) no-repeat left top/auto 3.2rem;
+}
+.bann_text_wrap_ty3 .text strong {
+	font-weight: 700;
+}
+.bann_text_wrap_ty3 .text > span {
+	margin-top: 0.4rem;
+	display: block;
+	font-size: var(--font-size-body-small);
+}
+.bann_text_wrap_ty3 .text .arrowRightSvg_ty4 {
+	padding-right: 2.4rem;
+	background-repeat: no-repeat;
+	background-position: right 0.4rem center;
+	background-size: 1.6rem auto;
+}
+.bann_text_wrap_ty3 + .card_item_wrap {
+	margin-top: 3.2rem;
+}
 .bann_wrap.bann_ty1 {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -5187,6 +5216,24 @@ strong {
 }
 .all_checking + .card_item_wrap {
 	margin-top: 1.6rem;
+}
+.insu_plan {
+	margin-bottom: 1.2rem;
+}
+.insu_plan .tit {
+	margin-bottom: 0.4rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 0.4rem;
+	font-size: var(--font-size-body-medium);
+	line-height: 1;
+}
+.insu_plan p {
+	color: var(--color-text-subtle);
 }
 /* checkbox */
 /* Checkbox */
@@ -8148,6 +8195,23 @@ strong {
 	height: 1rem;
 	background: url(../images/icon/progressbar_dot.svg) no-repeat center/0.8rem auto;
 }
+.progress_bar_ty2 .text_item {
+	margin-top: 0.8rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	font-size: var(--font-size-body-xsmall);
+	color: var(--color-text-subtle);
+}
+.progress_bar_ty2.danger .per_bar_dp {
+	background-color: var(--color-border-danger);
+}
 .progress_bar_ty3 .progress_bar_per_cover .per_bar {
 	overflow: hidden;
 	display: -webkit-box;
@@ -8192,6 +8256,62 @@ strong {
 	font-size: var(--font-size-body-small);
 	color: var(--color-text-subtle);
 	text-align: center;
+}
+.progress_bar_ty4 .progress_bar_per {
+	position: relative;
+	border-radius: 5rem;
+}
+.progress_bar_ty4 .progress_bar_per .per_bar {
+	position: relative;
+	height: 0.2rem;
+	border-radius: 0.4rem;
+	background-color: var(--color-element-gray-light);
+}
+.progress_bar_ty4 .per_bar_dp {
+	position: absolute;
+	top: -1px;
+	left: 0;
+	width: 0;
+	height: 0.4rem;
+	font-size: var(--font-size-body-xsmall);
+	color: var(--color-text-point);
+	line-height: 1.6rem;
+	border-radius: 0.4rem;
+	background-color: var(--color-border-danger);
+	white-space: nowrap;
+	-webkit-transition: width 1.3s ease;
+	transition: width 1.3s ease;
+}
+.progress_bar_ty4 .per_bar_dp:after {
+	position: absolute;
+	top: -0.2rem;
+	right: -0.2rem;
+	content: "";
+	width: 0.8rem;
+	height: 0.8rem;
+	background: var(--color-surface-white);
+	border-radius: 50%;
+	border: 1px solid var(--color-border-danger);
+}
+.progress_bar_ty4 .text_item {
+	margin-top: 0.6rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	font-size: var(--font-size-body-xsmall);
+	color: var(--color-text-subtle);
+}
+.progress_bar_ty4.sufficient .per_bar_dp {
+	background-color: var(--color-border-secondary);
+}
+.progress_bar_ty4.sufficient .per_bar_dp:after {
+	border-color: var(--color-border-secondary);
 }
 /* radio */
 /* Radio */
