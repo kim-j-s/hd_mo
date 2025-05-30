@@ -1,0 +1,111 @@
+{{#> layout/default page-title="보험료 확인 | 상품"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_full" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- s: popup_content_top -->
+		<div class="popup_content_top txt_center">
+            <!-- prettier-ignore -->
+			<h2 class="title_h2">
+                <strong>40대, 남자</strong> 평균<br>
+                가입금액 대비 <strong class="danger"><!-- 부족할때만 class 추가 -->부족</strong>해요
+			</h2>
+		</div>
+		<!-- e: popup_content_top -->
+        <a href="#" class="bann_text_wrap_ty3" title="페이지 이동">
+            <!-- prettier-ignore -->
+            <span class="text">
+                <strong class="point">월 99,820원</strong>으로<br>
+                <strong>뇌/심장/수술비·입원/사망</strong>
+                <span><span class="arrowRightSvg_ty4">건강보험 알아보기</span></span>
+            </span>
+        </a>
+		<div class="card_item_wrap">
+            <!-- 부족 -->
+            <div class="card_item">
+                <div class="insu_plan">
+                    <!-- prettier-ignore -->
+                    <div class="tit">
+                        <span class="hd_badge outline solid_pastel c_danger size_m">부족</span><span>뇌출혈진단</span>
+                    </div>
+                    <p>의사에 의해 뇌출혈로 진단이 확정된 경우 진단비 지급</p>
+                </div>
+                <div class="progress_bar_ty4" role="img" tabindex="0" aria-label="진행률">
+                    <div class="progress_bar_per_cover">
+                        <div class="progress_bar_per">
+                            <div class="per_bar">
+                                <span class="per_bar_dp" style="width:55%;"></span>
+                            </div>
+                        </div>
+                        <div class="text_item">
+                            <div>1,000만원 보장 중</div>
+                            <div>평균 1,800만원</div>
+                        </div>
+                    </div>	
+                </div>
+            </div>
+            <!-- 미가입 -->
+            <div class="card_item">
+                <div class="insu_plan">
+                    <!-- prettier-ignore -->
+                    <div class="tit">
+                        <span class="hd_badge outline solid_pastel c_info size_m">미가입</span><span>뇌졸중진단</span>
+                    </div>
+                    <p>의사에 의해 뇌졸중으로 진단이 확정된 경우 진단비 지급</p>
+                </div>
+                <div class="progress_bar_ty4" role="img" tabindex="0" aria-label="진행률">
+                    <div class="progress_bar_per_cover">
+                        <div class="progress_bar_per">
+                            <div class="per_bar">
+                                <span class="per_bar_dp" style="width:0%;"></span>
+                            </div>
+                        </div>
+                        <div class="text_item">
+                            <div>미가입</div>
+                            <div>평균 1,000만원</div>
+                        </div>
+                    </div>	
+                </div>
+            </div>
+            <!-- 충분 -->
+            <div class="card_item">
+                <div class="insu_plan">
+                    <!-- prettier-ignore -->
+                    <div class="tit">
+                        <span class="hd_badge outline solid_pastel c_secondary size_m">충분</span><span>뇌혈관질환진단</span>
+                    </div>
+                    <p>의사에 의해 뇌혈관 질환으로 진단이 확정된 경우 진단비 지급(뇌경색증, 뇌졸중, 뇌출혈, 대뇌/뇌전동맥의 폐쇄 및 협착 등)</p>
+                </div>
+                <div class="progress_bar_ty4 sufficient" role="img" tabindex="0" aria-label="진행률"><!-- 100%로 이상일때 sufficient 추가 -->
+                    <div class="progress_bar_per_cover">
+                        <div class="progress_bar_per">
+                            <div class="per_bar">
+                                <span class="per_bar_dp" style="width:100%;"></span>
+                            </div>
+                        </div>
+                        <div class="text_item">
+                            <div>1,000만원 보장 중</div>
+                            <div>평균 1,000만원</div>
+                        </div>
+                    </div>	
+                </div>
+            </div>
+        </div>
+        <ul class="list_ty2">
+            <li>위 나이대별 평균 금액은 한국신용정보원의 CreDB 보험표본 DB에 등록된 260만명의 계약 및 담보정보를 바탕으로 제공되었습니다.</li>
+        </ul>
+	</div>
+</div>
+
+<!-- s: 하단 고정 버튼 영역 -->
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" b-text="확인"}}
+	</div>
+</div>
+<!-- s: 하단 고정 버튼 영역 -->
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+ 
+{{/ layout/default }}
