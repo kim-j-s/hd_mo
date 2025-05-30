@@ -539,7 +539,7 @@
 	padding-bottom: var(--gap-7);
 	> li {
 		+ li {
-			margin-top: var(--gap-4,);
+			margin-top: var(--gap-4);
 		}
 	}
 	.item {
@@ -588,9 +588,9 @@
 
 .list_depth {
 	@include list-style(
-	  	$li-padding: 0 0 0 8px,
-	  	$li-font-size: var(--font-size-body-medium),
-	  	$li-color: var(--color-text-basic),
+		$li-padding: 0 0 0 8px,
+		$li-font-size: var(--font-size-body-medium),
+		$li-color: var(--color-text-basic),
 		$li-line-height: 1.5,
 		$li-dot-color: #33363D
 	) {
@@ -705,12 +705,12 @@
 	}
 
 	li {
-		padding-left: 8px;
 		position: relative;
+		padding-left: 8px;
 		&::before {
 			content: '';
 			position: absolute;
-			top:0;
+			top: 0;
 			left: 0;			
 		}
 	}
@@ -719,8 +719,8 @@
 		margin: 0;
 		font-size: var(--font-size-body-small);
 		&::before {
-			background-color: none;
 			content: '-';
+			background-color: none;
 		}
 
 		& ~ li {
@@ -744,7 +744,7 @@
 				}
 
 				& ~ li {
-					margin-top:8px;
+					margin-top: var(--gap-3);
 				}
 			}
 		}
@@ -766,7 +766,7 @@
 				}
 
 				& ~ li {
-					margin-top:8px;
+					margin-top: var(--gap-3);
 				}
 			}
 
@@ -971,7 +971,7 @@
 // 			height: 0.9em;
 // 		}
 // 		ol {
-// 			margin-top:8px;
+// 			margin-top: var(--gap-3);
 // 			counter-reset: number 0;
 // 			& > li {
 // 				font-size: var(--font-size-body-xsmall);
@@ -1075,7 +1075,7 @@
 		}
 		
 		ul {
-			margin-top:8px;
+			margin-top: var(--gap-3);
 			& > li {
 				position: relative;
 				padding: 0 0 0 8px;
