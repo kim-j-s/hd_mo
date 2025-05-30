@@ -641,7 +641,7 @@
 				margin-top: var(--gap-5);
 			}
 		}
-	}
+	}	
 
 	.sub_txt_area {
 		display: flex;
@@ -732,6 +732,42 @@
 				margin-top: var(--gap-5);
 			}
 		}
+	}
+
+	&.acd_item_ty9 { //헤더가 없는 케이스
+		border-radius: var(--radius-large2);
+		border: var(--border-width-static-regular) solid var(--color-border-gray-light);
+		.acd_head {
+			position: relative;
+			display: none;
+
+			.acd_btn {
+				display: none;
+			}
+		}
+
+		.acd_cont {
+			position: relative;
+			padding: 20px;
+			transition: all 0.3s;
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 20px;
+				width: calc(100% - 40px);
+				border-bottom: 1px solid var(--color-divider-gray-light);
+				transition: all 0.3s;
+			}
+		}
+
+		.coverage_item_list {
+			li ~ li {
+				border-top: 1px solid var(--color-divider-gray-light);
+				padding-top: 16px;
+			}
+		}
+
 	}
 
 	&.acd_tg {
