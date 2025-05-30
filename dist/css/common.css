@@ -4597,6 +4597,7 @@ strong {
 .card_item_wrap + * {
 	margin-top: 1.6rem;
 }
+.card_item_wrap + *.pop_title_h1,
 .card_item_wrap + *.list_top_wrap,
 .card_item_wrap + *.card_item_wrap,
 .card_item_wrap + *.title_h3,
@@ -10854,6 +10855,47 @@ strong {
 }
 .info_gray .info_top_cont dl dt {
 	min-width: 8rem;
+}
+.info_gray.flex_row {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.info_gray.flex_row dl {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	gap: 0;
+}
+.info_gray.flex_row dl dt {
+	text-align: center;
+	font-size: var(--font-size-body-xsmall);
+}
+.info_gray.flex_row dl dd {
+	text-align: center;
+	margin-top: 0.4rem;
+	font-size: var(--font-size-heading-small);
+	font-weight: 700;
+}
+.info_gray.flex_row dl dd span {
+	font-size: var(--font-size-heading-medium);
+}
+.info_gray.flex_row dl + dl {
+	position: relative;
+	margin: 0;
+}
+.info_gray.flex_row dl + dl::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	width: 1px;
+	height: 5.2rem;
+	background: var(--color-divider-gray-light);
 }
 .call_box {
 	margin-top: 5.2rem;

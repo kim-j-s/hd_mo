@@ -4050,6 +4050,8 @@ ul + .form_group_wrap {
 }
 .bg_top_cover + .opt_case4,
 .bg_top_cover + .info_cont,
+.bg_top_cover + .info_cont,
+.bg_top_cover + .card_item_wrap,
 .bg_top_cover + .acd_item {
 	margin-top: 3.2rem;
 }
@@ -4364,9 +4366,123 @@ ul + .form_group_wrap {
 	transform: rotate(0deg);
 }
 /* 보험진단 서비스 */
-.is_diagnosis_service .inner .service_visual {
-	height: 100%;
-	margin: 0 -2.4rem;
+.wrap.service .container {
+	padding-bottom: 1.6rem;
+}
+.is_diagnosis_service .service_visual {
+	height: calc(100vh - 4rem);
+	margin: -1.6rem -2.4rem 0;
+	background: var(--color-surface-warning-subtler) url(../images/content/mypg/img_MHOMYPG13005000000_1.svg) no-repeat center bottom;
+}
+.is_diagnosis_service .service_visual .inner {
 	padding: var(--padding-12) var(--padding-8) 25.4rem;
-	background: var(--color-surface-warning-subtler) url(../image/content/mypg/img_MHOMYPG13005000000_1.svg) no-repeat center bottom;
+}
+.is_diagnosis_service .service_visual .inner .visual_top .title {
+	font-size: var(--font-size-heading-xlarge);
+	text-align: center;
+}
+.is_diagnosis_service .service_visual .inner .visual_top .title strong {
+	color: var(--color-text-bolder);
+}
+.is_diagnosis_service .service_visual .inner .visual_top .title .desc {
+	font-size: var(--font-size-heading-medium);
+}
+.is_diagnosis_service .service_visual .inner .visual_top .btn_area {
+	margin-top: var(--gap-5);
+}
+.is_diagnosis_service .service_visual .inner .visual_msg {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	gap: var(--gap-5);
+	margin-top: 5.5rem;
+}
+.is_diagnosis_service .service_visual .inner .visual_msg [class^="msg_step"] {
+	position: relative;
+	display: inline-block;
+	padding: var(--padding-6) var(--padding-8);
+	background-color: #fef9ed;
+	font-size: var(--font-size-body-small);
+	color: var(--color-text-subtle);
+	-webkit-transform: translateY(9rem);
+	transform: translateY(9rem);
+}
+.is_diagnosis_service .service_visual .inner .visual_msg [class^="msg_step"] ~ .is_diagnosis_service .service_visual .inner .visual_msg [class^="msg_step"] {
+	margin-top: var(--gap-5);
+}
+.is_diagnosis_service .service_visual .inner .visual_msg [class^="msg_step"].effect {
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+	opacity: 1;
+}
+.is_diagnosis_service .service_visual .inner .visual_msg .msg_step1 {
+	margin-right: auto;
+	border-radius: var(--radius-large2) var(--radius-large2) var(--radius-large2) 0;
+	-webkit-transform-origin: top;
+	transform-origin: top;
+	-webkit-transition:
+		opacity 0.5s ease-in-out,
+		-webkit-transform 0.8s cubic-bezier(0, -0.25, 0, 1.25);
+	transition:
+		opacity 0.5s ease-in-out,
+		-webkit-transform 0.8s cubic-bezier(0, -0.25, 0, 1.25);
+	transition:
+		transform 0.8s cubic-bezier(0, -0.25, 0, 1.25),
+		opacity 0.5s ease-in-out;
+	transition:
+		transform 0.8s cubic-bezier(0, -0.25, 0, 1.25),
+		opacity 0.5s ease-in-out,
+		-webkit-transform 0.8s cubic-bezier(0, -0.25, 0, 1.25);
+}
+.is_diagnosis_service .service_visual .inner .visual_msg .msg_step1.effect {
+	color: var(--color-text-disabled);
+	background-color: transparent;
+}
+.is_diagnosis_service .service_visual .inner .visual_msg .msg_step1.effect:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: rgba(255, 255, 255, 0.25);
+	border-radius: var(--radius-large2) var(--radius-large2) var(--radius-large2) 0;
+}
+.is_diagnosis_service .service_visual .inner .visual_msg .msg_step2 {
+	margin-left: auto;
+	border-radius: var(--radius-large2) var(--radius-large2) 0 var(--radius-large2);
+	-webkit-transform-origin: top;
+	transform-origin: top;
+	-webkit-transition:
+		opacity 0.1s ease-in-out,
+		-webkit-transform 0.8s cubic-bezier(0, -0.25, 0, 1.25);
+	transition:
+		opacity 0.1s ease-in-out,
+		-webkit-transform 0.8s cubic-bezier(0, -0.25, 0, 1.25);
+	transition:
+		transform 0.8s cubic-bezier(0, -0.25, 0, 1.25),
+		opacity 0.1s ease-in-out;
+	transition:
+		transform 0.8s cubic-bezier(0, -0.25, 0, 1.25),
+		opacity 0.1s ease-in-out,
+		-webkit-transform 0.8s cubic-bezier(0, -0.25, 0, 1.25);
+	-webkit-transition-delay: 2s;
+	transition-delay: 2s;
+	opacity: 0;
+}
+.is_diagnosis_service .service_form {
+	margin-top: var(--gap-9);
+}
+.is_diagnosis_service .btn_area {
+	margin-top: var(--padding-12);
+	padding-top: var(--padding-5);
 }
