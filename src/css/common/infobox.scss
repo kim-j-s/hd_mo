@@ -356,6 +356,41 @@
 			}
 		}
 	}
+	&.flex_row {
+		display: flex;
+		dl {
+			flex-direction: column;
+			justify-content: center;
+			gap: 0;
+			dt {
+				text-align: center;
+				font-size: var(--font-size-body-xsmall);
+			}
+			dd {
+				text-align: center;
+				margin-top: 4px;
+				font-size: var(--font-size-heading-small);
+				font-weight: 700;
+				span  {
+					font-size: var(--font-size-heading-medium);
+				}
+			}
+			& + dl {
+				position: relative;
+				margin: 0;
+				&::before {
+					position: absolute;
+					top: 0;
+					left: 0;
+					content: '';
+					width: 1px;
+					height: 52px;
+					background: var(--color-divider-gray-light);
+				}
+			}
+		}
+
+	}
 
 }
 
