@@ -1,11 +1,18 @@
-{{#> layout/default page-title="계약선택 | 마이페이지"}}
+{{#> layout/default page-title="계약조회 | 마이페이지"}}
 	<div id="wrap" class="wrap">
-		{{> layout/header h-title="보험증권" }}
+		{{> layout/header h-title="손비처리용보험료납입증명서" }}
 		<div id="container" class="container">
 			<div class="content">
 				<p class="text_sub">
 					발급할 계약을 선택해주세요.
 				</p>
+                <div class="selectitem_wrap">
+                    {{> cp/selectitem si_class="select_item_case01_mi" si_ph="선택해주세요." si_title="조회기간 선택" si_item="2024.03~2025.03" si_popup="pop_type01"}}
+                </div>
+                <div class="btn_area">
+                    {{> cp/button type="2" size="2" b-text="조회"}}
+                </div>
+                <div class="divider_ty1"></div>
 				<div class="card_item_wrap ty3">
 					<div class="card_item">
 						<div class="item_inner">
@@ -28,12 +35,8 @@
 										<div class="cont">2021.06.01~2031.06.01</div>
 									</li>
 									<li>
-										<div class="title">보험료</div>
-										<div class="cont">49,780원</div>
-									</li>
-									<li>
-										<div class="title">피보험자</div>
-										<div class="cont">김*대</div>
+										<div class="title">연간보험료</div>
+										<div class="cont">2,400,000원</div>
 									</li>
 								</ul>
 							</div>
@@ -60,12 +63,8 @@
 										<div class="cont">2021.06.01~2031.06.01</div>
 									</li>
 									<li>
-										<div class="title">보험료</div>
-										<div class="cont">49,780원</div>
-									</li>
-									<li>
-										<div class="title">피보험자</div>
-										<div class="cont">김*대</div>
+										<div class="title">연간보험료</div>
+										<div class="cont">2,400,000원</div>
 									</li>
 								</ul>
 							</div>
@@ -93,16 +92,15 @@
 					<ul class="list_depth">
 						<li>이용대상 및 조건 
                             <ul>
-                                <li>보험계약을 유지 중인 인터넷 가입 계약자만 이용할 수 있습니다.</li>
-                                <li>일반보험 보험증권은 원계약 기준으로 발급되며, 국문/영문 선택이 가능합니다.</li>
-                                <li>계약사항을 변경한 경우, 계약담당자나 지점을 통해서도 발급할 수 있습니다.</li>
+                                <li>인터넷 가입 계약자만 이용할 수 있습니다.</li>
+                                <li>재물성 장기보험, 고용인(직원)이 피보험자인 장기보험에 해당해야 합산증명서, 월별 증명서를 발급할 수 있습니다.</li>
                             </ul>
                         </li>
 						<li>발급 시 유의사항
                             <ul>
+                                <li>기타 보험료는 납입보험료 중 저축보험료를 제외한 부분으로 위험보장 및 사업비 재원이 되는 금액입니다.(법인인 경우 손금산입 대상 금액)</li>
                                 <li>팝업이 차단돼 있을 경우 증명서가 보이지 않을 수 있습니다. 팝업 차단을 해제하고 다시 발급해주세요.</li>
                                 <li>자세한 내용은 대표 고객센터(1588-5656, 평일 09:00~18:00)로 문의해주세요.</li>
-                                <li>관련 법 조항: 「상법」 제640조(보험증권의 교부) ① 보험자는 보험계약이 성립한 때에는 지체없이 보험증권을 작성하여 보험계약자에게 교부하여야 한다.</li>
                             </ul>
                         </li>
 					</ul>
@@ -119,5 +117,27 @@
 	</div>
 
 	<!-- s: popup area -->
+<!-- s: 조회조건 - 날짜 선택 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="조회 기간 입력"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">기간</div>
+				<div class="range_calrendar">
+					{{> cp/text cal=true placeholder="날짜를 선택하세요" value="2024.03" }}
+					{{> cp/text cal=true placeholder="날짜를 선택하세요" value="2024.03" readonly=true }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 조회조건 - 날짜 선택 팝업 -->
 	<!-- e: popup area -->
 {{/ layout/default }}
