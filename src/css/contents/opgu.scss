@@ -5,7 +5,7 @@
 .cert_select_list {
 	> li {
 		+ li {
-			margin-top: 16px;
+			margin-top: var(--gap-5);
 		}
 	}
 	.cert_select_item {
@@ -136,12 +136,12 @@
 	position: relative;
 	height: 72px;
 	+ .btn_area {
-		margin-top: 16px;
+		margin-top: var(--gap-5);
 	}
 }
 
 .pin_enter_error_msg {
-	margin-top: 8px; 
+	margin-top: var(--gap-3); 
 	font-size: 0;
 	text-align: center;
 	> .text {
@@ -166,7 +166,7 @@
 		.item {
 			display: block;
 			height: 100%;
-			padding: 24px;
+			padding: var(--padding-8);
 			border-radius: 24px;
 			border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 			.text {
@@ -248,7 +248,7 @@
 }
 
 .zoom_content {
-	margin-top: 32px;
+	margin-top: var(--gap-8);
 }
 
 
@@ -290,10 +290,10 @@
 		}
 	}
 	& + .form_group_wrap {
-		margin-top: 16px;
+		margin-top: var(--gap-5);
 	}
 	& + .info_cont {
-		margin-top: 32px;
+		margin-top: var(--gap-8);
 	}
 }
 
@@ -354,11 +354,20 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				height: 160px;
+				// height: 160px;
+				height: 338px;
 				border-radius: var(--radius-medium3);
 				background-color: var(--color-surface-secondary-subtler);
 				.esc_msg {
-					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100px;
+					height: 50%;
+					display: flex;
+					width: 100%;
+					align-items: center;
+					justify-content: center;
 					font-size: var(--font-size-body-large);
 					color: var(--color-text-disabled);
 				}
