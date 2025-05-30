@@ -1,0 +1,417 @@
+{{#> layout/default page-title="보험료 결제 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="보험료 결제" }}
+
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
+				<h2 class="title_h2">
+					보험료를 <strong>결제하면</strong><br>
+					<strong>가입이 완료</strong>돼요
+				</h2>
+			</div>
+			<!-- e: content_top -->
+
+			<div class="bg_top_cover ty2">
+				<div class="info_gray bg_etc01">
+					<div class="total">
+						<dl>
+							<dt>결제하실 금액</dt>
+							<dd>
+								<strong class="big">42,500원</strong>
+							</dd>
+						</dl>
+					</div>
+					<div class="info_top_cont">
+						<dl>
+							<dt>할인 전 보험료</dt>
+							<dd>50,000원</dd>
+						</dl>
+						<dl>
+							<dt>할인금액</dt>
+							<dd>-7,500원
+								<div class="sub_text">동물등록할인(5%), 유기동물입양할인(3%), 다펫할인(5%)</div>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+
+			<!-- s: 간편정보 -->
+			<div class="simple_info_wrap">
+				<div class="simple_info_item">
+					<ul class="sii_list">
+						<li>
+							<span class="sii_list_l">결제하실 금액</span>
+							<span class="sii_list_r">
+								<strong class="price">42,500원</strong>
+							</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- e: 간편정보 -->
+		
+			<div class="tab_wrap">
+				<div class="tab_wrap_list_ty1" role="tablist">
+					{{>cp/tab_btn tb-text="신용(앱)카드" tb-id="01" tb-active=true}}
+					{{>cp/tab_btn tb-text="간편결제" tb-id="02"}}
+					{{>cp/tab_btn tb-text="즉시이체" tb-id="03"}}
+				</div>
+
+				<!-- 신용(앱)카드 -->
+				<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
+					<div class="btn_area end">
+						<a href="javascript:void(0)" role="button" class="btn_link short_cut">
+							<span class="text">이전 결제 정보 불러오기</span>
+						</a>
+					</div>
+					<h3 class="title_h4">신용카드 정보 입력</h3>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">카드사</div>
+							{{> cp/selectitem si_ph="카드사 선택" si_title="카드사 선택" }}
+							<!-- s: KB카드 선택 시 노출 -->
+							{{> cp/checkbox id="checkbox1" labelname="앱카드 결제" }}
+							<!-- e: KB카드 선택 시 노출 -->
+						</div>
+						<div class="form_line">
+							<div class="label_tit">카드번호</div>
+							<div class="comp_wrap card">
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" no_del="flase" }}
+								<span class="dash">-</span>
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="flase" }}
+								<span class="dash">-</span>
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
+								<span class="dash">-</span>
+								{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" inp-title="카드 마지막번째 4자리 입력" no_del="flase" }}
+							</div>
+						</div>
+						<div class="form_line">
+							<div class="label_tit">유효기간</div>
+							{{> cp/text placeholder="MMYY" minlength="4" maxlength="4" inp-title="유효기간 입력" }}
+						</div>
+						<div class="form_line">
+							<div class="label_tit">카드 할부</div>
+							{{> cp/selectitem si_ph="개월 수 선택" si_title="카드 할부 선택" si_popup="card_period_select"}}
+							<ul class="list_ty2">
+								<li>계약자 명의의 국내발급 카드로만 결제할 수 있어요. (법인, 가족카드 불가)</li>
+							</ul>
+						</div>
+						<!-- s: 현대카드 선택 시, 노출 -->
+						<div class="form_line">						
+							<div class="checkbox_group_wrap column">
+								<div class="inp_checkbox rd_box">
+									<input type="checkbox" id="checkbox01-9" />
+									<label for="checkbox01-9" class="chk_label chk_label_ty3">
+										<span class="label_cont">
+											현대카드 M포인트 사용 
+											{{> cp/button_question question-icon="arrow" pop_id="pop_type04" question_tit="현대카드 결제 혜택 안내" }}
+											<span class="sub_g_txt">(최소 1,000P부터 30,000P까지 이용 가능)</span>
+										</span>
+									</label>
+								</div>
+							</div>							
+
+						</div>
+						<!-- e: 현대카드 선택 시, 노출 -->
+					</div>
+
+					<!-- s: 카드 혜택 안내 배너 -->
+					<div class="banner_slide_wrap">
+						<div id="card_reward_banner_wrap" class="swiper"> 
+							<div class="swiper-wrapper">
+								<a class="swiper-slide bann_wrap bann_ty1 co_ty2" href="#">			
+									<div class="inner">									
+										<span class="logo">{{> cp/icon iconClass="i_logo_366"}}</span>
+										<div class="bann_cont">
+											<div class="title">신한카드로 결제해 보세요</div>
+											<div class="desc">
+												신한카드로 결제하면 포인트 100% 사용가능
+											</div>		
+										</div>
+									</div>
+								</a>
+								<a class="swiper-slide bann_wrap bann_ty1" href="#">
+									<div class="inner">
+										<span class="logo">{{> cp/icon iconClass="i_logo_367"}}</span>									
+										<div class="bann_cont">
+											<div class="title">현대카드로 결제해 보세요</div>
+											<div class="desc">
+												M포인트 100% 사용가능<br>
+												계속보험료 결제 가능
+											</div>
+										</div>
+									</div>
+								</a>			
+								<a class="swiper-slide bann_wrap bann_ty1 co_ty3" href="#">
+									<div class="inner">
+										<span class="logo">{{> cp/icon iconClass="i_logo_365"}}</span>												
+										<div class="bann_cont">
+											<div class="title">삼성카드로 결제해 보세요</div>
+											<div class="desc">
+												삼성카드로 결제하면 포인트 100% 사용가능
+											</div>		
+										</div>
+									</div>
+								</a>
+							</div>	
+						</div>
+						<div class="swiper-pagination sp_ty1"></div>
+						<button class="swiper_button sbc_03 sbs_01 swiper_button_left"></button>
+						<button class="swiper_button sbc_03 sbs_01 swiper_button_right" aria-label="다음" disabled></button>
+					</div>
+					<!-- e: 카드 혜택 안내 배너 -->	
+				</div>	
+			
+
+				<!-- 간편결제 -->
+				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
+					<h3 class="title_h4">간편 결제 정보 입력</h3>
+					<div class="radio_group_wrap" role="radiogroup">
+						{{> cp/radio rd-class="rd_btn icon_pay_ty1" rd-id="radio_btn_g1" name="radio_g1" labelname="카카오페이" checked=true }}
+						{{> cp/radio rd-class="rd_btn icon_pay_ty2" rd-id="radio_btn_g2" name="radio_g1" labelname="네이버페이" }}
+						{{> cp/radio rd-class="rd_btn icon_pay_ty3" rd-id="radio_btn_g3" name="radio_g1" labelname="토스 페이" }}
+					</div>
+					
+					
+					<!-- s: 카카오페이 -->
+					<div class="acd_item acd_item_ty4">
+						{{#> cp/accordion ac-title="Kakao Pay 이용안내" ac-active=true }}
+						<div class="info_cont">
+							<ul class="list_depth">
+								<li>카카오페이에 등록된 카드소유자(계좌 예금주)는 보험계약자와 같아야 해야합니다.</li>
+								<li>카카오페이로 결제하신 경우, 카드결제내역 및 계좌출금내역은 카카오페이에서 확인 가능합니다.</li>
+								<li>카카오페이 결제 시, 현대해상의 카드결제 후청구서비스 및 카드대체는 적용되지 않습니다.</li>
+								<li>200만원이상 결제시 ARS인증이 추가되며, 카드로 결제시 가맹점인 카카오페이 기준 무이자 할부정책이 적용됩니다.</li>
+								<li>현대해상의 다른 이벤트 혜택(제휴카드 등)과 중복 적용되지 않습니다.</li>
+							</ul>
+							<h4>Kakao Pay 고객센터</h4>
+							<ul class="list_depth">
+								<li>전화번호 : 1644-7405</li>
+								<li>운영시간 : 평일 09:00~18:00</li>
+							</ul>
+						</div>
+						{{/ cp/accordion }}
+					</div>
+					<!-- e: 카카오페이 -->
+
+					<!-- s: 네이버페이 -->
+					<div class="acd_item acd_item_ty4">
+						{{#> cp/accordion ac-title="Naver Pay 이용안내" ac-active=true }}
+						<div class="info_cont">
+							<ul class="list_depth">
+								<li>네이버페이는 네이버ID로 별도 앱 설치 없이 신용카드 또는 은행계좌 정보를 등록하여 네이버페이 비밀번호로 결제할 수 있는 간편결제 서비스입니다.
+									<ul>
+										<li>결제 가능한 신용카드: 신한, 삼성, 현대, BC, 국민, 하나, 롯데, NH농협, 씨티, 카카오뱅크</li>
+										<li>결제 가능한 은행: NH농협, 국민, 신한, 우리, 기업, SC제일, 부산, 경남, 수협, 우체국, 미래에셋대우, 광주, 대구, 전북, 새마을금고, 제주은행, 신협, 하나은행, 케이뱅크, 카카오뱅크, 삼성증권, KDB산업은행</li>
+									</ul>
+								</li>
+								<li>네이버페이에 등록된 카드소유자(계좌예금주)는 보험계약자와 동일해야 합니다.</li>
+								<li>네이버페이로 결제하신 경우, 카드 결제내역 및 계좌출금내역은 네이버페이에서 확인 가능합니다.</li>
+								<li>네이버페이 결제시, 당사의 카드결제 후청구 서비스 및 카드대체는 적용되지 않습니다.</li>
+								<li>네이버페이 카드 간편결제는 네이버페이에서 제공하는 카드사 별 무이자, 청구할인 혜택을 받을 수 있습니다.</li>
+								<li>당사에서 진행중인 타 이벤트 혜택(제휴카드 혜택)과 중복적용이 불가합니다.(네이버페이 혜택 적용)</li>
+								<li>주문 변경 시 카드사 혜택 및 할부 적용 여부는 해당 카드사 정책에 따라 변경될 수 있습니다.</li>
+							</ul>
+							<h4>Naver Pay 고객센터</h4>
+							<ul class="list_depth">
+								<li>전화번호 : 1588-3819</li>
+								<li>운영시간 : 평일 09:00~18:00</li>
+							</ul>
+						</div>
+						{{/ cp/accordion }}
+					</div>				
+					<!-- e: 네이버페이 -->
+
+					<!-- s: 토스페이 -->
+					<div class="acd_item acd_item_ty4">
+						{{#> cp/accordion ac-title="토스페이 이용안내" ac-active=true }}
+						<div class="info_cont">
+							<ul class="list_depth">
+								<li>계약자 본인 명의의 토스 앱이 설치된 스마트폰만 결제가 가능합니다.</li>
+								<li>관련 문의는 토스 고객센터(1599-4095)로 문의 부탁드립니다.</li>
+								<li>토스페이에 등록된 카드소유자(계좌 예금주)는 보험계약자와 동일해야합니다.</li>
+								<li>토스페이로 결제하신 경우, 카드 결제 내역 및 계좌 출금 내역은 토스페이에서 확인 가능합니다.</li>
+								<li>토스페이로 결제 시, 당사의 카드결제 후 청구 서비스 및 카드 대체는 적용되지 않습니다.</li>
+								<li>토스페이에서 제공하는 카드사 별 무이자 혜택은 당사 혜택과 상이할 수 있습니다.</li>
+								<li>타사에서 진행중인 타 이벤트 혜택(제휴카드 혜택)과 중복적용이 불가합니다. (토스페이 혜택 적용)</li>
+								<li>주문 변경시 카드사 혜택 및 활부 적용 여부는 해당 카드사 정책에 따라 변경될 수 있습니다.</li>
+							</ul>
+						</div>
+						{{/ cp/accordion }}
+					</div>
+					<!-- e: 토스페이 -->
+				</div>
+				<!-- 즉시이체 -->
+				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel03">
+					<h3 class="title_h4">계좌 정보 입력</h3>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">은행</div>
+							{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" }}
+						</div>
+						<div class="form_line">
+							<div class="label_tit">계좌번호</div>
+							{{> cp/text placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
+							<ul class="list_ty2">
+								<li>계약자 명의 계좌만 입력할 수 있어요.</li>
+								<li>즉시 이체 가능 시간 : 09:00 ~ 21:50</li>
+							</ul>
+						</div>
+					</div>					
+				</div>
+			</div>
+			<div class="divider_ty1"></div>
+			<h3 class="title_h4">2회차 이후 결제 정보 입력</h3>
+		
+			<div class="form_group_wrap">
+				<!-- s: 1회차를 현대카드로 선택시에만 출력 -->
+				<div class="form_line">
+					<div class="radio_group_wrap" role="radiogroup">
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_card1" name="radio01" labelname="현대카드로 결제" checked=true }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_card2" name="radio01" labelname="계좌이체로 결제" }}
+					</div>
+				</div>
+				<!-- e: 1회차를 현대카드로 선택시에만 출력 -->
+				
+				<div class="form_line">
+				{{> cp/checkbox checkbox_class="rd_box" id="checkbox04-9" label_class="chk_label_ty3" labelname="1회차 보험료 결제 계좌와 동일합니다" }}		
+				</div>
+				<div class="form_line">
+					<div class="label_tit">은행</div>
+					{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" }}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">계좌번호</div>
+					{{> cp/text placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">매월 자동이체일</div>
+					{{> cp/selectitem si_ph="매월 자동이체일 선택" si_item="5일" si_title="매월 자동이체일 선택" si_popup="bank_day_select"}}
+				</div>
+			</div>
+		
+
+			<div class="info_gray">
+				<dl>
+					<dt>납입 기간</dt>
+					<dd>10년</dd>
+				</dl>
+				<dl>
+					<dt>납입 방법</dt>
+					<dd>매월</dd>
+				</dl>
+			</div>
+			<div class="checkbox_group_wrap column">
+				{{> cp/checkbox labelname="자동이체 약관 동의" ag_more=true id="agree02" checkbox_class="rd_box" }}
+			</div>
+		</div>
+	</div>
+
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="결제 정보를 입력 중이에요" disabled=true }}
+			<!-- {{> cp/button type="1" size="1" b-text="보험료 결제하고 가입하기" }} -->
+		</div>
+	</div>
+</div>
+
+<!-- s: popup area -->
+<!-- s: 카드 할부 팝업 -->
+{{#> popup/popup_bottom popup-id="card_period_select" popup-title="카드 할부"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="opt_select_list opt_case3">
+			<div role="button" tabindex="0" class="option"><span class="text">일시불</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">2개월</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">3개월</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">4개월</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">5개월</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">6개월</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">6개월</span></div>
+		</div>
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 카드 할부 팝업 -->
+<!-- s: 매월 자동이체일 팝업 -->
+{{#> popup/popup_bottom popup-id="bank_day_select" popup-title="매월 자동이체일"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="opt_select_list opt_case3">
+			<div role="button" tabindex="0" class="option"><span class="text">1일</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">5일</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">10일</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">15일</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">20일</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">25일</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">말일</span></div>
+		</div>
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 매월 자동이체일 팝업 -->
+<!-- s: 현대카드 결제 혜택 안내 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type04" popup-title="현대카드 결제 혜택 안내" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="text_sub">현대카드로 1회차 보험료를 결제하면</div>
+		<ol class="circle_list">
+			<li>M포인트 100% 사용 가능(1회차 보험료만)</li>
+			<li>2회차 이후 계속보험료도 현대카드로 결제 가능</li>
+		</ol>
+		<ul class="list_ty4">
+			<li>
+				카드 승인액 한도 내 보유포인트 전액이 차감됩니다.<br>
+				(승인시점 기준 1,000P~3,000P 이용 가능)
+			</li>
+			<li>포인트는 1회차 보험료에 한해서만 사용됩니다.</li>
+			<li>결제대금은 포인트가 차감된 금액으로 청구됩니다.</li>
+			<li>
+				포인트 관련 상담 및 문의<br>
+				현대카드 고객센터(1577-6000)<br>
+				현대카드 홈페이지(www.hyunhaicard.com)
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 현대카드 결제 혜택 안내 팝업 -->
+
+
+<!-- e: popup area -->
+{{/ layout/default }}
+
+
+<script>
+	$(document).ready(function(){
+		var bannerSwiper = new Swiper('#card_reward_banner_wrap', {
+					slidesPerView: 1,
+					updateOnWindowResize:true,
+					navigation: {
+						prevEl: ".swiper_button_left", 
+						nextEl: ".swiper_button_right", 
+					},
+					a11y: {
+						enabled: true,
+						prevSlideMessage: '이전 항목으로 이동',
+						nextSlideMessage: '다음 항목으로 이동',
+					},
+					pagination: {
+						el: '.swiper-pagination',
+						clickable: true,
+						type: 'bullets',
+						renderBullet: function (index, className) {
+							return `<span class="${className}" aria-label="배너${index + 1}번으로 이동"></span>`;
+						},
+					}				
+				});
+		});
+</script>

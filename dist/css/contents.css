@@ -4499,3 +4499,82 @@ ul + .form_group_wrap {
 	margin-top: var(--padding-12);
 	padding-top: var(--padding-5);
 }
+.visual_top {
+	margin: 0 -2.4rem;
+	padding: var(--padding-6) var(--padding-8) 0;
+	background-repeat: no-repeat;
+}
+.visual_top.insurance_result {
+	min-height: 38rem;
+	background-color: var(--color-surface-secondary-subtler);
+	background-image: url(../images/content/mypg/img_MHOMYPG13005010000_1.svg);
+	background-position: center bottom;
+}
+.visual_top.insurance_result .vs_step {
+	margin-bottom: var(--gap-3);
+}
+.visual_top.insurance_result .vs_step li + li {
+	margin-left: 1.6rem;
+}
+.visual_top.insurance_result .vs_step li + li:before {
+	content: "";
+	position: absolute;
+	top: 0.4rem;
+	left: -1.7rem;
+	width: 1.6rem;
+	height: 1.6rem;
+	background: url(../images/icon/arrowRight_ty9.svg) no-repeat center/1.6rem auto;
+}
+.visual_top.insurance_result .vs_step li.active.step1 {
+	background-color: var(--color-element-danger-lighter);
+	border-color: var(--color-border-danger-light);
+	color: var(--color-text-danger);
+}
+.visual_top.insurance_result .vs_step li.active.step2 {
+	background-color: var(--color-element-secondary-light-blue);
+	border-color: var(--color-border-secondary-light);
+	color: var(--color-text-secondary);
+}
+.visual_top.insurance_result .vs_step li.active.step3 {
+	background-color: var(--color-element-primary-lighter);
+	border-color: var(--color-border-primary-light);
+	color: var(--color-text-primary);
+}
+.vs_step {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.vs_step li {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding: 0.2rem var(--padding-3);
+	background-color: var(--color-element-gray-lighter);
+	font-size: var(--font-size-label-small);
+	color: var(--color-text-disabled-on);
+	border: var(--border-width-static-regular, 1px) solid var(--color-border-gray-light);
+	border-radius: var(--radius-small2);
+}
+.vs_step li.active::after {
+	content: "현재 단계";
+	position: absolute;
+	opacity: 0;
+}
+.vs_step li.active .st {
+	font-weight: 700;
+}
+.vs_step li .st {
+	position: relative;
+	padding-right: 0.9rem;
+}
+.vs_step li .st:after {
+	content: "";
+	position: absolute;
+	top: 0.3rem;
+	right: 0.4rem;
+	width: 1px;
+	height: 1.2rem;
+	background-color: var(--color-border-gray-light);
+}

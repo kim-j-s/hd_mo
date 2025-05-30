@@ -1,100 +1,174 @@
-{{#> layout/default page-title="보험료 확인 | 상품"}}
+{{#> layout/default page-title="보험진단 서비스 | 상품"}}
 
-<!-- s: Full 팝업 -->
-{{#> popup/popup_full popup-id="pop_full" popup-active=true }}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="보험 진단 결과" }}
+
+	<div id="container" class="container">
+		<div class="content">
+			<div class="visual_top insurance_result">
+				<ol class="vs_step">
+					<!-- 해당 단계일 시, active 클래스 추가 -->
+					<li class="step1 active">
+						<span class="st">1단계</span>
+						<span>짚</span>
+					</li>
+					<li class="step2">
+						<span class="st">2단계</span>
+						<span>통나무</span>
+					</li>
+					<li class="step3">
+						<span class="st">3단계</span>
+						<span>벽돌</span>
+					</li>
+				</ol>
+				<!-- prettier-ignore -->
+				<h2 class="title_h2">
+					<strong>김*대</strong>님의 보험은<br>
+					바람이 조금만 불어도 휘청!<br>
+					보장이 <strong class="danger">많이 부족</strong>해요
+				</h2>
+
+				<div class="btn_area basic">
+					{{> cp/button type="3" size="5" b-text="계약 중인 보험 자세히보기" rightIcon="arrowRightSvg" }}
+				</div>
+			</div>
+
+			<div class="tab_wrap">
+				<div class="tab_wrap_list_ty1" role="tablist">
+					{{>cp/tab_btn tb-text="필요해요" tb-class="tab_btn_block" tb-id="ex01" tb-active=true}}
+					{{>cp/tab_btn tb-text="안전해요" tb-class="tab_btn_block" tb-id="ex02"}}
+				</div>
+				<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanelex01">
+
+					<div class="divider_ty1"></div>
+					<!-- prettier-ignore -->
+					<h3 class="title_h3">
+						<span class="light">비바람에도 안심되는</span><br>
+						벽돌집 보장으로 업그레이드<span class="light">하세요.</span>
+					</h3>
+
+					<div class="divider_ty1"></div>
+				</div>
+			</div>
+
+			<!-- s: 가입 시 유의사항 -->
+			{{#> cp/notice dp-title="가입시 유의 사항" dp-active="active"}}
+			<ul class="list_depth">
+				<li>
+					보험계약자가 기존에 체결했던 보험계약을 해지하고 다른 보험계약을 체결하면 보험 인수가 거절되거나 보험료가 인상되거나 보장내용이 달라질 수 있습니다. 또한 지급한도, 면책사항 등에 따라 보험금 지급이 제한될 수 있습니다.
+				</li>
+				<li>
+					이 보험계약은 예금자보호법에 따라 예금보험공사가 보호하되, 보호한도는 본 보험회사에 있는 귀하의 모든 예금보호대상 금융상품의 해양환급금(또는 만기시 보험금이나 사고보험금)에 기다지급금을 합하여 1인당 ‘최고 5천만원'이며, 5천만원을 초과하는 나머지 금액은 보호하지 않습니다.
+				</li>
+				<li>보험계약 체결 전 상품설명서 및 약관을 읽어보시기 바랍니다.</li>
+			</ul>
+			{{/ cp/notice }}
+			<!-- e: 가입 시 유의사항 -->
+		</div>
+	</div>
+</div>
+
+<!-- s: popup area -->
+
+<!-- s: Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="popup_type01" }}
 <div class="popup_cont">
 	<div class="popup_content">
 		<!-- s: popup_content_top -->
 		<div class="popup_content_top txt_center">
-            <!-- prettier-ignore -->
+			<!-- prettier-ignore -->
 			<h2 class="title_h2">
-                <strong>40대, 남자</strong> 평균<br>
-                가입금액 대비 <strong class="danger"><!-- 부족할때만 class 추가 -->부족</strong>해요
+				<strong>40대, 남자</strong> 평균<br>
+				가입금액 대비 <strong class="danger"><!-- 부족할때만 class 추가 -->부족</strong>해요
 			</h2>
 		</div>
 		<!-- e: popup_content_top -->
-        <a href="#" class="bann_text_wrap_ty3" title="페이지 이동">
-            <!-- prettier-ignore -->
-            <span class="text">
-                <strong class="point">월 99,820원</strong>으로<br>
-                <strong>뇌/심장/수술비·입원/사망</strong>
-                <span><span class="arrowRightSvg_ty4">건강보험 알아보기</span></span>
-            </span>
-        </a>
+
+		<a href="#" class="bann_text_wrap_ty3" title="페이지 이동">
+			<!-- prettier-ignore -->
+			<span class="text">
+				<strong class="point">월 99,820원</strong>으로<br>
+				<strong>뇌/심장/수술비·입원/사망</strong>
+				<span><span class="arrowRightSvg_ty4">건강보험 알아보기</span></span>
+			</span>
+		</a>
 		<div class="card_item_wrap">
-            <!-- 부족 -->
-            <div class="card_item">
-                <div class="insu_plan">
-                    <!-- prettier-ignore -->
-                    <div class="tit">
-                        <span class="hd_badge outline solid_pastel c_danger size_m">부족</span><span>뇌출혈진단</span>
-                    </div>
-                    <p>의사에 의해 뇌출혈로 진단이 확정된 경우 진단비 지급</p>
-                </div>
-                <div class="progress_bar_ty4" role="img" tabindex="0" aria-label="진행률">
-                    <div class="progress_bar_per_cover">
-                        <div class="progress_bar_per">
-                            <div class="per_bar">
-                                <span class="per_bar_dp" style="width:55%;"></span>
-                            </div>
-                        </div>
-                        <div class="text_item">
-                            <div>1,000만원 보장 중</div>
-                            <div>평균 1,800만원</div>
-                        </div>
-                    </div>	
-                </div>
-            </div>
-            <!-- 미가입 -->
-            <div class="card_item">
-                <div class="insu_plan">
-                    <!-- prettier-ignore -->
-                    <div class="tit">
-                        <span class="hd_badge outline solid_pastel c_info size_m">미가입</span><span>뇌졸중진단</span>
-                    </div>
-                    <p>의사에 의해 뇌졸중으로 진단이 확정된 경우 진단비 지급</p>
-                </div>
-                <div class="progress_bar_ty4" role="img" tabindex="0" aria-label="진행률">
-                    <div class="progress_bar_per_cover">
-                        <div class="progress_bar_per">
-                            <div class="per_bar">
-                                <span class="per_bar_dp" style="width:0%;"></span>
-                            </div>
-                        </div>
-                        <div class="text_item">
-                            <div>미가입</div>
-                            <div>평균 1,000만원</div>
-                        </div>
-                    </div>	
-                </div>
-            </div>
-            <!-- 충분 -->
-            <div class="card_item">
-                <div class="insu_plan">
-                    <!-- prettier-ignore -->
-                    <div class="tit">
-                        <span class="hd_badge outline solid_pastel c_secondary size_m">충분</span><span>뇌혈관질환진단</span>
-                    </div>
-                    <p>의사에 의해 뇌혈관 질환으로 진단이 확정된 경우 진단비 지급(뇌경색증, 뇌졸중, 뇌출혈, 대뇌/뇌전동맥의 폐쇄 및 협착 등)</p>
-                </div>
-                <div class="progress_bar_ty4 sufficient" role="img" tabindex="0" aria-label="진행률"><!-- 100%로 이상일때 sufficient 추가 -->
-                    <div class="progress_bar_per_cover">
-                        <div class="progress_bar_per">
-                            <div class="per_bar">
-                                <span class="per_bar_dp" style="width:100%;"></span>
-                            </div>
-                        </div>
-                        <div class="text_item">
-                            <div>1,000만원 보장 중</div>
-                            <div>평균 1,000만원</div>
-                        </div>
-                    </div>	
-                </div>
-            </div>
-        </div>
-        <ul class="list_ty2">
-            <li>위 나이대별 평균 금액은 한국신용정보원의 CreDB 보험표본 DB에 등록된 260만명의 계약 및 담보정보를 바탕으로 제공되었습니다.</li>
-        </ul>
+			<!-- 부족 -->
+			<div class="card_item">
+				<div class="insu_plan">
+					<!-- prettier-ignore -->
+					<div class="tit">
+						<span class="hd_badge outline solid_pastel c_danger size_m">부족</span><span>뇌출혈진단</span>
+					</div>
+					<p>의사에 의해 뇌출혈로 진단이 확정된 경우 진단비 지급</p>
+				</div>
+				<!-- aria-label 값 변경 필요 -->
+				<div class="progress_bar_ty4" role="img" tabindex="0" aria-label="1,000만원 보장 중 진행률 55% (평균 1,800만원)">
+					<div class="progress_bar_per_cover">
+						<div class="progress_bar_per">
+							<div class="per_bar">
+								<span class="per_bar_dp" style="width:55%;"></span>
+							</div>
+						</div>
+						<div class="text_item">
+							<div>1,000만원 보장 중</div>
+							<div>평균 1,800만원</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+			<!-- 미가입 -->
+			<div class="card_item">
+				<div class="insu_plan">
+					<!-- prettier-ignore -->
+					<div class="tit">
+						<span class="hd_badge outline solid_pastel c_info size_m">미가입</span><span>뇌졸중진단</span>
+					</div>
+					<p>의사에 의해 뇌졸중으로 진단이 확정된 경우 진단비 지급</p>
+				</div>
+				<!-- aria-label 값 변경 필요 -->
+				<div class="progress_bar_ty4" role="img" tabindex="0"  aria-label="미가입 진행률 0% (평균 1,000만원)">
+					<div class="progress_bar_per_cover">
+						<div class="progress_bar_per">
+							<div class="per_bar">
+								<span class="per_bar_dp" style="width:0%;"></span>
+							</div>
+						</div>
+						<div class="text_item">
+							<div>미가입</div>
+							<div>평균 1,000만원</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+			<!-- 충분 -->
+			<div class="card_item">
+				<div class="insu_plan">
+					<!-- prettier-ignore -->
+					<div class="tit">
+						<span class="hd_badge outline solid_pastel c_secondary size_m">충분</span><span>뇌혈관질환진단</span>
+					</div>
+					<p>의사에 의해 뇌혈관 질환으로 진단이 확정된 경우 진단비 지급(뇌경색증, 뇌졸중, 뇌출혈, 대뇌/뇌전동맥의 폐쇄 및 협착 등)</p>
+				</div>
+				<!-- aria-label 값 변경 필요 -->
+				<div class="progress_bar_ty4 sufficient" role="img" tabindex="0" aria-label="1,000만원 보장 중 진행률 100% (평균 1,000만원)"><!-- 100%로 이상일때 sufficient 추가 -->
+					<div class="progress_bar_per_cover">
+						<div class="progress_bar_per">
+							<div class="per_bar">
+								<span class="per_bar_dp" style="width:100%;"></span>
+							</div>
+						</div>
+						<div class="text_item">
+							<div>1,000만원 보장 중</div>
+							<div>평균 1,000만원</div>
+						</div>
+				</div>	
+			</div>
+		</div>
+		</div>
+		<ul class="list_ty2">
+			<li>위 나이대별 평균 금액은 한국신용정보원의 CreDB 보험표본 DB에 등록된 260만명의 계약 및 담보정보를 바탕으로 제공되었습니다.</li>
+		</ul>
 	</div>
 </div>
 
@@ -105,7 +179,9 @@
 	</div>
 </div>
 <!-- s: 하단 고정 버튼 영역 -->
-{{/ popup/popup_full}}
-<!-- e: Full 팝업 -->
+{{/ popup/popup_bottom}}
+<!-- e: Bottom 팝업 -->
+
+<!-- e: popup area -->
  
 {{/ layout/default }}
