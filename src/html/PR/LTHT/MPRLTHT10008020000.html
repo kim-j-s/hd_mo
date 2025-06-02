@@ -1,0 +1,55 @@
+{{#> layout/default page-title="건강검진진단서 이미지 등록 | 상품"}}
+    
+
+	<!-- s: 초년도 보험료 5% 할인 방법 안내 full 팝업 -->
+	{{#> popup/popup_full popup-id="pop_type01" popup-active=true popup-title="초년도 보험료 5% 할인 방법 안내" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+      <div class="popup_content_top">
+        <!-- prettier-ignore -->
+        <h2 class="title_h3">
+          <span class="light">계약체결일로부터 6개월 이내「건강검진결과통보서」를 사진으로 보내주시면</span> 초년도 보험료의 5%<span class="light">를 할인해드립니다.</span>  
+        </h2>
+        <p class="text_sub">(이미 납입하신 보험료는 5% 환급, 앞으로 내실 보험료는 5%할인 적용)</p>
+		  </div>
+
+      <div class="form_box">
+        <div class="info_gray">
+          <h3 class="title_h3">건강검진결과통보서</h3>
+          <ul class="list_depth">
+            <li>발급기관 : 건강보험공단 혹은 병원에서 발급</li>
+            <li>건강검진일 : 2023.05.26</li>
+            <li>사진송부기한 : 2025.11.19까지</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="form_box">
+        <h3 class="title_h3">모바일에서 사진 첨부하기</h3>
+        <div class="form_group_wrap">
+          <div class="form_line">
+            <div class="label_tit">휴대폰번호</div>
+            {{> cp/text class="phone" type="tel" placeholder="-없이 입력" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+           	<div class="btn_area">
+               {{> cp/button type="3" size="3" b-text="사진첨부 링크받기"}}
+            </div>  
+            <ul class="list_ty2">
+              <li>입력하신 휴대폰번호로 링크주소를 보내드립니다.(문자 혹은 알림톡)</li>
+              <li>계약체결 후 6개월 이후 송부시, 초년도보혐료 할인은 불가합니다.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="확인"}}
+		</div>
+	</div>
+	{{/ popup/popup_full}}
+	<!-- e: 초년도 보험료 5% 할인 방법 안내 full 팝업 -->
+
+
+
+	{{/ layout/default }}
