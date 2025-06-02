@@ -63,24 +63,30 @@
 											</div>
 									</div>
 
-									<div class="form_line">
-											<div class="label_tit">변경 기준일</div>
-											<ul>
-												<li>태아 : 임신확인서 상의 임신확인일 (임신확인일이 보험개시일 이전인 경우 보험개시일)</li>
-												<li>자녀 : 보험개시일 
-													<ul>
-														<li>다자녀인 경우 가장 어린 자녀(태아)를 기준으로 선택해주세요.</li>
-													</ul>
-												</li>
-											</ul>
-									</div>
-
-									<!-- s: 태아선택 & 다자녀 여부 -->
+									<!-- s: 태아선택 -->
 									<div class="form_line">
 											<div class="label_tit">태아 출생예정일</div>
 											{{> cp/text class="birth_day" type="tel" placeholder="예)19900101" maxlength="8" inp-title="태아 출생예정일 입력" }}
 									</div>
-									<!-- e: 태아선택 & 다자녀 여부 -->
+									<!-- e: 태아선택 -->
+
+									<!-- s: 자녀구분에서 자녀(만 12세 이하)를 선택 시 노출 -->
+									<div class="form_line">
+										<div class="label_tit">변경 기준일</div>
+										{{> cp/text cal=true }}
+										<ul class="list_depth_ty2">
+											<li>태아 : 임신확인서 상의 임신확인일 (임신확인일이 보험개시일 이전인 경우 보험개시일)</li>
+											<li>자녀 : 보험개시일 
+												<ul>
+													<!-- prettier-ignore -->
+													<li>다자녀인 경우 <strong class="point">가장 어린 자녀(태아)를 기준</strong>으로 선택해주세요.</li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+									<!-- e: 자녀구분에서 자녀(만 12세 이하)를 선택 시 노출 -->
+
+									
 								</div>	
 								<!-- e: 25-06-04 수정 -->
 						</div>
@@ -123,10 +129,12 @@
 												{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
 										</div>
 										<!-- s: 25-05-27 수정 -->
+										<!-- s: 25-06-04 수정 -->
 										<div class="info_gray">
-												<h3 class="title_h3">기명피보험자에게 가족관계증명서 간편 조회를 요청 하시겠습니까?</h3>				
-												<p class="info_text">문자로 받은 URL을 통해 가족관계증명서 간편조회를 이용하여 자녀 정보를 입력할 수 있습니다.</p>
+											<h3 class="title_h3">기명피보험자에게 가족관계증명서 간편 조회를 요청할까요?</h3>				
+											<p class="info_text">알림톡(문자)로 받은 링크로 가족관계증명서 간편조회를 이용해 자녀 정보를 입력할 수 있어요.</p>
 										</div>
+										<!-- e: 25-06-04 수정 -->
 										<!-- e: 25-05-27 수정 -->
 										<div class="btn_area">
 												{{#> cp/button type="2" size="2"}}알림톡(문자)으로 요청{{/ cp/button}}
@@ -157,11 +165,13 @@
 								</div>
 								<ul class="list_ty2">
 									<!-- s: 25-05-27 수정 -->
+									<!-- s: 25-06-04 수정 -->
 									<!-- prettier-ignore -->
 									<li>
 										자녀가 여러 명인 경우 가장 막내의 정보가 노출됩니다.<br>
-										<strong class="point">할인특약 가입을 위해 피보험자정보 확인 단계에서 가족관계 입증서류(가족관계중명서, 주민등록등본 등) 중 1매를 등록해 주세요.</strong>
+										<strong class="point">할인특약 가입을 위해 다음 단계에서 가족관계 입증서류(가족관계증명서, 주민등록등본 등) 중 1매를 등록해 주세요.</strong>
 									</li>
+									<!-- e: 25-06-04 수정 -->
 									<!-- e: 25-05-27 수정 -->
 								</ul>
 						</div>
