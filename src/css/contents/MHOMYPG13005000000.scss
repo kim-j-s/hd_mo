@@ -107,12 +107,16 @@
 
 
 .visual_top {
-	min-height: 380px;
-	margin: -16px -24px 0;
+	margin: 0 -24px;
 	padding: var(--padding-6) var(--padding-8) 0;
-	background-color: var(--color-surface-secondary-subtler);
-	background-position: center bottom;
-	background-repeat: no-repeat;
+
+	&[class*=result_st]{
+		min-height: 380px;
+		margin-top: -16px;
+		background-position: center bottom;
+		background-repeat: no-repeat;
+		background-color: var(--color-surface-secondary-subtler);
+	}
 
 	.vs_step {
 		margin-bottom: var(--gap-3);
@@ -134,10 +138,6 @@
 		}
 	}
 
-	& + .anchor_wrap {
-		margin-top: var(--gap-8);
-	}
-
 	&.result_st1 {
 		background-image: url(../images/content/mypg/img_MHOMYPG13005010000_1_1.png);
 		
@@ -147,13 +147,6 @@
 					background-color: var(--color-element-danger-lighter);
 					border-color: var(--color-border-danger-light);
 					color: var(--color-text-danger);
-
-					&::after {
-						content:'현재 단계';
-						position: absolute;
-						opacity: 0;
-						width: 0;
-					}
 					.st {
 						font-weight: 700;
 					}
@@ -170,13 +163,6 @@
 					background-color: var(--color-element-secondary-light-blue);
 					border-color: var(--color-border-secondary-light);
 					color: var(--color-text-secondary);
-
-					&::after {
-						content:'현재 단계';
-						position: absolute;
-						opacity: 0;
-						width: 0;
-					}
 					.st {
 						font-weight: 700;
 					}
@@ -194,17 +180,15 @@
 					border-color: var(--color-border-primary-light);
 					color: var(--color-text-primary);
 				}
-				&::after {
-					content:'현재 단계';
-					position: absolute;
-					opacity: 0;
-					width: 0;
-				}
 				.st {
 					font-weight: 700;
 				}
 			}
 		}
+	}
+
+	& + .anchor_wrap {
+		margin-top: var(--gap-8);
 	}
 }
 
@@ -220,31 +204,22 @@
 		color: var(--color-text-disabled-on);
 		border: var(--border-width-static-regular, 1px) solid var(--color-border-gray-light);
 		border-radius: var(--radius-small2);
-
-		// &.active {
-		// 	&::after {
-		// 		content:'현재 단계';
-		// 		position: absolute;
-		// 		opacity: 0;
-		// 		width: 0;
-		// 	}
-		// 	.st {
-		// 		font-weight: 700;
-		// 	}
-		// }
 		
 		.st {
-			position: relative;
-			padding-right: 9px;
+			display: flex;
+			> span {
+				position: relative;
+				padding-left: 9px;
 
-			&:after {
-				content:'';
-				position: absolute;
-				top: 3px;
-				right: 4px;
-				width: 1px;
-				height: 12px;
-				background-color: var(--color-border-gray-light);
+				&:after {
+					content:'';
+					position: absolute;
+					top: 3px;
+					left: 4px;
+					width: 1px;
+					height: 12px;
+					background-color: var(--color-border-gray-light);
+				}
 			}
 		}
 	}
@@ -289,7 +264,11 @@
 		}
 	}
 }
-
+.anchor_move {
+	& + .list_ty2 {
+		margin-top: var(--gap-11);
+	}
+}
 
 .icon_text_area {
 	padding-top: 64px;

@@ -135,14 +135,6 @@
 		}
 	})
 
-	/* Anchor */
-	$DOM.on('click', '.anchor_wrap .anchor_btn', function(){
-    const $this = $(this);
-
-		$this.closest('.anchor_wrap').find('.anchor_btn').removeClass('active');
-		$this.addClass('active');
-	})
-
 	/* tag_item click */
 	$DOM.on('click', '.tag_item_wrap .tag_item', function(){
 		const $this = $(this);
@@ -174,7 +166,6 @@
 		}
 	});
 
-
   /* Tooltip */
   $DOM.on('click', '.tooltip_wrap button', function(){
     const $click = $(this).closest('.tooltip_wrap'),
@@ -193,6 +184,33 @@
 				$focus_btn.focus();
 			}
   });
+
+	/* Anchor */
+	$DOM.on('click', '.anchor_wrap .anchor_btn', function(){
+    const $this = $(this),
+					btnIdx = $this.index(),
+					text = $this.find('.hd_badge').text(),
+					count = text.match(/\d+/)[0];
+
+		$this.closest('.anchor_wrap').find('.anchor_btn').removeClass('active');
+		$this.addClass('active');
+
+		// 보장상태가 0일 때
+		if(count !== '0') {
+			$('.anchor_move').each(function(idx){
+				const moveIdx = idx,
+							positionVal = $(this).position().top,
+							scrollTop = $('.container').scrollTop(),
+							newVal = positionVal  + scrollTop - 30;
+
+				if(moveIdx == btnIdx){
+					$('.container').animate({
+						scrollTop : newVal
+					}, 500)
+				}
+			})
+		}
+	})
 
 
   /* Input */

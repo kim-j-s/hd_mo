@@ -6,40 +6,45 @@
 	<div id="container" class="container">
 		<div class="content">
 			<!-- 
+				단계별 class 추가 필요
 				1단계 : result_st1 클래스 추가
 				2단계 : result_st2 클래스 추가
 				3단계 : result_st3 클래스 추가
 			  -->
-			<div class="visual_top result_st1">
+			<div class="visual_top result_st2">
 				<ol class="vs_step">
 					<li class="step1">
-						<div class="st">1단계</div>
-						<div>짚</div>
+						<span class="st">
+							1단계 <span>짚</span>
+						</span>
 					</li>
-					<li class="step2">
-						<div class="st">2단계</div>
-						<div>통나무</div>
+					<!-- 접근성 적용을 위해 현재 단계 해당될 때, title 추가 -->
+					<li class="step2" title="현재 단계">
+						<span class="st">
+							2단계 <span>통나무</span>
+						</span>
 					</li>
 					<li class="step3">
-						<div class="st">3단계</div>
-						<div>벽돌</div>
+						<span class="st">
+							3단계 <span>벽돌</span>
+						</span>
 					</li>
 				</ol>
 				<!-- 충분 보장 0~3건일 때 -->
 				<!-- prettier-ignore -->
-				<h2 class="title_h2">
+				<!-- <h2 class="title_h2">
 					<strong>김*대</strong>님의 보험은<br>
 					바람이 조금만 불어도 휘청!<br>
 					보장이 <strong class="danger">많이 부족</strong>해요
-				</h2>
+				</h2> -->
 
 				<!-- 충분 보장 4~6건일 때 -->
 				<!-- prettier-ignore -->
-				<!-- <h2 class="title_h2">
+				<h2 class="title_h2">
 					<strong>김*대</strong>님의 보험은<br>
 					바람이 거세게 불어오면 와르르!<br>
 					보장이 <strong class="secondary">조금 더 필요</strong>해요
-				</h2> -->
+				</h2>
 
 				<!-- 충분 보장 7~8건일 때 -->
 				<!-- prettier-ignore -->
@@ -54,21 +59,21 @@
 				</div>
 			</div>
 
-			<div class="anchor_wrap sticky">
+			<div class="anchor_wrap">
 				<!-- prettier-ignore -->
-				<a href="#ac_area1" class="anchor_btn active" role="button" title="필요해요 영역으로 이동">
+				<button type="button" class="anchor_btn active" title="해당 영역으로 이동">
 					필요해요
 					<span class="hd_badge outline solid_pastel c_primary size_m">8개</span>
-				</a>
+				</button>
 				<!-- prettier-ignore -->
-				<a href="#ac_area2" class="anchor_btn" role="button" title="필요해요 영역으로 이동">
+				<button type="button" class="anchor_btn" title="해당 영역으로 이동">
 					안전해요
 					<span class="hd_badge outline solid_pastel c_secondary size_m">0개</span>
-				</a>
+				</button>
 			</div>
 
 			<!-- s: 필요해요 -->
-			<div id="ac_area1">
+			<div class="anchor_move">
 				<!-- prettier-ignore -->
 				<div class="icon_text_area face1">
 					충분히 준비된 보장이<br>
@@ -138,13 +143,12 @@
 					<span><span class="arrowRightSvg_ty4">강아지 펫보험 알아보기</span></span>
 				</span>
 			</a>
-
 			<!-- e: 배너영역 -->
 
 			<div class="divider_ty1"></div>
 
 			<!-- s: 안전해요 -->
-			<div id="ac_area2">
+			<div class="anchor_move">
 				<!-- prettier-ignore -->
 				<div class="icon_text_area face2">
 					<strong class="point">3개 보장</strong>을<br>
@@ -159,6 +163,10 @@
 				<div class="is_coverage_graph">보장그래프 영역</div>
 			</div>
 			<!-- e: 안전해요 -->
+			
+			<ul class="list_ty2">
+				<li>준법감시인 확인필 제20233828호<br>(2023.04.21~2024.10.16)</li>
+			</ul>
 
 			<!-- s: 가입 시 유의사항 -->
 			{{#> cp/notice dp-title="가입시 유의 사항" dp-active="active"}}
