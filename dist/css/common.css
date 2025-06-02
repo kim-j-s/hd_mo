@@ -6261,32 +6261,27 @@ strong {
 .input_text input::placeholder {
 	color: var(--color-text-disabled);
 }
+.input_text input:-moz-read-only {
+	background-color: var(--color-input-surface-disabled);
+}
+.input_text input:read-only {
+	background-color: var(--color-input-surface-disabled);
+}
+.input_text input:-moz-read-only + .del {
+	display: none !important;
+}
+.input_text input:read-only + .del {
+	display: none !important;
+}
+.input_text input:disabled {
+	color: var(--color-text-disabled-on) !important;
+	background-color: var(--color-input-surface-disabled);
+}
 .input_text input:focus {
 	outline: none;
 }
-.input_text.readonly:not(.big),
+.input_text.readonly,
 .input_text.disabled {
-	background-color: var(--color-input-surface-disabled);
-}
-.input_text.readonly:not(.big):-moz-read-only,
-.input_text.disabled:-moz-read-only {
-	background-color: var(--color-input-surface-disabled);
-}
-.input_text.readonly:not(.big):read-only,
-.input_text.disabled:read-only {
-	background-color: var(--color-input-surface-disabled);
-}
-.input_text.readonly:not(.big):-moz-read-only + .del,
-.input_text.disabled:-moz-read-only + .del {
-	display: none !important;
-}
-.input_text.readonly:not(.big):read-only + .del,
-.input_text.disabled:read-only + .del {
-	display: none !important;
-}
-.input_text.readonly:not(.big):disabled,
-.input_text.disabled:disabled {
-	color: var(--color-text-disabled-on) !important;
 	background-color: var(--color-input-surface-disabled);
 }
 .input_text.disabled .int_txt {
@@ -6670,6 +6665,7 @@ strong {
 	}
 }
 /* Form group */
+.form_group_wrap + .checkbox_group_wrap,
 .form_group_wrap + .title_h3 {
 	margin-top: var(--gap-11);
 }

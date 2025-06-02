@@ -596,6 +596,51 @@ function prograssBar() {
 	});
 }
 
+//car prograss
+function prograssCar() {
+	const $prograss = $(".progress_box_ty2");
+
+	$prograss.each(function (idx) {
+		const $allBar = $prograss.eq(idx),
+			$bar = $allBar.find(".ing"),
+			$start = $bar.find(".newStart");
+
+		const allW = $allBar.width(),
+			barW = $bar.width();
+
+		const newW = Math.round((barW / allW) * 100),
+			startW = Math.round((10 / allW) * 100),
+			newstartW = Math.round((37 / allW) * 100);
+
+		$prograss.children(".ing").removeClass("full");
+
+		let spotMargin = -(100 - newW - newstartW - 1) + "%";
+		let parseVal = parseFloat(spotMargin);
+		let leftVal = (parseVal / 100) * barW;
+
+		// bar가 시작일과 겹칠 때
+		if (allW - barW <= 40) {
+			$bar.addClass("big");
+			$bar.find(".newStart").css("margin-left", spotMargin);
+			$bar.find(".newStart").children("em").css("left", -leftVal);
+
+			// bar 길이 100%일 때
+		} else if (allW === barW) {
+			$bar.addClass("full");
+
+			// 기준일, 종료일 겹칠 때
+		} else if (barW <= 76) {
+			let spotMargin2 = barW - 27;
+			console.log(spotMargin2);
+			$bar.find(".newStart").addClass("small");
+			$bar
+				.find(".newStart")
+				.children(".spot")
+				.css("margin-right", 40 + "px");
+		}
+	});
+}
+
 /* Tab Scroll */
 // 탭 버튼 클릭 시 중앙에 위치하는 기능 - 접근성 관련 기능
 function tabScroll() {
@@ -668,6 +713,8 @@ $(function () {
 
 	currentPlan();
 	fixedMenuPlay();
+
+	prograssCar();
 
 	//input disabled&readonly
 	$(".input_text input").each(function () {
