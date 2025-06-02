@@ -573,41 +573,6 @@
 })();
 
 
-// prograss
-function prograssBar(){
-	const $card = $('.card_item');
-
-	$card.each(function(){
-		const $this = $(this),
-					$bar = $this.find('.insurance_policyBox .progress_box .ing');
-
-		if($this.find('.insurance_policyBox .progress_box').length > 0){
-			const marginLeft = parseFloat($bar.css('margin-left'));
-			const barBoxWidth = $bar.closest('.progress_box').width();
-			const barWidth = $bar.width();
-			const infoWidth = $bar.find('.start').width();
-			const total = marginLeft + barWidth;
-
-			// console.log(marginLeft, barWidth, total, '/'+ barBoxWidth);
-
-			if(marginLeft <= 37){
-				$bar.find('.start').addClass('left');
-			}
-
-			if(barBoxWidth <= total){
-				$bar.find('.end').addClass('right');
-			}
-
-			const barW = $bar.width();
-			if(barW <= 76){
-				console.log('a');
-			}
-		}
-	})
-}
-
-
-
 /* Tab Scroll */
 // 탭 버튼 클릭 시 중앙에 위치하는 기능 - 접근성 관련 기능
 function tabScroll(){
@@ -677,8 +642,6 @@ $(function(){
 
 	currentPlan();
 	fixedMenuPlay();
-
-	prograssBar();
 
 	//input disabled&readonly
 	$('.input_text input').each(function() {
@@ -753,7 +716,7 @@ $(function(){
 			$input.attr("readonly", false); // readonly 속성 제거
 		}, 500);
 	});
-	prograssBar();
+	
 	// 달력 호출
 
 	
