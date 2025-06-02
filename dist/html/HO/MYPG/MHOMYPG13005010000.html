@@ -459,20 +459,24 @@
 			</div>
 			<div id="container" class="container">
 				<div class="content">
-					<div class="visual_top insurance_result">
+					<!-- 
+							1단계 : result_st1 클래스 추가
+							2단계 : result_st2 클래스 추가
+							3단계 : result_st3 클래스 추가
+						  -->
+					<div class="visual_top result_st1">
 						<ol class="vs_step">
-							<!-- 해당 단계일 시, active 클래스 추가 -->
-							<li class="step1 active">
-								<span class="st">1단계</span>
-								<span>짚</span>
+							<li class="step1">
+								<div class="st">1단계</div>
+								<div>짚</div>
 							</li>
 							<li class="step2">
-								<span class="st">2단계</span>
-								<span>통나무</span>
+								<div class="st">2단계</div>
+								<div>통나무</div>
 							</li>
 							<li class="step3">
-								<span class="st">3단계</span>
-								<span>벽돌</span>
+								<div class="st">3단계</div>
+								<div>벽돌</div>
 							</li>
 						</ol>
 						<!-- 충분 보장 0~3건일 때 -->
@@ -488,7 +492,7 @@
 						<!-- <h2 class="title_h2">
 								<strong>김*대</strong>님의 보험은<br>
 								바람이 거세게 불어오면 와르르!<br>
-								보장이 <strong class="danger">조금 더 필요</strong>해요
+								보장이 <strong class="secondary">조금 더 필요</strong>해요
 							</h2> -->
 
 						<!-- 충분 보장 7~8건일 때 -->
@@ -496,7 +500,7 @@
 						<!-- <h2 class="title_h2">
 								<strong>김*대</strong>님의 보험은<br>
 								태풍에도 끄떡없어요<br>
-								<strong class="danger">충분</strong>하게 잘 준비되었네요
+								<strong class="point">충분</strong>하게 잘 준비되었네요
 							</h2> -->
 
 						<div class="btn_area basic">
@@ -508,33 +512,110 @@
 					</div>
 
 					<div class="anchor_wrap sticky">
-						<a href="#ac_area1" class="anchor_btn active">
-							필요해요
-							<span class="hd_badge outline solid_pastel c_primary size_m">8개</span>
-						</a>
-						<a href="#ac_area2" class="anchor_btn">
-							충분해요
-							<span class="hd_badge outline solid_pastel c_secondary size_m">0개</span>
-						</a>
+						<!-- prettier-ignore -->
+						<a href="#ac_area1" class="anchor_btn active" role="button" title="필요해요 영역으로 이동">
+								필요해요
+								<span class="hd_badge outline solid_pastel c_primary size_m">8개</span>
+							</a>
+						<!-- prettier-ignore -->
+						<a href="#ac_area2" class="anchor_btn" role="button" title="필요해요 영역으로 이동">
+								안전해요
+								<span class="hd_badge outline solid_pastel c_secondary size_m">0개</span>
+							</a>
 					</div>
 
+					<!-- s: 필요해요 -->
+					<div id="ac_area1">
+						<!-- prettier-ignore -->
+						<div class="icon_text_area face1">
+								충분히 준비된 보장이<br>
+								<strong>하나도 없어요.</strong>
+							</div>
+						<!-- prettier-ignore -->
+						<div class="icon_text_area face1">
+								같은또래인 40대남성 평균<br>
+								<strong class="point">5개</strong> 보장이 더 <strong class="danger">필요</strong>해요.
+							</div>
+
+						<div class="is_coverage_graph">보장그래프 영역</div>
+					</div>
+					<!-- e: 필요해요 -->
+
 					<div class="divider_ty1"></div>
+
+					<!-- s: 배너영역 -->
 					<!-- prettier-ignore -->
 					<h3 class="title_h3">
 							보장<span class="light">을 더해서 완벽하게 준비하세요</span>
 						</h3>
+					<!-- 보족한 보장이 있는 경우  -->
+					<a href="#" class="bann_text_wrap_ty3 bg1" title="페이지 이동">
+						<!-- prettier-ignore -->
+						<span class="text">
+								<strong class="point">월 99,820원</strong>으로<br>
+								<strong>실손 보장을 채우세요</strong>
+								<span><span class="arrowRightSvg_ty4">실손보험 알아보기</span></span>
+							</span>
+					</a>
+					<a href="#" class="bann_text_wrap_ty3 bg2" title="페이지 이동">
+						<!-- prettier-ignore -->
+						<span class="text">
+								<strong class="point">월 15,820원</strong>으로<br>
+								<strong>뇌, 심장, 수술비/입원, 사망 보장을 채우세요</strong>
+								<span><span class="arrowRightSvg_ty4">건강보험 알아보기</span></span>
+							</span>
+					</a>
+					<a href="#" class="bann_text_wrap_ty3 bg3" title="페이지 이동">
+						<!-- prettier-ignore -->
+						<span class="text">
+								<strong class="point">월 99,820원</strong>으로<br>
+								<strong>일상생활 보장을 채우세요</strong>
+								<span><span class="arrowRightSvg_ty4">주택화재보험 알아보기</span></span>
+							</span>
+					</a>
+					<!-- 모든 보장그룹이 충분할 경우 -->
+					<a href="#" class="bann_text_wrap_ty3 bg1" title="페이지 이동">
+						<!-- prettier-ignore -->
+						<span class="text">
+								<strong>노후 준비를 위한 계획을 세워보세요</strong>
+								<span><span class="arrowRightSvg_ty4">연금보험 알아보기</span></span>
+							</span>
+					</a>
+					<a href="#" class="bann_text_wrap_ty3 bg2" title="페이지 이동">
+						<!-- prettier-ignore -->
+						<span class="text">
+								<strong>설레는 해외여행을 준비 중인가요?</strong>
+								<span><span class="arrowRightSvg_ty4">해외여행보험 알아보기</span></span>
+							</span>
+					</a>
+					<a href="#" class="bann_text_wrap_ty3 bg3" title="페이지 이동">
+						<!-- prettier-ignore -->
+						<span class="text">
+								<strong>사랑스러운 우리 강아지도 챙겨주세요</strong>
+								<span><span class="arrowRightSvg_ty4">강아지 펫보험 알아보기</span></span>
+							</span>
+					</a>
+
+					<!-- e: 배너영역 -->
 
 					<div class="divider_ty1"></div>
 
-					<div class="tab_wrap">
-						<div class="tab_wrap_list_ty1" role="tablist">
-							<button type="button" class="tab_btn tab_btn_block active" role="tab" aria-selected="true" aria-controls="tabPanelex01" id="tabex01">필요해요</button>
-							<button type="button" class="tab_btn tab_btn_block" role="tab" aria-selected="false" aria-controls="tabPanelex02" id="tabex02">안전해요</button>
-						</div>
-						<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanelex01"></div>
+					<!-- s: 안전해요 -->
+					<div id="ac_area2">
+						<!-- prettier-ignore -->
+						<div class="icon_text_area face2">
+								<strong class="point">3개 보장</strong>을<br>
+								<strong class="secondary">충분</strong>하게 준비해두셨어요
+							</div>
+						<!-- prettier-ignore -->
+						<div class="icon_text_area face2">
+								같은또래인 40대남성 평균<br>
+								더 <strong>필요</strong>한 보장이 없어요.
+							</div>
 
-						div.
+						<div class="is_coverage_graph">보장그래프 영역</div>
 					</div>
+					<!-- e: 안전해요 -->
 
 					<!-- s: 가입 시 유의사항 -->
 					<div class="bottom_fix_notice">
@@ -582,7 +663,7 @@
 							</div>
 							<!-- e: popup_content_top -->
 
-							<a href="#" class="bann_text_wrap_ty3" title="페이지 이동">
+							<a href="#" class="bann_text_wrap_ty3 bg1" title="페이지 이동">
 								<!-- prettier-ignore -->
 								<span class="text">
 										<strong class="point">월 99,820원</strong>으로<br>
