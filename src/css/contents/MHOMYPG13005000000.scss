@@ -153,6 +153,7 @@
 						position: absolute;
 						opacity: 0;
 						width: 0;
+						height: 0;
 					}
 					.st {
 						font-weight: 700;
@@ -176,6 +177,7 @@
 						position: absolute;
 						opacity: 0;
 						width: 0;
+						height: 0;
 					}
 					.st {
 						font-weight: 700;
@@ -199,6 +201,7 @@
 					position: absolute;
 					opacity: 0;
 					width: 0;
+					height: 0;
 				}
 				.st {
 					font-weight: 700;
@@ -220,31 +223,22 @@
 		color: var(--color-text-disabled-on);
 		border: var(--border-width-static-regular, 1px) solid var(--color-border-gray-light);
 		border-radius: var(--radius-small2);
-
-		// &.active {
-		// 	&::after {
-		// 		content:'현재 단계';
-		// 		position: absolute;
-		// 		opacity: 0;
-		// 		width: 0;
-		// 	}
-		// 	.st {
-		// 		font-weight: 700;
-		// 	}
-		// }
 		
 		.st {
-			position: relative;
-			padding-right: 9px;
+			display: flex;
+			> span {
+				position: relative;
+				padding-left: 9px;
 
-			&:after {
-				content:'';
-				position: absolute;
-				top: 3px;
-				right: 4px;
-				width: 1px;
-				height: 12px;
-				background-color: var(--color-border-gray-light);
+				&:after {
+					content:'';
+					position: absolute;
+					top: 3px;
+					left: 4px;
+					width: 1px;
+					height: 12px;
+					background-color: var(--color-border-gray-light);
+				}
 			}
 		}
 	}

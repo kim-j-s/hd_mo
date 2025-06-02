@@ -4537,13 +4537,14 @@ ul + .form_group_wrap {
 	border-color: var(--color-border-danger-light);
 	color: var(--color-text-danger);
 }
-.visual_top.result_st1 .vs_step li::after {
+.visual_top.result_st1 .vs_step li.step1::after {
 	content: "현재 단계";
 	position: absolute;
 	opacity: 0;
 	width: 0;
+	height: 0;
 }
-.visual_top.result_st1 .vs_step li .st {
+.visual_top.result_st1 .vs_step li.step1 .st {
 	font-weight: 700;
 }
 .visual_top.result_st2 {
@@ -4554,13 +4555,14 @@ ul + .form_group_wrap {
 	border-color: var(--color-border-secondary-light);
 	color: var(--color-text-secondary);
 }
-.visual_top.result_st2 .vs_step li::after {
+.visual_top.result_st2 .vs_step li.step2::after {
 	content: "현재 단계";
 	position: absolute;
 	opacity: 0;
 	width: 0;
+	height: 0;
 }
-.visual_top.result_st2 .vs_step li .st {
+.visual_top.result_st2 .vs_step li.step2 .st {
 	font-weight: 700;
 }
 .visual_top.result_st3 {
@@ -4576,6 +4578,7 @@ ul + .form_group_wrap {
 	position: absolute;
 	opacity: 0;
 	width: 0;
+	height: 0;
 }
 .visual_top.result_st3 .vs_step li .st {
 	font-weight: 700;
@@ -4598,14 +4601,19 @@ ul + .form_group_wrap {
 	border-radius: var(--radius-small2);
 }
 .vs_step li .st {
-	position: relative;
-	padding-right: 0.9rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
 }
-.vs_step li .st:after {
+.vs_step li .st > span {
+	position: relative;
+	padding-left: 0.9rem;
+}
+.vs_step li .st > span:after {
 	content: "";
 	position: absolute;
 	top: 0.3rem;
-	right: 0.4rem;
+	left: 0.4rem;
 	width: 1px;
 	height: 1.2rem;
 	background-color: var(--color-border-gray-light);
