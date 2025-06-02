@@ -92,6 +92,7 @@
 		line-height: 17px;
 		color: #FFF;
 		border-radius: 8px;
+		white-space: nowrap;
 	}
 
 	.ing {
@@ -184,29 +185,33 @@
 		line-height: 17px;
 		color: #FFF;
 		border-radius: 8px;
+		white-space: nowrap;
 	}
 
 	i {
 		position: absolute;
 		top: 8px;
 
-		display: block;
-		width: 37px;
-		padding: 0 4px;
-		background-color: var(--color-border-secondary);
-		font-size: var(--font-size-label-xsmall);
-		line-height: 17px;
-		font-style: normal;
-		color: #FFF;
-		white-space: nowrap;
-		border-radius: var(--radius-small1);
+		.spot {
+			display: block;
+			width: 37px;
+			padding: 0 4px;
+			background-color: var(--color-border-secondary);
+			font-size: var(--font-size-label-xsmall);
+			line-height: 17px;
+			font-style: normal;
+			color: #FFF;
+			white-space: nowrap;
+			border-radius: var(--radius-small1);
+		}
 
-		&:before {
+		em{
+		// &:before {
 			position: absolute;
-			top: -11px;
+			top: -10px;
 			content:'';
-			width: 10px;
-			height: 10px;
+			width: 8px;
+			height: 8px;
 			background-repeat: no-repeat;
 			background-position: right center;
 			background-position: 8px auto;
@@ -217,22 +222,37 @@
 		&.start {
 			left: 0;
 			top: 20px;
-			&:before {
+			z-index: 5;
+
+			em{
+			// &:before {
 				left: -2px;
 			}
 		}
 
 		&.newStart {
-			left: -16px;
-			&:before {
-				left: 12px;
+			// left: -16px;
+			left: 0;
+			z-index: 10;
+
+			em{
+			// &:before {
+				// left: 12px;
+				left: 0;
+			}
+
+			&.small {
+				display: flex;
+				justify-content: flex-end;
+				width: 100%;
 			}
 		}
 
 		&.end {
 			right: 0;
-			
-			&:before {
+
+			em{
+			// &:before {
 				right: -2px;
 			}
 		}
@@ -247,5 +267,120 @@
 		text-align: center;
 		right: 0;
 
+		&.full {
+			.newStart {
+				left: 33px;
+
+				em{
+				// &:before {
+					left: -38px;
+				}
+			}
+		}
 	}
 }
+
+
+// .progress_box_ty2 {
+// 	position: relative;
+// 	padding: 12px 0 21px;
+	
+// 	.date {
+// 		position: absolute;
+// 		top: -20px;
+// 		left: 50%;
+// 		transform: translateX(-50%);
+// 		display: inline-block;
+// 		padding: 0 4px;
+// 		background-color: var(--color-border-gray-darker);
+// 		font-size: var(--font-size-label-xsmall);
+// 		line-height: 17px;
+// 		color: #FFF;
+// 		border-radius: 8px;
+// 		white-space: nowrap;
+// 	}
+
+// 	i {
+// 		position: relative;
+// 		top: -2px;
+// 		display: block;
+// 		width: 8px;
+// 		height: 8px;
+// 		background-repeat: no-repeat;
+// 		background-position: right center;
+// 		background-position: 8px auto;
+// 		background-image: url(../images/icon/progressbar_dot.svg);
+// 		filter: drop-shadow(0px 0px 2px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05))) drop-shadow(0px 1px 2px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)));
+
+// 		&:before {
+// 			position: absolute;
+// 			top: 11px;
+// 			width: 37px;
+// 			padding: 0 4px;
+// 			background-color: var(--color-border-secondary);
+// 			font-size: var(--font-size-label-xsmall);
+// 			line-height: 17px;
+// 			font-style: normal;
+// 			color: #FFF;
+// 			white-space: nowrap;
+// 			border-radius: var(--radius-small1);
+// 		}
+
+// 		&.start {
+// 			left: -2px;
+// 			top: -2px;
+
+// 			&:before {
+// 				content: '시작일';
+// 				left: 0;
+// 			}
+// 		}
+
+// 		&.newStart {
+// 			left: 0;
+// 			&:before {
+// 				content: '기준일';
+// 				left: 0;
+// 			}
+// 		}
+
+// 		&.end {
+// 			position: absolute;
+// 			right: 0;
+			
+// 			&:before {
+// 				content: '종료일';
+// 				right: 0;
+// 			}
+// 		}
+// 	}
+
+// 	.ing {	
+// 		position: absolute;
+// 		top: 12px;
+// 		display: block;
+// 		width: 50%;
+// 		height: 4px;
+// 		background-color: var(--color-border-secondary);
+// 		text-align: center;
+// 		right: 0;
+
+// 		&.big {
+// 			.newStart {
+// 				left: 9px;
+// 				&:before {
+// 					left: -12px;
+// 				}
+// 			}
+// 		}
+
+// 		&.full {
+// 			.newStart {
+// 				left: 33px;
+// 				&:before {
+// 					left: -38px;
+// 				}
+// 			}
+// 		}
+// 	}
+// }

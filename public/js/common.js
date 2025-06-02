@@ -597,9 +597,15 @@ function prograssBar(){
 			if(barBoxWidth <= total){
 				$bar.find('.end').addClass('right');
 			}
+
+			const barW = $bar.width();
+			if(barW <= 76){
+				console.log('a');
+			}
 		}
 	})
 }
+
 
 
 /* Tab Scroll */
@@ -671,6 +677,8 @@ $(function(){
 
 	currentPlan();
 	fixedMenuPlay();
+
+	prograssBar();
 
 	//input disabled&readonly
 	$('.input_text input').each(function() {

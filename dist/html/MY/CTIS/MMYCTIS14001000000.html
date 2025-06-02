@@ -485,6 +485,7 @@
 									<span class="text">조회</span>
 								</button>
 							</div>
+							<div class="divider_ty1"></div>
 							<div class="card_item_wrap ty3">
 								<div class="card_item">
 									<div class="item_inner">
@@ -563,6 +564,32 @@
 							</div>
 						</div>
 						<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanelex02">
+							<div class="selectitem_wrap row_ty2">
+								<div class="select_item select_item_case01 select_item_case01_mi" role="button" tabindex="0" title="대상 선택" onclick="openHDPopup(this,'pop_type03');">
+									<div class="select_item_inner">
+										<div class="si_item" data-placeholder="선택해주세요.">대상 전체</div>
+										<span class="si_stat">선택됨</span>
+									</div>
+								</div>
+								<div class="select_item select_item_case01 select_item_case01_mi" role="button" tabindex="0" title="조회기간 선택" onclick="openHDPopup(this,'pop_type04');">
+									<div class="select_item_inner">
+										<div class="si_item" data-placeholder="선택해주세요.">2024.03.19~2025.03.19</div>
+										<span class="si_stat">선택됨</span>
+									</div>
+								</div>
+							</div>
+							<div class="btn_area">
+								<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_2">
+									<span class="text">조회</span>
+								</button>
+							</div>
+							<div class="divider_ty1"></div>
+							<div class="info_gray">
+								<dl class="total middle">
+									<dt>보험금 합계</dt>
+									<dd><strong class="big point">10,000원</strong></dd>
+								</dl>
+							</div>
 							<div class="card_item_wrap ty3">
 								<div class="card_item">
 									<div class="item_inner">
@@ -576,20 +603,24 @@
 											</div>
 											<ul class="card_list_ty1">
 												<li>
-													<div class="title">계약번호</div>
-													<div class="cont">L2021****123</div>
-												</li>
-												<li>
-													<div class="title">보험기간</div>
-													<div class="cont">2021.06.01~2031.06.01</div>
+													<div class="title">사고접수번호</div>
+													<div class="cont">2302270623</div>
 												</li>
 												<li>
 													<div class="title">계약자</div>
 													<div class="cont">김*대</div>
 												</li>
 												<li>
-													<div class="title">피보험자</div>
+													<div class="title">피보험자(피해자)</div>
 													<div class="cont">김*대</div>
+												</li>
+												<li>
+													<div class="title">사고일</div>
+													<div class="cont">2025.06.01</div>
+												</li>
+												<li>
+													<div class="title">지급보험금</div>
+													<div class="cont">10,000원</div>
 												</li>
 											</ul>
 										</div>
@@ -607,20 +638,24 @@
 											</div>
 											<ul class="card_list_ty1">
 												<li>
-													<div class="title">계약번호</div>
-													<div class="cont">L2021****123</div>
-												</li>
-												<li>
-													<div class="title">보험기간</div>
-													<div class="cont">2021.06.01~2031.06.01</div>
+													<div class="title">사고접수번호</div>
+													<div class="cont">2302270623</div>
 												</li>
 												<li>
 													<div class="title">계약자</div>
 													<div class="cont">김*대</div>
 												</li>
 												<li>
-													<div class="title">피보험자</div>
+													<div class="title">피보험자(피해자)</div>
 													<div class="cont">김*대</div>
+												</li>
+												<li>
+													<div class="title">사고일</div>
+													<div class="cont">2025.06.01</div>
+												</li>
+												<li>
+													<div class="title">지급보험금</div>
+													<div class="cont">10,000원</div>
 												</li>
 											</ul>
 										</div>
@@ -644,12 +679,8 @@
 					<!-- s: 조회 내역이 없는 경우 -->
 					<div class="no_list_area">
 						<i class="hd_icon exclamationSvg"></i>
-						<p>발급 가능한 보험증권이 없어요</p>
-						<p class="desc tac">
-							혹시 계약자와 피보험자가 다른가요?
-							<br />
-							이 경우 피보험자는 보험증권을 발급할 수 없어요.
-						</p>
+						<p>발급 가능한 지급내역서가 없어요</p>
+						<p class="desc tac">조회조건을 다르게 설정해보세요</p>
 					</div>
 					<!-- e: 조회 내역이 없는 경우 -->
 
@@ -662,8 +693,26 @@
 							<div class="acd_cont">
 								<div class="inner" style="display: block">
 									<ul class="list_depth">
-										<li>증명서 발급 시 개인정보가 별표(*) 처리됩니다.</li>
-										<li>전체 표기를 원하실 경우, 대표 고객센터(1588-5656, 평일 09:00~18:00)로 발급을 요청해주세요.</li>
+										<li>
+											이용대상
+											<ul>
+												<li>인터넷 가입 장기보험, 일반보험(국내/해외여행보험)으로 보험금을 지급받은 계약자, 피보험자, 친권자</li>
+											</ul>
+										</li>
+										<li>
+											이용조건
+											<ul>
+												<li>사고접수번호 기준 건별 지급내역 발급 가능</li>
+												<li>피보험자 기준 기간별 누적 지급내역 발급 가능</li>
+												<li>
+													피보험자 연말정산용 지급내역 발급 가능
+													<br />
+													(장기보험 실손의료보험금 기준)
+												</li>
+											</ul>
+										</li>
+										<li>팝업이 차단돼 있을 경우 증명서가 보이지 않을 수 있습니다. 팝업 차단을 해제하고 다시 발급해주세요.</li>
+										<li>자세한 내용은 대표 고객센터(1588-5656, 평일 09:00~18:00)로 문의해주세요.</li>
 									</ul>
 								</div>
 							</div>
@@ -684,35 +733,10 @@
 
 		<!-- s: popup area -->
 
-		<!-- s: 대상 선택 -->
+		<!-- s: 사고접수번호 대상 선택 -->
 		<div class="popup_wrap bottom" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="true">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
-				<div class="popup_inner">
-					<div class="draggable" aria-hidden="true">
-						<div class="move"></div>
-					</div>
-					<div class="popup_head"><div class="popup_head_title">대상 선택</div></div>
-
-					<div class="popup_cont">
-						<div class="popup_content">
-							<div class="opt_select_list opt_case3">
-								<div role="button" tabindex="0" class="option"><span class="text">계약자</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">피보험자</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">친권자</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">단체 피보험자</span></div>
-							</div>
-						</div>
-					</div>
-					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
-				</div>
-			</div>
-		</div>
-		<!-- e: 대상 선택 -->
-		<!-- s: 조회조건 - 날짜 선택 팝업 -->
-		<div class="popup_wrap bottom" id="pop_type021" role="dialog" aria-modal="true" aria-hidden="true">
-			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type021');"></div>
 				<div class="popup_inner">
 					<div class="draggable" aria-hidden="true">
 						<div class="move"></div>
@@ -723,7 +747,58 @@
 						<div class="popup_content">
 							<div class="form_group_wrap">
 								<div class="form_line">
-									<div class="label_tit">조회기간</div>
+									<div class="label_tit">대상</div>
+									<div class="radio_group_wrap_ty2" role="radiogroup">
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="sel01_01" name="sel01" />
+											<label for="sel01_01">
+												<span class="label_cont">계약자</span>
+											</label>
+										</div>
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="sel01_02" name="sel01" />
+											<label for="sel01_02">
+												<span class="label_cont">피보험자</span>
+											</label>
+										</div>
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="sel01_03" name="sel01" />
+											<label for="sel01_03">
+												<span class="label_cont">친권자</span>
+											</label>
+										</div>
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="sel01_04" name="sel01" />
+											<label for="sel01_04">
+												<span class="label_cont">단체 피보험자</span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: 사고접수번호 대상 선택 -->
+
+		<!-- s: 조회조건 - 날짜 선택 팝업 -->
+		<div class="popup_wrap bottom" id="pop_type02" role="dialog" aria-modal="true" aria-hidden="true">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type02');"></div>
+				<div class="popup_inner">
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head"><div class="popup_head_title">조회조건</div></div>
+
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">기간(최대 2년)</div>
 									<div class="range_calrendar">
 										<div class="input_text">
 											<div class="inp">
@@ -766,11 +841,134 @@
 							</button>
 						</div>
 					</div>
-					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type021');"><span class="blind">팝업 닫기</span></button>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type02');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
 		<!-- e: 조회조건 - 날짜 선택 팝업 -->
+		<!-- s: 피보험자 대상 선택 -->
+		<div class="popup_wrap bottom" id="pop_type03" role="dialog" aria-modal="true" aria-hidden="true">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type03');"></div>
+				<div class="popup_inner">
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head"><div class="popup_head_title">조회조건</div></div>
+
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit box">
+										<div>대상</div>
+										<a href="javascript:void(0)" class="btn_link short_cut sm" role="button" onclick="openHDPopup(this,'pop_type05');" title="연말정산용 안내 팝업 오픈">
+											<span class="text">연말정산용(실손대상) 안내</span>
+										</a>
+									</div>
+									<div class="radio_group_wrap_ty2" role="radiogroup">
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="sel02_01" name="sel02" />
+											<label for="sel02_01">
+												<span class="label_cont">전체</span>
+											</label>
+										</div>
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="sel02_02" name="sel02" />
+											<label for="sel02_02">
+												<span class="label_cont">연말정산용</span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type03');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: 피보험자 대상 선택 -->
+		<!-- s: 조회조건 - 연말정산선택 날짜 선택 팝업 -->
+		<div class="popup_wrap bottom" id="pop_type04" role="dialog" aria-modal="true" aria-hidden="true">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type04');"></div>
+				<div class="popup_inner">
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head"><div class="popup_head_title">조회조건</div></div>
+
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">기간(최대 2년)</div>
+									<div class="range_calrendar">
+										<div class="input_text calendar">
+											<div class="inp">
+												<input type="tel" class="inp_picker" placeholder="날짜를 선택하세요" title="날짜를 입력해주세요" />
+												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+												<button type="button" class="btn calendar_call" title="날짜 선택"></button>
+											</div>
+										</div>
+										<div class="input_text calendar">
+											<div class="inp">
+												<input type="tel" class="inp_picker" placeholder="날짜를 선택하세요" title="날짜를 입력해주세요" />
+												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+												<button type="button" class="btn calendar_call" title="날짜 선택"></button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">확인</span>
+							</button>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type04');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: 조회조건 - 연말정산선택 날짜 선택 팝업 -->
+		<!-- s: 연말정산용(실손대상) 안내 팝업 -->
+		<div class="popup_wrap bottom" id="pop_type05" role="dialog" aria-modal="true" aria-hidden="true">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type05');"></div>
+				<div class="popup_inner">
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head"><div class="popup_head_title">연말정산용(실손대상) 안내</div></div>
+
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="info_cont">
+								<ul class="list_depth">
+									<li>장기보험 실손의료보험금 외 보험금은 표기되지 않아요.</li>
+									<li>기타 보험금까지 확인하려면 조회대상을 ‘전체’로 설정해주세요.</li>
+									<li>연말정산용 지급내역서는 수익자(보험금 지급받은 분) 기준으로 조회돼요.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">확인</span>
+							</button>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type05');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: 연말정산용(실손대상) 안내 팝업 -->
 		<!-- e: popup area -->
 	</body>
 </html>
