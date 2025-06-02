@@ -4503,23 +4503,21 @@ ul + .form_group_wrap {
 	padding-top: var(--padding-5);
 }
 .visual_top {
-	margin: 0 -2.4rem;
+	min-height: 38rem;
+	margin: -1.6rem -2.4rem 0;
 	padding: var(--padding-6) var(--padding-8) 0;
+	background-color: var(--color-surface-secondary-subtler);
+	background-position: center bottom;
 	background-repeat: no-repeat;
 }
-.visual_top.insurance_result {
-	min-height: 38rem;
-	background-color: var(--color-surface-secondary-subtler);
-	background-image: url(../images/content/mypg/img_MHOMYPG13005010000_1.svg);
-	background-position: center bottom;
-}
-.visual_top.insurance_result .vs_step {
+.visual_top .vs_step {
 	margin-bottom: var(--gap-3);
 }
-.visual_top.insurance_result .vs_step li + li {
+.visual_top .vs_step li + li {
 	margin-left: 1.6rem;
+	background-color: var(--color-element-gray-lighter);
 }
-.visual_top.insurance_result .vs_step li + li:before {
+.visual_top .vs_step li + li:before {
 	content: "";
 	position: absolute;
 	top: 0.4rem;
@@ -4528,23 +4526,59 @@ ul + .form_group_wrap {
 	height: 1.6rem;
 	background: url(../images/icon/arrowRight_ty9.svg) no-repeat center/1.6rem auto;
 }
-.visual_top.insurance_result .vs_step li.active.step1 {
+.visual_top + .anchor_wrap {
+	margin-top: var(--gap-8);
+}
+.visual_top.result_st1 {
+	background-image: url(../images/content/mypg/img_MHOMYPG13005010000_1_1.png);
+}
+.visual_top.result_st1 .vs_step li.step1 {
 	background-color: var(--color-element-danger-lighter);
 	border-color: var(--color-border-danger-light);
 	color: var(--color-text-danger);
 }
-.visual_top.insurance_result .vs_step li.active.step2 {
+.visual_top.result_st1 .vs_step li::after {
+	content: "현재 단계";
+	position: absolute;
+	opacity: 0;
+	width: 0;
+}
+.visual_top.result_st1 .vs_step li .st {
+	font-weight: 700;
+}
+.visual_top.result_st2 {
+	background-image: url(../images/content/mypg/img_MHOMYPG13005010000_1_2.png);
+}
+.visual_top.result_st2 .vs_step li.step2 {
 	background-color: var(--color-element-secondary-light-blue);
 	border-color: var(--color-border-secondary-light);
 	color: var(--color-text-secondary);
 }
-.visual_top.insurance_result .vs_step li.active.step3 {
+.visual_top.result_st2 .vs_step li::after {
+	content: "현재 단계";
+	position: absolute;
+	opacity: 0;
+	width: 0;
+}
+.visual_top.result_st2 .vs_step li .st {
+	font-weight: 700;
+}
+.visual_top.result_st3 {
+	background-image: url(../images/content/mypg/img_MHOMYPG13005010000_1_3.png);
+}
+.visual_top.result_st3 .vs_step li.step3 {
 	background-color: var(--color-element-primary-lighter);
 	border-color: var(--color-border-primary-light);
 	color: var(--color-text-primary);
 }
-.visual_top.insurance_result + .anchor_wrap {
-	margin-top: var(--gap-8);
+.visual_top.result_st3 .vs_step li::after {
+	content: "현재 단계";
+	position: absolute;
+	opacity: 0;
+	width: 0;
+}
+.visual_top.result_st3 .vs_step li .st {
+	font-weight: 700;
 }
 .vs_step {
 	display: -webkit-box;
@@ -4563,15 +4597,6 @@ ul + .form_group_wrap {
 	border: var(--border-width-static-regular, 1px) solid var(--color-border-gray-light);
 	border-radius: var(--radius-small2);
 }
-.vs_step li.active::after {
-	content: "현재 단계";
-	position: absolute;
-	opacity: 0;
-	width: 0;
-}
-.vs_step li.active .st {
-	font-weight: 700;
-}
 .vs_step li .st {
 	position: relative;
 	padding-right: 0.9rem;
@@ -4589,8 +4614,7 @@ ul + .form_group_wrap {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	margin-left: -2.4rem;
-	margin-right: -2.4rem;
+	margin: 0 -2.4rem var(--gap-8);
 	border-bottom: 1px solid var(--color-border-gray-light);
 }
 .anchor_wrap .anchor_btn {
@@ -4625,4 +4649,27 @@ ul + .form_group_wrap {
 	width: 100%;
 	height: 0.3rem;
 	background-color: #1e2124;
+}
+.anchor_wrap .anchor_btn.active .hd_badge {
+	font-weight: normal;
+}
+.icon_text_area {
+	padding-top: 6.4rem;
+	font-size: var(--font-size-heading-small);
+	color: var(--color-text-bolder);
+	text-align: center;
+	background-repeat: no-repeat;
+	background-size: 5.2rem auto;
+	background-position: center top;
+}
+.icon_text_area.face1 {
+	background-image: url(../images/content/mypg/img_MHOMYPG13005010000_2.svg);
+}
+.icon_text_area.face2 {
+	background-image: url(../images/content/mypg/img_MHOMYPG13005010000_3.svg);
+}
+.is_coverage_graph {
+	height: 10rem;
+	text-align: center;
+	background-color: skyblue;
 }
