@@ -110,9 +110,12 @@
 	min-height: 380px;
 	margin: -16px -24px 0;
 	padding: var(--padding-6) var(--padding-8) 0;
-	background-color: var(--color-surface-secondary-subtler);
-	background-position: center bottom;
-	background-repeat: no-repeat;
+
+	&[class*=result_st]{
+		background-position: center bottom;
+		background-repeat: no-repeat;
+		background-color: var(--color-surface-secondary-subtler);
+	}
 
 	.vs_step {
 		margin-bottom: var(--gap-3);
@@ -132,10 +135,6 @@
 				}
 			}
 		}
-	}
-
-	& + .anchor_wrap {
-		margin-top: var(--gap-8);
 	}
 
 	&.result_st1 {
@@ -208,6 +207,10 @@
 				}
 			}
 		}
+	}
+
+	& + .anchor_wrap {
+		margin-top: var(--gap-8);
 	}
 }
 
