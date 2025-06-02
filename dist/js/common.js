@@ -88,7 +88,6 @@
 
 	/* Accordion */
 	$DOM.on("click", ".acd_item .acd_head .acd_btn", function () {
-		// console.log('아코디언');
 		const $this = $(this),
 			$head = $this.parent(".acd_head"),
 			$inner = $head.next(".acd_cont").children(".inner"),
@@ -127,6 +126,14 @@
 		} else {
 			$item.removeClass("active");
 		}
+	});
+
+	/* Anchor */
+	$DOM.on("click", ".anchor_wrap .anchor_btn", function () {
+		const $this = $(this);
+
+		$this.closest(".anchor_wrap").find(".anchor_btn").removeClass("active");
+		$this.addClass("active");
 	});
 
 	/* tag_item click */
