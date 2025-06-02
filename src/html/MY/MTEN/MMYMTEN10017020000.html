@@ -14,7 +14,9 @@
 					<div class="card_item">
 						<div class="item_inner">
 							<div class="inner_cont">
-								<div role="button" class="card_link" tabindex="0" onclick="openPop(this,'pop_type01');">
+								<!-- s: 25-06-04 수정 -->
+								<div role="button" class="card_link" tabindex="0">
+								<!-- s: 25-06-04 수정 -->
 									<div class="item_top">
 										<div class="title_info">
 											<div class="main_title">05보**90</div>
@@ -94,8 +96,10 @@
 	<!-- s: 자동차 배서 메뉴 -->
 	{{> pages/pop1 }}
 	<!-- e: 자동차 배서 메뉴 -->
+	 
 	<!-- s: alert2 -->
-	{{#> popup/popup_confirm popup-active=true popup-id="pop_type01" popup-title="서비스 이용에 불편을 드려 죄송합니다." no-header=flase }}
+	<!-- s: 25-06-04 수정 -->
+	{{#> popup/popup_confirm popup-active=false popup-id="pop_type01" popup-title="서비스 이용에 불편을 드려 죄송합니다." no-header=flase }}
 	<div class="popup_cont">
 		<div class="popup_content">
 			<!-- info Case -->
@@ -113,6 +117,7 @@
 		</div>
 	</div>
 	{{/ popup/popup_confirm}}
+	<!-- e: 25-06-04 수정 -->
 	<!-- e: alert2 -->
 
 {{/ layout/default }}
