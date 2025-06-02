@@ -6,6 +6,7 @@
 	<div id="container" class="container">
 		<div class="content">
 			<!-- 
+				단계별 class 추가 필요
 				1단계 : result_st1 클래스 추가
 				2단계 : result_st2 클래스 추가
 				3단계 : result_st3 클래스 추가
@@ -17,7 +18,8 @@
 							1단계 <span>짚</span>
 						</span>
 					</li>
-					<li class="step2">
+					<!-- 접근성 적용을 위해 현재 단계 해당될 때, title 추가 -->
+					<li class="step2" title="현재 단계">
 						<span class="st">
 							2단계 <span>통나무</span>
 						</span>
@@ -30,19 +32,19 @@
 				</ol>
 				<!-- 충분 보장 0~3건일 때 -->
 				<!-- prettier-ignore -->
-				<h2 class="title_h2">
+				<!-- <h2 class="title_h2">
 					<strong>김*대</strong>님의 보험은<br>
 					바람이 조금만 불어도 휘청!<br>
 					보장이 <strong class="danger">많이 부족</strong>해요
-				</h2>
+				</h2> -->
 
 				<!-- 충분 보장 4~6건일 때 -->
 				<!-- prettier-ignore -->
-				<!-- <h2 class="title_h2">
+				<h2 class="title_h2">
 					<strong>김*대</strong>님의 보험은<br>
 					바람이 거세게 불어오면 와르르!<br>
 					보장이 <strong class="secondary">조금 더 필요</strong>해요
-				</h2> -->
+				</h2>
 
 				<!-- 충분 보장 7~8건일 때 -->
 				<!-- prettier-ignore -->
@@ -141,7 +143,6 @@
 					<span><span class="arrowRightSvg_ty4">강아지 펫보험 알아보기</span></span>
 				</span>
 			</a>
-
 			<!-- e: 배너영역 -->
 
 			<div class="divider_ty1"></div>
@@ -162,6 +163,10 @@
 				<div class="is_coverage_graph">보장그래프 영역</div>
 			</div>
 			<!-- e: 안전해요 -->
+			
+			<ul class="list_ty2">
+				<li>준법감시인 확인필 제20233828호<br>(2023.04.21~2024.10.16)</li>
+			</ul>
 
 			<!-- s: 가입 시 유의사항 -->
 			{{#> cp/notice dp-title="가입시 유의 사항" dp-active="active"}}
