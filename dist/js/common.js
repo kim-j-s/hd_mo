@@ -713,7 +713,7 @@ $(function () {
 			$input.attr("readonly", false); // readonly 속성 제거
 		}, 500);
 	});
-	prograssBar();
+
 	// 달력 호출
 
 	// 간편정보 노출 방식
