@@ -1,0 +1,35 @@
+{{#> layout/default page-title="보험료 확인 | 상품"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-active=true popup-title="나눔실천 기부 이벤트" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="img_area space1">
+			<img src="" alt="이미지 영역">
+		</div>
+
+		<div class="form_group_wrap">
+			<div class="form_line_ty2">
+				<div class="label_tit">휴대폰번호</div>
+				{{> cp/text class="phone" type="tel" placeholder="-없이 입력" maxlength="8" l-text="010" value="- 1234 - 5678" inp-title="휴대폰번호 입력"  }}
+				<div class="checkbox_group_wrap column">
+					{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-9" label_class="chk_label_ty3" labelname="임력하신 휴대폰번호로 추후 기부금 사용내역이 전송됩니다. 수집된 개인정보는 해당이벤트에서만 사용(제공)됩니다." }}
+				</div>
+			</div>
+
+			<div class="form_line_ty2">
+				<div class="label_tit">기부 소감</div>
+				{{> cp/textarea name="textarea1" rows="3" inp-title="기부 소감 입력" placeholder="입력해 주세요. (최소 60자)" }}
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+<div class="popup_bottom">
+	<div class="btn_area">{{> cp/button type="1" size="1" b-text="이벤트 응모하기" }}</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+{{/ layout/default }}
