@@ -1,0 +1,169 @@
+{{#> layout/default page-title="계약자정보 입력 | 해외장기체류보험"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="피보험자/계약자 정보" }}
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
+        <!-- prettier-ignore -->
+				<h2 class="title_h2">
+          <!-- case(1)피보험자(성인단독) -->
+					계약자(피보험자)
+          <!-- case(2)피보험자(미성년자)-->
+            <!-- 계약자(피보험자의 친권자) -->
+          <!-- case(3)계피상이 -->
+          <!-- 계약자(보험료를 납입하실 분) -->
+          <br><strong>정보를 입력</strong>해주세요
+				</h2>			
+			</div>
+			<!-- e: content_top -->
+
+			<div class="form_box">
+				<h3 class="title_h3">기본 정보</h3>
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">휴대폰번호</div>
+						{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" value="- 1234 - 5678" inp-title="휴대폰번호" readonly=true }}
+					</div>
+					<div class="form_line">
+						<div class="label_tit">이메일</div>
+						{{> cp/text type="email" inpclass="email_auto" placeholder="이메일 입력" inp-title="이메일 입력" }}
+					</div>
+					<div class="form_line">
+						<div class="label_tit">주소</div>
+						<div class="radio_group_wrap" role="radiogroup">
+							{{> cp/radio rd-class="rd_btn" rd-id="addSel01_01" name="addSel01" labelname="집" }}
+							{{> cp/radio rd-class="rd_btn" rd-id="addSel01_02" name="addSel01" labelname="직장" }}
+						</div>
+						{{> cp/address ad_ph="주소를 입력해 주세요." case2=true}}
+					</div>
+					<div class="form_line">
+						<div class="label_tit">영문이름</div>
+						{{> cp/text type="text" placeholder="여권 영문이름 입력(예: KIM HYUN DAI)" inp-title="영문이름 입력" }}
+						<ul class="list_ty2">
+								<li>여권 영문이름과 달라도 보상 여부와는 무관해요.</li>
+						</ul>
+					</div>
+        </div>
+    	</div>
+
+      <div class="divider_ty1"></div>
+      <h3 class="title_h3">필수 확인사항</h3>
+			<div class="form_group_wrap">
+        <div class="form_line">
+          <div class="label_tit">보험계약서류 받는 방법</div>
+          <div class="radio_group_wrap" role="radiogroup">
+            {{> cp/radio rd-class="rd_btn" rd-id="receiveSel01_01" name="receiveSel01" labelname="모바일" checked=true }}
+            {{> cp/radio rd-class="rd_btn" rd-id="receiveSel01_02" name="receiveSel01" labelname="이메일" }}
+          </div>
+        </div>
+      </div>
+
+			<div class="divider_ty1"></div>
+			<!-- s: 계피동일 - 장애인전용보험전환특약 가입대상여부 확인 -->
+			<h3 class="title_h3">장애인전용보험전환특약 대상 여부</h3>
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">
+						「소득세법」에서 규정한 장애인 전용보험전환특약 가입대상이신가요? (피보험자가 「소득세법」에서 규정한 장애인인 경우 가입이 가능하며, 특약 가입 시 입증 서류가 필요합니다.)
+					</div>
+					<div class="radio_group_wrap" role="radiogroup">
+							{{> cp/radio rd-class="rd_btn" rd-id="checktype03_01" name="checktype03" labelname="예" }}
+							{{> cp/radio rd-class="rd_btn" rd-id="checktype03_02" name="checktype03" labelname="아니요" }}
+					</div>
+					<ul class="list_ty2">
+						<li>피보험자가 「소득세법」에서 규정한 장애인인 경우 가입이 가능하며, 특약 가입 시 입증 서류가 필요합니다.</li>
+					</ul>
+				</div>
+				<div class="form_line">
+					<div class="label_tit">장애유형</div>
+					<div class="radio_group_wrap" role="radiogroup">
+							{{> cp/radio rd-class="rd_btn" rd-id="checktype04_01" name="checktype04" labelname="영구 장애" }}
+							{{> cp/radio rd-class="rd_btn" rd-id="checktype04_02" name="checktype04" labelname="한시 장애" }}
+					</div>					
+				</div>
+				<div class="form_line">
+					<div class="label_tit">장애기간</div>
+					<div class="range_calrendar">
+						{{> cp/text cal=true placeholder="날짜 선택" }}
+						{{> cp/text cal=true placeholder="날짜 선택" }}
+					</div>
+				</div>
+			</div>
+			<div class="file_upload_wrap">
+					<h3 class="title_h3">장애인증명서(복지카드) 사진 등록</h3>
+					<p class="info_text">
+							<span class="point">사진을 등록하지 않으면 특약에 가입할 수 없어요.</span> 서류(카드)가 선명하게 보이도록 정면에서 촬영해주세요.
+					</p><!-- s: 이미지 파일 붙는 영역 -->
+					<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+					<div class="file_attach_box">
+							<div class="file_thumbnail">
+									<img src="../../../images/common/img_certify_card_ex.png" alt="복지카드 예시 이미지" />
+							</div>
+					</div>
+					<!-- 등록 후 이미지 (등록 전/후 따라 alt값 변경 필요) --> 
+					<!-- <div class="file_attach_box">
+							<div class="file_thumbnail">
+									<img src="../../../images/temp/img_certify_card_temp.png" alt="등록된 복지카드 이미지">
+							</div>
+							<button type="button" class="btn_file_delete">
+									<span>등록한 이미지 삭제하기</span>
+							</button>
+					</div> -->
+					<!-- e: 이미지 파일 붙는 영역 -->
+					<ul class="list_ty2">
+							<li>10MB 이하의 jpg, jpeg, gif, png 파일만 등록할 수 있어요</li>
+					</ul>
+					<!-- s: 이미지 파일 버튼 -->
+					<div class="btn_area center">
+							<!-- 등록 전 노출 -->
+							<div class="file_btn">
+									<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png">
+									<label for="file">
+											<span class="hd_btn hd_btn_ty_2 hd_btn_s_2">
+													<i class="hd_icon carmeraSvg"></i>
+													사진 등록
+											</span>
+									</label>
+							</div>
+							<!-- 등록 후 노출 -->
+							<!-- <div class="file_btn">
+									<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png">
+									<label for="file">
+											<span class="hd_btn hd_btn_ty_3 hd_btn_s_2">
+													<i class="hd_icon carmeraSvg2"></i>
+													사진 변경
+											</span>
+									</label>
+							</div> -->
+					</div>
+					<!-- e: 이미지 파일 버튼 -->
+			</div>
+			<!-- e: 계피동일 - 장애인전용보험전환특약 가입대상여부 확인 -->
+
+			<!-- s: 꼭 알아두세요 -->
+			{{#> cp/notice dp-active="active" }}
+			<ul class="list_depth">
+				<li>입력한 정보로 개인정보도 함께 변경돼요.</li>
+				<li>보험계약서류를 보내드리니 정확하게 입력해주세요.</li>
+			</ul>
+			{{/ cp/notice }}
+			<!-- e: 꼭 알아두세요 -->
+		</div>
+	</div>
+
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="입력 중이에요" disabled=true }}
+			<!-- {{> cp/button type="1" size="1" b-text="모두 입력했어요" }} -->
+		</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
+</div>
+
+<!-- s: popup area -->
+
+
+<!-- e: popup area -->
+{{/ layout/default }}
