@@ -1,0 +1,52 @@
+{{#> layout/default page-title="자동차 변경(차량대체) | 마이페이지"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="자동차 변경(차량대체)" h-ins="pop_insChk"}}
+		<div id="container" class="container">
+			<div class="content">
+				<!-- s: content_top -->
+				<div class="content_top">
+					<!-- prettier-ignore -->
+					<h2 class="title_h2">
+						<strong>자동차번호</strong> 또는<br>
+						<strong>차대번호</strong>를 입력해 주세요
+					</h2>
+					<div class="btn_area basic">
+						{{> cp/button type="3" size="5" b-text="보험만기일, 중고차, 신차 안내" rightIcon="arrowRightSvg" }}
+					</div>
+				</div>
+				<!-- e: content_top -->
+				 
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">자동차번호 7~9자리, 차대번호 17자리</div>
+						<div class="car_input_box">
+							<!-- 에러 메시지 시, error 클래스 추가 -->
+							{{> cp/text class="car_number_input error" placeholder="123가4567" minlength="7" maxlength="17" inp-title="자동차 또는 차대번호 입력"}}
+							<p class="msg_error">자동차 번호, 또는 차대번호를 입력해 주세요.</p>
+						</div>
+					</div>
+				</div>
+				<div class="radio_group_wrap column car_type_option" role="radiogroup">
+					{{> cp/radio rd-class="rd_btn_s1 icon_opt1" rd-id="radio_btn_g1" name="radio_g1" labelname="승용차<br><span>승차정원 10인 이하</span>" checked=true }}
+					{{> cp/radio rd-class="rd_btn_s1 icon_opt2" rd-id="radio_btn_g2" name="radio_g1" labelname="승합차<br><span>승차정원 11인 이상</span>" }}
+					{{> cp/radio rd-class="rd_btn_s1 icon_opt3" rd-id="radio_btn_g3" name="radio_g1" labelname="화물차<br><span>적재함이 있는 자동차, 밴형 및 픽업트럭</span>" }}
+					<!-- e: 25-04-18 수정 -->
+				</div>
+			</div>
+		</div>
+
+		<!-- s: 하단 고정 버튼 영역 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="1" b-text="승용차 차량번호로" class="full" }}
+			</div>
+		</div>
+		<!-- s: 하단 고정 버튼 영역 -->
+	</div>
+
+	<!-- s: popup area -->
+	<!-- s: 자동차 배서 메뉴 -->
+	{{> pages/pop1 }}
+	<!-- e: 자동차 배서 메뉴 -->
+	<!-- e: popup area -->
+{{/ layout/default }}
