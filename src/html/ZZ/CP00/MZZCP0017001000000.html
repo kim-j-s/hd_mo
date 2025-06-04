@@ -6,14 +6,18 @@
 	<div class="popup_content">
 		<!-- s: popup_content_top -->
 		<div class="popup_content_top">
+			<!-- s: 25-06-04 수정 -->
 			<h2 class="title_h2">
 				<strong>
 					카카오로<br>
-					본인인증을 진행해 주세요
+					본인인증을 진행할게요
 				</strong>
 			</h2>
+			<!-- e: 25-06-04 수정 -->
 			<div class="btn_area basic">
-				{{> cp/linkButton bl_class="short_cut sm" bl_text="다른 인증방식 선택" pop_id="pop_type02" }}
+				<!-- s: 25-06-04 수정 -->
+				{{> cp/linkButton bl_class="short_cut sm" bl_text="다른 인증방법 선택" pop_id="pop_type02" }}
+				<!-- e: 25-06-04 수정 -->
 			</div>
 		</div>
 		<!-- e: popup_content_top -->
@@ -24,22 +28,36 @@
 				{{> cp/text inp-title="이름 입력" placeholder="입력해 주세요" }}
 			</div>
 
+			<!-- s: 25-06-04 수정 -->
 			<div class="form_line">
+				<div class="label_tit">주민등록번호</div>
+				<div class="comp_wrap birth">
+					{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" }}
+					<span class="dash">-</span>
+					<div class="id_pass_box">
+						{{> cp/text type="tel" minlength="1" maxlength="1" placeholder="●" inp-title="주민등록번호 뒷1자리 입력" no_del="flase" }}
+						<div class="id_pass">
+							●●●●●●
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- e: 25-06-04 수정 -->
+
+			<!-- <div class="form_line">
 				<div class="label_tit">주민등록번호/외국인등록번호</div>
 				<div class="comp_wrap birth">
 					{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호(외국인등록번호) 앞자리 입력" }}
 					<span class="dash">-</span>
-					<!-- s: 25-05-20 수정 -->
-					<!-- s: 25-05-13 수정 -->
 					{{> cp/keypad7 case1=true kt="주민등록번호(외국인등록번호) 뒷자리 입력"}}
-					<!-- e: 25-05-13 수정 -->
-					 <!-- e: 25-05-20 수정 -->
 				</div>
-			</div>
+			</div> -->
 
 			<div class="form_line">
 				<div class="label_tit">휴대폰번호</div>
-				{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+				<!-- s: 25-06-04 수정 -->
+				{{> cp/text class="phone" type="tel" placeholder="-없이 입력" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+				<!-- e: 25-06-04 수정 -->
 			</div>
 
 		</div>
@@ -52,12 +70,16 @@
 <!-- e: Full 팝업 -->
 
 
-<!-- s: 다른 인증방식 선택 -->
-{{#> popup/popup_bottom popup-id="pop_type02" popup-title="인증방법을 선택해 주세요."}}
+<!-- s: 인증방법 선택 -->
+<!-- s: 25-06-04 수정 -->
+{{#> popup/popup_bottom popup-id="pop_type02" popup-title="인증방법 선택"}}
+<!-- e: 25-06-04 수정 -->
 <div class="popup_cont">
 	<div class="popup_content">
 		<div class="opt_select_list opt_case3">
-			<div role="button" tabindex="0" class="option"><span class="text">PIN인증</span></div>
+			<!-- s: 25-06-04 수정 -->
+			<div role="button" tabindex="0" class="option"><span class="text">간편비밀번호</span></div>
+			<!-- e: 25-06-04 수정 -->
 			<div role="button" tabindex="0" class="option"><span class="text">생체인증</span></div>
 			<div role="button" tabindex="0" class="option"><span class="text">휴대폰인증</span></div>
 			<div role="button" tabindex="0" class="option"><span class="text">카카오인증</span></div>
@@ -67,6 +89,6 @@
 	</div>
 </div>
 {{/ popup/popup_bottom}}
-<!-- e: 다른 인증방식 선택 -->
+<!-- e: 인증방법 선택 -->
 
 {{/ layout/default }}
