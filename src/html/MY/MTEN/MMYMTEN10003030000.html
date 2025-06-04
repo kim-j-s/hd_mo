@@ -1,0 +1,142 @@
+{{#> layout/default page-title="자동차 변경(차량대체) | 마이페이지"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="자동차 변경(차량대체)" h-ins="pop_insChk"}}
+		<div id="container" class="container">
+			<div class="content">
+
+				<!-- s: content_top -->
+				<div class="content_top">
+					<h2 class="title_h2">
+                        <!-- prettier-ignore -->
+						<strong>변경 기준일</strong>을 <strong>확인</strong>해주세요 
+					</h2>
+				</div>
+				<!-- e: content_top -->
+
+				<div class="info_gray">
+					<dl>
+						<dt>자동차번호</dt>
+						<dd>18루**22</dd>
+					</dl>
+					<dl>
+						<dt>보험기간</dt>
+						<dd>2025.04.30~2025.05.02</dd>
+					</dl>
+				</div>
+
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">변경 기준일(00시)</div>
+						{{> cp/text cal=true value="2025.12.18" }}
+					</div>
+					<ul class="list_ty2">
+						<li>변경기준일의 00시부터 보험종료일 24시까지 변경내용의 효력이 발생합니다.</li>
+					</ul>
+					<div class="info_gray ty2">
+						<div class="insurance_policyBox">
+							<div class="insurance_date">
+								<div class="insurance_barbox ty2">
+									<!-- s: 진행영역 -->
+									<!-- 
+										접근성 준수를 위해서 해당 구간은 약식 정보를 전달합니다.
+										전달정보는 aria-label="변경기간 365일" 형태로 제공됩니다.
+										ex) <span id="plnInagDay">200일</span> 일 경우 aria-label="변경기간 200일"
+
+										변경기간 적용 시, prograssCar() 호출 필요
+									-->
+									<!-- s: 25-06-04 수정 -->
+									<div class="progress_box_ty2" role="img" aria-label="변경기간 220일">
+										<i class="start">
+											<span class="spot">시작일</span>
+											<em></em>
+										</i>
+										<span id="plnIng" class="ing" style="width:100%">					
+											<span class="date" id="planCarTerm">
+												<span id="plnInagDay">220일</span>
+											</span>
+											<i class="newStart">
+												<span class="spot">기준일</span>
+												<em></em>
+											</i>
+											<i class="end">
+												<span class="spot">종료일</span>
+												<em></em>
+											</i>
+										</span>
+									</div>
+									<!-- e: 25-06-04 수정 -->
+									<!-- e: 진행영역 -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- s: 하단 고정 버튼 영역 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="1" b-text="다음" disabled=true}}
+			</div>
+		</div>
+		<!-- s: 하단 고정 버튼 영역 -->
+	</div>
+
+	<!-- s: popup area -->
+	<!-- s: 자동차 배서 메뉴 -->
+	{{> pages/pop1 }}
+	<!-- e: 자동차 배서 메뉴 -->
+	<!-- e: popup area -->
+
+	<script>
+		$(function(){
+			prograssCar();
+
+			$(window).on('resize', function(){
+				prograssCar();
+			})
+		})
+
+		function prograssCar(){
+			const $prograss = $('.progress_box_ty2');
+
+			$prograss.each(function(idx){
+				const $allBar = $prograss.eq(idx),
+							$bar = $allBar.find('.ing'),
+							$start = $bar.find('.newStart');
+
+				const allW = $allBar.width(),
+							barW = $bar.width();
+
+				const newW = Math.round((barW / allW) * 100),
+							startW = Math.round((10 / allW) * 100),
+							newstartW = Math.round((37 / allW) * 100);
+
+				$prograss.children('.ing').removeClass('full');
+
+				let spotMargin = -((100 - newW) - newstartW - 1)+ '%';
+				let parseVal = parseFloat(spotMargin);
+				let leftVal = (parseVal / 100) * barW;
+
+				// bar가 시작일과 겹칠 때
+				if((allW - barW) <= 40 ){
+					$bar.addClass('big');
+					$bar.find('.newStart').css('margin-left',spotMargin);
+					$bar.find('.newStart').children('em').css('left', -leftVal);
+
+				// bar 길이 100%일 때
+				}else if(allW === barW){
+					$bar.addClass('full');
+
+				// 기준일, 종료일 겹칠 때
+				}else if(barW <=76){
+					let spotMargin2 = barW - 27;
+					console.log(spotMargin2);
+					$bar.find('.newStart').addClass('small');
+					$bar.find('.newStart').children('.spot').css('margin-right', 40 + 'px');
+				}
+			})
+		}
+	</script>
+{{/ layout/default }}
