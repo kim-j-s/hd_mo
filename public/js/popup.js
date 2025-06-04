@@ -130,7 +130,7 @@ function closeHDPopup(target, returnTarget = null) {
 		$($prevPopup).find(".popup_inner").attr("aria-hidden", "false");
 		//To-Do : prevPopup inert on/off 기능 추가해야함
 
-		const focusTarget = $($triggerEl);
+		const focusTarget = $($triggerEl) || document.body;
 
 		// ios 스크린리더가 dom의 변경사항을 인식하도록 상태변경
 		focusTarget.css("display", "none");
