@@ -420,7 +420,62 @@
 						font-weight: 700;
 						font-size: var(--font-size-body-large);
 					}
+					.left_txt {
+						display: inline-block;
+						vertical-align: middle;
+						padding-right: var(--gap-4);;
+						font-weight: 700;
+						font-size: var(--font-size-body-small);
+					}
+
+					&.ty2 {
+						color: var(--color-text-subtle);
+						
+						.price_num {
+							font-size: var(--font-size-heading-medium);
+						}
+						.won {
+							font-size: var(--font-size-body-small);
+						}
+					}
 				}
+
+				+ .comb_info {
+					border-radius: var(--radius-medium3);
+					display: flex;
+					padding: var(--padding-6) var(--padding-7);
+					align-items: center;
+					align-self: stretch;
+					font-size: var(--font-size-body-small);
+					color: var(--color-text-subtle);
+					margin-top: var(--gap-3);
+					margin-bottom: var(--gap-4);
+					gap: var(--gap-2);
+
+					&.ty_gray {
+						background: var(--color-surface-gray-subtler);
+					}
+					&.ty_dashed {
+						border: 1px dashed var(--color-border-gray-light);
+					}
+
+					i.plus {
+						display: block;
+						width: 12px;
+						height: 12px;
+						background: url(../images/icon/icon_plus_ty2.svg) no-repeat center/12px;
+						margin: 0 4px;
+					}
+
+					+ .head_text {
+						padding-top: 0;
+
+						.price.ty2 {
+							padding-top: 0;
+						}
+					}
+				}
+
 				+ .gdi_content_list {
 					margin-top: var(--gap-4);
 				}
@@ -532,6 +587,11 @@
 						&.ico_add_ty9 {//해외장기체류
 							.item {
 								background-image: url(../images/content/guarantee/icon_gil_09.svg);
+							}
+						}
+						&.ico_add_ty10 {//어린이보험
+							.item {
+								background-image: url(../images/content/guarantee/icon_gil_10.svg);
 							}
 						}
 					}
@@ -686,6 +746,10 @@
 					margin-top: var(--gap-5);
 					padding-top: var(--gap-5);
 					border-top: var(--border-width-static-regular) solid var(--color-border-gray-light);
+					&.sil_li_ty2 {
+						padding-top: 0;
+						border-top: 0;
+					}
 				}
 				.bold {
 					font-weight: 700;
@@ -882,5 +946,24 @@
 	strong {
 		font-size: var(--font-size-button-cta-bold);
 		color: var(--color-text-basic);
+	}
+}
+
+.simple_info_wrap + .title_h3 {
+	margin-top: 32px;
+}
+
+.guarantee_container_right {
+	.title_h3 + .info_text {
+		margin-top: var(--gap-4);
+
+		.tooltip_wrap {
+			vertical-align: baseline;
+
+			.tooltip_panel {
+				top: calc(100% + 15px);
+			}
+		}
+		
 	}
 }
