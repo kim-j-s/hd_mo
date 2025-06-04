@@ -12,6 +12,9 @@
 	</div>
 	{{/if}}
   <button type="button" class="acd_btn{{#if ico-class}} acd_ico_{{ico-class}}{{/if}}" {{#if ac-active}}aria-expanded="true"{{else}}aria-expanded="false"{{/if}}>{{#if ac-title}}<span>{{{ac-title}}}</span>{{#if ac-desc}}<span class='sub_g_txt'>{{ac-desc}}</span>{{/if}}{{/if}}</button>
+	{{#if ac-linkBtn}}
+	<a href="javascript:void(0)" class="btn_link short_cut" role="button"{{#if ac-linkBtn-popup}} onclick="openHDPopup(this,'{{ac-linkBtn-popup}}');"{{/if}} title="{{ac-linkBtn}}"><span class="text">{{ac-linkBtn}}</span></a>
+	{{/if}}
 </div>
 <div class="acd_cont{{#if cont-class}} {{cont-class}}{{/if}}">
   <div class="inner"{{#if ac-active}} style="display:block;"{{/if}}>

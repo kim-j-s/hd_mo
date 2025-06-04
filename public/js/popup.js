@@ -106,7 +106,8 @@ function closeHDPopup(target, returnTarget = null) {
 
 	const $target = $("#" + target);
 	let $returnTarget;
-	const $opener = $('[triggerId="' + $target.attr("opner") + '"]');
+	const getOpener = $('[triggerId="' + $target.attr("opner") + '"]');
+	const $opener = (getOpener.length>0) && getOpener;
 	$target.removeClass("active");
 
 	//returnTarget 타입 유효성 체크
@@ -118,21 +119,22 @@ function closeHDPopup(target, returnTarget = null) {
 		}
 	}
 
-	const $triggerEl = returnTarget || $opener;	
+	const $triggerEl = returnTarget || $opener;
 
 	//하단에 다른 팝업이 열려있는 경우, 가장 최근 팝업으로 focus강제 이동
 	const $prevPopup = $(".popup_wrap.active:last");
 	if ($prevPopup.length > 0) {
 		$($prevPopup).attr("aria-hidden", "false");
 		$($prevPopup).find(".popup_inner").attr("aria-hidden", "false");
-		//To-Do : prevPopup inert on/off 기능 추가해야함
 
-		const focusTarget = $($triggerEl);
+		$prevInner = $($prevPopup).find(".popup_inner");
+
+		const focusTarget = $triggerEl || $prevInner || $("body");	
 
 		// ios 스크린리더가 dom의 변경사항을 인식하도록 상태변경
-		focusTarget.css("display", "none");
-		focusTarget[0].offsetHeight; //강제 reflow
-		focusTarget.css("display", "block");
+		// focusTarget.css("display", "none");
+		// focusTarget[0].offsetHeight; //강제 reflow
+		// focusTarget.css("display", "block");
 
 		setTimeout(() => {
 			focusTarget.focus();
@@ -151,11 +153,14 @@ function closeHDPopup(target, returnTarget = null) {
 		$("body").css("overscroll-behavior", "auto");
 		$("body").removeClass("scroll_lock");
 
+		const focusTarget = $triggerEl || $("body");
+
 		setTimeout(() => {
-			$triggerEl.attr("tabindex", 0).focus();
+			focusTarget.attr("tabindex", 0).focus();
 		}, 350);
 	}
 }
+
 
 // UUID생성
 function generateUUID() {

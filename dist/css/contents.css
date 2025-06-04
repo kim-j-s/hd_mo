@@ -260,6 +260,13 @@
 	-webkit-animation: bounce2 2.5s linear infinite;
 	animation: bounce2 2.5s linear infinite;
 }
+.bi_wrap .stepper_wrap .stepper .pgs .pgs_per .motion.child_fetus {
+	background: url(../images/content/bi/icon_spm_child_fetus.svg) no-repeat center center;
+	-webkit-transform-origin: bottom center;
+	transform-origin: bottom center;
+	-webkit-animation: bounce2 2.5s linear infinite;
+	animation: bounce2 2.5s linear infinite;
+}
 .bi_wrap .stepper_wrap .stepper .pgs .pgs_per .motion.home {
 	background: url(../images/content/bi/icon_spm_home.svg) no-repeat center center;
 	-webkit-animation: bounce 0.8s linear infinite;
@@ -3555,6 +3562,7 @@ ul + .form_group_wrap {
 }
 .special_contract_list > li .check_flex_box .check_box .label_cont .badge_wrap {
 	width: auto;
+	gap: 0.4rem;
 	vertical-align: middle;
 }
 .special_contract_list > li .check_flex_box .money_box {
@@ -4689,6 +4697,9 @@ ul + .form_group_wrap {
 	font-size: var(--font-size-body-medium);
 	text-align: center;
 }
+.anchor_wrap .anchor_btn .badge_wrap {
+	width: auto;
+}
 .anchor_wrap .anchor_btn.active {
 	font-weight: 700;
 	color: var(--color-text-basic);
@@ -4732,26 +4743,60 @@ ul + .form_group_wrap {
 	-webkit-box-direction: normal;
 	-ms-flex-flow: row wrap;
 	flex-flow: row wrap;
-	-webkit-box-pack: start;
-	-ms-flex-pack: start;
-	justify-content: flex-start;
-	margin-top: var(--gap-5);
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	row-gap: var(--gap-7);
+	margin: var(--gap-5) auto 0;
 	padding: 0 var(--padding-8);
-	text-align: center;
+	max-width: 32.7rem;
 }
 .is_coverage_graph .graph_item {
 	-webkit-box-flex: 0;
 	-ms-flex: 0 0 50%;
 	flex: 0 0 50%;
-}
-.is_coverage_graph .piechart {
 	position: relative;
-	display: inline-block;
-	width: 12rem;
+}
+.is_coverage_graph .graph_item:nth-child(2n + 1) .inner {
+	margin-right: auto;
+}
+.is_coverage_graph .graph_item:nth-child(2n + 1) .inner .piechart {
+	left: -0.6rem;
+}
+.is_coverage_graph .graph_item:nth-child(2n) .inner {
+	margin-left: auto;
+}
+.is_coverage_graph .graph_item:nth-child(2n) .inner .piechart {
+	right: 0.6rem;
+}
+.is_coverage_graph .graph_item .inner {
+	max-width: 12rem;
+}
+.is_coverage_graph .graph_item .item_btn {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: 100%;
 	height: 12rem;
-	margin: 0 auto;
+}
+.is_coverage_graph .graph_item .item_btn .coverage_part {
 	font-size: var(--font-size-body-medium);
-	text-align: center;
+	color: var(--color-text-basic);
+}
+.is_coverage_graph .graph_item .piechart {
+	position: absolute;
+	top: -0.6rem;
+	z-index: -1;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -4766,12 +4811,13 @@ ul + .form_group_wrap {
 	-ms-flex-align: center;
 	align-items: center;
 	row-gap: var(--gap-7);
+	width: 100%;
+	height: 100%;
+	max-width: 12rem;
+	max-height: 12rem;
+	margin: 0 auto;
 }
-.is_coverage_graph .piechart .coverage_part {
-	font-size: var(--font-size-body-medium);
-	color: var(--color-text-basic);
-}
-.is_coverage_graph .piechart canvas {
+.is_coverage_graph .graph_item .piechart canvas {
 	position: absolute;
 	top: 0;
 	left: 0;
