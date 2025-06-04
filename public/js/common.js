@@ -209,7 +209,7 @@
 					}, 500)
 
 					// console.log($('.anchor_move').eq(idx).children('.is_coverage_graph').attr('class'));
-					$('.anchor_move').eq(idx).focus();
+					$('.anchor_move').eq(moveIdx).focus();
 				}
 			})
 		}
