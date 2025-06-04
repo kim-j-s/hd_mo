@@ -9,7 +9,6 @@
  * @returns {void}
  */
 function openHDPopup($triggerEl, target) {
-
 	if (target == undefined || target == null) {
 		console.log("오픈할 팝업 타겟이 없습니다.");
 		return false;
@@ -92,8 +91,6 @@ function openHDPopup($triggerEl, target) {
 	}, 350);
 }
 
-
-
 /**
  * closeHDPopup
  * - popup ui를 제거하는 함수(접근성 대응)
@@ -148,7 +145,6 @@ function closeHDPopup(target, returnTarget = null) {
 			$target.attr("aria-hidden", "true");
 			$target.find(".popup_inner").attr("aria-hidden", "true");
 		}, 350);
-
 	} else {
 		$(".wrap").attr("aria-hidden", "false");
 		$(".wrap").removeAttr("inert");
