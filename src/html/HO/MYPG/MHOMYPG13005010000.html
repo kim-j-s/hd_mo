@@ -88,10 +88,11 @@
 					<strong class="point">5개</strong> 보장이 더 <strong class="danger">필요</strong>해요.
 				</div>
 
-				<div class="is_coverage_graph">
+				<div class="is_coverage_graph ty1">
 					<div class="graph_item">
-						<button type="button" class="item_btn">
+						<button type="button" class="item_btn" onclick="openHDPopup(this,'popup_type01');">
 							<span class="hd_badge outline solid_pastel c_danger size_m">
+								<!-- data-percent랑 맞춰주기 -->
 								<span class="num">70</span>점
 							</span>
 							<span class="coverage_part">뇌질환</span>
@@ -99,8 +100,9 @@
 						<div class="piechart" data-percent="70" arai-hidden="true"></div>
 					</div>
 					<div class="graph_item">
-						<button type="button" class="item_btn">
+						<button type="button" class="item_btn" onclick="openHDPopup(this,'popup_type01');">
 							<span class="hd_badge outline solid_pastel c_danger size_m">
+								<!-- data-percent랑 맞춰주기 -->
 								<span class="num">10</span>점
 							</span>
 							<span class="coverage_part">심장질환</span>
@@ -108,8 +110,9 @@
 						<div class="piechart" data-percent="10" arai-hidden="true"></div>
 					</div>
 					<div class="graph_item">
-						<button type="button" class="item_btn">
+						<button type="button" class="item_btn" onclick="openHDPopup(this,'popup_type01');">
 							<span class="hd_badge outline solid_pastel c_danger size_m">
+								<!-- data-percent랑 맞춰주기 -->
 								<span class="num">22</span>점
 							</span>
 							<span class="coverage_part">수술&middot;입원비</span> 
@@ -117,11 +120,22 @@
 						<div class="piechart" data-percent="22" arai-hidden="true"></div>
 					</div>
 					<div class="graph_item">
-						<button type="button" class="item_btn">
+						<button type="button" class="item_btn" onclick="openHDPopup(this,'popup_type01');">
 							<span class="hd_badge outline solid_pastel c_danger size_m">
+								<!-- data-percent랑 맞춰주기 -->
 								<span class="num">45</span>점
 							</span>
-							<span class="coverage_part">사망</span> 
+							<span class="coverage_part">일상생활</span> 
+						</button>
+						<div class="piechart" data-percent="45" arai-hidden="true"></div>
+					</div>
+					<div class="graph_item">
+						<button type="button" class="item_btn" onclick="openHDPopup(this,'popup_type01');">
+							<span class="hd_badge outline solid_pastel c_danger size_m">
+								<!-- data-percent랑 맞춰주기 -->
+								<span class="num">45</span>점
+							</span>
+							<span class="coverage_part">일상생활</span> 
 						</button>
 						<div class="piechart" data-percent="45" arai-hidden="true"></div>
 					</div>
@@ -200,7 +214,38 @@
 					더 <strong>필요</strong>한 보장이 없어요.
 				</div>
 
-				<div class="is_coverage_graph">보장그래프 영역</div>
+				<div class="is_coverage_graph ty2">
+					<div class="graph_item">
+						<button type="button" class="item_btn">
+							<span class="hd_badge outline solid_pastel c_danger size_m">
+								<!-- data-percent랑 맞춰주기 -->
+								<span class="num">15</span>점
+							</span>
+							<span class="coverage_part">사망</span>
+						</button>
+						<div class="piechart" data-percent="15" arai-hidden="true"></div>
+					</div>
+					<div class="graph_item">
+						<button type="button" class="item_btn">
+							<span class="hd_badge outline solid_pastel c_danger size_m">
+								<!-- data-percent랑 맞춰주기 -->
+								<span class="num">00</span>점
+							</span>
+							<span class="coverage_part">실손</span>
+						</button>
+						<div class="piechart" data-percent="0" arai-hidden="true"></div>
+					</div>
+					<div class="graph_item">
+						<button type="button" class="item_btn">
+							<span class="hd_badge outline solid_pastel c_danger size_m">
+								<!-- data-percent랑 맞춰주기 -->
+								<span class="num">57</span>점
+							</span>
+							<span class="coverage_part">운전자</span> 
+						</button>
+						<div class="piechart" data-percent="57" arai-hidden="true"></div>
+					</div>
+				</div>
 			</div>
 			<!-- e: 안전해요 -->
 			
@@ -344,26 +389,40 @@
 
 
 <script>
-	$(function(){
+
+	function coverageGraph() {
+		let colorTy = null;
 		$('.is_coverage_graph').each(function(){
-			$('.piechart').easyPieChart({
+			const $this = $(this);
+			if($this.hasClass('ty1')){
+				colorTy = '#DE3412';
+			}else if($this.hasClass('ty2')){
+				colorTy = '#346FB2';
+			}
+
+			console.log(colorTy);
+
+			$this.find('.piechart').easyPieChart({
 				scaleColor: "transparent",
 				lineWidth: 4,
-				lineCap: 'round', //Can be butt
-				barColor: '#CDD1D5',
-				trackColor:	"#DE3412",
-				size: 120,
+				lineCap: 'round',
+				barColor: colorTy,
+				trackColor:	"#CDD1D5",
+				size: 132,
 				rotate: 0,    
 				animate: 1000,
 
 				onStep: function(value) {
-					this.$el.find('.hd_badge').children('.num').text(Math.round(value));
+					$(this.el).find('.hd_badge').children('.num').text(Math.round(value));
 				},
 				onStop: function(value, to) {
-					this.$el.find('.hd_badge').children('.num').text(Math.round(to));
+					$(this.el).find('.hd_badge').children('.num').text(Math.round(to));
 				}
 			});
 		})
+	}
+	$(function(){
+		coverageGraph();
 	});
 </script>
 {{/ layout/default }}
