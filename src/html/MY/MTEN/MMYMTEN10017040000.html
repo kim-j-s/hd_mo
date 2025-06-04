@@ -20,26 +20,24 @@
 					</div>
 				</div>
 				<!-- e: content_top -->
-
-				
 				<div class="space_list_ty4">
-						<!-- s: 기가입 고객 -->
-						<!-- s: 25-06-04 삭제 -->
-						<!--<div class="item">
-								<div class="info_gray">
-										<dl>
-												<dt>특약가입일</dt>
-												<dd>2025.04.30</dd>
-										</dl>
-										<dl>
-												<dt>자녀1</dt>
-												<dd>자녀ㅣ2023.01.01(만2세)</dd>
-										</dl>
-										<dl>
-												<dt>자녀2</dt>
-												<dd>자녀ㅣ2024.12.30(만1세)</dd>
-										</dl>
-								</div>
+					<!-- s: 기가입 고객 -->
+					<!-- s: 25-06-04 삭제 -->
+					<!--<div class="item">
+							<div class="info_gray">
+									<dl>
+											<dt>특약가입일</dt>
+											<dd>2025.04.30</dd>
+									</dl>
+									<dl>
+											<dt>자녀1</dt>
+											<dd>자녀ㅣ2023.01.01(만2세)</dd>
+									</dl>
+									<dl>
+											<dt>자녀2</dt>
+											<dd>자녀ㅣ2024.12.30(만1세)</dd>
+									</dl>
+							</div>
 						</div>-->
 						<!-- e: 25-06-04 삭제 -->
 						<!-- e: 기가입 고객 -->
@@ -62,7 +60,7 @@
 													{{> cp/radio rd-class="rd_btn" rd-id="f1_g2_rb02" name="f1_g2" labelname="아니오"}}
 											</div>
 									</div>
-
+									
 									<!-- s: 태아선택 -->
 									<div class="form_line">
 											<div class="label_tit">태아 출생예정일</div>
@@ -70,7 +68,7 @@
 									</div>
 									<!-- e: 태아선택 -->
 
-									<!-- s: 자녀구분에서 자녀(만 12세 이하)를 선택 시 노출 -->
+									<!-- s: 태아선택 & 자녀구분에서 자녀(만 12세 이하)를 선택 시 노출 -->
 									<div class="form_line">
 										<div class="label_tit">변경 기준일</div>
 										{{> cp/text cal=true }}
@@ -84,9 +82,7 @@
 											</li>
 										</ul>
 									</div>
-									<!-- e: 자녀구분에서 자녀(만 12세 이하)를 선택 시 노출 -->
-
-									
+									<!-- e: 태아선택 & 자녀구분에서 자녀(만 12세 이하)를 선택 시 노출 -->
 								</div>	
 								<!-- e: 25-06-04 수정 -->
 						</div>
@@ -110,8 +106,10 @@
 												<div class="label_tit">자녀 생년월일</div>
 												<div class="row balance">
 														{{> cp/text class="birth_day" type="tel" placeholder="8자리 숫자 입력" maxlength="8" inp-title="생년월일 입력" }}
-														{{> cp/text class="price fix_w_case01 fit" type="tel" l-text="만" r-text="세" inp-title="자녀 만나이" no_del="true" value="" readonly="true"}}
-												</div>
+														<!-- s: 25-06-04 수정 -->
+														{{> cp/text class="price fix_w_case01 fit" type="tel" l-text="만" r-text="세" inp-title="자녀 만나이" no_del="true" value="" }}
+														<!-- e: 25-06-04 수정 -->
+													</div>
 										</div>
 								</div>
 						</div>
