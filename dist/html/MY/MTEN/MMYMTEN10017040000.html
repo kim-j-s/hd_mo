@@ -479,25 +479,24 @@
 						</div>
 					</div>
 					<!-- e: content_top -->
-
 					<div class="space_list_ty4">
 						<!-- s: 기가입 고객 -->
 						<!-- s: 25-06-04 삭제 -->
 						<!--<div class="item">
-											<div class="info_gray">
-													<dl>
-															<dt>특약가입일</dt>
-															<dd>2025.04.30</dd>
-													</dl>
-													<dl>
-															<dt>자녀1</dt>
-															<dd>자녀ㅣ2023.01.01(만2세)</dd>
-													</dl>
-													<dl>
-															<dt>자녀2</dt>
-															<dd>자녀ㅣ2024.12.30(만1세)</dd>
-													</dl>
-											</div>
+										<div class="info_gray">
+												<dl>
+														<dt>특약가입일</dt>
+														<dd>2025.04.30</dd>
+												</dl>
+												<dl>
+														<dt>자녀1</dt>
+														<dd>자녀ㅣ2023.01.01(만2세)</dd>
+												</dl>
+												<dl>
+														<dt>자녀2</dt>
+														<dd>자녀ㅣ2024.12.30(만1세)</dd>
+												</dl>
+										</div>
 									</div>-->
 						<!-- e: 25-06-04 삭제 -->
 						<!-- e: 기가입 고객 -->
@@ -541,28 +540,17 @@
 									</div>
 								</div>
 
-								<!-- s: 태아선택 -->
-								<div class="form_line">
-									<div class="label_tit">태아 출생예정일</div>
-									<div class="input_text birth_day">
-										<div class="inp">
-											<input type="tel" placeholder="예)19900101" maxlength="8" title="태아 출생예정일 입력" />
-											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-										</div>
-									</div>
-								</div>
-								<!-- e: 태아선택 -->
-
-								<!-- s: 자녀구분에서 자녀(만 12세 이하)를 선택 시 노출 -->
+								<!-- s: 자녀구분에서 자녀(만 12세 이하)를 선택하면 노출 -->
 								<div class="form_line">
 									<div class="label_tit">변경 기준일</div>
 									<div class="input_text calendar">
 										<div class="inp">
-											<input type="tel" class="inp_picker" title="날짜를 입력해주세요" />
+											<input type="tel" class="inp_picker" placeholder="날짜를 선택하세요" value="2025.02.18" readonly title="날짜를 입력해주세요" />
 											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 											<button type="button" class="btn calendar_call" title="날짜 선택"></button>
 										</div>
 									</div>
+
 									<ul class="list_depth_ty2">
 										<li>태아 : 임신확인서 상의 임신확인일 (임신확인일이 보험개시일 이전인 경우 보험개시일)</li>
 										<li>
@@ -574,7 +562,40 @@
 										</li>
 									</ul>
 								</div>
-								<!-- e: 자녀구분에서 자녀(만 12세 이하)를 선택 시 노출 -->
+								<!-- e: 자녀구분에서 자녀(만 12세 이하)를 선택하면 노출 -->
+
+								<!-- s: 태아선택 -->
+								<div class="form_line">
+									<div class="label_tit">태아 출생예정일</div>
+									<div class="input_text birth_day">
+										<div class="inp">
+											<input type="tel" placeholder="예)19900101" maxlength="8" title="태아 출생예정일 입력" />
+											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+										</div>
+									</div>
+								</div>
+								<div class="form_line">
+									<div class="label_tit">변경 기준일</div>
+									<div class="input_text calendar">
+										<div class="inp">
+											<input type="tel" class="inp_picker" placeholder="날짜 선택" title="날짜를 입력해주세요" />
+											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+											<button type="button" class="btn calendar_call" title="날짜 선택"></button>
+										</div>
+									</div>
+
+									<ul class="list_depth_ty2">
+										<li>태아 : 임신확인서 상의 임신확인일 (임신확인일이 보험개시일 이전인 경우 보험개시일)</li>
+										<li>
+											자녀 : 보험개시일
+											<ul>
+												<!-- prettier-ignore -->
+												<li>다자녀인 경우 <strong class="point">가장 어린 자녀(태아)를 기준</strong>으로 선택해주세요.</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+								<!-- e: 태아선택 -->
 							</div>
 							<!-- e: 25-06-04 수정 -->
 						</div>
@@ -621,13 +642,15 @@
 												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 											</div>
 										</div>
+										<!-- s: 25-06-04 수정 -->
 										<div class="input_text price fix_w_case01 fit">
 											<div class="int_txt left">만</div>
 											<div class="inp">
-												<input type="tel" readonly title="자녀 만나이" />
+												<input type="tel" title="자녀 만나이" />
 											</div>
 											<div class="int_txt right">세</div>
 										</div>
+										<!-- e: 25-06-04 수정 -->
 									</div>
 								</div>
 							</div>
