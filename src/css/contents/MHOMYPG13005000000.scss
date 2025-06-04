@@ -327,7 +327,41 @@
 
 // 그래프
 .is_coverage_graph {
-	height: 100px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	margin-top: var(--gap-5);
+	padding: 0 var(--padding-8);
 	text-align: center;
-	background-color: skyblue;
+
+	.graph_item {
+		flex: 0 0 50%;
+	}
+
+	.piechart {
+		position: relative;
+		display: inline-block;
+		width: 120px;
+		height: 120px;
+		margin: 0 auto;
+		font-size: var(--font-size-body-medium);
+		// line-height: 120px;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		row-gap: var(--gap-7);
+
+		.coverage_part {
+			font-size: var(--font-size-body-medium);
+			color: var(--color-text-basic);
+		}
+
+		canvas {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
 }

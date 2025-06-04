@@ -3365,7 +3365,7 @@ ul + .form_group_wrap {
 	margin-top: var(--gap-8);
 }
 .btn_area + .banner_box {
-	margin-top: var(--gap-5);
+	margin-top: var(--gap-8);
 }
 .btn_area + .banner_box.ty2 {
 	margin-top: var(--gap-8);
@@ -4725,7 +4725,54 @@ ul + .form_group_wrap {
 	background-image: url(../images/content/mypg/img_MHOMYPG13005010000_3.svg);
 }
 .is_coverage_graph {
-	height: 10rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	margin-top: var(--gap-5);
+	padding: 0 var(--padding-8);
 	text-align: center;
-	background-color: skyblue;
+}
+.is_coverage_graph .graph_item {
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 50%;
+	flex: 0 0 50%;
+}
+.is_coverage_graph .piechart {
+	position: relative;
+	display: inline-block;
+	width: 12rem;
+	height: 12rem;
+	margin: 0 auto;
+	font-size: var(--font-size-body-medium);
+	text-align: center;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	row-gap: var(--gap-7);
+}
+.is_coverage_graph .piechart .coverage_part {
+	font-size: var(--font-size-body-medium);
+	color: var(--color-text-basic);
+}
+.is_coverage_graph .piechart canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
 }
