@@ -7,7 +7,7 @@
 					지급내역을 확인해주세요.
 				</p>
                 <div class="selectitem_wrap">
-                    {{> cp/selectitem si_class="select_item_case01_mi" si_ph="선택해주세요." si_title="조회기간 선택" si_item="2024.03.19" si_popup="pop_type01"}}
+                    {{> cp/selectitem si_class="select_item_case01_mi" si_ph="선택해주세요." si_title="기준일 선택" si_item="2024.03.19" si_popup="pop_type01"}}
                 </div>
                 <div class="btn_area">
                     {{> cp/button type="2" size="2" b-text="조회"}}
@@ -15,7 +15,7 @@
                 <div class="divider_ty1"></div>
 				<!-- s: 계약 목록 -->
 				<div class="all_checking">
-					{{> cp/checkbox id="checkbox2" labelname="총 <strong class='point'>2</strong>건 전체 선택" }}
+					{{> cp/checkbox id="checkbox2" labelname="전체 선택" }}
 				</div>
 				<div class="card_item_wrap">
 					<div class="card_item">
@@ -35,20 +35,32 @@
 								</div>
 								<ul class="card_list_ty1">
 									<li>
-										<div class="title">대출일</div>
-										<div class="cont">2025.02.19</div>
+										<div class="title">계약번호</div>
+										<div class="cont">L2019****123</div>
 									</li>
 									<li>
-										<div class="title">대출잔액</div>
-										<div class="cont">10,000,000원</div>
+										<div class="title">대출일</div>
+										<div class="cont">2024.02.19</div>
 									</li>
 									<li>
 										<div class="title">이체일</div>
 										<div class="cont">10일</div>
 									</li>
 									<li>
-										<div class="title">납입계좌</div>
-										<div class="cont">국민은행 1234****1234</div>
+										<div class="title">대출합산금액</div>
+										<div class="cont">5,820,000원</div>
+									</li>
+									<li>
+										<div class="title">만기(상환)일</div>
+										<div class="cont">2025.02.19</div>
+									</li>
+									<li>
+										<div class="title">대출이율</div>
+										<div class="cont"><strong>3.4%</strong></div>
+									</li>
+									<li>
+										<div class="title">대출잔액</div>
+										<div class="cont"><strong>10,000,000원</strong></div>
 									</li>
 								</ul>
 							</div>
@@ -71,20 +83,32 @@
 								</div>
 								<ul class="card_list_ty1">
 									<li>
-										<div class="title">대출일</div>
-										<div class="cont">2025.02.19</div>
+										<div class="title">계약번호</div>
+										<div class="cont">L2019****123</div>
 									</li>
 									<li>
-										<div class="title">대출잔액</div>
-										<div class="cont">10,000,000원</div>
+										<div class="title">대출일</div>
+										<div class="cont">2024.02.19</div>
 									</li>
 									<li>
 										<div class="title">이체일</div>
 										<div class="cont">10일</div>
 									</li>
 									<li>
-										<div class="title">납입계좌</div>
-										<div class="cont">국민은행 1234****1234</div>
+										<div class="title">대출합산금액</div>
+										<div class="cont">5,820,000원</div>
+									</li>
+									<li>
+										<div class="title">만기(상환)일</div>
+										<div class="cont">2025.02.19</div>
+									</li>
+									<li>
+										<div class="title">대출이율</div>
+										<div class="cont"><strong>3.4%</strong></div>
+									</li>
+									<li>
+										<div class="title">대출잔액</div>
+										<div class="cont"><strong>10,000,000원</strong></div>
 									</li>
 								</ul>
 							</div>
@@ -96,70 +120,33 @@
 				<!-- s: 조회 내역이 없는 경우 -->
 				<div class="no_list_area">
 					{{> cp/icon iconClass="exclamationSvg"}}
-					<p>납입계좌 변경이 가능한 보험이 없어요</p>
+					<p>발급 가능한 지급내역서가 없어요</p>
                     <p class="desc tac">
-                        혹시 급여이체로 납입하시나요?<br>
-                        이 경우는 아래 ‘꼭 알아두세요’를 참고해주세요.
+                        조회조건을 다르게 설정해보세요.
                     </p>
                 </div>
-				<div class="btn_area">
-					<a href="javascript:void(0)" class="btn_link short_cut short_cut_icon short_cut_icon_ty5" title="보험계약대출 신청 페이지로 이동">
-						<span class="text">
-							<dl>
-								<dt>
-									바로 대출가능한 금액
-									<span class="sub_text">(2025.02.20 기준)</span> 
-								</dt>
-								<dd>
-									<strong>1,500,000원</strong>
-								</dd>
-							</dl>
-						</span>
-					</a>
-				</div>
                 <!-- e: 조회 내역이 없는 경우 -->
 
-				<!-- s: 꼭 알아두세요 -->
-				{{#> cp/notice dp-active=true }}
-					<ul class="list_depth">
-						<li>이용대상
-							<ul>
-								<li>보험계약대출 거래 계약자만 이용할 수 있습니다.</li>
-								<li>계약자 본인명의 계좌만 이용 가능합니다.
-                                    <ul>
-                                        <li>단, 평생계좌 등 일부 계좌는 이용 불가</li>
-                                    </ul>
-                                </li>
-							</ul>
-						</li>
-						<li>변경 시 유의사항
-							<ul>
-								<li>이자납입방법이 급여이체인 경우 현대해상 다이렉트 홈페이지와 모바일앱을 통해 자동이체를 신청하거나 변경할 수 없습니다. 고객님이 재직 중이신 사업장의 관련 부서에 문의해주세요.</li>
-								<li>자세한 내용은 인터넷 고객센터(02-2116-1004)로 문의해주세요.</li>
-							</ul>
-						</li>
-					</ul>
-				{{/ cp/notice }}
-				<!-- e: 꼭 알아두세요 -->
 			</div>
 		</div>
 
-		<!-- s: 조회 내역이 없는 경우에만 노출 -->
 		<div class="bottom_fix_wrap">
 			<div class="btn_area">
-				{{> cp/button type="1" size="1" b-text="홈으로"  }}
+				{{> cp/button type="1" size="1" b-text="발급방법을 선택할게요" }}
+		        <!-- s: 조회 내역이 없는 경우 -->
+				<!-- {{> cp/button type="1" size="1" b-text="홈으로"  }} -->
+		        <!-- e: 조회 내역이 없는 경우 -->
 			</div>
 		</div>
-		<!-- e: 조회 내역이 없는 경우에만 노출 -->
 	</div>
 
 <!-- s: 조회조건 팝업 -->
-{{#> popup/popup_bottom popup-id="pop_type04" popup-title="조회조건"}}
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="조회조건"}}
 <div class="popup_cont">
 	<div class="popup_content">
 		<div class="form_group_wrap">
 			<div class="form_line">
-				<div class="label_tit">기간(최대 2년)</div>
+				<div class="label_tit">기준일</div>
                 {{> cp/text cal=true placeholder="날짜를 선택하세요" }}
 			</div>
 		</div>

@@ -6,26 +6,23 @@
 		<div class="content">
 
 
-
-				<!-- s: content_top -->
-				<div class="content_top">
-					<!-- prettier-ignore -->
-					<h2 class="title_h2">
-						보험료를 <strong>결제하여 가입을</strong><br>
-						<strong>완료</strong>해주세요
-					</h2>
-				</div>
-				<!-- e: content_top -->
-				<div class="bg_top_cover ty2">
-					<div class="info_gray bg_etc01">
-						<div class="total">
-							<dl>
-								<dt>결제하실 금액</dt>
-								<!-- prettier-ignore -->
-								<dd>
-									<strong class="big point">768,693원</strong>
-								</dd>
-							</dl>
+				<!-- 신용(앱)카드 -->
+				<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
+					<!-- s: 25-06-04 -->
+					<div class="btn_area end">
+						<a href="javascript:void(0)" role="button" class="btn_link short_cut">
+							<span class="text">이전 결제 정보 불러오기</span>
+						</a>
+					</div>
+					<h3 class="title_h4">신용카드 정보 입력</h3>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">카드사</div>
+					<!-- e: 25-06-04 -->
+							{{> cp/selectitem si_ph="카드사 선택" si_title="카드사 선택"}}
+							<!-- s: KB카드 선택 시 노출 -->
+							{{> cp/checkbox id="checkbox1" labelname="앱카드 결제" }}
+							<!-- e: KB카드 선택 시 노출 -->
 						</div>
 						<div class="info_top_cont">
 							<dl>
@@ -295,27 +292,30 @@
 						</div>
 						<!-- e: 토스페이 -->
 					</div>
-					<!-- 계좌이체 -->
-					<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel03">
-						<h3 class="title_h4">계좌 정보 입력</h3>
-						<div class="form_group_wrap">
-							<div class="form_line">
-								<div class="label_tit box">
-									<div>은행</div>
-									<a href="javascript:void(0)" role="button" class="btn_link short_cut">
-										<span class="text">이전 계좌정보 불러오기</span>
-									</a>
-								</div>
-								{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" }}
-							</div>
-							<div class="form_line">
-								<div class="label_tit">계좌번호</div>
-								{{> cp/text placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
-								<ul class="list_ty2">
-									<li><strong>김*대(계약자)님의 본인 계좌만 이용 가능합니다.</strong></li>
-									<li>즉시 이체 가능 시간 : 09:00 ~ 21:50</li>
-								</ul>
-							</div>
+					<!-- e: 토스페이 -->
+				</div>
+				<!-- 계좌이체 -->
+				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel03">
+					<!-- s: 25-06-04 -->
+					<div class="btn_area end">
+						<a href="javascript:void(0)" role="button" class="btn_link short_cut">
+							<span class="text">이전 계좌정보 불러오기</span>
+						</a>
+					</div>
+					<h3 class="title_h4">계좌 정보 입력</h3>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">은행</div>
+					<!-- e: 25-06-04 -->
+							{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" }}
+						</div>
+						<div class="form_line">
+							<div class="label_tit">계좌번호</div>
+							{{> cp/text placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
+							<ul class="list_ty2">
+								<li><strong>김*대(계약자)님의 본인 계좌만 이용 가능합니다.</strong></li>
+								<li>즉시 이체 가능 시간 : 09:00 ~ 21:50</li>
+							</ul>
 						</div>
 					</div>
 					<!-- 가상계좌 -->
@@ -338,53 +338,52 @@
 
 				</div>
 
-				<div class="divider_ty1"></div>
-				<h3 class="title_h4">ECO 마일리지 환급 계좌</h3>
-				<div class="form_group_wrap">
-					<div class="form_line">
-						<div class="label_tit box">
-							<div>은행</div>
-							<a href="javascript:void(0)" role="button" class="btn_link short_cut">
-								<span class="text">이전 계좌정보 불러오기</span>
-							</a>
-						</div>
-						{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" }}
-					</div>
-					<div class="form_line">
-						<div class="label_tit">계좌번호</div>
-						{{> cp/text placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
-						<ul class="list_ty2">
-							<li><strong>김*대(계약자)님의 본인 계좌만 이용 가능합니다.</strong></li>
-							<li><strong>해당 계약 만기시 환급 받을 계좌정보를 입력해주세요.</strong></li>
-						</ul>
-					</div>
-				</div>
-				<div class="checkbox_group_wrap column">
-					{{#> cp/checkbox checkbox_class="rd_box" id="checkbox04-21" label_class="chk_label_ty2" labelname="마일리지 환급금 지급방법
-					안내<br>(갱신계약 대체보험료로 사용하지 않은 경우)" }}
-					<div class="chk_lby">
-						<ul class="list_ty2">
-							<li><strong class="point">카드 납입 체결계약 - 카드 부분취소 지급</strong></li>
-							<li><strong>현금 납입 체결계약 - 계좌 환급 지급</strong></li>
-						</ul>
-					</div>
-					{{/ cp/checkbox}}
-				</div>
-				<!-- s: 꼭 알아두세요 카드만 노출 -->
-				{{#> cp/notice dp-active=true }}
-				<ul class="list_depth">
-					<li>계약자 변경을 원하시는 경우 우측 상단 [설계내역] 버튼을 통해 7단계(피보험자/계약자 정보)로 이동하셔서 계약자를 변경해주세요.</li>
-					<li>보험계약 체결을 위해서는 휴대폰 직접서명 또는 전자서명이 필요합니다.</li>
-					<li>신용카드로 결제하신 보험료는 책임개시일 기준으로 후청구됩니다.<br>
-						{{> cp/linkButton bl_class="short_cut sm" bl_text="신용카드 청구기준" question_tit="신용카드 청구기준" }}
-					</li>
-					<li>최근 카드정보 불러오기는 이전 계약체결동의 내역에 따라 최근 결제이력을 자동으로 불러오는 기능입니다.</li>
-				</ul>
-				{{/ cp/notice }}
-				<!-- e: 꼭 알아두세요 카드만 노출 -->
-
-
-
+			</div>
+			
+            <div class="divider_ty1"></div><!-- s: 25-06-04 -->
+			<div class="btn_area end">
+				<a href="javascript:void(0)" role="button" class="btn_link short_cut">
+					<span class="text">이전 계좌정보 불러오기</span>
+				</a>
+			</div>
+			<h3 class="title_h4">ECO 마일리지 환급 계좌</h3>
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">은행</div>
+			<!-- e: 25-06-04 -->
+                    {{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" }}
+                </div>
+                <div class="form_line">
+                    <div class="label_tit">계좌번호</div>
+                    {{> cp/text placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
+                    <ul class="list_ty2">
+                        <li><strong>김*대(계약자)님의 본인 계좌만 이용 가능합니다.</strong></li>
+                        <li><strong>해당 계약 만기시 환급 받을 계좌정보를 입력해주세요.</strong></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="checkbox_group_wrap column">
+                {{#> cp/checkbox checkbox_class="rd_box" id="checkbox04-21" label_class="chk_label_ty2" labelname="마일리지 환급금 지급방법 안내<br>(갱신계약 대체보험료로 사용하지 않은 경우)" }}
+                <div class="chk_lby">
+                    <ul class="list_ty2">
+                        <li><strong class="point">카드 납입 체결계약 - 카드 부분취소 지급</strong></li>
+                        <li><strong>현금 납입 체결계약 - 계좌 환급 지급</strong></li>
+                    </ul>
+                </div>
+                {{/ cp/checkbox}}
+            </div>
+            <!-- s: 꼭 알아두세요 카드만 노출 -->
+            {{#> cp/notice dp-active=true }}
+                <ul class="list_depth">
+                    <li>계약자 변경을 원하시는 경우 우측 상단 [설계내역] 버튼을 통해 7단계(피보험자/계약자 정보)로 이동하셔서 계약자를 변경해주세요.</li>
+                    <li>보험계약 체결을 위해서는 휴대폰 직접서명 또는 전자서명이 필요합니다.</li>
+                    <li>신용카드로 결제하신 보험료는 책임개시일 기준으로 후청구됩니다.<br>
+                        {{> cp/linkButton bl_class="short_cut sm" bl_text="신용카드 청구기준" question_tit="신용카드 청구기준" }}
+                    </li>
+                    <li>최근 카드정보 불러오기는 이전 계약체결동의 내역에 따라 최근 결제이력을 자동으로 불러오는 기능입니다.</li>
+                </ul>
+            {{/ cp/notice }}
+            <!-- e: 꼭 알아두세요 카드만 노출 -->
 		</div>
 	</div>
 

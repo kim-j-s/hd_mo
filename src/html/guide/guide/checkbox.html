@@ -24,13 +24,7 @@
 	{{/ cp/checkbox }}
 
 	<div class="guide_discription">확장형 + 더보기 유형</div>
-	{{#> cp/checkbox labelname="슬관절 확장보장II(반려견)" ag_more=true id="checkbox01-2" }}
-	<div class="chk_lby2">
-		<div class="badge_wrap">
-			<span class="hd_badge outline solid_pastel c_secondary size_m">새로 나왔어요</span>
-		</div>
-	</div>
-	{{/ cp/checkbox }}
+	{{> cp/checkbox labelname="슬관절 확장보장II(반려견) <span class='badge_wrap'><span class='hd_badge outline solid_pastel c_secondary size_m'>새로 나왔어요</span></span>" ag_more=true id="checkbox01-2" }}
 	<br>
 	<br>
 	<br>
@@ -269,12 +263,23 @@
 	</div>
 
 
-	<div class="guide_discription">.special_contract_list</div>
+	<div class="guide_h4">.special_contract_list</div>
 	<ul class="special_contract_list">
 		<li>
 			<div class="check_flex_box">
 				<div class="check_box">
-					{{> cp/checkbox id="agreement01-6" labelname="반려동물 사고 지원금 특약" }}
+					<div class="inp_checkbox">
+						<input type="checkbox" id="agreement01-6">
+						<label for="agreement01-6" class="chk_label">
+							<span class="label_cont">
+								반려동물 사고 지원금 특약
+								<!-- 반려동물 사고 -->
+								<span class="badge_wrap">
+									<span class="hd_badge outline solid_pastel c_info size_m">추가정보입력</span>
+								</span>
+							</span>
+						</label>
+					</div>
 				</div>
 				<div class="money_box">
 					<div class="money">
@@ -283,41 +288,12 @@
 					{{> cp/button_question question-icon="arrow" pop_id="pop_type06" question_tit="반려동물 사고 지원금 특약" }}
 				</div>
 			</div>
-			<div class="btn_add">
-				{{> cp/button type="3" size="5" b-text="추가정보" btn-title="추가정보입력 팝업 열기" rightIcon="plusSvg" }}
-			</div>
 			<div class="info_gray">
 				<p>실속형</p>
 				<ul class="list_depth_ty2">
 					<li>바둑이 123456789012345</li>
 					<li>냐옹이 123456789054321</li>
 				</ul>
-			</div>
-		</li>
-		<li>
-			<div class="check_flex_box disabled">
-				<div class="check_box">
-					{{> cp/checkbox id="agreement02-4" labelname="상급병실&middot;성형&middot;치아보철지원특약" disabled=true }}
-				</div>
-				<div class="money_box">
-					<div class="money">
-						<span>5,100</span>원
-					</div>
-					{{> cp/button_question question-icon="arrow" pop_id="pop_type04" question_tit="상급병실,성형,치아보철지원특약" }}
-				</div>
-			</div>
-		</li>
-		<li>
-			<div class="check_flex_box">
-				<div class="check_box">
-					{{> cp/checkbox id="agreement02-1" labelname="상해간병비&middot;사망담보 특약" }}
-				</div>
-				<div class="money_box">
-					<div class="money">
-						<span>5,100</span>원
-					</div>
-					{{> cp/button_question question-icon="arrow" pop_id="pop_type01" question_tit="상해간병비&middot;사망담보 특약" }}
-				</div>
 			</div>
 		</li>
 	</ul>
