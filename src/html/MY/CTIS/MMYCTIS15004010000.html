@@ -1,0 +1,154 @@
+{{#> layout/default page-title="거래잔액증명서 | 마이페이지"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="거래잔액증명서" }}
+		<div id="container" class="container">
+			<div class="content">
+                <p class="text_sub">
+					지급내역을 확인해주세요.
+				</p>
+                <div class="selectitem_wrap">
+                    {{> cp/selectitem si_class="select_item_case01_mi" si_ph="선택해주세요." si_title="기준일 선택" si_item="2024.03.19" si_popup="pop_type01"}}
+                </div>
+                <div class="btn_area">
+                    {{> cp/button type="2" size="2" b-text="조회"}}
+                </div>
+                <div class="divider_ty1"></div>
+				<!-- s: 계약 목록 -->
+				<div class="all_checking">
+					{{> cp/checkbox id="checkbox2" labelname="전체 선택" }}
+				</div>
+				<div class="card_item_wrap">
+					<div class="card_item">
+						<div class="item_inner">
+                            <div class="inp_checkbox">
+                                <input type="checkbox" id="card_chk1" name="name1" aria-labelledby="card_chk1_cont">
+                                <label for="card_chk1" class="chk_label"></label>
+                                <i></i>
+                            </div>
+							<div class="inner_cont">
+								<div role="button" class="card_link" tabindex="0">
+									<div class="item_top" id="card_chk1_cont">
+										<div class="title_info">
+											<div class="main_title">무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(Hi2301)</div>
+										</div>
+									</div>
+								</div>
+								<ul class="card_list_ty1">
+									<li>
+										<div class="title">계약번호</div>
+										<div class="cont">L2019****123</div>
+									</li>
+									<li>
+										<div class="title">최종상환일</div>
+										<div class="cont">2024.02.19</div>
+									</li>
+									<li>
+										<div class="title">대출합산금액</div>
+										<div class="cont">15,720,000원</div>
+									</li>
+									<li>
+										<div class="title">대출잔액</div>
+										<div class="cont">7,720,000원</div>
+									</li>
+									<li>
+										<div class="title">상환금액</div>
+										<div class="cont"><strong>8,000,000원</strong></div>
+									</li>
+									<li>
+										<div class="title">납입이자합계</div>
+										<div class="cont"><strong>284,303원</strong></div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+                            <div class="inp_checkbox">
+                                <input type="checkbox" id="card_chk2" name="name1" aria-labelledby="card_chk2_cont">
+                                <label for="card_chk2" class="chk_label"></label>
+                                <i></i>
+                            </div>
+							<div class="inner_cont">
+								<div role="button" class="card_link" tabindex="0">
+									<div class="item_top" id="card_chk2_cont">
+										<div class="title_info">
+											<div class="main_title">무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(Hi2301)</div>
+										</div>
+									</div>
+								</div>
+								<ul class="card_list_ty1">
+									<li>
+										<div class="title">계약번호</div>
+										<div class="cont">L2019****123</div>
+									</li>
+									<li>
+										<div class="title">최종상환일</div>
+										<div class="cont">2024.02.19</div>
+									</li>
+									<li>
+										<div class="title">대출합산금액</div>
+										<div class="cont">15,720,000원</div>
+									</li>
+									<li>
+										<div class="title">대출잔액</div>
+										<div class="cont">7,720,000원</div>
+									</li>
+									<li>
+										<div class="title">상환금액</div>
+										<div class="cont"><strong>8,000,000원</strong></div>
+									</li>
+									<li>
+										<div class="title">납입이자합계</div>
+										<div class="cont"><strong>284,303원</strong></div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- e: 계약 목록 -->
+
+				<!-- s: 조회 내역이 없는 경우 -->
+				<div class="no_list_area">
+					{{> cp/icon iconClass="exclamationSvg"}}
+					<p>발급 가능한 확인서가 없어요</p>
+                    <p class="desc tac">
+                        상환한 금액이 없어요.
+                    </p>
+                </div>
+                <!-- e: 조회 내역이 없는 경우 -->
+
+			</div>
+		</div>
+
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="1" b-text="발급방법을 선택할게요" }}
+		        <!-- s: 조회 내역이 없는 경우 -->
+				<!-- {{> cp/button type="1" size="1" b-text="홈으로"  }} -->
+		        <!-- e: 조회 내역이 없는 경우 -->
+			</div>
+		</div>
+	</div>
+
+<!-- s: 조회조건 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="조회조건"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">기준일</div>
+                {{> cp/text cal=true placeholder="날짜를 선택하세요" }}
+			</div>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 조회조건 팝업 -->
+{{/ layout/default }}
