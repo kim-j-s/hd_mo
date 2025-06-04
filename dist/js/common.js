@@ -188,11 +188,11 @@
 			text = $this.find(".hd_badge").text(),
 			count = text.match(/\d+/)[0];
 
-		$this.closest(".anchor_wrap").find(".anchor_btn").removeClass("active");
-		$this.addClass("active");
-
 		// 보장상태가 0일 때
 		if (count !== "0") {
+			$this.closest(".anchor_wrap").find(".anchor_btn").removeClass("active");
+			$this.addClass("active");
+
 			$(".anchor_move").each(function (idx) {
 				const moveIdx = idx,
 					positionVal = $(this).position().top,
@@ -206,6 +206,9 @@
 						},
 						500,
 					);
+
+					// console.log($('.anchor_move').eq(idx).children('.is_coverage_graph').attr('class'));
+					$(".anchor_move").eq(moveIdx).focus();
 				}
 			});
 		}

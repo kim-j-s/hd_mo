@@ -332,16 +332,40 @@
 .is_coverage_graph {
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: flex-start;
-	gap: 15% 31px;
-	margin-top: var(--gap-5);
+	justify-content: space-between;
+	row-gap: var(--gap-7);
+	margin: var(--gap-5) auto 0;
 	padding: 0 var(--padding-8);
-	text-align: center;
+	max-width: 327px;
 
 	.graph_item {
+		flex: 0 0 50%;
 		position: relative;
-		width: 120px;
-		overflow: hidden;
+		// overflow: hidden;
+
+		&:nth-child(2n+1){
+			.inner {
+				margin-right: auto;
+
+				.piechart {
+					left: -6px;
+				}
+			}
+		}
+
+		&:nth-child(2n){
+			.inner {
+				margin-left: auto;
+
+				.piechart {
+					right: 6px;
+				}
+			}
+		}
+
+		.inner {
+			max-width: 120px;
+		}
 
 		.item_btn {
 			display: flex;
@@ -360,8 +384,8 @@
 		.piechart {
 			position: absolute;
 			top: -6px;
-			left: calc(50% - 6px);
-			transform: translateX(-50%);
+			// left: calc(50% - 6px);
+			// transform: translateX(-50%);
 			z-index: -1;
 			display: flex;
 			flex-direction: column;

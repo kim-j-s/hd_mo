@@ -458,6 +458,7 @@
 					</div>
 				</div>
 			</div>
+
 			<div id="container" class="container">
 				<div class="content">
 					<!-- 
@@ -466,7 +467,7 @@
 							2단계 : result_st2 클래스 추가
 							3단계 : result_st3 클래스 추가
 						  -->
-					<div class="visual_top result_st2">
+					<div class="visual_top result_st3">
 						<ol class="vs_step">
 							<li class="step1">
 								<span class="st">
@@ -481,6 +482,9 @@
 								</span>
 							</li>
 							<li class="step3">
+								<!-- s: 접근성을 위해 현재 해당하는 단계일 때 필요 -->
+								<span class="blind">현재 진행 중인 단계</span>
+								<!-- e: 접근성을 위해 현재 해당하는 단계일 때 필요 -->
 								<span class="st">
 									3단계
 									<span>벽돌</span>
@@ -489,19 +493,19 @@
 						</ol>
 						<!-- 충분 보장 0~3건일 때 -->
 						<!-- prettier-ignore -->
-						<!-- <h2 class="title_h2">
+						<h2 class="title_h2">
 								<strong>김*대</strong>님의 보험은<br>
 								바람이 조금만 불어도 휘청!<br>
 								보장이 <strong class="danger">많이 부족</strong>해요
-							</h2> -->
+							</h2>
 
 						<!-- 충분 보장 4~6건일 때 -->
 						<!-- prettier-ignore -->
-						<h2 class="title_h2">
+						<!-- <h2 class="title_h2">
 								<strong>김*대</strong>님의 보험은<br>
 								바람이 거세게 불어오면 와르르!<br>
 								보장이 <strong class="secondary">조금 더 필요</strong>해요
-							</h2>
+							</h2> -->
 
 						<!-- 충분 보장 7~8건일 때 -->
 						<!-- prettier-ignore -->
@@ -523,17 +527,21 @@
 						<!-- prettier-ignore -->
 						<button type="button" class="anchor_btn active" title="해당 영역으로 이동">
 								필요해요
-								<span class="hd_badge outline solid_pastel c_primary size_m">8개</span>
+								<span class="badge_wrap">
+									<span class="hd_badge outline solid_pastel c_primary size_m">6개</span>
+								</span>
 							</button>
 						<!-- prettier-ignore -->
 						<button type="button" class="anchor_btn" title="해당 영역으로 이동">
 								안전해요
-								<span class="hd_badge outline solid_pastel c_secondary size_m">0개</span>
+								<span class="badge_wrap">
+									<span class="hd_badge outline solid_pastel c_secondary size_m">3개</span>
+								</span>
 							</button>
 					</div>
 
 					<!-- s: 필요해요 -->
-					<div class="anchor_move">
+					<div class="anchor_move" tabindex="0">
 						<!-- prettier-ignore -->
 						<div class="icon_text_area face1">
 								충분히 준비된 보장이<br>
@@ -545,38 +553,71 @@
 								<strong class="point">5개</strong> 보장이 더 <strong class="danger">필요</strong>해요.
 							</div>
 
-						<div class="is_coverage_graph">
+						<div class="is_coverage_graph ty1">
 							<div class="graph_item">
-								<span class="hd_badge outline solid_pastel c_primary size_m">
-									<span class="num">70</span>
-									점
-								</span>
-								<span class="coverage_part">뇌질환</span>
-								<div class="piechart" data-percent="70"></div>
+								<div class="inner">
+									<button type="button" class="item_btn" onclick="openHDPopup(this,'popup_type01');">
+										<span class="hd_badge outline solid_pastel c_danger size_m">
+											<!-- .num과 data-percent랑 값 맞춰줘야 함 -->
+											<span class="num">70</span>
+											점
+										</span>
+										<span class="coverage_part">뇌질환</span>
+									</button>
+									<div class="piechart" data-percent="70" arai-hidden="true"></div>
+								</div>
 							</div>
 							<div class="graph_item">
-								<span class="hd_badge outline solid_pastel c_primary size_m">
-									<span class="num">10</span>
-									점
-								</span>
-								<span class="coverage_part">심장질환</span>
-								<div class="piechart" data-percent="10"></div>
+								<div class="inner">
+									<button type="button" class="item_btn" onclick="openHDPopup(this,'popup_type01');">
+										<span class="hd_badge outline solid_pastel c_danger size_m">
+											<!-- .num과 data-percent랑 값 맞춰줘야 함 -->
+											<span class="num">10</span>
+											점
+										</span>
+										<span class="coverage_part">심장질환</span>
+									</button>
+									<div class="piechart" data-percent="10" arai-hidden="true"></div>
+								</div>
 							</div>
 							<div class="graph_item">
-								<span class="hd_badge outline solid_pastel c_primary size_m">
-									<span class="num">22</span>
-									점
-								</span>
-								<span class="coverage_part">수술&middot;입원비</span>
-								<div class="piechart" data-percent="22"></div>
+								<div class="inner">
+									<button type="button" class="item_btn" onclick="openHDPopup(this,'popup_type01');">
+										<span class="hd_badge outline solid_pastel c_danger size_m">
+											<!-- .num과 data-percent랑 값 맞춰줘야 함 -->
+											<span class="num">22</span>
+											점
+										</span>
+										<span class="coverage_part">수술&middot;입원비</span>
+									</button>
+									<div class="piechart" data-percent="22" arai-hidden="true"></div>
+								</div>
 							</div>
 							<div class="graph_item">
-								<span class="hd_badge outline solid_pastel c_primary size_m">
-									<span class="num">45</span>
-									점
-								</span>
-								<span class="coverage_part">사망</span>
-								<div class="piechart" data-percent="45"></div>
+								<div class="inner">
+									<button type="button" class="item_btn" onclick="openHDPopup(this,'popup_type01');">
+										<span class="hd_badge outline solid_pastel c_danger size_m">
+											<!-- .num과 data-percent랑 값 맞춰줘야 함 -->
+											<span class="num">45</span>
+											점
+										</span>
+										<span class="coverage_part">일상생활</span>
+									</button>
+									<div class="piechart" data-percent="45" arai-hidden="true"></div>
+								</div>
+							</div>
+							<div class="graph_item">
+								<div class="inner">
+									<button type="button" class="item_btn" onclick="openHDPopup(this,'popup_type01');">
+										<span class="hd_badge outline solid_pastel c_danger size_m">
+											<!-- .num과 data-percent랑 값 맞춰줘야 함 -->
+											<span class="num">91</span>
+											점
+										</span>
+										<span class="coverage_part">암</span>
+									</button>
+									<div class="piechart" data-percent="91" arai-hidden="true"></div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -641,7 +682,7 @@
 					<div class="divider_ty1"></div>
 
 					<!-- s: 안전해요 -->
-					<div class="anchor_move">
+					<div class="anchor_move" tabindex="0">
 						<!-- prettier-ignore -->
 						<div class="icon_text_area face2">
 								<strong class="point">3개 보장</strong>을<br>
@@ -653,7 +694,47 @@
 								더 <strong>필요</strong>한 보장이 없어요.
 							</div>
 
-						<div class="is_coverage_graph">보장그래프 영역</div>
+						<div class="is_coverage_graph ty2">
+							<div class="graph_item">
+								<div class="inner">
+									<button type="button" class="item_btn">
+										<span class="hd_badge outline solid_pastel c_danger size_m">
+											<!-- .num과 data-percent랑 값 맞춰줘야 함 -->
+											<span class="num">15</span>
+											점
+										</span>
+										<span class="coverage_part">사망</span>
+									</button>
+									<div class="piechart" data-percent="15" arai-hidden="true"></div>
+								</div>
+							</div>
+							<div class="graph_item">
+								<div class="inner">
+									<button type="button" class="item_btn">
+										<span class="hd_badge outline solid_pastel c_danger size_m">
+											<!-- .num과 data-percent랑 값 맞춰줘야 함 -->
+											<span class="num">00</span>
+											점
+										</span>
+										<span class="coverage_part">실손</span>
+									</button>
+									<div class="piechart" data-percent="0" arai-hidden="true"></div>
+								</div>
+							</div>
+							<div class="graph_item">
+								<div class="inner">
+									<button type="button" class="item_btn">
+										<span class="hd_badge outline solid_pastel c_danger size_m">
+											<!-- .num과 data-percent랑 값 맞춰줘야 함 -->
+											<span class="num">57</span>
+											점
+										</span>
+										<span class="coverage_part">운전자</span>
+									</button>
+									<div class="piechart" data-percent="57" arai-hidden="true"></div>
+								</div>
+							</div>
+						</div>
 					</div>
 					<!-- e: 안전해요 -->
 
@@ -725,7 +806,10 @@
 									<div class="insu_plan">
 										<!-- prettier-ignore -->
 										<div class="tit">
-												<span class="hd_badge outline solid_pastel c_danger size_m">부족</span><span>뇌출혈진단</span>
+												<span class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_danger size_m">부족</span>
+												</span>
+												<span>뇌출혈진단</span>
 											</div>
 										<p>의사에 의해 뇌출혈로 진단이 확정된 경우 진단비 지급</p>
 									</div>
@@ -749,7 +833,10 @@
 									<div class="insu_plan">
 										<!-- prettier-ignore -->
 										<div class="tit">
-												<span class="hd_badge outline solid_pastel c_info size_m">미가입</span><span>뇌졸중진단</span>
+												<span class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_info size_m">미가입</span>
+												</span>
+												<span>뇌졸중진단</span>
 											</div>
 										<p>의사에 의해 뇌졸중으로 진단이 확정된 경우 진단비 지급</p>
 									</div>
@@ -773,7 +860,10 @@
 									<div class="insu_plan">
 										<!-- prettier-ignore -->
 										<div class="tit">
-												<span class="hd_badge outline solid_pastel c_secondary size_m">충분</span><span>뇌혈관질환진단</span>
+												<span class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_secondary size_m">충분</span>
+												</span>
+												<span>뇌혈관질환진단</span>
 											</div>
 										<p>의사에 의해 뇌혈관 질환으로 진단이 확정된 경우 진단비 지급(뇌경색증, 뇌졸중, 뇌출혈, 대뇌/뇌전동맥의 폐쇄 및 협착 등)</p>
 									</div>
@@ -818,25 +908,62 @@
 		<!-- e: popup area -->
 
 		<script>
-			$(function () {
-				$(".is_coverage_graph").each(function () {
-					$(".piechart").easyPieChart({
-						scaleColor: "transparent",
-						lineWidth: 4,
-						lineCap: "round", //Can be butt
-						barColor: "#CDD1D5",
-						trackColor: "#DE3412",
-						size: 120,
-						rotate: 0,
-						animate: 1000,
+			function coverageGraph(target) {
+				let colorTy = null;
+				const $target = target;
 
-						onStep: function (value) {
-							this.$el.find(".hd_badge").children(".num").text(Math.round(value));
-						},
-						onStop: function (value, to) {
-							this.$el.find(".hd_badge").children(".num").text(Math.round(to));
-						},
-					});
+				if ($target.hasClass("ty1")) {
+					colorTy = "#DE3412";
+				} else if ($target.hasClass("ty2")) {
+					colorTy = "#346FB2";
+				}
+
+				$target.find(".piechart").easyPieChart({
+					scaleColor: "transparent",
+					lineWidth: 4,
+					lineCap: "round",
+					barColor: colorTy,
+					trackColor: "#CDD1D5",
+					size: 132,
+					rotate: 0,
+					animate: 1500,
+
+					onStep: function (value) {
+						$(this.el).find(".hd_badge").children(".num").text(Math.round(value));
+					},
+					onStop: function (value, to) {
+						$(this.el).find(".hd_badge").children(".num").text(Math.round(to));
+					},
+				});
+			}
+
+			function graphChk(val) {
+				const $this = $(".container"),
+					contentH = $this.innerHeight(),
+					scrollVal = val;
+
+				$this.find(".is_coverage_graph").each(function () {
+					const $graph = $(this),
+						graphOffset = $graph.position().top,
+						newVal = scrollVal + graphOffset;
+
+					// console.log('현재 스크롤 위치 : ' + scrollVal, ' / 그래프 위치 : ' + newVal);
+					// console.log(contentH);
+
+					if (graphOffset < contentH || scrollVal >= newVal - contentH) {
+						coverageGraph($graph);
+					}
+				});
+			}
+
+			$(window).on("load", function () {
+				graphChk();
+
+				$(".container").on("scroll", function () {
+					const $this = $(this),
+						scrollTop = $this.scrollTop();
+
+					graphChk(scrollTop);
 				});
 			});
 		</script>
