@@ -60,18 +60,12 @@
 													{{> cp/radio rd-class="rd_btn" rd-id="f1_g2_rb02" name="f1_g2" labelname="아니오"}}
 											</div>
 									</div>
-									
-									<!-- s: 태아선택 -->
-									<div class="form_line">
-											<div class="label_tit">태아 출생예정일</div>
-											{{> cp/text class="birth_day" type="tel" placeholder="예)19900101" maxlength="8" inp-title="태아 출생예정일 입력" }}
-									</div>
-									<!-- e: 태아선택 -->
 
-									<!-- s: 태아선택 & 자녀구분에서 자녀(만 12세 이하)를 선택 시 노출 -->
+									<!-- s: 자녀구분에서 자녀(만 12세 이하)를 선택하면 노출 -->
 									<div class="form_line">
 										<div class="label_tit">변경 기준일</div>
-										{{> cp/text cal=true }}
+										{{> cp/text cal=true placeholder="날짜를 선택하세요" value="2025.02.18" readonly="true" }}
+										
 										<ul class="list_depth_ty2">
 											<li>태아 : 임신확인서 상의 임신확인일 (임신확인일이 보험개시일 이전인 경우 보험개시일)</li>
 											<li>자녀 : 보험개시일 
@@ -82,7 +76,28 @@
 											</li>
 										</ul>
 									</div>
-									<!-- e: 태아선택 & 자녀구분에서 자녀(만 12세 이하)를 선택 시 노출 -->
+									<!-- e: 자녀구분에서 자녀(만 12세 이하)를 선택하면 노출 -->
+									
+									<!-- s: 태아선택 -->
+									<div class="form_line">
+											<div class="label_tit">태아 출생예정일</div>
+											{{> cp/text class="birth_day" type="tel" placeholder="예)19900101" maxlength="8" inp-title="태아 출생예정일 입력" }}
+									</div>
+									<div class="form_line">
+										<div class="label_tit">변경 기준일</div>
+										{{> cp/text cal=true placeholder="날짜 선택" }}
+										
+										<ul class="list_depth_ty2">
+											<li>태아 : 임신확인서 상의 임신확인일 (임신확인일이 보험개시일 이전인 경우 보험개시일)</li>
+											<li>자녀 : 보험개시일 
+												<ul>
+													<!-- prettier-ignore -->
+													<li>다자녀인 경우 <strong class="point">가장 어린 자녀(태아)를 기준</strong>으로 선택해주세요.</li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+									<!-- e: 태아선택 -->
 								</div>	
 								<!-- e: 25-06-04 수정 -->
 						</div>
