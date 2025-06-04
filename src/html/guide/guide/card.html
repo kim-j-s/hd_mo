@@ -103,12 +103,14 @@
 				<div class="inner_cont">
 					<div role="button" class="card_link" tabindex="0">
 						<div class="item_top" id="card_chk3_cont">
-							<div class="badge_wrap">
-								<span class="hd_badge solid_pastel c_success size_m">badge</span>
-							</div>
 							<div class="title_info">
 								<div class="sub_title">subtitle</div>
-								<div class="main_title">title</div>
+								<div class="main_title">
+									title
+									<span class="badge_wrap">
+										<span class="hd_badge solid_pastel c_success size_m">badge</span>
+									</span>
+								</div>
 							</div>
 							<div class="text">text</div>
 							<div class="desc">description</div>
@@ -837,8 +839,11 @@
 							<div class="item_top" id="card_chk111_cont">
 								<div class="title_info">
 									<div class="sub_title">subtitle</div>
-									<div class="badge_wrap">
-										<span class="hd_badge outline solid_pastel c_primary size_m">만기 D-1,095일</span>
+									<div class="main_title">
+										title
+										<span class="badge_wrap">
+											<span class="hd_badge outline solid_pastel c_primary size_m">만기 D-1,095일</span>
+										</span>
 									</div>
 								</div>
 								<div class="text">text</div>
@@ -991,6 +996,55 @@
 
 	<div class="guide_h4">자동차보험 - 진행률 Case</div>
 	<div class="card_item_wrap">
+		
+		<div class="card_item">
+			<div class="item_inner">
+				<div class="inner_cont">
+					<!-- s: 25-05-26 수정 -->
+					<div class="item_top" id="card_chk1_cont">
+						<div class="badge_wrap">
+							<span class="hd_badge outline solid_pastel c_info size_m">설계차량</span>
+						</div>
+						<div class="title_info">
+							<div class="main_title">
+								321가**54
+							</div>
+						</div>
+					</div>
+					<!-- e: 25-05-26 수정 -->
+					<ul class="card_list_ty1">
+						<li>
+							<div class="title">보험기간</div>
+							<div class="cont">2020.01.01 ~ 2021.01.01</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- 동일동시 Case때만, 설계차량 영역 target 클래스 추가 -->
+			<div class="insurance_policyBox target">
+				<div class="insurance_date">
+					<div class="insurance_barbox">
+						<!-- s: 진행영역 -->
+						<!-- 
+							접근성 준수를 위해서 해당 구간은 약식 정보를 전달합니다.
+							전달정보는 aria-label="보험기간 365일" 형태로 제공됩니다.
+							ex) <span id="plnInagDay">365일</span> 일 경우 aria-label="보험기간 365일"
+							ex) <span id="plnInagDay">200일</span> 일 경우 aria-label="보험기간 200일"
+						-->
+						<div class="progress_box" role="img" aria-label="보험기간 365일">
+							<span id="plnIng" class="ing">
+								<span class="date" id="planCarTerm">
+									<span id="plnInagDay">365일</span>
+								</span>
+								<i class="start">시작일</i>
+								<i class="end">종료일</i>
+							</span>
+						</div>
+						<!-- e: 진행영역 -->
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="card_item">
 			<div class="item_inner">
 				<div class="inp_radio">
