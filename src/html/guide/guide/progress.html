@@ -326,16 +326,27 @@
 			<!-- 
 				접근성 준수를 위해서 해당 구간은 약식 정보를 전달합니다.
 				전달정보는 aria-label="변경기간 365일" 형태로 제공됩니다.
-				ex) <span id="plnInagDay">200일</span> 일 경우 aria-label="보험기간 200일"
+				ex) <span id="plnInagDay">200일</span> 일 경우 aria-label="변경기간 200일"
+				변경기간 적용 시, prograssCar() 호출 필요
 			-->
+			<!-- 스크립트 부분은 MMYMTEN10002030000 페이지 참고 -->
 			<div class="progress_box_ty2" role="img" aria-label="변경기간 220일">
-				<i class="start">시작일</i>
-				<span id="plnIng" class="ing">					
+				<i class="start">
+					<span class="spot">시작일</span>
+					<em></em>
+				</i>
+				<span id="plnIng" class="ing" style="width:100%">
 					<span class="date" id="planCarTerm">
 						<span id="plnInagDay">220일</span>
-					</span>					
-					<i class="newStart">기준일</i>
-					<i class="end right">종료일</i>
+					</span>
+					<i class="newStart">
+						<span class="spot">기준일</span>
+						<em></em>
+					</i>
+					<i class="end">
+						<span class="spot">종료일</span>
+						<em></em>
+					</i>
 				</span>
 			</div>
 			<!-- e: 진행영역 -->
