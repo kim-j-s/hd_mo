@@ -1,4 +1,5 @@
-<div id="header" class="header{{#if no-header}} h_none{{/if}}">
+{{#unless no-header}}
+<div id="header" class="header">
 	<div class="header_inner{{#unless h-back}} history_back_none{{/unless}}">
 
 		{{#if main}}
@@ -6,8 +7,6 @@
 			<a href="#"><img src="" alt="현대해상 다이렉트"></a>
 		</h1>
 		{{/if}}
-
-		{{#unless no-header}}
 
 		<div class="header_left">
 		{{#unless h-back}}
@@ -56,9 +55,6 @@
 			{{!-- e: 전체메뉴 --}}
 		</div>
 
-		{{/unless}}
-
-
 	</div>
-			
 </div>
+{{/unless}}
