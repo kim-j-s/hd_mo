@@ -1,4 +1,4 @@
-{{#> layout/default page-title="보험진단 서비스 | 상품"}}
+{{#> layout/default page-title="보험진단 서비스 | 상품" easychart=true }}
 
 <div id="wrap" class="wrap">
 	{{> layout/header h-title="보험 진단 결과" }}
@@ -84,7 +84,44 @@
 					<strong class="point">5개</strong> 보장이 더 <strong class="danger">필요</strong>해요.
 				</div>
 
-				<div class="is_coverage_graph">보장그래프 영역</div>
+				<div class="is_coverage_graph">
+					<div class="graph_item">
+						<button type="button" class="item_btn">
+							<span class="hd_badge outline solid_pastel c_danger size_m">
+								<span class="num">70</span>점
+							</span>
+							<span class="coverage_part">뇌질환</span>
+						</button>
+						<div class="piechart" data-percent="70" arai-hidden="true"></div>
+					</div>
+					<div class="graph_item">
+						<button type="button" class="item_btn">
+							<span class="hd_badge outline solid_pastel c_danger size_m">
+								<span class="num">10</span>점
+							</span>
+							<span class="coverage_part">심장질환</span>
+						</button>
+						<div class="piechart" data-percent="10" arai-hidden="true"></div>
+					</div>
+					<div class="graph_item">
+						<button type="button" class="item_btn">
+							<span class="hd_badge outline solid_pastel c_danger size_m">
+								<span class="num">22</span>점
+							</span>
+							<span class="coverage_part">수술&middot;입원비</span> 
+						</button>
+						<div class="piechart" data-percent="22" arai-hidden="true"></div>
+					</div>
+					<div class="graph_item">
+						<button type="button" class="item_btn">
+							<span class="hd_badge outline solid_pastel c_danger size_m">
+								<span class="num">45</span>점
+							</span>
+							<span class="coverage_part">사망</span> 
+						</button>
+						<div class="piechart" data-percent="45" arai-hidden="true"></div>
+					</div>
+				</div>
 			</div>
 			<!-- e: 필요해요 -->
 
@@ -300,4 +337,29 @@
 
 <!-- e: popup area -->
  
+
+
+<script>
+	$(function(){
+		$('.is_coverage_graph').each(function(){
+			$('.piechart').easyPieChart({
+				scaleColor: "transparent",
+				lineWidth: 4,
+				lineCap: 'round', //Can be butt
+				barColor: '#CDD1D5',
+				trackColor:	"#DE3412",
+				size: 120,
+				rotate: 0,    
+				animate: 1000,
+
+				onStep: function(value) {
+					this.$el.find('.hd_badge').children('.num').text(Math.round(value));
+				},
+				onStop: function(value, to) {
+					this.$el.find('.hd_badge').children('.num').text(Math.round(to));
+				}
+			});
+		})
+	});
+</script>
 {{/ layout/default }}
