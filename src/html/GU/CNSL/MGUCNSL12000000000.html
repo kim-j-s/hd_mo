@@ -1,0 +1,95 @@
+{{#> layout/default page-title="고객정보입력 | 이용안내"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="이메일 상담신청" }}
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
+				<h2 class="title_h2"><strong>고객님, 무엇을 도와드릴까요?</strong></h2>
+				<!-- prettier-ignore -->
+				<p class="text_sub">연락처를 남기시면<br>전문 상담사가 직접 연락드릴게요.</p>
+			</div>
+			<!-- e: content_top -->
+
+			<!-- s: 답변방법 선택 -->
+			<div class="form_box">
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">답변방법 선택</div>
+						<div class="radio_group_wrap" role="radiogroup">
+							{{> cp/radio rd-class="rd_btn" rd-id="radio_gt1_01" name="radio_gt1" labelname="이메일로 답변" checked=true }}
+							{{> cp/radio rd-class="rd_btn" rd-id="radio_gt1_02" name="radio_gt1" labelname="이메일+전화 답변" }}
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- e: 답변방법 선택 -->
+
+			<!-- s: 고객 정보 -->
+			<div class="form_box">
+				<h3 class="title_h3">고객 정보</h3>
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">이름</div>
+						{{> cp/text inp-title="이름 입력" placeholder="이름 입력" }}
+					</div>
+					<div class="form_line">
+						<div class="label_tit">생년월일</div>
+						{{> cp/text class="birth_day grow" type="tel" placeholder="8자리 숫자 입력 (예: 19910101)" placeholder="생년월일을 입력하세요" maxlength="8" inp-title="생년월일 입력" }}
+					</div>
+					<div class="form_line">
+						<div class="label_tit">성별</div>
+						<div class="radio_group_wrap" role="radiogroup">
+							{{> cp/radio rd-class="rd_btn" rd-id="radio_gt2_01" name="radio_gt2" labelname="남" }}
+							{{> cp/radio rd-class="rd_btn" rd-id="radio_gt2_02" name="radio_gt2" labelname="여" }}
+						</div>
+					</div>
+					<div class="form_line">
+						<div class="label_tit">이메일</div>
+						{{> cp/text type="email" inpclass="email_auto" placeholder="이메일 입력" inp-title="이메일 입력" }}
+					</div>
+					<!-- 이메일+전화 답변 선택 시에만 노출 -->
+					<div class="form_line">
+						<div class="label_tit">휴대폰번호</div>
+						{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+					</div>
+					<!-- 이메일+전화 답변 선택 시에만 노출 -->
+        </div>
+    	</div>	
+			<!-- e: 고객 정보 -->
+			
+			<!-- s: 상담 요청 내용 -->
+			<div class="form_box">
+				<h3 class="title_h3">상담 요청 내용</h3>
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">제목</div>
+						{{> cp/text inp-title="제목 입력" placeholder="제목 입력" }}
+					</div>
+					<div class="form_line">
+						<div class="label_tit">내용</div>
+						{{> cp/textarea name="textarea222" class="length_check" counter_tp2=true placeholder="상담받을 내용 자세히 입력" }}
+					</div>					
+        </div>
+				<ul class="list_ty2">
+					<li>이메일 상담신청을 위해 고객님의 개인정보처리 동의가 필요합니다.</li>
+				</ul>
+    	</div>	
+			<!-- e: 상담 요청 내용 -->
+		</div>
+	</div>
+
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="상담신청" disabled=true }}
+		</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
+</div>
+
+<!-- s: popup area -->
+
+
+<!-- e: popup area -->
+{{/ layout/default }}
