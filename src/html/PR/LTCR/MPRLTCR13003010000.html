@@ -1,0 +1,75 @@
+{{#> layout/default page-title="보험료 확인 | 어린이보험(0~15세)"}}
+
+<!-- s: Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_MPRLTCR13003010000" popup-title="변경할 가입조건 선택" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="form_group_wrap">
+    
+      <div class="form_line">
+        <div class="label_tit">보험기간(년)</div>
+        <div class="set_value_box">
+          <strong>30세만기</strong>
+        </div>
+        <div class="form_line">
+          <div class="acd_item acd_item_ty4">
+            {{#> cp/accordion ac-title="계약 전환 시 100세 보장 가능" }}
+            <ul class="list_ty1">
+              <li>이 상품은 최대 100세 만기로 계약 전환을 신청할 수 있습니다.</li>
+              <li>계약 전환 대상 계약은 보험기간 종료 시까지 유효한 계약이며 보험기간 종료일 전일까지 계약 전환을 신청한 경우 80, 90, 100세 만기로 전환이 가능합니다.</li>
+              <li>계약 전환 대상 보장 등 자세한 내용은 약관을 참조하여 주시기 바랍니다.</li>
+            </ul>
+            {{/ cp/accordion }}
+          </div>
+        </div>
+      </div>
+
+      <div class="form_line">
+				<div class="label_tit">납입 기간</div>
+				<div class="opt_select_wrap">
+					<span class="opt_select_wrap_live" aria-live="polite"></span>
+					<div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
+						<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="r2" id="r2_s1">
+							<label for="r2_s1">5년</label>
+						</div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="r2" id="r2_s2">
+							<label for="r2_s2">10년</label>
+						</div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="r2" id="r2_s3" checked>
+							<label for="r2_s3">15년</label>
+						</div>
+						<div class="opt_select opt_select_w1">
+							<input type="radio" name="r2" id="r2_s4">
+							<label for="r2_s4">20년</label>
+						</div>
+						<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+					</div>
+					<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_left" aria-label="이전 옵션"></button>
+					<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
+				</div>
+			</div>
+
+
+			<div class="form_line">
+				<div class="label_tit">납입 방법</div>
+				<div class="radio_group_wrap" role="radiogroup">
+					{{> cp/radio rd-class="rd_btn" rd-id="r3_s1" name="r3" labelname="매월 보험료 내기" checked=true }}
+				</div>
+			</div>
+		
+    </div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="가입조건 변경하기" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: Bottom 팝업 -->
+ 
+{{/ layout/default }}
