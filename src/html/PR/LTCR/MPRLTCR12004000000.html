@@ -88,8 +88,8 @@
 							{{> cp/linkButton bl_class="short_cut sm" bl_text="구분 안내" question_tit="전문금융소비자" }}
 						</div>
 						<div class="radio_group_wrap" role="radiogroup">
-							{{> cp/radio rd-class="rd_btn" rd-id="receiveSel05_01" name="receiveSel05" labelname="일반금융소비자" checked=true }}
-							{{> cp/radio rd-class="rd_btn" rd-id="receiveSel05_02" name="receiveSel05" labelname="전문금융소비자" }}
+							{{> cp/radio rd-class="rd_btn" rd-id="receiveSel02_01" name="receiveSel02" labelname="일반금융소비자" checked=true }}
+							{{> cp/radio rd-class="rd_btn" rd-id="receiveSel02_02" name="receiveSel02" labelname="전문금융소비자" }}
 						</div>
 						<ul class="list_ty2">
 							<li>「금융소비자 보호에 관한 법률」 제17조 제1항에 따라 보험계약자의 일반ㆍ전문금융소비자 여부를 확인하는 절차입니다.</li>
@@ -102,8 +102,8 @@
 							{{> cp/linkButton bl_class="short_cut sm" bl_text="안내" question_tit="해외금융계좌대상여부" }}
 						</div>
 						<div class="radio_group_wrap" role="radiogroup">
-							{{> cp/radio rd-class="rd_btn" rd-id="receiveSel04_01" name="receiveSel04" labelname="예" }}<!-- 예 선택 시 의료급여 수급권자 신청안내 바텀시트 호출 -->
-							{{> cp/radio rd-class="rd_btn" rd-id="receiveSel04_02" name="receiveSel04" labelname="아니요" checked=true }}
+							{{> cp/radio rd-class="rd_btn" rd-id="receiveSel03_01" name="receiveSel03" labelname="예" }}<!-- 예 선택 시 의료급여 수급권자 신청안내 바텀시트 호출 -->
+							{{> cp/radio rd-class="rd_btn" rd-id="receiveSel03_02" name="receiveSel03" labelname="아니요" checked=true}}
 						</div>
 						<ul class="list_ty2">
 							<li>해외금융계좌 신고제도에 따라 외국의 국적, 시민권, 영주권등을 보유하거나 외국에 납세의무를 지닌 경우 [예]를 선택해주세요.</li>
@@ -116,8 +116,8 @@
 							{{> cp/linkButton bl_class="short_cut sm" bl_text="안내" question_tit="의료급여 수급권자 할인 안내" pop_id="pop_type02" }}
 						</div>
 						<div class="radio_group_wrap" role="radiogroup">
-							{{> cp/radio rd-class="rd_btn" rd-id="receiveSel03_01" name="receiveSel03" labelname="예" }}
-							{{> cp/radio rd-class="rd_btn" rd-id="receiveSel03_02" name="receiveSel03" labelname="아니요" checked=true }}
+							{{> cp/radio rd-class="rd_btn" rd-id="receiveSel05_01" name="receiveSel05" labelname="예" }}
+							{{> cp/radio rd-class="rd_btn" rd-id="receiveSel05_02" name="receiveSel05" labelname="아니요" checked=true }}
 						</div>
 					</div>
 				</div>
@@ -209,7 +209,19 @@
 							</div> -->
 						</div>
 						<!-- e: 이미지 파일 버튼 -->
-					</div>	
+						</div>	
+					</div>
+
+					<div class="form_line">
+						<div class="label_tit box">
+							<div>출산지원금 대체 납입 선납을 가입하시겠습니까?</div>
+							{{> cp/linkButton bl_class="short_cut sm" bl_text="안내" question_tit="출산지원금 대체납입 선납" pop_id="pop_type04" }}
+						</div>
+						<div class="radio_group_wrap" role="radiogroup">
+							{{> cp/radio rd-class="rd_btn" rd-id="checktype06_01" name="checktype06" labelname="예" }}
+							{{> cp/radio rd-class="rd_btn" rd-id="checktype06_02" name="checktype06" labelname="아니요" checked=true }}
+						</div>
+					</div>
 
 					<div class="checkbox_group_wrap column">
 						{{> cp/checkbox checkbox_class="rd_box question" id="checkbox01-1" label_class="chk_label_ty3 check_hide" labelname="이 금융 거래의 실제 소유자입니다." checked=true }}
@@ -226,9 +238,7 @@
 							<dd>미지정</dd>
 						</dl>
 					</div>
-					</div>
 				</div>
-				
 			</div>
 			<!-- e: 장애인전용보험전환특약 대상 여부 -->
 
@@ -329,5 +339,27 @@
 </div>
 {{/ popup/popup_bottom}} 
 <!-- e: 의료급여 수급권자 신청안내 Bottom 팝업 -->
+
+<!-- s: 출산지원금 대체납입 선납 Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type04" popup-title="일상생활배상책임 담보" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="info_cont">
+			<ul class="list_ty3">
+				<li>회사는 출생일에 출산지원금(중도환급금)을 지급합니다. </li>
+				<li>출산지원금은 태아보장기간 적립순보험료에 대하여 보험료 납입일부터 약관 제13조(공시이율의 적용 및 공시)에 정한 공시이율로 ‘보험료 및 해약환급금 산출방법서’에 따라 계산합니다.</li>
+				<li>출산지원금 대체납입 선납을 가입하시면 출생예정일에 지급될 출산지원금으로 출생 후 보험료(출생 전 보험료 미납입분 포함)를 선납하실 수 있습니다. </li>
+				<li>보다 자세한 사항을 약관을 참조하여 주시기 바랍니다.</li>
+			</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인"}}
+	</div>
+</div>
+{{/ popup/popup_bottom}} 
+<!-- e: 출산지원금 대체납입 선납 Bottom 팝업 -->
+
 <!-- e: popup area -->
 {{/ layout/default }}
