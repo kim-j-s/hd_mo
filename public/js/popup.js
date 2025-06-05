@@ -23,7 +23,7 @@ function openHDPopup($triggerEl, target) {
 		// jQuery 객체인 경우
 		$trigger = $triggerEl;
 	} else {		
-		$trigger = document.body;
+		$trigger = $("body");
 	}
 
 	const $target = $("#" + target);
@@ -31,12 +31,12 @@ function openHDPopup($triggerEl, target) {
 	let $header = $target.find(".popup_head_title").length > 0 ? $target.find(".popup_head_title") : null;
 	let $content = $target.find(".popup_cont").length > 0 ? $target.find(".popup_cont") : null;
 
-	const getOpenerId = $($trigger).attr("triggerId");
+	const getOpenerId = $trigger.attr("triggerId");
 	let openerId;
 
 	if (!getOpenerId) {
 		openerId = generateUUID();
-		$($trigger).attr("triggerId", openerId);
+		$trigger.attr("triggerId", openerId);
 	} else {
 		openerId = getOpenerId;
 	}
@@ -116,18 +116,23 @@ function closeHDPopup(target, returnTarget = null) {
 			$returnTarget = $(returnTarget);
 		} else if (returnTarget instanceof jQuery) {
 			$returnTarget = returnTarget;
+		}else {
+			$returnTarget = null;
 		}
 	}
 
-	const $triggerEl = returnTarget || $opener;
+	const $triggerEl = $returnTarget || $opener;
 
 	//하단에 다른 팝업이 열려있는 경우, 가장 최근 팝업으로 focus강제 이동
 	const $prevPopup = $(".popup_wrap.active:last");
 	if ($prevPopup.length > 0) {
 		$($prevPopup).attr("aria-hidden", "false");
-		$($prevPopup).find(".popup_inner").attr("aria-hidden", "false");
 
 		$prevInner = $($prevPopup).find(".popup_inner");
+		$prevInner.find(".popup_inner").attr({
+			tabindex: 0,
+			"aria-hidden": "false",
+		});
 
 		const focusTarget = $triggerEl || $prevInner || $("body");	
 
@@ -145,7 +150,7 @@ function closeHDPopup(target, returnTarget = null) {
 			}, 0);
 
 			$target.attr("aria-hidden", "true");
-			$target.find(".popup_inner").attr("aria-hidden", "true");
+			$target.find(".popup_inner").attr("aria-hidden", "true").attr("tabindex", 0);
 		}, 350);
 	} else {
 		$(".wrap").attr("aria-hidden", "false");
