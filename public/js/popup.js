@@ -150,13 +150,15 @@ function closeHDPopup(target, returnTarget = null) {
 			}, 0);
 
 			$target.attr("aria-hidden", "true");
-			$target.find(".popup_inner").attr("aria-hidden", "true").attr("tabindex", 0);
+			$target.find(".popup_inner").attr("aria-hidden", "true").removeAttr("tabindex", 0);
 		}, 350);
 	} else {
 		$(".wrap").attr("aria-hidden", "false");
 		$(".wrap").removeAttr("inert");
 		$("body").css("overscroll-behavior", "auto");
 		$("body").removeClass("scroll_lock");
+		$target.attr("aria-hidden", "true");
+		$target.find(".popup_inner").attr("aria-hidden", "true").removeAttr("tabindex", 0);
 
 		const focusTarget = $triggerEl || $("body");
 
