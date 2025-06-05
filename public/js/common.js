@@ -198,10 +198,12 @@
 			$this.addClass('active');
 
 			$('.anchor_move').each(function(idx){
+				const headerH = $('.header').innerHeight(),
+							fixH = $('.anchor_wrap.stikcy').innerHeight();
 				const moveIdx = idx,
 							positionVal = $(this).position().top,
 							scrollTop = $('.container').scrollTop(),
-							newVal = positionVal  + scrollTop - 30;
+							newVal = positionVal  + scrollTop - headerH - fixH;
 
 				if(moveIdx == btnIdx){
 					$('.container').animate({
@@ -1137,6 +1139,28 @@ $(function(){
 	});
 
 
+	/* 페이지 내 스크롤 이벤트 */
+	$('.container').on('scroll', function(){
+		const $this = $(this),
+					scrollTop = $this.scrollTop();
+
+		if($('.anchor_wrap').length){
+			$('.anchor_move').each(function(idx){
+				const sectionOffset = $(this).offset().top,
+							anchorH = $('.anchor_wrap').innerHeight(),
+							headerH = $('.header').innerHeight(),
+							compareVal = scrollTop + sectionOffset - anchorH - headerH - 48;
+
+				// console.log(scrollTop, compareVal);
+
+				if(scrollTop > compareVal){
+					$('.anchor_wrap').find('.anchor_btn').removeClass('active');
+					$('.anchor_wrap').find('.anchor_btn').eq(idx).addClass('active');
+				}
+			})
+		}
+
+	});
 
 	// 범용 전체 팝업 내 스크롤 이벤트
 	$('.popup_cont').on('scroll', function(){
@@ -1244,6 +1268,8 @@ $(function(){
 			$this.find('.btn_area').remove();
 		}
 	});
+
+
 });
 	
 

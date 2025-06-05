@@ -103,6 +103,7 @@
 					font-size: var(--font-size-label-large);
 				}
 				.sub_g_txt {
+					padding-top: 8px;
 					font-size: var(--font-size-label-medium);
 				}
 				& + .ag_more_btn {
@@ -394,7 +395,6 @@
 		&.question {
 			padding-right: 16px;
 			display: flex;
-			align-items: center;
 			justify-content: space-between;
 			gap: var(--gap-3);
 			input[type=checkbox] {
@@ -402,6 +402,9 @@
 					padding-right: 0;
 				}
 			}
+		}
+		&.question:not( > button.question_mark_btn) {
+			align-items: center;
 		}
 
 		.chk_lby {
