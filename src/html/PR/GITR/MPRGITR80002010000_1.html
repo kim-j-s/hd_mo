@@ -1,52 +1,71 @@
-{{#> layout/guide }}
-	<div class="guide_h1">달력</div>
+{{#> layout/default page-title="해외여행보험 | 상품"}}
 
-	<div class="guide_h4">단일 달력 호출</div>
-	<!-- <button type="button" onclick="openHDPopup(this,'calendar');">달력 나와라</button> -->
-	<!-- {{> cp/button type="2" size="5" b-text="단일 선택 달력" popup="calendar" }} -->
-
-	<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="$calendar.open(this, 'calendar');">
-		<span class="text">단일 선택 달력</span>
-	</button>
-
-	<!-- popup-active=true -->
-	{{#> popup/popup_bottom popup-id="calendar" no-header=true }}
-	<div class="popup_cont">
-		<div class="popup_content">
-			{{> cp/calendar}}
-		</div>
+<!-- s: Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="도착일시 선택" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+    <div class="popup_calendar">
+		  {{> cp/calendar}}
+    </div>
+    <div class="ds_opts">
+      <div class="radio_group_wrap_ty2" role="radiogroup">
+        {{> cp/radio rd-class="rd_btn" rd-id="time_t1" name="time_t" labelname="오전" }}
+        {{> cp/radio rd-class="rd_btn" rd-id="time_t2" name="time_t" labelname="오후" }}
+      </div>
+      <div class="opt_select_wrap">
+        <span class="opt_select_wrap_live" aria-live="polite"></span>
+        <div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
+          <div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+          <div class="opt_select opt_select_w1">
+            <input type="radio" name="r1" id="r1_s1">
+            <label for="r1_s1">1년 6개월</label>
+          </div>
+          <div class="opt_select opt_select_w1">
+            <input type="radio" name="r1" id="r1_s2">
+            <label for="r1_s2">2년</label>
+          </div>
+          <div class="opt_select opt_select_w1">
+            <input type="radio" name="r1" id="r1_s3">
+            <label for="r1_s3">3년</label>
+          </div>
+          <div class="opt_select opt_select_w1">
+            <input type="radio" name="r1" id="r1_s4" checked>
+            <label for="r1_s4">4년</label>
+          </div>
+          <div class="opt_select opt_select_w1">
+            <input type="radio" name="r1" id="r1_s5">
+            <label for="r1_s5">5년</label>
+          </div>
+          <div class="opt_select opt_select_w1">
+            <input type="radio" name="r1" id="r1_s6">
+            <label for="r1_s6">6년</label>
+          </div>
+          <div class="opt_select opt_select_w1">
+            <input type="radio" name="r1" id="r1_s7">
+            <label for="r1_s7">1억 5천만원</label>
+          </div>
+          <div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+        </div>
+        <button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_left" aria-label="이전 옵션"></button>
+        <button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
+      </div>
+    </div>
+		<!-- <div class="date_select_area">
+		</div> -->
 	</div>
-	{{/ popup/popup_bottom}}
-
-	
-	<div class="guide_h4">단일 선택 달력 - datepicker 인풋영역 선택</div>
-	{{> cp/text cal=true placeholder="날짜를 선택하세요" }}
-
-	<div class="guide_h4">단일 선택 달력 - datepicker 인풋영역 선택 - input 클래스 추가 시</div>
-	<br>
-	{{> cp/text cal=true inpclass="cc" }}
-
-	<div class="guide_h4">단일 선택 달력 - readonly </div>
-	
-	{{> cp/text cal=true placeholder="날짜를 선택하세요" value="2025.04.09" readonly="true" }}
-
-	<div class="guide_h4">단일 선택 달력 - disabled </div>
-	{{> cp/text cal=true placeholder="날짜를 선택하세요" disabled="true"}}
+</div>
+<div class="popup_bottom">
+  <div class="btn_area">
+    {{> cp/button type="1" size="2" b-text="선택했어요" }}
+  </div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: Bottom 팝업 -->
 
 
 
 
-	<div class="guide_h4">기간 선택 달력</div>
-	<div class="range_calrendar">
-		{{> cp/text cal=true placeholder="날짜를 선택하세요" }}
-		{{> cp/text cal=true placeholder="날짜를 선택하세요" }}
-	</div>
-
-
-
-
-
-	<script>
+<script>
 
 		$(document).on("click", ".ccb_prev", function () {
 			$calendar.prevMonth();
@@ -258,4 +277,4 @@
 
 
 
-{{/ layout/guide }}
+{{/ layout/default }}
