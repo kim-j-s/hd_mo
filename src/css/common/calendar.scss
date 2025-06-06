@@ -239,172 +239,174 @@
 }
 
 .calendar_tbl {
-    > table {
-      width: 100%;
-      border-collapse: collapse;
-      border-spacing: 0;
-      margin: 0 auto;
-      table-layout: fixed;
-      thead {
-				th {
- 					padding: 7px 0;
-					font-size: var(--font-size-label-small);
-					color: var(--color-text-subtle);
-				}
+  > table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0 auto;
+    table-layout: fixed;
+    thead {
+      th {
+        padding: 7px 0;
+        font-size: var(--font-size-label-small);
+        color: var(--color-text-subtle);
       }
-      tbody {
-        td {
-          border-top: none;
-          border-bottom: none;
-          padding: 0;
-          &:nth-child(1) {
-            border-left: none;
-            .day_default {
-              color: var(--color-text-danger);
-            }
-          }
-          &:nth-child(7) {
-            border-right: none;
-          }
+    }
+    tbody {
+      td {
+        border-top: none;
+        border-bottom: none;
+        padding: 0;
+        &:nth-child(1) {
+          border-left: none;
           .day_default {
-            &:disabled {
-							font-size: var(--font-size-label-small);
-							color: var(--color-text-disabled);
-            }
+            color: var(--color-text-danger);
+          }
+        }
+        &:nth-child(7) {
+          border-right: none;
+        }
+        .day_default {
+          &:disabled {
+            color: var(--color-text-disabled);
             > .text {
-              position: relative;
-              z-index: 2;
+              font-size: var(--font-size-label-small);
             }
           }
-        }
-        tr {
-          td {
-            height: 46px;
-            padding: 1px 0;
-            button, 
-            a, 
-            span {
-              display: inline-flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              width: 100%;
-              height: 44px;
-              font-size: var(--font-size-label-medium);
-              line-height: 1;
-              border: none;
-              background-color: transparent;
-            }
+          > .text {
+            position: relative;
+            z-index: 2;
           }
         }
       }
-
-      .day_default {
-        margin: 0 auto;
-      }
-      .day_today {
-        position: relative;
-        > .text {
-          position: relative;
-          &::after {
-            content: "";
-            position: absolute;
-            top: calc(50% + 8px);
-            left: 50%;
-            width: 4px;
-            height: 4px;
-            border-radius: 50%;
-            background-color: var(--color-element-point);
-            transform: translateX(-50%);
+      tr {
+        td {
+          height: 46px;
+          padding: 1px 0;
+          button, 
+          a, 
+          span {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 44px;
+            font-size: var(--font-size-label-medium);
+            line-height: 1;
+            border: none;
+            background-color: transparent;
           }
         }
       }
+    }
 
-
-      .day_active {
+    .day_default {
+      margin: 0 auto;
+    }
+    .day_today {
+      position: relative;
+      > .text {
         position: relative;
         &::after {
           content: "";
           position: absolute;
-          top: 50%;
+          top: calc(50% + 8px);
           left: 50%;
-          z-index: 1;
-          width: 44px;
-          height: 44px;
+          width: 4px;
+          height: 4px;
           border-radius: 50%;
-          background-color: var(--color-action-secondary-active);
-          transform: translate(-50%, -50%);
+          background-color: var(--color-element-point);
+          transform: translateX(-50%);
         }
-        > .text {
-          color: var(--color-text-inverse-static);
-        }
-        
-      }
-
-      .start_day {
-        &.start_day_fix {
-          &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            height: 100%;
-            width: 50%;
-            background-color: var(--color-action-secondary-selected);
-          }
-          > .text {
-            &::before {
-              content: '시작일';
-              font-size: 0;
-            }
-          }
-        }
-        
-      }
-
-      .day_today {
-        &.day_active {
-          > .text {
-            &::after {
-              background-color: var(--color-element-inverse-static);
-            }
-          }
-        }
-
-      }
-
-      .end_day {
-        &.end_day_fix {
-          &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 50%;
-            background-color: var(--color-action-secondary-selected);
-          }
-          > .text {
-            &::before {
-              content: '종료일';
-              font-size: 0;
-            }
-          }
-        }
-      }
-
-      .between {
-        background-color: var(--color-action-secondary-selected);
-      }
-
-
-
-      td a.day_default {
-        position: relative;
-        z-index: 1;
       }
     }
+
+
+    .day_active {
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: var(--color-action-secondary-active);
+        transform: translate(-50%, -50%);
+      }
+      > .text {
+        color: var(--color-text-inverse-static);
+      }
+      
+    }
+
+    .start_day {
+      &.start_day_fix {
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+          width: 50%;
+          background-color: var(--color-action-secondary-selected);
+        }
+        > .text {
+          &::before {
+            content: '시작일';
+            font-size: 0;
+          }
+        }
+      }
+      
+    }
+
+    .day_today {
+      &.day_active {
+        > .text {
+          &::after {
+            background-color: var(--color-element-inverse-static);
+          }
+        }
+      }
+
+    }
+
+    .end_day {
+      &.end_day_fix {
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 50%;
+          background-color: var(--color-action-secondary-selected);
+        }
+        > .text {
+          &::before {
+            content: '종료일';
+            font-size: 0;
+          }
+        }
+      }
+    }
+
+    .between {
+      background-color: var(--color-action-secondary-selected);
+    }
+
+
+
+    td a.day_default {
+      position: relative;
+      z-index: 1;
+    }
   }
+}
 
 
 
