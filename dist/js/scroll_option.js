@@ -1,5 +1,5 @@
 const $scrollOption = {
-	initOptSelectUI: function () {
+	initOptSelectUI: function() {
 		$(".opt_select_wrap").each(function () {
 			const $wrap = $(this);
 			const $inner = $wrap.find(".opt_select_inner");
@@ -26,7 +26,7 @@ const $scrollOption = {
 			}
 		});
 	},
-
+	
 	// 좌우 더미 엘리먼트 사이즈 조정
 	setDmpWidth: function () {
 		const winWidth = $(window).width();
@@ -39,13 +39,13 @@ const $scrollOption = {
 	},
 
 	// 좌우 버튼 제어
-	initOptSelectScrollButtons: function () {
+	initOptSelectScrollButtons: function() {
 		$(".opt_select_wrap").each(function () {
 			const $wrap = $(this);
 			const $inner = $wrap.find(".opt_select_inner");
 			const $items = $inner.find(".opt_select:not(.opt_select_dmp)");
 			const itemGap = 16;
-
+			
 			// 최초 버튼 상태
 			$scrollOption.updateOptSelectButtonState($wrap);
 
@@ -58,7 +58,7 @@ const $scrollOption = {
 				const scrollAmount = itemWidth + itemGap;
 				const $checked = $items.find("input:checked").closest(".opt_select");
 				const $prev = $checked.prevAll(".opt_select:not(.opt_select_dmp)").first();
-
+				
 				if ($prev.length) {
 					$prev.find("input[type=radio]").prop("checked", true).trigger("change");
 					$scrollOption.updateLiveRegion($wrap);
@@ -85,7 +85,7 @@ const $scrollOption = {
 				const scrollAmount = itemWidth + itemGap;
 				const $checked = $items.find("input:checked").closest(".opt_select");
 				const $next = $checked.nextAll(".opt_select:not(.opt_select_dmp)").first();
-
+				
 				if ($next.length) {
 					$next.find("input[type=radio]").prop("checked", true).trigger("change");
 					$scrollOption.updateLiveRegion($wrap);
@@ -112,7 +112,7 @@ const $scrollOption = {
 	},
 
 	// 스크롤 시 버튼 상태 업데이트
-	updateOptSelectButtonState: function ($wrap) {
+	updateOptSelectButtonState: function($wrap) {
 		const $inner = $wrap.find(".opt_select_inner");
 		const scrollLeft = $inner.scrollLeft();
 		const scrollWidth = $inner[0].scrollWidth;
@@ -137,7 +137,7 @@ const $scrollOption = {
 	},
 
 	// 선택 시 스크롤 위치 보정
-	bindOptSelectClickScroll: function () {
+	bindOptSelectClickScroll: function() {
 		$(".opt_select_wrap").each(function () {
 			const $wrap = $(this);
 			const $inner = $wrap.find(".opt_select_inner");
@@ -161,7 +161,7 @@ const $scrollOption = {
 	},
 
 	// 터치 슬라이드
-	bindOptSelectTouchScroll: function () {
+	bindOptSelectTouchScroll: function() {
 		$(".opt_select_wrap").each(function () {
 			const $wrap = $(this);
 			const $inner = $wrap.find(".opt_select_inner");
@@ -178,8 +178,9 @@ const $scrollOption = {
 
 			// 터치 끝
 			$inner.on("touchend", function () {
+				
 				const $wrap = $(this).closest(".opt_select_wrap");
-
+				
 				isTouching = false;
 				// 조금 기다렸다가 스크롤 정지 후 체크
 				touchTimeout = setTimeout(function () {
@@ -190,7 +191,7 @@ const $scrollOption = {
 	},
 
 	// 스크롤 시 가장 가까운 아이템으로 스냅
-	snapToNearestItem: function ($wrap) {
+	snapToNearestItem: function($wrap) {
 		const $inner = $wrap.find(".opt_select_inner");
 		const $items = $inner.find(".opt_select:not(.opt_select_dmp)");
 		const innerOffsetLeft = $inner.offset().left;
@@ -216,12 +217,12 @@ const $scrollOption = {
 	},
 
 	// 라이브 리전 업데이트
-	updateLiveRegion: function ($wrap) {
+	updateLiveRegion: function($wrap) {
 		const $checked = $wrap.find("input[type=radio]:checked");
 		const text = $checked.closest(".opt_select").find("label").text().trim();
 		$wrap.find(".opt_select_wrap_live").text(text + " 선택됨");
-	},
-};
+	}
+}
 
 $(function () {
 	// 초기 실행
