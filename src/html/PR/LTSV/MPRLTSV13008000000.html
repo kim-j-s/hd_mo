@@ -7,8 +7,9 @@
 			<!-- s: content_top -->
 			<div class="content_top">
 				<h2 class="title_h2">
-					보험료를 <strong>결제하면</strong><br>
-					<strong>가입이 완료</strong>돼요
+					<!-- s: 25-06-09 -->
+					보험료를 <strong>결제하면<br>가입이 완료</strong>돼요
+					<!-- e: 25-06-09 -->
 				</h2>
 			</div>
 			<!-- e: content_top -->
@@ -42,8 +43,10 @@
                       <div class="label_tit">계좌번호</div>
                       {{> cp/text placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
                       <ul class="list_ty2">
-                        <li>계약자 명의 계좌만 입력할 수 있어요.</li>
-                        <li>즉시이체 가능시간: 09:00~21:50</li>
+                        <!-- s: 25-06-09 -->
+						<li><strong>김*대(계약자)님의 본인 계좌만 이용 가능합니다.</strong></li>
+                        <li>즉시 이체 가능 시간: 09:00~21:50</li>
+						<!-- e: 25-06-09 -->
                       </ul>
                   </div>
                 </div>
@@ -52,7 +55,9 @@
           </li>
           <li>
             <div class="checkbox_group_wrap">
-              {{> cp/checkbox checkbox_class="rd_box" id="checkbox01-13" labelname="만기환급금 입금 계좌 동의" ag_more=true }}
+				<!-- s: 25-06-09 -->
+				{{> cp/checkbox labelname="만기환급금 입금 계좌 동의" ag_more=true id="agree01"  label_class="chk_label_ty3" checkbox_class="rd_box" }}
+				<!-- e: 25-06-09 -->
             </div>  
           </li>
         </ul>
@@ -62,7 +67,9 @@
 
 	<div class="bottom_fix_wrap">
 		<div class="btn_area">
-			{{> cp/button type="1" size="1" b-text="결제 정보를 입력 중이에요" disabled=true }}
+			<!-- s: 25-06-09 -->
+			{{> cp/button type="1" size="1" b-text="결제 정보를 입력해 주세요" disabled=true }}
+			<!-- e: 25-06-09 -->
 			<!-- {{> cp/button type="1" size="1" b-text="보험료 결제하고 가입하기" }} -->
 		</div>
 	</div>

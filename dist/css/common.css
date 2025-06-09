@@ -2772,7 +2772,8 @@ strong {
 }
 .btn_area + .checkbox_group_wrap,
 .btn_area + .form_list,
-.btn_area + .form_group_wrap {
+.btn_area + .form_group_wrap,
+.btn_area + .space_list_ty2 {
 	margin-top: var(--gap-8);
 }
 .btn_area + .info_gray {
@@ -6729,6 +6730,12 @@ strong {
 	-ms-flex: 1;
 	flex: 1;
 }
+.card > .int_txt {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+	font-size: var(--font-size-body-medium);
+}
 .card input {
 	padding: 0;
 	text-align: center;
@@ -6829,6 +6836,38 @@ strong {
 	.key_number .hd_btn_s_4 {
 		padding: 0.6rem var(--padding-3);
 	}
+}
+.contractNum {
+	padding: 0 1.6rem;
+	width: 100%;
+}
+.contractNum.readonly,
+.contractNum.disabled,
+.contractNum.readonly .input_text,
+.contractNum.disabled .input_text,
+.contractNum.readonly input,
+.contractNum.disabled input {
+	background-color: var(--color-input-surface-disabled);
+}
+.contractNum > .int_txt {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+	font-size: var(--font-size-body-medium);
+	padding-top: 0.2rem;
+}
+.contractNum .input_text {
+	width: 6rem;
+}
+.contractNum .input_text.grow {
+	margin: 0 0.4rem;
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+}
+.contractNum input {
+	padding: 0;
+	text-align: left;
 }
 /* Form group */
 .form_group_wrap + .radio_group_wrap,
