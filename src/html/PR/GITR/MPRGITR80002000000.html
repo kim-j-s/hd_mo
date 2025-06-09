@@ -22,7 +22,7 @@
 						<!-- 국가 -->
 						<div class="bit_inner" data-pickitem="step1">
 							<!-- s: 25-05-26 수정 -->
-							<!-- prettier-ignore -->
+							
 							<p class="bit_inner_text">
 								설레이는 해외여행<br>
 								<span class="bold">어디로 가시나요?</span>
@@ -40,7 +40,7 @@
 						<!-- s: 25-05-30 수정 -->
 						<div class="bit_inner active" data-pickitem="step2">
 							<!-- s: 25-05-26 수정 -->
-							<!-- prettier-ignore -->
+							
 							<p class="bit_inner_text">
 								<span class="bold">출발일</span>과 <span class="bold">도착일</span>을 알려주세요
 								<small class="sub_txt">3개월 이상 머무실 경우 해외장기체류보험으로 가입하세요</small>
@@ -53,7 +53,7 @@
 						<!-- 대상 -->
 						<div class="bit_inner active" data-pickitem="step3">
 							<!-- s: 25-05-26 수정 -->
-							<!-- prettier-ignore -->
+							
 							<p class="bit_inner_text">
 								<span class="bold">누가</span> 가시나요?
 								<small class="sub_txt">보험에 가입하실 분</small>
@@ -65,7 +65,7 @@
 						<!-- 생년월일 -->
 						<div class="bit_inner active" data-pickitem="step4">
 							<!-- s: 25-05-26 수정 -->
-							<!-- prettier-ignore -->
+							
 							<p class="bit_inner_text">
 								<!-- case1(단독) -->
 								보장받으실 분의<br>
@@ -83,7 +83,7 @@
 						<!-- s: 25-05-07 수정 -->
 						<div class="bit_inner active" data-pickitem="step5">
 							<!-- s: 25-05-30 수정 -->
-							<!-- prettier-ignore -->
+							
 							<p class="bit_inner_text">
 								<span class="bold">성별</span>을 알려주세요<br>
 								보험료를 알아볼게요
@@ -100,11 +100,14 @@
 					<div class="bit_history">
 						<div class="bit_history_inner">
 							<!-- s: 25-06-04 수정 -->
-							<button type="button" class="selected_case step1 country" title="국가 수정">5555</button>
-							<button type="button" class="selected_case step2 date" title="기간 수정">5555</button>
-							<button type="button" class="selected_case step3 person" title="대상 수정">5555</button>
-							<button type="button" class="selected_case step4 birth" title="생년월일 수정">5555</button>
-							<button type="button" class="selected_case step5 gender" title="성별 수정">5555</button>
+							<button type="button" class="selected_case step1 country" title="국가 수정"></button>
+							<button type="button" class="selected_case step2 date" title="기간 수정"></button>
+							<!-- 기간 입력 후 -->
+							<!-- <button type="button" class="selected_case step2 date" title="기간 수정">2025.05.13 오전 09시~2025.05.17 오후 10시</button> -->
+							<!-- 기간 입력 후 -->
+							<button type="button" class="selected_case step3 person" title="대상 수정"></button>
+							<button type="button" class="selected_case step4 birth" title="생년월일 수정"></button>
+							<button type="button" class="selected_case step5 gender" title="성별 수정"></button>
 							<!-- e: 25-06-04 수정 -->
 						</div>
 					</div>
@@ -155,30 +158,19 @@
 					<!-- 국가 -->
 
 					<!-- 기간 -->
-					<!-- s: 25-06-04 수정 -->
-					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="날짜 선택 후 다음단계로 이동합니다." data-pickitem="step2">
+					<!-- s: 25-06-05 수정 -->
+					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step2">
 						
-						<div class="opts_area_item etc_c_1 column">
-							{{> cp/button type="3" size="ex" b-text="CTA 56px" btn-title="출발일시 선택 팝업 호출"  }}
-							{{> cp/button type="3" size="ex" b-text="CTA 56px" btn-title="도착일시 선택 팝업 호출"  }}
-							<div class="inp_radio rd_btn_s1">
-								<input type="radio" id="radio21" name="radio2" />
-								<label for="radio21">
-									<p></p>
-									<!--날짜 선택 후-->
-									<span class="label_cont">출발일시 2025.05.13 오전 09시</span>
-								</label>
-							</div>
-							<div class="inp_radio rd_btn_s1">
-								<input type="radio" id="radio22" name="radio2" />
-								<label for="radio22">
-									<!--날짜 선택 전-->
-									<span class="label_cont">도착일시</span>
-								</label>
-							</div>
+						<div class="opts_area_item column">
+							{{> cp/button type="3" size="b1" class="full" b-text="출발일시" btn-title="출발일시 선택 팝업 호출" }}
+							{{> cp/button type="3" size="b1" class="full" b-text="도착일시" btn-title="도착일시 선택 팝업 호출" }}
+							<!-- 기간 입력 후 -->
+							{{> cp/button type="3" size="b1" class="full" b-text="출발일시 2025.05.13 오전 09시" btn-title="출발일시 선택 팝업 호출" }}
+							{{> cp/button type="3" size="b1" class="full" b-text="도착일시 2025.05.17 오후 10시" btn-title="도착일시 선택 팝업 호출" }}
+							<!-- 기간 입력 후 -->
 						</div>
 					</div>
-					<!-- e: 25-06-04 수정 -->
+					<!-- e: 25-06-05 수정 -->
 					<!-- 기간 -->
 				
 					<!-- 대상 -->

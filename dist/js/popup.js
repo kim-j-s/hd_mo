@@ -22,7 +22,7 @@ function openHDPopup($triggerEl, target) {
 	} else if ($triggerEl instanceof jQuery) {
 		// jQuery 객체인 경우
 		$trigger = $triggerEl;
-	} else {
+	} else {		
 		$trigger = $("body");
 	}
 
@@ -107,16 +107,16 @@ function closeHDPopup(target, returnTarget = null) {
 	const $target = $("#" + target);
 	let $returnTarget;
 	const getOpener = $('[triggerId="' + $target.attr("opner") + '"]');
-	const $opener = getOpener.length > 0 && getOpener;
+	const $opener = (getOpener.length>0) && getOpener;
 	$target.removeClass("active");
 
 	//returnTarget 타입 유효성 체크
-	if (returnTarget) {
+ 	if(returnTarget) {		
 		if (typeof returnTarget == "string" || returnTarget instanceof HTMLElement) {
 			$returnTarget = $(returnTarget);
 		} else if (returnTarget instanceof jQuery) {
 			$returnTarget = returnTarget;
-		} else {
+		}else {
 			$returnTarget = null;
 		}
 	}
@@ -134,7 +134,7 @@ function closeHDPopup(target, returnTarget = null) {
 			"aria-hidden": "false",
 		});
 
-		const focusTarget = $triggerEl || $prevInner || $("body");
+		const focusTarget = $triggerEl || $prevInner || $("body");	
 
 		// ios 스크린리더가 dom의 변경사항을 인식하도록 상태변경
 		// focusTarget.css("display", "none");
@@ -167,6 +167,7 @@ function closeHDPopup(target, returnTarget = null) {
 		}, 350);
 	}
 }
+
 
 // UUID생성
 function generateUUID() {

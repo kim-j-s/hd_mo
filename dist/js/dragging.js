@@ -1,5 +1,5 @@
 function draggable(caller) {
-	const _caller = caller;
+	const _caller = caller; 
 
 	const $sheetContent = _caller.find(".popup_container");
 	const $dragIcon = _caller.find(".draggable");

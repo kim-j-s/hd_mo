@@ -1,0 +1,267 @@
+{{#> layout/default page-title="국내여행보험 | 상품"}}
+
+<!-- s: Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="도착일시 선택" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+    <div class="popup_calendar">
+		  {{> cp/calendar}}
+    </div>
+    <div class="ds_opts">
+      <div class="radio_group_wrap_ty2" role="radiogroup">
+        {{> cp/radio rd-class="rd_btn" rd-id="time_t1" name="time_t" labelname="오전" }}
+        {{> cp/radio rd-class="rd_btn" rd-id="time_t2" name="time_t" labelname="오후" }}
+      </div>
+      <div class="opt_select_wrap">
+        <span class="opt_select_wrap_live" aria-live="polite"></span>
+        <div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
+          <div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+          <div class="opt_select opt_select_w1">
+            <input type="radio" name="r1" id="r1_s1">
+            <label for="r1_s1">8시</label>
+          </div>
+          <div class="opt_select opt_select_w1">
+            <input type="radio" name="r1" id="r1_s2">
+            <label for="r1_s2">9시</label>
+          </div>
+          <div class="opt_select opt_select_w1">
+            <input type="radio" name="r1" id="r1_s3">
+            <label for="r1_s3">10시</label>
+          </div>
+          <div class="opt_select opt_select_w1">
+            <input type="radio" name="r1" id="r1_s4" checked>
+            <label for="r1_s4">11시</label>
+          </div>
+          <div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+        </div>
+        <button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_left" aria-label="이전 옵션"></button>
+        <button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
+      </div>
+    </div>
+	</div>
+</div>
+<div class="popup_bottom">
+  <div class="btn_area">
+		<!-- {{> cp/button type="1" size="2" b-text="도착일시를 선택 중이에요" disabled=true }} -->
+    {{> cp/button type="1" size="2" b-text="선택했어요" }}
+  </div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: Bottom 팝업 -->
+
+
+
+
+<script>
+
+		$(document).on("click", ".ccb_prev", function () {
+			$calendar.prevMonth();
+		});
+
+		$(document).on("click", ".ccb_next", function () {
+			$calendar.nextMonth();
+		});
+
+		const $calendar = {
+			data: {
+				year: 2025,
+				month: 5,
+				minDate: '',
+				maxDate: '',
+				selectedDate: '',
+			},
+			set: (key, value) => {
+				$calendar.data[key] = value;
+			},
+			get: (key) => {
+				return $calendar.data?.[key];
+			},
+			prevMonth: () => {
+				$calendar.state.month--;
+			},
+			nextMonth: () => {
+				$calendar.state.month++;
+			},
+			setDate: (newDate, type = 'yyyy-mm-dd') => {
+				// newDate = 'yyyy-mm-dd';
+				let _date;
+				
+				if(!newDate) {
+					_date = new Date();
+				} else if(type == 'yyyy-mm-dd') {
+					_date = new Date(newDate);
+				} else if(type == 'date') {
+					_date = newDate;
+				}
+
+				const _year = _date.getFullYear();
+				const _month = _date.getMonth() + 1;
+				const _day = _date.getDate();
+
+				const _result = {
+					year : _year,
+					month : _month,
+					day : _day,
+				}
+				return _result;
+			},
+			open: (target, popId) => {
+				// 표시날짜(year, month) 세팅 후
+				$calendar.renderCalendar($calendar.get('year'), $calendar.get('month'));
+				openHDPopup(target, popId);
+			},
+			renderCalendar: (year, month, todayDate = new Date()) => {
+				const minDate = $calendar.get('minDate');
+				const maxDate = $calendar.get('maxDate');
+
+				// minDate
+				const chkMinYear = (minDate.year <= year);
+				const chkMinMonth = (minDate.month <= month);
+
+				if(!chkMinYear || !chkMinMonth) {
+					console.log('minDate보다 작을 수 없음');
+					$calendar.nextMonth();
+					return;
+				}
+				if(minDate.year == year && minDate.month == month) {
+					$('.ccb_prev').prop('disabled', true);
+				} else {
+					$('.ccb_prev').prop('disabled', false);
+				}
+				
+				// maxDate
+				const chkMaxYear = (maxDate.year >= year);
+				const chkMaxMonth = (maxDate.month >= month);
+				
+				if(!chkMaxYear || !chkMaxMonth) {
+					console.log('maxDate보다 클 수 없음');
+					$calendar.prevMonth();
+					return;
+				}
+
+				if(maxDate.year == year && maxDate.month == month) {
+					$('.ccb_next').prop('disabled', true);
+				} else {
+					$('.ccb_next').prop('disabled', false);
+				}
+
+				$(".calendar_year .text").text($calendar.get('year'));
+				$(".calendar_month .text").text($calendar.get('month'));
+				$(".calendar_tbl tbody").empty();
+
+				const firstDay = new Date(year, month - 1, 1).getDay();
+				const lastDate = new Date(year, month, 0).getDate();
+
+				const todayYear = todayDate.getFullYear();
+				const todayMonth = todayDate.getMonth() + 1; // 0-based → 1-based
+				const todayDay = todayDate.getDate();
+
+				const _selectedDate = $calendar.get('selectedDate');
+
+				let day = 1;
+				let html = "";
+
+				for (let i = 0; i < 6; i++) {
+					let row = "<tr>";
+					for (let j = 0; j < 7; j++) {
+						if (i === 0 && j < firstDay) {
+							row += `<td><button type="button" class="day_default" disabled><span class="text"></span></button></td>`;
+						} else if (day > lastDate) {
+							row += `<td><button type="button" class="day_default" disabled><span class="text"></span></button></td>`;
+						} else {
+
+							// 오늘 날짜 여부 확인
+							const isToday = year === todayYear && month === todayMonth && day === todayDay;
+							let className = isToday ? "day_default day_today" : "day_default";
+							
+							const isSelectedDate = year === _selectedDate.year && month === _selectedDate.month && day === _selectedDate.day;
+							className += (isSelectedDate ? ' day_active': '');
+
+							const validMinDate = (minDate.year == year && minDate.month == month && minDate.day > day);
+							const validMaxDate = (maxDate.year == year && maxDate.month == month && maxDate.day < day);
+							
+							const isDisabled = (validMinDate || validMaxDate);
+							const _disabled = isDisabled ? 'disabled':'';
+
+							row += `<td><button type="button" class="${className}" ${_disabled}><span class="text">${day}</span></button></td>`;
+							day++;
+						}
+					}
+					row += "</tr>";
+					html += row;
+
+					if (day > lastDate) break;
+				}
+
+				$(".calendar_tbl tbody").append(html);
+			}
+		}
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			$calendar.state = new Proxy($calendar.data, {
+				set(target, property, value) {
+					if(property == 'month') {
+						let _value = value;
+						if (value === 0) {
+							$calendar.data.year -= 1;
+							_value = 12;
+						} else if (value === 13) {
+							$calendar.data.year += 1;
+							_value = 1;
+						}
+						target[property] = _value;
+						$calendar.renderCalendar($calendar.data.year, _value);
+					} else {
+						target[property] = value;
+					}
+				}
+			})
+
+
+			$(document).on("click", ".day_default", function () {
+				$(this).closest(".calendar_single").find(".day_active").removeClass("day_active");
+				$(this).addClass("day_active");
+
+				// 선택 날짜 세팅
+				const _year = $calendar.get('year');
+				const _month = $calendar.get('month');
+				const _day = $(this).find('.text').text();
+				const _selectedDate = `${_year}-${String(_month).padStart(2,'0')}-${String(_day).padStart(2,'0')}`;
+				console.log(_selectedDate);
+				$calendar.set('selectedDate', $calendar.setDate(_selectedDate));
+			});
+
+
+			/*
+				다음과 같이 세팅 후 $calendar.open 호출
+				1. year
+				2. month
+				3. minDate		// setDate 활용
+				4. maxDate		// setDate 활용
+
+				------ <예시> ------
+				$calendar.set('year', _now.year);
+				$calendar.set('month', _now.month);
+				$calendar.set('minDate', $calendar.setDate('2025-02-05'));
+				$calendar.set('maxDate', $calendar.setDate(_max, 'date'));
+				-------------------
+			*/
+
+
+			const _now = $calendar.setDate();
+			$calendar.set('year', _now.year);
+			$calendar.set('month', _now.month);
+
+			// 임시 세팅(now + 3개월)
+			const _min = new Date(_now.year, _now.month - 1, _now.day);
+			const _max = new Date(_now.year, _now.month + 2, _now.day);
+			$calendar.data.minDate = $calendar.setDate(_min, 'date');
+			// $calendar.data.maxDate = $calendar.setDate(_max, 'date');
+			// $calendar.set('minDate', $calendar.setDate('2025-02-05'));
+			$calendar.set('maxDate', $calendar.setDate(_max, 'date'));
+		})
+	</script>
+
+
+
+{{/ layout/default }}
