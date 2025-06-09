@@ -376,6 +376,10 @@
 	& > div {
 		flex: 1;
 	}
+	& > .int_txt {
+		flex: none;
+    font-size: var(--font-size-body-medium);
+	}
 	input {
 		padding: 0;
 		text-align: center;
@@ -468,6 +472,40 @@
 		.hd_btn_s_4 {
 			padding: 6px var(--padding-3);
 		}
+	}
+}
+
+
+//계약번호
+.contractNum {
+	padding: 0 16px;
+	width: 100%;
+	&.readonly,
+	&.disabled,
+	&.readonly .input_text,
+	&.disabled .input_text,
+	&.readonly input,
+	&.disabled input {
+		background-color: var(--color-input-surface-disabled);
+	}
+
+	& > .int_txt {
+		flex: none;
+    font-size: var(--font-size-body-medium);
+		padding-top: 2px;
+	}
+
+	.input_text  {
+		width: 60px;
+		&.grow {
+			margin : 0 4px;
+			flex-grow: 1;
+		}
+	}
+
+	input {
+		padding: 0;
+		text-align: left;
 	}
 }
 
