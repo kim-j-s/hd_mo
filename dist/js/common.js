@@ -431,6 +431,35 @@
 		$relGroup.removeAttr('class').addClass('relationship_box ' + newClass);
 	})
 
+	// 해제가능 radio group
+	// 
+	// $DOM.on('click', '.radio_group_resetable .inp_radio input[type="radio"]', function(){
+	// 	// console.log('change');
+	// 	const $this = $(this);
+	// 	setTimeout(function(){
+	// 		if($this.is(':checked')) {
+	// 			// $this.closest('.radio_group_resetable').removeClass('active');
+	// 			// $this.prop('checked', false);
+	// 			console.log('checked');
+	// 		} else {
+	// 			console.log('false');
+	// 		}
+	// 	}, 0);
+	// })
+
+	// var inputs = $('input');
+	// var checked = inputs.filter(':checked').val();
+	// inputs.on('click', function(){
+	// 	console.log('x');
+	// 	if($(this).val() === checked) {
+	// 		$(this).prop('checked', false);
+	// 		checked = '';
+	// 	} else {
+	// 		$(this).prop('checked', true);
+	// 		checked = $(this).val();
+	// 	}
+	// });
+
 
 	//radio_comb(2개의 라디오 버튼 중 택1 콤비네이션)
 	$DOM.on('change', '.radio_comb input[type="radio"]', function(){
@@ -574,6 +603,21 @@
 
 
 
+	let ri = $('.radio_group_resetable input');
+	let richecked = ri.filter(':checked').val();
+	$DOM.on('click', '.radio_group_resetable input[type="radio"]', function() {
+	// ri.on('click', function(){
+		if($(this).val() === richecked) {
+			$(this).prop('checked', false);
+			richecked = '';
+		} else {
+			$(this).prop('checked', true);
+			richecked = $(this).val();
+		}
+	});
+
+
+
 
 })();
 
@@ -647,6 +691,11 @@ $(function(){
 
 	currentPlan();
 	fixedMenuPlay();
+
+	
+
+// 	ri.addEventListener('click', function() {}
+// ,false)
 
 	//input disabled&readonly
 	$('.input_text input').each(function() {

@@ -618,7 +618,7 @@ strong {
 }
 .pl_msg_top {
 	font-weight: 700;
-	font-size: var(--font-size-heading-small);
+	font-size: var(--font-size-heading-medium);
 }
 .pl_msg_top + .pl_txt1 {
 	margin-top: var(--gap-5);
@@ -5218,6 +5218,7 @@ strong {
 }
 .card_list_wrap > li .card_wrap {
 	padding: 2.4rem 2rem;
+	font-size: var(--font-size-body-small);
 	background: var(--color-surface-white-subtle);
 	border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 	border-radius: var(--radius-large2);
@@ -5286,6 +5287,22 @@ strong {
 .card_list_wrap > li .card_wrap > dd.card_cont_list dl .point {
 	color: var(--color-text-primary-bold);
 	font-weight: 700;
+}
+.card_list_wrap > li .card_wrap.ty2 {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.card_list_wrap > li .card_wrap.ty2 dd {
+	margin: 0;
+	padding: 0;
+	border: 0;
 }
 .form_card_wrap .form_card_case + .form_card_case {
 	margin-top: var(--gap-5);
@@ -5534,6 +5551,10 @@ strong {
 	font-size: var(--font-size-body-large);
 	line-height: 2.4rem;
 }
+.inp_checkbox input[type="checkbox"] + .chk_label.switch_check.lg.txt_sm > .label_cont {
+	font-size: var(--font-size-body-xsmall);
+	color: var(--color-text-disabled-on);
+}
 .inp_checkbox input[type="checkbox"] + .chk_label.switch_check.lg::before {
 	width: 4rem;
 	height: 2.4rem;
@@ -5542,6 +5563,31 @@ strong {
 	width: 2rem;
 	height: 2rem;
 	background-size: 1rem auto;
+}
+.inp_checkbox input[type="checkbox"].right {
+	right: 0;
+}
+.inp_checkbox input[type="checkbox"].right + .switch_check {
+	position: relative;
+	padding-left: 0;
+	padding-right: 4rem;
+	text-align: right;
+}
+.inp_checkbox input[type="checkbox"].right + .switch_check::before {
+	position: absolute;
+	left: calc(100% - 3.2rem);
+}
+.inp_checkbox input[type="checkbox"].right + .switch_check::after {
+	left: calc(100% - 3rem);
+}
+.inp_checkbox input[type="checkbox"].right + .switch_check.lg {
+	padding-right: 4.8rem;
+}
+.inp_checkbox input[type="checkbox"].right + .switch_check.lg::before {
+	left: calc(100% - 4rem);
+}
+.inp_checkbox input[type="checkbox"].right + .switch_check.lg::after {
+	left: calc(100% - 3.8rem);
 }
 .inp_checkbox input[type="checkbox"]:disabled + .chk_label::before {
 	background-color: var(--color-element-gray-lighter);
@@ -5616,6 +5662,12 @@ strong {
 	width: 1px;
 	height: 1px;
 	clip: rect(0, 0, 0, 0);
+}
+.inp_checkbox input[type="checkbox"]:checked.right + .switch_check::after {
+	left: calc(100% - 1.8rem);
+}
+.inp_checkbox input[type="checkbox"]:checked.right + .switch_check.lg::after {
+	left: calc(100% - 2.2rem);
 }
 .inp_checkbox input[type="checkbox"]:checked:disabled + .chk_label::before {
 	background: var(--color-element-gray-lighter) url(../images/icon/check_ty5.svg) no-repeat center/1.2rem auto;
@@ -5785,6 +5837,11 @@ strong {
 }
 .checkbox_group_wrap.column .inp_checkbox.rd_box ~ .rd_box {
 	margin-top: var(--gap-5);
+}
+.checkbox_group_wrap.end {
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: end;
 }
 /* coupon */
 /* divider */
