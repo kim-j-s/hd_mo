@@ -543,6 +543,20 @@
 	{{> cp/text inp-search=true placeholder="검색어를 입력하세요" inp-title="검색어 입력" }}
 	<div class="guide_h4">주소 검색 - 개발 확인용 예시 가이드</div>
 
+
+	<div class="guide_h4">Type - 설계번호/계약번호</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">설계(계약)번호</div>
+			<div class="comp_wrap contractNum">
+				<div class="int_txt">M</div>
+				{{> cp/text type="tel" class="grow" minlength="11" maxlength="11" placeholder="11자리 입력" inp-title="계약(설계)번호 앞 열한자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="tel" minlength="3" maxlength="3" placeholder="000" inp-title="계약(설계)번호 뒤 세자리 입력" no_del="flase" }}
+				<button type="button" class="btn btn_search" title="검색"></button>
+			</div>
+		</div>
+	</div>
 	
 
 	<style lang="scss">
