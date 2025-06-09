@@ -91,13 +91,11 @@
 						</div>
 						<!-- s: 현대카드 선택 시, 노출 -->
 						<div class="form_line">
-							<!-- s: 25-06-09 -->
-                            <div class="checkbox_group_wrap column">
-                                <!-- s: 25-06-09 -->
-                            <div class="checkbox_group_wrap column">
-                                {{> cp/checkbox checkbox_class="rd_box question" id="checkbox01-01" label_class="chk_label_ty3" labelname="현대카드 M포인트 사용" labelcont="(1천원 이상 결제시, 3만 M포인트 한도)" question=true pop_id="pop_type04" }}
+							<!-- s: 25-06-09 수정 -->
+							<div class="checkbox_group_wrap column">
+							{{> cp/checkbox checkbox_class="rd_box question" id="checkbox01-01" label_class="chk_label_ty3" labelname="현대카드 M포인트 사용" labelcont="(1천원 이상 결제시, 3만 M포인트 한도)" question=true pop_id="pop_type04" }}
 							</div>
-							<!-- e: 25-06-09 -->
+							<!-- e: 25-06-09 수정 -->
 						</div>
 						<!-- e: 현대카드 선택 시, 노출 -->
 					</div>
@@ -122,9 +120,7 @@
 						{{> cp/radio rd-class="rd_btn icon_pay_ty1" rd-id="radio_btn_g1" name="radio_g1" labelname="카카오페이" checked=true }}
 						{{> cp/radio rd-class="rd_btn icon_pay_ty2" rd-id="radio_btn_g2" name="radio_g1" labelname="네이버페이" }}
 						{{> cp/radio rd-class="rd_btn icon_pay_ty3" rd-id="radio_btn_g3" name="radio_g1" labelname="토스 페이" }}
-					</div>
-
-					
+					</div>					
 					<!-- s: 카카오페이 -->
 					<div class="acd_item acd_item_ty4">
 						<!-- s: 25-06-09 -->
@@ -144,7 +140,7 @@
 							</ul>
 							<!-- s: 25-06-09 -->
 							<h4>카카오페이 고객센터</h4>
-						<!-- e: 25-06-09 -->
+							<!-- e: 25-06-09 -->
 							<ul class="list_depth">
 								<li>전화번호 : 1644-7405</li>
 								<li>운영시간 : 평일 09:00~18:00</li>
@@ -176,7 +172,7 @@
 							</ul>
 							<!-- s: 25-06-09 -->
 							<h4>네이버페이 고객센터</h4>
-						<!-- e: 25-06-09 -->
+							<!-- e: 25-06-09 -->
 							<ul class="list_depth">
 								<li>전화번호 : 1588-3819</li>
 								<li>운영시간 : 평일 09:00~18:00</li>
@@ -285,6 +281,7 @@
 </div>
 {{/ popup/popup_bottom}}
 <!-- e: 카드 할부 팝업 -->
+
 <!-- s: 매월 자동이체일 팝업 -->
 {{#> popup/popup_bottom popup-id="bank_day_select" popup-title="매월 자동이체일"}}
 <div class="popup_cont">
@@ -302,6 +299,7 @@
 </div>
 {{/ popup/popup_bottom}}
 <!-- e: 매월 자동이체일 팝업 -->
+
 <!-- s: 현대카드 결제 혜택 안내 팝업 -->
 {{#> popup/popup_bottom popup-id="pop_type04" popup-title="현대카드 결제 혜택 안내" }}
 <div class="popup_cont">
@@ -336,10 +334,11 @@
 
 
 <!-- e: popup area -->
-{{/ layout/default }}
-
 
 <script>
 	$(document).ready(function(){
 		});
 </script>
+
+{{/ layout/default }}
+
