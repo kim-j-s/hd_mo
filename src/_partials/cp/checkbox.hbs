@@ -17,12 +17,9 @@
 		{{!-- {{#if ag_top}} title="체크하시면 {{{labelname}}} 약관 팝업이 활성화 됩니다."{{/if}} --}}
 	>
 	<label for="{{id}}" class="chk_label{{#if label_class}} {{label_class}}{{/if}}{{#if ag_more}} more_add{{/if}}{{#if ag_more2}} more_add2{{/if}}{{#if question}} question{{/if}}{{#if ag_top}} chk_label_ty2{{/if}}">
-		<span class="label_cont">
-			{{#if ess}}<strong class="cb_ess">필수</strong>{{/if}}
-			{{{labelname}}}
-			{{#if labelcont}}<span class="sub_g_txt">{{{labelcont}}}</span>{{/if}}
-		</span>
-	</label>{{#if @partial-block}}{{> @partial-block }}{{/if}}{{#if cardmode}}<i></i>{{/if}}{{#if ag_more}}<button type="button" class="ag_more_btn" aria-label="{{stripHtml labelname}} 자세히 보기"{{#if pop_open}} aria-expanded="false" onclick="openHDPopup(this,'{{#if pop_id}}{{{pop_id}}}{{/if}}');"{{/if}}>자세히</button>{{/if}}{{#if ag_more2}}<button type="button" class="ag_more_btn2" aria-label="{{stripHtml labelname}} 자세히 보기"></button>{{/if}}
+		<span class="label_cont">{{#if ess}}<strong class="cb_ess">필수</strong>{{/if}}{{{labelname}}}{{#if labelcont}}<span class="sub_g_txt">{{{labelcont}}}</span>{{/if}}</span>
+	</label>
+	{{#if @partial-block}}{{> @partial-block }}{{/if}}{{#if cardmode}}<i></i>{{/if}}{{#if ag_more}}<button type="button" class="ag_more_btn" aria-label="{{stripHtml labelname}} 자세히 보기"{{#if pop_open}} aria-expanded="false" onclick="openHDPopup(this,'{{#if pop_id}}{{{pop_id}}}{{/if}}');"{{/if}}>자세히</button>{{/if}}{{#if ag_more2}}<button type="button" class="ag_more_btn2" aria-label="{{stripHtml labelname}} 자세히 보기"></button>{{/if}}
 	{{#if question}}
 		<button type="button" class="question_mark_btn" aria-expanded="false" onclick="openHDPopup(this,'{{#if pop_id}}{{{pop_id}}}{{/if}}');"><i class="hd_icon arrowRightSvg_ty4"></i><span class="blind">팝업열기</span></button>
 	{{/if}}

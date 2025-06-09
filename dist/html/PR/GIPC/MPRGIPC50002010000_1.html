@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 	<head>
 		<meta charset="UTF-8" />
@@ -40,255 +40,236 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>현대해상 다이렉트</title>
+		<title>해외장기체류보험 | 상품 - 현대해상 다이렉트</title>
 
-		<link rel="stylesheet" href="guide.css" />
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
 		<link rel="stylesheet" href="../../../css/contents.css" />
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
-	<body class="guide_body">
-		<div class="guide_h1">달력</div>
-
-		<div class="guide_h4">단일 달력 호출</div>
-		<!-- <button type="button" onclick="openHDPopup(this,'calendar');">달력 나와라</button> -->
-		<!-- <button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openHDPopup(this,'calendar');">
-    
-    	<span class="text">단일 선택 달력</span>
-    
-    </button> -->
-
-		<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="$calendar.open(this, 'calendar');">
-			<span class="text">단일 선택 달력</span>
-		</button>
-
-		<!-- popup-active=true -->
-		<div class="popup_wrap bottom" id="calendar" role="dialog" aria-modal="true" aria-hidden="true">
+	<body>
+		<!-- s: Bottom 팝업 -->
+		<div class="popup_wrap bottom active" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="false">
 			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('calendar');"></div>
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
 				<div class="popup_inner">
 					<div class="draggable" aria-hidden="true">
 						<div class="move"></div>
 					</div>
-					<div class="popup_head"></div>
+					<div class="popup_head"><div class="popup_head_title">도착일시 선택</div></div>
 
 					<div class="popup_cont">
 						<div class="popup_content">
-							<div class="calendar calendar_single">
-								<div class="calendar_top">
-									<button type="button" class="calendar_change_btn ccb_prev" title="이전 달"></button>
-									<button type="button" class="calendar_change_btn ccb_next" title="다음 달"></button>
-									<div class="calendar_title">
-										<span class="calendar_title_dp calendar_year">
-											<span class="text">2025</span>
-											년
-										</span>
-										<span class="calendar_title_dp calendar_month">
-											<span class="text">5</span>
-											월
-										</span>
+							<div class="popup_calendar">
+								<div class="calendar calendar_single">
+									<div class="calendar_top">
+										<button type="button" class="calendar_change_btn ccb_prev" title="이전 달"></button>
+										<button type="button" class="calendar_change_btn ccb_next" title="다음 달"></button>
+										<div class="calendar_title">
+											<span class="calendar_title_dp calendar_year"><span class="text">2025</span>년</span>
+											<span class="calendar_title_dp calendar_month"><span class="text">5</span>월</span>
+										</div>
+									</div>
+
+									<div class="calendar_cont">
+										<div class="calendar_tbl">
+											<table>
+												<caption class="blind">
+													달력
+												</caption>
+												<thead>
+													<tr>
+														<th scope="col">일</th>
+														<th scope="col">월</th>
+														<th scope="col">화</th>
+														<th scope="col">수</th>
+														<th scope="col">목</th>
+														<th scope="col">금</th>
+														<th scope="col">토</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>
+															<button type="button" class="day_default" disabled><span class="text">27</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default" disabled><span class="text">28</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default" disabled><span class="text">29</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default" disabled><span class="text">30</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">1</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">2</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">3</span></button>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<button type="button" class="day_default"><span class="text">4</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">5</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default day_today"><span class="text">6</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">7</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">8</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">9</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">10</span></button>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<button type="button" class="day_default"><span class="text">11</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">12</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">13</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">14</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">15</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">16</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">17</span></button>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<button type="button" class="day_default"><span class="text">18</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">19</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">20</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">21</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">22</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">23</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">24</span></button>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<button type="button" class="day_default"><span class="text">25</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">26</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">27</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">28</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">29</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">30</span></button>
+														</td>
+														<td>
+															<button type="button" class="day_default"><span class="text">31</span></button>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
 									</div>
 								</div>
-
-								<div class="calendar_cont">
-									<div class="calendar_tbl">
-										<table>
-											<caption class="blind">달력</caption>
-											<thead>
-												<tr>
-													<th scope="col">일</th>
-													<th scope="col">월</th>
-													<th scope="col">화</th>
-													<th scope="col">수</th>
-													<th scope="col">목</th>
-													<th scope="col">금</th>
-													<th scope="col">토</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>
-														<button type="button" class="day_default" disabled><span class="text">27</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default" disabled><span class="text">28</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default" disabled><span class="text">29</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default" disabled><span class="text">30</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">1</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">2</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">3</span></button>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<button type="button" class="day_default"><span class="text">4</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">5</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default day_today"><span class="text">6</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">7</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">8</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">9</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">10</span></button>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<button type="button" class="day_default"><span class="text">11</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">12</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">13</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">14</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">15</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">16</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">17</span></button>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<button type="button" class="day_default"><span class="text">18</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">19</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">20</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">21</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">22</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">23</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">24</span></button>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<button type="button" class="day_default"><span class="text">25</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">26</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">27</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">28</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">29</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">30</span></button>
-													</td>
-													<td>
-														<button type="button" class="day_default"><span class="text">31</span></button>
-													</td>
-												</tr>
-											</tbody>
-										</table>
+							</div>
+							<div class="ds_opts">
+								<div class="radio_group_wrap_ty2" role="radiogroup">
+									<div class="inp_radio rd_btn">
+										<input type="radio" id="time_t1" name="time_t" />
+										<label for="time_t1">
+											<span class="label_cont">오전</span>
+										</label>
 									</div>
+									<div class="inp_radio rd_btn">
+										<input type="radio" id="time_t2" name="time_t" />
+										<label for="time_t2">
+											<span class="label_cont">오후</span>
+										</label>
+									</div>
+								</div>
+								<div class="opt_select_wrap">
+									<span class="opt_select_wrap_live" aria-live="polite"></span>
+									<div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
+										<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+										<div class="opt_select opt_select_w1">
+											<input type="radio" name="r1" id="r1_s1" />
+											<label for="r1_s1">8시</label>
+										</div>
+										<div class="opt_select opt_select_w1">
+											<input type="radio" name="r1" id="r1_s2" />
+											<label for="r1_s2">9시</label>
+										</div>
+										<div class="opt_select opt_select_w1">
+											<input type="radio" name="r1" id="r1_s3" />
+											<label for="r1_s3">10시</label>
+										</div>
+										<div class="opt_select opt_select_w1">
+											<input type="radio" name="r1" id="r1_s4" checked />
+											<label for="r1_s4">11시</label>
+										</div>
+										<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+									</div>
+									<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_left" aria-label="이전 옵션"></button>
+									<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
 								</div>
 							</div>
 						</div>
 					</div>
-					<button type="button" class="popup_close" onclick="closeHDPopup('calendar');"><span class="blind">팝업 닫기</span></button>
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<!-- <button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2" disabled>
+						
+							<span class="text">도착일시를 선택 중이에요</span>
+						
+						</button> -->
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">선택했어요</span>
+							</button>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
-
-		<div class="guide_h4">단일 선택 달력 - datepicker 인풋영역 선택</div>
-		<div class="input_text calendar">
-			<div class="inp">
-				<input type="tel" class="inp_picker" placeholder="날짜를 선택하세요" title="날짜를 입력해주세요" />
-				<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-				<button type="button" class="btn calendar_call" title="날짜 선택"></button>
-			</div>
-		</div>
-
-		<div class="guide_h4">단일 선택 달력 - datepicker 인풋영역 선택 - input 클래스 추가 시</div>
-		<br />
-		<div class="input_text calendar">
-			<div class="inp">
-				<input type="tel" class="inp_picker cc" title="날짜를 입력해주세요" />
-				<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-				<button type="button" class="btn calendar_call" title="날짜 선택"></button>
-			</div>
-		</div>
-
-		<div class="guide_h4">단일 선택 달력 - readonly</div>
-
-		<div class="input_text calendar">
-			<div class="inp">
-				<input type="tel" class="inp_picker" placeholder="날짜를 선택하세요" value="2025.04.09" readonly title="날짜를 입력해주세요" />
-				<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-				<button type="button" class="btn calendar_call" title="날짜 선택"></button>
-			</div>
-		</div>
-
-		<div class="guide_h4">단일 선택 달력 - disabled</div>
-		<div class="input_text calendar">
-			<div class="inp">
-				<input type="tel" class="inp_picker" placeholder="날짜를 선택하세요" disabled title="날짜를 입력해주세요" />
-				<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-				<button type="button" class="btn calendar_call" title="날짜 선택"></button>
-			</div>
-		</div>
-
-		<div class="guide_h4">기간 선택 달력</div>
-		<div class="range_calrendar">
-			<div class="input_text calendar">
-				<div class="inp">
-					<input type="tel" class="inp_picker" placeholder="날짜를 선택하세요" title="날짜를 입력해주세요" />
-					<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-					<button type="button" class="btn calendar_call" title="날짜 선택"></button>
-				</div>
-			</div>
-			<div class="input_text calendar">
-				<div class="inp">
-					<input type="tel" class="inp_picker" placeholder="날짜를 선택하세요" title="날짜를 입력해주세요" />
-					<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-					<button type="button" class="btn calendar_call" title="날짜 선택"></button>
-				</div>
-			</div>
-		</div>
+		<!-- e: Bottom 팝업 -->
 
 		<script>
 			$(document).on("click", ".ccb_prev", function () {
@@ -467,19 +448,19 @@
 				});
 
 				/*
-    				다음과 같이 세팅 후 $calendar.open 호출
-    				1. year
-    				2. month
-    				3. minDate		// setDate 활용
-    				4. maxDate		// setDate 활용
-    
-    				------ <예시> ------
-    				$calendar.set('year', _now.year);
-    				$calendar.set('month', _now.month);
-    				$calendar.set('minDate', $calendar.setDate('2025-02-05'));
-    				$calendar.set('maxDate', $calendar.setDate(_max, 'date'));
-    				-------------------
-    			*/
+							다음과 같이 세팅 후 $calendar.open 호출
+							1. year
+							2. month
+							3. minDate		// setDate 활용
+							4. maxDate		// setDate 활용
+			
+							------ <예시> ------
+							$calendar.set('year', _now.year);
+							$calendar.set('month', _now.month);
+							$calendar.set('minDate', $calendar.setDate('2025-02-05'));
+							$calendar.set('maxDate', $calendar.setDate(_max, 'date'));
+							-------------------
+						*/
 
 				const _now = $calendar.setDate();
 				$calendar.set("year", _now.year);
