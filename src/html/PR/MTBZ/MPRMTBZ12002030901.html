@@ -1,0 +1,34 @@
+<!---
+화면번호 : MPRMTPS10002030901
+경로 : 3.자동차 상세정보 > 3-1.자동차 상세정보 입력 > 필터링 옵션 > 인승
+-->
+{{#> layout/default page-title="자동차 상세정보 | 상품"}}
+<!-- s: popup area -->
+
+	<!-- s: Bottom 팝업(인승 선택 팝업) -->
+	{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="인승"}}
+		<div class="popup_cont">
+			<div class="popup_content">
+				<div class="opt_select_list opt_case3">
+					<!-- s: 25-04-21 수정 -->
+					<div role="button" tabindex="0" class="option"><span class="text">6인승 이하</span></div>
+					<!-- e: 25-04-21 수정 -->
+					<div role="button" tabindex="0" class="option"><span class="text">7인 이상 ~ 8인 이하</span></div>
+					<div role="button" tabindex="0" class="option"><span class="text">9인 이상 ~ 10인 이하</span></div>
+					<div role="button" tabindex="0" class="option"><span class="text">11인 이상</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="popup_bottom">
+			<!-- s: 25-05-07 수정 -->
+			<div class="btn_area">
+				{{> cp/button type="3" size="2" b-text="취소"}}
+				{{> cp/button type="1" size="2" b-text="이 조건으로 조회"}}
+			</div>
+			<!-- e: 25-05-07 수정 -->
+		</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: Bottom 팝업(인승 선택 팝업) -->
+	 
+<!-- e: popup area -->
+{{/ layout/default }}
