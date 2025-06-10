@@ -90,17 +90,15 @@
 						<div class="form_line">
 							<div class="label_tit">카드번호</div>
 							<div class="comp_wrap card">
-								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력"
-								no_del="flase" }}
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" no_del="flase" }}
 								<span class="dash">-</span>
-								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력"
-								no_del="flase" }}
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="flase" }}
 								<span class="dash">-</span>
-								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력"
-								no_del="flase" }}
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
 								<span class="dash">-</span>
-								{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" inp-title="카드 마지막번째 4자리 입력"
-								no_del="flase" }}
+								<!-- s: 25-06-10 수정 -->
+								{{> cp/keypad4 case1="4(3자리)" kt="카드번호 마지막 4(3자리) 입력" }}
+								<!-- e: 25-06-10 수정 -->
 							</div>
 						</div>
 						<div class="form_line">
@@ -149,17 +147,15 @@
 						<div class="form_line">
 							<div class="label_tit">현대 블루멤버스 카드번호</div>
 							<div class="comp_wrap card">
-								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력"
-								no_del="flase" }}
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" no_del="flase" }}
 								<span class="dash">-</span>
-								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력"
-								no_del="flase" }}
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="flase" }}
 								<span class="dash">-</span>
-								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력"
-								no_del="flase" }}
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
 								<span class="dash">-</span>
-								{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" inp-title="카드 마지막번째 4자리 입력"
-								no_del="flase" }}
+								<!-- s: 25-06-10 수정 -->
+								{{> cp/keypad4 case1="4(3자리)" kt="카드번호 마지막 4(3자리) 입력" }}
+								<!-- e: 25-06-10 수정 -->
 							</div>
 							<div class="btn_area">
 								{{> cp/button type="2" size="2" b-text="포인트 조회" }}
@@ -170,17 +166,15 @@
 						<div class="form_line">
 							<div class="label_tit">기아 멤버스 카드번호</div>
 							<div class="comp_wrap card">
-								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력"
-								no_del="flase" }}
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" no_del="flase" }}
 								<span class="dash">-</span>
-								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력"
-								no_del="flase" }}
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="flase" }}
 								<span class="dash">-</span>
-								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력"
-								no_del="flase" }}
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
 								<span class="dash">-</span>
-								{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" inp-title="카드 마지막번째 4자리 입력"
-								no_del="flase" }}
+								<!-- s: 25-06-10 수정 -->
+								{{> cp/keypad4 case1="4(3자리)" kt="카드번호 마지막 4(3자리) 입력" }}
+								<!-- e: 25-06-10 수정 -->
 							</div>
 							<div class="btn_area">
 								{{> cp/button type="2" size="2" b-text="포인트 조회" }}
@@ -197,7 +191,11 @@
 						</div>
 						<div class="form_line">
 							<div class="label_tit">카드 비밀번호</div>
-							{{> cp/text type="password" max-langth="4" inp-title="카드 비밀번호 입력" placeholder="숫자 4자리 입력"}}
+							<div class="comp_wrap">
+								<!-- s: 25-06-10 수정 -->
+								{{> cp/keypad4 case1="숫자 4자리 입력" kt="카드 비밀번호 숫자 4자리 입력" }}
+								<!-- e: 25-06-10 수정 -->
+							</div>
 						</div>
 					</div>
 					<ul class="list_ty2">
@@ -425,6 +423,98 @@
 </div>
 {{/ popup/popup_bottom}}
 <!-- e: 현대/기아멤버스 포인트 팝업 -->
+
+
+<!-- s: 제휴포인트 조회 동의 bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type04" popup-title="제휴포인트 조회 동의"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="ag_groups">
+			<div class="ag_group_wrap">
+				<div class="ag_group_top">
+					{{> cp/checkbox id="chk_group01" chk_class="agw_all" label_class="chk_label_ty2" labelname="<span class='cheking_color'>선택</span> 제휴포인트 잔액 확인 및 사용을 위한 개인(신용)정보 처리 상세 동의"}}
+				</div>
+				<div class="ag_group_cont">
+					<div class="info_gray agc_tig">
+						<p class="info_text">(주)현대해상화재보험에서 제휴포인트 잔액 확인 및 사용을 위해 고객님의 개인(신용) 정보 처리 동의가 필요합니다. 본 동의는 보험계약 체결에 필수적이지 않으며 동의를 거부하실 수 있으나, 미동의 시 해당 서비스를 이용하실 수 없습니다. 또한 동의하시더라도 추후 당사 대표 콜센터(1588-5656)을 통해 철회를 요청하실 수 있습니다.</p>
+					</div>
+					<div class="agc_item">
+						<div class="agc_item_top">
+							<div class="text">
+								<span class="num">1.</span>
+								<span class="txt">
+									수집·이용에 관한 사항
+									<span class="badge_wrap">
+										<span class="hd_badge outline solid_pastel c_secondary size_m">안심</span>
+									</span>
+								</span>
+							</div>
+							<button type="button" class="btn_link short_cut" aria-label="수집·이용에 관한 사항 자세히 보기">자세히</button>
+						</div>
+						<div class="agc_item_cont">
+							<ul class="aic_list">
+								<li>
+									<div class="agrdo_group">
+										<div class="aic_list_l">개인(신용)정보</div>
+										<div class="aic_list_r">
+											<div class="radio_group_wrap">
+												{{> cp/radio rd-class="sm" rd-id="rm11-1" name="rm11" rdip-class="agr_dept1 agr_r_group noag" labelname="미동의" }}
+												{{> cp/radio rd-class="sm" rd-id="rm11-2" name="rm11" rdip-class="agr_dept1 agr_r_group ag" labelname="동의" }}
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="agc_item">
+						<div class="agc_item_top">
+							<div class="text">
+								<span class="num">2.</span>
+								<span class="txt">
+									제공에 관한 사항 Ⅰ
+									<span class="badge_wrap">
+										<span class="hd_badge outline solid_pastel c_secondary size_m">안심</span>
+									</span>
+								</span>
+							</div>
+							<button type="button" class="btn_link short_cut" aria-label="제공에 관한 사항 Ⅰ 자세히 보기">자세히</button>
+						</div>
+						<div class="agc_item_cont">
+							<ul class="aic_list">
+								<li>
+									<div class="agrdo_group">
+										<div class="aic_list_l">개인(신용)정보</div>
+										<div class="aic_list_r">
+											<div class="radio_group_wrap">
+												{{> cp/radio rd-class="sm" rd-id="rm12-1" name="rm12" rdip-class="agr_dept1 agr_r_group noag" labelname="미동의" }}
+												{{> cp/radio rd-class="sm" rd-id="rm12-2" name="rm12" rdip-class="agr_dept1 agr_r_group ag" labelname="동의" }}
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="agw_foot">
+						정보보호파트 승인 제90000235호(2024.08.13)
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		<!-- {{> cp/button type="1" size="2" b-text="약관에 동의해주세요" disabled=true }} -->
+		{{> cp/button type="1" size="2" b-text="포인트 조회"}}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 제휴포인트 조회 동의 bottom 팝업 -->
+
+
+
 <!-- e: popup area -->
 {{/ layout/default }}
 

@@ -155,7 +155,8 @@
 				<span class="dash">-</span>
 				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
 				<span class="dash">-</span>
-				{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" inp-title="카드 마지막번째 4자리 입력" no_del="flase" }}
+				<!-- {{> cp/keypad4 case1=true kt="카드번호 마지막 4(3자리) 입력" }} -->
+				{{> cp/keypad4 case1="4(3자리)" kt="카드번호 마지막 4(3자리) 입력"}}
 			</div>
 		</div>
 	</div>
@@ -164,14 +165,31 @@
 	<div class="form_group_wrap">
 		<div class="form_line">
 			<div class="label_tit">카드번호</div>
-			<div class="comp_wrap card error">
+			<div class="comp_wrap card">
 				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" no_del="flase" }}
 				<span class="dash">-</span>
 				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="flase" }}
 				<span class="dash">-</span>
 				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
 				<span class="dash">-</span>
-				{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" inp-title="카드 마지막번째 4자리 입력" no_del="flase" }}
+				<!-- {{> cp/keypad4 case1=true kt="카드번호 마지막 4(3자리) 입력" }} -->
+				{{> cp/keypad4 case2=true kt="카드번호 마지막 4(3자리) 입력"}}
+			</div>
+		</div>
+	</div>
+
+	<div class="guide_h4">Type - 카드</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">카드번호</div>
+			<div class="comp_wrap card">
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
+				<span class="dash">-</span>
+				{{> cp/keypad4 case3=true kt="카드번호 마지막 4(3자리) 입력"}}
 			</div>
 		</div>
 	</div>
@@ -187,7 +205,7 @@
 				<span class="dash">-</span>
 				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
 				<span class="dash">-</span>
-				{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" inp-title="카드 마지막번째 4자리 입력" no_del="flase" }}
+				{{> cp/keypad4 case1="4(3자리)" kt="카드번호 마지막 4(3자리) 입력" disabled=true }}
 			</div>
 		</div>
 	</div>
@@ -202,7 +220,7 @@
 				<span class="dash">-</span>
 				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
 				<span class="dash">-</span>
-				{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" inp-title="카드 마지막번째 4자리 입력" no_del="flase" }}
+				{{> cp/keypad4 case1="4(3자리)" kt="카드번호 마지막 4(3자리) 입력" disabled=true }}
 			</div>
 		</div>
 	</div>
@@ -217,7 +235,7 @@
 				<span class="dash">-</span>
 				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
 				<span class="dash">-</span>
-				{{> cp/text type="password" minlength="3" maxlength="4" placeholder="4(3자리)" inp-title="카드 마지막번째 4자리 입력" no_del="flase" }}
+				{{> cp/keypad4 case1="4(3자리)" kt="카드번호 마지막 4(3자리) 입력" }}
 			</div>
 		</div>
 	</div>
@@ -353,6 +371,17 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="guide_h4">Type - 보안키패드 - 카드 비밀번호</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">카드 비밀번호</div>
+			<div class="comp_wrap">
+				{{> cp/keypad4 case1="숫자 4자리 입력" kt="카드 비밀번호 숫자 4자리 입력" }}
+			</div>
+		</div>
+	</div>
+
 	<br><br>
 
 
