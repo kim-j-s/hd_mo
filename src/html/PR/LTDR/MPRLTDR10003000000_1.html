@@ -1,0 +1,197 @@
+
+{{#> layout/default page-title="보험료 확인 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="보험료 확인" }}
+
+	<div id="container" class="container">
+		<div class="content">
+			<div class="guarantee_container detail_only">
+					<!-- s: guarantee_detail -->
+					<div class="guarantee_detail">
+						<div class="guarantee_detail_top">
+							<div class="gd_item">
+								<div class="gdi_content" aria-labelledby="d_rdo_01">
+									<div class="badge_wrap">
+										<span class="hd_badge outline solid_pastel c_info size_m">10개 보장</span>
+									</div>
+									<p class="head_text no_text">										
+										<span class="price">
+											<strong class="price_num">26,650</strong><span class="won">원</span>
+										</span>
+									</p>
+									<ul class="gdi_content_list">
+										<li class="ico_add ico_add_ty1">
+											<div class="item">
+												{{#> cp/linkButton bl_class="add_text_btn" question_tit="할인 안내 팝업열기" }}
+											
+												<div class="txt">
+													당사 자동차보험 가입 고객님<br>
+													<strong class="point">매월 7% 할인</strong>을 해드려요
+												</div>
+													{{/ cp/linkButton}}
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="guarantee_detail_mini">
+								<div class="item_wrap">
+									<span class="i_data">
+										<span class="text">보험/납입 기간</span>
+										<strong class="data">10년</strong>
+									</span>
+									<span class="i_data">
+										<span class="text">납입 방법</span>
+										<strong class="data">월납</strong>
+									</span>
+								</div>
+								<div class="modify_ba">
+									{{> cp/button type="3" size="5" b-text="변경" btn-title="가입조건 변경 팝업열기"}}
+								</div>
+							</div>
+						</div>
+
+						<!-- 간편정보 -->
+						<div class="simple_info_wrap">
+							<div class="simple_info_item">
+								<ul class="sii_list">
+									<li>
+										<span class="sii_list_l">보험료</span>
+										<span class="sii_list_r">
+											<strong class="price">26,650원</strong>
+										</span>
+									</li>
+									<li>
+										<span class="sii_list_l">
+											<span class="text">보장 범위</span>
+											<strong class="bold">10개</strong>
+										</span>
+										<span class="sii_list_r">
+											<span class="text">
+												보험기간 및 납입방법  <strong class="bold">10년</strong>
+											</span>
+											<span class="pipe">
+												<strong class="bold">월납</strong>
+											</span>
+										</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- 간편정보 -->
+						 
+						<div class="gd_middle_ba btn_area center">
+							{{> cp/button type="3" size="3" b-text="계산 결과 문자로 받기" popup="pop_type01" }}
+						</div>
+						
+						<div class="acc_group">
+							<div class="space_list_ty2">
+								<div class="acd_item acd_item_ty1">
+									{{#> cp/accordion ac-active=true ac-title="상세보기" aci="aci01" aclc="chk_label_ty2" acl="교통사고 났을 때"}}
+										<ul class="coverage_item_list">
+											<li class="list">
+												<div class="item_title">교통상해후유장해(운전자)</div>
+												<div class="sub_txt_area">
+													{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" role_b=true question_tit="가입조건변경" }}
+												</div>
+											</li>
+											<li class="list">
+												<div class="item_title">교통상해사망(운전자)</div>
+												<div class="sub_txt_area">
+													{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" role_b=true question_tit="가입조건변경" }}
+												</div>
+											</li>
+										</ul>
+									{{/ cp/accordion }}
+								</div>
+								<div class="acd_item acd_item_ty1">
+									{{#> cp/accordion ac-active=true ac-title="상세보기" aci="aci02" aclc="chk_label_ty2" acl="운전을 못해 생업에 지장이 있을 때"}}
+									<ul class="coverage_item_list">
+										<li class="list">
+											<div class="item_title">자동차사고면허정지일당</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1만원" role_b=true question_tit="가입조건변경" }}
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">자동차사고면허취소</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1백만원" role_b=true question_tit="가입조건변경" }}
+											</div>
+										</li>
+									</ul>
+									{{/ cp/accordion }}
+								</div>								
+								<div class="acd_item acd_item_ty1">
+									{{#> cp/accordion ac-active=true ac-title="상세보기" aci="aci04" aclc="chk_label_ty2" acl="가장 기본! 운전자 3대 비용"}}
+									<ul class="coverage_item_list">
+										<li class="list">
+											<div class="item_title">자동차사고벌금Ⅱ(대인)</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="미가입" role_b=true question_tit="가입조건변경" }}
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">자동차사고벌금(대물)</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="미가입" role_b=true question_tit="가입조건변경" }}
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">자동차사고변호사선임비용Ⅲ(특정사고경찰조사포함Ⅱ)</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="5천만원" role_b=true question_tit="가입조건변경" }}
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">자동차사고처리지원금X(사망)</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="2억원" role_b=true question_tit="가입조건변경" }}
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">자동차사고처리지원금X(중과실)</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1억 5천억원" role_b=true question_tit="가입조건변경" }}
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">자동차사고처리지원금X(중상해)</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="2억원" role_b=true question_tit="가입조건변경" }}
+											</div>
+										</li>
+									</ul>
+									{{/ cp/accordion }}
+								</div>
+							</div>
+						</div>
+
+						<!-- s: 꼭 알아두세요 -->
+						{{#> cp/notice dp-active=true }}
+							<ul class="list_ty4">
+								<li>가입하지 않은 담보를 계약체결 이후 추가하시는 경우, 회사가 정하는 인수지침에 의하여 피보험자의 가입나이, 건강상태, 과거병력 및 직무 등에 따라 보험가입금액이 제한되거나 가입이 불가능할 수 있습니다.</li>
+								<li><strong class="point">현대해상</strong> 자동차보험 가입고객 보험료 매월 7% 할인(자동차보험 보험기간 1년, 유효 계약 기준)</li>
+								<li>할인을 적용받던 계약이 할인적용대상에 해당되지 않게 된 경우 <strong class="point">다음달</strong> 이후 납입되는 보험료부터 할인이 적용되지 않으며, 다시 적용대상에 해당되더라도 할인이 <strong class="point">재적용되지</strong> 않습니다.</li>
+								<li>차대차사고차량시세하락손실지원(개인자가용), 차량유리교체비용지원(개인자가용, <strong class="point">연간 1회 한</strong>) 담보는 고객님 본인의 개인 자가용(개인명의로 소유하거나 개인명의로 리스한 자동차) <strong class="point">자동차번호가</strong> 있어야 가입 가능하며, 보험가입기간이 10년을 초과할 경우 이 담보는 최대 10년까지만 보장됩니다.</li>
+								<li>자동차사고변호사선임비용, 자동차사고처리지원금 담보는 다른 보험에 이미 가입했어도 보장금액 확대를 위한 추가 가입이 가능합니다. 단, 실제 손해액 범위 내에서만 비례 보상됩니다.</li>
+							</ul>
+						{{/ cp/notice }}
+						<!-- e: 꼭 알아두세요 -->
+					</div>
+					<!-- e: guarantee_detail -->
+			</div>			
+		</div>
+	</div>
+
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="이대로 가입할래요"}}
+		</div>
+	</div>
+</div>
+
+<!-- s: popup area -->
+<!-- e: popup area -->
+{{/ layout/default }}
