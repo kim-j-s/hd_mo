@@ -7033,6 +7033,9 @@ strong {
 .form_group_wrap [class^="form_line"] ~ .extra_area {
 	margin-top: var(--gap-8);
 }
+.form_group_wrap [class^="form_line"].hidden + .form_line {
+	margin-top: 0;
+}
 .form_group_wrap > .form_line_ty2 + .form_line_ty2 {
 	margin-top: var(--gap-5);
 }
@@ -9111,6 +9114,8 @@ strong {
 	position: relative;
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
+	overflow: hidden;
+	background: var(--color-element-gray-lighter);
 }
 .radio_comb.origin {
 	border: var(--border-width-static-regular) solid var(--color-border-gray-light);
@@ -9124,9 +9129,7 @@ strong {
 	width: 1px;
 	height: 100%;
 	background-color: var(--color-border-gray-light);
-}
-.radio_comb.active {
-	background: var(--color-element-gray-lighter, #f4f5f6);
+	z-index: 10;
 }
 .radio_comb .inp_radio.rd_btn {
 	width: 5.6rem;
@@ -9142,9 +9145,12 @@ strong {
 }
 .radio_comb .inp_radio.rd_btn input[type="radio"] + label {
 	padding: 0;
+	border-radius: 0;
 }
 .radio_comb .inp_radio.rd_btn input[type="radio"] + label:after {
 	border-width: 0;
+	background-color: #fff;
+	border-radius: 0;
 }
 .radio_comb .inp_radio.rd_btn input[type="radio"] + label:before {
 	content: "";
@@ -9155,19 +9161,26 @@ strong {
 	width: 100%;
 	height: 100%;
 	border: none;
-	z-index: 0;
 }
-.radio_comb .inp_radio.rd_btn input[type="radio"]:checked + label:before {
+.radio_comb .inp_radio.rd_btn input[type="radio"]:disabled + label {
+	background-color: transparent;
+}
+.radio_comb .inp_radio.rd_btn input[type="radio"]:disabled + label:after {
+	background-color: var(--color-element-gray-lighter);
+}
+.radio_comb.active .inp_radio.rd_btn input[type="radio"] + label:after {
+	background-color: transparent;
+}
+.radio_comb.active .inp_radio.rd_btn input[type="radio"]:checked + label:before {
 	content: "";
-	background: #fff;
-	border-radius: var(--radius-medium3);
 	border: 0.2rem solid #fff;
 }
-.radio_comb .inp_radio.rd_btn input[type="radio"]:checked + label:after {
+.radio_comb.active .inp_radio.rd_btn input[type="radio"]:checked + label:after {
 	border-radius: var(--radius-medium3);
 	border-width: 0.2rem;
 	width: 5.6rem;
 	height: 5.6rem;
+	background: #fff;
 }
 .select_radio_item + .title_h3 {
 	margin-top: var(--gap-11);
@@ -10697,6 +10710,7 @@ strong {
 	color: var(--color-text-basic);
 }
 .text_sub_ty2 + .form_group_wrap,
+.text_sub_ty2 + .info_gray_wrap,
 .text_sub_ty2 + .info_gray,
 .text_sub_ty2 + .card_item_wrap,
 .text_sub_ty2 + .title_h3 {
@@ -11373,6 +11387,9 @@ strong {
 	width: 1px;
 	height: 5.2rem;
 	background: var(--color-divider-gray-light);
+}
+.info_gray_wrap + .text_sub_ty2 {
+	margin-top: var(--gap-8);
 }
 .call_box {
 	margin-top: var(--gap-11);
