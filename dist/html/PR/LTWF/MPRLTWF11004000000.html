@@ -830,8 +830,81 @@
 											</div>
 										</div>
 									</div>
+
+									<!-- s: 25-06-10 수정(추가)-->
+									<div class="form_line">
+										<div class="form_group_wrap">
+											<div class="form_line">
+												<div class="select_item select_item_case01 select_item_case01_mi" role="button" tabindex="0" title="조회구분 팝업 호출" onclick="openHDPopup(this,'pop01_combo02');">
+													<div class="select_item_inner">
+														<div class="si_item" data-placeholder="선택">고유번호(가입관리코드)</div>
+														<span class="si_stat">선택됨</span>
+													</div>
+												</div>
+											</div>
+											<div class="form_line">
+												<!-- placeholder로 레이블 대체 (1)고유번호(가입관리코드) 입력, (2)상호(목적물 시설명) 입력 -->
+												<div class="input_text inp_mi">
+													<div class="inp">
+														<input type="text" placeholder="고유번호(가입관리코드) 입력" title="입력" />
+														<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="btn_area">
+											<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_2">
+												<span class="text">조회</span>
+											</button>
+										</div>
+									</div>
+									<!-- e: 25-06-10 수정(추가)-->
 								</div>
 							</div>
+
+							<!-- s: 25-06-10 수정(추가)-->
+							<!-- 조회 결과 -->
+							<div class="divider_ty1"></div>
+							<h3 class="title_h3">조회 결과</h3>
+							<div class="card_item_wrap">
+								<div class="card_item">
+									<div class="item_inner">
+										<div class="inp_checkbox">
+											<input type="checkbox" id="card_chk1_1" name="name1" aria-labelledby="card_chk1_1_cont" />
+											<label for="card_chk1_1" class="chk_label"></label>
+											<i></i>
+										</div>
+										<div class="inner_cont">
+											<div class="item_top" id="card_chk1_1_cont">
+												<div class="title_info">
+													<div class="sub_title">도시가스회사</div>
+													<div class="main_title">D-GAS000000010001</div>
+												</div>
+											</div>
+
+											<ul class="card_list_ty1">
+												<li>
+													<div class="title">상호</div>
+													<div class="cont">코원에너지서비스(주)</div>
+												</li>
+												<li>
+													<div class="title">업태</div>
+													<div class="cont">전기가스 외</div>
+												</li>
+												<li>
+													<div class="title">가스종류</div>
+													<div class="cont">LNG</div>
+												</li>
+												<li>
+													<div class="title">주소</div>
+													<div class="cont">서울특별시 강남구 수서동 광평로39길 3-0 동익아파트802동 801호</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- e: 25-06-10 수정(추가)-->
 						</div>
 					</div>
 					<div class="popup_bottom">
@@ -848,7 +921,7 @@
 		<!-- e: 가스사고배상책임 팝업 -->
 
 		<!-- s: popup area -->
-		<!-- s: 가스사고배상책임 하위 팝업 -->
+		<!-- s: 가스사고배상책임 하위 팝업(1) -->
 		<div class="popup_wrap bottom" id="pop01_combo" role="dialog" aria-modal="true" aria-hidden="true">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop01_combo');"></div>
@@ -874,7 +947,33 @@
 				</div>
 			</div>
 		</div>
-		<!-- e: 가스사고배상책임 하위 팝업 -->
+		<!-- e: 가스사고배상책임 하위 팝업(1) -->
+
+		<!-- s: 25-06-10 수정(추가)-->
+		<!-- s: 가스사고배상책임 하위 팝업(2) -->
+		<div class="popup_wrap bottom" id="pop01_combo02" role="dialog" aria-modal="true" aria-hidden="true">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop01_combo02');"></div>
+				<div class="popup_inner">
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head"><div class="popup_head_title">조회구분 선택</div></div>
+
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="opt_select_list opt_case3">
+								<div role="button" tabindex="0" class="option"><span class="text">고유번호(가입관리코드)</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">상호(목적물 시설명)</span></div>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop01_combo02');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: 가스사고배상책임 하위 팝업(2) -->
+		<!-- e: 25-06-10 수정(추가)-->
 
 		<!-- s: 음식물배상책임 팝업 -->
 		<div class="popup_wrap full" id="pop02" role="dialog" aria-hidden="true">
@@ -1194,8 +1293,99 @@
 											<li>기숙사형 학원은 가입 불가합니다.</li>
 										</ul>
 									</div>
+
+									<!-- s: 25-06-10 수정(추가)-->
+
+									<div class="form_line">
+										<div class="label_tit">가입관리코드 의무 여부</div>
+										<div class="radio_group_wrap" role="radiogroup">
+											<div class="inp_radio rd_btn">
+												<input type="radio" id="pop01_select_g_2_01" name="pop01_select_g_2" />
+												<label for="pop01_select_g_2_01">
+													<span class="label_cont">예</span>
+												</label>
+											</div>
+											<div class="inp_radio rd_btn">
+												<input type="radio" id="pop01_select_g_2_02" name="pop01_select_g_2" checked />
+												<label for="pop01_select_g_2_02">
+													<span class="label_cont">아니요</span>
+												</label>
+											</div>
+										</div>
+									</div>
+
+									<div class="form_line">
+										<div class="form_group_wrap">
+											<div class="form_line">
+												<div class="select_item select_item_case01 select_item_case01_mi" role="button" tabindex="0" title="조회구분 팝업 호출" onclick="openHDPopup(this,'pop05_combo02');">
+													<div class="select_item_inner">
+														<div class="si_item" data-placeholder="선택">고유번호(가입관리코드)</div>
+														<span class="si_stat">선택됨</span>
+													</div>
+												</div>
+											</div>
+											<div class="form_line">
+												<!-- placeholder로 레이블 대체 (1)고유번호(가입관리코드) 입력, (2)학원명 입력 -->
+												<div class="input_text inp_mi">
+													<div class="inp">
+														<input type="text" placeholder="고유번호(가입관리코드) 입력" title="입력" />
+														<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="btn_area">
+											<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_2">
+												<span class="text">조회</span>
+											</button>
+										</div>
+									</div>
+									<!-- e: 25-06-10 수정(추가)-->
 								</div>
 							</div>
+
+							<!-- s: 25-06-10 수정(추가)-->
+							<!-- 조회 결과 -->
+							<div class="divider_ty1"></div>
+							<h3 class="title_h3">조회 결과</h3>
+							<div class="card_item_wrap">
+								<div class="card_item">
+									<div class="item_inner">
+										<div class="inp_checkbox">
+											<input type="checkbox" id="card_chk1_1" name="name1" aria-labelledby="card_chk1_1_cont" />
+											<label for="card_chk1_1" class="chk_label"></label>
+											<i></i>
+										</div>
+										<div class="inner_cont">
+											<div class="item_top" id="card_chk1_1_cont">
+												<div class="title_info">
+													<div class="main_title">D-GAS000000010001</div>
+												</div>
+											</div>
+
+											<ul class="card_list_ty1">
+												<li>
+													<div class="title">학원명</div>
+													<div class="cont">대치강안교육스터디학원</div>
+												</li>
+												<li>
+													<div class="title">학원등록번호</div>
+													<div class="cont">08202314241</div>
+												</li>
+												<li>
+													<div class="title">개원일자</div>
+													<div class="cont">2023.02.03</div>
+												</li>
+												<li>
+													<div class="title">주소</div>
+													<div class="cont">서울특별시 강남구 영동대로 85길 20-9,5층,7층 전체(대치동)</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- e: 25-06-10 수정(추가)-->
 						</div>
 					</div>
 					<div class="popup_bottom">
@@ -1211,7 +1401,7 @@
 		</div>
 		<!-- e: 학원 교습소배상책임(화재배상책임 제외) 팝업 -->
 
-		<!-- s: 학원 교습소배상책임(화재배상책임 제외) 하위 팝업 -->
+		<!-- s: 학원 교습소배상책임(화재배상책임 제외) 하위 팝업(1) -->
 		<div class="popup_wrap bottom" id="pop05_combo" role="dialog" aria-modal="true" aria-hidden="true">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop05_combo');"></div>
@@ -1237,7 +1427,33 @@
 				</div>
 			</div>
 		</div>
-		<!-- e: 학원 교습소배상책임(화재배상책임 제외) 하위 팝업 -->
+		<!-- e: 학원 교습소배상책임(화재배상책임 제외) 하위 팝업(1) -->
+
+		<!-- s: 25-06-10 수정(추가)-->
+		<!-- s: 학원 교습소배상책임(화재배상책임 제외) 하위 팝업(2) -->
+		<div class="popup_wrap bottom" id="pop05_combo02" role="dialog" aria-modal="true" aria-hidden="true">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop05_combo02');"></div>
+				<div class="popup_inner">
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head"><div class="popup_head_title">조회구분 선택</div></div>
+
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="opt_select_list opt_case3">
+								<div role="button" tabindex="0" class="option"><span class="text">고유번호(가입관리코드)</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">학원명</span></div>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop05_combo02');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: 학원 교습소배상책임(화재배상책임 제외) 하위 팝업(2) -->
+		<!-- e: 25-06-10 수정(추가)-->
 
 		<!-- s: 의약품배상책임 팝업 -->
 		<div class="popup_wrap full" id="pop06" role="dialog" aria-hidden="true">
