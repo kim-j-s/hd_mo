@@ -1,0 +1,119 @@
+<!---
+화면번호 : MPRMTBZ12001010000
+경로 : 1.고객정보 > 1.설계정보입력
+-->
+
+{{#> layout/default page-title="자동차 기본정보 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="자동차보험(법인)" }}
+	<div id="container" class="container">
+		<div class="content">
+			<div class="product_main_top">
+				<div class="logo">
+					<img src="../../../images/logo/logo_hd_direct.svg" alt="현대해상 다이렉트">
+				</div>
+				<div class="point">자사 오프라인 대비 17.9% 저렴</div>
+				
+				<h2 class="title_h2">
+					더 가벼운 <strong>마음</strong>으로<br />
+					가입하세요
+				</h2>
+		
+				<div class="btn_area basic">
+					{{> cp/button type="3" size="5" b-text="상세 보장 내용이 궁금하다면" rightIcon="arrowRightSvg" }}
+				</div>
+			</div>
+
+			<div class="input_form_box"> 
+				<div class="input_item_wrap">
+					<div class="input_title">자동차 소유(예정)인 법인 정보</div>
+					<div class="acd_item">
+						{{#> cp/accordion ac-title="법인명" ac-active=true }}
+						{{> cp/text class="big" placeholder="자동차 소유(예정)인 법인명" inp-title="법인명 입력" }}
+						{{/ cp/accordion }}
+					</div>
+					<div class="acd_item">
+						{{#> cp/accordion ac-title="사업자번호" }}
+						{{> cp/text class="inp_mi" placeholder="사업자등록번호 입력" inp-title="사업자등록번호 입력" }}
+						{{/ cp/accordion }}
+					</div>
+					
+				</div>
+			</div>
+
+			<div class="bg_area">
+				<!-- s: 25-06-05 수정 -->
+				
+				<h3 class="title_h3">
+					<span class="light">내 차 보험료</span> 할인 받는 방법<span class="light">은?</span>
+				</h3>
+				<!-- e: 25-06-05 수정 -->
+				<!-- s: 25-04-30 수정 -->
+				<ul class="discount_item_box">
+					<li class="item opt4">
+						<div class="cont">인터넷 가입 <strong class="point">17.9%</strong></div>
+						<div class="desc">자사오프라인 대비 평균</div>
+					</li>
+					<li class="item opt1">
+						<div class="cont">ECO 마일리지 할인 특약</div>
+						<div class="desc">연간 3천km이하 주행 시</div>
+					</li>
+					<li class="item opt2">
+						<div class="cont">무사고 할인 <strong class="point">12.2%</strong></div>
+						<div class="desc">3년 이상 평균</div>
+					</li>
+					<li class="item">
+						<div class="cont">어린이 통학버스 할인 특약 <strong class="point">12%</strong></div>
+						<div class="desc">도로교통법 제2조에서 정한 어린이 통학버스</div>
+					</li>
+					<li class="item opt5">
+						<div class="cont">커넥티드카 할인 특약 <br><strong class="point">7%</strong></div>
+						<div class="desc">사고 통보장치 장착 및 개통 시</div>
+					</li>
+					<li class="item opt3">
+						<div class="cont">첨단안전장치 할인 특약 <br><strong class="point">4 ~ 17%</strong></div>
+						<div class="desc">차선이탈, 전방충돌, 후측방충돌, HUD 장착 시</div>
+					</li>
+					<li class="item opt9">
+						<div class="cont">블랙박스 할인 특약 <strong class="point">3%</strong></div>
+						<div class="desc">블랙박스 장착 시</div>
+					</li>
+				</ul>
+				<!-- e: 25-04-30 수정 -->
+			</div>
+
+			<!-- 이벤트 배너 영역 -->
+			<div class="img_area">
+				<a href="#">
+					<img src="../../../images/event/img_car_bann01.png" alt="자동차보험 결제혜택 최대 3만원 받으세요. 30만원 이상 결제시 카드사, 간편결제사 제공 (이륜차포함)">
+				</a>
+			</div>
+		
+			<!-- s: 꼭 알아두세요 -->
+			{{#> cp/notice dp-active=true }}
+			<ul class="list_ty1">
+				<li>공동인증서 없이 보험료 계산이 가능합니다.</li>
+				<li>계약자가 법인인 경우, 계약 체결을 위해 공동인증서 혹은 법인카드가 필요합니다.</li>
+				<li>법인 소유 이륜차 보험은 PC에서만 가입할 수 있습니다.</li>
+			</ul>
+			{{/ cp/notice }}
+			<!-- e: 꼭 알아두세요 -->
+		</div>
+	</div>
+
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="내 보험료를 알아볼게요" }}
+			<!-- {{> cp/button type="1" size="1" b-text="이름을 입력 중이에요" disabled=true }}
+			{{> cp/button type="1" size="1" b-text="사업자번호를 입력 중이에요" disabled=true }}
+			{{> cp/button type="1" size="1" b-text="휴대폰번호를 중이에요" disabled=true }} -->
+		</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
+</div>
+
+<!-- s: popup area -->
+<!-- e: popup area -->
+
+{{/ layout/default }}
