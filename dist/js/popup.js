@@ -129,7 +129,7 @@ function closeHDPopup(target, returnTarget = null) {
 		$($prevPopup).attr("aria-hidden", "false");
 
 		$prevInner = $($prevPopup).find(".popup_inner");
-		$prevInner.find(".popup_inner").attr({
+		$prevInner.attr({
 			tabindex: 0,
 			"aria-hidden": "false",
 		});
