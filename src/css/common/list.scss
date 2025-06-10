@@ -1225,3 +1225,217 @@
 		gap: var(--gap-6);
 	}
 }
+
+
+//보험가입 진행 정보
+.data_list {
+	li {
+		dl {
+			display: flex;
+			gap: var(--gap-2);
+			font-size: var(--font-size-body-small);
+			dt {
+				color: var(--color-text-disabled-on);
+				padding-left: 26px;
+				background-repeat: no-repeat;
+				background-position: 4px center;
+				background-size: 16px auto;
+				//대상
+				&.person {
+					background-image: url(../images/content/bi/icon_stepper_person.svg);
+				}
+				//운전
+				&.car {
+					background-image: url(../images/content/bi/icon_stepper_car.svg);
+				}
+				//기간
+				&.date {
+					background-image: url(../images/content/bi/icon_stepper_date.svg);
+				}
+				//생년월일
+				&.birth {
+					background-image: url(../images/content/bi/icon_stepper_birth.svg);
+				}
+				//성별
+				&.gender {
+					background-image: url(../images/content/bi/icon_stepper_gender.svg);
+				}
+				//직업
+				&.job {
+					background-image: url(../images/content/bi/icon_stepper_job.svg);
+				}
+				//국가
+				&.country {
+					background-image: url(../images/content/bi/icon_stepper_country.svg);
+				}
+				//
+				&.period {
+					background-image: url(../images/content/bi/icon_stepper_period.svg);
+				}
+				//목적
+				&.work {
+					background-image: url(../images/content/bi/icon_stepper_work.svg);
+				}
+				//출산예정일
+				&.pregnant {
+					background-image: url(../images/content/bi/icon_stepper_pregnant.svg);
+				}
+				// 견종
+				&.dog {
+					background-image: url(../images/content/bi/icon_stepper_dog.svg);
+				}
+				// 암수
+				&.sex {
+					background-image: url(../images/content/bi/icon_stepper_sex.svg);
+				}
+				// 등록
+				&.reg {
+					background-image: url(../images/content/bi/icon_stepper_reg.svg);
+				}
+				// 고양이
+				&.cat {
+					background-image: url(../images/content/bi/icon_stepper_cat.svg);
+				}
+				// 금액
+				&.won {
+					background-image: url(../images/content/bi/icon_stepper_won.svg);
+				}
+				// 제조사
+				&.maker {
+					background-image: url(../images/content/bi/icon_stepper_car_maker.svg);
+				}
+				// 세부차명
+				&.detail1 {
+					background-image: url(../images/content/bi/icon_stepper_car_detail1.svg);
+				}
+				// 세부형식
+				&.detail2 {
+					background-image: url(../images/content/bi/icon_stepper_car_detail2.svg);
+				}
+				// 주택유형
+				&.home {
+					background-image: url(../images/content/bi/icon_stepper_home.svg);
+				}
+				// 동/호수
+				&.building {
+					background-image: url(../images/content/bi/icon_stepper_building.svg);
+				}
+				// 층
+				&.floor {
+					background-image: url(../images/content/bi/icon_stepper_floor.svg);
+				}
+				// 음식점
+				&.store {
+					background-image: url(../images/content/bi/icon_stepper_store.svg);
+				}
+				// 보험
+				&.insurance {
+					background-image: url(../images/content/bi/icon_stepper_insurance.svg);
+				}
+			}
+			dd {
+				color: var(--color-text-basic);
+			}
+		}
+		& ~ li {
+			margin-top: var(--gap-3);
+		}
+	}
+	& + .info_gray {
+		margin-top: var(--gap-7);
+	}
+}
+.step_list {
+	li {
+		position: relative;
+		padding-left: 14px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: var(--gap-4);
+		&::before {
+			content: '';
+			position: absolute;
+			top: 8px;
+			left: 0;
+			width: 1px;
+			height: 100%;
+			border-radius: 50%;
+			background-color: var(--color-border-gray-light);
+		}
+		dl {
+			display: block;
+			dt {
+				font-size: var(--font-size-body-xsmall);
+				color: var(--color-text-disabled-on);
+				&::after {
+					content: '';
+					position: absolute;
+					top: 23px;
+					left: -1px;
+					width: 3px;
+					height: 3px;
+					background-color: var(--color-icon-gray);
+					border-radius: 50%;
+				}
+			}
+			dd {
+				margin-top: var(--gap-2);
+				font-size: var(--font-size-body-medium);
+				color: var(--color-text-subtle);
+				text-align: left;
+				> div {
+					& + div {
+						margin-top: var(--gap-2);
+					} 
+				}
+				span {
+					color: var(--color-text-basic);
+				}
+			}
+		}
+		.modify {
+			width: 32px;
+			height: 32px;
+			padding: 7px;
+			border: 1px solid var(--color-button-icon-fill-border);
+			border-radius: 50%;
+			.hd_icon {
+				width: 16px;
+				height: 16px;
+			}
+		}
+		& + li {
+			padding-top: var(--gap-5);
+		}
+		&:first-child {
+			dl {
+				dt {
+					&::after {
+						top: 8px;
+					}
+				}
+			}
+		}
+		&:last-child {
+			&::before {
+				height: 18px;
+			}
+		}
+		&.active {
+			dl {
+				dt {
+					color: var(--color-text-basic);
+					font-weight: 700;
+				}
+			}
+		}
+	}
+	li.active ~ li {
+		dl dd,
+		.modify {
+		  display: none;
+		}
+
+	}
+}
