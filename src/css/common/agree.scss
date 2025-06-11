@@ -284,6 +284,119 @@
 		width: 100%;
 	}
 }
+
+.risk_rating_wrap {
+	margin: 16px 0;
+	.risk_rating {
+		display:grid;
+		grid-template-columns: repeat(5, 1fr);
+		padding-top:2px;
+	}
+	[class^='risk'] {
+		display:flex;
+		justify-content: center;
+		position: relative;
+		width: 100%;
+		margin-bottom: 16px;
+		&::after {
+			content:"";
+			display:block;
+			position: absolute;
+			bottom: -16px;
+			left:0;
+			width:100%;
+			height: 8px;			
+		}
+		&>span:not(.sr-only) {			
+			display:block;
+			position: relative;
+			font-size:var(--font-size-body-xsmall);
+			color:var(--color-text-disabled-on);
+			text-align: center;
+		}	
+		&.active {
+			&>span:not(.sr-only) {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding:2px 0;
+				width: calc(100% - 10px);
+				min-width: 48px;
+				font-weight: 700;
+				color:var(--color-text-bolder-inverse);
+				border-radius: 20px;
+				&::after {
+					content:"";
+					width: 6px;
+					height: 6px;
+					position: absolute;
+					bottom: -3px;
+					left: calc(50% - 3px);
+					transform: rotate(45deg);
+					border-radius: 1.5px;					
+				}
+			}
+			&.risk1 { //안심
+				&>span:not(.sr-only) {
+					background-color: var(--color-border-secondary);
+					&::after {
+						background-color: var(--color-border-secondary);
+					}
+				}
+			}
+			&.risk2 { //다소안심
+				&>span:not(.sr-only) {
+					background-color: var(--color-light-success-50);
+					&::after {
+						background-color: var(--color-light-success-50);
+					}
+				}
+			}
+			&.risk3 { //보통
+				&>span:not(.sr-only) {
+					background-color: var(--color-light-warning-30);
+					&::after {
+						background-color: var(--color-light-warning-30);
+					}
+				}
+			}
+			&.risk4 { //신중
+				&>span:not(.sr-only) {
+					background-color: var(--color-light-primary-40);
+					&::after {
+						background-color: var(--color-light-primary-40);
+					}
+				}
+			}
+			&.risk5 { //주의
+				&>span:not(.sr-only) {
+					background-color: var(--color-light-point-50);
+					&::after {
+						background-color: var(--color-light-point-50);
+					}
+				}
+			}
+		}
+	}
+	.risk1::after { //안심
+		background-color: var(--color-border-secondary);
+		border-radius:40px 0px 0px 40px;
+	}
+	.risk2::after { //다소안심
+		background-color: var(--color-light-success-50);
+	}
+	.risk3::after { //보통
+		background-color: var(--color-light-warning-30);
+	}
+	.risk4::after { //신중
+		background-color: var(--color-light-primary-40);
+	}
+	.risk5::after { //주의
+		background-color: var(--color-light-point-50);
+		border-radius: 0px 40px 40px 0px;
+	}
+}
+
 .agree_qr_box {
 	margin-bottom: 16px;
 	display: flex;
