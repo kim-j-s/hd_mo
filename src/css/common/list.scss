@@ -1439,3 +1439,32 @@
 
 	}
 }
+
+.repair_list {
+	.item {
+		padding: 16px 0 16px 49px;
+		background-repeat: no-repeat;
+		background-position: left center;
+		background-size: 32px auto;
+
+		@for $i from 1 through 5 {
+			&.opt#{$i}{
+				background-image: url(../images/content/cpbn/icon_repair#{$i}.svg);
+			}
+		}
+		.cont {
+			font-size: var(--font-size-body-medium);
+
+			& + .desc {
+				margin-top: var(--gap-2);
+			}
+		}
+		.desc {
+			font-size: var(--font-size-body-small);
+			color: var(--color-text-subtle);
+		}
+		& + .item {
+			border-top: 1px solid var(--color-divider-gray-light);
+		}
+	}
+}

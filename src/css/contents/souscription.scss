@@ -242,10 +242,16 @@ ul + .form_group_wrap {
 		}
 	}
 	.img_box {
+		&:not(div:first-child) {
 		margin-top:var(--gap-5);
+		}
 		img {
 			display: block;
 			width: 100%
+		}
+		& + ul,
+		& + ol {
+			margin-top: var(--gap-5);
 		}
 	}
 	.text_sub {

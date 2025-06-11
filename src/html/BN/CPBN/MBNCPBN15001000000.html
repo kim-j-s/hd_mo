@@ -1,0 +1,47 @@
+{{#> layout/default page-title="제휴혜택 | 상품"}}
+
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-active=true popup-title="우수정비업체 검색"}}
+<div class="popup_cont search_list_type2">
+
+    <div class="selectitem_wrap">
+        {{> cp/selectitem si_class="select_item_case01" si_ph="시/도 선택" si_title="시/도 선택" si_item="서울" si_popup="pop_type01"}}
+        {{> cp/selectitem si_class="select_item_case01" si_ph="시/군/구 선택" si_title="시/군/구 선택" si_item="강남구" si_popup="pop_type02"}}
+    </div>
+    <!-- 검색어를 submit 했을 때 search_on클래스 추가, 검색어 클리어시에 search_on클래스 제거 -->
+    <div class="search_inp_box">
+        {{> cp/text inp-search=true placeholder="엽체명을 입력해 주세요." inp-title="검색어 입력" }}	
+    </div>
+
+    <div class="search_result_count">
+        <p>검색결과 <strong class="point">2</strong>건</p>
+    </div>
+    <div class="search_reult_list_container">
+        <ul class="search_reult_list">
+            <li class="search_reult_list_item">
+                <a href="#">
+                    <span class="item_text">12345</span>
+                    <span class="item_text">서울 종로구 당주동</span>
+                </a>
+            </li>
+            <li class="search_reult_list_item"><a href="#"><span class="item_text">12345</span><span class="item_text">서울 종로구 당주동</span></a></li>
+            <li class="search_reult_list_item"><a href="#"><span class="item_text">12345</span><span class="item_text">서울 종로구 당주동</span></a></li>
+            <li class="search_reult_list_item"><a href="#"><span class="item_text">12345</span><span class="item_text">서울 종로구 당주동</span></a></li>
+            <li class="search_reult_list_item">
+                <div class="no_list_area">
+                    {{> cp/icon iconClass="exclamationSvg"}}
+                    <p>내역이 없어요</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+<!-- s: popup area -->
+		
+
+<!-- e: popup area -->
+{{/ layout/default }}
