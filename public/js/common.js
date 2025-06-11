@@ -606,7 +606,6 @@
 	let ri = $('.radio_group_resetable input');
 	let richecked = ri.filter(':checked').val();
 	$DOM.on('click', '.radio_group_resetable input[type="radio"]', function() {
-	// ri.on('click', function(){
 		if($(this).val() === richecked) {
 			$(this).prop('checked', false);
 			richecked = '';
@@ -778,9 +777,6 @@ $(function(){
 
 	simpleInfo();
 	
-
-// 	ri.addEventListener('click', function() {}
-// ,false)
 
 	//input disabled&readonly
 	$('.input_text input').each(function() {
