@@ -2673,7 +2673,6 @@
 	background-image: url(../images/content/guarantee/icon_gil_10.svg);
 }
 .guarantee_detail .guarantee_detail_mini {
-	margin-top: var(--gap-7);
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -2683,32 +2682,46 @@
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
+	gap: var(--gap-5);
 	width: 100%;
 	padding: 0 1.6rem;
-	gap: var(--gap-5);
+	margin-top: var(--gap-7);
 }
 .guarantee_detail .guarantee_detail_mini .item_wrap {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 0px;
+	flex: 1 1 0;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	gap: 0.4rem 1.2rem;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-ms-flex-flow: row wrap;
 	flex-flow: row wrap;
+	gap: 0.4rem 1.2rem;
+	min-width: 0;
 }
 .guarantee_detail .guarantee_detail_mini .i_data {
+	position: relative;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	gap: var(--gap-3);
-	position: relative;
 	padding-left: 0.8rem;
 	font-size: var(--font-size-body-small);
 	color: var(--color-text-subtle);
 }
+.guarantee_detail .guarantee_detail_mini .i_data .text {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+}
 .guarantee_detail .guarantee_detail_mini .i_data .data {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 0px;
+	flex: 1 1 0;
 	font-weight: 700;
+	overflow-wrap: anywhere;
 }
 .guarantee_detail .guarantee_detail_mini .i_data::before {
 	content: "";
@@ -2738,14 +2751,22 @@
 	margin-top: var(--gap-11);
 }
 .guarantee_detail.ty2 .guarantee_detail_mini {
-	margin-top: 1.6rem;
 	width: 100%;
+	margin-top: var(--gap-5);
 }
 .guarantee_detail.ty2 .guarantee_detail_mini .item_wrap {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 0px;
+	flex: 1 1 0;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(2, auto);
 	gap: 0.4rem var(--gap-4);
+}
+.guarantee_detail.ty2 .guarantee_detail_mini .item_wrap.flex_type {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
 }
 .guarantee_detail.ty2 .guarantee_detail_mini .item_wrap .i_data {
 	min-width: 11rem;
@@ -2757,10 +2778,10 @@
 	justify-self: flex-end;
 }
 .guarantee_detail.ty2 .btn_area {
-	gap: 1.2rem;
+	gap: var(--gap-4);
 }
 .guarantee_detail.ty2 .btn_area.ty2 + .acc_group {
-	margin-top: 3.2rem;
+	margin-top: var(--gap-8);
 }
 /* 간편정보 */
 .simple_info_wrap {
@@ -3368,13 +3389,13 @@ ul + .form_group_wrap {
 	margin-top: var(--gap-8);
 }
 .info_cont + .link_area {
-	margin-top: 1.6rem;
+	margin-top: var(--gap-5);
 }
 .info_cont .list_depth + .list_ty2 {
 	margin: 1.2rem 0 0 0.8rem;
 }
 .info_cont .acd_item + .acd_item {
-	margin-top: 1.6rem;
+	margin-top: var(--gap-5);
 }
 .info_cont .acd_item p {
 	margin: 0 0 1.6rem;
