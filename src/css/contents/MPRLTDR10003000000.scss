@@ -267,7 +267,6 @@
 		margin: 0;
 
 		.guarantee_detail_mini {
-			// justify-content: flex-start;
 			width: 100%;
 			margin: 0;
 			padding: 16px 16px 0;
@@ -278,7 +277,6 @@
 
 					& + .i_data {
 						margin: 0;
-						// padding-top: 4px;
 					}
 				}
 			}
@@ -602,37 +600,39 @@
 	}
 
 	.guarantee_detail_mini {
-		margin-top: var(--gap-7);
 		display: flex;
-		// justify-content: center;
 		align-items:center;
 		justify-content: space-between;
-		// width: fit-content;
-		// margin-left: auto;
-		// margin-right: auto;
+		gap: var(--gap-5);
 		width: 100%;
 		padding: 0 16px;
-		gap: var(--gap-5);
+		margin-top: var(--gap-7);
 		
 		.item_wrap {
-			// width: fit-content;
+			flex: 1 1 0;
 			display: flex;
-			gap: 4px 12px;
 			flex-flow: row wrap;
+			gap: 4px 12px;
+			min-width: 0;
+			// background-color: rgba(0, 0, 0, 0.05);
 		}
 
 		.i_data {
+			position: relative;
 			display: flex;
 			gap: var(--gap-3);
-			// width: fit-content;
-			position: relative;
 			padding-left: 8px;
-			// padding-top: 2px;
 			font-size: var(--font-size-body-small);
 			color: var(--color-text-subtle);
+			// background-color: rgba(200, 255, 255, 0.55);
+			.text {
+				flex: none;
+			}
 			.data {
-				// padding-left: 6px;
+				flex: 1 1 0;
 				font-weight: 700;
+				overflow-wrap: anywhere;
+
 			}
 			&::before {
 				content: '';
@@ -679,23 +679,28 @@
 
 .guarantee_detail.ty2 {
 	.guarantee_detail_mini {
-			margin-top:16px;
-			width: 100%;
-			
-			.item_wrap {
-				display: grid;
-				grid-template-columns: repeat(2, 1fr);
-				grid-template-rows: repeat(2, auto) ;
-				gap: 4px var(--gap-4);
+		width: 100%;
+		margin-top: var(--gap-5);
+		
+		.item_wrap {
+			flex: 1 1 0;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, auto);
+			gap: 4px var(--gap-4);
+			&.flex_type {
+				display: flex;
+			}
 
-				.i_data {
-					min-width: 110px;
-				}
+			.i_data {
+				min-width: 110px;
+			}
 
-				.i_data + .i_data { 
-					margin:0;
-				}
-	}
+			.i_data + .i_data { 
+				margin: 0;
+			}
+		}
+		
 
 	.modify_ba {
 		justify-self: flex-end;
@@ -703,10 +708,10 @@
 }
 
 	.btn_area {
-		gap: 12px;
+		gap: var(--gap-4);
 
 		&.ty2 + .acc_group{
-			margin-top:32px;	
+			margin-top: var(--gap-8);
 		}
 	}
 }

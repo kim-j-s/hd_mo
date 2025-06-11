@@ -1927,6 +1927,113 @@ strong {
 	display: block;
 	width: 100%;
 }
+.agree_graph_list {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	padding-top: 0.2rem;
+}
+.agree_graph .graph_item {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	position: relative;
+	width: 100%;
+	margin-bottom: 1.6rem;
+}
+.agree_graph .graph_item::after {
+	content: "";
+	display: block;
+	position: absolute;
+	bottom: -1.6rem;
+	left: 0;
+	width: 100%;
+	height: 0.8rem;
+}
+.agree_graph .graph_item .txt {
+	display: block;
+	position: relative;
+	font-size: var(--font-size-body-xsmall);
+	color: var(--color-text-disabled-on);
+	text-align: center;
+}
+.agree_graph .graph_item.active .txt {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: 0.2rem 0;
+	width: calc(100% - 1rem);
+	min-width: 4.8rem;
+	font-weight: 700;
+	color: var(--color-text-bolder-inverse);
+	border-radius: 4rem;
+}
+.agree_graph .graph_item.active .txt::after {
+	content: "";
+	width: 0.6rem;
+	height: 0.6rem;
+	position: absolute;
+	bottom: -0.3rem;
+	left: calc(50% - 0.3rem);
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	border-radius: 1.5px;
+}
+.agree_graph .graph_item.active:nth-child(1) .txt {
+	background-color: var(--color-border-secondary);
+}
+.agree_graph .graph_item.active:nth-child(1) .txt::after {
+	background-color: var(--color-border-secondary);
+}
+.agree_graph .graph_item.active:nth-child(2) .txt {
+	background-color: var(--color-light-success-50);
+}
+.agree_graph .graph_item.active:nth-child(2) .txt::after {
+	background-color: var(--color-light-success-50);
+}
+.agree_graph .graph_item.active:nth-child(3) .txt {
+	background-color: var(--color-light-warning-30);
+}
+.agree_graph .graph_item.active:nth-child(3) .txt::after {
+	background-color: var(--color-light-warning-30);
+}
+.agree_graph .graph_item.active:nth-child(4) .txt {
+	background-color: var(--color-light-primary-40);
+}
+.agree_graph .graph_item.active:nth-child(4) .txt::after {
+	background-color: var(--color-light-primary-40);
+}
+.agree_graph .graph_item.active:nth-child(5) .txt {
+	background-color: var(--color-light-point-50);
+}
+.agree_graph .graph_item.active:nth-child(5) .txt::after {
+	background-color: var(--color-light-point-50);
+}
+.agree_graph .graph_item:nth-child(1)::after {
+	background-color: var(--color-border-secondary);
+	border-radius: 4rem 0px 0px 4rem;
+}
+.agree_graph .graph_item:nth-child(2)::after {
+	background-color: var(--color-light-success-50);
+}
+.agree_graph .graph_item:nth-child(3)::after {
+	background-color: var(--color-light-warning-30);
+}
+.agree_graph .graph_item:nth-child(4)::after {
+	background-color: var(--color-light-primary-40);
+}
+.agree_graph .graph_item:nth-child(5)::after {
+	background-color: var(--color-light-point-50);
+	border-radius: 0px 4rem 4rem 0px;
+}
 .agree_qr_box {
 	margin-bottom: 1.6rem;
 	display: -webkit-box;
@@ -5121,7 +5228,7 @@ strong {
 	margin-top: 0;
 }
 .card_item_wrap .card_item .card_cont {
-	margin-top: 1.6rem;
+	margin-top: var(--gap-5);
 	padding-top: 1.6rem;
 	border-top: 1px solid #e1e3ea;
 }
@@ -10912,6 +11019,9 @@ strong {
 }
 .text_sub + .btn_area.basic {
 	margin-top: var(--gap-2);
+}
+.text_sub + .btn_area.basic.space1 {
+	margin-top: var(--gap-3);
 }
 .text_sub + .list_depth {
 	margin-top: var(--gap-4);

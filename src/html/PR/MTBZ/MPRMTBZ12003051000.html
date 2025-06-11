@@ -1,0 +1,73 @@
+<!---
+화면번호 : MPRMTBZ12003051000
+경로 : 5.특약할인 > 5-3. 특약할인 선택 > 어린이 통학버스 할인특약
+-->
+{{#> layout/default page-title="자동차 특약할인 | 상품"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_full" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- s: popup_content_top -->
+		<div class="popup_content_top">
+			<div class="title_h2">
+				<strong>어린이 통학버스 할인특약</strong>
+			</div>
+			<div class="btn_area basic">
+				{{> cp/button type="3" size="5" b-text="자세히 보기" popup="pop_bottom_01" btn-title="어린이 통학버스 할인특약 자세히보기 팝업 열기" rightIcon="arrowRightSvg" }}
+			</div>
+		</div>
+
+		<p class="text_sub">해당 차량이 자동차 등록증상 어린이 통학버스가 맞는지 확인해주세요.</p>
+		<div class="info_gray">
+			<p class="info_text">
+				어린이 통학버스 전용 특약으로, 특약증빙(어린이 통학버스 신고증명서)이 부정확할 경우 증빙 재요청 또는 할인보험료 반환을 요청드릴 수 있습니다.
+			</p>
+		</div>
+
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">가입 구분</div>
+				<div class="radio_group_wrap_ty2" role="radiogroup">
+					{{> cp/radio rd-class="rd_btn" rd-id="f1_g1_rb01" name="f1_g1" labelname="학교"}}
+					{{> cp/radio rd-class="rd_btn" rd-id="f1_g1_rb02" name="f1_g1" labelname="유치원 및 어린이집"}}
+					{{> cp/radio rd-class="rd_btn" rd-id="f1_g1_rb03" name="f1_g1" labelname="학원 및 교습소"}}
+					{{> cp/radio rd-class="rd_btn" rd-id="f1_g1_rb04" name="f1_g1" labelname="기타"}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- s: 하단 고정 버튼 영역 -->
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" b-text="확인"}}
+	</div>
+</div>
+<!-- s: 하단 고정 버튼 영역 -->
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+<!-- s: 어린이 통학버스 할인특약 자세히보기 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_bottom_01" popup-title="어린이 통학버스 할인특약 자세히보기" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="info_cont">
+					<h2>기타 유의사항</h2>
+					<ul class="list_depth">
+						<li>어린이 통학버스 신고증명서가 없어도 보험료 계산은 가능합니다.<br /> 단, 보험가입 시 <strong>어린이 통학버스 신고증명서</strong>가 필요하므로 미리 이미지 파일을 준비해 주세요.
+						</li>
+						<li>어린이 통학버스 전용 특약으로, 특약증빙(신고증명서)이 부정확할 경우 증빙 재요청 또는 할인보험료 반환을 요청드릴 수 있습니다.</li>
+					</ul>
+			</div>
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="2" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+<!-- e: 어린이 통학버스 할인특약 자세히보기 팝업 -->
+{{/ layout/default }}
