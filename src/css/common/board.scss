@@ -1,16 +1,3 @@
-
-.board_list_wrap {
-
-  .line_clamp {
-    display: -webkit-box;
-    line-clamp:2;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-}
-
 /* 게시판(모바일) - list(카드형) */
 .board_list_wrap.ty_card {
 
@@ -54,12 +41,22 @@
 		
 				.item_title {
 					color: var(--color-text-bolder);
+          font-size: var(--font-size-heading-xsmall);
+          font-weight: 700;
 				}
 		
-				p {
+				.item_preview {
 					color: var(--color-text-subtle);
 					font-size: var(--font-size-body-small);
 				}
+        
+        .item_title,.item_preview {
+          display: -webkit-box;
+          line-clamp:2;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
 
         .item_meta {
           .date {
@@ -80,6 +77,7 @@
 
 }
 
+
 /* 게시판(모바일) - list(목록형) */
 .board_list_wrap.ty_list {
 
@@ -92,20 +90,7 @@
       border-bottom: 1px solid var(--color-border-gray-light);
       display: flex;
 			align-items: stretch;
-
-      &:after {
-        display: block;
-        content:'';
-        width: 24px;
-        height: 24px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 0;
-
-        background: url(../images/icon/arrowRight_ty3.svg) no-repeat center / 20px auto;
-      }
-
+      
       &:first-of-type {
         border-top: 1px solid var(--color-border-gray-light);
       }
@@ -115,6 +100,18 @@
 				display: flex;
 				flex-direction: column;
 				gap: var(--gap-2);
+
+        &:after {
+          display: block;
+          content:'';
+          width: 24px;
+          height: 24px;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 0;
+          background: url(../images/icon/arrowRight_ty3.svg) no-repeat center / 20px auto;
+        }
 		
 				.item_title {
           font-size: var(--font-size-body-medium);
@@ -136,38 +133,51 @@
    
     }
   }
-
 }
 
 
-
 /* 게시판(모바일) - view */
+.view_wrap {
 
-.board_view {
-
-  .view_header {
-
+  .view_title {
     border-bottom: 1px solid var(--color-divider-gray-light);
     padding-bottom: var(--gap-5);
 
-    .view_title {
-      font-size: var(--font-size-heading-small);
-      color: var(--color-text-bolder);
-      font-weight: 700;
-    }
-
-    .view_date {
+    .hd_icon{
       display: block;
-      margin-top: 8px;
-      color: var(--color-text-information);
-      font-size: var(--font-size-body-small);
     }
 
+    .hd_icon + .title_info {
+      margin-top: var(--gap-3);
+    }
+
+    .title_info {
+      .sub_title {				
+				color: var(--color-text-subtle);
+				font-size: var(--font-size-body-small);
+
+        & + .main_title {
+          margin-top: var(--gap-2);
+        }
+			}
+
+      .main_title {
+        font-size: var(--font-size-heading-small);
+        color: var(--color-text-bolder);
+        font-weight: 700;
+      }
+  
+      & + .desc {
+				margin-top: var(--gap-3);
+        color: var(--color-text-information);
+        font-size: var(--font-size-body-small);
+      }
+    }
   }
 
-  .view_content {
-    padding : var(--gap-5) 0;
-    border-bottom: 1px solid var(--color-divider-gray-light);
+  .view_cont {
+    padding-top : var(--gap-5);
+		border-top: 1px solid var(--color-divider-gray-light);
     font-size: var(--font-size-body-medium);
 
     .event_info_area {
@@ -175,15 +185,23 @@
         margin-top: var(--gap-5);
       }
     }
+
+    & + .view_navigation {
+      margin-top: var(--gap-5);
+    }
   }
 
   .view_navigation {
-
     li.navigation_item {
       display: flex;
       align-items: center;
       gap: var(--gap-2);
       padding: var(--padding-6) 0px;
+      border-top: 1px solid var(--color-divider-gray-light);
+
+      &:last-of-type {
+        border-bottom: 1px solid var(--color-divider-gray-light);
+      }
 
       .navigation_label {
         color: var(--color-text-subtle);
@@ -203,14 +221,8 @@
 
         &.no-data {
           color: var(--color-text-disabled-on);
-        }       
+        }
       }
-     
-
-    }
-
-    li ~ li {
-      border-top: 1px solid var(--color-divider-gray-light);
     }
   }
 
