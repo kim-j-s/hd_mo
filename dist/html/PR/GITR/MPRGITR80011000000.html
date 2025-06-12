@@ -49,9 +49,9 @@
 	</head>
 	<body>
 		<!-- s: Full 팝업 -->
-		<div class="popup_wrap full active" id="pop_MPRGITR80002040000" role="dialog" aria-hidden="false">
+		<div class="popup_wrap full active" id="pop_type01" role="dialog" aria-hidden="false">
 			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_MPRGITR80002040000');"></div>
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
 				<div class="popup_inner">
 					<div class="popup_head"><div class="popup_head_title">보험가입 진행 정보</div></div>
 					<div class="popup_cont">
@@ -69,7 +69,7 @@
 										<li>
 											<dl>
 												<dt class="country">여행지</dt>
-												<dd>미국</dd>
+												<dd>멕시코</dd>
 											</dl>
 										</li>
 										<li>
@@ -100,29 +100,19 @@
 											</dl>
 										</li>
 										<!-- e: 피보험자다수 -->
-										<li>
-											<dl>
-												<dt class="work">체류목적</dt>
-												<dd>업무(주재원)</dd>
-											</dl>
-										</li>
-										<li>
-											<dl>
-												<dt class="job">회사</dt>
-												<dd>사무직 종사자</dd>
-											</dl>
-										</li>
 									</ul>
 								</div>
 								<div class="info_gray">
 									<ol class="step_list">
-										<li>
+										<li class="active">
 											<dl>
 												<dt class="title">1.보험료확인</dt>
 												<dd>
-													<div><span>표준형 11,500원</span>을 선택했어요</div>
-													<div><span>70세</span>부터 <span>10년</span> 동안</div>
-													<div><strong class="point">(예상)</strong> <span>매월 534,000원</span><strong class="point">(세전)</strong> 받아요</div>
+													<ul>
+														<li>선택: <span>표준형, 32,700원</span></li>
+														<li>할인: <span>다이렉트할인</span></li>
+													</ul>
+													<div class="info">보험료를 확인 중이에요</div>
 												</dd>
 											</dl>
 											<button type="button" class="modify" title="보험료확인 수정 페이지로 이동">
@@ -130,12 +120,29 @@
 												<i class="hd_icon resetSvg"></i>
 											</button>
 										</li>
-										<li class="active">
+										<li>
 											<dl>
 												<dt class="title">2.피보험자/계약자 정보</dt>
 												<dd>
-													<div>계약자는 <span>김*대(790102-*******,남성), KIM H*** DAI</span></div>
-													<div>피보험자 <span>김*영(790102-*******,여성), KIM H*** DAI 외 2명</span></div>
+													<!-- s: CASE1-1. 성인단독 -->
+													<ul>
+														<li>입력: <span>김*대(790102-*******,남성), KIM H*** DAI</span></li>
+													</ul>
+													<div class="info">정보를 입력 중이에요</div>
+													<!-- e: CASE1-1. 성인단독 -->
+													<!-- s: 미성년자단독, 피보험자다수 -->
+													<ul>
+														<!-- s: CASE1-2. 미성년자단독 -->
+														<li>계약자: <span>김*대(790102-*******,남성), KIM H*** DAI</span></li>
+														<li>피보험자: <span>윤*성(190327-4******, YUN TAESUNG)</span></li>
+														<!-- e: CASE1-2. 미성년자단독 -->
+														<!-- s: CASE1-3. 피보험자다수 -->
+														<li>계약자: <span>김*대(790102-*******,남성), KIM H*** DAI</span></li>
+														<li>피보험자: <span>김*대(790102-*******,남성), KIM H*** DAI 외 1명</span></li>
+														<!-- e: CASE1-3. 피보험자다수 -->
+													</ul>
+													<div class="info"><strong>피보험자 정보를 입력</strong> 중이에요</div>
+													<!-- e: 미성년자단독, 피보험자다수 -->
 												</dd>
 											</dl>
 											<button type="button" class="modify" title="피보험자/계약자 정보 수정 페이지로 이동">
@@ -147,7 +154,10 @@
 											<dl>
 												<dt class="title">3.가입내용</dt>
 												<dd>
-													<div>보험 <span>가입과 관련한 주요 내용</span>을 확인 했어요</div>
+													<ul>
+														<li>확인: <span>가입내용 및 계약서류</span></li>
+													</ul>
+													<div class="info">내용을 확인 중이에요</div>
 												</dd>
 											</dl>
 											<button type="button" class="modify" title="가입내용 수정 페이지로 이동">
@@ -159,13 +169,9 @@
 											<dl>
 												<dt class="title">4.보험료 결제</dt>
 												<dd>
-													<div><span>결제</span> 진행 중이에요</div>
+													<div class="info">정보를 입력 중이에요</div>
 												</dd>
 											</dl>
-											<button type="button" class="modify" title="보험료 결제 수정 페이지로 이동">
-												<span class="sr-only">수정</span>
-												<i class="hd_icon resetSvg"></i>
-											</button>
 										</li>
 									</ol>
 								</div>
@@ -185,7 +191,7 @@
 							</button>
 						</div>
 					</div>
-					<button type="button" class="popup_close" onclick="closeHDPopup('pop_MPRGITR80002040000');"><span class="blind">팝업 닫기</span></button>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
