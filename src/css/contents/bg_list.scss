@@ -5,7 +5,7 @@
 		background-color: var(--color-element-primary-lighter);
 		> li {
 			padding-left: 24px;
-			background: url(../images/icon/bg_heart_ty2.svg) no-repeat left top / 24px auto;
+			background: url(../images/icon/bg_heart.svg) no-repeat left top / 20px auto;
 			> .tit {
 				display: block;
 				font-size: var(--font-size-heading-xxsmall);
@@ -23,6 +23,44 @@
 			+ li {
 				margin-top: var(--gap-5);
 			}
+		}
+
+	}
+
+	&.bg_list_case02 {
+		padding: 0 var(--padding-7);
+		border-radius: var(--radius-medium4);
+		background-color:  var(--color-surface-primary-subtler);
+		> li {
+			padding: var(--padding-6) 0 var(--padding-6) 28px;
+
+			&.total_status {
+			background: url(../images/icon/bg_heart_ty2.svg) no-repeat left center / 24px auto;
+			}
+
+			&.year_status {
+				text-align: center;
+				font-size: var(--font-size-body-xsmall);
+				color:  var(--color-text-subtle);
+			}
+
+			> .tit {
+				display: flex;
+				justify-content: space-between;
+				gap: var(--gap-3);
+				font-size: var(--font-size-heading-xxsmall);
+				
+				.label {
+					font-size: var(--font-size-body-small);
+				}
+			}		
+			+ li {
+				border-top: 1px solid var(--color-divider-inverse);
+			}
+		}
+
+		& + .tab_wrap {
+			margin-top: 32px;
 		}
 
 	}
