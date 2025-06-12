@@ -7,6 +7,7 @@
  * 	- class : 추가 class
  *  - popup : 호출할 팝업 ID
  *  - b-text : 버튼 표시 텍스트
+ *  - noText : 아이콘만 있는 경우
  *  - btn-title : 호버시 툴팁 title
  *  - leftIcon : 왼쪽 아이콘 설정 class
  *  - rightIcon : 오른쪽 아이콘 설정 class
@@ -15,10 +16,12 @@
  --}}
 <{{#if atag}}a href="#"{{else}}button type="button"{{/if}} class="hd_btn{{#if type}} hd_btn_ty_{{type}}{{/if}}{{#if size}} hd_btn_s_{{size}}{{/if}}{{#if keep}} hd_btn_keep{{/if}}{{#if class}} {{class}}{{/if}}"{{#if disabled}} disabled{{/if}}{{#if popup}} onclick="openHDPopup(this,'{{popup}}');"{{/if}}{{#if btn-title}} title="{{btn-title}}"{{/if}}{{#if toast-msg}} onclick="toastAction(this);" data-msg="{{{toast-msg}}}"{{/if}}>
 {{#if leftIcon}}{{> cp/icon iconClass=leftIcon}}{{/if}}
-{{#if b-text}}
-	<span class="text">{{{b-text}}}</span>
-	{{else}}
-	<span class="text">{{> @partial-block }}</span>
-{{/if}}
+{{#unless noText}}
+	{{#if b-text}}
+		<span class="text">{{{b-text}}}</span>
+		{{else}}
+		<span class="text">{{> @partial-block }}</span>
+	{{/if}}
+{{/unless}}
 {{#if rightIcon}}{{> cp/icon iconClass=rightIcon}}{{/if}}
 {{#if atag}}</a>{{else}}</button>{{/if}}
