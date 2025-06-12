@@ -328,6 +328,65 @@
 			margin-right:4px;
 		}
 	}
+	
+	//주민번호
+	&.birth {
+		padding: 3px;
+		display: flex;
+		align-items: center;
+		gap: 4px;
+		width: 100%;
+		& > .input_text {
+			width: calc(50% - 8px);
+			
+		}
+		input {
+			height: 48px;
+			&:read-only {
+				text-align: center;
+			}
+		}
+		.id_pass_box {
+			display: flex;
+			align-items: center;
+			width: calc(50% - 8px);
+			gap: 4px;
+			.input_text {
+				border: none;
+			}
+			input {
+				padding: 0;
+				width: 20px;
+				height: 25px;
+				text-align: center;
+				border-bottom: 1px solid #6D7882;
+				border-radius: 0;
+			}
+			.id_pass {
+				line-height: 48px;
+				width: 100%;
+				font-size: 16px;
+				text-align: center;
+				background-color: var(--color-input-surface-disabled);
+				border-radius: 12px;
+			}
+			.id_pass2 {
+				line-height: 48px;
+				width: 100%;
+				font-size: 16px;
+				text-align: center;
+				border-radius: 12px;
+			}
+
+			&.read_only {
+
+				input {
+					border-bottom: 0;
+					background-color: transparent;
+				}			
+			}
+		}
+	}
 }
 
 // 금액
@@ -394,64 +453,6 @@
 	input {
 		padding: 0;
 		text-align: center;
-	}
-}
-//주민번호
-.birth {
-	padding: 3px;
-	display: flex;
-	align-items: center;
-	gap: 4px;
-	width: 100%;
-	& > .input_text {
-		width: calc(50% - 8px);
-		
-	}
-	input {
-		height: 48px;
-		&:read-only {
-			text-align: center;
-		}
-	}
-	.id_pass_box {
-		display: flex;
-		align-items: center;
-		width: calc(50% - 8px);
-		gap: 4px;
-		.input_text {
-			border: none;
-		}
-		input {
-			padding: 0;
-			width: 20px;
-			height: 25px;
-			text-align: center;
-			border-bottom: 1px solid #6D7882;
-			border-radius: 0;
-		}
-		.id_pass {
-			line-height: 48px;
-			width: 100%;
-			font-size: 16px;
-			text-align: center;
-			background-color: var(--color-input-surface-disabled);
-			border-radius: 12px;
-		}
-		.id_pass2 {
-			line-height: 48px;
-			width: 100%;
-			font-size: 16px;
-			text-align: center;
-			border-radius: 12px;
-		}
-
-		&.read_only {
-
-			input {
-				border-bottom: 0;
-				background-color: transparent;
-			}			
-		}
 	}
 }
 .key_number {
