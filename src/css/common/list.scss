@@ -1505,3 +1505,59 @@
 		}
 	}
 }
+.call_info_list {
+	.item {
+		display: block;
+		background-repeat: no-repeat;
+		background-position: 20px center;
+		background-size: 24px auto;
+		border: 1px solid var(--color-divider-gray-light);
+		border-radius: var(--radius-large2);
+
+		@for $i from 1 through 5 {
+			&.opt#{$i}{
+				background-image: url(../images/content/cnsl/icon_call_info#{$i}.svg);
+			}
+		}
+		&.call {
+			padding: 24px 20px 24px 48px;
+		}
+		&:not(.call){
+			position: relative;
+			padding: 24px 52px 24px 48px;
+			::after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				right: 20px;
+				width: 32px;
+				height: 32px;
+				background: transparent url(../images/icon/arrowRight_ty3.svg) no-repeat center / 20px auto;
+				transition: all 0.3s;
+				transform: translateY(-50%);
+			}
+		}
+		.title {
+			font-size: var(--font-size-body-medium);
+			& + .cont {
+				margin-top: var(--gap-2);
+			}
+		}
+		.cont {
+			display: flex;
+			align-items: center;
+			gap: var(--gap-3);
+			strong {
+				font-size: var(--font-size-heading-small);
+				color: var(--color-text-bolder);
+			}
+		}
+		.desc {
+			font-size: var(--font-size-body-small);
+			color: var(--color-text-subtle);
+		}
+		& + .item {
+			margin-top: var(--gap-5);
+		}
+	}
+}
