@@ -462,23 +462,23 @@
 
 
 	//radio_comb(2개의 라디오 버튼 중 택1 콤비네이션)
-	$DOM.on('change', '.radio_comb input[type="radio"]', function(){
-		const parentCont = $(this).closest('.radio_comb');
+	// $DOM.on('change', '.radio_comb input[type="radio"]', function(){
+	// 	const parentCont = $(this).closest('.radio_comb');
 
-		if(parentCont.length > 0){
-			parentCont.removeClass('origin').addClass('active');
-		}
-	});
+	// 	if(parentCont.length > 0){
+	// 		parentCont.removeClass('origin').addClass('active');
+	// 	}
+	// });
 
-	$DOM.ready(function(){
-		const target = $('.radio_comb input[type="radio"]:checked');
-		target.each(function(){
-			const parentCont = $(this).closest('.radio_comb');
-			if(parentCont.length > 0){
-				parentCont.removeClass('origin').addClass('active');
-			}
-		});
-	});
+	// $DOM.ready(function(){
+	// 	const target = $('.radio_comb input[type="radio"]:checked');
+	// 	target.each(function(){
+	// 		const parentCont = $(this).closest('.radio_comb');
+	// 		if(parentCont.length > 0){
+	// 			parentCont.removeClass('origin').addClass('active');
+	// 		}
+	// 	});
+	// });
 
 	// 수령지 일괄 선택
 	$DOM.on('change', '.sa_change', function() {

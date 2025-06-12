@@ -303,17 +303,16 @@
 
 
 .radio_comb {
+	position: relative;
+	display: flex;
 	min-width: 114px;
 	min-height: 58px;
-	display: flex;
-	border-radius: var(--radius-medium3);
+	// width: fit-content;
 	font-size: var(--font-size-label-medium);
-	width: fit-content;
-	border-radius: var(--radius-medium3, 16px);
-	position: relative;
-	transition: all 0.3s;
-	overflow: hidden;
+	border-radius: var(--radius-medium3);
 	background: var(--color-element-gray-lighter);
+	overflow: hidden;
+	transition: all 0.3s;
 
 	&.origin {
 		border: var(--border-width-static-regular) solid var(--color-border-gray-light);
@@ -324,17 +323,17 @@
 			position: absolute;
 			top:0;
 			left: 50%;
+			z-index: 10;
 			width: 1px;
 			height: 100%;
 			background-color: var(--color-border-gray-light);
-			z-index:10;
 		}
 	}
 
 	.inp_radio.rd_btn {
 		width: 56px;
 		height: 56px;
-		overflow: hidden;
+		// overflow: hidden;
 
 		span.label_cont {
 			z-index: 10;
@@ -358,14 +357,22 @@
 			& + label:before {
 				content:'';
 				position: absolute;
-				top:0;
-				left:0;
+				top: 0;
+				left: 0;
 				display: block;
 				width: 100%;
 				height: 100%;
 				border: none;
 				// z-index: 0;
-			}//before		
+			}
+			//before
+
+			&:checked {
+				+ label {
+					background-color: blue;
+				}
+			}
+
 
 			&:disabled + label {
 				background-color: transparent;//기존스타일 초기화
@@ -377,6 +384,7 @@
 		}//input[type=radio] End
 	}//.inp_radio.rd_btn End
 
+	/*
 	&.active { //.radio_comb.active
 
 		.inp_radio.rd_btn {
@@ -402,6 +410,9 @@
 			}
 		}
 	}
+	*/
+
+
 }//radio_comb End
 
 
