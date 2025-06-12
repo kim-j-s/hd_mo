@@ -303,69 +303,133 @@
 
 
 .radio_comb {
-	min-width: 114px;
-	min-height: 58px;
-	display: flex;
-	border-radius: var(--radius-medium3);
-	font-size: var(--font-size-label-medium);
-	width: fit-content;
-	border-radius: var(--radius-medium3, 16px);
 	position: relative;
-	transition: all 0.3s;
-	overflow: hidden;
+	display: flex;
+	// min-width: 114px;
+	// min-height: 56px;
+	// width: fit-content;
+	font-size: var(--font-size-label-medium);
+	border-radius: var(--radius-medium3);
 	background: var(--color-element-gray-lighter);
+	// background-color: var(--color-element-gray-lighter);
+	overflow: hidden;
+	transition: all 0.3s;
 
 	&.origin {
-		border: var(--border-width-static-regular) solid var(--color-border-gray-light);
+		// border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 
 		&:before {
-			display: block;
 			content:'';
 			position: absolute;
-			top:0;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			border-radius: var(--radius-medium3);
+			border: var(--border-width-static-regular) solid var(--color-border-gray-light);
+			// background-color: var(--color-border-gray-light);
+			// background-color: #fff;
+		}
+		&::after {
+			content:'';
+			display: block;
+			position: absolute;
+			top: 0;
 			left: 50%;
+			z-index: 10;
 			width: 1px;
 			height: 100%;
 			background-color: var(--color-border-gray-light);
-			z-index:10;
 		}
 	}
 
 	.inp_radio.rd_btn {
+		position: static;
+		z-index: 2;
 		width: 56px;
 		height: 56px;
-		overflow: hidden;
+		// overflow: hidden;
 
 		span.label_cont {
-			z-index: 10;
+			// z-index: 10;
+			position: relative;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			// background-color: var(--color-element-inverse);
 		}
 
 		input[type=radio] {
-			width: 100%;
-			height: 100%;
+			// width: 100%;
+			// height: 100%;
 
 			& + label {
-				padding: 0;
+				position: static;
+				width: 56px;
+				padding: 1px;
 				border-radius: 0;
+				&::before {
+					content:'';
+					position: absolute;
+					top: 0;
+					left: 0;
+					display: block;
+					width: 100%;
+					height: 100%;
+					border: none;
+					border-radius: 0;
+					background-color: transparent;
+
+					// z-index: 0;
+					pointer-events: none;
+				}
+				&::after {
+					content: none;
+					border-color: transparent;
+				}
+				.label_cont {
+					border-radius: var(--radius-medium3);
+					background-color: #fff;
+				}
 			}
 
-			& + label:after {
-				border-width: 0;
-				background-color: #fff;
-				border-radius: 0;
-			}//after
+			// & + label:before {
+				
+			// }
+			//before
 
-			& + label:before {
-				content:'';
-				position: absolute;
-				top:0;
-				left:0;
-				display: block;
-				width: 100%;
-				height: 100%;
-				border: none;
-				// z-index: 0;
-			}//before		
+			&:checked {
+				+ label {
+					// background-color: blue;
+					padding: 0;
+					&::before {
+						// border-radius: var(--radius-medium3);
+						// border: 2px solid var(--color-border-primary);
+						border-radius: 0;
+						background-color: var(--color-element-gray-lighter);
+						
+					}
+					.label_cont {
+						border-radius: var(--radius-medium3);;
+						background-color: var(--color-element-inverse);
+						&::after {
+							content: '';
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+							border-radius: var(--radius-medium3);
+							border: 2px solid var(--color-border-primary);
+						}
+
+					}
+				}
+			}
+
 
 			&:disabled + label {
 				background-color: transparent;//기존스타일 초기화
@@ -377,6 +441,7 @@
 		}//input[type=radio] End
 	}//.inp_radio.rd_btn End
 
+	/*
 	&.active { //.radio_comb.active
 
 		.inp_radio.rd_btn {
@@ -402,6 +467,9 @@
 			}
 		}
 	}
+	*/
+
+
 }//radio_comb End
 
 

@@ -1,7 +1,6 @@
 /* 컨텐츠 view */
 .view_wrap {
 	.view_title {
-		border-bottom: 1px solid var(--color-divider-gray-light);
 		padding-bottom: var(--gap-5);
 
 		.hd_icon {
@@ -10,6 +9,13 @@
 
 		.hd_icon + .title_info {
 			margin-top: var(--gap-3);
+		}
+
+		.card_item.donation {
+			border: 0;
+			border-radius: 0;
+			padding:0;
+			cursor: default;
 		}
 
 		.title_info {
@@ -41,7 +47,12 @@
 		border-top: 1px solid var(--color-divider-gray-light);
 		font-size: var(--font-size-body-medium);
 
-		.event_info_area {
+		.button_area {
+			text-align: right;
+			margin-bottom: var(--gap-3);
+		}
+
+		.event_info_area, .img_box {
 			& + * {
 				margin-top: var(--gap-5);
 			}
@@ -49,6 +60,10 @@
 
 		& + .view_navigation {
 			margin-top: var(--gap-5);
+		}
+
+		.form_group_wrap [class^=form_line] .label_tit {
+			color: var(--color-text-basic);
 		}
 	}
 
