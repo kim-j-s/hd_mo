@@ -106,6 +106,7 @@
 						color:#6D7882;
 					}
 				}
+				.card_link { cursor: default; }
 			}
 		}
 	}
@@ -234,6 +235,8 @@
 
 		.card_link {
 			display: block;
+			cursor: pointer;
+
 			.item_top {
 				.title_info {
 					.main_title {
@@ -580,6 +583,8 @@
 			}
 		
 			.card_link {
+				cursor: default;
+
 				.item_top {
 					.title_info {
 						// padding-right: 24px;
@@ -808,12 +813,14 @@
 	.card_item {
 		padding: var(--padding-8) var(--padding-7);
 		border: var(--border-width-static-regular) solid var(--color-border-gray-light);
+		background: var(--color-surface-white-subtle);
 		border-radius: var(--radius-large2);
 
 		display: flex;
 		flex-direction: column;
 		row-gap: var(--gap-5);
 		align-items: stretch;
+		cursor: pointer;
 
 		.img_box {
 			width: 100%;
@@ -877,6 +884,219 @@
 	}
 }
 
+
+//카드형 리스트(링크 기능) - 카드혜택 > 기부하기
+.card_list_wrap_ty3 {
+  li ~li {
+    margin-top: var(--gap-5);
+  }
+}
+
+//car_list를 사용하지 않고 card_item만 삽입하는 케이스가 있어 스타일 선언 구조 별도 분리함.
+	.card_item.donation {
+
+		& ~ .card_item {
+			margin-top: var(--gap-5);
+		}
+
+		padding: var(--padding-8) var(--padding-7);
+		border: var(--border-width-static-regular) solid var(--color-border-gray-light);
+		background: var(--color-surface-white-subtle);
+		border-radius: var(--radius-large2);
+		cursor: pointer;
+
+		.item_inner {
+      display: flex;
+			flex-direction: column;
+			gap: var(--gap-5);
+		}
+
+		.img_box {
+			width: 100%;
+			border-radius: var(--radius-medium3);
+
+			&.no_img {
+				width: 100%;
+				height: 140px;
+				background: var(--color-surface-gray-subtler);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			img {
+				display: block;
+				width: 100%;
+				border-radius: inherit;
+			}
+		}
+
+		.inner_cont {
+			display: flex;
+			flex-direction: column;
+			gap: var(--gap-3);
+
+			.title_info {
+				.badge_wrap {
+					gap: var(--gap-2);
+					align-items: center;
+					white-space: wrap;
+
+					.organ {
+						color: var(--color-text-subtle);
+						font-size: var(--font-size-body-small);
+						word-break: break-all;
+					}
+
+					& + .main_title {
+						margin-top: var(--gap-2);
+					}
+				}
+				
+				.main_title {
+					color: var(--color-text-bolder);
+					font-size: var(--font-size-heading-xsmall);
+					font-weight: 700;
+					display: -webkit-box;
+					line-clamp: 2;
+					-webkit-line-clamp: 2;
+					-webkit-box-orient: vertical;
+					overflow: hidden;
+				}
+
+				.date {
+					display: none;
+				}
+
+			}//title_info
+
+			.progress {
+				.bar {
+					height: 8px;
+					position: relative;
+
+					&:before {
+						display: block;
+						content:'';
+						position: absolute;
+						top: 50%;
+						transform: translateY(-50%);
+						width: 100%;
+						height: 2px;
+						background: var(--color-background-gray-subtle);
+						border-radius: 4px;
+					}
+
+					.guage {
+							position: absolute;
+							top: 50%;
+							transform: translateY(-50%);
+							width: 30%;
+							height: 4px;
+							background: var(--color-light-primary-60);
+							border-radius: 4px;
+
+						&:after {
+							display: block;
+							content:'';
+							position: absolute;
+							top: 50%;
+							transform: translate(50%,-50%);
+							right: 0;
+							width: 8px;
+							height: 8px;
+							background: #fff;
+							border: 2px solid var(--color-light-primary-60);
+							border-radius: 999px;
+						}
+					}
+				}
+
+				.progress_info {
+					margin-top: var(--gap-2);
+					display: flex;
+					justify-content: space-between;
+					font-size: var(--font-size-body-xsmall);
+					color: var(--color-text-subtle);
+				}
+			}
+		}
+
+		.item_btn_wrap {
+			display: flex;
+			align-items: center;
+			gap: var(--gap-3);
+
+			.stretch {
+				flex-grow: 1;
+			}
+
+		}
+
+		//.card_item.donation - small케이스
+		&.small {
+			.item_inner {
+				display: flex;
+				flex-direction: row;
+				gap: var(--gap-3);
+			}
+	
+			.img_box {
+				width: 56px;
+				height: 56px;
+				border-radius: var(--radius-medium3);
+				flex-shrink: 0;
+	
+				&.no_img {
+					width: 56px;
+					height: 56px;
+				}
+	
+				img {
+					width: 56px;
+					height: 56px;
+					filter: grayscale(0);				
+				}
+			}
+	
+			.inner_cont {
+				.title_info {
+					.badge_wrap + .main_title {
+						margin-top: var(--gap-2);
+					}
+	
+					.date {
+						display: block;
+						margin-top: var(--gap-3);
+						color: var(--color-text-information);
+						font-size: var(--font-size-body-small);
+						word-break: break-all;
+					}
+	
+				}//title_info
+	
+				.progress, .item_btn_wrap {
+					display: none;
+				}
+			}
+	
+			.item_btn_wrap {
+				display: none;
+			}
+
+			//이벤트 종료 케이스(samll)
+			&.end {
+				cursor: default;
+				img {
+					filter: grayscale(100%);
+				}
+			}
+
+		}//small케이스
+
+	
+
+	}//.card_item.donation
 
 
 .form_card_wrap {
