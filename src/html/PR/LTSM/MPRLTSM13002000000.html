@@ -16,6 +16,7 @@
 			<div class="tab_wrap">
 				<div class="tab_wrap_list_ty1" role="tablist">{{>cp/tab_btn tb-text="본인" tb-id="01" tb-active=true}} {{>cp/tab_btn tb-text="배우자/부모/자녀" tb-id="02"}}</div>
 
+				
 				<!-- 본인 탭 -->
 				<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
 					<h3 class="title_h3">피보험자/계약자</h3>
@@ -40,49 +41,54 @@
 
 				<!-- 배우자/부모/자녀 탭 -->
 				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
-					<div class="form_group_wrap">
-						<div class="form_line">
-							<div class="radio_group_wrap_ty2" role="radiogroup">
-								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt1" name="radio_gt1" labelname="배우자" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt2" name="radio_gt1" labelname="부모" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt3" name="radio_gt1" labelname="자녀(만 18세 이하)" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt4" name="radio_gt1" labelname="자녀(만 19세 이상)" }}</div>
-						</div>
-					</div>
-
-					<div class="form_group_wrap">
-						<h3 class="title_h3">피보험자(보장 받으실 분)</h3>
+					<!-- s: 25-06-12 수정 -->
+					<div class="form_box">
 						<div class="form_group_wrap">
 							<div class="form_line">
-								<div class="label_tit">주민등록번호</div>
-								<div class="comp_wrap birth">
-									{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" }}
-									<span class="dash">-</span>
-									<div class="id_pass_box">
-										{{> cp/text type="tel" minlength="1" maxlength="1" placeholder="●" inp-title="주민등록번호 뒷1자리 입력" no_del="flase" }}
-										<div class="id_pass">●●●●●●</div>
-									</div>
-								</div>								
-						</div>
-						
-						<div class="form_line">
-							<div class="label_tit">이름</div>
-							{{> cp/text placeholder="입력해주세요" inp-title="이름 입력" }}
-							{{> cp/linkButton bl_class="short_cut" bl_text="계약자 피보험자가 다를 때 가입 안내" pop_id="pop_03"}}
-						</div>						
-
-						<!-- s: 자녀(만 18세 이하) 선택 시 표시 -->
-						<div class="form_line">
-							<div class="label_tit space_between">미성년 자녀 직업 정보 	{{> cp/linkButton bl_class="short_cut sm" bl_text="미성년 자녀의 보험 가입 안내" pop_id="pop_02" }}</div>
-							<div class="radio_group_wrap_ty2" role="radiogroup">
-								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt1" name="radio_gt1" labelname="미취학아동" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt2" name="radio_gt1" labelname="초,중,고등학생" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt3" name="radio_gt1" labelname="대학생 및 대학원생" }}
-								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt4" name="radio_gt1" labelname="기타" }}</div>
+								<div class="radio_group_wrap_ty2" role="radiogroup">
+									{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt1" name="radio_gt1" labelname="배우자" }}
+									{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt2" name="radio_gt1" labelname="부모" }}
+									{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt3" name="radio_gt1" labelname="자녀(만 18세 이하)" }}
+									{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt4" name="radio_gt1" labelname="자녀(만 19세 이상)" }}</div>
 							</div>
-							<!-- e: 자녀(만 18세 이하) 선택 시 표시 -->
 						</div>
 					</div>
+					<div class="form_box">
+						<div class="form_group_wrap">
+							<h3 class="title_h3">피보험자(보장 받으실 분)</h3>
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">주민등록번호</div>
+									<div class="comp_wrap birth">
+										{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" }}
+										<span class="dash">-</span>
+										<div class="id_pass_box">
+											{{> cp/text type="tel" minlength="1" maxlength="1" placeholder="●" inp-title="주민등록번호 뒷1자리 입력" no_del="flase" }}
+											<div class="id_pass">●●●●●●</div>
+										</div>
+									</div>								
+							</div>
+							
+							<div class="form_line">
+								<div class="label_tit">이름</div>
+								{{> cp/text placeholder="입력해주세요" inp-title="이름 입력" }}
+								{{> cp/linkButton bl_class="short_cut" bl_text="계약자 피보험자가 다를 때 가입 안내" pop_id="pop_03"}}
+							</div>						
+
+							<!-- s: 자녀(만 18세 이하) 선택 시 표시 -->
+							<div class="form_line">
+								<div class="label_tit space_between">미성년 자녀 직업 정보 	{{> cp/linkButton bl_class="short_cut sm" bl_text="미성년 자녀의 보험 가입 안내" pop_id="pop_02" }}</div>
+								<div class="radio_group_wrap_ty2" role="radiogroup">
+									{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt1" name="radio_gt1" labelname="미취학아동" }}
+									{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt2" name="radio_gt1" labelname="초,중,고등학생" }}
+									{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt3" name="radio_gt1" labelname="대학생 및 대학원생" }}
+									{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt4" name="radio_gt1" labelname="기타" }}</div>
+								</div>
+								<!-- e: 자녀(만 18세 이하) 선택 시 표시 -->
+							</div>
+						</div>
+					</div>
+					<!-- e: 25-06-12 수정 -->
 
 					<div class="divider_ty1"></div>
 					<h3 class="title_h3">계약자(보험료를 납입하실 분)</h3>
@@ -236,6 +242,26 @@
 </div>
 {{/ popup/popup_full}}
 <!-- e: 가입절차 안내 팝업 -->
+
+<!-- s: 25-06-12 추가 -->
+<!-- s: 자녀 직업 선택 -->
+{{#> popup/popup_bottom popup-id="pop_type02" popup-title="자녀 직업 선택" }}
+<div class="popup_cont">
+	<div class="popup_content">
+    <div class="radio_group_wrap column" role="radiogroup">
+			{{> cp/radio rd-class="rd_btn_s1 xs" rd-id="radio_btn_gt31" name="radio_gt31" labelname="학원생, 재수생, 고시준비생" checked=true }}
+			{{> cp/radio rd-class="rd_btn_s1 xs" rd-id="radio_btn_gt32" name="radio_gt31" labelname="운동선수 (격투기)<p class='sub_g_txt'>이종격투기, 레슬링, 권투, 유도, 검도, 태권도 선수 등</p>" }}
+			{{> cp/radio rd-class="rd_btn_s1 xs" rd-id="radio_btn_gt33" name="radio_gt31" labelname="운동선수 (격투기 제외, 장비 미착용)<p class='sub_g_txt'>축구, 배구, 테니스, 골프 선수 등</p>" }}
+			{{> cp/radio rd-class="rd_btn_s1 xs" rd-id="radio_btn_gt34" name="radio_gt31" labelname="운동선수 (격투기 제외, 장비 착용)<p class='sub_g_txt'>럭비, 펜싱 선수 등</p>" }}
+		</div>
+   
+	</div>
+</div>
+<div class="popup_bottom">
+</div>          
+{{/ popup/popup_bottom}}
+<!-- e: 자녀 직업 선택 -->
+<!-- e: 25-06-12 추가 -->
 
 
 <!-- e: popup area -->
