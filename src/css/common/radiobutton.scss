@@ -297,27 +297,17 @@
 			}
 		}
 	}
-
-
 }
 
 
 .radio_comb {
 	position: relative;
 	display: flex;
-	// min-width: 114px;
-	// min-height: 56px;
-	// width: fit-content;
 	font-size: var(--font-size-label-medium);
 	border-radius: var(--radius-medium3);
 	background: var(--color-element-gray-lighter);
-	// background-color: var(--color-element-gray-lighter);
-	overflow: hidden;
 	transition: all 0.3s;
-
 	&.origin {
-		// border: var(--border-width-static-regular) solid var(--color-border-gray-light);
-
 		&:before {
 			content:'';
 			position: absolute;
@@ -328,8 +318,7 @@
 			height: 100%;
 			border-radius: var(--radius-medium3);
 			border: var(--border-width-static-regular) solid var(--color-border-gray-light);
-			// background-color: var(--color-border-gray-light);
-			// background-color: #fff;
+			background-color: var(--color-element-inverse);
 		}
 		&::after {
 			content:'';
@@ -342,6 +331,15 @@
 			height: 100%;
 			background-color: var(--color-border-gray-light);
 		}
+		&:has(input:checked) {
+			&::before {
+				border: none;
+				background-color: var(--color-element-gray-lighter);
+			}
+			&::after {
+				content: none;
+			}
+		}
 	}
 
 	.inp_radio.rd_btn {
@@ -349,23 +347,16 @@
 		z-index: 2;
 		width: 56px;
 		height: 56px;
-		// overflow: hidden;
-
 		span.label_cont {
-			// z-index: 10;
 			position: relative;
 			width: 100%;
 			height: 100%;
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			// background-color: var(--color-element-inverse);
 		}
 
 		input[type=radio] {
-			// width: 100%;
-			// height: 100%;
-
 			& + label {
 				position: static;
 				width: 56px;
@@ -389,29 +380,14 @@
 				&::after {
 					content: none;
 					border-color: transparent;
-				}
+				}				
 				.label_cont {
 					border-radius: var(--radius-medium3);
-					background-color: #fff;
 				}
 			}
-
-			// & + label:before {
-				
-			// }
-			//before
-
 			&:checked {
 				+ label {
-					// background-color: blue;
 					padding: 0;
-					&::before {
-						// border-radius: var(--radius-medium3);
-						// border: 2px solid var(--color-border-primary);
-						border-radius: 0;
-						background-color: var(--color-element-gray-lighter);
-						
-					}
 					.label_cont {
 						border-radius: var(--radius-medium3);;
 						background-color: var(--color-element-inverse);
@@ -425,11 +401,9 @@
 							border-radius: var(--radius-medium3);
 							border: 2px solid var(--color-border-primary);
 						}
-
 					}
 				}
 			}
-
 
 			&:disabled + label {
 				background-color: transparent;//기존스타일 초기화
@@ -438,39 +412,9 @@
 					background-color: var(--color-element-gray-lighter);
 				}
 			}
-		}//input[type=radio] End
-	}//.inp_radio.rd_btn End
-
-	/*
-	&.active { //.radio_comb.active
-
-		.inp_radio.rd_btn {
-			input[type=radio] {
-				& + label:after { 
-					background-color: transparent;
-				}
-
-				&:checked {	
-					& + label:before {
-						content:'';
-						// border-radius: var(--radius-medium3);
-						border: 2px solid #fff;
-					}
-					& + label:after {
-						border-radius: var(--radius-medium3);
-						border-width: 2px;
-						width: 56px;
-						height: 56px;
-						background: #fff;	
-					}			
-				}//checked End
-			}
 		}
 	}
-	*/
-
-
-}//radio_comb End
+}
 
 
 
