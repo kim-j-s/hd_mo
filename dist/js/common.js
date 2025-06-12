@@ -663,11 +663,11 @@ function simpleInfo(){
 		// console.log('scroll!! : '+ scrollTop);
 
 		if ($('.simple_info_wrap').length) {
-			const $target = $('.simple_info_wrap');
+			const $target = $(this).find('.simple_info_wrap');
 			const targetOffsetTop = $target.offset().top;
-			const $targetChild = $('.simple_info_wrap').children('.simple_info_item');
+			const $targetChild = $(this).find('.simple_info_wrap').children('.simple_info_item');
 			let new_headHeight = 0;
-			let simpleHeight = $('.simple_info_wrap').find('.simple_info_item').innerHeight();
+			let simpleHeight = $(this).find('.simple_info_wrap').find('.simple_info_item').innerHeight();
 
 			// console.log('기준 위치 : ', targetOffsetTop);
 
