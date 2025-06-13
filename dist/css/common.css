@@ -9211,9 +9211,16 @@ strong {
 	font-size: var(--font-size-body-medium);
 }
 .call_info_list .item .title + .cont {
-	margin-top: var(--gap-2);
+	margin-top: 1px;
 }
-.call_info_list .item .cont {
+.call_info_list .item .cont strong {
+	font-size: var(--font-size-heading-small);
+	color: var(--color-text-bolder);
+}
+.call_info_list .item .cont + .desc {
+	margin-top: var(--gap-3);
+}
+.call_info_list .item .cont:not(.no_flex) {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -9222,9 +9229,8 @@ strong {
 	align-items: center;
 	gap: var(--gap-3);
 }
-.call_info_list .item .cont strong {
-	font-size: var(--font-size-heading-small);
-	color: var(--color-text-bolder);
+.call_info_list .item .cont.no_flex .desc {
+	margin-top: var(--gap-2);
 }
 .call_info_list .item .desc {
 	font-size: var(--font-size-body-small);
@@ -10231,7 +10237,6 @@ strong {
 	justify-content: center;
 }
 .radio_comb .inp_radio.rd_btn input[type="radio"] + label {
-	position: static;
 	width: 5.6rem;
 	padding: 1px;
 	border-radius: 0;

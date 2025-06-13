@@ -664,11 +664,14 @@ function simpleInfo(){
 
 		if ($('.simple_info_wrap').length) {
 			const $target = $(this).find('.simple_info_wrap');
-			const targetOffsetTop = $target.offset().top;
+			let targetOffsetTop = null;
 			const $targetChild = $(this).find('.simple_info_wrap').children('.simple_info_item');
 			let new_headHeight = 0;
 			let simpleHeight = $(this).find('.simple_info_wrap').find('.simple_info_item').innerHeight();
-
+			
+			if ($target.length && $target.css('display') !== 'none') {
+				targetOffsetTop = $target.offset().top;
+			}
 			// console.log('기준 위치 : ', targetOffsetTop);
 
 			if($('.gd_middle_b').length){
