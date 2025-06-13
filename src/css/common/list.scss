@@ -1540,16 +1540,26 @@
 		.title {
 			font-size: var(--font-size-body-medium);
 			& + .cont {
-				margin-top: var(--gap-2);
+				margin-top: 1px;
 			}
 		}
 		.cont {
-			display: flex;
-			align-items: center;
-			gap: var(--gap-3);
 			strong {
 				font-size: var(--font-size-heading-small);
 				color: var(--color-text-bolder);
+			}
+			+ .desc {
+				margin-top: var(--gap-3);
+			}
+			&:not(.no_flex) {
+				display: flex;
+				align-items: center;
+				gap: var(--gap-3);
+			}
+			&.no_flex {
+				.desc {
+					margin-top: var(--gap-2);
+				}
 			}
 		}
 		.desc {
