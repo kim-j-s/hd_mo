@@ -14,45 +14,15 @@
 				<button type="button" class="stm_btn stm_r" onclick="$stepper.stepNext();">다음 단계</button>
 			</div>
 			
+			<!-- s: 25-06-13 수정 -->
 			<div class="bi_stepper">
 				<div class="bi_top">
 					<!-- bit -->
 					<div class="bit">
-
-						<!-- 생년월일 -->
-						<div class="bit_inner active" data-pickitem="step1">
-							<!-- s: 25-05-26 수정 -->
-														
-							<p class="bit_inner_text">
-								고객님의 <span class="bold">생년월일</span>을 알려주세요.
-							</p>
-							<!-- e: 25-05-26 수정 -->
-							<div class="bit_btn_scrollx">
-								<button type="button" class="btn_link short_cut sm rd_box">
-									<span class="text">보장내용 자세히 보기</span>
-								</button>
-							</div>
-						</div>
-						<!-- 생년월일 -->
-
-						<!-- 성별 -->
-						<div class="bit_inner active" data-pickitem="step2">
-							<!-- s: 25-05-26 수정 -->
-							
-							<p class="bit_inner_text">
-								고객님의 <span class="bold">성별</span>을 알려주세요
-							</p>
-							<!-- e: 25-05-26 수정 -->
-						</div>
-						<!-- 성별 -->
-
-
 						<!-- 주택유형 -->
-						<div class="bit_inner" data-pickitem="step3">
-							<!-- s: 25-05-26 수정 -->
-							
+						<div class="bit_inner" data-pickitem="step1">
 							<p class="bit_inner_text">
-								<span class="bold">가입하실 주택</span>이 무엇인가요?
+								가입할 <span class="bold">주택의 종류</span>를 선택해주세요
 							</p>
 							<!-- e: 25-05-26 수정 -->
 							<div class="bit_btn_scrollx">
@@ -68,67 +38,16 @@
 					<!-- bit_history -->
 					<div class="bit_history">
 						<div class="bit_history_inner">
-							<button type="button" class="selected_case step1 birth" title="생년월일 수정"></button>
-							<button type="button" class="selected_case step2 gender" title="성별 수정"></button>
-							<button type="button" class="selected_case step3 home" title="주택유형 수정"></button>
+							<button type="button" class="selected_case step1 home" title="주택유형 수정"></button>
 						</div>
 					</div>
 					<!-- bit_history -->
-
 				</div>
 
 
 				<div class="bi_opts_wrap">
-
-					<!-- 생년월일 -->
-					<div class="opts_area" tabindex="0" aria-label="생년월일 8자리를 입력하시면 다음단계로 이동합니다." data-pickitem="step1">
-						<div class="opts_area_item column">
-							<div class="birth_date_field" aria-live="polite"></div>
-							<div class="bi_keypad">
-								<div class="bi_keypad_item">
-									<button type="button" class="keypad_btn">1</button>
-									<button type="button" class="keypad_btn">2</button>
-									<button type="button" class="keypad_btn">3</button>
-									<button type="button" class="keypad_btn keypad_btn_del" aria-label="지우기"></button>
-								</div>
-								<div class="bi_keypad_item">
-									<button type="button" class="keypad_btn">4</button>
-									<button type="button" class="keypad_btn">5</button>
-									<button type="button" class="keypad_btn">6</button>
-									<button type="button" class="keypad_btn keypad_btn_delall">전체삭제</button>
-								</div>
-								<div class="bi_keypad_item">
-									<button type="button" class="keypad_btn">7</button>
-									<button type="button" class="keypad_btn">8</button>
-									<button type="button" class="keypad_btn">9</button>
-									<button type="button" class="keypad_btn">0</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- 생년월일 -->
-
-					<!-- 성별 -->
-					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step2">
-						<div class="opts_area_item">
-							<div class="inp_radio rd_btn_s1">
-								<input type="radio" id="radio11" name="radio1" />
-								<label for="radio11">
-									<span class="label_cont">남성</span>
-								</label>
-							</div>
-							<div class="inp_radio rd_btn_s1">
-								<input type="radio" id="radio12" name="radio1" />
-								<label for="radio12">
-									<span class="label_cont">여성</span>
-								</label>
-							</div>
-						</div>
-					</div>
-					<!-- 성별 -->
-
 					<!-- 주택유형 -->
-					<div class="opts_area" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step3">
+					<div class="opts_area" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step1">
 						<div class="opts_area_item">
 							<div class="inp_radio rd_btn_s3 full">
 								<input type="radio" id="radio21" name="radio2" />
@@ -162,6 +81,7 @@
 					<!-- 주택유형 -->					
 				</div>
 			</div>
+			<!-- e: 25-06-13 수정 -->
 
 
 		</div>
@@ -183,8 +103,10 @@ $(document).ready(function() {
 <div class="popup_cont">
 	<div class="popup_content">
 		<ul class="list_ty3">
-			<li>풍수해∙지진재보험(주택용)은 <strong>가입일 기준 7일 후 보험이 개시됩니다.</strong></li>
-			<li>기상청 기상특보 발령 후 보험가입을 하시면 보상이 되지 않습니다.</li>
+			<!-- s: 25-06-13 수정 -->
+			<li>풍수해∙지진재보험(주택용)은 <strong>가입일로부터 7일 후에 보험이 시작됩니다.</strong></li>
+			<li>기상청 기상특보 발령 후 보험을 가입하시면 보상이 되지 않습니다.</li>
+			<!-- e: 25-06-13 수정 -->
 		</ul>
 	</div>
 </div>
