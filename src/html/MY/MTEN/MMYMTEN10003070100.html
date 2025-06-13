@@ -1,0 +1,38 @@
+{{#> layout/default page-title="자동차 소유자 정보 | 마이페이지"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-active=true popup-id="pop_type01" popup-title="자동차 소유자 정보" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="popup_content_top">
+			<h2 class="title_h2">피보험자/소유자<br><strong>정보를 확인</strong>해 주세요</h2>
+		</div>
+
+		<!-- s: 소유자 불일치 -->
+		<div class="form_box">
+			<h3 class="car_title_h1">
+				피보험자(자동차 소유자) 정보 선택
+			</h3>
+			<p class="info_text">현재 가입하시려는 자동차에 대한 보험개발원 조회결과, 자동차 소유자 정보에 대한 확인이 필요합니다.</p>
+			<div class="radio_group_wrap column">
+				{{> cp/radio rd-id="radio03-1" name="radio03" rd-class="lg" labelname="매매(명의이전 예정) - 신차, 중고차 구입 등" labelcont="신차 또는 중고차를 구입한 경우<ul class='list_ty5'><li>매수한 날로부터 15일 이내 이전등록이 필요합니다.</li></ul>"}}
+				{{> cp/radio rd-id="radio03-2" name="radio03" rd-class="lg" labelname="공동명의" }}
+				{{> cp/radio rd-id="radio03-3" name="radio03" rd-class="lg" labelname="리스 계약(피보험자=리스계약자)" }}
+				{{> cp/radio rd-id="radio03-4" name="radio03" rd-class="lg" labelname="기타(그 외 사유 등) - 종교, 비영리법인 등" }}
+			</div>
+			<p class="info_text">매매(명의 이전 예정) 외 다른 사유 선택시 소유자 정보추가 확인이 필요할 수 있습니다.<br>고객센터(1899-6782)로 문의해 주세요.</p>
+		</div>
+		<!-- e: 소유자 불일치 -->
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" b-text="다음" disabled=true }}
+	  <!-- s: 입력이 완료되면 활성화 -->
+		<!--{{> cp/button type="1" size="1" b-text="다음" }}-->
+		<!-- e: 입력이 완료되면 활성화 -->
+	</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+{{/ layout/default }}

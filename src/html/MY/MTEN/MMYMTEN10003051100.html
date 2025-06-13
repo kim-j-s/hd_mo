@@ -1,0 +1,44 @@
+<!---
+화면번호 : MPRMTPS10004001100
+경로 : 3.자동차 상세정보 > 3-1.자동차 상세정보 입력 > 차종 코드 입력
+-->
+{{#> layout/default page-title="자동차 상세정보 | 상품"}}
+
+<!-- s: Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="차종 코드 선택"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">차종선택</div>
+				<div class="radio_group_wrap column" role="radiogroup">
+					{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt1_1" name="radio_gt1" labelname="화물-1종(5통초과)" }}
+					{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt1_2" name="radio_gt1" labelname="덤프트럭-의무(15통이하)" }}
+					{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt1_3" name="radio_gt1" labelname="덤프트럭-의무(15톤초과)" }}
+				</div>
+			</div>
+			<div class="form_line">
+				<div class="label_tit">연료형태</div>
+				<div class="radio_group_wrap column" role="radiogroup">
+					{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt2_1" name="radio_gt2" labelname="휘발유(가솔린)" }}
+					{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt2_2" name="radio_gt2" labelname="경유(디젤)" }}
+					{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt2_3" name="radio_gt2" labelname="하이브리드" }}
+				</div>
+				<ul class="list_ty2">
+					<li>차종 선택 관련 문의는 콜센터 (1867-6782)를 이용해 주세요.</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인"}}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+
+<!-- e: Bottom 팝업 -->
+
+{{/ layout/default }}
