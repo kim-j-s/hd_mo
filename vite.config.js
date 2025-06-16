@@ -152,6 +152,8 @@ export default defineConfig({
       name: 'delete-svn-folder-recursively',
       closeBundle() {
         const deleteSVNFolderRecursively = (dir) => {
+					if (!fs.existsSync(dir)) return;
+
           const files = fs.readdirSync(dir);
           files.forEach(file => {
             const currentPath = path.join(dir, file);
@@ -169,7 +171,9 @@ export default defineConfig({
         };
 
         // 'dist' 디렉토리 내 모든 서브디렉토리를 탐색하여 .svn 폴더 삭제
-        deleteSVNFolderRecursively(path.resolve(__dirname, 'dist'));
+				const distPath = path.resolve(__dirname, 'dist');
+				deleteSVNFolderRecursively(distPath);
+        // deleteSVNFolderRecursively(path.resolve(__dirname, 'dist'));
       },
     },
   ],
