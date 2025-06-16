@@ -2,12 +2,6 @@
 
 	<div class="guide_h1">선택목록 가이드</div>
 
-	<div class="guide_h4">선택 버튼 - active 확인</div>
-	{{> cp/selectitem si_ph="선택해주세요." si_title="연도 선택 팝업 호출" si_popup="pop_type01"}}
-
-	<div class="guide_h4">선택 버튼 - active 확인 - css hover 추가</div>
-	{{> cp/selectitem si_ph="선택해주세요." si_title="연도 선택 팝업 호출" si_popup="pop_type02"}}
-
 
 	<div class="guide_h4">선택 버튼 - 크기별</div>
 	<div class="guide_discription">height 56</div>
@@ -80,58 +74,7 @@
 	{{/ popup/popup_bottom}}
 	<!-- e: pop_type01 -->
 
-	<!-- s: pop_type02 -->
-	{{#> popup/popup_bottom popup-id="pop_type02" popup-title="팝업 타이틀"}}
-	<div class="popup_cont">
-		<div class="popup_content">
-			<div class="opt_select_list opt_case3 hover_add">
-				<div role="button" tabindex="0" class="option"><span class="text">항목 1</span></div>
-				<div role="button" tabindex="0" class="option"><span class="text">항목 2</span></div>
-				<div role="button" tabindex="0" class="option"><span class="text">항목 3</span></div>
-				<div role="button" tabindex="0" class="option"><span class="text">항목 4</span></div>
-				<div role="button" tabindex="0" class="option"><span class="text">항목 5</span></div>
-				<div role="button" tabindex="0" class="option"><span class="text">항목 6</span></div>
-				<div role="button" tabindex="0" class="option"><span class="text">항목 7</span></div>
-				<div role="button" tabindex="0" class="option"><span class="text">항목 8</span></div>
-				<div role="button" tabindex="0" class="option"><span class="text">항목 9</span></div>
-				<div role="button" tabindex="0" class="option"><span class="text">항목 10</span></div>
-				<div role="button" tabindex="0" class="option"><span class="text">항목 11</span></div>
-				<div role="button" tabindex="0" class="option"><span class="text">항목 12</span></div>
-				<div role="button" tabindex="0" class="option"><span class="text">항목 13</span></div>
-				<div role="button" tabindex="0" class="option"><span class="text">항목 14</span></div>
-				<div role="button" tabindex="0" class="option"><span class="text">항목 15</span></div>
-				<div role="button" tabindex="0" class="option"><span class="text">항목 16</span></div>
-				<div role="button" tabindex="0" class="option"><span class="text">항목 17</span></div>
-			</div>
-		</div>
-	</div>
-	{{/ popup/popup_bottom}}
-	<!-- e: pop_type02 -->
-
 	<!-- e: popup area -->
-
-
-	<script>
-		$(function(){
-			$(document).on('click', '.opt_select_list.opt_case3 .option', function(e){
-				$(this).closest('.opt_select_list').find('.option').removeClass('active').removeAttr('title');
-				$(this).addClass('active').attr('title', '선택됨');
-			});
-		});
-	</script>
-
-	<style lang="scss">
-		.opt_case3 {
-			&.hover_add {
-				.option {
-					&:hover {
-						background-color: #f0f0f0;
-					}
-				}
-			}
-
-		}
-	</style>
 
 
 
