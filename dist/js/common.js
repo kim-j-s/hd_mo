@@ -616,6 +616,11 @@
 	});
 
 
+	// 선택목록 active 처리
+	$DOM.on('click', '.opt_select_list.opt_case3 .option', function(e){
+		$(this).closest('.opt_select_list').find('.option').removeClass('active').removeAttr('title');
+		$(this).addClass('active').attr('title', '선택됨');
+	});
 
 
 })();
