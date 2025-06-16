@@ -1,0 +1,54 @@
+{{#> layout/default page-title="가입완료 | 상품"}}
+	<div id="wrap" class="wrap">
+    {{> layout/header no-header=true }}
+		<div id="container" class="container">
+			<div class="content">
+				<div class="process_info_area">
+					<div class="complete_info" aria-hidden="true">
+						<lottie-player src="../../../json/lottie_complete2.jso" background="transparent" speed="1" autoplay></lottie-player>
+					</div>
+					<h2 class="process_title">
+            피보험자 <strong>**해상님의 보험료 산출내역이 저장</strong>되었습니다
+					</h2>
+				</div>
+
+        <div class="info_gray">
+          <ul class="list_depth">
+            <li>계약자 명의의 결제수단으로만 보험료 납입이 가능하며, 계약체결 전 보험계약자의 동의(전자서명)가 필요합니다.</li>
+            <li>계약자에게 문자를 발송하여 보험료 결제 및 계약체결을 진행하실 수 있습니다.</li>
+          </ul>
+        </div>
+
+        <h3 class="title_h3">계약자 정보</h3>
+        <div class="info_gray ty2">
+          <dl>
+            <dt>계약자 이름</dt>
+            <dd>김*수</dd>
+          </dl>
+          <dl>
+            <dt>주민등록번호</dt>
+            <dd>900101-1******</dd>
+          </dl>
+        </div>
+
+        <div class="form_group_wrap">
+          <div class="form_line">
+            <div class="label_tit">계약자의 휴대폰번호</div>
+            {{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+          </div>
+        </div>
+			</div>
+		</div>
+
+    <div class="bottom_fix_wrap">
+      <div class="btn_area">
+        {{> cp/button type="1" size="1" b-text="문자전송" }}
+      </div>
+    </div>
+	</div>
+
+	<!-- s: popup area -->
+	 
+	<!-- e: popup area -->
+
+{{/ layout/default }}

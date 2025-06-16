@@ -903,12 +903,13 @@
 		border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 		background: var(--color-surface-white-subtle);
 		border-radius: var(--radius-large2);
-		cursor: pointer;
+		
 
 		.item_inner {
       display: flex;
 			flex-direction: column;
 			gap: var(--gap-5);
+			cursor: pointer;
 		}
 
 		.img_box {
@@ -1023,6 +1024,7 @@
 		}
 
 		.item_btn_wrap {
+			margin-top: var(--gap-5);
 			display: flex;
 			align-items: center;
 			gap: var(--gap-3);
@@ -1086,7 +1088,10 @@
 
 			//이벤트 종료 케이스(samll)
 			&.end {
-				cursor: default;
+				.item_inner {
+					cursor: default;
+				}
+			
 				img {
 					filter: grayscale(100%);
 				}
