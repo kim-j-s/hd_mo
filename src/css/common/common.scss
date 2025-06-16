@@ -433,7 +433,7 @@ strong {
 
 
 
-//목록이나 데이터가 존재하지 않는 경우
+// 목록이나 데이터가 존재하지 않는 경우
 .no_list_area {
 	display: flex;
 	justify-content: center;
@@ -455,6 +455,15 @@ strong {
 		color: var(--color-text-disabled-on);
 		&.tac {
 			text-align: center;
+		}
+	}
+}
+
+// 목록 미노출 간격 재정의
+.card_item_wrap {
+	&[style*="display: none"] {
+		+ .no_list_area {
+			margin-top: var(--gap-8);
 		}
 	}
 }
