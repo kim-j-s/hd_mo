@@ -1,0 +1,39 @@
+<!---
+화면번호 : MPRMTPS10002031200
+경로 : 3.자동차 상세정보 > 3-1.자동차 상세정보 입력 > 외제차 차량가액 입력
+-->
+{{#> layout/default page-title="자동차 상세정보 | 상품"}}
+
+<!-- s: Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="외제차의 차량가액 입력하시겠어요?"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">차량가액</div>
+				{{> cp/text type="tel" class="price" r-text="만원" inp-title="차량가액 입력" value="0" placeholder="금액을 입력하세요"}}
+			</div>
+		</div>
+
+		<!-- s: 꼭 알아두세요 -->
+		{{#> cp/notice dp-active=true }}
+		<ul class="list_ty1">
+			<li>선택하신 차명은 가액이 정해지지 않은 유사차명으로 고객님이 직접 차량가액을 입력하셔야 합니다.</li>
+			<li>외제차는 유사차명의 경우, <strong class="point">심사대상으로 차량가액 확인을 위한 서류(신차제작증, 수입신고필증, 차량등록증 등)가 필요</strong>합니다.</li>
+		</ul>
+		{{/ cp/notice }}
+		<!-- e: 꼭 알아두세요 -->
+	</div>
+</div>
+
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="3" size="2" b-text="취소"}}
+		{{> cp/button type="1" size="2" b-text="차량가액 입력"}}
+	</div>
+</div>
+ 
+{{/ popup/popup_bottom}}
+<!-- e: Bottom 팝업 -->
+
+{{/ layout/default }}
