@@ -1,0 +1,52 @@
+{{#> layout/default page-title="할인특약 선택 | 마이페이지"}}
+<!-- s: 첨단안전장치 할인특약 자세히 보기 bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="<strong>차량대체 전 아래사항</strong>을 확인해주세요"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<ul class="form_list">
+			<li>
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">
+							대체 전 차량을 양도/말소 하였습니다. (예정 포함)
+						</div>
+						<div class="radio_group_wrap" role="radiogroup">
+							{{> cp/radio rd-class="rd_btn" rd-id="notification01_01" name="notification01" labelname="예" }}
+							{{> cp/radio rd-class="rd_btn" rd-id="notification01_02" name="notification01" labelname="아니요" }}
+						</div>
+					</div>
+				</div>
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">
+							대체 전/후 차량의 소유주(피보험자)가 동일합니다.
+						</div>
+						<div class="radio_group_wrap" role="radiogroup">
+							{{> cp/radio rd-class="rd_btn" rd-id="notification02_01" name="notification02" labelname="예" }}
+							{{> cp/radio rd-class="rd_btn" rd-id="notification02_02" name="notification02" labelname="아니요" }}
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">
+							대체 후 차량이 10인승 이하 승용차입니다.
+						</div>
+						<div class="radio_group_wrap" role="radiogroup">
+							{{> cp/radio rd-class="rd_btn" rd-id="notification03_01" name="notification02" labelname="예" }}
+							{{> cp/radio rd-class="rd_btn" rd-id="notification03_02" name="notification02" labelname="아니요" }}
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">{{> cp/button type="1" size="2" b-text="다음" disabled=true}}</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 첨단안전장치 할인특약 자세히 보기 bottom 팝업 -->
+{{/ layout/default }}
