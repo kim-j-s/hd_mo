@@ -1,46 +1,88 @@
-
 {{#> layout/default page-title="보험료 확인 | 상품"}}
-	<!-- s: popup area -->
-		<!-- s: Bottom 팝업 -->
-		{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="Hi-Biz플랜 가입 안내" }}
-		<div class="popup_cont">
-			<div class="popup_content">
-                <div class="info_cont">
-                    <h3>Hi-Biz플랜 혜택</h3>
-                    <p>법인 임직원에 대한 차별화된 보장</p>
-                    <ul class="list_depth">
-                        <li>대물 7억 이상, 자동차상해 사망 7억/부상 1억 이상, 무보험차 상해 7억 등 최고 수준 보장</li>
-                        <li>산재보험과 중복보상 가능</li>
-                        <li>업계 유일 법인 전용 고보장 특약
-                            <ul>
-                                <li>사망/장애/부상 위로금, 상급병실료, 성형치아보철비용 보상</li>
-                            </ul>
-                        </li>
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_full" popup-active=true }}
+<div class="popup_cont">
+    <div class="popup_content">
+        <!-- s: popup_content_top -->
+        <div class="popup_content_top">
+            <h2 class="title_h2">
+                <strong>Hi-Biz플랜 추천</strong>
+            </h2>
+        </div>
+        <!-- e: popup_content_top -->
+        <div class="info_cont">
+            <h2 class="pop_title_h1">법인 임직원에 대한 차별화된 보장</h2>
+            <ul class="list_depth">
+                <li>산재보험과 중복보상 가능</li>
+                <li>업계 유일 법인 전용 고보장 특약
+                    <ul>
+                        <li>사망/장애/부상 위로금, 상급병실료, 성형치아보철비용 보상</li>
                     </ul>
-                    <h3>Hi-Biz플랜 내용</h3>
-                    <p>아래 기본담보 가입금액은 플랜 가입 시에만 가입 가능</p>
-                    <ul class="list_depth">
-                        <li>기본 담보
-                            <ul>
-                                <li>대물 7억, 자동차상해 사망 7억/부상 1억, 무보험차상해 7억</li>
-                            </ul>    
-                        </li>
-                        <li>특별약관
-                            <ul>
-                                <li>임직원 사고보상 확대특약, 임직원 치료비 지원담보 특약</li>
-                            </ul>
-                        </li>
-                        <li>자동차상해 등 기본담보는 가입금액 한도 내 보상</li>
-                    </ul>
-                </div>
-			</div>
-		</div>
-		<div class="popup_bottom">
-			<div class="btn_area">
-				{{> cp/button type="1" size="2" b-text="확인"}}
-			</div>
-		</div>
-		{{/ popup/popup_bottom}} 
-		<!-- e: Bottom 팝업 -->
-	<!-- e: popup area -->
+                </li>
+            </ul>
+
+            <div class="radio_group_wrap_ty2" role="radiogroup">
+                {{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt1" name="radio_gt1" labelname="고보장" }}
+                {{> cp/radio rd-class="rd_btn" rd-id="radio_btn_gt2" name="radio_gt1" labelname="기본보장" }}
+            </div>
+            <div class="info_gray">
+                <!-- s: 고보장 -->
+                <dl>
+                    <dt>대물배상</dt>
+                    <dd>20억원</dd>
+                </dl>
+                <dl>
+                    <dt>자동차상해</dt>
+                    <dd>10억원/5억원</dd>
+                </dl>
+                <dl>
+                    <dt>무보험차상해</dt>
+                    <dd>7억원</dd>
+                </dl>
+                <!-- e: 고보장 -->
+                <!-- s: 기본보장 -->
+                <dl>
+                    <dt>대물배상</dt>
+                    <dd>7억원</dd>
+                </dl>
+                <dl>
+                    <dt>자동차상해</dt>
+                    <dd>7억원/1억원</dd>
+                </dl>
+                <dl>
+                    <dt>무보험차상해</dt>
+                    <dd>7억원</dd>
+                </dl>
+                <!-- e: 기본보장 -->
+                <dl>
+                    <dt>부가담보</dt>
+                    <dd>
+                        임직원사고보장확대특약<br>
+                        임직원치료비지원특약<br>
+                        전기자동차 배터리 신품가약보상 특약<br>
+                        전기자동차 초과수리비용 지원 특약
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="popup_bottom">
+    <div class="total_price_display_ty1">
+        <p class="price_label">고보장</p>
+        <!-- <p class="price_label">기본보장</p> -->
+        <p class="price_val">
+            <strong>
+                <span class="primary">53,960만원</span>
+            </strong>
+        </p>
+    </div>
+    <div class="btn_area">
+        {{> cp/button type="3" size="2" b-text="기존 담보 유지"}}
+        {{> cp/button type="1" size="2" b-text="플랜 적용하기"}}
+    </div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
 {{/ layout/default }}
