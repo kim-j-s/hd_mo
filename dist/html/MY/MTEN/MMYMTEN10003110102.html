@@ -40,7 +40,7 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>자동차 특약할인 | 상품 - 현대해상 다이렉트</title>
+		<title>증빙자료등록 | 상품 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -48,7 +48,7 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body>
-		<!-- s: ECO마일리지 특약 Full 팝업 -->
+		<!-- s: ECO마일리지 증빙자료(사진등록) Full 팝업 -->
 		<div class="popup_wrap full active" id="pop_type01" role="dialog" aria-hidden="false">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
@@ -58,87 +58,472 @@
 						<div class="popup_content">
 							<!-- s: popup_content_top -->
 							<div class="popup_content_top">
-								<h2 class="title_h2">
-									<strong>ECO마일리지 특약</strong>
-								</h2>
-								<p class="text_sub">연간 18,000km 이하 주행 시, 주행거리 및 차종에 따라 <strong class="point">2~46%</strong> 할인 금액을 환급해 드려요</p>
+								<h2 class="title_h2">ECO마일리지 가입을 위한<br /><strong>사진을 등록</strong>해 주세요</h2>
 							</div>
 							<!-- e: popup_content_top -->
 
-							<h3 class="title_h3">특약상세정보</h3>
-							<div class="info_cont">
-								<ul class="list_depth">
-									<li>
-										연간 자동차 주행거리에 따라 보험료의 일부를 보험기간 종료 시 환급해주는 특약입니다.
-										<div class="table_wrap">
-											<table class="table">
-												<caption>
-													연간 주행거리, 할인율 제공
-												</caption>
-												<colgroup>
-													<col style="width: 50%" />
-													<col style="width: 50%" />
-												</colgroup>
-												<thead>
-													<tr>
-														<th scope="col">연간 주행거리</th>
-														<th scope="col">할인율</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>1,000km 이하</td>
-														<td>45%</td>
-													</tr>
-													<tr>
-														<td>3,000km 이하</td>
-														<td>36%</td>
-													</tr>
-													<tr>
-														<td>5,000km 이하</td>
-														<td>29%</td>
-													</tr>
-													<tr>
-														<td>8,000km 이하</td>
-														<td>22%</td>
-													</tr>
-													<tr>
-														<td>10,000km 이하</td>
-														<td>18%</td>
-													</tr>
-													<tr>
-														<td>12,000km 이하</td>
-														<td>8%</td>
-													</tr>
-													<tr>
-														<td>15,000km 이하</td>
-														<td>5%</td>
-													</tr>
-													<tr>
-														<td>18,000km 이하</td>
-														<td>2%</td>
-													</tr>
-												</tbody>
-											</table>
+							<!-- 사진 마일리지인 경우 노출-->
+							<div class="table_wrap">
+								<table class="table">
+									<caption>
+										캡션값
+									</caption>
+									<colgroup>
+										<col style="width: 40%" />
+										<col style="width: 30%" />
+										<col style="width: 30%" />
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row" rowspan="2">대체 전 차량번호<br />18루 **22</th>
+											<td>최초 주행거리</td>
+											<td>143,987km</td>
+										</tr>
+										<tr>
+											<td><strong class="point">최종 주행거리</strong></td>
+											<td><strong class="point">입력예정</strong></td>
+										</tr>
+										<tr>
+											<th scope="row" rowspan="2">대체 후 차량번호<br />29머 **62</th>
+											<td><strong class="point">최초 주행거리</strong></td>
+											<td><strong class="point">5km</strong></td>
+											<!-- 조회실패 
+						            <td>5km</td>
+						            -->
+										</tr>
+										<tr>
+											<td>최종 주행거리</td>
+											<td>만기 시 등록</td>
+											<!-- 조회실패 
+						            <td>만기 시 등록</td>
+						            -->
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="tab_wrap">
+								<div class="tab_wrap_list_ty1" role="tablist"><button type="button" class="tab_btn active" role="tab" aria-selected="true" aria-controls="tabPanel01" id="tab01">직접 사진 등록</button> <button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanel02" id="tab02">문자로 링크 받기</button></div>
+
+								<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
+									<h3 class="title_h3"><span class="disabled_on">선택</span> ECO마일리지 특약사진등록</h3>
+									<p class="text_sub">ECO마일리지 특약 가입을 위한 계기판 사진을 지금 등록하시겠습니까?</p>
+									<div class="radio_group_wrap column" role="radiogroup">
+										<!-- case(1) 신차일 경우-->
+										<div class="inp_radio">
+											<input type="radio" id="radio_g_eco1_1" name="radio_g_eco1" />
+											<label for="radio_g_eco1_1">
+												<span class="label_cont">신차 자동등록<span class="sub_g_txt">책임개시일 기준 5km, 사진첨부 불필요</span></span>
+											</label>
 										</div>
-									</li>
-									<li>가입에 따른 추가보험료 부담은 없으며 18,000km를 초과해도 어떤 불이익도 없으니 안심하세요.</li>
-									<li>
-										증권에 기재된 약정주행거리와 상관없이 실제 운행한 '연간환산 주행거리'에 따라 보험료를 환급 해드려요.
-										<ul>
-											<li>단, 하이카서비스 등 일부특약의 보험료는 할인 적용에서 제외</li>
-										</ul>
-									</li>
-									<li>사진 방식으로 마일리지 특약에 가입한 경우 <strong>운행정보확인장치 방식으로 변경할 수 없어요.</strong><br />운행정보확인장치 서비스 개통 준비 중이라면 마일리지 특약을 제외해 보험을 가입해주세요.</li>
-									<li>개통이 완료되면 다이렉트 고객센터(1899-6782 → 내선2번)로 연락해 운행정보확인장치 방식으로 가입을 진행해주세요.</li>
-								</ul>
+										<div class="inp_radio">
+											<input type="radio" id="radio_g_eco1_2" name="radio_g_eco1" />
+											<label for="radio_g_eco1_2">
+												<span class="label_cont">지금 등록</span>
+											</label>
+										</div>
+										<div class="inp_radio">
+											<input type="radio" id="radio_g_eco1_3" name="radio_g_eco1" />
+											<label for="radio_g_eco1_3">
+												<span class="label_cont">나중에 등록<span class="sub_g_txt">차량대체일로부터 7일 이내</span></span>
+											</label>
+										</div>
+										<!-- case(2) 중고차 신규가입의 경우-->
+										<div class="inp_radio">
+											<input type="radio" id="radio_g_eco2_1" name="radio_g_eco2" />
+											<label for="radio_g_eco2_1">
+												<span class="label_cont">지금 등록</span>
+											</label>
+										</div>
+										<div class="inp_radio">
+											<input type="radio" id="radio_g_eco2_2" name="radio_g_eco2" />
+											<label for="radio_g_eco2_2">
+												<span class="label_cont">나중에 등록<span class="sub_g_txt">차량대체일로부터 7일 이내</span></span>
+											</label>
+										</div>
+									</div>
+
+									<div class="space_list_ty2">
+										<div class="acd_item acd_item_ty2">
+											<div class="acd_head">
+												<button type="button" class="acd_btn" aria-expanded="false">
+													<span class="picture_info_top">
+														<span class="status">
+															<span class="title">대체 전 차량번호판 사진</span>
+														</span>
+														<!-- s: 등록한 이미지 있을 시 -->
+														<span class="preview" aria-hidden="true">
+															<img src="../../../images/content/mtps/img_MPRMTPS10005010000_01.png" alt="등록한 차량번호판 장착 사진" />
+														</span>
+														<!-- e: 등록한 이미지 있을 시 -->
+													</span>
+													<span>상세보기</span>
+												</button>
+											</div>
+											<div class="acd_cont">
+												<div class="inner">
+													<ul class="list_ty3 no_bullet">
+														<li>차량번호 사진을 등록해주세요.</li>
+													</ul>
+
+													<!-- s: 이미지 파일 붙는 영역 -->
+													<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+													<div class="file_attach_box">
+														<div class="file_thumbnail">
+															<img src="../../../images/content/mtps/img_MPRMTPS10005010000_01_before.png" alt="등록 전 차량번호판 예시 이미지" />
+														</div>
+													</div>
+
+													<div class="btn_area center">
+														<div class="file_btn">
+															<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png" />
+															<label for="file">
+																<span class="hd_btn hd_btn_ty_3 hd_btn_s_3">
+																	<i class="hd_icon pictureSvg"></i>
+																	사진 등록
+																</span>
+															</label>
+														</div>
+														<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_3">
+															<i class="hd_icon carmeraSvg"></i>
+															<span class="text">사진 촬영</span>
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="acd_item acd_item_ty2">
+											<div class="acd_head">
+												<button type="button" class="acd_btn" aria-expanded="false">
+													<span class="picture_info_top">
+														<span class="status">
+															<span class="title">대체 후 차량번호판 사진</span>
+														</span>
+														<!-- s: 등록한 이미지 있을 시 -->
+														<!-- <span class="preview" aria-hidden="true">
+						                    <img src="../../../images/content/mtps/img_MPRMTPS10005010000_01.png" alt="등록한 차량번호판 장착 사진">
+						                  </span> -->
+														<!-- e: 등록한 이미지 있을 시 -->
+													</span>
+													<span>상세보기</span>
+												</button>
+											</div>
+											<div class="acd_cont">
+												<div class="inner">
+													<ul class="list_ty3 no_bullet">
+														<li>차량번호 사진을 등록해주세요.</li>
+													</ul>
+
+													<!-- s: 이미지 파일 붙는 영역 -->
+													<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+													<div class="file_attach_box">
+														<div class="file_thumbnail">
+															<img src="../../../images/content/mtps/img_MPRMTPS10005010000_01_before.png" alt="등록 전 차량번호판 예시 이미지" />
+														</div>
+													</div>
+
+													<div class="btn_area center">
+														<div class="file_btn">
+															<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png" />
+															<label for="file">
+																<span class="hd_btn hd_btn_ty_3 hd_btn_s_3">
+																	<i class="hd_icon pictureSvg"></i>
+																	사진 등록
+																</span>
+															</label>
+														</div>
+														<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_3">
+															<i class="hd_icon carmeraSvg"></i>
+															<span class="text">사진 촬영</span>
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="acd_item acd_item_ty2">
+											<div class="acd_head">
+												<button type="button" class="acd_btn" aria-expanded="false">
+													<span class="picture_info_top">
+														<span class="status">
+															<span class="title">대체 전 계기판 사진</span>
+														</span>
+													</span>
+													<span>상세보기</span>
+													<!-- s: 등록한 이미지 있을 시 -->
+													<!-- <span class="preview" aria-hidden="true">
+						                  <img src="../../../images/content/mtps/img_MPRMTPS10005010000_02.png" alt="등록한 블랙박스 장착 사진">
+						                </span> -->
+													<!-- e: 등록한 이미지 있을 시 -->
+												</button>
+											</div>
+											<div class="acd_cont">
+												<div class="inner">
+													<div class="form_group_wrap">
+														<div class="form_line">
+															<div class="label_tit">최종 주행거리 기준일</div>
+															<!-- 당일로 세팅(수정불가) -->
+															<div class="input_text calendar">
+																<div class="inp">
+																	<input type="tel" class="inp_picker" value="2025.01.01" disabled title="날짜를 입력해주세요" />
+																	<button type="button" class="del"><span class="blind">텍스트 삭제</span></button><button type="button" class="btn calendar_call" title="날짜 선택"></button>
+																</div>
+															</div>
+														</div>
+														<div class="form_line">
+															<div class="label_tit">최종 주행거리</div>
+															<div class="input_text comma">
+																<div class="inp">
+																	<input type="tel" placeholder="숫자만" title="주행거리 입력" />
+																	<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+																</div>
+																<div class="int_txt right">km</div>
+															</div>
+														</div>
+
+														<!-- s: 이미지 파일 붙는 영역 -->
+														<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+														<div class="form_line">
+															<div class="file_attach_box">
+																<div class="file_thumbnail">
+																	<img src="../../../images/content/mtps/img_MPRMTPS10005010000_100_before.png" alt="등록 전 계기판 이미지" />
+																</div>
+															</div>
+
+															<div class="btn_area center">
+																<div class="file_btn">
+																	<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png" />
+																	<label for="file">
+																		<span class="hd_btn hd_btn_ty_3 hd_btn_s_3">
+																			<i class="hd_icon pictureSvg"></i>
+																			사진 등록
+																		</span>
+																	</label>
+																</div>
+																<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_3">
+																	<i class="hd_icon carmeraSvg"></i>
+																	<span class="text">사진 촬영</span>
+																</button>
+															</div>
+
+															<ul class="list_ty2">
+																<li>운행거리 증빙을 위한 계기판 사진은 ODO(총 운행거리 사진)만 인정되며 리셋된 트립 사진은 인정되지 않습니다.</li>
+																<li>이미지 등록이 되지 않을 경우 대표콜센터(1588-5656)를 통해 중도 가입하실 수 있습니다.</li>
+																<li>중도가입 시 보험료 할인은 가입일로부터 보험 종료일까지 일할 계산되어 적용됩니다.</li>
+															</ul>
+														</div>
+													</div>
+													<!--//form_group_wrap-->
+												</div>
+											</div>
+										</div>
+										<div class="acd_item acd_item_ty2">
+											<div class="acd_head">
+												<button type="button" class="acd_btn" aria-expanded="false">
+													<span class="picture_info_top">
+														<span class="status">
+															<span class="title">대체 후 계기판 사진</span>
+														</span>
+													</span>
+													<span>상세보기</span>
+													<!-- s: 등록한 이미지 있을 시 -->
+													<!-- <span class="preview" aria-hidden="true">
+						                  <img src="../../../images/content/mtps/img_MPRMTPS10005010000_02.png" alt="등록한 블랙박스 장착 사진">
+						                </span> -->
+													<!-- e: 등록한 이미지 있을 시 -->
+												</button>
+											</div>
+											<div class="acd_cont">
+												<div class="inner">
+													<div class="form_group_wrap">
+														<div class="form_line">
+															<div class="label_tit">최종 주행거리 기준일</div>
+															<!-- 당일로 세팅(수정불가) -->
+															<div class="input_text calendar">
+																<div class="inp">
+																	<input type="tel" class="inp_picker" value="2025.01.01" disabled title="날짜를 입력해주세요" />
+																	<button type="button" class="del"><span class="blind">텍스트 삭제</span></button><button type="button" class="btn calendar_call" title="날짜 선택"></button>
+																</div>
+															</div>
+														</div>
+														<div class="form_line">
+															<div class="label_tit">최종 주행거리</div>
+															<div class="input_text comma">
+																<div class="inp">
+																	<input type="tel" placeholder="숫자만" title="주행거리 입력" />
+																	<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+																</div>
+																<div class="int_txt right">km</div>
+															</div>
+														</div>
+
+														<!-- s: 이미지 파일 붙는 영역 -->
+														<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+														<div class="form_line">
+															<div class="file_attach_box">
+																<div class="file_thumbnail">
+																	<img src="../../../images/content/mtps/img_MPRMTPS10005010000_100_before.png" alt="등록 전 계기판 이미지" />
+																</div>
+															</div>
+
+															<div class="btn_area center">
+																<div class="file_btn">
+																	<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png" />
+																	<label for="file">
+																		<span class="hd_btn hd_btn_ty_3 hd_btn_s_3">
+																			<i class="hd_icon pictureSvg"></i>
+																			사진 등록
+																		</span>
+																	</label>
+																</div>
+																<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_3">
+																	<i class="hd_icon carmeraSvg"></i>
+																	<span class="text">사진 촬영</span>
+																</button>
+															</div>
+
+															<ul class="list_ty2">
+																<li>운행거리 증빙을 위한 계기판 사진은 ODO(총 운행거리 사진)만 인정되며 리셋된 트립 사진은 인정되지 않습니다.</li>
+																<li>이미지 등록이 되지 않을 경우 대표콜센터(1588-5656)를 통해 중도 가입하실 수 있습니다.</li>
+																<li>중도가입 시 보험료 할인은 가입일로부터 보험 종료일까지 일할 계산되어 적용됩니다.</li>
+															</ul>
+														</div>
+													</div>
+													<!--//form_group_wrap-->
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- s: 꼭 알아두세요 -->
+									<div class="bottom_fix_notice">
+										<div class="acd_item">
+											<div class="acd_head active">
+												<button type="button" class="acd_btn" aria-expanded="true"><span>꼭 알아두세요</span></button>
+											</div>
+											<div class="acd_cont">
+												<div class="inner" style="display: block">
+													<ul class="list_depth">
+														<li>부적합한 사진(허위 및 해당 사진이 아닌 경우)으로 변경하실 경우, 특약은 무효가 되며 할인보험료를 환입하셔야 합니다.</li>
+														<li>사진은 10MB이하의 JPG, JPEG, GIF, PNG 파일만 등록이 가능합니다.</li>
+														<li>이미지 등록이 되지 않을 경우 대표콜센터(1588-5656)로 문의바랍니다.</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- e: 꼭 알아두세요 -->
+								</div>
+
+								<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
+									<div class="info_gray ty2">
+										<p class="info_text">문자 내 링크를 통해 계약변경에 필요한 사진을 등록하실 수 있습니다.</p>
+									</div>
+
+									<div class="form_group_wrap">
+										<div class="form_line">
+											<div class="label_tit">휴대폰번호</div>
+											<div class="input_text phone">
+												<div class="int_txt left">010</div>
+												<div class="inp">
+													<input type="tel" placeholder="-없이 입력하세요" maxlength="8" title="휴대폰번호 입력" />
+													<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+												</div>
+											</div>
+											<p class="msg_info">문자를 받을 휴대폰 번호를 입력해주세요.</p>
+										</div>
+									</div>
+
+									<div class="btn_area">
+										<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_2">
+											<span class="text">링크 받기</span>
+										</button>
+										<!-- <button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_2" onclick="openHDPopup(this,'pop_type02');">
+						
+								<span class="text">등록 사진 확인</span>
+						
+						</button> -->
+									</div>
+
+									<ul class="list_ty2">
+										<li>버튼을 눌러 사진 등록 여부를 확인할 수 있어요.</li>
+									</ul>
+
+									<!-- s: 조회성공시  -->
+									<div class="divider_ty1"></div>
+									<h3 class="title_h3">조회결과</h3>
+									<div class="space_list_ty2">
+										<div class="picture_info_item">
+											<span class="picture_info_top">
+												<span class="status">
+													<span class="badge_wrap">
+														<span class="hd_badge outline solid_pastel c_success size_m">등록완료</span>
+													</span>
+													<span class="title">대체 전 차량번호판 사진</span>
+												</span>
+												<!-- s: 등록한 이미지 있을 시 -->
+												<span class="preview" aria-hidden="true">
+													<img src="../../../images/content/mtps/img_MPRMTPS10005010000_01.png" alt="등록한 차량번호판 장착 사진" />
+												</span>
+												<!-- e: 등록한 이미지 있을 시 -->
+											</span>
+										</div>
+										<div class="picture_info_item">
+											<span class="picture_info_top">
+												<span class="status">
+													<span class="badge_wrap">
+														<span class="hd_badge outline solid_pastel c_success size_m">등록완료</span>
+													</span>
+													<span class="title">대체 후 차량번호판 사진</span>
+												</span>
+												<!-- s: 등록한 이미지 있을 시 -->
+												<span class="preview" aria-hidden="true">
+													<img src="../../../images/content/mtps/img_MPRMTPS10005010000_01.png" alt="등록한 차량번호판 장착 사진" />
+												</span>
+												<!-- e: 등록한 이미지 있을 시 -->
+											</span>
+										</div>
+
+										<div class="picture_info_item">
+											<span class="picture_info_top">
+												<span class="status">
+													<span class="badge_wrap">
+														<span class="hd_badge outline solid_pastel c_success size_m">등록완료</span>
+													</span>
+													<span class="title">대체 전 계기판 사진</span>
+												</span>
+												<!-- s: 등록한 이미지 있을 시 -->
+												<span class="preview" aria-hidden="true">
+													<img src="../../../images/content/mtps/img_MPRMTPS10005010000_02.png" alt="등록한 계기판 사진" />
+												</span>
+												<!-- e: 등록한 이미지 있을 시 -->
+											</span>
+										</div>
+										<div class="picture_info_item">
+											<span class="picture_info_top">
+												<span class="status">
+													<span class="badge_wrap">
+														<span class="hd_badge outline solid_pastel c_success size_m">등록완료</span>
+													</span>
+													<span class="title">대체 후 계기판 사진</span>
+												</span>
+												<!-- s: 등록한 이미지 있을 시 -->
+												<span class="preview" aria-hidden="true">
+													<img src="../../../images/content/mtps/img_MPRMTPS10005010000_02.png" alt="등록한 계기판 사진" />
+												</span>
+												<!-- e: 등록한 이미지 있을 시 -->
+											</span>
+										</div>
+									</div>
+									<!-- e: 조회성공시  -->
+								</div>
 							</div>
 						</div>
+						<!-- popup_content -->
 					</div>
 					<div class="popup_bottom">
 						<div class="btn_area">
 							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
-								<span class="text">확인</span>
+								<span class="text">다음</span>
 							</button>
 						</div>
 					</div>
@@ -146,6 +531,37 @@
 				</div>
 			</div>
 		</div>
-		<!-- e: ECO마일리지 특약 Full 팝업 -->
+		<!-- e: ECO마일리지 증빙자료(사진등록) Full 팝업 -->
+
+		<!-- s: popup area -->
+		<!-- e: 조회실패 -->
+		<!-- s: 문자등록 조회실패 -->
+		<div class="popup_wrap confirm" id="pop_type02" role="dialog" aria-modal="true" aria-hidden="true">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type02');"></div>
+				<div class="popup_inner">
+					<div class="popup_head"><div class="popup_head_title">신차 주행거리 자동등록 안내</div></div>
+
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="msg_icon mi_info"></div>
+							<div>
+								<p class="info_text">대체 후 차량이 신차로 확인되어 최초 주행거리가 차량대체일 기준 5km로 자동등록 되어있습니다. 변경이 필요하신 경우에만 추가 등록을 진행해주세요.</p>
+							</div>
+						</div>
+					</div>
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">확인</span>
+							</button>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type02');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: 문자등록 조회실패 -->
+		<!-- e: popup area -->
 	</body>
 </html>
