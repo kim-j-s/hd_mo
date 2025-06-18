@@ -1,8 +1,4 @@
-<!-- 우선 마크업작업, 디자인 확정 후 수정할 예정-->
-
-
-
-{{#> layout/default page-title="증빙자료등록 | 마이페이지"}}
+{{#> layout/default page-title="자동차 변경(차량대체) | 마이페이지"}}
 
 <!-- s: ECO마일리지 특약 선택 Full 팝업 -->
 {{#> popup/popup_full popup-id="pop_type01" popup-active=true }}
@@ -14,17 +10,34 @@
 		</div>
 		<!-- e: popup_content_top -->
 
-    <div class="title_h3">가입구분</div>
     <div class="radio_group_wrap column" role="radiogroup">
-      {{> cp/radio rd-id="radio_g01_1" name="radio_g01" labelname="대체 전/후 차량 모두 마일리지 특약 가입" labelcont="<ul class='list_ty5'><li>차량대체일 기준 7일 이내 대체 전 최종, 대체 후 최초 주행거리 정보 등록이 필요합니다.</li></ul>" }}
-      {{> cp/radio rd-id="radio_g01_2" name="radio_g01" labelname="대체 후 차량만 마일리지 특약 가입" labelcont="<ul class='list_ty5'><li>대체 전 차량의 최종주행거리 정보 확인이 어려운 경우 대체 후 차량만 마일리지 특약에 가입하실 수 있습니다.</li><li>차량대체일 기준 7일 이내 대체 후 최초 주행거리 정보 등록이 필요합니다.</li></ul>" }}
-      {{> cp/radio rd-id="radio_g01_3" name="radio_g01" labelname="마일리지 특약 미가입" labelcont="<ul class='list_ty5'><li>마일리지 특약을 미가입(해지)합니다. 만기시 마일리지 특약 정산을 하실 수 없습니다.</li></ul>" }}
-    </div>
+      {{#> cp/radio rd-class="lg" rd-id="radio_g01_1" name="radio_g01" labelname="대체 전/후 차량 모두 마일리지 특약 가입" }}
+      <div class="sub_g_txt">
+				<ul class='list_ty5'><li>차량대체일 기준 7일 이내 <strong><span class="point">대체 전 최종</span>, 대체 후 최초</strong> 주행거리 정보 등록이 필요합니다.</li>
+				</ul>
+			</div>
+			{{/ cp/radio}}
+			{{#> cp/radio rd-class="lg" rd-id="radio_g01_2" name="radio_g01" labelname="대체 후 차량만 마일리지 특약 가입" }}
+      <div class="sub_g_txt">
+				<ul class='list_ty5'>
+					<li><strong>대체 전 차량의 최종주행거리 정보 확인이 어려운 경우</strong> 대체 후 차량만 마일리지 특약에 가입하실 수 있습니다.</li>
+					<li>차량대체일 기준 7일 이내 <strong>대체 후</strong> 최초 주행거리 정보 등록이 필요합니다.</li>
+				</ul>
+			</div>
+			{{/ cp/radio}}
+			{{#> cp/radio rd-class="lg" rd-id="radio_g01_3" name="radio_g01" labelname="마일리지 특약 미가입" labelcont="" }}
+			<div class="sub_g_txt">
+				<ul class='list_ty5'>
+					<li>마일리지 특약을 미가입(해지)합니다. 만기시 마일리지 특약 정산을 하실 수 없습니다.</li>
+				</ul>
+			</div>
+			{{/ cp/radio}}
+		</div>
 
 
 		<div class="form_box">
 			<div class="checkbox_group_wrap column">
-        {{> cp/checkbox checkbox_class="rd_box" id="checkbox04-17" label_class="chk_label_ty3 check_hide" labelname='<strong class="ess ess_t1">필수</strong> 마일리지 특약을 해지 하거나 기간 내 주행거리 정보를 등록하지 않아 해제(무효)된 경우 재가입이 불가합니다. 가입유형에 따른 안내사항을 꼭 확인해주세요'}}</div>
+        {{> cp/checkbox checkbox_class="rd_box" id="checkbox04-17" label_class="chk_label_ty3 check_hide" labelname='<strong class="ess ess_t1">필수</strong> 마일리지 특약을 해지 하거나 기간 내 주행거리 정보를 등록하지 않아 해제(무효)된 경우 <strong class="point">재가입이 불가합니다.</strong> 가입유형에 따른 안내사항을 꼭 확인해주세요'}}</div>
 		</div>
 	</div>
 </div>
