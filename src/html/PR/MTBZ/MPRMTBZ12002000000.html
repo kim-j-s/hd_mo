@@ -21,8 +21,8 @@
 			
 			<div class="tab_wrap">
 				<div class="tab_wrap_list_ty1" role="tablist">
-					{{>cp/tab_btn tb-text="1번 탭" tb-class="tab_btn_block" tb-id="ex01" tb-active=true}}
-					{{>cp/tab_btn tb-text="2번 탭" tb-class="tab_btn_block" tb-id="ex02"}}
+					{{>cp/tab_btn tb-text="자사 보유계약" tb-class="" tb-id="ex01" tb-active=true}}
+					{{>cp/tab_btn tb-text="타사 보유계약" tb-class="" tb-id="ex02"}}
 				</div>
 				<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanelex01">
 					<!-- s: 조회 차량 없을때 신규가입 차량 -->
@@ -148,9 +148,41 @@
 							</div>
 						</div>
 					</div>
+					<ul class="list_ty2">
+						<li>현재일 기준 보험료 계산이 가능한 계약만 조회됩니다.</li>
+					</ul>
+					<!-- s: 조회 차량 있을때 신규가입 차량 -->
+					<div class="card_item_wrap">
+						<div class="card_item">
+							<div class="item_inner">
+								<div class="inner_cont">
+									<div class="item_top">
+										<div class="title_info">
+											<div class="main_title">신규차량</div>
+										</div>
+										<div class="desc">
+											가입된 차 외에 다른 새 자동차로 자동차보험 가입을 원하신다면
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="btn_area">
+								{{> cp/button type="2" size="2" b-text="신규차량 보험가입" }}
+							</div>
+						</div>
+					</div>
+					<!-- e: 조회 차량 있을때 신규가입 차량 -->
+					<!-- s: 만기예정 차량이 없는 경우 -->
+					<div class="no_list_area">
+						{{> cp/icon iconClass="exclamationSvg"}}
+						<p>현재 갱신이 가능한 자동차가 없습니다.</p>
+					</div>
+					<!-- e: 만기예정 차량이 없는 경우 -->
 				</div>
 				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanelex02">
-		
+					<div class="btn_area">
+						{{> cp/button type="2" size="2" b-text="보유계약 조회하기" }}
+					</div>
 					<div class="list_top_wrap">
 						<div class="left">
 							<span>보유 중인 자동차 <strong class="point">2</strong>건</span>
@@ -221,35 +253,36 @@
 					<ul class="list_ty2">
 						<li>현재일 기준 보험료 계산이 가능한 계약만 조회됩니다.</li>
 					</ul>
-				</div>
-			</div>
-			<!-- s: 조회 차량 있을때 신규가입 차량 -->
-			<div class="card_item_wrap">
-				<div class="card_item">
-					<div class="item_inner">
-						<div class="inner_cont">
-							<div class="item_top">
-								<div class="title_info">
-									<div class="main_title">신규차량</div>
+					
+					<!-- s: 조회 차량 있을때 신규가입 차량 -->
+					<div class="card_item_wrap">
+						<div class="card_item">
+							<div class="item_inner">
+								<div class="inner_cont">
+									<div class="item_top">
+										<div class="title_info">
+											<div class="main_title">신규차량</div>
+										</div>
+										<div class="desc">
+											가입된 차 외에 다른 새 자동차로 자동차보험 가입을 원하신다면
+										</div>
+									</div>
 								</div>
-								<div class="desc">
-									가입된 차 외에 다른 새 자동차로 자동차보험 가입을 원하신다면
-								</div>
+							</div>
+							<div class="btn_area">
+								{{> cp/button type="2" size="2" b-text="신규차량 보험가입" }}
 							</div>
 						</div>
 					</div>
-					<div class="btn_area">
-						{{> cp/button type="2" size="2" b-text="신규차량 보험가입" }}
+					<!-- e: 조회 차량 있을때 신규가입 차량 -->
+					<!-- s: 만기예정 차량이 없는 경우 -->
+					<div class="no_list_area">
+						{{> cp/icon iconClass="exclamationSvg"}}
+						<p>현재 갱신이 가능한 자동차가 없습니다.</p>
 					</div>
+					<!-- e: 만기예정 차량이 없는 경우 -->
 				</div>
 			</div>
-			<!-- e: 조회 차량 있을때 신규가입 차량 -->
-			<!-- s: 만기예정 차량이 없는 경우 -->
-			<div class="no_list_area">
-				{{> cp/icon iconClass="exclamationSvg"}}
-				<p>현재 갱신이 가능한 자동차가 없습니다.</p>
-			</div>
-			<!-- e: 만기예정 차량이 없는 경우 -->
 		</div>
 
 		<!-- s: 최근계산내역-->
