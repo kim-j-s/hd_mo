@@ -31,6 +31,12 @@
 							<dt>전계약 마일리지 환급금</dt>
 							<dd>-186,850 원</dd>
 						</dl>
+						<!-- s: 25-06-18 -->
+						<dl class="sm">
+							<dt>환급금 사용여부</dt>
+							<dd>{{> cp/checkbox id="switch_check9" chk_class="right" label_class="switch_check" role="switch" aria-checked="false" }}</dd>
+						</dl>
+						<!-- e: 25-06-18 -->
 						<dl>
 							<dt>블루/기아멤버스 포인트</dt>
 							<dd>-30,000 원</dd>
@@ -207,6 +213,36 @@
 						<li>비밀번호 3회 오류 시 블루멤버스 고객센터(080-600-6000)로 연락하시어 비밀번호 재설정 후 결제 진행이 가능합니다.</li>
 					</ul>
 					<!-- e: 블루/기아멤버스 -->
+					 <!-- s: 25-06-18 법인만 -->
+					<div class="divider_ty1"></div>
+					<h3 class="title_h4">카드인증 전자서명 동의</h3>
+					<div class="card_item_wrap">
+						<div class="card_item">
+							<div class="inner_cont">
+								<div class="info_text">
+									법인카드 비밀번호 인증을 통한 전자서명에 동의합니다.
+								</div>
+								<div class="radio_group_wrap" role="radiogroup">
+									{{> cp/radio rd-class="" rd-id="radio_gt2_01" name="radio_gt2" labelname="미동의" }}
+									{{> cp/radio rd-class="" rd-id="radio_gt2_02" name="radio_gt2" labelname="동의" }}
+								</div>
+								<!-- s: 동의시 활성화 -->
+								<div class="card_cont">
+									<div class="form_group_wrap">
+										<div class="form_line">
+											<div class="label_tit">법인카드 비밀번호 입력</div>
+											{{> cp/text placeholder="비밀번호 앞 2자리" minlength="2" maxlength="2" inp-title="법인카드 비밀번호 앞 2자리 입력" }}
+										</div>
+									</div>
+									<ul class="list_ty2">
+										<li>미동의 또는 법인카드 비밀번호 미설정 시 공동인증 전자서명을 선택하시기 바랍니다.<br>(공동인증 시 모바일앱 설치 필요)</li>
+									</ul>
+								</div>
+								<!-- e: 동의시 활성화 -->
+							</div>
+						</div>
+					</div>
+					<!-- e: 25-06-18 법인만 -->
 				</div>
 
 				<!-- 간편결제 -->
@@ -372,9 +408,10 @@
 			<!-- s: 꼭 알아두세요 카드만 노출 -->
 			{{#> cp/notice dp-active=true }}
 			<ul class="list_depth">
-
-				<li>계약자 변경을 원하시는 경우 우측 상단 <strong>[설계내역]</strong> 버튼을 통해 <strong>7단계(피보험자/계약자 정보)</strong>로 이동하셔서 <strong>계약자를
-						변경</strong>해주세요.</li>
+				<!-- s: 법인만 25-06-18 -->
+				<li>&회사명& (계약자)님의 신용카드 및 체크카드로만 결제 가능합니다. (가족카드 결제불가)</li>
+				<!-- e: 법인만 25-06-18 -->
+				<li>계약자 변경을 원하시는 경우 우측 상단 <strong>[설계내역]</strong> 버튼을 통해 <strong>7단계(피보험자/계약자 정보)</strong>로 이동하셔서 <strong>계약자를 변경</strong>해주세요.</li>
 				<li>보험계약 체결을 위해서는 휴대폰 직접서명 또는 전자서명이 필요합니다.</li>
 				<li>신용카드로 결제하신 보험료는 책임개시일 기준으로 후청구됩니다.<br>
 					{{> cp/linkButton bl_class="short_cut sm" bl_text="신용카드 청구기준" question_tit="신용카드 청구기준" }}
