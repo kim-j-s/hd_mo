@@ -121,6 +121,13 @@
     }
   });
 
+	//리뷰 아코디언
+	$DOM.on('click', '.review_acd_item .acd_btn', function(){
+		const $this = $(this);
+		$this.parent('.review_acd_item').toggleClass('active');
+	});
+
+
 	/* 펼치기/접히기 */
 	$DOM.on('click', '.acd_item .btn_toggle', function(){
 		const $this = $(this),
@@ -620,6 +627,14 @@
 	$DOM.on('click', '.opt_select_list.opt_case3 .option', function(e){
 		$(this).closest('.opt_select_list').find('.option').removeClass('active').removeAttr('title');
 		$(this).addClass('active').attr('title', '선택됨');
+	});
+
+
+	// inp_only_num
+	$DOM.on('keyup', '.inp_only_num', function() {
+		const $this = $(this),
+					val = $this.val().replace(/[^0-9]/g, ''); // 숫자만 허용
+		$this.val(val);
 	});
 
 
