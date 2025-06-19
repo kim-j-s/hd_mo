@@ -1,0 +1,79 @@
+
+{{#> layout/default page-title="보험 심사 안내 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="보험 심사 안내" }}
+</div>
+
+<!-- s: popup area -->
+ <!-- s: 전문금융소비자 정보 Full 팝업 -->
+{{#> popup/popup_full popup-active=true popup-id="pop_type03" popup-title="보험 심사 안내" }}
+<div class="popup_cont">
+	<div class="popup_content">
+        <div class="process_info_area">
+            <div class="complete_info" aria-hidden="true">
+                <lottie-player src="../../../json/lottie_info.jso" background="transparent" speed="1" autoplay></lottie-player>
+            </div>
+            <h2 class="process_title">
+                <strong>고객님 죄송합니다</strong>
+            </h2>
+            <div class="process_desc">
+                인터넷으로 보험료 계산/가입이 어렵습니다.<br>
+                연락처를 남기시면 상담원이 직접 연락드리겠습니다.
+            </div>
+        </div>
+         <div class="form_group_wrap">
+			<div class="form_line">
+                <div class="label_tit">연락처</div>
+                <div class="radio_group_wrap_ty2" role="radiogroup">
+                    {{> cp/radio rd-class="rd_btn" rd-id="sel01_01" name="sel01" labelname="휴대폰" }}
+                    {{> cp/radio rd-class="rd_btn" rd-id="sel01_02" name="sel01" labelname="집" }}
+                </div>
+                <div class="form_line">
+				    {{> cp/text class="phone" type="tel" placeholder="-없이 숫자만 입력" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+                </div>
+                <div class="row">
+                    <div class="form_line fix_w_case02">
+                        {{> cp/selectitem si_popup="select_option_ty1" si_ph="국번 선택" si_item="02" si_title="국번 선택"}}
+                    </div>
+                    <div class="form_line grow">
+                        {{> cp/text type="tel" placeholder="-없이 숫자만 입력" maxlength="8" inp-title="집번호 입력" }}
+                    </div>
+                </div>
+            </div>
+			<div class="form_line">
+                <div class="checkbox_group_wrap column">
+                    {{> cp/checkbox checkbox_class="rd_box" id="checkbox01-01" label_class="chk_label_ty3" labelname="수집·이용 동의" labelcont="상담전화 신청을 위한 연락처 수집·이용에 동의합니다. 수집정보는 상담 목적 외 용도로 이용되지 않습니다." }}
+                </div>
+            </div>
+			<div class="form_line">
+                <div class="btn_area">
+                    {{> cp/button type="3" size="2" b-text="상담전화 신청" }}
+                </div>
+            </div>
+        </div>
+		<div class="info_gray ty2">
+			<div class="center_info">
+				<h4 class="title_h4">현대해상 다이렉트 고객센터</h4>
+				<div class="line1">
+					<div class="line1_item">
+						<strong class="tel">1899-6782</strong>
+					</div>
+					<div class="line1_item">
+						<span class="cit">평일 9시~ 18시</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="3" size="1" b-text="홈으로" }}
+		{{> cp/button type="1" size="1" b-text="계속 진행하기"}}
+	</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: 전문금융소비자 정보 Full 팝업 -->
+<!-- e: popup area -->
+
+{{/ layout/default }}
