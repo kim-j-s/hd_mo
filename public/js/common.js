@@ -121,6 +121,13 @@
     }
   });
 
+	//리뷰 아코디언
+	$DOM.on('click', '.review_acd_item .acd_btn', function(){
+		const $this = $(this);
+		$this.parent('.review_acd_item').toggleClass('active');
+	});
+
+
 	/* 펼치기/접히기 */
 	$DOM.on('click', '.acd_item .btn_toggle', function(){
 		const $this = $(this),
