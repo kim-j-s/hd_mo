@@ -534,10 +534,14 @@
 			flex: 0 1 calc(50% - 6px);
 			min-width: auto;
 		}
-	}
+	} 
 
 	& + * {
 		margin-top: var(--gap-5);
+	}
+
+	& + .checkbox_group_wrap {
+		margin-top: var(--gap-8);
 	}
 
 	& + .car_type_option {
@@ -550,6 +554,26 @@
 		flex-direction: column;
 		gap: 0;
 
+		// xlarge, large
+		&:has(.chk_label_ty2),
+		&:has(.chk_label_ty3){
+			.inp_checkbox {
+				~ .inp_checkbox {
+					margin-top: var(--gap-7);
+				}
+			}
+		}
+
+		//small
+		&:has(.chk_label_ty4){
+			.inp_checkbox {
+				~ .inp_checkbox {
+					margin-top: var(--gap-5);
+				}
+			}
+		}
+
+		//medium
 		.inp_checkbox {
 			& + .inp_checkbox {
 				margin-top: var(--gap-6);
