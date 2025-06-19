@@ -623,6 +623,14 @@
 	});
 
 
+	// inp_only_num
+	$DOM.on('keyup', '.inp_only_num', function() {
+		const $this = $(this),
+					val = $this.val().replace(/[^0-9]/g, ''); // 숫자만 허용
+		$this.val(val);
+	});
+
+
 })();
 
 
