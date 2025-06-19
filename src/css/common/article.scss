@@ -65,6 +65,12 @@
 		.form_group_wrap [class^=form_line] .label_tit {
 			color: var(--color-text-basic);
 		}
+
+		.vod_area, .acd_item {
+			& + p { 
+				margin-top: var(--gap-5);
+			}
+		} 
 	}
 
 	.view_navigation {
@@ -121,4 +127,107 @@
 			border-radius: inherit;
 		}
 	}
+}
+
+
+//동영상 게시판
+
+.vod_area {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1.778;
+	border-radius: var(--radius-large2);
+	overflow: hidden;
+
+	iframe {
+		width: 100%;
+		height: 100%;
+	}
+
+	& + .acd_item  {
+		margin-top: var(--gap-5);
+	}
+}
+
+.vod_preview {
+	width: 100%;
+	height: auto;
+	border-radius: var(--radius-large2);
+	aspect-ratio: 1.778;
+	display: flex;
+	position: relative;
+	overflow: hidden;
+
+	img {
+		width: 100%;
+	}
+
+	.vod_title {
+		display: flex;
+		align-items: end;
+		width: 100%;
+		height: 100%;
+		padding: 10px 16px;
+		background: rgba(0, 0, 0, 0.50);
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		color: #ffffff;
+		font-size: var(--font-size-heading-xsmall);
+		font-weight: 700;
+
+			&:before {
+				display: block;
+				content:'';
+				width: 48px;
+				height: 48px;
+				border-radius: var(--radius-max);
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+
+				border: var(--border-width-static-regular) solid var(--color-border-gray-light);
+				background: #fff url(../images/icon/icon_play.svg) no-repeat 12px center/ 24px 24px;
+			}
+
+	}
+
+	& + .box_list_wrap {
+		margin-top: var(--gap-8);
+	}
+}
+
+//동영상 자막 영역
+.vod_cont {
+
+	.acd_item.acd_item_ty2 {
+		.acd_head {
+			padding: var(--padding-6) var(--padding-7);
+
+			.acd_btn {
+				font-size: var(--font-size-heading-xsmall);
+			}
+			
+			&.active + .acd_cont {
+				padding: var(--gap-4) var(--padding-6);
+
+				#mov_youtube_caption {
+					visibility: visible;
+					opacity: 1;
+					color: #000;
+				}
+			}
+		}	
+	}
+
+	#mov_youtube_caption {
+		max-height: 216px;
+		overflow-y: scroll;
+		visibility: hidden;
+		opacity: 0;
+		transition: all 0.2s ease-in-out;
+	}
+	
 }
