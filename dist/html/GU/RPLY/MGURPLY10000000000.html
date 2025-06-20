@@ -1,3 +1,4 @@
+<!-- 25-06-20 수정(전체 코드 수정됨)-->
 <!DOCTYPE html>
 <html lang="ko">
 	<head>
@@ -455,7 +456,7 @@
 
 						<!-- s: 탭(1) 자동차보험-->
 						<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
-							<div class="space_list_ty5">
+							<div class="space_list_ty2">
 								<div class="select_item select_item_case01" role="button" tabindex="0" title="연도 선택 팝업 호출" onclick="openHDPopup(this,'pop_type01');">
 									<div class="select_item_inner">
 										<div class="si_item" data-placeholder="선택해주세요">전체</div>
@@ -466,15 +467,19 @@
 									<div class="review_acd_item">
 										<button type="button" class="acd_btn" aria-expanded="true"></button>
 										<div class="inner">
-											<div class="review_star_item" aria-label="" data-score="5">
-												<span class="star"></span>
-												<span class="star"></span>
-												<span class="star"></span>
-												<span class="star"></span>
-												<span class="star"></span>
+											<div class="review_star_item" aria-label="별점5점" data-score="5">
+												<span class="star on"></span>
+												<span class="star on"></span>
+												<span class="star on"></span>
+												<span class="star on"></span>
+												<span class="star on"></span>
 											</div>
 											<div class="info_area">
-												<!-- 뱃지 색상은 추후 정의될 예정입니다. -->
+												<!-- 뱃지 색상 정의(탭 별로 클래스 추가)
+			                    * 자동차보험 : c_primary
+			                    * 장기보험 : c_secondary
+			                    * 일반보험 : c_warning
+			                    -->
 												<span class="hd_badge outline solid_pastel c_primary size_m c_tab01">자동차보험</span>
 												<span class="meta">김*대</span>
 												<span class="meta">50대</span>
@@ -487,9 +492,9 @@
 									<div class="review_acd_item">
 										<button type="button" class="acd_btn" aria-expanded="true"></button>
 										<div class="inner">
-											<div class="review_star_item" aria-label="" data-score="2">
-												<span class="star"></span>
-												<span class="star"></span>
+											<div class="review_star_item" aria-label="별점2점" data-score="2">
+												<span class="star on"></span>
+												<span class="star on"></span>
 												<span class="star"></span>
 												<span class="star"></span>
 												<span class="star"></span>
@@ -507,8 +512,8 @@
 									<div class="review_acd_item">
 										<button type="button" class="acd_btn" aria-expanded="true"></button>
 										<div class="inner">
-											<div class="review_star_item" aria-label="" data-score="1">
-												<span class="star"></span>
+											<div class="review_star_item" aria-label="별점1점" data-score="1">
+												<span class="star on"></span>
 												<span class="star"></span>
 												<span class="star"></span>
 												<span class="star"></span>
@@ -540,7 +545,7 @@
 
 						<!-- s: 탭(2) 장기보험-->
 						<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
-							<div class="space_list_ty5">
+							<div class="space_list_ty2">
 								<div class="select_item select_item_case01" role="button" tabindex="0" title="연도 선택 팝업 호출" onclick="openHDPopup(this,'pop_type02');">
 									<div class="select_item_inner">
 										<div class="si_item" data-placeholder="선택해주세요">전체</div>
@@ -551,15 +556,15 @@
 									<div class="review_acd_item">
 										<button type="button" class="acd_btn" aria-expanded="true"></button>
 										<div class="inner">
-											<div class="review_star_item" aria-label="" data-score="2">
-												<span class="star"></span>
-												<span class="star"></span>
+											<div class="review_star_item" aria-label="별점2점" data-score="2">
+												<span class="star on"></span>
+												<span class="star on"></span>
 												<span class="star"></span>
 												<span class="star"></span>
 												<span class="star"></span>
 											</div>
 											<div class="info_area">
-												<span class="hd_badge outline solid_pastel c_primary size_m c_tab02">운전자보험(3년이상)</span>
+												<span class="hd_badge outline solid_pastel c_secondary size_m c_tab02">운전자보험(3년이상)</span>
 												<span class="meta">김*대</span>
 												<span class="meta">50대</span>
 												<span class="meta">남성</span>
@@ -571,15 +576,15 @@
 									<div class="review_acd_item">
 										<button type="button" class="acd_btn" aria-expanded="true"></button>
 										<div class="inner">
-											<div class="review_star_item" aria-label="" data-score="4">
-												<span class="star"></span>
-												<span class="star"></span>
-												<span class="star"></span>
-												<span class="star"></span>
+											<div class="review_star_item" aria-label="별점4점" data-score="4">
+												<span class="star on"></span>
+												<span class="star on"></span>
+												<span class="star on"></span>
+												<span class="star on"></span>
 												<span class="star"></span>
 											</div>
 											<div class="info_area">
-												<span class="hd_badge outline solid_pastel c_primary size_m c_tab02">어린이치아보험</span>
+												<span class="hd_badge outline solid_pastel c_secondary size_m c_tab02">어린이치아보험</span>
 												<span class="meta">김*대</span>
 												<span class="meta">50대</span>
 												<span class="meta">남성</span>
@@ -591,15 +596,15 @@
 									<div class="review_acd_item">
 										<button type="button" class="acd_btn" aria-expanded="true"></button>
 										<div class="inner">
-											<div class="review_star_item" aria-label="" data-score="5">
-												<span class="star"></span>
-												<span class="star"></span>
-												<span class="star"></span>
-												<span class="star"></span>
-												<span class="star"></span>
+											<div class="review_star_item" aria-label="별점5점" data-score="5">
+												<span class="star on"></span>
+												<span class="star on"></span>
+												<span class="star on"></span>
+												<span class="star on"></span>
+												<span class="star on"></span>
 											</div>
 											<div class="info_area">
-												<span class="hd_badge outline solid_pastel c_primary size_m c_tab02">우리펫보험</span>
+												<span class="hd_badge outline solid_pastel c_secondary size_m c_tab02">우리펫보험</span>
 												<span class="meta">김*대</span>
 												<span class="meta">50대</span>
 												<span class="meta">남성</span>
@@ -624,7 +629,7 @@
 
 						<!-- s: 탭(3) 일반보험-->
 						<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
-							<div class="space_list_ty5">
+							<div class="space_list_ty2">
 								<div class="select_item select_item_case01" role="button" tabindex="0" title="연도 선택 팝업 호출" onclick="openHDPopup(this,'pop_type03');">
 									<div class="select_item_inner">
 										<div class="si_item" data-placeholder="선택해주세요">전체</div>
@@ -635,15 +640,15 @@
 									<div class="review_acd_item">
 										<button type="button" class="acd_btn" aria-expanded="true"></button>
 										<div class="inner">
-											<div class="review_star_item" aria-label="" data-score="3">
-												<span class="star"></span>
-												<span class="star"></span>
-												<span class="star"></span>
+											<div class="review_star_item" aria-label="별점3점" data-score="3">
+												<span class="star on"></span>
+												<span class="star on"></span>
+												<span class="star on"></span>
 												<span class="star"></span>
 												<span class="star"></span>
 											</div>
 											<div class="info_area">
-												<span class="hd_badge outline solid_pastel c_primary size_m c_tab03">해외여행보험</span>
+												<span class="hd_badge outline solid_pastel c_warning size_m c_tab03">해외여행보험</span>
 												<span class="meta">김*대</span>
 												<span class="meta">50대</span>
 												<span class="meta">남성</span>
@@ -655,15 +660,15 @@
 									<div class="review_acd_item">
 										<button type="button" class="acd_btn" aria-expanded="true"></button>
 										<div class="inner">
-											<div class="review_star_item" aria-label="" data-score="1">
-												<span class="star"></span>
+											<div class="review_star_item" aria-label="별점1점" data-score="1">
+												<span class="star on"></span>
 												<span class="star"></span>
 												<span class="star"></span>
 												<span class="star"></span>
 												<span class="star"></span>
 											</div>
 											<div class="info_area">
-												<span class="hd_badge outline solid_pastel c_primary size_m c_tab03">풍수해·지진재해보험(주택)</span>
+												<span class="hd_badge outline solid_pastel c_warning size_m c_tab03">풍수해·지진재해보험(주택)</span>
 												<span class="meta">김*대</span>
 												<span class="meta">50대</span>
 												<span class="meta">남성</span>
@@ -675,15 +680,15 @@
 									<div class="review_acd_item">
 										<button type="button" class="acd_btn" aria-expanded="true"></button>
 										<div class="inner">
-											<div class="review_star_item" aria-label="" data-score="2">
-												<span class="star"></span>
-												<span class="star"></span>
+											<div class="review_star_item" aria-label="별점2점" data-score="2">
+												<span class="star on"></span>
+												<span class="star on"></span>
 												<span class="star"></span>
 												<span class="star"></span>
 												<span class="star"></span>
 											</div>
 											<div class="info_area">
-												<span class="hd_badge outline solid_pastel c_primary size_m c_tab03">풍수해·지진재해보험(주택)</span>
+												<span class="hd_badge outline solid_pastel c_warning size_m c_tab03">풍수해·지진재해보험(주택)</span>
 												<span class="meta">김*대</span>
 												<span class="meta">50대</span>
 												<span class="meta">남성</span>
@@ -801,29 +806,6 @@
 			</div>
 		</div>
 		<!-- e: 일반 보험 - 분류 선택 팝업 -->
-
 		<!-- e: popup area -->
-
-		<script>
-			$(document).ready(function () {
-				//리뷰의 별점을 display하는 함수
-				function fillStars() {
-					const scoreBox = $(".review_star_item");
-					scoreBox.each(function (_, item) {
-						const score = $(item).attr("data-score");
-						$(this).attr("aria-label", `별점${score}점`);
-
-						const startList = $(item).find(".star");
-						startList.each(function (idx, star) {
-							if (idx < score) {
-								$(star).addClass("on");
-							}
-						});
-					});
-				}
-
-				fillStars();
-			});
-		</script>
 	</body>
 </html>
