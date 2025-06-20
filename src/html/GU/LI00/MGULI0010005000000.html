@@ -42,6 +42,22 @@
 				</div>
 			</div>
 
+			<!-- s: 25-06-20 추가 -->
+			<div class="form_line">
+				<div class="label_tit">주민등록번호</div>
+				<div class="comp_wrap birth">
+					{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" }}
+					<span class="dash">-</span>
+					{{> cp/keypad7 case1=true kt="주민등록번호 뒤 7자리 입력"}}
+				</div>
+			</div>
+
+			<div class="form_line">
+				<div class="label_tit">통신사</div>
+				{{> cp/selectitem si_ph="통신사 선택" si_title="통신사 선택 팝업 호출" si_popup="pop_type03"}}
+			</div>
+			<!-- e: 25-06-20 추가 -->
+
 			<div class="form_line">
 				<div class="label_tit">휴대폰번호</div>
 				<!-- s: 25-06-04 수정 -->
@@ -86,5 +102,24 @@
 </div>
 {{/ popup/popup_bottom}}
 <!-- e: 다른 인증방식 선택 -->
+
+<!-- s: 25-06-20 수정 -->
+<!-- s: 통신사 선택 -->
+{{#> popup/popup_bottom popup-id="pop_type03" popup-title="통신사 선택"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="opt_select_list opt_case3">
+			<div role="button" tabindex="0" class="option"><span class="text">SKT</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">KT</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">LG U+</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">SKT알뜰</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">KT알뜰</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">LG U+알뜰</span></div>
+		</div>
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 통신사 선택 -->
+<!-- e: 25-06-20 수정 -->
 
 {{/ layout/default }}
