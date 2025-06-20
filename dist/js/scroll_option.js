@@ -60,7 +60,13 @@ const $scrollOption = {
 				const $prev = $checked.prevAll(".opt_select:not(.opt_select_dmp)").first();
 				
 				if ($prev.length) {
-					$prev.find("input[type=radio]").prop("checked", true).trigger("change");
+					// 2025-06-20 중복체크 방지용 수정
+					// $prev.find("input[type=radio]").prop("checked", true).trigger("change");
+					const $radio = $prev.find("input[type=radio]");
+					if (!$radio.is(":checked")) {
+						$radio.prop("checked", true).trigger("change");
+					}
+
 					$scrollOption.updateLiveRegion($wrap);
 				} else {
 					// 그래도 이동은 살짝
@@ -87,7 +93,12 @@ const $scrollOption = {
 				const $next = $checked.nextAll(".opt_select:not(.opt_select_dmp)").first();
 				
 				if ($next.length) {
-					$next.find("input[type=radio]").prop("checked", true).trigger("change");
+					// 2025-06-20 중복체크 방지용 수정
+					// $next.find("input[type=radio]").prop("checked", true).trigger("change");
+					const $radio = $next.find("input[type=radio]");
+					if (!$radio.is(":checked")) {
+						$radio.prop("checked", true).trigger("change");
+					}
 					$scrollOption.updateLiveRegion($wrap);
 				} else {
 					// 그래도 이동은 살짝
@@ -212,7 +223,12 @@ const $scrollOption = {
 		});
 
 		if (closest) {
-			closest.find("input[type=radio]").prop("checked", true).trigger("change");
+			// 2025-06-20 중복체크 방지용 수정
+			// closest.find("input[type=radio]").prop("checked", true).trigger("change");
+			const $radio = closest.find("input[type=radio]");
+			if (!$radio.is(":checked")) {
+				$radio.prop("checked", true).trigger("change");
+			}
 		}
 	},
 

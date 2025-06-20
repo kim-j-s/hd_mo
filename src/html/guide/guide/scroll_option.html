@@ -49,6 +49,7 @@
 					<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
 				</div>
 			</div>
+
 			<div class="form_line">
 				<div class="label_tit">보험기간(년)</div>
 				<div class="opt_select_wrap">
@@ -85,6 +86,7 @@
 					<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
 				</div>
 			</div>
+
 			<div class="form_line">
 				<div class="label_tit">보험기간(년)</div>
 				<div class="opt_select_wrap">
@@ -92,27 +94,27 @@
 					<div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
 						<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
 						<div class="opt_select opt_select_w1">
-							<input type="radio" name="r3" id="r3_s1">
+							<input type="radio" name="r3" id="r3_s1" onchange="javaScript:testFn(this);">
 							<label for="r3_s1">1년</label>
 						</div>
 						<div class="opt_select opt_select_w1">
-							<input type="radio" name="r3" id="r3_s2">
+							<input type="radio" name="r3" id="r3_s2" onchange="javaScript:testFn(this);">
 							<label for="r3_s2">2년</label>
 						</div>
 						<div class="opt_select opt_select_w1">
-							<input type="radio" name="r3" id="r3_s3">
+							<input type="radio" name="r3" id="r3_s3" onchange="javaScript:testFn(this);">
 							<label for="r3_s3">3년</label>
 						</div>
 						<div class="opt_select opt_select_w1">
-							<input type="radio" name="r3" id="r3_s4">
+							<input type="radio" name="r3" id="r3_s4" onchange="javaScript:testFn(this);">
 							<label for="r3_s4">4년</label>
 						</div>
 						<div class="opt_select opt_select_w1">
-							<input type="radio" name="r3" id="r3_s5" checked>
+							<input type="radio" name="r3" id="r3_s5" onchange="javaScript:testFn(this);">
 							<label for="r3_s5">5년</label>
 						</div>
 						<div class="opt_select opt_select_w1">
-							<input type="radio" name="r3" id="r3_s6">
+							<input type="radio" name="r3" id="r3_s6" onchange="javaScript:testFn(this);">
 							<label for="r3_s6">6년</label>
 						</div>
 						<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
@@ -131,6 +133,12 @@
 </div>
 {{/ popup/popup_bottom}}
 <!-- e: Bottom 팝업 -->
+
+<script>
+function testFn(el) {
 	
+	console.log("선택된 요소 ID:", el.id);
+}
+</script>
  
 {{/ layout/default }}
