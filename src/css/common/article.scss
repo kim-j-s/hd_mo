@@ -16,9 +16,20 @@
 			border-radius: 0;
 			padding: 0;
 			cursor: default;
+
+			.title_info .main_title {
+				font-size: var(--font-size-heading-small);//스타일우선 순위 문제로 중복선언함
+			}
 		}
 
 		.title_info {
+
+			.badge_wrap {
+				& + .main_title {
+					margin-top: var(--gap-2);
+				}
+			}
+			
 			.sub_title {
 				color: var(--color-text-subtle);
 				font-size: var(--font-size-body-small);
