@@ -1,112 +1,106 @@
-{{#> layout/default page-title="자동차사고/고장 접수 안내 | 마이페이지"}}
+<!-- s: 25-06-23 탭삭제 버튼 추가 -->
+{{#> layout/default page-title="자동차 고장출동 안내/신청| 마이페이지"}}
 <div id="wrap" class="wrap">
-	{{> layout/header h-title="자동차 사고접수/고장출동 신청" }}
+	{{> layout/header h-title="자동차 고장출동 안내/신청" }}
 	<div id="container" class="container">
 		<div class="content">
-
-			<div class="tab_wrap">
-				<div class="tab_wrap_list_ty1" role="tablist">
-					<!-- s: 25-06-13 수정 -->
-					{{>cp/tab_btn tb-text="사고접수" tb-id="ex01"}}
-					{{>cp/tab_btn tb-text="고장접수" tb-id="ex02" tb-active=true}}
-					<!-- e: 25-06-13 수정 -->
-				</div>
-
-				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanelex01">		
-					사고접수 내용
-				</div>
-				<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanelex02">
-					<p class="text_sub">
-						<strong class="point">하이카서비스 특약</strong> 가입 시 이용할 수 있어요.
-					</p>
-					<ol class="my_info_flow">
-						<li>
-							<span class="num">01</span>
-							<div class="cont">
-								<strong class="tit">사고접수</strong>
-								<ul class="list_ty3">
-									<li>
-										모바일 화면에서 접수
-										<div class="btn_area basic">
-											{{> cp/linkButton href="https://qamdirect.hi.co.kr/service.do?m=7f63c682c9" bl_class="new_open sm new_open_rd_box" bl_text="홈페이지 접수하기"}}
-										</div>
-									</li>
-									<li>
-										고객센터 (1588-5656) → ARS ②번
-										<div class="btn_area basic">
-											{{> cp/linkButton href="tel:1588-5656" bl_class="short_cut sm rd_box" bl_text="고객센터 전화걸기" }}
-										</div>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<span class="num">02</span>
-							<div class="cont">
-								<strong class="tit">필요 서비스 신청</strong>
-								<div class="btn_area basic">
-									{{> cp/button type="3" size="5" b-text="서비스 항목" rightIcon="arrowRightSvg"}}
-								</div>
-							</div>
-						</li>
-						<li>
-							<span class="num">03</span>
-							<div class="cont">
-								<strong class="tit">접수 완료</strong>
-							</div>
-						</li>
-						<li>
-							<span class="num">04</span>
-							<div class="cont">
-								<strong class="tit">서비스 출동</strong>
-							</div>
-						</li>
-					</ol>
-
-					<!-- s: 꼭 알아두세요 -->
-					{{#> cp/notice dp-active="active"}}
-					<ul class="list_depth">
-						<li>보험기간 중 서비스는 총 6회 이용할 수 있습니다.</li>
-						<li>단기 계약은 보험기간에 따라 제공횟수가 다릅니다.(3개월 미만 1회, 3개월 초과 1년 미만 3회 제공)</li>
-						<li>보험기간 중 서비스를 모두 이용한 경우, 하이카서비스 특약만 별도로 가입할 수 없습니다.</li>
-						<li>비상급유는 보험기간 중 2회 이용 가능하며, 비상급유 및 긴급 견인은 1일 1회만 이용 가능합니다.</li>
-						<li>차종에 따라 서비스 종류 및 이용가능 횟수가 다를 수 있습니다.</li>
-					</ul>
-					{{/ cp/notice }}
-					<!-- e: 꼭 알아두세요 -->
-				</div>
-			</div>
-		</div>
-	</div>
-
-</div>
-	 
-	<!-- s: popup area -->
-
-	<!-- s: 자동차 사고 접수 팝업 -->
-	{{#> popup/popup_layer popup-id="pop_type01" popup-title="자동차 사고 접수"}}
-	<div class="popup_cont">
-		<div class="popup_content">
-			<p class="pl_txt1">
-				<strong>현대해상 홈페이지로 이동</strong>할게요
+			<p class="text_sub">
+				<strong class="point">하이카서비스 특약</strong> 가입 시 이용할 수 있어요.
 			</p>
+			<ol class="my_info_flow">
+				<li>
+					<span class="num">01</span>
+					<div class="cont">
+						<strong class="tit">사고접수</strong>
+						<ul class="list_ty3">
+							<li>
+								모바일 화면에서 접수
+								<div class="btn_area basic">
+									{{> cp/linkButton href="https://qamdirect.hi.co.kr/service.do?m=7f63c682c9" bl_class="new_open sm new_open_rd_box" bl_text="홈페이지 접수하기"}}
+								</div>
+							</li>
+							<li>
+								고객센터 (1588-5656) → ARS ②번
+								<div class="btn_area basic">
+									{{> cp/linkButton href="tel:1588-5656" bl_class="short_cut sm rd_box" bl_text="고객센터 전화걸기" }}
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<span class="num">02</span>
+					<div class="cont">
+						<strong class="tit">필요 서비스 신청</strong>
+						<div class="btn_area basic">
+							{{> cp/button type="3" size="5" b-text="서비스 항목" rightIcon="arrowRightSvg"}}
+						</div>
+					</div>
+				</li>
+				<li>
+					<span class="num">03</span>
+					<div class="cont">
+						<strong class="tit">접수 완료</strong>
+					</div>
+				</li>
+				<li>
+					<span class="num">04</span>
+					<div class="cont">
+						<strong class="tit">서비스 출동</strong>
+					</div>
+				</li>
+			</ol>
+
+			<!-- s: 꼭 알아두세요 -->
+			{{#> cp/notice dp-active="active"}}
+			<ul class="list_depth">
+				<li>보험기간 중 서비스는 총 6회 이용할 수 있습니다.</li>
+				<li>단기 계약은 보험기간에 따라 제공횟수가 다릅니다.(3개월 미만 1회, 3개월 초과 1년 미만 3회 제공)</li>
+				<li>보험기간 중 서비스를 모두 이용한 경우, 하이카서비스 특약만 별도로 가입할 수 없습니다.</li>
+				<li>비상급유는 보험기간 중 2회 이용 가능하며, 비상급유 및 긴급 견인은 1일 1회만 이용 가능합니다.</li>
+				<li>차종에 따라 서비스 종류 및 이용가능 횟수가 다를 수 있습니다.</li>
+			</ul>
+			{{/ cp/notice }}
+			<!-- e: 꼭 알아두세요 -->
 		</div>
 	</div>
-	<div class="popup_bottom">
+
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="bottom_fix_wrap">
 		<div class="btn_area">
-			<!-- s: 25-06-16 수정 -->
-			<!-- s: 25-05-15 수정 -->
-			<a href="https://www.hi.co.kr/serviceAction.do?menuId=202006" class="hd_btn hd_btn_ty_1 hd_btn_s_2" target="_blank" title="새창열림">
-				<span class="text">확인</span>
-			</a>
-			<!-- e: 25-05-15 수정 -->
-			 <!-- e: 25-06-16 수정 -->
+			{{> cp/button type="1" size="1" b-text="고장출동 신청" }}
 		</div>
 	</div>
-	{{/ popup/popup_layer}}
-	<!-- e: 자동차 사고 접수 팝업 -->
-	 
-	<!-- e: popup area -->
+	<!-- s: 하단 고정 버튼 영역 -->
+</div>
+<!-- e: 25-06-23 탭삭제 버튼 추가 -->
+<!-- s: popup area -->
+
+<!-- s: 자동차 사고 접수 팝업 -->
+{{#> popup/popup_layer popup-id="pop_type01" popup-title="자동차 사고 접수"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<p class="pl_txt1">
+			<strong>현대해상 홈페이지로 이동</strong>할게요
+		</p>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		<!-- s: 25-06-16 수정 -->
+		<!-- s: 25-05-15 수정 -->
+		<a href="https://www.hi.co.kr/serviceAction.do?menuId=202006" class="hd_btn hd_btn_ty_1 hd_btn_s_2"
+			target="_blank" title="새창열림">
+			<span class="text">확인</span>
+		</a>
+		<!-- e: 25-05-15 수정 -->
+		<!-- e: 25-06-16 수정 -->
+	</div>
+</div>
+{{/ popup/popup_layer}}
+<!-- e: 자동차 사고 접수 팝업 -->
+
+<!-- e: popup area -->
 
 
 {{/ layout/default }}
