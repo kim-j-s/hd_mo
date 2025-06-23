@@ -105,13 +105,34 @@
 					}
 				}
 			}
-			&.disabled2 { 
-				.card_list_ty1 {
-					li > *:last-child {
-						color:#6D7882;
+			&.disabled2 {
+				background-color: var(--color-surface-gray-subtler);
+				.card_link {
+					// background-image: url(../images/icon/arrowRight_disabled_ty2.svg);
+					* {
+						color: var(--color-text-disabled-on) !important;
+						background-color: var(--color-surface-gray-subtler);
+					}
+
+					&::after {
+						content: '';
+						position: absolute;
+						top: 0;
+						left: 0;
+						z-index: 1;
+						width: 100%;
+						height: 100%;
 					}
 				}
-				.card_link { cursor: default; }
+				.card_list_ty1 {
+					// li > *:last-child {
+					// 	color:#6D7882;
+					// }
+					li > * {
+						color: var(--color-text-disabled-on) !important;
+					}
+				}
+				// .card_link { cursor: default; }
 			}
 		}
 	}
@@ -656,6 +677,84 @@
 			}
 		}
 	}
+
+	&.ty5 {
+		.card_item{
+			.card_link {
+				padding-right: 28px;
+				background: url(../images/icon/arrowRight_ty3.svg) no-repeat right center / 24px auto;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				.item_top {
+					.title_info {
+						flex-direction: row;
+						align-items: center;
+						.main_title {
+							background: none !important;
+							padding-right: 0 !important;
+						}
+						.desc {
+							font-size: var(--font-size-body-small);
+							color: var(--color-text-subtle);
+						}
+					}
+					.btn_area {
+
+						width: 100%;
+						margin: var(--gap-5) 0 0 0;
+
+						& > * {
+							flex: none;
+						}
+					}
+				}
+
+				.cont {
+					font-size: var(--font-size-body-small);
+					font-weight: 700;
+				}
+			}//card_link
+
+			&.disabled {
+				.card_link {
+					background: none;
+					&::after {
+						content: '';
+						position: absolute;
+						top: 0;
+						left: 0;
+						z-index: 1;
+						width: 100%;
+						height: 100%;
+					}
+				}
+			}
+			&.disabled2 {
+				background-color: var(--color-surface-gray-subtler);
+				.card_link {
+					// background-image: url(../images/icon/arrowRight_disabled_ty2.svg);
+
+					* {
+						color: var(--color-text-disabled-on) !important;
+						background-color: var(--color-surface-gray-subtler);
+					}
+
+					&::after {
+						content: '';
+						position: absolute;
+						top: 0;
+						left: 0;
+						z-index: 1;
+						width: 100%;
+						height: 100%;
+					}
+				}
+			}
+
+		}//card_item
+	}//ty5
 }
 
 
