@@ -1,0 +1,64 @@
+<!---
+화면번호 : MPRMTPS10002020203
+경로 : 2.자동차 기본정보 > 2-2.보험기간 입력 > ECO마일리지 최종정보 등록안내 > 사진등록 > 조회성공
+-->
+{{#> layout/default page-title="자동차 기본정보 | 상품"}}
+
+<!-- s: 사진판독 성공 안내 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- s: popup_content_top -->
+		<div class="popup_content_top">
+			<h2 class="title_h2">
+				전계약 마일리지 특약 <strong>환급금을 확인</strong> 결과를 확인하세요
+			</h2>
+		</div>
+		<!-- e: popup_content_top -->
+	
+		<!-- s: 커넥티드카 Case -->
+		<div class="info_gray">
+			<dl>
+				<dt><strong>확인결과</strong></dt>
+				<dd><strong class="point">성공</strong></dd>
+			</dl>
+			<dl>
+				<dt>기준일</dt>
+				<dd>2020.01.01</dd>
+			</dl>
+			<dl>
+				<dt>최종주행거리</dt>
+				<dd>46,100Km</dd>
+			</dl>
+			<dl>
+				<dt>마일리지 환급구간</dt>
+				<dd>12,000Km</dd>
+			</dl>
+			<dl class="footer_dl">
+				<dt>예상환급금</dt>
+				<dd><strong class="point">50,430원</strong></dd>
+			</dl>
+		</div>
+		<!-- e: 커넥티드카 Case -->
+
+		<!-- s: 꼭 알아두세요 -->
+		{{#> cp/notice dp-active=true }}
+		<ul class="list_depth">
+			<li>
+				<strong>갱신보험료 결제 시 마일리지 환급금을 차감해 계약을 체결</strong>할 수 있습니다.<br>
+				예) 갱신 보험료 70만원, 마일리지 환급금 20만원 차감 이용 시, 신용카드로 50만원(70만원-20만원) 결제하면 갱신계약 체결완료
+			</li>
+		</ul>
+		{{/ cp/notice }}
+		<!-- e: 꼭 알아두세요 -->
+	</div>
+</div>
+ 
+<div class="popup_bottom">
+	<div class="btn_area">
+	{{> cp/button type="1" size="1" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: 사진판독 성공 안내 팝업 -->
+{{/ layout/default }}
