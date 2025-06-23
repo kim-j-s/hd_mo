@@ -1,3 +1,7 @@
+<!---
+화면번호 : MPRMTPS10002020203
+경로 : 2.자동차 기본정보 > 2-2.보험기간 입력 > ECO마일리지 최종정보 등록안내 > 사진등록 > 조회성공
+-->
 <!DOCTYPE html>
 <html lang="ko">
 	<head>
@@ -48,22 +52,78 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body>
-		<!-- s: Full 팝업 -->
+		<!-- s: 사진판독 성공 안내 팝업 -->
 		<div class="popup_wrap full active" id="pop_type01" role="dialog" aria-hidden="false">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
 				<div class="popup_inner">
 					<div class="popup_head"><div class="popup_head_title"></div></div>
-					<div class="popup_cont load_cont">
+					<div class="popup_cont">
 						<div class="popup_content">
-							<iframe class="iframe_item" src="../../BN/CDBN/MBNCDBN10001000000_iframe.html" title="보장내역 상세보기" style="border: none" width="100%" height="100%" scrolling="yes"></iframe>
+							<!-- s: popup_content_top -->
+							<div class="popup_content_top">
+								<h2 class="title_h2">전계약 마일리지 특약 <strong>환급금을 확인</strong> 결과를 확인하세요</h2>
+							</div>
+							<!-- e: popup_content_top -->
+
+							<!-- s: 커넥티드카 Case -->
+							<div class="info_gray">
+								<dl>
+									<dt><strong>확인결과</strong></dt>
+									<dd><strong class="point">성공</strong></dd>
+								</dl>
+								<dl>
+									<dt>기준일</dt>
+									<dd>2020.01.01</dd>
+								</dl>
+								<dl>
+									<dt>최종주행거리</dt>
+									<dd>46,100Km</dd>
+								</dl>
+								<dl>
+									<dt>마일리지 환급구간</dt>
+									<dd>12,000Km</dd>
+								</dl>
+								<dl class="footer_dl">
+									<dt>예상환급금</dt>
+									<dd><strong class="point">50,430원</strong></dd>
+								</dl>
+							</div>
+							<!-- e: 커넥티드카 Case -->
+
+							<!-- s: 꼭 알아두세요 -->
+							<div class="bottom_fix_notice">
+								<div class="acd_item">
+									<div class="acd_head active">
+										<button type="button" class="acd_btn" aria-expanded="true"><span>꼭 알아두세요</span></button>
+									</div>
+									<div class="acd_cont">
+										<div class="inner" style="display: block">
+											<ul class="list_depth">
+												<li>
+													<strong>갱신보험료 결제 시 마일리지 환급금을 차감해 계약을 체결</strong>할 수 있습니다.<br />
+													예) 갱신 보험료 70만원, 마일리지 환급금 20만원 차감 이용 시, 신용카드로 50만원(70만원-20만원) 결제하면 갱신계약 체결완료
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- e: 꼭 알아두세요 -->
 						</div>
 					</div>
-					<script></script>
+
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
+								<span class="text">확인</span>
+							</button>
+						</div>
+					</div>
 					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
-		<!-- e: Full 팝업 -->
+		<!-- e: 사진판독 성공 안내 팝업 -->
 	</body>
 </html>
