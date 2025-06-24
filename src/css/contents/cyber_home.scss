@@ -1,0 +1,139 @@
+.container {
+    &.cyber {
+        padding: 0 0 var(--padding-13) 0;
+        background: var(--color-background-blue-darker, #313D4C);
+        .content {
+            background: transparent;
+        }
+        .h2_title {
+            font-size: var(--font-size-heading-medium);
+            + .icon_link {
+                margin-top: var(--gap-6);
+            }
+            + .banner_box {
+                margin-top: var(--gap-6);
+                > a {
+                    margin-top: var(--gap-5);
+                }
+            }
+        }
+        .btn_area {
+            margin-top: var(--padding-8);
+        }
+        .home_card {
+            padding: var(--padding-10) var(--padding-9);
+            border-radius: var(--radius-xlarge2);
+            background: var(--color-surface-white-subtle);
+            &.top {
+                padding: var(--padding-6) var(--padding-9) var(--padding-10) var(--padding-9);
+                border-radius: 0px 0px var(--radius-xlarge2) var(--radius-xlarge2);
+            }
+            + .register_box,
+            ~ .home_card {
+                margin-top: var(--gap-1);
+            }
+            &.bg_rain {
+                background: var(--color-surface-white-subtle) url(../images/content/mypg/bg_umbrella.png) no-repeat top 40px right 32px / 88px auto;
+            }
+        }
+        .btn_menu_search {
+            border-radius: var(--radius-large1);
+            background: var(--color-surface-gray-subtler);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 56px;
+            font-size: var(--font-size-body-small);
+            gap: var(--gap-3);
+            .hd_icon {
+                width: 16px;
+                height: 16px;
+                background-size: 16px auto;
+            }
+        }
+        .btn_basket {
+            display: flex;
+            align-items: center;
+            height: 64px;
+            width: 100%;
+            padding: var(--padding-8);
+            font-size: var(--font-size-button-large);
+            color: var(--color-text-basic-inverse);
+            font-weight: 400;
+            .hd_icon {
+                background-size: 20px auto;
+            }     
+        }
+
+        .icon_link {
+            display: flex;
+            gap: var(--gap-3);
+            .item {
+                flex: 1;
+                position: relative;
+                padding-top: 32px;
+                font-size: var(--font-size-body-medium);
+                text-align: center;
+                background-repeat: no-repeat;
+                background-position: top center;
+                background-size: 32px auto;
+                @for $i from 1 through 10 {
+                    &.opt#{$i}{
+                        background-image: url(../images/content/mypg/icon_link#{$i}.svg);
+                    }
+                }
+                .title {
+                    font-size: var(--font-size-body-medium);
+                    & + .cont {
+                        margin-top: 1px;
+                    }
+                }
+            }
+            &.list {
+                border-top: 1px solid var(--color-divider-gray-light);
+                flex-direction: column;
+                gap: 0;
+                .item {
+                    padding: 20px 36px 20px 44px;
+                    text-align: left;
+                    background-position: center left;
+                    border-bottom: 1px solid var(--color-divider-gray-light);
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        width: 24px;
+                        height: 24px;
+                        background: transparent url(../images/icon/arrowRight_ty3.svg) no-repeat center / 20px auto;
+                        transform: translateY(-50%);
+                    }
+                }
+
+            }
+        }
+        .register_box {
+            display: flex;
+            gap: var(--gap-1);
+            > a {
+                flex: 1;
+                padding: var(--padding-7) var(--padding-8);
+                font-size: var(--font-size-body-small);
+                border-radius: var(--radius-xlarge2);
+                background: var(--color-surface-secondary-subtler);
+                strong {
+                    margin-top: var(--gap-2);
+                    padding-left: var(--padding-8);
+                    display: block;
+                    color: var(--color-text-secondary-light);
+                    &.call {
+                        background: url(../images/content/mypg/icon_call.svg) no-repeat left center / 20px auto;
+                    }
+                    &.mobilize {
+                        background: url(../images/content/mypg/icon_mobilize.svg) no-repeat left center / 20px auto;
+                    }
+                }
+            }
+        }
+    }
+}
