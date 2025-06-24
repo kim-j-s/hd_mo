@@ -1,52 +1,52 @@
 {{#> layout/default page-title="피보험자정보 입력 | 여행"}}
-<div id="wrap" class="wrap">
-	{{> layout/header h-title="피보험자정보" }}
-	<div id="container" class="container">
-		<div class="content">
-			<!-- s: content_top -->
-			<div class="content_top">
-				
-				<h2 class="title_h2">
-					<strong>피보험자(가족) 정보</strong>를<br />입력해주세요
-				</h2>
-			</div>
-			<!-- e: content_top -->
+<!-- s: 25-06-24 수정 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-title="피보험자정보"  popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- s: popup_content_top -->
+		<div class="popup_content_top">
+			<h2 class="title_h2">
+			<strong>피보험자(가족) 정보</strong>를<br />입력해주세요
+			</h2>
+		</div>
+		<!-- e: popup_content_top -->
+		
 
-			<div class="form_box">
-				<h3 class="title_h3">배우자
-          <!-- s: 인증전 안내문구 -->
-           <span class="msg_error">본인인증이 필요해요.</span>
-           <!-- e: 인증전 안내문구 -->
-					<!-- s: 인증완료 시 안내문구 -->
-					<!--<span class="msg_success">본인인증 완료</span>-->
-					<!-- e: 인증완료 시 안내문구 -->
-				</h3>
+		<div class="form_box">
+			<h3 class="title_h3">배우자
+				<!-- s: 인증전 안내문구 -->
+					<span class="msg_error">본인인증이 필요해요.</span>
+					<!-- e: 인증전 안내문구 -->
+				<!-- s: 인증완료 시 안내문구 -->
+				<!--<span class="msg_success">본인인증 완료</span>-->
+				<!-- e: 인증완료 시 안내문구 -->
+			</h3>
 
-				<div class="form_group_wrap">
-					<div class="form_line">
-						<div class="label_tit">이름</div>
-						{{> cp/text type="text" placeholder="이름 입력" inp-title="이름 입력" }}
-					</div>
-					<div class="form_line">
-						<div class="label_tit">주민등록번호</div>
-						<div class="comp_wrap birth">
-							{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" value="790101" readonly=true }}
-							<span class="dash">-</span>
-							{{> cp/keypad7 case1=true kt="주민등록번호 뒤 7자리 입력"}}
-						</div>
-					</div>
-					<div class="form_line">
-						<div class="label_tit">휴대폰번호</div>
-						{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" value="- 1234 - 5678" inp-title="휴대폰번호" }}
-					</div>
-					<div class="form_line">
-						<div class="label_tit">영문이름</div>
-						{{> cp/text type="text" placeholder="여권 영문이름 입력(예: KIM HYUN DAI)" inp-title="영문이름 입력"}}
-						<ul class="list_ty2">
-							<li>여권 영문이름과 달라도 보상 여부와는 무관해요.</li>
-						</ul>
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">이름</div>
+					{{> cp/text type="text" placeholder="이름 입력" inp-title="이름 입력" }}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">주민등록번호</div>
+					<div class="comp_wrap birth">
+						{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" value="790101" readonly=true }}
+						<span class="dash">-</span>
+						{{> cp/keypad7 case1=true kt="주민등록번호 뒤 7자리 입력"}}
 					</div>
 				</div>
+				<div class="form_line">
+					<div class="label_tit">휴대폰번호</div>
+					{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" value="- 1234 - 5678" inp-title="휴대폰번호" }}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">영문이름</div>
+					{{> cp/text type="text" placeholder="여권 영문이름 입력(예: KIM HYUN DAI)" inp-title="영문이름 입력"}}
+					<ul class="list_ty2">
+						<li>여권 영문이름과 달라도 보상 여부와는 무관해요.</li>
+					</ul>
+				</div>
+			</div>
 			</div>
 			<div class="btn_area">
 				{{> cp/button type="2" size="2" b-text="인증하기"}}
@@ -150,19 +150,15 @@
 				</div>
 			</div>
 
-		</div>
-	</div>
 
-	<!-- s: 하단 고정 버튼 영역 -->
-	<div class="bottom_fix_wrap">
-		<div class="btn_area">
-			{{> cp/button type="1" size="1" b-text="입력 중이예요" disabled=true }}
-			<!-- {{> cp/button type="1" size="1" b-text="모두 입력했어요" }} -->
-		</div>
 	</div>
-	<!-- s: 하단 고정 버튼 영역 -->
 </div>
-
-<!-- s: popup area -->
-<!-- e: popup area -->
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" b-text="입력 중이예요" disabled=true }}
+		<!-- {{> cp/button type="1" size="1" b-text="모두 입력했어요" }} -->
+	</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: 25-06-24 수정 -->
 {{/ layout/default }}
