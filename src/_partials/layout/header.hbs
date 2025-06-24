@@ -1,14 +1,12 @@
 {{#unless no-header}}
 <div id="header" class="header">
 	<div class="header_inner{{#unless h-back}} history_back_none{{/unless}}">
-
+		<div class="header_left">
 		{{#if main}}
 		<h1 class="header_logo">
-			<a href="#"><img src="" alt="현대해상 다이렉트"></a>
+			<a href="#"><img src="../../../images/header/img_logo.svg" alt="현대해상 다이렉트 홈으로"></a>
 		</h1>
 		{{/if}}
-
-		<div class="header_left">
 		{{#unless h-back}}
 			<button type="button" class="history_back"><span class="text">이전 페이지로 이동</span></button>
 		{{/unless}}
@@ -49,6 +47,9 @@
 			{{!-- 계약변경 팝업 호출 버튼 --}}
 			{{#if h-ins}}
 				<button type="button" class="insChk" onclick="openHDPopup(this,'{{h-ins}}');"><span class="text">계약변경 팝업 열기</span></button>
+			{{/if}}
+			{{#if h-alarm}}
+				<button type="button" class="ins_alarm"><span class="text">알림 팝업 열기</span></button>
 			{{/if}}
 			{{!-- 계약변경 팝업 호출 버튼 --}}
 			{{#unless no-nav}}
