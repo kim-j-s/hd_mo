@@ -167,6 +167,7 @@
 		.item_inner {
 			display: flex;
 			align-items: flex-start;
+			
 
 			> .inp_checkbox,
 			> .inp_radio {
@@ -179,8 +180,22 @@
 				}
 			}
 
+			&:not(:has(.item_top)){
+				.inp_radio {
+					background-color: red;
+				}
+			}
+
 			.inner_cont {
 				flex: 1;
+
+				&:not(:has(.item_top)){
+					.inp_label {
+						.chk_label {
+							margin-top: 0;
+						}
+					}
+				}
 
 				> * {
 					& + .card_list_ty1 {
@@ -948,6 +963,7 @@
 		}
 
 		.item_inner {
+			position: relative;
       display: flex;
 			flex-direction: column;
 			gap: var(--gap-5);
