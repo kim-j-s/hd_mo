@@ -1070,8 +1070,8 @@
 .container.cyber .content {
 	background: transparent;
 }
-.container.cyber .h2_title {
-	font-size: var(--font-size-heading-medium);
+.container.cyber .h2_title ~ .ing_banner {
+	margin-top: var(--gap-5);
 }
 .container.cyber .h2_title + .icon_link {
 	margin-top: var(--gap-6);
@@ -1081,6 +1081,10 @@
 }
 .container.cyber .h2_title + .banner_box > a {
 	margin-top: var(--gap-5);
+}
+.container.cyber .h2_title ~ .bg_rain,
+.container.cyber .h2_title ~ .my_list {
+	margin-top: var(--gap-9);
 }
 .container.cyber .btn_area {
 	margin-top: var(--padding-8);
@@ -1098,8 +1102,59 @@
 .container.cyber .home_card ~ .home_card {
 	margin-top: var(--gap-1);
 }
-.container.cyber .home_card.bg_rain {
-	background: var(--color-surface-white-subtle) url(../images/content/mypg/bg_umbrella.png) no-repeat top 4rem right 3.2rem/8.8rem auto;
+.container.cyber .home_card .bg_rain {
+	background: var(--color-surface-white-subtle) url(../images/content/mypg/bg_umbrella.png) no-repeat top right/8.8rem auto;
+}
+.container.cyber .home_card .btn_area .hd_btn_s_3 {
+	position: relative;
+}
+.container.cyber .home_card .btn_area .hd_btn_s_3 .hd_icon {
+	position: absolute;
+	top: calc(50% - 1rem);
+	right: 1.6rem;
+}
+.container.cyber .home_card.bn_box {
+	padding-bottom: 16.8rem;
+}
+.container.cyber .home_card.bn_box .h2_title + .btn_area {
+	margin-top: var(--gap-5);
+}
+.container.cyber .home_card.bn_box.ty1 {
+	background: var(--color-surface-secondary-subtler) url(../images/content/mypg/my_bn_bg01.png) no-repeat bottom center/auto 16rem;
+}
+.container.cyber .home_card.bn_box.ty1 .h2_title {
+	text-align: center;
+}
+.container.cyber .home_card.bn_box.ty2 {
+	background: var(--color-surface-secondary-subtler) url(../images/content/mypg/my_bn_bg02.png) no-repeat bottom center/contain;
+}
+@media (min-width: 600px) {
+	.container.cyber .home_card.bn_box.ty2 {
+		background-size: cover;
+	}
+}
+.container.cyber .home_card.bn_box.ty3 {
+	background: var(--color-surface-secondary-subtler) url(../images/content/mypg/my_bn_bg03.png) no-repeat bottom center/contain;
+}
+@media (min-width: 600px) {
+	.container.cyber .home_card.bn_box.ty3 {
+		background-size: cover;
+	}
+}
+.container.cyber .home_card.bn_box.ty4 {
+	background: var(--color-surface-secondary-subtler) url(../images/content/mypg/my_bn_bg04.png) no-repeat bottom center/contain;
+}
+@media (min-width: 600px) {
+	.container.cyber .home_card.bn_box.ty4 {
+		background-size: cover;
+	}
+}
+.container.cyber .home_card.bn_box2 {
+	background: -webkit-gradient(linear, left bottom, left top, from(var(--color-surface-primary-subtler, #feefec)), to(var(--color-surface-primary-subtler, #feefec))), var(--color-surface-secondary-subtler, #eef2f7);
+	background: linear-gradient(0deg, var(--color-surface-primary-subtler, #feefec) 0%, var(--color-surface-primary-subtler, #feefec) 100%), var(--color-surface-secondary-subtler, #eef2f7);
+}
+.container.cyber .home_card.bn_box2 > div {
+	background: url(../images/content/mypg/bg_document.png) no-repeat top right/8.8rem auto;
 }
 .container.cyber .btn_menu_search {
 	border-radius: var(--radius-large1);
@@ -1187,6 +1242,9 @@
 .container.cyber .icon_link .item.opt10 {
 	background-image: url(../images/content/mypg/icon_link10.svg);
 }
+.container.cyber .icon_link .item.opt11 {
+	background-image: url(../images/content/mypg/icon_link11.svg);
+}
 .container.cyber .icon_link .item .title {
 	font-size: var(--font-size-body-medium);
 }
@@ -1244,6 +1302,70 @@
 }
 .container.cyber .register_box > a strong.mobilize {
 	background: url(../images/content/mypg/icon_mobilize.svg) no-repeat left center/2rem auto;
+}
+.container.cyber .ing_banner {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	gap: var(--gap-4);
+	padding: var(--padding-6) var(--padding-5);
+	font-size: var(--font-size-body-xsmall);
+	border-radius: var(--radius-medium1);
+	background: #f5f5f5;
+}
+.container.cyber .ing_banner .cont {
+	padding-left: 2.8rem;
+	word-wrap: break-word;
+	word-break: auto-phrase;
+	background: url(../images/content/mypg/icon_bell.svg) no-repeat left top/2.4rem auto;
+}
+.container.cyber .ing_banner .close {
+	width: 2rem;
+	height: 2rem;
+	background: url(../images/icon/close_ty1.svg) no-repeat center/2rem auto;
+}
+.container.cyber .my_list .title_box h2 {
+	color: var(--color-text-secondary-light);
+}
+.container.cyber .my_list + .btn_area {
+	margin-top: var(--gap-5);
+}
+.container.cyber .my_list .h2_title + .btn_area {
+	margin-top: var(--gap-6);
+}
+.h2_title {
+	font-size: var(--font-size-heading-medium);
+}
+.h2_title + .my_title {
+	margin-top: var(--gap-7);
+}
+.my_title {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	font-size: var(--font-size-body-xsmall);
+	color: var(--color-text-subtle);
+}
+.my_title h2 {
+	font-size: var(--font-size-heading-xxsmall);
+	color: var(--color-text-bolder);
+	font-weight: 700;
+}
+.my_title + .h2_title,
+.my_title + .card_item_wrap {
+	margin-top: var(--gap-5);
+}
+.my_title + .badge_wrap {
+	margin-top: var(--gap-4);
+}
+.my_title + .badge_wrap + .info_gray {
+	margin-top: var(--gap-7);
 }
 /* 자동차보험 - 고객정보 */
 .main_title {
@@ -3278,8 +3400,14 @@
 .form_box > .radio_group_wrap + p.info_text {
 	margin-top: var(--gap-8);
 }
-.form_box .title_h3 {
-	margin-bottom: var(--gap-6);
+.form_box .title_h3 + * {
+	margin-top: var(--gap-6);
+}
+.form_box .title_h3 + .text_sub {
+	margin-top: var(--gap-4);
+}
+.form_box .title_h3 + .text_sub + .form_group_wrap {
+	margin-top: var(--gap-8);
 }
 .form_box .checkbox_group_wrap {
 	margin-top: var(--gap-8);
