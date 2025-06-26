@@ -683,10 +683,12 @@ function tabScroll(){
 // 간편정보 노출 방식
 function simpleInfo(){
 	$('#container, .popup_cont, .container_form').on('scroll', function() {
+		const $bigTarget = $(this);
 		const $headHeight = $('#header').outerHeight();
 		const $pop_headHeight = $('.popup_head').outerHeight();
 		const scrollTop = $('#container').scrollTop();
 		const pop_scrollTop = $('.popup_cont').scrollTop();
+		const pop_height = $('.popup_cont').height();
 
 		// console.log('scroll!! : '+ scrollTop);
 
@@ -753,10 +755,17 @@ function simpleInfo(){
 				const targetTop = $target.position().top;
 				const targetHeight = $target.height();
 				const simpleHeight = $('.simple_info_wrap').height();
+				let isLast = 0;
+				isLast = $('.tag_item_move .tag_move').length - 1;
+
+				// console.log(pop_scrollTop, pop_height, $bigTarget[0].scrollHeight)
 
 				if( pop_scrollTop + 100 >= targetTop + targetHeight + simpleHeight ){
 					$('.tag_item').removeClass('active');
 					$('.tag_item').eq(idx).addClass('active');
+				}else if (pop_scrollTop + pop_height + 145 >= $bigTarget[0].scrollHeight){
+					$('.tag_item').removeClass('active');
+					$('.tag_item').eq(isLast).addClass('active');
 				}
 			});
 		}
