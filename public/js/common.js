@@ -150,25 +150,33 @@
 
 		if($('.tag_item_move').length){
 			const $target = $('.tag_item_move').find('.tag_move').eq(idx);
-			const targetMargin = parseFloat($target.css('margin-top'));
+			const targetPadding = parseFloat($target.css('padding-top'));
 			// const simpleHeight = $('.simple_info_wrap').height();
 			// const targetOffset = $target.position().top;
-			const simpleHeight = 122;
+			let summaryHeight = 0,
+					simpleHeight = 0;
 			const targetOffset = $target.position().top;
 			const fix_h = $(this).closest('.sticky').height();
 			
 			// console.log($target + ' : ' + targetOffset);
 			// console.log(targetOffset , targetMargin);
 
+			if($('.simple_info_wrap.ty2').length){
+				simpleHeight = 102;
+			}
+			if($('.info_summary').length){
+				summaryHeight = $('.info_summary').height();
+			}
+
 			$('.tag_item').removeClass('active');
 			$this.addClass('active');
 
 			$this.closest('.popup_cont').animate({
-				scrollTop: targetOffset + targetMargin + simpleHeight + fix_h
+				scrollTop: targetOffset + targetPadding + simpleHeight + fix_h + summaryHeight
 			}, 500);
 
 			if($('.btn_toggle').length){
-				posiionVal = targetOffset + targetMargin + simpleHeight + fix_h;
+				posiionVal = targetOffset + targetPadding + simpleHeight + fix_h;
 			}
 		}
 	});
