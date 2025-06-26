@@ -150,25 +150,33 @@
 
 		if($('.tag_item_move').length){
 			const $target = $('.tag_item_move').find('.tag_move').eq(idx);
-			const targetMargin = parseFloat($target.css('margin-top'));
+			const targetPadding = parseFloat($target.css('padding-top'));
 			// const simpleHeight = $('.simple_info_wrap').height();
 			// const targetOffset = $target.position().top;
-			const simpleHeight = 122;
+			let summaryHeight = 0,
+					simpleHeight = 0;
 			const targetOffset = $target.position().top;
 			const fix_h = $(this).closest('.sticky').height();
 			
 			// console.log($target + ' : ' + targetOffset);
 			// console.log(targetOffset , targetMargin);
 
+			if($('.simple_info_wrap.ty2').length){
+				simpleHeight = 102;
+			}
+			if($('.info_summary').length){
+				summaryHeight = $('.info_summary').height();
+			}
+
 			$('.tag_item').removeClass('active');
 			$this.addClass('active');
 
 			$this.closest('.popup_cont').animate({
-				scrollTop: targetOffset + targetMargin + simpleHeight + fix_h
+				scrollTop: targetOffset + targetPadding + simpleHeight + fix_h + summaryHeight
 			}, 500);
 
 			if($('.btn_toggle').length){
-				posiionVal = targetOffset + targetMargin + simpleHeight + fix_h;
+				posiionVal = targetOffset + targetPadding + simpleHeight + fix_h;
 			}
 		}
 	});
@@ -675,10 +683,12 @@ function tabScroll(){
 // 간편정보 노출 방식
 function simpleInfo(){
 	$('#container, .popup_cont, .container_form').on('scroll', function() {
+		const $bigTarget = $(this);
 		const $headHeight = $('#header').outerHeight();
 		const $pop_headHeight = $('.popup_head').outerHeight();
 		const scrollTop = $('#container').scrollTop();
 		const pop_scrollTop = $('.popup_cont').scrollTop();
+		const pop_height = $('.popup_cont').height();
 
 		// console.log('scroll!! : '+ scrollTop);
 
@@ -745,10 +755,17 @@ function simpleInfo(){
 				const targetTop = $target.position().top;
 				const targetHeight = $target.height();
 				const simpleHeight = $('.simple_info_wrap').height();
+				let isLast = 0;
+				isLast = $('.tag_item_move .tag_move').length - 1;
+
+				// console.log(pop_scrollTop, pop_height, $bigTarget[0].scrollHeight)
 
 				if( pop_scrollTop + 100 >= targetTop + targetHeight + simpleHeight ){
 					$('.tag_item').removeClass('active');
 					$('.tag_item').eq(idx).addClass('active');
+				}else if (pop_scrollTop + pop_height + 145 >= $bigTarget[0].scrollHeight){
+					$('.tag_item').removeClass('active');
+					$('.tag_item').eq(isLast).addClass('active');
 				}
 			});
 		}

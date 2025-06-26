@@ -1875,6 +1875,9 @@ strong {
 .ag_groups .ag_groups_top + .ag_group_wrap {
 	margin-top: var(--gap-5);
 }
+.ag_groups + .checkbox_group_wrap {
+	margin-top: var(--gap-11);
+}
 .ag_group_wrap {
 	padding: 0 var(--padding-7);
 	border-radius: var(--radius-large2);
@@ -4444,7 +4447,7 @@ strong {
 	position: relative;
 }
 .tag_item_move > .tag_move:first-child {
-	margin-top: var(--gap-5);
+	padding-top: var(--gap-5);
 }
 .tag_item_cont {
 	margin-top: var(--gap-8);
@@ -4816,7 +4819,7 @@ strong {
 	font-size: var(--font-size-body-small);
 	line-height: 2.7rem;
 }
-.bann_text_wrap_ty3 .text .arrowRightSvg_ty4 {
+.bann_text_wrap_ty3 .text .arrowRightSvg {
 	padding-right: 2.4rem;
 	background-repeat: no-repeat;
 	background-position: right 0.4rem center;
@@ -6993,20 +6996,17 @@ strong {
 	background-repeat: no-repeat;
 	background-position: center;
 }
-.hd_icon.downloadSvg {
+.hd_icon.downloadSvg_ty1 {
 	background-image: url(../images/icon/download_ty1.svg);
 }
-.hd_icon.arrowRightSvg {
+.hd_icon.arrowRightSvg_ty1 {
 	background-image: url(../images/icon/arrowRight_ty1.svg);
 }
-.hd_icon.downloadSvg {
+.hd_icon.downloadSvg_ty2 {
 	background-image: url(../images/icon/download_ty2.svg);
 }
-.hd_icon.arrowRightSvg {
+.hd_icon.arrowRightSvg_ty2 {
 	background-image: url(../images/icon/arrowRight_ty2.svg);
-}
-.hd_icon.arrowRightSvg2 {
-	background-image: url(../images/icon/arrowRight_ty1.svg);
 }
 .hd_icon.cameraSvg {
 	background-image: url(../images/icon/camera.svg);
@@ -7015,7 +7015,7 @@ strong {
 	background-image: url(../images/icon/download_ty3.svg);
 }
 .hd_icon.arrowRightSvg {
-	background-image: url(../images/icon/arrowRight_ty3.svg);
+	background-image: url(../images/icon/arrowRight_ty4.svg);
 }
 .hd_icon.openWindowSvg {
 	background-image: url(../images/icon/icon-open-window.svg);
@@ -7454,23 +7454,32 @@ strong {
 	height: 3.2rem;
 	background-position: center;
 }
-.arrowRightSvg {
+.arrowRightSvg_ty1 {
 	background-image: url(../images/icon/arrowRight_ty1.svg);
 }
-.arrowRight_ty3 {
-	background-image: url(../images/icon/arrowRight_ty3.svg);
+.arrowRightSvg_ty2 {
+	background-image: url(../images/icon/arrowRight_ty2.svg);
 }
-.arrowRightSvg_ty4 {
+.arrowRightSvg {
 	background-image: url(../images/icon/arrowRight_ty4.svg);
 }
 .arrowRightSvg_ty5 {
 	background-image: url(../images/icon/arrowRight_ty5.svg);
 }
-.arrowDownSvg_ty3 {
-	background-image: url(../images/icon/arrowDown_ty3.svg);
+.arrowRightSvg_ty6 {
+	background-image: url(../images/icon/arrowRight_ty6.svg);
 }
-.arrowDownSvg_ty3:disabled {
-	background-image: url(../images/icon/arrowDown_ty5.svg);
+.arrowRightSvg_ty7 {
+	background-image: url(../images/icon/arrowRight_ty7.svg);
+}
+.arrowRightSvg_ty8 {
+	background-image: url(../images/icon/arrowRight_ty8.svg);
+}
+.arrowRightSvg_ty9 {
+	background-image: url(../images/icon/arrowRight_ty9.svg);
+}
+.arrowRightSvg_ty10 {
+	background-image: url(../images/icon/arrowRight_ty10.svg);
 }
 .searchSvg {
 	background-image: url(../images/icon/icon_search.svg);
@@ -8125,6 +8134,7 @@ strong {
 }
 .form_group_wrap [class^="form_line"] .label_tit .tooltip_wrap {
 	vertical-align: top;
+	z-index: 11;
 }
 .form_group_wrap [class^="form_line"] .label_tit .tooltip_wrap .tooltip_panel {
 	top: calc(100% + 3.2rem);
@@ -8334,7 +8344,7 @@ strong {
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	height: 4.8rem;
+	height: 5.6rem;
 	gap: 0.2rem;
 	padding: 0 1.6rem;
 	font-size: var(--font-size-body-medium);
@@ -9506,6 +9516,15 @@ strong {
 .data_list li dl dt.info {
 	background-image: url(../images/content/bi/icon_info.svg);
 }
+.data_list li dl dt.business {
+	background-image: url(../images/content/bi/icon_stepper_business.svg);
+}
+.data_list li dl dt.structure {
+	background-image: url(../images/content/bi/icon_stepper_structure.svg);
+}
+.data_list li dl dt.type {
+	background-image: url(../images/content/bi/icon_stepper_type.svg);
+}
 .data_list li dl dd {
 	color: var(--color-text-basic);
 }
@@ -10371,7 +10390,9 @@ strong {
 	flex-flow: row wrap;
 	gap: var(--gap-4);
 }
-.radio_group_wrap + .title_h3,
+.radio_group_wrap + .title_h3 {
+	margin-top: var(--gap-11);
+}
 .radio_group_wrap + .info_gray,
 .radio_group_wrap + .acd_item,
 .radio_group_wrap + .space_list_ty2 {
@@ -12759,7 +12780,7 @@ strong {
 	background-image: url(../images/icon/icon_call_check.svg);
 }
 .info_gray.ty2 {
-	background: var(--color-surface-information-subtler);
+	background-color: var(--color-surface-information-subtler);
 }
 .info_gray.ty3 {
 	background: var(--color-action-secondary);
