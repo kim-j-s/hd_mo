@@ -27,38 +27,56 @@
 						{{> cp/address ad_ph="건물 구조 선택" case3=true ad_popup="pop_type01"}}
 						<!-- e: 25-06-16 수정 -->
 					</div>
+					<!-- s: 25-06-27 수정 -->
 					<div class="form_line">
-						<div class="label_tit">총 전용 면적 {{> cp/tooltip text="<p>가입하고자 하는 층수의 총 전용면적을 입력해주세요.</p>" trigger-icon="popover_help"}}</div>
-						<div class="row balance">
-							{{> cp/text type="tel" placeholder="숫자만 입력" value="78" r-text="㎡" inp-title="제곱미터 입력" }}
-							{{> cp/text type="tel" placeholder="숫자만 입력" r-text="평" inp-title="평수 면적 입력" disabled=true }}
-						</div>
-					</div>
-					<div class="form_line">
-						<div class="label_tit">총 지상 층수 {{> cp/tooltip text="<p>사업장 또는 공장이 위치하는 건물의 지상층수를 입력해주세요 (지하층 제외)</p>" trigger-icon="popover_help"}}</div>
+						<!-- <div class="label_tit">총 지상 층수 {{> cp/tooltip text="<p>사업장 또는 공장이 위치하는 건물의 지상층수를 입력해주세요 (지하층 제외)</p>" trigger-icon="popover_help"}}</div> -->
+						<div class="label_tit">총 지상 층수</div>
 						<div class="row"> 
 							{{> cp/text type="tel" class="grow" placeholder="숫자만 입력" value="1" r-text="층" inp-title="층수 입력" }}
 						</div>
 					</div>
 					<div class="form_line">
-						<div class="label_tit">가입 층수(저층~고층)</div>
+						<div class="label_tit">가입 층수(저층~)</div>
+							{{> cp/selectitem si_ph="선택" si_title="가입 층수(저층~) 선택" si_popup="pop_type02"}}
+							{{> cp/text type="tel" class="grow" placeholder="숫자만 입력" value="1" r-text="층" inp-title="층수 입력" }}
+					</div>
+					<div class="form_line">
+						<div class="label_tit">가입 층수(~고층)</div>
+							{{> cp/selectitem si_ph="선택" si_title="가입 층수(~고층) 선택" si_popup="pop_type03"}}
+							{{> cp/text type="tel" class="grow" placeholder="숫자만 입력" value="1" r-text="층" inp-title="층수 입력" }}
+					</div>
+					<div class="form_line">
+						<!-- <div class="label_tit">총 전용 면적 {{> cp/tooltip text="<p>가입하고자 하는 층수의 총 전용면적을 입력해주세요.</p>" trigger-icon="popover_help"}}</div> -->
+						<div class="label_tit">총 전용 면적</div>
 						<div class="row balance">
-							{{> cp/text type="tel" class="grow" placeholder="숫자만 입력" value="1" r-text="층" inp-title="층수 입력" }}
-							{{> cp/text type="tel" class="grow" placeholder="숫자만 입력" value="1" r-text="층" inp-title="층수 입력" }}
+							{{> cp/text type="tel" placeholder="숫자만 입력" value="78" r-text="㎡" inp-title="제곱미터 입력" }}
+							{{> cp/text type="tel" placeholder="숫자만 입력" r-text="평" inp-title="평수 면적 입력" disabled=true }}
 						</div>
 					</div>
+					<!-- e: 25-06-27 수정 -->
 				</div>
 			</div>
 
-			<!-- s: 25-05-07 수정 -->
+			<!-- s: 25-06-27 수정 -->
 			<!-- s: 꼭 알아두세요 -->
 			{{#> cp/notice dp-active="active" }}
 			<ul class="list_ty1">
-				<li>지하층은 가입 및 보상이 불가합니다. (사업장 및 공장이 지하층부터 지상층까지 있을 경우 지상1층부터 가입할 수 있습니다.)</li>
+				<li>사업장 또는 공장이 위치하는 건물의 지상 층수를 입력해주세요(지하층 제외)</li>
+				<li>보험에 가입하고자하는 해당 층을 선택해주세요.</li>
+				<li><strong class="point">지하층은 가입 및 보상이 불가합니다.</strong><br>(사업장 및 공장이 지하층부터 지상층까지 있을 경우 지상1층부터 가입할 수 있습니다.)</li>
 			</ul>
 			{{/ cp/notice }}
 			<!-- e: 꼭 알아두세요 -->
-			<!-- e: 25-05-07 수정 -->
+
+			<!-- s: 꼭 알아두세요 case2 요기요 -->
+			<!-- {{#> cp/notice dp-active="active" }}
+			<ul class="list_ty1">
+				<li>보험에 가입하고자하는 해당 층을 선택해주세요.</li>
+				<li>가입하고자 하는 영업장의 전체 면적을 입력해주세요.<br>(예, B1층~지상1층을 함께 가입하고자 하는 경우 B1층+1층 합산한 전용 면적)</li>
+			</ul>
+			{{/ cp/notice }} -->
+			<!-- e: 꼭 알아두세요 case2 요기요 -->
+			<!-- e: 25-06-27 수정 -->
 		</div>
 	</div>
 
@@ -88,6 +106,50 @@
 </div>
 {{/ popup/popup_layer}}
 <!-- e: Layer 팝업 -->
+
+<!-- s: 25-06-27 추가 -->
+<!-- s: 가입 층수(저층~) 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type02" popup-title="가입 층수(저층~)"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="opt_select_list opt_case3">
+			<!--s: case2 요기요 -->
+			<!-- <div role="button" tabindex="0" class="option"><span class="text">B2 이하</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">B1</span></div> -->
+			<!--e: case2 요기요 -->
+			<div role="button" tabindex="0" class="option"><span class="text">1층</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">2층</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">3층</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">4층</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">5층</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">직접입력</span></div>
+		</div>
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 가입 층수(저층~) 팝업 -->
+
+<!-- s: 가입 층수(~고층) 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type03" popup-title="가입 층수(~고층)"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="opt_select_list opt_case3">
+			<!--s: case2 요기요 -->
+			<!-- <div role="button" tabindex="0" class="option"><span class="text">B2 이하</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">B1</span></div> -->
+			<!--e: case2 요기요 -->
+			<div role="button" tabindex="0" class="option"><span class="text">1층</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">2층</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">3층</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">4층</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">5층</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">직접입력</span></div>
+		</div>
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 가입 층수(~고층) 팝업 -->
+<!-- e: 25-06-27 추가 -->
 
 <!-- e: popup area -->
 {{/ layout/default }}
