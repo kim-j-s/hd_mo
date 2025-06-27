@@ -191,14 +191,21 @@
 
 <!-- s: popup area -->
  <!-- s: 온라인 가입 불가 안내 팝업 -->
- {{#> popup/popup_bottom popup-id="pop_MPRLTMD12005000000" popup-title="온라인 가입 불가 안내" }}
+ {{#> popup/popup_bottom popup-id="pop_type02" popup-title="온라인 가입 불가 안내" }}
  <div class="popup_cont">
 	 <div class="popup_content">
 			 <h3 class="info_text">
-				이륜자동차 면허가 없는 경우 오토바이운전자보험 가입이 불가합니다.
-				<!-- “유상 운송 배달” 용도로 운전하는 경우 가입이 어렵습니다. -->
-				<!-- 고객님이 선택한 조건으로는 가입이 어렵습니다. -->
+				
+				
 			 </h3>
+			 <div class="popup_content_top txt_center">
+				<span class="status_icon">{{> cp/icon iconClass="icon_info_ty2_Svg"}}</span>
+				<h3 class="title_h3 normal">
+					<strong>이륜자동차 면허가 없는 경우<br/>오토바이운전자보험 가입이 불가합니다.</strong>
+					<!-- <strong>"유상 운송 배달" 용도로 운전하는 경우<br/> 가입이 어렵습니다.</strong> -->
+					<!-- <strong>고객님이 선택한 조건으로는<br />가입이 어렵습니다.</strong> -->
+				</h3>
+			</div>
 			 <!-- e: call_box -->
 			 <div class="call_box">
 					<div class="info_gray ty2">
@@ -219,7 +226,9 @@
 	 	</div>
  </div>
  <div class="popup_bottom">
-	 <div class="btn_area right">{{> cp/button type="1" size="2" b-text="홈으로" }}</div>
+	 <div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
  </div>
  {{/ popup/popup_bottom}}
  <!-- e: 온라인 가입 불가 안내 팝업 -->

@@ -164,21 +164,33 @@
 					</div>
 					<!-- 국가 -->
 
-					<!-- s: 25-06-05 수정 -->
+					<!-- s: 25-06-27 수정 -->
 					<!-- 기간 -->
 					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step2">
-						
-						<div class="opts_area_item column">
-							{{> cp/button type="3" size="b1" class="full" b-text="출발일시" btn-title="출발일시 선택 팝업 호출" }}
-							{{> cp/button type="3" size="b1" class="full" b-text="도착일시" btn-title="도착일시 선택 팝업 호출" }}
-							<!-- 기간 입력 후 -->
-							{{> cp/button type="3" size="b1" class="full" b-text="출발일시 2025.05.13 오전 09시" btn-title="출발일시 선택 팝업 호출" }}
-							{{> cp/button type="3" size="b1" class="full" b-text="도착일시 2025.05.17 오후 10시" btn-title="도착일시 선택 팝업 호출" }}
-							<!-- 기간 입력 후 -->
+						<div class="opts_area_item oai_lock">
+							<div class="item_box">
+								<div class="cont opts_area_item column">
+										{{> cp/button type="3" size="b1" class="full" b-text="출발일시" btn-title="출발일시 선택 팝업 호출" }}
+										{{> cp/button type="3" size="b1" class="full" b-text="도착일시" btn-title="도착일시 선택 팝업 호출" }}
+										<!-- 기간 입력 후 -->
+										{{> cp/button type="3" size="b1" class="full" b-text="출발일시 2025.05.13 오전 09시" btn-title="출발일시 선택 팝업 호출" }}
+										{{> cp/button type="3" size="b1" class="full" b-text="도착일시 2025.05.17 오후 10시" btn-title="도착일시 선택 팝업 호출" }}
+										<!-- 기간 입력 후 -->
+								</div>
+
+								<!-- s: 수정하는 경우(출발/도착일시 데이터가 있는 경우)에만 노출 -->
+								<div class="bottom_fix_wrap">
+									<div class="btn_area">
+										{{> cp/button type="1" size="1" b-text="일정을 선택했어요" }}
+									</div>
+								</div>
+								<!-- e: 수정하는 경우(출발/도착일시 데이터가 있는 경우)에만 노출 -->
+
+							</div>
 						</div>
 					</div>
 					<!-- 기간 -->
-					<!-- s: 25-06-05 수정 -->
+					<!-- s: 25-06-27 수정 -->
 				
 					<!-- 대상 -->
 					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step3">
