@@ -47,38 +47,38 @@
   });
 	/* 전체메뉴 닫기 */
 
-	/* 메뉴검색 메뉴 열기 */
-	$DOM.on('click', '.nsc_box', function() {
-		// console.log('메뉴검색 열기');
-    const $this = $(this),
-          $msp = $this.closest('.header_inner').find('.menu_search_popup');
-		$msp.addClass('active');
-		setTimeout(function(){
-			$msp.find('.msp_inner').attr('tabindex', '0').focus();
-			$('.nav_menu_wrap').attr('aria-hidden', 'true');
-			$msp.attr('aria-hidden', 'false');
-			$('.nav_menu_inner').removeAttr('tabindex');
-			// $('.header_inner').find('*').not('.nav_menu_wrap, .header_right, .header_right *').attr('aria-hidden', 'true');
-			// $('.wrap').children().not('.header').attr('aria-hidden', 'true');
-		}, 400);
-  });
+	/* 메뉴검색 메뉴 열기 - 25-6-27 하단 전체 팝업호출로 변경 기능 삭제 */
+	// $DOM.on('click', '.nsc_box', function() {
+	// 	// console.log('메뉴검색 열기');
+  //   const $this = $(this),
+  //         $msp = $this.closest('.header_inner').find('.menu_search_popup');
+	// 	$msp.addClass('active');
+	// 	setTimeout(function(){
+	// 		$msp.find('.msp_inner').attr('tabindex', '0').focus();
+	// 		$('.nav_menu_wrap').attr('aria-hidden', 'true');
+	// 		$msp.attr('aria-hidden', 'false');
+	// 		$('.nav_menu_inner').removeAttr('tabindex');
+	// 		// $('.header_inner').find('*').not('.nav_menu_wrap, .header_right, .header_right *').attr('aria-hidden', 'true');
+	// 		// $('.wrap').children().not('.header').attr('aria-hidden', 'true');
+	// 	}, 400);
+  // });
 	/* 메뉴검색 메뉴 열기 */
 
-	/* 메뉴검색 메뉴 닫기 */	
-	$DOM.on('click', '.menu_search_popup_close', function() {
-		console.log('전체메뉴 닫기');
-    const $this = $(this),
-          $msp = $this.closest('.header_inner').find('.menu_search_popup');
+	/* 메뉴검색 메뉴 닫기 - 25-6-27 하단 전체 팝업호출로 변경 기능 삭제 */	
+	// $DOM.on('click', '.menu_search_popup_close', function() {
+	// 	console.log('전체메뉴 닫기');
+  //   const $this = $(this),
+  //         $msp = $this.closest('.header_inner').find('.menu_search_popup');
 
-		$('.header .allmenu_close').focus();
-		$msp.find('.msp_inner').removeAttr('tabindex');
-		// $('.header_inner').find('*').not('.nav_menu_wrap, .header_right, .header_right *').attr('aria-hidden', 'false');
-		// $('.header_right .allmenu_open').attr('aria-hidden', 'false');
-		// $('.wrap').children().not('.header').attr('aria-hidden', 'false');
-		$msp.removeClass('active').attr('aria-hidden', 'true');
-		// $('body').removeClass('scroll_lock');
-		// $('.wrap').removeAttr('aria-hidden');
-  });
+	// 	$('.header .allmenu_close').focus();
+	// 	$msp.find('.msp_inner').removeAttr('tabindex');
+	// 	// $('.header_inner').find('*').not('.nav_menu_wrap, .header_right, .header_right *').attr('aria-hidden', 'false');
+	// 	// $('.header_right .allmenu_open').attr('aria-hidden', 'false');
+	// 	// $('.wrap').children().not('.header').attr('aria-hidden', 'false');
+	// 	$msp.removeClass('active').attr('aria-hidden', 'true');
+	// 	// $('body').removeClass('scroll_lock');
+	// 	// $('.wrap').removeAttr('aria-hidden');
+  // });
 	/* 메뉴검색 메뉴 닫기 */
 
 
