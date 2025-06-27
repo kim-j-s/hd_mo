@@ -113,7 +113,7 @@
 									</ul>
 
 									<div class="nmc_search_cont">
-										<button type="button" class="nsc_box" title="통합검색 화면 팝업 호출">
+										<button type="button" class="nsc_box" title="통합검색 화면 팝업 호출" onclick="openHDPopup(this, 'totalSearch')">
 											<span class="text">무엇을 찾으시나요?</span>
 										</button>
 									</div>
@@ -318,127 +318,6 @@
 								</div>
 							</div>
 						</div>
-
-						<div class="menu_search_popup" aria-hidden="true">
-							<div class="msp_inner">
-								<div class="msp_inner_top">
-									<button type="button" class="menu_search_popup_close"><span class="blind">팝업 닫기</span></button>
-								</div>
-								<div class="msp_wrap">
-									<div class="msp_wrap_top">
-										<div class="input_text search">
-											<div class="inp">
-												<input type="search" placeholder="상품부터 메뉴까지" title="메뉴 검색 입력" />
-												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button><button type="button" class="btn btn_search" title="검색"></button>
-											</div>
-										</div>
-									</div>
-
-									<div class="msp_wrap_cont">
-										<!-- s: 검색 전 노출 화면 -->
-										<!-- 
-											<div class="msp_in_cont">
-												<h4 class="msp_slw_title"><strong>최근 검색어</strong></h4>
-												<ul class="msp_sc_list">
-													<li>
-														<a href="#">
-															<span class="name">자동차보험</span>
-															<span class="date">2025.04.11</span>
-														</a>						
-													</li>
-													<li>
-														<a href="#">
-															<span class="name">자동차</span>
-															<span class="date">2025.04.11</span>
-														</a>						
-													</li>
-													<li>
-														<a href="#">
-															<span class="name">운전자특약</span>
-															<span class="date">2025.04.11</span>
-														</a>						
-													</li>
-												</ul>
-											</div>
-							
-											<div class="msp_in_cont">
-												<div class="suggestion_list_wrap">
-													<h4 class="msp_slw_title"><strong>자주 찾는 메뉴</strong></h4>
-													<div class="item_wrap">
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">자동차보험 계약변경</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">자동차 사고/고장 접수안내</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">보험금청구</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">개인정보변경</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">여행보험 계약변경</span></button>
-													</div>
-												</div>
-											</div>
-											
-											<div class="msp_in_cont">
-												<div class="suggestion_list_wrap">
-													<h4 class="msp_slw_title"><strong>인기상품</strong></h4>
-													<div class="item_wrap">
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">자동차보험</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">운전자보험</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">펫보험</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">어린이보험</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">여행보험</span></button>
-													</div>
-												</div>
-											</div>
-												-->
-										<!-- e: 검색 전 노출 화면 -->
-
-										<!-- s: 검색 후 노출 화면 -->
-										<!-- s: 키워드 검색 결과 리스트 -->
-										<div class="search_result_count">
-											<p>총<strong class="point">7</strong>건</p>
-										</div>
-										<div class="search_reult_list_container">
-											<!-- 데이터가 없는 경우 no_data 클래스 추가
-														<div class="search_reult_list_container no_data">
-														-->
-											<ul class="search_reult_list all_srla">
-												<!-- 검색시 스타일 예시 : 검색키워드 <i>태그로 강조 -->
-												<li class="search_reult_list_item">
-													<a href="#">
-														<span class="item_text"> <i>자동차</i>보험(개인) </span>
-													</a>
-												</li>
-												<li class="search_reult_list_item">
-													<a href="#">
-														<span class="item_text"> <i>자동차</i>보험(법인) </span>
-													</a>
-												</li>
-												<li class="search_reult_list_item">
-													<a href="#">
-														<span class="item_text"> 타임쉐어<i>자동차</i>보험 </span>
-													</a>
-												</li>
-												<li class="search_reult_list_item">
-													<div class="no_list_area">
-														<i class="hd_icon exclamationSvg"></i>
-														<p>검색결과가 없어요</p>
-													</div>
-												</li>
-											</ul>
-										</div>
-										<!-- e: 키워드 검색 결과 리스트 -->
-
-										<!-- e: 검색 후 노출 화면 -->
-									</div>
-									<!-- s: 검색 전 노출 화면 -->
-									<div class="mwc_footer_banner">
-										<a href="#">
-											<img src="../../../images/event/banner4.png" alt="자동차보험료 결제혜택 최대 3만원 30만원 이상 결제시" />
-										</a>
-									</div>
-									<!-- e: 검색 전 노출 화면 -->
-								</div>
-
-								<!-- // msp_inner -->
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -485,25 +364,83 @@
 								</div>
 								<!-- e: 25-06-16 수정 -->
 							</div>
+							<!-- s: 25-06-27 수정 -->
 							<div class="form_line">
-								<div class="label_tit">
-									총 전용 면적
-									<div class="tooltip_wrap">
-										<div class="tooltip_head">
-											<button type="button" class="open trigger_btn" aria-expanded="false"><i class="hd_icon popover_help"></i><span class="blind">툴팁 열기</span></button>
+								<!-- <div class="label_tit">총 지상 층수 <div class="tooltip_wrap">
+				<div class="tooltip_head">
+				<button type="button" class="open trigger_btn" aria-expanded="false"> <i class="hd_icon popover_help"></i><span class="blind">툴팁 열기</span></button>
+				</div>
+				<div class="tooltip_panel" role="tooltip">
+					<div class="inner">
+						<p class="inner_title" aria-describedby="title"></p>
+						<div class="inner_contents">
+							<p>사업장 또는 공장이 위치하는 건물의 지상층수를 입력해주세요 (지하층 제외)</p>
+						</div>
+						
+						<button type="button" class="close"><span class="blind">툴팁 닫기</span></button>
+					</div>
+				</div>
+			</div></div> -->
+								<div class="label_tit">총 지상 층수</div>
+								<div class="row">
+									<div class="input_text grow">
+										<div class="inp">
+											<input type="tel" placeholder="숫자만 입력" value="1" title="층수 입력" />
+											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 										</div>
-										<div class="tooltip_panel" role="tooltip">
-											<div class="inner">
-												<p class="inner_title" aria-describedby="title"></p>
-												<div class="inner_contents">
-													<p>가입하고자 하는 층수의 총 전용면적을 입력해주세요.</p>
-												</div>
-
-												<button type="button" class="close"><span class="blind">툴팁 닫기</span></button>
-											</div>
-										</div>
+										<div class="int_txt right">층</div>
 									</div>
 								</div>
+							</div>
+							<div class="form_line">
+								<div class="label_tit">가입 층수(저층~)</div>
+								<div class="select_item select_item_case01" role="button" tabindex="0" title="가입 층수(저층~) 선택" onclick="openHDPopup(this,'pop_type02');">
+									<div class="select_item_inner">
+										<div class="si_item" data-placeholder="선택"></div>
+										<span class="si_stat">선택됨</span>
+									</div>
+								</div>
+								<div class="input_text grow">
+									<div class="inp">
+										<input type="tel" placeholder="숫자만 입력" value="1" title="층수 입력" />
+										<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+									</div>
+									<div class="int_txt right">층</div>
+								</div>
+							</div>
+							<div class="form_line">
+								<div class="label_tit">가입 층수(~고층)</div>
+								<div class="select_item select_item_case01" role="button" tabindex="0" title="가입 층수(~고층) 선택" onclick="openHDPopup(this,'pop_type03');">
+									<div class="select_item_inner">
+										<div class="si_item" data-placeholder="선택"></div>
+										<span class="si_stat">선택됨</span>
+									</div>
+								</div>
+								<div class="input_text grow">
+									<div class="inp">
+										<input type="tel" placeholder="숫자만 입력" value="1" title="층수 입력" />
+										<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+									</div>
+									<div class="int_txt right">층</div>
+								</div>
+							</div>
+							<div class="form_line">
+								<!-- <div class="label_tit">총 전용 면적 <div class="tooltip_wrap">
+				<div class="tooltip_head">
+				<button type="button" class="open trigger_btn" aria-expanded="false"> <i class="hd_icon popover_help"></i><span class="blind">툴팁 열기</span></button>
+				</div>
+				<div class="tooltip_panel" role="tooltip">
+					<div class="inner">
+						<p class="inner_title" aria-describedby="title"></p>
+						<div class="inner_contents">
+							<p>가입하고자 하는 층수의 총 전용면적을 입력해주세요.</p>
+						</div>
+						
+						<button type="button" class="close"><span class="blind">툴팁 닫기</span></button>
+					</div>
+				</div>
+			</div></div> -->
+								<div class="label_tit">총 전용 면적</div>
 								<div class="row balance">
 									<div class="input_text">
 										<div class="inp">
@@ -521,58 +458,11 @@
 									</div>
 								</div>
 							</div>
-							<div class="form_line">
-								<div class="label_tit">
-									총 지상 층수
-									<div class="tooltip_wrap">
-										<div class="tooltip_head">
-											<button type="button" class="open trigger_btn" aria-expanded="false"><i class="hd_icon popover_help"></i><span class="blind">툴팁 열기</span></button>
-										</div>
-										<div class="tooltip_panel" role="tooltip">
-											<div class="inner">
-												<p class="inner_title" aria-describedby="title"></p>
-												<div class="inner_contents">
-													<p>사업장 또는 공장이 위치하는 건물의 지상층수를 입력해주세요 (지하층 제외)</p>
-												</div>
-
-												<button type="button" class="close"><span class="blind">툴팁 닫기</span></button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="input_text grow">
-										<div class="inp">
-											<input type="tel" placeholder="숫자만 입력" value="1" title="층수 입력" />
-											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-										</div>
-										<div class="int_txt right">층</div>
-									</div>
-								</div>
-							</div>
-							<div class="form_line">
-								<div class="label_tit">가입 층수(저층~고층)</div>
-								<div class="row balance">
-									<div class="input_text grow">
-										<div class="inp">
-											<input type="tel" placeholder="숫자만 입력" value="1" title="층수 입력" />
-											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-										</div>
-										<div class="int_txt right">층</div>
-									</div>
-									<div class="input_text grow">
-										<div class="inp">
-											<input type="tel" placeholder="숫자만 입력" value="1" title="층수 입력" />
-											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-										</div>
-										<div class="int_txt right">층</div>
-									</div>
-								</div>
-							</div>
+							<!-- e: 25-06-27 수정 -->
 						</div>
 					</div>
 
-					<!-- s: 25-05-07 수정 -->
+					<!-- s: 25-06-27 수정 -->
 					<!-- s: 꼭 알아두세요 -->
 					<div class="bottom_fix_notice">
 						<div class="acd_item">
@@ -582,14 +472,35 @@
 							<div class="acd_cont">
 								<div class="inner" style="display: block">
 									<ul class="list_ty1">
-										<li>지하층은 가입 및 보상이 불가합니다. (사업장 및 공장이 지하층부터 지상층까지 있을 경우 지상1층부터 가입할 수 있습니다.)</li>
+										<li>사업장 또는 공장이 위치하는 건물의 지상 층수를 입력해주세요(지하층 제외)</li>
+										<li>보험에 가입하고자하는 해당 층을 선택해주세요.</li>
+										<li><strong class="point">지하층은 가입 및 보상이 불가합니다.</strong><br />(사업장 및 공장이 지하층부터 지상층까지 있을 경우 지상1층부터 가입할 수 있습니다.)</li>
 									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
 					<!-- e: 꼭 알아두세요 -->
-					<!-- e: 25-05-07 수정 -->
+
+					<!-- s: 꼭 알아두세요 case2 요기요 -->
+					<!-- <div class="bottom_fix_notice ">
+				<div class="acd_item">
+					<div class="acd_head active">
+						<button type="button" class="acd_btn" aria-expanded="true"><span>꼭 알아두세요</span></button>
+					</div>
+					<div class="acd_cont">
+						<div class="inner" style="display:block;">
+							
+										<ul class="list_ty1">
+											<li>보험에 가입하고자하는 해당 층을 선택해주세요.</li>
+											<li>가입하고자 하는 영업장의 전체 면적을 입력해주세요.<br>(예, B1층~지상1층을 함께 가입하고자 하는 경우 B1층+1층 합산한 전용 면적)</li>
+										</ul>
+													</div>
+					</div>
+				</div>
+			</div> -->
+					<!-- e: 꼭 알아두세요 case2 요기요 -->
+					<!-- e: 25-06-27 수정 -->
 				</div>
 			</div>
 
@@ -636,6 +547,72 @@
 			</div>
 		</div>
 		<!-- e: Layer 팝업 -->
+
+		<!-- s: 25-06-27 추가 -->
+		<!-- s: 가입 층수(저층~) 팝업 -->
+		<div class="popup_wrap bottom" id="pop_type02" role="dialog" aria-modal="true" aria-hidden="true">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type02');"></div>
+				<div class="popup_inner">
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head"><div class="popup_head_title">가입 층수(저층~)</div></div>
+
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="opt_select_list opt_case3">
+								<!--s: case2 요기요 -->
+								<!-- <div role="button" tabindex="0" class="option"><span class="text">B2 이하</span></div>
+									<div role="button" tabindex="0" class="option"><span class="text">B1</span></div> -->
+								<!--e: case2 요기요 -->
+								<div role="button" tabindex="0" class="option"><span class="text">1층</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">2층</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">3층</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">4층</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">5층</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">직접입력</span></div>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type02');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: 가입 층수(저층~) 팝업 -->
+
+		<!-- s: 가입 층수(~고층) 팝업 -->
+		<div class="popup_wrap bottom" id="pop_type03" role="dialog" aria-modal="true" aria-hidden="true">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type03');"></div>
+				<div class="popup_inner">
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head"><div class="popup_head_title">가입 층수(~고층)</div></div>
+
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="opt_select_list opt_case3">
+								<!--s: case2 요기요 -->
+								<!-- <div role="button" tabindex="0" class="option"><span class="text">B2 이하</span></div>
+									<div role="button" tabindex="0" class="option"><span class="text">B1</span></div> -->
+								<!--e: case2 요기요 -->
+								<div role="button" tabindex="0" class="option"><span class="text">1층</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">2층</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">3층</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">4층</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">5층</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">직접입력</span></div>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type03');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: 가입 층수(~고층) 팝업 -->
+		<!-- e: 25-06-27 추가 -->
 
 		<!-- e: popup area -->
 	</body>
