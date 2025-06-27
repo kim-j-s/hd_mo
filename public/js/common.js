@@ -49,7 +49,7 @@
 
 	/* 메뉴검색 메뉴 열기 */
 	$DOM.on('click', '.nsc_box', function() {
-		console.log('메뉴검색 열기');
+		// console.log('메뉴검색 열기');
     const $this = $(this),
           $msp = $this.closest('.header_inner').find('.menu_search_popup');
 		$msp.addClass('active');
