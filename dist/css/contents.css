@@ -674,6 +674,18 @@
 .bi_opts_wrap .opts_area .opts_area_item .item_box .divider_ty2 {
 	margin: var(--gap-7) 0;
 }
+.bi_opts_wrap .opts_area .opts_area_item .item_box:has(.opts_area_item) {
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+}
+.bi_opts_wrap .opts_area .opts_area_item .item_box:has(.opts_area_item) .cont {
+	-webkit-box-flex: initial;
+	-ms-flex: initial;
+	flex: initial;
+	position: inherit;
+	padding-bottom: 0;
+}
 .bi_opts_wrap .opts_area .oai_block {
 	-webkit-box-flex: 0;
 	-ms-flex: none;
@@ -1556,6 +1568,8 @@
 /* 자동차보험 - 기본정보 */
 /* 자동차보험 | 기본 정보 */
 .insurance_policyBox {
+	position: relative;
+	z-index: 0;
 	padding-top: 2rem;
 }
 .insurance_policyBox .insurance_barbox {
@@ -3144,6 +3158,8 @@
 	margin: 0 -2.4rem;
 	background: var(--color-surface-white-subtler, #fff);
 }
+.simple_info_wrap + .form_box,
+.simple_info_wrap + .title_h3,
 .simple_info_wrap + .tab_wrap,
 .simple_info_wrap + .btn_area {
 	margin-top: var(--gap-8);
@@ -3347,9 +3363,6 @@
 	font-size: var(--font-size-button-cta-bold);
 	color: var(--color-text-basic);
 }
-.simple_info_wrap + .title_h3 {
-	margin-top: 3.2rem;
-}
 .guarantee_container_right .title_h3 + .info_text {
 	margin-top: var(--gap-4);
 }
@@ -3455,6 +3468,17 @@
 }
 .form_list > li > .form_group_wrap > .form_line > .label_tit + .info_gray {
 	margin-top: var(--gap-5);
+}
+.form_list > li > .form_group_wrap > .form_line > .label_tit + .btn_area {
+	margin-top: -0.8rem;
+}
+.form_list > li > .form_group_wrap > .form_line > .label_tit + .btn_area + * {
+	margin-top: var(--gap-5);
+}
+.form_list > li > .form_group_wrap > .form_line > .label_tit + .btn_area button {
+	-webkit-box-flex: 0;
+	-ms-flex: 0 1 auto;
+	flex: 0 1 auto;
 }
 .form_list > li > .form_group_wrap > .form_line > .form_group_wrap .row {
 	margin-top: var(--gap-5);

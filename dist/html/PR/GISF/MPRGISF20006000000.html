@@ -113,7 +113,7 @@
 									</ul>
 
 									<div class="nmc_search_cont">
-										<button type="button" class="nsc_box" title="통합검색 화면 팝업 호출">
+										<button type="button" class="nsc_box" title="통합검색 화면 팝업 호출" onclick="openHDPopup(this, 'totalSearch')">
 											<span class="text">무엇을 찾으시나요?</span>
 										</button>
 									</div>
@@ -318,127 +318,6 @@
 								</div>
 							</div>
 						</div>
-
-						<div class="menu_search_popup" aria-hidden="true">
-							<div class="msp_inner">
-								<div class="msp_inner_top">
-									<button type="button" class="menu_search_popup_close"><span class="blind">팝업 닫기</span></button>
-								</div>
-								<div class="msp_wrap">
-									<div class="msp_wrap_top">
-										<div class="input_text search">
-											<div class="inp">
-												<input type="search" placeholder="상품부터 메뉴까지" title="메뉴 검색 입력" />
-												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button><button type="button" class="btn btn_search" title="검색"></button>
-											</div>
-										</div>
-									</div>
-
-									<div class="msp_wrap_cont">
-										<!-- s: 검색 전 노출 화면 -->
-										<!-- 
-											<div class="msp_in_cont">
-												<h4 class="msp_slw_title"><strong>최근 검색어</strong></h4>
-												<ul class="msp_sc_list">
-													<li>
-														<a href="#">
-															<span class="name">자동차보험</span>
-															<span class="date">2025.04.11</span>
-														</a>						
-													</li>
-													<li>
-														<a href="#">
-															<span class="name">자동차</span>
-															<span class="date">2025.04.11</span>
-														</a>						
-													</li>
-													<li>
-														<a href="#">
-															<span class="name">운전자특약</span>
-															<span class="date">2025.04.11</span>
-														</a>						
-													</li>
-												</ul>
-											</div>
-							
-											<div class="msp_in_cont">
-												<div class="suggestion_list_wrap">
-													<h4 class="msp_slw_title"><strong>자주 찾는 메뉴</strong></h4>
-													<div class="item_wrap">
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">자동차보험 계약변경</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">자동차 사고/고장 접수안내</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">보험금청구</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">개인정보변경</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">여행보험 계약변경</span></button>
-													</div>
-												</div>
-											</div>
-											
-											<div class="msp_in_cont">
-												<div class="suggestion_list_wrap">
-													<h4 class="msp_slw_title"><strong>인기상품</strong></h4>
-													<div class="item_wrap">
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">자동차보험</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">운전자보험</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">펫보험</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">어린이보험</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">여행보험</span></button>
-													</div>
-												</div>
-											</div>
-												-->
-										<!-- e: 검색 전 노출 화면 -->
-
-										<!-- s: 검색 후 노출 화면 -->
-										<!-- s: 키워드 검색 결과 리스트 -->
-										<div class="search_result_count">
-											<p>총<strong class="point">7</strong>건</p>
-										</div>
-										<div class="search_reult_list_container">
-											<!-- 데이터가 없는 경우 no_data 클래스 추가
-														<div class="search_reult_list_container no_data">
-														-->
-											<ul class="search_reult_list all_srla">
-												<!-- 검색시 스타일 예시 : 검색키워드 <i>태그로 강조 -->
-												<li class="search_reult_list_item">
-													<a href="#">
-														<span class="item_text"> <i>자동차</i>보험(개인) </span>
-													</a>
-												</li>
-												<li class="search_reult_list_item">
-													<a href="#">
-														<span class="item_text"> <i>자동차</i>보험(법인) </span>
-													</a>
-												</li>
-												<li class="search_reult_list_item">
-													<a href="#">
-														<span class="item_text"> 타임쉐어<i>자동차</i>보험 </span>
-													</a>
-												</li>
-												<li class="search_reult_list_item">
-													<div class="no_list_area">
-														<i class="hd_icon exclamationSvg"></i>
-														<p>검색결과가 없어요</p>
-													</div>
-												</li>
-											</ul>
-										</div>
-										<!-- e: 키워드 검색 결과 리스트 -->
-
-										<!-- e: 검색 후 노출 화면 -->
-									</div>
-									<!-- s: 검색 전 노출 화면 -->
-									<div class="mwc_footer_banner">
-										<a href="#">
-											<img src="../../../images/event/banner4.png" alt="자동차보험료 결제혜택 최대 3만원 30만원 이상 결제시" />
-										</a>
-									</div>
-									<!-- e: 검색 전 노출 화면 -->
-								</div>
-
-								<!-- // msp_inner -->
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -455,11 +334,18 @@
 						<li>
 							<div class="form_group_wrap">
 								<div class="form_line">
+									<!-- s: 25-06-27 수정 -->
 									<div class="label_tit">
 										「”소상공인 보호 및 지원에 관한 법률” 제 2조, “중소기업기본법" 제 2조 2항」에서는 소상공인의 상시 근로자 수를 광업∙제조업∙건설업∙운수업 10명 미만, 그 밖의 업종은 5명 미만으로 제한합니다.<br />
-										피보험자의 <span class="point">상시 근로자수가 기준 미만입니까?</span
-										><!-- 25-05-02 -->
+										피보험자의 <span class="point">상시 근로자수가 기준 미만인가요?</span>
 									</div>
+									<div class="btn_area">
+										<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5">
+											<span class="text">주요 업종별 연평균 매출액 제한 확인</span>
+											<i class="hd_icon arrowRightSvg"></i>
+										</button>
+									</div>
+									<!-- e: 25-06-27 수정 -->
 									<div class="radio_group_wrap" role="radiogroup">
 										<div class="inp_radio rd_btn">
 											<input type="radio" id="notification01_01" name="notification02" />
@@ -468,7 +354,7 @@
 											</label>
 										</div>
 										<div class="inp_radio rd_btn">
-											<input type="radio" id="notification01_02" name="notification02" checked />
+											<input type="radio" id="notification01_02" name="notification02" />
 											<label for="notification01_02">
 												<span class="label_cont">아니오</span>
 											</label>
@@ -482,8 +368,8 @@
 								<div class="form_line">
 									<div class="label_tit">
 										「”중소기업기본법 시행령” 제 8조 1항”」에 서는 주요 업종별 평균매출액을 제한합니다.<br />
-										피보험자의 <span class="point">평균매출액이 기준 미만입니까?</span
-										><!-- 25-05-02 -->
+										피보험자의 <span class="point">평균매출액이 기준 미만인가요?</span
+										><!-- 25-06-27 수정 -->
 									</div>
 									<div class="radio_group_wrap" role="radiogroup">
 										<div class="inp_radio rd_btn">
@@ -493,7 +379,7 @@
 											</label>
 										</div>
 										<div class="inp_radio rd_btn">
-											<input type="radio" id="notification02_02" name="notification02" checked />
+											<input type="radio" id="notification02_02" name="notification02" />
 											<label for="notification02_02">
 												<span class="label_cont">아니오</span>
 											</label>
@@ -507,7 +393,7 @@
 								<div class="form_line">
 									<div class="label_tit">
 										<span class="point">계약자가 임차인인 경우 임대인의 소유의 물건(건물)을</span> 대신하여 가입하는 <span class="point">계약(제3자를 위한 계약)은 불가하며,</span> 이 경우 <span class="point">사고발생시 임대인의 소상공인 해당 여부를 불문하고 보험금지급이 제한됩니다.</span><br />
-										이 내용을 정확히 확인하였습니까?<!-- 25-05-02 -->
+										이 내용을 정확히 확인하셨나요?<!-- 25-06-27 수정 -->
 									</div>
 									<div class="radio_group_wrap" role="radiogroup">
 										<div class="inp_radio rd_btn">
@@ -517,7 +403,7 @@
 											</label>
 										</div>
 										<div class="inp_radio rd_btn">
-											<input type="radio" id="notification03_02" name="notification03" checked />
+											<input type="radio" id="notification03_02" name="notification03" />
 											<label for="notification03_02">
 												<span class="label_cont">아니오</span>
 											</label>
@@ -528,24 +414,7 @@
 						</li>
 					</ol>
 
-					<!-- s: 25-05-07 수정 -->
-					<!-- s: 꼭 알아두세요 -->
-					<div class="bottom_fix_notice">
-						<div class="acd_item">
-							<div class="acd_head active">
-								<button type="button" class="acd_btn" aria-expanded="true"><span>꼭 알아두세요</span></button>
-							</div>
-							<div class="acd_cont">
-								<div class="inner" style="display: block">
-									<ul class="list_depth">
-										<li>소상공인 확인 체크리스트는 청약서의 일부를 구성하여, 약관상 중요한 사항에 해당하며 만약 아래 질문들에 대하여 사실대로 알리지 않거나 사실과 다르게 알린 경우에는 보험가입이 거절될 수 있으며, 이미 보험사고가 발생하였더라도 보험금 지급을 거절하는 등 보장이 제한될 수 있습니다.</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- e: 꼭 알아두세요 -->
-					<!-- e: 25-05-07 수정 -->
+					<!-- 25-06-27 수정 (꼭 알아두세요 삭제) -->
 				</div>
 			</div>
 

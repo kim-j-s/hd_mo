@@ -113,7 +113,7 @@
 									</ul>
 
 									<div class="nmc_search_cont">
-										<button type="button" class="nsc_box" title="통합검색 화면 팝업 호출">
+										<button type="button" class="nsc_box" title="통합검색 화면 팝업 호출" onclick="openHDPopup(this, 'totalSearch')">
 											<span class="text">무엇을 찾으시나요?</span>
 										</button>
 									</div>
@@ -318,127 +318,6 @@
 								</div>
 							</div>
 						</div>
-
-						<div class="menu_search_popup" aria-hidden="true">
-							<div class="msp_inner">
-								<div class="msp_inner_top">
-									<button type="button" class="menu_search_popup_close"><span class="blind">팝업 닫기</span></button>
-								</div>
-								<div class="msp_wrap">
-									<div class="msp_wrap_top">
-										<div class="input_text search">
-											<div class="inp">
-												<input type="search" placeholder="상품부터 메뉴까지" title="메뉴 검색 입력" />
-												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button><button type="button" class="btn btn_search" title="검색"></button>
-											</div>
-										</div>
-									</div>
-
-									<div class="msp_wrap_cont">
-										<!-- s: 검색 전 노출 화면 -->
-										<!-- 
-											<div class="msp_in_cont">
-												<h4 class="msp_slw_title"><strong>최근 검색어</strong></h4>
-												<ul class="msp_sc_list">
-													<li>
-														<a href="#">
-															<span class="name">자동차보험</span>
-															<span class="date">2025.04.11</span>
-														</a>						
-													</li>
-													<li>
-														<a href="#">
-															<span class="name">자동차</span>
-															<span class="date">2025.04.11</span>
-														</a>						
-													</li>
-													<li>
-														<a href="#">
-															<span class="name">운전자특약</span>
-															<span class="date">2025.04.11</span>
-														</a>						
-													</li>
-												</ul>
-											</div>
-							
-											<div class="msp_in_cont">
-												<div class="suggestion_list_wrap">
-													<h4 class="msp_slw_title"><strong>자주 찾는 메뉴</strong></h4>
-													<div class="item_wrap">
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">자동차보험 계약변경</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">자동차 사고/고장 접수안내</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">보험금청구</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">개인정보변경</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">여행보험 계약변경</span></button>
-													</div>
-												</div>
-											</div>
-											
-											<div class="msp_in_cont">
-												<div class="suggestion_list_wrap">
-													<h4 class="msp_slw_title"><strong>인기상품</strong></h4>
-													<div class="item_wrap">
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">자동차보험</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">운전자보험</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">펫보험</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">어린이보험</span></button>
-														<button type="button" class="tag_item size_m c_ty02"><span class="text">여행보험</span></button>
-													</div>
-												</div>
-											</div>
-												-->
-										<!-- e: 검색 전 노출 화면 -->
-
-										<!-- s: 검색 후 노출 화면 -->
-										<!-- s: 키워드 검색 결과 리스트 -->
-										<div class="search_result_count">
-											<p>총<strong class="point">7</strong>건</p>
-										</div>
-										<div class="search_reult_list_container">
-											<!-- 데이터가 없는 경우 no_data 클래스 추가
-														<div class="search_reult_list_container no_data">
-														-->
-											<ul class="search_reult_list all_srla">
-												<!-- 검색시 스타일 예시 : 검색키워드 <i>태그로 강조 -->
-												<li class="search_reult_list_item">
-													<a href="#">
-														<span class="item_text"> <i>자동차</i>보험(개인) </span>
-													</a>
-												</li>
-												<li class="search_reult_list_item">
-													<a href="#">
-														<span class="item_text"> <i>자동차</i>보험(법인) </span>
-													</a>
-												</li>
-												<li class="search_reult_list_item">
-													<a href="#">
-														<span class="item_text"> 타임쉐어<i>자동차</i>보험 </span>
-													</a>
-												</li>
-												<li class="search_reult_list_item">
-													<div class="no_list_area">
-														<i class="hd_icon exclamationSvg"></i>
-														<p>검색결과가 없어요</p>
-													</div>
-												</li>
-											</ul>
-										</div>
-										<!-- e: 키워드 검색 결과 리스트 -->
-
-										<!-- e: 검색 후 노출 화면 -->
-									</div>
-									<!-- s: 검색 전 노출 화면 -->
-									<div class="mwc_footer_banner">
-										<a href="#">
-											<img src="../../../images/event/banner4.png" alt="자동차보험료 결제혜택 최대 3만원 30만원 이상 결제시" />
-										</a>
-									</div>
-									<!-- e: 검색 전 노출 화면 -->
-								</div>
-
-								<!-- // msp_inner -->
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -455,6 +334,15 @@
 					<!-- e: content_top -->
 
 					<!-- s: 25-06-27 수정(전체수정) -->
+					<div class="checkbox_group_wrap column">
+						<div class="inp_checkbox rd_check_btn sm">
+							<input type="checkbox" id="checkbox_all" />
+							<label for="checkbox_all" class="chk_label chk_label_ty5">
+								<span class="label_cont">모두 아니요</span>
+							</label>
+						</div>
+					</div>
+
 					<ol class="form_list">
 						<li>
 							<div class="form_group_wrap">
@@ -475,7 +363,7 @@
 											</label>
 										</div>
 										<div class="inp_radio rd_btn">
-											<input type="radio" id="notification01_02" name="notification01" checked />
+											<input type="radio" id="notification01_02" name="notification01" />
 											<label for="notification01_02">
 												<span class="label_cont">아니오</span>
 											</label>
@@ -502,7 +390,7 @@
 											</label>
 										</div>
 										<div class="inp_radio rd_btn">
-											<input type="radio" id="notification02_02" name="notification02" checked />
+											<input type="radio" id="notification02_02" name="notification02" />
 											<label for="notification02_02">
 												<span class="label_cont">아니오</span>
 											</label>
@@ -526,7 +414,7 @@
 											</label>
 										</div>
 										<div class="inp_radio rd_btn">
-											<input type="radio" id="notification03_02" name="notification03" checked />
+											<input type="radio" id="notification03_02" name="notification03" />
 											<label for="notification03_02">
 												<span class="label_cont">아니오</span>
 											</label>
@@ -550,7 +438,7 @@
 											</label>
 										</div>
 										<div class="inp_radio rd_btn">
-											<input type="radio" id="notification04_02" name="notification04" checked />
+											<input type="radio" id="notification04_02" name="notification04" />
 											<label for="notification04_02">
 												<span class="label_cont">아니오</span>
 											</label>
@@ -574,7 +462,7 @@
 											</label>
 										</div>
 										<div class="inp_radio rd_btn">
-											<input type="radio" id="notification05_02" name="notification05" checked />
+											<input type="radio" id="notification05_02" name="notification05" />
 											<label for="notification05_02">
 												<span class="label_cont">아니오</span>
 											</label>
@@ -598,7 +486,7 @@
 											</label>
 										</div>
 										<div class="inp_radio rd_btn">
-											<input type="radio" id="notification06_02" name="notification06" checked />
+											<input type="radio" id="notification06_02" name="notification06" />
 											<label for="notification06_02">
 												<span class="label_cont">아니오</span>
 											</label>
@@ -619,7 +507,7 @@
 											</label>
 										</div>
 										<div class="inp_radio rd_btn">
-											<input type="radio" id="notification07_02" name="notification07" checked />
+											<input type="radio" id="notification07_02" name="notification07" />
 											<label for="notification07_02">
 												<span class="label_cont">아니오</span>
 											</label>
@@ -640,7 +528,7 @@
 											</label>
 										</div>
 										<div class="inp_radio rd_btn">
-											<input type="radio" id="notification08_02" name="notification08" checked />
+											<input type="radio" id="notification08_02" name="notification08" />
 											<label for="notification08_02">
 												<span class="label_cont">아니오</span>
 											</label>
@@ -744,33 +632,33 @@
 									</div>
 									<div class="radio_group_wrap" role="radiogroup">
 										<div class="inp_radio rd_btn">
-											<input type="radio" id="notification03_01" name="notification03" />
-											<label for="notification03_01">
+											<input type="radio" id="notification09_01" name="notification09" />
+											<label for="notification09_01">
 												<span class="label_cont">예</span>
 											</label>
 										</div>
 										<div class="inp_radio rd_btn">
-											<input type="radio" id="notification03_02" name="notification03" checked />
-											<label for="notification03_02">
+											<input type="radio" id="notification09_02" name="notification09" />
+											<label for="notification09_02">
 												<span class="label_cont">아니오</span>
 											</label>
 										</div>
 									</div>
 									<div class="form_group_wrap">
 										<div class="form_line">
-											<div class="checkbox_group_wrap column space1">
+											<div class="checkbox_group_wrap column">
 												<!-- s: 이륜자동차 아닌 차종 선택 & 원동기장치 아니요일 경우 -->
 												<div class="inp_checkbox rd_box">
-													<input type="checkbox" id="checkbox02-1-12" />
-													<label for="checkbox02-1-12" class="chk_label chk_label_ty3">
+													<input type="checkbox" id="checkbox09-1-12" />
+													<label for="checkbox09-1-12" class="chk_label chk_label_ty3">
 														<span class="label_cont"><strong class="disabled_on">선택</strong> 피보험자가 이륜자동차 운전 중에 발생한 상해사고는 보험에서 보상되지 않습니다. 이륜자동차 운전중 상해 부담보 특별약관이 자동가입됩니다.</span>
 													</label>
 												</div>
 												<!-- e: 이륜자동차 아닌 차종 선택 & 원동기장치 아니요일 경우 -->
 												<!-- s: 이륜자동차 선택 시 -->
 												<div class="inp_checkbox rd_box">
-													<input type="checkbox" id="checkbox02-1-12" />
-													<label for="checkbox02-1-12" class="chk_label chk_label_ty3">
+													<input type="checkbox" id="checkbox09-1-12" />
+													<label for="checkbox09-1-12" class="chk_label chk_label_ty3">
 														<span class="label_cont"><strong class="point">필수</strong> 피보험자가 이륜자동차 운전 중에 발생한 상해사고는 보험에서 보상되지 않습니다. 이륜자동차 운전중 상해 부담보 특별약관이 자동가입됩니다.</span>
 													</label>
 												</div>
@@ -793,7 +681,7 @@
 											</label>
 										</div>
 										<div class="inp_radio rd_btn">
-											<input type="radio" id="notification10_02" name="notification10" checked />
+											<input type="radio" id="notification10_02" name="notification10" />
 											<label for="notification10_02">
 												<span class="label_cont">아니오</span>
 											</label>
@@ -819,14 +707,14 @@
 									<div class="label_tit">음주를 하시나요?</div>
 									<div class="radio_group_wrap" role="radiogroup">
 										<div class="inp_radio rd_btn">
-											<input type="radio" id="notification10_01" name="notification10" />
-											<label for="notification10_01">
+											<input type="radio" id="notification11_01" name="notification11" />
+											<label for="notification11_01">
 												<span class="label_cont">예</span>
 											</label>
 										</div>
 										<div class="inp_radio rd_btn">
-											<input type="radio" id="notification10_02" name="notification10" checked />
-											<label for="notification10_02">
+											<input type="radio" id="notification11_02" name="notification11" />
+											<label for="notification11_02">
 												<span class="label_cont">아니오</span>
 											</label>
 										</div>
@@ -864,14 +752,14 @@
 									<div class="label_tit">흡연을 하시나요?</div>
 									<div class="radio_group_wrap" role="radiogroup">
 										<div class="inp_radio rd_btn">
-											<input type="radio" id="notification11_01" name="notification11" />
-											<label for="notification11_01">
+											<input type="radio" id="notification12_01" name="notification12" />
+											<label for="notification12_01">
 												<span class="label_cont">예</span>
 											</label>
 										</div>
 										<div class="inp_radio rd_btn">
-											<input type="radio" id="notification11_02" name="notification11" checked />
-											<label for="notification11_02">
+											<input type="radio" id="notification12_02" name="notification12" />
+											<label for="notification12_02">
 												<span class="label_cont">아니오</span>
 											</label>
 										</div>
@@ -993,99 +881,19 @@
 									</div>
 									<div class="radio_group_wrap" role="radiogroup">
 										<div class="inp_radio rd_btn">
-											<input type="radio" id="notification16_01" name="notification16" />
-											<label for="notification16_01">
+											<input type="radio" id="notification13_01" name="notification13" />
+											<label for="notification13_01">
 												<span class="label_cont">예</span>
 											</label>
 										</div>
 										<div class="inp_radio rd_btn">
-											<input type="radio" id="notification16_02" name="notification16" checked />
-											<label for="notification16_02">
+											<input type="radio" id="notification13_02" name="notification13" />
+											<label for="notification13_02">
 												<span class="label_cont">아니오</span>
 											</label>
 										</div>
 									</div>
 								</div>
-								<div class="form_card_wrap">
-									<div class="form_card_case">
-										<h3 class="title_h4">가입 내역</h3>
-										<div class="form_group_wrap">
-											<div class="form_line">
-												<div class="label_tit">보험사</div>
-												<div class="select_item select_item_case01" role="button" tabindex="0" title="보험사 선택" onclick="openHDPopup(this,'pop_type02');">
-													<div class="select_item_inner">
-														<div class="si_item" data-placeholder="선택"></div>
-														<span class="si_stat">선택됨</span>
-													</div>
-												</div>
-											</div>
-											<div class="form_line">
-												<div class="label_tit">가입 건수</div>
-												<div class="input_text price">
-													<div class="inp">
-														<input type="tel" placeholder="숫자만 입력" maxlength="3" title="가입 건수 입력" />
-														<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-													</div>
-													<div class="int_txt right">건</div>
-												</div>
-											</div>
-											<div class="form_line">
-												<div class="label_tit">보험료(원)</div>
-												<div class="input_text price">
-													<div class="inp">
-														<input type="tel" placeholder="숫자만 입력" maxlength="3" title="보험료 입력" />
-														<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-													</div>
-													<div class="int_txt right">원</div>
-												</div>
-											</div>
-										</div>
-										<button type="button" class="btn_rd_close"><span class="blind">가입내역 입력 닫기</span></button>
-									</div>
-									<div class="form_card_case">
-										<h3 class="title_h4">가입 내역</h3>
-										<div class="form_group_wrap">
-											<div class="form_line">
-												<div class="label_tit">보험사</div>
-												<div class="select_item select_item_case01" role="button" tabindex="0" title="보험사 선택" onclick="openHDPopup(this,'pop_type02');">
-													<div class="select_item_inner">
-														<div class="si_item" data-placeholder="선택"></div>
-														<span class="si_stat">선택됨</span>
-													</div>
-												</div>
-											</div>
-											<div class="form_line">
-												<div class="label_tit">가입 건수</div>
-												<div class="input_text price">
-													<div class="inp">
-														<input type="tel" placeholder="숫자만 입력" maxlength="3" title="가입 건수 입력" />
-														<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-													</div>
-													<div class="int_txt right">건</div>
-												</div>
-											</div>
-											<div class="form_line">
-												<div class="label_tit">보험료(원)</div>
-												<div class="input_text price">
-													<div class="inp">
-														<input type="tel" placeholder="숫자만 입력" maxlength="3" title="보험료 입력" />
-														<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
-													</div>
-													<div class="int_txt right">원</div>
-												</div>
-											</div>
-										</div>
-										<button type="button" class="btn_rd_close"><span class="blind">가입내역 입력 닫기</span></button>
-									</div>
-								</div>
-								<div class="btn_area center btn_area_space2">
-									<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_3">
-										<span class="text">보험사 추가</span>
-									</button>
-								</div>
-								<ul class="list_ty2">
-									<li>최대 4건까지 입력할 수 있어요.</li>
-								</ul>
 							</div>
 						</li>
 					</ol>
