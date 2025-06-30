@@ -1,5 +1,5 @@
 <!---
-화면번호 : MPRMTPS10004020000
+화면번호 : MPRMTPS10002050000
 경로 : 3.자동차 상세정보 > 3-3. 자동차 추가 확인사항 (승용)
 -->
 <!-- s: 25-04-15 수정 -->
@@ -17,8 +17,7 @@
 					<strong>해당하는 항목</strong>이 있으면 체크해주세요
 				</h2>
 				<div class="btn_area basic">
-				 <!--TO-DO : (25-04-15 위서진) 추후 용어사전 팝업이 완성되면, popup id를 popup props에 적용해야함-->
-				 {{> cp/button type="3" size="5" b-text="어려운 용어 설명을 보시려면" popup="pop_01" btn-title="도움말 열기" rightIcon="arrowRightSvg" }}
+				 {{> cp/button type="3" size="5" b-text="어려운 용어 설명을 보시려면" btn-title="도움말 열기" rightIcon="arrowRightSvg" }}
 				</div>
 			</div>
 			<!-- e: content_top -->
@@ -28,12 +27,14 @@
 				<li>
 					<div class="form_group_wrap">
 						<div class="form_line">
-							<div class="label_tit">자동차관리법령에 따라 ‘승용캠핑카'로 구조변경(튜닝)한 차량입니까?</div>
-							<div class="info_gray">
+							<!-- s: 25-06-30 수정-->
+							<div class="label_tit">자동차관리법령에 따라 ‘승용캠핑카'로 구조변경(튜닝)한 차량인가요?</div>
+							<div class="info_gray ty2">
 								<p class="info_text">
-									승용캠핑카=승용 번호판(01-69, 100-699) & 등록 원부상 캠핑카 구조변경 내역 존재
+									승용캠핑카=승용 번호판(01-69, 100-699) & 등록 원부상 캠핑카 구조변경 내역 있음
 								</p>
 							</div>
+							<!-- e: 25-06-30 수정-->
 							<div class="radio_group_wrap" role="radiogroup">
 								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_05" name="radio_g3" labelname="예"}}
 								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_06" name="radio_g3" labelname="아니오" checked=true}}
@@ -45,12 +46,14 @@
 					<!-- s: 25-05-22 수정 -->
 					<div class="form_group_wrap">
 						<div class="form_line">
-							<div class="label_tit">차량이 캠핑트레일러, 보트, 수상오토바이 등의 레저장비를 견인하는 자동차 입니까?</div>
-							<div class="info_gray">
+							<!-- s: 25-06-30 수정-->
+							<div class="label_tit">차량이 캠핑트레일러, 보트, 수상오토바이 등의 레저장비를 견인하는 자동차 인가요?</div>
+							<div class="info_gray ty2">
 								<p class="info_text">
 									레저장비를 견인하는 자동차는 레저장비견인 중 위험담보요율 적용으로 기본보험요율이 할증됩니다.
 								</p>
 							</div>
+							<!-- e: 25-06-30 수정-->
 							<div class="radio_group_wrap" role="radiogroup">
 								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_03" name="radio_g2" labelname="예"}}
 								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_04" name="radio_g2" labelname="아니오" checked=true}}
