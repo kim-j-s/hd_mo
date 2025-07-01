@@ -13,13 +13,13 @@
 
 
 	.logo {
-		& + .point,
+		& + .secondary,
 		& + .title_h2 {
 			margin-top: var(--gap-5);
 		}
 	}
 	
-	.point {
+	.secondary {
 		font-size: var(--font-size-heading-xsmall);
 		font-weight: 700;
 		line-height: 24px;
@@ -36,8 +36,9 @@
 	background-color: var(--color-border-information-light);
 	border-radius: 16px;
 
-	& + .bg_area {
-		margin-top: var(--gap-9);
+	& + .checkbox_group_wrap {
+		margin-top: var(--gap-6);
+		margin-bottom: var(--gap-9);
 	}
 
 	.input_title {
@@ -201,6 +202,10 @@
 			}
 		}
 	}
+}
+
+.bg_area:has(.discount_item_box) {
+	padding: var(--padding-10) var(--padding-8);
 }
 
 // 특약 리스트
