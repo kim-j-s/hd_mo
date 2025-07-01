@@ -13,13 +13,13 @@
 
 
 	.logo {
-		& + .point,
+		& + .secondary,
 		& + .title_h2 {
 			margin-top: var(--gap-5);
 		}
 	}
 	
-	.point {
+	.secondary {
 		font-size: var(--font-size-heading-xsmall);
 		font-weight: 700;
 		line-height: 24px;
@@ -38,6 +38,10 @@
 
 	& + .bg_area {
 		margin-top: var(--gap-9);
+	}
+	& + .checkbox_group_wrap {
+		margin-top: var(--gap-6);
+		margin-bottom: var(--gap-9);
 	}
 
 	.input_title {
@@ -203,10 +207,14 @@
 	}
 }
 
+.bg_area:has(.discount_item_box) {
+	padding: var(--padding-10) var(--padding-8);
+}
+
 // 특약 리스트
 
 .discount_item_box {
-	padding: var(--padding-8);
+	padding: var(--padding-8) var(--padding-7);
 	background-color: #fff;
 	border-radius: var(--radius-large2);
 
@@ -220,6 +228,12 @@
 			&.opt#{$i}{
 				background-image: url(../images/content/mtps/icon_MPRMTPS10002010000_ty#{$i}.svg);
 			}
+		}
+		&:first-child {
+			padding-top: 0;
+		}
+		&:last-child {
+			padding-bottom: 0;
 		}
 
 		// > a {
