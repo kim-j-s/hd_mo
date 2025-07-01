@@ -48,12 +48,14 @@
 				선택 목록 팝업 케이스
 			</div>
 			<div class="g_dom">
-				<div class="p_guide_wrap_b">
+				<divfal class="p_guide_wrap_b">
 					{{> cp/button type="2" size="5" b-text="Bottom 선택 팝업열기 유형 1" popup="pop_type05" b-title="상황별 타이틀 입력 필요"}}				
 					{{> cp/button type="2" size="5" b-text="Bottom 선택 팝업열기 유형 2" popup="search_list_bottom_ty1" b-title="상황별 타이틀 입력 필요"}}
 					{{> cp/button type="2" size="5" b-text="Bottom 선택 팝업열기 유형 3" popup="pop_type07" b-title="상황별 타이틀 입력 필요"}}
 					{{> cp/button type="2" size="5" b-text="Bottom 선택 팝업열기 유형 4" popup="search_list_bottom_ty3" b-title="상황별 타이틀 입력 필요"}}
 					{{> cp/button type="2" size="5" b-text="검색어 입력 후 리스트(Bottom 유형2)" popup="search_list_bottom_ty2" b-title="상황별 타이틀 입력 필요"}}
+					{{> cp/button type="2" size="5" b-text="보험증명서" popup="pop_type09" b-title="보험증명서 선택 팝업 호출"  }}
+					{{> cp/button type="2" size="5" b-text="보험금청구" popup="pop_type10" b-title="보험금청구 선택 팝업 호출" }}
 				</div>
 			</div>
 
@@ -314,6 +316,41 @@
 	</div>
 	{{/ popup/popup_bottom}}
 	<!-- e: pop_type07 -->
+
+	<!-- s: pop_type09 -->
+	{{#> popup/popup_bottom popup-id="pop_type09" popup-title="보험증명서" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="opt_select_list_top right">
+				{{> cp/button type="3" size="4" rightIcon="arrowRightSvg" b-text="더많은 증명서"}}
+			</div>
+			<div class="opt_select_list opt_case3">
+				<div role="button" tabindex="0" class="option link"><span class="text">보험증권</span></div>
+				<a href="https://m.hi.co.kr/serviceAction.do?menuId=203603" class="option blank" target="_blank" title="새창열림"><span class="text">모바일증권카드</span></a>
+				<div role="button" tabindex="0" class="option link"><span class="text">자동차보험가입증명서</span></div>
+				<div role="button" tabindex="0" class="option link"><span class="text">보험금지급내역서</span></div>
+				<div role="button" tabindex="0" class="option link"><span class="text">적용요율등급확인서</span></div>
+			</div>
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: pop_type09 -->
+
+	<!-- s: pop_type10 -->
+	{{#> popup/popup_bottom popup-id="pop_type10" popup-title="보험금청구" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="opt_select_list opt_case3">
+				<a href="https://m.hi.co.kr/serviceAction.do?menuId=100411" class="option blank" target="_blank" title="새창열림"><span class="text">병원비 청구</span></a>
+				<a href="https://m.hi.co.kr/serviceAction.do?menuId=100432" class="option blank" target="_blank" title="새창열림"><span class="text">휴대품손해 청구</span></a>
+				<div role="button" tabindex="0" class="option link"><span class="text">자동차보험가입증명서</span></div>
+				<a href="https://m.hi.co.kr/serviceAction.do?menuId=100411" class="option blank" target="_blank" title="새창열림"><span class="text">펫보험 청구</span></a>
+				<a href="https://m.hi.co.kr/serviceAction.do?menuId=100432" class="option blank" target="_blank" title="새창열림"><span class="text">풍수해·지진재해보험청구</span></a>
+			</div>
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: pop_type10 -->
 
 	<!-- s: 은행/증권사 선택 팝업 -->
 	{{> popup/bank_select popup-id="bank_select" popup-title="은행 선택" }}
