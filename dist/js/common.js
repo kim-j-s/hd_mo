@@ -1116,7 +1116,7 @@ $(function(){
 			if ($labels.length > 1 && i > 0) {
 			  numStr += `-${i}`;
 			}
-			$(this).prepend(`<span class="num">${numStr} </span>`);
+			$(this).prepend(`<span class="num">${numStr}</span>`);
 		});
 	});
 
