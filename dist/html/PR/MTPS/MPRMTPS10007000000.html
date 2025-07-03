@@ -631,12 +631,11 @@
 								</div>
 								<div class="form_line">
 									<div class="label_tit">사용 포인트</div>
-									<div class="input_text price">
-										<div class="inp">
-											<input type="tel" title="사용 포인트 입력" />
-											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+									<div class="select_item select_item_case01" role="button" tabindex="0" title="사용 포인트 선택" onclick="openHDPopup(this,'pop_type07');">
+										<div class="select_item_inner">
+											<div class="si_item" data-placeholder="">선택해주세요</div>
+											<span class="si_stat">선택됨</span>
 										</div>
-										<div class="int_txt right">P</div>
 									</div>
 								</div>
 								<div class="form_line">
@@ -1051,6 +1050,31 @@
 			</div>
 		</div>
 		<!-- e: 현대/기아멤버스 포인트 팝업 -->
+		<!-- s: 사용 포인트 선택 목록 -->
+		<div class="popup_wrap bottom" id="pop_type07" role="dialog" aria-modal="true" aria-hidden="true">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type07');"></div>
+				<div class="popup_inner">
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head"><div class="popup_head_title">사용 포인트</div></div>
+
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="opt_select_list opt_case3">
+								<div role="button" tabindex="0" class="option"><span class="text">선택</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">1만</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">2만</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">3만</span></div>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type07');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: 사용 포인트 선택 목록 -->
 		<!-- e: popup area -->
 		<!-- 전체메뉴 -->
 		<!-- s: Full 팝업 -->
