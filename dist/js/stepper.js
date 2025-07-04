@@ -166,7 +166,9 @@ const $stepper = {
 		_btn.text(selectedText);
 		
 		if (_btnText == '') {
-			$('.stepper').attr('tabindex', '0');
+			const _len = $('.bit_within').length;
+			const _focusClass = (_len > 0) ? 'bit_within' : 'stepper';
+			$('.' + _focusClass).attr('tabindex', '0');
 		} else if (_btnText != selectedText) {
 			// 현재 선택된 인덱스를 기준으로 다음 단계에 있는 selected_case 텍스트를 빈 값으로 초기화
 			const _otherBtn = $('.bit_history_inner').children('.selected_case').slice(stepIdx + 1);
@@ -198,7 +200,11 @@ const $stepper = {
 			const _target = $(e.target);
 			const _keypadText = _target.text().trim();
 			const _input = _target.closest('.opts_area').find('.birth_date_field');
-			$('.stepper').attr('tabindex', '0');
+
+			const _len = $('.bit_within').length;
+			const _focusClass = (_len > 0) ? 'bit_within' : 'stepper';
+			$('.' + _focusClass).attr('tabindex', '0');
+			
 
 			let _inputText = _input.text() ?? '';
 
