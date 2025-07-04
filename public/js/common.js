@@ -851,6 +851,7 @@ $(function(){
 	});
 	
 	// 달력 호출
+	let $lastCalendarCallBtn = null;
 	$.datepicker.setDefaults({
 		dateFormat: 'yy.mm.dd',
 		prevText: '이전 달',
@@ -869,27 +870,66 @@ $(function(){
 			$("body").append('<div class="modal_backdrop"></div>');
 			setTimeout(function(){
 				$("body").addClass('modal_open');
-			},50);
+				const $dp = $("#ui-datepicker-div");
+				$dp.find('.ui-datepicker-prev, .ui-datepicker-next').attr('tabindex', '0');
+			}, 50);
 		},
-		onClose: function() { 
+		onChangeMonthYear: function(year, month, inst) {
+			// 월 변경 후에도 tabindex 재설정 필요
+			setTimeout(function() {
+				const $dp = $("#ui-datepicker-div");
+				$dp.find('.ui-datepicker-prev, .ui-datepicker-next').attr('tabindex', '0');
+			}, 0);
+		},
+
+		onClose: function() {
 			setTimeout(function(){
 				$('.modal_backdrop').remove();
-			},200);
+				$('.wrap').attr('aria-hidden', 'false');
+			}, 200);
 			$("body").removeClass('modal_open')
+			setTimeout(function(){
+				// 호출했던 버튼으로 포커스 복귀
+				if ($lastCalendarCallBtn) {
+					$lastCalendarCallBtn.focus();
+				}
+			}, 400);
 		}
+
 	});
 
 	$(".inp_picker").datepicker();
 
-
 	$(".calendar_call").on("click", function (e) {
-		e.preventDefault(); // 기본 동작 방지
-		const $input = $(this).siblings(".inp_picker");
-		$input.attr("readonly", true); // readonly 속성 추가	
+		e.preventDefault();
+
+		// 모바일 웹 접근성
+		$('.wrap').attr('aria-hidden', 'true');
+	
+		const $btn = $(this);
+		const $input = $btn.siblings(".inp_picker");
+	
+		// 포커스 복귀용으로 버튼 참조 저장
+		$lastCalendarCallBtn = $btn;
+	
+		// readonly 잠시 설정 → 키보드 입력 방지
+		$input.attr("readonly", true);
 		$input.datepicker("show");
-		setTimeout(function(){
-			$input.attr("readonly", false); // readonly 속성 제거
+	
+		// 0.5초 후 readonly 제거
+		setTimeout(function () {
+			$input.attr("readonly", false);
 		}, 500);
+	
+		// ✅ 달력 내부 포커스로 이동 (접근성 강화)
+		setTimeout(function () {
+			const $dp = $("#ui-datepicker-div");
+			// 날짜가 선택되어 있으면 해당 날짜에 포커스, 없으면 현재일
+			const $focusable = $dp.find(".ui-state-active, .ui-state-highlight, td a").first();
+			if ($focusable.length) {
+				$focusable.focus();
+			}
+		}, 400);
 	});
 	
 	// 달력 호출
