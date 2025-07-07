@@ -1,0 +1,77 @@
+{{#> layout/default page-title="자동차 운전자 정보 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="운전자 정보" h-carstep="3" h-chatbot=true }}
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
+				<h2 class="title_h2">
+					운전하실 분을 <strong>김*대님</strong>을<br>
+					기준으로 선택해주세요
+				</h2>
+			</div>
+			<!-- e: content_top -->
+			
+			<div class="select_driver_range direct">
+				<div class="radio_group_wrap_ty2" role="radiogroup">
+					{{> cp/radio rd-class="rd_btn pick1" rd-id="radio_btn_gt1" name="radio_gt1" labelname="본인만" }}
+					{{> cp/radio rd-class="rd_btn pick3" rd-id="radio_btn_gt3" name="radio_gt1" labelname="가족" }}
+					{{> cp/radio rd-class="rd_btn pick4" rd-id="radio_btn_gt4" name="radio_gt1" labelname="누구나" }}
+				</div>
+				
+				<div class="driver_relationship_state">
+					<div class="relationship_box">
+						<div class="rel_case1">
+							<span class="ty1">나의 부모</span>
+							<span class="ty2">배우자의 부모</span>
+						</div>
+						<div class="rel_case2">
+							<span>김*대님<br><i>본인</i></span>
+						</div>
+						<div class="rel_case3">
+							<span>배우자</span>
+						</div>
+						<div class="rel_case5">
+							<span>자녀와 자녀의 배우자</span>
+						</div>
+						<div class="rel_case6">
+							<span class="ty2">지정1인</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="선택 중이에요" disabled=true }}
+			<!-- {{> cp/button type="1" size="1" b-text="본인만 운전해요" }} -->
+		</div>
+	</div>
+	<!-- e: 하단 고정 버튼 영역 -->
+</div>
+
+	<!-- s: popup area -->
+	{{#> popup/popup_bottom popup-id="ex_popup_bottom" popup-title="보험가입경력 인정 안내" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<p class="text_sub">자동차보험 <strong>가입경력이 3년 미만인 운전자</strong>가 운전범위에 포함된 경우, 가입경력인정제도를 통해 향후 <strong>보험료를 절감</strong>할 수 있습니다.</p>
+			<ul class="list_depth">
+				<li>자동차보험 가입시 운전범위에 따라 기명피보험자 이외의 운전자(가족, 지정1인 등)를 가입경력인정자로 등록하시면 해당 운전자가 향후 본인명의로 자동차보험을 가입할 때 가입경력을 인정받아 보험료를 절감할 수 있습니다.</li>
+				<li>가입경력인정자 등록방법: 보험가입 완료 후 자동차 계약변경-<strong>[가입경력인정자 신청 입력]</strong> 메뉴를 통해 등록하실 수 있습니다.</li>
+				<li>운전범위에 따라 최대 2명까지 홈페이지 및 다이렉트 콜센터(1899-6782)을 통해 등록가능하며, 홈페이지 등록시 계약자의 전자서명 또는 휴대폰직접서명이 필요합니다.</li>
+				<li>과거 관공서 및 법인체에서 운전직으로 근무한 경력이나, 군에서 운전관련특기로 복무한 경력이 있을 경우, 보험가입 시 해당 증명서 제출을 통해 가입경력을 인정 받으실 수 있습니다.</li>
+				<li>다이렉트 콜센터(1899-6782)를 통해 증명서(운전직: 재직증명서 / 군경력: 병무청 발행 병적기록표 등) 제출시 계약체결 후에도 가입경력 인정이 가능합니다.</li>
+			</ul>
+		</div>
+	</div>	
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="2" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: popup area -->
+{{/ layout/default }}

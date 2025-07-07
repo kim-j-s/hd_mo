@@ -442,8 +442,16 @@
 		const $relGroup = $('.driver_relationship_state').find('.relationship_box');
 		const idx = $(this).closest('.inp_radio').index() + 1;
 		let newClass = 'pick' + idx;
+		const $parent = $(this).closest('[class*="pick"]');
 
-		$relGroup.removeAttr('class').addClass('relationship_box ' + newClass);
+		// 지정된 순으로
+		if($(this).closest('.select_driver_range').hasClass('direct')){
+			const newVal = $parent.attr('class');
+			$relGroup.removeAttr('class').addClass('relationship_box ' + newVal);
+		// 순차적으로
+		}else {
+			$relGroup.removeAttr('class').addClass('relationship_box ' + newClass);
+		}
 	})
 
 	// 해제가능 radio group

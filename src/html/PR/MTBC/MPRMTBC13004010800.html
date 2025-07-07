@@ -1,0 +1,63 @@
+{{#> layout/default no-sp=true page-title="보험료 확인 | 상품"}}
+<!-- s: popup area -->
+	<!-- s: Full 팝업 -->
+	{{#> popup/popup_full popup-id="pop_full" popup-active=true }}
+		<div class="popup_cont">
+			<div class="popup_content">
+				<div class="pop_top sticky_fix">
+					<div class="info_gray">
+						<dl>
+							<dt>다이렉트보험료</dt>
+							<dd>876,543원</dd>
+						</dl>
+					</div>
+				</div>
+				
+				<h2 class="pop_title_h1">대인&middot;대물 자기부담금</h2>
+				<p class="info_text">
+					이륜자동차의 사고로 대인배상 I 또는 대물배상에서 보험금이 지급되는 경우, 피보험자는 선택한 자기부담금을 보험회사로 납입하여야 합니다.<br>
+					자기부담금을 설정함으로 인해 고객님은 보험료 절감효과를 누릴 수 있습니다.
+				</p>
+				<div class="btn_area basic">
+					{{> cp/button type="3" size="5" b-text="자세히보기" btn-title="물적사고할증기준금액 자세히보기 팝업 열기" rightIcon="arrowRightSvg" }}
+				</div>
+				<ul class="special_contract_list radio">
+						<li>
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/radio name="agreement01" rd-id="agreement01-1" labelname="100만원
+									<span class='badge_wrap'>
+									<span class='hd_badge outline solid_pastel c_primary size_m'>추천</span>
+									<span class='hd_badge outline solid_pastel c_primary size_m'>18.9% Best 1</span></span>" checked="true" }}
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="check_flex_box">
+								<div class="check_box">
+										{{> cp/radio name="agreement01" rd-id="agreement01-2" labelname="50만원" }}
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="check_flex_box">
+								<div class="check_box">
+									{{> cp/radio name="agreement01" rd-id="agreement01-3" labelname="미가입" }}
+								</div>
+							</div>
+						</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- s: 하단 고정 버튼 영역 -->
+		<div class="popup_bottom">
+			<div class="btn_area">
+				{{> cp/button type="1" size="1" b-text="확인"}}
+			</div>
+		</div>
+		<!-- e: 하단 고정 버튼 영역 -->
+	{{/ popup/popup_full}}
+	 <!-- e: Full 팝업 -->
+<!-- e: popup area -->
+{{/ layout/default }}

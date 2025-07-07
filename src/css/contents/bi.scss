@@ -434,6 +434,14 @@
 				.checkbox_group_wrap,
 				.radio_group_wrap {
 					gap: var(--gap-7);
+					& + .inp_checkbox {
+						margin-top: var(--gap-8);
+					}
+				}
+				.radio_group_wrap {
+					&.ty2 {
+						gap: var(--gap-4);
+					}
 				}
 				.divider_ty2 {
 					margin: var(--gap-7) 0;
@@ -460,7 +468,21 @@
 			width: calc(50% - 6px);
 			&.full {
 				width: 100%;
+				& + .inp_checkbox {
+					margin-top: var(--gap-8);
+				}
 			}
+		}
+		.inp_checkbox {
+			flex: none;
+			&.full {
+				width: 100%;
+			}
+		}
+		.bottom_fix_wrap {
+			flex: none;
+			padding: 0;
+			width: 100%;
 		}
 		.direct_select_btn {
 			flex: none;
@@ -604,6 +626,10 @@
 	// 보험
 	&.insurance {
 		background-image: url(../images/content/bi/icon_stepper_insurance.svg);
+	}
+	// 연료형태
+	&.energy {
+		background-image: url(../images/content/bi/icon_stepper_energy.svg);
 	}
 	
 	

@@ -1,0 +1,327 @@
+{{#> layout/default page-title="기초 정보 입력 | 자동차보험"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="차량 정보" h-carstep="2" h-chatbot=true }}
+
+	<form action="" class="bi_form">
+		<div class="bi_wrap">
+			<div class="stepper_wrap">
+				<div class="stepper" role="img">
+					<div class="pgs">
+						<span class="pgs_per" style="width: 0%;"><span class="motion car"></span></span>
+					</div>
+				</div>
+				<button type="button" class="stm_btn stm_l" onclick="$stepper.stepBack();">이전 단계</button>
+				<button type="button" class="stm_btn stm_r" onclick="$stepper.stepNext();">다음 단계</button>
+			</div>
+			
+			<div class="bi_stepper">
+				<div class="bi_top">
+					<!-- bit -->
+					<div class="bit">
+
+						<!-- 제조사 -->
+						<div class="bit_inner" data-pickitem="step1">
+							<p class="bit_inner_text">
+								<span class="bold">제조사</span>를<br>
+								선택해 주세요
+							</p>
+							<div class="bit_btn_scrollx">
+								<button type="button" class="btn_link short_cut sm rd_box search_type">
+									<span class="text">차명 검색</span>
+								</button>
+							</div>
+						</div>
+						<!-- 제조사 -->
+
+						<!-- 자동차명 -->
+						<div class="bit_inner active" data-pickitem="step2">
+							<p class="bit_inner_text">
+								<span class="bold">자동차명</span>을<br>
+								선택해 주세요
+							</p>
+							<div class="bit_btn_scrollx">
+								<button type="button" class="btn_link short_cut sm rd_box search_type">
+									<span class="text">차명 검색</span>
+								</button>
+							</div>
+							<!-- <div class="bit_btn_scrollx">
+								{{> cp/linkButton bl_class="short_cut sm rd_box" bl_text="본인이 아닌 다른 사람의 보험을 가입하는 방법" role_b=true }}
+							</div> -->
+						</div>
+						<!-- 자동차명 -->
+
+						<!-- 등록연도 -->
+						<div class="bit_inner active" data-pickitem="step3">
+							<p class="bit_inner_text">
+								<span class="bold">등록연도</span>를<br>
+								선택해 주세요
+							</p>
+							<div class="bit_btn_scrollx">
+								<button type="button" class="btn_link short_cut sm rd_box">
+									<span class="text">차량연식/최초등록일 안내</span>
+								</button>
+							</div>
+						</div>
+						<!-- 등록연도 -->
+
+						<!-- 연료형태 -->
+						<div class="bit_inner active" data-pickitem="step4">
+							<p class="bit_inner_text">
+								<span class="bold">연료형태</span>를<br>
+								선택해 주세요
+							</p>
+						</div>
+						<!-- 연료형태 -->
+					</div>
+					<!-- bit -->
+
+					<!-- bit_history -->
+					<div class="bit_history">
+						<div class="bit_history_inner">
+							<button type="button" class="selected_case step1 maker" title="제조사 수정">1</button>
+							<button type="button" class="selected_case step2 car" title="자동차명 수정">1</button>
+							<button type="button" class="selected_case step3 date" title="등록연도 수정">1</button>
+							<button type="button" class="selected_case step4 energy" title="연료형태 수정">1</button>
+						</div>
+					</div>
+					<!-- bit_history -->
+
+				</div>
+
+
+				<div class="bi_opts_wrap">
+
+					<!-- 제조사 -->
+					<div class="opts_area" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step1">
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s3 logo_add la_1">
+								<input type="radio" id="radio11" name="radio1" />
+								<label for="radio11">
+									<span class="label_cont">현대</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s3 logo_add la_2">
+								<input type="radio" id="radio12" name="radio1" />
+								<label for="radio12">
+									<span class="label_cont">기아</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s3 logo_add la_3">
+								<input type="radio" id="radio13" name="radio1" />
+								<label for="radio13">
+									<span class="label_cont">르노삼성</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s3 logo_add la_4">
+								<input type="radio" id="radio14" name="radio1" />
+								<label for="radio14">
+									<span class="label_cont">
+										쉐보레
+										<small class="sm_txt">GM대우</small>
+									</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s3 logo_add la_5">
+								<input type="radio" id="radio15" name="radio1" />
+								<label for="radio15">
+									<span class="label_cont">KG모빌리티</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s3 logo_add la_6">
+								<input type="radio" id="radio16" name="radio1" />
+								<label for="radio16">
+									<span class="label_cont">외제차</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- 제조사 -->
+
+					<!-- 자동차명 -->
+					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step2">
+						<div class="opts_area_item">
+							<div class="oai_block oai_filter">
+								{{> cp/selectitem si_class="select_item_case01_sm si_ellipsis" si_ph="전체" si_title="배기량 선택"}}
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio21" name="radio2" />
+								<label for="radio21">
+									<span class="label_cont">EV3</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio22" name="radio2" />
+								<label for="radio22">
+									<span class="label_cont">EV6</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio23" name="radio2" />
+								<label for="radio23">
+									<span class="label_cont">EV9</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio24" name="radio2" />
+								<label for="radio24">
+									<span class="label_cont">K3</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio25" name="radio2" />
+								<label for="radio25">
+									<span class="label_cont">K5</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio26" name="radio2" />
+								<label for="radio26">
+									<span class="label_cont">K7</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio27" name="radio2" />
+								<label for="radio27">
+									<span class="label_cont">K8</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s1">
+								<input type="radio" id="radio28" name="radio2" />
+								<label for="radio28">
+									<span class="label_cont">K9</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- 자동차명 -->
+
+					<!-- 등록연도 -->
+					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step3">
+						<div class="opts_area_item">
+							<div class="inp_radio rd_btn_s3">
+								<input type="radio" id="radio31" name="radio3" />
+								<label for="radio31">
+									<span class="label_cont">
+										2023년
+										<small class="sm_txt">(09월07일 이후)</small>
+									</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s3">
+								<input type="radio" id="radio32" name="radio3" />
+								<label for="radio32">
+									<span class="label_cont">
+										2023년 
+										<small class="sm_txt">(09월06일 이전)</small>
+									</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s3">
+								<input type="radio" id="radio33" name="radio3" />
+								<label for="radio33">
+									<span class="label_cont">2022년</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s3">
+								<input type="radio" id="radio34" name="radio3" />
+								<label for="radio34">
+									<span class="label_cont">2021년</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s3">
+								<input type="radio" id="radio35" name="radio3" />
+								<label for="radio35">
+									<span class="label_cont">2020년</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s3">
+								<input type="radio" id="radio36" name="radio3" />
+								<label for="radio36">
+									<span class="label_cont">2019년</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s3">
+								<input type="radio" id="radio37" name="radio3" />
+								<label for="radio37">
+									<span class="label_cont">2018년</span>
+								</label>
+							</div>
+							<div class="inp_radio rd_btn_s3">
+								<input type="radio" id="radio38" name="radio3" />
+								<label for="radio38">
+									<span class="label_cont">2017년</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- 등록연도 -->
+
+					<!-- 연료형태 -->
+					<div class="opts_area active" role="radiogroup" tabindex="0" aria-label="선택 시 다음단계로 이동합니다." data-pickitem="step4">
+						<div class="opts_area_item oai_lock">
+							<div class="item_box">
+								<div class="cont">
+									<div class="radio_group_wrap ty2" role="radiogroup">
+										<div class="inp_radio rd_btn_s1 full">
+											<input type="radio" id="radio41" name="radio4" />
+											<label for="radio41">
+												<span class="label_cont">휘발유</span>
+											</label>
+										</div>
+										<div class="inp_radio rd_btn_s1 full">
+											<input type="radio" id="radio42" name="radio4" />
+											<label for="radio42">
+												<span class="label_cont">전기</span>
+											</label>
+										</div>
+										<div class="inp_radio rd_btn_s1 full">
+											<input type="radio" id="radio43" name="radio4" />
+											<label for="radio43">
+												<span class="label_cont">기타</span>
+											</label>
+										</div>
+									</div>
+		
+									{{#> cp/checkbox checkbox_class="rd_box full" id="checkbox04-13" label_class="chk_label_ty3" labelname="<strong class='ess ess_t1'>필수</strong> 자동차관리법상 사용신고 대상인 이륜차만 가입 가능합니다. 
+									" }}
+									<div class="chk_lby2">
+										{{> cp/linkButton bl_class="short_cut" bl_text="가입불가 차량 확인" role_b=true question_tit="가입불가 차량 확인"}}
+									</div>
+									{{/ cp/checkbox}}
+								</div>
+								<div class="bottom_fix_wrap">
+									<div class="btn_area">
+										{{> cp/button type="1" size="1" b-text="다음" disabled=true }}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 연료형태 -->
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+<script>
+	$(document).ready(function() {
+		// 1. 콜백 받을 함수를 세팅
+		$stepper.setCallback(() => {
+			$stepper.stepNext();
+		});
+	
+		// 2. 최대 step카운트로 초기화
+		$stepper.init();
+	});
+</script>
+	
+
+
+<!-- s: popup area -->
+
+	 
+<!-- e: popup area -->
+
+
+{{/ layout/default }}
