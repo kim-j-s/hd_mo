@@ -393,9 +393,6 @@
 									<span class="text">이전 결제 정보 불러오기</span>
 								</a>
 							</div>
-							<!-- s: 25-06-30 -->
-							<h3 class="title_h3">신용카드 정보 입력</h3>
-							<!-- e: 25-06-30 -->
 							<div class="form_group_wrap">
 								<div class="form_line">
 									<div class="label_tit">카드사</div>
@@ -435,12 +432,14 @@
 											</div>
 										</div>
 										<span class="dash">-</span>
+										<!-- s: 25-06-10 수정 -->
 										<div class="comp_wrap_keypad_call form_key" role="button" tabindex="0" title="카드번호 마지막 4(3자리) 입력">
 											<div class="pin_area default">
 												4(3자리)
 												<input type="password" name="" id="" readonly="true" autocomplete="new-password" title="숫자 입력" />
 											</div>
 										</div>
+										<!-- e: 25-06-10 수정 -->
 									</div>
 								</div>
 								<div class="form_line">
@@ -455,8 +454,13 @@
 									<!-- e: 25-06-19 수정 -->
 								</div>
 								<div class="form_line">
-									<div class="label_tit">카드 할부</div>
-									<div class="select_item select_item_case01" role="button" tabindex="0" title="카드 할부 선택" onclick="openHDPopup(this,'card_period_select');">
+									<div class="label_tit box">
+										<div>카드 할부</div>
+										<a href="javascript:void(0)" class="btn_link short_cut sm" title="무이자할부 안내 팝업 오픈">
+											<span class="text">무이자할부 안내</span>
+										</a>
+									</div>
+									<div class="select_item select_item_case01" role="button" tabindex="0" title="카드 할부 선택" onclick="openHDPopup(this,'pop_type02');">
 										<div class="select_item_inner">
 											<div class="si_item" data-placeholder="">일시불</div>
 											<span class="si_stat">선택됨</span>
@@ -487,9 +491,6 @@
 
 						<!-- 간편결제 -->
 						<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
-							<!-- s: 25-06-30 -->
-							<h3 class="title_h3">간편 결제 정보 입력</h3>
-							<!-- e: 25-06-30 -->
 							<div class="radio_group_wrap" role="radiogroup">
 								<div class="inp_radio rd_btn icon_pay_ty1">
 									<input type="radio" id="radio_btn_g1" name="radio_g1" checked />
@@ -510,7 +511,6 @@
 									</label>
 								</div>
 							</div>
-
 							<!-- s: 25-06-19 수정 -->
 							<div class="acd_item_group">
 								<!-- s: 카카오페이 -->
@@ -528,15 +528,24 @@
 													<li>200만원이상 결제시 ARS인증이 추가되며, 카드로 결제시 가맹점인 카카오페이 기준 무이자 할부정책이 적용됩니다.</li>
 													<li>당사의 일부 타 이벤트 혜택(제휴카드 등)과 중복 적용되지 않습니다.</li>
 												</ul>
-												<h4>카카오페이 고객센터</h4>
-												<ul class="list_depth">
-													<li>전화번호 : 1644-7405</li>
-													<li>운영시간 : 평일 09:00~18:00</li>
-												</ul>
+												<!-- s: 25-07-04 -->
 											</div>
 										</div>
 									</div>
 								</div>
+								<div class="info_gray ty2">
+									<a href="tel:1644-7405" class="call_link">
+										<div class="center_info ty2">
+											<div class="line1">
+												<div class="line1_item2">카카오페이 고객센터 : 1644-7405</div>
+												<div class="line1_item">
+													<span class="cit">평일 09:00~18:00</span>
+												</div>
+											</div>
+										</div>
+									</a>
+								</div>
+								<!-- e: 25-07-04 -->
 								<!-- e: 카카오페이 -->
 
 								<!-- s: 네이버페이 -->
@@ -562,15 +571,24 @@
 													<li>당사에서 진행중인 타 이벤트 혜택(제휴카드 혜택)과 중복적용이 불가합니다.(네이버페이 혜택 적용)</li>
 													<li>주문 변경 시 카드사 혜택 및 할부 적용 여부는 해당 카드사 정책에 따라 변경될 수 있습니다.</li>
 												</ul>
-												<h4>네이버페이 고객센터</h4>
-												<ul class="list_depth">
-													<li>전화번호 : 1588-3819</li>
-													<li>운영시간 : 평일 09:00~18:00</li>
-												</ul>
+												<!-- s: 25-07-04 -->
 											</div>
 										</div>
 									</div>
 								</div>
+								<div class="info_gray ty2">
+									<a href="tel:1588-3819" class="call_link">
+										<div class="center_info ty2">
+											<div class="line1">
+												<div class="line1_item2">네이버페이 고객센터: 1588-3819</div>
+												<div class="line1_item">
+													<span class="cit">평일 09:00~18:00</span>
+												</div>
+											</div>
+										</div>
+									</a>
+								</div>
+								<!-- e: 25-07-04 -->
 								<!-- e: 네이버페이 -->
 
 								<!-- s: 토스페이 -->
@@ -592,15 +610,24 @@
 													<li>타사에서 진행중인 타 이벤트 혜택(제휴카드 혜택)과 중복적용이 불가합니다. (토스페이 혜택 적용)</li>
 													<li>주문 변경시 카드사 혜택 및 활부 적용 여부는 해당 카드사 정책에 따라 변경될 수 있습니다.</li>
 												</ul>
-												<h4>토스페이 고객센터</h4>
-												<ul class="list_depth">
-													<li>전화번호 : 1599-4095</li>
-													<li>운영시간 : 24시간</li>
-												</ul>
+												<!-- s: 25-07-04 -->
 											</div>
 										</div>
 									</div>
 								</div>
+								<div class="info_gray ty2">
+									<a href="tel:1599-4095" class="call_link">
+										<div class="center_info ty2">
+											<div class="line1">
+												<div class="line1_item2">토스페이 고객센터 : 1599-4095</div>
+												<div class="line1_item">
+													<span class="cit">24시간</span>
+												</div>
+											</div>
+										</div>
+									</a>
+								</div>
+								<!-- e: 25-07-04 -->
 								<!-- e: 토스페이 -->
 							</div>
 							<!-- e: 25-06-19 수정 -->
@@ -612,9 +639,6 @@
 									<span class="text">이전 계좌정보 불러오기</span>
 								</a>
 							</div>
-							<!-- s: 25-06-30 -->
-							<h3 class="title_h3">계좌 정보 입력</h3>
-							<!-- e: 25-06-30 -->
 							<div class="form_group_wrap">
 								<div class="form_line">
 									<div class="label_tit">은행</div>
@@ -658,59 +682,73 @@
 					<!-- e: 해외여행자보험 기간연장 외 결제 -->
 					<!-- s: 해외여행자보험 기간연장 -->
 					<div class="form_group_wrap">
-						<div class="form_line">
-							<div class="label_tit">카드사</div>
-							<div class="select_item select_item_case01" role="button" tabindex="0" title="카드사 선택">
-								<div class="select_item_inner">
-									<div class="si_item" data-placeholder="카드사 선택"></div>
-									<span class="si_stat">선택됨</span>
-								</div>
-							</div>
-							<!-- s: KB카드 선택 시 노출 -->
-							<div class="inp_checkbox">
-								<input type="checkbox" id="checkbox1" />
-								<label for="checkbox1" class="chk_label">
-									<span class="label_cont">앱카드 결제</span>
-								</label>
-							</div>
-							<!-- e: KB카드 선택 시 노출 -->
+						<div class="btn_area end">
+							<a href="javascript:void(0)" role="button" class="btn_link short_cut">
+								<span class="text">이전 결제 정보 불러오기</span>
+							</a>
 						</div>
-						<div class="form_line">
-							<div class="label_tit">카드번호</div>
-							<div class="comp_wrap card">
-								<div class="input_text">
-									<div class="inp">
-										<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 첫번째 4자리 입력" />
+						<!-- s: 25-06-30 -->
+						<h3 class="title_h3">신용카드 정보 입력</h3>
+						<!-- e: 25-06-30 -->
+						<div class="form_group_wrap">
+							<div class="form_line">
+								<div class="label_tit">카드사</div>
+								<div class="select_item select_item_case01" role="button" tabindex="0" title="카드사 선택">
+									<div class="select_item_inner">
+										<div class="si_item" data-placeholder="카드사 선택"></div>
+										<span class="si_stat">선택됨</span>
 									</div>
 								</div>
-								<span class="dash">-</span>
-								<div class="input_text">
-									<div class="inp">
-										<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 두번째 4자리 입력" />
-									</div>
+								<!-- s: KB카드 선택 시 노출 -->
+								<div class="inp_checkbox">
+									<input type="checkbox" id="checkbox1" />
+									<label for="checkbox1" class="chk_label">
+										<span class="label_cont">앱카드 결제</span>
+									</label>
 								</div>
-								<span class="dash">-</span>
-								<div class="input_text">
-									<div class="inp">
-										<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 세번째 4자리 입력" />
+								<!-- e: KB카드 선택 시 노출 -->
+							</div>
+							<div class="form_line">
+								<div class="label_tit">카드번호</div>
+								<div class="comp_wrap card">
+									<div class="input_text">
+										<div class="inp">
+											<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 첫번째 4자리 입력" />
+										</div>
 									</div>
-								</div>
-								<span class="dash">-</span>
-								<div class="comp_wrap_keypad_call form_key" role="button" tabindex="0" title="카드번호 마지막 4(3자리) 입력">
-									<div class="pin_area default">
-										4(3자리)
-										<input type="password" name="" id="" readonly="true" autocomplete="new-password" title="숫자 입력" />
+									<span class="dash">-</span>
+									<div class="input_text">
+										<div class="inp">
+											<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 두번째 4자리 입력" />
+										</div>
 									</div>
+									<span class="dash">-</span>
+									<div class="input_text">
+										<div class="inp">
+											<input type="tel" placeholder="4자리" minlength="4" maxlength="4" title="카드 세번째 4자리 입력" />
+										</div>
+									</div>
+									<span class="dash">-</span>
+									<!-- s: 25-06-10 수정 -->
+									<div class="comp_wrap_keypad_call form_key" role="button" tabindex="0" title="카드번호 마지막 4(3자리) 입력">
+										<div class="pin_area default">
+											4(3자리)
+											<input type="password" name="" id="" readonly="true" autocomplete="new-password" title="숫자 입력" />
+										</div>
+									</div>
+									<!-- e: 25-06-10 수정 -->
 								</div>
 							</div>
-						</div>
-						<div class="form_line">
-							<div class="label_tit">유효기간</div>
-							<div class="input_text">
-								<div class="inp">
-									<input type="tel" class="inp_only_num" placeholder="MMYY" minlength="4" maxlength="4" title="유효기간 입력" />
-									<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+							<div class="form_line">
+								<div class="label_tit">유효기간</div>
+								<!-- s: 25-06-19 수정 -->
+								<div class="input_text">
+									<div class="inp">
+										<input type="tel" class="inp_only_num" placeholder="MMYY" minlength="4" maxlength="4" title="유효기간 입력" />
+										<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+									</div>
 								</div>
+								<!-- e: 25-06-19 수정 -->
 							</div>
 						</div>
 					</div>
