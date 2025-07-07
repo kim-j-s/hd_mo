@@ -1,0 +1,94 @@
+					<div class="divider_ty1"></div>
+					<!-- s: 25-06-30 -->
+					<h3 class="title_h3">제휴포인트 사용여부</h3>
+					<!-- e: 25-06-30 -->
+					<div class="form_group_wrap">
+						{{#unless point_check}}
+						<div class="form_line">
+							<div class="checkbox_group_wrap column">
+								<!-- s: 현대카드 선택 시, 노출 -->
+								{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-01" label_class="chk_label_ty3" labelname="현대카드 M포인트 사용" labelcont="(1천원 이상 결제시, 3만 M포인트 한도)" }}
+								{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-02" label_class="chk_label_ty3" labelname="M포인트 + 블루/기아 멤버스포인트 사용" labelcont="(현대·기아 전용 신용카드, 포인트별 최대 3만 포인트 한도)" }}
+								{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-03" label_class="chk_label_ty3" labelname="현대카드M 블루멤버스/기아멤버스 신용카드" labelcont="(청구할인적용, M포인트 사용 불가)" }}
+								<!-- e: 현대카드 선택 시, 노출 -->
+								<!-- s: 삼성카드 선택 시, 노출 -->
+								{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-01" label_class="chk_label_ty3" labelname="삼성카드보너스포인트 사용" labelcont="(1포인트 ~ 보유 포인트 전액 차감<br>(카드 승인액 한도 내))" }}
+								<!-- e: 삼성카드 선택 시, 노출 -->
+								<!-- s: 신한카드 선택 시, 노출 -->
+								{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-01" label_class="chk_label_ty3" labelname="마이신한포인트 사용" labelcont="(1포인트 ~ 보유 포인트 전액 차감<br>(카드 승인액 한도 내))" }}
+								<!-- e: 신한카드 선택 시, 노출 -->
+							</div>
+						</div>
+						{{/unless}}
+						<!-- s: 블루/기아멤버스 -->
+						<div class="form_line">
+							<div class="label_tit">
+								블루/기아멤버스 포인트 선택
+							</div>
+							{{> cp/selectitem si_ph="블루/기아멤버스 포인트 선택" si_title="블루/기아멤버스 포인트 선택" si_item="현대 블루멤버스 포인트"
+							si_popup="pop_type03" }}
+						</div>
+						<!-- s: 현대 블루멤버스 -->
+						<div class="form_line">
+							<div class="label_tit">현대 블루멤버스 카드번호</div>
+							<div class="comp_wrap card">
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" no_del="flase" }}
+								<span class="dash">-</span>
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="flase" }}
+								<span class="dash">-</span>
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
+								<span class="dash">-</span>
+								<!-- s: 25-06-10 수정 -->
+								{{> cp/keypad4 case1="4(3자리)" kt="카드번호 마지막 4(3자리) 입력" }}
+								<!-- e: 25-06-10 수정 -->
+							</div>
+							<div class="btn_area">
+								<!-- s: 25-06-11 수정 -->
+								{{> cp/button type="2" size="2" b-text="포인트 조회" popup="pop_type04" }}
+								<!-- e: 25-06-11 수정 -->
+							</div>
+						</div>
+						<!-- e: 현대 블루멤버스 -->
+						<!-- s: 기아 멤버스 -->
+						<div class="form_line">
+							<div class="label_tit">기아 멤버스 카드번호</div>
+							<div class="comp_wrap card">
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" no_del="flase" }}
+								<span class="dash">-</span>
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="flase" }}
+								<span class="dash">-</span>
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
+								<span class="dash">-</span>
+								<!-- s: 25-06-10 수정 -->
+								{{> cp/keypad4 case1="4(3자리)" kt="카드번호 마지막 4(3자리) 입력" }}
+								<!-- e: 25-06-10 수정 -->
+							</div>
+							<div class="btn_area">
+								<!-- s: 25-06-11 수정 -->
+								{{> cp/button type="2" size="2" b-text="포인트 조회" popup="pop_type04" }}
+								<!-- e: 25-06-11 수정 -->
+							</div>
+						</div>
+						<!-- e: 기아 멤버스 -->
+						<div class="form_line">
+							<div class="label_tit">보유 포인트</div>
+							{{> cp/text type="tel" class="price" r-text="P" inp-title="포인트 조회" readonly=true }}
+						</div>
+						<div class="form_line">
+							<div class="label_tit">사용 포인트</div>
+							{{> cp/selectitem si_item="선택해주세요" si_title="사용 포인트 선택" si_popup="pop_type07"}}
+						</div>
+						<div class="form_line">
+							<div class="label_tit">카드 비밀번호</div>
+							<div class="comp_wrap">
+								<!-- s: 25-06-10 수정 -->
+								{{> cp/keypad4 case1="숫자 4자리 입력" kt="카드 비밀번호 숫자 4자리 입력" }}
+								<!-- e: 25-06-10 수정 -->
+							</div>
+						</div>
+					</div>
+					<ul class="list_ty2">
+						<li>블루멤버스 카드의 개인회원 초기 비밀번호는 주민번호 뒷 4자리(14. 8. 4. 이전가입) 또는 생년월일 4자리(14. 8. 4. 이후가입)입니다.</li>
+						<li>비밀번호 3회 오류 시 블루멤버스 고객센터(080-600-6000)로 연락하시어 비밀번호 재설정 후 결제 진행이 가능합니다.</li>
+					</ul>
+					<!-- e: 블루/기아멤버스 -->

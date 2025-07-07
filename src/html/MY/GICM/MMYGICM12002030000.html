@@ -35,29 +35,7 @@
 					<div class="info_gray">
 						<p class="info_text">계약자 김현대님의 카드만 이용할 수 있어요.<br/>(해외발급, 법인, 가족카드 이용 불가)</p>
 					</div>
-					<h3 class="title_h3">신용카드 정보 입력</h3>
-					<div class="form_group_wrap">
-						<div class="form_line">
-							<div class="label_tit">카드사</div>
-							{{> cp/selectitem si_ph="카드사 선택" si_title="카드사 선택" }}
-						</div>
-						<div class="form_line">
-							<div class="label_tit">카드번호</div>
-							<div class="comp_wrap card">
-								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" no_del="flase" }}
-								<span class="dash">-</span>
-								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="flase" }}
-								<span class="dash">-</span>
-								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
-								<span class="dash">-</span>
-								{{> cp/keypad4 case1="4(3자리)" kt="카드번호 마지막 4(3자리) 입력" }}
-							</div>
-						</div>
-						<div class="form_line">
-							<div class="label_tit">유효기간</div>
-							{{> cp/text type='tel' inpclass="inp_only_num" placeholder="MMYY" minlength="4" maxlength="4" inp-title="유효기간 입력" }}
-						</div>
-					</div>
+					{{> pay/card prev_story=true installment=true}}
 				</div>
 				<!-- e: 결제할 보험료가 있는 경우 노출 -->
 			</div>

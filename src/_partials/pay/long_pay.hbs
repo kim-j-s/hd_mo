@@ -1,0 +1,45 @@
+            <div class="divider_ty1"></div>
+			<!-- s: 25-06-30 -->
+			<h3 class="title_h3">2회차 이후 결제 정보 입력</h3>
+			<!-- e: 25-06-30 -->
+			<!-- s: 카드사(현대카드) 선택 시 -->
+			<div class="radio_group_wrap" role="radiogroup">
+				{{> cp/radio rd-class="rd_btn" rd-id="radio_card1" name="radio01" labelname="현대카드로 결제" checked=true }}
+				{{> cp/radio rd-class="rd_btn" rd-id="radio_card2" name="radio01" labelname="계좌이체로 결제" }}
+			</div>
+			<!-- e: 카드사(현대카드) 선택 시 -->
+			<!-- s: 이체 선택 시 -->		
+			{{> cp/checkbox checkbox_class="rd_box" id="checkbox04-9" label_class="chk_label_ty3" labelname="1회차 보험료 결제 계좌와 동일합니다" }}		
+			<!-- e: 이체 선택 시 -->	
+			<!-- s: 카드사(현대카드) 선택 외 -->		
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">은행</div>
+					{{> cp/selectitem si_ph="은행 선택" si_title="은행 선택" }}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">계좌번호</div>
+					{{> cp/text placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">매월 자동이체일</div>
+					{{> cp/selectitem si_ph="매월 자동이체일 선택" si_item="5일" si_title="매월 자동이체일 선택" si_popup="bank_day_select"}}
+				</div>
+			</div>
+			<!-- e: 카드사(현대카드) 선택 외 -->
+			<div class="info_gray">
+				<dl>
+					<dt>납입 기간</dt>
+					<dd>10년</dd>
+				</dl>
+				<dl>
+					<dt>납입 방법</dt>
+					<dd>매월</dd>
+				</dl>
+			</div>
+			<div class="checkbox_group_wrap column">
+				<!-- s: 25-06-18 수정 -->
+				{{> cp/checkbox labelname="만기환급금 입금 계좌 동의" ag_more=true id="agree01" label_class="chk_label_ty3" checkbox_class="rd_box" pop_open=true pop_id="pop_type05" }}
+				{{> cp/checkbox labelname="자동이체 약관 동의" ag_more=true id="agree02" label_class="chk_label_ty3" checkbox_class="rd_box" pop_open=true pop_id="pop_type06" }}
+				<!-- e: 25-06-18 수정 -->
+			</div>
