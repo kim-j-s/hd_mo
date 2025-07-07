@@ -105,17 +105,7 @@
 			{{> pay/car_pay }}
             <!-- s: 꼭 알아두세요 카드만 노출 -->
             {{#> cp/notice dp-active=true }}
-                <ul class="list_depth">
-					<!-- s: 25-06-05 -->
-					
-                    <li>계약자 변경을 원하시는 경우 우측 상단 <strong>[설계내역]</strong> 버튼을 통해 <strong>7단계(피보험자/계약자 정보)</strong>로 이동하셔서 <strong>계약자를 변경</strong>해주세요.</li>
-					<!-- e: 25-06-05 -->
-                    <li>보험계약 체결을 위해서는 휴대폰 직접서명 또는 전자서명이 필요합니다.</li>
-                    <li>신용카드로 결제하신 보험료는 책임개시일 기준으로 후청구됩니다.<br>
-                        {{> cp/linkButton bl_class="short_cut sm" bl_text="신용카드 청구기준" question_tit="신용카드 청구기준" }}
-                    </li>
-                    <li>최근 카드정보 불러오기는 이전 계약체결동의 내역에 따라 최근 결제이력을 자동으로 불러오는 기능입니다.</li>
-                </ul>
+				{{> pay/card_info corporate=true }}
             {{/ cp/notice }}
             <!-- e: 꼭 알아두세요 카드만 노출 -->
 		</div>
