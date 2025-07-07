@@ -25,15 +25,7 @@
 					<div class="info_top_cont">
 						<dl>
 							<dt>총 보험료</dt>
-							<dd><strong>995,543 원</strong></dd>
-						</dl>
-						<dl>
-							<dt>블루/기아멤버스 포인트</dt>
-							<dd>-30,000 원</dd>
-						</dl>
-						<dl>
-							<dt>하이헬스 챌린지 포인트</dt>
-							<dd>-10,000 원</dd>
+							<dd><strong>768,693원</strong></dd>
 						</dl>
 					</div>
 				</div>
@@ -70,7 +62,7 @@
 				<!-- 신용(앱)카드 -->
 				<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
 					{{> pay/card }}
-					{{> pay/car_benefit }}
+					{{> pay/car_benefit point_check=true }}
 				</div>
 
 				<!-- 간편결제 -->
@@ -88,7 +80,6 @@
 
 			</div>
 
-			{{> pay/car_pay eco=true }}
 			<!-- s: 꼭 알아두세요 카드만 노출 -->
 			{{#> cp/notice dp-active=true }}
 			<ul class="list_depth">

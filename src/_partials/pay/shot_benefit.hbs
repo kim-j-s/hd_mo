@@ -1,0 +1,60 @@
+						<!-- s: 카드 혜택 안내 배너 -->
+					<div class="banner_slide_wrap">
+						<div id="card_reward_banner_wrap" class="swiper"> 
+							<div class="swiper-wrapper">
+								<a class="swiper-slide bann_wrap bann_ty1 co_ty2" href="#">			
+									<div class="inner">
+										<span class="logo">{{> cp/icon iconClass="i_logo_366"}}</span>		
+										<div class="bann_cont">
+											<div class="title">신한카드로 결제해 보세요</div>
+											<div class="desc">
+												신한카드로 결제하면 포인트 100% 사용가능
+											</div>		
+										</div>
+									</div>
+								</a>
+								<a class="swiper-slide bann_wrap bann_ty1" href="#">
+									<div class="inner">
+										<span class="logo">{{> cp/icon iconClass="i_logo_367"}}</span>
+										<div class="bann_cont">
+											<div class="title">현대카드로 결제해 보세요</div>
+											<div class="desc">
+												M포인트 100% 사용가능<br>
+												계속보험료 결제 가능
+											</div>
+										</div>
+									</div>
+								</a>			
+								<a class="swiper-slide bann_wrap bann_ty1 co_ty3" href="#">			
+									<div class="inner">
+										<span class="logo">{{> cp/icon iconClass="i_logo_365"}}</span>		
+										<div class="bann_cont">
+											<div class="title">삼성카드로 결제해 보세요</div>
+											<div class="desc">
+												삼성카드로 결제하면 포인트 100% 사용가능
+											</div>		
+										</div>
+									</div>
+								</a>
+							</div>	
+						</div>
+						<div class="swiper-pagination sp_ty1"></div>
+						<button class="swiper_button sbc_03 sbs_01 swiper_button_left"></button>
+						<button class="swiper_button sbc_03 sbs_01 swiper_button_right" aria-label="다음" disabled></button>
+					</div>
+					<!-- e: 카드 혜택 안내 배너 -->
+                    <!-- s: 현대카드 선택 시, 노출 -->
+                    <div class="checkbox_group_wrap column">
+                        {{> cp/checkbox checkbox_class="rd_box question" id="checkbox01-01" label_class="chk_label_ty3" labelname="현대카드 M포인트 사용" labelcont="(1천원 이상 결제시, 3만 M포인트 한도)" question=true pop_id="pop_type04" }}
+                    </div>
+                    <!-- e: 현대카드 선택 시, 노출 -->
+                    <!-- s: 신한카드 선택 시, 노출 -->
+                    <div class="checkbox_group_wrap column">
+                        {{> cp/checkbox checkbox_class="rd_box question" id="checkbox02-01" label_class="chk_label_ty3" labelname="신한카드 포인트 100% 사용" labelcont="포인트는 결제할 보험료 내에서 사용됩니다.<br>포인트는 1회차 보험료에 한해서만 사용됩니다.<br>문의: 신한카드 고객센터(1544-7000)"}}
+                    </div>
+                    <!-- e: 신한카드 선택 시, 노출 -->
+                    <!-- s: 삼성카드 선택 시, 노출 -->
+                    <div class="checkbox_group_wrap column">
+                        {{> cp/checkbox checkbox_class="rd_box question" id="checkbox03-01" label_class="chk_label_ty3" labelname="삼성카드 포인트 100% 사용" labelcont="포인트는 결제할 보험료 내에서 사용됩니다.<br>포인트는 1회차 보험료에 한해서만 사용됩니다.<br>문의: 신한카드 고객센터(1544-8700)" }}
+                    </div>
+                    <!-- e: 삼성카드 선택 시, 노출 -->
