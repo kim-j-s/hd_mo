@@ -1,0 +1,55 @@
+{{#> layout/default no-sp=true page-title="자동차 상세정보 | 상품"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- s: popup_content_top -->
+		<div class="popup_content_top">
+			<h2 class="title_h2">
+				구체적인 <strong>사용용도</strong>에 <br>대해 답변해주세요.
+			</h2>
+		</div>
+		<!-- e: popup_content_top -->
+
+		<ol class="form_list">
+			<li>
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">보험기간 중 가입하는 이륜차를 <span class="point">요금이나 대가를 목적으로 타인의 물건을 배달</span>하는데 사용하거나, 사용할 계획이 있으신가요?</div>
+						<div class="radio_group_wrap" role="radiogroup">
+							{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_01" name="radio_g1" labelname="예"}}
+							{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_02" name="radio_g1" labelname="아니오"}}
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">가입하는 이륜차를 타인에게 <span class="point">요금이나 대가를 받고 대여(임대, 리스, 렌탈)</span> 해주거나, 대여해 줄 계획이 있으신가요?</div>
+						<div class="radio_group_wrap" role="radiogroup">
+							{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_03" name="radio_g2" labelname="예"}}
+							{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_04" name="radio_g2" labelname="아니오"}}
+						</div>
+					</div>
+				</div>
+			</li>
+		</ol>
+
+    <div class="divider_ty1"></div>
+		<div class="checkbox_group_wrap column">
+			{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-12ess" label_class="chk_label_ty3" labelname="<strong class='ess ess_t1'>필수</strong> 상기 이륜차 사용용도에 대한 답변이 모두 사실이며 만약 비유상/유상운송 배달 및 대여 용도로 사용 시 보상이 불가함을 확인합니다." checked=true }}
+		</div>
+	</div>
+</div>
+
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" b-text="확인"}}
+	</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+{{/ layout/default }}
