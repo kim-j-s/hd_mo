@@ -64,19 +64,19 @@
 	}
 
 	&.focusin {
-		.card_item:not(.disabled):focus-within  {
-			&::after {
-				content:"";
-				position: absolute;
-				top: -1px;
-				left: -1px;
-				z-index: -1;
-				width: calc(100% + 2px);
-				height: calc(100% + 2px);
-				border: 2px solid #F8633C;
-				border-radius: 24px;
-				// transition: border-color 0.2s ease;
+		.card_item{
+			padding:0;
+			.item_inner {
+				padding: var(--padding-8) var(--padding-7);
+				border: var(--border-width-static-regular) solid transparent;
 			}
+			&:not(.disabled):focus-within  {
+				border-color: var(--color-border-primary);
+				.item_inner {
+					border: var(--border-width-static-regular) solid var(--color-border-primary);
+					border-radius: 22px;
+				}
+			}			
 		}
 	}
 
