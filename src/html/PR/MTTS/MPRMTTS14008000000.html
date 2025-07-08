@@ -1,0 +1,167 @@
+<!-- s: 25-06-05 -->
+{{#> layout/default page-title="보험료 결제 | 자동차보험"}}
+<!-- e: 25-06-05 -->
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="보험료 결제" }}
+
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
+				
+				<h2 class="title_h2">
+					<!-- s: 25-06-05 -->
+					보험료를 <strong>결제하면<br>가입이 완료</strong>돼요
+					<!-- e: 25-06-05 -->
+				</h2>
+			</div>
+			<!-- e: content_top -->
+			<div class="bg_top_cover ty2">
+				<div class="info_gray bg_etc01">
+					<div class="total">
+						<dl>
+							<dt>결제하실 금액</dt>
+							<dd>
+								<strong class="big point">768,693원</strong>
+							</dd>
+						</dl>
+					</div>
+					<div class="info_top_cont">
+						<dl>
+							<dt>총 보험료</dt>
+							<dd><strong>768,693원</strong></dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+
+			<!-- s: 간편정보 -->
+			<div class="simple_info_wrap">
+				<div class="simple_info_item">
+					<ul class="sii_list">
+						<li>
+							<span class="sii_list_l">결제하실 금액</span>
+							<span class="sii_list_r">
+								<strong class="price">768,693원</strong>
+							</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- e: 간편정보 -->
+
+			<div class="tab_wrap">
+				<div class="tab_wrap_list_ty1" role="tablist">
+					{{>cp/tab_btn tb-text="신용카드" tb-id="01" tb-active=true}}
+					{{>cp/tab_btn tb-text="간편결제" tb-id="02"}}
+					{{>cp/tab_btn tb-text="즉시이체" tb-id="03"}}
+				</div>
+
+				<!-- 신용(앱)카드 -->
+				<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
+					{{> pay/card }}
+				</div>
+
+				<!-- 간편결제 -->
+				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
+					{{> pay/pay_info }}		
+				</div>
+				<!-- 계좌이체 -->
+				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel03">
+					{{> pay/bank1 }}
+				</div>
+
+			</div>
+            
+            <!-- s: 꼭 알아두세요 카드만 노출 -->
+            {{#> cp/notice dp-active=true }}
+				{{> pay/card_info corporate=true time=true }}
+            {{/ cp/notice }}
+            <!-- e: 꼭 알아두세요 카드만 노출 -->
+		</div>
+	</div>
+
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="결제 정보를 입력해 주세요" disabled=true }}
+			<!-- {{> cp/button type="1" size="1" b-text="보험료 결제하고 가입하기" }} -->
+		</div>
+	</div>
+</div>
+
+<!-- s: popup area -->
+<!-- s: 카드 할부 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type02" popup-title="카드 할부"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="opt_select_list opt_case3">
+			<div role="button" tabindex="0" class="option"><span class="text">일시불</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 2</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 3</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 4</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 5</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 6</span></div>
+		</div>
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 카드 할부 팝업 -->
+<!-- s: 현대/기아멤버스 포인트 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type03" popup-title="현대/기아멤버스 포인트"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="opt_select_list opt_case3">
+			<div role="button" tabindex="0" class="option"><span class="text">항목 1</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 2</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 3</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 4</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 5</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">항목 6</span></div>
+		</div>
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 현대/기아멤버스 포인트 팝업 -->
+ <!-- s: 사용 포인트 선택 목록 -->
+{{#> popup/popup_bottom popup-id="pop_type07" popup-title="사용 포인트"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="opt_select_list opt_case3">
+			<div role="button" tabindex="0" class="option"><span class="text">선택</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">1만</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">2만</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">3만</span></div>
+		</div>
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 사용 포인트 선택 목록 -->
+<!-- e: popup area -->
+{{/ layout/default }}
+
+
+<script>
+	$(document).ready(function () {
+		var bannerSwiper = new Swiper('#card_reward_banner_wrap', {
+			slidesPerView: 1,
+			updateOnWindowResize: true,
+			navigation: {
+				prevEl: ".swiper_button_left",
+				nextEl: ".swiper_button_right",
+			},
+			a11y: {
+				enabled: true,
+				prevSlideMessage: '이전 항목으로 이동',
+				nextSlideMessage: '다음 항목으로 이동',
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+				type: 'bullets',
+				renderBullet: function (index, className) {
+					return `<span class="${className}" aria-label="배너${index + 1}번으로 이동"></span>`;
+				},
+			}
+		});
+	});
+</script>
