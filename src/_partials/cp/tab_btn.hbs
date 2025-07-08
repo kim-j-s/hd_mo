@@ -5,6 +5,6 @@
 	- tb-class: 추가 클래스
 	- tb-active: 현재 선택 상태 여부
 	구조 삽입 예시:
-	{{>cp/tab_btn tb-text="<span class='x'>내용</span>" tb-id="01" tb-active=true}}
+	{{> cp/tab_btn tb-text="<span class='x'>내용</span>" tb-id="01" tb-active=true}}
  --}}
 <button type="button" class="tab_btn{{#if tb-class}} {{tb-class}}{{/if}}{{#if tb-active}} active{{/if}}" role="tab" aria-selected="{{#if tb-active}}true{{else}}false{{/if}}" aria-controls="tabPanel{{#if tb-id}}{{tb-id}}{{/if}}" id="tab{{#if tb-id}}{{tb-id}}{{/if}}"{{#if disabled}} disabled{{/if}}>{{#if tb-text}}{{{tb-text}}}{{/if}}{{#if icon}}{{> @partial-block }}{{/if}}</button>
