@@ -1,14 +1,14 @@
-{{#> layout/default no-sp=true page-title="정보입력"}}
+{{#> layout/default no-sp=true page-title="전자서명"}}
 
 <!-- s: Full 팝업 -->
-{{#> popup/popup_full popup-id="pop_type01" popup-active=true }}
+{{#> popup/popup_full popup-id="pop_type01" popup-title="전자서명" popup-active=true }}
 <div class="popup_cont">
 	<div class="popup_content">
 		<!-- s: popup_content_top -->
 		<div class="popup_content_top">
 			<h2 class="title_h2">				
 				<strong>
-					카카오인증으로<br>
+					법인카드 비밀번호로<br>
 					전자서명을 진행할게요
 				</strong>
 			</h2>
@@ -20,54 +20,26 @@
 
 		<div class="form_group_wrap">
 			<div class="form_line">
-				<div class="label_tit">이름</div>
+				<div class="label_tit">비밀번호 앞2자리</div>
 				{{> cp/text inp-title="이름 입력" placeholder="이름 입력" }}
 			</div>
-
-			<div class="form_line">
-				<div class="label_tit">주민등록번호/외국인등록번호</div>
-				<div class="comp_wrap birth">
-					{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호(외국인등록번호) 앞자리 입력" }}
-					<span class="dash">-</span>
-					<div class="id_pass_box">
-						{{> cp/text type="tel" minlength="1" maxlength="1" placeholder="●" inp-title="주민등록번호(외국인등록번호) 뒷1자리 입력" no_del="flase" }}
-						<div class="id_pass">
-							●●●●●●
-						</div>
-					</div>
-				</div>
+			<div class="info_gray ty2">
+				<ul class="list_depth">
+					<li>법인카드 비밀번호를 설정하지 않았다면 공동인증을 이용해 주세요(모바일앱 또는 PC에서 가능)</li>
+				</ul>
 			</div>
-
-			<div class="form_line">
-				<div class="label_tit">주민등록번호</div>
-				<div class="comp_wrap birth">
-					{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" }}
-					<span class="dash">-</span>
-					{{> cp/keypad7 case1=true kt="주민등록번호 뒤 7자리 입력"}}
-				</div>
-			</div>
-
-			<div class="form_line">
-				<div class="label_tit">통신사</div>
-				{{> cp/selectitem si_ph="통신사 선택" si_title="통신사 선택 팝업 호출" si_popup="pop_type03"}}
-			</div>
-
-			<div class="form_line">
-				<div class="label_tit">휴대폰번호</div>
-				{{> cp/text class="phone" type="tel" placeholder="-없이 입력" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
-			</div>
-
 		</div>
 
 
+
 	</div>
 
 </div>
-<div class="popup_bottom">
+<!-- <div class="popup_bottom">
 	<div class="btn_area">
 		{{> cp/button type="1" size="1" b-text="다음"}}
 	</div>
-</div>
+</div> -->
 {{/ popup/popup_full}}
 <!-- e: Full 팝업 -->
 
