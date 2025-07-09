@@ -320,11 +320,16 @@
 				margin-top: var(--gap-4);
 			}
 			.total_car {
-				margin-top: 21px;
 				align-items: center;
 
+				&:has(.del){
+					margin-top: 21px;
+					dd {
+						margin-top: -21px;
+					}
+				}
+
 				dd {
-					margin-top: -21px;
 					del {
 						display: block;
 						font-size: var(--font-size-body-small);

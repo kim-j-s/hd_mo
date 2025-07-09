@@ -1,0 +1,64 @@
+{{#> layout/default no-sp=true page-title="보험료 확인 | 상품"}}
+<!-- s: popup area -->
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_full" popup-active=true }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="pop_top sticky_fix">
+				<div class="info_gray">
+					<dl>
+						<dt>다이렉트보험료</dt>
+						<dd>876,543원</dd>
+					</dl>
+				</div>
+			</div>
+
+			<h2 class="pop_title_h1">법률비용 지원 특약</h2>
+			<p class="info_text">피보험자가 피보험자동차를 운전하는 동안에 생긴 피보험자동차의 사고로 인하여 다른 사람을 죽게 하거나 다치게 한 경우에 이 특별약관에서 정하는 바에 따라 보험금을 지급하여 드립니다.</p>
+			<div class="btn_area basic">
+				{{> cp/button type="3" size="5" b-text="자세히보기" btn-title="법률비용 지원 특약 자세히보기 팝업 열기" rightIcon="arrowRightSvg" }}
+			</div>
+
+			<ul class="special_contract_list radio">
+				<li>
+					<div class="check_flex_box">
+						<div class="check_box">
+							{{> cp/radio name="agreement01" rd-id="agreement01_1" labelname="가입" checked="true" }}
+						</div>
+						<div class="money_box">
+							<div class="money">
+								<span>90</span>원
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="check_flex_box">
+						<div class="check_box">
+							{{> cp/radio name="agreement01" rd-id="agreement01_2" labelname="미가입" }}
+						</div>
+						<div class="money_box">
+							<div class="money">
+								<span>0</span>원
+							</div>
+							<div class="money">
+								<strong class="trend down"><span class="updown decrease">감소</span>90원</strong>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="확인"}}
+		</div>
+	</div>
+	<!-- e: 하단 고정 버튼 영역 -->
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+<!-- e: popup area -->
+{{/ layout/default }}

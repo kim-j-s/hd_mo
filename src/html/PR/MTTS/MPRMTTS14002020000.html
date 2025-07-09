@@ -1,0 +1,40 @@
+{{#> layout/default page-title="자동차 기본정보 | 상품"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="차량 정보" h-carstep="2" h-chatbot=true }}
+
+		<div id="container" class="container">
+			<div class="content">
+				<!-- s: content_top -->
+				<div class="content_top">
+					<h2 class="title_h2">
+						<strong>자동차번호</strong>를 입력해 주세요
+					</h2>
+				</div>
+				<!-- e: content_top -->
+				 
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">자동차번호 7~9자리</div>
+						<div class="car_input_box">
+							<!-- 에러 메시지 시, error 클래스 추가 -->
+							{{> cp/text class="car_number_input error" placeholder="123가**67" minlength="7" maxlength="17" inp-title="자동차번호 입력"}}
+							<p class="msg_error">자동차 번호를 입력해 주세요.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- s: 하단 고정 버튼 영역 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="1" b-text="다음" disabled=true }}
+				<!-- {{> cp/button type="1" size="1" b-text="승용차로 알아볼게요"}} -->
+			</div>
+		</div>
+		<!-- s: 하단 고정 버튼 영역 -->
+	</div>
+
+	<!-- s: popup area -->
+	<!-- e: popup area -->
+{{/ layout/default }}
