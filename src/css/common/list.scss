@@ -262,6 +262,42 @@
 }
 
 
+.list_ty6 {
+  @include list-style(
+    $li-padding: 0 0 0 8px,
+		$li-line-height: 150%,
+    $li-font-size: var(--font-size-body-small),
+    $li-color: var(--color-text-subtle),
+  ) {
+    > li {
+			&::before {
+				content: '';
+				position: absolute;
+				top: 8px;
+				left: 0;
+				width: 2px;
+				height: 2px;
+				border-radius: 50%;
+				background-color: #6D7882;
+			}
+    }
+  }
+
+	> li {
+		& ~ li {
+			margin-top: var(--gap-4);
+		}
+
+		ul.list_depth_ty2 {
+			margin-top: var(--gap-4);
+
+			&.subtle {
+				color: var(--color-text-subtle);
+			}
+		}
+	}
+}
+
 /* 검색 리스트 관련 스타일*/
 
 //search_list_type
