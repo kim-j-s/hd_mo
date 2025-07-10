@@ -391,67 +391,6 @@
 	}
 
 	&.acd_item_ty4 {
-		overflow: hidden;
-		padding: 16px 0 20px;
-		background-color: var(--color-surface-secondary-subtler);
-		border-radius: 24px;
-
-		.acd_head {
-			position: relative;
-
-			.acd_btn {
-				position: relative;
-				width: 100%;
-				padding: 0 20px;
-				background-color: var(--color-surface-secondary-subtler);
-				font-size: var(--font-size-heading-xxsmall);
-				color: var(--color-text-bolder);
-				font-weight: 700;
-				line-height: 32px;
-				
-				&::before {
-					content: '';
-					position: absolute;
-					top: 50%;
-					right: 20px;
-					width: 32px;
-					height: 32px;
-					background: transparent url(../images/icon/arrowDown_ty3.svg) no-repeat center / 24px auto;
-					transition: all 0.3s;
-					transform: translateY(-50%);
-				}
-			}
-			&.active {
-				border: none;
-				.acd_btn {
-					&::before {
-						transform: translateY(-50%) rotate(180deg);
-					}
-				}
-				& + .acd_cont {
-					&::before {
-						opacity: 1;
-					}
-				}
-			}
-		}
-		.acd_cont {
-			position: relative;
-			transition: all 0.3s;
-
-			.inner {
-				padding: 16px 20px 0;
-			}
-		}
-
-		.sub_text {
-			display: block;
-			font-size: var(--font-size-body-small);
-		}
-
-	}
-
-	&.acd_item_ty5 {
 		border-radius: var(--radius-large2);
 		background-color: var(--color-surface-secondary-subtler);
 		.acd_head {
@@ -459,14 +398,14 @@
 			.acd_btn {
 				position: relative;
 				width: 100%;
-				padding: 22px 24px;
+				padding: var(--padding-6) var(--padding-7);
 				background-color: transparent;
 				
 				> span {
 					display: block;
 					font-weight: 700; 
 					font-size: var(--font-size-heading-xxsmall);
-					line-height: 20px;
+					line-height: 32px;
 				}
 	
 				&:after {
@@ -490,7 +429,7 @@
 
 		.acd_cont {
 			> .inner {
-				padding: 0 20px 20px 20px;
+				padding: 0 var(--padding-7) var(--padding-7) var(--padding-7);
 			}
 		}
 
