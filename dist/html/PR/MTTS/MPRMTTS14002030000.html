@@ -410,7 +410,7 @@
 										<button type="button" class="del"><span class="blind">텍스트 삭제</span></button><button type="button" class="btn calendar_call" title="날짜 선택"></button>
 									</div>
 								</div>
-								<div class="select_item select_item_case01" role="button" tabindex="0" title="대여시작 시간 선택 팝업 호출" onclick="openHDPopup(this,'pop_type01');">
+								<div class="select_item select_item_case01" role="button" tabindex="0" title="대여시작 시간 선택 팝업 호출" onclick="openHDPopup(this,'pop_type02');">
 									<div class="select_item_inner">
 										<div class="si_item" data-placeholder="00시 00분"></div>
 										<span class="si_stat">선택됨</span>
@@ -427,7 +427,7 @@
 										<button type="button" class="del"><span class="blind">텍스트 삭제</span></button><button type="button" class="btn calendar_call" title="날짜 선택"></button>
 									</div>
 								</div>
-								<div class="select_item select_item_case01" role="button" tabindex="0" title="대여종료 시간 선택 팝업 호출" onclick="openHDPopup(this,'pop_type01');">
+								<div class="select_item select_item_case01" role="button" tabindex="0" title="대여종료 시간 선택 팝업 호출" onclick="openHDPopup(this,'pop_type02');">
 									<div class="select_item_inner">
 										<div class="si_item" data-placeholder="00시 00분"></div>
 										<span class="si_stat">선택됨</span>
@@ -519,7 +519,7 @@
 					<div class="draggable" aria-hidden="true">
 						<div class="move"></div>
 					</div>
-					<div class="popup_head"><div class="popup_head_title">팝업 타이틀</div></div>
+					<div class="popup_head"><div class="popup_head_title">시간 선택</div></div>
 
 					<div class="popup_cont">
 						<div class="popup_content">
@@ -537,6 +537,122 @@
 			</div>
 		</div>
 		<!-- e: 시간 선택 -->
+
+		<!-- s: 대여 시간 선택 -->
+		<div class="popup_wrap bottom active" id="pop_type02" role="dialog" aria-modal="true" aria-hidden="false">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type02');"></div>
+				<div class="popup_inner">
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head"><div class="popup_head_title">대여시간 선택</div></div>
+
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="opt_select_wrap">
+								<span class="opt_select_wrap_live" aria-live="polite"></span>
+								<div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
+									<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r1" id="r1_s1" checked />
+										<label for="r1_s1">00시</label>
+									</div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r1" id="r1_s2" />
+										<label for="r1_s2">01시</label>
+									</div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r1" id="r1_s3" />
+										<label for="r1_s3">02시</label>
+									</div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r1" id="r1_s4" />
+										<label for="r1_s4">03시</label>
+									</div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r1" id="r1_s5" />
+										<label for="r1_s5">04시</label>
+									</div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r1" id="r1_s6" />
+										<label for="r1_s6">08시</label>
+									</div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r1" id="r1_s7" />
+										<label for="r1_s7">20시</label>
+									</div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r1" id="r1_s8" />
+										<label for="r1_s8">21시</label>
+									</div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r1" id="r1_s9" />
+										<label for="r1_s9">22시</label>
+									</div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r1" id="r1_s10" />
+										<label for="r1_s10">23시</label>
+									</div>
+									<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+								</div>
+								<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_left" aria-label="이전 옵션"></button>
+								<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
+							</div>
+							<div class="opt_select_wrap">
+								<span class="opt_select_wrap_live" aria-live="polite"></span>
+								<div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
+									<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r2" id="r2_s1" checked />
+										<label for="r2_s1">00분</label>
+									</div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r2" id="r2_s" />
+										<label for="r2_s2">01분</label>
+									</div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r2" id="r2_s" />
+										<label for="r2_s3">02분</label>
+									</div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r2" id="r2_s4" />
+										<label for="r2_s4">03분</label>
+									</div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r2" id="r2_s4" />
+										<label for="r2_s4">56분</label>
+									</div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r2" id="r2_s5" />
+										<label for="r2_s5">57분</label>
+									</div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r2" id="r2_s6" />
+										<label for="r2_s6">58분</label>
+									</div>
+									<div class="opt_select opt_select_w1">
+										<input type="radio" name="r2" id="r2_s7" />
+										<label for="r2_s7">59분</label>
+									</div>
+									<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+								</div>
+								<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_left" aria-label="이전 옵션"></button>
+								<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
+							</div>
+						</div>
+					</div>
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">선택했어요</span>
+							</button>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type02');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
 		<!-- e: popup area -->
 		<!-- 전체메뉴 -->
 		<!-- s: Full 팝업 -->
