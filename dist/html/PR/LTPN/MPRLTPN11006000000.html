@@ -463,7 +463,7 @@
 											<span class="text">무이자할부 안내</span>
 										</a>
 									</div>
-									<div class="select_item select_item_case01" role="button" tabindex="0" title="카드 할부 선택" onclick="openHDPopup(this,'pop_type02');">
+									<div class="select_item select_item_case01" role="button" tabindex="0" title="카드 할부 선택" onclick="openHDPopup(this,'card_period_select');">
 										<div class="select_item_inner">
 											<div class="si_item" data-placeholder="">일시불</div>
 											<span class="si_stat">선택됨</span>
@@ -1023,27 +1023,5 @@
 	</body>
 </html>
 <script>
-	$(document).ready(function () {
-		var bannerSwiper = new Swiper("#card_reward_banner_wrap", {
-			slidesPerView: 1,
-			updateOnWindowResize: true,
-			navigation: {
-				prevEl: ".swiper_button_left", //25-05-12
-				nextEl: ".swiper_button_right", //25-05-12
-			},
-			a11y: {
-				enabled: true,
-				prevSlideMessage: "이전 항목으로 이동",
-				nextSlideMessage: "다음 항목으로 이동",
-			},
-			pagination: {
-				el: ".swiper-pagination",
-				clickable: true,
-				type: "bullets",
-				renderBullet: function (index, className) {
-					return `<span class="${className}" aria-label="배너${index + 1}번으로 이동"></span>`;
-				},
-			},
-		});
-	});
+	$(document).ready(function () {});
 </script>
