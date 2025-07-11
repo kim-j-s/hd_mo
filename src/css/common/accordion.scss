@@ -14,7 +14,7 @@
 				}
 			}
 			
-			.list_depth {
+			.list_depth:has(.acd_item:not(.faq_ty)) {
 				> li {
 					font-size: var(--font-size-body-small);
 					&::before {
@@ -875,7 +875,8 @@
 			.acd_btn {
 				position: relative;
 				width: 100%;
-				padding: 12px 32px 8px 0;
+				padding: 12px 32px 8px 0;				
+				min-height: 48px;
 				background-color: #fff;
 				font-size: var(--font-size-body-medium);
 				&::before {
@@ -883,14 +884,14 @@
 					position: absolute;
 					top: 50%;
 					right: 0;
-					width: 32px;
-					height: 32px;
+					width: 24px;
+					height: 24px;
 					background: transparent url(../images/icon/arrowDown_ty3.svg) no-repeat center / 20px auto;
 					transition: all 0.3s;
 					transform: translateY(-50%);
 				}
 				.sub_g_txt {
-					margin: 4px 0;
+					margin-bottom: var(--gap-2);
 					display: block;
 					font-size: var(--font-size-label-medium);
 					color: var(--color-text-bolder);
