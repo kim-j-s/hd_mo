@@ -412,16 +412,26 @@
 // 금액
 .price {
 	width: 100%;
-	.inp {
-		width: 100%;
-		justify-content: space-between;
-		input {
-			padding-right: 0;
-			text-align: right;
+	&.input_text {
+		.inp {
+			width: 100%;
+			justify-content: space-between;
+			input {
+				padding-right: 0;
+				text-align: right;
+			}
+			&.active {
+				input {
+					padding-right: 28px;
+				}
+			}
 		}
 	}
+	
 	.del {
-		right: calc(100% - 48px);
+		//right: calc(100% - 48px);
+		width: 28px;
+		background-position: center right;
 	}
 	&.big {
 		input {
