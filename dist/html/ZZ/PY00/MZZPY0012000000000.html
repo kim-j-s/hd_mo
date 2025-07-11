@@ -480,7 +480,7 @@
 											<span class="text">무이자할부 안내</span>
 										</a>
 									</div>
-									<div class="select_item select_item_case01" role="button" tabindex="0" title="카드 할부 선택" onclick="openHDPopup(this,'pop_type02');">
+									<div class="select_item select_item_case01" role="button" tabindex="0" title="카드 할부 선택" onclick="openHDPopup(this,'card_period_select');">
 										<div class="select_item_inner">
 											<div class="si_item" data-placeholder="">일시불</div>
 											<span class="si_stat">선택됨</span>
@@ -766,9 +766,9 @@
 		<!-- s: popup area -->
 
 		<!-- s: 카드 할부 팝업 -->
-		<div class="popup_wrap bottom" id="pop_type02" role="dialog" aria-modal="true" aria-hidden="true">
+		<div class="popup_wrap bottom" id="card_period_select" role="dialog" aria-modal="true" aria-hidden="true">
 			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type02');"></div>
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('card_period_select');"></div>
 				<div class="popup_inner">
 					<div class="draggable" aria-hidden="true">
 						<div class="move"></div>
@@ -789,40 +789,11 @@
 							</div>
 						</div>
 					</div>
-					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type02');"><span class="blind">팝업 닫기</span></button>
+					<button type="button" class="popup_close" onclick="closeHDPopup('card_period_select');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
 		<!-- e: 카드 할부 팝업 -->
-		<!-- s: 매월 자동이체일 팝업 -->
-		<div class="popup_wrap bottom" id="pop_type03" role="dialog" aria-modal="true" aria-hidden="true">
-			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type03');"></div>
-				<div class="popup_inner">
-					<div class="draggable" aria-hidden="true">
-						<div class="move"></div>
-					</div>
-					<div class="popup_head">
-						<div class="popup_head_title">매월 자동이체일</div>
-					</div>
-
-					<div class="popup_cont">
-						<div class="popup_content">
-							<div class="opt_select_list opt_case3">
-								<div role="button" tabindex="0" class="option"><span class="text">항목 1</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">항목 2</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">항목 3</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">항목 4</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">항목 5</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">항목 6</span></div>
-							</div>
-						</div>
-					</div>
-					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type03');"><span class="blind">팝업 닫기</span></button>
-				</div>
-			</div>
-		</div>
-		<!-- e: 매월 자동이체일 팝업 -->
 
 		<!-- s: 현대카드 결제 혜택 안내 팝업 -->
 		<div class="popup_wrap bottom" id="pop_type04" role="dialog" aria-modal="true" aria-hidden="true">
@@ -1002,27 +973,5 @@
 </html>
 
 <script>
-	$(document).ready(function () {
-		var bannerSwiper = new Swiper("#card_reward_banner_wrap", {
-			slidesPerView: 1,
-			updateOnWindowResize: true,
-			navigation: {
-				prevEl: ".swiper_button_left",
-				nextEl: ".swiper_button_right",
-			},
-			a11y: {
-				enabled: true,
-				prevSlideMessage: "이전 항목으로 이동",
-				nextSlideMessage: "다음 항목으로 이동",
-			},
-			pagination: {
-				el: ".swiper-pagination",
-				clickable: true,
-				type: "bullets",
-				renderBullet: function (index, className) {
-					return `<span class="${className}" aria-label="배너${index + 1}번으로 이동"></span>`;
-				},
-			},
-		});
-	});
+	$(document).ready(function () {});
 </script>
