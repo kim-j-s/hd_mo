@@ -1,6 +1,4 @@
-<!-- s: 25-06-05 -->
 {{#> layout/default page-title="보험료 결제 | 자동차보험"}}
-<!-- e: 25-06-05 -->
 <div id="wrap" class="wrap">
 	{{> layout/header h-title="보험료 결제" }}
 
@@ -8,11 +6,9 @@
 		<div class="content">
 			<!-- s: content_top -->
 			<div class="content_top">
-				
+
 				<h2 class="title_h2">
-					<!-- s: 25-06-05 -->
 					보험료를 <strong>결제하면<br>가입이 완료</strong>돼요
-					<!-- e: 25-06-05 -->
 				</h2>
 			</div>
 			<!-- e: content_top -->
@@ -50,6 +46,11 @@
 			</div>
 			<!-- e: 간편정보 -->
 
+			<div class="banner_box ty3">
+				<a href="#">
+					<img src="../../../images/event/banner4.png" alt="자동차보험료 결제혜택 최대 3만원 30만원 이상 결제시">
+				</a>
+			</div>
 			<div class="tab_wrap">
 				<div class="tab_wrap_list_ty1" role="tablist">
 					{{> cp/tab_btn tb-text="신용카드" tb-id="01" tb-active=true}}
@@ -72,12 +73,12 @@
 				</div>
 
 			</div>
-            
-            <!-- s: 꼭 알아두세요 카드만 노출 -->
-            {{#> cp/notice dp-active=true }}
-				{{> pay/card_info corporate=true time=true }}
-            {{/ cp/notice }}
-            <!-- e: 꼭 알아두세요 카드만 노출 -->
+
+			<!-- s: 꼭 알아두세요 카드만 노출 -->
+			{{#> cp/notice dp-active=true }}
+				{{> pay/card_info corporate=true  }}
+			{{/ cp/notice }}
+			<!-- e: 꼭 알아두세요 카드만 노출 -->
 		</div>
 	</div>
 
@@ -91,7 +92,7 @@
 
 <!-- s: popup area -->
 <!-- s: 카드 할부 팝업 -->
-{{#> popup/popup_bottom popup-id="pop_type02" popup-title="카드 할부"}}
+{{#> popup/popup_bottom popup-id="card_period_select" popup-title="카드 할부"}}
 <div class="popup_cont">
 	<div class="popup_content">
 		<div class="opt_select_list opt_case3">
@@ -106,6 +107,7 @@
 </div>
 {{/ popup/popup_bottom}}
 <!-- e: 카드 할부 팝업 -->
+
 <!-- s: 현대/기아멤버스 포인트 팝업 -->
 {{#> popup/popup_bottom popup-id="pop_type03" popup-title="현대/기아멤버스 포인트"}}
 <div class="popup_cont">
@@ -122,46 +124,18 @@
 </div>
 {{/ popup/popup_bottom}}
 <!-- e: 현대/기아멤버스 포인트 팝업 -->
- <!-- s: 사용 포인트 선택 목록 -->
-{{#> popup/popup_bottom popup-id="pop_type07" popup-title="사용 포인트"}}
-<div class="popup_cont">
-	<div class="popup_content">
-		<div class="opt_select_list opt_case3">
-			<div role="button" tabindex="0" class="option"><span class="text">선택</span></div>
-			<div role="button" tabindex="0" class="option"><span class="text">1만</span></div>
-			<div role="button" tabindex="0" class="option"><span class="text">2만</span></div>
-			<div role="button" tabindex="0" class="option"><span class="text">3만</span></div>
-		</div>
-	</div>
-</div>
-{{/ popup/popup_bottom}}
-<!-- e: 사용 포인트 선택 목록 -->
+
+<!-- s: 25-06-11 수정 -->
+
+{{> pay/car_pop }}
+
+
 <!-- e: popup area -->
 {{/ layout/default }}
 
 
 <script>
 	$(document).ready(function () {
-		var bannerSwiper = new Swiper('#card_reward_banner_wrap', {
-			slidesPerView: 1,
-			updateOnWindowResize: true,
-			navigation: {
-				prevEl: ".swiper_button_left",
-				nextEl: ".swiper_button_right",
-			},
-			a11y: {
-				enabled: true,
-				prevSlideMessage: '이전 항목으로 이동',
-				nextSlideMessage: '다음 항목으로 이동',
-			},
-			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
-				type: 'bullets',
-				renderBullet: function (index, className) {
-					return `<span class="${className}" aria-label="배너${index + 1}번으로 이동"></span>`;
-				},
-			}
-		});
+		
 	});
 </script>
