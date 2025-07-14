@@ -45,13 +45,14 @@
 
 .mail_list_cont {
 	position: absolute;
-	top: 56px;
+	//top: 56px;
+	top: calc(var(--size-height-8) - 1px);
 	left: 0;
 	z-index: 1;
 	display: none;
 	width: 100%;
-	padding: var(--padding-8);
-	border-radius: var(--number-10);
+	padding: calc(var(--padding-6) - 1px) 3px  calc(var(--padding-6) - 1px)  calc(var(--padding-8) - 1px);
+	border-radius: var(--radius-medium3);
 	border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 	background-color: var(--color-background-gray-subtler);
 	&.on {
@@ -60,10 +61,31 @@
 }
 .mail_list {
 	max-height: 200px;
-	overflow: auto;
+	padding-right: calc(var(--padding-8) - 6px);
+	overflow-y: auto;
+	//스크롤바 디자인
+	&::-webkit-scrollbar {
+		width: 3px;  
+	}
+	&::-webkit-scrollbar-track {
+		background: transparent;     
+		border-radius: 6px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: var(--color-divider-gray-dark);     
+		border-radius: var(--radius-max);
+	}
+
 	> li {
+		&:first-child {
+			margin-top: var(--padding-5);
+		}
+		&:last-child {
+			margin-bottom: var(--padding-5);
+		}
 		> .text {
 			display: block;
+			word-break: break-all;
 			font-size: var(--font-size-body-medium);
 			line-height: 24px;
 			color: var(--color-text-subtle);

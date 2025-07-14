@@ -81,7 +81,8 @@
 .ag_groups {
 
 	.ag_groups_top {
-		padding: 20px;
+		//padding: 20px;
+		padding: var(--padding-8) 20px;
 		border-radius: var(--radius-large2);
 		border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 		+ .ag_group_wrap {
@@ -210,11 +211,13 @@
 					top: 9px;
 					left: 0;
 					width: 2px;
-					border-radius: 50pc;
-					border-bottom: 1px solid #6D7882;
+					height: 2px;
+					border-radius: 50%;
+					background-color: var(--color-divider-gray-dark);
 				}
 				+ li {
-					margin-top: var(--gap-4);
+					//margin-top: var(--gap-4);
+					margin-top: var(--gap-5);
 				}
 				.agrdo_group {
 					display: flex;
@@ -226,6 +229,9 @@
 						// .radio_group_wrap {
 						// 	justify-content: end;
 						// }
+						.radio_group_wrap {
+							gap: var(--gap-3);
+						}
 					}
 				}
 			}

@@ -323,10 +323,6 @@
 	-webkit-transform: translateY(0);
 	transform: translateY(0);
 }
-.popup_wrap.bottom.active .popup_container .popup_inner .popup_close {
-	top: 2rem;
-	right: 2.4rem;
-}
 .popup_wrap.bottom.bottom_full .popup_container .popup_inner {
 	height: 100%;
 }
@@ -364,6 +360,10 @@
 }
 .popup_wrap.bottom .popup_container .popup_inner .popup_cont .bottom_fix_notice {
 	padding-top: 3.2rem;
+}
+.popup_wrap.bottom .popup_container .popup_inner .popup_close {
+	top: 2rem;
+	right: 2.4rem;
 }
 .popup_wrap.bottom .popup_container .popup_inner .popup_cont > .popup_content {
 	-webkit-box-flex: 1;
@@ -434,14 +434,16 @@
 .popup_wrap.bottom .p_benefit_info + .info_gray {
 	margin-top: var(--gap-8);
 }
+.popup_wrap.bottom .select_list_ty_logo {
+	margin-top: -0.8rem;
+}
+.popup_wrap.bottom .popup_cont:has(.tab_wrap) {
+	margin-top: calc(var(--gap-2) * -1);
+}
 /* popup_confirm(alert) */
 .popup_wrap.confirm.active .popup_container {
 	-webkit-transform: translateY(0);
 	transform: translateY(0);
-}
-.popup_wrap.confirm.active .popup_container .popup_inner .popup_close {
-	top: 1.5rem;
-	right: 1.6rem;
 }
 .popup_wrap.confirm .popup_container {
 	-webkit-box-align: center;
@@ -494,6 +496,10 @@
 .popup_wrap.confirm .popup_container .popup_inner .popup_cont .list_depth > li::before {
 	-webkit-transform: translateY(-100%);
 	transform: translateY(-100%);
+}
+.popup_wrap.confirm .popup_container .popup_inner .popup_close {
+	top: 1.5rem;
+	right: 1.6rem;
 }
 .msg_icon {
 	padding-top: 4.8rem;

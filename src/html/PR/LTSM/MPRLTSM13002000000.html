@@ -78,9 +78,10 @@
 							</div>
 							
 							<div class="form_line">
-								<div class="label_tit">이름</div>
+								<!-- s: 25-07-14 수정 -->
+								<div class="label_tit space_between">이름 {{> cp/linkButton bl_class="short_cut sm" bl_text="계약자 피보험자가 다를 때 가입 안내" pop_id="pop_03"}}</div>
 								{{> cp/text placeholder="입력해주세요" inp-title="이름 입력" }}
-								{{> cp/linkButton bl_class="short_cut" bl_text="계약자 피보험자가 다를 때 가입 안내" pop_id="pop_03"}}
+								<!-- e: 25-07-14 수정 -->
 							</div>						
 
 							<!-- s: 자녀(만 18세 이하) 선택 시 표시 -->
@@ -137,7 +138,7 @@
 <!-- s: popup area -->
 
 <!-- s: 실손보험(전환용) 가입 안내 팝업 -->
-{{#> popup/popup_bottom popup-id="pop_01" popup-title="실손보험(전환용) 가입 안내" }}
+{{#> popup/popup_bottom popup-id="pop_01" popup-title="실손보험(전환용) 가입 안내" popup-active="true" }}
 <div class="popup_cont">
 	<div class="popup_content">
 
@@ -150,15 +151,25 @@
 				<li>고객님의 계약 상태에 따라 원스탑 실손전환 서비스 이용이 어려울 수 있습니다.</li>
 			</ul>
 		
-			<div class="info_cont">
+			<!-- s: 25-07-14 수정 -->
+			<div class="call_box call_box_icoadd">
 				<div class="info_gray ty2">
-					<h4>상담문의: 현대해상 실손전환센터</h4>
-					<div class="badge_wrap_ty2">
-						<div class="cont_tel">1588-8291</div>
-						<span class="hd_badge c_info size_m">평일 9:30~17:30</span>
-					</div>
+					<a href="tel:1588-8291" class="call_link">
+						<div class="center_info">
+								<h4 class="title_h4">현대해상 실손 전환 상담센터</h4>
+								<div class="line1">
+										<div class="line1_item">
+												<strong class="tel">1588-8291</strong>
+										</div>
+										<div class="line1_item">
+											<span class="cit">평일 09:30 ~ 17:30</span>
+										</div>
+								</div>
+						</div>
+					</a>
 				</div>
 			</div>
+			<!-- e: 25-07-14 수정 -->
 
 	</div>
 </div>
