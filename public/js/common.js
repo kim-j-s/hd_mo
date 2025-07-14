@@ -47,48 +47,12 @@
   });
 	/* 전체메뉴 닫기 */
 
-	/* 메뉴검색 메뉴 열기 - 25-6-27 하단 전체 팝업호출로 변경 기능 삭제 */
-	// $DOM.on('click', '.nsc_box', function() {
-	// 	// console.log('메뉴검색 열기');
-  //   const $this = $(this),
-  //         $msp = $this.closest('.header_inner').find('.menu_search_popup');
-	// 	$msp.addClass('active');
-	// 	setTimeout(function(){
-	// 		$msp.find('.msp_inner').attr('tabindex', '0').focus();
-	// 		$('.nav_menu_wrap').attr('aria-hidden', 'true');
-	// 		$msp.attr('aria-hidden', 'false');
-	// 		$('.nav_menu_inner').removeAttr('tabindex');
-	// 		// $('.header_inner').find('*').not('.nav_menu_wrap, .header_right, .header_right *').attr('aria-hidden', 'true');
-	// 		// $('.wrap').children().not('.header').attr('aria-hidden', 'true');
-	// 	}, 400);
-  // });
-	/* 메뉴검색 메뉴 열기 */
-
-	/* 메뉴검색 메뉴 닫기 - 25-6-27 하단 전체 팝업호출로 변경 기능 삭제 */	
-	// $DOM.on('click', '.menu_search_popup_close', function() {
-	// 	console.log('전체메뉴 닫기');
-  //   const $this = $(this),
-  //         $msp = $this.closest('.header_inner').find('.menu_search_popup');
-
-	// 	$('.header .allmenu_close').focus();
-	// 	$msp.find('.msp_inner').removeAttr('tabindex');
-	// 	// $('.header_inner').find('*').not('.nav_menu_wrap, .header_right, .header_right *').attr('aria-hidden', 'false');
-	// 	// $('.header_right .allmenu_open').attr('aria-hidden', 'false');
-	// 	// $('.wrap').children().not('.header').attr('aria-hidden', 'false');
-	// 	$msp.removeClass('active').attr('aria-hidden', 'true');
-	// 	// $('body').removeClass('scroll_lock');
-	// 	// $('.wrap').removeAttr('aria-hidden');
-  // });
-	/* 메뉴검색 메뉴 닫기 */
-
-
-
 
 	$(document).on('keydown', function(e) {
 		if (e.key === 'Enter') {
 			const focusedElement = document.activeElement; // 현재 포커스된 요소
-			console.log('현재 포커스된 요소:', focusedElement);
-			console.log('jQuery this로는:', $(focusedElement));
+			// console.log('현재 포커스된 요소:', focusedElement);
+			// console.log('jQuery this로는:', $(focusedElement));
 		}
 	});
 
@@ -106,18 +70,10 @@
       $head.addClass('active');
 			$this.attr('aria-expanded', 'true');
       $inner.slideDown();
-
-			// if($this.closest('.acd_item').parent().hasClass('input_item_wrap')){
-			// 	$this.closest('.acd_item').addClass('open')
-			// }
     }else {
 			$this.attr('aria-expanded', 'false');
       $head.removeClass('active');
       $inner.slideUp();
-
-			// if($this.closest('.acd_item').parent().hasClass('input_item_wrap')){
-			// 	$this.closest('.acd_item').removeClass('open')
-			// }
     }
   });
 
@@ -151,15 +107,10 @@
 		if($('.tag_item_move').length){
 			const $target = $('.tag_item_move').find('.tag_move').eq(idx);
 			const targetPadding = parseFloat($target.css('padding-top'));
-			// const simpleHeight = $('.simple_info_wrap').height();
-			// const targetOffset = $target.position().top;
 			let summaryHeight = 0,
 					simpleHeight = 0;
 			const targetOffset = $target.position().top;
 			const fix_h = $(this).closest('.sticky').height();
-			
-			// console.log($target + ' : ' + targetOffset);
-			// console.log(targetOffset , targetMargin);
 
 			if($('.simple_info_wrap.ty2').length){
 				simpleHeight = 102;
@@ -255,7 +206,6 @@
 		}
 
 		//전화번호
-		// if($this.closest('.input_text').hasClass('phone')){
 		if( $this.closest('.input_text').hasClass('phone') && !$this.prop('readonly') && !$this.prop('disabled') ){
 			if(val){
 				const newVal = val.replace(/ - /g, '');
@@ -281,7 +231,6 @@
 		});
 
 		// 전화번호
-		// if($this.closest('.input_text').hasClass('phone')){
 		if( $this.closest('.input_text').hasClass('phone') && !$this.prop('readonly') && !$this.prop('disabled') ){
 			$this.attr('maxlength', 14);
 			if(val){
@@ -298,7 +247,6 @@
     e.preventDefault();
 	
 		setTimeout(() => {
-			// $this.siblings('input').val('').trigger("input").focus();
 			const $input = $this.siblings("input");
 			$input.val("").focus();
 			$input[0].dispatchEvent(new Event("input", { bubbles: true }));
@@ -664,7 +612,6 @@ function tabScroll(){
 
 	$('[class^=tab_scroll_box]').on('scroll', function() {
 		scrollPosition = $(this).scrollLeft();
-		// $('#scroll_position span').text(scrollPosition);
 	});
 
 	$('[class^=tab_scroll_box] .tab_btn').on('click', function(){
@@ -697,8 +644,6 @@ function simpleInfo(){
 		const scrollTop = $('#container').scrollTop();
 		const pop_scrollTop = $('.popup_cont').scrollTop();
 		const pop_height = $('.popup_cont').height();
-
-		// console.log('scroll!! : '+ scrollTop);
 
 		if ($('.simple_info_wrap').length) {
 			const $target = $(this).find('.simple_info_wrap');
