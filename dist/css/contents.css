@@ -242,7 +242,7 @@
 }
 .bi_wrap .stepper_wrap {
 	position: relative;
-	height: 7.2rem;
+	height: var(--size-height-10);
 	padding: 0 4rem;
 }
 .bi_wrap .stepper_wrap .stepper {
@@ -252,7 +252,7 @@
 	position: relative;
 	height: 0.4rem;
 	border-radius: 0.8rem;
-	background-color: #e6e8ea;
+	background-color: var(--color-element-gray-light);
 }
 .bi_wrap .stepper_wrap .stepper .pgs .pgs_per {
 	position: absolute;
@@ -1072,25 +1072,45 @@
 **/
 .mail_list_cont {
 	position: absolute;
-	top: 5.6rem;
+	top: calc(var(--size-height-8) - 1px);
 	left: 0;
 	z-index: 1;
 	display: none;
 	width: 100%;
-	padding: var(--padding-8);
-	border-radius: var(--number-10);
+	padding: calc(var(--padding-6) - 1px) 0.3rem calc(var(--padding-6) - 1px) calc(var(--padding-8) - 1px);
+	border-radius: var(--radius-medium3);
 	border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 	background-color: var(--color-background-gray-subtler);
+	display: block !important;
 }
 .mail_list_cont.on {
 	display: block;
 }
 .mail_list {
 	max-height: 20rem;
-	overflow: auto;
+	padding-right: calc(var(--padding-8) - 0.6rem);
+	overflow-y: auto;
+}
+.mail_list::-webkit-scrollbar {
+	width: 0.3rem;
+}
+.mail_list::-webkit-scrollbar-track {
+	background: transparent;
+	border-radius: 0.6rem;
+}
+.mail_list::-webkit-scrollbar-thumb {
+	background: var(--color-divider-gray-dark);
+	border-radius: var(--radius-max);
+}
+.mail_list > li:first-child {
+	margin-top: var(--padding-5);
+}
+.mail_list > li:last-child {
+	margin-bottom: var(--padding-5);
 }
 .mail_list > li > .text {
 	display: block;
+	word-break: break-all;
 	font-size: var(--font-size-body-medium);
 	line-height: 2.4rem;
 	color: var(--color-text-subtle);
@@ -3106,6 +3126,9 @@
 .guarantee_detail .gd_item .gdi_content .gdi_content_list > li.ico_add.ico_add_ty10 .item {
 	background-image: url(../images/content/guarantee/icon_gil_10.svg);
 }
+.guarantee_detail .gd_item .gdi_content .gdi_content_list > li.ico_add.ico_add_ty11 .item {
+	background-image: url(../images/content/guarantee/icon_gil_11.svg);
+}
 .guarantee_detail .guarantee_detail_mini {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -3376,7 +3399,7 @@
 	-webkit-box-direction: normal;
 	-ms-flex-direction: column;
 	flex-direction: column;
-	gap: 0.4rem;
+	gap: var(--gap-2);
 }
 .coverage_item_list > .list .item_title {
 	font-size: var(--font-size-label-medium);
