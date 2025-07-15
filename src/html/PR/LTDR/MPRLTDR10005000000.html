@@ -6,14 +6,15 @@
 		<div class="content">
 			<!-- s: content_top -->
 			<div class="content_top">
+				<!-- s: 25-07-15 수정 -->
 				<h2 class="title_h2">
-					보험가입에 <strong>중요한 사항</strong>에 대한 <strong>확인</strong>이 필요합니다.
+					보험가입에 <strong>중요한 사항</strong>에 대한<br />
+					<strong>확인</strong>이 필요합니다.
 				</h2>
-				<!-- s: 25-06-27 수정 -->
-				<p class="text_sub">
+				<p class="title_sub">
 					가입하시는 피보험자 기준으로 확인해 주시기 바랍니다. 향후 보험금 지급에 문제가 없도록 꼭 사실대로 알려주세요.
 				</p>
-				<!-- e: 25-06-27 수정 -->
+				<!-- e: 25-07-15 수정 -->
 			</div>
 			<!-- e: content_top -->
 
@@ -125,12 +126,30 @@
 	<div class="bottom_fix_wrap">
 		<div class="btn_area">
 			{{> cp/button type="1" size="1" b-text="중요 사항을 확인 중이에요" disabled=true }}
-			<!-- {{> cp/button type="1" size="1" b-text="모두 확인했어요" }} -->
+			<!-- {{> cp/button type="1" size="1" b-text="모두 확인했어요" popup="pop_MPRLTDR10005000000" }} -->
 		</div>
 	</div>
 </div>
 
 <!-- s: popup area -->
+<!-- s: 25-07-15 추가 -->
+{{#> popup/popup_bottom popup-id="pop_MPRLTDR10005000000" popup-title="피보험자 동의 완료" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="info_cont">
+			<p>피보험자(보상 받으실 분)의 개인(신용)정보 수집·이용 동의 및 보험료 확인 절차가 완료되었습니다.</p>
+			<ul class="list_ty1">
+				<li>보험료 결제 등 보험가입을 완료할 수 있도록 <strong class="point">계약자(홍*동)에게 안내</strong>해 드리겠습니다.</li>
+				<li>최종 보험가입이 완료되면 <strong class="point">[청약 내용 확인]</strong> 메시지를 <strong class="point">고객님께 안내</strong>해 드리겠습니다.</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area right">{{> cp/button type="1" size="2" b-text="확인" }}</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 25-07-15 추가 -->
 <!-- e: popup area -->
 
 {{/ layout/default }}

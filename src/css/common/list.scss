@@ -1592,10 +1592,14 @@
 		display: block;
 		background-repeat: no-repeat;
 		background-position: 20px center;
-		background-size: 24px auto;
-		border: 1px solid var(--color-divider-gray-light);
+		//background-size: 24px auto;
+		background-size: 32px auto;
+		border: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 		border-radius: var(--radius-large2);
-		padding: 24px 64px 24px 56px;
+		//padding: 24px 64px 24px 56px;
+		padding: calc(var(--padding-8) - 1px) 55px calc(var(--padding-8) - 1px) 63px;
+
+
 
 		@for $i from 1 through 5 {
 			&.opt#{$i}{
@@ -1623,13 +1627,15 @@
 		.title {
 			font-size: var(--font-size-body-medium);
 			& + .cont {
-				margin-top: 1px;
+				//margin-top: 1px;
+				margin-top: var(--gap-2);
 			}
 		}
 		.cont {
 			display: flex;
 			align-items: center;
 			flex-wrap: wrap;
+			row-gap: var(--gap-2);
 			strong {
 				display: flex;
 				align-items: center;
