@@ -2480,7 +2480,7 @@
 	background-color: #fff;
 }
 .summary_ii {
-	--sili-space: 5.2rem;
+	--sili-space: var(--gap-6);
 	overflow: hidden;
 	margin-top: var(--gap-5);
 }
@@ -2556,7 +2556,7 @@
 	position: relative;
 }
 .summary_ii .sic_cont_inner + .sic_cont_inner {
-	margin-top: var(--gap-9);
+	margin-top: var(--gap-6);
 }
 .summary_ii .sic_cont_inner .title_h4 + .sic_list {
 	margin-top: var(--gap-5);
@@ -3537,6 +3537,9 @@
 .form_box .form_group_wrap + .if_box + .btn_area {
 	margin-top: var(--gap-11);
 }
+.form_box .form_group_wrap + .checkbox_group_wrap {
+	margin-top: var(--gap-5);
+}
 .form_box .form_group_wrap .if_box_ty2 {
 	margin-top: var(--gap-8);
 }
@@ -3611,6 +3614,12 @@
 }
 .form_list > li > .form_group_wrap > .form_line .checkbox_group_wrap + .form_group_wrap {
 	margin-top: var(--gap-8);
+}
+.form_list > li > .form_group_wrap > .form_line > .text_sub {
+	font-size: var(--font-size-body-small);
+}
+.form_list > li > .form_group_wrap > .form_line > .text_sub + .label_tit {
+	margin-top: var(--gap-3);
 }
 .form_list > li > .form_group_wrap + .form_group_wrap {
 	margin-top: var(--gap-9);
@@ -4038,7 +4047,7 @@ ul + .form_group_wrap {
 	margin-top: var(--gap-11);
 }
 .info_gray + .btn_area {
-	margin-top: var(--gap-5);
+	margin-top: var(--gap-8);
 }
 .info_gray.mg_ty2 {
 	margin-top: var(--gap-8);
@@ -4588,18 +4597,18 @@ ul + .form_group_wrap {
 .miss_service_list > li .item {
 	display: block;
 	height: 100%;
-	padding: var(--padding-8);
+	padding: calc(var(--padding-8) - 1px);
 	border-radius: 2.4rem;
 	border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 }
 .miss_service_list > li .item .text {
 	display: block;
-	padding-top: 4rem;
+	padding-top: calc(var(--size-height-5) + var(--gap-2));
 	font-size: var(--font-size-body-medium);
 	color: var(--color-text-bolder);
 	background-repeat: no-repeat;
 	background-position: left top;
-	background-size: 4rem auto;
+	background-size: var(--size-height-5) auto;
 }
 .miss_service_list > li .item.item_ty1 .text {
 	background-image: url(../images/login/icon_service_01.svg);
@@ -5526,4 +5535,8 @@ ul + .form_group_wrap {
 }
 .info_gray.ty3 .list + .list {
 	margin-top: var(--gap-5);
+}
+/* 주택 - 기초정보입력 */
+.popup_wrap.full .bi_opts_wrap .opts_area_item .btn_area {
+	margin-top: 2.4rem;
 }
