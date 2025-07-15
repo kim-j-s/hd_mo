@@ -125,12 +125,30 @@
 	<div class="bottom_fix_wrap">
 		<div class="btn_area">
 			{{> cp/button type="1" size="1" b-text="중요 사항을 확인 중이에요" disabled=true }}
-			<!-- {{> cp/button type="1" size="1" b-text="모두 확인했어요" }} -->
+			<!-- {{> cp/button type="1" size="1" b-text="모두 확인했어요" popup="pop_MPRLTDR10005000000" }} -->
 		</div>
 	</div>
 </div>
 
 <!-- s: popup area -->
+<!-- s: 25-07-15 추가 -->
+{{#> popup/popup_bottom popup-id="pop_MPRLTDR10005000000" popup-title="피보험자 동의 완료" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="info_cont">
+			<p>피보험자(보상 받으실 분)의 개인(신용)정보 수집·이용 동의 및 보험료 확인 절차가 완료되었습니다.</p>
+			<ul class="list_ty1">
+				<li>보험료 결제 등 보험가입을 완료할 수 있도록 <strong class="point">계약자(홍*동)에게 안내</strong>해 드리겠습니다.</li>
+				<li>최종 보험가입이 완료되면 <strong class="point">[청약 내용 확인]</strong> 메시지를 <strong class="point">고객님께 안내</strong>해 드리겠습니다.</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area right">{{> cp/button type="1" size="2" b-text="확인" }}</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 25-07-15 추가 -->
 <!-- e: popup area -->
 
 {{/ layout/default }}
