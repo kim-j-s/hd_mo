@@ -73,7 +73,7 @@
 		// height: var(--size-height-8);
 		height: calc(var(--size-height-8) - 2px);
 		padding: 3px 32px 3px 16px;
-		font-size: 16px;
+		font-size: var(--font-size-body-medium);
 		line-height: 24px;
 		appearance: none;               
 		box-sizing: border-box;
@@ -218,7 +218,7 @@
 				height: 54px;
 				width: 100%;
 				padding: 3px 16px;
-				font-size: 16px;
+				font-size: var(--font-size-body-medium);
 				line-height: 24px;
 				.file_name {
 					flex: 1;
@@ -321,7 +321,7 @@
 	}
 
 	.dash {
-		font-size: 16px;
+		font-size: var(--font-size-body-medium);
 	}
 
 	.input_text {
@@ -396,7 +396,7 @@
 			.id_pass {
 				line-height: 48px;
 				width: 100%;
-				font-size: 16px;
+				font-size: var(--font-size-body-medium);
 				text-align: center;
 				background-color: var(--color-input-surface-disabled);
 				border-radius: 12px;
@@ -404,7 +404,7 @@
 			.id_pass2 {
 				line-height: 48px;
 				width: 100%;
-				font-size: 16px;
+				font-size: var(--font-size-body-medium);
 				text-align: center;
 				border-radius: 12px;
 			}
@@ -785,7 +785,9 @@
 		}
 
 		&.balance {
-			& > * { width: 50%;}
+			& > * { 
+				width: 50%;
+			}
 		}
 
 		& + .form_line {
@@ -863,7 +865,7 @@
 	}
 	&.rd_box {
 		padding: var(--padding-8) var(--padding-7);
-		border: var(--border-width-static-regular, 1px) solid var(--color-border-gray-light, #CDD1D5);
+		border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 		border-radius: var(--radius-large2);
 	}
 }
