@@ -601,6 +601,26 @@
 		$this.val(val);
 	});
 
+	// 달력 날짜 입력 항목 focus 시 attr 추가 및 blur 시 자리수 정리 기능 추가
+	$DOM.on('focus', '.inp_picker', function() {
+		const $this = $(this);
+		let val = $this.val();
+		$this.attr('maxlength', '8'); // focus 시 maxlength 속성 추가
+		const raw = val.replace(/\D/g, ''); // 모든 숫자만 남김
+		if (raw.length === 8) {
+			$this.val(raw);
+		}
+	});
+	$DOM.on('blur', '.inp_picker', function () {
+		const $this = $(this);
+		let val = $this.val().replace(/\D/g, ''); // 숫자만 추출
+	
+		if (val.length === 8) {
+			const formatted = val.replace(/^(\d{4})(\d{2})(\d{2})$/, '$1.$2.$3');
+			$this.val(formatted);
+		}
+	});
+
 
 })();
 
@@ -671,7 +691,8 @@ function simpleInfo(){
 			// console.log('컨텐츠 스크롤 위치 : ' + scrollTop);
 			// console.log('팝업 컨텐츠 스크롤 위치 : ' + pop_scrollTop);
 
-			if (targetOffsetTop <= new_headHeight + 30 && !$targetChild.hasClass('active')) {
+			// if (targetOffsetTop <= new_headHeight + 30 && !$targetChild.hasClass('active')) {
+			if (targetOffsetTop <= new_headHeight && !$targetChild.hasClass('active')) {
 				// console.log('펴기');
 				$targetChild.addClass('active');
 
@@ -685,7 +706,8 @@ function simpleInfo(){
 					$('.tag_item_wrap.sticky').css('top', simpleHeight - 50).addClass('active');
 				}
 
-			} else if (targetOffsetTop > new_headHeight + 30 && $targetChild.hasClass('active')) {
+			// } else if (targetOffsetTop > new_headHeight + 30 && $targetChild.hasClass('active')) {
+			} else if (targetOffsetTop > new_headHeight && $targetChild.hasClass('active')) {
 				// console.log('접기');
 				$target.removeAttr('style').removeClass('active');
 				$targetChild.removeClass('active');
@@ -884,6 +906,8 @@ $(function(){
 			}
 		}, 400);
 	});
+
+	
 	
 	// 달력 호출
 
