@@ -31,6 +31,8 @@
 
 	&.big {
 		input {
+			border-color: var(--color-border-gray-light);
+			height: calc(var(--size-height-10) - 2px); 
 			font-size: var(--font-size-heading-medium);
 			font-weight: 700;
 		}
@@ -38,7 +40,7 @@
 			.int_txt {
 				padding-top: 0;
 				font-size: var(--font-size-heading-medium);
-				font-weight: 700;
+				font-weight: 700; 
 			}
 		}
 	}
@@ -77,6 +79,7 @@
 		box-sizing: border-box;
 		border-radius: inherit;
 		border: none;
+		background-color: var(--color-input-surface);
 
 		&::placeholder {
 			color: var(--color-text-disabled);
@@ -90,7 +93,7 @@
 		}
 		&:disabled {
 			color: var(--color-text-disabled-on) !important;
-			background-color: var(--color-input-surface-disabled);
+			background-color: var(--color-input-surface-disabled);			
 		}
 		&:focus {
 			outline: none;
@@ -100,6 +103,7 @@
 	&.readonly,
 	&.disabled {
 		background-color: var(--color-input-surface-disabled);
+		border-color: var(--color-input-border-disabled);  
 	}
 	&.disabled {
 		.int_txt {
@@ -149,6 +153,10 @@
 			input {
 				padding-left: 0;
 			}
+		}
+		&.readonly,
+		&.disabled {
+			gap: 6px;
 		}
 
 	}
@@ -291,10 +299,10 @@
 		}
 	}
 
-	&.card {
+	&.card {		
 		.comp_wrap_keypad_call {
+			flex: none;
 			.pin_area {
-				padding: 0;
 				&.default {
 					justify-content: center;
 				}
@@ -408,6 +416,13 @@
 					background-color: transparent;
 				}			
 			}
+		}
+	}
+
+	//금액
+	&.key_number {
+		& + .btn_area.basic {
+			margin-top: var(--gap-4);
 		}
 	}
 }
