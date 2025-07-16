@@ -673,12 +673,12 @@ function simpleInfo(){
 			let simpleHeight = $(this).find('.simple_info_wrap').find('.simple_info_item').innerHeight();
 			
 			if ($target.length && $target.css('display') !== 'none') {
-				targetOffsetTop = $target.offset().top;
+				targetOffsetTop = $target.position().top;
 			}
 			// console.log('기준 위치 : ', targetOffsetTop);
 
-			if($('.gd_middle_b').length){
-				targetOffsetTop = targetOffsetTop - 50
+			if($('.gd_middle_ba').length){
+				targetOffsetTop = targetOffsetTop - 50;
 			}
 
 			if($('.popup_head').length){
