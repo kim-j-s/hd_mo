@@ -282,12 +282,17 @@ $logo-numbers: "000", "002", "003", "004", "005", "007", "011", "012", "020", "0
 
 //화면 상태 표시 아이콘
 .status_icon {
-	display: inline-block;
+	//display: inline-block;
+	display: flex;
+	justify-content: center;;
 	line-height: 0;
 	.hd_icon {
 		width: 32px;
 		height: 32px;
 		background-position: center;
+	}
+	& + .title_h3 {
+		margin-top: var(--gap-5);
 	}
 }
 
