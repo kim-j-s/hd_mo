@@ -676,8 +676,9 @@ function simpleInfo(){
 				targetOffsetTop = $target.offset().top;
 			}
 			// console.log('기준 위치 : ', targetOffsetTop);
+			console.log($target);
 
-			if($('.gd_middle_b').length){
+			if($('.gd_middle_ba').length){
 				targetOffsetTop = targetOffsetTop - 50
 			}
 
