@@ -48,7 +48,7 @@ function openHDPopup($triggerEl, target) {
 		$(".wrap").attr("inert", "");
 	}
 
-	//popup active
+	// popup active
 	$("body").css("overscroll-behavior", "contain");
 	$("body").addClass("scroll_lock");
 	$target.addClass("active");
@@ -57,6 +57,10 @@ function openHDPopup($triggerEl, target) {
 	if ($target.hasClass("bottom")) {
 		draggable($target);
 	}
+
+	$('.popup_cont').animate({
+		scrollTop: 0 // 팝업 열 때 스크롤을 최상단으로 이동
+	}, 0);
 
 	$target.attr("aria-hidden", "false");
 	$target.find(".popup_inner").attr({
