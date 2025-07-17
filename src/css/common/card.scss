@@ -168,10 +168,10 @@
 			align-items: flex-start;
 			
 
-			> .inp_checkbox,
-			> .inp_radio {
+			// > .inp_checkbox,
+			// > .inp_radio {
 				// margin-top: 3px;
-			}
+			// }
 
 			.inp_checkbox {
 				input {
@@ -179,11 +179,11 @@
 				}
 			}
 
-			&:not(:has(.item_top)){
-				.inp_radio {
-					// background-color: red;
-				}
-			}
+			// &:not(:has(.item_top)){
+			// 	.inp_radio {
+			// 		// background-color: red;
+			// 	}
+			// }
 
 			.inner_cont {
 				flex: 1;
@@ -251,6 +251,17 @@
 					&:before {
 						top: 3px;
 						z-index: 10;
+					}
+					// 현업 요청에 의한 클릭 영역 추가
+					&::after {
+						content: '';
+						position: absolute;
+						top: -5px;
+						left: -8px;
+						z-index: 1;
+						width: 36px;
+						height: 36px;
+						// background-color: rgba($color: #ddd, $alpha: 0.8);
 					}
 
 					&.chk_label_ty4 {

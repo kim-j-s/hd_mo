@@ -1189,6 +1189,12 @@ strong {
 	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
 }
+.header .header_inner .header_right .btn_go_home {
+	width: 3.2rem;
+	height: 3.2rem;
+	font-size: 0;
+	background-image: url(../images/header/icon_home.svg);
+}
 /* footer */
 /* Footer */
 .fix_nav_menu {
@@ -5561,6 +5567,16 @@ strong {
 .card_item_wrap .card_item .item_inner .inp_checkbox .chk_label:before {
 	top: 0.3rem;
 	z-index: 10;
+}
+.card_item_wrap .card_item .item_inner .inp_radio .chk_label::after,
+.card_item_wrap .card_item .item_inner .inp_checkbox .chk_label::after {
+	content: "";
+	position: absolute;
+	top: -0.5rem;
+	left: -0.8rem;
+	z-index: 1;
+	width: 3.6rem;
+	height: 3.6rem;
 }
 .card_item_wrap .card_item .item_inner .inp_radio .chk_label.chk_label_ty4:before,
 .card_item_wrap .card_item .item_inner .inp_checkbox .chk_label.chk_label_ty4:before {
@@ -13317,10 +13333,19 @@ strong {
 	-ms-flex-align: center;
 	align-items: center;
 }
-.info_gray .total.car .total_car:has(.del) {
+.info_gray .total.car .total_car:has(.del),
+.info_gray .total.car .total_car:has(del) {
+	-webkit-box-align: end;
+	-ms-flex-align: end;
+	align-items: flex-end;
 	margin-top: 2.1rem;
 }
-.info_gray .total.car .total_car:has(.del) dd {
+.info_gray .total.car .total_car:has(.del) dt,
+.info_gray .total.car .total_car:has(del) dt {
+	line-height: 4.8rem;
+}
+.info_gray .total.car .total_car:has(.del) dd,
+.info_gray .total.car .total_car:has(del) dd {
 	margin-top: -2.1rem;
 }
 .info_gray .total.car .total_car dd del {

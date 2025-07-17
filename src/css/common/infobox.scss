@@ -323,9 +323,13 @@
 			}
 			.total_car {
 				align-items: center;
-
-				&:has(.del){
+				&:has(.del),
+				&:has(del) {
+					align-items: flex-end;
 					margin-top: 21px;
+					dt {
+						line-height: 48px;
+					}
 					dd {
 						margin-top: -21px;
 					}
