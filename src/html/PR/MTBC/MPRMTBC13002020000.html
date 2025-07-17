@@ -1,0 +1,61 @@
+{{#> layout/default page-title="자동차 기본정보 | 상품"}}
+	<div id="wrap" class="wrap">
+		{{> layout/header h-title="차량 정보" }}
+		<div id="container" class="container">
+			<div class="content">
+				<!-- s: content_top -->
+				<div class="content_top">
+					<h2 class="title_h2">
+						<strong>보험기간</strong>을 입력해 주세요
+					</h2>
+				</div>
+				<!-- e: content_top -->
+	 
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">가입기간</div>
+						<div class="radio_group_wrap" role="radiogroup">
+							{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_g1" name="radio_g1" labelname="1년 계약" checked=true }}
+							{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_g2" name="radio_g1" labelname="1년 미만 계약" }}
+						</div>
+					</div>
+					<div class="row">
+						<div class="form_line grow">
+							<div class="label_tit">보험시작일</div>
+							{{> cp/text cal=true }}
+						</div>
+						<div class="form_line grow">
+							<div class="label_tit">보험종료일</div>
+							{{> cp/text cal=true }}
+						</div>
+					</div>
+				</div>
+				<!-- s: 꼭 알아두세요 -->
+				{{#> cp/notice dp-active=true }}
+					<!-- s: 가입기간 1년 계약 선택 시 노출 -->
+					<ul class="list_depth">
+						<li>차대번호로 가입하는 경우, 추후 차량번호로 계약변경이 필요합니다.</li>
+						<li><span class="point">이륜차를 구입할 예정인 경우(이륜차 번호와 차대번호를 둘 다 모르는 경우)에는 보험료 계산은 가능하지만, 가입은 불가능합니다.</span></li>
+						<li>1년으로 가입하는 경우, 보험기간의 시작일과 종료일은 반드시 같아야 합니다.</li>
+						<li>보험계약을 갱신하는 경우, 보험효력은 시작일 24시(다음날 00시)부터 종료일의 24시까지입니다. (단, 만기일이 경과하여 가입하는 경우, 의무보험의 보험효력은 보험료를 받은 때부터 시작되고 임의보험은 보험료를 받은 날의 24시부터 시작됩니다.)</li>
+						<li>이륜차를 새로 구입하여 가입하는 경우, 보험효력은 보험료를 받은 때부터 시작됩니다.</li>
+					</ul>
+				{{/ cp/notice }}
+				<!-- e: 꼭 알아두세요 -->
+			</div>
+		</div>
+
+		<!-- s: 하단 고정 버튼 영역 -->
+		<div class="bottom_fix_wrap">
+			<div class="btn_area">
+				{{> cp/button type="1" size="1" b-text="1년 계약으로"}}
+				<!-- {{> cp/button type="1" size="1" b-text="1년 미만 계약으로"}} -->
+			</div>
+		</div>
+		<!-- s: 하단 고정 버튼 영역 -->
+	</div>
+
+	<!-- s: popup area -->
+
+	<!-- e: popup area -->
+{{/ layout/default }}
