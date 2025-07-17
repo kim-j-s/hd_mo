@@ -37,9 +37,19 @@
 					<dd>매월</dd>
 				</dl>
 			</div>
+			<!-- s: 25-07-17 -->
+			<div class="checkbox_group_wrap column">
+				<!-- s: 25-06-18 수정 -->
+				{{> cp/checkbox labelname="자동이체 약관 동의" ag_more=true id="agree02" label_class="chk_label_ty3" checkbox_class="rd_box" pop_open=true pop_id="pop_type06" }}
+				<!-- e: 25-06-18 수정 -->
+			</div> 
+			{{#unless no_end_bank}}
+			<div class="divider_ty1"></div>
+			<h3 class="title_h3">만기환급금 계좌정보 입력</h3>
 			<div class="checkbox_group_wrap column">
 				<!-- s: 25-06-18 수정 -->
 				{{> cp/checkbox labelname="만기환급금 입금 계좌 동의" ag_more=true id="agree01" label_class="chk_label_ty3" checkbox_class="rd_box" pop_open=true pop_id="pop_type05" }}
-				{{> cp/checkbox labelname="자동이체 약관 동의" ag_more=true id="agree02" label_class="chk_label_ty3" checkbox_class="rd_box" pop_open=true pop_id="pop_type06" }}
 				<!-- e: 25-06-18 수정 -->
 			</div>
+			{{/unless}}
+			<!-- e: 25-07-17 -->
