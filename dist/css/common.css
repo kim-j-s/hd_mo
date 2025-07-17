@@ -866,7 +866,6 @@ strong {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	gap: 0.3rem;
 }
 .trend.up {
 	color: var(--color-text-point);
@@ -5504,7 +5503,6 @@ strong {
 	margin-top: var(--gap-5);
 }
 .card_item_wrap .card_item ~ .card_item.non_chk {
-	margin-top: var(--gap-11);
 	padding: 2.4rem 2rem;
 }
 .card_item_wrap .card_item ~ .card_item.non_chk .item_inner .inp_radio .chk_label::before {
@@ -5672,6 +5670,9 @@ strong {
 }
 .card_item_wrap .card_item .item_top .title_info + .badge_wrap {
 	margin-top: var(--gap-2);
+}
+.card_item_wrap .card_item .item_top .title_info > .flex_start {
+	gap: var(--gap-3);
 }
 .card_item_wrap .card_item .item_top .text {
 	font-size: var(--font-size-label-large);
@@ -7048,26 +7049,20 @@ strong {
 /* graph */
 /* icon */
 .updown {
-	--trangle-width: 1.4rem;
-	--trangle-height: 1rem;
-	--increase: var(--color-text-point);
-	--decrease: #052b57;
-	display: -webkit-inline-box;
-	display: -ms-inline-flexbox;
-	display: inline-flex;
-	width: var(--trangle-width);
+	display: inline-block;
+	width: 1.6rem;
+	height: 1.6rem;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 	font-size: 0;
 	line-height: 0;
-	border-left: calc(var(--trangle-width) / 2) solid transparent;
-	border-right: calc(var(--trangle-width) / 2) solid transparent;
 }
 .updown.increase {
-	border-bottom-color: var(--increase);
-	border-bottom: var(--trangle-height) solid;
+	background-image: url(../images/icon/stat_up.svg);
 }
 .updown.decrease {
-	border-top-color: var(--decrease);
-	border-top: var(--trangle-height) solid;
+	background-image: url(../images/icon/stat_down.svg);
 }
 .hd_icon {
 	display: inline-block;
@@ -7145,6 +7140,10 @@ strong {
 }
 .hd_icon.bmpSvg {
 	background-image: url(../images/icon/icon_png.svg);
+}
+.hd_icon.pm {
+	width: 2rem;
+	height: 2rem;
 }
 /**
 * 아이콘 에셋
@@ -7525,6 +7524,40 @@ strong {
 }
 .i_logo_900 {
 	background-image: url("../images/logo/i_logo_900.svg");
+}
+/* PM(플랫폼비교추천) 로고 */
+.i_logo_pm_f001 {
+	background-image: url("../images/logo/i_logo_pm_f001.svg");
+}
+.i_logo_pm_f002 {
+	background-image: url("../images/logo/i_logo_pm_f002.svg");
+}
+.i_logo_pm_f003 {
+	background-image: url("../images/logo/i_logo_pm_f003.svg");
+}
+.i_logo_pm_f004 {
+	background-image: url("../images/logo/i_logo_pm_f004.svg");
+}
+.i_logo_pm_f005 {
+	background-image: url("../images/logo/i_logo_pm_f005.svg");
+}
+.i_logo_pm_f006 {
+	background-image: url("../images/logo/i_logo_pm_f006.svg");
+}
+.i_logo_pm_f007 {
+	background-image: url("../images/logo/i_logo_pm_f007.svg");
+}
+.i_logo_pm_f008 {
+	background-image: url("../images/logo/i_logo_pm_f008.svg");
+}
+.i_logo_pm_f009 {
+	background-image: url("../images/logo/i_logo_pm_f009.svg");
+}
+.i_logo_pm_f010 {
+	background-image: url("../images/logo/i_logo_pm_f010.svg");
+}
+.i_logo_pm_f011 {
+	background-image: url("../images/logo/i_logo_pm_f011.svg");
 }
 /********
 * 기타 아이콘
@@ -9007,7 +9040,6 @@ strong {
 	width: 100%;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
-	padding-bottom: var(--gap-7);
 	/* 은행선택 로고 추가 후 수정 필요 */
 	/* 은행선택 로고 추가 후 수정 필요 */
 }
@@ -9049,9 +9081,6 @@ strong {
 	height: 3.2rem;
 }
 /* 카드사 선택 목록 */
-.select_list_ty_card {
-	padding-bottom: var(--gap-7);
-}
 .select_list_ty_card > li + li {
 	margin-top: var(--gap-4);
 }
@@ -10518,7 +10547,7 @@ strong {
 	background-color: var(--color-element-gray-lighter);
 }
 .inp_radio input[type="radio"]:disabled + label > .label_cont {
-	color: var(--color-text-disabled);
+	color: var(--color-text-disabled-on);
 }
 .inp_radio input[type="radio"]:checked + label::before {
 	background: var(--color-element-primary) url(../images/icon/check_ty1.svg) no-repeat center center/1.4rem auto;
@@ -10684,7 +10713,7 @@ strong {
 	gap: 0;
 }
 .radio_group_wrap.column .inp_radio + .inp_radio {
-	margin-top: var(--gap-6);
+	margin-top: var(--gap-4);
 }
 .radio_group_wrap.column .inp_radio.lg ~ .lg {
 	margin-top: var(--gap-7);
@@ -11741,13 +11770,14 @@ strong {
 	align-items: center;
 	font-size: var(--font-size-body-xsmall);
 	font-weight: 700;
+	color: var(--color-text-subtle);
 }
 .step_list_container > li .inner h3 {
 	font-size: var(--font-size-heading-xsmall);
 	font-weight: 700;
 	color: var(--color-text-bolder);
 }
-.step_list_container > li .inner h3 + .content {
+.step_list_container > li .inner h3 + .content.no_bullet {
 	margin-top: var(--gap-4);
 }
 .step_list_container > li + li {
