@@ -14,17 +14,19 @@
 		&:focus-within {
 			border-color: var(--color-input-border-active);
 		}
-		&:read-only {
-			border-color: var(--color-input-border-disabled);
+		&:read-only,
+		&:disabled {
 			background-color: var(--color-input-surface-disabled);
+			border-color: var(--color-input-border-disabled);
 		}
 		&:disabled {
 			color: var(--color-text-disabled-on);
-			border-color: var(--color-input-border-disabled);
-			background-color: var(--color-input-surface-disabled);
 		}
-		&:placeholder {
+		&::placeholder {
 			color: var(--color-text-disabled);
+		}
+		&:focus {
+			outline: none;
 		}
 	}
 
@@ -33,6 +35,7 @@
 		font-size: var(--font-size-body-small);
 		color: var(--color-text-subtle);
 		text-align: right;
+		color: var(--color-text-subtle);
 		em {
 			color: var(--color-text-primary);
 		}
