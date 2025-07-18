@@ -15,18 +15,20 @@
 						<div class="form_line">
 							<div class="label_tit">카드사</div>
 							{{> cp/selectitem si_ph="카드사 선택" si_title="카드사 선택"}}
+							{{#unless corporate}}
 							<!-- s: KB카드 선택 시 노출 -->
 							{{> cp/checkbox id="checkbox1" labelname="앱카드 결제" }}
 							<!-- e: KB카드 선택 시 노출 -->
+							{{/unless}}
 						</div>
 						<div class="form_line">
 							<div class="label_tit">카드번호</div>
 							<div class="comp_wrap card">
-								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" no_del="flase" }}
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" no_del="false" }}
 								<span class="dash">-</span>
-								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="flase" }}
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="false" }}
 								<span class="dash">-</span>
-								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
+								{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="false" }}
 								<span class="dash">-</span>
 								<!-- s: 25-06-10 수정 -->
 								{{> cp/keypad4 case1="4(3자리)" kt="카드번호 마지막 4(3자리) 입력" }}
@@ -47,7 +49,11 @@
 							</div>
 							{{> cp/selectitem si_item="일시불" si_title="카드 할부 선택" si_popup="card_period_select"}}
 							<ul class="list_ty2">
+								{{#if corporate}}
+								<li>&회사명&(계약자)명의의 국내발급 카드로만 결제가 가능합니다. (법인, 가족카드 불가)</li>
+								{{else}}
 								<li>계약자 명의의 국내발급 카드로만 결제가 가능합니다. (법인, 가족카드 불가)</li>
+								{{/if}}
 							</ul>
 						</div>
 						{{/unless}}
