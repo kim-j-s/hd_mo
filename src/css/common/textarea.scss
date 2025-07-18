@@ -14,15 +14,19 @@
 		&:focus-within {
 			border-color: var(--color-input-border-active);
 		}
-		&:read-only {
+		&:read-only,
+		&:disabled {
 			background-color: var(--color-input-surface-disabled);
+			border-color: var(--color-input-border-disabled);
 		}
 		&:disabled {
 			color: var(--color-text-disabled-on);
-			background-color: var(--color-input-surface-disabled);
 		}
-		&:placeholder {
+		&::placeholder {
 			color: var(--color-text-disabled);
+		}
+		&:focus {
+			outline: none;
 		}
 	}
 
@@ -30,6 +34,7 @@
 		margin-top: var(--gap-3);
 		font-size: var(--font-size-body-small);
 		text-align: right;
+		color: var(--color-text-subtle);
 		em {
 			color: var(--color-text-primary);
 		}
