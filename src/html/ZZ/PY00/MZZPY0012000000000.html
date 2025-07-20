@@ -12,7 +12,7 @@
 				</h2>
 			</div>
 			<!-- e: content_top -->
-            <!-- s: 해외여행, 해외장기체류, 국내여행, 골프 -->
+            <!-- s: 해외여행, 해외장기체류, 국내여행, 골프, 하이펫-->
 			<div class="bg_top_cover ty2">
 				<div class="info_gray bg_etc01">
 					<div class="total">
@@ -43,7 +43,7 @@
 					</div>
 				</div>
 			</div>
-            <!-- e: 해외여행, 해외장기체류, 국내여행, 골프 -->
+            <!-- e: 해외여행, 해외장기체류, 국내여행, 골프, 하이펫 -->
             <!-- s: 풍수해·지진재해(사업장)(주택용) -->
 			<div class="bg_top_cover ty2">
 				<div class="info_gray bg_etc01">
@@ -92,24 +92,26 @@
 				<div class="tab_wrap_list_ty1" role="tablist">
 					{{> cp/tab_btn tb-text="신용카드" tb-id="01" tb-active=true}}
 					{{> cp/tab_btn tb-text="간편결제" tb-id="02"}}
-					{{> cp/tab_btn tb-text="즉시이체" tb-id="03"}}
+					{{> cp/tab_btn tb-text="계좌이체" tb-id="03"}}
 				</div>
 
 				<!-- 신용(앱)카드 -->
 				<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
-					{{> pay/card no_tit=true }}
+					{{> pay/card }}
 					{{> pay/shot_benefit }}
                 </div>
 
 				<!-- 간편결제 -->
 				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
-					{{> pay/pay_info no_tit=true }}
+					{{> pay/pay_info }}
 				</div>
 				<!-- 즉시이체 -->
 				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel03">
-					{{> pay/bank1 no_tit=true }}
+					{{> pay/bank1 }}
 				</div>
 			</div>
+			<!-- 2회차 결제 -->
+			{{> pay/long_pay no_end_bank=true }}
 		</div>
 	</div>
 
@@ -131,6 +133,26 @@
 
 <script>
 	$(document).ready(function(){
-		
+		var bannerSwiper = new Swiper('#card_reward_banner_wrap', {
+					slidesPerView: 1,
+					updateOnWindowResize:true,
+					navigation: {
+						prevEl: ".swiper_button_left", //25-05-12
+						nextEl: ".swiper_button_right", //25-05-12
+					},
+					a11y: {
+						enabled: true,
+						prevSlideMessage: '이전 항목으로 이동',
+						nextSlideMessage: '다음 항목으로 이동',
+					},
+					pagination: {
+						el: '.swiper-pagination',
+						clickable: true,
+						type: 'bullets',
+						renderBullet: function (index, className) {
+							return `<span class="${className}" aria-label="배너${index + 1}번으로 이동"></span>`;
+						},
+					}				
+				});
 		});
 </script>

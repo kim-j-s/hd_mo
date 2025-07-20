@@ -1,0 +1,31 @@
+{{#> layout/default no-sp=true page-title="자동차 기본정보 | 상품"}}
+
+	<!-- s: Bottom 팝업 -->
+    {{#> popup/popup_bottom popup-id="pop_type03" popup-active=true popup-title="차랑구독서비스 대상 확인 안내" }}
+    <div class="popup_cont">
+        <div class="popup_content">
+					<p class="text_sub">
+						산출하신 차량의 피보험자 및 등록증상 소유자<span>(ㅇㅇㅇ)</span>는 자동차 대여사업자로 확인됩니다.<br>
+						차량대여(구독)서비스 제공중이신 경우, 유상운송특약을 포함하여 가입하셔야 합니다.
+					</p>
+					<p class="text_sub">
+						대여(구독)차량이 유상운송특약 미가입시, 사고처리가 불가할 수 있습니다.
+					</p>
+					<p class="text_sub">
+						가입관련 문의사항은 다이렉트 고객센터(1899-6782)로 연락주시기 바랍니다.
+					</p>
+					<div class="radio_group_wrap column" role="radiogroup">
+						{{> cp/radio rd-id="radio02-1" name="radio02" labelname="보험 가입을 계속합니다.(대여차량이 아닌 경우)" }}
+						{{> cp/radio rd-id="radio02-2" name="radio02" labelname="유상운송특약 가입을 위해 계약전 알릴의무 화면으로 이동합니다." }}
+					</div>
+        </div>
+    </div>
+    <div class="popup_bottom">
+        <div class="btn_area">
+          {{> cp/button type="1" size="2" b-text="확인"}}
+        </div>
+    </div>
+    {{/ popup/popup_bottom}} 
+		<!-- e: Bottom 팝업 -->
+
+{{/ layout/default }}
