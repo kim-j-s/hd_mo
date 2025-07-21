@@ -697,7 +697,8 @@ function simpleInfo(){
 				$targetChild.addClass('active');
 
 				if(!$target.hasClass('ty2')){
-					$targetChild.stop().slideDown(300);
+					// $targetChild.stop().slideDown(300);
+					console.log('slideDown');
 				}else {
 					$targetChild.stop().show();
 				}
@@ -713,7 +714,8 @@ function simpleInfo(){
 				$targetChild.removeClass('active');
 
 				if(!$target.hasClass('ty2')){
-					$targetChild.stop().slideUp(300);
+					// $targetChild.stop().slideUp(300);
+					console.log('slideUp');
 				}else {
 					$targetChild.stop().hide();
 				}
