@@ -1921,7 +1921,7 @@ strong {
 	padding: var(--padding-8) 0 var(--gap-5);
 }
 .ag_group_wrap .ag_group_top + .ag_group_cont {
-	border-top: var(--border-width-static-regular) solid var(--color-border-gray-light);
+	border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 }
 .ag_group_wrap .ag_group_cont {
 	padding: var(--gap-5) 0 var(--padding-8);
@@ -3096,6 +3096,9 @@ strong {
 }
 .view_wrap .view_navigation li.navigation_item .navigation_title {
 	font-size: var(--font-size-body-medium, 16px);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .view_wrap .view_navigation li.navigation_item .navigation_title.no-data {
 	color: var(--color-text-disabled-on);
@@ -3567,7 +3570,7 @@ strong {
 .hd_btn_ty_3 {
 	color: var(--color-text-basic);
 	border: var(--border-width-static-regular) solid var(--color-button-tertiary-border);
-	background: var(--color-button-tertiary-fill, rgba(255, 255, 255, 0));
+	background: var(--color-button-tertiary-fill);
 }
 .hd_btn_ty_3:focus {
 	background: var(--color-button-tertiary-fill);
@@ -7973,6 +7976,7 @@ strong {
 	border: var(--border-width-variable-regular) solid var(--color-input-border);
 	border-radius: var(--radius-medium3);
 	/* comp_wrap 내부에서 보안키패드 호출 버튼 공통 사용요소 - 필요시 각 class별로 별도 설정 필요 */
+	/* 현업 요청에 의한 색상 재정의 */
 }
 .comp_wrap:focus-within {
 	border-color: var(--color-text-basic);
@@ -8112,6 +8116,15 @@ strong {
 }
 .comp_wrap.key_number + .btn_area.basic {
 	margin-top: var(--gap-4);
+}
+.comp_wrap.key_number .input_text:has(.int_txt.right) input {
+	padding-right: 0;
+}
+.comp_wrap .hd_btn {
+	--color-button-tertiary-fill: rgba(255, 255, 255, 1);
+}
+.comp_wrap .hd_btn.hd_btn_ty_3 {
+	background: var(--color-button-tertiary-fill);
 }
 .price {
 	width: 100%;
@@ -8612,6 +8625,7 @@ strong {
 	background-color: var(--color-text-disabled);
 }
 .form_key.pin_type .pin_area .dot_mark.active {
+	border-color: var(--color-text-basic);
 	background-color: var(--color-text-basic);
 }
 .form_key.pin_type.error .pin_area .dot_mark {
@@ -12379,6 +12393,10 @@ strong {
 .table_wrap .table th .tooltip_wrap .tooltip_head.active::after,
 .table_wrap .table td .tooltip_wrap .tooltip_head.active::after {
 	top: calc(100% - 0.9rem);
+}
+.table_wrap .table th .inp_checkbox,
+.table_wrap .table td .inp_checkbox {
+	text-align: left;
 }
 .table_wrap .table th {
 	vertical-align: middle;
