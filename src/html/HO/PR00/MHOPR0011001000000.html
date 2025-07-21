@@ -2,22 +2,22 @@
 
 <div id="wrap" class="wrap">
     {{> layout/header h-title="" }}
-    <div id="container" class="container cyber">
+    <div id="container" class="container home">
         <div class="content">
             <div class="home_card top sticky">
-                <div class="">
+                <div class="top_item_box">
                     <h3 class="h2_title">
                         <strong>어떤 상품</strong>을 찾으시나요?
                     </h3>
                     <div class="product_top">
-                        <button type="button" class="product_top1">자동차</button>
-                        <button type="button" class="product_top2">운전자</button>
-                        <button type="button" class="product_top3">펫</button>
-                        <button type="button" class="product_top4">재산/화재</button>
-                        <button type="button" class="product_top5">어린이</button>
-                        <button type="button" class="product_top6">건강·암</button>
-                        <button type="button" class="product_top7">여행/레저</button>
-                        <button type="button" class="product_top8">연금/저축</button>
+                        <button type="button" class="product_top1" data-target="1">자동차</button>
+                        <button type="button" class="product_top2" data-target="2">운전자</button>
+                        <button type="button" class="product_top3" data-target="3">펫</button>
+                        <button type="button" class="product_top4" data-target="4">재산/화재</button>
+                        <button type="button" class="product_top5" data-target="5">어린이</button>
+                        <button type="button" class="product_top6" data-target="6">건강·암</button>
+                        <button type="button" class="product_top7" data-target="7">여행/레저</button>
+                        <button type="button" class="product_top8" data-target="8">연금/저축</button>
                     </div>
                 </div>
             </div>
@@ -325,24 +325,106 @@
 <!-- e: popup area -->
 
 <script> 
-    $('.product_top button').each(function (i) {
-        $(this).on('click', function () {
-            $('.product_top button').removeClass('active');
-            $(this).addClass('active');
-            setTimeout(function() {
-                const $target = $(`.bg_ty0${i + 1}`);
-                if ($target.length) {
-                    var scrollTop = $target.offset().top;
-                    $('#container').animate({
-                        scrollTop: $target.offset().top
-                    }, 600);
-                }
-            }, 500);
+    $(window).on('load', function () {
+        const $container = $('#container');
+        const $buttons = $('.product_top button');
+        const headerHeight = $('.home_card.sticky').outerHeight() || 0;
+        let isClickScrolling = false;
+
+        // 버튼 클릭 시
+        $buttons.each(function () {
+            const $btn = $(this);
+            const targetNum = $btn.data('target');
+            const $target = $(`.bg_ty0${targetNum}`);
+
+           
+            $btn.on('click', function () {
+                // 클릭으로 인한 스크롤임을 표시
+                isClickScrolling = true;
+                
+                const scrollTop = $target.offset().top - $container.offset().top + $container.scrollTop() - headerHeight + 150;
+
+                // 버튼 active
+                $buttons.removeClass('active');
+                $btn.addClass('active');
+
+                // 버튼 중앙 정렬 (선택)
+                setTimeout(scrollActiveButtonIntoView, 10);
+
+                // 콘텐츠로 이동
+                $container.animate({
+                    scrollTop: scrollTop
+                }, 600, function () {
+                    // 애니메이션 완료 후 다시 감지 허용
+                    isClickScrolling = false;
+                });
+            });
         });
+
+        $container.on('scroll', function () {
+            if (isClickScrolling) return;
+
+            const scrollTop = $container.scrollTop();
+            const containerHeight = $container.innerHeight();
+            const viewTriggerLine = scrollTop + containerHeight * 0.5;
+
+            let closestId = null;
+            let minDistance = Infinity;
+
+            if (scrollTop > 0) {
+                $('.home_card.sticky').addClass('active');
+
+                 $('[class*="bg_ty0"]').each(function () {
+                    const $section = $(this);
+                    const className = $section.attr('class') || '';
+                    const idMatch = className.match(/bg_ty0(\d+)/);
+                    if (!idMatch) return;
+
+                    const id = idMatch[1];
+                    const sectionTop = $section.offset().top - $container.offset().top + scrollTop + 150;
+
+                    if (sectionTop > viewTriggerLine) return;
+
+                    const distance = Math.abs(sectionTop - viewTriggerLine);
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        closestId = id;
+                    }
+                });
+
+                if (closestId) {
+                    $buttons.removeClass('active');
+                    $buttons.filter(`[data-target="${closestId}"]`).addClass('active');
+                    scrollActiveButtonIntoView();
+                }
+
+
+            } else {
+                $('.home_card.sticky').removeClass('active');
+            }
+        });
+        function scrollActiveButtonIntoView() {
+            const $container = $('.top_item_box');
+            const $activeBtn = $('.product_top button.active');
+
+            if ($activeBtn.length && $container.length) {
+                const containerEl = $container[0];
+                const activeEl = $activeBtn[0];
+
+                // 버튼이 container 안에 있는지 확인
+                const containerRect = containerEl.getBoundingClientRect();
+                const activeRect = activeEl.getBoundingClientRect();
+
+                const offsetLeft =
+                    activeEl.offsetLeft -
+                    (containerEl.clientWidth / 2) +
+                    (activeEl.clientWidth / 2);
+
+                $container.stop().animate({ scrollLeft: offsetLeft }, 300);
+            }
+        }
     });
-    if($('#container').scrollTop > 0 ) {
-        $('.product_top').addClass('active');
-    }
+
 </script>
 
 {{/ layout/default }}
