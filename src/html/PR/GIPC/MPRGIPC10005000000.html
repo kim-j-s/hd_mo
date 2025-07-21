@@ -36,15 +36,35 @@
 						{{> cp/address ad_ph="주소를 입력해 주세요." case2=true}}
 						<!-- e: 25-06-16 수정 -->
 					</div>
-          <div class="form_line">
-						<div class="label_tit">보험계약서류 받는 방법</div>
-						<div class="radio_group_wrap" role="radiogroup">
-							{{> cp/radio rd-class="rd_btn" rd-id="receiveSel01_01" name="receiveSel01" labelname="모바일" checked=true }}
-							{{> cp/radio rd-class="rd_btn" rd-id="receiveSel01_02" name="receiveSel01" labelname="이메일" }}
-						</div>
-					</div>
 				</div>
 			</div>
+
+			<!-- s: 25-07-21 추가 -->
+			<div class="divider_ty1"></div>
+			<h3 class="title_h3">필수 확인 사항</h3>
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">보험계약서류 받는 방법</div>
+					<div class="radio_group_wrap" role="radiogroup">
+						{{> cp/radio rd-class="rd_btn" rd-id="receiveSel01_01" name="receiveSel01" labelname="모바일" checked=true }}
+						{{> cp/radio rd-class="rd_btn" rd-id="receiveSel01_02" name="receiveSel01" labelname="이메일" }}
+					</div>
+				</div>
+				<div class="form_line">
+					<div class="label_tit box">
+						<div>전문금융소비자 여부를 확인해주세요</div>
+						{{> cp/linkButton bl_class="short_cut sm" bl_text="구분 안내" question_tit="전문금융소비자" }}
+					</div>
+					<div class="radio_group_wrap" role="radiogroup">
+						{{> cp/radio rd-class="rd_btn" rd-id="receiveSel02_01" name="receiveSel02" labelname="일반금융소비자" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="receiveSel02_02" name="receiveSel02" labelname="전문금융소비자" }}
+					</div>
+					<ul class="list_ty2">
+						<li>「금융소비자 보호에 관한 법률」 제17조 제1항에 따라 보험계약자의 일반ㆍ전문금융소비자 여부를 확인하는 절차입니다.</li>
+					</ul>
+				</div>
+			</div>
+			<!-- e: 25-07-21 추가 -->
 
 			<!-- s: 25-06-17 추가 -->
 			<div class="divider_ty1"></div>
