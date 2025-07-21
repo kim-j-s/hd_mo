@@ -1921,7 +1921,7 @@ strong {
 	padding: var(--padding-8) 0 var(--gap-5);
 }
 .ag_group_wrap .ag_group_top + .ag_group_cont {
-	border-top: var(--border-width-static-regular) solid var(--color-border-gray-light);
+	border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 }
 .ag_group_wrap .ag_group_cont {
 	padding: var(--gap-5) 0 var(--padding-8);
@@ -3096,6 +3096,9 @@ strong {
 }
 .view_wrap .view_navigation li.navigation_item .navigation_title {
 	font-size: var(--font-size-body-medium, 16px);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .view_wrap .view_navigation li.navigation_item .navigation_title.no-data {
 	color: var(--color-text-disabled-on);
@@ -3567,7 +3570,7 @@ strong {
 .hd_btn_ty_3 {
 	color: var(--color-text-basic);
 	border: var(--border-width-static-regular) solid var(--color-button-tertiary-border);
-	background: var(--color-button-tertiary-fill, rgba(255, 255, 255, 0));
+	background: var(--color-button-tertiary-fill);
 }
 .hd_btn_ty_3:focus {
 	background: var(--color-button-tertiary-fill);
@@ -4424,12 +4427,14 @@ strong {
 	-ms-flex-align: center;
 	align-items: center;
 	gap: var(--gap-3);
+	margin-bottom: var(--gap-8);
 	background-color: #fff;
 }
 .tag_item_wrap + .title_h3,
 .tag_item_wrap + .card_item_wrap {
 	margin-top: var(--gap-11);
 }
+.tag_item_wrap + .tag_item_cont,
 .tag_item_wrap + .search_result_count {
 	margin-top: var(--gap-8);
 }
@@ -4468,9 +4473,6 @@ strong {
 .tag_item_move > .tag_move:first-child {
 	padding-top: var(--gap-5);
 }
-.tag_item_cont {
-	margin-top: var(--gap-8);
-}
 .tag_item_cont .s_title {
 	color: var(--color-text-subtle);
 	font-size: var(--font-size-body-small);
@@ -4480,6 +4482,10 @@ strong {
 }
 .tag_item_cont .card_list_wrap + .s_title {
 	margin-top: var(--gap-11);
+}
+.tag_item_cont .card_list_wrap .card_wrap .card_link .item_top .title_info .title {
+	padding-right: 3rem;
+	background: url(../images/icon/arrowRight_ty4.svg) no-repeat right top 0.35rem/2rem auto;
 }
 /* button_tag */
 .keypad_wrap {
@@ -6133,6 +6139,11 @@ strong {
 }
 .card_list_wrap > li .card_wrap > dt .icon.driver {
 	background-image: url(../images/icon/icon_driver.svg);
+}
+.card_list_wrap > li .card_wrap > dt .icon > button {
+	width: 100%;
+	padding-right: 3rem;
+	background: url(../images/icon/arrowRight_ty4.svg) no-repeat center right/2rem auto;
 }
 .card_list_wrap > li .card_wrap > dt .sub_text {
 	font-size: var(--font-size-body-small);
@@ -7973,6 +7984,7 @@ strong {
 	border: var(--border-width-variable-regular) solid var(--color-input-border);
 	border-radius: var(--radius-medium3);
 	/* comp_wrap 내부에서 보안키패드 호출 버튼 공통 사용요소 - 필요시 각 class별로 별도 설정 필요 */
+	/* 현업 요청에 의한 색상 재정의 */
 }
 .comp_wrap:focus-within {
 	border-color: var(--color-text-basic);
@@ -8112,6 +8124,15 @@ strong {
 }
 .comp_wrap.key_number + .btn_area.basic {
 	margin-top: var(--gap-4);
+}
+.comp_wrap.key_number .input_text:has(.int_txt.right) input {
+	padding-right: 0;
+}
+.comp_wrap .hd_btn {
+	--color-button-tertiary-fill: rgba(255, 255, 255, 1);
+}
+.comp_wrap .hd_btn.hd_btn_ty_3 {
+	background: var(--color-button-tertiary-fill);
 }
 .price {
 	width: 100%;
@@ -8612,6 +8633,7 @@ strong {
 	background-color: var(--color-text-disabled);
 }
 .form_key.pin_type .pin_area .dot_mark.active {
+	border-color: var(--color-text-basic);
 	background-color: var(--color-text-basic);
 }
 .form_key.pin_type.error .pin_area .dot_mark {
@@ -12073,8 +12095,8 @@ strong {
 	opacity: 0.5;
 }
 .splide_wrap.splide_wrap_ty1 .splide .splide__slide .gd_item {
-	-webkit-transform: scale(0.97);
-	transform: scale(0.97);
+	-webkit-transform: scaleY(0.97);
+	transform: scaleY(0.97);
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
@@ -12379,6 +12401,10 @@ strong {
 .table_wrap .table th .tooltip_wrap .tooltip_head.active::after,
 .table_wrap .table td .tooltip_wrap .tooltip_head.active::after {
 	top: calc(100% - 0.9rem);
+}
+.table_wrap .table th .inp_checkbox,
+.table_wrap .table td .inp_checkbox {
+	text-align: left;
 }
 .table_wrap .table th {
 	vertical-align: middle;
