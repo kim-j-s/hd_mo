@@ -6627,6 +6627,7 @@ strong {
 }
 .inp_checkbox input[type="checkbox"] + .chk_label.chk_label_ty3 > .label_cont {
 	font-size: var(--font-size-label-large);
+	color: var(--color-text-basic);
 }
 .inp_checkbox input[type="checkbox"] + .chk_label.chk_label_ty3 .sub_g_txt {
 	padding-top: 0.8rem;
@@ -7585,13 +7586,21 @@ strong {
 * 기타 아이콘
 *********/
 .status_icon {
-	display: inline-block;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 	line-height: 0;
 }
 .status_icon .hd_icon {
 	width: 3.2rem;
 	height: 3.2rem;
 	background-position: center;
+}
+.status_icon + .title_h3 {
+	margin-top: var(--gap-5);
 }
 .arrowRightSvg_ty1 {
 	background-image: url(../images/icon/arrowRight_ty1.svg);
