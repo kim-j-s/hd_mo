@@ -99,38 +99,38 @@
 	})
 
 	/* tag_item click */
-	$DOM.on('click', '.tag_item_wrap .tag_item', function(){
-		const $this = $(this);
-		const idx = $this.index();
-		const positionVal = null;
+	// $DOM.on('click', '.tag_item_wrap .tag_item', function(){
+	// 	const $this = $(this);
+	// 	const idx = $this.index();
+	// 	const positionVal = null;
 
-		if($('.tag_item_move').length){
-			const $target = $('.tag_item_move').find('.tag_move').eq(idx);
-			const targetPadding = parseFloat($target.css('padding-top'));
-			let summaryHeight = 0,
-					simpleHeight = 0;
-			const targetOffset = $target.position().top;
-			const fix_h = $(this).closest('.sticky').height();
+	// 	if($('.tag_item_move').length){
+	// 		const $target = $('.tag_item_move').find('.tag_move').eq(idx);
+	// 		const targetPadding = parseFloat($target.css('padding-top'));
+	// 		let summaryHeight = 0,
+	// 				simpleHeight = 0;
+	// 		const targetOffset = $target.position().top;
+	// 		const fix_h = $(this).closest('.sticky').height();
 
-			if($('.simple_info_wrap.ty2').length){
-				simpleHeight = 102;
-			}
-			if($('.info_summary').length){
-				summaryHeight = $('.info_summary').height();
-			}
+	// 		if($('.simple_info_wrap.ty2').length){
+	// 			simpleHeight = 102;
+	// 		}
+	// 		if($('.info_summary').length){
+	// 			summaryHeight = $('.info_summary').height();
+	// 		}
 
-			$('.tag_item').removeClass('active');
-			$this.addClass('active');
+	// 		$('.tag_item').removeClass('active');
+	// 		$this.addClass('active');
 
-			$this.closest('.popup_cont').animate({
-				scrollTop: targetOffset + targetPadding + simpleHeight + fix_h + summaryHeight
-			}, 500);
+	// 		$this.closest('.popup_cont').animate({
+	// 			scrollTop: targetOffset + targetPadding + simpleHeight + fix_h + summaryHeight
+	// 		}, 500);
 
-			if($('.btn_toggle').length){
-				posiionVal = targetOffset + targetPadding + simpleHeight + fix_h;
-			}
-		}
-	});
+	// 		if($('.btn_toggle').length){
+	// 			posiionVal = targetOffset + targetPadding + simpleHeight + fix_h;
+	// 		}
+	// 	}
+	// });
 
   /* Tooltip */
   $DOM.on('click', '.tooltip_wrap button', function(){
@@ -535,42 +535,42 @@
 
 
 	// 위치 이벤트
-	let pe = true; // 초기엔 true로 시작해야 클릭이 가능함
-	$DOM.on('click', '.position_event_tab .tag_item', function () {
-		if (!pe) return;
+	// let pe = true; // 초기엔 true로 시작해야 클릭이 가능함
+	// $DOM.on('click', '.position_event_tab .tag_item', function () {
+	// 	if (!pe) return;
 
-		pe = false; // 클릭되면 바로 잠금 (중복 클릭 방지)
+	// 	pe = false; // 클릭되면 바로 잠금 (중복 클릭 방지)
 
-		const $this = $(this),
-					$target = $this.closest('.position_event_wrap').find('.position_event_content'),
-					idx = $this.index();
+	// 	const $this = $(this),
+	// 				$target = $this.closest('.position_event_wrap').find('.position_event_content'),
+	// 				idx = $this.index();
 
-		const $point = $target.find('.pec_point').eq(idx);
-		if (!$point.length) {
-			pe = true; // 타겟 없으면 다시 풀어줌
-			return;
-		}
+	// 	const $point = $target.find('.pec_point').eq(idx);
+	// 	if (!$point.length) {
+	// 		pe = true; // 타겟 없으면 다시 풀어줌
+	// 		return;
+	// 	}
 
-		const posInfo = $point.offset().top;
+	// 	const posInfo = $point.offset().top;
 
-		if ($this.closest('.popup_cont').length) {
-			const $popupContent = $('.popup_content');
-			const popupContTop = $popupContent.position().top;
-			const $wrapHeight = $this.closest('.tag_item_wrap').outerHeight();
+	// 	if ($this.closest('.popup_cont').length) {
+	// 		const $popupContent = $('.popup_content');
+	// 		const popupContTop = $popupContent.position().top;
+	// 		const $wrapHeight = $this.closest('.tag_item_wrap').outerHeight();
 
-			$('.popup_cont').stop().animate({
-				scrollTop: posInfo - (popupContTop + $wrapHeight)
-			}, 500, function () {
-				pe = true; // 애니메이션 끝난 후 다시 열림
-				setTimeout(function () {
-					$this.closest('.position_event_tab').find('.tag_item').removeClass('active');
-					$this.addClass('active');
-				}, 10);
-			});
-		} else {
-			pe = true; // 조건 미충족 시도라도 열어둠
-		}
-	});
+	// 		$('.popup_cont').stop().animate({
+	// 			scrollTop: posInfo - (popupContTop + $wrapHeight)
+	// 		}, 500, function () {
+	// 			pe = true; // 애니메이션 끝난 후 다시 열림
+	// 			setTimeout(function () {
+	// 				$this.closest('.position_event_tab').find('.tag_item').removeClass('active');
+	// 				$this.addClass('active');
+	// 			}, 10);
+	// 		});
+	// 	} else {
+	// 		pe = true; // 조건 미충족 시도라도 열어둠
+	// 	}
+	// });
 
 
 
@@ -675,10 +675,9 @@ function simpleInfo(){
 			if ($target.length && $target.css('display') !== 'none') {
 				targetOffsetTop = $target.position().top;
 			}
-			// console.log('기준 위치 : ', targetOffsetTop);
 
-			if($('.gd_middle_ba').length){
-				targetOffsetTop = targetOffsetTop - 50;
+			if($target.hasClass('ty2')){
+				$target.parent().css('position', 'relative');
 			}
 
 			if($('.popup_head').length){
@@ -686,13 +685,13 @@ function simpleInfo(){
 			}else {
 				new_headHeight = $headHeight;
 			}
+			// console.log('기준 위치 : ', targetOffsetTop, '스크롤 위치' + scrollTop, pop_scrollTop);
 
 			// console.log('target 위치 : ' + targetOffsetTop);
 			// console.log('컨텐츠 스크롤 위치 : ' + scrollTop);
 			// console.log('팝업 컨텐츠 스크롤 위치 : ' + pop_scrollTop);
 
-			// if (targetOffsetTop <= new_headHeight + 30 && !$targetChild.hasClass('active')) {
-			if (targetOffsetTop <= new_headHeight && !$targetChild.hasClass('active')) {
+			if (targetOffsetTop <= 0 && !$targetChild.hasClass('active')) {
 				// console.log('펴기');
 				$targetChild.addClass('active');
 
@@ -704,11 +703,10 @@ function simpleInfo(){
 				}
 
 				if($('.tag_item_wrap.sticky').length){
-					$('.tag_item_wrap.sticky').css('top', simpleHeight - 50).addClass('active');
+					$('.tag_item_wrap.sticky').css('top', simpleHeight - new_headHeight).addClass('active');
 				}
 
-			// } else if (targetOffsetTop > new_headHeight + 30 && $targetChild.hasClass('active')) {
-			} else if (targetOffsetTop > new_headHeight && $targetChild.hasClass('active')) {
+			} else if (targetOffsetTop > 0 && $targetChild.hasClass('active')) {
 				// console.log('접기');
 				$target.removeAttr('style').removeClass('active');
 				$targetChild.removeClass('active');
@@ -726,26 +724,26 @@ function simpleInfo(){
 			}
 		}
 
-		if($('.tag_item_wrap.sticky').length){
-			$('.tag_item_move .tag_move').each(function(idx) {
-				const $target = $(this);
-				const targetTop = $target.position().top;
-				const targetHeight = $target.height();
-				const simpleHeight = $('.simple_info_wrap').height();
-				let isLast = 0;
-				isLast = $('.tag_item_move .tag_move').length - 1;
+		// if($('.tag_item_wrap.sticky').length){
+		// 	$('.tag_item_move .tag_move').each(function(idx) {
+		// 		const $target = $(this);
+		// 		const targetTop = $target.position().top;
+		// 		const targetHeight = $target.height();
+		// 		const simpleHeight = $('.simple_info_wrap').height();
+		// 		let isLast = 0;
+		// 		isLast = $('.tag_item_move .tag_move').length - 1;
 
-				// console.log(pop_scrollTop, pop_height, $bigTarget[0].scrollHeight)
+		// 		// console.log(pop_scrollTop, pop_height, $bigTarget[0].scrollHeight)
 
-				if( pop_scrollTop + 100 >= targetTop + targetHeight + simpleHeight ){
-					$('.tag_item').removeClass('active');
-					$('.tag_item').eq(idx).addClass('active');
-				}else if (pop_scrollTop + pop_height + 145 >= $bigTarget[0].scrollHeight){
-					$('.tag_item').removeClass('active');
-					$('.tag_item').eq(isLast).addClass('active');
-				}
-			});
-		}
+		// 		if( pop_scrollTop + 100 >= targetTop + targetHeight + simpleHeight ){
+		// 			$('.tag_item').removeClass('active');
+		// 			$('.tag_item').eq(idx).addClass('active');
+		// 		}else if (pop_scrollTop + pop_height + 145 >= $bigTarget[0].scrollHeight){
+		// 			$('.tag_item').removeClass('active');
+		// 			$('.tag_item').eq(isLast).addClass('active');
+		// 		}
+		// 	});
+		// }
 	});
 }
 // 간편정보 노출 방식
@@ -1271,44 +1269,152 @@ $(function(){
 
 	});
 
+	
 	// 범용 전체 팝업 내 스크롤 이벤트
-	$('.popup_cont').on('scroll', function(){
+	// $('.popup_cont').on('scroll', function(){
 
-		// 현재 스크롤 위치
-		if (!$('.position_event_wrap').length) return;
+	// 	// 현재 스크롤 위치
+	// 	if (!$('.position_event_wrap').length) return;
 
-		const $this = $(this);
-		const scrollTop = $this.scrollTop();
+	// 	const $this = $(this);
+	// 	const scrollTop = $this.scrollTop();
 
-		// 기준 위치값 계산 요소
-		const $popupContent = $('.popup_content');
-		const popupContTop = $popupContent.position().top;
-		const $wrapHeight = $('.tag_item_wrap').outerHeight();
+	// 	// 기준 위치값 계산 요소
+	// 	const $popupContent = $('.popup_content');
+	// 	const popupContTop = $popupContent.position().top;
+	// 	const $wrapHeight = $('.tag_item_wrap').outerHeight();
 
-		const baseOffset = popupContTop + $wrapHeight;
+	// 	const baseOffset = popupContTop + $wrapHeight;
 
-		const $points = $('.position_event_content .pec_point');
-		let activeIdx = -1;
+	// 	const $points = $('.position_event_content .pec_point');
+	// 	let activeIdx = -1;
 
-		const $tagItem = $('.position_event_tab .tag_item');
+	// 	const $tagItem = $('.position_event_tab .tag_item');
 
-		$points.each(function (index) {
-			const pointTop = $(this).offset().top;
-			const targetScroll = pointTop - baseOffset;
+	// 	$points.each(function (index) {
+	// 		const pointTop = $(this).offset().top;
+	// 		const targetScroll = pointTop - baseOffset;
 
-			if (scrollTop >= targetScroll) {
-				activeIdx = index; // 조건을 만족하는 가장 마지막 인덱스를 저장
+	// 		if (scrollTop >= targetScroll) {
+	// 			activeIdx = index; // 조건을 만족하는 가장 마지막 인덱스를 저장
+	// 		}
+	// 	});
+
+	// 	if (activeIdx !== -1) {
+	// 		// console.log('현재 인덱스:', activeIdx);
+	// 		$tagItem.removeClass('active');
+	// 		$tagItem.eq(activeIdx).addClass('active');
+	// 	}
+	// });
+
+	// 500
+
+
+
+	
+	// 개선 버젼
+	
+	const $wraps = $('.position_event_wrap');
+	$wraps.each(function () {
+		const $wrap = $(this);
+		const $tabBtns = $wrap.find('.position_event_tab .tag_item');
+		const $contents = $wrap.find('.position_event_content .pec_point');
+		const $scrollArea = $wrap.find('.position_event_content');
+
+		let scrolling = false;
+
+		// 1. 탭 클릭 시 콘텐츠 위치로 스크롤
+		$tabBtns.on('click', function () {
+			const idx = $(this).index();
+			const $target = $contents.eq(idx);
+			let expHeight = 0;
+
+			if ($wrap.find('.pew_exception').length) {
+				const $exception = $wrap.find('.pew_exception');
+				const exceptionHeight = $exception.outerHeight();
+
+				// console.log('결제영역높이 : ' + exceptionHeight)
+
+					expHeight = exceptionHeight;
+			}
+
+			console.log('예외 높이 : ', expHeight);
+
+			if ($target.length) {
+				scrolling = true;
+				$tabBtns.removeClass('active');
+				$(this).addClass('active');
+
+				const containerTop = $scrollArea.offset().top;
+				const targetTop = $target.offset().top;
+				
+				// console.log('위치 1 : ', containerTop);
+				// console.log('위치 2 : ', targetTop);
+				const scrollY = targetTop - containerTop + expHeight;
+
+				$wrap.stop().animate({ 
+					scrollTop: scrollY 
+				}, 300, function () {
+					scrolling = false;
+					// console.log(scrollY, containerTop, targetTop);
+					// 포커스 가능한 첫 요소 탐색
+					const $focusable = $target.find('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])').filter(':visible').first();
+
+					if ($focusable.length) {
+						$focusable.focus();
+					} else {
+						// 없다면 컨테이너 자체에 tabindex 부여 후 포커스 (예외 대응)
+						$target.attr('tabindex', '-1').focus();
+					}
+				});
 			}
 		});
 
-		if (activeIdx !== -1) {
-			// console.log('현재 인덱스:', activeIdx);
-			$tagItem.removeClass('active');
-			$tagItem.eq(activeIdx).addClass('active');
-		}
-	});
+		// 현재 스크롤 위치
+		$wrap.on('scroll', function () {
+			if (scrolling) return;
+			const $this = $(this);
+			const scrollTop = $this.scrollTop();
+			const scrollH = $this.outerHeight();
+			// 팝업인체 바닥인지 조건
 
-	// 500
+			let expHeight = 0;
+
+			if ($wrap.find('.pew_exception').length) {
+				const $exception = $wrap.find('.pew_exception');
+				const exceptionHeight = $exception.outerHeight();
+
+				if( $wrap.find('.tag_item_wrap_po_etc1').length ) {
+					expHeight = exceptionHeight - 0; // 예외 높이 + 16
+				} else {
+					expHeight = exceptionHeight;
+				}
+			}
+
+			const $points = $this.find('.position_event_content .pec_point');
+			let activeIdx = -1;
+
+			$points.each(function (index) {
+				const targetTop = $(this).offset().top; // 가야하는곳
+				const containerTop = $scrollArea.offset().top;
+				const scrollY = targetTop - containerTop + expHeight;
+				if (scrollY < scrollTop + 10) {
+					activeIdx = index; // 조건을 만족하는 가장 마지막 인덱스를 저장
+				}
+			});
+			
+			// console.log(scrollTop + height, srHeight);
+
+			if (activeIdx !== -1) {
+				// console.log('현재 인덱스:', activeIdx);
+				$tabBtns.removeClass('active');
+				$tabBtns.eq(activeIdx).addClass('active');
+			}
+			
+		});
+
+	});
+	// 개선 버젼
   
 
 
