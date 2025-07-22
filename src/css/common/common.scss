@@ -286,8 +286,13 @@ strong {
 		}
 		.title_h2 + .desc_area {
 			margin-top: var(--gap-3);
+		}
+		.desc_area {
 			color: var(--color-text-subtle);
 			font-size: var(--font-size-body-small);
+			+ .title_h2 {
+				margin-top: var(--gap-2);
+			}
 		}
 
 		&.space_between {
@@ -759,7 +764,17 @@ strong {
 	.complete_info {
 		width: 120px;
 		height: 120px;
-		margin: 0 auto;	
+		margin: 0 auto;
+		text-align: center;
+		&.complete_info_gif {
+			&::before {
+				content: '';
+				display: inline-block;
+				width: 120px;
+				height: 120px;
+				background: url(../json/lottie_complete2.gif) no-repeat center / 120px auto;
+			}
+		}
 	}
 
 	.process_title {

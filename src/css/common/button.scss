@@ -312,8 +312,7 @@
 	&_s_4 {
 		//sm
 		min-width: 54px;
-		// height: var(--button-size-small);
-		padding: 6px var(--padding-5);
+		padding: 6px calc(var(--padding-5) - 2px);
 		border-radius: var(--radius-medium1);
 		font-size: var(--font-size-button-small-bold);
 		font-weight: 700;
@@ -541,6 +540,9 @@
 					background-size: 16px auto;
 				}
 			}
+		}
+		&.two_line {
+			background-position: bottom 3px right;
 		}
 		&.short_cut_icon {
 			display: block;
@@ -941,7 +943,7 @@
 	
 			> span {
 				font-weight: 700;
-				font-size: 16px;
+				font-size: var(--font-size-body-medium);
 			}
 		}
 
