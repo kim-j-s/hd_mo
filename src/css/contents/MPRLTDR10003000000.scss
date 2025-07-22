@@ -274,6 +274,7 @@
 
 	&.detail_only {
 		margin: 0;
+		position: static;
 
 		.guarantee_detail_mini {
 			width: 100%;
@@ -352,6 +353,7 @@
 }
  
 .guarantee_detail {
+	
 	&:focus {
 		outline: none;
 	}
@@ -752,6 +754,7 @@
 .simple_info_wrap {
 	position: sticky;
 	top: -24px;
+	// top: -16px;
 	z-index: 11;
 	margin: 0 -24px;
 	background: var(--color-surface-white-subtler, #FFF);
@@ -917,6 +920,18 @@
 				background-color: #FFF;
 				box-shadow: 0px var(--shadow-y-2) var(--shadow-blur-2) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
 				border-radius: 0px 0px var(--padding-6) var(--padding-6);
+			}
+		}
+	}
+}
+
+.position_event_wrap {
+	&:has(.pec_point_wrap) {
+		.pec_point_wrap {
+			.pec_point {
+				~ .pec_point {
+					margin-top: 52px;
+				}
 			}
 		}
 	}
