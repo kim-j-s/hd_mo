@@ -81,13 +81,14 @@ function openHDPopup($triggerEl, target) {
 	}
 
 	setTimeout(() => {
-		focusTarget.focus();
-		focusTarget.attr("aria-live", "assertive"); //포커스 이동을 스크린 리더에 알림
+		if (focusTarget) {
+			focusTarget.focus();
+			focusTarget.attr("aria-live", "assertive"); //포커스 이동을 스크린 리더에 알림
 
-		setTimeout(() => {
-			focusTarget.attr("aria-live", null);
-		}, 0);
-
+			setTimeout(() => {
+				focusTarget.attr("aria-live", null);
+			}, 0);
+		}
 		if (activePopups.length > 0) {
 			activePopups.attr("aria-hidden", "true");
 			activePopups.find(".popup_inner").attr("aria-hidden", "true");
@@ -144,14 +145,15 @@ function closeHDPopup(target, returnTarget = null) {
 		// focusTarget.css("display", "none");
 		// focusTarget[0].offsetHeight; //강제 reflow
 		// focusTarget.css("display", "block");
-
 		setTimeout(() => {
-			focusTarget.focus();
-			focusTarget.attr("aria-live", "assertive"); //포커스 이동을 스크린 리더에 알림
+			if(focusTarget) {
+				focusTarget.focus();
+				focusTarget.attr("aria-live", "assertive"); //포커스 이동을 스크린 리더에 알림
+				setTimeout(() => {
+					focusTarget.attr("aria-live", null);
+				}, 0);
+			}
 
-			setTimeout(() => {
-				focusTarget.attr("aria-live", null);
-			}, 0);
 
 			$target.attr("aria-hidden", "true");
 			$target.find(".popup_inner").attr("aria-hidden", "true").removeAttr("tabindex", 0);
