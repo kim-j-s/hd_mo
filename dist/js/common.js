@@ -1328,6 +1328,7 @@ $(function(){
 			const idx = $(this).index();
 			const $target = $contents.eq(idx);
 			let expHeight = 0;
+			let sHeight = 0;
 
 			if ($wrap.find('.pew_exception').length) {
 				const $exception = $wrap.find('.pew_exception');
@@ -1336,6 +1337,13 @@ $(function(){
 				// console.log('결제영역높이 : ' + exceptionHeight)
 
 					expHeight = exceptionHeight;
+			}
+
+			if($wrap.find('.sii_wrap').length){
+				const $sii = $wrap.find('.sii_wrap').children('.position_event_tab');
+				const siiHeight = parseFloat($sii.css('padding-bottom'));
+
+				sHeight = siiHeight;
 			}
 
 			console.log('예외 높이 : ', expHeight);
@@ -1348,9 +1356,9 @@ $(function(){
 				const containerTop = $scrollArea.offset().top;
 				const targetTop = $target.offset().top;
 				
-				// console.log('위치 1 : ', containerTop);
-				// console.log('위치 2 : ', targetTop);
-				const scrollY = targetTop - containerTop + expHeight;
+				console.log('위치 1 : ', containerTop);
+				console.log('위치 2 : ', targetTop);
+				const scrollY = targetTop - containerTop + expHeight + sHeight;
 
 				$wrap.stop().animate({ 
 					scrollTop: scrollY 
@@ -1379,17 +1387,21 @@ $(function(){
 			// 팝업인체 바닥인지 조건
 
 			let expHeight = 0;
+			let sHeight = 0;
 
 			if ($wrap.find('.pew_exception').length) {
 				const $exception = $wrap.find('.pew_exception');
 				const exceptionHeight = $exception.outerHeight();
 
-				if( $wrap.find('.tag_item_wrap_po_etc1').length ) {
-					expHeight = exceptionHeight - 0; // 예외 높이 + 16
-				} else {
-					expHeight = exceptionHeight;
-				}
+				expHeight = exceptionHeight;
 			}
+			if($wrap.find('.sii_wrap').length){
+				const $sii = $wrap.find('.sii_wrap').children('.position_event_tab');
+				const siiHeight = parseFloat($sii.css('padding-bottom'));
+
+				sHeight = siiHeight;
+			}
+			console.log(sHeight);
 
 			const $points = $this.find('.position_event_content .pec_point');
 			let activeIdx = -1;
@@ -1397,7 +1409,7 @@ $(function(){
 			$points.each(function (index) {
 				const targetTop = $(this).offset().top; // 가야하는곳
 				const containerTop = $scrollArea.offset().top;
-				const scrollY = targetTop - containerTop + expHeight;
+				const scrollY = targetTop - containerTop + expHeight + sHeight;
 				if (scrollY < scrollTop + 10) {
 					activeIdx = index; // 조건을 만족하는 가장 마지막 인덱스를 저장
 				}
