@@ -1,0 +1,269 @@
+{{#> layout/default no-sp=true page-title="피보험자 정보 | 상품"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-active=true popup-title="전계약 사진" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="space_list_ty2">
+		
+			<div class="acd_item acd_item_ty2">
+				<div class="acd_head active">
+					<button type="button" class="acd_btn" aria-expanded="true">
+						<span class="picture_info_top">
+							<span class="status">
+								<span class="title">차량번호판 사진</span>
+							</span>
+							<!-- s: 등록한 이미지 있을 시 -->
+							<!-- <span class="preview" aria-hidden="true">
+								<img src="../../../images/content/mtps/img_MPRMTPS10005010000_01.png" alt="등록한 차량번호판 장착 사진">
+							</span> -->
+							<!-- e: 등록한 이미지 있을 시 -->
+						</span>
+						<span>상세보기</span>
+					</button>
+				</div>
+				<div class="acd_cont">
+					<div class="inner" style="display: block;">
+						<!-- s: 이미지 파일 붙는 영역 -->
+						<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+						<!-- 사진 1개 전계약 이미지가 있는 경우 -->
+						<div class="file_attach_box">
+							<div class="file_thumbnail">
+								<div class="swiper"> 
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<img src="../../../images/temp/img_carmera_temp.png" alt="등록한 차량번호판 이미지">
+										</div>
+										<div class="swiper-slide">
+											<img src="../../../images/temp/img_certify_card_temp.png" alt="등록한 차량번호판 이미지">
+										</div>
+										<div class="swiper-slide">
+											<img src="../../../images/temp/img_carmera_temp.png" alt="등록한 차량번호판 이미지">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-pagination sp_ty1"></div>
+							<button class="swiper_button sbc_04 sbs_02 swiper_button_left"></button>
+							<button class="swiper_button sbc_04 sbs_02 swiper_button_right"></button>
+						</div>
+
+						<div class="btn_area center">
+							<div class="file_btn">
+								<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png">
+								<label for="file">
+									<span class="hd_btn hd_btn_ty_3 hd_btn_s_3">
+										<i class="hd_icon pictureSvg"></i>
+										사진 선택
+									</span>
+								</label>
+							</div>
+						</div>
+						<!-- 사진 1개 전계약 이미지가 있는 경우 -->
+
+						<!-- 전계약에 등록된 사진이 없을 경우 -->
+						<div class="file_attach_box">
+							<div class="file_thumbnail">
+								 <div class="no_list_area">
+									{{> cp/icon iconClass="exclamationSvg"}}
+									<p>전계약에 등록된 사진이 없습니다.</p>
+								</div>
+							</div>
+						</div> 
+						<!-- 전계약에 등록된 사진이 없을 경우 -->
+					</div>
+				</div>
+			</div>
+			 
+			<div class="acd_item acd_item_ty2">
+				<div class="acd_head">
+					<button type="button" class="acd_btn" aria-expanded="false">
+						<span class="picture_info_top">
+							<span class="status">
+								<span class="badge_wrap">
+									<span class="hd_badge outline solid_pastel c_success size_m">등록완료</span>
+								</span>
+								<span class="title">블랙박스 장착 사진</span>
+							</span>
+							<!-- s: 등록한 이미지 있을 시 -->
+							<span class="preview" aria-hidden="true">
+								<img src="../../../images/content/mtps/img_MPRMTPS10005010000_02.png" alt="등록한 블랙박스 장착 사진">
+							</span>
+							<!-- e: 등록한 이미지 있을 시 -->
+						</span>
+						<span>상세보기</span>
+					</button>
+				</div>
+				<div class="acd_cont">
+					<div class="inner">
+						<!-- s: 이미지 파일 붙는 영역 -->
+						<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+						<div class="file_attach_box">
+							<div class="file_thumbnail">
+								<div class="swiper"> 
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<img src="../../../images/content/mtps/img_MPRMTPS10005010000_02.png" alt="등록한 블랙박스 장착 이미지">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-pagination sp_ty1"></div>
+							<button class="swiper_button sbc_04 sbs_02 swiper_button_left"></button>
+							<button class="swiper_button sbc_04 sbs_02 swiper_button_right"></button>
+						</div>
+
+						<div class="btn_area center">
+							<div class="file_btn">
+								<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png">
+								<label for="file">
+									<span class="hd_btn hd_btn_ty_3 hd_btn_s_3">
+										<i class="hd_icon pictureSvg"></i>
+										사진 선택
+									</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- 선택완료인 경우 & 사진2개인경우 -->
+			<div class="acd_item acd_item_ty2">
+				<div class="acd_head">
+						<button type="button" class="acd_btn" aria-expanded="false">
+						<span class="picture_info_top">
+							<span class="status">
+								<span class="badge_wrap">
+									<span class="hd_badge outline solid_pastel c_primary size_m">선택완료</span>
+								</span>
+								<span class="title">블랙박스 장착 사진</span>
+							</span>
+							<!-- s: 등록한 이미지 있을 시 -->
+							<div class="preview_item">
+								<span class="preview" aria-hidden="true">
+									<img src="../../../images/content/mtps/img_MPRMTPS10005010000_02.png" alt="등록한 블랙박스 장착 이미지">
+								</span>
+								<span class="preview" aria-hidden="true">
+									<img src="../../../images/content/mtps/img_MPRMTPS10005010000_02.png" alt="등록한 블랙박스 장착 이미지">
+								</span>
+							</div>
+							<!-- e: 등록한 이미지 있을 시 -->
+						</span>
+						<span>상세보기</span>
+					</button>
+				</div>
+				<div class="acd_cont">
+					<div class="inner">
+						<!-- s: 이미지 파일 붙는 영역 -->
+						<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+						<div class="file_attach_box">
+							<div class="file_thumbnail">
+								<img src="../../../images/content/mtps/img_MPRMTPS10005010000_03_before.png" alt="등록 전 블랙박스 장착 사진 예시 이미지">
+							</div>
+						</div>
+
+						<div class="btn_area center">
+							<div class="file_btn">
+								<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png">
+								<label for="file">
+									<span class="hd_btn hd_btn_ty_3 hd_btn_s_3">
+										<i class="hd_icon pictureSvg"></i>
+										<!-- s: 25-06-02 수정 -->
+										사진 선택
+										<!-- e: 25-06-02 수정 -->
+									</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 선택완료인 경우 & 사진2개인경우 -->
+			
+			<div class="acd_item acd_item_ty2">
+				<div class="acd_head">
+					<button type="button" class="acd_btn" aria-expanded="false">
+						<span class="picture_info_top">
+							<span class="status">
+								<span class="title">장애인등록증, 국가유공자확인서 중 택1</span>
+							</span>
+						</span>
+						<span>상세보기</span>
+					</button>
+				</div>
+				<div class="acd_cont">
+					<div class="inner">
+						<!-- s: 이미지 파일 붙는 영역 -->
+						<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+						<div class="file_attach_box">
+							<div class="file_thumbnail">
+								<img src="../../../images/content/mtps/img_MPRMTPS10005010000_12_before.png" alt="등록 전 장애인등록증, 국가유공자확인서 중 예시 이미지">
+							</div>
+						</div>
+
+						<div class="btn_area center">
+							<div class="file_btn">
+								<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png">
+								<label for="file">
+									<span class="hd_btn hd_btn_ty_3 hd_btn_s_3">
+										<i class="hd_icon pictureSvg"></i>
+										사진 선택
+									</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="popup_bottom">
+  <div class="btn_area">
+  {{> cp/button type="3" size="1" b-text="취소" }}
+  {{> cp/button type="1" size="1" b-text="적용" }}
+  </div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+ 
+{{/ layout/default }}
+
+<script>
+	$(document).ready(function(){
+		$('.file_attach_box').each(function (idx) {
+			const $swiperContainer = $(this).find('.swiper');
+			const $pagination = $(this).find('.swiper-pagination');
+			const $nextBtn = $(this).find('.swiper_button_right');
+			const $prevBtn = $(this).find('.swiper_button_left');
+
+			new Swiper($swiperContainer[0], {
+				slidesPerView: 1,
+				/* s: 25-05-12 수정 */
+				updateOnWindowResize:true,
+				/* e: 25-05-12 수정 */
+				loop: false,
+				observer: true,
+				navigation: {
+					nextEl: $nextBtn[0],
+					prevEl: $prevBtn[0],
+				},
+				a11y: {
+					enabled: true,
+					prevSlideMessage: '이전 항목으로 이동',
+					nextSlideMessage: '다음 항목으로 이동',
+				},
+				pagination: {
+					el: $pagination[0],
+					clickable: true,
+					type: 'bullets',
+					renderBullet: function (index, className) {
+						return `<span class="${className}" aria-label="배너${index + 1}번으로 이동"></span>`;
+					},
+				}
+			});
+		});
+	});
+</script>

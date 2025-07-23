@@ -1,0 +1,84 @@
+{{#> layout/default no-sp=true page-title="부속품 정보 입력/수정 | 상품"}}
+
+<!-- s: Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="블랙박스 정보 입력"}}
+<!-- e: 25-04-22 수정 -->
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- s: 수정모드 진입시 버튼 출력 -->
+		<div class="etc_btn_area right">{{> cp/button type="3" size="5" rightIcon="deleteSvg" b-text="삭제" popup="alert_d1"}}</div>
+		<!-- e: 수정모드 진입시 버튼 출력 -->
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">세부명칭</div>
+				{{> cp/text placeholder="추가부품명 입력" inp-title="세부명칭 입력"}}
+			</div>
+			<div class="row">
+				<div class="form_line fix_w_case01">
+					<div class="label_tit">장착연도</div>
+					{{> cp/selectitem si_popup="select_option_ty1" si_ph="선택" si_title="장착연도 선택"}}
+				</div>
+				<div class="form_line grow">
+					<div class="label_tit">구입가격</div>
+					{{> cp/text type="tel" class="price" placeholder="숫자만" r-text="만원" inp-title="구입가격 입력"}}
+				</div>
+			</div>
+			
+			<div class="total_price_display_ty1">
+				<p class="price_label">총 차량가액</p>
+				<p class="price_val">
+					<strong>
+						<span class="primary">2,179만원</span>
+					</strong>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="세부명칭을 입력 중이에요" disabled=true}}
+		<!-- {{> cp/button type="1" size="2" b-text="장착연도를 선택 중이에요" disabled=true}} -->
+		<!-- {{> cp/button type="1" size="2" b-text="구매가격을 입력 중이에요" disabled=true}} -->
+		<!-- {{> cp/button type="1" size="2" b-text="부품정보 저장하기"}} -->
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+
+<!-- e: Bottom 팝업 -->
+
+	<!-- s: popup area -->
+	<!-- s: select popup(장착연도 선택) -->
+	{{#> popup/popup_bottom popup-id="select_option_ty1" popup-title="장착연도 선택"}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="opt_select_list opt_case3">
+				<div role="button" tabindex="0" class="option"><span class="text">2020</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">2020</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">2020</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">2020</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">2020</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">2020</span></div>
+			</div>
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: select popup(장착연도 선택) -->
+
+	<!-- s: Layer 팝업('삭제' 버튼 클릭시) -->
+	{{#> popup/popup_layer popup-id="alert_d1"}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<!-- [추가부속품명]자리에 해당 부속품명 표시 -->
+			[추가 부속품명]을 삭제하시겠습니까?
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">{{> cp/button type="3" size="2" b-text="아니오" }} {{> cp/button type="1" size="2" b-text="예" }}</div>
+	</div>
+	{{/ popup/popup_layer}}
+	<!-- e: Layer 팝업('삭제' 버튼 클릭시) -->
+	<!-- e: popup area -->
+
+	{{/ layout/default }}
