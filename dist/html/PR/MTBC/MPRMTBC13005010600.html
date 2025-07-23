@@ -40,7 +40,7 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>현재페이지 | 뎁스 페이지 - 현대해상 다이렉트</title>
+		<title>피보험자(자동차 소유자) 정보 선택 | 상품 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -48,46 +48,68 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body>
-		<div id="wrap" class="wrap">
-			<!-- s: 25-06-02 수정 -->
-			<!-- e: 25-06-02 수정 -->
-			<div id="container" class="container">
-				<div class="content">
-					<div class="process_info_area">
-						<!-- 변경 전 -->
-						<div class="complete_info" aria-hidden="true">
-							<lottie-player src="../../../json/lottie_complete2.jso" background="transparent" speed="1" autoplay></lottie-player>
-						</div>
-						<!-- 변경 전 -->
-						<!-- 변경 후 -->
-						<div class="complete_info complete_info_gif" aria-hidden="true"></div>
-						<!-- 변경 후 -->
-						<h2 class="process_title">
-							<strong>가입완료시 사용합니다</strong><br />
-							가입완료시 사용합니다
-						</h2>
-						<div class="process_desc">안내문구가 들어갑니다 안내문구가 들어갑니다</div>
+		<!-- s: Full 팝업 -->
+		<div class="popup_wrap full active" id="pop_type01" role="dialog" aria-hidden="false">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
+				<div class="popup_inner">
+					<div class="popup_head">
+						<div class="popup_head_title">피보험자(자동차 소유자) 정보 선택</div>
 					</div>
-				</div>
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="form_box">
+								<div class="title_area">
+									<p class="info_text">현재 가입하시려는 자동차에 대한 보험개발원 조회결과, 자동차 소유자 정보에 대한 확인이 필요합니다.</p>
+								</div>
 
-				<!-- // container -->
-			</div>
-
-			<!-- s: 하단 고정 버튼 영역 -->
-			<div class="bottom_fix_wrap">
-				<div class="btn_area">
-					<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
-						<span class="text">홈으로</span>
-					</button>
+								<div class="space_list_ty5">
+									<div class="form_group_wrap">
+										<div class="radio_group_wrap column">
+											<div class="inp_radio lg">
+												<input type="radio" id="radio03-1" name="radio03" />
+												<label for="radio03-1">
+													<span class="label_cont"
+														>매매(명의이전 예정)<span class="sub_g_txt"
+															>신차 또는 중고차를 구입한 경우
+															<ul class="list_ty5">
+																<li>매수한 날로부터 15일 이내 이전등록이 필요합니다.</li>
+															</ul></span
+														></span
+													>
+												</label>
+											</div>
+											<div class="inp_radio lg">
+												<input type="radio" id="radio03-3" name="radio03" />
+												<label for="radio03-3">
+													<span class="label_cont">리스 계약(피보험자=리스계약자)<span class="sub_g_txt">자동차 리스사업자 명의의 차량을 리스계약한 경우</span></span>
+												</label>
+											</div>
+											<div class="inp_radio lg">
+												<input type="radio" id="radio03-4" name="radio03" />
+												<label for="radio03-4">
+													<span class="label_cont">기타(그 외 사유 등)<span class="sub_g_txt">종교, 비영리법인 등 기타사유로 명의가 다른 경우</span></span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<p class="info_text ty2">명의 이전 예정 외 다른 사유를 선택하신 경우, 인터넷으로 직접 가입이 불가할 수 있습니다.<br />고객센터(1899-6782)로 문의해 주세요.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">확인</span>
+							</button>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
-			<!-- s: 하단 고정 버튼 영역 -->
 		</div>
-
-		<!-- s: popup area -->
-
-		<!-- e: popup area -->
-
+		<!-- e: Full 팝업 -->
 		<!-- 전체메뉴 -->
 		<!-- s: Full 팝업 -->
 		<div class="popup_wrap full pts_wrap" id="totalSearch" role="dialog" aria-hidden="true">
