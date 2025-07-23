@@ -1,9 +1,10 @@
 {{#> layout/default page-title="알림 | 현대다이렉트"}}
-<div id="wrap" class="wrap">
-	{{> layout/header h-title="알림" no-nav=true }}
 
-	<div id="container" class="container">
-		<div class="content">
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-title="알림" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+    
 			<div class="tag_item_wrap">
 				<button type="button" class="tag_item size_m c_ty02 active"><span class="text">#전체</span></button>
 				<button type="button" class="tag_item size_m c_ty02"><span class="text">#일상</span></button>
@@ -95,9 +96,9 @@
 					{{> cp/button_more}}
 				</div>
 			</div>
-	</div>
+    </div>
 </div>
-
-<!-- s: popup area -->
-<!-- e: popup area -->
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+ 
 {{/ layout/default }}
