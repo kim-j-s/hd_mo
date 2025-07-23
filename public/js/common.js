@@ -1366,14 +1366,17 @@ $(function(){
 					scrolling = false;
 					// console.log(scrollY, containerTop, targetTop);
 					// 포커스 가능한 첫 요소 탐색
-					const $focusable = $target.find('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])').filter(':visible').first();
+					/* 25-07-23 모바일용으로 재수정 */
+					// const $focusable = $target.find('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])').filter(':visible').first();
 
-					if ($focusable.length) {
-						$focusable.focus();
-					} else {
-						// 없다면 컨테이너 자체에 tabindex 부여 후 포커스 (예외 대응)
-						$target.attr('tabindex', '-1').focus();
-					}
+					// if ($focusable.length) {
+					// 	$focusable.focus();
+					// } else {
+					// 	// 없다면 컨테이너 자체에 tabindex 부여 후 포커스 (예외 대응)
+					// 	$target.attr('tabindex', '-1').focus();
+					// }
+					/* 25-07-23 모바일용으로 재수정 */
+					$target.attr('tabindex', '-1').focus();
 				});
 			}
 		});
