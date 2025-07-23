@@ -43,8 +43,8 @@
 		&.banner_box {
 			margin-top: var(--gap-8);
 		}
-		&.banner_box {
-			margin-top: var(--gap-8);
+		&.title_h3 {
+			margin-top: var(--gap-11);
 		}
 
 		&.btn_area {
@@ -152,7 +152,7 @@
 				padding: 24px 20px;
 				
 				.item_inner {
-					.inp_radio {
+					[class^=inp_]{
 						.chk_label {
 							&::before {
 								top: 1px;
@@ -813,6 +813,41 @@
 
 		}//card_item
 	}//ty5
+	&.wrap_row2 {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--gap-3);
+		justify-content: space-around;
+		.card_item {
+			flex-basis: calc(50% - 4px);
+			~ .card_item {
+				margin-top: 0;
+			}
+		}
+	}
+	&.high_work {
+		.card_item {
+			padding: var(--padding-12) var(--padding-8) var(--padding-8); 
+			background-color: var(--color-surface-secondary-subtler);
+			border: 0;
+			background-repeat: no-repeat;
+			background-position: 24px 24px;
+			.title {
+				font-size: var(--font-size-body-small);
+				color: var(--color-text-subtle);
+				+ .cont {
+					margin-top: var(--gap-2);
+					font-size: var(--font-size-body-medium);
+				}
+			}
+			&.ty1 {
+				background-image: url(../images/content/bn/icon_high_work1.svg);
+			}
+			&.ty2 {
+				background-image: url(../images/content/bn/icon_high_work2.svg);
+			}
+		}
+	}
 }
 
 
