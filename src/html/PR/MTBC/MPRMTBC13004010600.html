@@ -1,0 +1,69 @@
+
+{{#> layout/default no-sp=true page-title="보험료 확인 | 상품"}}
+	<!-- s: popup area --><!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_full" popup-active=true }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="pop_top sticky_fix">
+				<div class="info_gray">
+					<dl>
+						<dt>다이렉트보험료</dt>
+						<dd>876,543원</dd>
+					</dl>
+				</div>
+			</div>
+			<h2 class="pop_title_h1">긴급출동특약</h2>
+            <p class="info_text">하이카서비스는 긴급구난, 긴급견인, 비상급유, 배터리충전, 타이어 펑크수리 등을 위한 긴급출동서비스를 제공합니다.</p>
+			<div class="btn_area basic">
+				{{> cp/button type="3" size="5" b-text="자세히보기" btn-title="긴급출동특약 자세히보기 팝업 열기" rightIcon="arrowRightSvg" }}
+			</div>
+            <ul class="special_contract_list radio">
+                <li>
+                    <div class="check_flex_box">
+                        <!-- s: 25-06-04 수정 -->
+                        <div class="check_box">
+                            {{> cp/radio name="agreement01" rd-id="agreement01_1" labelname="하이카(친환경100KM) 
+                            <span class='badge_wrap'>
+                            <span class='hd_badge outline solid_pastel c_primary size_m'>추천</span>
+                            <span class='hd_badge outline solid_pastel c_primary size_m'>18.9% Best 1</span></span>" checked="true" }}
+                        </div>
+                        <!-- e: 25-06-04 수정 -->
+                        <div class="money_box">
+                            <div class="money">
+                                <span>190,300</span>원
+                            </div>
+                            <div class="money">
+                                <strong class="trend down"><span class="updown decrease">감소</span>60,300원</strong>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="check_flex_box">
+                        <div class="check_box">
+                            {{> cp/radio name="agreement01" rd-id="agreement01-2" labelname="가입 안함/가입 안함" }}
+                        </div>
+                        <div class="money_box">
+                            <div class="money">
+                                <span>0</span>원
+                            </div>
+                            <div class="money">
+                                <strong class="trend down"><span class="updown decrease">감소</span>60,300원</strong>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+		</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="확인"}}
+		</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
+{{/ popup/popup_full}}
+	 <!-- e: Full 팝업 -->
+	<!-- e: popup area -->
+{{/ layout/default }}
