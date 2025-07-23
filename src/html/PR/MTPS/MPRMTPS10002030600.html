@@ -2,7 +2,8 @@
 
 <!-- s: Full 팝업 -->
 {{#> popup/popup_full popup-id="pop_type01" popup-active=true }}
-<div class="popup_cont">
+<!-- s: 25-07-23 수정 -->
+<div class="popup_cont search_list_type">
 	<div class="popup_content">
 		<!-- s: popup_content_top -->
 		<div class="popup_content_top">
@@ -12,12 +13,15 @@
 			</h2>
 		</div>
 		<!-- e: popup_content_top -->
-		<div class="autocomplete_wrap">
+		<!-- <div class="autocomplete_wrap">
 			{{> cp/text inp-search=true placeholder="ex) 그랜져" inp-title="검색어를 입력하세요." auto=true }}
 			<div class="autocomplete_wrap_list">
 				<ul class="autocomplete_list"></ul>
 			</div>
-		</div>
+		</div> -->
+		<div class="search_inp_box">
+        {{> cp/text inp-search=true placeholder="ex) 그랜져" inp-title="검색어 입력" }}	
+    </div>
 
 		<!-- 최초 진입 시 노출 -->
 		<!-- s: 25-04-21 수정 -->
@@ -42,7 +46,27 @@
 		</div>
 		<!-- e: 25-04-21 수정 -->
 		<!-- 최초 진입 시 노출 -->
-		
+
+		<!-- s: 검색 결과 리스트 -->
+		<div class="search_result_count">
+			<p>검색결과 <strong class="point">2,117</strong>건</p>
+		</div>
+		<div class="search_reult_list_container">
+			<ul class="search_reult_list">
+				<li class="search_reult_list_item"><a href="#"><span class="item_text">쏘나타</span></a></li>
+				<li class="search_reult_list_item"><a href="#"><span class="item_text">쏘나타</span></a></li>
+				<li class="search_reult_list_item"><a href="#"><span class="item_text">쏘나타</span></a></li>
+				<li class="search_reult_list_item"><a href="#"><span class="item_text">쏘나타</span></a></li>
+				<li class="search_reult_list_item">
+					<div class="no_list_area">
+						{{> cp/icon iconClass="exclamationSvg"}}
+						<p>내역이 없어요</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- e: 검색 결과 리스트 -->
+		<!-- e: 25-07-23 수정 -->
 	</div>
 </div>
 <div class="popup_bottom">
