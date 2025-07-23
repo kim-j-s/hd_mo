@@ -475,10 +475,14 @@
 											</div>
 											<div class="guarantee_item_cont">
 												<div class="gic_inner_top">
+													<!-- s: 25-07-23 수정 -->
 													<div class="badge_wrap">
-														<span class="hd_badge outline solid_pastel c_primary size_m">고급</span>
+														<span class="hd_badge outline solid_pastel c_primary size_l">
+															고급
+															<span class="text">17개 보장</span>
+														</span>
 													</div>
-													<span class="text">17개 보장</span>
+													<!-- e: 25-07-23 수정 -->
 												</div>
 												<div class="gic_inner">
 													<!-- s: 25-05-30 수정 -->
@@ -490,9 +494,18 @@
 												</div>
 											</div>
 										</div>
-										<a href="javascript:void(0)" class="btn_link short_cut sm move_detail" title="슬라이드 이동">
-											<span class="text">보장내용 자세히 보기</span>
-										</a>
+										<!-- s: 25-07-23 수정 -->
+										<!-- 삭제 <a href="javascript:void(0)"
+			     class="btn_link short_cut sm move_detail"
+			            
+			         title="슬라이드 이동"
+			    
+			    
+			>
+			<span class="text">보장내용 자세히 보기</span>
+			
+			</a> -->
+										<!-- e: 25-07-23 수정 -->
 									</div>
 
 									<div class="guarantee_item" data-sendclass="03">
@@ -520,10 +533,14 @@
 											</div>
 											<div class="guarantee_item_cont">
 												<div class="gic_inner_top">
+													<!-- s: 25-07-23 수정 -->
 													<div class="badge_wrap">
-														<span class="hd_badge outline solid_pastel c_success size_m">기본</span>
+														<span class="hd_badge outline solid_pastel c_success size_l">
+															기본
+															<span class="text">17개 보장</span>
+														</span>
 													</div>
-													<span class="text">17개 보장</span>
+													<!-- e: 25-07-23 수정 -->
 												</div>
 												<div class="gic_inner">
 													<!-- s: 25-05-30 수정 -->
@@ -537,9 +554,18 @@
 												</div>
 											</div>
 										</div>
-										<a href="javascript:void(0)" class="btn_link short_cut sm move_detail" title="슬라이드 이동">
-											<span class="text">보장내용 자세히 보기</span>
-										</a>
+										<!-- s: 25-07-23 수정 -->
+										<!-- 삭제 <a href="javascript:void(0)"
+			     class="btn_link short_cut sm move_detail"
+			            
+			         title="슬라이드 이동"
+			    
+			    
+			>
+			<span class="text">보장내용 자세히 보기</span>
+			
+			</a> -->
+										<!-- e: 25-07-23 수정 -->
 									</div>
 								</div>
 							</div>
@@ -975,21 +1001,16 @@
 			</div>
 
 			<div class="bottom_fix_wrap">
+				<!-- s: 25-07-23 수정 -->
 				<div class="btn_area">
-					<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1" disabled>
+					<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1 slide_move_btn" disabled>
 						<span class="text">원하는 보장을 선택 중이에요</span>
 					</button>
-					<!-- <button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
-			
-					<span class="text">선택한 플랜으로 가입할게요</span>
-			
-			</button> -->
-					<!-- <button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
-			
-					<span class="text">이대로 가입할래요</span>
-			
-			</button> -->
+					<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1 slide_detail_btn hidden">
+						<span class="text">이대로 가입하기</span>
+					</button>
 				</div>
+				<!-- e: 25-07-23 수정 -->
 			</div>
 		</div>
 
@@ -1032,12 +1053,13 @@
 
 		<!-- e: popup area -->
 
+		<!-- s: 25-07-23 수정 -->
 		<script>
 			$(function () {
 				// 보험 플랜 - 진입화면 라디오 선택 이벤트
 				$('.guarantee_choice_wrap .guarantee_item .gi_radio input[type="radio"]').on("change", function () {
 					const idx = $(this).closest(".guarantee_item").index();
-					// console.log(idx)
+					// console.log(idx);
 					const $selectedItem = $(this).closest(".guarantee_item");
 					$(this).closest(".guarantee_choice_wrap").addClass("active");
 					$(this).closest(".guarantee_choice_wrap").find(".guarantee_item").removeClass("active");
@@ -1070,9 +1092,14 @@
 					// 비쥬얼 영역 변경
 					$(".guarantee_visuval").stop(true, true).slideUp(300);
 
+					// 25-07-23 수정
 					// 추가된 부분
-					const selectedClass = $(this).closest(".guarantee_item").data("sendclass"); // 선택된 항목의 data-sendclass 값
-					console.log("선택된 항목의 data-sendclass:", selectedClass);
+					// const selectedClass = $(this).closest('.guarantee_item').data('sendclass'); // 선택된 항목의 data-sendclass 값
+					// console.log('선택된 항목의 data-sendclass:', selectedClass);
+
+					// 25-07-23 수정
+					$(".slide_move_btn").attr("disabled", false).text("선택한 플랜으로 가입할게요"); // 버튼 활성화
+					// 25-07-23 수정
 				});
 				// 보험 플랜 - 진입화면 라디오 선택 이벤트
 
@@ -1130,9 +1157,14 @@
 				updateArrowState();
 
 				// 보험 플랜 - 우측 이동
-				$(".move_detail").on("click", function () {
+				// 25-07-23 수정
+				// $('.move_detail').on('click', function () {
+				$(".slide_move_btn").on("click", function () {
+					$(".slide_move_btn").addClass("hidden"); // 버튼 숨김
+					$(".slide_detail_btn").removeClass("hidden"); // 버튼 숨김
+					// 25-07-23 수정
 					const selectedClass = $('.guarantee_choice_wrap .guarantee_item input[type="radio"]:checked').closest(".guarantee_item").data("sendclass");
-					console.log("선택된 항목의 data-sendclass:", selectedClass);
+					// console.log('선택된 항목의 data-sendclass:', selectedClass);
 					const targetSlide = $('.splide__slide[data-getclass="' + selectedClass + '"]');
 
 					if (targetSlide.length) {
@@ -1162,6 +1194,7 @@
 				// 25-05-19 수정
 			});
 		</script>
+		<!-- e: 25-07-23 수정 -->
 
 		<!-- 전체메뉴 -->
 		<!-- s: Full 팝업 -->

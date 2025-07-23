@@ -2387,7 +2387,14 @@
 	margin-top: var(--gap-9);
 }
 .view_img_list.ty2 > li {
-	width: calc((100% - 2.4rem) / 2);
+	width: 100%;
+}
+.view_img_list.ty2 > li .thumnail {
+	border: none;
+	border-radius: 0;
+}
+.view_img_list.ty2 > li .thumnail img {
+	width: 100%;
 }
 /* 자동차보험 - 운전자정보 */
 /* 자동차보험 | 운전자 정보 - 운전자 범위 선택 */
@@ -2505,10 +2512,10 @@
 .relationship_box .rel_case2 {
 	top: 10.9rem;
 	left: 3rem;
-	min-height: 10.3rem;
 }
 .relationship_box .rel_case2 > span {
 	width: 9rem;
+	min-height: 10.3rem;
 	background-image: url(../images/content/mtps/img_rel_case2.svg);
 }
 .relationship_box .rel_case2 > span:before {
@@ -2537,7 +2544,6 @@
 	top: 10.9rem;
 	left: 50%;
 	margin-left: -2.8rem;
-	min-height: 10.3rem;
 }
 .relationship_box .rel_case3 > span {
 	width: 9rem;
@@ -3149,8 +3155,10 @@
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 	gap: var(--gap-3);
-	padding-right: 14rem;
 	font-size: var(--font-size-label-small);
 }
 .guarantee_item_cont .gic_inner_top .badge_wrap {
@@ -3159,17 +3167,44 @@
 	flex: none;
 	width: auto;
 }
+.guarantee_item_cont .gic_inner_top .badge_wrap .hd_badge {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding: var(--padding-2) var(--padding-6);
+	font-weight: 700;
+}
+.guarantee_item_cont .gic_inner_top .badge_wrap .hd_badge .text {
+	position: relative;
+	padding-left: 1.7rem;
+	font-weight: 400;
+}
+.guarantee_item_cont .gic_inner_top .badge_wrap .hd_badge .text:before {
+	position: absolute;
+	left: 0.9rem;
+	top: 50%;
+	content: "";
+	width: 1px;
+	height: 1.4rem;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.guarantee_item_cont .gic_inner_top .badge_wrap .hd_badge.c_primary .text:before {
+	background-color: var(--color-border-primary-light);
+}
+.guarantee_item_cont .gic_inner_top .badge_wrap .hd_badge.c_secondary .text:before {
+	background-color: var(--color-border-secondary-light);
+}
+.guarantee_item_cont .gic_inner_top .badge_wrap .hd_badge.c_success .text:before {
+	background-color: var(--color-border-secondary-light);
+}
 .guarantee_item_cont .gic_inner_top .text {
 	-webkit-box-flex: 1;
 	-ms-flex: 1 1 0px;
 	flex: 1 1 0;
 }
-.guarantee_item_cont .gic_inner {
-	margin-top: var(--gap-5);
-	border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
-}
 .guarantee_item_cont .gic {
-	padding: 2.4rem 0 0;
+	padding: var(--gap-4) 0 0;
 }
 .guarantee_item_cont .gic .tit {
 	display: block;
@@ -5399,6 +5434,9 @@ ul + .form_group_wrap {
 }
 .contact_list > li .item.spot::before {
 	background-image: url(../images/content/my/icon_manager_spot.svg);
+}
+.contact_list + .acd_item {
+	margin-top: var(--gap-11);
 }
 /* 계약 담당자 */
 /* 수수료 비교 이미지 */
