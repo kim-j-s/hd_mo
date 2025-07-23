@@ -162,24 +162,71 @@
 			position: relative;
 			display: flex;
 			align-items: center;
+			justify-content: center;
 			gap: var(--gap-3);
-			padding-right: 140px;
+			// padding-right: 140px;
 			font-size: var(--font-size-label-small);
 			.badge_wrap {
 				flex: none;
 				width: auto;
+
+				.hd_badge {
+					display: flex;
+					padding: var(--padding-2) var(--padding-6);
+					font-weight: 700;
+
+					.text {
+						position: relative;
+						padding-left: 17px;
+						font-weight: 400;
+
+						&:before {
+							position: absolute;
+							left: 9px;
+							top: 50%;
+							content:'';
+							width: 1px;
+							height: 14px;
+							transform: translateY(-50%);
+						}
+					}
+
+					&.c_primary {
+						.text {
+							&:before {
+								background-color: var(--color-border-primary-light);
+							}
+						}
+					}
+					&.c_secondary {
+						.text {
+							&:before {
+								background-color: var(--color-border-secondary-light);
+							}
+						}
+					}
+					&.c_success {
+						.text {
+							&:before {
+								background-color: var(--color-border-secondary-light);
+							}
+						}
+					}
+				}
 			}
+
 			.text {
 				flex: 1 1 0;
 			}
 		}
 		.gic_inner {
 			// display: none;
-			margin-top: var(--gap-5);
-			border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
+			// margin-top: var(--gap-5);
+			// border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 		}
 		.gic {
-			padding: 24px 0 0;
+			// padding: 24px 0 0;
+			padding: var(--gap-4) 0 0;
 			.tit {
 				display: block;
 				padding-top: 96px;
