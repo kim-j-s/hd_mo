@@ -2295,6 +2295,12 @@ strong {
 .acd_item .acd_cont .inner .card_list_ty1 > li.result {
 	border-top: var(--border-width-static-regular) solid var(--color-border-gray-light);
 }
+.acd_item .acd_cont .chk_lby2 {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	gap: var(--gap-3);
+}
 .acd_item + .checkbox_group_wrap,
 .acd_item + .info_gray {
 	margin-top: var(--gap-5);
@@ -3522,6 +3528,12 @@ strong {
 	-ms-flex-preferred-size: calc(50% - 0.5rem);
 	flex-basis: calc(50% - 0.5rem);
 }
+.btn_area.ty5 .hd_btn:nth-child(1) {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+	width: 11.5rem;
+}
 .btn_area + .info_cont {
 	margin-top: var(--gap-8);
 }
@@ -3617,7 +3629,7 @@ strong {
   */
 .hd_btn_s_1 {
 	min-width: 9.8rem;
-	padding: 1.3rem var(--padding-8) 1.4rem;
+	padding: 1.3rem calc(var(--padding-8) - 0.2rem) 1.4rem;
 	border-radius: var(--radius-medium4);
 	font-size: var(--font-size-button-cta-bold);
 	font-weight: 700;
@@ -7067,6 +7079,9 @@ strong {
 	min-height: var(--size-height-6);
 	padding: var(--padding-3) var(--padding-4);
 }
+.inp_checkbox.rd_check_btn.sm input[type="checkbox"] + .chk_label.chk_label_ty5 span {
+	padding-left: calc(var(--gap-2) + var(--size-height-3));
+}
 .inp_checkbox.rd_check_btn.sm input[type="checkbox"] + .chk_label.chk_label_ty5 span.label_cont {
 	font-size: var(--font-size-button-medium);
 }
@@ -7140,6 +7155,9 @@ strong {
 }
 .checkbox_group_wrap + .car_type_option {
 	margin-top: var(--gap-11);
+}
+.checkbox_group_wrap + .info_gray {
+	margin-top: var(--gap-8);
 }
 .checkbox_group_wrap.column {
 	-webkit-box-orient: vertical;
@@ -10300,7 +10318,7 @@ strong {
 	padding-left: 2.4rem;
 	font-size: var(--font-size-heading-xsmall);
 	color: var(--color-text-basic);
-	background: url(../images/icon/point_circle.svg) no-repeat left 50%/1.6rem auto;
+	background: url(../images/icon/point_circle.svg) no-repeat left 50%/2rem auto;
 }
 .bottom_fix_notice .acd_head .acd_btn:after {
 	position: absolute;
@@ -12548,6 +12566,10 @@ strong {
 	font-weight: 700;
 	background: var(--color-surface-primary-subtler);
 }
+.table_wrap .table td:has(.table_wrap.type_mini) {
+	padding-top: var(--padding-6);
+	padding-bottom: var(--padding-6);
+}
 .table_wrap .table thead th {
 	padding: calc(var(--padding-3) + 1px) var(--padding-3);
 	vertical-align: middle;
@@ -12585,7 +12607,6 @@ strong {
 	position: relative;
 	font-weight: normal;
 	background: transparent;
-	border-right: none !important;
 }
 .table_wrap.type_mini + .type_mini {
 	margin-top: var(--gap-5);
@@ -13285,7 +13306,6 @@ strong {
 	background: var(--color-action-secondary);
 	border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 }
-.info_gray + .checkbox_group_wrap,
 .info_gray + .ag_groups,
 .info_gray + .ag_group_wrap,
 .info_gray + .chk_group_wrap {
@@ -13302,7 +13322,8 @@ strong {
 .info_gray + .select_driver_range,
 .info_gray + .banner_box.ty2,
 .info_gray + .all_checking,
-.info_gray + .text_sub_ty2 {
+.info_gray + .text_sub_ty2,
+.info_gray + .checkbox_group_wrap {
 	margin-top: var(--gap-8);
 }
 .info_gray + .tab_wrap {
@@ -13368,9 +13389,6 @@ strong {
 .info_gray .title_h3 + [class^="title_h"] {
 	margin-top: 0;
 }
-.info_gray .title_h3 + .list_depth {
-	margin-top: var(--gap-4);
-}
 .info_gray .title_h3 + .list_ty3 {
 	margin-top: var(--gap-5);
 }
@@ -13411,6 +13429,7 @@ strong {
 	justify-content: space-between;
 	gap: var(--gap-3);
 	width: 100%;
+	min-width: 0;
 	font-size: var(--font-size-body-small);
 }
 .info_gray dl.middle {
@@ -13427,11 +13446,18 @@ strong {
 	margin-top: var(--gap-5);
 }
 .info_gray dl dt {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+	min-width: 0;
+	max-width: 13rem;
 	color: var(--color-text-subtle);
-	-ms-flex-negative: 0;
-	flex-shrink: 0;
+	overflow-wrap: anywhere;
 }
 .info_gray dl dd {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 0px;
+	flex: 1 1 0;
 	text-align: right;
 }
 .info_gray dl dd .big {
@@ -13445,6 +13471,7 @@ strong {
 }
 .info_gray dl .sub_text {
 	display: block;
+	padding-top: var(--gap-2);
 	font-size: var(--font-size-body-xsmall);
 	color: var(--color-text-subtle);
 }
@@ -13498,8 +13525,8 @@ strong {
 	gap: 1.2rem;
 }
 .info_gray .car_alarm_box .info {
-	font-size: var(--font-size-body-medium);
 	font-weight: 700;
+	font-size: var(--font-size-body-medium);
 }
 .info_gray .car_alarm_box .date {
 	font-size: var(--font-size-body-small);
@@ -13522,14 +13549,7 @@ strong {
 }
 .info_gray .total.car .total_car:has(.del),
 .info_gray .total.car .total_car:has(del) {
-	-webkit-box-align: end;
-	-ms-flex-align: end;
-	align-items: flex-end;
 	margin-top: 2.1rem;
-}
-.info_gray .total.car .total_car:has(.del) dt,
-.info_gray .total.car .total_car:has(del) dt {
-	line-height: 4.8rem;
 }
 .info_gray .total.car .total_car:has(.del) dd,
 .info_gray .total.car .total_car:has(del) dd {

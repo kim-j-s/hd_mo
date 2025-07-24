@@ -846,6 +846,11 @@
 																	<a href="javascript:void(0)" class="btn_link price_btn" role="button" title="가입조건변경 팝업 오픈">
 																		<span class="text">1천만원</span>
 																	</a>
+																	<!-- s: 25-07-24 추가 -->
+																	<span class="badge_wrap">
+																		<span class="hd_badge outline solid_pastel c_primary size_m">많이 선택했어요</span>
+																	</span>
+																	<!-- e: 25-07-24 추가 -->
 																</div>
 															</div>
 														</li>
@@ -859,6 +864,11 @@
 																	<a href="javascript:void(0)" class="btn_link price_btn" role="button" title="가입조건변경 팝업 오픈">
 																		<span class="text">3백만원</span>
 																	</a>
+																	<!-- s: 25-07-24 추가 -->
+																	<span class="badge_wrap">
+																		<span class="hd_badge outline solid_pastel c_primary size_m">많이 선택했어요</span>
+																	</span>
+																	<!-- e: 25-07-24 추가 -->
 																</div>
 															</div>
 														</li>
@@ -882,7 +892,7 @@
 																	<span class="label_cont">중증갑상선암진단(갱신형)</span>
 																</label>
 																<div class="chk_lby2">
-																	<a href="javascript:void(0)" class="btn_link price_btn" role="button" title="가입조건변경 팝업 오픈">
+																	<a href="javascript:void(0)" class="btn_link price_btn_non" role="button" title="가입조건변경 팝업 오픈">
 																		<span class="text">미가입</span>
 																	</a>
 																</div>
@@ -1018,14 +1028,16 @@
 
 			<div class="bottom_fix_wrap">
 				<!-- s: 25-07-23 수정 -->
-				<div class="btn_area">
+				<!-- s: 25-07-24 수정 -->
+				<div class="btn_area btn_area_change_evnet">
+					<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_1 slide_detail_btn hidden">
+						<span class="text">다시 선택</span>
+					</button>
 					<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1 slide_move_btn" disabled>
 						<span class="text">원하는 보장을 선택 중이에요</span>
 					</button>
-					<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1 slide_detail_btn hidden">
-						<span class="text">이대로 가입하기</span>
-					</button>
 				</div>
+				<!-- e: 25-07-24 수정 -->
 				<!-- e: 25-07-23 수정 -->
 			</div>
 		</div>
@@ -1078,7 +1090,9 @@
 					// console.log('선택된 항목의 data-sendclass:', selectedClass);
 
 					// 25-07-23 수정
-					$(".slide_move_btn").attr("disabled", false).text("선택한 플랜으로 가입할게요"); // 버튼 활성화
+					// 25-07-24 수정
+					$(".slide_move_btn").attr("disabled", false).find(".text").text("선택한 플랜으로 가입할게요"); // 버튼 활성화
+					// 25-07-24 수정
 					// 25-07-23 수정
 				});
 				// 보험 플랜 - 진입화면 라디오 선택 이벤트
@@ -1138,11 +1152,14 @@
 
 				// 보험 플랜 - 우측 이동
 				// 25-07-23 수정
-				// $('.move_detail').on('click', function () {
+				// 25-07-24 수정
 				$(".slide_move_btn").on("click", function () {
-					$(".slide_move_btn").addClass("hidden"); // 버튼 숨김
+					$(".btn_area_change_evnet").addClass("ty5");
+					$(".slide_move_btn").find(".text").text("이대로 가입하기");
 					$(".slide_detail_btn").removeClass("hidden"); // 버튼 숨김
+					// 25-07-24 수정
 					// 25-07-23 수정
+
 					const selectedClass = $('.guarantee_choice_wrap .guarantee_item input[type="radio"]:checked').closest(".guarantee_item").data("sendclass");
 					// console.log('선택된 항목의 data-sendclass:', selectedClass);
 					const targetSlide = $('.splide__slide[data-getclass="' + selectedClass + '"]');

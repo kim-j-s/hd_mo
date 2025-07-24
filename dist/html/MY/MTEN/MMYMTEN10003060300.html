@@ -40,7 +40,7 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>변경내용 확인 | 마이페이지 - 현대해상 다이렉트</title>
+		<title>자동차 변경(차량대체) | 마이페이지 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -56,10 +56,11 @@
 					</div>
 
 					<div class="header_connect">
-						<h1 class="header_title">변경내용 확인</h1>
+						<h1 class="header_title">자동차 변경(차량대체)</h1>
 					</div>
 
 					<div class="header_right">
+						<button type="button" class="insChk" onclick="openHDPopup(this,'pop_insChk');"><span class="text">계약변경 팝업 열기</span></button>
 						<button type="button" class="allmenu_open"><span class="text">전체메뉴 열기</span></button>
 						<div class="nav_menu_wrap" aria-hidden="true">
 							<div class="nav_menu_inner">
@@ -416,194 +417,91 @@
 				<div class="content">
 					<!-- s: content_top -->
 					<div class="content_top">
-						<h2 class="title_h2"><strong>변경내용</strong>과 <strong>보험료</strong>를<br /><strong>확인</strong>해주세요</h2>
+						<h2 class="title_h2"><strong>추가 확인 사항</strong> 중 해당하는 항목이 있으면 체크해 주세요</h2>
+						<div class="btn_area basic">
+							<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5" title="도움말 팝업 열기">
+								<span class="text">어려운 용어 설명을 보려면</span>
+								<i class="hd_icon arrowRightSvg"></i>
+							</button>
+						</div>
 					</div>
 					<!-- e: content_top -->
 
-					<h3 class="title_h3">기준일</h3>
-					<div class="table_wrap">
-						<table class="table">
-							<caption>
-								변경 기준일 제공
-							</caption>
-							<colgroup>
-								<col style="width: 35%" />
-								<col style="width: 65%" />
-							</colgroup>
-							<tbody>
-								<tr>
-									<th scope="row">변경 기준일</th>
-									<td>
-										<strong class="point">2025.02.07 00시</strong>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-
-					<ul class="list_ty2">
-						<li>차량대체는 <span class="point">계약변경 확정시점</span>부터 보험종료일 24시까지 변경내용의 효력이 발생합니다. (대체전 차량의 양도/말소 여부를 꼭 확인해주세요)</li>
+					<ul class="form_list">
+						<li>
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">자동차가 요금 및 대가를 위해 사용되는 경우가 있나요?</div>
+									<div class="info_gray ty2">
+										<p class="info_text">요금이나 대가를 받는 자동차는 유상운송위험담보특약이 적용되어 기본 보험료가 할증됩니다.</p>
+									</div>
+									<div class="radio_group_wrap" role="radiogroup">
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="notification01_01" name="notification01" />
+											<label for="notification01_01">
+												<span class="label_cont">예</span>
+											</label>
+										</div>
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="notification01_02" name="notification01" checked />
+											<label for="notification01_02">
+												<span class="label_cont">아니요</span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">(기타) 「소득세법」에서 규정한 장애인전용보험전환 특약 가입대상이신가요?</div>
+									<div class="info_gray ty2">
+										<p class="info_text">기명피보험자가 「소득세법」에서 규정한 장애인인경우 가입이 가능하며, 특약 가입 시 입증 서류가 필요합니다.</p>
+									</div>
+									<div class="radio_group_wrap" role="radiogroup">
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="notification02_01" name="notification02" />
+											<label for="notification02_01">
+												<span class="label_cont">예</span>
+											</label>
+										</div>
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="notification02_02" name="notification02" checked />
+											<label for="notification02_02">
+												<span class="label_cont">아니요</span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">어린이 통학차량으로, 어린이 통학버스 신고증명서가 있습니까?</div>
+									<div class="info_gray ty2">
+										<p class="info_text">도로교통법 제2조에서 정한 어린이 통학버스인 경우</p>
+									</div>
+									<div class="radio_group_wrap" role="radiogroup">
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="notification03_01" name="notification03" />
+											<label for="notification03_01">
+												<span class="label_cont">예</span>
+											</label>
+										</div>
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="notification03_02" name="notification03" checked />
+											<label for="notification03_02">
+												<span class="label_cont">아니요</span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
 					</ul>
-					<h3 class="title_h3">변경내용</h3>
-					<div class="table_wrap">
-						<table class="table">
-							<caption>
-								구분, 변경 전, 변경 후 제공
-							</caption>
-							<colgroup>
-								<col style="width: 33.333%" />
-								<col style="width: 33.333%" />
-								<col style="width: 33.333%" />
-							</colgroup>
-							<thead>
-								<tr>
-									<th scope="col">구분</th>
-									<th scope="col">변경 전</th>
-									<th scope="col">변경 후</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>차량번호</td>
-									<td>12수**34</td>
-									<td>345수**34</td>
-								</tr>
-								<tr>
-									<td>차대번호</td>
-									<td>AAAA1******12345</td>
-									<td>AAAA123AAAA123456</td>
-								</tr>
-								<tr>
-									<td>차명코드</td>
-									<td>61S52</td>
-									<td>61WJ3</td>
-								</tr>
-								<tr>
-									<td>차명</td>
-									<td>코나 일렉트릭</td>
-									<td>더 뉴 투산 1.6 하이브리드</td>
-								</tr>
-								<tr>
-									<td>차량가액</td>
-									<td>1,625만원</td>
-									<td>3,277만원</td>
-								</tr>
-								<tr>
-									<td>최초신규등록년월</td>
-									<td>2018.11.19</td>
-									<td>2024.01.05</td>
-								</tr>
-								<tr>
-									<td>년식</td>
-									<td>2018</td>
-									<td>2024B</td>
-								</tr>
-								<tr>
-									<td>차종코드</td>
-									<td>1108(승용중형1종(1601cc~1900cc))</td>
-									<td>1106(승용소형B2종(1401cc~1600cc))</td>
-								</tr>
-								<tr>
-									<td>총차량가액</td>
-									<td>1,660만원</td>
-									<td>3,277만원</td>
-								</tr>
-								<tr>
-									<td>총가입금액</td>
-									<td>1,660만원</td>
-									<td>3,277만원</td>
-								</tr>
-								<tr>
-									<td>차량대체 블랙박스 적용 구분</td>
-									<td></td>
-									<td>대체 전 차량만 가입</td>
-								</tr>
-								<tr>
-									<td>부속품코드</td>
-									<td>25</td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>부속품명</td>
-									<td>블랙박스</td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>부속품가액</td>
-									<td>35만원</td>
-									<td></td>
-								</tr>
-								<!-- s: 25-07-24 수정 -->
-								<tr>
-									<td>커넥티드 블랙박스 안전운전</td>
-									<td>가입</td>
-									<td><span class="point">미가입</span></td>
-								</tr>
-								<tr>
-									<td>커넥티드카할인특약</td>
-									<td>가입</td>
-									<td><span class="point">미가입</span></td>
-								</tr>
-								<tr>
-									<td>월별 안전운전점수할인</td>
-									<td>가입</td>
-									<td><span class="point">미가입</span></td>
-								</tr>
-								<!-- e: 25-07-24 수정 -->
-								<tr>
-									<td>전기차배터리신품가액보상특약</td>
-									<td>가입</td>
-									<td>미가입</td>
-								</tr>
-								<tr>
-									<td>전기차충전중위험보장특약</td>
-									<td>가입</td>
-									<td>미가입</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-
-					<h3 class="title_h3">보험료</h3>
-					<div class="table_wrap">
-						<table class="table">
-							<caption>
-								변경 전 보험료, 변경 후 보험료, 환급 보험료 제공
-							</caption>
-							<colgroup>
-								<col style="width: 35%" />
-								<col style="width: 65%" />
-							</colgroup>
-							<tbody>
-								<tr>
-									<th scope="row">변경 전 보험료</th>
-									<td>576,970원</td>
-								</tr>
-								<tr>
-									<th scope="row">변경 후 보험료</th>
-									<td>543,770원</td>
-								</tr>
-								<tr>
-									<th scope="row">환급 보험료</th>
-									<td>
-										<strong class="point">33,200원</strong>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-
-					<div class="checkbox_group_wrap column">
-						<div class="inp_checkbox rd_box">
-							<input type="checkbox" id="checkbox01" checked />
-							<label for="checkbox01" class="chk_label chk_label_ty3">
-								<span class="label_cont"><strong class="ess ess_t1">필수</strong> 계약변경 기준일, 변경내용, 보험료 및 대체 전 차량에 대한 양도, 말소 (예정)사항을 확인했습니다.</span>
-							</label>
-						</div>
-					</div>
 				</div>
-
-				<!-- // container -->
 			</div>
 
 			<!-- s: 하단 고정 버튼 영역 -->
@@ -618,7 +516,6 @@
 		</div>
 
 		<!-- s: popup area -->
-
 		<!-- s: 자동차 배서 메뉴 -->
 		<!-- s: 자동차 계약변경 -->
 		<div class="popup_wrap full" id="pop_insChk" role="dialog" aria-hidden="true">
@@ -781,6 +678,59 @@
 		<!-- e: 자동차 배서 메뉴 -->
 		<!-- e: popup area -->
 
+		<script>
+			$(function () {
+				prograssCar();
+
+				$(window).on("resize", function () {
+					prograssCar();
+				});
+			});
+
+			function prograssCar() {
+				const $prograss = $(".progress_box_ty2");
+
+				$prograss.each(function (idx) {
+					const $allBar = $prograss.eq(idx),
+						$bar = $allBar.find(".ing"),
+						$start = $bar.find(".newStart");
+
+					const allW = $allBar.width(),
+						barW = $bar.width();
+
+					const newW = Math.round((barW / allW) * 100),
+						startW = Math.round((10 / allW) * 100),
+						newstartW = Math.round((37 / allW) * 100);
+
+					$prograss.children(".ing").removeClass("full");
+
+					let spotMargin = -(100 - newW - newstartW - 1) + "%";
+					let parseVal = parseFloat(spotMargin);
+					let leftVal = (parseVal / 100) * barW;
+
+					// bar가 시작일과 겹칠 때
+					if (allW - barW <= 40) {
+						$bar.addClass("big");
+						$bar.find(".newStart").css("margin-left", spotMargin);
+						$bar.find(".newStart").children("em").css("left", -leftVal);
+
+						// bar 길이 100%일 때
+					} else if (allW === barW) {
+						$bar.addClass("full");
+
+						// 기준일, 종료일 겹칠 때
+					} else if (barW <= 76) {
+						let spotMargin2 = barW - 27;
+						console.log(spotMargin2);
+						$bar.find(".newStart").addClass("small");
+						$bar
+							.find(".newStart")
+							.children(".spot")
+							.css("margin-right", 40 + "px");
+					}
+				});
+			}
+		</script>
 		<!-- 전체메뉴 -->
 		<!-- s: Full 팝업 -->
 		<div class="popup_wrap full pts_wrap" id="totalSearch" role="dialog" aria-hidden="true">
