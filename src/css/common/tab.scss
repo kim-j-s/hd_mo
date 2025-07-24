@@ -30,10 +30,9 @@
 		&.active {
 			font-weight: 700;
 			color: var(--color-text-basic);
-
 			&:before { 
 				position: absolute;
-				bottom: 0;
+				bottom: -1px;
 				left: 0;
 				z-index: 5;
 				content:'';
@@ -45,6 +44,16 @@
 
 		&:disabled {
 			color: var(--color-text-disabled);
+		}
+	}
+
+	&.scroll {
+		.tab_btn {
+			&.active {
+				&:before { 
+					bottom: 0;
+				}
+			}
 		}
 	}
 }
