@@ -495,74 +495,76 @@
 
 	<div class="bottom_fix_wrap">
 		<!-- s: 25-07-23 수정 -->
-		<div class="btn_area">
+		<!-- s: 25-07-24 수정 -->
+		<div class="btn_area btn_area_change_evnet">
+			{{> cp/button class="slide_detail_btn hidden" type="3" size="1" b-text="다시 선택" }}
 			{{> cp/button class="slide_move_btn" type="1" size="1" b-text="원하는 보장을 선택 중이에요" disabled=true }}
-			{{> cp/button class="slide_detail_btn hidden" type="1" size="1" b-text="이대로 가입하기" }}
 		</div>
+		<!-- e: 25-07-24 수정 -->
 		<!-- e: 25-07-23 수정 -->
 	</div>
 </div>
 
 <!-- s: popup area -->
 
-	<!-- s: 특약 팝업 -->
-	{{#> popup/popup_bottom popup-id="sp_pop" popup-title="다음 특약에 가입하시겠어요?" }}
-	<div class="popup_cont">
-		<div class="popup_content">
-			<div class="info_gray">
-				<h5 class="title_h3">가입할 담보</h5>
-				<ul class="list_depth">
-					<li>차대차사고차량시세하락손실지원(개인자가용)</li>
-					<li>차량유리교체비용지원(개인자가용, 연간1회한)</li>
-				</ul>
+<!-- s: 특약 팝업 -->
+{{#> popup/popup_bottom popup-id="sp_pop" popup-title="다음 특약에 가입하시겠어요?" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="info_gray">
+			<h5 class="title_h3">가입할 담보</h5>
+			<ul class="list_depth">
+				<li>차대차사고차량시세하락손실지원(개인자가용)</li>
+				<li>차량유리교체비용지원(개인자가용, 연간1회한)</li>
+			</ul>
+		</div>
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">가입할 자동차번호</div>
+				{{> cp/text inp-title="자동차번호 입력" placeholder="자동차번호 입력" }}
 			</div>
-			<div class="form_group_wrap">
-				<div class="form_line">
-					<div class="label_tit">가입할 자동차번호</div>
-					{{> cp/text inp-title="자동차번호 입력" placeholder="자동차번호 입력" }}
-				</div>
-				<ul class="list_ty2">
-					<li>위 담보 가입 시 고객님 본인소유 개인 자가용(개인명의로 소유하거나 개인명의로 리스한 자동차) 차량정보가 필요합니다.</li>
-					<li>보험증권에 기재된 본인소유 해당 차량에 대해서만 보장됩니다.</li>
-				</ul>
-			</div>
-			<!-- e: popup_content_top -->
+			<ul class="list_ty2">
+				<li>위 담보 가입 시 고객님 본인소유 개인 자가용(개인명의로 소유하거나 개인명의로 리스한 자동차) 차량정보가 필요합니다.</li>
+				<li>보험증권에 기재된 본인소유 해당 차량에 대해서만 보장됩니다.</li>
+			</ul>
 		</div>
+		<!-- e: popup_content_top -->
 	</div>
-	<div class="popup_bottom">
-		<div class="btn_area">
-			{{> cp/button type="3" size="2" b-text="가입안함" }}
-			{{> cp/button type="1" size="2" b-text="특약 가입" }}
-		</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="3" size="2" b-text="가입안함" }}
+		{{> cp/button type="1" size="2" b-text="특약 가입" }}
 	</div>
-	{{/ popup/popup_bottom}}
-	<!-- e: 특약 팝업 -->
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 특약 팝업 -->
 
-	{{> pay/hd_card }}
+{{> pay/hd_card }}
 
-	<!-- s: Full 팝업(예시) -->
-	{{#> popup/popup_full popup-id="ex_popup_full" popup-title="팝업 타이틀" }}
-	<div class="popup_cont">
-		<div class="popup_content">
-			<!-- s: popup_content_top -->
-			<div class="popup_content_top">
-				<h2 class="title_h2">
-					타이틀영역
-				</h2>
-			</div>
-			<!-- e: popup_content_top -->
+<!-- s: Full 팝업(예시) -->
+{{#> popup/popup_full popup-id="ex_popup_full" popup-title="팝업 타이틀" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- s: popup_content_top -->
+		<div class="popup_content_top">
+			<h2 class="title_h2">
+				타이틀영역
+			</h2>
+		</div>
+		<!-- e: popup_content_top -->
 
-			버튼클릭시 출력되는 풀 팝업 예시입니다.
-		</div>
+		버튼클릭시 출력되는 풀 팝업 예시입니다.
 	</div>
-	<div class="popup_bottom">		
-		<div class="btn_area">
-			{{> cp/button type="3" size="1" b-text="취소" }}
-			{{> cp/button type="1" size="1" b-text="확인" }}
-		</div>
+</div>
+<div class="popup_bottom">		
+	<div class="btn_area">
+		{{> cp/button type="3" size="1" b-text="취소" }}
+		{{> cp/button type="1" size="1" b-text="확인" }}
 	</div>
-	{{/ popup/popup_full}}
-	<!-- e: Full 팝업(예시) -->
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업(예시) -->
 
 <!-- e: popup area -->
 
@@ -607,7 +609,9 @@
 			// console.log('선택된 항목의 data-sendclass:', selectedClass);
 
 			// 25-07-23 수정
-			$('.slide_move_btn').attr('disabled', false).text('선택한 플랜으로 가입할게요'); // 버튼 활성화
+			// 25-07-24 수정
+			$('.slide_move_btn').attr('disabled', false).find('.text').text('선택한 플랜으로 가입할게요'); // 버튼 활성화
+			// 25-07-24 수정
 			// 25-07-23 수정
 			
 		});
@@ -670,11 +674,14 @@
 
 		// 보험 플랜 - 우측 이동
 		// 25-07-23 수정
-		// $('.move_detail').on('click', function () {
+		// 25-07-24 수정
 		$('.slide_move_btn').on('click', function () {
-			$('.slide_move_btn').addClass('hidden'); // 버튼 숨김
-			$('.slide_detail_btn').removeClass('hidden'); // 버튼 숨김
-		// 25-07-23 수정
+			$('.btn_area_change_evnet').addClass('ty4');
+			$('.slide_move_btn').find('.text').text('이대로 가입하기');
+			$('.slide_detail_btn').removeClass('hidden'); // 버튼 숨김			
+			// 25-07-24 수정
+			// 25-07-23 수정
+
 			const selectedClass = $('.guarantee_choice_wrap .guarantee_item input[type="radio"]:checked').closest('.guarantee_item').data('sendclass');
 			// console.log('선택된 항목의 data-sendclass:', selectedClass);
 			const targetSlide = $('.splide__slide[data-getclass="' + selectedClass + '"]');

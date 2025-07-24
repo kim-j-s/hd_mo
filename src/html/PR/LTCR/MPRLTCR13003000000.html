@@ -616,10 +616,12 @@
 
 	<div class="bottom_fix_wrap">
 		<!-- s: 25-07-23 수정 -->
-		<div class="btn_area">
+		<!-- s: 25-07-24 수정 -->
+		<div class="btn_area btn_area_change_evnet">
+			{{> cp/button class="slide_detail_btn hidden" type="3" size="1" b-text="다시 선택" }}
 			{{> cp/button class="slide_move_btn" type="1" size="1" b-text="원하는 보장을 선택 중이에요" disabled=true }}
-			{{> cp/button class="slide_detail_btn hidden" type="1" size="1" b-text="이대로 가입하기" }}
 		</div>
+		<!-- e: 25-07-24 수정 -->
 		<!-- e: 25-07-23 수정 -->
 	</div>
 </div>
@@ -767,7 +769,9 @@
 			// console.log('선택된 항목의 data-sendclass:', selectedClass);
 
 			// 25-07-23 수정
-			$('.slide_move_btn').attr('disabled', false).text('선택한 플랜으로 가입할게요'); // 버튼 활성화
+			// 25-07-24 수정
+			$('.slide_move_btn').attr('disabled', false).find('.text').text('선택한 플랜으로 가입할게요'); // 버튼 활성화
+			// 25-07-24 수정
 			// 25-07-23 수정
 			
 		});
@@ -830,11 +834,14 @@
 
 		// 보험 플랜 - 우측 이동
 		// 25-07-23 수정
-		// $('.move_detail').on('click', function () {
+		// 25-07-24 수정
 		$('.slide_move_btn').on('click', function () {
-			$('.slide_move_btn').addClass('hidden'); // 버튼 숨김
-			$('.slide_detail_btn').removeClass('hidden'); // 버튼 숨김
-		// 25-07-23 수정
+			$('.btn_area_change_evnet').addClass('ty4');
+			$('.slide_move_btn').find('.text').text('이대로 가입하기');
+			$('.slide_detail_btn').removeClass('hidden'); // 버튼 숨김			
+			// 25-07-24 수정
+			// 25-07-23 수정
+
 			const selectedClass = $('.guarantee_choice_wrap .guarantee_item input[type="radio"]:checked').closest('.guarantee_item').data('sendclass');
 			// console.log('선택된 항목의 data-sendclass:', selectedClass);
 			const targetSlide = $('.splide__slide[data-getclass="' + selectedClass + '"]');

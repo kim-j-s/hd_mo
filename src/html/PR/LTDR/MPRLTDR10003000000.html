@@ -572,113 +572,112 @@
 
 	<div class="bottom_fix_wrap">
 		<!-- s: 25-07-23 수정 -->
-		<div class="btn_area">
+		<!-- s: 25-07-24 수정 -->
+		<div class="btn_area btn_area_change_evnet">
+			{{> cp/button class="slide_detail_btn hidden" type="3" size="1" b-text="다시 선택" }}
 			{{> cp/button class="slide_move_btn" type="1" size="1" b-text="원하는 보장을 선택 중이에요" disabled=true }}
-			{{> cp/button class="slide_detail_btn hidden" type="1" size="1" b-text="이대로 가입하기" }}
 		</div>
+		<!-- e: 25-07-24 수정 -->
 		<!-- e: 25-07-23 수정 -->
 	</div>
 </div>
 
 <!-- s: popup area -->
 
-	<!-- s: 특약 팝업 -->
-	{{#> popup/popup_bottom popup-id="sp_pop" popup-title="다음 특약에 가입하시겠어요?" }}
-	<div class="popup_cont">
-		<div class="popup_content">
-			<div class="info_gray">
-				<h5 class="title_h3">가입할 담보</h5>
-				<ul class="list_depth">
-					<li>차대차사고차량시세하락손실지원(개인자가용)</li>
-					<li>차량유리교체비용지원(개인자가용, 연간1회한)</li>
-				</ul>
+<!-- s: 특약 팝업 -->
+{{#> popup/popup_bottom popup-id="sp_pop" popup-title="다음 특약에 가입하시겠어요?" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="info_gray">
+			<h5 class="title_h3">가입할 담보</h5>
+			<ul class="list_depth">
+				<li>차대차사고차량시세하락손실지원(개인자가용)</li>
+				<li>차량유리교체비용지원(개인자가용, 연간1회한)</li>
+			</ul>
+		</div>
+		<div class="form_group_wrap">
+			<div class="form_line">
+				<div class="label_tit">가입할 자동차번호</div>
+				{{> cp/text inp-title="자동차번호 입력" placeholder="자동차번호 입력" }}
 			</div>
-			<div class="form_group_wrap">
-				<div class="form_line">
-					<div class="label_tit">가입할 자동차번호</div>
-					{{> cp/text inp-title="자동차번호 입력" placeholder="자동차번호 입력" }}
-				</div>
-				<ul class="list_ty2">
-					<li>위 담보 가입 시 고객님 본인소유 개인 자가용(개인명의로 소유하거나 개인명의로 리스한 자동차) 차량정보가 필요합니다.</li>
-					<li>보험증권에 기재된 본인소유 해당 차량에 대해서만 보장됩니다.</li>
-				</ul>
-			</div>
-			<!-- e: popup_content_top -->
+			<ul class="list_ty2">
+				<li>위 담보 가입 시 고객님 본인소유 개인 자가용(개인명의로 소유하거나 개인명의로 리스한 자동차) 차량정보가 필요합니다.</li>
+				<li>보험증권에 기재된 본인소유 해당 차량에 대해서만 보장됩니다.</li>
+			</ul>
 		</div>
+		<!-- e: popup_content_top -->
 	</div>
-	<div class="popup_bottom">
-		<div class="btn_area">
-			{{> cp/button type="3" size="2" b-text="가입안함" }}
-			{{> cp/button type="1" size="2" b-text="특약 가입" }}
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="3" size="2" b-text="가입안함" }}
+		{{> cp/button type="1" size="2" b-text="특약 가입" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 특약 팝업 -->
+
+<!-- 25-05-20 수정 -->
+<!-- s: 현대해상 결제 혜택 안내 팝업 -->
+{{#> popup/popup_bottom popup-id="ex_popup_bottom2" popup-title="자동차보험 가입 할인 안내" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="p_benefit_info">
+			<h2 class="title_h3">					
+				<span class="ext">현대해상 자동차보험 가입 고객님은</span><br> 매월 보험료 7% 할인<span class="ext">을 해드려요</span>
+			</h2>
+			<h3 class="title_h4">보험료 할인 대상 확인</h3>
+			<p class="sub_text">보험료 확인 화면 (본인인증 후)</p>
 		</div>
-	</div>
-	{{/ popup/popup_bottom}}
-	<!-- e: 특약 팝업 -->
 
-	<!-- 25-05-20 수정 -->
-	<!-- s: 현대해상 결제 혜택 안내 팝업 -->
-	{{#> popup/popup_bottom popup-id="ex_popup_bottom2" popup-title="자동차보험 가입 할인 안내" }}
-	<div class="popup_cont">
-		<div class="popup_content">
-			<div class="p_benefit_info">
-				<h2 class="title_h3">					
-					<span class="ext">현대해상 자동차보험 가입 고객님은</span><br> 매월 보험료 7% 할인<span class="ext">을 해드려요</span>
-				</h2>
-				<h3 class="title_h4">보험료 할인 대상 확인</h3>
-				<p class="sub_text">보험료 확인 화면 (본인인증 후)</p>
-			</div>
-
-			<div class="info_gray">
-				<h3 class="title_h3">할인적용</h3>
-				<ul class="list_depth">
-					<li>현대해상 자동차보험 보험기간이 1년인 유효 계약 (이륜차보험 포함)</li>
-					<li>초회보험료부터 적용되며 영업보험료의 7% 할인</li>
-					<li>계약 체결 이후 할인적용대상에 해당되는 경우 할인 적용대상에 해당되는 시점 익월 이후 납입되는 보험료부터 할인 적용</li>
-					<li>할인을 적용 받던 계약이 할인적용대상에 해당되지 않게 된 경우 익월 이후 납입되는 보험료부터 할인이 적용되지 않며, 다시 적용대상에 해당되더라도 할인이 재적용 되지 않음</li>
-					<li>자세한 사항은 약관을 참고해 주세요.</li>
-				</ul>
-			</div>
-
-			
+		<div class="info_gray">
+			<h3 class="title_h3">할인적용</h3>
+			<ul class="list_depth">
+				<li>현대해상 자동차보험 보험기간이 1년인 유효 계약 (이륜차보험 포함)</li>
+				<li>초회보험료부터 적용되며 영업보험료의 7% 할인</li>
+				<li>계약 체결 이후 할인적용대상에 해당되는 경우 할인 적용대상에 해당되는 시점 익월 이후 납입되는 보험료부터 할인 적용</li>
+				<li>할인을 적용 받던 계약이 할인적용대상에 해당되지 않게 된 경우 익월 이후 납입되는 보험료부터 할인이 적용되지 않며, 다시 적용대상에 해당되더라도 할인이 재적용 되지 않음</li>
+				<li>자세한 사항은 약관을 참고해 주세요.</li>
+			</ul>
 		</div>
+
+		
 	</div>
-	<div class="popup_bottom">
-		<div class="btn_area">
-			{{> cp/button type="1" size="2" b-text="확인" }}
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 현대해상 결제 혜택 안내 팝업 -->
+<!-- 25-05-20 수정 -->
+
+{{> pay/hd_card }}	
+
+<!-- s: Full 팝업(예시) -->
+{{#> popup/popup_full popup-id="ex_popup_full" popup-title="팝업 타이틀" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- s: popup_content_top -->
+		<div class="popup_content_top">
+			<h2 class="title_h2">
+				타이틀영역
+			</h2>
 		</div>
+		<!-- e: popup_content_top -->
+
+		버튼클릭시 출력되는 풀 팝업 예시입니다.
 	</div>
-	{{/ popup/popup_bottom}}
-	<!-- e: 현대해상 결제 혜택 안내 팝업 -->
-	<!-- 25-05-20 수정 -->
-
-	{{> pay/hd_card }}
-
-
-	
-
-	<!-- s: Full 팝업(예시) -->
-	{{#> popup/popup_full popup-id="ex_popup_full" popup-title="팝업 타이틀" }}
-	<div class="popup_cont">
-		<div class="popup_content">
-			<!-- s: popup_content_top -->
-			<div class="popup_content_top">
-				<h2 class="title_h2">
-					타이틀영역
-				</h2>
-			</div>
-			<!-- e: popup_content_top -->
-
-			버튼클릭시 출력되는 풀 팝업 예시입니다.
-		</div>
+</div>
+<div class="popup_bottom">		
+	<div class="btn_area">
+		{{> cp/button type="3" size="1" b-text="취소" }}
+		{{> cp/button type="1" size="1" b-text="확인" }}
 	</div>
-	<div class="popup_bottom">		
-		<div class="btn_area">
-			{{> cp/button type="3" size="1" b-text="취소" }}
-			{{> cp/button type="1" size="1" b-text="확인" }}
-		</div>
-	</div>
-	{{/ popup/popup_full}}
-	<!-- e: Full 팝업(예시) -->
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업(예시) -->
 
 <!-- e: popup area -->
 
@@ -723,7 +722,9 @@
 			// console.log('선택된 항목의 data-sendclass:', selectedClass);
 
 			// 25-07-23 수정
-			$('.slide_move_btn').attr('disabled', false).text('선택한 플랜으로 가입할게요'); // 버튼 활성화
+			// 25-07-24 수정
+			$('.slide_move_btn').attr('disabled', false).find('.text').text('선택한 플랜으로 가입할게요'); // 버튼 활성화
+			// 25-07-24 수정
 			// 25-07-23 수정
 			
 		});
@@ -786,11 +787,14 @@
 
 		// 보험 플랜 - 우측 이동
 		// 25-07-23 수정
-		// $('.move_detail').on('click', function () {
+		// 25-07-24 수정
 		$('.slide_move_btn').on('click', function () {
-			$('.slide_move_btn').addClass('hidden'); // 버튼 숨김
-			$('.slide_detail_btn').removeClass('hidden'); // 버튼 숨김
-		// 25-07-23 수정
+			$('.btn_area_change_evnet').addClass('ty4');
+			$('.slide_move_btn').find('.text').text('이대로 가입하기');
+			$('.slide_detail_btn').removeClass('hidden'); // 버튼 숨김			
+			// 25-07-24 수정
+			// 25-07-23 수정
+
 			const selectedClass = $('.guarantee_choice_wrap .guarantee_item input[type="radio"]:checked').closest('.guarantee_item').data('sendclass');
 			// console.log('선택된 항목의 data-sendclass:', selectedClass);
 			const targetSlide = $('.splide__slide[data-getclass="' + selectedClass + '"]');
