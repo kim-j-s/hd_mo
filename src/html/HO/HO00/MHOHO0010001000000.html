@@ -1,8 +1,7 @@
 {{#> layout/default page-title="계약/보상 | 상품"}}
 
 <div id="wrap" class="wrap">
-    {{> layout/header h-title="" }}
-    {{> cp/checkbox id="easySwitch" label_class="switch_check lg easy" role="switch" aria-checked="false" labelname="간편" }}
+    {{> layout/header main=true h-back=true h-easy=true h-alarm=true}}
     <div id="container" class="container home">
         <div class="content">
             <div class="normal_cont">
@@ -345,12 +344,14 @@
         $('#easySwitch').on('change', function () {
             if ($(this).is(':checked')) {
                 $('.normal_cont').addClass('easy');
-                $('.toolbar ').hide();
+                $('.toolbar').hide();
+                $('.easy_top').show();
                 $('.easy_item > .home_card').removeClass('bg_primary');
                 $('.easy_item .icon_link').addClass('list');
             } else {
                 $('.normal_cont').removeClass('easy');
-                $('.toolbar ').show();
+                $('.toolbar').show();
+                $('.easy_top').hide();
                 $('.easy_item > .home_card').addClass('bg_primary');
                 $('.easy_item .icon_link').removeClass('list');
             }
