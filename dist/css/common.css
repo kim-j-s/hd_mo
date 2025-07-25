@@ -392,6 +392,12 @@ strong {
 .no_list_area .desc.tac {
 	text-align: center;
 }
+.no_list_area > .btn_area {
+	margin-top: 1.2rem;
+}
+.no_list_area:has(.btn_area) + .card_item_wrap {
+	margin-top: var(--gap-5);
+}
 .card_item_wrap[style*="display: none"] + .no_list_area {
 	margin-top: var(--gap-8);
 }
@@ -3673,10 +3679,6 @@ strong {
 	font-size: var(--font-size-button-cta-bold);
 	font-weight: 700;
 }
-.hd_btn_s_1 .hd_icon {
-	width: 2.4rem;
-	height: 2.7rem;
-}
 .hd_btn_s_1.text_long {
 	padding: 0px var(--padding-4);
 	min-width: calc(50% - 0.5rem);
@@ -3705,7 +3707,7 @@ strong {
 	height: 2rem;
 }
 .hd_btn_s_4 {
-	min-width: 5.4rem;
+	min-width: 6.4rem;
 	padding: 0.6rem calc(var(--padding-5) - 0.2rem);
 	border-radius: var(--radius-medium1);
 	font-size: var(--font-size-button-small-bold);
@@ -4002,6 +4004,9 @@ strong {
 }
 .btn_link.short_cut.short_cut_icon.short_cut_icon_ty5 > .text::before {
 	background-image: url(../images/content/guarantee/icon_gtl_money.svg);
+}
+.btn_link.short_cut.short_cut_icon.short_cut_icon_ty5 > .text dl {
+	gap: var(--gap-3);
 }
 .btn_link.short_cut.short_cut_icon.short_cut_icon_ty6 > .text::before {
 	background-image: url(../images/icon/icon_call_fill_ty3.svg);
@@ -8292,6 +8297,9 @@ strong {
 .comp_wrap.key_number + .btn_area.basic {
 	margin-top: var(--gap-4);
 }
+.comp_wrap.key_number + .btn_area.basic .hd_btn_s_4 {
+	min-width: 5.4rem;
+}
 .comp_wrap.key_number .input_text:has(.int_txt.right) input {
 	padding-right: 0;
 }
@@ -8730,6 +8738,9 @@ strong {
 	-webkit-box-flex: 1;
 	-ms-flex: 1;
 	flex: 1;
+}
+.range_calrendar + .btn_area.basic .hd_btn_s_4 {
+	min-width: 5.4rem;
 }
 .form_key {
 	position: relative;
@@ -9898,7 +9909,7 @@ strong {
 	color: var(--color-text-disabled-on);
 	padding-left: 2.6rem;
 	background-repeat: no-repeat;
-	background-position: 0.4rem center;
+	background-position: 0.4rem 0.3rem;
 	background-size: 1.6rem auto;
 }
 .data_list li dl dt.person {
@@ -9988,6 +9999,11 @@ strong {
 .data_list li ~ li {
 	margin-top: var(--gap-3);
 }
+.data_list li > .info {
+	padding-left: 2.6rem;
+	background: url(../images/content/bi/icon_info.svg) no-repeat 0.4rem 0.3rem/1.6rem auto;
+	color: var(--color-text-disabled-on);
+}
 .data_list + .info_gray {
 	margin-top: var(--gap-7);
 }
@@ -10045,6 +10061,7 @@ strong {
 .step_list > li dl .title {
 	font-size: var(--font-size-body-medium);
 	color: var(--color-text-disabled-on);
+	max-width: none;
 }
 .step_list > li dl .title::after {
 	content: "";

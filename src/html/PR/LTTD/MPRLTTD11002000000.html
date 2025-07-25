@@ -25,6 +25,14 @@
 							<p class="bit_inner_text">
 								<span class="bold">일상생활</span>이나 <span class="bold">출퇴근 용도</span>로<br>운전을 하시나요?
 							</p>
+
+							<!-- s: 25-07-25 수정 -->
+							<div class="bit_inner_sub_text">
+							{{> cp/linkButton bl_class="short_cut" bl_text="가입이 어려운 경우" pop_id="helper_popup" question_tit="팝업 열림" }}
+							</div>
+							<!-- e: 25-07-25 수정 -->
+							
+
 							<div class="bit_btn_scrollx">
 								{{> cp/linkButton bl_class="short_cut sm rd_box" bl_text="최근 계산 내역" }}
 								<button type="button" class="btn_link short_cut sm rd_box">
@@ -220,6 +228,62 @@
 	
 
 <!-- s: 25-07-07 수정 -->
+
+<!-- s: 25-07-25 수정 -->
+<!-- s: 가입이 어려운 경우 팝업 -->
+{{#> popup/popup_bottom popup-id="helper_popup" popup-title="이륜차 보험 가입 불가 차량 안내" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="popup_content_top">
+			<p class="text_sub">자동차관리법에 따라 “사용신고 제외 차량”의 경우, 이륜 자동차 보험 가입이 불가합니다. 또한, 이륜자동차 운전이 가능한 면허 등을 보유하고 있는 이륜자동차 운전자만 가입 가능합니다.</p>
+		</div>
+
+		<div class="info_gray">
+			<h3 class="title_h3">가입 불가 차량 종류</h3>
+			<ul class="list_depth">
+				<li>의료기기법에 따른 의료기기(전동휠체어 등)
+					<ul>
+						<li>전동휠체어(의료기기)</li>
+					</ul>
+				</li>
+				<li>최고속도 25 km/h 미만의 이륜자동차
+					<ul>
+						<li>전동스쿠터(노약자용)</li>
+						<li>어린이용 전동차</li>
+						<li>전기보드</li>
+					</ul>
+				</li>
+				<li>최고속도 25km/h 이상의 이륜자동차이지만 도로운행에 적합하지 않은 차량 (도로 이외의 장소에서 운행 가능)
+					<ul>
+						<li>모터보드</li>
+						<li>미니바이크</li>
+						<li>휠맨</li>
+					</ul>
+				</li>
+				<li>산악지형이나 비포장도로에서 주로 사용하는 <span class="point">*</span>차동장치가 없는 이륜자동차
+					<ul>
+						<li>산악용ATV
+							<ul>
+								<li><span class="point">*</span>선회 시 좌, 우 바퀴를 다른 속도로 회전시키는 장치</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+			
+
+
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">{{> cp/button type="1" size="2" b-text="확인" }}</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 가입이 어려운 경우 팝업 -->
+<!-- e: 25-07-25 수정 -->
+
+
 <!-- s: 온라인 가입 불가 안내 팝업 -->
 {{#> popup/popup_bottom popup-id="pop_type02" popup-title="온라인 가입 불가 안내"}}
 <div class="popup_cont">
