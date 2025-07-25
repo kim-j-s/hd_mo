@@ -22,6 +22,11 @@
 		{{/if}}
 
 		<div class="header_right">
+			{{!-- 메인 간편모드 --}}
+			{{#if h-easy}}
+    			{{> cp/checkbox id="easySwitch" label_class="switch_check lg easy" role="switch" aria-checked="false" labelname="간편" }}
+			{{/if}}
+			{{!-- 메인 간편모드 --}}
 			{{!-- 하이펫 보험 강아지/고양이 선택 --}}
 			{{#if h-animaltype}}
 				<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5"><span>{{h-animaltype}}</span></button>
