@@ -4449,6 +4449,9 @@ strong {
 	background-size: 2.4rem auto;
 }
 /* swiper button */
+.btn_area .done {
+	display: none;
+}
 /* button_tag */
 .tag_item {
 	display: inline-block;
@@ -6914,6 +6917,19 @@ strong {
 	height: 2rem;
 	background-size: 1rem auto;
 }
+.inp_checkbox input[type="checkbox"] + .chk_label.switch_check.easy {
+	width: 5.4rem;
+}
+.inp_checkbox input[type="checkbox"] + .chk_label.switch_check.easy .label_cont {
+	position: absolute;
+	left: 2.4rem;
+	font-size: var(--font-size-body-xsmall);
+	color: var(--color-text-basic-inverse);
+	font-weight: 700;
+}
+.inp_checkbox input[type="checkbox"] + .chk_label.switch_check.easy::before {
+	width: 5.4rem;
+}
 .inp_checkbox input[type="checkbox"].right {
 	right: 0;
 }
@@ -7001,6 +7017,17 @@ strong {
 .inp_checkbox input[type="checkbox"]:checked + .chk_label.switch_check.lg::after {
 	left: 1.8rem;
 	background-size: 1.4rem auto;
+}
+.inp_checkbox input[type="checkbox"]:checked + .chk_label.switch_check.easy .label_cont {
+	left: 0.8rem;
+}
+.inp_checkbox input[type="checkbox"]:checked + .chk_label.switch_check.easy::before {
+	background: var(--color-icon-secondary);
+	border-color: var(--color-icon-secondary);
+}
+.inp_checkbox input[type="checkbox"]:checked + .chk_label.switch_check.easy::after {
+	left: 3.2rem;
+	background: var(--color-element-inverse) url(../../images/icon/toggle_open_ty2.svg) no-repeat center/1.4rem auto;
 }
 .inp_checkbox input[type="checkbox"]:checked + .chk_label.check_hide .sub_g_txt {
 	overflow: hidden;
@@ -8303,6 +8330,21 @@ strong {
 .comp_wrap.key_number .input_text:has(.int_txt.right) input {
 	padding-right: 0;
 }
+.comp_wrap.key_number:has(.phone.readonly) {
+	overflow: hidden;
+}
+.comp_wrap.key_number:has(.phone.readonly)::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--color-input-surface-disabled);
+}
+.comp_wrap.key_number:has(.phone.readonly) .hd_btn {
+	position: relative;
+}
 .comp_wrap .hd_btn {
 	--color-button-tertiary-fill: rgba(255, 255, 255, 1);
 }
@@ -8935,7 +8977,8 @@ strong {
 .list_ty3 + .tab_wrap {
 	margin-top: var(--gap-8);
 }
-.list_ty3 + .pop_title_h1 {
+.list_ty3 + .pop_title_h1,
+.list_ty3 + .acd_item {
 	margin-top: var(--gap-11);
 }
 .list_ty3 > li ~ li {
@@ -12225,6 +12268,32 @@ strong {
 }
 .banner_slide_wrap + .checkbox_group_wrap {
 	margin-top: var(--gap-8);
+}
+.main_slide_wrap {
+	margin: 0 -3.2rem;
+}
+.main_slide_wrap .pagination_item {
+	margin: auto;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	gap: var(--gap-3);
+}
+.main_slide_wrap .pagination_item .swiper_button {
+	width: 2.4rem;
+	height: 2.4rem;
+	background-size: 1.6rem auto;
+}
+.main_slide_wrap .pagination_item .swiper-pagination {
+	position: static !important;
+	-webkit-transform: translateY(0.4rem);
+	transform: translateY(0.4rem);
 }
 .bg_swiper_wrap {
 	background-color: var(--color-surface-gray-subtler);

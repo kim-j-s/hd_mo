@@ -694,6 +694,9 @@
 	position: inherit;
 	padding-bottom: 0;
 }
+.bi_opts_wrap .opts_area .opts_area_item .hd_btn_s_b1 > .text {
+	text-align: left;
+}
 .bi_opts_wrap .opts_area .oai_block {
 	-webkit-box-flex: 0;
 	-ms-flex: none;
@@ -1220,10 +1223,12 @@
 	color: var(--color-text-basic-inverse);
 	background: var(--color-border-secondary);
 }
+.container.home .home_card + .easy_none,
 .container.home .home_card + .acd_item,
 .container.home .home_card + .banner_box,
 .container.home .home_card + .register_box,
 .container.home .home_card ~ .home_card,
+.container.cyber .home_card + .easy_none,
 .container.cyber .home_card + .acd_item,
 .container.cyber .home_card + .banner_box,
 .container.cyber .home_card + .register_box,
@@ -1380,8 +1385,14 @@
 .container.cyber .banner_box a + a {
 	margin-top: var(--gap-1);
 }
-.container.home .banner_box + .register_box,
-.container.cyber .banner_box + .register_box {
+.container.home .easy_item + *,
+.container.home .easy_item > *,
+.container.cyber .easy_item + *,
+.container.cyber .easy_item > * {
+	margin-top: var(--gap-1);
+}
+.container.home .easy_none + *,
+.container.cyber .easy_none + * {
 	margin-top: var(--gap-1);
 }
 .container.home .btn_menu_search,
@@ -1488,6 +1499,10 @@
 .container.home .ing_banner + .ing_banner,
 .container.cyber .ing_banner + .ing_banner {
 	margin-top: var(--gap-1);
+}
+.container.home .ing_banner + .main_slide_wrap,
+.container.cyber .ing_banner + .main_slide_wrap {
+	margin: var(--gap-3) -3.2rem 0;
 }
 .container.home .my_list .title_box h2,
 .container.cyber .my_list .title_box h2 {
@@ -1948,6 +1963,42 @@
 .footer .footer_bottom .fbl_bottom {
 	margin-top: var(--gap-3);
 	color: var(--color-text-disabled);
+}
+.normal_cont.easy .easy_none {
+	display: none;
+	-webkit-transition: ease-out 0.3s;
+	transition: ease-out 0.3s;
+}
+.normal_cont.easy .easy_item {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: reverse;
+	-ms-flex-direction: column-reverse;
+	flex-direction: column-reverse;
+}
+.normal_cont.easy .easy_item .home_card .pro_tit,
+.normal_cont.easy .easy_item .home_card .btn_area {
+	display: none;
+}
+.normal_cont.easy .easy_item .home_card .icon_link {
+	margin: 0;
+}
+.normal_cont.easy .easy_item .home_card .icon_link a {
+	font-size: var(--font-size-easy-body-medium);
+	font-weight: 700;
+}
+.normal_cont.easy .easy_item .register_box a {
+	font-size: var(--font-size-easy-body-small);
+}
+.normal_cont.easy .easy_item .register_box a > span {
+	display: none;
+}
+.normal_cont.easy .easy_item .register_box a strong {
+	margin: 0;
+	padding-left: 2.8rem;
+	background-size: 2.4rem auto;
 }
 /* 자동차보험 - 고객정보 */
 .main_title {
