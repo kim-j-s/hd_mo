@@ -471,6 +471,16 @@ strong {
 			text-align: center;
 		}
 	}
+
+	// 버튼 있는 경우
+	> .btn_area {
+		margin-top: 12px;
+	}
+	&:has(.btn_area) {
+		+ .card_item_wrap {
+			margin-top: var(--gap-5);
+		}
+	}
 }
 
 // 목록 미노출 간격 재정의
