@@ -429,6 +429,23 @@
 		.input_text:has(.int_txt.right) input{
 			padding-right: 0;    
 		}
+
+		&:has(.phone.readonly) {
+			overflow: hidden;
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: var(--color-input-surface-disabled);
+
+			}
+			.hd_btn {
+				position: relative;
+			}
+		}
 	}
 
 	/* 현업 요청에 의한 색상 재정의 */
@@ -439,6 +456,7 @@
 		}
 	}
 }
+
 
 // 금액
 .price {
