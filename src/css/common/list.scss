@@ -1313,7 +1313,7 @@
 				color: var(--color-text-disabled-on);
 				padding-left: 26px;
 				background-repeat: no-repeat;
-				background-position: 4px center;
+				background-position: 4px 3px;
 				background-size: 16px auto;
 				//대상
 				&.person {
@@ -1431,6 +1431,12 @@
 		& ~ li {
 			margin-top: var(--gap-3);
 		}
+
+		> .info {
+			padding-left: 26px;
+			background: url(../images/content/bi/icon_info.svg) no-repeat 4px 3px / 16px auto;
+			color: var(--color-text-disabled-on);
+		}
 	}
 	& + .info_gray {
 		margin-top: var(--gap-7);
@@ -1481,6 +1487,7 @@
 			.title {
 				font-size: var(--font-size-body-medium);
 				color: var(--color-text-disabled-on);
+				max-width: none;
 				&::after {
 					content: '';
 					position: absolute;
