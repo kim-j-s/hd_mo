@@ -50,12 +50,21 @@
 	<body>
 		<div id="wrap" class="wrap">
 			<div id="header" class="header">
-				<div class="header_inner history_back_none">
+				<div class="header_inner">
 					<div class="header_left">
-						<button type="button" class="history_back"><span class="text">이전 페이지로 이동</span></button>
+						<h1 class="header_logo">
+							<a href="#"><img src="../../../images/header/img_logo.svg" alt="현대해상 다이렉트 홈으로" /></a>
+						</h1>
 					</div>
 
 					<div class="header_right">
+						<div class="inp_checkbox">
+							<input type="checkbox" id="easySwitch" role="switch" aria-checked="false" />
+							<label for="easySwitch" class="chk_label switch_check lg easy">
+								<span class="label_cont">간편</span>
+							</label>
+						</div>
+						<button type="button" class="ins_alarm"><span class="text">알림 팝업 열기</span></button>
 						<button type="button" class="allmenu_open"><span class="text">전체메뉴 열기</span></button>
 						<div class="nav_menu_wrap" aria-hidden="true">
 							<div class="nav_menu_inner">
@@ -412,168 +421,194 @@
 				<div class="content">
 					<div class="normal_cont">
 						<div class="home_card top">
-							<div class="">
-								<div class="cont" roll="button" title="진행중인 보험 페이지로 이동"><strong>최근 계산한 보험료</strong>가 있으신가요?</div>
-								<button type="button" class="close">
-									<span class="sr-only">닫기</span>
-								</button>
-							</div>
-							<div class="ing_banner">
-								<div class="cont" roll="button" title="진행중인 보험 페이지로 이동"><strong>자동차 보험(80고**44) 1,999,999원</strong> 계산중이시네요?</div>
-								<button type="button" class="close">
-									<span class="sr-only">닫기</span>
-								</button>
-							</div>
-							<div class="bg_main01">
-								<h2 class="title_h6 secondary">인터넷가입 평균 18.3% 저렴하게! 자동차보험</h2>
-								<div class="pro_tit">
-									<h3 class="h2_title">
-										날씨는 포근하게<br />
-										<strong>자동차보험은 탄탄하게</strong>
-									</h3>
-									<div class="btn_area basic">
-										<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_3">
-											<span class="text">보험료계산</span>
-										</button>
+							<div class="easy_none">
+								<div class="ing_banner">
+									<div class="cont" roll="button" title="진행중인 보험 페이지로 이동"><strong>최근 계산한 보험료</strong>가 있으신가요?</div>
+									<button type="button" class="close">
+										<span class="sr-only">닫기</span>
+									</button>
+								</div>
+								<div class="ing_banner">
+									<div class="cont" roll="button" title="진행중인 보험 페이지로 이동"><strong>자동차 보험(80고**44) 1,999,999원</strong> 계산중이시네요?</div>
+									<button type="button" class="close">
+										<span class="sr-only">닫기</span>
+									</button>
+								</div>
+
+								<div class="main_slide_wrap">
+									<div id="main_banner_wrap" class="swiper">
+										<div class="swiper-wrapper">
+											<a class="swiper-slide" href="javascrip:void(0);" title="페이지 이동">
+												<div class="inner">
+													<img src="../../../images/content/ho/img_main_banner01.png" alt="인터넷가입 평균 18.3% 저렴하게! 자동차보험 날씨는 포근하게 자동차보험은 탄탄하게 자동차보험 결제 최대 3만원 할인 보험료계산" />
+												</div>
+											</a>
+											<a class="swiper-slide" href="javascrip:void(0);" title="페이지 이동">
+												<div class="inner">
+													<img src="../../../images/content/ho/img_main_banner01.png" alt="인터넷가입 평균 18.3% 저렴하게! 자동차보험 날씨는 포근하게 자동차보험은 탄탄하게 자동차보험 결제 최대 3만원 할인 보험료계산" />
+												</div>
+											</a>
+											<a class="swiper-slide" href="javascrip:void(0);" title="페이지 이동">
+												<div class="inner">
+													<img src="../../../images/content/ho/img_main_banner01.png" alt="인터넷가입 평균 18.3% 저렴하게! 자동차보험 날씨는 포근하게 자동차보험은 탄탄하게 자동차보험 결제 최대 3만원 할인 보험료계산" />
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="pagination_item">
+										<button class="swiper_button swiper_button_left"></button>
+										<div class="swiper-pagination sp_ty1"></div>
+										<button class="swiper_button swiper_button_right"></button>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="home_card">
-							<div class="product_top">
-								<button type="button" class="product_top1" data-target="1">자동차</button>
-								<button type="button" class="product_top2" data-target="2">운전자</button>
-								<button type="button" class="product_top3" data-target="3">펫</button>
-								<button type="button" class="product_top4" data-target="4">재산/화재</button>
-								<button type="button" class="product_top5" data-target="5">어린이</button>
-								<button type="button" class="product_top6" data-target="6">건강·암</button>
-								<button type="button" class="product_top7" data-target="7">여행/레저</button>
-								<button type="button" class="product_top8" data-target="8">연금/저축</button>
-							</div>
-							<div class="btn_area">
-								<a href="javascript:void(0);" class="link_btn_big">
-									<span class="text">전체 상품이 궁금하신가요?</span>
+							<div class="easy_top">
+								<a href="javascript:void(0)" class="btn_link short_cut" title="페이지 이동">
+									<span class="text">전체상품</span>
 								</a>
 							</div>
 						</div>
-						<div class="banner_box">
-							<a href="javascript:void(0);" title="페이지 이동"><img src="../../../images/content/ho/img_banner02.png" alt="필요한 보험 가입하고 경품 받으세요 운전자/주택/어린이/암/건강/펫" /></a>
-							<a href="javascript:void(0);" title="페이지 이동"><img src="../../../images/content/ho/img_banner03.png" alt="커넥티드카 안전운전(UBI) 할인특약 원별 안전운전점수 추가할인특약 신설 5%추가할인 받으세요!" /></a>
-						</div>
-						<div class="register_box">
-							<a href="tel:1588-5656" title="전화 걸기">
-								차량 사고가 났다면<br />ARS ②번
-								<strong class="call">사고접수</strong>
-							</a>
-							<a href="javascript:void(0);" title="페이지 이동">
-								차량 고장이 났다면<br />모바일 접수!
-								<strong class="mobilize">고장출동</strong>
-							</a>
-						</div>
-						<div class="home_card bg_primary">
-							<div class="pro_tit">
-								<h3 class="h2_title">
-									<strong>번거로운 계약/보상 절차</strong>를 <br />
-									줄여보세요
-								</h3>
+						<div class="easy_none">
+							<div class="home_card">
+								<div class="product_top">
+									<button type="button" class="product_top1" data-target="1" title="아래 컨텐츠로 이동">자동차</button>
+									<button type="button" class="product_top2" data-target="2" title="아래 컨텐츠로 이동">운전자</button>
+									<button type="button" class="product_top3" data-target="3" title="아래 컨텐츠로 이동">펫</button>
+									<button type="button" class="product_top4" data-target="4" title="아래 컨텐츠로 이동">재산/화재</button>
+									<button type="button" class="product_top5" data-target="5" title="아래 컨텐츠로 이동">어린이</button>
+									<button type="button" class="product_top6" data-target="6" title="아래 컨텐츠로 이동">건강·암</button>
+									<button type="button" class="product_top7" data-target="7" title="아래 컨텐츠로 이동">여행/레저</button>
+									<button type="button" class="product_top8" data-target="8" title="아래 컨텐츠로 이동">연금/저축</button>
+								</div>
+								<div class="btn_area">
+									<a href="javascript:void(0);" class="link_btn_big">
+										<span class="text">전체 상품이 궁금하신가요?</span>
+									</a>
+								</div>
 							</div>
-							<div class="icon_link">
-								<a href="javascript:void(0);" class="item opt1" title="페이지 이동">계약조회</a>
-								<a href="javascript:void(0);" class="item opt2" title="페이지 이동">계약변경</a>
-								<a href="javascript:void(0);" class="item opt3" onclick="openHDPopup(this,'pop_type01');" title="팝업 열림">보험증명서</a>
-								<a href="javascript:void(0);" class="item opt10" onclick="openHDPopup(this,'pop_type02');" title="팝업 열림">보험금청구</a>
+							<div class="banner_box">
+								<a href="javascript:void(0);" title="페이지 이동"><img src="../../../images/content/ho/img_banner02.png" alt="필요한 보험 가입하고 경품 받으세요 운전자/주택/어린이/암/건강/펫" /></a>
+								<a href="javascript:void(0);" title="페이지 이동"><img src="../../../images/content/ho/img_banner03.png" alt="커넥티드카 안전운전(UBI) 할인특약 원별 안전운전점수 추가할인특약 신설 5%추가할인 받으세요!" /></a>
 							</div>
-							<div class="btn_area">
-								<a href="javascript:void(0);" class="link_btn_big pink_search">
-									<span class="text">더 많은 메뉴를 검색해보세요</span>
+						</div>
+						<div class="easy_item">
+							<div class="register_box">
+								<a href="tel:1588-5656" title="전화 걸기">
+									<span>차량 사고가 났다면<br />ARS ②번</span>
+									<strong class="call">사고접수</strong>
+								</a>
+								<a href="javascript:void(0);" title="페이지 이동">
+									<span>차량 고장이 났다면<br />모바일 접수!</span>
+									<strong class="mobilize">고장출동</strong>
 								</a>
 							</div>
-						</div>
-						<div class="home_card">
-							<div class="pro_tit">
-								<h3 class="h2_title">
-									걱정은 줄이고 <br />
-									<strong>혜택을 더해보세요</strong>
-								</h3>
+							<div class="home_card bg_primary">
+								<div class="pro_tit">
+									<h3 class="h2_title">
+										<strong>번거로운 계약/보상 절차</strong>를 <br />
+										줄여보세요
+									</h3>
+								</div>
+								<div class="icon_link">
+									<a href="javascript:void(0);" class="item opt1" title="페이지 이동">계약조회</a>
+									<a href="javascript:void(0);" class="item opt2" title="페이지 이동">계약변경</a>
+									<a href="javascript:void(0);" class="item opt3" onclick="openHDPopup(this,'pop_type01');" title="팝업 열림">보험증명서</a>
+									<a href="javascript:void(0);" class="item opt10" onclick="openHDPopup(this,'pop_type02');" title="팝업 열림">보험금청구</a>
+								</div>
+								<div class="btn_area">
+									<a href="javascript:void(0);" class="link_btn_big pink_search">
+										<span class="text">더 많은 메뉴를 검색해보세요</span>
+									</a>
+								</div>
 							</div>
-							<div class="bn_scroll_wrap">
-								<div class="bn_item_wrap ty4 vw50">
-									<a href="javascript:void(0);" title="카드혜택 페이지로 이동">
-										<div class="badge_wrap">
-											<!-- <span class="hd_badge outline solid_pastel c_primary size_m">결제혜택</span>
+						</div>
+						<div class="easy_none">
+							<div class="home_card">
+								<div class="pro_tit">
+									<h3 class="h2_title">
+										걱정은 줄이고 <br />
+										<strong>혜택을 더해보세요</strong>
+									</h3>
+								</div>
+								<div class="bn_scroll_wrap">
+									<div class="bn_item_wrap ty4 vw50">
+										<a href="javascript:void(0);" title="카드혜택 페이지로 이동">
+											<div class="badge_wrap">
+												<!-- <span class="hd_badge outline solid_pastel c_primary size_m">결제혜택</span>
 			                                <span class="hd_badge outline solid_pastel c_secondary size_m">포인트결제</span>
 			                                <span class="hd_badge outline solid_pastel c_warning size_m">무이자할부</span>
 			                                <span class="hd_badge outline solid_pastel c_success size_m">제휴</span> -->
-											<span class="hd_badge outline solid_pastel c_secondary size_m">포인트결제</span>
+												<span class="hd_badge outline solid_pastel c_secondary size_m">포인트결제</span>
+											</div>
+											<div class="cont">3만포인트부터 전액사용까지</div>
+										</a>
+										<a href="javascript:void(0);" title="카드혜택 페이지로 이동">
+											<div class="badge_wrap">
+												<span class="hd_badge outline solid_pastel c_primary size_m">결제혜택</span>
+											</div>
+											<div class="cont">최대 3만원 주유권 또는 캐시백</div>
+										</a>
+										<a href="javascript:void(0);" title="카드혜택 페이지로 이동">
+											<div class="badge_wrap">
+												<span class="hd_badge outline solid_pastel c_warning size_m">무이자할부</span>
+											</div>
+											<div class="cont">2~6개월 무이자할부</div>
+										</a>
+										<a href="javascript:void(0);" title="제휴혜택 페이지로 이동">
+											<div class="badge_wrap">
+												<span class="hd_badge outline solid_pastel c_success size_m">제휴</span>
+											</div>
+											<div class="cont">차량정비 할인쿠폰받기</div>
+										</a>
+										<a href="javascript:void(0);" title="제휴혜택 페이지로 이동">
+											<div class="badge_wrap">
+												<span class="hd_badge outline solid_pastel c_success size_m">제휴</span>
+											</div>
+											<div class="cont">차량정비 할인쿠폰받기</div>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="home_card gray">
+								<div class="pro_tit">
+									<h3 class="h2_title">
+										마음을 담아 <br />
+										<strong>유익한 정보를 드려요</strong>
+									</h3>
+								</div>
+								<div class="card_item_wrap">
+									<a href="javascript:void(0);" class="card_item">
+										<div class="bn_main01">
+											어떻게 다를까?<br />
+											자동차 보험과 운전자보험의 차이점
 										</div>
-										<div class="cont">3만포인트부터 전액사용까지</div>
-									</a>
-									<a href="javascript:void(0);" title="카드혜택 페이지로 이동">
-										<div class="badge_wrap">
-											<span class="hd_badge outline solid_pastel c_primary size_m">결제혜택</span>
-										</div>
-										<div class="cont">최대 3만원 주유권 또는 캐시백</div>
-									</a>
-									<a href="javascript:void(0);" title="카드혜택 페이지로 이동">
-										<div class="badge_wrap">
-											<span class="hd_badge outline solid_pastel c_warning size_m">무이자할부</span>
-										</div>
-										<div class="cont">2~6개월 무이자할부</div>
-									</a>
-									<a href="javascript:void(0);" title="제휴혜택 페이지로 이동">
-										<div class="badge_wrap">
-											<span class="hd_badge outline solid_pastel c_success size_m">제휴</span>
-										</div>
-										<div class="cont">차량정비 할인쿠폰받기</div>
-									</a>
-									<a href="javascript:void(0);" title="제휴혜택 페이지로 이동">
-										<div class="badge_wrap">
-											<span class="hd_badge outline solid_pastel c_success size_m">제휴</span>
-										</div>
-										<div class="cont">차량정비 할인쿠폰받기</div>
 									</a>
 								</div>
 							</div>
-						</div>
-						<div class="home_card gray">
-							<div class="pro_tit">
-								<h3 class="h2_title">
-									마음을 담아 <br />
-									<strong>유익한 정보를 드려요</strong>
-								</h3>
-							</div>
-							<div class="card_item_wrap">
-								<a href="javascript:void(0);" class="card_item">
-									<div class="bn_main01">
-										어떻게 다를까?<br />
-										자동차 보험과 운전자보험의 차이점
+							<div class="acd_item acd_item_ty5">
+								<div class="acd_head active">
+									<button type="button" class="acd_btn" aria-expanded="true"><span>알려드려요</span></button>
+								</div>
+								<div class="acd_cont">
+									<div class="inner" style="display: block">
+										<ul class="opt_select_list opt_case5">
+											<li>
+												<a href="javascript:void(0);" class="option" title="페이지 이동">
+													<span class="opi_t1">3월 신용카드 무이자할부 안내</span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="option" title="페이지 이동">
+													<span class="opi_t1">신상품 '다이렉트 오토바이운전바보험' 출시</span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="option" title="페이지 이동">
+													<span class="opi_t1">온라인플랫폼 서비스 이용약관 개정 안내</span>
+												</a>
+											</li>
+										</ul>
 									</div>
-								</a>
-							</div>
-						</div>
-						<div class="acd_item acd_item_ty5">
-							<div class="acd_head active">
-								<button type="button" class="acd_btn" aria-expanded="true"><span>새로운 소식을 알려드려요</span></button>
-							</div>
-							<div class="acd_cont">
-								<div class="inner" style="display: block">
-									<ul class="opt_select_list opt_case5">
-										<li>
-											<a href="javascript:void(0);" class="option" title="페이지 이동">
-												<span class="opi_t1">3월 신용카드 무이자할부 안내</span>
-											</a>
-										</li>
-										<li>
-											<a href="javascript:void(0);" class="option" title="페이지 이동">
-												<span class="opi_t1">신상품 '다이렉트 오토바이운전바보험' 출시</span>
-											</a>
-										</li>
-										<li>
-											<a href="javascript:void(0);" class="option" title="페이지 이동">
-												<span class="opi_t1">온라인플랫폼 서비스 이용약관 개정 안내</span>
-											</a>
-										</li>
-									</ul>
 								</div>
 							</div>
 						</div>
@@ -635,7 +670,7 @@
 				</div>
 			</div>
 			<!-- toolbar -->
-			<div class="toolbar ty2">
+			<div class="toolbar ty1">
 				<a href="javascript:void(0);" class="home" title="페이지 이동">홈</a>
 				<a href="javascript:void(0);" class="join" title="페이지 이동">보험가입</a>
 				<a href="javascript:void(0);" class="benefit" title="페이지 이동">혜택/서비스</a>
@@ -727,7 +762,46 @@
 		</div>
 		<!-- e: popup area -->
 
-		<script></script>
+		<script>
+			$(document).ready(function () {
+				var bannerSwiper = new Swiper("#main_banner_wrap", {
+					slidesPerView: 1,
+					updateOnWindowResize: true,
+					navigation: {
+						nextEl: ".swiper_button_right",
+						prevEl: ".swiper_button_left",
+					},
+					a11y: {
+						enabled: true,
+						prevSlideMessage: "이전 항목으로 이동",
+						nextSlideMessage: "다음 항목으로 이동",
+					},
+					pagination: {
+						el: ".swiper-pagination",
+						clickable: true,
+						type: "bullets",
+						renderBullet: function (index, className) {
+							return `<span class="${className}" aria-label="Go to slidesss ${index + 1}"></span>`;
+						},
+					},
+				});
+				$("#easySwitch").on("change", function () {
+					if ($(this).is(":checked")) {
+						$(".normal_cont").addClass("easy");
+						$(".toolbar").hide();
+						$(".easy_top").show();
+						$(".easy_item > .home_card").removeClass("bg_primary");
+						$(".easy_item .icon_link").addClass("list");
+					} else {
+						$(".normal_cont").removeClass("easy");
+						$(".toolbar").show();
+						$(".easy_top").hide();
+						$(".easy_item > .home_card").addClass("bg_primary");
+						$(".easy_item .icon_link").removeClass("list");
+					}
+				});
+			});
+		</script>
 
 		<!-- 전체메뉴 -->
 		<!-- s: Full 팝업 -->

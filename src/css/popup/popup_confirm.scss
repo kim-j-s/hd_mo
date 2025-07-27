@@ -16,21 +16,23 @@
 			transition-duration: 0.3s;
 
 			.popup_inner {
-				// max-height: 85%;
 				max-height: calc(100% - 20px);
 				height: auto;
 				width: calc(100% - 96px);
 				border-radius: 32px;
 
 				.popup_head {
-					min-height: 32px;
+					min-height: 56px;
 					padding: 14px 36px 14px 16px;
 				}
 
 				.popup_cont {
 					padding: 12px 24px 16px;
-					margin-top: var(--gap-2);
 					text-align: center;
+
+					&:has(.msg_icon.mi_info) {
+						padding-top: 0;
+					}
 
 					.info_confirm {
 						padding-top: 48px;
