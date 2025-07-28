@@ -1,5 +1,5 @@
 {{#> layout/default page-title="자동차번호 확정/변경 | 마이페이지"}}
-	<div id="wrap" class="wrap">
+	<div id="wrap" class="wrap easy-mode">
 		<!-- s: 25-07-11 수정 -->
 		{{> layout/header h-title="자동차번호 확정/변경" h-ins="pop_insChk" }}
 		<!-- e: 25-07-11 수정 -->
@@ -8,9 +8,11 @@
 
 				<!-- s: content_top -->
 				<div class="content_top">
+					<!-- s: 25-07-28 수정 -->
 					<h2 class="title_h2">
-						<strong>확정/변경할 정보를<br> 입력해주세요</strong>
+						<strong>확정/변경</strong>할 <strong>정보</strong>를<br> 입력해주세요
 					</h2>
+					<!-- e: 25-07-28 수정 -->
 				</div>
 				<!-- e: content_top -->
 
@@ -22,10 +24,12 @@
 					</dl>
 					<!-- e: 확정 -->
 					<!-- s: 변경 -->
-					<dl>
-						<dt>자동차번호</dt>
+					<!-- s: 25-07-28 수정-->
+					<!-- <dl>
+						<dt>차량번호</dt>
 						<dd>18루**22</dd>
-					</dl>
+					</dl> -->
+					<!-- e: 25-07-28 수정-->
 					<!-- e: 변경 -->
 					<dl>
 						<dt>보험기간</dt>
@@ -34,28 +38,29 @@
 				</div>
 
 				<div class="form_group_wrap">
+					<!-- s: 25-07-28 수정 -->
 					<div class="form_line">
-						<div class="label_tit">확정/변경 자동차번호</div>
+						<div class="label_tit">확정/변경 차량번호</div>
 						<!-- s: 25-06-12 수정 -->
 						<!-- s: 25-06-09 수정 -->
-						{{> cp/text placeholder="123가**67(띄어쓰기 없이)" inp-title="확정/변경 자동차번호 입력" maxlength="9"}}
+						{{> cp/text placeholder="123가**67(띄어쓰기 없이)" inp-title="확정/변경 차량번호 입력" maxlength="9"}}
 						<!-- e: 25-06-09 수정 -->
 						 <!-- e: 25-06-12 수정 -->
 					</div>
 					<div class="form_line">
-						<div class="label_tit">변경 기준일(00시)</div>
+						<div class="label_tit">변경기준일</div>
 						{{> cp/text cal=true value="2025.12.18" }}
 					</div>
-					<!-- <ul class="list_ty2">
-						<li>변경기준일의 00시부터 보험종료일 24시까지 변경내용의 효력이 발생합니다.</li>
+					<ul class="list_ty2">
 						<li>
-							변경기준일은 다음날짜로 선택해 주세요.
+							변경기준일은 다음 날짜로 선택해주세요.
 							<ul class="list_ty5">
-								<li>자동차번호 확정: 책임개시일(대체후 차량인 경우 차량대체일)</li>
+								<li>자동차번호 확정: 책임개시일(대체 후 차량인 경우 차량대체일)</li>
 								<li>자동차번호 변경: 변경등록일</li>
 							</ul>
 						</li>
-					</ul> -->
+					</ul>
+					<!-- e: 25-07-28 수정 -->
 					<div class="info_gray ty2">
 						<div class="insurance_policyBox">
 							<div class="insurance_date">
@@ -144,6 +149,7 @@
 		<!-- s: 하단 고정 버튼 영역 -->
 		<div class="bottom_fix_wrap">
 			<div class="btn_area">
+				{{> cp/button type="3" size="1" b-text="다음"}}
 				{{> cp/button type="1" size="1" b-text="다음" disabled=true}}
 			</div>
 		</div>
