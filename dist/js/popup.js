@@ -58,9 +58,11 @@ function openHDPopup($triggerEl, target) {
 		draggable($target);
 	}
 
-	$('.popup_cont').animate({
-		scrollTop: 0 // 팝업 열 때 스크롤을 최상단으로 이동
-	}, 0);
+	if($content) {
+		$content.animate({
+			scrollTop: 0 // 팝업 열 때 스크롤을 최상단으로 이동
+		}, 0);
+	}
 
 	$target.attr("aria-hidden", "false");
 	$target.find(".popup_inner").attr({
@@ -188,9 +190,9 @@ function generateUUID() {
 
 /* Toast 팝업 */
 let toastTimer = null;
-function toastAction(click) {
-	const $toast = $(".toast_wrap"),
-		msg = $(click).data("msg");
+function toastAction(target, msg) {
+	const $toast = $(".toast_wrap");
+		//msg = $(target).data("msg");
 
 	if (toastTimer != undefined) return;
 	// console.log(toastTimer);

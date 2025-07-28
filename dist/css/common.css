@@ -4348,8 +4348,8 @@ strong {
 }
 .btn_rd_close {
 	width: 3.2rem;
-	height: 3.2rem;
-	background: url(../images/icon/close_ty1.svg) no-repeat center/1.6rem auto;
+	height: var(--size-height-5);
+	background: url(../images/icon/close_ty3.svg) no-repeat center/1.6rem auto;
 	border: var(--border-width-static-regular) solid var(--color-button-icon-fill-border);
 	border-radius: 100%;
 }
@@ -5607,6 +5607,9 @@ strong {
 .card_item_wrap .card_item ~ .card_item.non_chk .item_inner [class^="inp_"] .chk_label::before {
 	top: 1px;
 }
+.card_item_wrap .card_item ~ .card_item.non_chk .item_inner .sub_title {
+	color: var(--color-text-basic);
+}
 .card_item_wrap .card_item .item_inner {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -5696,7 +5699,7 @@ strong {
 }
 .card_item_wrap .card_item .card_link .item_top .title_info .main_title {
 	padding-right: 3rem;
-	background: url(../images/icon/arrowRight_ty4.svg) no-repeat right top 0.35rem/2rem auto;
+	background: url(../images/icon/arrowRight_ty4.svg) no-repeat right 0.2rem top 0.35rem/2rem auto;
 }
 .card_item_wrap .card_item .card_link[aria-disabled="true"] .item_top .title_info .main_title {
 	cursor: not-allowed;
@@ -5912,6 +5915,9 @@ strong {
 	font-size: var(--font-size-body-xsmall);
 	line-height: 1.8rem;
 }
+.card_item_wrap .card_item .card_list_ty1 > li.subitem .cont {
+	color: var(--color-text-subtle);
+}
 .card_item_wrap .card_item .card_list_ty1 > li + .subitem {
 	margin-top: -0.8rem;
 }
@@ -6019,6 +6025,12 @@ strong {
 .card_item_wrap .card_item.disabled .card_link .item_top .title_info .main_title {
 	padding-right: 3rem;
 	background: url(../images/icon/arrowRight_disabled_ty2.svg) no-repeat right bottom/2.4rem auto;
+}
+.card_item_wrap .card_item.disabled .hd_btn:disabled {
+	background-color: var(--color-button-disabled-fill);
+}
+.card_item_wrap .card_item.disabled .hd_btn:disabled span {
+	background-color: transparent;
 }
 .card_item_wrap .card_item.selected:not(.disabled) {
 	background-color: #fff;
@@ -6209,6 +6221,7 @@ strong {
 }
 .card_list_wrap > li .card_wrap > dt .title + .sub_text {
 	margin-top: var(--gap-3);
+	color: var(--color-text-information);
 }
 .card_list_wrap > li .card_wrap > dt .icon {
 	padding-left: 3.2rem;
@@ -6272,7 +6285,7 @@ strong {
 .card_list_wrap > li .card_wrap > dd {
 	margin-top: var(--gap-5);
 	padding-top: 1.6rem;
-	border-top: var(--border-width-static-regular) solid var(--color-border-gray-light);
+	border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 }
 .card_list_wrap > li .card_wrap > dd.card_cont_list dl {
 	display: -webkit-box;
@@ -6512,7 +6525,7 @@ strong {
 	transform: translateY(-50%);
 	width: 30%;
 	height: 0.4rem;
-	background: var(--color-light-primary-60);
+	background: var(--color-border-primary);
 	border-radius: 0.4rem;
 }
 .card_item.donation .inner_cont .progress .bar .guage:after {
@@ -6526,7 +6539,7 @@ strong {
 	width: 0.8rem;
 	height: 0.8rem;
 	background: #fff;
-	border: 0.2rem solid var(--color-light-primary-60);
+	border: 1px solid var(--color-border-primary);
 	border-radius: 99.9rem;
 }
 .card_item.donation .inner_cont .progress .progress_info {
@@ -6661,7 +6674,7 @@ strong {
 }
 .form_card_case {
 	position: relative;
-	padding: 1.6rem 2rem 2.4rem;
+	padding: var(--padding-8) var(--padding-7);
 	border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 	border-radius: 2.4rem;
 }
@@ -6669,7 +6682,8 @@ strong {
 .form_card_case + .btn_area.btn_area_space2 {
 	margin-top: var(--gap-5);
 }
-.form_card_case .select_item + .form_group_wrap {
+.form_card_case .select_item + .form_group_wrap,
+.form_card_case .title_h4 + .form_group_wrap {
 	margin-top: var(--gap-5);
 }
 .form_card_case + .btn_area {
@@ -9896,6 +9910,7 @@ strong {
 	position: absolute;
 	top: 0;
 	left: 0;
+	color: var(--color-text-primary);
 }
 .star_list > span:nth-child(2)::before {
 	content: "**";
@@ -10289,6 +10304,16 @@ strong {
 }
 .call_info_list .item + .item {
 	margin-top: var(--gap-5);
+}
+.has_title li + li {
+	margin-top: var(--gap-9);
+}
+.has_title li::before {
+	top: 4.3rem;
+}
+.has_title li .pop_title_h2 {
+	margin-left: -1.8rem;
+	margin-bottom: var(--gap-5);
 }
 /* list_box */
 /* box_list(목록형) */
@@ -13792,7 +13817,7 @@ strong {
 .info_gray .list_depth_ty2_group {
 	margin: var(--padding-5) 0 0 var(--padding-3);
 }
-.info_gray .list_depth_ty2_group .list_depth_ty2 {
+.info_gray .list_depth_ty2_group .list_depth_ty2 > li {
 	font-size: var(--font-size-body-medium);
 }
 .call_box {

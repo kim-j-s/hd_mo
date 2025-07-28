@@ -1,0 +1,279 @@
+{{#> layout/guide }}
+	<style lang="scss">
+		.acddee {
+			align-items: flex-start;
+			flex-flow: row wrap;
+			.hd_btn {
+				flex: 1 1 auto;				
+			}
+		}
+	</style>
+	<div class="guide_h1">Button (Easy Mode)</div>
+<div class="easy-mode">
+	<!-- 기본 버튼 variation -->
+	<div class="guide_h4">Button variation(타입별)</div>
+
+	<div class="guide_discription">기본형</div>
+	<div class="btn_area">
+		{{> cp/button type="3" size="2" b-text="개인정보 변경"}}
+	</div>
+	
+	<!-- [Type(1) - default] -->
+	<div class="guide_discription">[Type(1) default] type="1"</div>
+	<div class="btn_area acddee">
+	{{> cp/button type="1" size="1" b-text="xlarge 72px"}}
+	{{> cp/button type="1" size="2" b-text="CTA 64px"}}
+	{{> cp/button type="1" size="3" b-text="large 56px"}}
+	{{> cp/button type="1" size="4" b-text="medium 48px"}}
+	{{> cp/button type="1" size="5" b-text="small 40px"}}
+	{{> cp/button type="1" size="6" b-text="xsmall 32px"}}
+	</div>
+
+	<div class="guide_discription">[Type(1) default:disabled] type="1"</div>
+	<div class="btn_area acddee">
+	{{> cp/button type="1" size="1" b-text="xlarge 72px" disabled="true"}}
+	{{> cp/button type="1" size="2" b-text="CTA 64px" disabled="true"}}
+	{{> cp/button type="1" size="3" b-text="large 56px" disabled="true"}}
+	{{> cp/button type="1" size="4" b-text="medium 48px" disabled="true"}}
+	{{> cp/button type="1" size="5" b-text="small 40px" disabled="true"}}
+	{{> cp/button type="1" size="6" b-text="xsmall 32px" disabled="true"}}
+	</div>
+
+	<!-- [Type(2) - secondary] -->
+	<div class="guide_discription">[Type(2) secondary] type="2"</div>
+	<div class="btn_area acddee">
+	{{> cp/button type="2" size="1" b-text="xlarge 72px"}}
+	{{> cp/button type="2" size="2" b-text="CTA 64px"}}
+	{{> cp/button type="2" size="3" b-text="large 56px"}}
+	{{> cp/button type="2" size="4" b-text="medium 48px"}}
+	{{> cp/button type="2" size="5" b-text="small 40px"}}
+	{{> cp/button type="2" size="6" b-text="xsmall 32px"}}
+	</div>
+
+	<div class="guide_discription">[Type(2) secondary:disabled] type="2"</div>
+	<div class="btn_area acddee">
+	{{> cp/button type="2" size="1" b-text="xlarge 72px" disabled="true"}}
+	{{> cp/button type="2" size="2" b-text="CTA 64px" disabled="true"}}
+	{{> cp/button type="2" size="3" b-text="large 56px" disabled="true"}}
+	{{> cp/button type="2" size="4" b-text="medium 48px" disabled="true"}}
+	{{> cp/button type="2" size="5" b-text="small 40px" disabled="true"}}
+	{{> cp/button type="2" size="6" b-text="xsmall 32px" disabled="true"}}
+	</div>
+
+	<!-- [Type - tertiary] -->
+	<div class="guide_discription">[Type(3) tertiary] type="3"</div>
+	<div class="btn_area acddee">
+	{{> cp/button type="3" size="1" b-text="xlarge 72px"}}
+	{{> cp/button type="3" size="2" b-text="CTA 64px"}}
+	{{> cp/button type="3" size="3" b-text="large 56px"}}
+	{{> cp/button type="3" size="4" b-text="medium 48px"}}
+	{{> cp/button type="3" size="5" b-text="small 40px"}}
+	{{> cp/button type="3" size="6" b-text="xsmall 32px"}}
+	</div>
+
+	<div class="guide_discription">[Type(3) tertiary:disabled] type="3"</div>
+	<div class="btn_area acddee">
+	{{> cp/button type="3" size="1" b-text="xlarge 72px" disabled="true"}}
+	{{> cp/button type="3" size="2" b-text="CTA 64px" disabled="true"}}
+	{{> cp/button type="3" size="3" b-text="large 56px" disabled="true"}}
+	{{> cp/button type="3" size="4" b-text="medium 48px" disabled="true"}}
+	{{> cp/button type="3" size="5" b-text="small 40px" disabled="true"}}
+	{{> cp/button type="3" size="6" b-text="xsmall 32px" disabled="true"}}
+	</div>
+
+
+	<!-- 아이콘 버튼 -->
+	<div class="guide_h4">icon 형태 Button</div>
+	<div class="guide_discription">
+		<p>- leftIcon, rightIcon속성에 svg 경로를 넣은 클래스를 지정한다.</p>
+		<p>- icon.scss 파일 내부에 아이콘 에셋을 불러오는 클래스를 생성하여 사용</p>
+	</div>
+
+	<!-- [Type - Icon] -->
+	<div class="guide_discription">icon 위치 적용 예시</div>
+	<div class="btn_area acddee">
+		{{> cp/button type="1" size="1" leftIcon="downloadSvg_ty1" b-text="left icon"}}
+		{{> cp/button type="1" size="1" rightIcon="arrowRightSvg_ty1" b-text="right icon"}}
+		{{> cp/button type="1" size="1" leftIcon="downloadSvg_ty1" rightIcon="arrowRightSvg_ty1" b-text="both icon"}}
+		<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1 between">
+			<span class="text">between icon</span>
+			<i class="hd_icon downloadSvg_ty1"></i>
+		</button>
+	</div>
+	
+	<div class="guide_discription">icon 타입별 케이스 - type1</div>
+	<div class="btn_area acddee">
+		{{> cp/button type="1" size="1" rightIcon="downloadSvg_ty1" b-text="downloadSvg_ty1"}}
+		{{> cp/button type="1" size="1" rightIcon="arrowRightSvg_ty1" b-text="arrowRightSvg_ty1"}}
+	</div>
+	<div class="guide_discription">icon 타입별 케이스 - type2</div>
+	<div class="btn_area acddee">
+		{{> cp/button type="2" size="1" rightIcon="downloadSvg_ty2" b-text="downloadSvg_ty2"}}
+		{{> cp/button type="2" size="1" rightIcon="arrowRightSvg_ty2" b-text="arrowRightSvg_ty2"}}
+		{{> cp/button type="2" size="1" rightIcon="cameraSvg" b-text="cameraSvg"}}
+	</div>
+	<div class="guide_discription">icon 타입별 케이스 - type3</div>
+	<div class="btn_area acddee">
+		{{> cp/button type="3" size="1" rightIcon="downloadSvg" b-text="downloadSvg"}}
+		{{> cp/button type="3" size="1" rightIcon="arrowRightSvg" b-text="arrowRightSvg"}}
+		{{> cp/button type="3" size="1" rightIcon="openWindowSvg" b-text="버튼 케이스"}}
+		<a href="https://accident.knia.or.kr" class="hd_btn hd_btn_ty_3 hd_btn_s_1" target="_blank" title="새창열림">
+			<span class="text">새창열림 openWindowSvg</span>
+			<i class="hd_icon openWindowSvg"></i>
+		</a>
+		<a href="#" class="hd_btn hd_btn_ty_3 hd_btn_s_1">
+			<span class="text">pdfSvg</span>
+			<i class="hd_icon pdfSvg"></i>
+		</a>
+		{{> cp/button type="3" size="1" rightIcon="mailSvg" b-text="mailSvg"}}
+		{{> cp/button type="3" size="1" rightIcon="documentSvg" b-text="documentSvg"}}
+		{{> cp/button type="3" size="1" rightIcon="pictureSvg" b-text="pictureSvg"}}
+		{{> cp/button type="3" size="1" rightIcon="pdfSvg" b-text="pdfSvg"}}
+		{{> cp/button type="3" size="1" rightIcon="docSvg" b-text="docSvg"}}
+		{{> cp/button type="3" size="1" rightIcon="registerSvg" b-text="registerSvg"}}
+		{{> cp/button type="3" size="1" rightIcon="shareSvg" b-text="shareSvg"}}  
+		{{> cp/button type="3" size="1" rightIcon="resetSvg" b-text="resetSvg" btn-title="정보입력 페이지로 이동"}}
+		{{> cp/button type="3" size="1" rightIcon="deleteSvg" b-text="deleteSvg"}}
+		{{> cp/button type="3" size="1" rightIcon="plusSvg" b-text="plusSvg" }}
+		{{> cp/button type="3" size="1" rightIcon="hiwalkSvg" b-text="hiwalkSvg" }}
+		{{> cp/button type="3" size="1" rightIcon="docSearchSvg" b-text="docSearchSvg" }}
+		{{> cp/button type="3" size="1" rightIcon="searchGraySvg" b-text="searchGraySvg" }}
+		{{> cp/button type="3" size="1" rightIcon="callSvg" b-text="callSvg" }}
+		<a href="#" class="hd_btn hd_btn_ty_3 hd_btn_s_1">
+			<span class="text">pdfSvg</span>
+			<i class="hd_icon pdfSvg"></i>
+		</a>
+		<a href="#" class="hd_btn hd_btn_ty_3 hd_btn_s_1">
+			<span class="text">docSvg</span>
+			<i class="hd_icon docSvg"></i>
+		</a>
+		<a href="#" class="hd_btn hd_btn_ty_3 hd_btn_s_1">
+			<span class="text">pngSvg</span>
+			<i class="hd_icon pngSvg"></i>
+		</a>
+		<a href="#" class="hd_btn hd_btn_ty_3 hd_btn_s_1">
+			<span class="text">jpgSvg</span>
+			<i class="hd_icon jpgSvg"></i>
+		</a>
+		<a href="#" class="hd_btn hd_btn_ty_3 hd_btn_s_1">
+			<span class="text">bmpSvg</span>
+			<i class="hd_icon bmpSvg"></i>
+		</a>
+	</div>
+
+	<div class="guide_discription">icon 타입별 케이스 - text 없는 케이스</div>
+	<div class="btn_area">
+		{{> cp/button type="3" size="1" rightIcon="shareSvg" noText=true }}
+	</div>
+
+
+	<!-- text button -->
+	<div class="guide_h4">바로가기 버튼(Text button)</div>
+	<div class="guide_discription">.short_cut</div>
+	{{> cp/linkButton bl_class="short_cut lg" bl_text="기본링크 20px(lg)" bl_title="페이지 이동" }}<br>
+	{{> cp/linkButton bl_class="short_cut primary lg" bl_text="기본링크 primary 20px(lg)" bl_title="페이지 이동" }}<br>
+	{{> cp/linkButton bl_class="short_cut" bl_text="기본링크 18px" blank="예제" }}<br>
+	{{> cp/linkButton bl_class="short_cut sm" bl_text="기본링크 16px(sm)" pop_id="pop_type01" question_tit="링크" }}<br>
+
+
+	<!-- icon only button -->
+	<div class="guide_h4">아이콘 단독 버튼</div>
+	<div class="btn_area hd_btn_ty_icon">
+		{{> cp/button size="3" rightIcon="shareSvg" noText=true }} <!-- lg 32px -->
+		{{> cp/button size="4" rightIcon="shareSvg" noText=true }} <!-- md 24px -->
+		{{> cp/button size="5" rightIcon="shareSvg" noText=true }} <!-- sm 20px -->
+		{{> cp/button size="6" rightIcon="shareSvg" noText=true }} <!-- xs 16px -->
+	</div>
+
+
+	<!-- Grouping Botton(btn_area) -->
+	<div class="guide_h4">Grouping Button (.btn_area) - 스타일 미정의 상태 - 구조는 사용</div>
+
+	<div class="guide_discription">row (Defalut)</div>
+	<div class="btn_area">
+		{{> cp/button type="1" size="3" b-text="버튼명"}}
+		{{> cp/button type="1" size="3" b-text="버튼명"}}
+		{{> cp/button type="1" size="3" b-text="버튼명"}}
+		{{> cp/button type="1" size="3" b-text="버튼명"}}
+	</div>
+
+	<div class="guide_discription">row (.btn_area.ty2)</div>
+	<div class="btn_area ty2">
+		{{> cp/button type="2" size="3" b-text="버튼명"}}
+		{{> cp/button type="2" size="3" b-text="버튼명"}}
+		{{> cp/button type="2" size="3" b-text="버튼명"}}
+		{{> cp/button type="2" size="3" b-text="버튼명" class="full"}}
+		{{> cp/button type="2" size="3" b-text="버튼명" class="half"}}
+	</div>
+	
+	<div class="guide_discription">row (.btn_area.ty3)</div>
+	<div class="btn_area ty3">
+		{{> cp/button type="3" size="3" b-text="버튼명"}}
+		{{> cp/button type="3" size="3" b-text="버튼명"}}
+		{{> cp/button type="3" size="3" b-text="버튼명"}}
+		{{> cp/button type="3" size="3" b-text="버튼명"}}
+		{{> cp/button type="3" size="3" b-text="버튼명"}}
+		{{> cp/button type="3" size="3" b-text="버튼명" class="full"}}
+		{{> cp/button type="3" size="3" b-text="버튼명" class="half"}}
+	</div>
+
+	<div class="guide_discription">row (.btn_area.ty4) 왼쪽 고정 115px / 우측 가변</div>
+	<div class="btn_area ty5">
+		{{> cp/button type="3" size="1" b-text="버튼명"}}
+		{{> cp/button type="1" size="1" b-text="버튼명"}}
+	</div>
+
+	<div class="guide_discription">row (.btn_area.basic)</div>
+	<div class="btn_area basic">
+		{{> cp/button type="1" size="3" b-text="버튼명"}}
+		{{> cp/button type="1" size="3" b-text="버튼명"}}
+	</div>
+
+	<div class="guide_discription">row (.btn_area.between)</div>
+	<div class="btn_area between">
+		{{> cp/button type="1" size="3" b-text="버튼명"}}
+		{{> cp/button type="1" size="3" b-text="버튼명"}}
+	</div>
+
+	<div class="guide_discription">row (.btn_area.end)</div>
+	<div class="btn_area end">
+		{{> cp/button type="1" size="3" b-text="버튼명"}}
+	</div>
+
+	<div class="guide_discription">column (.btn_area.center)</div>
+	<div class="btn_area center">
+		{{> cp/button type="1" size="3" b-text="버튼명"}}
+		{{> cp/button type="2" size="3" b-text="버튼명"}}
+	</div>
+
+
+	<div class="guide_discription">column (.btn_area.column)</div>
+	<div class="btn_area column">
+		{{> cp/button type="1" size="3" b-text="버튼명"}}
+		{{> cp/button type="2" size="3" b-text="버튼명"}}
+		<button type="button" class="hd_btn normal">
+			<span class="text">나중에 등록</span>
+		</button>
+	</div>
+
+	<!-- 더보기 버튼 -->
+	<!-- <div class="guide_h4">더보기 버튼</div>
+	<div class="guide_discription">더보기 (paging)</div>
+	<div class="btn_area center view_more">
+		{{> cp/button_more }}
+	</div>
+
+	<div class="guide_discription">더보기 (no-paging)</div>
+	<div class="btn_area center view_more">
+		{{> cp/button_more no_paging=" " }}
+	</div>
+	
+	<div class="guide_discription">펼치기/접기</div>
+	<div class="btn_area center">
+		<button type="button" class="btn btn_toggle">
+			<span class="text"></span>
+		</button>
+	</div> -->
+
+</div>
+{{/ layout/guide }}
