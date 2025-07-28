@@ -283,7 +283,6 @@
 		padding: 24px 20px;
 		border-radius: var(--radius-large2);
 		background-color: var(--color-surface-secondary-subtler);
-		
 		&::after {
 			content: '';
 			position: absolute;
@@ -343,6 +342,37 @@
 
 		}
 	}
+	&.certify {
+		counter-reset: number 0;
+		li {
+			flex-direction: column;
+			gap: 0;
+			padding-left: 52px;
+			font-size: var(--font-size-body-medium);
+			background-size: 24px auto;
+			background-position: 20px 24px;
+			background-repeat: no-repeat;
+			&::before {
+				counter-increment: number 1;
+				content: 'STEP 0' counter(number);
+				position: static;
+				display: block;
+				width: auto;
+				height: auto;
+				border: none;
+				border-radius: 0;
+				font-size: var(--font-size-body-small);
+				color: var(--color-text-subtle);
+				font-weight: 700;
+			}
+			&.pc {
+				background-image: url(../images/common/cert/icon_step_pc.svg);
+			}
+			&.phone {
+				background-image: url(../images/common/cert/icon_step_phone.svg);
+			}
+		}
+	}	
 }
 
 
