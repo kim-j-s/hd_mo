@@ -188,9 +188,9 @@ function generateUUID() {
 
 /* Toast 팝업 */
 let toastTimer = null;
-function toastAction(click) {
-	const $toast = $(".toast_wrap"),
-		msg = $(click).data("msg");
+function toastAction(target, msg) {
+	const $toast = $(".toast_wrap");
+		//msg = $(target).data("msg");
 
 	if (toastTimer != undefined) return;
 	// console.log(toastTimer);

@@ -21,27 +21,40 @@ const $stepper = {
 			$stepper.selectedIdx = (value + 1);
 			$stepper.data.nowStep = (value + 1);
 			$('.bi_wrap').attr('data-now', value);
+			
+			if(typeof stepIngCheck === 'function') {	// 일반 - 펫보험
+				stepIngCheck(value); //스텝 진행시 처리해야할 내용이 있을경우 호출 함수 - 업무화면에 존재
+			}
 		}
 		$stepper.data[key] = value;
 	},
 	get: (key) => {
 		return $stepper.data?.[key];
 	},
-	stepperInit: function (callback, startIdx = 0) {
+	stepperInit: function (callback, startIdx = 0, type) {
 		$stepper.setCallback(callback);
 		const _totalStep = $(".opts_area").length;
-		$stepper.init(_totalStep, startIdx);
+
+		if(type == 'GI') {
+			$stepper.init(_totalStep, startIdx, 'GI');
+		} else {
+			$stepper.init(_totalStep, startIdx);
+		}
 	},
-	init: (totalStep = 0, nowIdx = 0) => {
+	init: (totalStep = 0, nowIdx = 0, type) => {
 		const _optsLen = $(".opts_area").length;
 		const _totalStep = (totalStep > 0) ? totalStep : _optsLen;
 		$stepper.set('totalStep', _totalStep);
 		
 		$stepper.openTab(nowIdx);
 
-		$stepper.addMoveStepEvent();	// 버튼영역 이벤트
-		$stepper.addSelectEvent();		// 선택영역 이벤트
-		$stepper.addKeypadEvent();		// 키패드영역 이벤트
+		$stepper.addMoveStepEvent();				// 버튼영역 이벤트
+		$stepper.addKeypadEvent();					// 키패드영역 이벤트
+		if(type == 'GI') {
+			$stepper.addSelectEvent(null, 'GI');	// 선택영역 이벤트
+		} else {
+			$stepper.addSelectEvent();				// 선택영역 이벤트
+		}
 	},
 	openTab: (nowIdx) => {
 		// 현재 stepIdx
@@ -62,12 +75,9 @@ const $stepper = {
 		// // 3. 키패드에서 입력된 값 초기화
 		// $(".birth_date_field").text(""); // 텍스트 업데이트
 
-
 		const _len = $('.bit_within').length;
 		const _focusClass = (_len > 0) ? 'bit_within' : 'stepper';
 		$('.' + _focusClass).focus();
-		
-
 	},
 	ctrlProgress: (nowIdx) => {
 		// label / dataSet 세팅 -> 현재 step 기준
@@ -105,7 +115,8 @@ const $stepper = {
 		const $selectedButton = $('.bit_history_inner').find('.selected_case').eq(nowIdx);
 		const buttonText = $selectedButton.text().trim();
 
-		if (buttonText === '') {
+		const _totalStep = $stepper.get('totalStep');
+		if (buttonText === '' || _totalStep <= (nowIdx+1)) {
 			$('.stm_btn.stm_r').prop('disabled', true);
 		} else {
 			$('.stm_btn.stm_r').prop('disabled', false);
@@ -140,23 +151,38 @@ const $stepper = {
 		});
 	},
 	// 선택영역 이벤트
-	addSelectEvent: (itemName) => {	// 예시: itemName = 'step1'
-		let _targetArea = $(`.opts_area[data-pickitem="${itemName}"]`);
-		if(_targetArea.length == 0) {
-			_targetArea = $(document);
-		}
-		
-		$(_targetArea).find('.opts_area_item input[type="radio"]').on('change', (e) => {
-			const _target = $(e.target);
-			const _stepIdx = _target.closest('.opts_area').index();
-			const _selectedText = _target.next('label').find('.label_cont').text().trim();
-
-			$stepper.setButtonText(_stepIdx, _selectedText);
-			
-			if(typeof $stepper.fnCallback == 'function') {
-				$stepper.fnCallback(_target);
+	addSelectEvent: (itemName, type) => {	// 예시: itemName = 'step1'
+		if(type == 'GI') {
+			//[[변경필요]] 동적 radio button들이 이벤트를 안탐
+			$(document).on('change', '.opts_area_item input[type="radio"]', function(e) {
+				const _target = $(e.target);
+				const _stepIdx = _target.closest('.opts_area').index();
+				const _selectedText = _target.next('label').find('.label_cont').text().trim();
+				
+				$stepper.setButtonText(_stepIdx, _selectedText);
+				
+				if(typeof $stepper.fnCallback == 'function') {
+					$stepper.fnCallback(_target);
+				}
+			});
+		} else {
+			let _targetArea = $(`.opts_area[data-pickitem="${itemName}"]`);
+			if(_targetArea.length == 0) {
+				_targetArea = $(document);
 			}
-		});
+
+			$(_targetArea).find('.opts_area_item input[type="radio"]').on('change', (e) => {
+				const _target = $(e.target);
+				const _stepIdx = _target.closest('.opts_area').index();
+				const _selectedText = _target.next('label').find('.label_cont').text().trim();
+
+				$stepper.setButtonText(_stepIdx, _selectedText);
+				
+				if(typeof $stepper.fnCallback == 'function') {
+					$stepper.fnCallback(_target);
+				}
+			});
+		}
 	},
 	// 버튼 텍스트 세팅
 	setButtonText: (stepIdx, selectedText) => {
@@ -184,7 +210,8 @@ const $stepper = {
 		if(_target.attr("type") == "radio") {
 			_selectedText = _target.next("label").find(".label_cont").text().trim();
 		} else if(_target.attr("type") == "button") {
-			_selectedText = _target.closest(".opts_area").find(".birth_date_field").text();
+			const _birthDate = _target.closest(".opts_area").find(".birth_date_field").text();
+			_selectedText = sUtil.formatDateFromNumber(_birthDate);
 		}
 		
 		// UI 업데이트
@@ -204,7 +231,7 @@ const $stepper = {
 			const _len = $('.bit_within').length;
 			const _focusClass = (_len > 0) ? 'bit_within' : 'stepper';
 			$('.' + _focusClass).attr('tabindex', '0');
-			
+
 
 			let _inputText = _input.text() ?? '';
 
