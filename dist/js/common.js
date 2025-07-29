@@ -621,6 +621,66 @@
 		}
 	});
 
+	// 이벤트 위임 - 탭 클릭 이벤트
+	$(document).off('click.positionEventTab').on('click.positionEventTab', '.position_event_wrap .position_event_tab .tag_item', function () {
+		const $tab = $(this);
+		const $wrap = $tab.closest('.position_event_wrap');
+		const $tabBtns = $wrap.find('.position_event_tab .tag_item');
+		const $contents = $wrap.find('.position_event_content .pec_point');
+		const $scrollArea = $wrap.find('.position_event_content');
+
+		const idx = $tab.index();
+		const $target = $contents.eq(idx);
+
+		let expHeight = 0;
+		let sHeight = 0;
+
+		if ($wrap.find('.pew_exception').length) {
+			const $exception = $wrap.find('.pew_exception');
+			const exceptionHeight = $exception.outerHeight();
+
+			if ($wrap.find('.tag_item_wrap_po_etc1').length) {
+				expHeight = exceptionHeight + 64;
+			} else {
+				expHeight = exceptionHeight;
+			}
+		}
+
+		if($wrap.find('.sii_wrap').length){
+			const $sii = $wrap.find('.sii_wrap').children('.position_event_tab');
+			const siiHeight = parseFloat($sii.css('padding-bottom'));
+
+			sHeight = siiHeight;
+		}
+
+		if ($target.length) {
+			$wrap.data('scrolling', true);
+
+			$tabBtns.removeClass('active');
+			$tab.addClass('active');
+
+			const containerTop = $scrollArea.offset().top;
+			const targetTop = $target.offset().top;
+			const scrollY = targetTop - containerTop + expHeight;
+
+			$wrap.stop().animate({
+				scrollTop: scrollY
+			}, 300, function () {
+				$wrap.data('scrolling', false);
+
+				// 포커스 가능한 첫 요소 탐색
+				// const $focusable = $target.find('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])').filter(':visible').first();
+
+				// if ($focusable.length) {
+				// 	$focusable.focus();
+				// } else {
+				// 	$target.attr('tabindex', '-1').focus();
+				// }
+				$target.attr('tabindex', '-1').focus();
+			});
+		}
+	});
+
 
 })();
 
@@ -651,9 +711,6 @@ function tabScroll(){
 		}, 200);
 	})
 }
-
-
-
 	
 // 간편정보 노출 방식
 function simpleInfo(){
@@ -783,6 +840,61 @@ function fixedMenuPlay() {
 	});
 }
 
+// 초기화 함수 (동적 요소가 생성될 때마다 호출)
+function initPositionEventWrap($wrap) {
+	if (!$wrap.length) return;
+
+	const $tabBtns = $wrap.find('.position_event_tab .tag_item');
+	const $contents = $wrap.find('.position_event_content .pec_point');
+	const $scrollArea = $wrap.find('.position_event_content');
+
+	$wrap.data('scrolling', false);
+
+	// 스크롤 이벤트 (요소 개별)
+	$wrap.off('scroll.positionEvent').on('scroll.positionEvent', function () {
+		if ($wrap.data('scrolling')) return;
+
+		const scrollTop = $wrap.scrollTop();
+		let expHeight = 0;
+		let sHeight = 0;
+
+		if ($wrap.find('.pew_exception').length) {
+			const $exception = $wrap.find('.pew_exception');
+			const exceptionHeight = $exception.outerHeight();
+
+			if ($wrap.find('.tag_item_wrap_po_etc1').length) {
+				expHeight = exceptionHeight + 64;
+			} else {
+				expHeight = exceptionHeight;
+			}
+		}
+
+		if($wrap.find('.sii_wrap').length){
+			const $sii = $wrap.find('.sii_wrap').children('.position_event_tab');
+			const siiHeight = parseFloat($sii.css('padding-bottom'));
+
+			sHeight = siiHeight;
+		}
+		// console.log(sHeight);
+
+		let activeIdx = -1;
+
+		$contents.each(function (index) {
+			const targetTop = $(this).offset().top;
+			const containerTop = $scrollArea.offset().top;
+			const scrollY = targetTop - containerTop + expHeight;
+
+			if (scrollY < scrollTop + 10) {
+				activeIdx = index;
+			}
+		});
+
+		if (activeIdx !== -1) {
+			$tabBtns.removeClass('active').eq(activeIdx).addClass('active');
+		}
+	});
+}
+
 $(function(){
 	// tab Scroll
 	tabScroll();
@@ -791,7 +903,11 @@ $(function(){
 	fixedMenuPlay();
 
 	simpleInfo();
-	
+
+	// 스크롤 이벤트 초기화 및 동적 생성시 재 호출
+	$('.position_event_wrap').each(function () {
+		initPositionEventWrap($(this));
+	});	
 
 	//input disabled&readonly
 	$('.input_text input').each(function() {
@@ -1270,54 +1386,13 @@ $(function(){
 				}
 			})
 		}
-
 	});
-
-	
-	// 범용 전체 팝업 내 스크롤 이벤트
-	// $('.popup_cont').on('scroll', function(){
-
-	// 	// 현재 스크롤 위치
-	// 	if (!$('.position_event_wrap').length) return;
-
-	// 	const $this = $(this);
-	// 	const scrollTop = $this.scrollTop();
-
-	// 	// 기준 위치값 계산 요소
-	// 	const $popupContent = $('.popup_content');
-	// 	const popupContTop = $popupContent.position().top;
-	// 	const $wrapHeight = $('.tag_item_wrap').outerHeight();
-
-	// 	const baseOffset = popupContTop + $wrapHeight;
-
-	// 	const $points = $('.position_event_content .pec_point');
-	// 	let activeIdx = -1;
-
-	// 	const $tagItem = $('.position_event_tab .tag_item');
-
-	// 	$points.each(function (index) {
-	// 		const pointTop = $(this).offset().top;
-	// 		const targetScroll = pointTop - baseOffset;
-
-	// 		if (scrollTop >= targetScroll) {
-	// 			activeIdx = index; // 조건을 만족하는 가장 마지막 인덱스를 저장
-	// 		}
-	// 	});
-
-	// 	if (activeIdx !== -1) {
-	// 		// console.log('현재 인덱스:', activeIdx);
-	// 		$tagItem.removeClass('active');
-	// 		$tagItem.eq(activeIdx).addClass('active');
-	// 	}
-	// });
-
-	// 500
 
 
 
 	
 	// 개선 버젼
-	
+	/*
 	const $wraps = $('.position_event_wrap');
 	$wraps.each(function () {
 		const $wrap = $(this);
@@ -1370,7 +1445,7 @@ $(function(){
 					scrolling = false;
 					// console.log(scrollY, containerTop, targetTop);
 					// 포커스 가능한 첫 요소 탐색
-					/* 25-07-23 모바일용으로 재수정 */
+					// 25-07-23 모바일용으로 재수정
 					// const $focusable = $target.find('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])').filter(':visible').first();
 
 					// if ($focusable.length) {
@@ -1379,7 +1454,7 @@ $(function(){
 					// 	// 없다면 컨테이너 자체에 tabindex 부여 후 포커스 (예외 대응)
 					// 	$target.attr('tabindex', '-1').focus();
 					// }
-					/* 25-07-23 모바일용으로 재수정 */
+					// 25-07-23 모바일용으로 재수정
 					$target.attr('tabindex', '-1').focus();
 				});
 			}
@@ -1433,6 +1508,7 @@ $(function(){
 		});
 
 	});
+	*/
 	// 개선 버젼
   
 
