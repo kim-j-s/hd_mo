@@ -83,7 +83,7 @@ const generateThemeCssVariables = tokenData => {
 	for (const [_, categoryData] of Object.entries(tokenData)) {
 		for (const [mainKey, mainValue] of Object.entries(categoryData)) {
 			let responsiveMode = "";
-			if (mainKey == "mobile" || mainKey == "pc") {
+			if (mainKey == "mobile" || mainKey == "pc" || mainKey == "value-set") {
 				// responsiveMode = mainKey == "mobile" ? " .mobile" : " .pc";
 				if (mainKey == "pc") continue; //pc용 제외(임시)
 
