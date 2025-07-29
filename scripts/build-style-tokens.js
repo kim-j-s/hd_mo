@@ -97,7 +97,14 @@ const generateThemeCssVariables = tokenData => {
 					}
 				});
 			} else {
-				let prefixStr = `--${mainKey}`;
+				console.log(mainKey);
+				let prefixStr;
+				if (mainKey == "easy") {
+					prefixStr = `--${mainKey}-`;
+				} else {
+					prefixStr = `--${mainKey}`;
+				}
+				// let prefixStr = `--${mainKey}`;
 				const cssBlock = createStyleToken(prefixStr, mainValue, responsiveMode);
 				if (cssBlock) {
 					cssBlocks.push(cssBlock);
