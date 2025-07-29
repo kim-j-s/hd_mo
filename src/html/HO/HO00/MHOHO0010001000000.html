@@ -55,7 +55,21 @@
                         </div>
                     </div>
                     <div class="easy_top">
+                        <div class="btn_area ty2">
+                            {{> cp/button type="1" size="1" b-text="계산하기"}}
+                            {{> cp/button type="2" size="1" b-text="갱신간편계산"}}
+                        </div>
+                        <div class="btn_area ty2">
+                            {{> cp/button type="3" size="2" b-text="운전자보험"}}
+                            {{> cp/button type="3" size="2" b-text="어린이보험"}}
+                            {{> cp/button type="3" size="2" b-text="펫보험"}}
+                            {{> cp/button type="3" size="2" b-text="주택화재보험"}}
+                            {{> cp/button type="3" size="2" b-text="건강보험"}}
+                            {{> cp/button type="3" size="2" b-text="해외여행보험"}}
+                        </div>
+                        <div class="btn_area center">
                         {{> cp/linkButton bl_class="short_cut" bl_text="전체상품" bl_title="페이지 이동" }}
+                        </div>
                     </div>
                 </div>
                 <div class="easy_none">
@@ -343,13 +357,13 @@
         });
         $('#easySwitch').on('change', function () {
             if ($(this).is(':checked')) {
-                $('.normal_cont').addClass('easy');
+                $('body').addClass('easy-mode');
                 $('.toolbar').hide();
                 $('.easy_top').show();
                 $('.easy_item > .home_card').removeClass('bg_primary');
                 $('.easy_item .icon_link').addClass('list');
             } else {
-                $('.normal_cont').removeClass('easy');
+                $('body').removeClass('easy-mode');
                 $('.toolbar').show();
                 $('.easy_top').hide();
                 $('.easy_item > .home_card').addClass('bg_primary');

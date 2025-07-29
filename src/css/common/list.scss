@@ -1726,3 +1726,246 @@ ol li .table_wrap {
 		}
 	}
 }
+
+// easy mode
+.easy-mode {
+
+	// list ty2
+	.list_ty2 {
+  @include list-style(
+			$li-padding: 0 0 0 10px,
+			$li-font-size: var(--font-size-body-small),
+			$li-color: var(--color-text-subtle)
+		) {
+			// ul.list-1에 대한 추가적인 스타일
+			// background-color: var(--color-primary);
+			> li {
+				&::before {
+					content: '-';
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+			}
+		}
+
+		> li {
+			& ~ li {
+				margin-top: var(--gap-3);
+			}
+			> .list_ty5 {
+				margin-top: var(--gap-2);
+			}
+		}
+
+		& + .title_h4 {
+			margin-top: var(--gap-9);
+		}
+
+		+ .title_h5 {
+			margin-top: var(--gap-6);
+		}
+
+		& + .radio_group_wrap,
+		& + .banner_box {
+			margin-top: var(--gap-8);
+		}
+		& + .title_h3,
+		& + .card_item_wrap,
+		+ .table_wrap {
+			margin-top: var(--gap-11);
+		}
+		& + .btn_area{
+			margin-top: var(--gap-5);
+		}
+	}
+
+	// list depth
+	.list_depth {
+		@include list-style(
+			$li-padding: 0 0 0 6px,
+			$li-font-size: var(--easy--font-size-body-medium),
+			$li-color: var(--color-text-basic),
+			$li-line-height: 1.5,
+			$li-dot-color: #33363D
+		) {
+			// depth1
+			> li {
+				&::before {
+					content: '';
+					position: absolute;
+					top: 12px;
+					left: 0;
+					width: 4px;
+					height: 4px;
+					border-radius: 50%;
+				}
+				&.st_none {
+					padding-left: 0;
+					&::before {
+						display: none;
+					}
+					ul {
+						margin-top: var(--gap-5);
+					}
+					.title_h2 {
+						margin-top: var(--gap-9);
+					}
+				}
+				.new_open {
+					padding-right: 22px;
+					font-size: var(--font-size-body-medium);
+					font-weight: inherit;
+					background-size: 20px auto;
+				}
+				& ~ li {
+					margin-top: var(--gap-5);
+				}
+				// depth2
+				> ul {
+					margin-top: var(--gap-4);
+					@include list-style(
+						$li-padding: 0 0 0 9px,
+						$li-font-size: var(--easy--font-size-body-small),
+						$li-color: var(--color-text-basic),
+						$li-line-height: 1.5
+					) {
+						> li {
+							&::before {
+								content: '-';
+								position: absolute;
+								top: 0;
+								left: 0;
+								margin-right: 4px;
+							}
+							& ~ li {
+								margin-top: var(--gap-4);
+							}
+							// depth3
+							> ul {
+								margin-top: var(--gap-3);
+								@include list-style(
+									$li-padding: 0 0 0 6px,
+									$li-font-size: var(--easy--font-size-body-xsmall),
+									$li-color: var(--color-text-information),
+									$li-line-height: 1.5,
+									$li-dot-color: #6D7882
+								) {
+									> li {
+										&::before {
+											content: '';
+											position: absolute;
+											top: 9px;
+											left: 0;
+											width: 3px;
+											height: 3px;
+											border-radius: 50%;
+										}
+										& ~ li {
+											margin-top: var(--gap-3);
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+		}
+	}
+
+	// list_depth_ty2
+	.list_depth_ty2 {
+		.sub_title {
+			font-size: var(--font-size-body-small);
+			line-height: 1.5;
+
+			& + li {
+				margin-top: var(--gap-4);
+			}
+		}
+
+		li {
+			position: relative;
+			padding-left: 8px;
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;			
+			}
+		}
+
+		& > li {		
+			margin: 0;
+			font-size: var(--font-size-body-small);
+			&::before {
+				content: '-';
+				background-color: none;
+			}
+
+			& ~ li {
+				margin-top: var(--gap-3);
+			}
+
+			
+			& > ul {
+				margin-top: var(--gap-2);
+				& > li {
+					padding: 0 0 0 8px;
+					font-size: var(--font-size-body-xsmall);
+					color: var(--color-text-information);
+
+					&::before {
+						top: 8px;
+						width: 2px;
+						height: 2px;
+						border-radius: 50%;
+						background-color: var(--color-text-information);
+					}
+
+					& ~ li {
+						margin-top: var(--gap-3);
+					}
+				}
+			}
+
+
+			& > ol {
+				margin-top: var(--gap-2);
+				& > li {
+					padding: 0 0 0 8px;
+					font-size: var(--font-size-body-xsmall);
+					color: var(--color-text-information);
+					
+					//기본 : circle_list
+					&::before {
+						top: 8px;
+						width: 2px;
+						height: 2px;
+						background-color: var(--color-text-information);
+					}
+
+					& ~ li {
+						margin-top: var(--gap-3);
+					}
+				}
+
+				&.number_list {
+					& > li {
+						padding-left: 16px;
+						&::before {
+							top: 0;
+							left: 0;
+							width: 12px;
+							height: 18px;
+							// background-color: var(--color-text-information);
+							background-color: transparent;
+						}
+					}			
+				}
+			}
+		}	
+	}
+}
