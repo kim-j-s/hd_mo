@@ -1364,10 +1364,8 @@ $(function(){
   const $moveTarget = $popupCont.find('.move');
 
 	let moveTargetPosition = 0;
-
 	if ($moveTarget.length) {
 		moveTargetPosition = $moveTarget.position().top;
-		console.log('있는데?', moveTargetPosition);
 	}
   $doneButton.hide();
 
