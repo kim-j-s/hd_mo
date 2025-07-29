@@ -8509,10 +8509,12 @@ strong {
 .comp_wrap.key_number .input_text:has(.int_txt.right) input {
 	padding-right: 0;
 }
-.comp_wrap.key_number:has(.phone.readonly) {
+.comp_wrap.key_number:has(.phone.readonly),
+.comp_wrap.key_number:has(.phone.disabled) {
 	overflow: hidden;
 }
-.comp_wrap.key_number:has(.phone.readonly)::before {
+.comp_wrap.key_number:has(.phone.readonly)::before,
+.comp_wrap.key_number:has(.phone.disabled)::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -8521,7 +8523,8 @@ strong {
 	height: 100%;
 	background-color: var(--color-input-surface-disabled);
 }
-.comp_wrap.key_number:has(.phone.readonly) .hd_btn {
+.comp_wrap.key_number:has(.phone.readonly) .hd_btn,
+.comp_wrap.key_number:has(.phone.disabled) .hd_btn {
 	position: relative;
 }
 .comp_wrap .hd_btn {
@@ -9826,6 +9829,16 @@ strong {
 	font-size: var(--font-size-body-small);
 	color: var(--color-text-subtle);
 }
+.number_list > li:not(:has(.list_checking)) .circle_list {
+	padding-top: var(--padding-5);
+}
+.number_list > li .circle_list .circle_tit {
+	margin-top: var(--padding-3);
+	color: var(--color-text-information);
+}
+.number_list > li .circle_list .circle_tit + ol {
+	margin-top: var(--gap-2);
+}
 .number_list.big > li {
 	padding-left: 0;
 	font-size: var(--font-size-heading-small);
@@ -10480,6 +10493,18 @@ strong {
 ul li .table_wrap,
 ol li .table_wrap {
 	margin-top: var(--gap-4);
+}
+ul li .table_wrap + .table_wrap,
+ol li .table_wrap + .table_wrap {
+	margin-top: var(--gap-3);
+}
+ul li .table_wrap + .list_ty2,
+ol li .table_wrap + .list_ty2 {
+	margin-top: var(--gap-3);
+}
+ul li .table_wrap + .list_ty2 li + li,
+ol li .table_wrap + .list_ty2 li + li {
+	margin-top: var(--gap-3);
 }
 /* list_box */
 /* box_list(목록형) */
@@ -12339,6 +12364,14 @@ ol li .table_wrap {
 .space_list_ty5 + .banner_box {
 	margin-top: var(--gap-8);
 }
+/* 컨텐츠 show/hide 용 */
+.fake_form_group_wrap + .form_group_wrap {
+	margin-top: var(--gap-8);
+}
+.fake_form_group_wrap[style*="display: none"] + .form_group_wrap {
+	margin-top: 0;
+}
+/* 컨텐츠 show/hide 용 */
 /* swiper */
 /* 예시 */
 #swiper1 .swiper-slide {
@@ -13588,6 +13621,7 @@ ol li .table_wrap {
 }
 .info_gray.bg_etc01 {
 	background-color: var(--color-surface-white-subtle);
+	padding: var(--padding-8);
 }
 .info_gray[class*="icon_"] {
 	padding: 1.6rem 2rem;
@@ -13773,6 +13807,9 @@ ol li .table_wrap {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
+}
+.info_gray dl.middle .big {
+	font-size: var(--font-size-body-large);
 }
 .info_gray dl.bottom {
 	-webkit-box-align: end;
