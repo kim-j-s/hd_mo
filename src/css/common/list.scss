@@ -184,7 +184,6 @@
 	+ .title_h3 {
 		margin-top: var(--gap-8);
 	}
-
 }
 
 .list_ty4 {
@@ -905,6 +904,21 @@
 			margin-top: var(--gap-2);
 			font-size: var(--font-size-body-small);
 			color: var(--color-text-subtle);
+		}
+
+		&:not(:has(.list_checking)) {
+			.circle_list {
+				padding-top: var(--padding-5);
+			}
+		}
+		.circle_list {
+			.circle_tit {
+				margin-top: var(--padding-3);
+				color: var(--color-text-information);
+				& + ol {
+					margin-top: var(--gap-2);
+				}
+			}
 		}
 		
 	}
@@ -1702,4 +1716,13 @@
 ul li .table_wrap,
 ol li .table_wrap {
 	margin-top: var(--gap-4);
+	& + .table_wrap {
+		margin-top: var(--gap-3);
+	}
+	& + .list_ty2 {
+		margin-top: var(--gap-3);
+		li + li {
+			margin-top: var(--gap-3);
+		}
+	}
 }
