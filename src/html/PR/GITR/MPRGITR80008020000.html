@@ -291,29 +291,4 @@
 {{/ popup/popup_full}}
 <!-- e: Full 팝업 -->
 
-<!-- s: 25-07-31 -->
-<script>
-	let clickedOnce = false;
-
-	$('.scroll_down').click(function(e) {
-		if (!clickedOnce) {
-			// 첫 번째 클릭: .move 위치로 이동
-			let offset = $('.move').offset();
-			$('.popup_cont').animate({ scrollTop: offset.top - 88 }, 1000);
-			clickedOnce = true;
-		} else {
-			// 두 번째 클릭: 최하단으로 이동
-			$('.popup_cont').animate(
-				{ scrollTop: $('.popup_content')[0].scrollHeight },
-				1000,
-				function () {
-					$('.scroll_down').hide();
-					$('.done').show();
-				}
-			);
-		}
-	});
-</script>
-<!-- e: 25-07-31 -->	
-
 {{/ layout/default }}
