@@ -858,10 +858,14 @@
 					.sii_list_l:has(.text),
 					.sii_list_r:has(.text) {
 						display: flex;
-						.text {
-							display: flex;
-							gap: var(--gap-3);
+
+						.short_cut.lg:not(:has(.text)) {
+							.text {
+								display: flex;
+								gap: var(--gap-3);
+							}
 						}
+						
 					}
 				}
 				.bold {
