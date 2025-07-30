@@ -954,7 +954,20 @@ ul + .form_group_wrap {
 				margin: 16px 0 0 28px;
 			}
 		}
+
+		//radio 선택 시 금액 노출
+		&.state_check {
+			.money_box {
+				display: none;
+			}
+			& > li:has(input[type=radio]:checked) {
+				.money_box {
+					display: flex;
+				}
+			}
+		}
 	}
+	
 }
 
 .link_flex_box {
