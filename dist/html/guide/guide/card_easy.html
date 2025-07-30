@@ -1,6 +1,3 @@
-<!---
-경로 : 6.보험료 확인 > 대인배상Ⅰ의무
--->
 <!DOCTYPE html>
 <html lang="ko">
 	<head>
@@ -43,68 +40,109 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>보험료 확인 | 상품 - 현대해상 다이렉트</title>
+		<title>현대해상 다이렉트</title>
 
+		<link rel="stylesheet" href="guide.css" />
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
 		<link rel="stylesheet" href="../../../css/contents.css" />
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
-	<body>
-		<!-- s: popup area --><!-- s: Full 팝업 -->
-		<div class="popup_wrap full active" id="pop_full" role="dialog" aria-hidden="false">
-			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_full');"></div>
-				<div class="popup_inner">
-					<div class="popup_head">
-						<div class="popup_head_title"></div>
-					</div>
-					<div class="popup_cont">
-						<div class="popup_content">
-							<div class="pop_top sticky_fix">
-								<div class="info_gray">
-									<dl>
-										<dt>다이렉트보험료</dt>
-										<dd>876,543원</dd>
-									</dl>
+	<body class="guide_body">
+		<div class="guide_h1">Card 타입 (Easy Mode)</div>
+
+		<div class="easy_mode">
+			<div class="guide_h4">Link Button 있는 타입</div>
+			<div class="guide_discription">.card_list_ty1</div>
+			<div class="card_item_wrap">
+				<div class="card_item">
+					<div class="item_inner">
+						<div class="inner_cont">
+							<div role="button" class="card_link" tabindex="0">
+								<div class="item_top">
+									<div class="badge_wrap">
+										<span class="hd_badge outline solid_pastel c_primary size_m">badge</span>
+									</div>
+									<div class="title_info">
+										<div class="sub_title">subtitle</div>
+										<div class="main_title">title</div>
+									</div>
+									<div class="desc">description</div>
 								</div>
 							</div>
-							<!-- s: 25-07-30 수정 -->
-							<h2 class="pop_title_h1">대인배상Ⅰ<span class="point">(의무)</span></h2>
-							<!-- e: 25-07-30 수정 -->
-							<ul class="special_contract_list radio">
+							<ul class="card_list_ty1">
 								<li>
-									<div class="check_flex_box">
-										<div class="check_box">
-											<div class="inp_radio">
-												<input type="radio" id="agreement01_1" name="agreement01" checked />
-												<label for="agreement01_1">
-													<span class="label_cont">자동차손해배상 보장법 한도(1억 5천만원)</span>
-												</label>
-											</div>
-										</div>
-										<div class="money_box">
-											<div class="money"><span>190,300</span>원</div>
-										</div>
-									</div>
+									<div class="title">보험기간</div>
+									<div class="cont">2020.01.01 ~ 2021.01.01</div>
+								</li>
+								<li>
+									<div class="title">차량정보</div>
+									<div class="cont">111너**11(삼성)</div>
+								</li>
+								<li>
+									<div class="title">계약자</div>
+									<div class="cont">김*대</div>
+								</li>
+								<li>
+									<div class="title">피보험자</div>
+									<div class="cont">김*대</div>
 								</li>
 							</ul>
 						</div>
 					</div>
-					<!-- s: 하단 고정 버튼 영역 -->
-					<div class="popup_bottom">
-						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
-								<span class="text">확인</span>
-							</button>
-						</div>
+					<div class="btn_area">
+						<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_3">
+							<span class="text">취소</span>
+						</button>
+						<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_3">
+							<span class="text">확인</span>
+						</button>
 					</div>
-					<!-- s: 하단 고정 버튼 영역 -->
-					<button type="button" class="popup_close" onclick="closeHDPopup('pop_full');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
-		<!-- e: Full 팝업 -->
-		<!-- e: popup area -->
 	</body>
 </html>
+
+<script>
+	$(function () {
+		prograssBar();
+
+		$(window).on("resize", function () {
+			prograssBar();
+		});
+	});
+
+	function prograssBar() {
+		const $card = $(".card_item");
+
+		$card.each(function () {
+			const $this = $(this),
+				$bar = $this.find(".insurance_policyBox .progress_box .ing");
+
+			if ($this.find(".insurance_policyBox .progress_box").length > 0) {
+				const marginLeft = parseFloat($bar.css("margin-left"));
+				const barBoxWidth = $bar.closest(".progress_box").width();
+				const barWidth = $bar.width();
+				const infoWidth = $bar.find(".start").width();
+				const total = marginLeft + barWidth;
+
+				// console.log(marginLeft, barWidth, total, '/'+ barBoxWidth);
+
+				if (marginLeft <= 37) {
+					$bar.find(".start").addClass("left");
+				}
+
+				if (barBoxWidth <= total) {
+					$bar.find(".end").addClass("right");
+				}
+
+				const barW = $bar.width();
+				// if(barW <= 76){
+				// 	$bar.find('.start').children('.spot').css('margin-left', -100 + '%');
+				// 	$bar.find('.end').children('.spot').css('margin-left', 100 + '%');
+				// }
+			}
+		});
+	}
+</script>
