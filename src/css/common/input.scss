@@ -333,6 +333,7 @@
 	/* comp_wrap 내부에서 보안키패드 호출 버튼 공통 사용요소 - 필요시 각 class별로 별도 설정 필요 */
 	.comp_wrap_keypad_call {
 		flex: 1 1 0;
+		min-width: 0;
 		.keypad_call {
 			display: block;
 			width: 100%;
@@ -360,7 +361,7 @@
 		}
 	}
 	
-	//주민번호
+	// 주민번호
 	&.birth {
 		padding: 3px;
 		display: flex;
@@ -368,9 +369,12 @@
 		gap: 4px;
 		width: 100%;
 		& > .input_text {
+			min-width: 0;
 			width: calc(50% - 8px);
-			
 		}
+		// & > .comp_wrap_keypad_call {
+		// 	min-width: 0;
+		// }
 		input {
 			height: 48px;
 			&:read-only {

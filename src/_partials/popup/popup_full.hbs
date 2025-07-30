@@ -1,7 +1,7 @@
 {{!-- 
 	popup-id : id 배정
 --}}
-<div class="popup_wrap full{{#if popup-class}} {{popup-class}}{{/if}}{{#if popup-active}} active{{/if}}"{{#if popup-id}} id="{{popup-id}}"{{/if}}{{#if close-btn}}{{/if}} role="dialog" {{#if popup-active}}aria-hidden="false"{{else}}aria-hidden="true"{{/if}}>
+<div class="popup_wrap full{{#if popup-class}} {{popup-class}}{{/if}}{{#if popup-active}} active{{/if}}"{{#if popup-id}} id="{{popup-id}}"{{/if}}{{#if close-btn}}{{/if}} role="dialog" {{#if popup-active}}aria-hidden="false"{{else}}aria-hidden="true"{{/if}}{{#if test-l}} style="width: 50%;"{{/if}}{{#if test-r}} style="width: 50%; left: auto; right: 0;"{{/if}}>
 	<div class="popup_container">
 		<div class="popup_dim" aria-hidden="true"{{#if popup-id}} onclick="closeHDPopup('{{popup-id}}');"{{/if}}></div>
 		<div class="popup_inner{{#if in-class}} {{in-class}}{{/if}}">
