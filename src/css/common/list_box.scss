@@ -104,3 +104,98 @@
 
 	}
 }
+
+
+// easy mode
+.easy_mode {
+	.box_list_wrap {
+		.box_list {
+			.item {
+				border-bottom: var(--border-width-static-regular) solid var(--color-divider-gray-light);
+				&:first-of-type {
+					border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
+				}
+
+				.link_item {
+					display: flex;
+					align-items: center;
+					position: relative;
+					&::after {
+						content: "";
+						display: block;
+						position: absolute;
+						width: 24px;
+						height: 24px;
+						top: 50%;
+						right: 0;
+						background: url(../images/icon/arrowRight_ty4.svg) no-repeat center / 20px auto;
+						-webkit-transform: translateY(-50%);
+						transform: translateY(-50%);
+					}
+				}
+				.item_inner_cont {
+					display: flex;
+					flex-direction: column;
+					padding-top: var(--padding-6);
+					padding-bottom: var(--padding-6);
+					.item_title {
+						padding-bottom: var(--easy--gap-3);
+						font-size: var( --easy--font-size-body-medium);
+						color: var(--color-text-basic);
+						line-height: 150%;
+					}
+					.item_desc {
+						font-size: var(--easy--font-size-body-small);
+						color: var(--color-text-subtle);
+						line-height: 150%;
+					}
+					strong {
+						display: block;
+						padding-bottom: var(--easy--gap-2);
+						font-size: var( --easy--font-size-body-medium);
+					}
+				}
+				&:has(.link_item) {
+					.link_item {
+						padding-right: 44px;
+					}
+				}
+				&:has(:not(.item_inner_cont)) {
+					.item_inner_cont {
+						padding-right: var(--padding-6);
+					}
+				}
+			}
+
+			&.ty_icons {
+				.item {
+					padding-left: 44px;
+					background-repeat: no-repeat;
+					background-position: left center;
+					background-size: 32px auto;
+					&.opt1 {
+						background-image: url('../images/content/mtps/icon_MPRMTPS10002010000_ty1.svg');
+					}
+					&.opt2 {
+						background-image: url('../images/content/mtps/icon_MPRMTPS10002010000_ty2.svg');
+					}
+					&.opt3 {
+						background-image: url('../images/content/mtps/icon_MPRMTPS10002010000_ty3.svg');
+					}
+					&.opt4 {
+						background-image: url('../images/content/mtps/icon_MPRMTPS10002010000_ty4.svg');
+					}
+					&.opt5 {
+						background-image: url('../images/content/mtps/icon_MPRMTPS10002010000_ty5.svg');
+					}
+					&.opt9 {
+						background-image: url('../images/content/mtps/icon_MPRMTPS10002010000_ty9.svg');
+					}
+					&.opt10 {
+						background-image: url('../images/content/mtps/icon_MPRMTPS10002010000_ty10.svg');
+					}
+				}
+			}
+		}
+	}
+}
