@@ -47,7 +47,11 @@
 						<div class="form_line">
 							<div class="label_tit box">
 								<div>카드 할부</div>
+								<!-- s: 25-07-31 수정 -->
+								{{#unless interest_free}}
 								{{> cp/linkButton bl_class="short_cut sm" bl_text="무이자할부 안내" question_tit="무이자할부 안내" }}
+								{{/unless}}
+								<!-- e: 25-07-31 수정 -->
 							</div>
 							{{> cp/selectitem si_item="일시불" si_title="카드 할부 선택" si_popup="card_period_select"}}
 							<ul class="list_ty2">
