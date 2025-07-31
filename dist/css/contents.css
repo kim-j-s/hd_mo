@@ -2031,8 +2031,8 @@ body.easy-mode .normal_cont .easy_item .register_box a strong {
 }
 .input_form_box {
 	margin-top: -2.6rem;
-	background-color: var(--color-border-information-light);
-	border-radius: 1.6rem;
+	background-color: var(--color-surface-gray-subtle);
+	border-radius: var(--radius-medium3);
 }
 .input_form_box + .img_area,
 .input_form_box + .form_group_wrap,
@@ -2070,7 +2070,7 @@ body.easy-mode .normal_cont .easy_item .register_box a strong {
 	box-shadow: 0 0 0.2rem 0 var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)), 0 0.4rem 0.8rem 0 var(--color-alpha-shadow2, rgba(0, 0, 0, 0.08));
 }
 .input_form_box .input_item_wrap .acd_item ~ .acd_item {
-	border-top: var(--border-width-static-regular) solid var(--color-border-gray-light);
+	border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 }
 .input_form_box .input_item_wrap .acd_item .acd_head {
 	overflow: hidden;
@@ -2079,9 +2079,12 @@ body.easy-mode .normal_cont .easy_item .register_box a strong {
 .input_form_box .input_item_wrap .acd_item .acd_head .acd_btn {
 	position: relative;
 	width: 100%;
-	padding: 2rem 4.8rem 2rem 2.4rem;
+	padding: var(--padding-7) 4.8rem var(--padding-7) var(--padding-8);
 	background-color: #fff;
 	font-size: var(--font-size-label-medium);
+}
+.input_form_box .input_item_wrap .acd_item .acd_head .acd_btn > span {
+	line-height: 2.4rem;
 }
 .input_form_box .input_item_wrap .acd_item .acd_head .acd_btn:after {
 	position: absolute;
@@ -2099,6 +2102,9 @@ body.easy-mode .normal_cont .easy_item .register_box a strong {
 .input_form_box .input_item_wrap .acd_item .acd_head .acd_btn[aria-expanded="true"]:after {
 	-webkit-transform: rotate(180deg);
 	transform: rotate(180deg);
+}
+.input_form_box .input_item_wrap .acd_item .acd_head.active + .acd_cont {
+	margin-top: -1.2rem;
 }
 .input_form_box .input_item_wrap .acd_item .acd_cont {
 	background-color: #fff;
@@ -2707,10 +2713,15 @@ body.easy-mode .normal_cont .easy_item .register_box a strong {
 	top: 10.9rem;
 	left: 3rem;
 }
+.relationship_box .rel_case2.man > span {
+	background-image: url(../images/content/mtps/img_rel_case_man.svg);
+}
+.relationship_box .rel_case2.woman > span {
+	background-image: url(../images/content/mtps/img_rel_case_woman.svg);
+}
 .relationship_box .rel_case2 > span {
 	width: 9rem;
 	min-height: 10.3rem;
-	background-image: url(../images/content/mtps/img_rel_case2.svg);
 }
 .relationship_box .rel_case2 > span:before {
 	content: "";
@@ -2739,10 +2750,15 @@ body.easy-mode .normal_cont .easy_item .register_box a strong {
 	left: 50%;
 	margin-left: -2.8rem;
 }
+.relationship_box .rel_case3.man > span {
+	background-image: url(../images/content/mtps/img_rel_case_man.svg);
+}
+.relationship_box .rel_case3.woman > span {
+	background-image: url(../images/content/mtps/img_rel_case_woman.svg);
+}
 .relationship_box .rel_case3 > span {
 	width: 9rem;
 	min-height: 10.3rem;
-	background-image: url(../images/content/mtps/img_rel_case3.svg);
 }
 .relationship_box .rel_case3 > span:before {
 	content: "";
@@ -2797,8 +2813,11 @@ body.easy-mode .normal_cont .easy_item .register_box a strong {
 .relationship_box.pick1 .rel_case2 > span {
 	font-weight: 700;
 }
-.relationship_box.pick1 .rel_case2 > span {
-	background-image: url(../images/content/mtps/img_rel_case2_on.svg);
+.relationship_box.pick1 .rel_case2.woman > span {
+	background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+}
+.relationship_box.pick1 .rel_case2.man > span {
+	background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
 }
 .relationship_box.pick2 .rel_case2:before {
 	opacity: 1;
@@ -2806,8 +2825,11 @@ body.easy-mode .normal_cont .easy_item .register_box a strong {
 .relationship_box.pick2 .rel_case2 > span {
 	font-weight: 700;
 }
-.relationship_box.pick2 .rel_case2 > span {
-	background-image: url(../images/content/mtps/img_rel_case2_on.svg);
+.relationship_box.pick2 .rel_case2.woman > span {
+	background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+}
+.relationship_box.pick2 .rel_case2.man > span {
+	background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
 }
 .relationship_box.pick2 .rel_case3:before {
 	opacity: 1;
@@ -2815,8 +2837,11 @@ body.easy-mode .normal_cont .easy_item .register_box a strong {
 .relationship_box.pick2 .rel_case3 > span {
 	font-weight: 700;
 }
-.relationship_box.pick2 .rel_case3 > span {
-	background-image: url(../images/content/mtps/img_rel_case3_on.svg);
+.relationship_box.pick2 .rel_case3.woman > span {
+	background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+}
+.relationship_box.pick2 .rel_case3.man > span {
+	background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
 }
 .relationship_box.pick3 .rel_case1:before {
 	opacity: 1;
@@ -2836,8 +2861,11 @@ body.easy-mode .normal_cont .easy_item .register_box a strong {
 .relationship_box.pick3 .rel_case2 > span {
 	font-weight: 700;
 }
-.relationship_box.pick3 .rel_case2 > span {
-	background-image: url(../images/content/mtps/img_rel_case2_on.svg);
+.relationship_box.pick3 .rel_case2.woman > span {
+	background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+}
+.relationship_box.pick3 .rel_case2.man > span {
+	background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
 }
 .relationship_box.pick3 .rel_case3:before {
 	opacity: 1;
@@ -2845,8 +2873,11 @@ body.easy-mode .normal_cont .easy_item .register_box a strong {
 .relationship_box.pick3 .rel_case3 > span {
 	font-weight: 700;
 }
-.relationship_box.pick3 .rel_case3 > span {
-	background-image: url(../images/content/mtps/img_rel_case3_on.svg);
+.relationship_box.pick3 .rel_case3.woman > span {
+	background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+}
+.relationship_box.pick3 .rel_case3.man > span {
+	background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
 }
 .relationship_box.pick3 .rel_case5:before {
 	opacity: 1;
@@ -2875,6 +2906,12 @@ body.easy-mode .normal_cont .easy_item .register_box a strong {
 .relationship_box.pick4 .rel_case2 > span {
 	font-weight: 700;
 }
+.relationship_box.pick4 .rel_case2.woman > span {
+	background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+}
+.relationship_box.pick4 .rel_case2.man > span {
+	background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
+}
 .relationship_box.pick4 .rel_case2 > span {
 	background-image: url("../images/content/mtps/img_rel_case2_on.svg");
 }
@@ -2883,6 +2920,12 @@ body.easy-mode .normal_cont .easy_item .register_box a strong {
 }
 .relationship_box.pick4 .rel_case3 > span {
 	font-weight: 700;
+}
+.relationship_box.pick4 .rel_case3.woman > span {
+	background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+}
+.relationship_box.pick4 .rel_case3.man > span {
+	background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
 }
 .relationship_box.pick4 .rel_case3 > span {
 	background-image: url("../images/content/mtps/img_rel_case3_on.svg");
@@ -2920,8 +2963,11 @@ body.easy-mode .normal_cont .easy_item .register_box a strong {
 .relationship_box.pick6 .rel_case2 > span {
 	font-weight: 700;
 }
-.relationship_box.pick6 .rel_case2 > span {
-	background-image: url(../images/content/mtps/img_rel_case2_on.svg);
+.relationship_box.pick6 .rel_case2.woman > span {
+	background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+}
+.relationship_box.pick6 .rel_case2.man > span {
+	background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
 }
 .relationship_box.pick6 .rel_case6:before {
 	opacity: 1;
@@ -2938,8 +2984,11 @@ body.easy-mode .normal_cont .easy_item .register_box a strong {
 .relationship_box.pick7 .rel_case2 > span {
 	font-weight: 700;
 }
-.relationship_box.pick7 .rel_case2 > span {
-	background-image: url(../images/content/mtps/img_rel_case2_on.svg);
+.relationship_box.pick7 .rel_case2.woman > span {
+	background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+}
+.relationship_box.pick7 .rel_case2.man > span {
+	background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
 }
 .relationship_box.pick7 .rel_case3:before {
 	opacity: 1;
@@ -2947,8 +2996,11 @@ body.easy-mode .normal_cont .easy_item .register_box a strong {
 .relationship_box.pick7 .rel_case3 > span {
 	font-weight: 700;
 }
-.relationship_box.pick7 .rel_case3 > span {
-	background-image: url(../images/content/mtps/img_rel_case3_on.svg);
+.relationship_box.pick7 .rel_case3.woman > span {
+	background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+}
+.relationship_box.pick7 .rel_case3.man > span {
+	background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
 }
 .relationship_box.pick7 .rel_case6:before {
 	opacity: 1;
@@ -2965,8 +3017,11 @@ body.easy-mode .normal_cont .easy_item .register_box a strong {
 .relationship_box.pick8 .rel_case2 > span {
 	font-weight: 700;
 }
-.relationship_box.pick8 .rel_case2 > span {
-	background-image: url(../images/content/mtps/img_rel_case2_on.svg);
+.relationship_box.pick8 .rel_case2.woman > span {
+	background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+}
+.relationship_box.pick8 .rel_case2.man > span {
+	background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
 }
 .relationship_box.pick8 .rel_case3:before {
 	opacity: 1;
@@ -2974,8 +3029,11 @@ body.easy-mode .normal_cont .easy_item .register_box a strong {
 .relationship_box.pick8 .rel_case3 > span {
 	font-weight: 700;
 }
-.relationship_box.pick8 .rel_case3 > span {
-	background-image: url(../images/content/mtps/img_rel_case3_on.svg);
+.relationship_box.pick8 .rel_case3.woman > span {
+	background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+}
+.relationship_box.pick8 .rel_case3.man > span {
+	background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
 }
 .relationship_box.pick8 .rel_case5:before {
 	opacity: 1;
@@ -2992,8 +3050,11 @@ body.easy-mode .normal_cont .easy_item .register_box a strong {
 .relationship_box.pick9 .rel_case2 > span {
 	font-weight: 700;
 }
-.relationship_box.pick9 .rel_case2 > span {
-	background-image: url(../images/content/mtps/img_rel_case2_on.svg);
+.relationship_box.pick9 .rel_case2.woman > span {
+	background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+}
+.relationship_box.pick9 .rel_case2.man > span {
+	background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
 }
 .relationship_box.pick9 .rel_case5:before {
 	opacity: 1;
@@ -5872,6 +5933,7 @@ ul + .form_group_wrap {
 .bottom_panel {
 	width: 100%;
 	background-color: var(--color-surface-white-subtle);
+	border-radius: var(--radius-medium3) var(--radius-medium3) 0 0;
 }
 .bottom_panel .item_hidden {
 	display: none;
@@ -5913,6 +5975,9 @@ ul + .form_group_wrap {
 	position: fixed;
 	bottom: 0;
 	left: 0;
+}
+.bottom_panel.active .item_hidden {
+	border-color: var(--color-divider-gray-light);
 }
 .bottom_panel.active .bottom_panel_toggle::after {
 	-webkit-transform: rotate(0deg);
@@ -6315,3 +6380,4 @@ ul + .form_group_wrap {
 .popup_wrap.full .bi_opts_wrap .opts_area_item .btn_area {
 	margin-top: 2.4rem;
 }
+/* 상품안내 */
