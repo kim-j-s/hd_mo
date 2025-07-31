@@ -1,4 +1,10 @@
 					
+					{{#unless no_tit}}
+					<!-- s: 25-06-30 -->
+					<h3 class="title_h3">신용카드 정보 입력</h3>
+					<!-- e: 25-06-30 -->
+					{{/unless}}
+					<!-- s: 25-07-31 -->
 					{{#unless prev_story}}
 					<div class="btn_area end">
 						<a href="javascript:void(0)" role="button" class="btn_link short_cut">
@@ -6,11 +12,7 @@
 						</a>
 					</div>
 					{{/unless}}
-					{{#unless no_tit}}
-					<!-- s: 25-06-30 -->
-					<h3 class="title_h3">신용카드 정보 입력</h3>
-					<!-- e: 25-06-30 -->
-					{{/unless}}
+					<!-- s: 25-07-31 -->
 					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">카드사</div>
@@ -45,7 +47,11 @@
 						<div class="form_line">
 							<div class="label_tit box">
 								<div>카드 할부</div>
+								<!-- s: 25-07-31 수정 -->
+								{{#unless interest_free}}
 								{{> cp/linkButton bl_class="short_cut sm" bl_text="무이자할부 안내" question_tit="무이자할부 안내" }}
+								{{/unless}}
+								<!-- e: 25-07-31 수정 -->
 							</div>
 							{{> cp/selectitem si_item="일시불" si_title="카드 할부 선택" si_popup="card_period_select"}}
 							<ul class="list_ty2">

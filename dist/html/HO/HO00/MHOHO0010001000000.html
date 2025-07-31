@@ -463,9 +463,39 @@
 								</div>
 							</div>
 							<div class="easy_top">
-								<a href="javascript:void(0)" class="btn_link short_cut" title="페이지 이동">
-									<span class="text">전체상품</span>
-								</a>
+								<div class="btn_area ty2">
+									<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
+										<span class="text">계산하기</span>
+									</button>
+									<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_1">
+										<span class="text">갱신간편계산</span>
+									</button>
+								</div>
+								<div class="btn_area ty2">
+									<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_2">
+										<span class="text">운전자보험</span>
+									</button>
+									<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_2">
+										<span class="text">어린이보험</span>
+									</button>
+									<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_2">
+										<span class="text">펫보험</span>
+									</button>
+									<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_2">
+										<span class="text">주택화재보험</span>
+									</button>
+									<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_2">
+										<span class="text">건강보험</span>
+									</button>
+									<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_2">
+										<span class="text">해외여행보험</span>
+									</button>
+								</div>
+								<div class="btn_area center">
+									<a href="javascript:void(0)" class="btn_link short_cut" title="페이지 이동">
+										<span class="text">전체상품</span>
+									</a>
+								</div>
 							</div>
 						</div>
 						<div class="easy_none">
@@ -787,13 +817,13 @@
 				});
 				$("#easySwitch").on("change", function () {
 					if ($(this).is(":checked")) {
-						$(".normal_cont").addClass("easy");
+						$("body").addClass("easy-mode");
 						$(".toolbar").hide();
 						$(".easy_top").show();
 						$(".easy_item > .home_card").removeClass("bg_primary");
 						$(".easy_item .icon_link").addClass("list");
 					} else {
-						$(".normal_cont").removeClass("easy");
+						$("body").removeClass("easy-mode");
 						$(".toolbar").show();
 						$(".easy_top").hide();
 						$(".easy_item > .home_card").addClass("bg_primary");

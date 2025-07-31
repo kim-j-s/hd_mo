@@ -1,10 +1,11 @@
 .bottom_panel{
 	width:100%;
-	background-color: var(--color-surface-white-subtle);		
+	background-color: var(--color-surface-white-subtle);	
+	border-radius: var(--radius-medium3) var(--radius-medium3) 0 0;	
 	.item_hidden {
 		display: none;
 		overflow: hidden;
-	}
+	}	
 
 	.bottom_panel_toggle {
 		display: inline-flex;
@@ -41,6 +42,9 @@
 		position: fixed;
 		bottom:0;
 		left:0;
+		.item_hidden {
+			border-color: var(--color-divider-gray-light);
+		}
 		.bottom_panel_toggle {
 			&::after {
 				transform: rotate(0deg);

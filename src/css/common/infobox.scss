@@ -19,7 +19,7 @@
 		}
 		& + .info_gray {
 			margin-top: var(--gap-3);
-		}
+		}    
 	}
 
 	&.bg_etc01 {
@@ -87,7 +87,6 @@
 	}
 
 	// margin-top 52
-	& + .call_box,
 	& + .ag_groups,
 	& + .ag_group_wrap,
 	& + .chk_group_wrap {
@@ -128,6 +127,7 @@
 	& + .inp_checkbox,
 	& + .card_item_wrap,
 	& + .list_ty2,
+	& + .call_box,
 	& + .checkbox_group_wrap.space1 {
 		margin-top: var(--gap-5);
 	}
@@ -242,9 +242,6 @@
 		font-size: var(--font-size-body-small);
 		&.middle {
 			align-items: center;
-			.big {
-				font-size: var(--font-size-body-large);
-			}
 		}
 		&.bottom {
 			align-items: flex-end;
@@ -266,7 +263,8 @@
 			text-align: right;
 
 			.big {
-				font-size: var(--font-size-heading-medium);
+				font-size: var(--font-size-body-large);
+				//font-size: var(--font-size-heading-medium);
 			}
 			.rise,
 			.trend {
@@ -338,9 +336,8 @@
 			font-size: var(--font-size-body-small);
 		}
 	}
-	.total {
+	.total { 
 		.big {
-			//font-size: 20px;
 			font-size: var(--font-size-body-large);
 		}
 		&:not(.car) {
@@ -467,6 +464,17 @@
 			}
 		}
 	}
+
+	.picture_info_top {
+		.big {
+			font-size: var(--font-size-heading-medium);
+		}
+	}
+
+	.updown {
+		width: 12px;
+		height: 12px;
+	}
 }
 
 .call_box {
@@ -532,6 +540,58 @@
 		margin-top: var(--gap-3);
 		ul {
 			margin-top: 0;
+		}
+	}
+}
+
+
+// easy mode
+.easy_mode {
+	.info_gray {
+		.title_h6 {
+			color: var(--color-text-subtle);
+			margin-bottom: var(--easy--gap-2);
+		}
+		.title_h3 {
+			font-size: var(--easy--font-size-heading-small);
+		}
+		.info_text {
+			font-size: var(--easy--font-size-body-medium);
+			line-height: 30px;
+		}
+
+		// 보험료 확인(자동차)
+		dl {
+			gap: var(--easy--gap-8);
+			dt {
+				flex-grow: 0;
+				flex-shrink: 1;
+				font-size: var(--easy--font-size-body-small);
+			}
+			dd {
+				flex-shrink: 0;
+				flex-basis: auto;
+				font-size: var(--easy--font-size-body-small);
+				font-weight: 700;
+				del {
+					font-size: var(--easy--font-size-body-small);
+				}
+				.total_bic {
+					font-size: var(--easy--font-size-display-medium);
+				}
+				.big {
+					font-size: var(--easy--font-size-heading-large);
+				}
+			}
+		}
+		.info_top_cont {
+			dl {
+				gap: var(--easy--gap-4);
+				dt {
+					flex: none;
+					min-width: 135px;
+				}
+			}
 		}
 	}
 }

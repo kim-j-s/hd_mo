@@ -1965,12 +1965,12 @@
 	margin-top: var(--gap-3);
 	color: var(--color-text-disabled);
 }
-.normal_cont.easy .easy_none {
+body.easy-mode .normal_cont .easy_none {
 	display: none;
 	-webkit-transition: ease-out 0.3s;
 	transition: ease-out 0.3s;
 }
-.normal_cont.easy .easy_item {
+body.easy-mode .normal_cont .easy_item {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -1979,24 +1979,24 @@
 	-ms-flex-direction: column-reverse;
 	flex-direction: column-reverse;
 }
-.normal_cont.easy .easy_item .home_card .pro_tit,
-.normal_cont.easy .easy_item .home_card .btn_area {
+body.easy-mode .normal_cont .easy_item .home_card .pro_tit,
+body.easy-mode .normal_cont .easy_item .home_card .btn_area {
 	display: none;
 }
-.normal_cont.easy .easy_item .home_card .icon_link {
+body.easy-mode .normal_cont .easy_item .home_card .icon_link {
 	margin: 0;
 }
-.normal_cont.easy .easy_item .home_card .icon_link a {
+body.easy-mode .normal_cont .easy_item .home_card .icon_link a {
 	font-size: var(--font-size-easy-body-medium);
 	font-weight: 700;
 }
-.normal_cont.easy .easy_item .register_box a {
+body.easy-mode .normal_cont .easy_item .register_box a {
 	font-size: var(--font-size-easy-body-small);
 }
-.normal_cont.easy .easy_item .register_box a > span {
+body.easy-mode .normal_cont .easy_item .register_box a > span {
 	display: none;
 }
-.normal_cont.easy .easy_item .register_box a strong {
+body.easy-mode .normal_cont .easy_item .register_box a strong {
 	margin: 0;
 	padding-left: 2.8rem;
 	background-size: 2.4rem auto;
@@ -3939,8 +3939,8 @@
 	display: -ms-flexbox;
 	display: flex;
 }
-.simple_info_wrap .simple_info_item .sii_list > li + li .sii_list_l:has(.text) .text,
-.simple_info_wrap .simple_info_item .sii_list > li + li .sii_list_r:has(.text) .text {
+.simple_info_wrap .simple_info_item .sii_list > li + li .sii_list_l:has(.text) .short_cut.lg:not(:has(.text)) .text,
+.simple_info_wrap .simple_info_item .sii_list > li + li .sii_list_r:has(.text) .short_cut.lg:not(:has(.text)) .text {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -4329,7 +4329,7 @@ ul + .form_group_wrap {
 	font-weight: 700;
 }
 .pop_title_h1 + .info_text {
-	margin-top: var(--gap-3);
+	margin-top: var(--gap-4);
 }
 .pop_title_h1 + p {
 	margin-top: var(--gap-4);
@@ -4715,7 +4715,7 @@ ul + .form_group_wrap {
 	margin-top: var(--gap-5);
 }
 .info_gray + .pop_title_h1 {
-	margin-top: var(--gap-11);
+	margin-top: var(--gap-8);
 }
 .info_gray + .btn_area {
 	margin-top: var(--gap-5);
@@ -4991,6 +4991,14 @@ ul + .form_group_wrap {
 }
 .special_contract_list.radio .check_flex_box + .form_group_wrap {
 	margin: 1.6rem 0 0 2.8rem;
+}
+.special_contract_list.radio.state_check .money_box {
+	display: none;
+}
+.special_contract_list.radio.state_check > li:has(input[type="radio"]:checked) .money_box {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
 }
 .link_flex_box {
 	display: block;
@@ -5517,6 +5525,9 @@ ul + .form_group_wrap {
 .bg_top_cover .info_top_cont dt .point {
 	margin-left: 0.4rem;
 }
+.bg_top_cover .info_gray.bg_etc01 .total .big {
+	font-size: var(--font-size-heading-medium);
+}
 /* 배경색 있는 상단 컨텐츠 영역 */
 /* 계약상세 */
 .cd_top_wrap {
@@ -5978,20 +5989,22 @@ ul + .form_group_wrap {
 	transition: transform 0.8s cubic-bezier(0, -0.25, 0, 1.25), -webkit-transform 0.8s cubic-bezier(0, -0.25, 0, 1.25);
 }
 .is_diagnosis_service .service_visual .inner .visual_msg .msg_step1.effect {
-	color: var(--color-text-disabled);
-	background-color: transparent;
-}
-.is_diagnosis_service .service_visual .inner .visual_msg .msg_step1.effect:before {
-	position: absolute;
-	top: 0;
-	left: 0;
-	content: "";
-	display: block;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	background-color: rgba(255, 255, 255, 0.25);
-	border-radius: var(--radius-large2) var(--radius-large2) var(--radius-large2) 0;
+	color: var(--color-text-subtle);
+	background-color: rgba(255, 255, 255, 0.5);
+	/*
+  &:before {
+  	position: absolute;
+  	top:0;
+  	left: 0;
+  	content: '';
+  	display: block;
+  	width: 100%;
+  	height: 100%;
+  	overflow: hidden;
+  	background-color: rgba(255, 255, 255, 0.5);
+  	border-radius: var(--radius-large2) var(--radius-large2) var(--radius-large2) 0;
+  }
+  */
 }
 .is_diagnosis_service .service_visual .inner .visual_msg .msg_step2 {
 	margin-left: auto;

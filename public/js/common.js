@@ -12,7 +12,6 @@
     const $this = $(this),
           $nav = $this.closest('.header_inner').find('.nav_menu_wrap');
 
-    // if($nav.css('visibility') == 'hidden'){
 		/* 전체팝업 열기 */
 		if(!$nav.hasClass('active')){
 			$('body').addClass('scroll_lock');
@@ -83,7 +82,6 @@
 		$this.parent('.review_acd_item').toggleClass('active');
 	});
 
-
 	/* 펼치기/접히기 */
 	$DOM.on('click', '.acd_item .btn_toggle', function(){
 		const $this = $(this),
@@ -96,41 +94,7 @@
 		}else {
 			$item.removeClass('active');
 		}
-	})
-
-	/* tag_item click */
-	// $DOM.on('click', '.tag_item_wrap .tag_item', function(){
-	// 	const $this = $(this);
-	// 	const idx = $this.index();
-	// 	const positionVal = null;
-
-	// 	if($('.tag_item_move').length){
-	// 		const $target = $('.tag_item_move').find('.tag_move').eq(idx);
-	// 		const targetPadding = parseFloat($target.css('padding-top'));
-	// 		let summaryHeight = 0,
-	// 				simpleHeight = 0;
-	// 		const targetOffset = $target.position().top;
-	// 		const fix_h = $(this).closest('.sticky').height();
-
-	// 		if($('.simple_info_wrap.ty2').length){
-	// 			simpleHeight = 102;
-	// 		}
-	// 		if($('.info_summary').length){
-	// 			summaryHeight = $('.info_summary').height();
-	// 		}
-
-	// 		$('.tag_item').removeClass('active');
-	// 		$this.addClass('active');
-
-	// 		$this.closest('.popup_cont').animate({
-	// 			scrollTop: targetOffset + targetPadding + simpleHeight + fix_h + summaryHeight
-	// 		}, 500);
-
-	// 		if($('.btn_toggle').length){
-	// 			posiionVal = targetOffset + targetPadding + simpleHeight + fix_h;
-	// 		}
-	// 	}
-	// });
+	})	
 
   /* Tooltip */
   $DOM.on('click', '.tooltip_wrap button', function(){
@@ -182,7 +146,6 @@
 			})
 		}
 	})
-
 
   /* Input */
   $DOM.on('focus input', '.input_text .inp > input', function(){
@@ -316,8 +279,7 @@
       $(this).closest('.chk_group_wrap').find('input[type=checkbox]:not(:disabled)').prop('checked', false);
     }
   })
-	// 약관 동의
-  	
+	// 약관 동의  	
 	
 	//toggle-swich
 	$DOM.on('change', '.inp_checkbox input[role="switch"]', function(){
@@ -374,7 +336,6 @@
 		}
   });
 
-
 	/* Tab */
 	$DOM.on('click', '.tab_btn:not(.tab_btn_block)', function(){
 		const idx = $(this).index();
@@ -383,7 +344,6 @@
 		$(this).closest('.tab_wrap').children('.tab_wrap_content').removeClass('active');
 		$(this).closest('.tab_wrap').children('.tab_wrap_content').eq(idx).addClass('active');
 	});
-
 
 	// select_driver
 	$DOM.on('change', '.select_driver_range input[type="radio"]', function(){
@@ -400,56 +360,7 @@
 		}else {
 			$relGroup.removeAttr('class').addClass('relationship_box ' + newClass);
 		}
-	})
-
-	// 해제가능 radio group
-	// 
-	// $DOM.on('click', '.radio_group_resetable .inp_radio input[type="radio"]', function(){
-	// 	// console.log('change');
-	// 	const $this = $(this);
-	// 	setTimeout(function(){
-	// 		if($this.is(':checked')) {
-	// 			// $this.closest('.radio_group_resetable').removeClass('active');
-	// 			// $this.prop('checked', false);
-	// 			console.log('checked');
-	// 		} else {
-	// 			console.log('false');
-	// 		}
-	// 	}, 0);
-	// })
-
-	// var inputs = $('input');
-	// var checked = inputs.filter(':checked').val();
-	// inputs.on('click', function(){
-	// 	console.log('x');
-	// 	if($(this).val() === checked) {
-	// 		$(this).prop('checked', false);
-	// 		checked = '';
-	// 	} else {
-	// 		$(this).prop('checked', true);
-	// 		checked = $(this).val();
-	// 	}
-	// });
-
-
-	//radio_comb(2개의 라디오 버튼 중 택1 콤비네이션)
-	// $DOM.on('change', '.radio_comb input[type="radio"]', function(){
-	// 	const parentCont = $(this).closest('.radio_comb');
-
-	// 	if(parentCont.length > 0){
-	// 		parentCont.removeClass('origin').addClass('active');
-	// 	}
-	// });
-
-	// $DOM.ready(function(){
-	// 	const target = $('.radio_comb input[type="radio"]:checked');
-	// 	target.each(function(){
-	// 		const parentCont = $(this).closest('.radio_comb');
-	// 		if(parentCont.length > 0){
-	// 			parentCont.removeClass('origin').addClass('active');
-	// 		}
-	// 	});
-	// });
+	});
 
 	// 수령지 일괄 선택
 	$DOM.on('change', '.sa_change', function() {
@@ -496,84 +407,6 @@
 	}
 	// 수령지 일괄 선택
 
-	// $DOM.on('change', '.select_driver_range input[type="radio"]', function(){
-	// 	const $relGroup = $('.ouput_driver_relationship').find('.rel_group')
-	// 	let chkNum = $(this).attr('data-num');
-
-	// 	if(chkNum){
-	// 		chkNum = chkNum.split(',');
-	// 	}else {
-	// 		return;
-	// 	}
-
-	// 	console.log(chkNum);
-
-	// 	$relGroup.children('div').each(function(){
-	// 		const $this = $(this),
-	// 					thisNum = $this.attr('data-num'),
-	// 					numSrc = $this.find('img').attr('src'),
-	// 					newFile = numSrc.substring(0, numSrc.lastIndexOf('.'));
-
-	// 		// console.log('chkNum' + chkNum, 'num' + num);
-	// 		// console.log(numSrc)
-
-	// 		if (chkNum.includes(thisNum)) {
-	// 			$this.addClass('active');
-	// 			$this.find('img').attr('src', newFile + '_on.' + /[^.]+$/.exec(numSrc));
-	// 	} else {
-	// 			// chkNum에 해당하지 않는 div에 대해서는 '_on'을 삭제
-	// 			if (numSrc.includes('_on')) {
-	// 					const originalSrc = numSrc.replace('_on', '');
-	// 					$this.find('img').attr('src', originalSrc);
-	// 			}
-	// 	}
-
-	// 		// numCase.addClass('active');
-	// 		// numCase.find('img').attr('src', newFile + '_on.' + /[^.]+$/.exec(numSrc));
-	// 	});
-	// })
-
-
-	// 위치 이벤트
-	// let pe = true; // 초기엔 true로 시작해야 클릭이 가능함
-	// $DOM.on('click', '.position_event_tab .tag_item', function () {
-	// 	if (!pe) return;
-
-	// 	pe = false; // 클릭되면 바로 잠금 (중복 클릭 방지)
-
-	// 	const $this = $(this),
-	// 				$target = $this.closest('.position_event_wrap').find('.position_event_content'),
-	// 				idx = $this.index();
-
-	// 	const $point = $target.find('.pec_point').eq(idx);
-	// 	if (!$point.length) {
-	// 		pe = true; // 타겟 없으면 다시 풀어줌
-	// 		return;
-	// 	}
-
-	// 	const posInfo = $point.offset().top;
-
-	// 	if ($this.closest('.popup_cont').length) {
-	// 		const $popupContent = $('.popup_content');
-	// 		const popupContTop = $popupContent.position().top;
-	// 		const $wrapHeight = $this.closest('.tag_item_wrap').outerHeight();
-
-	// 		$('.popup_cont').stop().animate({
-	// 			scrollTop: posInfo - (popupContTop + $wrapHeight)
-	// 		}, 500, function () {
-	// 			pe = true; // 애니메이션 끝난 후 다시 열림
-	// 			setTimeout(function () {
-	// 				$this.closest('.position_event_tab').find('.tag_item').removeClass('active');
-	// 				$this.addClass('active');
-	// 			}, 10);
-	// 		});
-	// 	} else {
-	// 		pe = true; // 조건 미충족 시도라도 열어둠
-	// 	}
-	// });
-
-
-
 	let ri = $('.radio_group_resetable input');
 	let richecked = ri.filter(':checked').val();
 	$DOM.on('click', '.radio_group_resetable input[type="radio"]', function() {
@@ -586,13 +419,11 @@
 		}
 	});
 
-
 	// 선택목록 active 처리
 	$DOM.on('click', '.opt_select_list.opt_case3 .option', function(e){
 		$(this).closest('.opt_select_list').find('.option').removeClass('active').removeAttr('title');
 		$(this).addClass('active').attr('title', '선택됨');
 	});
-
 
 	// inp_only_num
 	$DOM.on('keyup', '.inp_only_num', function() {
@@ -611,6 +442,7 @@
 			$this.val(raw);
 		}
 	});
+
 	$DOM.on('blur', '.inp_picker', function () {
 		const $this = $(this);
 		let val = $this.val().replace(/\D/g, ''); // 숫자만 추출
@@ -681,6 +513,19 @@
 		}
 	});
 
+
+
+	
+
+
+
+
+
+
+
+
+
+	// 즉시 실행 함수
 
 })();
 
@@ -780,32 +625,12 @@ function simpleInfo(){
 				}
 			}
 		}
-
-		// if($('.tag_item_wrap.sticky').length){
-		// 	$('.tag_item_move .tag_move').each(function(idx) {
-		// 		const $target = $(this);
-		// 		const targetTop = $target.position().top;
-		// 		const targetHeight = $target.height();
-		// 		const simpleHeight = $('.simple_info_wrap').height();
-		// 		let isLast = 0;
-		// 		isLast = $('.tag_item_move .tag_move').length - 1;
-
-		// 		// console.log(pop_scrollTop, pop_height, $bigTarget[0].scrollHeight)
-
-		// 		if( pop_scrollTop + 100 >= targetTop + targetHeight + simpleHeight ){
-		// 			$('.tag_item').removeClass('active');
-		// 			$('.tag_item').eq(idx).addClass('active');
-		// 		}else if (pop_scrollTop + pop_height + 145 >= $bigTarget[0].scrollHeight){
-		// 			$('.tag_item').removeClass('active');
-		// 			$('.tag_item').eq(isLast).addClass('active');
-		// 		}
-		// 	});
-		// }
 	});
 }
 // 간편정보 노출 방식
 
 // 최근설계내역
+
 function currentPlan() {
 	const $bottom = $('.bottom_fix_wrap'),
 				$bottom_h = $bottom.outerHeight(),
@@ -894,6 +719,14 @@ function initPositionEventWrap($wrap) {
 		}
 	});
 }
+
+
+
+
+
+
+
+
 
 $(function(){
 	// tab Scroll
@@ -1025,12 +858,8 @@ $(function(){
 				$focusable.focus();
 			}
 		}, 400);
-	});
-
-	
-	
+	});	
 	// 달력 호출
-
 
 	// 라디오 약관 동의
 	$('.ag_groups').each(function () {
@@ -1222,7 +1051,6 @@ $(function(){
 	});
 	/* 광고성 정보의 수신동의 - 개별 Case */
 
-
 	// 큰글씨 모드
 	// 확대 버튼 클릭 이벤트
 	$('.z_up').on('click', function() {
@@ -1352,7 +1180,6 @@ $(function(){
 	}
 	autoCompleteEmail();
 
-
 	// 진입 시 전화번호 포맷 - readonly만 적용
 	$('.input_text').each(function() {
 		if( $(this).hasClass('phone') && $(this).hasClass('readonly') ){
@@ -1364,7 +1191,6 @@ $(function(){
 			$inp.val(newVal).addClass('isVal');
 		}
 	});
-
 
 	/* 페이지 내 스크롤 이벤트 */
 	$('.container').on('scroll', function(){
@@ -1388,132 +1214,6 @@ $(function(){
 		}
 	});
 
-
-
-	
-	// 개선 버젼
-	/*
-	const $wraps = $('.position_event_wrap');
-	$wraps.each(function () {
-		const $wrap = $(this);
-		const $tabBtns = $wrap.find('.position_event_tab .tag_item');
-		const $contents = $wrap.find('.position_event_content .pec_point');
-		const $scrollArea = $wrap.find('.position_event_content');
-
-		let scrolling = false;
-
-		// 1. 탭 클릭 시 콘텐츠 위치로 스크롤
-		$tabBtns.on('click', function () {
-			const idx = $(this).index();
-			const $target = $contents.eq(idx);
-			let expHeight = 0;
-			let sHeight = 0;
-
-			if ($wrap.find('.pew_exception').length) {
-				const $exception = $wrap.find('.pew_exception');
-				const exceptionHeight = $exception.outerHeight();
-
-				// console.log('결제영역높이 : ' + exceptionHeight)
-
-					expHeight = exceptionHeight;
-			}
-
-			if($wrap.find('.sii_wrap').length){
-				const $sii = $wrap.find('.sii_wrap').children('.position_event_tab');
-				const siiHeight = parseFloat($sii.css('padding-bottom'));
-
-				sHeight = siiHeight;
-			}
-
-			console.log('예외 높이 : ', expHeight);
-
-			if ($target.length) {
-				scrolling = true;
-				$tabBtns.removeClass('active');
-				$(this).addClass('active');
-
-				const containerTop = $scrollArea.offset().top;
-				const targetTop = $target.offset().top;
-				
-				console.log('위치 1 : ', containerTop);
-				console.log('위치 2 : ', targetTop);
-				const scrollY = targetTop - containerTop + expHeight + sHeight;
-
-				$wrap.stop().animate({ 
-					scrollTop: scrollY 
-				}, 300, function () {
-					scrolling = false;
-					// console.log(scrollY, containerTop, targetTop);
-					// 포커스 가능한 첫 요소 탐색
-					// 25-07-23 모바일용으로 재수정
-					// const $focusable = $target.find('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])').filter(':visible').first();
-
-					// if ($focusable.length) {
-					// 	$focusable.focus();
-					// } else {
-					// 	// 없다면 컨테이너 자체에 tabindex 부여 후 포커스 (예외 대응)
-					// 	$target.attr('tabindex', '-1').focus();
-					// }
-					// 25-07-23 모바일용으로 재수정
-					$target.attr('tabindex', '-1').focus();
-				});
-			}
-		});
-
-		// 현재 스크롤 위치
-		$wrap.on('scroll', function () {
-			if (scrolling) return;
-			const $this = $(this);
-			const scrollTop = $this.scrollTop();
-			const scrollH = $this.outerHeight();
-			// 팝업인체 바닥인지 조건
-
-			let expHeight = 0;
-			let sHeight = 0;
-
-			if ($wrap.find('.pew_exception').length) {
-				const $exception = $wrap.find('.pew_exception');
-				const exceptionHeight = $exception.outerHeight();
-
-				expHeight = exceptionHeight;
-			}
-			if($wrap.find('.sii_wrap').length){
-				const $sii = $wrap.find('.sii_wrap').children('.position_event_tab');
-				const siiHeight = parseFloat($sii.css('padding-bottom'));
-
-				sHeight = siiHeight;
-			}
-			console.log(sHeight);
-
-			const $points = $this.find('.position_event_content .pec_point');
-			let activeIdx = -1;
-
-			$points.each(function (index) {
-				const targetTop = $(this).offset().top; // 가야하는곳
-				const containerTop = $scrollArea.offset().top;
-				const scrollY = targetTop - containerTop + expHeight + sHeight;
-				if (scrollY < scrollTop + 10) {
-					activeIdx = index; // 조건을 만족하는 가장 마지막 인덱스를 저장
-				}
-			});
-			
-			// console.log(scrollTop + height, srHeight);
-
-			if (activeIdx !== -1) {
-				// console.log('현재 인덱스:', activeIdx);
-				$tabBtns.removeClass('active');
-				$tabBtns.eq(activeIdx).addClass('active');
-			}
-			
-		});
-
-	});
-	*/
-	// 개선 버젼
-  
-
-
-	// ready
 
 	//MY - 대출신청금액입력 MMYLOAN10002010000 접고 펼치기 
 	$('.bottom_panel').each(function () {
@@ -1579,6 +1279,73 @@ $(function(){
 		}
 	});
 
+	
+	// s: 상품설명서 주요 내용 스크롤 이동 버튼
+	const $popupCont = $('.popup_cont');
+  const $fixedButton = $('.scroll_down');
+  const $moveTarget = $popupCont.find('.move');
+
+	let moveTargetPosition = 0;
+	if ($moveTarget.length) {
+		moveTargetPosition = $moveTarget.position().top;
+	}
+
+	let scrollingChk = false; // 스크롤 중복 실행 방지 플래그	
+
+  // 스크롤 이벤트
+  $popupCont.on('scroll', function() {
+		if (scrollingChk) return;
+		if ( $(this).find('.move').length === 0 ) return; // .move가 없으면 실행하지 않음
+		const $thisPopupCont = $(this); // 현재 스크롤된 .popup_cont
+		const $popupWrap = $thisPopupCont.closest('.popup_wrap');
+		const $fixedButton = $popupWrap.find('.scroll_down');
+		const $doneButton = $popupWrap.find('.done');
+	
+		const currentScrollTopInPopup = $thisPopupCont.scrollTop();
+		const scrollHeight = this.scrollHeight; // DOM element 접근
+		const clientHeight = $thisPopupCont.height();
+	
+		// console.log('currentScrollTopInPopup: ' + currentScrollTopInPopup);
+	
+		// 스크롤이 최하단에 도달했는지 확인
+		if (currentScrollTopInPopup + clientHeight >= scrollHeight - 80) {
+			$fixedButton.hide();
+			$doneButton.show();
+		}
+	});
+
+  // 하단 고정 버튼 클릭 이벤트
+	
+	
+  $fixedButton.on('click', function() {
+		if (scrollingChk) return; // 이미 스크롤 중이면 중복 실행 방지
+		scrollingChk = true; // 스크롤 시작 시 플래그 설정
+		// 스크롤 애니메이션
+		const $popupContThis = $(this).closest('.popup_wrap').find('.popup_cont');
+    const currentScrollTopInPopup = $popupContThis.scrollTop();
+    if (currentScrollTopInPopup < moveTargetPosition - 88) {
+      $popupContThis.animate({
+        scrollTop: moveTargetPosition - 88
+      }, 800, function(){
+				moveTargetPosition = $popupContThis.scrollTop();
+				scrollingChk = false; // 스크롤 완료 후 플래그 해제
+			});
+			// console.log('event 1');
+    } else {
+      $popupContThis.animate({
+        scrollTop: $popupContThis[0].scrollHeight - $popupContThis.outerHeight()
+      }, 800, function(){
+				scrollingChk = false; // 스크롤 완료 후 플래그 해제
+				$(this).closest('.popup_wrap').find('.scroll_down').hide();
+				$(this).closest('.popup_wrap').find('.done').show();
+			});
+			// console.log('event 2');
+    }
+  });
+	// e: 상품설명서 주요 내용 스크롤 버튼
+
+
+	// ready
 
 });
 	
