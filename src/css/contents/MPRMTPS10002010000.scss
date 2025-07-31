@@ -45,8 +45,8 @@
 // 정보입력 폼
 .input_form_box {
 	margin-top: -26px;
-	background-color: var(--color-border-information-light);
-	border-radius: 16px;
+	background-color: var(--color-surface-gray-subtle);
+	border-radius: var(--radius-medium3);
 
 	& + .img_area,
 	& + .form_group_wrap,
@@ -88,7 +88,7 @@
 			}
 
 			& ~ .acd_item {
-				border-top: var(--border-width-static-regular) solid var(--color-border-gray-light);
+				border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 			}
 
 			// &:first-child {
@@ -124,9 +124,13 @@
 					position: relative;
 					width: 100%;
 					// padding: 20px 48px 12px 24px;
-					padding: 20px 48px 20px 24px;
+					padding: var(--padding-7) 48px var(--padding-7) var(--padding-8);
 					background-color: #fff;
 					font-size: var(--font-size-label-medium);
+
+					& > span {
+						line-height: 24px;
+					}
 
 					&:after {
 						position: absolute;
@@ -149,8 +153,7 @@
 				}
 				&.active {
 					& + .acd_cont {
-						.inner {
-						}
+						margin-top: -12px;
 					}
 				}
 			}
