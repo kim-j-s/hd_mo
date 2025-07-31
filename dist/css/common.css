@@ -235,6 +235,9 @@ strong {
 .content .content_top + .text_sub {
 	margin-top: var(--gap-4);
 }
+.content .content_top + .card_item_wrap {
+	margin-top: var(--gap-5);
+}
 .content .content_top .title_h2 + .btn_area {
 	margin-top: var(--gap-3);
 }
@@ -2989,7 +2992,7 @@ strong {
 }
 .picture_info_top .preview img {
 	display: block;
-	width: 5.2rem;
+	width: 5.4rem;
 	height: 4rem;
 }
 .picture_info_top .preview_item {
@@ -6049,6 +6052,11 @@ strong {
 	display: block;
 	text-align: right;
 }
+.card_item_wrap .card_item .card_list_ty1 > li:not(:has(.cont)) .title {
+	max-width: 100%;
+	text-align: left;
+	color: var(--color-text-subtle);
+}
 .card_item_wrap .card_item .card_list_ty1 > li.result > * {
 	line-height: 2.4rem;
 }
@@ -6878,6 +6886,8 @@ strong {
 }
 .easy_mode .card_item_wrap .card_item .item_inner .inner_cont .item_top .title_info .main_title {
 	font-size: var(--easy--font-size-heading-large);
+	background-size: 2.4rem auto;
+	background-position: right 0.2rem top 0.6rem;
 }
 .easy_mode .card_item_wrap .card_item .item_inner .inner_cont .item_top .desc {
 	font-size: var(--easy--font-size-label-medium);
@@ -10842,7 +10852,7 @@ ol li .table_wrap + .list_ty2 li + li {
 	height: 2.4rem;
 	top: 50%;
 	right: 0;
-	background: url(../images/icon/arrowRight_ty4.svg) no-repeat center/2rem auto;
+	background: url(../images/icon/arrowRight_ty4.svg) no-repeat center/2.4rem auto;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
@@ -10857,27 +10867,49 @@ ol li .table_wrap + .list_ty2 li + li {
 	padding-top: var(--padding-6);
 	padding-bottom: var(--padding-6);
 }
-.easy_mode .box_list_wrap .box_list .item .item_inner_cont .item_title {
-	padding-bottom: var(--easy--gap-3);
-	font-size: var(--easy--font-size-body-medium);
-	color: var(--color-text-basic);
-	line-height: 150%;
-}
-.easy_mode .box_list_wrap .box_list .item .item_inner_cont .item_desc {
-	font-size: var(--easy--font-size-body-small);
-	color: var(--color-text-subtle);
-	line-height: 150%;
-}
-.easy_mode .box_list_wrap .box_list .item .item_inner_cont strong {
-	display: block;
+.easy_mode .box_list_wrap .box_list .item .item_inner_cont .item_sub_title {
 	padding-bottom: var(--easy--gap-2);
 	font-size: var(--easy--font-size-body-medium);
+	line-height: 3rem;
+}
+.easy_mode .box_list_wrap .box_list .item .item_inner_cont .item_title {
+	font-size: var(--easy--font-size-body-medium);
+	font-weight: 700;
+	color: var(--color-text-basic);
+	line-height: 3rem;
+}
+.easy_mode .box_list_wrap .box_list .item .item_inner_cont .item_desc {
+	padding-top: var(--easy--gap-3);
+	font-size: var(--easy--font-size-body-small);
+	color: var(--color-text-subtle);
+	line-height: 2.7rem;
 }
 .easy_mode .box_list_wrap .box_list .item:has(.link_item) .link_item {
 	padding-right: 4.4rem;
 }
-.easy_mode .box_list_wrap .box_list .item:has(:not(.item_inner_cont)) .item_inner_cont {
+.easy_mode .box_list_wrap .box_list .item:not(:has(.link_item)) .item_inner_cont {
 	padding-right: var(--padding-6);
+}
+.easy_mode .box_list_wrap .box_list.ty_box {
+	padding: var(--padding-8) var(--padding-7);
+	border: var(--border-width-static-regular) solid var(--color-border-gray-light);
+	border-radius: var(--easy--radius-large2);
+	background: var(--color-surface-white-subtle);
+}
+.easy_mode .box_list_wrap .box_list.ty_box .item {
+	border: 0;
+}
+.easy_mode .box_list_wrap .box_list.ty_box .item_inner_cont {
+	padding: 0;
+}
+.easy_mode .box_list_wrap .box_list.ty_box .item_inner_cont .item_sub_title {
+	font-size: var(--easy--font-size-body-small);
+	line-height: 2.7rem;
+}
+.easy_mode .box_list_wrap .box_list.ty_box .item_inner_cont .item_title {
+	font-size: var(--easy--font-size-heading-large);
+	font-weight: 700;
+	line-height: 3.6rem;
 }
 .easy_mode .box_list_wrap .box_list.ty_icons .item {
 	padding-left: 4.4rem;
@@ -13091,11 +13123,9 @@ ol li .table_wrap + .list_ty2 li + li {
 	margin-top: var(--gap-6);
 }
 .table_wrap + .space_list_ty2,
-.table_wrap + .checkbox_group_wrap {
-	margin-top: var(--gap-8);
-}
+.table_wrap + .checkbox_group_wrap,
 .table_wrap + .tab_wrap {
-	margin-top: var(--gap-11);
+	margin-top: var(--gap-8);
 }
 .table_wrap + .title_h3 {
 	margin-top: var(--gap-11);
