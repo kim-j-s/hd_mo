@@ -125,10 +125,20 @@
 		top: 109px;
 		left: 30px;
 
+		&.man {
+			> span {
+				background-image:url(../images/content/mtps/img_rel_case_man.svg);
+			}
+		}
+		&.woman {
+			> span {
+				background-image:url(../images/content/mtps/img_rel_case_woman.svg);
+			}
+		}
+
 		> span {
 			width: 90px;
 			min-height: 103px;
-			background-image:url(../images/content/mtps/img_rel_case2.svg);
 
 			&:before {
 				content:'';
@@ -161,10 +171,20 @@
 		margin-left: -28px;
 		// min-height: 103px;
 
+		&.man {
+			> span {
+				background-image:url(../images/content/mtps/img_rel_case_man.svg);
+			}
+		}
+		&.woman {
+			> span {
+				background-image:url(../images/content/mtps/img_rel_case_woman.svg);
+			}
+		}
+
 		> span {
 			width: 90px;
 			min-height: 103px;
-			background-image:url(../images/content/mtps/img_rel_case3.svg);
 
 			&:before {
 				content:'';
@@ -223,8 +243,17 @@
 	&.pick1 {
 		.rel_case2  {
 			@include activeState;
-			> span {
-				@include activeImage(2);
+
+			&.woman {
+				> span {
+					background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+				}
+			}
+
+			&.man {
+				> span {
+					background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
+				}
 			}
 		}
 	}
@@ -233,14 +262,32 @@
 	&.pick2 {
 		.rel_case2 {
 			@include activeState;
-			> span {
-				@include activeImage(2);
+
+			&.woman {
+				> span {
+					background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+				}
+			}
+
+			&.man {
+				> span {
+					background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
+				}
 			}
 		}
 		.rel_case3 {
 			@include activeState;
-			> span {
-				@include activeImage(3);
+
+			&.woman {
+				> span {
+					background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+				}
+			}
+
+			&.man {
+				> span {
+					background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
+				}
 			}
 		}
 	}
@@ -261,14 +308,32 @@
 		}
 		.rel_case2 {
 			@include activeState;
-			> span {
-				@include activeImage(2);
+
+			&.woman {
+				> span {
+					background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+				}
+			}
+
+			&.man {
+				> span {
+					background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
+				}
 			}
 		}
 		.rel_case3 {
 			@include activeState;
-			> span {
-				@include activeImage(3);
+
+			&.woman {
+				> span {
+					background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+				}
+			}
+
+			&.man {
+				> span {
+					background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
+				}
 			}
 		}
 		.rel_case5 {
@@ -285,6 +350,20 @@
 			@if $count != 4 {
 				.rel_case#{$count}{
 					@include activeState;
+					
+					@if $count == 2 or $count == 3 {
+						&.woman {
+							> span {
+								background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+							}
+						}
+
+						&.man {
+							> span {
+								background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
+							}
+						}
+					}
 					& > span {
 						@if $count == 1 {
 							&.ty1 {
@@ -317,8 +396,17 @@
 	&.pick6 {
 		.rel_case2 {
 			@include activeState;
-			> span {
-				@include activeImage(2);
+
+			&.woman {
+				> span {
+					background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+				}
+			}
+
+			&.man {
+				> span {
+					background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
+				}
 			}
 		}
 		.rel_case6 {
@@ -333,14 +421,32 @@
 	&.pick7 {
 		.rel_case2 {
 			@include activeState;
-			> span {
-				@include activeImage(2);
+
+			&.woman {
+				> span {
+					background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+				}
+			}
+
+			&.man {
+				> span {
+					background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
+				}
 			}
 		}
 		.rel_case3 {
 			@include activeState;
-			> span {
-				@include activeImage(3);
+
+			&.woman {
+				> span {
+					background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+				}
+			}
+
+			&.man {
+				> span {
+					background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
+				}
 			}
 		}
 		.rel_case6 {
@@ -355,14 +461,32 @@
 	&.pick8 {
 		.rel_case2 {
 			@include activeState;
-			> span {
-				@include activeImage(2);
+
+			&.woman {
+				> span {
+					background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+				}
+			}
+
+			&.man {
+				> span {
+					background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
+				}
 			}
 		}
 		.rel_case3 {
 			@include activeState;
-			> span {
-				@include activeImage(3);
+
+			&.woman {
+				> span {
+					background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+				}
+			}
+
+			&.man {
+				> span {
+					background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
+				}
 			}
 		}
 		.rel_case5  {
@@ -377,8 +501,17 @@
 	&.pick9 {
 		.rel_case2 {
 			@include activeState;
-			> span {
-				@include activeImage(2);
+
+			&.woman {
+				> span {
+					background-image: url(../images/content/mtps/img_rel_case_woman_on.svg);
+				}
+			}
+
+			&.man {
+				> span {
+					background-image: url(../images/content/mtps/img_rel_case_man_on.svg);
+				}
 			}
 		}
 		.rel_case5 {
