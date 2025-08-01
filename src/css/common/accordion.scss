@@ -123,8 +123,12 @@
 		border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 		.acd_head {
 			position: relative;
-			padding: 24px 56px 16px 20px;
+			padding: var(--padding-8) 56px var(--padding-8) var(--padding-7);
 
+			.inp_checkbox:not(:has(.sub_g_txt)) {
+				min-height: 32px;
+				padding-top: 2px;
+			}
 			.acd_btn {
 				position: absolute;
 				top: 50%;
@@ -157,6 +161,7 @@
 				}
 			}
 			&.active {
+				padding-bottom: 16px;
 				.acd_btn {
 					&::after {
 						transform: rotate(180deg);
