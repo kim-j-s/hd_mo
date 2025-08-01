@@ -1,3 +1,455 @@
-.prd{
+%background_set {
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 32px auto;
+}
+
+body {
+	// 백그라운드 넓이 100% 좌우 스크롤 삭제
+	&.overflow-x {
+		overflow-x: hidden;
+	}
+}
+
+// 상품안내
+.prd_view {
+	// 타이틀 영역
+	.title_view_wrap {
+		&.flex_column {
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			gap: var(--gap-3);
+		}
+	}
+	// 컨텐츠 영역
+	.content_body {
+		display: flex;
+		flex-direction: column;
+		gap: var(--gap-11);
+	}
+
+	// intro info
+	.intro_area {
+		.info_gray {
+			display: flex;
+			align-items: center;
+			min-height: 234px;
+		}
+	}
+	.intro_info {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: relative;
+		width: 100%;
+		&::after {
+			content: '';
+			display: block;
+			width: 240px;
+			height: 160px;
+			background-repeat: no-repeat;
+    	background-position: center center;
+    	background-size: contain;
+		}
+		@for $i from 1 through 5 {
+			&.bg_intro#{$i}::after {
+					background-image: url('../images/content/ltht/bg_intro#{$i}.png');
+			}
+		}
+
+		.info_list {
+			.item {
+				@for $i from 1 through 5 {
+					&.ico_intro#{$i} {
+							background-image: url('../images/content/ltht/ico_intro#{$i}.svg');
+					}
+				}
+			}
+		}
+	}
+
+	// 보장내용
+	.guarantee_area {
+		position: relative;
+		padding: var(--padding-10) 0;
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			width: 100vw;
+			height: 100%;
+			background: var(--color-surface-warning-subtler);
+			transform: translateX(-50%);
+			z-index: -1;
+		}
+		.guarantee_list {
+			display: flex;
+			flex-direction: column;
+			gap: var(--gap-5);
+			.item {
+				&:nth-child(n+4) {
+					display: none;
+				}
+				.titie_wrap {
+					padding-left: 44px;
+					@extend %background_set;
+					@for $i from 1 through 40 {
+						&.item_ico_ty#{$i} {
+								background-image: url('../images/content/bi/visual/bg_exp_ty#{$i}.png');
+						}
+					}
+				}
+				.desc {
+					padding-top: var(--gap-2);
+					font-size: var(--font-size-body-small);
+					color: var(--color-text-subtle);
+				}
+			}
+		}
+		.btn_area {
+			margin-top: var(--gap-5);
+		}
+
+		// 보장내용 토글버튼
+		.tg_item {
+			+ .btn_area {
+				.btn_toggle {
+					.text {
+						&::before {
+							content:'더보기';
+						}
+					}
+				}
+			}
+			&.active {
+				.guarantee_list {
+					.item {
+						&:nth-child(n+4) {
+							display: block;
+						}
+					}
+				}
+				+ .btn_area {
+					 .btn_toggle {
+						 .text {
+							&::before {
+								content: "닫기";
+							}
+							&::after {
+								transform: rotate(-180deg);
+							}
+						 }
+					 }
+				}
+			}
+			
+		}
+
+	}
+
+	// 할인혜택
+	.benefit_area {
+		.info_list {
+			.item {
+				@for $i from 1 through 5 {
+					&.ico_benefit#{$i} {
+							background-image: url('../images/content/ltht/ico_benefit#{$i}.svg');
+					}
+				}
+			}
+		}
+	}
+
+	// 자주하는질문
+	.faq_area {
+		.item_wrap_faq {
+			border-top: 0;
+			.acd_item {
+				// border-bottom: 0;
+				.acd_head {
+					.acd_btn {
+						position: relative;
+						padding: 14px 32px 10px 28px;
+						background-color: transparent;
+						&::after {
+							content: '';
+							display: block;
+							position: absolute;
+							bottom: 10px;
+							left: 0;
+							width: 24px;
+							height: 24px;
+							background: url('../images/content/ltht/ico_accordion_q.svg') no-repeat;
+							background-size: 24px auto;
+						}
+					}
+				}
+				.acd_cont {
+					.inner {
+						position: relative;
+						padding-left: 28px;
+						&::before {
+							content: '';
+							display: block;
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 24px;
+							height: 24px;
+							background: url('../images/content/ltht/ico_accordion_a.svg') no-repeat;
+							background-size: 24px auto;
+						}
+						&:has(img) {
+							text-align: center;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// 가입후기
+	.recommend_area {
+		.card_list_wrap_ty2 {
+			display: flex;
+			flex-wrap: wrap;
+			gap: var(--gap-4);
+			> li {
+				flex-grow: 0;
+				flex-basis: calc(100% / 2 - 6px);
+				margin: 0;
+
+				.info_area {
+					width: 100%;
+					display: flex;
+					align-items: center;
+					gap: var(--gap-2);
+					flex-wrap: wrap;
+					.meta {
+						display: inline-block;
+						color: var(--color-text-subtle);
+						font-size: var(--font-size-body-small);
+						color: var(--color-text-subtle);
+						white-space: nowrap;
+						position: relative;
+						& + .meta {
+							padding-left: 9px;
+							&::before {
+								display: block;
+								content: "";
+								width: 1px;
+								height: 12px;
+								margin: 0 4px;
+								background: var(--color-border-gray-light);
+								position: absolute;
+								top: 50%;
+								left: 0px;
+								transform: translateY(-50%);
+							}
+						}
+					}
+				} //info_area
+			}
+			.item_preview {
+				font-size: var(--font-size-body-medium);
+				color: var(--color-text-basic);
+				line-height: 24px;
+				line-clamp: 2;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+			}
+		}
+	}
 	
+	// 목록
+	.info_list {
+		display: flex;
+		flex-direction: column;
+		gap: var(--gap-7);
+		.tit {
+			font-size: var(--font-size-body-medium);
+			color: var(--color-text-basic);
+			line-height: 24px;
+		}
+		.desc {
+			padding-top: var(--gap-2);
+			font-size: var(--font-size-body-small);
+			color: var(--color-text-subtle);
+			line-height: 21px;
+		}
+		.item {
+			padding-left: 44px;
+			@extend %background_set;
+		}
+		&.ty_line {
+			gap: 0;
+			.item {
+				padding-top: var(--padding-6);
+				padding-bottom: var(--padding-6);
+				border-bottom: var(--border-width-static-regular) solid var(--color-border-gray-light);
+				&:first-of-type {
+					border-top: var(--border-width-static-regular) solid var(--color-border-gray-light);
+				}
+			}
+		}
+	}
+	
+	// 간격
+	.cont_head {
+		display: flex;
+		flex-direction: column;
+		gap: var(--gap-2);
+		margin-bottom: var(--gap-6);
+		&.flex-inline {
+			flex-direction: row;
+			align-items: center;
+		}
+		.info_text2 {
+			margin-top: 0;
+			margin-left: var(--gap-3);
+		}
+	}
+	
+}
+
+// 이벤트 베너
+.evt_banner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	width: 100%;
+	border: 1px solid transparent;
+	border-radius: var(--radius-large2);
+	&::after {
+		content: '';
+		display: block;
+		width: 164px;
+		height: 100px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 100% auto;
+	}
+	@for $i from 1 through 5 {
+		&.evt_bg#{$i}::after {
+				background-image: url('../images/content/ltht/bg_banner#{$i}.png');
+		}
+	}
+
+	.desc_wrap {
+		padding-left: var(--padding-8);
+		.tit {
+			font-size: var(--font-size-body-large);
+		}
+		.desc {
+			font-size: 13px;
+		}
+	}
+
+	// 베너 종류
+	&.evt_bg1 {
+		border-color: #D1F3DE;
+		background-color: #EDFFF4;
+		.desc_wrap {
+			.tit {
+				color: #167052;
+			}
+			.desc {
+				color: #218564;
+			}
+		}
+	}
+}
+
+// 별점 리뷰
+.review_wrap {
+	display: flex;
+	align-items: center;
+	gap: var(--gap-3);
+	.review_acd_item {
+		width: auto;
+		border: 0;
+		border-radius: inherit;
+	}
+}
+
+// 상품바로가기
+.prd_link_area {
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	&.fixed {
+		position: fixed;
+	}
+
+	.prd_link {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: relative;
+		width: 836px;
+		min-height: 84px;
+		margin: 0 auto;
+		padding: var(--padding-5) 0 var(--padding-6);
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			width: 100vw;
+			height: 100%;
+			border-radius: var(--radius-xlarge2) var(--radius-xlarge2) 0 0;
+			background-color: var(--color-surface-white-subtle);
+			box-shadow: 0 var(--shadow-y-minus2) var(--shadow-blur-2) 0 var(--color-alpha-shadow1);
+			transform: translateX(-50%);
+			z-index: -1;
+		}
+
+		.prd_item {
+			position: relative;
+			padding-left: 68px;
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				width: 56px;
+				height: 56px;
+				border-radius: var(--radius-medium2);
+				background: var(--color-surface-primary-subtler);
+				transform: translateY(-50%);
+			}
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: -4px;
+				left: 12px;
+				width: 32px;
+				height: 32px;
+				@extend %background_set;
+				z-index: 2;
+			}
+			@for $i from 1 through 40 {
+				&.item_ico_ty#{$i}::after {
+						background-image: url('../images/content/bi/visual/bg_exp_ty#{$i}.png');
+				}
+			}
+
+			.tit {
+				font-weight: 700;
+				font-size: var(--font-size-body-medium);
+				color: var(--color-text-basic);
+			}
+		}
+	}
+
 }
