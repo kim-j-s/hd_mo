@@ -741,6 +741,21 @@ $(function(){
 	$('.position_event_wrap').each(function () {
 		initPositionEventWrap($(this));
 	});	
+	//header_inner
+	const headBtn = $('.header_inner button'); 
+	headBtn.each(function(){
+		const btnAria = $(this);
+		const btnText = $(this).children('.text').text();
+		btnAria.attr('aria-label', btnText);
+	});
+	//전체메뉴 북마크
+	const bookmarkLabel = $('.nrs_items .item');
+	bookmarkLabel.each(function(){
+		const bookmark = $(this).children('.item_bookmark');
+		const tit = bookmark.prev().text();
+		const mark = bookmark.children().text();
+		bookmark.attr('aria-label', tit + ' ' + mark);
+	});
 
 	//input disabled&readonly
 	$('.input_text input').each(function() {
