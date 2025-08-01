@@ -123,8 +123,12 @@
 		border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 		.acd_head {
 			position: relative;
-			padding: 24px 56px 16px 20px;
+			padding: var(--padding-8) 56px var(--padding-8) var(--padding-7);
 
+			.inp_checkbox:not(:has(.sub_g_txt)) {
+				min-height: 32px;
+				padding-top: 2px;
+			}
 			.acd_btn {
 				position: absolute;
 				top: 50%;
@@ -157,6 +161,7 @@
 				}
 			}
 			&.active {
+				padding-bottom: 16px;
 				.acd_btn {
 					&::after {
 						transform: rotate(180deg);
@@ -216,9 +221,9 @@
 
 		.cont_text {
 			font-size: var(--font-size-label-medium);
-			+ .cont_text_sub {
-				margin-top: var(--gap-2);
-			}
+			// + .cont_text_sub {
+			// 	margin-top: var(--gap-2);
+			// }
 		}
 		.cont_text_sub {
 			color: #6C7882;
@@ -242,6 +247,7 @@
 				font-weight: 700;
 				font-size: var(--font-size-heading-small);
 				color: var(--color-text-bolder);
+
 				&:after {
 					position: absolute;
 					top: calc(50% - 16px);
@@ -260,20 +266,34 @@
 					}
 				}
 
+				.hd_badge,
+				.cont_text_sub {
+					font-weight: 400;
+				}
+				
 				.sub_g_txt {
 					display: block;
-					padding-top: calc(var(--gap-1) + 1px);
+					margin-top: var(--gap-1);
 					font-size: var(--font-size-body-xsmall);
 					font-weight: 400;
 					color: var(--color-text-subtle);
 				}
+
+				.picture_info_top {
+					.cont_text_sub {
+						margin-top: -1px;
+						font-size: var(--font-size-body-xsmall);
+					}
+				}
+				& + .btn_link {
+					margin-top: 4px;
+				}
 			}
 
 			&.active {
-				& + .acd_cont {
-					margin-top: -8px;
+				padding-bottom: 16px;
+				& + .acd_cont { 
 					padding: var(--gap-5) var(--padding-7) var(--padding-8);
-
 					&::before {
 						opacity: 1;
 					}
@@ -297,11 +317,9 @@
 			}
 
 			.inp_checkbox {
-				.chk_label:not(.chk_label_ty3) {
-					+ .ag_more_btn {
-						top: 1px;
-						font-size: var(--font-size-button-small);
-					}
+				.ag_more_btn {
+					top: 1px;
+					font-size: var(--font-size-button-small);
 				}
 			}
 
@@ -346,6 +364,17 @@
 							}
 						}
 					}
+				}
+			}
+
+			.chk_lby2:has(.cont_text_sub) {
+				flex-wrap: wrap;
+				row-gap: 0;
+				column-gap: var(--gap-3);
+				.cont_text_sub {	
+					display: block;
+					width: 100%;				
+					font-size: var(--font-size-label-small);
 				}
 			}
 		}
@@ -957,7 +986,7 @@
 			&.active {
 				border: none;
 				.acd_btn {
-					background: var(--color-action-secondary-pressed);
+					//background: var(--color-action-secondary-pressed);
 					&::before {
 						transform: translateY(-50%) rotate(180deg);
 					}

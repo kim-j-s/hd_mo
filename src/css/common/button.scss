@@ -694,15 +694,10 @@
 		}
 
 		&.rd_box {
-			padding: 2px 10px;
+			padding: 2px 28px 2px 10px;
 			border-radius: var(--radius-small3);
 			border: var(--border-width-static-regular) solid var(--color-button-tertiary-border);
-			// background: var(--color-button-tertiary-fill);
-			background: transparent;
-			> .text {
-				padding-right: 18px;
-				background: url(../images/icon/arrowRight_ty4.svg) no-repeat right center / 16px auto;
-			}
+			background-position: right 8px center;
 		}
 
 		&.search_type {
@@ -726,14 +721,10 @@
 			display: block;
 			text-align: center;
 			width: auto;
-			padding: 8px var(--padding-6);
+			padding: var(--padding-3) var(--padding-10) var(--padding-3) var(--padding-6);
 			border: var(--border-width-static-regular) solid var(--color-button-tertiary-border);
-			background: none;
-			> .text {
-				display: inline-block;
-				padding-right: 24px;
-				background: url(../images/icon/icon_new_open.svg) no-repeat right center / 20px auto;
-			}
+			background-size: 20px auto;
+			background-position: right 16px center;
 			&.tel {
 				> .text {
 					padding-right: 0;
@@ -742,11 +733,9 @@
 			}
 
 			&.sm {
-				padding: 2px 10px;
+				padding: 2px 30px 2px 10px;
 				background-size: 16px auto;
-				.text {
-					// padding-left: 18px;
-				}
+				background-position: right 10px center;
 			}
 		}
 	}
@@ -1183,163 +1172,6 @@
 /* swiper button */
 
 
-// easy mode
-.easy_mode {
-	// easy mode fixed button size
-	.bottom_fix_wrap {
-		.hd_btn {
-			&_s_1 {
-				//CTA&primary
-				height: var(--easy--button-size-cta);
-				padding: 0 var(--padding-6);
-				font-size: var(--easy--font-size-button-cta);
-			}
-			&_ty_3 {
-				//CTA&primary
-				// height: var(--button-size-xlarge);
-				> .text {
-					font-weight: 700;
-				}
-			}
-		}
-	}
-
-	// easy mode button size
-	.hd_btn {
-		&_s_1 {
-			//xlarge
-			min-width: 96px;
-			height: var(--easy--button-size-xlarge);
-			padding: 0 var(--padding-6);
-			border-radius: var(--easy--radius-medium4);
-			font-size: var(--easy--font-size-button-xlarge);
-		}
-		&_s_2 {
-			//CTA&primary
-			min-width: 98px;
-			height: var(--easy--button-size-cta);
-			padding: 0 var(--padding-6);
-			border-radius: var(--easy--radius-medium4);
-			font-size: var(--easy--font-size-button-cta);
-		}
-		&_s_3 {
-			//lg
-			min-width: 48px;
-			height: var(--easy--button-size-large);
-			padding: 0 var(--padding-6);
-			border-radius: var(--easy--radius-medium2);
-			font-size: var(--easy--font-size-button-large);
-
-			.hd_icon {
-				width: 32px;
-				height: 32px;
-			}
-		}
-		&_s_4 {
-			//md
-			min-width: 78px;
-			height: var(--easy--button-size-medium);
-			padding: 0 var(--padding-5);
-			border-radius: var(--easy--radius-medium2);
-			font-size: var( --easy--font-size-button-medium);
-
-			.hd_icon {
-				width: 24px;
-				height: 24px;
-			}
-		}
-		&_s_5 {
-			//sm
-			min-width: 64px;
-			height: var(--easy--button-size-small);
-			padding: 0 var(--padding-4);
-			border-radius: var(--easy--radius-medium2);
-			font-size: var(--easy--font-size-button-small);
-
-			.hd_icon {
-				width: 20px;
-				height: 20px;
-			}
-		}
-		&_s_6 {
-			//xs
-			gap: 2px;
-			min-width: 48px;
-			height: var( --easy--button-size-xsmall);
-			padding: 0 var(--padding-3);
-			border-radius: var(--easy--radius-small3);
-			font-size: var(--easy--font-size-button-xsmall);
-			font-weight: 700;
-
-			.hd_icon {
-				width: 16px;
-				height: 16px;
-			}
-		}
-	}
-
-	// 아이콘
-	.hd_btn_ty_icon {
-		.hd_btn {
-			&_s_3 {
-				//lg
-				min-width: 40px;
-				height: 40px;
-				padding: 0;
-				border-radius: 0;
-				font-size: initial;
-			}
-			&_s_4 {
-				//md
-				min-width: 32px;
-				height: 32px;
-				padding: 0;
-				border-radius: 0;
-				font-size: initial;
-			}
-			&_s_5 {
-				//sm
-				min-width: 24px;
-				height: 24px;
-				padding: 0;
-				border-radius: 0;
-				font-size: initial;
-			}
-			&_s_6 {
-				//xs
-				min-width: 20px;
-				height: 20px;
-				padding: 0;
-				border-radius: 0;
-				font-size: initial;
-			}
-		}
-	}
-
-	// text button
-	.btn_link {
-		&.short_cut {
-			display: inline-block;
-			padding-right: 16px;
-			font-size: var(--easy--font-size-button-medium);
-			line-height: 1.5;
-			background: url(../images/icon/arrowRight_ty4.svg) no-repeat right center / 16px auto;
-				
-			&.sm {
-				font-size: var(--easy--font-size-button-small);
-			}
-			&.lg {
-				font-size: var(--easy--font-size-button-large);
-				padding-right: 20px;
-				font-weight: 400;
-				background-size: 20px auto;
-			}
-			&.primary {
-				color: var(--color-text-primary);
-			}
-		}
-	}
-}
 
 
 /* 상품설명서에 사용되는 스타일용 */
