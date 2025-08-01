@@ -205,7 +205,7 @@
 			}
 		}
 
-		thead {
+		> thead {
 			th {
 				padding: calc(var(--padding-3) + 1px) var(--padding-3);
 				vertical-align: middle;
@@ -213,27 +213,31 @@
 			}
 
 			& + tbody {
-
-				&:has(th[scope="row"]){
+				td {
+					padding: var(--padding-5) var(--padding-3);
+				}
+				
+				&:has(th) {
 					td {
 						padding: var(--padding-5);
 					}
-					&:has(.body_th) {
+					&:has(.body_th){
 						td {
 							padding: var(--padding-5) var(--padding-3);
 						}
-						th {
-							padding: var(--padding-5);
-							& ~ td {
-								padding: var(--padding-5);
-							}
-						}
+					}
+				}
+					
+				th.body_th {
+					padding: var(--padding-5);
+					& ~ td {
+						padding: var(--padding-5);
 					}
 				}
 			}
 		}
 
-		tbody {
+		> tbody {
 			th {
 				vertical-align: unset;
 				padding: var(--padding-5) var(--padding-7) var(--padding-5) var(--padding-3);
@@ -245,23 +249,6 @@
 				}
 				& ~ td {
 					padding: var(--padding-5);
-				}
-			}
-			
-			&:has(th[scope="row"]){
-				td {
-					padding: var(--padding-5);
-				}
-				&:has(.body_th) {
-					td {
-						padding: var(--padding-5) var(--padding-3);
-					}
-					th {
-						padding: var(--padding-5);
-						& ~ td {
-							padding: var(--padding-5);
-						}
-					}
 				}
 			}
 		}

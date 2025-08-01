@@ -3,14 +3,13 @@
 .insurance_policyBox {
 	position: relative;
 	z-index: 0;
-	padding-top: 20px;
 
 	.insurance_barbox {
 		position: relative;
 
 		&:before {
 			position: absolute;
-			top: 13px;
+			top: 21px;
 			left: 0;
 			z-index: -1;
 			content:'';
@@ -23,6 +22,7 @@
 		&.ty2 {
 			&:before {
 				z-index: 0;
+				top: 20px;
 			}
 		}
 	}
@@ -36,7 +36,7 @@
 	
 			&:after {
 				position: absolute;
-				top: 13px;
+				top: 21px;
 				right: 0;
 				z-index: -1;
 				content:'';
@@ -81,11 +81,14 @@
 
 .progress_box {
 	position: relative;
-	padding: 12px 0 21px;
+	// padding: 19px 0 21px;
+	// padding: 12px 0 21px;
+	padding: 20px 2px 26px;
+	height: 48px;
 	
 	.date {
 		position: absolute;
-		top: -20px;
+		top: -19px;
 		left: 38%;
 		display: inline-block;
 		padding: 0 4px;
@@ -107,7 +110,7 @@
 
 		i {
 			position: absolute;
-			top: 7px;
+			top: 8px;
 
 			display: block;
 			width: 37px;
@@ -124,7 +127,7 @@
 
 			&:before {
 				position: absolute;
-				top: -10px;
+				top: -11px;
 				content:'';
 				width: 10px;
 				height: 10px;
@@ -173,18 +176,20 @@
 
 .progress_box_ty2 {
 	position: relative;
-	padding: 12px 0 21px;
+	// padding: 19px 0 23px;
+	padding: 20px 2px 26px;
+	height: 48px;
 	
 	.date {
 		position: absolute;
-		top: -20px;
+		top: -19px;
 		left: 50%;
 		transform: translateX(-50%);
 		display: inline-block;
 		padding: 0 4px;
 		background-color: var(--color-border-gray-darker);
 		font-size: var(--font-size-label-xsmall);
-		line-height: 17px;
+		line-height: 15px;
 		color: #FFF;
 		border-radius: 8px;
 		white-space: nowrap;
@@ -200,15 +205,14 @@
 			padding: 0 4px;
 			background-color: var(--color-border-secondary);
 			font-size: var(--font-size-label-xsmall);
-			line-height: 17px;
+			line-height: 19px;
 			font-style: normal;
 			color: #FFF;
 			white-space: nowrap;
 			border-radius: var(--radius-small1);
 		}
 
-		em{
-		// &:before {
+		em {
 			position: absolute;
 			top: -10px;
 			content:'';
@@ -223,23 +227,19 @@
 
 		&.start {
 			left: 0;
-			top: 20px;
+			top: 27px;
 			z-index: 5;
 
 			em{
-			// &:before {
 				left: -2px;
 			}
 		}
 
 		&.newStart {
-			// left: -16px;
 			left: 0;
 			z-index: 10;
 
-			em{
-			// &:before {
-				// left: 12px;
+			em {
 				left: 0;
 			}
 
@@ -262,6 +262,7 @@
 
 	.ing {	
 		position: absolute;
+		top: 19px;
 		display: block;
 		width: 50%;
 		height: 4px;
@@ -274,7 +275,6 @@
 				left: 33px;
 
 				em{
-				// &:before {
 					left: -38px;
 				}
 			}
@@ -282,209 +282,9 @@
 	}
 }
 
-
-// .progress_box_ty2 {
-// 	position: relative;
-// 	padding: 12px 0 21px;
-	
-// 	.date {
-// 		position: absolute;
-// 		top: -20px;
-// 		left: 50%;
-// 		transform: translateX(-50%);
-// 		display: inline-block;
-// 		padding: 0 4px;
-// 		background-color: var(--color-border-gray-darker);
-// 		font-size: var(--font-size-label-xsmall);
-// 		line-height: 17px;
-// 		color: #FFF;
-// 		border-radius: 8px;
-// 		white-space: nowrap;
-// 	}
-
-// 	i {
-// 		position: relative;
-// 		top: -2px;
-// 		display: block;
-// 		width: 8px;
-// 		height: 8px;
-// 		background-repeat: no-repeat;
-// 		background-position: right center;
-// 		background-position: 8px auto;
-// 		background-image: url(../images/icon/progressbar_dot.svg);
-// 		filter: drop-shadow(0px 0px 2px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05))) drop-shadow(0px 1px 2px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)));
-
-// 		&:before {
-// 			position: absolute;
-// 			top: 11px;
-// 			width: 37px;
-// 			padding: 0 4px;
-// 			background-color: var(--color-border-secondary);
-// 			font-size: var(--font-size-label-xsmall);
-// 			line-height: 17px;
-// 			font-style: normal;
-// 			color: #FFF;
-// 			white-space: nowrap;
-// 			border-radius: var(--radius-small1);
-// 		}
-
-// 		&.start {
-// 			left: -2px;
-// 			top: -2px;
-
-// 			&:before {
-// 				content: '시작일';
-// 				left: 0;
-// 			}
-// 		}
-
-// 		&.newStart {
-// 			left: 0;
-// 			&:before {
-// 				content: '기준일';
-// 				left: 0;
-// 			}
-// 		}
-
-// 		&.end {
-// 			position: absolute;
-// 			right: 0;
-			
-// 			&:before {
-// 				content: '종료일';
-// 				right: 0;
-// 			}
-// 		}
-// 	}
-
-// 	.ing {	
-// 		position: absolute;
-// 		top: 12px;
-// 		display: block;
-// 		width: 50%;
-// 		height: 4px;
-// 		background-color: var(--color-border-secondary);
-// 		text-align: center;
-// 		right: 0;
-
-// 		&.big {
-// 			.newStart {
-// 				left: 9px;
-// 				&:before {
-// 					left: -12px;
-// 				}
-// 			}
-// 		}
-
-// 		&.full {
-// 			.newStart {
-// 				left: 33px;
-// 				&:before {
-// 					left: -38px;
-// 				}
-// 			}
-// 		}
-// 	}
-// }
-
-
-// .progress_box {
-// 	position: relative;
-// 	padding: 12px 0 21px;
-	
-// 	.date {
-// 		position: absolute;
-// 		top: -20px;
-// 		left: 38%;
-// 		display: inline-block;
-// 		padding: 0 4px;
-// 		background-color: var(--color-border-gray-darker);
-// 		font-size: var(--font-size-label-xsmall);
-// 		line-height: 17px;
-// 		color: #FFF;
-// 		border-radius: 8px;
-// 		white-space: nowrap;
-// 	}
-
-// 	.ing {
-// 		position: relative;
-// 		display: block;
-// 		width: 50%;
-// 		height: 4px;
-// 		background-color: var(--color-border-secondary);
-// 		text-align: center;
-
-// 		i {
-// 			position: absolute;
-// 			top: 7px;
-
-// 			.spot {
-// 				display: block;
-// 				width: 37px;
-// 				padding: 0 4px;
-// 				background-color: var(--color-border-secondary);
-// 				font-size: var(--font-size-label-xsmall);
-// 				line-height: 17px;
-// 				font-style: normal;
-// 				color: #FFF;
-// 				white-space: nowrap;
-// 				border-radius: var(--radius-small1);
-// 			}
-// 			em{
-// 			// &:before {
-// 				position: absolute;
-// 				top: -9px;
-// 				content:'';
-// 				width: 8px;
-// 				height: 8px;
-// 				// background-color: var(--color-border-secondary);
-// 				background-repeat: no-repeat;
-// 				background-position: right center;
-// 				background-position: 8px auto;
-// 				background-image: url(../images/icon/progressbar_dot.svg);
-// 				filter: drop-shadow(0px 0px 2px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05))) drop-shadow(0px 1px 2px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)));
-// 			}
-
-// 			&.start {
-// 				// left: -16px;
-// 				left: 0;
-
-// 				&:before {
-// 					left: 12px;
-// 				}
-// 				em {
-// 					left: 0;
-// 				}
-
-// 				&.left {
-// 					left: 0;
-// 					&:before {
-// 						left: -2px;
-// 					}
-// 				}
-// 			}
-
-// 			&.end {
-// 				// right: -16px;
-// 				right: 0;
-
-// 				em {
-// 					right: 0;
-// 				}
-
-// 				&:before {
-// 					right: 12px;
-// 					background-image: url(../images/icon/progressbar_dot_end.svg);
-// 					background-size: 9px auto;
-// 				}
-
-// 				&.right {
-// 					right: 0;
-// 					&:before {
-// 						right: -2px;
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }
+// card 내 존재
+.card_item {
+	.insurance_policyBox {
+		margin-top: var(--gap-5);
+	}
+}
