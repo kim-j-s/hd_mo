@@ -97,6 +97,9 @@
                     }
                 }
             }
+            &.easy_on {
+                display: none;
+            }
         }
         .ing_banner {
             display: flex;
@@ -635,10 +638,6 @@
 }
 //body
 .easy_mode {
-    .easy_none {
-        display: none;
-        transition: ease-out 0.3s;
-    }
     .easy_top {
         display: block;
         margin: 0 -32px;
@@ -675,11 +674,9 @@
                 }
             }
         }
-        .register_box {
+        .register_box.easy_on {
+            display: flex;
             a {
-                > span {
-                    display: none;
-                }
                 font-size: var(--easy--font-size-body-small);
                 strong {
                     margin: 0;
@@ -688,6 +685,10 @@
                 }
             }
         }
+    }
+    .easy_none {
+        display: none !important;
+        transition: ease-out 0.3s;
     }
 }
 .pop_home {
