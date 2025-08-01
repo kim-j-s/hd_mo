@@ -6,10 +6,29 @@
 		<div class="content">
 			<!-- s: content_top -->
 			<div class="content_top">
-				<h2 class="title_h2">
-					건강한 만큼 할인받는<br>
-					<strong>나를 지키는 가장 기본적인 준비</strong>
-				</h2>
+				<div class="page_title">
+					<p class="m_info">무배당 현대해상다이렉트 H건강보험</p>
+					<h2 class="title_h2">
+						건강한 만큼 할인받는<br>
+						<strong>나를 지키는 가장 기본적인 준비</strong>
+					</h2>
+				</div>
+				<!-- s: review -->
+				<div class="review_wrap">
+					<div class="review_acd_item">
+						<div class="review_star_item" aria-label="별점5점" data-score="5">
+							<span class="star on"></span>
+							<span class="star on"></span>
+							<span class="star on"></span>
+							<span class="star on"></span>
+							<span class="star on"></span>
+						</div>
+					</div>
+					<div class="btn_area">
+						{{> cp/linkButton bl_class="short_cut anchor_btn" bl_text="가입후기 100개 이상" href="#anchor_move" role_b=true}}
+					</div>
+				</div>
+				<!-- e: review -->
 			</div>
 			<!-- e: content_top -->
 
@@ -18,7 +37,7 @@
 				<!-- s: intro_info -->
 				<div class="intro_area">
 					<div class="info_gray">
-						<div class="intro_info bg_intro1">
+						<div class="intro_info">
 							<ul class="info_list">
 								<li class="item ico_intro1">
 									<p class="tit">필수 보장들을 하나로</p>
@@ -35,11 +54,6 @@
 							</ul>
 						</div>
 					</div>
-					<div class="btn_area center">
-						<a href="#" class="hd_btn hd_btn_ty_1 hd_btn_s_3">
-							<span class="text">보험료 확인하기</span>
-						</a>
-					</div>
 				</div>
 				<!-- e: intro_info -->
 
@@ -54,7 +68,7 @@
 
 				<!-- s: 보장내용 -->
 				<div class="guarantee_area">
-					<div class="cont_head flex-inline"> 
+					<div class="cont_head"> 
 						<h3 class="title_h3">건강보험 하나로 종합 보장!</h3>
 						<p class="info_text2">해당 특약 가입 시</p>
 					</div>				
@@ -93,6 +107,15 @@
 											</div>
 										</div>
 									</li>
+									<li class="item">
+										<div class="info_gray bg_etc01">
+											<div class="titie_wrap item_ico_ty16">
+												<h5 class="title_h5">
+													생활 속 걱정되는 <strong class="point">특정 질환 진단비(통풍, 대상포진 등)</strong> 보장
+												</h5>
+											</div>
+										</div>
+									</li>
 								</ul>
 								<!-- e: guarantee_list -->
 							</div>
@@ -118,11 +141,11 @@
 					<div class="cont-body">
 						<div class="benefit_list">
 							<ul class="info_list ty_line">
-								<li class="item ico_benefit1">
+								<li class="item">
 									<p class="tit">건강정보 제공만 해도 할인(5%)</p>
 									<p class="desc">최근 2년 이내 건강검진정보 제공 시 초년도 보험료 5% 할인</p>
 								</li>
-								<li class="item ico_benefit2">
+								<li class="item">
 									<p class="tit">5년 후 더 건강해지면 할인</p>
 									<p class="desc">5년 뒤 건강등급 재 산정 시 더 건강해지면 보험료 추가 할인!</p>
 								</li>
@@ -273,7 +296,7 @@
 							<li>보험계약 전 상품설명서 및 약관을 통해 보다 상세한 내용을 꼭 확인해 주세요.</li>
 							<li>실제 가입 때 선택하신 특별약관에 대해서만 보장됩니다. 가입 시 고객님께 보내드리는 약관(개별맞춤약관)을 확인해 주세요.</li>
 						</ul>
-						<div class="btn_area">
+						<div class="btn_area column">
 							{{> cp/button type="3" size="4" rightIcon="documentSvg" b-text="상품약관"}}
 							{{> cp/button type="3" size="4" rightIcon="documentSvg" b-text="유의사항"}}
 						</div>
@@ -361,7 +384,42 @@
 
 <!-- e: popup area -->
 
+<script>
+$(function(){
+	toggleView();
+	anchorMove();
+});
 
+function toggleView() {
+  $('.guarantee_area .acd_tg_bottom2').each(function () {
+    const $this = $(this),
+          $item = $this.find('.guarantee_list'),
+          $ele = $item.find('.item');
+    const eleLength = $ele.length;
+
+    if (eleLength <= 3) {
+      $this.find('.btn_area').remove();
+    }
+  });
+}
+
+function anchorMove() {
+	$(".anchor_btn").on("click", function (e) {
+    e.preventDefault();
+
+    const targetId = $(this).attr("href");
+    const target = $(targetId);
+    if (target.length) {
+      $("html, body").animate(
+        {
+          scrollTop: target.offset().top - 100
+        },
+        500 
+      );
+    }
+  });
+}
+</script>
 
 
 {{/ layout/default }}
