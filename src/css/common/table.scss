@@ -97,6 +97,7 @@
 		width: 100%;
 		border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 		border-collapse: separate;
+
 		&.bd_l {
 			th, td {
 				border-width: 0 0 1px 1px;
@@ -210,17 +211,23 @@
 				vertical-align: middle;
 				text-align: center;
 			}
-			
-			& ~ tbody {
+
+			& + tbody {
+
 				&:has(th[scope="row"]){
-					th:has(.body_th) {
-						padding: var(--padding-5);
-						& ~ td {
-							padding: var(--padding-5);
-						}
-					}
 					td {
-						padding: var(--padding-5, 12px) var(--padding-3, 8px);
+						padding: var(--padding-5);
+					}
+					&:has(.body_th) {
+						td {
+							padding: var(--padding-5) var(--padding-3);
+						}
+						th {
+							padding: var(--padding-5);
+							& ~ td {
+								padding: var(--padding-5);
+							}
+						}
 					}
 				}
 			}
@@ -237,17 +244,6 @@
 					background-color: #fff;
 				}
 				& ~ td {
-					padding: var(--padding-5);
-				}
-			}
-			
-			&:has(th[scope="row"]){
-				.body_th {
-					& ~ td {
-						padding: var(--padding-5);
-					}
-				}
-				td {
 					padding: var(--padding-5);
 				}
 			}
