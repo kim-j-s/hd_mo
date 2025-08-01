@@ -736,7 +736,8 @@ $(function(){
 	fixedMenuPlay();
 
 	simpleInfo();
-
+	headAria();
+	
 	// 스크롤 이벤트 초기화 및 동적 생성시 재 호출
 	$('.position_event_wrap').each(function () {
 		initPositionEventWrap($(this));
@@ -1349,6 +1350,23 @@ $(function(){
 
 });
 	
+function headAria() {
+	//headBtn
+	const headBtn = $('.header_inner button'); 
+	headBtn.each(function(){
+		const btnAria = $(this);
+		const btnText = $(this).children('.text').text();
+		btnAria.attr('aria-label', btnText);
+	});
+	//전체메뉴 북마크
+	const bookmarkLabel = $('.nrs_items .item');
+	bookmarkLabel.each(function(){
+		const bookmark = $(this).children('.item_bookmark');
+		const tit = bookmark.prev().text();
+		const mark = bookmark.children().text();
+		bookmark.attr('aria-label', tit + ' ' + mark);
+	});
+} 
 
 $(window).resize(function(){
 	// prograssBar();

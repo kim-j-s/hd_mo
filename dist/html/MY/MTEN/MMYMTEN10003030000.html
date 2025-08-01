@@ -281,7 +281,9 @@
 											</div>
 											<!-- 계약/보상 -->
 											<!-- 혜택/서비스 -->
-											<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel02">
+											<!-- s: 25-08-01 -->
+											<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel03">
+												<!-- e: 25-08-01 -->
 												<h6 class="nmc_menus_title">카드 혜택</h6>
 												<ul class="nmc_menus_list">
 													<li>
@@ -678,6 +680,7 @@
 				});
 			});
 
+			// s: 25-08-01 수정
 			function prograssCar() {
 				const $prograss = $(".progress_box_ty2");
 
@@ -687,15 +690,16 @@
 						$start = $bar.find(".newStart");
 
 					const allW = $allBar.width(),
-						barW = $bar.width();
+						barW = $bar.width(),
+						labelW = $allBar.find(".start").width();
 
 					const newW = Math.round((barW / allW) * 100),
 						startW = Math.round((10 / allW) * 100),
-						newstartW = Math.round((37 / allW) * 100);
+						newstartW = Math.round((labelW / allW) * 100);
 
 					$prograss.children(".ing").removeClass("full");
 
-					let spotMargin = -(100 - newW - newstartW - 1) + "%";
+					let spotMargin = -(100 - newW - newstartW) + "%";
 					let parseVal = parseFloat(spotMargin);
 					let leftVal = (parseVal / 100) * barW;
 
@@ -721,6 +725,7 @@
 					}
 				});
 			}
+			// e: 25-08-01 수정
 		</script>
 		<!-- 전체메뉴 -->
 		<!-- s: Full 팝업 -->
