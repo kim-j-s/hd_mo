@@ -143,6 +143,10 @@ export default defineConfig({
             'href="../../../css/popup.css"'
           )
           .replace(
+            /crossorigin href="\/css\/easy\.css"/g,
+            'href="../../../css/easy.css"'
+          )
+          .replace(
             /crossorigin href="\/html\/guide\/guide\/guide\.css"/g,
             'href="guide.css"'
           );
