@@ -14,14 +14,17 @@ body {
 // 상품안내
 .prd_view {
 	// 타이틀 영역
-	.title_view_wrap {
-		&.flex_column {
-			flex-direction: column;
-			justify-content: flex-start;
-			align-items: flex-start;
-			gap: var(--gap-3);
-		}
-	}
+  .content_top {
+    .m_info {
+      margin-bottom: var(--gap-2);
+      font-weight: 700;
+      font-size: var(--font-size-heading-xxsmall);
+      color: var(--color-text-primary-bold);
+    }
+    .review_wrap {
+      margin-top: var(--gap-3);
+    }
+  }
 	// 컨텐츠 영역
 	.content_body {
 		display: flex;
@@ -43,20 +46,6 @@ body {
 		justify-content: space-between;
 		position: relative;
 		width: 100%;
-		&::after {
-			content: '';
-			display: block;
-			width: 240px;
-			height: 160px;
-			background-repeat: no-repeat;
-    	background-position: center center;
-    	background-size: contain;
-		}
-		@for $i from 1 through 5 {
-			&.bg_intro#{$i}::after {
-					background-image: url('../images/content/ltht/bg_intro#{$i}.png');
-			}
-		}
 
 		.info_list {
 			.item {
@@ -153,13 +142,17 @@ body {
 	// 할인혜택
 	.benefit_area {
 		.info_list {
-			.item {
-				@for $i from 1 through 5 {
-					&.ico_benefit#{$i} {
-							background-image: url('../images/content/ltht/ico_benefit#{$i}.svg');
-					}
-				}
-			}
+      .item {
+        padding-left: 0;
+      }
+      // 모바일에선 아이콘 삭제
+			// .item {
+			// 	@for $i from 1 through 5 {
+			// 		&.ico_benefit#{$i} {
+			// 				background-image: url('../images/content/ltht/ico_benefit#{$i}.svg');
+			// 		}
+			// 	}
+			// }
 		}
 	}
 
@@ -215,11 +208,11 @@ body {
 	.recommend_area {
 		.card_list_wrap_ty2 {
 			display: flex;
-			flex-wrap: wrap;
-			gap: var(--gap-4);
+			flex-direction: column;
+			gap: var(--gap-5);
 			> li {
-				flex-grow: 0;
-				flex-basis: calc(100% / 2 - 6px);
+				flex-grow: 1;
+				flex-basis: 0;
 				margin: 0;
 
 				.info_area {
@@ -269,7 +262,7 @@ body {
 	.info_list {
 		display: flex;
 		flex-direction: column;
-		gap: var(--gap-7);
+		gap: var(--gap-8);
 		.tit {
 			font-size: var(--font-size-body-medium);
 			color: var(--color-text-basic);
@@ -310,7 +303,6 @@ body {
 		}
 		.info_text2 {
 			margin-top: 0;
-			margin-left: var(--gap-3);
 		}
 	}
 	
@@ -323,30 +315,31 @@ body {
 	justify-content: space-between;
 	position: relative;
 	width: 100%;
+  margin-top: -36px;
+  padding: 18px var(--padding-8);
 	border: 1px solid transparent;
 	border-radius: var(--radius-large2);
-	&::after {
-		content: '';
-		display: block;
-		width: 164px;
-		height: 100px;
-		background-repeat: no-repeat;
-		background-position: center center;
-		background-size: 100% auto;
-	}
-	@for $i from 1 through 5 {
-		&.evt_bg#{$i}::after {
-				background-image: url('../images/content/ltht/bg_banner#{$i}.png');
-		}
-	}
+	// &::after {
+	// 	content: '';
+	// 	display: block;
+	// 	width: 164px;
+	// 	height: 100px;
+	// 	background-repeat: no-repeat;
+	// 	background-position: center center;
+	// 	background-size: 100% auto;
+	// }
+	// @for $i from 1 through 5 {
+	// 	&.evt_bg#{$i}::after {
+	// 			background-image: url('../images/content/ltht/bg_banner#{$i}.png');
+	// 	}
+	// }
 
 	.desc_wrap {
-		padding-left: var(--padding-8);
 		.tit {
-			font-size: var(--font-size-body-large);
+			font-size: var(--font-size-body-small);
 		}
 		.desc {
-			font-size: 13px;
+			font-size: 10px;
 		}
 	}
 
@@ -375,81 +368,4 @@ body {
 		border: 0;
 		border-radius: inherit;
 	}
-}
-
-// 상품바로가기
-.prd_link_area {
-	display: block;
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	&.fixed {
-		position: fixed;
-	}
-
-	.prd_link {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		position: relative;
-		width: 836px;
-		min-height: 84px;
-		margin: 0 auto;
-		padding: var(--padding-5) 0 var(--padding-6);
-		&::before {
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 50%;
-			width: 100vw;
-			height: 100%;
-			border-radius: var(--radius-xlarge2) var(--radius-xlarge2) 0 0;
-			background-color: var(--color-surface-white-subtle);
-			box-shadow: 0 var(--shadow-y-minus2) var(--shadow-blur-2) 0 var(--color-alpha-shadow1);
-			transform: translateX(-50%);
-			z-index: -1;
-		}
-
-		.prd_item {
-			position: relative;
-			padding-left: 68px;
-			&::before {
-				content: '';
-				display: block;
-				position: absolute;
-				top: 50%;
-				left: 0;
-				width: 56px;
-				height: 56px;
-				border-radius: var(--radius-medium2);
-				background: var(--color-surface-primary-subtler);
-				transform: translateY(-50%);
-			}
-			&::after {
-				content: '';
-				display: block;
-				position: absolute;
-				top: -4px;
-				left: 12px;
-				width: 32px;
-				height: 32px;
-				@extend %background_set;
-				z-index: 2;
-			}
-			@for $i from 1 through 40 {
-				&.item_ico_ty#{$i}::after {
-						background-image: url('../images/content/bi/visual/bg_exp_ty#{$i}.png');
-				}
-			}
-
-			.tit {
-				font-weight: 700;
-				font-size: var(--font-size-body-medium);
-				color: var(--color-text-basic);
-			}
-		}
-	}
-
 }
