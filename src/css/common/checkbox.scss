@@ -2,6 +2,13 @@
 .inp_checkbox {
 	position: relative;
 
+	&:has(.chk_label_ty3){
+		input[type='checkbox']{
+			width: 24px;
+			height: 24px;
+		}
+	}
+
 	input[type='checkbox']{
 		// overflow: hidden;
 		position: absolute;
@@ -9,6 +16,7 @@
 		height: 20px;
 		// clip: rect(0,0,0,0);
 		opacity: 0;
+		z-index: 1;
 		
 		
 		& + .chk_label {
@@ -202,7 +210,7 @@
 					padding-left: 48px;
 					height: 24px;
 					> .label_cont {
-						font-size: var(--font-size-body-large);
+						font-size: var(--font-size-label-large);
 						line-height: 24px;
 					}
 					&.txt_sm > .label_cont {
@@ -314,6 +322,9 @@
 					}
 					&::after {
 						background-color: var(--color-element-gray-light);
+					}
+					.label_cont {
+						color: var(--color-text-disabled);
 					}
 				}
 			}

@@ -1,4 +1,4 @@
-{{#> layout/default page-title="건강보험 상품안내 | 상품" bd-class="overflow-x"}}
+{{#> layout/default page-title="건강보험 상품안내 | 상품" }}
 <div id="wrap" class="wrap">
 	{{> layout/header h-title="건강보험" }}
 
@@ -58,11 +58,8 @@
 				<!-- e: intro_info -->
 
 				<!-- s: event banner -->
-				<div class="evt_banner evt_bg1">
-					<div class="desc_wrap">
-						<strong class="tit">지금 가입하시면 네이버페이 포인트 최대 3만원을 드려요!</strong>
-						<p class="desc">월 보험료 기준 경품 증정</p>
-					</div>
+				<div class="evt_banner">
+					<img src="../../../images/temp/rewardBanner_naver_temp.png" alt="지금 가입하시면 네이버페이 포인트 최대 3만원을 드려요!">
 				</div>
 				<!-- e: event banner -->
 
@@ -74,13 +71,13 @@
 					</div>				
 					<div class="cont_body">
 						<!-- s: acd_item -->
-						<div class="  acd_tg_bottom2">
+						<div class="acd_item acd_tg_bottom2">
 							<div class="tg_item">
 								<!-- s: guarantee_list -->
 								<ul class="guarantee_list">
 									<li class="item">
 										<div class="info_gray bg_etc01">
-											<div class="titie_wrap item_ico_ty15">
+											<div class="titie_wrap item_ico_ty1">
 												<h5 class="title_h5">
 													<strong class="point">3대질병(암, 뇌혈관질환, 심장질환) 진단비</strong> 보장
 												</h5>
@@ -91,7 +88,7 @@
 									</li>
 									<li class="item">
 										<div class="info_gray bg_etc01">
-											<div class="titie_wrap item_ico_ty2">
+											<div class="titie_wrap opt1">
 												<h5 class="title_h5">
 													<strong class="point">입원/수술비, 응급실 내원, 특정감염병 입원</strong>까지 보장
 												</h5>
@@ -100,16 +97,7 @@
 									</li>
 									<li class="item">
 										<div class="info_gray bg_etc01">
-											<div class="titie_wrap item_ico_ty16">
-												<h5 class="title_h5">
-													생활 속 걱정되는 <strong class="point">특정 질환 진단비(통풍, 대상포진 등)</strong> 보장
-												</h5>
-											</div>
-										</div>
-									</li>
-									<li class="item">
-										<div class="info_gray bg_etc01">
-											<div class="titie_wrap item_ico_ty16">
+											<div class="titie_wrap item_ico_ty2">
 												<h5 class="title_h5">
 													생활 속 걱정되는 <strong class="point">특정 질환 진단비(통풍, 대상포진 등)</strong> 보장
 												</h5>
@@ -404,21 +392,24 @@ function toggleView() {
 }
 
 function anchorMove() {
-	$(".anchor_btn").on("click", function (e) {
-    e.preventDefault();
-
+  $(".anchor_btn").on("click", function () {
     const targetId = $(this).attr("href");
     const target = $(targetId);
+
     if (target.length) {
-      $("html, body").animate(
-        {
-          scrollTop: target.offset().top - 100
+      const targetOffset = target.offset().top - 100;
+
+      $("html, body").stop().animate(
+				{
+					scrollTop: targetOffset
         },
-        500 
+        500
       );
     }
+		
   });
 }
+
 </script>
 
 
