@@ -392,8 +392,7 @@ function toggleView() {
 }
 
 function anchorMove() {
-  $(".anchor_btn").on("click", function (e) {
-    e.preventDefault();
+  $(".anchor_btn").on("click", function () {
     const targetId = $(this).attr("href");
     const target = $(targetId);
 
@@ -401,14 +400,13 @@ function anchorMove() {
       const targetOffset = target.offset().top - 100;
 
       $("html, body").stop().animate(
-        {
-          scrollTop: targetOffset
+				{
+					scrollTop: targetOffset
         },
         500
       );
     }
-
-		// console.log('111');
+		
   });
 }
 
