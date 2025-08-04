@@ -2577,6 +2577,7 @@ strong {
 	background-color: #fff;
 	font-weight: 700;
 	font-size: var(--font-size-heading-medium);
+	color: var(--color-text-bolder);
 }
 .acd_item.acd_item_ty3 .acd_head .acd_btn::before {
 	content: "";
@@ -2628,6 +2629,7 @@ strong {
 	width: 100%;
 	padding: var(--padding-6) var(--padding-7);
 	background-color: transparent;
+	color: var(--color-text-bolder);
 }
 .acd_item.acd_item_ty4 .acd_head .acd_btn > span {
 	display: block;
@@ -3037,14 +3039,9 @@ strong {
 	flex: none;
 	gap: 0.8rem;
 }
-.item_wrap_faq {
-	border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
-}
-.item_wrap_faq .acd_item {
-	border-bottom: var(--border-width-static-regular) solid var(--color-divider-gray-light);
-}
 .item_wrap_faq .acd_item .acd_head {
 	position: relative;
+	border-bottom: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 }
 .item_wrap_faq .acd_item .acd_head .acd_btn {
 	position: relative;
@@ -3053,6 +3050,7 @@ strong {
 	min-height: 4.8rem;
 	background-color: #fff;
 	font-size: var(--font-size-body-medium);
+	color: var(--color-text-bolder);
 }
 .item_wrap_faq .acd_item .acd_head .acd_btn::before {
 	content: "";
@@ -3077,7 +3075,7 @@ strong {
 	background: var(--color-action-secondary-pressed);
 }
 .item_wrap_faq .acd_item .acd_head.active {
-	border: none;
+	border-bottom: var(--border-width-static-regular) solid var(--color-divider-gray-darker);
 }
 .item_wrap_faq .acd_item .acd_head.active .acd_btn::before {
 	-webkit-transform: translateY(-50%) rotate(180deg);
@@ -3086,7 +3084,6 @@ strong {
 .item_wrap_faq .acd_item .acd_head.active + .acd_cont {
 	padding: 1.6rem 0;
 	font-size: var(--font-size-body-medium);
-	border-top: var(--border-width-static-regular) solid var(--color-divider-gray-darker);
 }
 .item_wrap_faq .acd_item .acd_head.active + .acd_cont::before {
 	opacity: 1;
@@ -4667,17 +4664,18 @@ strong {
 }
 .hd_badge {
 	padding: 0px var(--padding-3);
+	text-align: center;
 	border-radius: var(--radius-small2);
 }
 .hd_badge.size_l {
 	display: inline-block;
-	padding: 0.5rem 0.8rem;
+	padding: 0.5rem 0.7rem;
 	font-size: var(--font-size-label-medium);
 	line-height: 2rem;
 }
 .hd_badge.size_m {
 	display: inline-block;
-	padding: 0.2rem 0.8rem;
+	padding: 0.2rem 0.7rem;
 	font-size: var(--font-size-label-small);
 	line-height: 1.8rem;
 }
@@ -5124,7 +5122,7 @@ strong {
 .ui-datepicker-today .ui-state-default:before {
 	content: "";
 	position: absolute;
-	bottom: 1.4rem;
+	bottom: 0.9rem;
 	left: 50%;
 	width: 0.4rem;
 	height: 0.4rem;
@@ -5132,13 +5130,6 @@ strong {
 	background-color: var(--color-element-point);
 	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
-}
-.ui-datepicker-today .ui-state-default::after {
-	content: "";
-	display: block;
-	width: 100%;
-	height: 0.4rem;
-	margin-top: 1px;
 }
 .ui-state-default.ui-state-active {
 	position: relative;
@@ -6767,11 +6758,16 @@ strong {
 .inp_checkbox {
 	position: relative;
 }
+.inp_checkbox:has(.chk_label_ty3) input[type="checkbox"] {
+	width: 2.4rem;
+	height: 2.4rem;
+}
 .inp_checkbox input[type="checkbox"] {
 	position: absolute;
 	width: 2rem;
 	height: 2rem;
 	opacity: 0;
+	z-index: 1;
 }
 .inp_checkbox input[type="checkbox"] + .chk_label {
 	position: relative;
@@ -6959,7 +6955,7 @@ strong {
 	height: 2.4rem;
 }
 .inp_checkbox input[type="checkbox"] + .chk_label.switch_check.lg > .label_cont {
-	font-size: var(--font-size-body-large);
+	font-size: var(--font-size-label-large);
 	line-height: 2.4rem;
 }
 .inp_checkbox input[type="checkbox"] + .chk_label.switch_check.lg.txt_sm > .label_cont {
@@ -7050,6 +7046,9 @@ strong {
 }
 .inp_checkbox input[type="checkbox"]:disabled + .chk_label.switch_check::after {
 	background-color: var(--color-element-gray-light);
+}
+.inp_checkbox input[type="checkbox"]:disabled + .chk_label.switch_check .label_cont {
+	color: var(--color-text-disabled);
 }
 .inp_checkbox input[type="checkbox"]:checked + .chk_label::before {
 	background: var(--color-element-primary) url(../images/icon/check_ty1.svg) no-repeat center/1.2rem auto;
@@ -13591,6 +13590,9 @@ ol li .table_wrap + .list_ty2 li + li {
 }
 .info_gray.ty2 + .call_box.space1 {
 	margin-top: var(--gap-8);
+}
+.info_gray.ty2 dl + .footer_dl {
+	border-color: var(--color-divider-gray-light);
 }
 .info_gray.ty3 {
 	background: var(--color-action-secondary);
