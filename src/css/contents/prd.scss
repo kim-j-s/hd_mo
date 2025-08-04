@@ -165,7 +165,7 @@
 	// 할인혜택
 	.benefit_area {
 		.benefit_list {
-			.list_depth_ty2 {
+			.list_ty2 {
 				padding-top: var(--gap-3);
 			}
 		}
@@ -191,7 +191,7 @@
 							content: '';
 							display: block;
 							position: absolute;
-							bottom: 10px;
+							top: 14px;
 							left: 0;
 							width: 24px;
 							height: 24px;
@@ -222,7 +222,7 @@
 						&:has(img) {
 							text-align: center;
 						}
-						.list_depth_ty2 {
+						.list_ty2 {
 							text-align: left;
 							margin-top: var(--gap-4);
 						}
@@ -353,5 +353,41 @@
 		width: auto;
 		border: 0;
 		border-radius: inherit;
+	}
+}
+
+// 자주하는질문 아코디언 운전자보험
+.driver_mis_list {
+	margin-top: var(--gap-4);
+	padding: var(--padding-8) var(--padding-7);
+	border-radius: var(--radius-large2);
+	border: var(--border-width-static-regular) solid var(--color-border-gray-light);
+	background-color: var(--color-surface-white-subtle);
+	.mis_list {
+		display: flex;
+		flex-direction: column;
+		gap: var(--gap-8);
+		margin-bottom: 16px;
+		padding: 16px 0 17px;
+		border-bottom: 1px solid #E6E8EA;
+		.item {
+			padding-left: 44px;
+			@extend %background_set;
+			font-size: var(--font-size-body-medium);
+			color: var(--color-text-basic);
+			span {
+				display: block;
+				font-size: var(--font-size-body-small);
+				color: var(--color-text-subtle);
+			}
+			@for $i from 1 through 5 {
+				&.ico_mis#{$i} {
+						background-image: url('../images/content/ltht/ico_mis_list#{$i}.svg');
+				}
+			}
+		}
+		+ .list_depth {
+			margin-top: 16px;
+		}
 	}
 }
