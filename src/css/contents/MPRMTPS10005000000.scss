@@ -16,8 +16,8 @@
 .driver_relationship_state {
 	margin: var(--gap-8) -24px 0;
 	padding: var(--padding-9) var(--padding-8);
-	background-color: #F5F5F5;
 	border-radius: var(--radius-xlarge2);
+	background: var(--color-surface-gray-subtler);
 }
 
 .relationship_box {
@@ -70,7 +70,6 @@
 			}
 
 			&.ty2 {
-				// padding-top: 52px;
 				min-width: 78px;
 			}			
 		}
@@ -79,17 +78,14 @@
 		top: 0;
 		left: 0;
 		display: flex;
-		// justify-content: center;
 		justify-content: space-between;
 		gap: var(--gap-3);
-		// width: 256px;
 		width: calc(50% + 90px);
 		padding: 0 24px;
 
 		> span {
 			position: relative;
-			min-width: 99px;
-			
+			min-width: 99px;			
 			&:after {
 				content:'';
 				display: block;
@@ -99,7 +95,7 @@
 				z-index: 1;
 				width: 1px;
 				height: 100vh;
-				background-color: #D9D9D9;
+				background-color: var(--color-border-gray-light);
 			}
 
 			&.ty1 {
@@ -120,7 +116,7 @@
 			z-index: 1;
 			width: 1px;
 			height: 100vh;
-			background-color: #D9D9D9;
+			background-color: var(--color-border-gray-light);
 		}
 	}
 	.rel_case2 {
@@ -151,7 +147,7 @@
 				z-index: 1;
 				width: 1px;
 				height: 100vw;
-				background-color: #F5F5F5;
+				background-color: var(--color-surface-gray-subtler);
 			}
 	
 			&:after {
@@ -163,7 +159,7 @@
 				z-index: 1;
 				width: 100vw;
 				height: 1px;
-				background-color: #D9D9D9;
+				background-color: var(--color-border-gray-light);
 			}
 		}
 	}
@@ -171,8 +167,6 @@
 		top: 109px;
 		left: 50%;
 		margin-left: -28px;
-		// min-height: 103px;
-
 		&.man {
 			> span {
 				background-image:url(../images/content/mtps/img_rel_case_man.svg);
@@ -196,19 +190,19 @@
 				left: 1px;
 				width: 100%;
 				height: 100vw;
-				background-color: #F5F5F5;
+				background-color: var(--color-surface-gray-subtler);
 			}
 
 			&:after {
 				content:'';
 				display: block;
 				position: absolute;
-				top:50%;
+				top: calc(50% - 5px);
 				left: 100%;
 				z-index: 1;
 				width: 100vw;
-				height: 1px;
-				background-color: #F5F5F5;
+				height: 10px;
+				background-color: var(--color-surface-gray-subtler);
 			}
 		}
 	}
