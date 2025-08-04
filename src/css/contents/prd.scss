@@ -61,14 +61,21 @@ body {
 	// 보장내용
 	.guarantee_area {
 		position: relative;
+		margin-left: -24px;
+		margin-right: -24px;
 		padding: var(--padding-10) 0;
+		.cont_head,
+		.cont_body {
+			padding-left: var(--padding-8);
+			padding-right: var(--padding-8);
+		}
 		&::before {
 			content: '';
 			display: block;
 			position: absolute;
 			top: 0;
 			left: 50%;
-			width: 100vw;
+			width: 100%;
 			height: 100%;
 			background: var(--color-surface-warning-subtler);
 			transform: translateX(-50%);
@@ -85,10 +92,13 @@ body {
 				.titie_wrap {
 					padding-left: 44px;
 					@extend %background_set;
-					@for $i from 1 through 40 {
+					@for $i from 1 through 10 {
 						&.item_ico_ty#{$i} {
-								background-image: url('../images/content/bi/visual/bg_exp_ty#{$i}.png');
+								background-image: url('../images/content/ltht/bg_exp_ty#{$i}.svg');
 						}
+					}
+					&.opt1 {
+						background-image: url('../images/content/cnsl/icon_call_info1.svg');
 					}
 				}
 				.desc {
@@ -145,14 +155,6 @@ body {
       .item {
         padding-left: 0;
       }
-      // 모바일에선 아이콘 삭제
-			// .item {
-			// 	@for $i from 1 through 5 {
-			// 		&.ico_benefit#{$i} {
-			// 				background-image: url('../images/content/ltht/ico_benefit#{$i}.svg');
-			// 		}
-			// 	}
-			// }
 		}
 	}
 
@@ -310,52 +312,7 @@ body {
 
 // 이벤트 베너
 .evt_banner {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	position: relative;
-	width: 100%;
   margin-top: -36px;
-  padding: 18px var(--padding-8);
-	border: 1px solid transparent;
-	border-radius: var(--radius-large2);
-	// &::after {
-	// 	content: '';
-	// 	display: block;
-	// 	width: 164px;
-	// 	height: 100px;
-	// 	background-repeat: no-repeat;
-	// 	background-position: center center;
-	// 	background-size: 100% auto;
-	// }
-	// @for $i from 1 through 5 {
-	// 	&.evt_bg#{$i}::after {
-	// 			background-image: url('../images/content/ltht/bg_banner#{$i}.png');
-	// 	}
-	// }
-
-	.desc_wrap {
-		.tit {
-			font-size: var(--font-size-body-small);
-		}
-		.desc {
-			font-size: 10px;
-		}
-	}
-
-	// 베너 종류
-	&.evt_bg1 {
-		border-color: #D1F3DE;
-		background-color: #EDFFF4;
-		.desc_wrap {
-			.tit {
-				color: #167052;
-			}
-			.desc {
-				color: #218564;
-			}
-		}
-	}
 }
 
 // 별점 리뷰
