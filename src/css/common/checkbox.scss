@@ -2,6 +2,13 @@
 .inp_checkbox {
 	position: relative;
 
+	&:has(.chk_label_ty3){
+		input[type='checkbox']{
+			width: 24px;
+			height: 24px;
+		}
+	}
+
 	input[type='checkbox']{
 		// overflow: hidden;
 		position: absolute;
@@ -9,6 +16,7 @@
 		height: 20px;
 		// clip: rect(0,0,0,0);
 		opacity: 0;
+		z-index: 1;
 		
 		
 		& + .chk_label {
