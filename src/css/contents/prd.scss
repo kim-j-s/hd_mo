@@ -91,7 +91,7 @@
 				.titie_wrap {
 					padding-left: 44px;
 					@extend %background_set;
-					@for $i from 1 through 36 {
+					@for $i from 1 through 37 {
 						&.item_ico_ty#{$i} {
 								background-image: url('../images/content/prd/bg_exp_ty#{$i}.svg');
 						}
@@ -224,6 +224,9 @@
 						}
 						.call_box  {
 							margin-top:0;
+						}
+						.btn_area {
+							margin-top: var(--gap-2);
 						}
 					}
 				}
@@ -417,4 +420,27 @@
 		}
 		
 	}
+}
+
+// 어린이치아 팝업
+.tooth_list {
+	display: flex;
+	justify-content: space-between;
+	li {
+		width: 80px;
+		padding-top: 40px;
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-size: 40px auto;
+		text-align: center;
+		line-height: 1.5;
+		font-weight: 700;
+		font-size: 16px;
+		@for $i from 1 through 6 {
+			&.ico_tooth#{$i} {
+				background-image: url('../images/content/prd/ico_tooth#{$i}.svg');
+			}
+		}
+	}
+	
 }
