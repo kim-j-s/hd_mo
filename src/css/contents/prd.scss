@@ -91,7 +91,7 @@
 				.titie_wrap {
 					padding-left: 44px;
 					@extend %background_set;
-					@for $i from 1 through 12 {
+					@for $i from 1 through 36 {
 						&.item_ico_ty#{$i} {
 								background-image: url('../images/content/prd/bg_exp_ty#{$i}.svg');
 						}
@@ -152,8 +152,11 @@
 	// 할인혜택
 	.benefit_area {
 		.benefit_list {
-			.list_ty2 {
+			.list_ty2{
 				padding-top: var(--gap-3);
+			}
+			.btn_area {
+				margin-top: var(--gap-2);
 			}
 		}
 		.info_list {
@@ -205,6 +208,9 @@
 						> p {
 							margin-bottom: var(--gap-4);
 							text-align: left;
+							& + .list_ty2 {
+								margin-top: var(--gap-5);
+							}
 						}
 						&:has(img) {
 							text-align: center;
@@ -212,6 +218,9 @@
 						.list_ty2 {
 							text-align: left;
 							margin-top: var(--gap-4);
+						}
+						.list_depth_ty2 {
+							margin-top: var(--gap-5);
 						}
 						.call_box  {
 							margin-top:0;
