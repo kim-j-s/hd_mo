@@ -45,7 +45,7 @@
 			.item {
 				@for $i from 1 through 16 {
 					&.ico_intro#{$i} {
-							background-image: url('../images/content/ltht/ico_intro#{$i}.svg');
+							background-image: url('../images/content/prd/ico_intro#{$i}.svg');
 					}
 				}
 			}
@@ -91,24 +91,11 @@
 				.titie_wrap {
 					padding-left: 44px;
 					@extend %background_set;
-					@for $i from 1 through 10 {
+					@for $i from 1 through 36 {
 						&.item_ico_ty#{$i} {
-								background-image: url('../images/content/ltht/bg_exp_ty#{$i}.svg');
+								background-image: url('../images/content/prd/bg_exp_ty#{$i}.svg');
 						}
 					}
-					&.opt1 {
-						background-image: url('../images/content/cnsl/icon_call_info1.svg');
-					}
-					&.opt2 {
-						background-image: url('../images/content/ho/icon_link14.svg');
-					}
-					&.opt3 {
-						background-image: url('../images/content/ho/icon_link15.svg');
-					}
-					&.opt4 {
-						background-image: url('../images/content/ho/icon_link10.svg');
-					}
-
 					 
 				}
 				.desc {
@@ -165,8 +152,11 @@
 	// 할인혜택
 	.benefit_area {
 		.benefit_list {
-			.list_ty2 {
+			.list_ty2{
 				padding-top: var(--gap-3);
+			}
+			.btn_area {
+				margin-top: var(--gap-2);
 			}
 		}
 		.info_list {
@@ -195,7 +185,7 @@
 							left: 0;
 							width: 24px;
 							height: 24px;
-							background: url('../images/content/ltht/ico_accordion_q.svg') no-repeat;
+							background: url('../images/content/prd/ico_accordion_q.svg') no-repeat;
 							background-size: 24px auto;
 						}
 					}
@@ -212,12 +202,15 @@
 							left: 0;
 							width: 24px;
 							height: 24px;
-							background: url('../images/content/ltht/ico_accordion_a.svg') no-repeat;
+							background: url('../images/content/prd/ico_accordion_a.svg') no-repeat;
 							background-size: 24px auto;
 						}
 						> p {
 							margin-bottom: var(--gap-4);
 							text-align: left;
+							& + .list_ty2 {
+								margin-top: var(--gap-5);
+							}
 						}
 						&:has(img) {
 							text-align: center;
@@ -226,8 +219,14 @@
 							text-align: left;
 							margin-top: var(--gap-4);
 						}
+						.list_depth_ty2 {
+							margin-top: var(--gap-5);
+						}
 						.call_box  {
 							margin-top:0;
+						}
+						.btn_area {
+							margin-top: var(--gap-2);
 						}
 					}
 				}
@@ -382,7 +381,7 @@
 			}
 			@for $i from 1 through 5 {
 				&.ico_mis#{$i} {
-						background-image: url('../images/content/ltht/ico_mis_list#{$i}.svg');
+						background-image: url('../images/content/prd/ico_mis_list#{$i}.svg');
 				}
 			}
 		}
