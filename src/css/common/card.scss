@@ -1412,11 +1412,6 @@
 }
 
 .form_card_wrap {
-	.form_card_case {
-		& + .form_card_case {
-			margin-top: var(--gap-5);
-		}
-	}
 	& + .btn_area {
 		margin-top: var(--gap-5);
 	}
@@ -1441,6 +1436,15 @@
 	}
 	& + .btn_area {
 		margin-top: var(--gap-8);
+	}
+	.form_group_wrap {
+		[class^=form_line] {
+			.form_line {
+				+ .form_line {
+					margin-top: var(--gap-8);
+				}
+			}
+		}
 	}
 
 	> .select_item {
