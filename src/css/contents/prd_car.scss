@@ -173,6 +173,7 @@
 		}
 	}
 
+
 	.sec_group {
 		.sec_head {
 			margin-bottom: var(--gap-5);
@@ -192,7 +193,32 @@
 			}
 		}
 	}
+	.sec_body {
+		&:has(.title_h4) {
+			margin-top: -6px;
+		}
+
+		// sec_group 안에 간격 40 인경우
+		.group {
+			+ .group {
+				margin-top: 40px;
+			}
+		}
+	}
 	
 	// 간격
-
+	.tab_wrap {
+		+ .btn_area {
+			margin-top: var(--gap-11);
+			+ .list_ty2 {
+				margin-top: var(--gap-11);
+			}
+		}
+	} // 텝 + 보험약관버튼 + 준법감시필 
+	
+	.title_h4 {
+		+ .list_depth {
+			margin-top: var(--gap-4);
+		}
+	}
 }
