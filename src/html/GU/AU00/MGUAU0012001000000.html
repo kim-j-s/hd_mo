@@ -1,24 +1,39 @@
 {{#> layout/default no-sp=true page-title="생체인증서 등록 | 인증센터"}}
+<!-- s: 25-08-06 -->
 	<div id="wrap" class="wrap">
 		{{> layout/header h-title="생체인증서 등록/삭제" }}
 		<div id="container" class="container">
 			<div class="content">
+				<!-- s: case1 등록 -->
 				<div class="process_info_area ico_type ico_type01">
 					<h2 class="process_title">
 						<strong>
-							생체인증을<br>
-							등록하거나 삭제할 수 있어요
+							휴대폰에 등록된<br>
+							생체인증을 이용합니다
 						</strong>
 					</h2>
 					<div class="process_desc">
-						생체인증으로 간편하게 로그인, 인증해보세요
+						현대해상 다이렉트는<br>
+						생체인증 정보를 저장하지 않습니다.
 					</div>
 				</div>
-				 
+				<!-- e: case1 등록 -->
+				<!-- s: case2 삭제 -->
+				<!-- <div class="process_info_area ico_type ico_type01">
+					<h2 class="process_title">
+						<strong>
+							생체인증을 삭제해 주세요
+						</strong>
+					</h2>
+					<div class="process_desc">
+						삭제하면 생체인증 이용을 할 수 없고,<br>
+						생체인증을 등록해야 이용이 가능합니다.
+					</div>
+				</div> -->
+				<!-- e: case2 삭제 -->
+				
 				<!-- s: 꼭 알아두세요 -->
-				<!-- s: 25-05-20 수정 -->
 				{{#> cp/notice dp-active=true}}
-				<!-- e: 25-05-20 수정 -->
 					<ul class="list_depth">
 						<li>앱을 재설치 하시거나, 최초 등록하신 스마트폰이 아닌 다른 기기에서 접속할 경우 재등록이 필요합니다.</li>
 					</ul>
@@ -32,8 +47,8 @@
 		<!-- s: 하단 고정 버튼 영역 -->
 		<div class="bottom_fix_wrap">
 			<div class="btn_area">
-				{{> cp/button type="3" size="1" b-text="삭제"}}
 				{{> cp/button type="1" size="1" b-text="등록"}}
+				<!-- {{> cp/button type="1" size="1" b-text="삭제"}} -->
 			</div>
 		</div>
 		<!-- s: 하단 고정 버튼 영역 -->
@@ -41,7 +56,22 @@
 	</div>
 
 	<!-- s: popup area -->
-	 
+	<!-- s: Layer 팝업 -->
+	{{#> popup/popup_layer popup-id="pop_type01" popup-active="true" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			인증센터 > 생체인증 등록/관리는 로그인한 회원만 이용할 수 있습니다.
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="3" size="2" b-text="회원가입" }}
+			{{> cp/button type="1" size="2" b-text="로그인" }}
+		</div>
+	</div>
+	{{/ popup/popup_layer}}
+	<!-- e: Layer 팝업 -->
 	<!-- e: popup area -->
+<!-- e: 25-08-06 -->
 
 {{/ layout/default }}
