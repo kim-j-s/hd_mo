@@ -417,7 +417,7 @@
 	flex:1;
 	padding: 0;
 	overflow-y: auto;
-	border-top: var(--border-width-static-regular) solid var(--color-border-gray-light);
+	border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 
 	ul.search_reult_list {
 		li {
@@ -1321,12 +1321,12 @@
 		dl {
 			display: flex;
 			gap: var(--gap-2);
-			font-size: var(--font-size-body-small);
+			font-size: var(--font-size-body-medium);
 			dt {
 				color: var(--color-text-disabled-on);
-				padding-left: 26px;
+				padding-left: 28px;
 				background-repeat: no-repeat;
-				background-position: 4px 3px;
+				background-position: 4px 4px;
 				background-size: 16px auto;
 				//대상
 				&.person {
@@ -1481,7 +1481,7 @@
 .step_list {
 	> li {
 		position: relative;
-		padding: 0 0 8px 14px;
+		padding: 0 0 var(--padding-5) 14px;
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;
@@ -1504,7 +1504,7 @@
 				&::after {
 					content: '';
 					position: absolute;
-					top: 23px;
+					top: calc(var(--padding-5) + var(--gap-3));
 					left: -1px;
 					width: 3px;
 					height: 3px;
@@ -1546,9 +1546,10 @@
 			}
 		}
 		& + li {
-			padding-top: var(--gap-5);
+			padding-top: var(--padding-5);
 		}
 		&:first-child {
+			margin-top: var(--padding-5);
 			dl {
 				dt {
 					&::after {
