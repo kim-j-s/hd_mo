@@ -5,7 +5,9 @@
     <div id="container" class="container home">
         <div class="content">
             <div class="normal_cont">
-                <div class="home_card top">
+                <!-- s: 25-08-06 --> 
+                <div class="home_card top main">
+                <!-- e: 25-08-06 -->
                     <div class="easy_none">
                         <div class="ing_banner">
                             <div class="cont" roll="button" title="진행중인 보험 페이지로 이동">
@@ -69,12 +71,14 @@
                             {{> cp/button type="2" size="1" b-text="갱신간편계산"}}
                         </div>
                         <div class="btn_area ty2">
-                            {{> cp/button type="3" size="2" b-text="운전자보험"}}
-                            {{> cp/button type="3" size="2" b-text="어린이보험"}}
-                            {{> cp/button type="3" size="2" b-text="펫보험"}}
-                            {{> cp/button type="3" size="2" b-text="주택화재보험"}}
-                            {{> cp/button type="3" size="2" b-text="건강보험"}}
-                            {{> cp/button type="3" size="2" b-text="해외여행보험"}}
+                            <!-- s: 25-08-06 -->
+                            {{> cp/button type="3" size="1" b-text="운전자보험"}}
+                            {{> cp/button type="3" size="1" b-text="어린이보험"}}
+                            {{> cp/button type="3" size="1" b-text="펫보험"}}
+                            {{> cp/button type="3" size="1" b-text="주택화재보험"}}
+                            {{> cp/button type="3" size="1" b-text="건강보험"}}
+                            {{> cp/button type="3" size="1" b-text="해외여행보험"}}
+                            <!-- e: 25-08-06 -->
                         </div>
                         <div class="btn_area center">
                             {{> cp/linkButton bl_class="short_cut" bl_text="전체상품" bl_title="페이지 이동" pop_id="pop_pro" }}
@@ -137,10 +141,8 @@
                         <div class="icon_link">
                             <a href="javascript:void(0);" class="item opt1" title="페이지 이동">계약조회</a>
                             <a href="javascript:void(0);" class="item opt2" title="페이지 이동">계약변경</a>
-                            <a href="javascript:void(0);" class="item opt3" onclick="openHDPopup(this,'pop_type01');"
-                                title="팝업 열림">보험증명서</a>
-                            <a href="javascript:void(0);" class="item opt10" onclick="openHDPopup(this,'pop_type02');"
-                                title="팝업 열림">보험금청구</a>
+                            <a href="javascript:void(0);" class="item opt3" onclick="openHDPopup(this,'pop_type01');" title="팝업 열림">보험증명서</a>
+                            <a href="javascript:void(0);" class="item opt10" onclick="openHDPopup(this,'pop_type02');" title="팝업 열림">보험금청구</a>
                         </div>
                         <div class="btn_area">
                             <a href="javascript:void(0);" class="link_btn_big pink_search">
@@ -204,12 +206,56 @@
                             </h3>
                         </div>
                         <div class="card_item_wrap">
+                            <!-- s: 25-08-06 -->
                             <a href="javascript:void(0);" class="card_item">
-                                <div class="bn_main01">
+                                <div class="bn_main icon01">
                                     어떻게 다를까?<br>
                                     자동차 보험과 운전자보험의 차이점
                                 </div>
                             </a>
+                            <a href="javascript:void(0);" class="card_item">
+                                <div class="bn_main icon02">
+                                    어떻게 다를까?<br>
+                                    자동차 보험과 운전자보험의 차이점
+                                </div>
+                            </a>
+                            <a href="javascript:void(0);" class="card_item">
+                                <div class="bn_main icon03">
+                                    어떻게 다를까?<br>
+                                    자동차 보험과 운전자보험의 차이점
+                                </div>
+                            </a>
+                            <a href="javascript:void(0);" class="card_item">
+                                <div class="bn_main icon04">
+                                    어떻게 다를까?<br>
+                                    자동차 보험과 운전자보험의 차이점
+                                </div>
+                            </a>
+                            <a href="javascript:void(0);" class="card_item">
+                                <div class="bn_main icon05">
+                                    어떻게 다를까?<br>
+                                    자동차 보험과 운전자보험의 차이점
+                                </div>
+                            </a>
+                            <a href="javascript:void(0);" class="card_item">
+                                <div class="bn_main icon06">
+                                    어떻게 다를까?<br>
+                                    자동차 보험과 운전자보험의 차이점
+                                </div>
+                            </a>
+                            <a href="javascript:void(0);" class="card_item">
+                                <div class="bn_main icon07">
+                                    어떻게 다를까?<br>
+                                    자동차 보험과 운전자보험의 차이점
+                                </div>
+                            </a>
+                            <a href="javascript:void(0);" class="card_item">
+                                <div class="bn_main icon08">
+                                    어떻게 다를까?<br>
+                                    자동차 보험과 운전자보험의 차이점
+                                </div>
+                            </a>
+                            <!-- e: 25-08-06 -->
                         </div>
                     </div>
                     <div class="acd_item acd_item_ty5">
@@ -629,6 +675,10 @@
 
 <script>
     $(document).ready(function () {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = '../../../css/easy.css';
+        document.head.appendChild(link);
         var bannerSwiper = new Swiper('#main_banner_wrap', {
             slidesPerView: 1,
             updateOnWindowResize: true,
