@@ -98,8 +98,9 @@
 										<li class="ty1">
 											<a href="#"><span class="text">계약조회</span></a>
 										</li>
-										<li class="ty2">
-											<a href="#"><span class="text">계약변경</span></a>
+										<!-- s: 25-08-06 수정 -->
+										<li class="ty5">
+											<a href="#"><span class="text">보험증명서</span></a>
 										</li>
 										<li class="ty3">
 											<a href="#"><span class="text">고장출동</span></a>
@@ -107,9 +108,10 @@
 										<li class="ty4">
 											<a href="#"><span class="text">사고접수</span></a>
 										</li>
-										<li class="ty5">
-											<a href="#"><span class="text">보험증명서</span></a>
+										<li class="ty2">
+											<a href="#"><span class="text">인증센터</span></a>
 										</li>
+										<!-- e: 25-08-06 수정 -->
 									</ul>
 
 									<div class="nmc_search_cont">
@@ -433,7 +435,7 @@
 							<div class="comp_wrap birth">
 								<div class="input_text">
 									<div class="inp">
-										<input type="tel" placeholder="앞자리" minlength="6" maxlength="6" title="주민등록번호(외국인등록번호) 앞자리 입력" />
+										<input type="tel" placeholder="앞자리" value="990101" minlength="6" maxlength="6" title="주민등록번호(외국인등록번호) 앞자리 입력" />
 										<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 									</div>
 								</div>
@@ -491,7 +493,34 @@
 		</div>
 
 		<!-- s: popup area -->
-
+		<!-- s: 25-08-06 수정 -->
+		<!-- s: Layer 팝업 -->
+		<div class="popup_wrap layer active" id="pop_type01" role="dialog" aria-hidden="false">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
+				<div class="popup_inner">
+					<div class="popup_head">
+						<div class="popup_head_title"></div>
+					</div>
+					<div class="popup_cont">
+						<div class="popup_content">인증센터 > 생체인증 등록/관리는 로그인한 회원만 이용할 수 있습니다.</div>
+					</div>
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_2">
+								<span class="text">회원가입</span>
+							</button>
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">로그인</span>
+							</button>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: Layer 팝업 -->
+		<!-- s: 25-08-06 수정 -->
 		<!-- e: popup area -->
 	</body>
 </html>
