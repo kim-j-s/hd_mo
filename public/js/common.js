@@ -508,7 +508,9 @@
 				// } else {
 				// 	$target.attr('tabindex', '-1').focus();
 				// }
-				$target.attr('tabindex', '-1').focus();
+				setTimeout(function(){
+					$target.children('*:first-child').attr('tabindex', '-1').focus();
+				}, 300)
 			});
 		}
 	});
