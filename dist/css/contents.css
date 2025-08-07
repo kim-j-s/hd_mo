@@ -790,18 +790,23 @@
 	flex: none;
 	position: relative;
 	width: auto;
-	padding: 0.9rem 1rem 0.9rem 3.4rem;
+	padding: 0.9rem 0.9rem 0.9rem 3.3rem;
 	font-size: 1.4rem;
 	line-height: 2rem;
 	color: var(--color-text-basic);
 	border-radius: 1.2rem;
 	background-repeat: no-repeat;
-	background-position: 1rem center;
+	background-position: 0.9rem center;
 	background-size: 2rem auto;
 	border: var(--border-width-static-regular) solid var(--color-border-gray);
-	background-color: #fff;
+	background-color: var(--color-action-white);
 	visibility: visible;
 	opacity: 1;
+}
+.selected_case.selected {
+	padding: 0.8rem 0.8rem 0.8rem 3.2rem;
+	border: var(--border-width-static-medium) solid var(--color-border-primary);
+	background-position: 0.8rem center;
 }
 .selected_case.person {
 	background-image: url(../images/content/bi/icon_stepper_person.svg);
@@ -5150,7 +5155,7 @@ ul + .form_group_wrap {
 	font-size: var(--font-size-body-large);
 }
 .guarantee_ty2_top_container .inner .content_list {
-	border-top: var(--border-widt h-static-regular) solid var(--color-divider-gray-light);
+	border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 	margin-top: var(--gap-4);
 	padding-top: var(--padding-6);
 }
@@ -6993,12 +6998,6 @@ ul + .form_group_wrap {
 .prd_car.position_event_wrap .sii_wrap {
 	padding-bottom: 0;
 }
-.prd_car .position_event_content .popup_content_body {
-	gap: 0;
-}
-.prd_car .position_event_content .popup_content_body .sec_group + .sec_group {
-	padding-top: var(--gap-11);
-}
 .prd_car .popup_content_body {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -7271,19 +7270,25 @@ ul + .form_group_wrap {
 .prd_car .sec_group .sec_body:has(.title_h4) {
 	margin-top: -0.8rem;
 }
-.prd_car .sec_group .sec_body .title_h4 + .desc,
-.prd_car .sec_group .sec_body .title_h4 + .list_depth {
-	padding-top: var(--gap-4);
+.prd_car .group + .group {
+	padding-top: 4rem;
 }
-.prd_car .sec_group .sec_body .title_h4 + .table_wrap {
+.prd_car .title_h4 + .desc,
+.prd_car .title_h4 + .list_depth {
+	margin-top: var(--gap-4);
+}
+.prd_car .title_h4 + .table_wrap {
 	margin-top: var(--gap-5);
 }
-.prd_car .sec_group .sec_body .group + .group {
-	padding-top: 4rem;
+.prd_car .list_depth + .table_wrap {
+	margin-top: var(--gap-4);
 }
 .prd_car .tab_wrap + .btn_area {
 	margin-top: var(--gap-11);
 }
 .prd_car .tab_wrap + .btn_area + .list_ty2 {
 	margin-top: var(--gap-11);
+}
+.prd_car .web_link {
+	text-decoration: underline;
 }
