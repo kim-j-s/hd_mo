@@ -209,9 +209,17 @@
 
 				.btn_area {
 					flex-flow: row wrap;
+					
+					&:has(.hd_btn_s_1) {
+						gap: var(--gap-4) var(--gap-3);
+					}
 
 					&.column {
 						flex-direction: column;
+
+						&:has(.hd_btn_s_1) {
+							gap: var(--gap-4);
+						}
 					}
 					
 					& + .btn_area {
