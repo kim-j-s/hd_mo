@@ -2,7 +2,7 @@
 <!-- s: popup area -->
 <!-- s: Full 팝업 -->	
 {{#> popup/popup_full popup-id="pop_full" popup-title="자동차보험" popup-active=true }}
-	<div class="popup_cont">
+	<div class="popup_cont position_event_wrap">
 		<div class="popup_content prd_car">
 			<!-- s: tab -->
 			<div class="tab_wrap">
@@ -11,6 +11,7 @@
 					{{> cp/tab_btn tb-text="보장내용" tb-id="02"}}
 					{{> cp/tab_btn tb-text="유의사항" tb-id="03" }}
 				</div>
+				<!-- tab1: 상품안내 -->
 				<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
 					<!-- s: popup_content_top -->
 					<div class="popup_content_top">
@@ -130,6 +131,8 @@
 					</div>
 					<!-- e: popup_content_body -->
 				</div>
+
+				<!-- tab2: 보장내용 -->
 				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab02" id="tabPanel02">
 					<!-- s: popup_content_body -->
 					<div class="popup_content_body">
@@ -320,31 +323,157 @@
 					</div>
 					<!-- e: popup_content_body -->
 				</div>
-				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel02">
-					<!-- s: popup_content_top -->
-					<div class="popup_content_top">
-						<h2 class="title_h2">
-							<strong>타이틀</strong>
-						</h2>
-					</div>
-					<!-- e: popup_content_top -->
 
-					<!-- s: popup_content_body -->
-					<div class="popup_content_body">
-						<!-- s: sec_group -->
-						<div class="sec_group">
-							<div class="sec_head"> 
-								<h3 class="title_h3">title_h3_20</h3>
-								<h4 class="title_h4">title_h4_18</h4>
-								<p class="desc">설명문구</p>
-							</div>
-							<div class="sec_body">
-								
-							</div>
-						</div>
-						<!-- e: sec_group -->
+				<!-- tab3: 유의사항 -->
+				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel02">
+					<div class="sii_wrap">
+					<!-- s: position_event_tab -->
+					<div class="tag_item_wrap sticky position_event_tab">
+						<button type="button" class="tag_item size_m c_ty02 active"><span class="text" title="">#전체</span></button>
+						<button type="button" class="tag_item size_m c_ty02"><span class="text" title="">#주요 확인사항</span></button>
+						<button type="button" class="tag_item size_m c_ty02"><span class="text" title="">#보험계약상 알릴 의무</span></button>
+						<button type="button" class="tag_item size_m c_ty02"><span class="text" title="">#분할납부</span></button>
+						<button type="button" class="tag_item size_m c_ty02"><span class="text" title="">#의무보험</span></button>
+						<button type="button" class="tag_item size_m c_ty02"><span class="text" title="">#차량대체 가능 차종</span></button>
+						<button type="button" class="tag_item size_m c_ty02"><span class="text" title="">#운전가능 범위</span></button>
+						<button type="button" class="tag_item size_m c_ty02"><span class="text" title="">#청약철회 및 위법계약 해지</span></button>
+						<button type="button" class="tag_item size_m c_ty02"><span class="text" title="">#예금자보호</span></button>
+						<button type="button" class="tag_item size_m c_ty02"><span class="text" title="">#상담 및 보험분쟁 조정</span></button>
+						<button type="button" class="tag_item size_m c_ty02"><span class="text" title="">#모집질서 확립 및 신고센터</span></button>
 					</div>
-					<!-- e: popup_content_body -->
+
+					<div class="position_event_content">
+						<!-- s: popup_content_body -->
+						<div class="popup_content_body">
+							<!-- s: sec_group -->
+							<div class="sec_group pec_point">
+								<div class="sec_head"> 
+									<h3 class="title_h3">title_h3_20</h3>
+									<h4 class="title_h4">title_h4_18</h4>
+									<p class="desc">설명문구</p>
+								</div>
+								<div class="sec_body">
+									<p>
+										01. 주요 확인사항 - 청약서, 영수증, 보험증권 및 약관 내용은 확인하셨나요?
+										보험 가입자의 이름, 주소는 올바르게 기록돼 있나요?
+										차량번호, 차명은 정확한가요?
+										가입한 담보 정보 및 가입 금액은 정확한가요?
+										어떤 사고에 대해 보상이 완료됐나요?
+										사고 시 보상되지 않는 사항은 어떤 것인가요?
+
+										02. 보험계약상의 알릴 의무
+										계약 전 알릴 의무
+										계약자 또는 피보험자는 보험계약 청약 시 청약서(전자 문서 포함)의 질문사항에 대하여 알고 있는 내용을 반드시 사실대로 알려야 하며(청약서 또는 전자청약서에 기재), 그렇지 않은 경우 보험금의 지급이 거절될 수 있습니다.
+										보험계약 체결 전에 반드시 상품설명서와 약관을 확인해야 하며, 보험계약자가 기존에 체결했던 보험계약을 해지하고 다른 보험계약을 체결하면 보험인수가 거절되거나 보험료가 인상되거나 보장내용이 달라질 수 있습니다.
+
+										계약 후 알릴 의무
+										계약자 또는 피보험자는 보험계약을 맺은 후 보험약관에 정한 계약 후 알릴 의무사항이 발생하였을 경우 지체 없이 회사에 알려야 합니다. 그렇지 않을 경우 보험금 지급이 거절될 수 있습니다. *알릴 의무를 위반하신 경우 계약을 해지하거나 보험금 지급이 제한될 수 있습니다. 기타 자세한 사항은 약관의 내용을 따릅니다.
+									</p>
+								</div>
+							</div>
+							<!-- e: sec_group -->
+
+							<!-- s: sec_group -->
+							<div class="sec_group pec_point">
+								<div class="sec_head"> 
+									<h3 class="title_h3">title_h3_20</h3>
+									<h4 class="title_h4">title_h4_18</h4>
+									<p class="desc">설명문구</p>
+								</div>
+								<div class="sec_body">
+									<p>
+										01. 주요 확인사항 - 청약서, 영수증, 보험증권 및 약관 내용은 확인하셨나요?
+										보험 가입자의 이름, 주소는 올바르게 기록돼 있나요?
+										차량번호, 차명은 정확한가요?
+										가입한 담보 정보 및 가입 금액은 정확한가요?
+										어떤 사고에 대해 보상이 완료됐나요?
+										사고 시 보상되지 않는 사항은 어떤 것인가요?
+
+										02. 보험계약상의 알릴 의무
+										계약 전 알릴 의무
+										계약자 또는 피보험자는 보험계약 청약 시 청약서(전자 문서 포함)의 질문사항에 대하여 알고 있는 내용을 반드시 사실대로 알려야 하며(청약서 또는 전자청약서에 기재), 그렇지 않은 경우 보험금의 지급이 거절될 수 있습니다.
+										보험계약 체결 전에 반드시 상품설명서와 약관을 확인해야 하며, 보험계약자가 기존에 체결했던 보험계약을 해지하고 다른 보험계약을 체결하면 보험인수가 거절되거나 보험료가 인상되거나 보장내용이 달라질 수 있습니다.
+
+										계약 후 알릴 의무
+										계약자 또는 피보험자는 보험계약을 맺은 후 보험약관에 정한 계약 후 알릴 의무사항이 발생하였을 경우 지체 없이 회사에 알려야 합니다. 그렇지 않을 경우 보험금 지급이 거절될 수 있습니다. *알릴 의무를 위반하신 경우 계약을 해지하거나 보험금 지급이 제한될 수 있습니다. 기타 자세한 사항은 약관의 내용을 따릅니다.
+									</p>
+								</div>
+							</div>
+							<!-- e: sec_group -->
+
+							<!-- s: sec_group -->
+							<div class="sec_group pec_point">
+								<div class="sec_head"> 
+									<h3 class="title_h3">title_h3_20</h3>
+									<h4 class="title_h4">title_h4_18</h4>
+									<p class="desc">설명문구</p>
+								</div>
+								<div class="sec_body">
+									<p>
+										01. 주요 확인사항 - 청약서, 영수증, 보험증권 및 약관 내용은 확인하셨나요?
+										보험 가입자의 이름, 주소는 올바르게 기록돼 있나요?
+										차량번호, 차명은 정확한가요?
+										가입한 담보 정보 및 가입 금액은 정확한가요?
+										어떤 사고에 대해 보상이 완료됐나요?
+										사고 시 보상되지 않는 사항은 어떤 것인가요?
+
+										02. 보험계약상의 알릴 의무
+										계약 전 알릴 의무
+										계약자 또는 피보험자는 보험계약 청약 시 청약서(전자 문서 포함)의 질문사항에 대하여 알고 있는 내용을 반드시 사실대로 알려야 하며(청약서 또는 전자청약서에 기재), 그렇지 않은 경우 보험금의 지급이 거절될 수 있습니다.
+										보험계약 체결 전에 반드시 상품설명서와 약관을 확인해야 하며, 보험계약자가 기존에 체결했던 보험계약을 해지하고 다른 보험계약을 체결하면 보험인수가 거절되거나 보험료가 인상되거나 보장내용이 달라질 수 있습니다.
+
+										계약 후 알릴 의무
+										계약자 또는 피보험자는 보험계약을 맺은 후 보험약관에 정한 계약 후 알릴 의무사항이 발생하였을 경우 지체 없이 회사에 알려야 합니다. 그렇지 않을 경우 보험금 지급이 거절될 수 있습니다. *알릴 의무를 위반하신 경우 계약을 해지하거나 보험금 지급이 제한될 수 있습니다. 기타 자세한 사항은 약관의 내용을 따릅니다.
+									</p>
+								</div>
+							</div>
+							<!-- e: sec_group -->
+
+							<!-- s: sec_group -->
+							<div class="sec_group pec_point">
+								<div class="sec_head"> 
+									<h3 class="title_h3">title_h3_20</h3>
+									<h4 class="title_h4">title_h4_18</h4>
+									<p class="desc">설명문구</p>
+								</div>
+								<div class="sec_body">
+									<p>
+										01. 주요 확인사항 - 청약서, 영수증, 보험증권 및 약관 내용은 확인하셨나요?
+										보험 가입자의 이름, 주소는 올바르게 기록돼 있나요?
+										차량번호, 차명은 정확한가요?
+										가입한 담보 정보 및 가입 금액은 정확한가요?
+										어떤 사고에 대해 보상이 완료됐나요?
+										사고 시 보상되지 않는 사항은 어떤 것인가요?
+
+										02. 보험계약상의 알릴 의무
+										계약 전 알릴 의무
+										계약자 또는 피보험자는 보험계약 청약 시 청약서(전자 문서 포함)의 질문사항에 대하여 알고 있는 내용을 반드시 사실대로 알려야 하며(청약서 또는 전자청약서에 기재), 그렇지 않은 경우 보험금의 지급이 거절될 수 있습니다.
+										보험계약 체결 전에 반드시 상품설명서와 약관을 확인해야 하며, 보험계약자가 기존에 체결했던 보험계약을 해지하고 다른 보험계약을 체결하면 보험인수가 거절되거나 보험료가 인상되거나 보장내용이 달라질 수 있습니다.
+
+										계약 후 알릴 의무
+										계약자 또는 피보험자는 보험계약을 맺은 후 보험약관에 정한 계약 후 알릴 의무사항이 발생하였을 경우 지체 없이 회사에 알려야 합니다. 그렇지 않을 경우 보험금 지급이 거절될 수 있습니다. *알릴 의무를 위반하신 경우 계약을 해지하거나 보험금 지급이 제한될 수 있습니다. 기타 자세한 사항은 약관의 내용을 따릅니다.
+									</p>
+								</div>
+							</div>
+							<!-- e: sec_group -->
+
+							<!-- s: sec_group -->
+							<div class="sec_group pec_point">
+								<div class="sec_head"> 
+									<h3 class="title_h3">title_h3_20</h3>
+									<h4 class="title_h4">title_h4_18</h4>
+									<p class="desc">설명문구</p>
+								</div>
+								<div class="sec_body">
+									
+								</div>
+							</div>
+							<!-- e: sec_group -->
+						</div>
+						<!-- e: popup_content_body -->
+					</div>
+					<!-- e: position_event_tab -->
+					</div>
 				</div>
 			</div>
 			<!-- e: tab -->
