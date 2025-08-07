@@ -557,19 +557,23 @@
 	flex: none;
 	position: relative;
 	width: auto;
-	padding: 9px 10px 9px 34px;
+	padding: 9px 9px 9px 33px;
 	font-size: 14px;
 	line-height: 20px;
 	color: var(--color-text-basic);
 	border-radius: 12px;
 	background-repeat: no-repeat;
-	background-position: 10px center;
+	background-position: 9px center;
 	background-size: 20px auto;
 	border: var(--border-width-static-regular) solid var(--color-border-gray);
-	background-color: #FFF;
+	background-color: var(--color-action-white);
 	visibility: visible;
 	opacity: 1;
-	// transition: var(--t-time);
+	&.selected {
+		padding: 8px 8px 8px 32px;
+		border: var(--border-width-static-medium) solid var(--color-border-primary);
+		background-position: 8px center;
+	}
 	&.person {
 		background-image: url(../images/content/bi/icon_stepper_person.svg);
 	}
