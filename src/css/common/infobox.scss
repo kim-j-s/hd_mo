@@ -4,9 +4,13 @@
 	border-radius: var(--radius-large2);
 	background: var(--color-surface-secondary-subtler);
 
-	// & + &.ty2 {
-	// 	margin-top: var(--gap-11);
-	// }
+	// margin-top 16
+	& + & {
+		margin-top: var(--gap-5);
+		&.ty2:not(.and) {
+			margin-top: var(--gap-11);
+		}
+	}
 	& + .text_sub,
 	& + [class^=list_ty] {
 		margin-top: var(--gap-5);
@@ -135,13 +139,13 @@
 		margin-top: var(--gap-5);
 	}
 	
-	& + .info_gray {
-		margin-top: var(--gap-5);
+	// & + .info_gray {
+	// 	margin-top: var(--gap-5);
 		
-		&.ty2 {
-			margin-top: var(--gap-8);
-		}
-	}
+	// 	&.ty2 {
+	// 		margin-top: var(--gap-8);
+	// 	}
+	// }
 
 	// margin-top 12
 	& + .info_text {
