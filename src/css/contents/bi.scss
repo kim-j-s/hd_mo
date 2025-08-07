@@ -467,6 +467,21 @@
 					text-align: left;
 				}
 			}
+
+			// 기초정보입력 선택된 상태값 표기			
+			.inp_radio {
+				&.selected {
+					input[type="radio"] {
+						& + label {
+							&::after {
+								border: var(--border-width-static-medium) solid var(--color-border-primary);
+							}
+						}
+					}
+				}
+			}
+			// 기초정보입력 선택된 상태값 표기
+
 		}
 
 		.oai_block {

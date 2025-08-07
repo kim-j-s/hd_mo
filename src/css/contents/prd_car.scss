@@ -6,6 +6,21 @@
 
 // 상품안내 
 .prd_car {
+	&.position_event_wrap {
+		.sii_wrap {
+			padding-bottom: 0;
+		}
+	}
+	.position_event_content {
+		.popup_content_body {
+			gap: 0;
+			.sec_group {
+				+.sec_group {
+					padding-top: var(--gap-11);
+				}
+			}
+		}
+	}
 	.popup_content_body {
 		display: flex;
 		flex-direction: column;
@@ -174,39 +189,35 @@
 	}
 
 
+	// 간격
 	.sec_group {
 		.sec_head {
-			margin-bottom: var(--gap-5);
-			.title_h3 {
-				+ .title_h4,
-				+ .desc {
-					margin-top: var(--gap-4);
+			margin-bottom: var(--gap-6);
+		}
+		.sec_body {
+			&:has(.title_h4) {
+				margin-top: -8px;
+			}
+			
+			.title_h4 {
+				+ .desc,
+				+ .list_depth {
+					padding-top: var(--gap-4);
+				}
+				+ .table_wrap {
+					margin-top: var(--gap-5);
 				}
 			}
-			.title_h4 { 
-				+ .desc {
-					margin-top: var(--gap-4);
+	
+			// sec_group 안에 간격 40 인경우
+			.group {
+				+ .group {
+					padding-top: 40px;
 				}
-			}
-			&:not(:has(.title_h4, .desc)) {
-				margin-bottom: var(--gap-6);
-			}
-		}
-	}
-	.sec_body {
-		&:has(.title_h4) {
-			margin-top: -6px;
-		}
-
-		// sec_group 안에 간격 40 인경우
-		.group {
-			+ .group {
-				margin-top: 40px;
 			}
 		}
 	}
 	
-	// 간격
 	.tab_wrap {
 		+ .btn_area {
 			margin-top: var(--gap-11);
@@ -216,9 +227,4 @@
 		}
 	} // 텝 + 보험약관버튼 + 준법감시필 
 	
-	.title_h4 {
-		+ .list_depth {
-			margin-top: var(--gap-4);
-		}
-	}
 }
