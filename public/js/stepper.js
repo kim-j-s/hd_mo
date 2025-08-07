@@ -66,7 +66,7 @@ const $stepper = {
 
 		// 1. 선택tab 영역(해당 탭 radio 체크 해제)
 		const _stepRadio = $('.opts_area').eq(nowIdx).find('input[type="radio"]');
-		// _stepRadio.prop('checked', false); // 라디오 버튼 선택 해제
+		_stepRadio.prop('checked', false); // 라디오 버튼 선택 해제
 
 		// 2. birth_date_field 텍스트 초기화
 		const _birthDateField = $(".opts_area").eq(nowIdx).find(".birth_date_field");

@@ -480,10 +480,17 @@
 
 		if($wrap.find('.sii_wrap').length){
 			const $sii = $wrap.find('.sii_wrap').children('.position_event_tab');
-			const siiHeight = parseFloat($sii.css('padding-bottom'));
-
+			let siiHeight = 0;
+			
+			if($('.position_event_content').hasClass('summary_ii')){
+				siiHeight = parseFloat($sii.css('padding-bottom'));
+			}else {
+				siiHeight = parseFloat($sii.css('margin-bottom'));
+			}
 			sHeight = siiHeight;
 		}
+
+		console.log(sHeight);
 
 		if ($target.length) {
 			$wrap.data('scrolling', true);
@@ -493,7 +500,7 @@
 
 			const containerTop = $scrollArea.offset().top;
 			const targetTop = $target.offset().top;
-			const scrollY = targetTop - containerTop + expHeight;
+			const scrollY = (targetTop - containerTop) + expHeight + sHeight;
 
 			$wrap.stop().animate({
 				scrollTop: scrollY
@@ -508,7 +515,9 @@
 				// } else {
 				// 	$target.attr('tabindex', '-1').focus();
 				// }
-				$target.attr('tabindex', '-1').focus();
+				setTimeout(function(){
+					$target.children('*:first-child').attr('tabindex', '-1').focus();
+				}, 300)
 			});
 		}
 	});
