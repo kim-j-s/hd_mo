@@ -49,6 +49,7 @@
 	</head>
 	<body>
 		<!-- s: Full 팝업 -->
+		<!-- s: 25-08-07 수정 -->
 		<div class="popup_wrap full active" id="pop_type01" role="dialog" aria-hidden="false">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
@@ -56,6 +57,7 @@
 					<div class="popup_head">
 						<div class="popup_head_title">알림</div>
 					</div>
+					<!-- e: 25-08-07 수정 -->
 					<div class="popup_cont">
 						<div class="popup_content">
 							<div class="tag_item_wrap">
@@ -151,12 +153,64 @@
 							</div>
 						</div>
 					</div>
+					<!-- s: 25-08-07 수정 -->
+					<button type="button" class="popup_setting" onclick="openHDPopup(this,'pop_type02');"><span class="blind">알림 설정 팝업 열기</span></button>
+					<!-- e: 25-08-07 수정 -->
 					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
 		<!-- e: Full 팝업 -->
+		<!-- s: 25-08-07 수정 -->
+		<!-- s: Bottom 팝업 -->
+		<div class="popup_wrap bottom" id="pop_type02" role="dialog" aria-modal="true" aria-hidden="true">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type02');"></div>
+				<div class="popup_inner">
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head">
+						<div class="popup_head_title">알림 설정</div>
+					</div>
 
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">알림 수신동의</div>
+									<div class="radio_group_wrap">
+										<div class="inp_radio">
+											<input type="radio" id="radio01-1" name="radio01" />
+											<label for="radio01-1">
+												<span class="label_cont">미동의</span>
+											</label>
+										</div>
+										<div class="inp_radio">
+											<input type="radio" id="radio01-2" name="radio01" checked />
+											<label for="radio01-2">
+												<span class="label_cont">동의</span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
+								<span class="text">확인</span>
+							</button>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type02');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: Bottom 팝업 -->
+		<!-- e: 25-08-07 수정 -->
 		<!-- 전체메뉴 -->
 		<!-- s: Full 팝업 -->
 		<div class="popup_wrap full pts_wrap" id="totalSearch" role="dialog" aria-hidden="true">
@@ -279,6 +333,8 @@
 							<!-- e: 검색 전 노출 화면 -->
 						</div>
 					</div>
+					<!-- s: 25-08-07 수정 -->
+					<!-- e: 25-08-07 수정 -->
 					<button type="button" class="popup_close" onclick="closeHDPopup('totalSearch');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
