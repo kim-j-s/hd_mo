@@ -1,0 +1,97 @@
+{{#> layout/default no-sp=true page-title="차량정보 확인 | 상품"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_full" popup-active=true popup-title="차량정보 확인" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- s: popup_content_top -->
+		<div class="popup_content_top">
+			<div class="title_h2">
+				고객님의 <strong>차량</strong>을<br>선택해주세요
+			</div>
+		</div>
+
+		<h3 class="title_h3">고객님 선택 차량정보</h3>
+		<div class="card_item_wrap">
+			<div class="card_item">
+				<div class="item_inner">
+					<div class="inp_radio">
+						<input type="radio" id="card_radio1-1" name="name1" aria-labelledby="card_radio1-1_cont">
+						<label for="card_radio1-1" class="chk_label"></label>
+						<i></i>
+					</div>
+					<div class="inner_cont">
+						<div class="item_top" id="card_radio1-1_cont">
+							<div class="title_info">
+								<div class="main_title">
+									기아 K7 Premier 3.0 GDi<br>(2023년)
+								</div>
+							</div>
+							<div class="desc"><strong>5인승</strong>, 2999cc, 시그니처, 오토, 에어컨, P/S, ABS, AIR-D, IM</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<h3 class="title_h3">현대해상 추천 차량정보</h3>
+		<div class="card_item_wrap">
+			<div class="card_item">
+				<div class="item_inner">
+					<div class="inp_radio">
+						<input type="radio" id="card_radio2-1" name="name2" aria-labelledby="card_radio2-1_cont">
+						<label for="card_radio2-1" class="chk_label"></label>
+						<i></i>
+					</div>
+					<div class="inner_cont">
+						<div class="item_top" id="card_radio2-1_cont">
+							<div class="title_info">
+								<div class="main_title">
+									기아 K7 Premier 3.0 GDi<br>(2023년)
+								</div>
+							</div>
+							<div class="desc"><strong>5인승</strong>, 2999cc, 시그니처, 오토, 에어컨, P/S, ABS, AIR-D, IM</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- s: 조회 내역이 없는 경우 -->
+			<div class="no_list_area">
+				{{> cp/icon iconClass="exclamationSvg"}}
+				<p>추천 차량정보가 없어요.</p>
+				<div class="btn_area">{{> cp/button type="3" size="3" b-text="개인정보 변경"}}</div>
+			</div>
+			<!-- e: 조회 내역이 없는 경우 -->
+		</div>
+
+	</div>
+</div>
+
+<!-- s: 하단 고정 버튼 영역 -->
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" b-text="확인" disabled="true" }}
+	</div>
+</div>
+<!-- s: 하단 고정 버튼 영역 -->
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+{{#> popup/popup_layer popup-id="pop_type01" popup-title="팝업 타이틀" no-header=true popup-active="true" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<p class="pl_msg_top msg_ty1">
+			선택하신 차량정보가 추천 차량정보와 일치하지 않습니다.
+			<span>차량정보를 정확히 확인 후 진행해주세요.</span>
+		</p>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="3" size="2" b-text="취소" }}
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_layer}}
+
+{{/ layout/default }}
