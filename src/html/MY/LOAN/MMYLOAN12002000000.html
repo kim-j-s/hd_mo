@@ -203,7 +203,8 @@
     </div>
     {{/ popup/popup_bottom}}
     
-	{{#> popup/popup_confirm popup-id="pop_type01" no-header=true }}
+	<!-- s: 25-08-08 수정 -->
+	{{#> popup/popup_layer popup-id="pop_type01" no-header=true }}
 	<div class="popup_cont">
 		<div class="popup_content">
 			<!-- info Case -->
@@ -217,8 +218,8 @@
 			{{> cp/button type="1" size="2" b-text="확인" }}
 		</div>
 	</div>
-	{{/ popup/popup_confirm}}
-	{{#> popup/popup_confirm popup-id="pop_type02" no-header=true }}
+	{{/ popup/popup_layer}}
+	{{#> popup/popup_layer popup-id="pop_type02" no-header=true }}
 	<div class="popup_cont">
 		<div class="popup_content">
 			<!-- info Case -->
@@ -233,5 +234,6 @@
 			{{> cp/button type="1" size="2" b-text="확인" }}
 		</div>
 	</div>
-	{{/ popup/popup_confirm}}
+	{{/ popup/popup_layer}}
+	<!-- e: 25-08-08 수정 -->
 {{/ layout/default }}
