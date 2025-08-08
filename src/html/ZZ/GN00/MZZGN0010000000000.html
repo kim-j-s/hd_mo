@@ -1,7 +1,9 @@
 {{#> layout/default page-title="알림 | 현대다이렉트"}}
 
 <!-- s: Full 팝업 -->
-{{#> popup/popup_full popup-id="pop_type01" popup-title="알림" popup-active=true }}
+<!-- s: 25-08-07 수정 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-title="알림" popup-active=true setting-btn="true" }}
+<!-- e: 25-08-07 수정 -->
 <div class="popup_cont">
 	<div class="popup_content">
     
@@ -100,5 +102,29 @@
 </div>
 {{/ popup/popup_full}}
 <!-- e: Full 팝업 -->
- 
+<!-- s: 25-08-07 수정 -->
+<!-- s: Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type02" popup-title="알림 설정"}}
+<div class="popup_cont">
+		<div class="popup_content">
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">알림 수신동의</div>
+						<div class="radio_group_wrap">
+							{{> cp/radio rd-id="radio01-1" name="radio01" labelname="미동의" }}
+							{{> cp/radio rd-id="radio01-2" name="radio01" labelname="동의" checked=true }}
+						</div>
+				</div>
+			</div>
+		</div>
+</div>
+
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: Bottom 팝업 -->
+<!-- e: 25-08-07 수정 -->
 {{/ layout/default }}

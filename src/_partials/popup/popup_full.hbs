@@ -11,6 +11,11 @@
 				{{/unless}}
 			</div>
 			{{> @partial-block}}
+			<!-- s: 25-08-07 수정 -->
+			{{#if setting-btn}}
+				<button type="button" class="popup_setting" onclick="openHDPopup(this,'pop_type02');"><span class="blind">알림 설정 팝업 열기</span></button>
+			{{/if}}
+			<!-- e: 25-08-07 수정 -->
 			{{#unless close-btn}}
 				<button type="button" class="popup_close"{{#if popup-id}} onclick="closeHDPopup('{{popup-id}}');"{{/if}}><span class="blind">팝업 닫기</span></button>
 			{{/unless}}

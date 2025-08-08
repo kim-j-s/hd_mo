@@ -467,6 +467,21 @@
 					text-align: left;
 				}
 			}
+
+			// 기초정보입력 선택된 상태값 표기			
+			.inp_radio {
+				&.selected {
+					input[type="radio"] {
+						& + label {
+							&::after {
+								border: var(--border-width-static-medium) solid var(--color-border-primary);
+							}
+						}
+					}
+				}
+			}
+			// 기초정보입력 선택된 상태값 표기
+
 		}
 
 		.oai_block {
@@ -542,19 +557,23 @@
 	flex: none;
 	position: relative;
 	width: auto;
-	padding: 9px 10px 9px 34px;
+	padding: 9px 9px 9px 33px;
 	font-size: 14px;
 	line-height: 20px;
 	color: var(--color-text-basic);
 	border-radius: 12px;
 	background-repeat: no-repeat;
-	background-position: 10px center;
+	background-position: 9px center;
 	background-size: 20px auto;
 	border: var(--border-width-static-regular) solid var(--color-border-gray);
-	background-color: #FFF;
+	background-color: var(--color-action-white);
 	visibility: visible;
 	opacity: 1;
-	// transition: var(--t-time);
+	&.selected {
+		padding: 8px 8px 8px 32px;
+		border: var(--border-width-static-medium) solid var(--color-border-primary);
+		background-position: 8px center;
+	}
 	&.person {
 		background-image: url(../images/content/bi/icon_stepper_person.svg);
 	}
@@ -695,10 +714,10 @@
 	font-size: 24px;
 	color: #9f9f9f;
 	text-align: center;
-	margin-bottom: 4px;
+	margin-bottom: var(--gap-5);
 
 	&::before {
-		content: '8자리 입력';
+		content: '8자리 숫자 입력';
 	}
 	&.active {
 		color: #000;
@@ -731,7 +750,7 @@
 .bi_keypad {
 	display: flex;
 	flex-direction: column;
-	gap: 24px 0;
+	gap: var(--gap-3);
 	&_item {
 		display: flex;
 		justify-content: space-between;
@@ -739,16 +758,18 @@
 		.keypad_btn {
 			display: block;
 			width: 100%;
-			height: 46px;
+			height: var(--size-height-8);
 			font-size: 24px;
 			color: var(--color-text-basic);
 			text-align: center;
 			background-color: #fff;
 			&.keypad_btn_del {
 				background: #fff url(../images/content/bi/icon_del.svg) no-repeat center center;
+				background-size: 32px 32px;
+				
 			}
 			&.keypad_btn_delall {
-				font-size: 16px;
+				font-size: var(--font-size-label-large);
 			}
 		}
 

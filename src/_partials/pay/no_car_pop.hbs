@@ -118,3 +118,28 @@
 <!-- e: 자동이체 약관 동의 -->
 
 <!-- e: 25-06-18 수정 -->
+
+{{#if child}}
+<!-- s: 25-08-07 -->
+<!-- s: 보험료 결제 방식 안내 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type10" popup-title="보험료 결제 방식 안내" }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="info_cont">
+			<ul class="list_depth">
+				<li>어린이보험과 실손보험 <strong class="point">2개 상품을 함께 가입</strong>하시는 것으로 <strong class="point">보험료는 상품별로 1회씩 총 2회 결제</strong> 됩니다.</li>
+				<li>1회차 보험료는 선택하신 결제방법(신용카드 또는 실시간 계좌이체)에 따라 결제 또는 이체되며 2회차 보험료부터는 등록하신 계좌에서 자동이체 됩니다.</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인"}}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 보험료 결제 방식 안내 팝업 -->
+<!-- e: 25-08-07 -->
+{{/if}}
+
