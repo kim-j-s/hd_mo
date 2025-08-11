@@ -729,12 +729,78 @@ function initPositionEventWrap($wrap) {
 	});
 }
 
+// input 상태값 표현식
+function inputState() {
+	//input disabled&readonly	
+	$('.input_text input').each(function() {
+		if( $(this).closest('.comp_wrap').find('.input_text').length > 1 ) {
+			if( $(this).closest('.comp_wrap').find('.comp_wrap_keypad_call').length ) {
+				const $parent =  $(this).closest('.comp_wrap');				
+				const lngInp = $parent.find('.input_text').length;
+				const lngInpReadonly = $parent.find('.input_text input[readonly]').length;
+				const lngInpDisabled = $parent.find('.input_text input[disabled]').length;
+				const $keyPad = $parent.find('.comp_wrap_keypad_call');
+				if( lngInp === lngInpReadonly && $keyPad.attr('aria-disabled') === 'true' ) {
+					$(this).closest('.comp_wrap').addClass('readonly sdfsf');
+				} else if (lngInp === lngInpDisabled && $keyPad.attr('aria-disabled') === 'true') {
+					$(this).closest('.comp_wrap').addClass('disabled');
+				}
+			} else {
+				const lngInp = $(this).closest('.comp_wrap').find('.input_text').length;
+				const lngInpReadonly = $(this).closest('.comp_wrap').find('.input_text input').prop('readonly').length;
+				const lngInpDisabled = $(this).closest('.comp_wrap').find('.input_text input').prop('disabled').length;
+				if( lngInp === lngInpReadonly ) {
+					$(this).closest('.comp_wrap').addClass('readonly');
+				} else if (lngInp === lngInpDisabled) {
+					$(this).closest('.comp_wrap').addClass('disabled');
+				}
+			}
+		} else {
+			const $this = $(this),
+					$wrapBox = $this.closest('.comp_wrap'),
+					$wrapCard = $this.closest('.card'),
+					$inpBox = $this.closest('.input_text'),
+					$wrapCalendar = $this.closest('.calendar'),
+					isDisabled = $this.prop('disabled'),
+					isReadonly = $this.prop('readonly');
+		
+			if (isReadonly) {
+				if($wrapCard.length) {
+					$wrapBox.addClass('readonly');
+				} else if($wrapCalendar.length) {
+					$this.siblings('.calendar_call').prop('disabled', true);
+				} 
+				if(!$wrapBox.length) {
+					$inpBox.addClass('readonly');
+				} else if ($wrapBox.length) {
+					$inpBox.addClass('readonly');
+				}
+				if ( $wrapBox.find('.comp_wrap_keypad_call').attr('aria-disabled') === 'true' ) {
+					$wrapBox.addClass('readonly');
+				}
+			} 
+			if (isDisabled) {
+				if($wrapCard.length) {
+						$wrapBox.addClass('disabled');
+				} else if($wrapCalendar.length) {
+					$this.siblings('.calendar_call').prop('disabled', true);
+				}
+				if(!$wrapBox.length) {
+					$inpBox.addClass('disabled');
+				} else if ($wrapBox.length) {
+					$inpBox.addClass('disabled');
+				}
+				if ( $wrapBox.find('.comp_wrap_keypad_call').attr('aria-disabled') === 'true' ) {
+					$wrapBox.addClass('disabled');
+				}
+			}
+		}
+	});
+}
 
-
-
-
-
-
+$(window).on('load', function() {
+	inputState();
+});
 
 
 $(function(){
@@ -751,42 +817,6 @@ $(function(){
 	$('.position_event_wrap').each(function () {
 		initPositionEventWrap($(this));
 	});	
-
-	//input disabled&readonly
-	$('.input_text input').each(function() {
-		const $this = $(this),
-			  $wrapBox = $this.closest('.comp_wrap'),
-			  $wrapCard = $this.closest('.card'),
-			  $inpBox = $this.closest('.input_text'),
-			  $wrapCalendar = $this.closest('.calendar'),
-			  isDisabled = $this.prop('disabled'),
-			  isReadonly = $this.prop('readonly');
-	
-		if (isReadonly) {
-			if($wrapCard.length) {
-				$wrapBox.addClass('readonly');
-			} else if($wrapCalendar.length) {
-				$this.siblings('.calendar_call').prop('disabled', true);
-			} 
-			if(!$wrapBox.length) {
-				$inpBox.addClass('readonly');
-			} else if ($wrapBox.length) {
-				$inpBox.addClass('readonly');
-			}
-		} 
-		if (isDisabled) {
-			if($wrapCard.length) {
-			  	$wrapBox.addClass('disabled');
-			} else if($wrapCalendar.length) {
-				$this.siblings('.calendar_call').prop('disabled', true);
-			}
-			if(!$wrapBox.length) {
-				$inpBox.addClass('disabled');
-			} else if ($wrapBox.length) {
-				$inpBox.addClass('disabled');
-			}
-		}
-	});
 	
 	// 달력 호출
 	let $lastCalendarCallBtn = null;
