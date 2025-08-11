@@ -17,13 +17,23 @@
 				max-height: 100%;
 				border-radius: var(--radius-large2);
 
+				&:has(.msg_icon.mi_info) {
+					padding-top: 0;
+					.popup_head {
+						margin-bottom: 0;
+					}
+				}
+
 				&:not(:has(.popup_close)){
 					.popup_head {
 						min-height: auto;
 					}
 				}
+				.popup_head {
+					margin-bottom: var(--gap-4);
+				}
 				.popup_cont {
-					padding: var(--gap-4) var(--number-10) var(--padding-6) var(--number-10);
+					padding: 0 var(--padding-8) var(--padding-6) var(--padding-8);
 				}
 			}
 		}
