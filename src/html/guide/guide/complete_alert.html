@@ -1,16 +1,24 @@
 {{#> layout/default no-sp=true page-title="팝업 | 가이드"}}
-	<!-- s: alert -->
-	{{#> popup/popup_confirm popup-active=true popup-id="pop_type01" close-btn=true no-header=true }}
-	<div class="popup_cont">
-		<div class="popup_content">
+<!-- s: alert2 -->
+{{#> popup/popup_confirm popup-active=true popup-id="pop_type01" popup-title="팝업 타이틀" no-header=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- info Case -->
+
+		<div class="msg_icon mi_info"></div>
+		<div>
+			<!-- html -->
 			<p class="info_text">alert 내용 입력<br>alert 내용 입력</p>
+			<!-- html -->
 		</div>
+
 	</div>
-	<div class="popup_bottom">
-		<div class="btn_area">
-			{{> cp/button type="1" size="2" b-text="확인" }}
-		</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인" }}
 	</div>
-	{{/ popup/popup_confirm}}
-	<!-- e: alert -->
+</div>
+{{/ popup/popup_confirm}}
+<!-- e: alert2 -->
 {{/ layout/default}}
