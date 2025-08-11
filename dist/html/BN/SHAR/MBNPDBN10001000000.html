@@ -441,10 +441,12 @@
 							<!-- e: 초과 -->
 							<p class="text_sub">2025.04.01(화)~2025.04.30(수)</p>
 							<div class="btn_area basic space1">
-								<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5">
+								<!-- s: 25-08-08 수정 -->
+								<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5" onclick="openHDPopup(this,'pop_type05');">
 									<span class="text">일별 걸음수 보기</span>
 									<i class="hd_icon arrowRightSvg"></i>
 								</button>
+								<!-- e: 25-08-08 수정 -->
 							</div>
 							<!-- e: 부족, 초과 -->
 						</div>
@@ -581,7 +583,8 @@
 
 		<!-- s: popup area -->
 
-		<!-- s: 피보험자 선택 목록 -->
+		<!-- s: 25-08-08 수정 -->
+		<!-- s: 일별 걸음수 보기 -->
 		<div class="popup_wrap bottom" id="pop_type05" role="dialog" aria-modal="true" aria-hidden="true">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type05');"></div>
@@ -590,56 +593,69 @@
 						<div class="move"></div>
 					</div>
 					<div class="popup_head">
-						<div class="popup_head_title">피보험자</div>
+						<div class="popup_head_title">일별 걸음수 보기</div>
 					</div>
 
 					<div class="popup_cont">
 						<div class="popup_content">
-							<div class="opt_select_list opt_case3">
-								<div role="button" tabindex="0" class="option"><span class="text">하*현</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">하*현 2</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">하*현 3</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">하*현 4</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">하*현 5</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">하*현 6</span></div>
+							<div class="info_gray ty2">2025.03.31(월)~2025.04.30(수)</div>
+
+							<div class="table_wrap and">
+								<table class="table">
+									<caption>
+										캡션값
+									</caption>
+									<colgroup>
+										<col style="width: 40%" />
+										<col style="width: auto" />
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row" aria-label="일자">2025.03.07</th>
+											<td aria-label="걸음 수">500</td>
+										</tr>
+										<tr>
+											<th scope="row" aria-label="일자">2025.03.06</th>
+											<td>2,090</td>
+										</tr>
+										<tr>
+											<th scope="row" aria-label="일자">2025.03.05</th>
+											<td>2,090</td>
+										</tr>
+										<tr>
+											<th scope="row" aria-label="일자">2025.03.04</th>
+											<td>2,090</td>
+										</tr>
+										<tr>
+											<th scope="row" aria-label="일자">2025.03.03</th>
+											<td>2,090</td>
+										</tr>
+										<tr>
+											<th scope="row" aria-label="일자">2025.03.02</th>
+											<td>2,090</td>
+										</tr>
+										<tr>
+											<th scope="row" aria-label="일자">2025.03.01</th>
+											<td>2,090</td>
+										</tr>
+									</tbody>
+								</table>
 							</div>
+						</div>
+					</div>
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">확인</span>
+							</button>
 						</div>
 					</div>
 					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type05');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
-		<!-- e: 피보험자 선택 목록 -->
-
-		<!-- s: 피보험자/목적물소재지 선택 목록 -->
-		<div class="popup_wrap bottom" id="pop_type06" role="dialog" aria-modal="true" aria-hidden="true">
-			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type06');"></div>
-				<div class="popup_inner">
-					<div class="draggable" aria-hidden="true">
-						<div class="move"></div>
-					</div>
-					<div class="popup_head">
-						<div class="popup_head_title">피보험자/목적물소재지</div>
-					</div>
-
-					<div class="popup_cont">
-						<div class="popup_content">
-							<div class="opt_select_list opt_case3">
-								<div role="button" tabindex="0" class="option"><span class="text">04535 서울 중구 명동2길 20, 현대해상명동사옥</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">04535 서울 중구 명동2길 20, 현대해상명동사옥 2</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">04535 서울 중구 명동2길 20, 현대해상명동사옥 3</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">04535 서울 중구 명동2길 20, 현대해상명동사옥 4</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">04535 서울 중구 명동2길 20, 현대해상명동사옥 5</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">04535 서울 중구 명동2길 20, 현대해상명동사옥 6</span></div>
-							</div>
-						</div>
-					</div>
-					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type06');"><span class="blind">팝업 닫기</span></button>
-				</div>
-			</div>
-		</div>
-		<!-- e: 피보험자/목적물소재지 선택 목록 -->
+		<!-- e: 일별 걸음수 보기 -->
+		<!-- e: 25-08-08 수정 -->
 
 		<!-- e: popup area -->
 

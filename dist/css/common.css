@@ -711,6 +711,15 @@ strong {
 .pl_msg_top.normal {
 	font-weight: 400;
 }
+.popup_wrap .popup_cont .pl_msg_top.msg_ty1 {
+	text-align: left;
+	font-weight: normal;
+	font-size: var(--font-size-body-medium);
+}
+.popup_wrap .popup_cont .pl_msg_top.msg_ty1 span {
+	display: block;
+	margin-top: var(--gap-4);
+}
 [class*="pl_ico_ty_"] {
 	padding-top: 4.8rem;
 	background-repeat: no-repeat;
@@ -938,6 +947,9 @@ strong {
 }
 [class^="ico_top_ty"] + [class^="title_h"] {
 	margin-top: var(--gap-4);
+}
+.and {
+	margin-top: var(--gap-5) !important;
 }
 /* common 인증, 로딩 등 */
 .blockUI,
@@ -3481,8 +3493,10 @@ strong {
 	-ms-flex-pack: justify;
 	justify-content: space-between;
 	gap: var(--gap-3);
-	-ms-flex-wrap: row wrap;
-	flex-wrap: row wrap;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
 }
 .btn_area:has(.hd_btn_s_1) {
 	gap: var(--gap-4) var(--gap-3);
@@ -8659,6 +8673,9 @@ strong {
 .form_group_wrap + .form_group_wrap.space2 {
 	margin-top: var(--gap-5);
 }
+.form_group_wrap + .form_group_wrap.space3 {
+	margin-top: var(--gap-11);
+}
 .form_group_wrap > * ~ .row {
 	margin-top: var(--gap-8);
 }
@@ -11356,8 +11373,8 @@ ol li .table_wrap + .list_ty2 li + li {
 .inp_radio.rd_img {
 	--count: 100% / 3;
 	-webkit-box-flex: 0;
-	-ms-flex: 0 1 calc(var(--count) - 1.2rem);
-	flex: 0 1 calc(var(--count) - 1.2rem);
+	-ms-flex: 0 1 calc(var(--count) - 0.8rem);
+	flex: 0 1 calc(var(--count) - 0.8rem);
 	text-align: center;
 	border-radius: var(--radius-medium1);
 }
@@ -13676,7 +13693,6 @@ ol li .table_wrap + .list_ty2 li + li {
 .info_gray + .chk_group_wrap {
 	margin-top: var(--gap-11);
 }
-.info_gray + .table_wrap,
 .info_gray + .info_cont,
 .info_gray + .title_h3,
 .info_gray + .title_h4,
