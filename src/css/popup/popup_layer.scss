@@ -16,38 +16,86 @@
 				height: auto;
 				max-height: 100%;
 				border-radius: var(--radius-large2);
+
+				.popup_head {
+					min-height: 56px;
+					padding: 14px 36px 14px 16px;
+				}
 				
 				.popup_cont {
 					padding: var(--gap-4) var(--number-10) var(--padding-6) var(--number-10);
+
+
+					&:has(.msg_icon.mi_info) {
+						padding-top: 0;
+					}
+
+					.pl_msg_top {
+						font-size: var(--font-size-heading-small);
+					}
+
+					.pl_txt1 {
+						display: flex;
+						flex-direction: column;
+						gap: var(--gap-4);
+					}
+
+					.info_text {
+						text-align: center;
+						&+.list_ty2 {
+							margin-top: var(--gap-5);
+						}
+					}
+
+					.info_confirm {
+						padding-top: 48px;
+						background: url(../images/icon/icon_exclamation.svg) no-repeat top center / 32px auto;
+
+						strong {
+							font-size: var(--font-size-heading-small);
+
+							&+.info_text {
+								margin-top: var(--gap-5);
+							}
+						}
+					}
+
+					.list_ty2,
+					.list_depth {
+						> li {
+							padding: 0;
+							&::before {
+								display: inline-block;
+								position: static;
+								margin-right: 4px;
+							}
+						}
+					}
+
+					.list_depth {
+						> li {
+							&::before {
+								transform: translateY(-100%);
+							}
+						}
+					}
+				}
+				.popup_close {
+					top: 15px;
+					right: 16px;
 				}
 			}
 		}
+	}
+}
 
-		.pl_msg_top {
-			font-size: var(--font-size-heading-small);
-		}
-
-		.pl_txt1 {
-			display: flex;
-			flex-direction: column;
-			gap: var(--gap-4);
-		}
-
-		.info_text {
-			text-align: center;
-		}
-
-		.info_confirm {
-			padding-top: 48px;
-			background: url(../images/icon/icon_exclamation.svg) no-repeat top center / 32px auto;
-
-			strong {
-				font-size: var(--font-size-heading-small);
-
-				&+.info_text {
-					margin-top: var(--gap-5);
-				}
-			}
-		}
+.msg_icon {
+	padding-top: 48px;
+	&.mi_info {
+		background: url(../images/icon/icon_exclamation.svg) no-repeat top center / 32px auto;
+	}
+	&.mi_error {
+		// padding-top: 48px;
+		background: url(../images/icon/icon_complete_error.svg) no-repeat top center / 32px auto;
 	}
 }
