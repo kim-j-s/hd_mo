@@ -228,9 +228,9 @@
 			<div class="comp_wrap card">
 				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" value="2232" no_del="flase" readonly=true }}
 				<span class="dash">-</span>
-				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="flase" }}
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="flase" readonly=true }}
 				<span class="dash">-</span>
-				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" }}
+				{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="flase" readonly=true }}
 				<span class="dash">-</span>
 				{{> cp/keypad4 case1="4(3자리)" kt="카드번호 마지막 4(3자리) 입력" disabled=true }}
 			</div>
@@ -374,6 +374,18 @@
 				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" }}
 				<span class="dash">-</span>
 				{{> cp/keypad7 case3=true kt="주민등록번호 뒤 7자리 입력"}}
+			</div>
+		</div>
+	</div>
+
+	<div class="guide_h4">Type - 주민등록번호 - 보안키패드 호출 시 - 주민등록번호 - 입력 불가 / 보안키패드 입력 불가</div>
+	<div class="form_group_wrap">
+		<div class="form_line">
+			<div class="label_tit">주민등록번호</div>
+			<div class="comp_wrap birth">
+				{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" value="000000" readonly=true }}
+				<span class="dash">-</span>
+				{{> cp/keypad7 case3=true kt="주민등록번호 뒤 7자리 입력" disabled=true }}
 			</div>
 		</div>
 	</div>
