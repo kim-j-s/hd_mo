@@ -851,18 +851,23 @@
     }
 	//main
     .easy_top {
-        display: block;
-		padding-bottom: var(--padding-6);
-		.pro_tit {
-			margin: 0 -32px;
-			padding: var(--gap-5) var(--gap-8) 0;
-			background: var(--color-surface-white-subtle) url(../images/content/ho/bg_easy_top.png) no-repeat right 16px / 122px auto;
-		}
-        .btn_area.ty2 {
-            + .ty2 {
-                margin-top: var(--gap-8);
-            }
-        }
+			display: block;
+			padding-bottom: var(--padding-8);
+
+			.pro_tit {
+				margin: 0 -32px;
+				padding: var(--gap-5) var(--gap-8) var(--gap-6);
+				// background: var(--color-surface-white-subtle) url(../images/content/ho/bg_easy_top.png) no-repeat right 16px / 122px auto;
+				background: var(--color-surface-white-subtle) url(../images/content/ho/bg_easy_top.png) no-repeat right bottom / 122px auto;
+				& + .btn_area.ty2 {
+					margin-top: 0;
+				}
+			}
+			.btn_area.ty2 {
+					+ .ty2 {
+							margin-top: var(--gap-8);
+					}
+			}
     }
     .pro_tit {
         .h2_title {
@@ -877,6 +882,8 @@
         display: flex;
         flex-direction: column-reverse;
         .home_card {
+						padding: var(--padding-9) var(--padding-9) var(--padding-10);
+
             .pro_tit,
             .btn_area {
                 display: none;
@@ -892,6 +899,7 @@
         .register_box.easy_on {
             display: flex;
             a {
+								padding: var(--padding-8);
                 font-size: var(--easy--font-size-body-small);
                 strong {
                     margin: 0;
