@@ -418,13 +418,19 @@
 			</div>
 			<div id="container" class="container">
 				<div class="content">
-					<p class="text_sub">지급내역을 확인해주세요.</p>
-					<div class="select_item select_item_case01 select_item_case01_mi si_ellipsis" role="button" tabindex="0" title="조회계약 선택" onclick="openHDPopup(this,'pop_type01');">
+					<p class="text_sub">
+						<!-- s: 25-08-12 UXW -->
+						발급할 대출을 선택해주세요.
+						<!-- e: 25-08-12 UXW -->
+					</p>
+					<!-- s: 25-08-12 -->
+					<div class="select_item select_item_case01 select_item_case01_mi si_ellipsis" role="button" tabindex="0" title="조회계약 선택">
 						<div class="select_item_inner">
 							<div class="si_item" data-placeholder="선택해주세요.">L2008****123 무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(Hi2301)</div>
 							<span class="si_stat">선택됨</span>
 						</div>
 					</div>
+					<!-- e: 25-08-12 -->
 					<div class="select_item select_item_case01 select_item_case01_mi" role="button" tabindex="0" title="조회기간 선택" onclick="openHDPopup(this,'pop_type02');">
 						<div class="select_item_inner">
 							<div class="si_item" data-placeholder="선택해주세요.">2024.03.19~2025.03.19</div>
@@ -466,8 +472,10 @@
 											<div class="cont">L2019****123</div>
 										</li>
 										<li>
-											<div class="title">만기(상환)일</div>
-											<div class="cont">2025.02.19</div>
+											<!-- s: 25-08-12 -->
+											<div class="title">거래일(경로)</div>
+											<div class="cont">2023.01.01(콜센터)</div>
+											<!-- e: 25-08-12 -->
 										</li>
 									</ul>
 								</div>
@@ -494,8 +502,10 @@
 											<div class="cont">L2019****123</div>
 										</li>
 										<li>
-											<div class="title">만기(상환)일</div>
-											<div class="cont">2025.02.19</div>
+											<!-- s: 25-08-12 -->
+											<div class="title">거래일(경로)</div>
+											<div class="cont">2023.01.01(콜센터)</div>
+											<!-- e: 25-08-12 -->
 										</li>
 									</ul>
 								</div>
@@ -507,8 +517,9 @@
 					<!-- s: 조회 내역이 없는 경우 -->
 					<div class="no_list_area">
 						<i class="hd_icon exclamationSvg"></i>
-						<p>발급 가능한 지급내역서가 없어요</p>
-						<p class="desc tac">조회조건을 다르게 설정해보세요.</p>
+						<!-- s: 25-08-12 UXW -->
+						<p>발급 가능한 증명서가 없어요.</p>
+						<!-- e: 25-08-12 UXW -->
 					</div>
 					<!-- e: 조회 내역이 없는 경우 -->
 				</div>
@@ -641,29 +652,32 @@
 		</div>
 		<!-- e: 조회조건 - 대상 선택 -->
 		<!-- s: selpop -->
-		<div class="popup_wrap bottom" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="true">
-			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
-				<div class="popup_inner">
-					<div class="draggable" aria-hidden="true">
-						<div class="move"></div>
-					</div>
-					<div class="popup_head">
-						<div class="popup_head_title">자동차보험 재발행 사유</div>
-					</div>
-
-					<div class="popup_cont">
-						<div class="popup_content">
-							<div class="opt_select_list opt_case3">
-								<div role="button" tabindex="0" class="option"><span class="text">계약 전체</span></div>
-								<div role="button" tabindex="0" class="option"><span class="text">L2008****123 무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(Hi2301)</span></div>
+		<!-- s: 25-08-12 삭제 -->
+		<!-- <div class="popup_wrap bottom" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="true">
+				<div class="popup_container">
+					<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
+					<div class="popup_inner">
+						<div class="draggable" aria-hidden="true">
+							<div class="move"></div>
+						</div>
+						<div class="popup_head">
+							<div class="popup_head_title">자동차보험 재발행 사유</div>
+							</div>
+						
+						
+						<div class="popup_cont">
+							<div class="popup_content">
+								<div class="opt_select_list opt_case3">
+									<div role="button" tabindex="0" class="option"><span class="text">계약 전체</span></div>
+									<div role="button" tabindex="0" class="option"><span class="text">L2008****123 무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(Hi2301)</span></div>
+								</div>
 							</div>
 						</div>
+							<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
 					</div>
-					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
 				</div>
-			</div>
-		</div>
+			</div> -->
+		<!-- e: 25-08-12 삭제 -->
 		<!-- e: selpop -->
 		<!-- 전체메뉴 -->
 		<!-- s: Full 팝업 -->

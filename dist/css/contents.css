@@ -7119,10 +7119,54 @@ ul + .form_group_wrap {
 	background-repeat: no-repeat;
 	background-position: top center;
 	background-size: 4rem auto;
+	text-align: center;
 }
 .prd_car .intro_info.column .title_h3 {
 	font-size: var(--font-size-heading-medium);
 	text-align: center;
+}
+.prd_car .intro_info.column .title_h3 + .note {
+	margin-top: var(--gap-5);
+}
+.prd_car .intro_info.column .desc {
+	font-size: var(--font-size-body-medium);
+	color: var(--color-text-basic);
+}
+.prd_car .intro_info.column .note {
+	display: block;
+	margin-top: var(--gap-4);
+	font-size: var(--font-size-body-small);
+	color: var(--color-text-subtle);
+}
+.prd_car .intro_info.column .tip {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	position: relative;
+	margin-bottom: var(--gap-5);
+	font-weight: 700;
+	font-size: var(--font-size-heading-xsmall);
+	color: var(--color-text-bolder);
+}
+.prd_car .intro_info.column .tip::before {
+	content: "";
+	display: block;
+	width: 2rem;
+	height: 2rem;
+	margin-right: 0.4rem;
+	background: url("../images/content/prdcar/ico_tag.svg") no-repeat left top;
+	background-size: 2rem auto;
+}
+.prd_car .intro_info.column .desc_wrap {
+	margin-top: var(--gap-7);
+	padding-top: var(--gap-7);
+	border-top: var(--border-width-static-regular) solid var(--color-border-gray-light);
 }
 .prd_car .intro_info.column.ico_special1 {
 	background-image: url("../images/content/prdcar/ico_car_benefit1.svg");
@@ -7301,14 +7345,22 @@ ul + .form_group_wrap {
 .prd_car .sec_group .sec_head {
 	margin-bottom: var(--gap-6);
 }
-.prd_car .sec_group .sec_body:has(.title_h4) {
+.prd_car .sec_group .sec_body:has(.title_h4),
+.prd_car .sec_group .sec_body:has(.text_sub) {
 	margin-top: -0.8rem;
+}
+.prd_car .sec_group .sec_body:has(.my_info_flow) {
+	margin-top: 0;
 }
 .prd_car .group + .group {
 	padding-top: 4rem;
 }
+.prd_car .group .group_item + .group_item {
+	margin-top: var(--gap-8);
+}
 .prd_car .title_h4 + .desc,
-.prd_car .title_h4 + .list_depth {
+.prd_car .title_h4 + .list_depth,
+.prd_car .title_h4 + .group_item {
 	margin-top: var(--gap-4);
 }
 .prd_car .title_h4 + .table_wrap {
@@ -7325,4 +7377,76 @@ ul + .form_group_wrap {
 }
 .prd_car .web_link {
 	text-decoration: underline;
+}
+.prd_car .table_wrap + .list_depth {
+	margin-top: var(--gap-8);
+}
+.prd_car .my_info_flow > li:last-child {
+	margin-bottom: 0;
+}
+.prd_car .my_info_flow + .list_ty2 {
+	margin-top: var(--gap-5);
+}
+.prd_car .item_wrap_faq .acd_cont .inner > p {
+	margin-bottom: var(--gap-4);
+}
+.prd_car .item_wrap_faq .acd_cont .inner .btn_area {
+	margin-top: var(--gap-2);
+}
+.prd_car .item_wrap_faq .acd_cont .inner .list_depth + .text_sub {
+	margin-top: var(--gap-4);
+}
+.prd_car .mileage_box {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+.prd_car .mileage_box .item {
+	position: relative;
+	padding: calc(var(--padding-4) - 1px) calc(var(--padding-3) - 1px);
+	background-color: var(--color-element-secondary-lighter);
+	border: 1px solid var(--color-border-secondary-light);
+	border-radius: 1.2rem;
+	font-size: 1.2rem;
+	color: var(--color-text-subtle);
+}
+.prd_car .mileage_box .item::after {
+	content: "";
+	display: block;
+	background-repeat: no-repeat;
+	background-size: 1.6rem auto;
+	width: 1.6rem;
+	height: 1.6rem;
+	position: absolute;
+	bottom: -2rem;
+	left: calc(50% - 0.8rem);
+}
+.prd_car .mileage_box .item:nth-child(1)::after {
+	background-image: url("../images/content/prdcar/icon_plus.svg");
+}
+.prd_car .mileage_box .item:nth-child(2)::after {
+	background-image: url("../images/content/prdcar/icon_sum.svg");
+}
+.prd_car .mileage_box .item > div {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: var(--gap-2);
+}
+.prd_car .mileage_box .item + .item {
+	margin-top: 2.4rem;
+}
+.prd_car .mileage_box .item strong {
+	color: var(--color-text-secondary);
 }
