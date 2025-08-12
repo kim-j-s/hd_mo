@@ -244,11 +244,17 @@
 		+ .group {
 			padding-top: 40px;
 		}
+		.group_item {
+			+ .group_item {
+				margin-top: var(--gap-8);
+			}
+		}
 	}
 
 	.title_h4 {
 		+ .desc,
-		+ .list_depth {
+		+ .list_depth,
+		+ .group_item {
 			margin-top: var(--gap-4);
 		}
 		+ .table_wrap {
@@ -270,9 +276,23 @@
 			}
 		}
 	} // 텝 + 보험약관버튼 + 준법감시필 
-
+	
 	.web_link {
 		text-decoration: underline;
 	}
 	
+	.table_wrap {
+		+ .list_depth {
+			margin-top: var(--gap-8);
+		}
+	}
+
+	.my_info_flow {
+		> li:last-child {
+			margin-bottom:0;
+		}
+		& + .list_ty2 {
+			margin-top: var(--gap-5);
+		}
+	}
 }
