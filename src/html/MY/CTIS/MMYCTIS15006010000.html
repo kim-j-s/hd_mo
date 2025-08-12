@@ -4,9 +4,13 @@
 		<div id="container" class="container">
 			<div class="content">
                 <p class="text_sub">
-					지급내역을 확인해주세요.
+					<!-- s: 25-08-12 UXW -->
+					발급할 내역을 선택해주세요.
+					<!-- e: 25-08-12 UXW -->
 				</p>
-                {{> cp/selectitem si_class="select_item_case01_mi si_ellipsis" si_ph="선택해주세요." si_title="조회계약 선택" si_item="L2008****123 무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(Hi2301)" si_popup="pop_type01"}}
+				<!-- s: 25-08-12 -->
+                {{> cp/selectitem si_class="select_item_case01_mi si_ellipsis" si_ph="선택해주세요." si_title="조회계약 선택" si_item="L2008****123 무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(Hi2301)" }}
+				<!-- e: 25-08-12 -->
                 {{> cp/selectitem si_class="select_item_case01_mi" si_ph="선택해주세요." si_title="조회기간 선택" si_item="2024.03.19~2025.03.19" si_popup="pop_type02"}}
                 {{> cp/selectitem si_class="select_item_case01_mi" si_ph="선택해주세요." si_title="조회대상 선택" si_item="대상 전체" si_popup="pop_type03"}}
                 <div class="btn_area">
@@ -44,7 +48,9 @@
                                     </li>
                                     <li>
                                         <div class="title">대출잔액</div>
-                                        <div class="cont"><strong>10,000,000원</strong></div>
+					                    <!-- s: 25-08-12 UXW -->
+                                        <div class="cont">10,000,000원</div>
+					                    <!-- e: 25-08-12 UXW -->
                                     </li>
                                     <li>
                                         <div class="title">경로</div>
@@ -83,7 +89,9 @@
                                     </li>
                                     <li>
                                         <div class="title">대출잔액</div>
-                                        <div class="cont"><strong>10,000,000원</strong></div>
+					                    <!-- s: 25-08-12 UXW -->
+                                        <div class="cont">10,000,000원</div>
+					                    <!-- e: 25-08-12 UXW -->
                                     </li>
                                     <li>
                                         <div class="title">경로</div>
@@ -99,10 +107,9 @@
 				<!-- s: 조회 내역이 없는 경우 -->
 				<div class="no_list_area">
 					{{> cp/icon iconClass="exclamationSvg"}}
-					<p>발급 가능한 영수증이 없어요</p>
-                    <p class="desc tac">
-                        조회조건을 다르게 설정해보세요.
-                    </p>
+					<!-- s: 25-08-12 UXW -->
+					<p>발급 가능한 영수증이 없어요.</p>
+					<!-- e: 25-08-12 UXW -->
                 </div>
                 <!-- e: 조회 내역이 없는 경우 -->
                 <!-- s: 꼭 알아두세요 -->
@@ -175,7 +182,8 @@
 	{{/ popup/popup_bottom}}
 	<!-- e: 조회조건 - 대상 선택 -->
 <!-- s: selpop -->
-{{#> popup/popup_bottom popup-id="pop_type01" popup-title="자동차보험 재발행 사유"}}
+<!-- s: 25-08-12 삭제 -->
+<!-- {{#> popup/popup_bottom popup-id="pop_type01" popup-title="자동차보험 재발행 사유"}}
 <div class="popup_cont">
 	<div class="popup_content">
 		<div class="opt_select_list opt_case3">
@@ -184,6 +192,7 @@
 		</div>
 	</div>
 </div>
-{{/ popup/popup_bottom}}
+{{/ popup/popup_bottom}} -->
+<!-- e: 25-08-12 삭제 -->
 <!-- e: selpop -->
 {{/ layout/default }}
