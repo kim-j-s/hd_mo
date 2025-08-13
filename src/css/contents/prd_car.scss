@@ -249,9 +249,11 @@
 			&:has(.text_sub) {
 				margin-top: -8px;
 			}
+
 			&:has(.my_info_flow) {
-				&:not(.title_h4) {
-					margin-top: 0;
+				margin-top: 0;
+				&:has(.title_h4) {
+					margin-top: -8px;
 				}
 			}
 		}
@@ -266,6 +268,11 @@
 	.group_item {
 		+ .group_item {
 			margin-top: var(--gap-8);
+		}
+		&:has(.table_wrap) {
+			+ .group_item {
+				margin-top: var(--gap-7);
+			}
 		}
 	}
 
@@ -322,6 +329,26 @@
 			td[rowspan]:last-child {
 				border-right: none
 			}
+		}
+
+		//임시
+		.th_tit {
+			background-color: var(--color-surface-white-subtle);
+			padding: var(--padding-5);
+			vertical-align: top;
+			font-weight: 400;
+			font-size: 16px;
+			color: var(--color-text-subtle);
+			//font-size: var(--font-size-body-xsmall);
+			& ~ td {
+				padding: var(--padding-5);
+			}
+		}	
+	}
+
+	.file_attach_box {
+		.file_thumbnail {
+			height: auto;
 		}
 	}
 
@@ -412,7 +439,7 @@
 			padding: var(--padding-7) var(--padding-8);
 			background-color: var(--color-background-gray-subtler);
 			border-radius: 16px;
-			font-size: var(--font-size-label-meduim);
+			font-size: var(--font-size-label-medium);
 			color: var(--color-text-basic);
 			& > div {
 				display: flex;
@@ -424,13 +451,22 @@
 					display: inline-block;
 					width: 40px;
 					height: 40px;
+					margin-bottom: var(--gap-2);
+				}
+			}
+
+			@for $i from 1 through 7 {
+				&.ico#{$i} {
+					&>div::before {
+						background-image: url('../images/content/prdcar/ico_contract_logo#{$i}.svg');
+					}
 				}
 			}
 		}
 	}
 
-	.title_h3.icon {
-		&::before {
+	.title_h3 {
+		&.icon::before {
 			content:"";
 			display: inline-block;
 			width: 20px;
