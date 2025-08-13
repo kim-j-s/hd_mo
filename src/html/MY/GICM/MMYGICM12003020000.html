@@ -32,7 +32,7 @@
 					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">이름</div>
-							{{> cp/text type="text" placeholder="입력해주세요" inp-title="이름 입력" }}
+							{{> cp/text type="text" placeholder="이름 입력" inp-title="이름 입력" disabled=true }}
 						</div>
 						<div class="form_line">
 							<div class="label_tit">주민등록번호</div>
@@ -51,11 +51,15 @@
 						</div>
 						<div class="form_line">
 							<div class="label_tit">휴대폰번호</div>
-							{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+          					<!-- s: 25-08-13 UXW -->
+							{{> cp/text class="phone" type="tel" placeholder="-없이 입력" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+          					<!-- e: 25-08-13 UXW -->
 						</div>
 						<div class="form_line">
 							<div class="label_tit">이메일</div>
-							{{> cp/text type="email" inpclass="email_auto" placeholder="이메일을 입력하세요" inp-title="이메일 입력" }}
+          					<!-- s: 25-08-13 UXW -->
+							{{> cp/text type="email" inpclass="email_auto" placeholder="이메일 입력" inp-title="이메일 입력" }}
+          					<!-- e: 25-08-13 UXW -->
 						</div>
 					</div>
 
@@ -80,7 +84,9 @@
 								<div class="form_line">
 									<div class="label_tit">예금주</div>
 									<!-- s: 25-05-21 -->
-									{{> cp/text type="text" placeholder="입력해주세요" inp-title="예금주 입력" value="김현대" readonly=true }}
+          							<!-- s: 25-08-13 UXW -->
+									{{> cp/text type="text" placeholder="[계좌확인]을 눌러 예금주 입력" inp-title="예금주 입력" value=""  readonly=true }}
+          							<!-- e: 25-08-13 UXW -->
 									<!-- e: 25-05-21 -->
 								</div>
 							</div>	

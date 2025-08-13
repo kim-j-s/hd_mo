@@ -42,6 +42,13 @@
 							<!-- s: 25-06-19 수정 -->
 							{{> cp/text type='tel' inpclass="inp_only_num" placeholder="MMYY" minlength="4" maxlength="4" inp-title="유효기간 입력" }}
 							<!-- e: 25-06-19 수정 -->
+							{{#if installment}}
+							<!-- s: 25-08-13 -->
+							<ul class="list_ty2">
+								<li>계약자 명의의 국내발급 카드로만 결제가 가능합니다. (법인, 가족카드 불가)</li>
+							</ul>
+							<!-- e: 25-08-13 -->
+							{{/if}}
 						</div>
 						{{#unless installment}}
 						<div class="form_line">
