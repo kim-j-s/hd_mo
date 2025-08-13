@@ -114,6 +114,13 @@
 				margin-top: var(--gap-7);
 				padding-top: var(--gap-7);
 				border-top: var(--border-width-static-regular) solid var(--color-border-gray-light);
+				&:has(.list_ty6) {
+					border-color: var(--color-divider-gray-light);
+				}
+				.list_ty6 {
+					text-align: left;
+					color: var(--color-text-information);
+				}
 			}
 			
 			@for $i from 1 through 13 {
@@ -247,11 +254,12 @@
 	.group {
 		+ .group {
 			padding-top: 40px;
-		}
-		.group_item {
-			+ .group_item {
-				margin-top: var(--gap-8);
-			}
+		}		
+	}
+
+	.group_item {
+		+ .group_item {
+			margin-top: var(--gap-8);
 		}
 	}
 
