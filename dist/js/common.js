@@ -542,22 +542,22 @@
 /* Tab Scroll */
 // 탭 버튼 클릭 시 중앙에 위치하는 기능 - 접근성 관련 기능
 function tabScroll(){
-	let scrollPosition = 0;
+	// let scrollPosition = 0;
 
-	$('[class^=tab_scroll_box]').on('scroll', function() {
-		scrollPosition = $(this).scrollLeft();
-	});
+	// $('[class^=tab_scroll_box]').on('scroll', function() {
+	// 	scrollPosition = $(this).scrollLeft();
+	// });
 
 	$('[class^=tab_scroll_box] .tab_btn').on('click', function(){
 		const $this = $(this),
 					$scrollBox = $this.closest('[class^=tab_scroll_box]')
 					$scrollList = $scrollBox.children('.scroll');
 
-		const btn_offset = $this.offset().left - 20,
-					scrollBox_offset = $scrollBox.offset().left,
+		const btn_offset = $this.position().left,
 					scrollBox_w = $scrollList.width();
-		let scrollMove = btn_offset + scrollPosition - ($scrollBox.width() / 2) + ($this.outerWidth() / 2);
+		let scrollMove = btn_offset - ($scrollBox.width() / 2) + ($this.outerWidth() / 2);
 
+		console.log($scrollBox.get(0).scrollLeft);
 		// console.log('move : ' + scrollMove);
 		// console.log('버튼 위치 : ' + btn_offset, '스크롤 위치 : ' + scrollPosition);
 		$scrollBox.animate({
