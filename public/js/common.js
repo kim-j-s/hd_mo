@@ -554,7 +554,6 @@ function tabScroll(){
 					$scrollList = $scrollBox.children('.scroll');
 
 		const btn_offset = $this.offset().left - 20,
-					scrollBox_offset = $scrollBox.offset().left,
 					scrollBox_w = $scrollList.width();
 		let scrollMove = btn_offset + scrollPosition - ($scrollBox.width() / 2) + ($this.outerWidth() / 2);
 
