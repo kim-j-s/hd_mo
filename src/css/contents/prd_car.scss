@@ -297,6 +297,19 @@
 		+ .list_depth {
 			margin-top: var(--gap-8);
 		}
+
+		.table {
+			border-collapse: collapse;
+		}
+
+		tbody:has(td[rowspan]) {
+			td:last-child {
+				border-left: var(--border-width-static-regular) solid var(--color-divider-gray-light);
+			}
+			td[rowspan]:last-child {
+				border-right: none
+			}
+		}
 	}
 
 	.my_info_flow {
