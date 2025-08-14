@@ -875,8 +875,14 @@
 .selected_case.insurance {
 	background-image: url(../images/content/bi/icon_stepper_insurance.svg);
 }
-.selected_case.energy {
-	background-image: url(../images/content/bi/icon_stepper_energy.svg);
+.selected_case.stamp {
+	background-image: url(../images/content/bi/icon_stepper_stamp.svg);
+}
+.selected_case.fuel {
+	background-image: url(../images/content/bi/icon_stepper_fuel.svg);
+}
+.selected_case.room {
+	background-image: url(../images/content/bi/icon_stepper_building.svg);
 }
 .selected_case:empty {
 	width: 0;
@@ -3072,8 +3078,20 @@
 	background-image: url(../images/content/mtps/img_rel_case5_on.svg);
 }
 /* 자동차보험 - 보험료 확인 */
-.acd_ico_rcd_ty1 {
+.acd_item .acd_ico_rcd_ty1 {
 	background-image: url(../images/content/mtps/icon_MPRMTPS10007000905_ty01.svg);
+}
+.acd_item .acd_ico_rcd_ty2 {
+	background-image: url(../images/content/mtps/icon_MPRMTPS10007000905_ty02.svg);
+}
+.acd_item .acd_ico_rcd_ty3 {
+	background-image: url(../images/content/mtps/icon_MPRMTPS10007000905_ty03.svg);
+}
+.acd_item .acd_ico_rcd_ty4 {
+	background-image: url(../images/content/mtps/icon_MPRMTPS10007000905_ty04.svg);
+}
+.acd_item .acd_ico_rcd_ty5 {
+	background-image: url(../images/content/mtps/icon_MPRMTPS10007000905_ty05.svg);
 }
 .border_list .list {
 	display: -webkit-box;
@@ -5139,6 +5157,15 @@ ul + .form_group_wrap {
 .title_item + p {
 	margin-top: var(--gap-4);
 }
+.info_cont_wrap {
+	margin-top: var(--gap-8);
+}
+.info_cont_wrap .title_h3 + .info_cont {
+	margin-top: var(--gap-4);
+}
+.info_cont_wrap + .info_cont_wrap {
+	margin-top: 5.2rem;
+}
 /* 운전자보험 - 보험료 결제 */
 .insurance_payment_area {
 	position: relative;
@@ -5784,11 +5811,6 @@ ul + .form_group_wrap {
 	justify-content: space-between;
 	gap: var(--gap-3);
 	padding: 1.6rem 0;
-}
-.scp_list > li .scp_list_l {
-	-webkit-box-flex: 0;
-	-ms-flex: none;
-	flex: none;
 }
 .scp_list > li .scp_list_l .line1 {
 	font-size: var(--font-size-label-medium);
@@ -7176,10 +7198,7 @@ ul + .form_group_wrap {
 	padding-top: var(--gap-7);
 	border-top: var(--border-width-static-regular) solid var(--color-border-gray-light);
 }
-.prd_car .intro_info.column .desc_wrap:has(.list_ty6) {
-	border-color: var(--color-divider-gray-light);
-}
-.prd_car .intro_info.column .desc_wrap .list_ty6 {
+.prd_car .intro_info.column .desc_wrap .list_ty6 > li {
 	text-align: left;
 	color: var(--color-text-information);
 }
@@ -7302,6 +7321,9 @@ ul + .form_group_wrap {
 .prd_car .benefit_area .info_list .item.ico_benefit13::after {
 	background-image: url("../images/content/prdcar/ico_car_benefit13.svg");
 }
+.prd_car .benefit_area .info_list .item.ico_benefit14::after {
+	background-image: url("../images/content/prdcar/ico_car_benefit14.svg");
+}
 .prd_car .info_list {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -7357,18 +7379,37 @@ ul + .form_group_wrap {
 .prd_car .info_list.ty_line .item:first-of-type {
 	border-top: var(--border-width-static-regular) solid var(--color-border-gray-light);
 }
-.prd_car .img_wrap {
+.prd_car [class*="img_wrap"] {
+	border: 1px solid #cdd1d5;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+.prd_car .img_wrap_highwalk {
 	margin-top: 3.2rem;
+	height: 23.6rem;
+	border-radius: 2.4rem;
+}
+.prd_car .img_wrap_highwalk img {
+	width: 28rem;
 }
 .prd_car .sec_group .sec_head {
 	margin-bottom: var(--gap-6);
 }
-.prd_car .sec_group .sec_body:has(.title_h4),
-.prd_car .sec_group .sec_body:has(.text_sub) {
+.prd_car .sec_group .sec_body:has(.title_h4) {
 	margin-top: -0.8rem;
 }
 .prd_car .sec_group .sec_body:has(.my_info_flow) {
 	margin-top: 0;
+}
+.prd_car .sec_group .sec_body:has(.my_info_flow):has(.title_h4) {
+	margin-top: -0.8rem;
 }
 .prd_car .group + .group {
 	padding-top: 4rem;
@@ -7376,12 +7417,19 @@ ul + .form_group_wrap {
 .prd_car .group_item + .group_item {
 	margin-top: var(--gap-8);
 }
+.prd_car .group_item:has(.table_wrap) + .group_item {
+	margin-top: var(--gap-7);
+}
 .prd_car .title_h4 + .desc,
 .prd_car .title_h4 + .list_depth,
 .prd_car .title_h4 + .group_item {
 	margin-top: var(--gap-4);
 }
-.prd_car .title_h4 + .table_wrap {
+.prd_car .title_h4 + .table_wrap,
+.prd_car .title_h4 + .my_info_flow {
+	margin-top: var(--gap-5);
+}
+.prd_car .text_sub + .list_depth {
 	margin-top: var(--gap-5);
 }
 .prd_car .list_depth + .table_wrap {
@@ -7408,14 +7456,27 @@ ul + .form_group_wrap {
 .prd_car .table_wrap tbody:has(td[rowspan]) td[rowspan]:last-child {
 	border-right: none;
 }
+.prd_car .file_attach_box .file_thumbnail {
+	max-width: none;
+}
+.prd_car .file_attach_box .file_thumbnail img {
+	width: 55.2rem;
+	max-width: none;
+}
 .prd_car .my_info_flow > li:last-child {
 	margin-bottom: 0;
 }
 .prd_car .my_info_flow + .list_ty2 {
 	margin-top: var(--gap-5);
 }
-.prd_car .my_info_flow .img_wrap {
+.prd_car .my_info_flow .img_wrap_ex {
 	margin-top: var(--gap-4);
+	height: 32rem;
+	background-color: #fff;
+	border-radius: 1.6rem 1.6rem 0 0;
+}
+.prd_car .my_info_flow .img_wrap_ex img {
+	width: 25rem;
 }
 .prd_car .item_wrap_faq .acd_cont .inner > p {
 	margin-bottom: var(--gap-4);
@@ -7425,6 +7486,9 @@ ul + .form_group_wrap {
 }
 .prd_car .item_wrap_faq .acd_cont .inner .list_depth + .text_sub {
 	margin-top: var(--gap-4);
+}
+.prd_car .item_wrap_faq .acd_cont .inner .table_wrap {
+	margin-top: var(--gap-5);
 }
 .prd_car .mileage_box {
 	display: -webkit-box;
@@ -7479,4 +7543,77 @@ ul + .form_group_wrap {
 }
 .prd_car .mileage_box .item strong {
 	color: var(--color-text-secondary);
+}
+.prd_car .list_contract {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: var(--gap-5);
+}
+.prd_car .list_contract .item {
+	padding: var(--padding-7) var(--padding-8);
+	background-color: var(--color-background-gray-subtler);
+	border-radius: 1.6rem;
+	font-size: var(--font-size-label-medium);
+	color: var(--color-text-basic);
+}
+.prd_car .list_contract .item > div {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.prd_car .list_contract .item > div::before {
+	content: "";
+	display: inline-block;
+	width: 4rem;
+	height: 4rem;
+	margin-bottom: var(--gap-2);
+}
+.prd_car .list_contract .item.ico1 > div::before {
+	background-image: url("../images/content/prdcar/ico_contract_logo1.svg");
+}
+.prd_car .list_contract .item.ico2 > div::before {
+	background-image: url("../images/content/prdcar/ico_contract_logo2.svg");
+}
+.prd_car .list_contract .item.ico3 > div::before {
+	background-image: url("../images/content/prdcar/ico_contract_logo3.svg");
+}
+.prd_car .list_contract .item.ico4 > div::before {
+	background-image: url("../images/content/prdcar/ico_contract_logo4.svg");
+}
+.prd_car .list_contract .item.ico5 > div::before {
+	background-image: url("../images/content/prdcar/ico_contract_logo5.svg");
+}
+.prd_car .list_contract .item.ico6 > div::before {
+	background-image: url("../images/content/prdcar/ico_contract_logo6.svg");
+}
+.prd_car .list_contract .item.ico7 > div::before {
+	background-image: url("../images/content/prdcar/ico_contract_logo7.svg");
+}
+.prd_car .btn_area:has(.btn_app) {
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+}
+.prd_car .btn_app {
+	width: 16rem;
+	height: 4.8rem;
+}
+.prd_car .title_h3.icon::before {
+	content: "";
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+	margin: 0.4rem 0.4rem 0 0;
+	background: url("../images/content/prdcar/ico_price_20.svg") no-repeat 0 0;
+	background-size: 2rem auto;
+	vertical-align: top;
 }

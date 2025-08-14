@@ -11,10 +11,11 @@
 	padding: 0 24px 60px;
 
 	//자동차보험
-	background: url(../images/content/mtps/img_MPRMTPS10002010000.png) no-repeat right bottom 26px / 160px auto;
+	background: url(../images/content/mtps/visual_mtps_ty1.png) no-repeat right bottom 26px / 160px auto;
 
 
 	.logo {
+		width: 160px;
 		& + .secondary,
 		& + .title_h2 {
 			margin-top: var(--gap-5);
@@ -30,6 +31,12 @@
 	& + .bg_area {
 		margin-top: -26px;
 	}
+
+	//자동차보험 2타입
+	&.car2 {
+		background-image: url(../images/content/mtps/visual_mtps_ty2.png);
+	}
+
 
 	//이륜차보험
 	&.moto {
@@ -242,7 +249,7 @@
 // 특약 리스트
 
 .discount_item_box {
-	padding: var(--padding-8) var(--padding-7);
+	padding: var(--padding-8) var(--padding-7) var(--padding-3);
 	background-color: #fff;
 	border-radius: var(--radius-large2);
 
@@ -252,16 +259,10 @@
 		background-position: left center;
 		background-size: 32px auto;
 
-		@for $i from 1 through 11 {
+		@for $i from 1 through 14 {
 			&.opt#{$i}{
 				background-image: url(../images/content/mtps/icon_MPRMTPS10002010000_ty#{$i}.svg);
 			}
-		}
-		&:first-child {
-			padding-top: 0;
-		}
-		&:last-child {
-			padding-bottom: 0;
 		}
 
 		// > a {
@@ -280,6 +281,13 @@
 		.desc {
 			font-size: var(--font-size-body-small);
 			color: var(--color-text-subtle);
+		}
+	}
+	.top_wrap {
+		display: flex;
+		justify-content: flex-end;
+		.info_text2 {
+			margin-top: 0;
 		}
 	}
 }

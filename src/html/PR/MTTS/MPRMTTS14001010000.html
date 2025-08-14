@@ -25,23 +25,29 @@
 				<div class="input_item_wrap">
 					<div class="acd_item">
 						{{#> cp/accordion ac-title="이름" ac-active=true }}
-						{{> cp/text class="big" placeholder="자동차 소유(예정)자" inp-title="자동차 소유(예정)자 입력" }}
+						<!-- s: 25-08-14 UXW -->
+						{{> cp/text class="big" placeholder="이름 입력" inp-title="이름 입력" }}
+						<!-- e: 25-08-14 UXW -->
 						{{/ cp/accordion }}
 					</div>
 					<div class="acd_item">
 						{{#> cp/accordion ac-title="주민등록번호" }}
 						<!-- 키패드 입력까지 된 후, active 클래스 추가 -->
 						<div class="comp_wrap birth active">
-							{{> cp/text class="big" type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" }}
+							<!-- s: 25-08-14 UXW -->
+							{{> cp/text class="big" type="tel" minlength="6" maxlength="6" placeholder="앞 6자리" inp-title="주민등록번호 앞 6자리 입력" }}
 							<span class="dash">-</span>
 							{{> cp/keypad7 kp-class="big" case1=true kt="주민등록번호 뒤 7자리 입력"}}
+							<!-- e: 25-08-14 UXW -->
 						</div>
 						{{/ cp/accordion }}
 					</div>
 					<!-- 신규 고객에 한해 출력 -->
 					<div class="acd_item">
 						{{#> cp/accordion ac-title="휴대폰번호" }}
-						{{> cp/text class="phone big" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+						<!-- s: 25-08-14 UXW -->
+						{{> cp/text class="phone big" type="tel" placeholder="- 없이 입력" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+						<!-- e: 25-08-14 UXW -->
 						{{/ cp/accordion }}
 					</div>
 				</div>
@@ -59,23 +65,26 @@
 
 			<!-- s: 꼭 알아두세요 -->
 			{{#> cp/notice dp-active=true }}
+			<!-- s: 25-08-14 UXW -->
 			<ul class="list_depth">
-				<li>Hicar 타임쉐어 자동차보험은 타인소유 차량 또는 렌터카를 빌려 단기간으로 가입하는 시간단위 맞춤형 보험으로 최소 6시간~최대 10일까지 시간 단위로 가입할 수 있는 보험입니다.</li>
-				<li>보험가입을 위해서는 계약자의 본인인증 및 신용카드가 필요합니다.</li>
-				<li>만 24세이상 운전자로 본인 또는 배우자 명의의 자동차 보험이 없는 경우 가입할 수 있으며, 차량 소유자로부터 운전을 허락받은 경우에만 가입이 가능합니다. </li>
+				<li>Hicar 타임쉐어 자동차보험은 <strong>타인소유 차량 또는 렌터카를 빌려 단기간으로 가입하는 시간단위 맞춤형 보험</strong>으로 <strong>최소 6시간~최대 10일</strong>까지 시간 단위로 가입할 수 있는 보험입니다.</li>
+				<li>보험가입을 위해서는 <strong>계약자의 본인인증 및 신용카드가 필요</strong>합니다.</li>
+				<li><strong>만 24세이상</strong> 운전자로 본인 또는 배우자 명의의 <strong>자동차 보험이 없는 경우</strong> 가입할 수 있으며, <strong>차량 소유자로부터 운전을 허락</strong>받은 경우에만 가입이 가능합니다. </li>
+				<li><strong>렌터카</strong>의 경우 <strong>10일 이내 대여한 차량만</strong> 가입가능하며, 운전할 <strong>차량의 사진촬영</strong>이 필요합니다.</li>
 				<li>법인소유 차량의 경우 가입대상이 아닙니다.</li>
 				<li>
 					보험계약 취소 및 해지 기준
 					<ul>
 						<li>모바일 해지 가능하며, 보험가입기간이 12시간 이내의 경우 해약환급금 없습니다. (12시간 초과 시간에 대하여 미경과보험료를 환급해드립니다.)</li>
 					</ul>
-				<li>
-					보험기간 변경이 필요한 경우, 기존 보험계약 해지 후 새로이 원하는 보험기간으로 가입하시면 됩니다.
-					<div class="btn_area basic">
-						{{> cp/linkButton bl_class="short_cut sm" bl_text="Hicar 타임쉐어 자동차보험 해지/취소" bl_title="페이지 이동" }}
-					</div>
-				</li>
-			</ul>
+					<li>
+						보험기간 변경이 필요한 경우, 기존 보험계약 해지 후 새로이 원하는 보험기간으로 가입하시면 됩니다.
+						<div class="btn_area basic">
+							{{> cp/linkButton bl_class="short_cut sm" bl_text="Hicar 타임쉐어 자동차보험 해지/취소" bl_title="페이지 이동" }}
+						</div>
+					</li>
+				</ul>
+				<!-- e: 25-08-14 UXW -->
 			{{/ cp/notice }}
 			<!-- e: 꼭 알아두세요 -->
 		</div>
@@ -84,7 +93,9 @@
 	<!-- s: 하단 고정 버튼 영역 -->
 	<div class="bottom_fix_wrap">
 		<div class="btn_area">
-			{{> cp/button type="1" size="1" b-text="이름을 입력 중이에요" disabled=true }}
+			<!-- s: 25-08-14 UXW -->
+			{{> cp/button type="1" size="1" b-text="설계 정보를 입력 중이에요" disabled=true }}
+			<!-- e: 25-08-14 UXW -->
 			<!-- {{> cp/button type="1" size="1" b-text="내 보험료를 알아볼게요" }} -->
 		</div>
 	</div>
