@@ -243,11 +243,22 @@ strong {
 	.banner_box {
 		margin-bottom: var(--gap-4);
 	}
+	
 	.btn_area {
 		gap: var(--gap-3);
+		flex-flow: row wrap;
 
 		&.column {
 			gap: var(--gap-4);
+		}
+				
+		.hd_btn {
+			flex: 1 0 auto;
+			min-width: calc(50% - 5px);
+
+			> .text {
+				white-space: nowrap;
+			}
 		}
 	}
 	.info_gray {
