@@ -6,15 +6,19 @@
 			<div class="content">
 				<!-- s: content_top -->
 				<div class="content_top">
+					<!-- s: 25-08-14 UXW -->
 					<h2 class="title_h2">
-						<strong>보험기간</strong>을 입력해 주세요
+						<strong>보험기간</strong>을 입력해주세요
 					</h2>
+					<!-- e: 25-08-14 UXW -->
 				</div>
 				<!-- e: content_top -->
 	 
 				<div class="form_group_wrap">
 					<div class="form_line">
-						<div class="label_tit">보험기간</div>
+						<!-- s: 25-08-14 UXW -->
+						<div class="label_tit">보험가입시점</div>
+						<!-- e: 25-08-14 UXW -->
 						<div class="radio_group_wrap" role="radiogroup">
 							{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_g1" name="radio_g1" labelname="즉시 가입" }}
 							{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_g2" name="radio_g1" labelname="미리 가입" }}
@@ -24,7 +28,9 @@
 						<div class="label_tit">보험시작일</div>
 						<div class="row row balance">
 							{{> cp/text cal=true disabled=true }}
-							{{> cp/selectitem si_ph="결재시점" si_title="보험시작 시간 선택 팝업 호출" si_popup="pop_type01" disabled=true}}
+							<!-- s: 25-08-14 UXW -->
+							{{> cp/selectitem si_ph="결제시점" si_title="보험시작 시간 선택 팝업 호출" si_popup="pop_type01" disabled=true}}
+							<!-- e: 25-08-14 UXW -->
 						</div>
 					</div>
 					<div class="form_line">
@@ -35,12 +41,14 @@
 						</div>
 					</div>
 				</div>
+				<!-- s: 25-08-14 UXW -->
 				<ul class="list_ty2">
 					<li>
-						보험기간은 개시일로부터 <strong class="point">6시간</strong>입니다.<br>
-						(보험료 결제 시 설계시간 경과로 보험기간이 변경될 수 있습니다.)
+						보험기간은 보험시작일(개시일)로부터 6시간입니다.<br>
+						<strong class="point">(보험료 결제 시 설계시간 경과로 보험기간이 변경될 수 있습니다.)</strong>
 					</li>
 				</ul>
+				<!-- e: 25-08-14 UXW -->
 
 				<!-- 차량 대여 정보 -->
 				<h3 class="title_h3">차량 대여 정보</h3>
@@ -60,40 +68,46 @@
 						</div>
 					</div>
 					<ul class="list_ty2">
-						<li>렌터카 임대차 계약서에 기재된 계약기간의 개시시점부터 1시간 이내에만 가입이 가능합니다.</li>
+						<li>렌터카 임대차 계약서에 기재된 <strong class="point">계약기간의 개시시점부터 1시간 이내에만 가입이 가능</strong>합니다.</li>
 					</ul>
 
 					<div class="form_line">
 						<div class="label_tit">대여지역</div>
-						{{> cp/text placeholder="지역을 입력해 주세요" }}
+						<!-- s: 25-08-14 UXW -->
+						{{> cp/text placeholder="지역 입력" }}
+						<!-- e: 25-08-14 UXW -->
 					</div>
 					<div class="form_line">
 						<div class="label_tit">대여업체명</div>
-						{{> cp/text placeholder="업체명을 입력해 주세요" }}
+						<!-- s: 25-08-14 UXW -->
+						{{> cp/text placeholder="업체명 입력" }}
+						<!-- e: 25-08-14 UXW -->
 					</div>
 					<div class="form_line">
 						<div class="label_tit">대여업체 전화번호</div>
-						{{> cp/text type="tel" placeholder="전화번호를 입력해 주세요" }}
+						<!-- s: 25-08-14 UXW -->
+						{{> cp/text type="tel" placeholder="- 없이 입력" }}
+						<!-- e: 25-08-14 UXW -->
 					</div>
 				</div>
 
 				<!-- s: 꼭 알아두세요 -->
 				{{#> cp/notice dp-active=true }}
+					<!-- s: 25-08-14 UXW -->
 					<ul class="list_ty1">
 						<!-- 즉시 가입 Case -->
-						<li>보험가입은 최소 6시간 ~ 최대 10일까지 가능합니다.</li>
-						<li>결제시점이란, 보험료 결제가 완료된 시간을 말합니다.</li>
-						<li>종료시간은 시간 단위로만 선택 가능하며, 최소보장시간 6시간을 초과하는 시간대만 선택 가능합니다.</li>
+						<li>보험기간은 최소 6시간~최대 10일까지 설정할 수 있습니다.</li>
+						<li>‘결제시점’이란 보험료 결제가 완료된 시간을 말합니다.</li>
+						<li>종료시간은 시간 단위로만 선택 가능하며, 최소보장시간 6시간을 초과하는 시간대만 선택할 수 있습니다.</li>
 
 						<!-- 미리 가입 Case -->
-						 <li>미리 가입은 개시일이 24시간 이내인 경우에만 가입 가능합니다.</li>
-						 <li>보험가입은 최소 6시간 ~ 최대 10일까지 가능합니다.</li>
-						 <li>보험 개시 및 종료시간은 시간단위로 선택 가능하십니다.</li>
-						 <li>
-							보험 개시시간은 현재시간에서 1시간 이후 정각부터 설정 가능합니다.<br>
-							예) 13시 01분일 경우, 15시부터 가입 가능합니다.
-						 </li>
-					</ul>
+						<li>미리 가입은 보험시작일(개시일)이 24시간 이내인 경우에만 가능합니다. </li>
+						<li>보험기간은 최소 6시간 ~ 최대 10일까지 설정할 수 있습니다. </li>
+						<li>보험 시작일 및 종료일 설정은 시간 단위로 할 수 있습니다. </li>
+						<li>보험 시작 시간은 현재 시간에서 1시간 이후 정각부터 설정할 수 있습니다.<br>
+							예) 13시 01분일 경우, 15시부터 가입할 수 있습니다.</li>
+						</ul>
+						<!-- e: 25-08-14 UXW -->
 				{{/ cp/notice }}
 				<!-- e: 꼭 알아두세요 -->
 			</div>
@@ -102,7 +116,8 @@
 		<!-- s: 하단 고정 버튼 영역 -->
 		<div class="bottom_fix_wrap">
 			<div class="btn_area">
-				{{> cp/button type="1" size="1" b-text="다음"}}
+				{{> cp/button type="1" size="1" b-text="즉시 가입 가입할게요"}}
+				<!-- {{> cp/button type="1" size="1" b-text="미리 가입 가입할게요"}} -->
 			</div>
 		</div>
 		<!-- s: 하단 고정 버튼 영역 -->
