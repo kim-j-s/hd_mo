@@ -830,6 +830,7 @@ $(function(){
 
 	simpleInfo();
 	headAria();
+	nbList();//알릴고지 넘버링
 	
 	// 스크롤 이벤트 초기화 및 동적 생성시 재 호출
 	$('.position_event_wrap').each(function () {
@@ -1129,19 +1130,6 @@ $(function(){
 		}
 	});
 	// 큰글씨 모드
-	
-	//알릴고지 숫자 표기
-	$('ol.form_list > li').each(function (index) {
-		const $labels = $(this).find('> .form_group_wrap > .form_line > .label_tit'); // 여러 개일 수 있음
-		const num = (index + 1).toString().padStart(2, '0');
-		$labels.each(function (i) {
-			let numStr = num;
-			if ($labels.length > 1 && i > 0) {
-			  numStr += `-${i}`;
-			}
-			$(this).prepend(`<span class="num">${numStr}</span>`);
-		});
-	});
 
 	//이메일 자동완성
 	function autoCompleteEmail() {
@@ -1424,6 +1412,25 @@ function headAria() {
 		bookmark.attr('aria-label', tit + ' ' + mark);
 	});
 } 
+
+	
+//알릴고지 숫자 표기
+function nbList() {
+	$('ol.form_list > li').each(function (index) {
+		const $labels = $(this).find('> .form_group_wrap > .form_line > .label_tit'); // 여러 개일 수 있음
+		const num = (index + 1).toString().padStart(2, '0');
+
+		$labels.find('.num').remove(); // 기존 번호 삭제
+
+		$labels.each(function (i) {
+			let numStr = num;
+			if ($labels.length > 1 && i > 0) {
+				numStr += `-${i}`;
+			}
+			$(this).prepend(`<span class="num">${numStr}</span>`);
+		});
+	});
+}
 
 $(window).resize(function(){
 	// prograssBar();
