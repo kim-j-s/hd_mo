@@ -1,4 +1,4 @@
-{{#> layout/default no-sp=true page-title="정비할인쿠폰 발송을 위한 약관 동의 | 마이페이지"}}
+{{#> layout/default no-sp=true page-title="자동차유형 | 타임쉐어자동차보험"}}
 
 	<!-- s: Full 팝업 -->
 	{{#> popup/popup_full popup-id="pop_type01" popup-title="" popup-active=true}}
@@ -6,9 +6,11 @@
 		<div class="popup_content">
 			<!-- s: popup_content_top -->
 			<div class="popup_content_top">
+				<!-- s: 25-08-14 UXW -->
 				<h2 class="title_h2">					
-					아래 내용은 보험 가입 전 <strong>필수 확인 사항</strong>입니다.
+					보험 가입 전 <strong>중요 사항</strong>에 대한 확인이 필요해요
 				</h2>
+				<!-- e: 25-08-14 UXW -->
 			</div>
 			<!-- e: popup_content_top -->
 
@@ -16,7 +18,9 @@
 				<li>
 					<div class="form_group_wrap">
 						<div class="form_line">
-							<div class="label_tit">렌터카 승차정원이 10인 이하입니까?</div>
+							<!-- s: 25-08-14 UXW -->
+							<div class="label_tit">렌터카 승차정원이 10인 이하인가요?</div>
+							<!-- e: 25-08-14 UXW -->
 							<div class="radio_group_wrap" role="radiogroup">
 								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_01_1" name="radio_g1" labelname="예"}}
 								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_01_2" name="radio_g1" labelname="아니오"}}
@@ -27,7 +31,9 @@
 				<li>
 					<div class="form_group_wrap">
 						<div class="form_line">
-							<div class="label_tit">렌터카 업체로부터 대여하신 기간이 10일이내 입니까?</div>
+							<!-- s: 25-08-14 UXW -->
+							<div class="label_tit">렌터카 업체로부터 대여하신 기간이 10일 이내 인가요?</div>
+							<!-- e: 25-08-14 UXW -->
 							<div class="radio_group_wrap" role="radiogroup">
 								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_02_1" name="radio_g2" labelname="예"}}
 								{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_02_2" name="radio_g2" labelname="아니오"}}
@@ -39,26 +45,17 @@
 
 			<div class="divider_ty1"></div>
 			<div class="checkbox_group_wrap column">
-				{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-12ess" label_class="chk_label_ty3" labelname="보험가입 후 사고 시 가입 대상에 해당하지 않은 경우 보험금 지급이 제한될 수 있습니다." checked=true }}
-				{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-13ess" label_class="chk_label_ty3" labelname="12시간 이내의 보험가입기간에 대하여는 보험을 해지 하더라도 해약환급금이 발생되지 않습니다." checked=true }}
+				{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-12ess" label_class="chk_label_ty3" labelname="보험 가입 후 사고 시 가입 대상이 아닌 경우 보험금 지급이 제한될 수 있습니다." checked=true }}
+				{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-13ess" label_class="chk_label_ty3" labelname="12시간 이내의 보험가입 기간에 대해서는 보험을 해지하더라도 해약환급금을 받으실 수 없습니다." checked=true }}
 			</div>
 
 			<!-- s: 꼭 알아두세요 -->
 			{{#> cp/notice dp-active=true}}
 			<ul class="list_depth">
-				<li>
-					내용 확인 이후 설계 진행 가능하십니다.<br>
-					(미확인 시 설계 진행이 불가합니다.)
-				</li>
-				<li>
-					렌터카 임대차 계약서에 기재된 계약기간의 개시시점부터 1시간 이내에만 가입이 가능합니다. <br>
-					(렌터카 임대차 계약서상 명기된 운전자에 한하며, 렌터카 임대차 계약서상 명기된 운전자 모두 보장받기 위해서는 운전자별로 가입하셔야 합니다.)
-				</li>
-				<li>대인배상, 대물배상, 자신신체손해담보는 렌터카보험에서 가입 가능합니다.</li>
-				<li>
-					카셰어링(차량공유) 차량은 가입이 불가능합니다.<br>
-					예) 그린카, 쏘카, 시티카 등
-				</li>
+				<li>중요 사항에 대한 확인 이후에 보험 설계를 진행할 수 있습니다.(미확인 시 설계 진행이 불가합니다.)</li>
+				<li>렌터카 임대차 계약서에 기재된 계약기간의 개시시점부터 1시간 이내에만 가입할 수 있습니다.(렌터카 임대차 계약서상 명기된 운전자에 한하며, 렌터카 임대차 계약서상 명기된 운전자 모두 보장받기 위해서는 운전자별로 가입하셔야 합니다.)</li>
+				<li>대인배상, 대물배상, 자신신체손해담보는 렌터카보험에서 가입할 수 있습니다.</li>
+				<li>카셰어링(차량공유) 차량은 가입할 수 없습니다. 예) 그린카, 쏘카, 시티카 등</li>
 			</ul>
 			{{/ cp/notice }}
 			<!-- e: 꼭 알아두세요 -->
