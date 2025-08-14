@@ -110,16 +110,16 @@
 					background-size: 20px auto;
 				}
 			}
-			.desc_wrap {
+			.desc_wrap {        
+				width: 100%;
 				margin-top: var(--gap-7);
 				padding-top: var(--gap-7);
 				border-top: var(--border-width-static-regular) solid var(--color-border-gray-light);
-				&:has(.list_ty6) {
-					border-color: var(--color-divider-gray-light);
-				}
 				.list_ty6 {
-					text-align: left;
-					color: var(--color-text-information);
+					> li {
+						text-align: left;
+						color: var(--color-text-information);
+					}
 				}
 			}
 			
@@ -249,8 +249,12 @@
 			&:has(.text_sub) {
 				margin-top: -8px;
 			}
+
 			&:has(.my_info_flow) {
 				margin-top: 0;
+				&:has(.title_h4) {
+					margin-top: -8px;
+				}
 			}
 		}
 	}
@@ -265,6 +269,11 @@
 		+ .group_item {
 			margin-top: var(--gap-8);
 		}
+		&:has(.table_wrap) {
+			+ .group_item {
+				margin-top: var(--gap-7);
+			}
+		}
 	}
 
 	.title_h4 {
@@ -273,7 +282,14 @@
 		+ .group_item {
 			margin-top: var(--gap-4);
 		}
-		+ .table_wrap {
+		+ .table_wrap,
+		+ .my_info_flow {
+			margin-top: var(--gap-5);
+		}
+	}
+
+	.text_sub {
+		+ .list_depth {
 			margin-top: var(--gap-5);
 		}
 	}
@@ -314,6 +330,26 @@
 				border-right: none
 			}
 		}
+
+		//임시
+		.th_tit {
+			background-color: var(--color-surface-white-subtle);
+			padding: var(--padding-5);
+			vertical-align: top;
+			font-weight: 400;
+			font-size: 16px;
+			color: var(--color-text-subtle);
+			//font-size: var(--font-size-body-xsmall);
+			& ~ td {
+				padding: var(--padding-5);
+			}
+		}	
+	}
+
+	.file_attach_box {
+		.file_thumbnail {
+			height: auto;
+		}
 	}
 
 	.my_info_flow {
@@ -342,6 +378,9 @@
 					& + .text_sub {
 						margin-top: var(--gap-4);
 					}
+				}
+				.table_wrap {
+						margin-top: var(--gap-5);
 				}
 			}
 		}
@@ -388,6 +427,54 @@
 			strong {
 				color: var(--color-text-secondary);
 			}
+		}
+	}
+
+	//스마트 안전운전(UBI) 
+	.list_contract {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--gap-5);
+		.item {
+			padding: var(--padding-7) var(--padding-8);
+			background-color: var(--color-background-gray-subtler);
+			border-radius: 16px;
+			font-size: var(--font-size-label-medium);
+			color: var(--color-text-basic);
+			& > div {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				&::before {
+					content:"";
+					display: inline-block;
+					width: 40px;
+					height: 40px;
+					margin-bottom: var(--gap-2);
+				}
+			}
+
+			@for $i from 1 through 7 {
+				&.ico#{$i} {
+					&>div::before {
+						background-image: url('../images/content/prdcar/ico_contract_logo#{$i}.svg');
+					}
+				}
+			}
+		}
+	}
+
+	.title_h3 {
+		&.icon::before {
+			content:"";
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			margin: 4px 4px 0 0;
+			background: url('../images/content/prdcar/ico_price_20.svg') no-repeat 0 0;
+			background-size: 20px auto;
+			vertical-align: top;
 		}
 	}
 }
