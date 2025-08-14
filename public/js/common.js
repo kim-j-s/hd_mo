@@ -522,8 +522,6 @@
 		}
 	});
 
-
-
 	
 
 
@@ -800,6 +798,26 @@ function inputState() {
 
 $(window).on('load', function() {
 	inputState();
+	
+	// 폼요소 라디오, 체크박스 타이틀 연결 필요시 살릴 소스
+	// $('.form_line').each(function(index) {
+	// 	const $formBox = $(this);
+	// 	const $formLabel = $formBox.find('.label_tit');
+	// 	const $formRadio = $formBox.find('.radio_group_wrap');
+	// 	const $formCheck = $formBox.find('.checkbox_group_wrap');
+
+	// 	if ($formRadio.length) {
+	// 		const labelId = 'label_radio_' + (index + 1);
+	// 		$formLabel.attr('id', labelId);
+	// 		$formRadio.attr('aria-labelledby', labelId);
+	// 	}
+
+	// 	if ($formCheck.length) {
+	// 		const labelId = 'label_check_' + (index + 1);
+	// 		$formLabel.attr('id', labelId);
+	// 		$formCheck.attr('aria-labelledby', labelId);
+	// 	}
+	// });
 });
 
 
