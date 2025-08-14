@@ -1,5 +1,16 @@
 .acd_ico_rcd_ty1 {
-	background-image: url(../images/content/mtps/icon_MPRMTPS10007000905_ty01.svg);
+	// background-image: url(../images/content/mtps/icon_MPRMTPS10007000905_ty01.svg);
+}
+
+[class^=acd_ico_rcd_ty] {
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+@for $i from 1 through 5 {
+	.acd_ico_rcd_ty#{$i}{
+		background-image: url(../images/content/mtps/icon_MPRMTPS10007000905_ty0#{$i}.svg);
+	}
 }
 
 
