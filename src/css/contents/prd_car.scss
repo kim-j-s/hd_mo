@@ -234,9 +234,21 @@
 		}
 	}
 
-	// 이미지
-	.img_wrap {
+	
+	// 이미지 박스
+	[class*="img_wrap"] {
+		border: 1px solid #CDD1D5;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.img_wrap_highwalk {
 		margin-top: 32px;
+		height: 236px;
+		border-radius: 24px;
+		img {
+			width: 280px; 
+		}
 	}
 
 	// 간격
@@ -245,8 +257,7 @@
 			margin-bottom: var(--gap-6);
 		}
 		.sec_body {
-			&:has(.title_h4),
-			&:has(.text_sub) {
+			&:has(.title_h4) {
 				margin-top: -8px;
 			}
 
@@ -330,25 +341,15 @@
 				border-right: none
 			}
 		}
-
-		//임시
-		.th_tit {
-			background-color: var(--color-surface-white-subtle);
-			padding: var(--padding-5);
-			vertical-align: top;
-			font-weight: 400;
-			font-size: 16px;
-			color: var(--color-text-subtle);
-			//font-size: var(--font-size-body-xsmall);
-			& ~ td {
-				padding: var(--padding-5);
-			}
-		}	
 	}
 
 	.file_attach_box {
 		.file_thumbnail {
-			height: auto;
+			max-width: none;
+			img {
+				width: 552px;
+				max-width: none;
+			}
 		}
 	}
 
@@ -359,8 +360,14 @@
 		& + .list_ty2 {
 			margin-top: var(--gap-5);
 		}
-		.img_wrap{
+		.img_wrap_ex {
 			margin-top: var(--gap-4);
+			height:320px;
+			background-color: #fff;
+			border-radius: 16px 16px 0 0;
+			img {
+				width: 250px;
+			}
 		}
 	}
 
@@ -465,6 +472,16 @@
 		}
 	}
 
+	//앱 다운로드
+	.btn_area:has(.btn_app) {
+		flex-wrap: nowrap;
+	}
+	.btn_app {
+		width: 160px;
+		height: 48px;
+	}
+
+	// 타이틀 아이콘
 	.title_h3 {
 		&.icon::before {
 			content:"";
