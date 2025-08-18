@@ -607,9 +607,10 @@ function simpleInfo(){
 				if(!$target.hasClass('ty2')){
 					// $targetChild.stop().slideDown(300);
 					// console.log('slideDown');
+					console.log('ty2 no');
 				}else {
 					$targetChild.stop().show();
-
+					console.log('ty2 checking');
 					if($('.tag_item_wrap.sticky').length){
 						$target.closest('.position_event_wrap').find('.tag_item_wrap.sticky').css('top', simpleHeight - new_headHeight).addClass('active');
 					}
