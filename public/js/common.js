@@ -606,13 +606,13 @@ function simpleInfo(){
 
 				if(!$target.hasClass('ty2')){
 					// $targetChild.stop().slideDown(300);
-					console.log('slideDown');
+					// console.log('slideDown');
 				}else {
 					$targetChild.stop().show();
-				}
 
-				if($('.tag_item_wrap.sticky').length){
-					$('.tag_item_wrap.sticky').css('top', simpleHeight - new_headHeight).addClass('active');
+					if($('.tag_item_wrap.sticky').length){
+						$target.closest('.position_event_wrap').find('.tag_item_wrap.sticky').css('top', simpleHeight - new_headHeight).addClass('active');
+					}
 				}
 
 			} else if (targetOffsetTop > 0 && $targetChild.hasClass('active')) {
@@ -622,7 +622,7 @@ function simpleInfo(){
 
 				if(!$target.hasClass('ty2')){
 					// $targetChild.stop().slideUp(300);
-					console.log('slideUp');
+					// console.log('slideUp');
 				}else {
 					$targetChild.stop().hide();
 				}
