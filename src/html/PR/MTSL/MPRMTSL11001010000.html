@@ -28,14 +28,18 @@
 				<div class="input_item_wrap">
 					<div class="acd_item">
 						{{#> cp/accordion ac-title="이름" ac-active=true }}
-						{{> cp/text class="big" placeholder="자동차 소유(예정)자" inp-title="자동차 소유(예정)자 입력" }}
+						<!-- s: 25-08-18 UXW -->
+						{{> cp/text class="big" placeholder="이름 입력" inp-title="이름 입력" }}
+						<!-- e: 25-08-18 UXW -->
 						{{/ cp/accordion }}
 					</div>
 					<div class="acd_item">
 						{{#> cp/accordion ac-title="주민등록번호" }}
 						<!-- 키패드 입력까지 된 후, active 클래스 추가 -->
 						<div class="comp_wrap birth active">
-							{{> cp/text class="big" type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" }}
+							<!-- s: 25-08-18 UXW -->
+							{{> cp/text class="big" type="tel" minlength="6" maxlength="6" placeholder="앞 6자리" inp-title="주민등록번호 앞 6자리 입력" }}
+							<!-- e: 25-08-18 UXW -->
 							<span class="dash">-</span>
 							{{> cp/keypad7 kp-class="big" case1=true kt="주민등록번호 뒤 7자리 입력"}}
 						</div>
@@ -43,7 +47,9 @@
 					</div>
 					<div class="acd_item">
 						{{#> cp/accordion ac-title="휴대폰번호" }}
-						{{> cp/text class="phone big" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+						<!-- s: 25-08-18 UXW -->
+						{{> cp/text class="phone big" type="tel" placeholder="- 없이 입력" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+						<!-- e: 25-08-18 UXW -->
 						{{/ cp/accordion }}
 					</div>
 				</div>
@@ -90,9 +96,12 @@
 
 	<!-- s: 하단 고정 버튼 영역 -->
 	<div class="bottom_fix_wrap">
+		<!-- s: 25-08-18 UXW -->
 		<div class="btn_area">
-			{{> cp/button type="1" size="1" b-text="보험료 계산하기" disabled=true }}
+			{{> cp/button type="1" size="1" b-text="설계 정보를 입력 중이에요" disabled=true }}
+			<!-- {{> cp/button type="1" size="1" b-text="내 보험료를 알아볼게요" }} -->
 		</div>
+		<!-- e: 25-08-18 UXW -->
 	</div>
 	<!-- s: 하단 고정 버튼 영역 -->
 </div>
