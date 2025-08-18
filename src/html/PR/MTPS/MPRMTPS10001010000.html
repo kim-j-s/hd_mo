@@ -41,7 +41,9 @@
 				<div class="input_item_wrap">
 					<div class="acd_item">
 						{{#> cp/accordion ac-title="이름" ac-active=true }}
-						{{> cp/text class="big" placeholder="자동차 소유(예정)자" inp-title="자동차 소유(예정)자 입력" }}
+						<!-- s: 25-08-18 UXW -->
+						{{> cp/text class="big" placeholder="이름 입력" inp-title="이름 입력" }}
+						<!-- e: 25-08-18 UXW -->
 						{{/ cp/accordion }}
 					</div>
 					<div class="acd_item">
@@ -51,7 +53,9 @@
 						<!-- 키패드 입력까지 된 후, active 클래스 추가 -->
 						<div class="comp_wrap birth active">
 						<!-- e: 25-05-22 수정 -->
-							{{> cp/text class="big" type="tel" minlength="6" maxlength="6" placeholder="앞자리" inp-title="주민등록번호 앞자리 입력" }}
+						 	<!-- s: 25-08-18 UXW -->
+						 	{{> cp/text class="big" type="tel" minlength="6" maxlength="6" placeholder="앞 6자리" inp-title="주민등록번호 앞 6자리 입력" }}
+						 	<!-- e: 25-08-18 UXW -->
 							<span class="dash">-</span>
 							<!-- s: 25-05-20 수정 -->
 							<!-- s: 25-05-13 수정 -->
@@ -66,7 +70,9 @@
 					<!-- s: 25-05-22 수정 -->
 					<div class="acd_item">
 						{{#> cp/accordion ac-title="휴대폰번호" }}
-						{{> cp/text class="phone big" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+						<!-- s: 25-08-18 UXW -->
+						{{> cp/text class="phone big" type="tel" placeholder="- 없이 입력" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+						<!-- e: 25-08-18 UXW -->
 						{{/ cp/accordion }}
 					</div>
 					<!-- e: 25-05-22 수정 -->
@@ -83,7 +89,7 @@
 				<!-- s: 25-08-18 수정 -->
 				<div class="discount_item_box">
 					<div class="top_wrap">
-						<p class="info_text2">해당 특약 가입 시</p>
+						<p class="msg_info">해당 특약 가입 시</p>
 					</div>
 					<ul>
 						<li class="item opt1">
@@ -150,8 +156,9 @@
 			<!-- s: 꼭 알아두세요 -->
 			{{#> cp/notice dp-active=true }}
 			<ul class="list_ty1">
-				<li>보험료 계산시 개인(신용)정보 동의 및 본인인증이 필요합니다.</li>
-				<li>가입 가능한 연령은 만 19세 이상입니다.</li>
+				<!-- s: 25-08-18 UXW -->
+				<li>고객님의 자동차보험료를 계산하기 위해 개인(신용)정보 동의 및 본인인증이 필요합니다.</li>
+				<!-- e: 25-08-18 UXW -->
 				<!-- s: 25-05-22 수정 -->
 				<!-- 삭제 <li>
 					이륜차보험(가정용, 배달용)
@@ -169,9 +176,12 @@
 
 	<!-- s: 하단 고정 버튼 영역 -->
 	<div class="bottom_fix_wrap">
+		<!-- s: 25-08-18 UXW -->
 		<div class="btn_area">
-			{{> cp/button type="1" size="1" b-text="보험료 계산하기" disabled=true }}
+			{{> cp/button type="1" size="1" b-text="설계 정보를 입력 중이에요" disabled=true }}
+			<!-- {{> cp/button type="1" size="1" b-text="내 보험료를 알아볼게요" }} -->
 		</div>
+		<!-- e: 25-08-18 UXW -->
 	</div>
 	<!-- s: 하단 고정 버튼 영역 -->
 </div>
