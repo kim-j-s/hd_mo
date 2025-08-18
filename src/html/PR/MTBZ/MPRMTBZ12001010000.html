@@ -8,7 +8,7 @@
 	{{> layout/header h-title="자동차보험(법인)" }}
 	<div id="container" class="container">
 		<div class="content">
-			<div class="product_main_top">
+			<div class="product_main_top corporate">
 				<div class="logo">
 					<img src="../../../images/logo/logo_hd_direct.svg" alt="현대해상 다이렉트">
 				</div>
@@ -44,62 +44,75 @@
 			</div>
 
 			<div class="checkbox_group_wrap column">
-				{{> cp/checkbox checkbox_class="rd_box" id="checkbox04-17" label_class="chk_label_ty3 check_hide" labelname="입력한 정보는 보험료 계산/가입을 위해 보험개발원, 손해보험협회 공동전산망 조회에 활용됩니다."}}
+				<!-- s: 25-08-18 수정 -->
+				{{> cp/checkbox id="checkbox04-17" label_class="chk_label_ty3 check_hide" labelname="입력하신 정보는 보험료 계산/가입을 위해 보험개발원, 손해보험협회 공동전산망 조회에 활용됩니다."}}
+				<!-- e: 25-08-18 수정 -->
 			</div>
 
 			<div class="bg_area">
 				<h3 class="title_h3">
 					<span class="light">내 차 보험료</span> 할인 받는 방법<span class="light">은?</span>
 				</h3>
-				<ul class="discount_item_box">
-					<li class="item opt4">
-						<div class="cont">인터넷 가입 <strong class="point">17.9%</strong></div>
-						<div class="desc">자사오프라인 대비 평균</div>
-					</li>
-					<li class="item opt1">
-						<div class="cont">ECO 마일리지 할인 특약 <strong class="point">17%</strong></div>
-						<div class="desc">연간 3천km이하 주행 시</div>
-					</li>
-					<li class="item opt2">
-						<div class="cont">무사고 할인 <strong class="point">12.2%</strong></div>
-						<div class="desc">3년 이상 평균</div>
-					</li>
-					<li class="item opt10">
-						<div class="cont">어린이 통학버스 할인 특약 <strong class="point">12%</strong></div>
-						<div class="desc">도로교통법 제2조에서 정한 어린이 통학버스</div>
-					</li>
-					<li class="item opt5">
-						<div class="cont">커넥티드카 할인 특약 <strong class="point">최대 7%</strong></div>
-						<div class="desc">사고 통보장치 장착 및 개통 시</div>
-					</li>
-					<li class="item opt3">
-						<div class="cont">첨단안전장치 할인 특약 <br><strong class="point">4 ~ 17%</strong></div>
-						<div class="desc">차선이탈, 전방충돌, 후측방충돌, HUD 장착 시</div>
-					</li>
-					<li class="item opt9">
-						<div class="cont">블랙박스 할인 특약 <strong class="point">3%</strong></div>
-						<div class="desc">블랙박스 장착 시</div>
-					</li>
-					<!-- <li class="item opt11">
-						<div class="cont">친환경 에코부품사용 특약 <strong class="point">자차 8%</strong></div>
-						<div class="desc">보험개발원장이 인정한 업체에서 제공하는 부품 사용 시</div>
-					</li> -->
-				</ul>
+				<!-- s: 25-08-18 수정 -->
+				<div class="discount_item_box">
+					<div class="top_wrap">
+						<p class="msg_info">해당 특약 가입 시</p>
+					</div>
+					<ul>
+						<li class="item opt1">
+							<div class="cont">ECO 마일리지 할인 특약 <strong class="point">17%</strong></div>
+							<div class="desc">연간 3천km 이하 주행 시</div>
+						</li>
+						<li class="item opt4">
+							<div class="cont">인터넷 가입 <strong class="point">17.9%</strong></div>
+							<div class="desc">자사 오프라인 대비 평균</div>
+						</li>
+						<li class="item opt2">
+							<div class="cont">무사고 할인 <strong class="point">12.2%</strong></div>
+							<div class="desc">3년 이상 평균</div>
+						</li>
+						<li class="item opt3">
+							<div class="cont">첨단안전장치 할인 특약 <br><strong class="point">17 ~ 4%</strong></div>
+							<div class="desc">첨단안전장치 장착 개수에 따라</div>
+						<li class="item opt5">
+							<div class="cont">커넥티드카 할인 특약 <strong class="point">최대 7%</strong></div>
+							<div class="desc">사고 통보장치 장착 및 개통 시</div>
+						</li>
+						</li>
+						<li class="item opt9">
+							<div class="cont">블랙박스 할인 특약 <strong class="point">3%</strong></div>
+							<div class="desc">블랙박스 장착 시</div>
+						</li>
+						<li class="item opt10">
+							<div class="cont">어린이 통학버스 할인 특약 <strong class="point">12%</strong></div>
+							<div class="desc">도로교통법 제2조에서 정한 어린이 통학버스</div>
+						</li>
+						<!-- <li class="item opt11">
+							<div class="cont">친환경 에코부품사용 특약 <strong class="point">자차 8%</strong></div>
+							<div class="desc">보험개발원장이 인정한 업체에서 제공하는 부품 사용 시</div>
+						</li> -->
+					</ul>
+				</div>
+				<!-- e: 25-08-18 수정 -->
 			</div>
 
 			<!-- 이벤트 배너 영역 -->
-			<div class="img_area">
-				<a href="#">
-					<img src="../../../images/event/img_car_bann01.png" alt="자동차보험 결제혜택 최대 3만원 받으세요. 30만원 이상 결제시 카드사, 간편결제사 제공 (이륜차포함)">
-				</a>
-			</div>
+			 <!-- s: 25-08-18 삭제 -->
+			 <!-- <div class="img_area">
+				 <a href="#">
+					 <img src="../../../images/event/img_car_bann01.png" alt="자동차보험 결제혜택 최대 3만원 받으세요. 30만원 이상 결제시 카드사, 간편결제사 제공 (이륜차포함)">
+					</a>
+				</div> -->
+			<!-- e: 25-08-18 삭제 -->
 		
 			<!-- s: 꼭 알아두세요 -->
 			{{#> cp/notice dp-active=true }}
 			<ul class="list_ty1">
 				<li>공동인증서 없이 보험료 계산이 가능합니다.</li>
 				<li>계약자가 법인인 경우, 계약 체결을 위해 공동인증서 혹은 법인카드가 필요합니다.</li>
-				<li>법인 소유 이륜차 보험은 PC에서만 가입할 수 있습니다.</li>
+				<!-- s: 25-08-18 삭제 -->
+				<!-- <li>법인 소유 이륜차 보험은 PC에서만 가입할 수 있습니다.</li> -->
+				<!-- e: 25-08-18 삭제 -->
 			</ul>
 			{{/ cp/notice }}
 			<!-- e: 꼭 알아두세요 -->
