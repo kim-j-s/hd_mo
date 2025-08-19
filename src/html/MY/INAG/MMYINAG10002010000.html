@@ -682,8 +682,24 @@
 				$progressBar.find('.per_bar_dp .text').text('D-' + remainingDays);
 	
 				// 접근성 관련 문구 생성 후 삽입
-				$progressBar.attr('aria-label', '만기일 (' + endDate + ') 만기 ' + remainingDays + '일 전');
-				
+				//25-08-19
+				const isExpired = $progressBar.hasClass('expired');
+				const isBefore = $progressBar.hasClass('before');
+				let labelText = `만기일 ${remainingDays}일 전`;
+				let ariaLabel = `${labelText} - 시작일:${startDate}, 종료일:${endDate}`;
+
+				if (isExpired || isBefore) {
+					if (isExpired) {
+						labelText = '만기 D-30';
+						ariaLabel = `만기 30일전 - 시작일:${startDate}, 종료일:${endDate}`;
+					} else {
+						labelText = '개시전';
+						ariaLabel = `개시전 - 시작일:${startDate}, 종료일:${endDate}`;
+					}
+					$progressBar.find('.per_bar_dp .text').text(labelText);
+				}
+				$progressBar.attr('aria-label', ariaLabel);				
+				//25-08-19
 
 				// 전체 넓이
 				var $progressBarPer = $progressBar.find('.progress_bar_per');
@@ -699,20 +715,6 @@
 				// 초기 클래스 제거
 				$perBar.removeClass('pos');
 				$perBarDp.removeClass('poe');
-	
-		
-				//25-08-19
-				if ($progressBar.hasClass('expired') || $progressBar.hasClass('before')) {
-					const isExpired = $progressBar.hasClass('expired');
-					const labelText = isExpired ? '만기 D-30' : '개시전';
-					const ariaLabel = isExpired 
-						? `만기일 (${endDate}) 만기 30 일 전` 
-						: `개시전 시작일 (${startDate}) 종료일 (${endDate}) `;
-
-					$progressBar.find('.per_bar_dp .text').text(labelText);
-					$progressBar.attr('aria-label', ariaLabel);
-				}
-				//25-08-19
 
 
 				// 앞에 고정하기
