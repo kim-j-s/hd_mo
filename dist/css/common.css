@@ -270,6 +270,14 @@ strong {
 .content .content_top.space_between * {
 	margin-top: 0;
 }
+.content .content_top.sticky_fix {
+	padding: 0 var(--padding-8) var(--padding-6);
+	margin: -1.6rem -2.4rem 0;
+	top: -1.6rem;
+}
+.content .content_top.sticky_fix + .content_top {
+	margin-top: var(--padding-6);
+}
 .content .content_ty1 {
 	margin: 0 -2.4rem;
 	padding: var(--padding-6) var(--padding-8) var(--padding-9);
@@ -5954,6 +5962,9 @@ strong {
 	color: var(--color-text-subtle);
 }
 .card_item_wrap .card_item .item_cont ul .txt_r {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
 	margin-left: auto;
 	font-size: var(--font-size-body-large);
 	text-align: right;
@@ -9786,6 +9797,9 @@ strong {
 }
 .list_depth + .inp_checkbox {
 	margin-top: var(--gap-8);
+}
+.list_depth + .list_depth {
+	margin-top: var(--gap-4);
 }
 .list_depth_ty2 .sub_title {
 	font-size: var(--font-size-body-small);
