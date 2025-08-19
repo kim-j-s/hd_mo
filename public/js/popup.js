@@ -25,7 +25,6 @@ function openHDPopup($triggerEl, target) {
 	} else {		
 		$trigger = $("body");
 	}
-
 	const $target = $("#" + target);
 
 	let $header = $target.find(".popup_head_title").length > 0 ? $target.find(".popup_head_title") : null;
@@ -40,6 +39,7 @@ function openHDPopup($triggerEl, target) {
 	} else {
 		openerId = getOpenerId;
 	}
+	console.log($triggerEl);
 
 	$target.attr("opner", openerId);
 
@@ -112,6 +112,7 @@ function closeHDPopup(target, returnTarget = null) {
 	}
 
 	const $target = $("#" + target);
+	console.log($target);
 	let $returnTarget;
 	const getOpener = $('[triggerId="' + $target.attr("opner") + '"]');
 	const $opener = (getOpener.length>0) && getOpener;
@@ -148,6 +149,8 @@ function closeHDPopup(target, returnTarget = null) {
 		// focusTarget[0].offsetHeight; //강제 reflow
 		// focusTarget.css("display", "block");
 		setTimeout(() => {
+			$target.attr("aria-hidden", "true");
+			$target.find(".popup_inner").attr("aria-hidden", "true").removeAttr("tabindex", 0);
 			if(focusTarget) {
 				focusTarget.focus();
 				focusTarget.attr("aria-live", "assertive"); //포커스 이동을 스크린 리더에 알림
@@ -155,10 +158,6 @@ function closeHDPopup(target, returnTarget = null) {
 					focusTarget.attr("aria-live", null);
 				}, 0);
 			}
-
-
-			$target.attr("aria-hidden", "true");
-			$target.find(".popup_inner").attr("aria-hidden", "true").removeAttr("tabindex", 0);
 		}, 350);
 	} else {
 		$(".wrap").attr("aria-hidden", "false");
@@ -169,7 +168,6 @@ function closeHDPopup(target, returnTarget = null) {
 		$target.find(".popup_inner").attr("aria-hidden", "true").removeAttr("tabindex", 0);
 
 		const focusTarget = $triggerEl || $("body");
-
 		setTimeout(() => {
 			focusTarget.attr("tabindex", 0).focus();
 		}, 350);
