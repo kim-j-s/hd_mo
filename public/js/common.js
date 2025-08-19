@@ -1374,7 +1374,6 @@ $(function(){
       }, 800, function(){
 				moveTargetPosition = $popupContThis.scrollTop();
 				scrollingChk = false; // 스크롤 완료 후 플래그 해제
-				console.log('moveTargetPosition : ' + moveTargetPosition);
 			});
 			// console.log('event 1');
     } else {
@@ -1388,62 +1387,7 @@ $(function(){
 			// console.log('event 2');
     }
   });
-	// e: 상품설명서 주요 내용 스크롤 버튼
-
-
-	$('.popup_wrap').each(function () {
-    const $wrap = $(this);
-    const $cont = $wrap.find('.popup_cont');
-    const $btnDown = $wrap.find('.scroll_down');
-    const $btnDone = $wrap.find('.done');
-    const $move = $cont.find('.move');
-
-    // 팝업별 상태 저장
-    $wrap.data('scrolling', false);
-    $wrap.data('targetTop', $move.length ? $move.position().top : 0);
-
-    // 스크롤 이벤트
-    $cont.on('scroll', function () {
-      if ($wrap.data('scrolling')) return;
-
-      const st = $cont.scrollTop();
-      const ch = $cont.height();
-      const sh = this.scrollHeight;
-
-      if (st + ch >= sh - 80) {
-        $btnDown.hide();
-        $btnDone.show();
-      }
-    });
-
-    // 하단 고정 버튼
-    $btnDown.on('click', function () {
-      if ($wrap.data('scrolling')) return;
-      $wrap.data('scrolling', true);
-
-      const targetTop = $wrap.data('targetTop');
-      const current = $cont.scrollTop();
-
-      const to = (current < targetTop - 88)
-        ? (targetTop - 88)
-        : ($cont[0].scrollHeight - $cont.outerHeight());
-
-      $cont.animate({ scrollTop: to }, 800, function () {
-        // 1단계(.move까지) 도달 시 현재 위치를 다음 target으로 갱신
-        if (current < targetTop - 88) {
-          $wrap.data('targetTop', $cont.scrollTop());
-          $wrap.data('scrolling', false);
-        } else {
-          // 최하단 도달
-          $wrap.data('scrolling', false);
-          $btnDown.hide();
-          $btnDone.show();
-        }
-      });
-    });
-  });
-
-	
+	// e: 상품설명서 주요 내용 스크롤 버튼	
 
 	// ready
 
@@ -1452,11 +1396,10 @@ $(function(){
 // 상품설명서 주요 내용 reset
 function resetProDesc() {
 	moveTargetPosition = 0; // 스크롤 위치 초기화
-	$('.popup_wrap').find('.scroll_down').show();
 	$('.popup_wrap').find('.done').hide();
+	$('.popup_wrap').find('.scroll_down').show();
 }
 // 상품설명서 주요 내용 reset
-
 
 	
 function headAria() {
