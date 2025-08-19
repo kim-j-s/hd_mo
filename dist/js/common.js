@@ -607,10 +607,10 @@ function simpleInfo(){
 				if(!$target.hasClass('ty2')){
 					// $targetChild.stop().slideDown(300);
 					// console.log('slideDown');
-					console.log('ty2 no');
+					// console.log('ty2 no');
 				}else {
 					$targetChild.stop().show();
-					console.log('ty2 checking');
+					// console.log('ty2 checking');
 					if($('.tag_item_wrap.sticky').length){
 						$target.closest('.position_event_wrap').find('.tag_item_wrap.sticky').css('top', simpleHeight - new_headHeight).addClass('active');
 					}
@@ -1342,7 +1342,7 @@ $(function(){
   // 스크롤 이벤트
   $popupCont.on('scroll', function() {
 		if (scrollingChk) return;
-		if ( $(this).find('.move').length === 0 ) return; // .move가 없으면 실행하지 않음
+		// if ( $(this).find('.move').length === 0 ) return; // .move가 없으면 실행하지 않음
 		const $thisPopupCont = $(this); // 현재 스크롤된 .popup_cont
 		const $popupWrap = $thisPopupCont.closest('.popup_wrap');
 		const $fixedButton = $popupWrap.find('.scroll_down');
@@ -1361,9 +1361,7 @@ $(function(){
 		}
 	});
 
-  // 하단 고정 버튼 클릭 이벤트
-	
-	
+  // 하단 고정 버튼 클릭 이벤트	
   $fixedButton.on('click', function() {
 		if (scrollingChk) return; // 이미 스크롤 중이면 중복 실행 방지
 		scrollingChk = true; // 스크롤 시작 시 플래그 설정
@@ -1376,6 +1374,7 @@ $(function(){
       }, 800, function(){
 				moveTargetPosition = $popupContThis.scrollTop();
 				scrollingChk = false; // 스크롤 완료 후 플래그 해제
+				console.log('moveTargetPosition : ' + moveTargetPosition);
 			});
 			// console.log('event 1');
     } else {
@@ -1392,9 +1391,73 @@ $(function(){
 	// e: 상품설명서 주요 내용 스크롤 버튼
 
 
+	$('.popup_wrap').each(function () {
+    const $wrap = $(this);
+    const $cont = $wrap.find('.popup_cont');
+    const $btnDown = $wrap.find('.scroll_down');
+    const $btnDone = $wrap.find('.done');
+    const $move = $cont.find('.move');
+
+    // 팝업별 상태 저장
+    $wrap.data('scrolling', false);
+    $wrap.data('targetTop', $move.length ? $move.position().top : 0);
+
+    // 스크롤 이벤트
+    $cont.on('scroll', function () {
+      if ($wrap.data('scrolling')) return;
+
+      const st = $cont.scrollTop();
+      const ch = $cont.height();
+      const sh = this.scrollHeight;
+
+      if (st + ch >= sh - 80) {
+        $btnDown.hide();
+        $btnDone.show();
+      }
+    });
+
+    // 하단 고정 버튼
+    $btnDown.on('click', function () {
+      if ($wrap.data('scrolling')) return;
+      $wrap.data('scrolling', true);
+
+      const targetTop = $wrap.data('targetTop');
+      const current = $cont.scrollTop();
+
+      const to = (current < targetTop - 88)
+        ? (targetTop - 88)
+        : ($cont[0].scrollHeight - $cont.outerHeight());
+
+      $cont.animate({ scrollTop: to }, 800, function () {
+        // 1단계(.move까지) 도달 시 현재 위치를 다음 target으로 갱신
+        if (current < targetTop - 88) {
+          $wrap.data('targetTop', $cont.scrollTop());
+          $wrap.data('scrolling', false);
+        } else {
+          // 최하단 도달
+          $wrap.data('scrolling', false);
+          $btnDown.hide();
+          $btnDone.show();
+        }
+      });
+    });
+  });
+
+	
+
 	// ready
 
 });
+
+// 상품설명서 주요 내용 reset
+function resetProDesc() {
+	moveTargetPosition = 0; // 스크롤 위치 초기화
+	$('.popup_wrap').find('.scroll_down').show();
+	$('.popup_wrap').find('.done').hide();
+}
+// 상품설명서 주요 내용 reset
+
+
 	
 function headAria() {
 	//headBtn
