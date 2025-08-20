@@ -1,0 +1,86 @@
+{{#> layout/default no-sp=true page-title="월별 안전운전점수 할인 | 상품"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-title="대중교통이용 할인특약" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- s: popup_content_top -->
+		<div class="popup_content_top">
+			<h2 class="title_h2">
+				<!-- 가입 -->
+				조회 결과 대중교통이용<br>할인특약에 <strong>가입 가능</strong>해요
+
+				<!-- 가입불가 -->
+				<!-- 대중교통이용 내역을<br><strong>조회할 수 없습니다</strong> -->
+				
+				<!-- 대중교통 이용 조회  -->
+				<!-- 조회 결과 대중교통이용<br><strong>횟수가 부족합니다.</strong> -->
+			</h2>		
+			<div class="btn_area basic">
+			{{> cp/button type="3" size="5" b-text="자세히 보기" rightIcon="arrowRightSvg" }}
+			</div>
+		</div>
+		<!-- e: popup_content_top -->
+
+	
+			<!-- 가입 -->
+			<div class="info_gray">
+				<dl>
+					<dt>대중교통이용 조회 결과</dt>
+					<dd><strong class="point">가입 가능</strong></dd>
+				</dl>
+				<dl>
+					<dt>대중교통 이용 횟수<br>(직전 3개월 기준)</dt>
+					<dd>
+						<strong class="point">93회</strong>
+					</dd>
+				</dl>
+			</div>
+
+			<!-- 조회불가 -->
+			<div class="info_gray">
+				<dl>
+					<dt>대중교통이용 조회 결과</dt>
+					<dd><strong>조회불가</strong></dd>
+				</dl>
+				<dl>
+					<dt>대중교통 이용 횟수<br>(직전 3개월 기준)</dt>
+					<dd>
+						<strong>-</strong>
+					</dd>
+				</dl>
+				<div class="btn_area">
+					{{> cp/button type="3" size="4" b-text="대중교통 이용 조회" rightIcon="docSearchSvg" }}
+				</div>
+			</div>
+
+			<!-- 가입불가 -->
+			<div class="info_gray">
+				<dl>
+					<dt>대중교통이용 조회 결과</dt>
+					<dd><strong class="danger">가입 불가</strong></dd>
+				</dl>
+				<dl>
+					<dt>대중교통 이용 횟수<br>(직전 3개월 기준)</dt>
+					<dd>
+						<strong class="danger">21회</strong>
+					</dd>
+				</dl>
+				<div class="btn_area">
+					{{> cp/button type="3" size="4" b-text="대중교통 이용 조회" rightIcon="docSearchSvg" }}
+				</div>
+			</div>
+			
+		
+	</div>
+</div>
+
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" b-text="확인"}}
+	</div>
+</div>
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+{{/ layout/default }}
