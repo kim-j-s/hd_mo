@@ -92,7 +92,23 @@
 				> .text {
 					background-image: url(../images/icon/icon_progress_ty3.svg);
 				}
-			}			
+			}	
+			&.dp_ic4 {
+				background-color: var(--color-surface-danger-subtler);
+				color: var(--color-text-danger);
+				border-color: var(--color-border-danger);
+				> .text {
+					background-image: url(../images/icon/icon_progress_ty4.svg);
+				}
+			}		
+			&.dp_ic5 {
+				background-color: var(--color-light-information-5);
+				color: var(--color-text-disabled-on);
+				border-color: var(--color-text-disabled-on);				
+				> .text {
+					background-image: url(../images/icon/icon_progress_ty5.svg);
+				}
+			}		
 		}
 
 		.progress_bar_bottom {
@@ -102,6 +118,20 @@
 			margin-top: var(--gap-3);
 			font-size: var(--font-size-body-xsmall);
 			color: var(--color-text-disabled-on);
+		}
+
+		//개시전
+		&.before {
+			.per_bar.active {
+				width: calc(69px / 2);
+			}
+		}
+
+		//만기 D-30
+		&.expired {
+			.per_bar.active {
+				background-color: var(--color-element-danger);
+			}
 		}
 	}
 	
