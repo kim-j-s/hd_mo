@@ -212,7 +212,7 @@ export default defineConfig({
     // host: 'localhost',
     host: '0.0.0.0',
     open: 'index.html',
-    port: 8081,
+    port: 8011,
 		hmr: true,
   }
 });
