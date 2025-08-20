@@ -3377,6 +3377,11 @@
 }
 .gtl_special {
 	height: 0;
+	margin-bottom: 0;
+	-webkit-transform-origin: top center;
+	transform-origin: top center;
+	-webkit-transform: scaleY(0);
+	transform: scaleY(0);
 	visibility: hidden;
 	opacity: 0;
 	-webkit-transition: all 0.3s;
@@ -3384,6 +3389,8 @@
 }
 .gtl_special.active {
 	height: auto;
+	-webkit-transform: scaleY(1);
+	transform: scaleY(1);
 	opacity: 1;
 	visibility: visible;
 }
@@ -7523,9 +7530,10 @@ ul + .form_group_wrap {
 	height: 32rem;
 	background-color: #fff;
 	border-radius: 1.6rem 1.6rem 0 0;
+	overflow: hidden;
 }
 .prd_car .my_info_flow .img_wrap_ex img {
-	width: 25rem;
+	width: 25.5rem;
 }
 .prd_car .item_wrap_faq .acd_cont .inner > p {
 	margin-bottom: var(--gap-4);
@@ -7648,13 +7656,35 @@ ul + .form_group_wrap {
 .prd_car .list_contract .item.ico7 > div::before {
 	background-image: url("../images/content/prdcar/ico_contract_logo7.svg");
 }
-.prd_car .btn_area:has(.btn_app) {
-	-ms-flex-wrap: nowrap;
-	flex-wrap: nowrap;
-}
 .prd_car .btn_app {
-	width: 16rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	min-width: 4.8rem;
 	height: 4.8rem;
+	background-color: #000;
+	border: var(--border-width-static-regular) solid var(--color-button-tertiary-border);
+	border-radius: 1.2rem;
+}
+.prd_car .btn_app::before {
+	content: "";
+	display: inline-block;
+	width: 13.8rem;
+	height: 3.4rem;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.prd_car .btn_app.icon_google::before {
+	background-image: url("../images/content/prdcar/ico_btn_google.svg");
+}
+.prd_car .btn_app.icon_app::before {
+	background-image: url("../images/content/prdcar/ico_btn_app.svg");
 }
 .prd_car .title_h3.icon::before {
 	content: "";
