@@ -365,8 +365,9 @@
 			height:320px;
 			background-color: #fff;
 			border-radius: 16px 16px 0 0;
+			overflow: hidden;
 			img {
-				width: 250px;
+				width: 255px;
 			}
 		}
 	}
@@ -473,12 +474,33 @@
 	}
 
 	//앱 다운로드
-	.btn_area:has(.btn_app) {
-		flex-wrap: nowrap;
-	}
 	.btn_app {
-		width: 160px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-width: 48px;
 		height: 48px;
+		background-color: #000;
+		border: var(--border-width-static-regular) solid var(--color-button-tertiary-border);
+		border-radius: 12px;
+		&::before {
+			content:'';
+			display: inline-block;
+			width: 138px;
+			height: 34px;
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+		&.icon_google {
+			&::before {
+				background-image: url('../images/content/prdcar/ico_btn_google.svg');
+			}
+		}
+		&.icon_app {
+			&::before {
+				background-image: url('../images/content/prdcar/ico_btn_app.svg');
+			}
+		}
 	}
 
 	// 타이틀 아이콘
