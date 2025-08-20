@@ -17,12 +17,18 @@ function openHDPopup($triggerEl, target) {
 	let $trigger;
 
 	//$trigger 타입 유효성 체크
-	if (typeof $triggerEl == "string" || $triggerEl instanceof HTMLElement) {
-		$trigger = $($triggerEl);
-	} else if ($triggerEl instanceof jQuery) {
-		// jQuery 객체인 경우
-		$trigger = $triggerEl;
-	} else {		
+	try {
+		if (!$triggerEl) { // null 또는 undefined
+			$trigger = $(event.target);
+		} else if ($triggerEl instanceof jQuery) {
+			// jQuery 객체인 경우
+			$trigger = $triggerEl;
+		} else if (typeof $triggerEl === "string" || $triggerEl instanceof HTMLElement) {
+			$trigger = $($triggerEl);
+		} else {		
+			$trigger = $("body");
+		}
+	} catch {
 		$trigger = $("body");
 	}
 	const $target = $("#" + target);
@@ -30,17 +36,28 @@ function openHDPopup($triggerEl, target) {
 	let $header = $target.find(".popup_head_title").length > 0 ? $target.find(".popup_head_title") : null;
 	let $content = $target.find(".popup_cont").length > 0 ? $target.find(".popup_cont") : null;
 
-	const getOpenerId = $trigger.attr("triggerId");
+	$("[triggerId]").removeAttr("triggerId");
+	$("[opner]").removeAttr("opner");
+
+	if (!$trigger.is("button, a")) {
+		const $parentTrigger = $trigger.closest("button, a");
+		if ($parentTrigger.length) {
+			$trigger = $parentTrigger;
+		}
+	}
+
+	//const getOpenerId = $trigger.attr("triggerId");
 	let openerId;
 
-	if (!getOpenerId) {
-		openerId = generateUUID();
-		$trigger.attr("triggerId", openerId);
-	} else {
-		openerId = getOpenerId;
-	}
-	console.log($triggerEl);
+	// if (!getOpenerId) {
+	// 	openerId = generateUUID();
+	// 	$trigger.attr("triggerId", openerId);
+	// } else {
+	// 	openerId = getOpenerId;
+	// }
 
+	openerId = generateUUID();
+	$trigger.attr("triggerId", openerId);
 	$target.attr("opner", openerId);
 
 	if ($(".wrap").attr("aria-hidden") == undefined || $(".wrap").attr("aria-hidden") == "false") {
@@ -112,7 +129,6 @@ function closeHDPopup(target, returnTarget = null) {
 	}
 
 	const $target = $("#" + target);
-	console.log($target);
 	let $returnTarget;
 	const getOpener = $('[triggerId="' + $target.attr("opner") + '"]');
 	const $opener = (getOpener.length>0) && getOpener;
