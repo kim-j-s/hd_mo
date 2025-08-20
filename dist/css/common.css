@@ -4761,31 +4761,36 @@ strong {
 	margin-top: var(--gap-5);
 }
 .hd_badge {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 0 var(--gap-2);
 	padding: 0px var(--padding-3);
 	text-align: center;
 	border-radius: var(--radius-small2);
 }
 .hd_badge.size_l {
-	display: inline-block;
 	padding: 0.5rem 0.7rem;
 	font-size: var(--font-size-label-medium);
 	line-height: 2rem;
 }
 .hd_badge.size_m {
-	display: inline-block;
 	padding: 0.2rem 0.7rem;
 	font-size: var(--font-size-label-small);
 	line-height: 1.8rem;
 }
 .hd_badge .pipe_line {
 	position: relative;
-	margin-left: 0.7rem;
+	padding-left: 0.5rem;
 }
 .hd_badge .pipe_line::before {
 	content: "";
 	position: absolute;
 	top: 50%;
-	left: -0.5rem;
+	left: 0;
 	height: 1.2rem;
 	border-left: 1px solid #000;
 	-webkit-transform: translateY(-50%);
@@ -11465,8 +11470,9 @@ ol li .table_wrap + .list_ty2 li + li {
 }
 .inp_radio.rd_btn_s1 input[type="radio"] + label {
 	min-height: 7.2rem;
+	padding: calc(var(--padding-5) - 0.2rem) var(--padding-6);
+	color: var(--color-text-basic);
 	border-radius: var(--radius-medium3);
-	padding: var(--padding-5) var(--padding-6);
 }
 .inp_radio.rd_btn_s1 input[type="radio"] + label::after {
 	border-radius: var(--radius-medium3);
@@ -11478,6 +11484,12 @@ ol li .table_wrap + .list_ty2 li + li {
 .inp_radio.rd_btn_s1 input[type="radio"] + label > span span {
 	display: block;
 	font-size: var(--font-size-body-small);
+	color: var(--color-text-subtle);
+}
+.inp_radio.rd_btn_s1 input[type="radio"] + label > span .sub_desc {
+	display: block;
+	padding-top: var(--gap-2);
+	font-size: var(--font-size-body-xsmall);
 	color: var(--color-text-subtle);
 }
 .inp_radio.rd_btn_s2 input[type="radio"] + label {

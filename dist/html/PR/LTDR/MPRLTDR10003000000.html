@@ -1316,6 +1316,7 @@
 			$(function () {
 				// 보험 플랜 - 진입화면 라디오 선택 이벤트
 				$('.guarantee_choice_wrap .guarantee_item .gi_radio input[type="radio"]').on("change", function () {
+					const timeset = 300; // 슬라이드 애니메이션 시간 설정
 					const idx = $(this).closest(".guarantee_item").index();
 					// console.log(idx);
 					const $selectedItem = $(this).closest(".guarantee_item");
@@ -1325,13 +1326,13 @@
 
 					// 모든 항목 초기화: 컨텐츠 닫고 타이틀 열기
 					$(".guarantee_choice_wrap .guarantee_item").each(function () {
-						$(this).find(".guarantee_item_cont").stop(true, true).slideUp(300);
-						$(this).find(".guarantee_item_top").stop(true, true).slideDown(300);
+						$(this).find(".guarantee_item_cont").stop(true, true).slideUp(timeset);
+						$(this).find(".guarantee_item_top").stop(true, true).slideDown(timeset);
 					});
 
 					// 선택된 항목만: 컨텐츠 열고 타이틀 닫기
-					$selectedItem.find(".guarantee_item_cont").stop(true, true).slideDown(300);
-					$selectedItem.find(".guarantee_item_top").stop(true, true).slideUp(300);
+					$selectedItem.find(".guarantee_item_cont").stop(true, true).slideDown(timeset);
+					$selectedItem.find(".guarantee_item_top").stop(true, true).slideUp(timeset);
 
 					// 고급 선택 시
 					if (idx === 0 && $(".gtl_special").length) {
@@ -1348,7 +1349,7 @@
 						.removeClass("active");
 
 					// 비쥬얼 영역 변경
-					$(".guarantee_visuval").stop(true, true).slideUp(300);
+					$(".guarantee_visuval").stop(true, true).slideUp(timeset);
 
 					// 25-07-23 수정
 					// 추가된 부분

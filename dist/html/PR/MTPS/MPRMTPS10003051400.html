@@ -40,76 +40,114 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>현대해상 다이렉트</title>
+		<title>월별 안전운전점수 할인 | 상품 - 현대해상 다이렉트</title>
 
-		<link rel="stylesheet" href="guide.css" />
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
 		<link rel="stylesheet" href="../../../css/contents.css" />
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
-	<body class="guide_body">
-		<div class="guide_h1">Swiper</div>
+	<body>
+		<!-- s: Full 팝업 -->
+		<div class="popup_wrap full active" id="pop_type01" role="dialog" aria-hidden="false">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
+				<div class="popup_inner">
+					<div class="popup_head">
+						<div class="popup_head_title">대중교통이용 할인특약</div>
+					</div>
+					<div class="popup_cont">
+						<div class="popup_content">
+							<!-- s: popup_content_top -->
+							<div class="popup_content_top">
+								<h2 class="title_h2">
+									<!-- 가입 -->
+									조회 결과 대중교통이용<br />할인특약에 <strong>가입 가능</strong>해요
 
-		<div class="guide_h4">Option Swiper</div>
-		<div class="select_rolling_opt">
-			<div id="option_swiper" class="swiper-container">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">3년</div>
-					<div class="swiper-slide">5년</div>
-					<div class="swiper-slide">7년</div>
-					<div class="swiper-slide">10년</div>
-					<div class="swiper-slide">15년</div>
-					<div class="swiper-slide">20년</div>
+									<!-- 가입불가 -->
+									<!-- 대중교통이용 내역을<br><strong>조회할 수 없습니다</strong> -->
+
+									<!-- 대중교통 이용 조회  -->
+									<!-- 조회 결과 대중교통이용<br><strong>횟수가 부족합니다.</strong> -->
+								</h2>
+								<div class="btn_area basic">
+									<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5">
+										<span class="text">자세히 보기</span>
+										<i class="hd_icon arrowRightSvg"></i>
+									</button>
+								</div>
+							</div>
+							<!-- e: popup_content_top -->
+
+							<!-- 가입 -->
+							<div class="info_gray">
+								<dl>
+									<dt>대중교통이용 조회 결과</dt>
+									<dd><strong class="point">가입 가능</strong></dd>
+								</dl>
+								<dl>
+									<dt>대중교통 이용 횟수<br />(직전 3개월 기준)</dt>
+									<dd>
+										<strong class="point">93회</strong>
+									</dd>
+								</dl>
+							</div>
+
+							<!-- 조회불가 -->
+							<div class="info_gray">
+								<dl>
+									<dt>대중교통이용 조회 결과</dt>
+									<dd><strong>조회불가</strong></dd>
+								</dl>
+								<dl>
+									<dt>대중교통 이용 횟수<br />(직전 3개월 기준)</dt>
+									<dd>
+										<strong>-</strong>
+									</dd>
+								</dl>
+								<div class="btn_area">
+									<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_4">
+										<span class="text">대중교통 이용 조회</span>
+										<i class="hd_icon docSearchSvg"></i>
+									</button>
+								</div>
+							</div>
+
+							<!-- 가입불가 -->
+							<div class="info_gray">
+								<dl>
+									<dt>대중교통이용 조회 결과</dt>
+									<dd><strong class="danger">가입 불가</strong></dd>
+								</dl>
+								<dl>
+									<dt>대중교통 이용 횟수<br />(직전 3개월 기준)</dt>
+									<dd>
+										<strong class="danger">21회</strong>
+									</dd>
+								</dl>
+								<div class="btn_area">
+									<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_4">
+										<span class="text">대중교통 이용 조회</span>
+										<i class="hd_icon docSearchSvg"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
+								<span class="text">확인</span>
+							</button>
+						</div>
+					</div>
+					<!-- s: 25-08-07 수정 -->
+					<!-- e: 25-08-07 수정 -->
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
 				</div>
-				<div class="swiper-button-next"></div>
-				<div class="swiper-button-prev"></div>
 			</div>
 		</div>
-
-		<script>
-			$(document).ready(function () {
-				var swiper = new Swiper("#swiper1", {
-					slidesPerView: 3,
-					navigation: {
-						nextEl: ".swiper-button-next",
-						prevEl: ".swiper-button-prev",
-					},
-					a11y: {
-						enabled: true,
-						prevSlideMessage: "이전 항목으로 이동",
-						nextSlideMessage: "다음 항목으로 이동",
-					},
-					pagination: {
-						el: ".swiper-pagination",
-						clickable: true,
-						type: "bullets",
-						renderBullet: function (index, className) {
-							// return `<span class="${className}" aria-label="Go to slidesss ${index + 1}">${index + 1}</span>`;
-							return `<span class="${className}">${index + 1}</span>`;
-							// return `<span class="\${className}" aria-label="배너\${index + 1}번으로 이동"></span>`;
-							// jsp 사용시
-						},
-					},
-				});
-
-				const optionSwiper = new Swiper("#option_swiper", {
-					slidesPerView: "auto",
-					centeredSlides: true,
-					initialSlide: 2,
-					spaceBetween: 16,
-					observer: true,
-					navigation: {
-						nextEl: ".swiper-button-next",
-						prevEl: ".swiper-button-prev",
-					},
-					a11y: {
-						enabled: true,
-						prevSlideMessage: "이전 항목으로 이동",
-						nextSlideMessage: "다음 항목으로 이동",
-					},
-				});
-			});
-		</script>
+		<!-- e: Full 팝업 -->
 	</body>
 </html>

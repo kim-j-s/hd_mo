@@ -40,7 +40,7 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>질병/상해/단체보험 처리현황 | 마이페이지 - 현대해상 다이렉트</title>
+		<title>운전자 정보 | 상품 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -48,82 +48,118 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body>
-		<!-- s: Full 팝업 -->
-		<div class="popup_wrap full active" id="pop_type01" role="dialog" aria-hidden="false">
+		<!-- s: Bottom 팝업 -->
+		<div class="popup_wrap bottom active" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="false">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
 				<div class="popup_inner">
-					<div class="popup_head">
-						<div class="popup_head_title">서류 상세</div>
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
 					</div>
+					<div class="popup_head">
+						<div class="popup_head_title">할인특약 조회 추가정보 입력</div>
+					</div>
+
 					<div class="popup_cont">
 						<div class="popup_content">
-							<div class="bg_swiper_wrap">
-								<!-- <div class="inner"> -->
-								<div class="image_rolling_wrap">
-									<div class="swiper">
-										<div class="swiper-wrapper">
-											<div class="swiper-slide">
-												<img src="../../../images/temp/img_car_temp.png" alt="등록한 서류 상세 이미지" />
-											</div>
-											<div class="swiper-slide">
-												<img src="../../../images/temp/img_carmera_temp.png" alt="등록한 서류 상세 이미지" />
-											</div>
-											<div class="swiper-slide">
-												<img src="../../../images/temp/img_car_temp.png" alt="등록한 서류 상세 이미지" />
-											</div>
+							<div class="form_group_wrap">
+								<h2 class="title_h4">네이버지도 안전운전 점수 조회</h2>
+								<div class="form_line">
+									<div class="label_tit">네이버 아이디(ID)</div>
+									<div class="input_text">
+										<div class="inp">
+											<input type="text" placeholder="네이버회원 아이디(ID) 입력" title="네이버회원 아이디(ID) 입력" />
+											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 										</div>
 									</div>
-									<div class="swiper-pagination sp_ty1"></div>
-									<button class="swiper_button sbc_01 sbs_02 swiper_button_left"></button>
-									<button class="swiper_button sbc_01 sbs_02 swiper_button_right" aria-label="다음" disabled></button>
+									<ul class="list_ty2">
+										<li>네이버 아이디가 없으신 경우, 네이버지도 안전운전점수 조회가 어렵습니다.</li>
+									</ul>
 								</div>
-								<!-- </div> -->
+								<div class="form_line">
+									<div class="inp_checkbox">
+										<input type="checkbox" id="checkbox_size1_1" />
+										<label for="checkbox_size1_1" class="chk_label chk_label_ty3">
+											<span class="label_cont">네이버 안전점수 조회 제외</span>
+										</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="form_group_wrap">
+								<h2 class="title_h4">대중교통 이용 조회</h2>
+								<div class="form_line">
+									<div class="label_tit">통신사</div>
+									<div class="select_item select_item_case01" role="button" tabindex="0" title="통신사 선택 팝업 호출" onclick="openHDPopup(this,'pop_type03');">
+										<div class="select_item_inner">
+											<div class="si_item" data-placeholder="통신사 선택"></div>
+											<span class="si_stat">선택됨</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="form_line">
+									<div class="label_tit">휴대폰번호</div>
+									<div class="comp_wrap key_number">
+										<div class="input_text phone">
+											<div class="int_txt left">010</div>
+											<div class="inp">
+												<input type="tel" placeholder="-없이 입력하세요" value="- 1234 - 5678" maxlength="8" readonly title="휴대폰번호 입력" />
+												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+											</div>
+										</div>
+										<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_4">
+											<span class="text">인증번호요청</span>
+										</button>
+										<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_4">
+											<span class="text">인증번호요청</span>
+										</button>
+									</div>
+								</div>
+
+								<!-- s: 인증번호 발송 후 인증번호 입력 영역 노출 -->
+								<div class="form_line">
+									<div class="label_tit">인증번호</div>
+									<div class="comp_wrap key_number">
+										<div class="input_text">
+											<div class="inp">
+												<input type="tel" placeholder="숫자 6자리 입력" minlength="6" maxlength="6" title="인증번호 입력" />
+												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+											</div>
+											<div class="int_txt right">00:00</div>
+										</div>
+										<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_4">
+											<span class="text">시간연장</span>
+										</button>
+										<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_4">
+											<span class="text">재요청</span>
+										</button>
+									</div>
+								</div>
+								<!-- e: 인증번호 발송 후 인증번호 입력 영역 노출 -->
+
+								<div class="form_line">
+									<div class="inp_checkbox">
+										<input type="checkbox" id="checkbox_size2_1" />
+										<label for="checkbox_size2_1" class="chk_label chk_label_ty3">
+											<span class="label_cont">대중교통 이용 조회 제외</span>
+										</label>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-					<!-- s: 25-08-07 수정 -->
-					<!-- e: 25-08-07 수정 -->
+					<div class="popup_bottom">
+						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">확인</span>
+							</button>
+						</div>
+					</div>
 					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
-		<!-- e: Full 팝업 -->
+		<!-- e: Bottom 팝업 -->
 	</body>
 </html>
-<script>
-	$(document).ready(function () {
-		$(".image_rolling_wrap").each(function (idx) {
-			const $swiperContainer = $(this).find(".swiper");
-			const $pagination = $(this).find(".swiper-pagination");
-			const $nextBtn = $(this).find(".swiper_button_right");
-			const $prevBtn = $(this).find(".swiper_button_left");
-
-			new Swiper($swiperContainer[0], {
-				slidesPerView: 1,
-				updateOnWindowResize: true,
-				loop: false,
-				observer: true,
-				navigation: {
-					nextEl: ".swiper_button_right",
-					prevEl: ".swiper_button_left",
-				},
-				a11y: {
-					enabled: true,
-					prevSlideMessage: "이전 항목으로 이동",
-					nextSlideMessage: "다음 항목으로 이동",
-				},
-				pagination: {
-					el: $pagination[0],
-					clickable: true,
-					type: "bullets",
-					renderBullet: function (index, className) {
-						return `<span class="${className}" aria-label="사고사진${index + 1}번으로 이동"></span>`;
-						// return `<span class="\${className}" aria-label="사고사진\${index + 1}번으로 이동"></span>`;
-						// jsp 사용시
-					},
-				},
-			});
-		});
-	});
-</script>
