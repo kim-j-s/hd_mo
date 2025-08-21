@@ -406,6 +406,7 @@ strong {
 	padding: var(--gap-7) 0;
 	color: var(--color-text-subtle);
 	font-size: var(--font-size-body-medium);
+	text-align: center;
 }
 .no_list_area .hd_icon {
 	width: 3.2rem;
@@ -1664,7 +1665,7 @@ strong {
 	-ms-flex-direction: column;
 	flex-direction: column;
 	padding: var(--padding-6) var(--padding-8) var(--padding-12);
-	font-size: 1.4rem;
+	font-size: var(--font-size-body-small);
 	overflow-y: auto;
 }
 .msp_wrap_top {
@@ -5387,17 +5388,25 @@ strong {
 .calendar_tbl > table .day_today > .text {
 	position: relative;
 }
-.calendar_tbl > table .day_today > .text::after {
+.calendar_tbl > table .day_today > .text::before {
 	content: "";
 	position: absolute;
 	top: calc(50% + 0.8rem);
 	left: 50%;
+	z-index: 1;
 	width: 0.4rem;
 	height: 0.4rem;
 	border-radius: 50%;
 	background-color: var(--color-element-point);
 	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
+}
+.calendar_tbl > table .day_today.day_active > .text::before {
+	background-color: var(--color-element-inverse-static);
+}
+.calendar_tbl > table .day_today.day_active.day_departure > .text::before,
+.calendar_tbl > table .day_today.day_active.day_arrival > .text::before {
+	content: none;
 }
 .calendar_tbl > table .day_active {
 	position: relative;
@@ -5418,34 +5427,19 @@ strong {
 .calendar_tbl > table .day_active > .text {
 	color: var(--color-text-inverse-static);
 }
-.calendar_tbl > table .start_day.start_day_fix::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	right: 0;
-	height: 100%;
-	width: 50%;
-	background-color: var(--color-action-secondary-selected);
+.calendar_tbl > table .day_departure .text:after {
+	content: "출발일";
+	padding-top: 0.4rem;
+	display: block;
+	color: var(--color-text-basic-inverse);
+	font-size: var(--font-size-label-xsmall);
 }
-.calendar_tbl > table .start_day.start_day_fix > .text::before {
-	content: "시작일";
-	font-size: 0;
-}
-.calendar_tbl > table .day_today.day_active > .text::after {
-	background-color: var(--color-element-inverse-static);
-}
-.calendar_tbl > table .end_day.end_day_fix::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 50%;
-	background-color: var(--color-action-secondary-selected);
-}
-.calendar_tbl > table .end_day.end_day_fix > .text::before {
-	content: "종료일";
-	font-size: 0;
+.calendar_tbl > table .day_arrival .text:after {
+	content: "도착일";
+	padding-top: 0.4rem;
+	display: block;
+	color: var(--color-text-basic-inverse);
+	font-size: var(--font-size-label-xsmall);
 }
 .calendar_tbl > table .between {
 	background-color: var(--color-action-secondary-selected);
@@ -5678,7 +5672,7 @@ strong {
 	padding: 0;
 }
 .card_item_wrap.focusin .card_item .item_inner {
-	padding: var(--padding-8) var(--padding-7);
+	padding: calc(var(--padding-8) - 1px) var(--padding-7);
 	border: var(--border-width-static-regular) solid transparent;
 }
 .card_item_wrap.focusin .card_item:not(.disabled):focus-within {
@@ -5721,7 +5715,7 @@ strong {
 }
 .card_item_wrap .card_item {
 	position: relative;
-	padding: var(--padding-8) var(--padding-7);
+	padding: calc(var(--padding-8) - 1px) var(--padding-7);
 	border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 	border-radius: 2.4rem;
 	background: var(--color-surface-white-subtle);
@@ -5919,9 +5913,8 @@ strong {
 	margin-top: var(--gap-3);
 }
 .card_item_wrap .card_item .item_top .desc {
-	font-size: 1.4rem;
-	line-height: 2.1rem;
-	color: #58616a;
+	font-size: var(--font-size-body-small);
+	color: var(--color-text-information);
 }
 .card_item_wrap .card_item .item_top + .card_list_ty1 > li:first-child {
 	margin-top: var(--gap-5);
@@ -5999,7 +5992,6 @@ strong {
 	margin: 0;
 	padding: 0 0 1.2rem;
 	font-size: var(--font-size-body-small);
-	line-height: 2rem;
 	color: inherit;
 }
 .card_item_wrap .card_item .card_list_ty1 > li {
@@ -6038,9 +6030,6 @@ strong {
 	text-align: left;
 	color: var(--color-text-subtle);
 	word-break: break-all;
-}
-.card_item_wrap .card_item .card_list_ty1 > li.result > * {
-	line-height: 2.4rem;
 }
 .card_item_wrap .card_item .card_list_ty1 > li.result .point {
 	font-size: var(--font-size-body-large);
@@ -6469,7 +6458,7 @@ strong {
 	margin-top: var(--gap-5);
 }
 .card_list_wrap_ty2 .card_item {
-	padding: var(--padding-8) var(--padding-7);
+	padding: calc(var(--padding-8) - 1px) var(--padding-7);
 	border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 	background: var(--color-surface-white-subtle);
 	border-radius: var(--radius-large2);
@@ -6559,7 +6548,7 @@ strong {
 	margin-top: var(--gap-5);
 }
 .card_item.donation {
-	padding: var(--padding-8) var(--padding-7);
+	padding: calc(var(--padding-8) - 1px) var(--padding-7);
 	border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 	background: var(--color-surface-white-subtle);
 	border-radius: var(--radius-large2);
@@ -6763,7 +6752,7 @@ strong {
 }
 .card_list_wrap_ty4 .card_item {
 	position: relative;
-	padding: var(--padding-8) var(--padding-7);
+	padding: calc(var(--padding-8) - 1px) var(--padding-7);
 	border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 	background: var(--color-surface-white-subtle);
 	border-radius: var(--radius-large2);
@@ -6826,7 +6815,7 @@ strong {
 }
 .form_card_case {
 	position: relative;
-	padding: var(--padding-8) var(--padding-7);
+	padding: calc(var(--padding-8) - 1px) var(--padding-7);
 	border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 	border-radius: 2.4rem;
 }
@@ -12381,7 +12370,7 @@ ol li .table_wrap + .list_ty2 li + li {
 }
 .stepper_list .list_item {
 	position: relative;
-	font-size: 1.4rem;
+	font-size: var(--font-size-body-small);
 }
 .stepper_list .list_item ~ .list_item {
 	padding-left: 1.8rem;
@@ -12520,6 +12509,12 @@ ol li .table_wrap + .list_ty2 li + li {
 .fake_form_group_wrap[style*="display: none"] + .form_group_wrap {
 	margin-top: 0;
 }
+.list_ty2 + .fake_form_group_wrap > .title_h3 {
+	margin-top: var(--gap-11);
+}
+.popup_wrap .popup_container .popup_inner .popup_cont .pop_top.sticky_fix + .fake_content_wrap {
+	margin-top: var(--gap-5);
+}
 /* 컨텐츠 show/hide 용 */
 /* swiper */
 /* 예시 */
@@ -12582,7 +12577,7 @@ ol li .table_wrap + .list_ty2 li + li {
 .swiper-pagination.sp_ty1 .swiper-pagination-bullet.swiper-pagination-bullet-active {
 	width: 2rem;
 	border-radius: 0.8rem;
-	background-color: #58616a;
+	background-color: var(--color-text-information);
 }
 /* swiper-pagination */
 .banner_slide_wrap {
@@ -14280,4 +14275,13 @@ ol li .table_wrap + .list_ty2 li + li {
 }
 .function_item + .info_gray.ty2 ul {
 	margin-top: 0;
+}
+.pay_notice .msg_info {
+	background-position: left 0.2rem;
+}
+.pay_notice .msg_info + .list_ty2 {
+	margin: var(--gap-6) 0 0 var(--gap-6);
+}
+.pay_notice + .tab_wrap {
+	margin-top: var(--gap-8);
 }
