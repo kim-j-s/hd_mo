@@ -62,88 +62,91 @@
 
 					<div class="popup_cont">
 						<div class="popup_content">
-							<div class="form_group_wrap">
-								<h2 class="title_h4">네이버지도 안전운전 점수 조회</h2>
-								<div class="form_line">
-									<div class="label_tit">네이버 아이디(ID)</div>
-									<div class="input_text">
-										<div class="inp">
-											<input type="text" placeholder="네이버회원 아이디(ID) 입력" title="네이버회원 아이디(ID) 입력" />
-											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+							<!-- 네이버지도 안전운전 점수 조회 -->
+							<div class="form_box">
+								<h2 class="pop_title_h2">네이버지도 안전운전 점수 조회</h2>
+								<div class="form_group_wrap">
+									<div class="form_line">
+										<div class="label_tit">네이버 아이디(ID)</div>
+										<div class="input_text">
+											<div class="inp">
+												<input type="text" placeholder="네이버회원 아이디(ID) 입력" title="네이버회원 아이디(ID) 입력" />
+												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+											</div>
 										</div>
+										<ul class="list_ty2">
+											<li>네이버 아이디가 없으신 경우, 네이버지도 안전운전점수 조회가 어렵습니다.</li>
+										</ul>
 									</div>
-									<ul class="list_ty2">
-										<li>네이버 아이디가 없으신 경우, 네이버지도 안전운전점수 조회가 어렵습니다.</li>
-									</ul>
-								</div>
-								<div class="form_line">
-									<div class="inp_checkbox">
-										<input type="checkbox" id="checkbox_size1_1" />
-										<label for="checkbox_size1_1" class="chk_label chk_label_ty3">
-											<span class="label_cont">네이버 안전점수 조회 제외</span>
-										</label>
+									<div class="form_line">
+										<div class="inp_checkbox">
+											<input type="checkbox" id="checkbox_size1_1" />
+											<label for="checkbox_size1_1" class="chk_label chk_label_ty3">
+												<span class="label_cont">네이버 안전점수 조회 제외</span>
+											</label>
+										</div>
 									</div>
 								</div>
 							</div>
 
-							<div class="form_group_wrap">
-								<h2 class="title_h4">대중교통 이용 조회</h2>
-								<div class="form_line">
-									<div class="label_tit">통신사</div>
-									<div class="select_item select_item_case01" role="button" tabindex="0" title="통신사 선택 팝업 호출" onclick="openHDPopup(this,'pop_type03');">
-										<div class="select_item_inner">
-											<div class="si_item" data-placeholder="통신사 선택"></div>
-											<span class="si_stat">선택됨</span>
-										</div>
-									</div>
-								</div>
-
-								<div class="form_line">
-									<div class="label_tit">휴대폰번호</div>
-									<div class="comp_wrap key_number">
-										<div class="input_text phone">
-											<div class="int_txt left">010</div>
-											<div class="inp">
-												<input type="tel" placeholder="-없이 입력하세요" value="- 1234 - 5678" maxlength="8" readonly title="휴대폰번호 입력" />
-												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+							<!-- 대중교통 이용 조회 -->
+							<div class="form_box space2">
+								<h2 class="pop_title_h2">대중교통 이용 조회</h2>
+								<div class="form_group_wrap">
+									<div class="form_line">
+										<div class="label_tit">통신사</div>
+										<div class="select_item select_item_case01" role="button" tabindex="0" title="통신사 선택 팝업 호출" onclick="openHDPopup(this,'pop_type03');">
+											<div class="select_item_inner">
+												<div class="si_item" data-placeholder="통신사 선택"></div>
+												<span class="si_stat">선택됨</span>
 											</div>
 										</div>
-										<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_4">
-											<span class="text">인증번호요청</span>
-										</button>
-										<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_4">
-											<span class="text">인증번호요청</span>
-										</button>
 									</div>
-								</div>
 
-								<!-- s: 인증번호 발송 후 인증번호 입력 영역 노출 -->
-								<div class="form_line">
-									<div class="label_tit">인증번호</div>
-									<div class="comp_wrap key_number">
-										<div class="input_text">
-											<div class="inp">
-												<input type="tel" placeholder="숫자 6자리 입력" minlength="6" maxlength="6" title="인증번호 입력" />
-												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+									<div class="form_line">
+										<div class="label_tit">휴대폰번호</div>
+										<div class="comp_wrap key_number">
+											<div class="input_text phone">
+												<div class="int_txt left">010</div>
+												<div class="inp">
+													<input type="tel" placeholder="-없이 입력하세요" value="- 1234 - 5678" maxlength="8" readonly title="휴대폰번호 입력" />
+													<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+												</div>
 											</div>
-											<div class="int_txt right">00:00</div>
+											<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_4">
+												<span class="text">인증번호요청</span>
+											</button>
 										</div>
-										<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_4">
-											<span class="text">시간연장</span>
-										</button>
-										<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_4">
-											<span class="text">재요청</span>
-										</button>
 									</div>
-								</div>
-								<!-- e: 인증번호 발송 후 인증번호 입력 영역 노출 -->
 
-								<div class="form_line">
-									<div class="inp_checkbox">
-										<input type="checkbox" id="checkbox_size2_1" />
-										<label for="checkbox_size2_1" class="chk_label chk_label_ty3">
-											<span class="label_cont">대중교통 이용 조회 제외</span>
-										</label>
+									<!-- s: 인증번호 발송 후 인증번호 입력 영역 노출 -->
+									<div class="form_line">
+										<div class="label_tit">인증번호</div>
+										<div class="comp_wrap key_number">
+											<div class="input_text">
+												<div class="inp">
+													<input type="tel" placeholder="숫자 6자리 입력" minlength="6" maxlength="6" title="인증번호 입력" />
+													<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+												</div>
+												<div class="int_txt right">00:00</div>
+											</div>
+											<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_4">
+												<span class="text">시간연장</span>
+											</button>
+											<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_4">
+												<span class="text">재요청</span>
+											</button>
+										</div>
+									</div>
+									<!-- e: 인증번호 발송 후 인증번호 입력 영역 노출 -->
+
+									<div class="form_line">
+										<div class="inp_checkbox">
+											<input type="checkbox" id="checkbox_size2_1" />
+											<label for="checkbox_size2_1" class="chk_label chk_label_ty3">
+												<span class="label_cont">대중교통 이용 조회 제외</span>
+											</label>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -161,5 +164,35 @@
 			</div>
 		</div>
 		<!-- e: Bottom 팝업 -->
+
+		<!-- s: 통신사 선택 -->
+		<div class="popup_wrap bottom" id="pop_type03" role="dialog" aria-modal="true" aria-hidden="true">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type03');"></div>
+				<div class="popup_inner">
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head">
+						<div class="popup_head_title">통신사 선택</div>
+					</div>
+
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="opt_select_list opt_case3">
+								<div role="button" tabindex="0" class="option"><span class="text">SKT</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">KT</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">LG U+</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">SKT알뜰</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">KT알뜰</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">LG U+알뜰</span></div>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type03');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: 통신사 선택 -->
 	</body>
 </html>
