@@ -111,6 +111,9 @@
   margin: 0 auto;
   // font-size: var(--font-size-body-small);
 }
+.ui-datepicker-today {
+	font-weight: bold;
+}
 .ui-datepicker-today .ui-state-default {
   position: relative;
 }
@@ -142,9 +145,9 @@
   top: 50%;
   left: 50%;
   z-index: -1;
-  width: 40px;
-  height: 40px;
-  margin: -20px 0 0 -20px;
+  width: 44px;
+  height: 44px;
+  margin: -22px 0 0 -22px;
   border-radius: 50%;
   background-color: var(--color-action-secondary-active);
   transform: translateX(0);
@@ -308,6 +311,8 @@
       position: relative;
       > .text {
         position: relative;
+				font-weight: bold;
+
         &::before {
         // &::after {
           content: "";
@@ -331,6 +336,7 @@
 				&.day_departure,
 				&.day_arrival {
 					> .text {
+						font-weight: normal;
 						&::before {
 							content: none;
 						}
