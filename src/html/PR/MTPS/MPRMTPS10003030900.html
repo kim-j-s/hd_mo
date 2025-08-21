@@ -4,55 +4,56 @@
 {{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="할인특약 조회 추가정보 입력"}}
 <div class="popup_cont">
 		<div class="popup_content">
-			
-		
-			<div class="form_group_wrap">
-				<h2 class="title_h4">네이버지도 안전운전 점수 조회</h2>
-				<div class="form_line">
-					<div class="label_tit">네이버 아이디(ID)</div>
-					{{> cp/text inp-title="네이버회원 아이디(ID) 입력" placeholder="네이버회원 아이디(ID) 입력" }}
-					<ul class="list_ty2">
-						<li>네이버 아이디가 없으신 경우, 네이버지도 안전운전점수 조회가 어렵습니다. </li>
-					</ul>					
-				</div>	
-				<div class="form_line">
-					{{> cp/checkbox id="checkbox_size1_1" labelname="네이버 안전점수 조회 제외" label_class="chk_label_ty3" }}
-				</div>		
-			</div>
-			
-			<div class="form_group_wrap">		
-				<h2 class="title_h4">대중교통 이용 조회</h2>
-				<div class="form_line">
-					<div class="label_tit">통신사</div>
-					{{> cp/selectitem si_ph="통신사 선택" si_title="통신사 선택 팝업 호출" si_popup="pop_type03"}}
-				</div>
-
-				<div class="form_line">
-					<div class="label_tit">휴대폰번호</div>
-					<div class="comp_wrap key_number">
-						{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" value="- 1234 - 5678" readonly="true" }}
-						{{> cp/button type="3" size="4" b-text="인증번호요청"}}
-						{{> cp/button type="3" size="4" b-text="인증번호요청"}}
-					</div>
-				</div>
-
-				<!-- s: 인증번호 발송 후 인증번호 입력 영역 노출 -->
-				<div class="form_line">
-					<div class="label_tit">인증번호</div>
-					<div class="comp_wrap key_number">
-						{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="숫자 6자리 입력" inp-title="인증번호 입력" r-text="00:00" }}
-						{{> cp/button type="3" size="4" b-text="시간연장"}}
-						{{> cp/button type="3" size="4" b-text="재요청"}}
-					</div>
-				</div>
-				<!-- e: 인증번호 발송 후 인증번호 입력 영역 노출 -->
-
-				<div class="form_line">
-					{{> cp/checkbox id="checkbox_size2_1" labelname="대중교통 이용 조회 제외" label_class="chk_label_ty3" }}
+			<!-- 네이버지도 안전운전 점수 조회 -->
+			<div class="form_box">
+				<h2 class="pop_title_h2">네이버지도 안전운전 점수 조회</h2>
+				<div class="form_group_wrap">
+					<div class="form_line">
+						<div class="label_tit">네이버 아이디(ID)</div>
+						{{> cp/text inp-title="네이버회원 아이디(ID) 입력" placeholder="네이버회원 아이디(ID) 입력" }}
+						<ul class="list_ty2">
+							<li>네이버 아이디가 없으신 경우, 네이버지도 안전운전점수 조회가 어렵습니다. </li>
+						</ul>					
+					</div>	
+					<div class="form_line">
+						{{> cp/checkbox id="checkbox_size1_1" labelname="네이버 안전점수 조회 제외" label_class="chk_label_ty3" }}
+					</div>		
 				</div>
 			</div>
 
-			
+			<!-- 대중교통 이용 조회 -->
+			<div class="form_box space2">
+				<h2 class="pop_title_h2">대중교통 이용 조회</h2>
+				<div class="form_group_wrap">		
+					<div class="form_line">
+						<div class="label_tit">통신사</div>
+						{{> cp/selectitem si_ph="통신사 선택" si_title="통신사 선택 팝업 호출" si_popup="pop_type03"}}
+					</div>
+
+					<div class="form_line">
+						<div class="label_tit">휴대폰번호</div>
+						<div class="comp_wrap key_number">
+							{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" value="- 1234 - 5678" readonly="true" }}
+							{{> cp/button type="3" size="4" b-text="인증번호요청"}}
+						</div>
+					</div>
+
+					<!-- s: 인증번호 발송 후 인증번호 입력 영역 노출 -->
+					<div class="form_line">
+						<div class="label_tit">인증번호</div>
+						<div class="comp_wrap key_number">
+							{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="숫자 6자리 입력" inp-title="인증번호 입력" r-text="00:00" }}
+							{{> cp/button type="3" size="4" b-text="시간연장"}}
+							{{> cp/button type="3" size="4" b-text="재요청"}}
+						</div>
+					</div>
+					<!-- e: 인증번호 발송 후 인증번호 입력 영역 노출 -->
+
+					<div class="form_line">
+						{{> cp/checkbox id="checkbox_size2_1" labelname="대중교통 이용 조회 제외" label_class="chk_label_ty3" }}
+					</div>
+				</div>
+			</div>
 		</div>
 </div>
 <div class="popup_bottom">
@@ -63,7 +64,22 @@
 {{/ popup/popup_bottom}}
 <!-- e: Bottom 팝업 -->
 
-
+<!-- s: 통신사 선택 -->
+{{#> popup/popup_bottom popup-id="pop_type03" popup-title="통신사 선택"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="opt_select_list opt_case3">
+			<div role="button" tabindex="0" class="option"><span class="text">SKT</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">KT</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">LG U+</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">SKT알뜰</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">KT알뜰</span></div>
+			<div role="button" tabindex="0" class="option"><span class="text">LG U+알뜰</span></div>
+		</div>
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 통신사 선택 -->
 
  
 {{/ layout/default }}
