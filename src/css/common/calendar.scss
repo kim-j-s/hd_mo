@@ -109,7 +109,7 @@
   // width: 28px;
   // height: 28px;
   margin: 0 auto;
-  // font-size: 14px;
+  // font-size: var(--font-size-body-small);
 }
 .ui-datepicker-today .ui-state-default {
   position: relative;
@@ -308,11 +308,13 @@
       position: relative;
       > .text {
         position: relative;
-        &::after {
+        &::before {
+        // &::after {
           content: "";
           position: absolute;
           top: calc(50% + 8px);
           left: 50%;
+					z-index: 1;
           width: 4px;
           height: 4px;
           border-radius: 50%;
@@ -320,6 +322,21 @@
           transform: translateX(-50%);
         }
       }
+			&.day_active {
+				> .text {
+					&::before {
+						background-color: var(--color-element-inverse-static);
+					}
+				}
+				&.day_departure,
+				&.day_arrival {
+					> .text {
+						&::before {
+							content: none;
+						}
+					}
+				}
+			}
     }
 
 
@@ -339,69 +356,37 @@
       }
       > .text {
         color: var(--color-text-inverse-static);
-				// 적용 시 사용 - 시작일 / 종료일 추가 편성 필요 content 문구 추가 구분 필요
-				// &:after {
-				// 	content: '출발일';
-				// 	padding-top: 4px;
-				// 	display: block;
-				// 	color: #fff;
-				// 	font-size: 10px;
-				// }
-      }
-      
+      }      
     }
 
-    .start_day {
-      &.start_day_fix {
-        &::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          right: 0;
-          height: 100%;
-          width: 50%;
-          background-color: var(--color-action-secondary-selected);
-        }
-        > .text {
-          &::before {
-            content: '시작일';
-            font-size: 0;
-          }
-        }
-      }
-      
-    }
+		// 시작일
+		.day_departure {
+			.text {
+				&:after {
+					content: '출발일';
+					padding-top: 4px;
+					display: block;
+					color: var(--color-text-basic-inverse);
+					font-size: var(--font-size-label-xsmall);
+				}
+			}
+		}
+		// 도착일
+		.day_arrival {
+			.text {
+				&:after {
+					content: '도착일';
+					padding-top: 4px;
+					display: block;
+					color: var(--color-text-basic-inverse);
+					font-size: var(--font-size-label-xsmall);
+				}
+			}
+		}
 
-    .day_today {
-      &.day_active {
-        > .text {
-          &::after {
-            background-color: var(--color-element-inverse-static);
-          }
-        }
-      }
+		
+		
 
-    }
-
-    .end_day {
-      &.end_day_fix {
-        &::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 50%;
-          background-color: var(--color-action-secondary-selected);
-        }
-        > .text {
-          &::before {
-            content: '종료일';
-            font-size: 0;
-          }
-        }
-      }
-    }
 
     .between {
       background-color: var(--color-action-secondary-selected);
