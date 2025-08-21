@@ -5222,6 +5222,7 @@ strong {
 }
 .ui-datepicker-today .ui-state-default {
 	position: relative;
+	font-weight: bold;
 }
 .ui-datepicker-today .ui-state-default:before {
 	content: "";
@@ -5235,6 +5236,12 @@ strong {
 	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
 }
+.ui-datepicker-today .ui-state-default.ui-state-active {
+	font-weight: normal;
+}
+.ui-datepicker-today .ui-state-default.ui-state-active::before {
+	background-color: var(--color-element-inverse-static);
+}
 .ui-state-default.ui-state-active {
 	position: relative;
 	color: var(--color-text-inverse-static);
@@ -5245,9 +5252,9 @@ strong {
 	top: 50%;
 	left: 50%;
 	z-index: -1;
-	width: 4rem;
-	height: 4rem;
-	margin: -2rem 0 0 -2rem;
+	width: 4.4rem;
+	height: 4.4rem;
+	margin: -2.2rem 0 0 -2.2rem;
 	border-radius: 50%;
 	background-color: var(--color-action-secondary-active);
 	-webkit-transform: translateX(0);
@@ -5387,6 +5394,7 @@ strong {
 }
 .calendar_tbl > table .day_today > .text {
 	position: relative;
+	font-weight: bold;
 }
 .calendar_tbl > table .day_today > .text::before {
 	content: "";
@@ -5403,6 +5411,10 @@ strong {
 }
 .calendar_tbl > table .day_today.day_active > .text::before {
 	background-color: var(--color-element-inverse-static);
+}
+.calendar_tbl > table .day_today.day_active.day_departure > .text,
+.calendar_tbl > table .day_today.day_active.day_arrival > .text {
+	font-weight: normal;
 }
 .calendar_tbl > table .day_today.day_active.day_departure > .text::before,
 .calendar_tbl > table .day_today.day_active.day_arrival > .text::before {
