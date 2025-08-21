@@ -7,13 +7,17 @@
 			<!-- s: 25-07-31 -->
 			<div class="btn_area end">
 				<!-- s: 25-08-14 수정 -->
-				{{> cp/linkButton bl_class="short_cut" bl_text="이전 결제정보 불러오기" bl_title="이전 결제정보 팝업 열기" pop_id="pop_type07" }}
-				<!-- e: 25-08-14 수정 -->>
+				<!-- s: 25-08-21 UXW -->
+				{{> cp/linkButton bl_class="short_cut" bl_text="이전 카드 정보 불러오기" bl_title="이전 카드 정보 팝업 열기" pop_id="pop_type07" }}
+				<!-- e: 25-08-21 UXW -->
+				<!-- e: 25-08-14 수정 -->
 			</div>
 			<!-- e: 25-07-31 -->
 			<!-- s: 25-06-18 -->
-			<!-- s: 이체 선택 시 -->		
-			{{> cp/checkbox checkbox_class="rd_box" id="checkbox04-9" label_class="chk_label_ty3" labelname="결제 계좌와 동일합니다" }}		
+			<!-- s: 이체 선택 시 -->
+			<!-- s: 25-08-21 UXW -->		
+			{{> cp/checkbox checkbox_class="rd_box" id="checkbox04-9" label_class="chk_label_ty3" labelname="결제 계좌와 같아요" }}		
+			<!-- e: 25-08-21 UXW -->
 			<!-- e: 이체 선택 시 -->
 			<!-- e: 25-06-18 -->
 			<div class="form_group_wrap">
@@ -23,7 +27,9 @@
 				</div>
 				<div class="form_line">
 					<div class="label_tit">계좌번호</div>
-					{{> cp/text placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
+					<!-- s: 25-08-21 UXW -->
+					{{> cp/text placeholder="- 없이 입력" inp-title="계좌번호 입력" }}
+					<!-- e: 25-08-21 UXW -->
 					<ul class="list_ty2">
 						<li><strong>김*대(계약자)님의 본인 계좌만 이용 가능합니다.</strong></li>
 						<li><strong>해당 계약 만기시 환급 받을 계좌정보를 입력해주세요.</strong></li>
@@ -31,8 +37,7 @@
 				</div>
 			</div>
 			<div class="checkbox_group_wrap column">
-				{{#> cp/checkbox checkbox_class="rd_box" id="checkbox04-21" label_class="chk_label_ty2" labelname="마일리지 환급금 지급방법
-				안내<br>(갱신계약 대체보험료로 사용하지 않은 경우)" }}
+				{{#> cp/checkbox checkbox_class="rd_box" id="checkbox04-21" label_class="chk_label_ty2" labelname="마일리지 환급금 지급방법 안내<br>(갱신계약 대체보험료로 사용하지 않은 경우)" }}
 				<div class="chk_lby">
 					<ul class="list_ty2">
 						<li><strong class="point">카드 납입 체결계약 - 카드 부분취소 지급</strong></li>
@@ -62,7 +67,9 @@
 				</div>
 				<div class="form_line">
 					<div class="label_tit">계좌번호</div>
-					{{> cp/text placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
+					<!-- s: 25-08-21 UXW -->
+					{{> cp/text placeholder="- 없이 입력" inp-title="계좌번호 입력" }}
+					<!-- e: 25-08-21 UXW -->
 					<ul class="list_ty2">
 						<li><strong>김*대(계약자)님의 본인 계좌만 이용 가능합니다.</strong></li>
 					</ul>
