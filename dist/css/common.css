@@ -10938,21 +10938,24 @@ ol li .table_wrap + .list_ty2 li + li {
 .progress_bar.progress_bar_ty1 .per_bar_dp.dp_ic3 > .text {
 	background-image: url(../images/icon/icon_progress_ty3.svg);
 }
+.progress_bar.progress_bar_ty1 .per_bar_dp.dp_ic4 > .text {
+	background-image: url(../images/icon/icon_progress_ty4.svg);
+}
+.progress_bar.progress_bar_ty1 .per_bar_dp.dp_ic5 > .text {
+	background-image: url(../images/icon/icon_progress_ty5.svg);
+}
+.progress_bar.progress_bar_ty1 .per_bar_dp.dp_ic6 > .text {
+	background-image: url(../images/icon/icon_progress_ty6.svg);
+}
 .progress_bar.progress_bar_ty1 .per_bar_dp.dp_ic4 {
 	background-color: var(--color-surface-danger-subtler);
 	color: var(--color-text-danger);
 	border-color: var(--color-border-danger);
 }
-.progress_bar.progress_bar_ty1 .per_bar_dp.dp_ic4 > .text {
-	background-image: url(../images/icon/icon_progress_ty4.svg);
-}
 .progress_bar.progress_bar_ty1 .per_bar_dp.dp_ic5 {
 	background-color: var(--color-light-information-5);
 	color: var(--color-text-disabled-on);
 	border-color: var(--color-text-disabled-on);
-}
-.progress_bar.progress_bar_ty1 .per_bar_dp.dp_ic5 > .text {
-	background-image: url(../images/icon/icon_progress_ty5.svg);
 }
 .progress_bar.progress_bar_ty1 .progress_bar_bottom {
 	display: -webkit-box;
@@ -11326,6 +11329,22 @@ ol li .table_wrap + .list_ty2 li + li {
 .radio_group_wrap .icon_pay_ty3 {
 	background-image: url(../images/logo/pay_toss.svg);
 }
+.radio_group_wrap.structure:has(input[type="radio"]:checked) input[type="radio"] + label .label_cont {
+	color: var(--color-text-disabled);
+}
+.radio_group_wrap.structure:has(input[type="radio"]:checked) input[type="radio"] + label .img img {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-o-object-fit: cover;
+	object-fit: cover;
+}
+.radio_group_wrap.structure:has(input[type="radio"]:checked) input[type="radio"]:checked + label .label_cont {
+	color: var(--color-text-basic);
+}
+.radio_group_wrap.structure:has(input[type="radio"]:checked) input[type="radio"]:checked + label .img img {
+	-webkit-filter: none;
+	filter: none;
+}
 .radio_group_wrap_ty2 + .input_text {
 	margin-top: var(--gap-5);
 }
@@ -11560,15 +11579,10 @@ ol li .table_wrap + .list_ty2 li + li {
 	display: block;
 	width: 100%;
 	height: 100%;
-	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
-	-o-object-fit: cover;
-	object-fit: cover;
 }
 .inp_radio.rd_img input[type="radio"] + label .label_cont {
 	margin-top: var(--gap-3);
 	font-size: var(--font-size-label-medium);
-	color: var(--color-text-disabled);
 }
 .inp_radio.rd_img input[type="radio"]:checked + label:before {
 	background: var(--color-element-primary) url(../images/icon/check_ty1.svg) no-repeat center center/1.4rem auto;

@@ -8,8 +8,10 @@
 				{{> cp/radio rd-class="rd_btn" rd-id="radio_card2" name="radio01" labelname="계좌이체로 결제" }}
 			</div>
 			<!-- e: 카드사(현대카드) 선택 시 -->
-			<!-- s: 이체 선택 시 -->		
-			{{> cp/checkbox checkbox_class="rd_box" id="checkbox04-9" label_class="chk_label_ty3" labelname="1회차 보험료 결제 계좌와 동일합니다" }}		
+			<!-- s: 이체 선택 시 -->	
+			<!-- s: 25-08-21 UXW -->	
+			{{> cp/checkbox checkbox_class="rd_box" id="checkbox04-9" label_class="chk_label_ty3" labelname="1회차 보험료 결제 계좌와 같아요" }}
+			<!-- e: 25-08-21 UXW -->		
 			<!-- e: 이체 선택 시 -->	
 			<!-- s: 카드사(현대카드) 선택 외 -->		
 			<div class="form_group_wrap">
@@ -19,11 +21,15 @@
 				</div>
 				<div class="form_line">
 					<div class="label_tit">계좌번호</div>
-					{{> cp/text placeholder="계좌번호 입력" inp-title="계좌번호 입력" }}
+					<!-- s: 25-08-21 UXW -->
+					{{> cp/text placeholder="- 없이 입력" inp-title="계좌번호 입력" }}
+					<!-- e: 25-08-21 UXW -->
 				</div>
 				<div class="form_line">
 					<div class="label_tit">매월 자동이체일</div>
-					{{> cp/selectitem si_ph="매월 자동이체일 선택" si_item="5일" si_title="매월 자동이체일 선택" si_popup="bank_day_select"}}
+					<!-- s: 25-08-21 UXW -->
+					{{> cp/selectitem si_ph="매월 자동이체일 선택" si_title="매월 자동이체일 선택" si_popup="bank_day_select"}}
+					<!-- e: 25-08-21 UXW -->
 				</div>
 			</div>
 			<!-- e: 카드사(현대카드) 선택 외 -->
@@ -40,7 +46,9 @@
 			<!-- s: 25-07-17 -->
 			<div class="checkbox_group_wrap column">
 				<!-- s: 25-06-18 수정 -->
+				<!-- s: 25-08-21 수정 -->
 				{{> cp/checkbox labelname="자동이체 약관 동의" ag_more=true id="agree02" label_class="chk_label_ty3" checkbox_class="rd_box" pop_open=true pop_id="pop_type06" }}
+				<!-- e: 25-08-21 수정 -->
 				<!-- e: 25-06-18 수정 -->
 			</div> 
 			{{#unless no_end_bank}}
@@ -48,7 +56,9 @@
 			<h3 class="title_h3">만기환급금 계좌정보 입력</h3>
 			<div class="checkbox_group_wrap column">
 				<!-- s: 25-06-18 수정 -->
+				<!-- s: 25-08-21 수정 -->
 				{{> cp/checkbox labelname="만기환급금 입금 계좌 동의" ag_more=true id="agree01" label_class="chk_label_ty3" checkbox_class="rd_box" pop_open=true pop_id="pop_type05" }}
+				<!-- e: 25-08-21 수정 -->
 				<!-- e: 25-06-18 수정 -->
 			</div>
 			{{/unless}}
