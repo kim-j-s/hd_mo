@@ -7,7 +7,7 @@
 	$li-padding: 0,
 	$li-margin: 0,
 	$li-font-size: 16px,
-	$li-line-height: 20px,
+	// $li-line-height: 28px,
 	$li-color: inherit
 ) {
 	// padding: $ul-padding;
@@ -18,7 +18,7 @@
 		margin: $li-margin;
 		padding: $li-padding;
 		font-size: $li-font-size;
-		line-height: $li-line-height;
+		// line-height: $li-line-height;
 		color: $li-color;
 	}
 	@content;
@@ -67,7 +67,7 @@
 		.card_item{
 			padding:0;
 			.item_inner {
-				padding: var(--padding-8) var(--padding-7);
+				padding: calc(var(--padding-8) - 1px) var(--padding-7);
 				border: var(--border-width-static-regular) solid transparent;
 			}
 			&:not(.disabled):focus-within  {
@@ -139,7 +139,7 @@
 	
 	.card_item {
 		position: relative;
-		padding: var(--padding-8) var(--padding-7);
+		padding: calc(var(--padding-8) - 1px) var(--padding-7);
 		border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 		border-radius: 24px;
 		background: var(--color-surface-white-subtle);
@@ -410,8 +410,8 @@
 				}
 			}
 			.desc {
-				font-size: 14px;
-				line-height: 21px;
+				font-size: var(--font-size-body-small);
+				font-size: var(--font-size-body-small);
 				color: #58616A;
 			}
 
@@ -532,7 +532,7 @@
 					// padding-top: 16px;
 					// border-top: 1px solid #e1e3ea;
 					> * {
-						line-height: 24px;
+						// line-height: 24px;
 					}
 					.point {
 						// font-size: 16px;
@@ -1060,7 +1060,7 @@
     margin-top: var(--gap-5);
   }
 	.card_item {
-		padding: var(--padding-8) var(--padding-7);
+		padding: calc(var(--padding-8) - 1px) var(--padding-7);
 		border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 		background: var(--color-surface-white-subtle);
 		border-radius: var(--radius-large2);
@@ -1154,7 +1154,8 @@
 		margin-top: var(--gap-5);
 	}
 
-	padding: var(--padding-8) var(--padding-7);
+	// padding: var(--padding-8) var(--padding-7);
+	padding: calc(var(--padding-8) - 1px) var(--padding-7);
 	border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 	background: var(--color-surface-white-subtle);
 	border-radius: var(--radius-large2);
@@ -1368,7 +1369,7 @@
 	}
 	.card_item {
 		position: relative;
-		padding: var(--padding-8) var(--padding-7);
+		padding: calc(var(--padding-8) - 1px) var(--padding-7);
 		border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 		background: var(--color-surface-white-subtle);
 		border-radius: var(--radius-large2);
@@ -1449,7 +1450,7 @@
 
 .form_card_case {
 	position: relative;
-	padding: var(--padding-8) var(--padding-7);
+	padding: calc(var(--padding-8) - 1px) var(--padding-7);
 	border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 	border-radius: 24px;
 
