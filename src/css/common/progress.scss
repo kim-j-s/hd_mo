@@ -78,36 +78,23 @@
 				background-position: left center;
 				background-size: 16px auto;
 			}
-			&.dp_ic1 {
-				> .text {
-					background-image: url(../images/icon/icon_progress_ty1.svg);
+
+			@for $i from 1 through 6 {
+				&.dp_ic#{$i}{
+					> .text {
+						background-image: url(../images/icon/icon_progress_ty#{$i}.svg);
+					}
 				}
 			}
-			&.dp_ic2 {
-				> .text {
-					background-image: url(../images/icon/icon_progress_ty2.svg);
-				}
-			}
-			&.dp_ic3 {
-				> .text {
-					background-image: url(../images/icon/icon_progress_ty3.svg);
-				}
-			}	
 			&.dp_ic4 {
 				background-color: var(--color-surface-danger-subtler);
 				color: var(--color-text-danger);
 				border-color: var(--color-border-danger);
-				> .text {
-					background-image: url(../images/icon/icon_progress_ty4.svg);
-				}
 			}		
 			&.dp_ic5 {
 				background-color: var(--color-light-information-5);
 				color: var(--color-text-disabled-on);
-				border-color: var(--color-text-disabled-on);				
-				> .text {
-					background-image: url(../images/icon/icon_progress_ty5.svg);
-				}
+				border-color: var(--color-text-disabled-on);			
 			}		
 		}
 

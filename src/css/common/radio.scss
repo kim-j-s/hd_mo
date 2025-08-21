@@ -255,6 +255,37 @@
 	.icon_pay_ty3 {
 		background-image: url(../images/logo/pay_toss.svg);
 	}
+
+	// 주택 - 구조 선택
+	&.structure {
+		&:has(input[type='radio']:checked){
+			input[type='radio'] {
+				& + label {
+					.label_cont {
+						color: var(--color-text-disabled);
+					}
+					.img {
+						img {
+							filter: grayscale(100%);
+							object-fit: cover;
+						}
+					}
+				}
+			}
+			input[type='radio']:checked {
+				& + label {
+					.label_cont {
+						color: var(--color-text-basic);
+					}
+					.img {
+						img {
+							filter: none;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 .radio_group_wrap_ty2 {
