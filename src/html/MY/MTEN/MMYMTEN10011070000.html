@@ -108,6 +108,7 @@
 	<!-- e: 자동차 배서 메뉴 -->
 	<!-- e: popup area -->
 
+	<!-- s: 25-08-22 수정 -->
 	<script>
 		$(function(){
 			prograssCar();
@@ -123,39 +124,43 @@
 			$prograss.each(function(idx){
 				const $allBar = $prograss.eq(idx),
 							$bar = $allBar.find('.ing'),
-							$start = $bar.find('.newStart');
+							$start = $bar.find('.newStart'),
+							$spot = $bar.find('.spot');
 
-				const allW = $allBar.width(),
-							barW = $bar.width();
+				let spotLeft = null;
 
-				const newW = Math.round((barW / allW) * 100),
-							startW = Math.round((10 / allW) * 100),
-							newstartW = Math.round((37 / allW) * 100);
+				const allW = $allBar.outerWidth(), //progressbar 전체 너비
+							barW = $bar.width(), 		//진행된 bar의 너비
+							spotW = $spot.outerWidth(),		//spot 너비
+							spaceW = 2;										//spot끼리 여백 너비
+
+				const newW = Math.round((barW / allW) * 100),	//진행된 너비 % 변환
+							startW = Math.round((8 / allW) * 100),	//기준일 spot % 변환
+							newstartW = Math.round((spotW / allW) * 100), //기준일 badge 너비 % 변환
+							spacePer = (2 / allW) * 100;
 
 				$prograss.children('.ing').removeClass('full');
 
-				let spotMargin = -((100 - newW) - newstartW - 1)+ '%';
-				let parseVal = parseFloat(spotMargin);
-				let leftVal = (parseVal / 100) * barW;
+				console.log(allW, barW)
 
 				// bar가 시작일과 겹칠 때
-				if((allW - barW) <= 40 ){
+				if((allW - barW) <= spotW + spaceW){
 					$bar.addClass('big');
-					$bar.find('.newStart').css('margin-left',spotMargin);
-					$bar.find('.newStart').children('em').css('left', -leftVal);
+					spotLeft = spotW + spaceW - (allW - barW);
+					$bar.find('.newStart').children('.spot').css('left', spotLeft);
 
-				// bar 길이 100%일 때
-				}else if(allW === barW){
-					$bar.addClass('full');
+					// bar 길이 100%일 때
+					if(allW == barW){
+						$bar.find('.newStart').children('em').css('left', '1px');
+					}
 
 				// 기준일, 종료일 겹칠 때
-				}else if(barW <=76){
-					let spotMargin2 = barW - 27;
-					console.log(spotMargin2);
+				}else if(barW <= (spotW * 2) + spaceW){
 					$bar.find('.newStart').addClass('small');
-					$bar.find('.newStart').children('.spot').css('margin-right', 40 + 'px');
+					$bar.find('.newStart').children('.spot').css('margin-right', spotW + spaceW + 'px');
 				}
 			})
 		}
 	</script>
+	<!-- e: 25-08-22 수정 -->
 {{/ layout/default }}

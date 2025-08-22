@@ -64,6 +64,14 @@
 				</div>
 			</li>
 		</ul>
+		<!-- s: 25-08-22 수정 -->
+		<!-- s: 조회 내역이 없는 경우 -->
+		<div class="no_list_area">
+			{{> cp/icon iconClass="exclamationSvg"}}
+			<p>신청 가능한 계약이 없어요.</p>
+		</div>
+		<!-- e: 조회 내역이 없는 경우 -->
+		<!-- e: 25-08-22 수정 -->
 
 		<!-- s: 꼭 알아두세요 -->
 		{{#> cp/notice dp-active="active"}}
@@ -84,7 +92,7 @@
 <!-- e: 고장출동 신청 -->
 
 <!-- s: 계약 조회 팝업 -->
-{{#> popup/popup_bottom popup-id="pop_type01" popup-title="고장출동 신청" }}
+{{#> popup/popup_bottom popup-id="pop_type02" popup-title="고장출동 신청" popup-active=true }}
 <div class="popup_cont">
 	<!-- s: 25-06-24 수정 -->
 	<div class="popup_content">
