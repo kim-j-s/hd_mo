@@ -85,26 +85,31 @@
 						<!-- s: 이미지 파일 붙는 영역 -->
 						<!-- 등록 후 이미지 (등록 전/후 따라 alt값 변경 필요) -->
 						<div class="file_attach_box">
-							<div class="file_thumbnail">
+							<!-- s: 25-08-25 수정 -->
+							<!-- 등록 후 또는 이미지 등록으로 불러왔을 시, load 클래스 추가-->
+							<div class="file_thumbnail load">
+							<!-- e: 25-08-25 수정 -->
 								<img src="../../../images/content/mtps/img_MPRMTPS10005010000_02.png" alt="등록된 블랙박스 장착 이미지">
 							</div>
 						</div>
 						<!-- e: 이미지 파일 붙는 영역 -->
 
 						<div class="btn_area center">
+							<!-- s: 25-08-22 수정 -->
 							<div class="file_btn">
 								<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png">
 								<label for="file">
 									<span class="hd_btn hd_btn_ty_3 hd_btn_s_3">
 										<i class="hd_icon pictureSvg"></i>
-										사진 등록
+										사진 변경
 									</span>
 								</label>
 							</div>
-							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_3">
+							<!-- 삭제 <button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_3">
 								<i class="hd_icon carmeraSvg"></i>
 								<span class="text">사진 촬영</span>
-							</button>
+							</button> -->
+							<!-- e: 25-08-22 수정 -->
 							{{> cp/button type="3" size="3" b-text="가입확인서 발급방법" }}
 						</div>
 
