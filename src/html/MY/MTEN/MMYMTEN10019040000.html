@@ -15,7 +15,9 @@
 
 			<div class="info_gray">
 				<dl>
-					<dt>자동차번호</dt>
+					<!-- s: 25-08-22 UXW -->
+					<dt>차량번호</dt>
+					<!-- e: 25-08-22 UXW -->
 					<dd>18루**22</dd>
 				</dl>
 				<dl>
@@ -53,9 +55,9 @@
 							</div>
 							<div class="acd_cont">
 								<div class="inner">
-									<ul class="list_ty3">
-										<li>차량번호 사진을 등록해주세요. </li>
-									</ul>
+									<!-- s: 25-08-22 UXW -->
+									<p class="text_sub">차량번호 사진을 등록해주세요.</p>
+									<!-- e: 25-08-22 UXW -->
 
 									<!-- s: 이미지 파일 붙는 영역 -->
 									<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
@@ -105,18 +107,24 @@
 							</div>
 							<div class="acd_cont">
 								<div class="inner">
+									<!-- s: 25-08-22 UXW -->
+									<p class="text_sub">계기판 사진과 주행거리를 등록해주세요.</p>
+									<!-- e: 25-08-22 UXW -->
 									<div class="form_group_wrap">
 										<div class="form_line">
 											<div class="label_tit">주행거리 기준일</div>
-											{{> cp/text cal=true value="2025.01.01" }}
+											<!-- s: 25-08-22 UXW -->
+											{{> cp/text cal=true placeholder="날짜 입력" value="2025.01.01" }}
+											<!-- e: 25-08-22 UXW -->
 										</div>
 										<div class="form_line">
 											<div class="label_tit">주행거리</div>
-											{{> cp/text type="tel" class="comma" placeholder="숫자만" r-text="km" inp-title="주행거리 입력"}}
+											<!-- s: 25-08-22 UXW -->
+											{{> cp/text type="tel" class="comma" placeholder="숫자만 입력" r-text="km" inp-title="주행거리 입력"}}
+											<!-- e: 25-08-22 UXW -->
 										</div>
 									</div>
 	
-									<p class="text_sub">계기판 사진과 주행거리를 등록해주세요.</p>
 	
 									<!-- s: 이미지 파일 붙는 영역 -->
 									<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
@@ -143,12 +151,12 @@
 											<span class="text">사진 촬영</span>
 										</button>
 									</div>
-	
+									
+									<!-- s: 25-08-22 UXW -->
 									<ul class="list_ty2">
-										<li>주행거리 기준일과 계기판의 주행거리를 입력해주세요.</li>
 										<li>운행거리 증빙을 위한 계기판 사진은 ODO(총 운행거리 사진)만 인정되며 리셋된 트립 사진은 인정되지 않습니다.</li>
-										<li>이미지 등록이 되지 않을 경우 대표콜센터(1588-5656)로 문의바랍니다.</li>
 									</ul>
+									<!-- e: 25-08-22 UXW -->
 								</div>
 							</div>
 						</div>
@@ -156,10 +164,13 @@
 
 					<!-- s: 꼭 알아두세요 -->
 					{{#> cp/notice dp-active=true }}
+					<!-- s: 25-08-22 UXW -->
 					<ul class="list_depth">
-						<li>부적합한 사진(허위 및 해당 사진이 아닌 경우)으로 변경하실 경우, 특약은 무효가 되며 할인보험료를 환입하셔야 합니다.</li>
-						<li>사진은 10MB이하의 JPG, JPEG, GIF, PNG 파일만 등록이 가능합니다.</li>
+						<li>부적합한 사진(허위 및 해당 사진이 아닌 경우)으로 변경할 경우, 특약은 무효가 되며 할인보험료를 환입하셔야 합니다.</li>
+						<li>사진은 10MB 이하의 JPG, JPEG, GIF, PNG 파일만 등록할 수 있습니다.</li>
+						<li>이미지 등록이 되지 않을 경우 대표콜센터(1588-5656)로 문의해주세요.</li>
 					</ul>
+					<!-- e: 25-08-22 UXW -->
 					{{/ cp/notice }}
 					<!-- e: 꼭 알아두세요 -->
 
@@ -175,7 +186,9 @@
 					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">휴대폰번호</div>
-							{{> cp/text class="phone" type="tel" placeholder="-없이 입력" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" msg3="문자를 받을 휴대폰 번호를 입력해주세요." }}
+							<!-- s: 25-08-22 UXW -->
+							{{> cp/text class="phone" type="tel" placeholder="- 없이 입력" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" msg3="문자를 받을 휴대폰번호를 입력해주세요." }}
+							<!-- e: 25-08-22 UXW -->
 						</div>
 					</div>
 
