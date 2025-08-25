@@ -22,24 +22,35 @@
 		<div class="form_group_wrap">
 			<div class="form_line">
 				<div class="label_tit">납입주기</div>
-				<div class="radio_group_wrap" role="radiogroup">{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_g1" name="radio_g1" labelname="월납" checked=true }} {{> cp/radio rd-class="rd_btn" rd-id="radio_btn_g2" name="radio_g1" labelname="연납" }}</div>
+				<!-- s: 25-08-25 UXW -->				
+				<div class="radio_group_wrap" role="radiogroup">
+					{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_g1" name="radio_g1" labelname="매월 보험료 내기" checked=true }} 
+					{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_g2" name="radio_g1" labelname="1년치 한번에 내기" }}
+				</div>
+				<!-- e: 25-08-25 UXW -->
 			</div>
 
 			<div class="form_line">
 				<div class="label_tit">보험료</div>
-				{{> cp/text type="tel" class="price" r-text="만원" inp-title="금액입력"}}
+				<!-- s: 25-08-25 UXW -->				
+				{{> cp/text type="tel" class="price" r-text="만원" placeholder="숫자만 입력" inp-title="금액입력"}}
+				<!-- e: 25-08-25 UXW -->
 			</div>
 
 			<!-- s: 25-05-02 수정 -->
 			<div class="selectitem_wrap row">
 				<div class="form_line grow">
 					<div class="label_tit">납입기간</div>
-					{{> cp/selectitem si_ph="선택해주세요." si_title="납입기간 선택" si_popup="select_pop_01"}}
+					<!-- s: 25-08-25 UXW -->					
+					{{> cp/selectitem si_ph="선택" si_title="납입기간 선택" si_popup="select_pop_01"}}
+					<!-- e: 25-08-25 UXW -->
 				</div>
 				<div class="form_line grow">
 					<div class="label_tit">연금받는 기간</div>
 					<!-- s: 25-05-16 수정 -->
-					{{> cp/selectitem si_ph="선택해주세요." si_title="연금받는 기간 선택" si_popup="select_pop_02"}}
+					<!-- s: 25-08-25 UXW -->					
+					{{> cp/selectitem si_ph="선택" si_title="연금받는 기간 선택" si_popup="select_pop_02"}}
+					<!-- e: 25-08-25 UXW -->
 					<!-- e: 25-05-16 수정 -->
 				</div>
 			</div>
@@ -48,13 +59,17 @@
 				<div class="form_line grow">
 					<div class="label_tit">연금시작 나이</div>
 					<!-- s: 25-05-16 수정 -->
-					{{> cp/selectitem si_ph="선택해주세요." si_title="연금시작 나이 선택" si_popup="select_pop_03"}}
+					<!-- s: 25-08-25 UXW -->					
+					{{> cp/selectitem si_ph="선택" si_title="연금시작 나이 선택" si_popup="select_pop_03"}}
+					<!-- e: 25-08-25 UXW -->
 					<!-- s: 25-05-16 수정 -->
 				</div>
 				<div class="form_line grow">
 					<div class="label_tit">연금받는 주기</div>
 					<!-- s: 25-05-16 수정 -->
-					{{> cp/selectitem si_ph="선택해주세요." si_title="연금받는 주기 선택" si_popup="select_pop_04"}}
+					<!-- s: 25-08-25 UXW -->				
+					{{> cp/selectitem si_ph="선택" si_title="연금받는 주기 선택" si_popup="select_pop_04"}}
+						<!-- e: 25-08-25 UXW -->
 					<!-- e: 25-05-16 수정 -->
 				</div>
 			</div>

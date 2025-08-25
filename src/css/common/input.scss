@@ -713,6 +713,13 @@
 				display: flex;
 				justify-content: space-between;
 				align-items: end;
+				
+				&_column {
+					display: flex;
+					flex-direction: column;
+					gap: 4px;
+					margin-bottom: 16px;
+				}
 			}
 
 			& + .address_item {
@@ -921,6 +928,8 @@
 	.extra_area ~ .form_line {
 		margin-top: var(--gap-8);
 	}
+
+	
 	.list_ty2 {
 		margin-top: var(--gap-5);
 
@@ -928,6 +937,16 @@
 			margin-top: var(--gap-5);
 		}
 	}
+	
+	&:has(.box_column) {
+		.checkbox_group_wrap.column {
+			.list_ty2 {
+				margin-top: 0;
+			}
+		}
+	}
+	
+	
 
 	.list_depth_ty2,
 	.title_sub {
@@ -941,6 +960,8 @@
 		border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 		border-radius: var(--radius-large2);
 	}
+
+
 }
 
 /* Form group hidden용 */
