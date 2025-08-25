@@ -832,6 +832,9 @@ $(function(){
 	simpleInfo();
 	headAria();
 	nbList();//알릴고지 넘버링
+
+	// 펼치기/접히기 - 담보한번에변경하기(MPRMTPS10004001000)
+	moreLngChk();
 	
 	// 스크롤 이벤트 초기화 및 동적 생성시 재 호출
 	$('.position_event_wrap').each(function () {
@@ -883,7 +886,6 @@ $(function(){
 				}
 			}, 400);
 		}
-
 	});
 
 	$(".inp_picker").datepicker();
@@ -1312,20 +1314,6 @@ $(function(){
 			});
 		}
 	});
-
-
-	// 펼치기/접히기 - 담보한번에변경하기(MPRMTPS10004001000)
-	$('.acd_tg_bottom').each(function(){
-		const $this = $(this),
-					$item = $this.find('.select_radio_item'),
-					$btn = $item.find('.rd_btn');
-		let btnLength = $btn.length;
-
-		if(btnLength <= 4){
-			$this.find('.btn_area').remove();
-		}
-	});
-
 	
 	// s: 상품설명서 주요 내용 스크롤 이동 버튼
 	const $popupCont = $('.popup_cont');
@@ -1392,6 +1380,22 @@ $(function(){
 	// ready
 
 });
+
+
+
+function moreLngChk() {
+	// 펼치기/접히기 - 담보한번에변경하기(MPRMTPS10004001000)
+	$('.acd_tg_bottom').each(function(){
+		const $this = $(this),
+					$item = $this.find('.select_radio_item'),
+					$btn = $item.find('.rd_btn');
+		let btnLength = $btn.length;
+
+		if(btnLength <= 4){
+			$this.find('.btn_area').remove();
+		}
+	});
+}
 
 // 상품설명서 주요 내용 reset
 function resetProDesc() {
