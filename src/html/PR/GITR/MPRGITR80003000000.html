@@ -23,7 +23,10 @@
 							<h2 class="title_h2">
 								<!-- s: 25-05-14 수정 -->
 								<!-- s: 25-08-08 UXW -->
-								<strong>18,600원</strong>을 선택하시겠어요?
+								<!-- s: 25-08-26 수정 -->
+								<strong>18,600원</strong><br>
+								<strong>고급형</strong> 플랜을 선택할까요?
+								<!-- e: 25-08-26 수정 -->
 								<!-- e: 25-08-08 UXW -->
 								<!-- e: 25-05-14 수정 -->
 							</h2>
@@ -32,7 +35,10 @@
 							<h2 class="title_h2">
 								<!-- s: 25-05-14 수정 -->
 								<!-- s: 25-08-08 UXW -->
-								<strong>11,500원</strong>을 선택하시겠어요?
+								<!-- s: 25-08-26 수정 -->
+								<strong>11,500원</strong><br>
+								<strong>표준형</strong> 플랜을 선택할까요?
+								<!-- e: 25-08-26 수정 -->
 								<!-- e: 25-08-08 UXW -->
 								<!-- e: 25-05-14 수정 -->
 							</h2>
@@ -41,7 +47,10 @@
 							<h2 class="title_h2">
 								<!-- s: 25-05-14 수정 -->
 								<!-- s: 25-08-08 UXW -->
-								<strong>7,200원</strong>을 선택하시겠어요?
+								<!-- s: 25-08-26 수정 -->
+								<strong>7,200원</strong><br>
+								<strong>실속형</strong> 플랜을 선택할까요?
+								<!-- e: 25-08-26 수정 -->
 								<!-- e: 25-08-08 UXW -->
 								<!-- e: 25-05-14 수정 -->
 							</h2>
@@ -571,7 +580,9 @@
 		<!-- s: 25-07-23 수정 -->
 		<!-- s: 25-07-24 수정 -->
 		<div class="btn_area btn_area_change_evnet">
-			{{> cp/button class="slide_detail_btn hidden" type="3" size="1" b-text="다시 선택" }}
+			<!-- s: 25-08-26 수정 -->
+			{{> cp/button class="slide_detail_btn hidden" type="3" size="1" b-text="플랜 다시 선택" }}
+			<!-- e: 25-08-26 수정 -->
 			<!-- s: 25-08-19 UXW -->
 			{{> cp/button class="slide_move_btn" type="1" size="1" b-text="원하는 보장을 선택 중이에요" disabled=true }}
 			<!-- e: 25-08-19 UXW -->
@@ -734,7 +745,9 @@
 		// 25-07-23 수정
 		// 25-07-24 수정
 		$('.slide_move_btn').on('click', function () {
-			$('.btn_area_change_evnet').addClass('ty5');
+			// 25-08-26 수정
+			// $('.btn_area_change_evnet').addClass('ty5');
+			// 25-08-26 수정
 			$('.slide_move_btn').find('.text').text('이대로 가입하기');
 			$('.slide_detail_btn').removeClass('hidden'); // 버튼 숨김			
 			// 25-07-24 수정

@@ -438,10 +438,20 @@
 									</h2>
 								</div>
 								<div class="guarantee_top_item">
-									<h2 class="title_h2"><strong>월 39,520원</strong>을 선택하시겠어요?</h2>
+									<h2 class="title_h2">
+										<!-- s: 25-08-26 수정 -->
+										<strong>월 39,520원</strong><br />
+										<strong>고급형</strong> 플랜을 선택할까요?
+										<!-- e: 25-08-26 수정 -->
+									</h2>
 								</div>
 								<div class="guarantee_top_item">
-									<h2 class="title_h2"><strong>월 28,050원</strong>을 선택하시겠어요?</h2>
+									<h2 class="title_h2">
+										<!-- s: 25-08-26 수정 -->
+										<strong>월 28,050원</strong><br />
+										<strong>표준형</strong> 플랜을 선택할까요?
+										<!-- e: 25-08-26 수정 -->
+									</h2>
 								</div>
 								<!-- e: 25-06-05 수정 -->
 							</div>
@@ -605,14 +615,13 @@
 																</p>
 																<ul class="gdi_content_list">
 																	<li class="ico_add ico_add_ty4">
+																		<!-- s: 25-08-26 UXW -->
 																		<div class="item">
-																			<!-- s: 25-05-19 수정 -->
-																			<!-- s: 25-06-05 수정 -->
-
-																			<div class="txt">동물등록 <strong class="point">5%</strong>, 유기동물입양 <strong class="point">5%</strong>, 다펫가입 <strong class="point">5%</strong> 할인</div>
-																			<!-- e: 25-06-05 수정 -->
-																			<!-- e: 25-05-19 수정 -->
+																			<a href="javascript:void(0)" class="btn_link add_text_btn" role="button" onclick="openHDPopup(this,'ex_popup_bottom');" title="할인 안내 팝업열기 팝업 오픈">
+																				<div class="txt">동물등록 <strong class="point">5%</strong>, 유기동물입양 <strong class="point">3%</strong>, 다펫가입 <strong class="point">5%</strong> <strong class="point">최대 13% </strong> 할인 받을 수 있어요</div>
+																			</a>
 																		</div>
+																		<!-- e: 25-08-26 UXW -->
 																	</li>
 																</ul>
 															</div>
@@ -643,6 +652,8 @@
 																</p>
 																<ul class="gdi_content_list">
 																	<li class="ico_add ico_add_ty4">
+																		<!-- s: 25-08-26 수정 -->
+																		<!-- e: 25-08-26 수정 -->
 																		<div class="item">
 																			<!-- s: 25-05-19 수정 -->
 																			<!-- s: 25-06-05 수정 -->
@@ -938,9 +949,11 @@
 				<!-- s: 25-07-23 수정 -->
 				<!-- s: 25-07-24 수정 -->
 				<div class="btn_area btn_area_change_evnet">
+					<!-- s: 25-08-26 수정 -->
 					<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_1 slide_detail_btn hidden">
-						<span class="text">다시 선택</span>
+						<span class="text">플랜 다시 선택</span>
 					</button>
+					<!-- e: 25-08-26 수정 -->
 					<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1 slide_move_btn" disabled>
 						<span class="text">원하는 보장을 선택 중이에요</span>
 					</button>
@@ -1065,7 +1078,9 @@
 				// 25-07-23 수정
 				// 25-07-24 수정
 				$(".slide_move_btn").on("click", function () {
-					$(".btn_area_change_evnet").addClass("ty5");
+					// 25-08-26 수정
+					// $('.btn_area_change_evnet').addClass('ty5');
+					// 25-08-26 수정
 					$(".slide_move_btn").find(".text").text("이대로 가입하기");
 					$(".slide_detail_btn").removeClass("hidden"); // 버튼 숨김
 					// 25-07-24 수정
