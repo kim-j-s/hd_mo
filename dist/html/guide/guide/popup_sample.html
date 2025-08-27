@@ -224,7 +224,7 @@
 			</div>
 			<!-- e: pop_type04(layer팝업) -->
 			<!-- s: pop_type05(layer팝업) -->
-			<div class="popup_wrap layer active" id="pop_type05" role="dialog" aria-hidden="false">
+			<div class="popup_wrap layer" id="pop_type05" role="dialog" aria-hidden="true">
 				<div class="popup_container">
 					<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type05');"></div>
 					<div class="popup_inner">
@@ -248,7 +248,11 @@
 			<!-- e: pop_type05(layer팝업) -->
 		</div>
 		<!-- e: popup area -->
-
+		<script>
+			$(window).on("load", function () {
+				openHDPopup("", "pop_type05");
+			});
+		</script>
 		<!-- 전체메뉴 -->
 		<!-- s: Full 팝업 -->
 		<div class="popup_wrap full pts_wrap" id="totalSearch" role="dialog" aria-hidden="true">
