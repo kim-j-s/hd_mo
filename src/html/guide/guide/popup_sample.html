@@ -10,6 +10,9 @@
 		}
 		.g_dom {
 			margin: 20px 0;
+			+ .g_dom {
+				margin: 1000px 0;
+			}
 		}
 		.p_guide_wrap_b {
 			display: flex;
@@ -28,6 +31,12 @@
 				<div class="p_guide_wrap_b">
 					{{> cp/button type="2" size="5" b-text="Layer 팝업열기" popup="pop_type01" }}
 					{{> cp/button type="2" size="5" b-text="Bottom 팝업열기" popup="pop_type02" }}
+					{{> cp/button type="2" size="5" b-text="Layer 팝업 닫기 지정 포커스" popup="pop_type04" }}
+				</div>
+			</div>
+			<div class="g_dom">
+				<div class="p_guide_wrap_b">
+					{{> cp/text placeholder="플레이스홀더" inp-title="Default" id="input" }}
 				</div>
 			</div>
 		</div>
@@ -94,6 +103,38 @@
 	</div>
 	{{/ popup/popup_layer}}
 	<!-- e: pop_type03(layer팝업) -->
+	<!-- s: pop_type04(layer팝업) -->
+	{{#> popup/popup_layer popup-id="pop_type04" popup-title="지정포커스 이동" no-header=false }}
+	<div class="popup_cont">
+		<div class="popup_content">		
+			확인버튼클릭
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2" onclick="closeHDPopup('pop_type04', '#input');">
+				<span class="text">확인</span>
+			</button>
+		</div>
+	</div>
+	{{/ popup/popup_layer}}
+	<!-- e: pop_type04(layer팝업) -->
+	<!-- s: pop_type05(layer팝업) -->
+	{{#> popup/popup_layer popup-id="pop_type05" popup-title="포커스 없는 캐이스" no-header=false popup-active=true }}
+	<div class="popup_cont">
+		<div class="popup_content">		
+			포커스 body로 이동 
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2" onclick="closeHDPopup('pop_type05');">
+				<span class="text">확인</span>
+			</button>
+		</div>
+	</div>
+	{{/ popup/popup_layer}}
+	<!-- e: pop_type05(layer팝업) -->
 </div>
 <!-- e: popup area -->
 
