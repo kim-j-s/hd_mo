@@ -120,7 +120,7 @@
 	{{/ popup/popup_layer}}
 	<!-- e: pop_type04(layer팝업) -->
 	<!-- s: pop_type05(layer팝업) -->
-	{{#> popup/popup_layer popup-id="pop_type05" popup-title="포커스 없는 캐이스" no-header=false popup-active=true }}
+	{{#> popup/popup_layer popup-id="pop_type05" popup-title="포커스 없는 캐이스" no-header=false }}
 	<div class="popup_cont">
 		<div class="popup_content">		
 			포커스 body로 이동 
@@ -137,5 +137,9 @@
 	<!-- e: pop_type05(layer팝업) -->
 </div>
 <!-- e: popup area -->
-
+<script>
+	$(window).on('load', function () {
+		openHDPopup('','pop_type05');
+	});
+</script>
 {{/ layout/default }}
