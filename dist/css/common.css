@@ -8290,12 +8290,15 @@ strong {
 	height: 5rem;
 	background: url(../images/icon/icon_reset.svg) no-repeat center right 1.6rem/2rem auto;
 }
-.input_text:has(.int_txt.right) input {
-	padding-right: 2.8rem;
+.input_text:has(.int_txt.right) .inp input {
+	padding-right: 0;
 }
-.input_text:has(.int_txt.right) .del {
+.input_text:has(.int_txt.right) .inp .del {
 	width: 2.8rem;
 	background-position: center right;
+}
+.input_text:has(.int_txt.right) .inp.active input {
+	padding-right: 2.8rem;
 }
 .input_text.phone {
 	width: 100%;
@@ -8599,9 +8602,6 @@ strong {
 }
 .comp_wrap.key_number + .btn_area.basic .hd_btn_s_4 {
 	min-width: 5.4rem;
-}
-.comp_wrap.key_number .input_text:has(.int_txt.right) input {
-	padding-right: 0;
 }
 .comp_wrap.key_number:has(.phone.readonly),
 .comp_wrap.key_number:has(.phone.disabled) {

@@ -132,13 +132,21 @@
 		background: url(../images/icon/icon_reset.svg) no-repeat center right 16px / 20px auto;
 	}
 
+	// 단위 있을 때 placeholder 짤리는 현상
 	&:has(.int_txt.right) {
-		input {
-			padding-right: 28px;
-		}
-		.del {
-			width: 28px;
-			background-position: center right;
+		.inp {
+			input {
+				padding-right: 0;
+			}
+			.del {
+				width: 28px;
+				background-position: center right;
+			}
+			&.active {
+				input {
+					padding-right: 28px;
+				}
+			}
 		}
 	}
 
@@ -457,11 +465,6 @@
 			.hd_btn_s_4 {
 				min-width: 54px;
 			}
-		}
-
-		//시간연장, 재요청 버튼 2개일 경우 텍스트 짤림현상 방지
-		.input_text:has(.int_txt.right) input{
-			padding-right: 0;    
 		}
 
 		&:has(.phone.readonly),
