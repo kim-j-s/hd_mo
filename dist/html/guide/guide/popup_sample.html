@@ -59,6 +59,9 @@
 				}
 				.g_dom {
 					margin: 2rem 0;
+					+ .g_dom {
+						margin: 100rem 0;
+					}
 				}
 				.p_guide_wrap_b {
 					display: -webkit-box;
@@ -87,6 +90,19 @@
 							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openHDPopup(this,'pop_type02');">
 								<span class="text">Bottom 팝업열기</span>
 							</button>
+							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openHDPopup(this,'pop_type04');">
+								<span class="text">Layer 팝업 닫기 지정 포커스</span>
+							</button>
+						</div>
+					</div>
+					<div class="g_dom">
+						<div class="p_guide_wrap_b">
+							<div class="input_text">
+								<div class="inp">
+									<input type="text" id="input" placeholder="플레이스홀더" title="Default" />
+									<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -184,6 +200,52 @@
 				</div>
 			</div>
 			<!-- e: pop_type03(layer팝업) -->
+			<!-- s: pop_type04(layer팝업) -->
+			<div class="popup_wrap layer" id="pop_type04" role="dialog" aria-hidden="true">
+				<div class="popup_container">
+					<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type04');"></div>
+					<div class="popup_inner">
+						<div class="popup_head">
+							<div class="popup_head_title">지정포커스 이동</div>
+						</div>
+						<div class="popup_cont">
+							<div class="popup_content">확인버튼클릭</div>
+						</div>
+						<div class="popup_bottom">
+							<div class="btn_area">
+								<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2" onclick="closeHDPopup('pop_type04', '#input');">
+									<span class="text">확인</span>
+								</button>
+							</div>
+						</div>
+						<button type="button" class="popup_close" onclick="closeHDPopup('pop_type04');"><span class="blind">팝업 닫기</span></button>
+					</div>
+				</div>
+			</div>
+			<!-- e: pop_type04(layer팝업) -->
+			<!-- s: pop_type05(layer팝업) -->
+			<div class="popup_wrap layer active" id="pop_type05" role="dialog" aria-hidden="false">
+				<div class="popup_container">
+					<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type05');"></div>
+					<div class="popup_inner">
+						<div class="popup_head">
+							<div class="popup_head_title">포커스 없는 캐이스</div>
+						</div>
+						<div class="popup_cont">
+							<div class="popup_content">포커스 body로 이동</div>
+						</div>
+						<div class="popup_bottom">
+							<div class="btn_area">
+								<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2" onclick="closeHDPopup('pop_type05');">
+									<span class="text">확인</span>
+								</button>
+							</div>
+						</div>
+						<button type="button" class="popup_close" onclick="closeHDPopup('pop_type05');"><span class="blind">팝업 닫기</span></button>
+					</div>
+				</div>
+			</div>
+			<!-- e: pop_type05(layer팝업) -->
 		</div>
 		<!-- e: popup area -->
 
