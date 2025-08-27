@@ -190,7 +190,7 @@
 					<div class="guarantee_container_right">
 						<!-- s: guarantee_detail -->
 						<div class="guarantee_detail">
-							<div class="guarantee_detail_top">
+							<div class="guarantee_detail_top ">
 								<div class="splide_wrap splide_wrap_ty1" id="splide_wrap_ty1">
 									<div class="splide" role="group">
 										<div class="splide__track">
@@ -209,11 +209,16 @@
 																<!-- e: 25-08-22 UXW -->
 															</div>
 															<p class="head_text">
-																운전자 3대 필수 비용은 기본
+																<em>운전자 3대 필수 비용은 기본</em>
 																<span class="price">
 																	<strong class="price_num">9,500</strong><span class="won">원</span>
 																</span>
 															</p>
+															<!-- s: 25-08-27 수정 -->
+															<div class="btn_area basic">
+																{{> cp/button type="3" size="5" b-text="예상환급률 <strong>26.17%</strong>" rightIcon="arrowRightSvg" }}
+															</div> 
+															<!-- e: 25-08-27 수정 -->
 															<ul class="gdi_content_list">
 																<li class="ico_add ico_add_ty1">
 																	<div class="item">
@@ -256,11 +261,16 @@
 																<span class="hd_badge outline solid_pastel c_secondary size_m"><strong>표준</strong> <span class="pipe_line">40개 보장</span></span>
 															</div>
 															<p class="head_text">
-																자동차 사고로 다쳤을 때 걱정 없게
+																<em>자동차 사고로 다쳤을 때 걱정 없게</em>
 																<span class="price">
 																	<strong class="price_num">23,900</strong><span class="won">원</span>
 																</span>
 															</p>
+															<!-- s: 25-08-27 수정 -->
+															<div class="btn_area basic">
+																{{> cp/button type="3" size="5" b-text="예상환급률 <strong>26.17%</strong>" rightIcon="arrowRightSvg" }}
+															</div> 
+															<!-- e: 25-08-27 수정 -->
 															<ul class="gdi_content_list">
 																<li class="ico_add ico_add_ty1">
 																	<div class="item">
@@ -304,11 +314,16 @@
 															</div>
 															<!-- s: 25-08-22 UXW -->
 															<p class="head_text">
-																사고 후 치료와 재활까지 꼼꼼하게
+																<em>사고 후 치료와 재활까지 꼼꼼하게</em>
 																<span class="price">
 																	<strong class="price_num">35,200</strong><span class="won">원</span>
 																</span>
 															</p>
+															<!-- s: 25-08-27 수정 -->
+															<div class="btn_area basic">
+																{{> cp/button type="3" size="5" b-text="예상환급률 <strong>26.17%</strong>" rightIcon="arrowRightSvg" }}
+															</div> 
+															<!-- e: 25-08-27 수정 -->
 															<!-- e: 25-08-22 UXW -->
 															<ul class="gdi_content_list">
 																<li class="ico_add ico_add_ty1">
@@ -366,7 +381,7 @@
 							</div>
 
 							<!-- 간편정보 -->
-							<div class="simple_info_wrap">
+							<!-- <div class="simple_info_wrap">
 								<div class="simple_info_item">
 									<ul class="sii_list">
 										<li>
@@ -392,7 +407,7 @@
 										</li>
 									</ul>
 								</div>
-							</div>
+							</div> -->
 							<!-- 간편정보 -->
 							
 							<div class="gd_middle_ba btn_area">
@@ -887,6 +902,24 @@
 			splide.refresh(); // 슬라이드 다시 계산
 		});
 		// 25-05-19 수정
+
+		
+		$('#container').on('scroll', function() {
+			const scrollTopVal = $(this).scrollTop(),
+						gtHeight = $('.guarantee_container .guarantee_detail_top').outerHeight(),
+						$fixTarget = $(this).find('.guarantee_detail_top');
+						console.log(scrollTopVal, gtHeight);
+
+			if(!$('.guarantee_container_right').css('opacity') == '0'){
+				if(scrollTopVal > gtHeight){
+					$fixTarget.addClass('sticky_fix');
+					$fixTarget.css('top', '-16px');
+				}else {
+					$fixTarget.removeClass('sticky_fix');
+					$fixTarget.css('top', '0');
+				}
+			}
+		});
 	});
 </script>
 <!-- e: 25-07-23 수정 -->
