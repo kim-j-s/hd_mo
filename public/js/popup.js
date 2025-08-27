@@ -36,8 +36,8 @@ function openHDPopup($triggerEl, target) {
 	let $header = $target.find(".popup_head_title").length > 0 ? $target.find(".popup_head_title") : null;
 	let $content = $target.find(".popup_cont").length > 0 ? $target.find(".popup_cont") : null;
 
-	$("[triggerId]").removeAttr("triggerId");
-	$("[opner]").removeAttr("opner");
+	//$("[triggerId]").removeAttr("triggerId");
+	//$("[opner]").removeAttr("opner");
 
 	if (!$trigger.is("button, a")) {
 		const $parentTrigger = $trigger.closest("button, a");
@@ -188,6 +188,8 @@ function closeHDPopup(target, returnTarget = null) {
 			focusTarget.attr("tabindex", 0).focus();
 		}, 350);
 	}
+	getOpener.removeAttr("triggerId");
+	$target.removeAttr("opner");
 }
 
 
