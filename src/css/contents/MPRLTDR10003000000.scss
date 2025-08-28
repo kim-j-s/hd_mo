@@ -501,31 +501,46 @@
 				.badge_wrap {
 					width: auto;
 					& + .head_text {
-						flex: 1;
 						padding-top: 0;
-						text-align: right;
+					}
+				}
+				.head_text {
+					flex: 1;
+					text-align: right;
 
-						> em {
-							display: none;
+					> em {
+						display: none;
+					}
+
+					.price {
+						display: flex;
+						align-items: center;
+						justify-content: flex-end;
+						padding-top: 0;
+
+						.price_info {
+							display: block;
 						}
-	
-						.price {
-							display: flex;
-							align-items: center;
-							justify-content: flex-end;
-							padding-top: 0;
+						.price_num,
+						.won {
+							padding: 0;
+							font-size: var(--font-size-body-medium);
+						}
+					}
 
-							.price_info {
-								display: block;
-							}
-							.price_num,
-							.won {
-								padding: 0;
-								font-size: var(--font-size-body-medium);
-							}
+					&.discount_item {
+						justify-content: flex-end;
+						.price_discount {
+							display: none;
 						}
 					}
 				}
+				.head_desc_text {
+					display: none;
+				}
+			}
+			.gdi_info_list {
+				display: none;
 			}
 
 			.guarantee_detail_mini {
@@ -536,6 +551,7 @@
 					gap: var(--gap-5);
 
 					.i_data {
+						flex: 0 0 calc(50% - 8px);
 						padding-left: 0;
 
 						&.dn {
@@ -706,7 +722,7 @@
 						margin: 0 4px;
 					}
 
-					+ .head_text {
+					.head_text {
 						padding-top: 0;
 
 						.price.ty2 {
@@ -852,8 +868,7 @@
 					
 				}
 			}
-		}
-	}
+		}	}
 
 	.guarantee_detail_mini {
 		display: flex;
