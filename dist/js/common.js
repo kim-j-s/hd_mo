@@ -1264,6 +1264,24 @@ $(function(){
 	});
 
 
+	// 보험료 확인 (상단 sticky)
+	if($('.container.pro_sticky').length){
+		$('.container.pro_sticky').on('scroll', function() {
+			const scrollTopVal = $(this).scrollTop(),
+						gtHeight = $('.guarantee_container .guarantee_detail_top').outerHeight(),
+						$fixTarget = $(this).find('.guarantee_detail_top');
+						console.log(scrollTopVal, gtHeight);
+
+			if($('.guarantee_container.detail_only').length || !$('.guarantee_container_right').css('opacity') == '0'){
+				if(scrollTopVal > gtHeight){
+					$fixTarget.addClass('sticky_fix');
+				}else {
+					$fixTarget.removeClass('sticky_fix');
+				}
+			}
+		});
+	}
+
 	//MY - 대출신청금액입력 MMYLOAN10002010000 접고 펼치기 
 	$('.bottom_panel').each(function () {
 		const $bottomPanel = $(this);
