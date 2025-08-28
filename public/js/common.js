@@ -1265,7 +1265,7 @@ $(function(){
 
 
 	// 보험료 확인 (상단 sticky)
-	if($('.pro_sticky').length){
+	if($('.container.pro_sticky').length){
 		$('#container').on('scroll', function() {
 			const scrollTopVal = $(this).scrollTop(),
 						gtHeight = $('.guarantee_container .guarantee_detail_top').outerHeight(),
@@ -1275,10 +1275,8 @@ $(function(){
 			if(!$('.guarantee_container_right').css('opacity') == '0'){
 				if(scrollTopVal > gtHeight){
 					$fixTarget.addClass('sticky_fix');
-					// $fixTarget.css('top', '-16px');
 				}else {
 					$fixTarget.removeClass('sticky_fix');
-					// $fixTarget.css('top', '0');
 				}
 			}
 		});
