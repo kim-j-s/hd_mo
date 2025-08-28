@@ -40,7 +40,7 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>자동차 상세정보 | 상품 - 현대해상 다이렉트</title>
+		<title>기본 정보 입력 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -49,54 +49,68 @@
 	</head>
 	<body>
 		<!-- s: Full 팝업 -->
-		<!-- s: 25-08-19 수정 -->
-		<!-- s: 25-08-18 UXW -->
 		<div class="popup_wrap full active" id="pop_type01" role="dialog" aria-hidden="false">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
 				<div class="popup_inner">
 					<div class="popup_head">
-						<div class="popup_head_title">보험기간 안내</div>
+						<div class="popup_head_title">기본 정보 입력</div>
 					</div>
-					<!-- e: 25-08-18 UXW -->
-					<!-- e: 25-08-19 수정 -->
 					<div class="popup_cont">
 						<div class="popup_content">
 							<!-- s: popup_content_top -->
 							<div class="popup_content_top">
-								<!-- s: 25-08-18 UXW -->
-								<h2 class="title_h2">보험기간을 <strong class="point">1년 미만</strong>으로 가입하는 경우, 아래 내용을 반드시 확인해주세요</h2>
-								<!-- e: 25-08-18 UXW -->
+								<h2 class="title_h2"><strong>가입경력인정 대상자 정보</strong>를<br />입력해주세요</h2>
 							</div>
 							<!-- e: popup_content_top -->
 
-							<ul class="list_depth">
-								<li>갱신시 무사고 할인혜택을 받으실 수 없습니다.</li>
-								<!-- s: 25-08-28 UXW -->
-								<li><strong class="point">ECO마일리지 특별약관을 가입하실 수 없습니다.</strong></li>
-								<!-- e: 25-08-28 UXW -->
-								<li>단, 다른 자동차보험 계약과 동일증권으로 가입하는 경우 보험기간 3개월 이상인 경우에 한하여 가입할 수 있습니다.</li>
-								<li>
-									<strong class="point">보험기간 별 긴급출동 서비스 제공 횟수가 상이하오니</strong> 약관을 참고해 주시기 바랍니다.
-									<ul>
-										<li>(3개월 초과~1년 미만 계약 : 3회, 3개월 이하 계약 : 1회, 개인용 기준)</li>
-									</ul>
-								</li>
-								<li>인터넷으로 보험가입시, 보험기간이 3개월 미만인 경우에는 자기차량손해 담보를 가입하실 수 없습니다.</li>
-								<li>보험기간이 15일 초과 ~ 1년 미만인 경우 본인소유 차량만 인터넷으로 계약체결이 가능합니다.</li>
-								<li>확정 보험료가 가입시 납입한 보험료와 달라질 수 있으며 추후 보험료 환급추징이 발생할 수 있습니다.</li>
-								<li>보험료 계산시 단기요율이 적용됩니다.</li>
-								<li>1개월 미만 단기계약은 만기안내 비대상으로 보험기간 및 갱신계약 관리에 유의하시기 바랍니다.</li>
-								<li>단기요율: 7일까지(6%), 15일까지(10%), 30일까지(15%), 45일까지(18%), 60일까지(20%), 75일까지(25%), 90일까지(30%), 105일까지(35%), 120일까지(40%), 135일까지(45%), 150일까지(50%), 180일까지(60%), 210일까지(70%), 240일까지(80%), 270일까지(85%), 300일까지(90%), 330일까지(95%), 1년까지(100%)</li>
-								<li>단기요율은 보험기간1년의 적용보험료를 100으로 가정할 때 보험기간에 따라 고객이 부담하게 되는 보험료 비율입니다.</li>
-							</ul>
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">이름</div>
+									<div class="input_text">
+										<div class="inp">
+											<input type="text" placeholder="이름 입력" title="이름 입력" />
+											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+										</div>
+									</div>
+								</div>
+
+								<div class="form_line">
+									<div class="label_tit">주민등록번호</div>
+									<div class="comp_wrap birth">
+										<div class="input_text">
+											<div class="inp">
+												<input type="tel" placeholder="앞 6자리" minlength="6" maxlength="6" title="주민등록번호 앞자리 입력" />
+												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+											</div>
+										</div>
+										<span class="dash">-</span>
+										<div class="comp_wrap_keypad_call form_key" role="button" tabindex="0" title="주민등록번호 뒤 7자리 입력">
+											<div class="pin_area default">
+												뒤 7자리
+												<input type="password" name="" id="" readonly="true" autocomplete="new-password" title="숫자 입력" />
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="form_line">
+									<div class="label_tit">휴대폰번호</div>
+									<div class="input_text phone">
+										<div class="int_txt left">010</div>
+										<div class="inp">
+											<input type="tel" placeholder="-없이 입력" maxlength="8" title="휴대폰번호 입력" />
+											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
-
 					<div class="popup_bottom">
 						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
-								<span class="text">확인</span>
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1" disabled>
+								<span class="text">다음</span>
 							</button>
 						</div>
 					</div>
