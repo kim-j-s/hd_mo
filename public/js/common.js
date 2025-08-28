@@ -1266,13 +1266,13 @@ $(function(){
 
 	// 보험료 확인 (상단 sticky)
 	if($('.container.pro_sticky').length){
-		$('#container').on('scroll', function() {
+		$('.container.pro_sticky').on('scroll', function() {
 			const scrollTopVal = $(this).scrollTop(),
 						gtHeight = $('.guarantee_container .guarantee_detail_top').outerHeight(),
 						$fixTarget = $(this).find('.guarantee_detail_top');
 						console.log(scrollTopVal, gtHeight);
 
-			if(!$('.guarantee_container_right').css('opacity') == '0'){
+			if($('.guarantee_container.detail_only').length || !$('.guarantee_container_right').css('opacity') == '0'){
 				if(scrollTopVal > gtHeight){
 					$fixTarget.addClass('sticky_fix');
 				}else {
