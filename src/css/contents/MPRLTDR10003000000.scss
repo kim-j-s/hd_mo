@@ -558,6 +558,9 @@
 					.item_wrap {
 						.i_data {
 							flex: 0 0 100%;
+							&.column {
+								flex-direction: row;
+							}
 						}
 					}
 				}
@@ -871,16 +874,17 @@
 		}
 
 		.i_data {
+			//flex: 1 1 0;
 			position: relative;
 			display: flex;
-			flex: 0 0 calc(50% - 8px);
-			gap: var(--gap-3);
+			flex-flow: row wrap;
+			gap: 0 var(--gap-3);
 			padding-left: 8px;
 			font-size: var(--font-size-body-small);
 			color: var(--color-text-subtle);
 			// background-color: rgba(200, 255, 255, 0.55);
 			.text {
-				flex: none;
+			 	flex: none;
 			}
 			.data {
 				flex: 1 1 0;
@@ -916,7 +920,10 @@
 				align-items: center;
 				justify-content: space-between;
 				.i_data {
-					flex: 0 0 auto;
+					flex: 0 0 calc(100% - 64px);
+					.data {
+						flex: auto;
+					}
 				}
 			}
 		}
