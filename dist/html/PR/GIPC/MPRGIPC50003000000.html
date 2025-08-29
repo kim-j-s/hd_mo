@@ -423,7 +423,9 @@
 				</div>
 			</div>
 
-			<div id="container" class="container">
+			<!-- s: 25-08-29 수정 -->
+			<div id="container" class="container pro_sticky">
+				<!-- e: 25-08-29 수정 -->
 				<div class="content">
 					<div class="guarantee_container">
 						<!-- s: guarantee_container_left -->
@@ -668,8 +670,9 @@
 																	<!-- e: 25-08-11 UXW -->
 																</div>
 																<p class="head_text">
-																	부담없이 가볍게
-
+																	<!-- s: 25-08-29 수정 -->
+																	<em>부담없이 가볍게</em>
+																	<!-- e: 25-08-29 수정 -->
 																	<span class="price"> <strong class="price_num">1,250,600</strong><span class="won">원</span> </span>
 																</p>
 																<ul class="gdi_content_list">
@@ -696,8 +699,9 @@
 																	<span class="hd_badge outline solid_pastel c_secondary size_m"><strong>표준</strong> <span class="pipe_line">17개 보장</span></span>
 																</div>
 																<p class="head_text">
-																	빈틈없이 든든하게
-
+																	<!-- s: 25-08-29 수정 -->
+																	<em>빈틈없이 든든하게</em>
+																	<!-- e: 25-08-29 수정 -->
 																	<span class="price"> <strong class="price_num">1,856,200</strong><span class="won">원</span> </span>
 																</p>
 																<ul class="gdi_content_list">
@@ -724,8 +728,9 @@
 																	<span class="hd_badge outline solid_pastel c_primary size_m"><strong>고급</strong> <span class="pipe_line">21개 보장</span></span>
 																</div>
 																<p class="head_text">
-																	더 큰 보장으로 완벽하게
-
+																	<!-- s: 25-08-29 수정 -->
+																	<em>더 큰 보장으로 완벽하게</em>
+																	<!-- e: 25-08-29 수정 -->
 																	<span class="price"> <strong class="price_num">2,556,900</strong><span class="won">원</span> </span>
 																</p>
 																<ul class="gdi_content_list">
@@ -748,51 +753,58 @@
 										</div>
 									</div>
 									<!-- s: 25-08-21 수정 -->
-									<ul class="list_ty4">
-										<li>
-											<div class="txt">
-												보험기간
-												<strong>2025.08.20~2025.08.30</strong>
+									<!-- s: 25-08-29 수정 -->
+									<div class="guarantee_detail_mini column">
+										<div class="item_wrap">
+											<span class="i_data">
+												<span class="text">보험기간</span>
+												<strong class="data">2025.08.20~2025.08.30 23시</strong>
+											</span>
+											<div class="modify_ba">
+												<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5" title="가입조건 변경 팝업열기">
+													<span class="text">변경</span>
+												</button>
 											</div>
-											<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5">
-												<span class="text">변경</span>
-											</button>
-										</li>
-										<li>
-											<div class="txt">
-												보험에 가입하실 분
-												<strong>혼자</strong>
-											</div>
-											<!-- <button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5">
-			
-					<span class="text">변경</span>
-			
-			</button> -->
-										</li>
-									</ul>
+										</div>
+										<div class="item_wrap">
+											<span class="i_data">
+												<span class="text">보험에 가입하실 분</span>
+												<strong class="data">혼자</strong>
+											</span>
+											<!-- <div class="modify_ba">
+													<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5" title="가입조건 변경 팝업열기">
+													
+															<span class="text">변경</span>
+													
+													</button>									</div> -->
+										</div>
+									</div>
+									<!-- e: 25-08-29 수정 -->
 									<!-- e: 25-08-21 수정 -->
 								</div>
 
+								<!-- s: 25-08-29 삭제 -->
 								<!-- 간편정보 -->
-								<div class="simple_info_wrap">
-									<div class="simple_info_item">
-										<ul class="sii_list">
-											<li>
-												<span class="sii_list_l">보험료</span>
-												<span class="sii_list_r">
-													<strong class="price">2,556,900원</strong>
-												</span>
-											</li>
-											<li>
-												<span class="sii_list_l">보험기간</span>
-												<span class="sii_list_r">
-													<strong class="bold">2025.03.15 10시~2026.03.15 10시</strong>
-												</span>
-											</li>
-										</ul>
-									</div>
-								</div>
+								<!-- <div class="simple_info_wrap">
+										<div class="simple_info_item">
+											<ul class="sii_list">
+												<li>
+													<span class="sii_list_l">보험료</span>
+													<span class="sii_list_r">
+														<strong class="price">2,556,900원</strong>
+													</span>
+												</li>
+												<li>
+													<span class="sii_list_l">보험기간</span>
+													<span class="sii_list_r">
+														<strong class="bold">2025.03.15 10시~2026.03.15 10시</strong>
+													</span>
+												</li>
+											</ul>
+										</div>
+									</div> -->
 								<!-- 간편정보 -->
+								<!-- e: 25-08-29 삭제 -->
 
 								<div class="gd_middle_ba btn_area">
 									<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_3" title="전체 팝업">
@@ -1187,12 +1199,15 @@
 				// 보험 플랜 - 우측 이동
 				// 25-07-23 수정
 				// 25-07-24 수정
-				$(".slide_move_btn").on("click", function () {
+				// 25-08-28 수정
+				$(document).on("click", ".slide_move_btn", function () {
 					// 25-08-26 수정
 					// $('.btn_area_change_evnet').addClass('ty5');
 					// 25-08-26 수정
 					$(".slide_move_btn").find(".text").text("이대로 가입하기");
+					$(".slide_move_btn").removeClass("slide_move_btn");
 					$(".slide_detail_btn").removeClass("hidden"); // 버튼 숨김
+					// 25-08-28 수정
 					// 25-07-24 수정
 					// 25-07-23 수정
 
