@@ -1,7 +1,3 @@
-<!---
-화면번호 : MPRGITR80003000000
-경로 :  상품 > 여행 > 해외여행보험 > 보험료계산결과
--->
 <!DOCTYPE html>
 <html lang="ko">
 	<head>
@@ -1374,12 +1370,15 @@
 				// 보험 플랜 - 우측 이동
 				// 25-07-23 수정
 				// 25-07-24 수정
-				$(".slide_move_btn").on("click", function () {
+				// 25-08-28 수정
+				$(document).on("click", ".slide_move_btn", function () {
 					// 25-08-26 수정
 					// $('.btn_area_change_evnet').addClass('ty5');
 					// 25-08-26 수정
 					$(".slide_move_btn").find(".text").text("이대로 가입하기");
+					$(".slide_move_btn").removeClass("slide_move_btn");
 					$(".slide_detail_btn").removeClass("hidden"); // 버튼 숨김
+					// 25-08-28 수정
 					// 25-07-24 수정
 					// 25-07-23 수정
 
