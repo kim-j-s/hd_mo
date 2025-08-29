@@ -25073,7 +25073,7 @@
 						<td class="idx_dept6"></td>
 						<td class="idx_dept7"></td>
 						<td class="end_date">2025-05-23</td>
-						<td class="link"><a href="html/PR/LTSM/MPRLTSM13009050000.html" target="_blank" title="지성희">MPRLTSM13010050000</a></td>
+						<td class="link"><a href="html/PR/LTSM/MPRLTSM13009050000.html" target="_blank" title="지성희">MPRLTSM13009050000</a></td>
 						<td class="complete ok"></td>
 						<td class="bigo"></td>
 						<td class="bigo2"></td>
@@ -28150,8 +28150,8 @@
 							<td class="idx_dept5"></td>
 							<td class="idx_dept6"></td>
 							<td class="idx_dept7"></td>
-							<td class="end_date"></td>
-							<td class="link"><a href="html/PR/LTFM/.html" target="_blank" title="김민정"></a></td>
+							<td class="end_date">2025-04-25</td>
+							<td class="link"><a href="html/PR/LTFM/MPRLTFM10001000000.html" target="_blank" title="김민정">MPRLTFM10001000000</a></td>
 							<td class="complete"></td>
 							<td class="bigo"></td>
 							<td class="bigo2"></td>
@@ -41137,12 +41137,12 @@
 
 			// 'no_count' 클래스를 가진 tr을 제외하고 tr의 갯수를 계산
 			const trCount = $tbody.find("tr").not(".no_count").length;
-			// $tbody.find("tr").not(".no_count").each(function(i){
-			// 	$(this).find('.idx_dept1').text(i + 1);
-			// });
-			// $tbody.find("tr").not(".no_count").find(".complete.ok").closest("tr").each(function(i){
-			// 	$(this).find('.idx_dept2').text(i + 1);
-			// });
+			$tbody.find("tr").not(".no_count").each(function(i){
+				$(this).find('.idx_dept1').text(i + 1);
+			});
+			$tbody.find("tr").not(".no_count").find(".complete.ok").closest("tr").each(function(i){
+				$(this).find('.idx_dept2').text(i + 1);
+			});
 
 			// 이전 thead 안의 rate_total에 trCount를 텍스트로 설정
 			$tbody.prev("thead").find(".rate_total").text(trCount);
