@@ -1,47 +1,47 @@
-{{#> layout/default no-sp=true page-title="기본 정보 입력"}}
+{{#> layout/default page-title="기본 정보 입력 | 상품"}}
+<!-- s: 25-09-01 팝업 -> 바닥으로 전체수정 -->
+<div id="wrap" class="wrap">
+	{{> layout/header main=true h-back=true no-nav=true }}
 
-<!-- s: Full 팝업 -->
-{{#> popup/popup_full popup-id="pop_type01" popup-active=true popup-title="기본 정보 입력" }}
-<div class="popup_cont">
-	<div class="popup_content">
-		<!-- s: popup_content_top -->
-		<div class="popup_content_top">
-			<h2 class="title_h2">				
-				<strong>가입경력인정 대상자 정보</strong>를<br>입력해주세요
-			</h2>
-		</div>
-		<!-- e: popup_content_top -->
-
-		<div class="form_group_wrap">
-			<div class="form_line">
-				<div class="label_tit">이름</div>
-				{{> cp/text inp-title="이름 입력" placeholder="이름 입력" }}
+	<div id="container" class="container">
+		<div class="content">
+			<div class="content_top">
+				<h2 class="title_h2">				
+					<strong>가입경력인정 대상자 정보</strong>를<br>입력해주세요
+				</h2>
 			</div>
 
-			<div class="form_line">
-				<div class="label_tit">주민등록번호</div>
-				<div class="comp_wrap birth">
-					{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞 6자리" inp-title="주민등록번호 앞자리 입력" }}
-					<span class="dash">-</span>
-					{{> cp/keypad7 case1=true kt="주민등록번호 뒤 7자리 입력"}}
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">이름</div>
+					{{> cp/text inp-title="이름 입력" placeholder="이름 입력" }}
 				</div>
-			</div>
 
-			<div class="form_line">
-				<div class="label_tit">휴대폰번호</div>
-				{{> cp/text class="phone" type="tel" placeholder="-없이 입력" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
-			</div>
+				<div class="form_line">
+					<div class="label_tit">주민등록번호</div>
+					<div class="comp_wrap birth">
+						{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞 6자리" inp-title="주민등록번호 앞자리 입력" }}
+						<span class="dash">-</span>
+						{{> cp/keypad7 case1=true kt="주민등록번호 뒤 7자리 입력"}}
+					</div>
+				</div>
 
+				<div class="form_line">
+					<div class="label_tit">휴대폰번호</div>
+					{{> cp/text class="phone" type="tel" placeholder="-없이 입력" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+				</div>
+
+			</div>
 		</div>
 	</div>
 
-</div>
-<div class="popup_bottom">
-	<div class="btn_area">
-		{{> cp/button type="1" size="1" b-text="다음" disabled=true }}
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="다음" disabled=true }}
+		</div>
 	</div>
 </div>
-{{/ popup/popup_full}}
-<!-- e: Full 팝업 -->
-
+<!-- s: popup area -->
+<!-- e: popup area -->
+<!-- e: 25-09-01 팝업 -> 바닥으로 전체수정 -->
 {{/ layout/default }}
