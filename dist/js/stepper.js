@@ -22,6 +22,15 @@ const $stepper = {
 			$stepper.data.nowStep = (value + 1);
 			$('.bi_wrap').attr('data-now', value);
 			
+			// 2025-08-07 버튼텍스트 영역 selected 클래스 add/remove
+			const _btnGroup = $('.bit_history_inner').find('.selected_case');
+			_btnGroup.removeClass('selected');
+			const _targetBtn = _btnGroup.eq(value);
+			_targetBtn.addClass('selected');
+			
+			// 2025-09-01 해당 step 버튼으로 스크롤
+			$stepper.targetScroll(_targetBtn);
+			
 			if(typeof stepIngCheck === 'function') {	// 일반 - 펫보험
 				stepIngCheck(value); //스텝 진행시 처리해야할 내용이 있을경우 호출 함수 - 업무화면에 존재
 			}
@@ -156,6 +165,8 @@ const $stepper = {
 			//[[변경필요]] 동적 radio button들이 이벤트를 안탐
 			$(document).on('change', '.opts_area_item input[type="radio"]', function(e) {
 				const _target = $(e.target);
+				_target.closest('.inp_radio').siblings().removeClass('selected');
+				_target.closest('.inp_radio').addClass('selected');
 				const _stepIdx = _target.closest('.opts_area').index();
 				const _selectedText = _target.next('label').find('.label_cont').text().trim();
 				
@@ -173,6 +184,8 @@ const $stepper = {
 
 			$(_targetArea).find('.opts_area_item input[type="radio"]').on('change', (e) => {
 				const _target = $(e.target);
+				_target.closest('.inp_radio').siblings().removeClass('selected');
+				_target.closest('.inp_radio').addClass('selected');
 				const _stepIdx = _target.closest('.opts_area').index();
 				const _selectedText = _target.next('label').find('.label_cont').text().trim();
 
@@ -199,6 +212,9 @@ const $stepper = {
 			// 현재 선택된 인덱스를 기준으로 다음 단계에 있는 selected_case 텍스트를 빈 값으로 초기화
 			const _otherBtn = $('.bit_history_inner').children('.selected_case').slice(stepIdx + 1);
 			_otherBtn.text('');
+
+			const _otherArea = $('.bi_opts_wrap').find('.opts_area').slice(stepIdx + 1);
+			_otherArea.find('.inp_radio').removeClass('selected');
 		}
 	},
 	setHistory: function(target) {
@@ -264,5 +280,19 @@ const $stepper = {
 		_targetIdx = Math.min(_targetIdx, $stepper.get('totalStep') - 1);
 		$stepper.setButtonText(_targetIdx, '');
 		$stepper.openTab(_targetIdx);
+	},
+	targetScroll: (target) => {
+		// 클릭한 버튼을 가운데로 스크롤
+		// const $bitThis = $(target);
+		const $bitThis = target;
+		const $bitScrollBox = $bitThis.closest('.bit_history');
+
+		const bitBtn_offset = $bitThis.position().left;
+		let bitScrollMove = bitBtn_offset - ($bitScrollBox.width() / 2) + ($bitThis.outerWidth() / 2);
+		
+		$bitScrollBox.animate({
+			scrollLeft: bitScrollMove
+		}, 300);
+		// 클릭한 버튼을 가운데로 스크롤
 	}
 }
