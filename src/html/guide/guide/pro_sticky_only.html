@@ -1,0 +1,90 @@
+{{#> layout/default page-title="보험료확인 | 상품"}}
+
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="보험료확인" }}
+	
+	<!-- s: pro_sticky 수정 -->
+	<div id="container" class="container"><!-- sticky필요시 class - pro_sticky 추가 -->
+		<div class="content">
+			<div class="guarantee_container detail_only">
+				<!-- s: guarantee_detail -->
+				<div class="guarantee_detail">
+					<div class="guarantee_detail_top">
+						<div class="gd_item">
+							<div class="gdi_content" aria-labelledby="d_rdo_01">
+								<p class="head_text no_text">
+									<em>70세부터 10년간, 매월</em>
+									<span class="price">
+										<span class="price_info">매월</span>
+										<span class="price_num">277,450</span>
+										<!-- s: 25-08-25 UXW -->							
+										<span class="won">원씩</span>
+										<!-- e: 25-08-25 UXW -->
+									</span>									
+								</p>
+								<ul class="gdi_content_list">
+									<li>
+										<div class="item icon_pensionSvg">
+											<div class="txt">
+												환급률
+												<strong class="point">235.24%</strong>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="guarantee_detail_mini">
+							<div class="item_wrap">
+								<span class="i_data">
+									<span class="text">보험 기간</span>
+									<strong class="data">15년</strong>
+								</span>
+								<span class="i_data dn">
+									<!-- s: 25-05-16 수정 -->
+									<span class="text">납입 주기</span>
+									<!-- e: 25-05-16 수정 -->
+									<strong class="data">월납</strong>
+								</span>
+								<span class="i_data grow">
+									<span class="text">월보험료</span>
+									<strong class="data">20만원</strong>
+								</span>
+							</div>
+
+							<div class="modify_ba">
+								{{> cp/button type="3" size="5" b-text="변경" btn-title="가입조건 변경 팝업열기"}}
+							</div>
+						</div>
+					</div>
+					<!-- e: pro_sticky 수정 -->
+					<!-- s: 25-05-13 -->
+					<div class="btn_area">
+						{{> cp/button type="3" size="3" b-text="예상환급금 보기" btn-title="전체 팝업"}} 
+						<!-- s: 25-08-25 UXW -->
+						{{> cp/button type="3" size="3" b-text="계산 결과 받기" btn-title="전체 팝업"}}
+						<!-- e: 25-08-25 UXW -->
+					</div>
+					<div class="checkbox_group_wrap">
+						{{> cp/checkbox checkbox_class="rd_box" id="checkbox01" label_class="chk_label_ty3" labelname="내 연금저축한도 조회에 동의해요" }}
+					</div>
+					<!-- e: 25-05-13 -->
+				<!-- s: pro_sticky 수정 -->
+				</div>
+			</div>
+		</div>
+		<!-- e: pro_sticky 수정 -->
+		<!--content-->
+	</div>
+
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">{{> cp/button type="1" size="1" b-text="이대로 가입하기" }}</div>
+	</div>
+</div>
+
+<!-- s: popup area -->
+
+<!-- e: popup area -->
+
+{{/ layout/default }}

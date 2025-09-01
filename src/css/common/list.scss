@@ -1627,14 +1627,14 @@
 		background-position: 20px center;
 		//background-size: 24px auto;
 		background-size: 32px auto;
-		border: var(--border-width-static-regular) solid var(--color-divider-gray-light);
+		border: var(--border-width-static-regular) solid var(--color-border-gray-light);
 		border-radius: var(--radius-large2);
 		//padding: 24px 64px 24px 56px;
 		padding: calc(var(--padding-8) - 1px) 55px calc(var(--padding-8) - 1px) 63px;
 
 
 
-		@for $i from 1 through 5 {
+		@for $i from 1 through 7 {
 			&.opt#{$i}{
 				background-image: url(../images/content/cnsl/icon_call_info#{$i}.svg);
 			}
@@ -1702,6 +1702,26 @@
 		}
 		& + .item {
 			margin-top: var(--gap-5);
+		}
+	}
+
+	// 회원가입 선택
+	&.ty2 {
+		.item {
+			.title {
+				font-size: var(--font-size-body-large);
+			}
+			.cont {
+				gap: var(--gap-3);
+				margin-top: 0;
+				.info {
+					font-size: var(--font-size-body-small);
+					color: var(--color-text-information);
+					.point {
+						font-weight: 700;
+					}
+				}
+			}
 		}
 	}
 }

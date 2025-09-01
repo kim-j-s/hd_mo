@@ -8,7 +8,7 @@
 
   /* 전체메뉴 열기 */
   $DOM.on('click', '.header .header_right .allmenu_open', function() {
-		console.log('열기');
+		// console.log('열기');
     const $this = $(this),
           $nav = $this.closest('.header_inner').find('.nav_menu_wrap');
 
@@ -31,7 +31,7 @@
 
 	/* 전체메뉴 닫기 */
 	$DOM.on('click', '.header .header_right .allmenu_close', function() {
-		console.log('닫기');
+		// console.log('닫기');
     const $this = $(this),
           $nav = $this.closest('.header_inner').find('.nav_menu_wrap');
 
@@ -197,8 +197,8 @@
 		if( $this.closest('.input_text').hasClass('phone') && !$this.prop('readonly') && !$this.prop('disabled') ){
 			$this.attr('maxlength', 14);
 			if(val){
-				val = val.replace(/[^0-9]/g, '');
-				newVal = ' - ' + val.replace(/(\d{4})(?=\d)/g, '$1 - ');
+				val = val.replace(/[^0-9*]/g, '');
+				newVal = ' - ' + val.replace(/([0-9*]{4})(?=[0-9*])/g, '$1 - ');
 				$this.val(newVal).addClass('isVal');
 			}else {
 				$this.removeClass('isVal');
@@ -490,7 +490,7 @@
 			sHeight = siiHeight;
 		}
 
-		console.log(sHeight);
+		// console.log(sHeight);
 
 		if ($target.length) {
 			$wrap.data('scrolling', true);
@@ -555,7 +555,7 @@ function tabScroll(){
 					scrollBox_w = $scrollList.width();
 		let scrollMove = btn_offset - ($scrollBox.width() / 2) + ($this.outerWidth() / 2);
 
-		console.log($scrollBox.get(0).scrollLeft);
+		// console.log($scrollBox.get(0).scrollLeft);
 		// console.log('move : ' + scrollMove);
 		// console.log('버튼 위치 : ' + btn_offset, '스크롤 위치 : ' + scrollPosition);
 		$scrollBox.animate({
@@ -795,6 +795,19 @@ function inputState() {
 			}
 		}
 	});
+	inpPhoneFormat();
+}
+
+function inpPhoneFormat() {
+	$('.input_text').each(function() {
+		if( $(this).hasClass('phone') && $(this).hasClass('readonly') || $(this).hasClass('phone') && $(this).hasClass('disabled') ){
+			const $inp = $(this).children('.inp').find('input');
+			let val = $inp.val();
+			val = val.replace(/[^0-9*]/g, '');
+			newVal = ' - ' + val.replace(/([0-9*]{4})(?=[0-9*])/g, '$1 - ');
+			$inp.val(newVal).addClass('isVal');
+		}
+	});
 }
 
 $(window).on('load', function() {
@@ -1007,7 +1020,7 @@ $(function(){
 				if (!$this.is(':checked')) return;
 
 				const index = $this.closest('.inp_radio').index();
-				console.log(index);
+				// console.log(index);
 			
 				const $agGroupCont = $this.closest('.ag_group_cont');
 
@@ -1089,9 +1102,9 @@ $(function(){
 			});
 	
 			const isAllAgreed = allGroups.length === agreedGroups.length;
-			console.log('체크 : ' + allGroups.length + ' : ', + agreedGroups.length);
+			// console.log('체크 : ' + allGroups.length + ' : ', + agreedGroups.length);
 			$totalCheck.prop('checked', isAllAgreed);
-			console.log('$totalCheck : ' + $totalCheck);
+			// console.log('$totalCheck : ' + $totalCheck);
 		}
 	});
 	// 라디오 약관 동의
@@ -1230,16 +1243,16 @@ $(function(){
 	autoCompleteEmail();
 
 	// 진입 시 전화번호 포맷 - readonly만 적용
-	$('.input_text').each(function() {
-		if( $(this).hasClass('phone') && $(this).hasClass('readonly') ){
-			const $inp = $(this).children('.inp').find('input');
-			let val = $inp.val();
-			console.log(val);
-			val = val.replace(/[^0-9]/g, '');
-			newVal = ' - ' + val.replace(/(\d{4})(?=\d)/g, '$1 - ');
-			$inp.val(newVal).addClass('isVal');
-		}
-	});
+	// $('.input_text').each(function() {
+	// 	if( $(this).hasClass('phone') && $(this).hasClass('readonly') ){
+	// 		const $inp = $(this).children('.inp').find('input');
+	// 		let val = $inp.val();
+	// 		console.log(val);
+	// 		val = val.replace(/[^0-9]/g, '');
+	// 		newVal = ' - ' + val.replace(/(\d{4})(?=\d)/g, '$1 - ');
+	// 		$inp.val(newVal).addClass('isVal');
+	// 	}
+	// });
 
 	/* 페이지 내 스크롤 이벤트 */
 	$('.container').on('scroll', function(){
@@ -1270,7 +1283,7 @@ $(function(){
 			const scrollTopVal = $(this).scrollTop(),
 						gtHeight = $('.guarantee_container .guarantee_detail_top').outerHeight(),
 						$fixTarget = $(this).find('.guarantee_detail_top');
-						console.log(scrollTopVal, gtHeight);
+						// console.log(scrollTopVal, gtHeight);
 
 			if($('.guarantee_container.detail_only').length || !$('.guarantee_container_right').css('opacity') == '0'){
 				if(scrollTopVal > gtHeight){
