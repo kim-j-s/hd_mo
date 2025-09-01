@@ -1157,14 +1157,12 @@ $(function(){
 		const etcWord = "직접입력";
 		const domainArr = [
 			"naver.com",
+			"gmail.com",
 			"hanmail.net",
 			"daum.net",
 			"kakao.com",
-			"korea.kr",
-			"korea.com",
-			"dreamwiz.com",
+			"nate.com",
 			"yahoo.co.kr",
-			"hi.co.kr",
 		];
 
 		$inputEmail.on("keyup", function () {
