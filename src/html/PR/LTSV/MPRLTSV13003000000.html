@@ -2,112 +2,124 @@
 
 <div id="wrap" class="wrap">
 	{{> layout/header h-title="보험료확인" }}
-	<div id="container" class="container">
+	<!-- s: pro_sticky 수정 -->
+	<div id="container" class="container pro_sticky">
 		<div class="content">
-			<div class="bg_top_cover guarantee_ty2_top_container">
-				<div class="inner">
-					<p class="head_text">
-						1년 후
-						<span class="price">
-							<span class="price_num">51,615,300</span>
-							<span class="won">원 받아요</span>
-						</span>
-					</p>
-					<ul class="content_list">
-						<li>
-							<div class="item icon_savingSvg">
-								<div class="txt">
-									환급률
-									<strong class="point">103.23%</strong>
-								</div>
-							</div>
-						</li>
-					</ul>
-				</div>
-
+			<div class="guarantee_container detail_only">
+				<!-- s: guarantee_detail -->
 				<div class="guarantee_detail">
-					<div class="item_wrap">
-						<span class="i_data">
-							<!-- s: 25-05-27 수정 -->
-							<!-- s: 25-08-22 UXW -->							
-							<span class="text">보험/납입기간</span>
-							<!-- e: 25-08-22 UXW -->
-							<!-- e: 25-05-27 수정 -->
-							<strong class="data">1년</strong>
-						</span>
-						<span class="i_data">
-							<span class="text">납입방법</span>
-							<strong class="data">일시납</strong>
-						</span>
-						<span class="i_data grow">
-							<span class="text">보험료</span>
-							<strong class="data">5,000만원</strong>
-						</span>
+					<div class="guarantee_detail_top">
+						<div class="gd_item">
+							<div class="gdi_content" aria-labelledby="d_rdo_01">
+								<p class="head_text no_text">
+									<em>1년 후</em>
+									<span class="price">
+										<span class="price_info">만기 환급금</span>
+										<span class="price_num">51,615,300</span>
+										<span class="won">원 받아요</span>
+									</span>
+								</p>
+								<ul class="gdi_content_list">
+									<li>
+										<div class="item icon_savingSvg">
+											<div class="txt">
+												환급률
+												<strong class="point">103.23%</strong>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+							<div class="guarantee_detail_mini">
+						<div class="item_wrap">
+							<span class="i_data">
+								<!-- s: 25-05-27 수정 -->
+								<!-- s: 25-08-22 UXW -->							
+								<span class="text">보험/납입 기간</span>
+								<!-- e: 25-08-22 UXW -->
+								<!-- e: 25-05-27 수정 -->
+								<strong class="data">1년</strong>
+							</span>
+							<span class="i_data dn">
+								<span class="text">납입 방법</span>
+								<strong class="data">일시납</strong>
+							</span>
+							<span class="i_data grow">
+								<span class="text">보험료</span>
+								<strong class="data">5,000만원</strong>
+							</span>
+						</div>
+
+						<div class="modify_ba">{{> cp/button type="3" size="5" b-text="변경" btn-title="가입조건 변경 팝업열기"}}</div>
+					</div>
+				</div>
+			
+				<!-- s: 간편정보 -->
+				<!-- <div class="simple_info_wrap">
+					<div class="simple_info_item">
+						<ul class="sii_list">
+							<li>
+								<span class="sii_list_l">만기환급금</span>
+								<span class="sii_list_r">
+									<strong class="price">51,615,300원</strong>
+								</span>
+							</li>
+				<li>
+								<span class="sii_list_l">
+					<span class="text">
+					보험기간 <strong class="bold">1년</strong>
+					</span>
+				</span>
+								<span class="sii_list_r">
+					<span class="text">
+					보험료 <strong class="bold">5,000만원</strong>
+					</span>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div> -->
+				<!-- e: 간편정보 -->
+				<!-- e: pro_sticky 수정 -->
+				<div class="btn_area">
+					{{> cp/button type="3" size="3" b-text="예상해약환급금 보기" btn-title="예상해약환급금 팝업열기"}} 
+					<!-- s: 25-08-22 UXW -->				
+					<!-- 삭제 {{> cp/button type="3" size="3" b-text="계산 결과 문자로 받기" btn-title="계산내역발송 팝업열기"}} -->
+					<!-- e: 25-08-22 UXW -->
+				</div>
+				<div class="info_cont">
+					<div class="acd_item acd_item_ty2">
+						{{#> cp/accordion ac-title="꼭 가입해야 할 보장" ac-active=true }}
+							<div class="coverage_item_list_ty2">
+								<div class="list">
+								<span class="item_title">상해사망담보</span>
+								{{> cp/linkButton bl_text="100만원" size="1" bl_class="price_btn" question_tit="보장 상세 내용 팝업열기"}}
+								</div>							
+							</div>          
+						{{/ cp/accordion }}
+						</div>
 					</div>
 
-					<div class="modify_ba">{{> cp/button type="3" size="5" b-text="변경" btn-title="가입조건 변경 팝업열기"}}</div>
-				</div>
-			</div>
-
-      <!-- s: 간편정보 -->
-			<div class="simple_info_wrap">
-				<div class="simple_info_item">
-					<ul class="sii_list">
-						<li>
-							<span class="sii_list_l">만기환급금</span>
-							<span class="sii_list_r">
-								<strong class="price">51,615,300원</strong>
-							</span>
-						</li>
-            <li>
-							<span class="sii_list_l">
-                <span class="text">
-                  보험기간 <strong class="bold">1년</strong>
-                </span>
-              </span>
-							<span class="sii_list_r">
-                <span class="text">
-                  보험료 <strong class="bold">5,000만원</strong>
-                </span>
-							</span>
-						</li>
+					<!-- s: 꼭 알아두세요 -->
+					{{#> cp/notice dp-active="active" }}
+					<ul class="list_ty1">
+						<!-- s: 25-08-22 UXW -->				
+						<li>중도인출은 계약일로부터 3개월 이상 지난 이후 1년에 12번만  가능합니다.</li>
+						<!-- e: 25-08-22 UXW -->
+						<li>일시납의 경우 추가납입보험료를 납입할 수 없습니다.</li>
+						<li>저축성보험은 보험료에서 사업비 등을 제외한 금액만 적립해 적용이율로 이자를 더하는 상품으로 은행의 예금, 적금 등과는 다른 상품입니다.</li>
 					</ul>
+					{{/ cp/notice }}
+					<!-- e: 꼭 알아두세요 -->
+					
 				</div>
+		<!-- s: pro_sticky 수정 -->
 			</div>
-			<!-- e: 간편정보 -->
-
-			<div class="btn_area">
-				{{> cp/button type="3" size="3" b-text="예상해약환급금 보기" btn-title="예상해약환급금 팝업열기"}} 
-				<!-- s: 25-08-22 UXW -->				
-				<!-- 삭제 {{> cp/button type="3" size="3" b-text="계산 결과 문자로 받기" btn-title="계산내역발송 팝업열기"}} -->
-				<!-- e: 25-08-22 UXW -->
-			</div>
-      <div class="info_cont">
-			  <div class="acd_item acd_item_ty2">
-        {{#> cp/accordion ac-title="꼭 가입해야 할 보장" ac-active=true }}
-          <div class="coverage_item_list_ty2">
-            <div class="list">
-              <span class="item_title">상해사망담보</span>
-              {{> cp/linkButton bl_text="100만원" size="1" bl_class="price_btn" question_tit="보장 상세 내용 팝업열기"}}
-            </div>							
-          </div>          
-        {{/ cp/accordion }}
-        </div>
-      </div>
-
-      <!-- s: 꼭 알아두세요 -->
-			{{#> cp/notice dp-active="active" }}
-			<ul class="list_ty1">
-				<!-- s: 25-08-22 UXW -->				
-				<li>중도인출은 계약일로부터 3개월 이상 지난 이후 1년에 12번만  가능합니다.</li>
-				<!-- e: 25-08-22 UXW -->
-				<li>일시납의 경우 추가납입보험료를 납입할 수 없습니다.</li>
-				<li>저축성보험은 보험료에서 사업비 등을 제외한 금액만 적립해 적용이율로 이자를 더하는 상품으로 은행의 예금, 적금 등과는 다른 상품입니다.</li>
-			</ul>
-			{{/ cp/notice }}
-			<!-- e: 꼭 알아두세요 -->
-      
 		</div>
+		<!-- e: pro_sticky 수정 -->
+		
 		<!--content-->
 	</div>
 
