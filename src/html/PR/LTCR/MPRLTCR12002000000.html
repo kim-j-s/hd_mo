@@ -183,7 +183,13 @@
 
 <script>
 $(document).ready(function() {
-	$stepper.stepperInit(null, 0);
+	// 1. 콜백 받을 함수를 세팅
+	$stepper.setCallback(() => {
+		$stepper.stepNext();
+	});
+
+	// 2. 최대 step카운트로 초기화
+	$stepper.init();
 });
 </script>
 
