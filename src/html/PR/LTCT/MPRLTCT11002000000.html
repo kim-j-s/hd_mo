@@ -77,7 +77,9 @@
 					<!-- bit_history -->
 					<div class="bit_history">
 						<div class="bit_history_inner">
-							<button type="button" class="selected_case step1 job" title="직업 수정"></button>
+							<!-- s: 25-09-02 수정 -->
+							<button type="button" class="selected_case step1 job" title="자녀 정보 수정"></button>
+							<!-- e: 25-09-02 수정 -->
 							<button type="button" class="selected_case step2 birth" title="생년월일 수정"></button>
 							<button type="button" class="selected_case step3 gender" title="성별 수정"></button>
 						</div>
@@ -179,7 +181,13 @@
 
 <script>
 $(document).ready(function() {
-	$stepper.stepperInit(null, 0);
+	// 1. 콜백 받을 함수를 세팅
+	$stepper.setCallback(() => {
+		$stepper.stepNext();
+	});
+
+	// 2. 최대 step카운트로 초기화
+	$stepper.init();
 });
 </script>
 
