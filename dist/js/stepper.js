@@ -104,7 +104,8 @@ const $stepper = {
 		_contentsTab.eq(nowIdx).removeClass('active');
 
 		// 진행 퍼센트 계산
-		const progress = Math.floor(((nowIdx + 1) / $stepper.get('totalStep')) * 100);
+		// const progress = Math.floor(((nowIdx + 1) / $stepper.get('totalStep')) * 100);
+		const progress = Math.floor(((nowIdx) / $stepper.get('totalStep')) * 100);
 		$('.pgs_per').css('width', `${progress}%`);
 
 		// 시작 및 완료 상태 클래스 추가/제거
@@ -284,15 +285,37 @@ const $stepper = {
 	targetScroll: (target) => {
 		// 클릭한 버튼을 가운데로 스크롤
 		// const $bitThis = $(target);
+		// const $bitThis = target;
+		// const $bitScrollBox = $bitThis.closest('.bit_history');
+
+		// const bitBtn_offset = $bitThis.position().left;
+		// let bitScrollMove = bitBtn_offset - ($bitScrollBox.width() / 2) + ($bitThis.outerWidth() / 2);
+		
+		// $bitScrollBox.animate({
+		// 	scrollLeft: bitScrollMove
+		// }, 300);
+		// 클릭한 버튼을 가운데로 스크롤
+
+
+		// 클릭한 버튼을 왼쪽 정렬
+		// const $bitThis = $(target);
 		const $bitThis = target;
 		const $bitScrollBox = $bitThis.closest('.bit_history');
 
 		const bitBtn_offset = $bitThis.position().left;
-		let bitScrollMove = bitBtn_offset - ($bitScrollBox.width() / 2) + ($bitThis.outerWidth() / 2);
+		// let bitScrollMove = bitBtn_offset - ($bitScrollBox.width() / 2) + ($bitThis.outerWidth() / 2);
+		let bitScrollMove = bitBtn_offset;
+		let sbitScrollMove = Math.floor(bitScrollMove);
+
+		console.log(sbitScrollMove);
+
+		// $('.bit_history').scrollLeft(184);
 		
 		$bitScrollBox.animate({
-			scrollLeft: bitScrollMove
+			// scrollLeft: bitScrollMove
+			scrollLeft: sbitScrollMove
 		}, 300);
-		// 클릭한 버튼을 가운데로 스크롤
+		// 클릭한 버튼을 왼쪽 정렬
+
 	}
 }
