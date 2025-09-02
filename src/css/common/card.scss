@@ -261,11 +261,15 @@
 					&::after {
 						content: '';
 						position: absolute;
-						top: -5px;
-						left: -8px;
+						// top: -5px;
+						// left: -8px;
+						top: 0;
+						left: 0;
 						z-index: 1;
-						width: 36px;
-						height: 36px;
+						// width: 36px;
+						// height: 36px;
+						width: 100%;
+						height: 100%;
 						// background-color: rgba($color: #ddd, $alpha: 0.8);
 					}
 
@@ -295,9 +299,23 @@
 					}
 				}
 			}
+
+			> .inp_radio,
+			> .inp_checkbox {
+				.chk_label {
+					position: static;
+
+					&:before {
+						top: 26px;
+						left: 20px;
+					}
+				}
+			}
 		}
 
 		.card_link {
+			position: relative;
+			z-index: 20;
 			display: block;
 			cursor: pointer;
 
@@ -570,6 +588,7 @@
 					font-weight: 700;
 				}
 				.price_btn {
+					z-index: 20;
 					font-size: var(--font-size-body-small);
 					font-weight: 700;
 				}
@@ -611,6 +630,7 @@
 
 		.btn_area {
 			position: relative;
+			z-index: 20;
 			margin-top: var(--gap-5);
 
 			.hd_btn:not(.hd_btn_s_4) {
