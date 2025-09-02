@@ -370,7 +370,7 @@
 	-webkit-transition: all var(--t-time);
 	transition: all var(--t-time);
 }
-.bi_wrap .stepper_wrap .stepper .pgs .pgs_per.start .motion.car {
+.bi_wrap .stepper_wrap .stepper .pgs .pgs_per.start .motion {
 	right: -4rem;
 }
 .bi_wrap .stepper_wrap .stepper .pgs .pgs_per.end .motion {
@@ -527,7 +527,7 @@
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	gap: 0.4rem;
+	gap: var(--gap-2);
 	margin: 0.8rem -2rem 0 -2rem;
 	padding: 0 2rem;
 	overflow-x: scroll;
@@ -3678,7 +3678,7 @@
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	gap: 0.4rem;
+	gap: var(--gap-2);
 }
 .gdi_info_list dl dt,
 .gdi_info_list dl dd {
@@ -4032,7 +4032,7 @@
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	gap: 0.4rem;
+	gap: var(--gap-2);
 	margin: 0.8rem 0;
 	font-size: var(--font-size-body-small);
 	color: var(--color-text-subtle);
@@ -4249,7 +4249,7 @@
 .simple_info_wrap {
 	position: sticky;
 	top: -2.4rem;
-	z-index: 11;
+	z-index: 21;
 	margin: 0 -2.4rem;
 	background: var(--color-surface-white-subtler, #fff);
 }
@@ -4445,7 +4445,7 @@
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	gap: 0.4rem;
+	gap: var(--gap-2);
 	font-size: var(--font-size-label-medium);
 }
 .coverage_item_list > .list .item_bottom {
@@ -4468,7 +4468,7 @@
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	gap: 0.4rem;
+	gap: var(--gap-2);
 }
 .coverage_item_list_ty2 > .list ~ .list {
 	margin-top: var(--gap-5);
@@ -4539,6 +4539,12 @@
 }
 .form_box.space2:has(.pop_title_h2) {
 	margin-top: var(--gap-9);
+}
+.form_box + .acd_item_ty3 {
+	margin-top: var(--gap-11);
+}
+.form_box + .acd_item_ty3 + .img_area {
+	margin-top: var(--gap-11);
 }
 .form_box + .btn_area {
 	margin-top: var(--gap-5);
@@ -5203,7 +5209,7 @@ ul + .form_group_wrap {
 	margin-top: var(--gap-4);
 }
 .address_detail_cont + .list_ty2 {
-	margin-top: var(--gap-4);
+	margin-top: var(--gap-5);
 }
 .sns_box {
 	margin-bottom: var(--gap-4);
@@ -5329,7 +5335,7 @@ ul + .form_group_wrap {
 }
 .special_contract_list > li .check_flex_box .check_box .label_cont .badge_wrap {
 	width: auto;
-	gap: 0.4rem;
+	gap: var(--gap-2);
 	vertical-align: middle;
 }
 .special_contract_list > li .check_flex_box .money_box {
@@ -5463,6 +5469,9 @@ ul + .form_group_wrap {
 }
 .info_cont_wrap + .info_cont_wrap {
 	margin-top: 5.2rem;
+}
+.appendix_item {
+	margin-top: var(--gap-11);
 }
 /* 운전자보험 - 보험료 결제 */
 .insurance_payment_area {
@@ -5626,7 +5635,8 @@ ul + .form_group_wrap {
 	background-size: 2.4rem auto;
 }
 .cert_select_list .cert_select_item > .text .tip_item {
-	width: 100%;
+	--tl: 3.5rem;
+	padding-right: 0;
 }
 .cert_select_list .cert_select_item.pin > .text::before {
 	background-image: url(../images/common/cert/icon_cert_pin.svg);
@@ -5660,6 +5670,9 @@ ul + .form_group_wrap {
 }
 .cert_select_list .cert_select_item.naver_cert > .text::before {
 	background-image: url(../images/common/cert/icon_cert_naver_cert.svg);
+}
+.cert_select_list .cert_select_item.company_cert > .text::before {
+	background-image: url(../images/common/cert/icon_cert_company_cert.svg);
 }
 /* PIN 인증 */
 .pin_enter {
@@ -6552,7 +6565,7 @@ ul + .form_group_wrap {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	gap: 0.4rem;
+	gap: var(--gap-2);
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
@@ -6736,6 +6749,10 @@ ul + .form_group_wrap {
 }
 .prd_view {
 	scroll-behavior: smooth;
+}
+.prd_view .content_top .badge_wrap {
+	gap: var(--gap-2);
+	margin-bottom: var(--gap-3);
 }
 .prd_view .content_top .m_info {
 	margin-bottom: var(--gap-2);
