@@ -826,6 +826,11 @@
 					&::before {
 						opacity: 1;
 					}
+
+					& + dl {
+						padding-top: 0;
+						border-top: none;
+					}
 				}
 			}		
 		}
@@ -836,6 +841,11 @@
 			dl + dl,
 			& + dl {
 				margin-top: var(--gap-4);
+			}
+
+			& + dl {
+				padding-top: var(--padding-5);
+				border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 			}
 		}
 	}
