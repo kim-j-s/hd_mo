@@ -8,7 +8,9 @@
 					<div class="info_gray bg_etc01">
 						<div class="acd_item acd_item_ty8">
 							<div class="acd_head active">
-								<button type="button" class="acd_btn" aria-expanded="false">
+								<!-- s: 25-09-03 수정 -->
+								<button type="button" class="acd_btn" aria-expanded="true">
+								<!-- e: 25-09-03 수정 -->
 									<span class="picture_info_top">
 										<dl>
 											<dt>실제지급금액</dt>
@@ -63,7 +65,9 @@
 							<p>최근 2년 이내 이체 실적이 3회 이상인 계약자 본인명의 계좌만 선택할 수 있어요.</p>
 							{{/ cp/tooltip}}
 						</div>
-						{{> cp/selectitem si_ph="국민은행 1234******1234" si_title="계좌 선택" si_popup="my_bank_select"}}
+						<!-- s: 25-09-03 수정 -->
+						{{> cp/selectitem si_ph="국민은행 1234******1234" si_title="계좌 선택" si_item="국민은행 1234******1234" si_popup="my_bank_select"}}
+						<!-- e: 25-09-03 수정 -->
 						<!-- s: CASE. 계좌 디폴트 선택 시 - 대출금지급가능 계좌가 1개인 경우 -->
 						<!-- {{> cp/text type="text" placeholder="입력해주세요" inp-title="대출금 받을 계좌 입력" value="국민은행 1234******1234" disabled=true }} -->
 						<!-- e: CASE. 계좌 디폴트 선택 시 - 대출금지급가능 계좌가 1개인 경우 -->
@@ -76,8 +80,10 @@
 						</div>
 						<div class="space_list_ty1">
 							{{> cp/checkbox id="checkbox01-1" label_class="" labelname="대출금 받을 계좌와 같아요." }}
-							<!-- 대출금지급가능 계좌 동일여부 체크 해제 시 -->
-							{{> cp/selectitem si_ph="국민은행 1234******1234" si_title="계좌 선택" si_popup="my_bank_select"}}
+							<!-- 대출금지급가능 계좌 동일여부 체크 해제 시 --> 
+							<!-- s: 25-09-03 수정 -->
+							{{> cp/selectitem si_ph="국민은행 1234******1234" si_title="계좌 선택" si_item="국민은행 1234******1234" si_popup="my_bank_select"}}
+							<!-- e: 25-09-03 수정 -->
 							<!-- 대출금지급가능 계좌 동일여부 체크 해제 시 -->
 						</div>
 					</div>
