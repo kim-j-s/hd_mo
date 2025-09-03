@@ -24,6 +24,13 @@
 
 // esay mode
 .easy_mode {
+	.content {
+		.content_top {
+			+ * {
+				margin-top: var(--easy--gap-9);
+			}
+		}
+	} 
     //text
 	.title_h1 {
 		font-size: var(  --easy--font-size-heading-xlarge);
@@ -59,19 +66,35 @@
 		font-size: var(--easy--font-size-heading-xsmall);
 		line-height: 27px;
 	}
+	.pop_title_h1 {
+		+ .text_sub {
+			margin-top: var(--easy--gap-6);
+		}
+	}
 	.text_sub_ty2,
 	.text_sub {
 		font-size: var(--easy--font-size-body-medium);
 	}
-    .text_sub_ty2 {
-        + .form_group_wrap,
-        + .info_gray {
-            margin-top: var(--easy--gap-9);
-        }
-    }
+	.text_sub {
+		line-height: 30px;
+		+ .text_sub {
+			margin-top: var(--easy--gap-5);
+		}
+	}
+	.text_sub_ty2 {
+			+ .form_group_wrap,
+			+ .info_gray {
+					margin-top: var(--easy--gap-9);
+			}
+	}
 	.no_list_area {
+		.hd_icon {
+			width: 40px;
+			height: 40px;
+		}
 		p {
-			font-size: var(--easy--font-size-label-medium);
+			font-size: var(--easy--font-size-body-large);
+			line-height: 150%;
 		}
 		.desc {
 			font-size: var(--easy--font-size-label-small);
@@ -334,6 +357,9 @@
 					}
 				}
 			}
+			+ .card_item {
+				margin-top: var(--easy--gap-6);
+			}
 		}
 	}
     //infobox
@@ -349,7 +375,17 @@
 			font-size: var(--easy--font-size-body-medium);
 			line-height: 30px;
 		}
-
+		.total {
+			&.car {
+				.total_car {
+					dd {
+						del {
+							font-size: var(--easy--font-size-body-small);
+						}
+					}
+				}
+			}
+		}
 		// 보험료 확인(자동차)
 		dl {
 			gap: var(--easy--gap-8);
@@ -363,9 +399,6 @@
 				flex-basis: auto;
 				font-size: var(--easy--font-size-body-small);
 				font-weight: 700;
-				del {
-					font-size: var(--easy--font-size-body-small);
-				}
 				.total_bic {
 					font-size: var(--easy--font-size-display-medium);
 				}
@@ -405,7 +438,7 @@
 	}
 	.input_text {
 		input {
-			font-size: var( --easy--font-size-label-medium);
+			font-size: var( --easy--font-size-label-large);
 		}
 		.int_txt {
 			padding-top: 0;
@@ -444,11 +477,11 @@
 						content: "";
 						display: block;
 						position: absolute;
-						width: 24px;
-						height: 24px;
+						width: 32px;
+						height: 32px;
 						top: 50%;
 						right: 0;
-						background: url(../images/icon/arrowRight_ty4.svg) no-repeat center / 24px auto;
+						background: url(../images/icon/arrowRight_ty4.svg) no-repeat center / 32px auto;
 						-webkit-transform: translateY(-50%);
 						transform: translateY(-50%);
 					} 
@@ -540,6 +573,15 @@
 					}
 					&.opt10 {
 						background-image: url('../images/content/mtps/icon_MPRMTPS10002010000_ty10.svg');
+					}
+					&.opt11 {
+						background-image: url('../images/content/mtps/icon_MPRMTPS10009000000_01.svg');
+					}
+					&.opt12 {
+						background-image: url('../images/content/mtps/icon_MPRMTPS10009000000_07.svg');
+					}
+					&.opt13 {
+						background-image: url('../images/content/mtps/icon_MPRMTPS10009000000_08.svg');
 					}
 				}
 			}
@@ -770,7 +812,7 @@
 				font-size: var(--easy--font-size-heading-xsmall);
 			}
 			td {
-				vertical-align: top;
+				vertical-align: middle;
 				padding: var(--padding-6) var(--padding-6);
 				font-size: var(--easy--font-size-body-small);
 			}

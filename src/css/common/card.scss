@@ -877,7 +877,7 @@
 	&.high_work {
 		.card_item {
 			padding: var(--padding-12) var(--padding-8) var(--padding-8); 
-			background-color: var(--color-surface-secondary-subtler);
+			background-color: var(--color-surface-gray-subtler);//var(--color-surface-secondary-subtler);
 			border: 0;
 			background-repeat: no-repeat;
 			background-position: 24px 24px;
@@ -887,6 +887,9 @@
 				+ .cont {
 					margin-top: var(--gap-2);
 					font-size: var(--font-size-body-medium);
+					.point {
+						font-size: var(--font-size-body-large);
+					}
 				}
 			}
 			&.ty1 {
@@ -1137,7 +1140,7 @@
 
 			.item_title {
 				color: var(--color-text-bolder);
-				font-size: var(--font-size-heading-xsmall);
+				font-size: var(--font-size-heading-small);//var(--font-size-heading-xsmall);
 				font-weight: 700;
 			}
 
@@ -1163,6 +1166,15 @@
 				}
 			}
 			
+		}
+	}
+
+	// 진행중인 이벤트
+	&:has(.item_meta) {
+		.card_item {
+			.item_preview {
+				color: var(--color-text-information);
+			}
 		}
 	}
 }
@@ -1240,7 +1252,7 @@
 			
 			.main_title {
 				color: var(--color-text-bolder);
-				font-size: var(--font-size-heading-xsmall);
+				font-size: var(--font-size-heading-small);//var(--font-size-heading-xsmall);
 				font-weight: 700;
 				display: -webkit-box;
 				line-clamp: 2;

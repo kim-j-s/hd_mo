@@ -685,6 +685,12 @@
 .bi_opts_wrap .opts_area .opts_area_item .item_box .radio_group_wrap.ty2 {
 	gap: var(--gap-4);
 }
+.bi_opts_wrap .opts_area .opts_area_item .item_box .radio_group_wrap.ty2 .inp_radio {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+	width: calc(50% - 0.6rem);
+}
 .bi_opts_wrap .opts_area .opts_area_item .item_box .divider_ty2 {
 	margin: var(--gap-7) 0;
 }
@@ -966,7 +972,10 @@
 	margin-bottom: var(--gap-5);
 }
 .birth_date_field::before {
-	content: "8자리 숫자 입력";
+	content: "8자리 숫자 입력(예: 19900101)";
+}
+.birth_date_field.birth_date_field_word_type2::before {
+	content: "8자리 숫자 입력(예: 20230101)";
 }
 .birth_date_field.active {
 	color: #000;
@@ -4718,6 +4727,7 @@ ul + .form_group_wrap {
 .pop_title_h1 {
 	font-size: var(--font-size-heading-medium) !important;
 	font-weight: 700;
+	color: var(--color-text-bolder);
 }
 .pop_title_h1 + .info_text {
 	margin-top: var(--gap-4);
@@ -6329,6 +6339,13 @@ ul + .form_group_wrap {
 }
 .bottom_panel .bottom_panel_cont .info_gray:not(.bg_etc01) {
 	margin-top: var(--gap-8);
+}
+.bottom_panel .bottom_panel_cont .info_gray dt {
+	max-width: none;
+}
+.bottom_panel .bottom_panel_cont + .btn_area {
+	margin-top: var(--padding-5);
+	padding-top: var(--padding-5);
 }
 .bottom_panel.active {
 	position: fixed;
