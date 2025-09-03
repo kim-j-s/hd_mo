@@ -261,15 +261,17 @@
 					&::after {
 						content: '';
 						position: absolute;
-						// top: -5px;
-						// left: -8px;
-						top: 0;
-						left: 0;
+						top: -5px;
+						left: -8px;
+						// h_chk
+						// top: 0;
+						// left: 0;
+						// width: 100%;
+						// height: 100%;
+						// h_chk
 						z-index: 1;
-						// width: 36px;
-						// height: 36px;
-						width: 100%;
-						height: 100%;
+						width: 36px;
+						height: 36px;
 						// background-color: rgba($color: #ddd, $alpha: 0.8);
 					}
 
@@ -300,22 +302,26 @@
 				}
 			}
 
-			> .inp_radio,
-			> .inp_checkbox {
-				.chk_label {
-					position: static;
+			// h_chk
+			// > .inp_radio,
+			// > .inp_checkbox {
+			// 	.chk_label {
+			// 		position: static;
 
-					&:before {
-						top: 26px;
-						left: 20px;
-					}
-				}
-			}
+			// 		&:before {
+			// 			top: 26px;
+			// 			left: 20px;
+			// 		}
+			// 	}
+			// }
+			// h_chk
 		}
 
 		.card_link {
-			position: relative;
-			z-index: 20;
+			// h_chk
+			// position: relative;
+			// z-index: 20;
+			// h_chk
 			display: block;
 			cursor: pointer;
 
@@ -642,7 +648,7 @@
 		.item_info {
 			margin-top: var(--gap-5);
 			padding-top: 16px;
-			border-top: var(--border-width-static-regular) solid var(--color-border-gray-light);
+			border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 		}
 		.checkbox_group_wrap {
 			.inp_checkbox {
@@ -871,7 +877,7 @@
 	&.high_work {
 		.card_item {
 			padding: var(--padding-12) var(--padding-8) var(--padding-8); 
-			background-color: var(--color-surface-secondary-subtler);
+			background-color: var(--color-surface-gray-subtler);//var(--color-surface-secondary-subtler);
 			border: 0;
 			background-repeat: no-repeat;
 			background-position: 24px 24px;
@@ -881,6 +887,9 @@
 				+ .cont {
 					margin-top: var(--gap-2);
 					font-size: var(--font-size-body-medium);
+					.point {
+						font-size: var(--font-size-body-large);
+					}
 				}
 			}
 			&.ty1 {
@@ -1131,7 +1140,7 @@
 
 			.item_title {
 				color: var(--color-text-bolder);
-				font-size: var(--font-size-heading-xsmall);
+				font-size: var(--font-size-heading-small);//var(--font-size-heading-xsmall);
 				font-weight: 700;
 			}
 
@@ -1157,6 +1166,15 @@
 				}
 			}
 			
+		}
+	}
+
+	// 진행중인 이벤트
+	&:has(.item_meta) {
+		.card_item {
+			.item_preview {
+				color: var(--color-text-information);
+			}
 		}
 	}
 }
@@ -1234,7 +1252,7 @@
 			
 			.main_title {
 				color: var(--color-text-bolder);
-				font-size: var(--font-size-heading-xsmall);
+				font-size: var(--font-size-heading-small);//var(--font-size-heading-xsmall);
 				font-weight: 700;
 				display: -webkit-box;
 				line-clamp: 2;

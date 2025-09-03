@@ -48,8 +48,10 @@
                   <div class="info_gray">
                       <dl>
                           <dt>계약별로 직접 입력</dt>
-                          <dd>{{> cp/checkbox id="switch_check3" label_class="switch_check lg" role="switch" aria-checked="true" }}</dd>
-                      </dl>						
+                          <!-- s: 25-09-03 수정 -->
+                          <dd class="flex_none">{{> cp/checkbox id="switch_check3" label_class="switch_check text_empty lg" role="switch" aria-checked="true" }}</dd>
+                          <!-- e: 25-09-03 수정 -->
+                        </dl>						
                   </div>
                   <!-- s: 계약별로 직접 입력 선택인 경우 대출 가능 계약 목록 노출 -->
                   <div class="card_item_wrap focusin">
@@ -100,7 +102,9 @@
                                                   {{> cp/button type="3" size="4" b-text="정정"}}
                                               </div>
                                               <div class="btn_area basic">
-                                                  {{> cp/linkButton bl_class="short_cut" bl_text="이 대출은 신용정보 집중 대상이에요" pop_id="pop_type01" question_tit="신용정보 집중 대상 대출 안내" }}
+                                                <!-- s: 25-09-03 수정 -->
+                                                {{> cp/linkButton bl_class="short_cut sm" bl_text="이 대출은 신용정보 집중 대상이에요" pop_id="pop_type01" question_tit="신용정보 집중 대상 대출 안내" }}
+                                                <!-- e: 25-09-03 수정 -->
                                               </div>
                                           </div>
                                       </div>
