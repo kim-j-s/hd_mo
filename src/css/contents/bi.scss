@@ -745,8 +745,15 @@
 	margin-bottom: var(--gap-5);
 
 	&::before {
-		content: '8자리 숫자 입력';
+		content: '8자리 숫자 입력(예: 19900101)';
 	}
+	
+	&.birth_date_field_word_type2 {
+		&::before {
+			content: '8자리 숫자 입력(예: 20230101)';
+		}
+	}
+	
 	&.active {
 		color: #000;
 		&::before {
