@@ -247,7 +247,7 @@
 			}
 			
 			&.active + .acd_cont {
-				padding: var(--gap-4) var(--padding-6);
+				padding: var(--padding-5) var(--padding-7) var(--padding-6);//var(--gap-4) var(--padding-6);
 
 				#mov_youtube_caption {
 					visibility: visible;
@@ -334,6 +334,9 @@
 			flex-shrink: 0;
 		}
 
+		.meta_group {
+			display: flex;
+		}
 		.meta {
 			display: inline-block;
 			color: var(--color-text-subtle);
@@ -350,7 +353,7 @@
 					content: "";
 					width: 1px;
 					height: 12px;
-					margin: 0 4px;
+					margin: 0 var(--gap-2);
 					background: var(--color-border-gray-light);
 					position: absolute;
 					top: 50%;
@@ -374,8 +377,8 @@
 		position: absolute;
 		top: var(--padding-8);
 		right: var(--padding-7);
-		width: 24px;
-		height: 24px;
+		width: 32px;//24px;
+		height: 32px;//24px;
 		font-size: 0;
 		transition: all 0.3s;
 
@@ -388,6 +391,13 @@
 			height: 100%;
 			background: #fff url(../images/icon/arrowDown_ty3.svg) no-repeat center / 24px auto;
 			transition: all 0.3s;
+		}
+	}
+
+	//아코디언 형태일때 별점 높이값
+	&:has(.acd_btn) {
+		.review_star_item {
+			height: 32px;
 		}
 	}
 
@@ -405,7 +415,7 @@
 	.review_star_item {
 		display: flex;
 		align-items: center;
-		gap: var(--gap-2);
+		gap: var(--gap-1);//var(--gap-2);
 		height: 24px;
 
 		.star {
@@ -422,3 +432,4 @@
 		}
 	} //review_star_item
 }
+
