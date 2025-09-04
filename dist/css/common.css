@@ -220,6 +220,9 @@ strong {
 .bottom_fix_wrap .banner_box {
 	margin-bottom: var(--gap-4);
 }
+.bottom_fix_wrap .banner_box + .btn_area {
+	margin-top: var(--gap-7);
+}
 .bottom_fix_wrap .btn_area {
 	gap: var(--gap-3);
 	-webkit-box-orient: horizontal;
@@ -2027,7 +2030,7 @@ strong {
 	margin-top: var(--gap-8);
 }
 .ag_group_wrap .ag_group_cont + .ag_group_cont {
-	border-top: var(--border-width-static-regular) solid var(--color-border-gray-light);
+	border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 }
 .ag_group_wrap .ag_group_cont .chk_list .inp_checkbox .list_ty2 {
 	margin-top: var(--gap-5);
@@ -4407,7 +4410,7 @@ strong {
 	position: fixed;
 	right: 2.4rem;
 	bottom: 5.2rem;
-	z-index: 10;
+	z-index: 30;
 	max-width: calc(100% - 4.8rem);
 }
 .fixed_link_wrap .inner {
@@ -9606,7 +9609,7 @@ strong {
 	right: 0;
 	width: 2.4rem;
 	height: 2.4rem;
-	background: url(../images/icon/arrowRight_ty5.svg) no-repeat center/2rem auto;
+	background: url(../images/icon/arrowRight_ty5.svg) no-repeat center/2.4rem auto;
 }
 .search_reult_list_container ul.search_reult_list li a.disabled::after {
 	background-image: url(../images/icon/arrowRight_disabled_ty2.svg);
@@ -9809,10 +9812,10 @@ strong {
 	height: 0.3rem;
 	border-radius: 50%;
 }
-.list_depth > li .table_wrap {
+.list_depth > li .in_table {
 	margin: var(--gap-11) 0 0 -0.8rem;
 }
-.list_depth > li .table_wrap .pop_title_h1 + .table {
+.list_depth > li .in_table .pop_title_h1 + .table {
 	margin-top: var(--gap-6);
 }
 .list_depth > li .new_open {
@@ -12323,6 +12326,14 @@ ol li .table_wrap + .list_ty2 li + li {
 	border-radius: 0.8rem;
 	background: var(--color-element-gray-lighter);
 }
+.opt_select_list.opt_case2.sm {
+	border-bottom: var(--border-width-static-regular) solid var(--color-divider-gray-light);
+}
+.opt_select_list.opt_case2.sm .option > .text {
+	padding: var(--padding-6) calc(2.4rem + var(--padding-6)) var(--padding-6) 0;
+	background-size: 2rem auto;
+	background-position-x: calc(100% - 0.2rem);
+}
 .opt_select_list.opt_case3 {
 	margin: 0 -2.4rem;
 }
@@ -13215,6 +13226,7 @@ ol li .table_wrap + .list_ty2 li + li {
 .table_wrap .table th.primary_bold,
 .table_wrap .table td.primary_bold {
 	font-weight: 700;
+	color: var(--color-text-primary-bold);
 }
 .table_wrap .table th.v_mid,
 .table_wrap .table td.v_mid {
@@ -13240,6 +13252,7 @@ ol li .table_wrap + .list_ty2 li + li {
 	font-weight: 700;
 	word-break: keep-all;
 	background-color: var(--color-surface-gray-subtler);
+	color: var(--color-text-bolder);
 }
 .table_wrap .table td {
 	vertical-align: top;
