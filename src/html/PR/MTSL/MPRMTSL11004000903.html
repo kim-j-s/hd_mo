@@ -31,7 +31,9 @@
 					{{> cp/tab_btn tb-text="보장확대" tb-id="contract04"}}
 				</div>
 				<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanelcontract03">
-					<h3 class="pop_title_h2">내 차에 대한 보장을 확대하는 특약</h3>
+					<!-- s: 25-09-04 수정 -->
+					<h3 class="pop_title_h2">나와 내 가족에 대한 보장을 확대하는 특약</h3>
+					<!-- e: 25-09-04 수정 -->
 					<ul class="special_contract_list">
 						<!-- s: 25-07-30 수정 -->
 
@@ -56,7 +58,9 @@
 						<li>
 							<div class="check_flex_box disabled">
 								<div class="check_box">
-									{{> cp/checkbox id="agreement02-11" labelname="전기자동차 배터리 신품가액보상 특약" checked=true disabled=true }}
+									<!-- s: 25-09-04 수정 -->
+									{{> cp/checkbox id="agreement02-11" labelname="친환경자동차 배터리 신품가액보상 특약" checked=true disabled=true }}
+									<!-- e: 25-09-04 수정 -->
 								</div>
 								<!-- s: 25-07-30 수정 -->			
 								<!-- <div class="money_box">
@@ -132,9 +136,10 @@
 							</div>
 						</li>
 						<li>
+							<!-- s: 25-09-04 수정 -->
 							<div class="check_flex_box">
 								<div class="check_box">
-									{{> cp/checkbox id="agreement01-15" labelname="대물배상가입금액확장담보특약" }}
+									{{> cp/checkbox id="agreement01-15" labelname="대물배상 가입금액 확장담보 특약" }}
 								</div>
 								<!-- s: 25-07-30 수정 -->			
 								<!-- <div class="money_box">
@@ -144,10 +149,11 @@
 									{{> cp/button_question question-icon="arrow" pop_id="pop_type15" question_tit="대물배상가입금액확장담보특약" }}
 								</div> -->
 								<!-- s: 25-09-01 수정 -->
-								{{> cp/button_question question-icon="arrow" pop_id="pop_type15" question_tit="대물배상가입금액확장담보특약" }}
+								{{> cp/button_question question-icon="arrow" pop_id="pop_type15" question_tit="대물배상 가입금액 확장담보 특약" }}
 								<!-- e: 25-09-01 수정 -->
 								<!-- e: 25-07-30 수정 -->			
 							</div>
+							<!-- e: 25-09-04 수정 -->
 						</li>
 						<li>
 							<div class="check_flex_box">
@@ -168,22 +174,24 @@
 							</div>
 						</li>
 						<li>
+							<!-- s: 25-09-04 수정 -->
 							<div class="check_flex_box">
 								<div class="check_box">
-									{{> cp/checkbox id="agreement01-7" labelname="타이어교체 및 펑크수리 추가특약" }}
+									{{> cp/checkbox id="agreement01-7" labelname="타이어 교체 및 펑크수리 추가특약" }}
 								</div>
 								<!-- s: 25-07-30 수정 -->	
 								<!-- <div class="money_box">
 									<div class="money">
 										<span>5,100</span>원
 									</div>
-									{{> cp/button_question question-icon="arrow" pop_id="pop_type07" question_tit="타이어교체 및 펑크수리 추가특약" }}
+									{{> cp/button_question question-icon="arrow" pop_id="pop_type07" question_tit="타이어 교체 및 펑크수리 추가특약" }}
 								</div> -->
 								<!-- s: 25-09-01 수정 -->
-								{{> cp/button_question question-icon="arrow" pop_id="pop_type07" question_tit="타이어교체 및 펑크수리 추가특약" }}
+								{{> cp/button_question question-icon="arrow" pop_id="pop_type07" question_tit="타이어 교체 및 펑크수리 추가특약" }}
 								<!-- e: 25-09-01 수정 -->
 								<!-- e: 25-07-30 수정 -->	
 							</div>
+							<!-- e: 25-09-04 수정 -->
 						</li>
 						<li>
 							<div class="check_flex_box">
@@ -213,8 +221,10 @@
 {{/ popup/popup_full}}
 	 <!-- e: Full 팝업 -->
 		
-    	<!-- s: 타이어교체 및 펑크수리 추가특약 Bottom 팝업 -->
-		{{#> popup/popup_bottom popup-id="pop_type07" popup-active=false popup-title="타이어교체 및 펑크수리 추가특약" }}
+    	<!-- s: 타이어 교체 및 펑크수리 추가특약 Bottom 팝업 -->
+		<!-- s: 25-09-04 수정 -->
+		{{#> popup/popup_bottom popup-id="pop_type07" popup-active=false popup-title="타이어 교체 및 펑크수리 추가특약" }}
+		<!-- e: 25-09-04 수정 -->
 		<div class="popup_cont">
 			<div class="popup_content">
 				<div class="info_cont">
@@ -240,24 +250,22 @@
 			</div>
 		</div>
 		{{/ popup/popup_bottom}} 
-		<!-- e: 타이어교체 및 펑크수리 추가특약 Bottom 팝업 -->
+		<!-- e: 타이어 교체 및 펑크수리 추가특약 Bottom 팝업 -->
     	
     	<!-- s: 자기차량손해 보장 확대 Bottom 팝업 -->
 		{{#> popup/popup_bottom popup-id="pop_type10" popup-active=false popup-title="자기차량손해 보장 확대" }}
 		<div class="popup_cont">
 			<div class="popup_content">
 				<div class="info_cont">
-					<h2>가입형태</h2>
-					<p>자기차량손해 담보에 가입하는 경우에 한하여 가입</p>
-					<h2>보상책임</h2>
-					<p>피보험자동차를 소유&middot;사용&middot;관리하는 동안에 발생한 사고로 피보험자동차에 직접적으로 생긴 손해를 보상</p>
+					<!-- s: 25-09-04 수정 -->
+					<h2>보상내용</h2>
 					<ul class="list_depth">
-						<li>타물체와의 충돌, 접촉, 추락, 전복 또는 차량의 침수로 인한 손해</li>
+						<li>피보험자동차를 소유·사용·관리하는 동안에 발생한 사고로 피보험자동차에 직접적으로 생긴 손해를 보상</li>
+						<li>다른 물체와의 충돌, 접촉, 추락, 전복 또는 자동차의 침수로 인한 손해</li>
 						<li>화재, 폭발, 낙뢰, 날아온 물체, 떨어지는 물체에 의한 손해 또는 풍력에 의해 차체에 생긴 손해</li>
-					</ul>
-					<ul class="list_ty2">
 						<li>보험금 지급기준은 ‘자기차량손해’ 담보와 같습니다.</li>
 					</ul>
+					<!-- e: 25-09-04 수정 -->
 				</div>
 			</div>
 		</div>
@@ -268,21 +276,18 @@
 		</div>
 		{{/ popup/popup_bottom}} 
 		<!-- e: 자기차량손해 보장 확대 Bottom 팝업 -->
-    	<!-- s: 전기자동차 배터리 신품가액보상 특약 Bottom 팝업 -->
-		{{#> popup/popup_bottom popup-id="pop_type11" popup-active=false popup-title="전기자동차 배터리 신품가액보상 특약" }}
+    	<!-- s: 친환경자동차 배터리 신품가액보상 특약 Bottom 팝업 -->
+		<!-- s: 25-09-04 수정 -->
+		{{#> popup/popup_bottom popup-id="pop_type11" popup-active=false popup-title="친환경자동차 배터리 신품가액보상 특약" }}
+		<!-- e: 25-09-04 수정 -->
 		<div class="popup_cont">
 			<div class="popup_content">
                 <div class="info_cont">
-					<h2>가입대상</h2>
-					<ul class="list_depth">
-						<li>전기자동차(화물자동차)</li>
-						<li>자기차량손해 또는 자기차량손해 보장 확대 특약 가입자</li>
-					</ul>
+					<!-- s: 25-09-04 수정 -->
 					<h2>보상내용</h2>
-					<p>자차사고로 배터리 수리 시 신품 보상(감가상각 미적용)</p>
-					<h2>특이사항</h2>
-					<p>특약 미가입 시 배터리 등 중요한 부품의 신품 교환 시 연식에 따른 감가상각 금액은 고객 부담</p>
-                </div>
+					<p>사고로 전기차 배터리 수리 시 중요한 부품으로서 감가상각하지 않고 신품으로 보상<br>단, 새 부분품을 포함한 수리비용이 보험가액보다 많은 경우에는 보험가액을 한도로 보상</p>
+					<!-- e: 25-09-04 수정 -->
+				</div>
 			</div>
 		</div>
 		<div class="popup_bottom">
@@ -291,19 +296,16 @@
 			</div>
 		</div>
 		{{/ popup/popup_bottom}} 
-		<!-- e: 전기자동차 배터리 신품가액보상 특약 Bottom 팝업 -->
+		<!-- e: 친환경자동차 배터리 신품가액보상 특약 Bottom 팝업 -->
     	<!-- s: 전기자동차 초과수리비용 지원특약 Bottom 팝업 -->
 		{{#> popup/popup_bottom popup-id="pop_type12" popup-active=false popup-title="전기자동차 초과수리비용 지원특약" }}
 		<div class="popup_cont">
 			<div class="popup_content">
                 <div class="info_cont">
-					<h2>가입대상</h2>
-					<ul class="list_depth">
-						<li>전기자동차(화물자동차)</li>
-						<li>자기차량손해 또는 자기차량손해 보장 확대 특약 가입자</li>
-					</ul>
+					<!-- s: 25-09-04 수정 -->
 					<h2>보상내용</h2>
-					<p>자차 전손 사고로 수리 시 차량가액의 130%까지 보상<br>단, 실제 수리를 하지 않는 경우에는 차량가액 한도 보상</p>
+					<p>사고로 전기차를 실제로 수리할 경우 배터리를 포함한 차량가액의 130% 한도 보상</p>
+					<!-- e: 25-09-04 수정 -->
                 </div>
 			</div>
 		</div>
@@ -321,7 +323,9 @@
 			<div class="popup_content">
 				<div class="info_cont">
 					<h2>보상내용</h2>
-					<p>대물배상 담보의 보상내용을 준용합니다.</p>
+					<!-- s: 25-09-04 수정 -->
+					<p>「자동차손해배상보장법」에서 정한 대물배상 가입금액(2,000만원)을 초과해 피보험자동차 사고로 다른 사람의 재물을 없애거나 훼손한 경우 보상</p>
+					<!-- e: 25-09-04 수정 -->
 				</div>
 			</div>
 		</div>
@@ -338,15 +342,14 @@
 		<div class="popup_cont">
 			<div class="popup_content">
 				<div class="info_cont">
-					<h2>가입대상</h2>
-                    <p>하이카서비스 특별약관에 가입한 경우에 한하여 가입 가능</p>
+					<!-- s: 25-09-04 수정 -->
 					<h2>보상내용</h2>
-					<p>피보험자동차가 사고 또는 고장으로 인하여 자력으로 주행이 불가능한 경우 1일당 1회에 한하여 견인</p>
-					<h2>유의사항</h2>
 					<ul class="list_depth">
-						<li>견인을 개시한 곳으로부터 60km 한도</li>
-						<li>고장출동서비스를 가입한 경우에 한하여 가입 가능</li>
+						<li>피보험자동차가 사고 또는 고장으로 인해 자력으로 주행할 수 없는 경우 1일당 1회에 한해 견인</li>
+						<li>견인을 시작한 곳으로부터 60km 한도</li>
+						<li>고장출동서비스를 가입한 경우에만 가입 가능</li>
 					</ul>
+					<!-- e: 25-09-04 수정 -->
 				</div>
 			</div>
 		</div>
@@ -391,18 +394,10 @@
 		<div class="popup_cont">
 			<div class="popup_content">
 				<div class="info_cont">
-					<h2>가입대상</h2>
-					<ul class="list_depth">
-						<li>전기자동차(화물자동차)</li>
-						<li>자기신체사고, 자동차상해 또는 자기차량손해 보장 확대 특약 가입 시 해당 담보에 자동 적용</li>
-					</ul>
+					<!-- s: 25-09-04 수정 -->
 					<h2>보상내용</h2>
-					<ul class="list_depth">
-						<li>전기차 충전 중 화재, 폭발, 감전 사고로 사망 또는 상해 시 보상</li>
-						<li>전기차 충전 중 중요한 부품의 전기적 손해 보상</li>
-					</ul>
-					<h2>특이사항</h2>
-					<p>전기차 가입설계 시 자동 가입, 보험료 없음</p>
+					<p>전기차 충전 중 피보험자가 죽거나 다친 경우 또는 전기차 중요부품의 전기적 손해가 발생한 경우 보상</p>
+					<!-- e: 25-09-04 수정 -->
 				</div>
 			</div>
 		</div>
