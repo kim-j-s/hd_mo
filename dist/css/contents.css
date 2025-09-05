@@ -7074,14 +7074,14 @@ ul + .form_group_wrap {
 }
 .prd_view .faq_area .item_wrap_faq .acd_item .acd_head .acd_btn {
 	position: relative;
-	padding: 1.4rem 3.2rem 1rem 2.8rem;
+	padding: 1.2rem 3.2rem 1.2rem 2.8rem;
 	background-color: transparent;
 }
 .prd_view .faq_area .item_wrap_faq .acd_item .acd_head .acd_btn::after {
 	content: "";
 	display: block;
 	position: absolute;
-	top: 1.4rem;
+	top: 1.2rem;
 	left: 0;
 	width: 2.4rem;
 	height: 2.4rem;
@@ -7104,11 +7104,13 @@ ul + .form_group_wrap {
 	background-size: 2.4rem auto;
 }
 .prd_view .faq_area .item_wrap_faq .acd_item .acd_cont .inner > p {
-	margin-bottom: var(--gap-4);
 	text-align: left;
 }
 .prd_view .faq_area .item_wrap_faq .acd_item .acd_cont .inner > p + .list_ty2 {
 	margin-top: var(--gap-5);
+}
+.prd_view .faq_area .item_wrap_faq .acd_item .acd_cont .inner:has(> p) p ~ * {
+	margin-top: var(--gap-4);
 }
 .prd_view .faq_area .item_wrap_faq .acd_item .acd_cont .inner:has(img) {
 	text-align: center;
@@ -7172,7 +7174,7 @@ ul + .form_group_wrap {
 	content: "";
 	width: 1px;
 	height: 1.2rem;
-	margin: 0 0.4rem;
+	margin: 0 0.2rem;
 	background: var(--color-border-gray-light);
 	position: absolute;
 	top: 50%;
@@ -7213,6 +7215,10 @@ ul + .form_group_wrap {
 	color: var(--color-text-subtle);
 	line-height: 2.1rem;
 }
+.prd_view .info_list .desc + button,
+.prd_view .info_list .desc + .btn_area {
+	margin-top: var(--gap-2);
+}
 .prd_view .info_list .item {
 	padding-left: 4.4rem;
 }
@@ -7222,10 +7228,10 @@ ul + .form_group_wrap {
 .prd_view .info_list.ty_line .item {
 	padding-top: var(--padding-6);
 	padding-bottom: var(--padding-6);
-	border-bottom: var(--border-width-static-regular) solid var(--color-border-gray-light);
+	border-bottom: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 }
 .prd_view .info_list.ty_line .item:first-of-type {
-	border-top: var(--border-width-static-regular) solid var(--color-border-gray-light);
+	border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 }
 .prd_view .cont_head {
 	display: -webkit-box;
@@ -7266,6 +7272,9 @@ ul + .form_group_wrap {
 	width: auto;
 	border: 0;
 	border-radius: inherit;
+}
+.review_wrap .review_acd_item .review_star_item {
+	height: auto;
 }
 .review_wrap .review_acd_item .review_star_item .star {
 	cursor: auto;
