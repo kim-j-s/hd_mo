@@ -39,11 +39,21 @@
             + *,
             > * {
                 margin-top: var(--gap-1);
-            }
+            }            
         }
         .easy_none {
             + *:not(.easy_top) {
                 margin-top: var(--gap-1);
+            }
+
+            //home > 전체 상품이 궁금하신가요? 여백
+            &:has(.product_top) {
+                .home_card {
+                    padding-top: var(--padding-9);
+                }
+            }
+            .product_top {
+                margin: 0 var(--padding-3);
             }
         }
         .btn_menu_search {
@@ -160,6 +170,12 @@
             }
         }
     }
+
+     &.home {
+        .btn_area {
+            margin-top: var(--padding-6);
+        }
+     }
 }
 
 
@@ -173,10 +189,17 @@
     }
 }
 .pro_tit {
-    + .card_item_wrap,
-    + .icon_link {
-        margin-top: var(--gap-5);
+    // + .card_item_wrap,
+    // + .icon_link {
+    //     margin-top: var(--gap-5);
+    // }
+    + .card_item_wrap {
+    margin-top: var(--gap-5);
     }
+    + .icon_link {
+    margin-top: var(--gap-6);
+    }
+    
 } 
 .my_title  {
     display: flex;
@@ -419,8 +442,9 @@
         background: var(--color-surface-primary-subtler);
         .icon_link {
             .item {
-                padding: 44px 0 var(--padding-5);
+                padding: 48px 0 var(--padding-5);//44px 0 var(--padding-5);
                 background-position: center 12px;
+                font-size: var(--font-size-body-small);
             }
         }
     }
