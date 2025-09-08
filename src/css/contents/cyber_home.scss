@@ -121,7 +121,7 @@
 				background: url(../images/icon/close_ty1.svg) no-repeat center / 20px auto;
             }
             + .ing_banner {
-                margin-top: var(--gap-1);
+                margin-top: var(--gap-5);//var(--gap-1);
             }
             + .main_slide_wrap {
 	            margin: var(--gap-3) -32px 0;
@@ -177,7 +177,7 @@
     + .icon_link {
         margin-top: var(--gap-5);
     }
-}
+} 
 .my_title  {
     display: flex;
     justify-content: space-between;
@@ -208,6 +208,19 @@
         }
     }
 }
+
+// 팝업 안 타이틀 색상 & badge 여백
+.popup_wrap.bottom  {
+    .my_title {
+        h2 {
+            color: var(--color-text-bolder);
+        }
+        & + .badge_wrap {
+            gap: var(--gap-2);
+        }
+    }
+}
+
 .sub_text {
     font-size: var(--font-size-body-small);
     color: var(--color-text-subtle);
@@ -644,7 +657,9 @@
             .select_item.select_item_case01 .si_item {
                 padding: var(--padding-5) 36px var(--padding-5) var(--padding-5);
                 color: inherit;
-                background: transparent url(../images/icon/arrowDown_ty4.svg) no-repeat right 12px center / 16px auto;
+                background: transparent url(../images/icon/arrowDown_ty2.svg) no-repeat right 12px center / 16px auto;
+                font-size: var(--font-size-body-xsmall);
+                border-radius: var(--radius-medium3);
                 &::after {
                     border: 0;
                 }
