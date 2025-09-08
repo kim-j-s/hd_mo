@@ -194,7 +194,7 @@
 																	<!-- e: 본인인증 전 -->
 
 																	<!-- s: 본인인증 후 -->
-																	<!-- {{#> cp/linkButton bl_class="add_text_btn" pop_id="ex_popup_bottom" question_tit="할인 안내 팝업열기" }}
+																	<!-- {{#> cp/linkButton bl_class="add_text_btn" pop_id="pb1" question_tit="할인 안내 팝업열기" }}
 																	<div class="txt">
 																		건강검진정보를 제공하면<br>
 																		<strong class="point">5% 할인</strong>해드려요
@@ -238,13 +238,13 @@
 														<!-- s: 25-05-08 수정 -->
 														<ul class="gdi_content_list">
 															<li class="ico_add ico_add_ty8">
-																<div class="item">																	
-																		{{#> cp/linkButton bl_class="add_text_btn" pop_id="ex_popup_bottom" question_tit="할인 안내 팝업열기" }}
+																<div class="item">
+																		{{#> cp/linkButton bl_class="add_text_btn" pop_id="pb1" question_tit="할인 안내 팝업열기" }}
 																		<div class="txt">
 																			건강검진정보를 제공하면<br>
 																		<strong class="point">5% 할인</strong>해드려요
 																		</div>
-																		{{/ cp/linkButton}}																	
+																		{{/ cp/linkButton}}
 																</div>
 															</li>
 														</ul>
@@ -708,6 +708,7 @@
 <!-- e: 특약 팝업 -->
 
 {{> pay/hd_card }}
+
 <!-- s: Full 팝업(예시) -->
 {{#> popup/popup_full popup-id="ex_popup_full" popup-title="팝업 타이틀" }}
 <div class="popup_cont">
@@ -731,6 +732,56 @@
 </div>
 {{/ popup/popup_full}}
 <!-- e: Full 팝업(예시) -->
+
+{{#> popup/popup_bottom popup-id="pb1" popup-title="보험료 할인"}}
+	<!-- e: 25-08-28 UXW -->
+	<!-- e: 25-05-22 수정 -->
+	<div class="popup_cont">
+		<div class="popup_content">
+
+			<!-- s: 25-05-14 수정-->
+			<div class="popup_content_top">
+				<!-- s: 25-05-22 수정 -->
+				<!-- s: 25-08-28 UXW -->
+				<h3 class="title_h3 normal center">
+					2년 이내의 건강검진정보를 제출하면<br>
+					가입 첫 해 <strong class="point">보험료의 5%를 할인</strong> 받을 수 있어요
+				</h3>
+				<!-- e: 25-08-28 UXW -->
+				<!-- e: 25-05-22 수정 -->
+			</div>
+
+			<div class="info_gray">
+				<ul class="list_depth">
+					<!-- s: 25-08-11 UXW -->
+					<li>간편인증(카카오, 네이버 등)으로 건강검진 결과를 제출할 수 있습니다.</li>
+					<li>건강정보를 분석해 건강할수록 보험료를 추가로 할인해드립니다.</li>
+					<!-- s: 25-08-28 UXW -->
+					<li>계약 완료 후 다이렉트 고객센터(1899-6782)를 통해 사진으로 제출할 수 있습니다.</li>
+					<!-- e: 25-08-28 UXW -->
+					<!-- e: 25-08-11 UXW -->
+				</ul>
+			</div>	
+			<!-- e: 25-05-14 수정-->		
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area column">
+			<!-- s: 25-08-28 수정 -->	
+			<!-- s: 25-05-22 수정 -->
+			<!-- s: 25-08-11 UXW -->
+			<!-- {{> cp/button type="1" size="2" b-text="간편인증으로 제출하고 보험료 할인받기"}} -->
+			<!-- e: 25-08-11 UXW -->
+			<!-- e: 25-05-22 수정 -->
+			<!-- <button type="button" class="hd_btn normal">
+				<span class="text">나중에 등록</span>
+			</button> -->
+			{{> cp/button type="3" size="2" b-text="나중에 등록"}}
+			{{> cp/button type="1" size="2" b-text="간편인증으로 제출하고 보험료 할인받기"}}
+			<!-- e: 25-08-28 수정 -->
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
 
 <!-- e: popup area -->
 

@@ -1062,11 +1062,21 @@
 	background: transparent;
 	vertical-align: top;
 	.hd_icon {
-		&.popover_help,
-		&.arrowRightSvg {
+		&.popover_help {
 			width: inherit;
 			height: inherit;
 		}
+		&.arrowRightSvg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+	&:has(.arrowRightSvg) {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 24px;
+		height: 24px;
 	}
 }
 
