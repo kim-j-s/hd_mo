@@ -17,10 +17,13 @@
 				<div class="form_group_wrap">
 					<div class="form_line">
 						<div class="label_tit">휴대폰번호</div>
-						<div class="comp_wrap key_number">
+						<!-- s: 25-09-08 수정 -->
+						<!-- <div class="comp_wrap key_number">
 							{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
 							{{> cp/button type="3" size="4" b-text="인증번호요청"}}
-						</div>
+						</div> -->
+						{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" value="12345678" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" readonly=true }}
+						<!-- e: 25-09-08 수정 -->
 						<ul class="list_ty2">
 							<li>피보험자의 스마트폰만 이용 가능합니다.</li>
 						</ul>
@@ -28,7 +31,9 @@
 
 					<div class="form_line">
 						<div class="label_tit">이메일</div>
-						{{> cp/text type="email" inpclass="email_auto" inp-title="이메일 입력" }}
+						<!-- s: 25-09-08 수정 -->
+						{{> cp/text type="email" inpclass="email_auto" placeholder="이메일 입력" inp-title="이메일 입력" }}
+						<!-- e: 25-09-08 수정 -->
 					</div>
 
 					<div class="form_line">
@@ -47,7 +52,9 @@
 			<!-- s: 25-07-08 수정 (장애인 대상 여부 삭제) -->
 			<div class="divider_ty1"></div>
 			<div class="form_box">
-				<h3 class="title_h3">필수 확인 사항</h3>
+				<!-- s: 25-09-08 수정 -->
+				<h3 class="title_h3">필수 확인사항</h3>
+				<!-- e: 25-09-08 수정 -->
 				<div class="form_group_wrap">
 					<div class="form_line">
 						<div class="label_tit">
@@ -62,14 +69,18 @@
 							<div class="form_group_wrap">
 								<div class="form_line">
 									<div class="label_tit">공동 친권자 이름(배우자)</div>
-									{{> cp/text type="text" placeholder="공동 친권자 이름(배우자)" inp-title="공동 친권자 이름(배우자) 입력" }}
+									<!-- s: 25-09-08 수정 -->
+									{{> cp/text type="text" placeholder="공동 친권자 이름 입력" inp-title="공동 친권자 이름(배우자) 입력" }}
+									<!-- e: 25-09-08 수정 -->
 								</div>
 							</div>
 						</div>
 					</div>
 
 					<div class="form_line">
-						<div class="label_tit">보험증권 받는 방법을 선택해주세요.</div>
+						<!-- s: 25-09-08 수정 -->
+						<div class="label_tit">보험계약서류 받는 방법을 선택해주세요.</div>
+						<!-- e: 25-09-08 수정 -->
 						<div class="radio_group_wrap" role="radiogroup">
 							{{> cp/radio rd-class="rd_btn" rd-id="receiveSel02_01" name="receiveSel02" labelname="모바일" }}
 							{{> cp/radio rd-class="rd_btn" rd-id="receiveSel02_02" name="receiveSel02" labelname="이메일" }}
@@ -102,9 +113,11 @@
 							{{> cp/radio rd-class="rd_btn" rd-id="qs_item04_02" name="qs_item04" labelname="아니요" }}
 						</div>
 						<ul class="list_ty2">
+							<!-- s: 25-09-08 수정 -->
 							<li>
-								해외금융계좌 신고제도에 따라 외국의 국적, 시민권, 영주권 등을 보유하거나 외국에 납세의무를 지닌 경우 [예] 를 체크해주세요.
+								해외금융계좌 신고제도에 따라 외국의 국적, 시민권, 영주권 등을 보유하거나 외국에 납세의무를 지닌 경우 [예] 를 선택해주세요.
 							</li>
+							<!-- e: 25-09-08 수정 -->
 						</ul>	
 					</div>
 				</div>
@@ -248,9 +261,11 @@
 				labelname="이 금융 거래의 실제 소유자입니다." labelcont="「특정금융정보법」에 따라 금융기관과의 거래를 위해 고객의 신원이 실제 소유자임을 확인하고 있습니다." }}
 				{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-2" label_class="chk_label_ty3 check_hide"
 				labelname="보험수익자 지정/변경 약정에 동의합니다." labelcont="계약자 사망시 상속인 등 승계인이 보험(만기, 사망, 기타)수익자 지정, 변경권을 행사합니다." }}
+				<!-- s: 25-09-08 수정 -->
 				{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-3" label_class="chk_label_ty3 check_hide"
 				labelname="통신수단을 이용한 계약해지에 동의합니다." labelcont="보험계약자가 체결한 계약을 해지하고자 하는 경우, 통신수단(전화)을 이용할 수 있습니다. 단, 금융사고 예방 등을
-				위해 회사가 정한 규정에 의해 일부 제한될 수 있음을 꼭 알아두세요." }}
+				위해 현대해상이 정한 규정에 의해 일부 제한될 수 있음을 꼭 알아두세요." }}
+				<!-- e: 25-09-08 수정 -->
 			</div>
 			<div class="info_gray">
 				<dl>
@@ -285,28 +300,38 @@
 					<li>
 						<div class="form_group_wrap">
 							<div class="form_line">
+								<!-- s: 25-09-08 수정 -->
 								<div class="label_tit">
-									고객님의 직업을 입력해 주세요.
+									고객님의 직업을 입력해주세요.
 								</div>
+								<!-- e: 25-09-08 수정 -->
 								<!-- s: 25-07-01 수정 -->
 								<!-- s: 25-05-22 수정 -->
 									<div class="form_line">
 										<div class="label_tit">근무처</div>
-										{{> cp/text placeholder="예) 사무실, 공장" inp-title="근무처 입력"}}
+										<!-- s: 25-09-08 수정 -->
+										{{> cp/text placeholder="예) 현대해상" inp-title="근무처 입력"}}
+										<!-- e: 25-09-08 수정 -->
 									</div>
 									<div class="form_line">
 										<div class="label_tit">근무 지역</div>
-										{{> cp/text placeholder="예) 서울시, 경기도" inp-title="근무 지역 입력"}}
+										<!-- s: 25-09-08 수정 -->
+										{{> cp/text placeholder="예) 서울시" inp-title="근무 지역 입력"}}
+										<!-- e: 25-09-08 수정 -->
 									</div>
 									<div class="form_line">
-										<div class="label_tit">취급하는 업무</div>
-										{{> cp/text placeholder="실제 하는 일 자세히 입력" inp-title="취급하는 업무 입력"}}
+										<!-- s: 25-09-08 수정 -->
+										<div class="label_tit">맡으신 업무</div>
+										{{> cp/text placeholder="예) 사무관리" inp-title="맡으신 업무 입력"}}
+										<!-- e: 25-09-08 수정 -->
 									</div>
 								<!-- e: 25-05-22 수정 -->
 								<div class="info_gray ty2">
+									<!-- s: 25-09-08 수정 -->
 									<p class="info_text">
-										보험계약 체결 당시 직업 또는 직무를 사실대로 알리지 않거나 보험계약 체결 후 직업 또는 직무가 변경된 사실 (예: 사무관리⥊현장관리)을 지체없이 회사에 알리지 않은 경우 계약 해지 등 알릴 의무 위반에 따른 불이익이 발생할 수 있습니다.
+										보험계약 체결 당시 직업 또는 직무를 사실대로 알리지 않거나 보험계약 체결 후 직업 또는 직무가 변경된 사실 (예: 사무관리⥊현장관리)을 현대해상에 즉시 알리지 않은 경우 계약 해지 등 알릴 의무 위반에 따른 불이익이 발생할 수 있습니다.
 									</p>
+									<!-- e: 25-09-08 수정 -->
 								</div>
 								<!-- e: 25-07-01 수정 -->
 							</div>
@@ -321,7 +346,9 @@
 								</div>
 								<div class="radio_group_wrap" role="radiogroup">
 									{{> cp/radio rd-class="rd_btn" rd-id="notification08_01" name="notification08" labelname="예" }}
-									{{> cp/radio rd-class="rd_btn" rd-id="notification08_02" name="notification08" labelname="아니오" }}
+									<!-- s: 25-09-08 수정 -->
+									{{> cp/radio rd-class="rd_btn" rd-id="notification08_02" name="notification08" labelname="아니요" }}
+									<!-- e: 25-09-08 수정 -->
 								</div>
 							</div>
 						</div>
@@ -345,7 +372,9 @@
 								<div class="form_group_wrap">
 									<div class="form_line">
 										<div class="label_tit">기타 차종</div>
-										{{> cp/text placeholder="입력해 주세요" inp-title="기타 차종 입력"}}
+										<!-- s: 25-09-08 수정 -->
+										{{> cp/text placeholder="기타 차종 입력" inp-title="기타 차종 입력"}}
+										<!-- e: 25-09-08 수정 -->
 									</div>
 								</div>
 								<!-- e: 25-07-01 수정 -->
@@ -361,24 +390,30 @@
 								<div class="info_gray ty2">
 									<ul class="list_ty3">
 										<li>전동휠체어, 의료용 스쿠터 등 보행보조용 의자차는 해당되지 않습니다.</li>
-										<li>직업, 직무 또는 동호회 활동과 출퇴근용도 등으로 계속적으로 사용하는 경우 [예]를 선택해 주세요.</li>
-										<li>이 질문에 [아니요]로 기재하고 보험계약∙체결 후 이륜자동차 또는 전동킥보드 등 개인형이동장치를 포함한 원동기장치 자전거를 사용하게 된 사실을 지체 없이 회사에 알리지 않은 경우 계약 해지 등 알릴 의무 위반에 따른 불이익이 발생할 수 있습니다.</li>
+										<!-- s: 25-09-08 수정 -->
+										<li>직업, 직무 또는 동호회 활동과 출퇴근용도 등으로 계속적으로 사용하는 경우 [예]를 선택해주세요.</li>
+										<li>이 질문에 [아니요]로 선택하고 보험계약∙체결 후 이륜자동차 또는 전동킥보드 등 개인형이동장치를 포함한 원동기장치 자전거를 사용하게 된 사실을 현대해상에 즉시 알리지 않은 경우 계약 해지 등 알릴 의무 위반에 따른 불이익이 발생할 수 있습니다.</li>
+										<!-- e: 25-09-08 수정 -->
 									</ul>
 								</div>
 								<div class="radio_group_wrap" role="radiogroup">
 									{{> cp/radio rd-class="rd_btn" rd-id="notification09_01" name="notification09" labelname="예" }}
-									{{> cp/radio rd-class="rd_btn" rd-id="notification09_02" name="notification09" labelname="아니오" }}
+									<!-- s: 25-09-08 수정 -->
+									{{> cp/radio rd-class="rd_btn" rd-id="notification09_02" name="notification09" labelname="아니요" }}
+									<!-- e: 25-09-08 수정 -->
 								</div>
 								<div class="form_group_wrap">
 									<div class="form_line">
 										<!-- s: 25-08-07 수정 -->
 									<div class="checkbox_group_wrap column">
 										<!-- s: 이륜자동차 아닌 차종 선택 & 원동기장치 아니요일 경우 -->
-										{{> cp/checkbox checkbox_class="rd_box" id="checkbox02-1-12" label_class="chk_label_ty3" labelname="<strong class='secondary'>[선택]</strong> 피보험자가 이륜자동차 운전 중에 발생한 상해사고는 보험에서 보상되지 않습니다. 이륜자동차 운전중 상해 부담보 특별약관이 자동가입됩니다." }}
+										<!-- s: 25-09-08 수정 -->
+										{{> cp/checkbox checkbox_class="rd_box" id="checkbox02-1-12" label_class="chk_label_ty3" labelname="<strong class='secondary'>[선택]</strong> 피보험자가 이륜자동차 운전 중에 발생한 상해사고는 보험에서 보상되지 않습니다. 이륜자동차 운전 중 상해를 보장하지 않는 상해 부담보 특별약관이 자동 가입됩니다." }}
 										<!-- e: 이륜자동차 아닌 차종 선택 & 원동기장치 아니요일 경우 -->
 										<!-- s: 이륜자동차 선택 시 -->
-										<!-- {{> cp/checkbox checkbox_class="rd_box" id="checkbox02-1-12" label_class="chk_label_ty3" labelname="<strong class='point'>[필수]</strong> 피보험자가 이륜자동차 운전 중에 발생한 상해사고는 보험에서 보상되지 않습니다. 이륜자동차 운전중 상해 부담보 특별약관이 자동가입됩니다." }} -->
+										<!-- {{> cp/checkbox checkbox_class="rd_box" id="checkbox02-1-12" label_class="chk_label_ty3" labelname="<strong class='point'>[필수]</strong> 피보험자가 이륜자동차 운전 중에 발생한 상해사고는 보험에서 보상되지 않습니다. 이륜자동차 운전 중 상해를 보장하지 않는 상해 부담보 특별약관이 자동 가입됩니다." }} -->
 										<!-- e: 이륜자동차 선택 시  -->
+										<!-- e: 25-09-08 수정 -->
 									</div>
 									<!-- e: 25-08-07 수정 -->
 									</div>
@@ -392,8 +427,10 @@
 			<!-- s: 꼭 알아두세요 -->
 			{{#> cp/notice dp-active=true }}
 				<ul class="list_depth">
-					<li>입력하신 휴대폰/이메일로  보험계약서류(보험증권, 청약서, 약관 등)를 발송해드립니다. 연락처 정보를 정확히 확인해 주세요.</li>
-					<li>개인정보는 입력하신 정보로 업데이트 되오니 이 점 유의하시기 바랍니다.</li>
+					<!-- s: 25-09-08 수정 -->
+					<li>입력한 정보로 개인정보도 함께 변경됩니다.</li>
+					<li>입력하신 휴대폰/이메일로 보험계약서류를 보내드리니 정확하게 입력해주세요.</li>
+					<!-- e: 25-09-08 수정 -->
 				</ul>
 			{{/ cp/notice }}
 			<!-- e: 꼭 알아두세요 -->
@@ -404,7 +441,9 @@
 	<div class="bottom_fix_wrap">
 		<div class="btn_area">
 			{{> cp/button type="1" size="1" b-text="정보를 입력 중이에요" disabled=true }}
-			<!-- {{> cp/button type="1" size="1" b-text="모두 입력했습니다." }} -->
+			<!-- s: 25-09-08 수정 -->
+			<!-- {{> cp/button type="1" size="1" b-text="모두 입력했어요" }} -->
+			<!-- e: 25-09-08 수정 -->
 		</div>
 	</div>
 	<!-- s: 하단 고정 버튼 영역 -->
@@ -416,10 +455,12 @@
 <div class="popup_cont">
 	<div class="popup_content">
 		<div class="info_cont">
-			<p>
-				지금까지 입력하신 정보로 청약이 진행됩니다. 추후 정보 변경을 원하실 경우 처음부터 진행이 필요합니다.
+			<!-- s: 25-09-08 수정 -->
+			<P>
+				지금까지 입력하신 정보로 청약이 진행됩니다. 정보 변경을 원하실 경우 처음부터 진행해야 합니다.<br>
 				다음 단계인 <strong class="point">[피보험자 가입 내용 확인]</strong>을 진행하시겠습니까? 
-			</p>			
+			</P>
+			<!-- e: 25-09-08 수정 -->
 		</div>
 	</div>
 </div>
