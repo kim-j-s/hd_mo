@@ -430,6 +430,17 @@
 	overflow-y: auto;
 	border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 
+	&.non_border {
+		border-top: none;
+		.search_reult_list {
+			li {
+				&:first-of-type {
+					border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
+				}
+			}
+		}
+	}
+
 	ul.search_reult_list {
 		li {
 			padding: 16px 0;
