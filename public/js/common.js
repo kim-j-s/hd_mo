@@ -4,8 +4,6 @@
         wHeight = $WIN.height();
 
 
-
-
   /* 전체메뉴 열기 */
   $DOM.on('click', '.header .header_right .allmenu_open', function() {
 		// console.log('열기');
