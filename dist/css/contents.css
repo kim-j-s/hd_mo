@@ -1219,6 +1219,14 @@
 .container.cyber .easy_none + *:not(.easy_top) {
 	margin-top: var(--gap-1);
 }
+.container.home .easy_none:has(.product_top) .home_card,
+.container.cyber .easy_none:has(.product_top) .home_card {
+	padding-top: var(--padding-9);
+}
+.container.home .easy_none .product_top,
+.container.cyber .easy_none .product_top {
+	margin: 0 var(--padding-3);
+}
 .container.home .btn_menu_search,
 .container.cyber .btn_menu_search {
 	border-radius: var(--radius-large1);
@@ -1326,7 +1334,7 @@
 }
 .container.home .ing_banner + .ing_banner,
 .container.cyber .ing_banner + .ing_banner {
-	margin-top: var(--gap-1);
+	margin-top: var(--gap-5);
 }
 .container.home .ing_banner + .main_slide_wrap,
 .container.cyber .ing_banner + .main_slide_wrap {
@@ -1361,6 +1369,9 @@
 .container.cyber .list_box .list_ty2 li {
 	color: var(--color-text-subtle-inverse);
 }
+.container.home .btn_area {
+	margin-top: var(--padding-6);
+}
 .h2_title {
 	font-size: var(--font-size-heading-medium);
 }
@@ -1370,9 +1381,11 @@
 .h2_title + .sub_text {
 	margin-top: var(--gap-4);
 }
-.pro_tit + .card_item_wrap,
-.pro_tit + .icon_link {
+.pro_tit + .card_item_wrap {
 	margin-top: var(--gap-5);
+}
+.pro_tit + .icon_link {
+	margin-top: var(--gap-6);
 }
 .my_title {
 	display: -webkit-box;
@@ -1402,6 +1415,12 @@
 }
 .my_title + .badge_wrap + .info_gray {
 	margin-top: var(--gap-7);
+}
+.popup_wrap.bottom .my_title h2 {
+	color: var(--color-text-bolder);
+}
+.popup_wrap.bottom .my_title + .badge_wrap {
+	gap: var(--gap-2);
 }
 .sub_text {
 	font-size: var(--font-size-body-small);
@@ -1631,8 +1650,9 @@
 	background: var(--color-surface-primary-subtler);
 }
 .home_card.bg_primary .icon_link .item {
-	padding: 4.4rem 0 var(--padding-5);
+	padding: 4.8rem 0 var(--padding-5);
 	background-position: center 1.2rem;
+	font-size: var(--font-size-body-small);
 }
 .icon_link {
 	display: -webkit-box;
@@ -2000,7 +2020,9 @@
 .footer .footer_top > div .select_item.select_item_case01 .si_item {
 	padding: var(--padding-5) 3.6rem var(--padding-5) var(--padding-5);
 	color: inherit;
-	background: transparent url(../images/icon/arrowDown_ty4.svg) no-repeat right 1.2rem center/1.6rem auto;
+	background: transparent url(../images/icon/arrowDown_ty2.svg) no-repeat right 1.2rem center/1.6rem auto;
+	font-size: var(--font-size-body-xsmall);
+	border-radius: var(--radius-medium3);
 }
 .footer .footer_top > div .select_item.select_item_case01 .si_item::after {
 	border: 0;
@@ -4561,6 +4583,7 @@
 .form_box + .img_area {
 	margin-top: var(--gap-11);
 }
+.form_box + .checkbox_group_wrap,
 .form_box.space1 {
 	margin-top: var(--gap-8);
 }
@@ -4827,6 +4850,7 @@ ul + .form_group_wrap {
 .info_cont .title_h2 {
 	font-size: var(--font-size-heading-small);
 	font-weight: 700;
+	color: var(--color-text-bolder);
 }
 .info_cont h2 + .table_wrap,
 .info_cont h2 + .info_gray,
@@ -4861,6 +4885,7 @@ ul + .form_group_wrap {
 .info_cont h3 {
 	font-size: var(--font-size-heading-xsmall);
 	font-weight: 700;
+	color: var(--color-text-bolder);
 }
 .info_cont .pop_title_h3 + h4,
 .info_cont h3 + h4 {
@@ -5367,11 +5392,15 @@ ul + .form_group_wrap {
 	gap: var(--gap-2);
 	vertical-align: middle;
 }
+.special_contract_list > li .check_flex_box .check_box .inp_checkbox + .hd_badge {
+	margin-top: var(--gap-2);
+	margin-left: 2.8rem;
+}
 .special_contract_list > li .check_flex_box .money_box {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	min-width: 10rem;
+	min-width: 3rem;
 	-webkit-box-pack: end;
 	-ms-flex-pack: end;
 	justify-content: end;
@@ -5385,7 +5414,6 @@ ul + .form_group_wrap {
 }
 .special_contract_list > li .check_flex_box .money_box .question_mark_btn {
 	position: relative;
-	top: 1px;
 }
 .special_contract_list > li .check_flex_box.disabled .money_box .money {
 	color: var(--color-text-disabled);
@@ -5922,6 +5950,8 @@ ul + .form_group_wrap {
 .ele_sign .ele_sign_canvas_wrap .ele_sign_canvas_wrap_top .ele_sign_canvas canvas {
 	position: relative;
 	z-index: 1;
+	width: 100%;
+	height: 31rem;
 	border-radius: var(--radius-medium3);
 }
 .ele_sign .ele_sign_canvas_wrap .ele_sign_canvas_wrap_cont {
@@ -6253,6 +6283,7 @@ ul + .form_group_wrap {
 .my_info_flow > li .cont .tit {
 	display: block;
 	font-size: var(--font-size-heading-xsmall);
+	color: var(--color-text-bolder);
 }
 .my_info_flow > li .cont .desc {
 	padding-top: 1.2rem;
