@@ -179,14 +179,18 @@
 						<li>
 							<div class="check_flex_box disabled">
 								<div class="check_box">
-									{{> cp/checkbox id="agreement02-11" labelname="전기자동차 배터리 신품가액보상 특약" checked=true disabled=true }}
+									<!-- s: 25-09-08 수정 -->
+									{{> cp/checkbox id="agreement02-11" labelname="친환경자동차 배터리 신품가액보상 특약" checked=true disabled=true }}
+									<!-- e: 25-09-08 수정 -->
 								</div>
 								<div class="money_box">
 									<div class="money">
 										<span>5,100</span>원
 									</div>
 									<!-- s: 25-09-01 수정 -->
-									{{> cp/button_question question-icon="arrow" pop_id="pop_type11" question_tit="전기자동차 배터리 신품가액보상 특약" }}
+									<!-- s: 25-09-08 수정 -->
+									{{> cp/button_question question-icon="arrow" pop_id="pop_type11" question_tit="친환경자동차 배터리 신품가액보상 특약" }}
+									<!-- e: 25-09-08 수정 -->
 									<!-- e: 25-09-01 수정 -->
 								</div>
 							</div>
@@ -425,8 +429,9 @@
 								</div>
 							</div>
 						</li>
+						<!-- s: 25-09-08 수정 -->
 						<!-- s: 25-06-27 -->
-						<li>
+						<!-- <li>
 							<div class="check_flex_box">
 								<div class="check_box">
 									{{> cp/checkbox id="agreement01-24" labelname="분할납부 
@@ -438,9 +443,20 @@
 							<div class="info_gray">
 								<p class="info_text">기본형</p>
 							</div>
-						</li>
+						</li> -->
 						<!-- e: 25-06-27 -->
 					</ul>
+					<div class="checkbox_group_wrap column">
+						{{#> cp/checkbox checkbox_class="rd_box" id="checkbox01-1" labelname="분할납부 <span class='badge_wrap'><span class='hd_badge outline solid_pastel c_info size_m'>추가정보입력</span></span>" }}
+
+						<div class="chk_lby3">
+							<div class="info_gray">
+								<p class="info_text">2회납(자동이체)</p>
+							</div>
+						</div>
+						{{/ cp/checkbox}}
+					</div>
+					<!-- e: 25-09-08 수정 -->
 				</div>
 			</div>
 		</div>
@@ -633,8 +649,10 @@
 					<ul class="list_depth">
 						<li>자기차량손해 보험금이 지급되는 경우</li>
 						<li>렌트 시 동종의 국산 대여차 기준 렌트비(1일당 차종별 렌트비용 한도금액 내 실제 렌트비용 지급)</li>
-						<li>비렌트 시 렌트비용의 30%지급</li>
-						<li>수리불능시 10일,실수리 시 30일 한도 보상</li>
+						<!-- s: 25-09-08 수정 -->
+						<li>렌트하지 않을 경우 렌트비용의 30% 지급</li>
+						<li>수리할 수 없을 때 10일, 실제로 수리했을 때 30일 한도</li>
+						<!-- e: 25-09-08 수정 -->
 					</ul>
 				</div>
 			</div>
@@ -652,16 +670,18 @@
 			<div class="popup_content">
 				<div class="info_cont">
 					<h2>보상내용</h2>
-					<p>한 번의 사고로 생긴 기명피보험자의 손해가 보험가입금액의 30% 이상의 경우</p>
+					<!-- s: 25-09-08 수정 -->
 					<ul class="list_depth">
-						<li>신차가액 보험금 (전손 혹은 손해액이 보험가입금액의 70% 이상 시)</li>
-						<li>대체차량 등록비용(신차구입비용이 지급되는 경우 새로 구입하는 자동차의 등록비용으로 보험가입 금액의 7%한도로 차량 교환 시 소요된 취/등록세 지급)</li>
-						<li>취,등록세 지급 시 대체차량등록 추가지원금 20만원 지급(정액)</li>
-						<li>수리비 제비용 (한 번의 사고로 생긴 손해액의 보험가입금액의 30% 이상 70% 미만일 경우 보험가입금액의 10% 지급)</li>
+						<li>한 번의 사고로 생긴 기명피보험자의 손해가 보험가입금액의 30% 이상의 경우</li>
+						<li>신차가액 보험금(전손 혹은 손해액이 보험가입금액의 70% 이상일 때)</li>
+						<li>대체차량 등록비용(신차구입비용이 지급되는 경우 새로 구입하는 자동차의 등록비용으로 보험가입금액의 7% 한도로 자동차 교환 시 지출한 취/등록세 지급)
+							<ul>
+								<li>취/등록세 지급 시 대체차량등록 추가지원금 20만원 지급(정액)</li>
+							</ul>
+						</li>
+						<li>수리비 제비용(한 번의 사고로 생긴 손해액의 보험가입금액의 30% 이상 70% 미만일 경우 보험가입금액의 10% 지급)</li>
 					</ul>
-					<ul class="list_ty2">
-						<li>가입대상: 승용, 경·3종 승합, 또는 경·3종·4종 화물자동차로써 최초등록일로부터 6개월 미경과 차량</li>
-					</ul>
+					<!-- e: 25-09-08 수정 -->
 				</div>
 			</div>
 		</div>
@@ -677,15 +697,15 @@
 		<div class="popup_cont">
 			<div class="popup_content">
 				<div class="info_cont">
-					<h2>보상책임</h2>
-					<p>피보험자동차를 소유&middot;사용&middot;관리하는 동안에 발생한 사고로 피보험자동차에 직접적으로 생긴 손해를 보상</p>
+					<!-- s: 25-09-08 수정 -->
+					<h2>보상내용</h2>
 					<ul class="list_depth">
-						<li>타물체와의 충돌, 접촉, 추락, 전복 또는 차량의 침수로 인한 손해</li>
+						<li>피보험자동차를 소유·사용·관리하는 동안에 발생한 사고로 피보험자동차에 직접적으로 생긴 손해를 보상</li>
+						<li>다른 물체와의 충돌, 접촉, 추락, 전복 또는 자동차의 침수로 인한 손해</li>
 						<li>화재, 폭발, 낙뢰, 날아온 물체, 떨어지는 물체에 의한 손해 또는 풍력에 의해 차체에 생긴 손해</li>
-					</ul>
-					<ul class="list_ty2">
 						<li>보험금 지급기준은 ‘자기차량손해’ 담보와 같습니다.</li>
 					</ul>
+					<!-- e: 25-09-08 수정 -->
 				</div>
 			</div>
 		</div>
@@ -697,19 +717,18 @@
 		{{/ popup/popup_bottom}} 
 		<!-- e: 자기차량손해 보장 확대 Bottom 팝업 -->
     	<!-- s: 25-07-16 -->
-    	<!-- s: 전기자동차 배터리 신품가액보상 특약 Bottom 팝업 -->
-		{{#> popup/popup_bottom popup-id="pop_type11" popup-active=false popup-title="전기자동차 배터리 신품가액보상 특약" }}
+    	<!-- s: 친환경자동차 배터리 신품가액보상 특약 Bottom 팝업 -->
+		<!-- s: 25-09-08 수정 -->
+		{{#> popup/popup_bottom popup-id="pop_type11" popup-active=false popup-title="친환경자동차 배터리 신품가액보상 특약" }}
+		<!-- e: 25-09-08 수정 -->
 		<div class="popup_cont">
 			<div class="popup_content">
-                <div class="info_cont">
-                    <h2>보상책임</h2>
-                    <ul class="list_depth">
-                        <li>
-							사고로 전기차 배터리 수리 시 중요한 부품으로써 감가상각하지 않고 신품으로 보상<br>
-							단, 새 부분품을 포함한 수리비용이 보험가액보다 많은 경우에는 보험가액을 한도로 보상
-						</li>
-                    </ul>
-                </div>
+				<div class="info_cont">
+					<!-- s: 25-09-08 수정 -->
+					<h2>보상내용</h2>
+					<p>사고로 전기차 배터리 수리 시 중요한 부품으로서 감가상각하지 않고 신품으로 보상<br>단, 새 부분품을 포함한 수리비용이 보험가액보다 많은 경우에는 보험가액을 한도로 보상</p>
+						<!-- e: 25-09-08 수정 -->
+				</div>
 			</div>
 		</div>
 		<div class="popup_bottom">
@@ -718,17 +737,17 @@
 			</div>
 		</div>
 		{{/ popup/popup_bottom}}
-		<!-- e: 전기자동차 배터리 신품가액보상 특약 Bottom 팝업 -->
+		<!-- e: 친환경자동차 배터리 신품가액보상 특약 Bottom 팝업 -->
     	<!-- s: 전기자동차 초과수리비용 지원특약 Bottom 팝업 -->
 		{{#> popup/popup_bottom popup-id="pop_type12" popup-active=false popup-title="전기자동차 초과수리비용 지원특약" }}
 		<div class="popup_cont">
 			<div class="popup_content">
-                <div class="info_cont">
-                    <h2>보상책임</h2>
-                    <ul class="list_depth">
-                        <li>사고로 전기차 실수리 시 배터리를 포함한 차량가액의 130%한도 보상</li>
-					</ul>
-                </div>
+				<!-- s: 25-09-08 수정 -->
+				<div class="info_cont">
+					<h2>보상내용</h2>
+					<p>사고로 전기차를 실제로 수리할 경우 배터리를 포함한 차량가액의 130% 한도 보상</p>
+				</div>
+				<!-- e: 25-09-08 수정 -->
 			</div>
 		</div>
 		<div class="popup_bottom">
@@ -766,10 +785,9 @@
 			<div class="popup_content">
 				<div class="info_cont">
 					<h2>보상내용</h2>
-					<ul class="list_depth">
-						<li>자기차량손해 보험금이 지급되는 경우</li>
-						<li>차량운반비용:50만원 한도 실비보상</li>
-					</ul>
+					<!-- s: 25-09-08 수정 -->
+					<p>사고로 인해 피보험자동차가 자력으로 운행이 불가하여 피보험자동차를 운반하는 비용</p>
+					<!-- e: 25-09-08 수정 -->
 				</div>
 			</div>
 		</div>
@@ -804,15 +822,15 @@
 		<div class="popup_cont">
 			<div class="popup_content">
 				<div class="info_cont">
-					<h2>벌금비용</h2>
+					<!-- s: 25-09-08 수정 -->
+					<h2>보상내용</h2>
 					<ul class="list_depth">
 						<li>법률비용지원담보특약에서 벌금비용만 제외 보상</li>
+						<li>변호사 선임비용 제외 추가특약 또는 벌금비용 제외 추가특약 선택가능 </li>
+						<li>대인배상Ⅱ를 가입하는 경우에만 가입 가능</li>
+						<li>비례보상담보 중복 조회가 필요하며, 확인 후 가입 여부를 선택해주세요.</li>
 					</ul>
-					<ul class="list_ty2">
-						<li>변호사 선임 비용 제외 추가특약 또는 벌금 비용 제외 추가특약 선택가능</li>
-						<li>대인배상Ⅱ를 가입하는 경우에 한하여 가입 가능</li>
-						<li>비례보상담보 중복 조회가 필요하며, 확인 후 가입 여부를 선택해 주세요.</li>
-					</ul>
+					<!-- e: 25-09-08 수정 -->
 				</div>
 			</div>
 		</div>
@@ -828,15 +846,15 @@
 		<div class="popup_cont">
 			<div class="popup_content">
 				<div class="info_cont">
-					<h2>변호사 선임 비용</h2>
+					<!-- s: 25-09-08 수정 -->
+					<h2>보상내용</h2>
 					<ul class="list_depth">
-						<li>법률비용지원담보특약에서 변호사선임비용만 제외 보상</li>
+						<li>법률비용지원담보특약에서 변호사 선임비용만 제외 보상</li>
+						<li>변호사 선임비용 제외 추가특약 또는 벌금비용 제외 추가특약 선택가능(추가특약 가입 시 해당 보험금 지급 안함)</li>
+						<li>대인배상Ⅱ를 가입하는 경우에만 가입 가능</li>
+						<li>비례보상담보 중복 조회가 필요하며, 확인 후 가입 여부를 선택해주세요.</li>
 					</ul>
-					<ul class="list_ty2">
-						<li>변호사 선임 비용 제외 추가특약 또는 벌금 비용 제외 추가특약 선택가능(추가특약 가입 시 해당 보험금 미지급)</li>
-						<li>대인배상Ⅱ를 가입하는 경우에 한하여 가입 가능</li>
-						<li>비례보상담보 중복 조회가 필요하며, 확인 후 가입 여부를 선택해 주세요.</li>
-					</ul>
+					<!-- e: 25-09-08 수정 -->
 				</div>
 			</div>
 		</div>
@@ -853,13 +871,13 @@
 			<div class="popup_content">
 				<div class="info_cont">
 					<h2>보상내용</h2>
+					<!-- s: 25-09-08 수정 -->
 					<ul class="list_depth">
-						<li>피보험자동차가 사고 또는 고장으로 인하여 자력으로 주행이 불가능한 경우 1일당 1회에 한하여 견인</li>
+						<li>피보험자동차가 사고 또는 고장으로 인해 자력으로 주행할 수 없는 경우 1일당 1회에 한해 견인</li>
+						<li>견인을 시작한 곳으로부터 60km 한도</li>
+						<li>고장출동서비스를 가입한 경우에만 가입 가능</li>
 					</ul>
-					<ul class="list_ty2">
-						<li>견인을 개시한 곳으로부터 60km 한도</li>
-						<li>고장출동서비스를 가입한 경우에 한하여 가입 가능</li>
-					</ul>
+					<!-- e: 25-09-08 수정 -->
 				</div>
 			</div>
 		</div>
@@ -908,12 +926,12 @@
 			<div class="popup_content">
 				<div class="info_cont">
 					<h2>보상내용</h2>
+					<!-- s: 25-09-08 수정 -->
 					<ul class="list_depth">
 						<li>대리운전자가 피보험자동차 운전 중 발생한 사고에 대해 보상</li>
+						<li>대리운전자: 대리운전업자(요금이나 대가 목적 운전대행서비스 제공자)로 피보험자동차 운전을 일시적으로 의뢰받아 대리하는 사람</li>
 					</ul>
-					<ul class="list_ty2">
-						<li>대리운전자: 대리운전업자(요금이나 대가 목적 운전대행서비스 제공자)로 피보험자동차 운전을 일시적으로 의뢰 받아 대리하는 사람</li>
-					</ul>
+					<!-- e: 25-09-08 수정 -->
 				</div>
 			</div>
 		</div>
