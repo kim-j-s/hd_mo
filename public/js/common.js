@@ -69,8 +69,8 @@
       $inner.slideDown();
     }else {
 			$this.attr('aria-expanded', 'false');
-      $head.removeClass('active');
       $inner.slideUp();
+      $head.removeClass('active');
     }
   });
 
