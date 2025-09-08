@@ -791,7 +791,7 @@
 		height: 100%;
 		padding-right: 19px;
 		font-size: var(--font-size-button-large);
-		color: var(--color-text-primary);
+		color: var(--color-text-primary-bold);
 		background: url(../images/icon/arrowRight_ty6.svg) no-repeat right center /20px auto;
 		flex-shrink: 0;
 
@@ -1062,11 +1062,21 @@
 	background: transparent;
 	vertical-align: top;
 	.hd_icon {
-		&.popover_help,
-		&.arrowRightSvg {
+		&.popover_help {
 			width: inherit;
 			height: inherit;
 		}
+		&.arrowRightSvg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+	&:has(.arrowRightSvg) {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 24px;
+		height: 24px;
 	}
 }
 
