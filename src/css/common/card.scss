@@ -323,7 +323,7 @@
 						z-index: 1;
 						width: 36px;
 						height: 36px;
-						background-color: rgba($color: #ddd, $alpha: 0.8);
+						// background-color: rgba($color: #ddd, $alpha: 0.8);
 					}
 
 					&.chk_label_ty4 {
@@ -444,10 +444,6 @@
 							vertical-align: middle;
 							font-weight: 400;
 						}
-					}
-					.hd_badge {
-						font-weight: 400;
-						vertical-align: 2px;
 					}
 
 					&.tooltip_add {
@@ -727,6 +723,7 @@
 
 		//비활성화 케이스
 		&.disabled {
+			border-color: transparent;
 			background-color: var(--color-surface-gray-subtler);
 			overflow: hidden;
 
@@ -810,12 +807,8 @@
 					}
 				}
 			}
-			&.disabled {
-				border-color: transparent;
-			}		
 		}
 	}
-	
 
 	& + .inp_checkbox {
 		margin-top: var(--gap-8);
@@ -1604,71 +1597,5 @@
 		color: var(--color-text-subtle);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-/* 예시 샘플 */
-.txtxt {
-
-	.inner_cont {
-		position: static !important;
-		padding-left: 28px;
-	}
-	.x {
-		// position: relative;
-	}
-
-	.card_link {
-		&.xt {
-			position: absolute;
-			top: 50px;
-			top: 23px;
-			right: 20px;
-			width: 24px;
-			height: 24px;
-			background: url(../images/icon/arrowRight_ty4.svg) no-repeat center center / 24px auto;
-			// background-color: rgba($color: #0000ff, $alpha: 0.3);
-			&::after {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 200%;
-				// background-color: blue;
-				// background-color: rgba($color: #0000ff, $alpha: 0.3);
-			}
-		}
-
-	}
-
-	.inp_checkbox {
-		// width: auto !important;
-		width: calc(100% - 36px) !important;
-	}
-
-	.chk_label {
-		// background-color: rgba($color: #000000, $alpha: 0.3);
-		
-		&::before {
-			left: -28px !important;
-		}
-		&::after {
-			left: -36px !important;
-		}
-		+ i {
-			pointer-events: none;
-		}
-	}
-}
-/* 예시 샘플 */
-
 
 
