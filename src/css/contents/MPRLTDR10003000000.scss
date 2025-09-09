@@ -1127,10 +1127,18 @@
 
 				.sii_list_r {
 					text-align: right;
+					.btn_link {
+						&.short_cut {
+							> .text {
+								gap: 0;
+							}
+						}
+					}
 				}
 
 				del {
 					display: block;
+					color: var(--color-text-subtle);
 				}
 				.price {
 					font-size: var(--font-size-body-medium);
@@ -1155,6 +1163,11 @@
 						gap: var(--gap-3);
 					}
 					
+				}
+				&:nth-child(2) {
+					.sii_list_l {
+						color: var(--color-text-subtle);
+					}
 				}
 			}
 		}
