@@ -40,6 +40,7 @@ strong {
 }
 .point {
 	color: var(--color-text-primary-bold);
+	font-weight: 700;
 }
 .success {
 	color: #009419;
@@ -52,6 +53,7 @@ strong {
 }
 .primary_bold {
 	color: var(--color-text-primary-bold);
+	font-weight: 700;
 }
 .danger {
 	color: var(--color-text-danger);
@@ -6009,10 +6011,6 @@ strong {
 	vertical-align: middle;
 	font-weight: 400;
 }
-.card_item_wrap .card_item .item_top .title_info .main_title .hd_badge {
-	font-weight: 400;
-	vertical-align: 0.2rem;
-}
 .card_item_wrap .card_item .item_top .title_info .main_title.tooltip_add {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -6263,6 +6261,7 @@ strong {
 	margin-top: var(--gap-5);
 }
 .card_item_wrap .card_item.disabled {
+	border-color: transparent;
 	background-color: var(--color-surface-gray-subtler);
 	overflow: hidden;
 }
@@ -6308,7 +6307,7 @@ strong {
 	padding-right: 3rem;
 }
 .card_item_wrap .card_item.selected.disabled {
-	border-color: transparent;
+	border-color: var(--color-border-primary-light);
 }
 .card_item_wrap + .inp_checkbox {
 	margin-top: var(--gap-8);
@@ -6548,6 +6547,33 @@ strong {
 }
 .card_list_wrap > li .card_wrap > dt .icon.house_fire {
 	background-image: url(../images/icon/icon_house_fire.svg);
+}
+.card_list_wrap > li .card_wrap > dt .icon.business {
+	background-image: url(../images/icon/icon_business.svg);
+}
+.card_list_wrap > li .card_wrap > dt .icon.bicycle {
+	background-image: url(../images/icon/icon_bicycle.svg);
+}
+.card_list_wrap > li .card_wrap > dt .icon.timeshare {
+	background-image: url(../images/icon/icon_timeshare.svg);
+}
+.card_list_wrap > li .card_wrap > dt .icon.helmet {
+	background-image: url(../images/icon/icon_helmet.svg);
+}
+.card_list_wrap > li .card_wrap > dt .icon.fetus {
+	background-image: url(../images/icon/icon_fetus.svg);
+}
+.card_list_wrap > li .card_wrap > dt .icon.tooth {
+	background-image: url(../images/icon/icon_tooth.svg);
+}
+.card_list_wrap > li .card_wrap > dt .icon.cancer {
+	background-image: url(../images/icon/icon_cancer.svg);
+}
+.card_list_wrap > li .card_wrap > dt .icon.health_losss {
+	background-image: url(../images/icon/icon_health_losss.svg);
+}
+.card_list_wrap > li .card_wrap > dt .icon.pension {
+	background-image: url(../images/icon/icon_pension.svg);
 }
 .card_list_wrap > li .card_wrap > dt .icon > button {
 	width: 100%;
@@ -7019,41 +7045,6 @@ strong {
 	font-size: var(--font-size-body-small);
 	color: var(--color-text-subtle);
 }
-/* 예시 샘플 */
-.txtxt .inner_cont {
-	position: static !important;
-	padding-left: 2.8rem;
-}
-.txtxt .card_link.xt {
-	position: absolute;
-	top: 5rem;
-	top: 2.3rem;
-	right: 2rem;
-	width: 2.4rem;
-	height: 2.4rem;
-	background: url(../images/icon/arrowRight_ty4.svg) no-repeat center center/2.4rem auto;
-}
-.txtxt .card_link.xt::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 200%;
-}
-.txtxt .inp_checkbox {
-	width: calc(100% - 3.6rem) !important;
-}
-.txtxt .chk_label::before {
-	left: -2.8rem !important;
-}
-.txtxt .chk_label::after {
-	left: -3.6rem !important;
-}
-.txtxt .chk_label + i {
-	pointer-events: none;
-}
-/* 예시 샘플 */
 /* checkbox */
 /* Checkbox */
 .inp_checkbox {
@@ -9405,6 +9396,7 @@ strong {
 	position: absolute;
 	top: 0;
 	left: 0;
+	color: var(--color-icon-gray-light);
 }
 .list_ty2 > li ~ li {
 	margin-top: var(--gap-3);
@@ -9941,6 +9933,7 @@ strong {
 	width: 0.3rem;
 	height: 0.3rem;
 	border-radius: 50%;
+	background-color: var(--color-icon-gray);
 }
 .list_depth > li .in_table {
 	margin: var(--gap-11) 0 0 -0.8rem;
@@ -9976,6 +9969,7 @@ strong {
 	position: absolute;
 	top: 0;
 	left: 0;
+	color: var(--color-icon-gray-light);
 }
 .list_depth > li > ul > li ~ li {
 	margin-top: var(--gap-3);
@@ -10002,6 +9996,7 @@ strong {
 	width: 0.2rem;
 	height: 0.2rem;
 	border-radius: 50%;
+	color: var(--color-icon-information);
 }
 .list_depth > li > ul > li > ul > li ~ li {
 	margin-top: var(--gap-3);
@@ -10038,6 +10033,9 @@ strong {
 .list_depth + .list_depth {
 	margin-top: var(--gap-4);
 }
+.list_depth .circle_list {
+	margin-top: var(--gap-4);
+}
 .list_depth_ty2 .sub_title {
 	font-size: var(--font-size-body-small);
 	line-height: 1.5;
@@ -10062,6 +10060,7 @@ strong {
 .list_depth_ty2 > li::before {
 	content: "-";
 	background-color: none;
+	color: var(--color-icon-gray-light);
 }
 .list_depth_ty2 > li ~ li {
 	margin-top: var(--gap-3);
@@ -10079,7 +10078,7 @@ strong {
 	width: 0.2rem;
 	height: 0.2rem;
 	border-radius: 50%;
-	background-color: var(--color-text-information);
+	background-color: var(--color-icon-information);
 }
 .list_depth_ty2 > li > ul > li ~ li {
 	margin-top: var(--gap-3);
