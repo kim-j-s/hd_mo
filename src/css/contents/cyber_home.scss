@@ -370,41 +370,54 @@
     }
     
     &.bn_box {
-        padding-bottom: 168px;
+        padding-bottom: 167px;//168px;
         > .my_title {
             > h2 {
                 color: var(--color-text-bolder);
             }
         }
-        .h2_title {
+        .h2_title {   
             + .btn_area {
                 margin-top: var(--gap-5);
             }
         }
+        &[class*="ty"] {
+            background-color:  var(--color-surface-secondary-subtler);
+            background-position: center bottom;
+            background-size: auto 210px;
+            background-repeat: no-repeat;
+        }
+
+        @for $i from 1 through 4 {
+			&.ty#{$i}{
+				background-image: url(../images/content/ho/my_bn_bg0#{$i}.png);
+			}
+		}
+
         &.ty1 {
-            background: var(--color-surface-secondary-subtler) url(../images/content/ho/my_bn_bg01.png) no-repeat bottom center / auto 160px;
+            //background: var(--color-surface-secondary-subtler) url(../images/content/ho/my_bn_bg01.png) no-repeat bottom center / auto 160px;
             .h2_title {
                 text-align: center;
             }
         }
-        &.ty2 {
-            background: var(--color-surface-secondary-subtler) url(../images/content/ho/my_bn_bg02.png) no-repeat bottom center / contain;
-            @media (min-width: 600px) {
-                background-size: cover;
-            }
-        }
-        &.ty3 {
-            background: var(--color-surface-secondary-subtler) url(../images/content/ho/my_bn_bg03.png) no-repeat bottom center / contain;
-            @media (min-width: 600px) {
-                background-size: cover;
-            }
-        }
-        &.ty4 {
-            background: var(--color-surface-secondary-subtler) url(../images/content/ho/my_bn_bg04.png) no-repeat bottom center / contain;
-            @media (min-width: 600px) {
-                background-size: cover;
-            }
-        }
+        // &.ty2 {
+        //     background: var(--color-surface-secondary-subtler) url(../images/content/ho/my_bn_bg02.png) no-repeat bottom center / contain;
+        //     @media (min-width: 600px) {
+        //         background-size: cover;
+        //     }
+        // }
+        // &.ty3 {
+        //     background: var(--color-surface-secondary-subtler) url(../images/content/ho/my_bn_bg03.png) no-repeat bottom center / contain;
+        //     @media (min-width: 600px) {
+        //         background-size: cover;
+        //     }
+        // }
+        // &.ty4 {
+        //     background: var(--color-surface-secondary-subtler) url(../images/content/ho/my_bn_bg04.png) no-repeat bottom center / contain;
+        //     @media (min-width: 600px) {
+        //         background-size: cover;
+        //     }
+        // }
         
     }
     &.bn_box2 {
