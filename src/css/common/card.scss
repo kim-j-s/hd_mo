@@ -184,7 +184,48 @@
 			// > .inp_radio {
 				// margin-top: 3px;
 			// }
+			&:has(.tit_item) {
+				flex-direction: column;
+				.tit_item {
+					display: flex;
+					justify-content: space-between;
+					align-items: end;
+					width: 100%;
+					.inp_checkbox {
+						width: auto;
+					}
+					.question_mark_btn {
+						width: 30px;
+						height: 100%;
+						.hd_icon.arrowRightSvg {
+							width: 24px;
+							height: 24px;
+						}
+					}
+					+ .inner_cont {
+						margin-left: 28px;
+						margin-top: var(--gap-5);
+						padding-top: 16px;
+						border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
+						width: calc(100% - 28px);
+					}
+				}
+			}
+			&:has(> .inp_checkbox ){
+				.inp_checkbox{
+					input:not(:disabled) {
+						+ .chk_label {
+							position: absolute;
+							border: 1px solid #F8633C; 
+							padding-left: 28px;
+							width: calc(100% - 70px);
+							height: var(--itemTopHeight);
+							z-index: 100;
+						}
 
+					}
+				}
+			}
 			.inp_checkbox {
 				input {
 					margin-top: 3px;
