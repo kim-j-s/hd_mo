@@ -24,12 +24,13 @@
 			</div>
 			<div class="form_line">
 				<div class="label_tit">보상비율</div>
-				<div class="opt_select_wrap">
+				<!-- s: 25-09-09 수정 -->
+				<!-- <div class="opt_select_wrap">
 					<span class="opt_select_wrap_live" aria-live="polite"></span>
 					<div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
-						<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+						<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div> -->
 						<!-- s: 25-05-13 수정 -->
-						<div class="opt_select opt_select_w1">
+						<!-- <div class="opt_select opt_select_w1">
 							<input type="radio" name="opt1" id="opt1_1">
 							<label for="opt1_1">50%</label>
 						</div>
@@ -44,17 +45,24 @@
 						<div class="opt_select opt_select_w1">
 							<input type="radio" name="opt1" id="opt1_4">
 							<label for="opt1_4">90%</label>
-						</div>
+						</div> -->
 						<!-- e: 25-05-13 수정 -->
-						<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+						<!-- <div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
 					</div>
 					<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_left" aria-label="이전 옵션"></button>
 					<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
 				</div>
+ 				-->
+				<div class="radio_group_wrap" role="radiogroup">
+					{{> cp/radio rd-class="rd_btn" rd-id="rd_opt3_1" name="rd_opt3" labelname="50%" }}
+					{{> cp/radio rd-class="rd_btn" rd-id="rd_opt3_2" name="rd_opt3" labelname="70%" checked=true }}
+				</div>
+				<!-- e: 25-09-09 수정 -->
 			</div>
 			<div class="form_line">
 				<div class="label_tit">자기부담금</div>
-				<div class="opt_select_wrap">
+				<!-- s: 25-09-09 수정 -->
+				<!-- <div class="opt_select_wrap">
 					<span class="opt_select_wrap_live" aria-live="polite"></span>
 					<div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
 						<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
@@ -78,7 +86,12 @@
 					</div>
 					<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_left" aria-label="이전 옵션"></button>
 					<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
+				</div> -->
+				<div class="radio_group_wrap" role="radiogroup">
+					{{> cp/radio rd-class="rd_btn" rd-id="rd_opt4_1" name="rd_opt4" labelname="3만원" checked=true }}
+					{{> cp/radio rd-class="rd_btn" rd-id="rd_opt4_2" name="rd_opt4" labelname="5만원" }}
 				</div>
+				<!-- e: 25-09-09 수정 -->
 			</div>
 			<div class="form_line">
 				<div class="label_tit">납입방법</div>
