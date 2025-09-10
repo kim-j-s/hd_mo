@@ -48,6 +48,7 @@
 	</head>
 	<body>
 		<div id="wrap" class="wrap">
+			<!-- s: 25-09-10 수정 -->
 			<div id="header" class="header">
 				<div class="header_inner history_back_none">
 					<div class="header_left">
@@ -55,10 +56,11 @@
 					</div>
 
 					<div class="header_connect">
-						<h1 class="header_title">보험료 결제</h1>
+						<h1 class="header_title">$메뉴명$</h1>
 					</div>
 
 					<div class="header_right">
+						<button type="button" class="insChk" onclick="openHDPopup(this,'pop_insChk');"><span class="text">계약변경 팝업 열기</span></button>
 						<button type="button" class="allmenu_open"><span class="text">전체메뉴 열기</span></button>
 						<div class="nav_menu_wrap" aria-hidden="true">
 							<div class="nav_menu_inner">
@@ -421,6 +423,7 @@
 					</div>
 				</div>
 			</div>
+			<!-- e: 25-09-10 수정 -->
 
 			<div id="container" class="container">
 				<div class="content">
@@ -472,6 +475,8 @@
 
 						<!-- 신용(앱)카드 -->
 						<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
+							<!-- s: 25-09-10 수정 (현대카드 M포인트 사용 checkbox 삭제) -->
+
 							<!-- s: 25-06-30 -->
 							<h3 class="title_h3">신용카드 정보 입력</h3>
 							<!-- e: 25-06-30 -->
@@ -568,38 +573,28 @@
 										<!-- e: 25-08-14 UXW -->
 									</ul>
 								</div>
-								<!-- s: 현대카드 선택 시, 노출 -->
-								<div class="form_line">
-									<div class="checkbox_group_wrap column">
-										<!-- s: 25-08-21 수정 -->
-										<div class="inp_checkbox rd_box question">
-											<input type="checkbox" id="checkbox01-01" />
-											<label for="checkbox01-01" class="chk_label chk_label_ty3 question">
-												<span class="label_cont">현대카드 M포인트 사용<span class="sub_g_txt">(1천원 이상 결제시, 3만 M포인트 한도)</span></span>
-											</label>
+							</div>
+							<!-- e: 25-09-10 수정 (현대카드 M포인트 사용 checkbox 삭제) -->
 
-											<button type="button" class="question_mark_btn" onclick="openHDPopup(this,'pop_type04');"><i class="hd_icon arrowRightSvg"></i><span class="blind">팝업열기</span></button>
-										</div>
-										<!-- e: 25-08-21 수정 -->
-									</div>
-								</div>
-								<!-- e: 현대카드 선택 시, 노출 -->
-							</div>
 							<!-- s: 꼭 알아두세요 -->
-							<div class="acd_item acd_item_ty4">
-								<div class="acd_head active">
-									<button type="button" class="acd_btn" aria-expanded="true"><span>이용안내</span></button>
-								</div>
-								<div class="acd_cont">
-									<div class="inner" style="display: block">
-										<ul class="list_depth">
-											<li>보험계약변경 완료를 위해서는 계약자의 전자서명이 필요합니다.</li>
-											<li>신용카드사의 정책에 따라 최소 결제금액에 제한이 있을 수 있습니다.</li>
-											<li>최근 카드정보 불러오기는 이전 계약체결동의 내역에 따라 최근 결제이력을 자동으로 불러오는 기능입니다.</li>
-										</ul>
+							<!-- s: 25-09-10 수정 -->
+							<div class="bottom_fix_notice">
+								<div class="acd_item">
+									<div class="acd_head active">
+										<button type="button" class="acd_btn" aria-expanded="true"><span>꼭 알아두세요</span></button>
+									</div>
+									<div class="acd_cont">
+										<div class="inner" style="display: block">
+											<ul class="list_depth">
+												<li>보험계약변경 완료를 위해서는 계약자의 전자서명이 필요합니다.</li>
+												<li>신용카드사의 정책에 따라 최소 결제금액에 제한이 있을 수 있습니다.</li>
+												<li>이전 카드정보 불러오기는 이전 계약체결동의 내역에 따라 최근 결제이력을 자동으로 불러오는 기능입니다.</li>
+											</ul>
+										</div>
 									</div>
 								</div>
 							</div>
+							<!-- e: 25-09-10 수정 -->
 							<!-- e: 꼭 알아두세요 -->
 						</div>
 
@@ -776,9 +771,11 @@
 							<div class="btn_area end">
 								<!-- s: 25-08-14 수정 -->
 								<!-- s: 25-08-21 UXW -->
+								<!-- s: 25-09-10 수정 -->
 								<a href="javascript:void(0)" class="btn_link short_cut" role="button" onclick="openHDPopup(this,'pop_type07');">
-									<span class="text">이전 결제 정보 불러오기</span>
+									<span class="text">이전 계좌 정보 불러오기</span>
 								</a>
+								<!-- e: 25-09-10 수정 -->
 								<!-- e: 25-08-21 UXW -->
 								<!-- e: 25-08-14 수정 -->
 							</div>
@@ -808,24 +805,30 @@
 										<li><strong class="point">김*대(계약자)님의 본인 계좌만 이용 가능합니다.</strong></li>
 										<!-- e: 25-08-14 UXW -->
 										<!-- s: 25-08-21 UXW -->
-										<li>즉시 이체 가능 시간: 09:00~21:50</li>
+										<!-- s: 25-09-10 수정 -->
+										<li>즉시 이체 가능 시간: 00:30~23:50, 최소금액 2,000원 이상</li>
+										<!-- e: 25-09-10 수정 -->
 										<!-- e: 25-08-21 UXW -->
 									</ul>
 								</div>
 							</div>
 							<!-- s: 꼭 알아두세요 -->
-							<div class="acd_item acd_item_ty4">
-								<div class="acd_head active">
-									<button type="button" class="acd_btn" aria-expanded="true"><span>이용안내</span></button>
-								</div>
-								<div class="acd_cont">
-									<div class="inner" style="display: block">
-										<ul class="list_depth">
-											<li>보험계약변경 완료를 위해서는 계약자의 전자서명이 필요합니다.</li>
-										</ul>
+							<!-- s: 25-09-10 수정 -->
+							<div class="bottom_fix_notice">
+								<div class="acd_item">
+									<div class="acd_head active">
+										<button type="button" class="acd_btn" aria-expanded="true"><span>꼭 알아두세요</span></button>
+									</div>
+									<div class="acd_cont">
+										<div class="inner" style="display: block">
+											<ul class="list_depth">
+												<li>보험계약변경 완료를 위해서는 계약자의 전자서명이 필요합니다.</li>
+											</ul>
+										</div>
 									</div>
 								</div>
 							</div>
+							<!-- e: 25-09-10 수정 -->
 							<!-- e: 꼭 알아두세요 -->
 						</div>
 					</div>
@@ -835,9 +838,11 @@
 			<div class="bottom_fix_wrap">
 				<div class="btn_area">
 					<!-- s: 25-06-09 -->
+					<!-- s: 25-09-10 수정 -->
 					<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1" disabled>
-						<span class="text">결제 정보를 입력해 주세요</span>
+						<span class="text">전자서명하고 결제하기</span>
 					</button>
+					<!-- e: 25-09-10 수정 -->
 					<!-- e: 25-06-09 -->
 					<!-- <button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
 			

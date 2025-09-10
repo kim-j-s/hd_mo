@@ -832,6 +832,7 @@ $(window).on('load', function() {
 	// });
 });
 
+
 $(function(){
 	// tab Scroll
 	tabScroll();
@@ -845,8 +846,6 @@ $(function(){
 
 	// 펼치기/접히기 - 담보한번에변경하기(MPRMTPS10004001000)
 	moreLngChk();
-
-	syncItemTopHeightToLabel();//카드라벨
 	
 	// 스크롤 이벤트 초기화 및 동적 생성시 재 호출
 	$('.position_event_wrap').each(function () {
@@ -1471,20 +1470,6 @@ function nbList() {
 	});
 }
 
-//카드라벨
-function syncItemTopHeightToLabel() {
-  document.querySelectorAll('.card_item').forEach((cardItem) => {
-    const itemTop = cardItem.querySelector('.item_top');
-    const chkLabel = cardItem.querySelector('.chk_label');
-
-    if (itemTop && chkLabel) {
-      const itemTopHeight = itemTop.offsetHeight;
-      chkLabel.style.height = `${itemTopHeight}px`;
-    }
-  });
-}
-
 $(window).resize(function(){
 	// prograssBar();
-	window.addEventListener('resize', syncItemTopHeightToLabel);//카드라벨
 })

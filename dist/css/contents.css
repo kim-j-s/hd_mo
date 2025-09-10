@@ -358,6 +358,11 @@
 	-webkit-animation: bounce 0.8s linear infinite;
 	animation: bounce 0.8s linear infinite;
 }
+.bi_wrap .stepper_wrap .stepper .pgs .pgs_per .motion.saving {
+	background: url(../images/content/bi/icon_spm_saving.svg) no-repeat center center;
+	-webkit-animation: bounce 0.8s linear infinite;
+	animation: bounce 0.8s linear infinite;
+}
 .bi_wrap .stepper_wrap .stepper .pgs .pgs_per .motion::after {
 	content: "";
 	position: absolute;
@@ -3709,7 +3714,7 @@
 	justify-content: space-between;
 	margin-top: var(--gap-5);
 	padding-top: 1.2rem;
-	border-top: var(--border-width-static-regular) solid var(--color-border-gray-light);
+	border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 }
 .gdi_info_list dl {
 	display: -webkit-box;
@@ -3719,6 +3724,9 @@
 	-ms-flex-align: center;
 	align-items: center;
 	gap: var(--gap-2);
+}
+.gdi_info_list dl dt {
+	color: var(--color-text-subtle);
 }
 .gdi_info_list dl dt,
 .gdi_info_list dl dd {
@@ -4271,7 +4279,7 @@
 	margin-top: var(--gap-8);
 }
 .guarantee_detail .btn_area.gd_middle_ba + .coverage_item_wrap {
-	margin-top: var(--gap-7);
+	margin-top: var(--gap-8);
 }
 .guarantee_detail .btn_area + .acc_group {
 	margin-top: var(--gap-8);
@@ -4342,6 +4350,12 @@
 }
 .simple_info_wrap .simple_info_item .sii_list > li + li strong {
 	color: var(--color-text-basic);
+}
+.simple_info_wrap .simple_info_item .sii_list > li + li strong.point {
+	color: var(--color-text-primary-bold);
+}
+.simple_info_wrap .simple_info_item .sii_list > li + li strong.trend.up {
+	color: var(--color-text-point);
 }
 .simple_info_wrap .simple_info_item .sii_list > li + li .sii_list_l:has(.text),
 .simple_info_wrap .simple_info_item .sii_list > li + li .sii_list_r:has(.text) {
@@ -4470,7 +4484,7 @@
 .coverage_item_wrap .coverage_item_list > .list + .list {
 	margin-top: var(--gap-6);
 	padding-top: 2rem;
-	border-top: var(--border-width-static-regular) solid var(--color-border-gray-light);
+	border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 }
 .coverage_item_list > .list {
 	display: -webkit-box;
@@ -5406,7 +5420,7 @@ ul + .form_group_wrap {
 	gap: var(--gap-3);
 }
 .special_contract_list > li .check_flex_box .money_box .money {
-	color: var(--color-text-primary);
+	color: var(--color-text-primary-bold);
 	font-size: var(--font-size-button-large);
 	line-height: 2.4rem;
 	font-weight: 700;
