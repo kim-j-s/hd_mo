@@ -80,15 +80,15 @@
 				<div class="tab_wrap_content active" role="tabpanel" tabindex="0" aria-labelledby="tab01" id="tabPanel01">
 					{{> pay/card interest_free=true }}
 					<!-- s: 꼭 알아두세요 -->
-					<div class="acd_item acd_item_ty4">
-						{{#> cp/accordion ac-title="이용안내" ac-active=true }}
-							<ul class="list_depth">
-								<li>보험계약변경 완료를 위해서는 계약자의 전자서명이 필요합니다.</li>
-								<li>신용카드사의 정책에 따라 최소 결제금액에 제한이 있을 수 있습니다.</li>
-								<li>최근 카드정보 불러오기는 이전 계약체결동의 내역에 따라 최근 결제이력을 자동으로 불러오는 기능입니다.</li>
-							</ul>
-						{{/ cp/accordion }}
-					</div>
+					<!-- s: 25-09-10 수정 -->
+					{{#> cp/notice dp-active=true}}
+					<ul class="list_depth">
+						<li>보험계약변경 완료를 위해서는 계약자의 전자서명이 필요합니다.</li>
+						<li>신용카드사의 정책에 따라 최소 결제금액에 제한이 있을 수 있습니다.</li>
+						<li>이전 카드정보 불러오기는 이전 계약체결동의 내역에 따라 최근 결제이력을 자동으로 불러오는 기능입니다.</li>
+					</ul>
+					{{/ cp/notice }}
+					<!-- e: 25-09-10 수정 -->
 					<!-- e: 꼭 알아두세요 -->
                 </div>
 
@@ -100,13 +100,13 @@
 				<div class="tab_wrap_content" role="tabpanel" tabindex="0" aria-labelledby="tab03" id="tabPanel03">
 					{{> pay/bank1 }}
 					<!-- s: 꼭 알아두세요 -->
-					<div class="acd_item acd_item_ty4">
-						{{#> cp/accordion ac-title="이용안내" ac-active=true }}
-							<ul class="list_depth">
-								<li>보험계약변경 완료를 위해서는 계약자의 전자서명이 필요합니다.</li>
-							</ul>
-						{{/ cp/accordion }}
-					</div>
+					<!-- s: 25-09-10 수정 -->
+					{{#> cp/notice dp-active=true}}
+						<ul class="list_depth">
+							<li>보험계약변경 완료를 위해서는 계약자의 전자서명이 필요합니다.</li>
+						</ul>
+					{{/ cp/notice }}
+					<!-- e: 25-09-10 수정 -->
 					<!-- e: 꼭 알아두세요 -->	
 				</div>
 			</div>
@@ -124,7 +124,9 @@
 	<div class="bottom_fix_wrap">
 		<div class="btn_area">
 			<!-- s: 25-08-21 UXW -->
-			{{> cp/button type="1" size="1" b-text="결제 정보를 입력 중이에요" disabled=true }}
+			<!-- s: 25-09-10 수정 -->
+			{{> cp/button type="1" size="1" b-text="전자서명하고 결제하기" disabled=true }}
+			<!-- e: 25-09-10 수정 -->
 			<!-- e: 25-08-21 UXW -->
 			<!-- {{> cp/button type="1" size="1" b-text="전자서명" }} 해외여행자보험 기간연장 외 상품 -->
 			<!-- {{> cp/button type="1" size="1" b-text="변경을 위해 전자서명 하기" }} 해외여행자보험 기간연장 -->
