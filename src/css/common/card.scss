@@ -97,11 +97,7 @@
 			&.disabled {
 				.card_link {
 					.item_top {
-						.title_info {
-							.main_title {
-								background-image: none;
-							}
-						}
+						background-image: none;
 					}
 				}
 			}
@@ -143,7 +139,92 @@
 			}
 		}
 	}
-	
+	&:not(.info_type) {
+		.card_item {
+			.item_inner {
+				
+				&:has(.inp_checkbox, .inp_radio){
+					flex-direction: column;
+					.inp_radio,
+					.inp_checkbox {
+						.chk_label {
+							z-index: 1;
+							.sub_title {
+								display: block;
+							}
+							.badge_wrap {
+								display: inline;
+							}
+						}
+					}
+					.inner_cont {
+						margin-left: 28px;
+						// margin-top: var(--gap-5);
+						// padding-top: 16px;
+						// border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
+						width: calc(100% - 28px);
+					}
+					&:has(.tit_item) {
+						.tit_item {
+							display: flex;
+							justify-content: space-between;
+							align-items: start;
+							width: 100%;
+							.inp_checkbox {
+								width: calc(100% - 30px);
+							}
+							.question_mark_btn {
+								width: 30px;
+								height: inherit;
+								.hd_icon.arrowRightSvg {
+									width: 24px;
+									height: 24px;
+								}
+							}
+							&:not(.question_mark_btn) {
+								.inp_radio,
+								.inp_checkbox{
+									width: 100%;
+									input:not(:disabled) {
+										+ .chk_label {
+											padding-left: 28px;
+											display: block;
+										}
+
+									}
+								}
+
+							}
+						}
+					}
+				}
+				&:has(.tit_item, .card_link) {
+					.card_list_ty1 {
+						// margin-top: var(--gap-5);
+						// padding-top: 16px;
+						// border-top: 1px solid #e1e3ea;
+						> li {
+							&:first-child {
+								margin-top: var(--gap-5);
+								padding-top: 16px;
+								border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
+								/* 목록 상 결과값만 최상단에 존재하는 경우 */
+								&.result {
+									align-items: center;
+									margin-top: var(--gap-4);
+									padding-top: 0;
+									border-top: none;
+								}
+							}
+						}
+					}
+				}
+				
+
+			}
+		}
+
+	}
 	.card_item {
 		position: relative;
 		padding: calc(var(--padding-8) - 1px) var(--padding-7);
@@ -184,238 +265,6 @@
 			// > .inp_radio {
 				// margin-top: 3px;
 			// }
-			&:has(.tit_item) {
-				flex-direction: column;
-				.tit_item {
-					display: flex;
-					justify-content: space-between;
-					align-items: end;
-					width: 100%;
-					.inp_checkbox {
-						width: calc(100% - 30px);
-						.chk_label {
-							z-index: 1;
-						}
-					}
-					.question_mark_btn {
-						width: 30px;
-						height: inherit;
-						.hd_icon.arrowRightSvg {
-							width: 24px;
-							height: 24px;
-						}
-					}
-					+ .inner_cont {
-						margin-left: 28px;
-						margin-top: var(--gap-5);
-						padding-top: 16px;
-						border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
-						width: calc(100% - 28px);
-					}
-				}
-			}
-
-
-			
-			// 임시삭제
-			// &:has(> .inp_checkbox ){
-			// 	.inp_checkbox{
-			// 		input:not(:disabled) {
-			// 			+ .chk_label {
-			// 				position: absolute;
-			// 				border: 1px solid #F8633C; 
-			// 				padding-left: 28px;
-			// 				width: calc(100% - 70px);
-			// 				height: var(--itemTopHeight);
-			// 				z-index: 100;
-			// 			}
-			// 		}
-			// 	}
-			// }
-			// 임시삭제
-
-
-
-			.inp_checkbox {
-				input {
-					margin-top: 3px;
-				}
-			}
-
-			// &:not(:has(.item_top)){
-			// 	.inp_radio {
-			// 		// background-color: red;
-			// 	}
-			// }
-
-			.inner_cont {
-				flex: 1;
-				position: relative;
-
-				&:not(:has(.item_top)){
-					.inp_label {
-						.chk_label {
-							margin-top: 0;
-						}
-					}
-				}
-
-				> * {
-					& + .card_list_ty1 {
-						// margin-top: var(--gap-5);
-						// padding-top: 16px;
-						// border-top: 1px solid #e1e3ea;
-						> li {
-							&:first-child {
-								margin-top: var(--gap-5);
-								padding-top: 16px;
-								border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
-								/* 목록 상 결과값만 최상단에 존재하는 경우 */
-								&.result {
-									align-items: center;
-									margin-top: var(--gap-4);
-									padding-top: 0;
-									border-top: none;
-								}
-							}
-						}
-					}
-				}
-
-				.progress_bar_ty3 {
-					margin-top: var(--gap-5);
-				}
-
-				.checkbox_group_wrap {
-					&.column {
-						.inp_checkbox {
-							input {
-								&:checked {
-									& + .label {
-										&:before {
-											background-size: 20px auto;
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-
-			.inp_radio,
-			.inp_checkbox {
-				position: static;
-				width: 28px;
-				
-				.chk_label {
-					padding-left: 28px;
-
-					&:before {
-						top: 3px;
-						z-index: 10;
-					}
-					// 현업 요청에 의한 클릭 영역 추가
-					&::after {
-						content: '';
-						position: absolute;
-						top: -5px;
-						left: -8px;
-						// h_chk
-						// top: 0;
-						// left: 0;
-						// width: 100%;
-						// height: 100%;
-						// h_chk
-						z-index: 1;
-						width: 36px;
-						height: 36px;
-						// background-color: rgba($color: #ddd, $alpha: 0.8);
-					}
-
-					&.chk_label_ty4 {
-						&:before {
-							top: 1px;
-						}
-					}
-				}
-				input:checked{
-					& ~ i {
-						position: absolute;
-						top: -1px;
-						left: -1px;
-						z-index: 0;
-						width: calc(100% + 2px);
-						height: calc(100% + 2px);
-						border: var(--border-width-static-medium) solid #F8633C;
-						border-radius: 24px;
-						// transition: border-color .2s ease;
-					}
-
-					& + .chk_label_ty4 {
-						&:before {
-							background-size: 16px auto;
-						}
-					}
-				}
-			}
-
-			// h_chk
-			// > .inp_radio,
-			// > .inp_checkbox {
-			// 	.chk_label {
-			// 		position: static;
-
-			// 		&:before {
-			// 			top: 26px;
-			// 			left: 20px;
-			// 		}
-			// 	}
-			// }
-			// h_chk
-		}
-
-		.card_link {
-			// h_chk
-			// position: relative;
-			// z-index: 20;
-			// h_chk
-			display: block;
-			cursor: pointer;
-
-			.item_top {
-				.title_info {
-					.main_title {
-						padding-right: 30px;
-						background: url(../images/icon/arrowRight_ty4.svg) no-repeat right 2px top 2px / 24px auto;
-					}
-				}
-			}
-			&[aria-disabled="true"] {
-				.item_top {
-					.title_info {
-						.main_title {
-							cursor: not-allowed;
-							background: none !important;
-							// background: url(../images/icon/arrowRight_disabled_ty2.svg) no-repeat right 3.5px / 20px auto;
-						}
-					}
-				}
-			}
-		}
-
-
-		// card 상단영역
-		.item_top {
-			display: flex;
-			flex-direction: column;
-
-			.badge_wrap {
-				& + .title_info {
-					margin-top: var(--gap-2);
-				}
-			}
-
 			.title_info {
 				display: flex;
 				flex-direction: column;
@@ -496,6 +345,159 @@
 				color: var(--color-text-information);				
 			}
 
+			.inp_checkbox {
+				input {
+					margin-top: 3px;
+				}
+			}
+
+			// &:not(:has(.item_top)){
+			// 	.inp_radio {
+			// 		// background-color: red;
+			// 	}
+			// }
+
+			.inner_cont {
+				flex: 1;
+				position: relative;
+
+				&:not(:has(.item_top)){
+					.inp_label {
+						.chk_label {
+							margin-top: 0;
+						}
+					}
+				}
+
+
+				.progress_bar_ty3 {
+					margin-top: var(--gap-5);
+				}
+
+				.checkbox_group_wrap {
+					&.column {
+						.inp_checkbox {
+							input {
+								&:checked {
+									& + .label {
+										&:before {
+											background-size: 20px auto;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			.inp_radio,
+			.inp_checkbox {
+				position: static;
+				//width: 28px;
+				height: 100%;
+				
+				.chk_label {
+					padding-left: 28px;
+					height: 100%;
+
+					&:before {
+						top: 3px;
+						z-index: 10;
+					}
+					// 현업 요청에 의한 클릭 영역 추가
+					&::after {
+						content: '';
+						position: absolute;
+						top: -5px;
+						left: -8px;
+						// h_chk
+						// top: 0;
+						// left: 0;
+						// width: 100%;
+						// height: 100%;
+						// h_chk
+						z-index: 1;
+						width: 100%;
+						height: calc(100% + 8px);
+						//background-color: rgba($color: rgb(226, 0, 0), $alpha: 0.2);
+					}
+
+					&.chk_label_ty4 {
+						&:before {
+							top: 1px;
+						}
+					}
+				}
+				input:checked{
+					& ~ i {
+						position: absolute;
+						top: -1px;
+						left: -1px;
+						z-index: 0;
+						width: calc(100% + 2px);
+						height: calc(100% + 2px);
+						border: var(--border-width-static-medium) solid #F8633C;
+						border-radius: 24px;
+						// transition: border-color .2s ease;
+					}
+
+					& + .chk_label_ty4 {
+						&:before {
+							background-size: 20px auto;
+						}
+					}
+				}
+			}
+
+			// h_chk
+			// > .inp_radio,
+			// > .inp_checkbox {
+			// 	.chk_label {
+			// 		position: static;
+
+			// 		&:before {
+			// 			top: 26px;
+			// 			left: 20px;
+			// 		}
+			// 	}
+			// }
+			// h_chk
+		}
+
+		.card_link {
+			// h_chk
+			// position: relative;
+			// z-index: 20;
+			// h_chk
+			display: block;
+			cursor: pointer;
+
+			.item_top {
+				padding-right: 30px;
+				background: url(../images/icon/arrowRight_ty4.svg) no-repeat right 2px top 2px / 24px auto;
+			}
+			&[aria-disabled="true"] {
+				.item_top {
+					background: none !important;
+					cursor: not-allowed;
+				}
+			}
+		}
+
+
+		// card 상단영역
+		.item_top {
+			display: flex;
+			flex-direction: column;
+
+			.badge_wrap {
+				& + .title_info {
+					margin-top: var(--gap-2);
+				}
+			}
+
+			
 			& + .card_list_ty1 {
 				// margin-top: var(--gap-5);
 				// padding-top: 16px;
@@ -745,14 +747,12 @@
 				}
 			}
 
-			.item_top {
-				.title_info {
-					.main_title {
-						color: var(--color-text-disabled-on);
-					}
-					.desc {
-						color: var(--color-text-information);
-					}
+			.title_info {
+				.main_title {
+					color: var(--color-text-disabled-on);
+				}
+				.desc {
+					color: var(--color-text-information);
 				}
 			}
 		
@@ -764,7 +764,7 @@
 				}
 			}
 		
-			.item_top .title_info .main_title {
+			.title_info .main_title {
 				color: inherit;
 			}
 		
@@ -840,6 +840,9 @@
 			.item_inner {
 				align-items: center;
 				gap: var(--gap-4);
+				.item_top {
+					background-position: right center;
+				}
 				.title_info {
 					word-break: keep-all;
 				}
@@ -857,13 +860,11 @@
 				align-items: center;
 
 				.item_top {
+					background: none !important;
+					padding-right: 0 !important;
 					.title_info {
 						flex-direction: row;
 						align-items: center;
-						.main_title {
-							background: none !important;
-							padding-right: 0 !important;
-						}
 						.desc {
 							font-size: var(--font-size-body-small);
 							color: var(--color-text-subtle);
@@ -962,9 +963,53 @@
 			}
 		}
 	}
+	&.info_type {
+		.card_item {
+			position: relative;
+			&:has(.hidden) {
+				z-index: 20;
+				background: var(--color-surface-secondary-subtler);
+				border: 0;		
+			}
+			.item_inner {
+				.inp_radio,
+				.inp_checkbox:not(.hidden) {
+					width: auto;
+					input[type=checkbox],
+					input[type=radio] {
+						+ .chk_label {
+							position: absolute;
+							top: 4px;
+							left: 8px;
+							width: calc(100% - 1px);
+							height: calc(100% - 8px);
+							&:before {
+								top: 20px;
+								left: 10px;
+								background: #ffffff;
+								border: var(--border-width-static-regular) solid var(--color-border-gray-dark);
+							}
+							&::after {
+								border-radius: 24px;
+							}
+						}
+						&:checked {
+							+ .chk_label {
+								&:before {
+									background: #F8633C url(../images/icon/check_ty1.svg) no-repeat center / 12px auto;
+									border-color: #F8633C;
+								}
+							}
+						}
+					}
+					+ .inner_cont {
+						margin-left: 28px;
+					}
+				}
+			}
+		} 
+	}
 }
-
-
 
 /* Card - information Type (예외 case에서만 사용됨)*/
 .card_item_wrap.info_type {
@@ -973,20 +1018,7 @@
 		margin-top: var(--gap-11);
 	}
 
-	.card_item {
-		background: var(--color-surface-secondary-subtler);
-		border: 0;
-	}
 
-	.inp_checkbox input[type=checkbox] + .chk_label::before {
-		background: #ffffff;
-		border: var(--border-width-static-regular) solid var(--color-border-gray-dark);
-	}
-
-	.inp_checkbox input[type=checkbox]:checked + .chk_label::before {
-		background: #F8633C url(../images/icon/check_ty1.svg) no-repeat center / 12px auto;
-		border-color: #F8633C;
-	}
 
 	.card_list_ty1 {
 		> li {
