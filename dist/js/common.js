@@ -143,7 +143,20 @@
 				}
 			})
 		}
-	})
+	});
+
+	/* Anchor */
+	// $DOM.on('click', '.dom_anchor_btn', function(e){
+	// 	e.preventDefault();
+  //   const targetId = $(this).attr("href");
+  //   const target = $(targetId);
+  //   if (target.length) {
+  //     const targetOffset = target.offset().top - 100;
+  //     $(".container").stop().animate({
+	// 				scrollTop: targetOffset
+  //     }, 300);
+  //   }		
+  // });
 
   /* Input */
   $DOM.on('focus input', '.input_text .inp > input', function(){
@@ -189,9 +202,6 @@
 		}, 100);
 		$wrap.find('.del').on('blur', function(){
 			$(this).closest('.inp').removeClass('active');
-			if($(this).closest('.length_check').length){
-				$(this).closest('.length_check').find('.counter').attr('aria-label', '입력한 숫자 없음').children('.c_input').text('0');
-			}
 		});
 
 		// 전화번호
@@ -325,23 +335,11 @@
 	$DOM.on('keyup', '.length_check > textarea, .length_check > .input_text input', function (e){
     const str = $(this).val(),
 					$count = $(this).closest('.length_check').find('.counter em');
-			
+
     if(str.length == 0 || str == ''){
-<<<<<<< HEAD
       $count.text('0');
     }else{
 			$count.text(str.length);
-=======
-			$count.closest('.counter').attr('aria-label', '입력한 숫자 없음');
-			$count.text('0');
-      // $count.text('0');
-			// $count.html('<span class="live_region">현재 입력한 숫자의 개수</span>' + '0');
-    }else{
-			$count.closest('.counter').attr('aria-label', '15개 중' + str.length + ' 개 입력');
-			$count.text(str.length);
-			// $count.text(str.length);
-			// $count.html('<span class="live_region">현재 입력한 숫자의 개수</span>' + str.length);
->>>>>>> b3f233d7c962b76c2c1e44cc5c8f69b0fa8e3a55
     }
 
     if (str.length > 500) {

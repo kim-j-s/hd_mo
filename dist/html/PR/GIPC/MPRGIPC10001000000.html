@@ -449,8 +449,7 @@
 								</div>
 							</div>
 							<div class="btn_area">
-								<!-- <a href="#anchor_move" class="btn_link short_cut anchor_btn"> -->
-								<a href="#anchor_move" class="btn_link short_cut anchor_btn">
+								<a href="#anchor_move" class="btn_link short_cut anchor_btn" role="button">
 									<span class="text">가입후기 100개 이상</span>
 								</a>
 							</div>
@@ -485,7 +484,9 @@
 						<!-- e: intro_info -->
 
 						<!-- s: 가입후기 -->
-						<div class="recommend_area" id="anchor_move">
+						<!-- s: 25-09-11 수정 -->
+						<div class="recommend_area smt_ty1" id="anchor_move">
+							<!-- e: 25-09-11 수정 -->
 							<div class="cont_head">
 								<h5 class="title_h5"><strong class="point">가입후기</strong></h5>
 								<h3 class="title_h3">실제로 가입하신 분들의 생생한 후기</h3>
@@ -659,7 +660,9 @@
 		<script>
 			$(function () {
 				toggleView();
-				anchorMove();
+				/* s: 25-09-11 수정 */
+				// anchorMove();
+				/* e: 25-09-11 수정 */
 			});
 
 			function toggleView() {
@@ -675,23 +678,25 @@
 				});
 			}
 
-			function anchorMove() {
-				$(".anchor_btn").on("click", function () {
-					const targetId = $(this).attr("href");
-					const target = $(targetId);
-
-					if (target.length) {
-						const targetOffset = target.offset().top - 100;
-
-						$("html, body").stop().animate(
-							{
-								scrollTop: targetOffset,
-							},
-							500,
-						);
-					}
-				});
-			}
+			/* s: 25-09-11 수정 */
+			// function anchorMove() {
+			//   $(".anchor_btn").on("click", function () {
+			//     const targetId = $(this).attr("href");
+			//     const target = $(targetId);
+			//
+			//     if (target.length) {
+			//       const targetOffset = target.offset().top - 100;
+			//
+			//       $("html, body").stop().animate(
+			// 				{
+			// 					scrollTop: targetOffset
+			//         },
+			//         500
+			//       );
+			//     }
+			//   });
+			// }
+			/* e: 25-09-11 수정 */
 		</script>
 
 		<!-- 전체메뉴 -->
