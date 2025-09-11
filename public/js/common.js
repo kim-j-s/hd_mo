@@ -217,7 +217,7 @@
 			$this.siblings('input').removeClass('isVal');
 		}
 		if($(this).closest('.length_check').length){
-			$(this).closest('.length_check').find('.counter').attr('aria-label', '입력한 숫자 없음').children('.c_input').text('0');
+			$(this).closest('.length_check').find('.counter').attr('aria-label', '입력한 숫자 없음').find('.c_input').text('0');
 		}
   });
 	
