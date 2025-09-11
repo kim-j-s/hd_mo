@@ -189,6 +189,9 @@
 		}, 100);
 		$wrap.find('.del').on('blur', function(){
 			$(this).closest('.inp').removeClass('active');
+			if($(this).closest('.length_check').length){
+				$(this).closest('.length_check').find('.counter').children('.c_input').text('0').attr('aria-label', '입력한 숫자 없음')
+			}
 		});
 
 		// 전화번호
@@ -324,11 +327,11 @@
 					$count = $(this).closest('.length_check').find('.counter em');
 			
     if(str.length == 0 || str == ''){
-			$count.text('0').attr('aria-label', '입력한 수 0');
+			$count.text('0').attr('aria-label', '입력한 숫자 없음');
       // $count.text('0');
 			// $count.html('<span class="live_region">현재 입력한 숫자의 개수</span>' + '0');
     }else{
-			$count.text(str.length).attr('aria-label', '입력한 수 ' + str.length);
+			$count.text(str.length).attr('aria-label', '15개 중' + str.length + '개 입력');
 			// $count.text(str.length);
 			// $count.html('<span class="live_region">현재 입력한 숫자의 개수</span>' + str.length);
     }
