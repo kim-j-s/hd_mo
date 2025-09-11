@@ -143,7 +143,20 @@
 				}
 			})
 		}
-	})
+	});
+
+	/* Anchor */
+	// $DOM.on('click', '.dom_anchor_btn', function(e){
+	// 	e.preventDefault();
+  //   const targetId = $(this).attr("href");
+  //   const target = $(targetId);
+  //   if (target.length) {
+  //     const targetOffset = target.offset().top - 100;
+  //     $(".container").stop().animate({
+	// 				scrollTop: targetOffset
+  //     }, 300);
+  //   }		
+  // });
 
   /* Input */
   $DOM.on('focus input', '.input_text .inp > input', function(){

@@ -271,7 +271,9 @@
 
 
 				<!-- s: 가입후기 -->
-				<div class="recommend_area" id="anchor_move">
+				<!-- s: 25-09-11 수정 -->
+				<div class="recommend_area smt_ty1" id="anchor_move">
+					<!-- e: 25-09-11 수정 -->
 					<div class="cont_head">
 						<h5 class="title_h5"><strong class="point">가입후기</strong></h5>
 						<h3 class="title_h3">실제로 가입하신 분들의 생생한 후기</h3>
@@ -427,44 +429,47 @@
 <!-- e: popup area -->
 
 <script>
-$(function(){
-	toggleView();
-	anchorMove();
-});
-
-function toggleView() {
-  $('.guarantee_area .acd_tg_bottom2').each(function () {
-    const $this = $(this),
-          $item = $this.find('.guarantee_list'),
-          $ele = $item.find('.item');
-    const eleLength = $ele.length;
-
-    if (eleLength <= 3) {
-      $this.find('.btn_area').remove();
-    }
-  });
-}
-
-function anchorMove() {
-  $(".anchor_btn").on("click", function () {
-    const targetId = $(this).attr("href");
-    const target = $(targetId);
-
-    if (target.length) {
-      const targetOffset = target.offset().top - 100;
-
-      $("html, body").stop().animate(
-				{
-					scrollTop: targetOffset
-        },
-        500
-      );
-    }
-		
-  });
-}
-
-</script>
+	$(function(){
+		toggleView();
+		/* s: 25-09-11 수정 */
+		// anchorMove();
+		/* e: 25-09-11 수정 */
+	});
+	
+	function toggleView() {
+		$('.guarantee_area .acd_tg_bottom2').each(function () {
+			const $this = $(this),
+						$item = $this.find('.guarantee_list'),
+						$ele = $item.find('.item');
+			const eleLength = $ele.length;
+	
+			if (eleLength <= 3) {
+				$this.find('.btn_area').remove();
+			}
+		});
+	}
+	
+	/* s: 25-09-11 수정 */
+	// function anchorMove() {
+	//   $(".anchor_btn").on("click", function () {
+	//     const targetId = $(this).attr("href");
+	//     const target = $(targetId);
+	// 
+	//     if (target.length) {
+	//       const targetOffset = target.offset().top - 100;
+	// 
+	//       $("html, body").stop().animate(
+	// 				{
+	// 					scrollTop: targetOffset
+	//         },
+	//         500
+	//       );
+	//     }		
+	//   });
+	// }
+	/* e: 25-09-11 수정 */
+	
+	</script>
 
 
 {{/ layout/default }}
