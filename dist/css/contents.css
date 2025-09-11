@@ -4449,6 +4449,15 @@
 .simple_info_wrap.ty2 .simple_info_item.active {
 	padding-bottom: 0;
 }
+.simple_info_wrap.ty2 .simple_info_item.active .sii_list:has(.trend) {
+	padding-bottom: 2.4rem;
+}
+.simple_info_wrap.ty2 .simple_info_item.active .sii_list:has(.trend) > li:has(.trend) .trend {
+	margin-bottom: -2.4rem;
+}
+.simple_info_wrap.ty2 .simple_info_item.active .sii_list:has(.trend) .trend {
+	font-size: var(--font-size-body-medium);
+}
 .simple_info_wrap + .sticky.tag_item_wrap {
 	margin: 0 -2.4rem;
 	padding: var(--padding-9) var(--padding-8);
@@ -4457,7 +4466,7 @@
 	position: sticky;
 	z-index: 10;
 	padding-top: var(--padding-6);
-	padding-bottom: var(--padding-6);
+	padding-bottom: var(--padding-7);
 	background-color: #fff;
 	-webkit-box-shadow: 0px var(--shadow-y-2) var(--shadow-blur-2) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
 	box-shadow: 0px var(--shadow-y-2) var(--shadow-blur-2) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
@@ -5744,6 +5753,9 @@ ul + .form_group_wrap {
 .cert_select_list .cert_select_item.company_cert > .text::before {
 	background-image: url(../images/common/cert/icon_cert_company_cert.svg);
 }
+.cert_select_list + .btn_area {
+	margin-top: var(--gap-8);
+}
 /* PIN 인증 */
 .pin_enter {
 	position: relative;
@@ -6014,6 +6026,19 @@ ul + .form_group_wrap {
 }
 .bg_top_cover .info_gray.bg_etc01 .total .big {
 	font-size: var(--font-size-heading-medium);
+}
+.bg_top_cover .info_gray.bg_etc01 .total.car .chg_rate {
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	margin-top: 0;
+	padding-bottom: 2.4rem;
+}
+.bg_top_cover .info_gray.bg_etc01 .total.car .chg_rate dd {
+	margin-bottom: -2.4rem;
+}
+.bg_top_cover .info_gray.bg_etc01 .total.car .chg_rate dd .trend {
+	font-size: var(--font-size-body-medium);
 }
 /* 배경색 있는 상단 컨텐츠 영역 */
 /* 계약상세 */

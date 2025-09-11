@@ -73,12 +73,19 @@
 										</a>
 										<!-- e: 25-05-15 수정 -->
 									</div>
-									<div class="input_text">
-										<div class="inp">
-											<input type="number" placeholder="15자리 숫자 입력" minlength="15" maxlength="15" title="동물번호 입력" />
-											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+									<!-- s: 25-09-11 수정 -->
+									<div class="comp_wrap count_number length_check">
+										<div class="input_text count">
+											<div class="inp">
+												<input type="tel" placeholder="15자리 숫자 입력" maxlength="15" title="동물번호 15자리 숫자 입력" />
+												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+											</div>
 										</div>
+										<span class="counter">
+											<em class="c_input" aria-live="polite"><span class="sr-only">입력한 수</span>0</em>/<span class="count_total"><span class="sr-only">총 입력가능한 수</span>15</span>
+										</span>
 									</div>
+									<!-- e: 25-09-11 수정 -->
 								</div>
 								<div class="form_line">
 									<div class="label_tit box">
@@ -156,9 +163,11 @@
 					</div>
 					<div class="popup_bottom">
 						<div class="btn_area">
+							<!-- s: 25-09-11 수정 -->
 							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2" disabled>
-								<span class="text">입력 중이에요</span>
+								<span class="text">정보를 입력 중이에요</span>
 							</button>
+							<!-- e: 25-09-11 수정 -->
 							<!-- <button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
 						
 								<span class="text">모두 입력했어요</span>
