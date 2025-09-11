@@ -481,10 +481,13 @@
 			let siiHeight = 0;
 			
 			if($('.position_event_content').hasClass('summary_ii')){
-				siiHeight = parseFloat($sii.css('padding-bottom'));
+				// siiHeight = parseFloat($sii.css('padding-bottom'));
+				siiHeight = parseFloat($scrollArea.css('margin-top'));
 			}else {
-				siiHeight = parseFloat($sii.css('margin-bottom'));
+				const mTop = parseFloat($contents.css('margin-bottom'));
+				siiHeight = parseFloat($sii.css('padding-bottom')) + mTop + (mTop / 2);
 			}
+			console.log(siiHeight)
 			sHeight = siiHeight;
 		}
 
@@ -679,6 +682,7 @@ function initPositionEventWrap($wrap) {
 	const $tabBtns = $wrap.find('.position_event_tab .tag_item');
 	const $contents = $wrap.find('.position_event_content .pec_point');
 	const $scrollArea = $wrap.find('.position_event_content');
+	const $tab = $wrap.find('.position_event_tab');
 
 	$wrap.data('scrolling', false);
 
@@ -701,12 +705,24 @@ function initPositionEventWrap($wrap) {
 			}
 		}
 
-		if($wrap.find('.sii_wrap').length){
-			const $sii = $wrap.find('.sii_wrap').children('.position_event_tab');
-			const siiHeight = parseFloat($sii.css('padding-bottom'));
+		const tabOffsetTop = $tab.position().top;
 
-			sHeight = siiHeight;
-		}
+		// 조건: scrollTop이 탭 위치에 도달한 경우
+
+		// if($wrap.find('.sii_wrap').length){
+		// 	const $sii = $wrap.find('.sii_wrap').children('.position_event_tab');
+		// 	const siiHeight = parseFloat($sii.css('padding-bottom'));
+			
+		// 	if (scrollTop >= tabOffsetTop - expHeight) {
+		// 		$sii.css({
+		// 			'margin-bottom' : '0'
+		// 		});
+		// 	} else {
+		// 		$sii.css({
+		// 			'margin-bottom' : '32px'
+		// 		});
+		// 	}
+		// }
 		// console.log(sHeight);
 
 		let activeIdx = -1;
