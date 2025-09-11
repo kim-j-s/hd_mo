@@ -330,12 +330,10 @@
 			$count.closest('.counter').attr('aria-label', '입력한 숫자 없음');
 			$count.text('0');
       // $count.text('0');
-			// $count.html('<span class="live_region">현재 입력한 숫자의 개수</span>' + '0');
     }else{
 			$count.closest('.counter').attr('aria-label', '15개 중 ' + str.length + '개 입력');
 			$count.text(str.length);
 			// $count.text(str.length);
-			// $count.html('<span class="live_region">현재 입력한 숫자의 개수</span>' + str.length);
     }
 
     if (str.length > 500) {
