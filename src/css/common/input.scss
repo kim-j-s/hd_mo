@@ -187,7 +187,10 @@
 			background: url(../images/icon/icon_reset.svg) no-repeat center center / 20px auto;
 		}
 		.btn_search {
-			right: 16px;
+			width: 20px;
+			height: 20px;
+			right: calc(var(--padding-6) - 1px);//16px;
+			background-image: url(../images/icon/icon_search.svg);
 			&::after {
 				content: '';
 				position: absolute;
@@ -645,6 +648,23 @@
 .extra_area {
 	& + .form_list {
 		margin-top: var(--gap-8);
+	}
+}
+
+// 동물번호
+.count_number {
+	.input_text {
+		flex: 1;
+	}
+	.counter {
+		padding-right: var(--padding-6);
+		line-height: 150%;
+		font-size: var(--font-size-button-small);
+		color: var(--color-text-subtle);
+
+		.c_input {
+			color:  var(--color-divider-point);
+		}
 	}
 }
 

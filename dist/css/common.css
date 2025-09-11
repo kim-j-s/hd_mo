@@ -7379,6 +7379,9 @@ strong {
 .inp_checkbox input[type="checkbox"]:disabled + .chk_label.switch_check .label_cont {
 	color: var(--color-text-disabled);
 }
+.inp_checkbox input[type="checkbox"]:disabled:checked + .chk_label.chk_label_ty4 .label_cont {
+	color: var(--color-text-basic);
+}
 .inp_checkbox input[type="checkbox"]:checked + .chk_label::before {
 	background: var(--color-element-primary) url(../images/icon/check_ty1.svg) no-repeat center/1.2rem auto;
 	border-color: var(--color-element-primary);
@@ -8508,7 +8511,10 @@ strong {
 	background: url(../images/icon/icon_reset.svg) no-repeat center center/2rem auto;
 }
 .input_text.search .btn_search {
-	right: 1.6rem;
+	width: 2rem;
+	height: 2rem;
+	right: calc(var(--padding-6) - 1px);
+	background-image: url(../images/icon/icon_search.svg);
 }
 .input_text.search .btn_search::after {
 	content: "";
@@ -8965,6 +8971,25 @@ strong {
 }
 .extra_area + .form_list {
 	margin-top: var(--gap-8);
+}
+.count_number .input_text {
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+.count_number .counter {
+	min-width: 4.5rem;
+	padding-right: var(--padding-6);
+	line-height: 150%;
+	font-size: var(--font-size-button-small);
+	color: var(--color-text-subtle);
+}
+.count_number .counter .c_input {
+	color: var(--color-divider-point);
+}
+.count_number .counter .live_region {
+	position: absolute;
+	left: -999.9rem;
 }
 /* Form group */
 .form_group_wrap + .info_gray.ty2,

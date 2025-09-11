@@ -189,6 +189,9 @@
 		}, 100);
 		$wrap.find('.del').on('blur', function(){
 			$(this).closest('.inp').removeClass('active');
+			if($(this).closest('.length_check').length){
+				$(this).closest('.length_check').find('.counter').children('.c_input').text('0').attr('aria-label', '입력한 숫자 없음')
+			}
 		});
 
 		// 전화번호
@@ -319,14 +322,18 @@
   });
 
 	// length check
-	$DOM.on('keyup', '.length_check > textarea', function (e){
+	$DOM.on('keyup', '.length_check > textarea, .length_check > .input_text input', function (e){
     const str = $(this).val(),
-					$count = $(this).next('.counter').find('em');
-
+					$count = $(this).closest('.length_check').find('.counter em');
+			
     if(str.length == 0 || str == ''){
-      $count.text('0');
+			$count.text('0').attr('aria-label', '입력한 숫자 없음');
+      // $count.text('0');
+			// $count.html('<span class="live_region">현재 입력한 숫자의 개수</span>' + '0');
     }else{
-			$count.text(str.length);
+			$count.text(str.length).attr('aria-label', '15개 중' + str.length + '개 입력');
+			// $count.text(str.length);
+			// $count.html('<span class="live_region">현재 입력한 숫자의 개수</span>' + str.length);
     }
 
     if (str.length > 500) {
@@ -578,6 +585,7 @@ function simpleInfo(){
 			const $targetChild = $(this).find('.simple_info_wrap').children('.simple_info_item');
 			let new_headHeight = 0;
 			let simpleHeight = $(this).find('.simple_info_wrap').find('.simple_info_item').innerHeight();
+
 			
 			if ($target.length && $target.css('display') !== 'none') {
 				targetOffsetTop = $target.position().top;
@@ -610,7 +618,7 @@ function simpleInfo(){
 					$targetChild.stop().show();
 					// console.log('ty2 checking');
 					if($('.tag_item_wrap.sticky').length){
-						$target.closest('.position_event_wrap').find('.tag_item_wrap.sticky').css('top', simpleHeight - new_headHeight).addClass('active');
+						$target.closest('.position_event_wrap').find('.tag_item_wrap.sticky').css('top', simpleHeight - new_headHeight + 12).addClass('active');
 					}
 				}
 

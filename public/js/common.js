@@ -319,9 +319,9 @@
   });
 
 	// length check
-	$DOM.on('keyup', '.length_check > textarea', function (e){
+	$DOM.on('keyup', '.length_check > textarea, .length_check > .input_text input', function (e){
     const str = $(this).val(),
-					$count = $(this).next('.counter').find('em');
+					$count = $(this).closest('.length_check').find('.counter em');
 
     if(str.length == 0 || str == ''){
       $count.text('0');
@@ -578,6 +578,7 @@ function simpleInfo(){
 			const $targetChild = $(this).find('.simple_info_wrap').children('.simple_info_item');
 			let new_headHeight = 0;
 			let simpleHeight = $(this).find('.simple_info_wrap').find('.simple_info_item').innerHeight();
+
 			
 			if ($target.length && $target.css('display') !== 'none') {
 				targetOffsetTop = $target.position().top;
@@ -610,7 +611,7 @@ function simpleInfo(){
 					$targetChild.stop().show();
 					// console.log('ty2 checking');
 					if($('.tag_item_wrap.sticky').length){
-						$target.closest('.position_event_wrap').find('.tag_item_wrap.sticky').css('top', simpleHeight - new_headHeight).addClass('active');
+						$target.closest('.position_event_wrap').find('.tag_item_wrap.sticky').css('top', simpleHeight - new_headHeight + 12).addClass('active');
 					}
 				}
 
