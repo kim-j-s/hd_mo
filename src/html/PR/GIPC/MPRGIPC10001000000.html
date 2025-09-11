@@ -31,9 +31,7 @@
 						</div>
 					</div>
 					<div class="btn_area">
-						<!-- s: 25-09-11 수정 -->
-						{{> cp/linkButton bl_class="short_cut" bl_text="가입후기 100개 이상" href="#anchor_move" }}
-						<!-- e: 25-09-11 수정 -->
+						{{> cp/linkButton bl_class="short_cut anchor_btn" bl_text="가입후기 100개 이상" href="#anchor_move" role_b=true}}
 					</div>
 				</div>
 				<!-- e: review -->
@@ -245,10 +243,16 @@ function anchorMove() {
     const targetId = $(this).attr("href");
     const target = $(targetId);
 
+		console.log('x');
+
     if (target.length) {
       const targetOffset = target.offset().top - 100;
 
-      $("html, body").stop().animate(
+			console.log('x', targetOffset);
+
+      // $("html, body").stop().animate(
+      $(".container.prd_view").stop().animate(
+				
 				{
 					scrollTop: targetOffset
         },
