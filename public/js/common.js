@@ -189,9 +189,6 @@
 		}, 100);
 		$wrap.find('.del').on('blur', function(){
 			$(this).closest('.inp').removeClass('active');
-			if($(this).closest('.length_check').length){
-				$(this).closest('.length_check').find('.counter').attr('aria-label', '입력한 숫자 없음').children('.c_input').text('0');
-			}
 		});
 
 		// 전화번호
@@ -218,6 +215,9 @@
 
 		if($this.closest('.comp_wrap').hasClass('phone')){
 			$this.siblings('input').removeClass('isVal');
+		}
+		if($(this).closest('.length_check').length){
+			$(this).closest('.length_check').find('.counter').attr('aria-label', '입력한 숫자 없음').children('.c_input').text('0');
 		}
   });
 	
@@ -332,7 +332,7 @@
       // $count.text('0');
 			// $count.html('<span class="live_region">현재 입력한 숫자의 개수</span>' + '0');
     }else{
-			$count.closest('.counter').attr('aria-label', '15개 중' + str.length + ' 개 입력');
+			$count.closest('.counter').attr('aria-label', '15개 중 ' + str.length + '개 입력');
 			$count.text(str.length);
 			// $count.text(str.length);
 			// $count.html('<span class="live_region">현재 입력한 숫자의 개수</span>' + str.length);
