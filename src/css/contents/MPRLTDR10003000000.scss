@@ -1238,6 +1238,25 @@
 
 			&.active {
 				padding-bottom: 0;
+
+				.sii_list {
+					&:has(.trend){
+						padding-bottom: 24px;
+
+						> li {
+							&:has(.trend){
+								.trend {
+									margin-bottom: -24px;
+								}
+							}
+						}
+
+						.trend {
+							// margin-top: -24px;
+							font-size: var(--font-size-body-medium);
+						}
+					}
+				}
 			}
 		}
 	}
@@ -1251,7 +1270,7 @@
 				position: sticky;
 				z-index: 10;
 				padding-top: var(--padding-6);
-				padding-bottom: var(--padding-6);
+				padding-bottom: var(--padding-7);
 				background-color: #FFF;
 				box-shadow: 0px var(--shadow-y-2) var(--shadow-blur-2) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
 				border-radius: 0px 0px var(--padding-6) var(--padding-6);
