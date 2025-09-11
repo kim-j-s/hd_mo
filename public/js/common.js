@@ -718,7 +718,7 @@ function initPositionEventWrap($wrap) {
 			}
 		}
 
-		const tabOffsetTop = $tab.position().top;
+		// const tabOffsetTop = $tab.position().top;
 
 		// 조건: scrollTop이 탭 위치에 도달한 경우
 
