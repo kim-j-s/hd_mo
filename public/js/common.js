@@ -319,9 +319,9 @@
   });
 
 	// length check
-	$DOM.on('keyup', '.length_check > textarea', function (e){
+	$DOM.on('keyup', '.length_check > textarea, .length_check > .input_text input', function (e){
     const str = $(this).val(),
-					$count = $(this).next('.counter').find('em');
+					$count = $(this).closest('.length_check').find('.counter em');
 
     if(str.length == 0 || str == ''){
       $count.text('0');
