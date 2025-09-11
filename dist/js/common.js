@@ -324,9 +324,10 @@
 					$count = $(this).closest('.length_check').find('.counter em');
 
     if(str.length == 0 || str == ''){
-      $count.text('0');
+      $count.html('<span class="sr-only">현재 입력한 숫자의 수</span>' + '0');
     }else{
-			$count.text(str.length);
+			// $count.text(str.length);
+      $count.html('<span class="sr-only">현재 입력한 숫자의 수</span>' + str.length);
     }
 
     if (str.length > 500) {
