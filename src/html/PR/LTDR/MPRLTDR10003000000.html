@@ -730,7 +730,9 @@
 				<li>자동차, 이륜차보험의 개시일 이후 1년간 납입한 보험료의 7% 할인</li>
 				<!-- e: 25-09-03 수정 -->		
 				<!-- e: 25-08-22 UXW -->
-				<li>초회보험료부터 적용되며 영업보험료의 7% 할인</li>
+				<!-- s: 25-09-12 수정 -->
+				<!-- <li>초회보험료부터 적용되며 영업보험료의 7% 할인</li> -->
+				<!-- e: 25-09-12 수정 -->
 				<li>계약 체결 이후 할인적용대상에 해당되는 경우 할인 적용대상에 해당되는 시점 익월 이후 납입되는 보험료부터 할인 적용</li>
 				<!-- s: 25-09-03 수정 -->
 				<li>할인을 적용 받던 계약이 할인적용대상에 해당되지 않게 된 경우 익월 이후 납입되는 보험료부터 할인이 적용되지 않으며, 다시 적용대상에 해당되더라도 할인이 재적용 되지 않음</li>
@@ -755,7 +757,50 @@
 <!-- e: 현대해상 결제 혜택 안내 팝업 -->
 <!-- 25-05-20 수정 -->
 
+<!-- s: 25-09-12 수정 -->
 {{> pay/hd_card }}	
+<!-- s: 현대카드 결제 혜택 안내 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type04" popup-title="현대카드 결제 혜택 안내" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<h3 class="title_h3 normal center">
+			현대카드로<br>
+			<strong>운전자보험 보험료를 결제해보세요</strong>
+		</h3>
+		<div class="info_gray">
+			<ul class="list_depth">
+				<li>
+					<strong>M포인트 100% 사용 가능(1회차 보험료만)</strong>
+					<ul>
+						<li>카드 승인액 한도 내 보유포인트 전액이 차감됩니다. (승인시점 기준 1,000P~3,000P 이용 가능)</li>
+						<li>M포인트 사용 시 결제대금은 포인트가 차감된 금액으로 청구됩니다.</li>
+					</ul>
+				</li>
+				<li>
+					<strong>2회차 이후 계속보험료도 현대카드로 결제 가능</strong>
+					<ul>
+						<li>결제대금은 포인트가 차감된 금액으로 청구됩니다.</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<ul class="list_ty2">
+			<li>
+				포인트 관련 상담 및 문의<br>
+				현대카드 고객센터(1577-6000)<br>
+				현대카드 홈페이지(www.hyundaicard.com)
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: 현대카드 결제 혜택 안내 팝업 -->
+<!-- e: 25-09-12 수정 -->
 
 <!-- s: Full 팝업(예시) -->
 {{#> popup/popup_full popup-id="ex_popup_full" popup-title="팝업 타이틀" }}
