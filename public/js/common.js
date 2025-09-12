@@ -229,6 +229,9 @@
 		if($this.closest('.comp_wrap').hasClass('phone')){
 			$this.siblings('input').removeClass('isVal');
 		}
+		if($(this).closest('.length_check').length){
+			$(this).closest('.length_check').find('.counter').attr('aria-label', '입력한 숫자 없음').find('.c_input').text('0');
+		}
   });
 	
 	// comma
@@ -336,11 +339,13 @@
     const str = $(this).val(),
 					$count = $(this).closest('.length_check').find('.counter em');
 
-    if(str.length == 0 || str == ''){
-      $count.text('0');
-    }else{
+		if(str.length == 0 || str == ''){
+			$count.closest('.counter').attr('aria-label', '입력한 숫자 없음');
+			$count.text('0');
+		}else{
+			$count.closest('.counter').attr('aria-label', '15개 중 ' + str.length + '개 입력');
 			$count.text(str.length);
-    }
+		}
 
     if (str.length > 500) {
     	$(this).val($(this).val().substring(0, 500));

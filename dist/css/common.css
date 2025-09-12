@@ -688,7 +688,6 @@ strong {
 }
 .process_info_area {
 	text-align: center;
-	padding-bottom: var(--gap-8);
 }
 .process_info_area .process_info_icon_area {
 	width: 6.4rem;
@@ -742,6 +741,9 @@ strong {
 }
 .process_info_area.ico_type.ico_type04 {
 	background-image: url(../images/common/cert/icon_cert_common_cert.svg);
+}
+.process_info_area + * {
+	margin-bottom: var(--gap-8);
 }
 .process_info_area + .btn_area {
 	margin-top: var(--gap-11);
@@ -9081,6 +9083,7 @@ strong {
 .form_group_wrap > * ~ .row {
 	margin-top: var(--gap-8);
 }
+.form_group_wrap + .form_card_wrap,
 .form_group_wrap + .acd_item,
 .form_group_wrap + .info_gray,
 .form_group_wrap + .bann_wrap,
@@ -9089,9 +9092,7 @@ strong {
 .form_group_wrap + .file_attach_box {
 	margin-top: var(--gap-8);
 }
-.form_group_wrap + .text_sub,
-.form_group_wrap + .form_card_wrap,
-.form_group_wrap + .form_card_case {
+.form_group_wrap + .text_sub {
 	margin-top: var(--gap-7);
 }
 .form_group_wrap + [class^="list_ty"],
