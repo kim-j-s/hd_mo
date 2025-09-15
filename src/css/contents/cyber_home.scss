@@ -520,106 +520,118 @@
     }
 }
 .bn_scroll_wrap {
-    margin: 20px -32px 0;
+    margin: 0 -32px;
     overflow-x: auto;
-    .bn_item_wrap {
-        padding: 0 32px;
-        width: max-content; 
-        display: flex;
-        gap: var(--gap-3);
-        > div,
-        a {
-            padding: var(--padding-8) var(--padding-7);
-            font-size: var(--font-size-body-medium);
-            border-radius: var(--radius-large2);
-            background-color: var(--color-surface-gray-subtler);
-            flex-shrink: 0;
-            word-break: keep-all;
-        }
-        &:not(.ty3) {
-            a {
-                width: 41.5vw;
-            }
-        }
-        &.ty1 {
-            a {
-                padding: var(--padding-8);
-                padding-top: 60px;
-                background-repeat: no-repeat;
-                background-size: 32px auto;
-                background-position: 24px 24px;
-                @for $i from 1 through 2 {
-                    &.opt#{$i}{
-                        background-image: url(../images/content/ho/icon_benefit01_#{$i}.svg);
-                    }
-                }
-            }
-        }
-        &.ty2 {
-            a {
-                padding-top: 96px;
-                background-repeat: no-repeat;
-                background-size: 56px auto;
-                background-position: 24px 24px;
-                @for $i from 1 through 2 {
-                    &.opt#{$i}{
-                        background-image: url(../images/content/ho/icon_benefit02_#{$i}.png);
-                    }
-                }
-            }
-            > div:not(.auto) {
-                width: 40vw;
-            }
-            .tit {
-                font-size: var(--font-size-body-small);
-                color: var(--color-text-subtle);
-                + .cont {
-                    margin-top: var(--gap-2);
-                }
-            }
-            .badge_wrap {
-                + .cont {
-                    color: var(--color-text-basic);
-                }
-            }
-        }
-        &.ty3 {
-            a {
-                img {
-                    margin: auto;
-                    display: block;
-                    width: 92px;
-                }
-            }
-        }
-        &.ty4 {
-            a {
-                padding: var(--padding-9) var(--padding-8);
-                width: 50vw;
-                min-height: 164px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                .badge_wrap {
-                    + .cont {
-                        margin-top: var(--gap-2);
-                    }
-                }
-            }
-        } &.ty5 {
-            > div:not(.auto) {
-                width: 40vw;
-            }
-            .tit {
-                font-size: var(--font-size-label-small);
-                color: var(--color-text-subtle);
-                + .cont {
-                    margin-top: var(--gap-2);
-                    font-size: var(--font-size-body-small);
-                }
-            }
-        }
-    }
+
+		.bn_item_wrap {
+			padding: 0 32px;
+			width: max-content; 
+			&:not(.ty3) {
+				a {
+						width: 41.5vw;
+				}
+			}
+		}
+}
+.bn_item_wrap {
+		display: flex;
+		gap: var(--gap-3);
+		margin-top: 20px;
+		> div,
+		a {
+				padding: var(--padding-8) var(--padding-7);
+				font-size: var(--font-size-body-medium);
+				border-radius: var(--radius-large2);
+				background-color: var(--color-surface-gray-subtler);
+				flex-shrink: 0;
+				word-break: keep-all;
+		}
+		&.ty1 {
+				a {
+						padding: var(--padding-8);
+						padding-top: 60px;
+						background-repeat: no-repeat;
+						background-size: 32px auto;
+						background-position: 24px 24px;
+						@for $i from 1 through 2 {
+								&.opt#{$i}{
+										background-image: url(../images/content/ho/icon_benefit01_#{$i}.svg);
+								}
+						}
+				}
+		}
+		&.ty2 {
+				a {
+						flex: 1;
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						// padding-top: 96px;
+						min-height: 104px;
+						padding-left: 96px;
+						background-repeat: no-repeat;
+						background-size: 56px auto;
+						background-position: 24px 24px;
+						background-color: #fff;
+						
+						@for $i from 1 through 2 {
+								&.opt#{$i}{
+										background-image: url(../images/content/ho/icon_benefit02_#{$i}.png);
+								}
+						}
+				}
+				> div:not(.auto) {
+						width: 40vw;
+				}
+				.tit {
+						font-size: var(--font-size-body-small);
+						color: var(--color-text-subtle);
+						+ .cont {
+								margin-top: var(--gap-2);
+						}
+				}
+				.badge_wrap {
+						+ .cont {
+								color: var(--color-text-basic);
+						}
+				}
+		}
+		&.ty3 {
+				a {
+						img {
+								margin: auto;
+								display: block;
+								width: 92px;
+						}
+				}
+		}
+		&.ty4 {
+				a {
+						padding: var(--padding-9) var(--padding-8);
+						width: 50vw;
+						min-height: 164px;
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						.badge_wrap {
+								+ .cont {
+										margin-top: var(--gap-2);
+								}
+						}
+				}
+		} &.ty5 {
+				> div:not(.auto) {
+						width: 40vw;
+				}
+				.tit {
+						font-size: var(--font-size-label-small);
+						color: var(--color-text-subtle);
+						+ .cont {
+								margin-top: var(--gap-2);
+								font-size: var(--font-size-body-small);
+						}
+				}
+		}
 }
 .link_btn_big {
     min-height: 56px;
