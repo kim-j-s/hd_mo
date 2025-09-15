@@ -3219,13 +3219,14 @@
 	padding-bottom: 6rem;
 }
 .sii_wrap .tag_item_wrap {
-	padding-bottom: 1.6rem;
 	background-color: #fff;
 }
 .sii_wrap .tag_item_wrap.sticky {
 	position: sticky;
 	top: 0;
 	z-index: 1;
+	padding-bottom: 1.6rem;
+	margin-bottom: 0;
 }
 .sii_wrap .tag_item_wrap.sticky::before {
 	content: "";
@@ -3235,6 +3236,9 @@
 	width: calc(100% + 3.2rem);
 	height: 1.6rem;
 	background-color: #fff;
+}
+.sii_wrap .position_event_content {
+	margin-top: 3.2rem;
 }
 .summary_ii {
 	--sili-space: var(--gap-6);
@@ -7508,7 +7512,12 @@ ul + .form_group_wrap {
 	-webkit-box-direction: normal;
 	-ms-flex-direction: column;
 	flex-direction: column;
-	gap: var(--gap-11);
+}
+.prd_car .popup_content_body > * {
+	margin-bottom: var(--gap-11);
+}
+.prd_car .popup_content_body > *:last-child {
+	margin-bottom: 0;
 }
 .prd_car .intro_area .info_gray {
 	display: -webkit-box;
