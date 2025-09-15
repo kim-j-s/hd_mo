@@ -5873,10 +5873,15 @@ strong {
 .card_item_wrap:not(.info_type) .card_item .item_inner:has(.inp_checkbox, .inp_radio):has(.tit_item) .tit_item .question_mark_btn {
 	width: 3rem;
 	height: inherit;
+	z-index: 20;
 }
 .card_item_wrap:not(.info_type) .card_item .item_inner:has(.inp_checkbox, .inp_radio):has(.tit_item) .tit_item .question_mark_btn .hd_icon.arrowRightSvg {
 	width: 2.4rem;
 	height: 2.4rem;
+}
+.card_item_wrap:not(.info_type) .card_item .item_inner:has(.inp_checkbox, .inp_radio):has(.tit_item) .tit_item .question_mark_btn[aria-disabled="true"] {
+	background: none;
+	z-index: -1;
 }
 .card_item_wrap:not(.info_type) .card_item .item_inner:has(.inp_checkbox, .inp_radio):has(.tit_item) .tit_item:not(.question_mark_btn) .inp_radio,
 .card_item_wrap:not(.info_type) .card_item .item_inner:has(.inp_checkbox, .inp_radio):has(.tit_item) .tit_item:not(.question_mark_btn) .inp_checkbox {

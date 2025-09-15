@@ -176,9 +176,21 @@
 							.question_mark_btn {
 								width: 30px;
 								height: inherit;
+								z-index: 20;
 								.hd_icon.arrowRightSvg {
 									width: 24px;
 									height: 24px;
+								}
+								&:disabled {
+									i {
+										background-image: url(../images/icon/arrowRight_ty8.svg);
+									}
+								}
+								&[aria-disabled="true"] {
+									i {
+										background: none;
+									}
+									z-index: -1;
 								}
 							}
 							&:not(.question_mark_btn) {
@@ -732,7 +744,7 @@
 
 		//비활성화 케이스
 		&.disabled {
-			border-color: transparent;
+			//border-color: transparent;
 			background-color: var(--color-surface-gray-subtler);
 			overflow: hidden;
 
