@@ -1016,6 +1016,14 @@ strong {
 .and {
 	margin-top: var(--gap-5) !important;
 }
+.bann_img_box > a {
+	display: block;
+}
+.bann_img_box img {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
 /* common 인증, 로딩 등 */
 .blockUI,
 .c_loading {
@@ -1183,6 +1191,11 @@ strong {
 		background-color: var(--color-graphic-brand);
 	}
 }
+/* 유의사항 */
+.note_wrap .note_cont ~ .note_cont {
+	margin-top: var(--gap-11);
+}
+/* 유의사항 */
 /* header */
 .header.h_none .header_inner {
 	min-height: auto;
@@ -5879,9 +5892,14 @@ strong {
 	width: 2.4rem;
 	height: 2.4rem;
 }
+.card_item_wrap:not(.info_type) .card_item .item_inner:has(.inp_checkbox, .inp_radio):has(.tit_item) .tit_item .question_mark_btn:disabled i {
+	background-image: url(../images/icon/arrowRight_ty8.svg);
+}
 .card_item_wrap:not(.info_type) .card_item .item_inner:has(.inp_checkbox, .inp_radio):has(.tit_item) .tit_item .question_mark_btn[aria-disabled="true"] {
-	background: none;
 	z-index: -1;
+}
+.card_item_wrap:not(.info_type) .card_item .item_inner:has(.inp_checkbox, .inp_radio):has(.tit_item) .tit_item .question_mark_btn[aria-disabled="true"] i {
+	background: none;
 }
 .card_item_wrap:not(.info_type) .card_item .item_inner:has(.inp_checkbox, .inp_radio):has(.tit_item) .tit_item:not(.question_mark_btn) .inp_radio,
 .card_item_wrap:not(.info_type) .card_item .item_inner:has(.inp_checkbox, .inp_radio):has(.tit_item) .tit_item:not(.question_mark_btn) .inp_checkbox {
@@ -6302,7 +6320,6 @@ strong {
 	margin-top: var(--gap-5);
 }
 .card_item_wrap .card_item.disabled {
-	border-color: transparent;
 	background-color: var(--color-surface-gray-subtler);
 	overflow: hidden;
 }
@@ -9570,6 +9587,7 @@ strong {
 	margin-top: var(--gap-4);
 }
 .list_ty3 + .file_attach_box,
+.list_ty3 + .info_gray,
 .list_ty3 + .btn_area {
 	margin-top: var(--gap-5);
 }
@@ -10910,6 +10928,14 @@ strong {
 }
 .call_info_list .item + .item {
 	margin-top: var(--gap-5);
+}
+.call_info_list.ty2 .item {
+	background-position: 2rem 2.4rem;
+}
+.call_info_list.ty2 .item::after {
+	top: 2.4rem;
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
 }
 .call_info_list.ty2 .item .title {
 	font-size: var(--font-size-body-large);
