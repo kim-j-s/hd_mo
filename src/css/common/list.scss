@@ -166,6 +166,8 @@
 		margin-top: var(--gap-11);
 	}
 
+	
+
 	> li {
 		& ~ li {
 			margin-top: var(--gap-4);
@@ -176,9 +178,12 @@
 	}
 
 	& + .file_attach_box,
+	& + .info_gray,
 	& + .btn_area {
 		margin-top: var(--gap-5);
 	}
+
+	// --gap-5
 	
 	+ .space_list_ty2,
 	+ .tab_wrap,
@@ -1743,6 +1748,11 @@
 	// 회원가입 선택
 	&.ty2 {
 		.item {
+			background-position: 20px 24px;
+			&::after {
+				top: 24px;
+				transform: translateY(0);
+			}
 			.title {
 				font-size: var(--font-size-body-large);
 			}
