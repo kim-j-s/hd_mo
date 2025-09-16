@@ -1,0 +1,141 @@
+
+{{#> layout/default page-title="출국 정보 등록 | 상품"}}
+<div id="wrap" class="wrap">
+	
+	{{> layout/header h-title="해외여행보험 출국 정보 등록" }}
+	
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
+				<h2 class="title_h2">
+					<strong>출국 정보</strong>를 입력해주세요
+				</h2>
+			</div>
+			<!-- e: content_top -->
+
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">출국국가</div>
+					{{> cp/text placeholder="입력하세요" inp-title="출국국가 입력" value="대한민국" readonly=true }}
+				</div>
+				
+				<div class="form_line">
+					<div class="label_tit">출국일시</div>
+					<div class="column">
+						{{> cp/text cal=true placeholder="출국일자 선택" }}
+						<div class="row">
+							<div class="form_line grow">
+								{{> cp/selectitem si_item="00시" si_title="출국일시 시 선택 팝업 호출" si_popup="pop_type01_1"}}
+							</div>
+							<div class="form_line grow">
+								{{> cp/selectitem si_item="00분" si_title="출국일시 분 선택 팝업 호출" si_popup="pop_type01_2"}}
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form_line">
+					<div class="label_tit">항공편</div>
+					{{> cp/selectitem si_ph="항공사 선택" si_title="항공사 선택 팝업 호출" si_popup="pop_type02"}}
+				</div>
+
+				<div class="row">
+					<div class="form_line grow">
+						<div class="label_tit">항공사코드</div>
+						{{> cp/text type="tel" placeholder="영문 또는 숫자" inp-title="항공사코드 입력" value="OZ" readonly=true }}
+					</div>
+					<div class="form_line grow">
+						<div class="label_tit">편명</div>
+						{{> cp/text type="tel" placeholder="숫자만 입력" inp-title="편명 입력"}}
+					</div>
+				</div>
+				<ul class="list_ty2">
+					<li>경유하시는 경우, 대한민국에서 출발(경유지 도착)하는 항공편명을 입력해주세요.</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="다음" disabled=true }}
+		</div>
+	</div>
+</div>
+
+<!-- s: popup area -->
+{{#> popup/popup_bottom popup-id="pop_type01_1" popup-title="시 선택"}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="opt_select_list opt_case3">
+				<div role="button" tabindex="0" class="option"><span class="text">00시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">01시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">03시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">04시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">05시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">06시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">07시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">08시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">09시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">10시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">11시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">12시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">13시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">14시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">15시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">16시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">17시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">18시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">19시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">20시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">21시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">22시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">23시</span></div>
+			</div>
+		</div>
+	</div>
+{{/ popup/popup_bottom}}
+
+{{#> popup/popup_bottom popup-id="pop_type01_2" popup-title="분 선택"}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="opt_select_list opt_case3">
+				<div role="button" tabindex="0" class="option"><span class="text">00분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">05분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">10분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">15분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">20분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">25분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">30분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">35분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">40분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">45분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">50분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">55분</span></div>
+			</div>
+		</div>
+	</div>
+{{/ popup/popup_bottom}}
+
+{{#> popup/popup_bottom popup-id="pop_type02" popup-title="항공편 선택"}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="opt_select_list opt_case3">
+				<div role="button" tabindex="0" class="option"><span class="text">대한항공(KE)</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">아시아나항공(OZ)</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">제주항공(7C)</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">진에어(LJ)</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">에어부산(BX)</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">티웨이항공(TW)</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">에어서울(RS)</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">이스타항공(ZE)</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">직접 입력</span></div>
+			</div>
+		</div>
+	</div>
+{{/ popup/popup_bottom}}
+<!-- e: popup area -->
+ 
+
+{{/ layout/default }}
