@@ -243,7 +243,7 @@
 
 	// onlyEng
 	$DOM.on('keyup', '.inp_only_eng', function() {
-		console.log('영문만');
+		// console.log('영문만');
 		const $this = $(this);
 		let val = $this.val().replace(/[^a-zA-Z ]/g, ''); // 영문만 허용
 		val = val.toUpperCase();
