@@ -103,10 +103,13 @@
 
 			if($(this).hasClass('open')){
 				$('.tooltip_wrap .tooltip_head').removeClass('active').find('.open').attr('aria-expanded', 'false');
+				$('.tooltip_wrap').removeClass('active');
+				$click.addClass('active');
 				$t_head.addClass('active').find('.open').attr('aria-expanded', 'true');
 				$('.tooltip_wrap .tooltip_panel .inner').hide();
 				$t_text.css('display', 'block').focus();
 			}else {
+				$('.tooltip_wrap').removeClass('active');
 				$('.tooltip_wrap .tooltip_head').removeClass('active').find('.open').attr('aria-expanded', 'false');
 				$('.tooltip_wrap .tooltip_panel .inner').hide();
 				$focus_btn.focus();
@@ -243,7 +246,7 @@
 
 	// onlyEng
 	$DOM.on('keyup', '.inp_only_eng', function() {
-		console.log('영문만');
+		// console.log('영문만');
 		const $this = $(this);
 		let val = $this.val().replace(/[^a-zA-Z ]/g, ''); // 영문만 허용
 		val = val.toUpperCase();

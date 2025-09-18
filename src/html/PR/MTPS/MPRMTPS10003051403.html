@@ -1,0 +1,188 @@
+
+{{#> layout/default no-sp=true page-title="대중교통이용 조회하기 | 상품"}}
+<!-- s: Bottom 팝업 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="대중교통이용 조회"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<div class="ag_groups">
+			<div class="ag_group_wrap">
+				<div class="ag_group_top">
+					{{> cp/checkbox id="chk_group05" chk_class="agw_all" label_class="chk_label_ty2" labelname="<span class='secondary'>[선택]</span> 대중교통할인특약 가입 확인을 위한 개인(신용)정보 처리 상세 동의"}}
+				</div>
+				<div class="ag_group_cont">
+					<div class="info_gray agc_tig">
+						<p class="info_text">귀하는 개인(신용)정보의 수집·이용 및 조회, 제공에 관한 동의를 거부하실 수 있으며, 휴대전화 본인인증을 위한 목적 이외의 개인(신용)정보 처리에 대한 동의는 철회 할 수 있습니다. 다만, 본 동의는 '휴대전화 본인 인증'을 위해 필수적인 사항이므로 동의를 거부하시는 경우 관련 업무수행이 불가능합니다.</p>
+					</div>
+					<div class="agc_item">
+						<div class="agc_item_top">
+							<div class="text">
+								<span class="num">1.</span>
+								<span class="txt">
+									수집·이용에 관한 사항
+									<span class="badge_wrap">
+										<span class="hd_badge outline solid_pastel c_secondary size_m">안심</span>
+									</span>
+								</span>
+							</div>
+							<button type="button" class="btn_link short_cut" aria-label="수집·이용에 관한 사항 자세히 보기">자세히</button>
+						</div>
+						<div class="agc_item_cont">
+							<ul class="aic_list">
+								<li>
+									<div class="agrdo_group">
+										<div class="aic_list_l">개인(신용)정보</div>
+										<div class="aic_list_r">
+											<div class="radio_group_wrap">
+												{{> cp/radio rd-class="sm" rd-id="rm81-1" name="rm81" rdip-class="agr_dept1 agr_r_group noag" labelname="미동의" }}
+												{{> cp/radio rd-class="sm" rd-id="rm81-2" name="rm81" rdip-class="agr_dept1 agr_r_group ag" labelname="동의" }}
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="agc_item">
+						<div class="agc_item_top">
+							<div class="text">
+								<span class="num">2.</span>
+								<span class="txt">
+									제공에 관한 사항 Ⅰ
+									<span class="badge_wrap">
+										<span class="hd_badge outline solid_pastel c_secondary size_m">안심</span>
+									</span>
+								</span>
+							</div>
+							<button type="button" class="btn_link short_cut" aria-label="제공에 관한 사항 Ⅰ 자세히 보기">자세히</button>
+						</div>
+						<div class="agc_item_cont">
+							<ul class="aic_list">
+								<li>
+									<div class="agrdo_group">
+										<div class="aic_list_l">개인(신용)정보</div>
+										<div class="aic_list_r">
+											<div class="radio_group_wrap">
+												{{> cp/radio rd-class="sm" rd-id="rm82-1" name="rm82" rdip-class="agr_dept1 agr_r_group noag" labelname="미동의" }}
+												{{> cp/radio rd-class="sm" rd-id="rm82-2" name="rm82" rdip-class="agr_dept1 agr_r_group ag" labelname="동의" }}
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="agc_item">
+						<div class="agc_item_top">
+							<div class="text">
+								<span class="num">3.</span>
+								<span class="txt">
+									제공에 관한 사항 Ⅱ
+									<span class="badge_wrap">
+										<span class="hd_badge outline solid_pastel c_secondary size_m">안심</span>
+									</span>
+								</span>
+							</div>
+							<button type="button" class="btn_link short_cut" aria-label="제공에 관한 사항 Ⅱ 자세히 보기">자세히</button>
+						</div>
+						<div class="agc_item_cont">
+							<ul class="aic_list">
+								<li>
+									<div class="agrdo_group">
+										<div class="aic_list_l">개인(신용)정보</div>
+										<div class="aic_list_r">
+											<div class="radio_group_wrap">
+												{{> cp/radio rd-class="sm" rd-id="rm83-1" name="rm83" rdip-class="agr_dept1 agr_r_group noag" labelname="미동의" }}
+												{{> cp/radio rd-class="sm" rd-id="rm83-2" name="rm83" rdip-class="agr_dept1 agr_r_group ag" labelname="동의" }}
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="agw_foot">정보보호파트 승인 제90000368호(2025.01.24)</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="form_box space2">
+			<h2 class="pop_title_h2">대중교통 이용 조회</h2>
+			<div class="form_group_wrap">
+				<!-- s: 25-09-18 수정 -->	  
+				<!-- <div class="form_line">
+					<div class="label_tit">통신사</div>
+					{{#> cp/selectbox_pc s-title="통신사 선택" sb-ph="통신사 선택" }}
+						<option value="">SKT</option>
+						<option value="">KT</option>
+						<option value="">LG U+</option>
+						<option value="">SKT알뜰</option>
+						<option value="">KT알뜰</option>
+						<option value="">LG U+알뜰</option>
+					{{/ cp/selectbox_pc}}
+				</div>
+
+				<div class="form_line">
+					<div class="label_tit">휴대폰번호</div>
+					<div class="comp_wrap key_number">
+						{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" value="- 1234 - 5678" readonly="true" }}
+						{{> cp/button type="3" size="4" b-text="인증번호요청"}}
+					</div>
+				</div> -->
+
+				<!-- s: 인증번호 발송 후 인증번호 입력 영역 노출 -->
+				<!-- <div class="form_line">
+					<div class="label_tit">인증번호</div>
+					<div class="comp_wrap key_number">
+						{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="숫자 6자리 입력" inp-title="인증번호 입력" r-text="00:00" }}
+						{{> cp/button type="3" size="4" b-text="시간연장"}}
+						{{> cp/button type="3" size="4" b-text="재요청"}}
+					</div>
+				</div> -->
+				<!-- e: 인증번호 발송 후 인증번호 입력 영역 노출 -->
+				<div class="form_line">
+					<div class="radio_group_wrap" role="radiogroup">
+						{{> cp/radio rd-class="rd_btn" rd-id="card01_1" name="card01" labelname="실물카드" checked=true }}
+						{{> cp/radio rd-class="rd_btn" rd-id="card01_2" name="card01" labelname="모바일카드" }}
+					</div>
+					<ul class="list_ty2">
+						<li><strong class="point">후불교통 결제 기능이 포함되어 대중교통 이용이 가능한 카드</strong></li>
+					</ul>
+				</div>
+				<div class="form_line">
+					<div class="label_tit">카드번호</div>
+					<div class="comp_wrap card">
+						{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" no_del="false" }}
+						<span class="dash">-</span>
+						{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="false" }}
+						<span class="dash">-</span>
+						{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="false" }}
+						<span class="dash">-</span>
+						{{> cp/keypad4 case1="4(3자리)" kt="카드번호 마지막 4(3자리) 입력" }}
+					</div>
+				</div>
+				<div class="form_line">
+					<div class="label_tit">유효기간</div>
+					{{> cp/text type="tel" placeholder="MMYY" maxlength="" value="" inp-title="유효기간 입력" }}
+				</div>
+				<!-- e: 25-09-18 수정 -->
+			</div>
+		</div> 
+		
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		<!--약관 동의 시 활성화 -->
+		 {{> cp/button type="1" size="2" b-text="대중교통이용 조회하기" disabled=true}} 
+	</div>
+</div>
+{{/ popup/popup_bottom}}
+<!-- e: Bottom 팝업 -->
+
+
+<!-- e: 통신사 선택 -->
+
+
+ 
+{{/ layout/default }}
+

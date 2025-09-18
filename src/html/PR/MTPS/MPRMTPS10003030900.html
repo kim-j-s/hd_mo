@@ -24,31 +24,57 @@
 			<!-- 대중교통 이용 조회 -->
 			<div class="form_box space2">
 				<h2 class="pop_title_h2">대중교통 이용 조회</h2>
-				<div class="form_group_wrap">		
-					<div class="form_line">
+				<div class="form_group_wrap">
+					<!-- s: 25-09-18 수정 -->
+					<!-- <div class="form_line">
 						<div class="label_tit">통신사</div>
 						{{> cp/selectitem si_ph="통신사 선택" si_title="통신사 선택 팝업 호출" si_popup="pop_type03"}}
 					</div>
-
+					
 					<div class="form_line">
 						<div class="label_tit">휴대폰번호</div>
 						<div class="comp_wrap key_number">
 							{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" value="- 1234 - 5678" readonly="true" }}
 							{{> cp/button type="3" size="4" b-text="인증번호요청"}}
 						</div>
-					</div>
-
+					</div> -->
+					
 					<!-- s: 인증번호 발송 후 인증번호 입력 영역 노출 -->
-					<div class="form_line">
+					<!-- <div class="form_line">
 						<div class="label_tit">인증번호</div>
 						<div class="comp_wrap key_number">
 							{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="숫자 6자리 입력" inp-title="인증번호 입력" r-text="00:00" }}
 							{{> cp/button type="3" size="4" b-text="시간연장"}}
 							{{> cp/button type="3" size="4" b-text="재요청"}}
 						</div>
-					</div>
+					</div> -->
 					<!-- e: 인증번호 발송 후 인증번호 입력 영역 노출 -->
-
+					<div class="form_line">
+						<div class="radio_group_wrap" role="radiogroup">
+							{{> cp/radio rd-class="rd_btn" rd-id="card01_1" name="card01" labelname="실물카드" checked=true }}
+							{{> cp/radio rd-class="rd_btn" rd-id="card01_2" name="card01" labelname="모바일카드" }}
+						</div>
+						<ul class="list_ty2">
+							<li><strong class="point">후불교통 결제 기능이 포함되어 대중교통 이용이 가능한 카드</strong></li>
+						</ul>
+					</div>
+					<div class="form_line">
+						<div class="label_tit">카드번호</div>
+						<div class="comp_wrap card">
+							{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 첫번째 4자리 입력" no_del="false" }}
+							<span class="dash">-</span>
+							{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 두번째 4자리 입력" no_del="false" }}
+							<span class="dash">-</span>
+							{{> cp/text type="tel" minlength="4" maxlength="4" placeholder="4자리" inp-title="카드 세번째 4자리 입력" no_del="false" }}
+							<span class="dash">-</span>
+							{{> cp/keypad4 case1="4(3자리)" kt="카드번호 마지막 4(3자리) 입력" }}
+						</div>
+					</div>
+					<div class="form_line">
+						<div class="label_tit">유효기간</div>
+						{{> cp/text type="tel" placeholder="MMYY" maxlength="" value="" inp-title="유효기간 입력" }}
+					</div>
+					<!-- e: 25-09-18 수정 -->
 					<div class="form_line">
 						{{> cp/checkbox id="checkbox_size2_1" labelname="대중교통 이용 조회 제외" label_class="chk_label_ty3" }}
 					</div>
