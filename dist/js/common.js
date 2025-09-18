@@ -888,6 +888,8 @@ $(function(){
 	headAria();
 	nbList();//알릴고지 넘버링
 
+	prograssCar(); //변경기준일
+
 	// 펼치기/접히기 - 담보한번에변경하기(MPRMTPS10004001000)
 	moreLngChk();
 	
@@ -1512,6 +1514,60 @@ function nbList() {
 			$(this).prepend(`<span class="num">${numStr}</span>`);
 		});
 	});
+}
+
+// 변경기준일 prograss bar
+function prograssCar(){
+	const $prograss = $('.progress_box_ty2');
+
+	$prograss.each(function(idx){
+		const $allBar = $prograss.eq(idx),
+					$bar = $allBar.find('.ing'),
+					$start = $bar.find('.newStart'),
+					$spot = $bar.find('.spot');
+
+		let spotLeft = null;
+
+		const allW = $allBar.outerWidth(), //progressbar 전체 너비
+					barW = $bar.width(), 		//진행된 bar의 너비
+					spotW = $spot.outerWidth(),		//spot 너비
+					spaceW = 2;										//spot끼리 여백 너비
+
+		const newW = Math.round((barW / allW) * 100),	//진행된 너비 % 변환
+					startW = Math.round((8 / allW) * 100);	//기준일 spot % 변환
+					// newstartW = Math.round((spotW / allW) * 100), //기준일 badge 너비 % 변환
+					// spacePer = (2 / allW) * 100;
+
+		$prograss.children('.ing').removeClass('full');
+
+		$bar.removeClass('big');
+		$bar.find('.newStart').removeClass('small');
+		$bar.find('.newStart').children('.spot').css({ left: '', 'margin-right': '' });
+		$bar.find('.newStart').children('em').css('left', '');
+		// console.log('실행');
+
+		// bar가 시작일과 겹칠 때
+		if((allW - barW) <= spotW + spaceW){
+			$bar.addClass('big');
+			spotLeft = spotW + spaceW - (allW - barW);
+			$bar.find('.newStart').children('.spot').css('left', spotLeft);
+
+			// bar 길이 100%일 때
+			if(allW == barW){
+				$bar.find('.newStart').children('em').css('left', '1px');
+			}
+
+		// 기준일, 종료일 겹칠 때
+		}else if(barW <= (spotW * 2) + spaceW){
+			$bar.find('.newStart').addClass('small');
+			$bar.find('.newStart').children('.spot').css('margin-right', spotW + spaceW + 'px');
+		
+		// 겹치지 않을 때
+		}else {
+			$bar.find('.newStart').children('.spot').css('left', '0');
+			$bar.find('.newStart').children('em').css('left', '0');
+		}
+	})
 }
 
 $(window).resize(function(){
