@@ -1,8 +1,83 @@
 {{#> layout/default no-sp=true page-title="증빙자료등록 | 상품"}}
+<!-- s: 25-09-18 수정 -->
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="자동차 변경(차량대체)"  h-ins="pop_insChk" }}
+
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
+				<h2 class="title_h2">
+					<strong>주행거리정보</strong>를 <strong>확인</strong>해주세요
+				</h2>
+			</div>
+			<!-- e: content_top -->
+
+			<!-- 조회성공 -->
+			<h3 class="title_h3">커넥티드 마일리지 제조사 조회결과</h3>
+			<div class="table_wrap">
+				<table class="table">
+					<caption>대체 전 차량과 대체 후 차량 최초 주행거리, 최종 주행거리 제공</caption>
+					<colgroup>
+						<col style="width:40%;">
+						<col style="width:30%;">
+						<col style="width:30%;">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row" rowspan="2">대체 전 차량번호<br/>18루 **22</th>
+							<!-- s: 차대번호 case -->
+							<!-- <th scope="row" rowspan="2">대체 전 차대번호<br/>KHMF5*******55555</th> -->
+							<!-- e: 차대번호 case -->
+							<td>최초 주행거리</td>
+							<td>143,987km</td>
+						</tr>
+						<tr>
+							<td>최종 주행거리</td>
+							<td>200,000km</td>
+						</tr>
+						<tr>
+							<th scope="row" rowspan="2">대체 후 차량번호<br/>29머 **62</th>
+							<!-- s: 차대번호 case -->
+							<!-- <th scope="row" rowspan="2">대체 후 차대번호<br/>KHMF5*******55555</th> -->
+							<!-- e: 차대번호 case -->
+							<td>최초 주행거리</td>
+							<td>100km</td>
+							<!-- 조회실패 
+							<td><strong class="point">5km</strong></td>
+							-->
+						</tr>
+						<tr>
+							<td>최종 주행거리</td>
+							<td>만기 시 자동연동</td>
+							<!-- 조회실패 
+							<td>만기 시 등록</td>
+							-->
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	
+			<!-- 조회실패 -->
+			<ul class="list_ty2">
+				<li>대체 전 차량에 대한 주행거리 정보를 조회할 수 없습니다.</li>
+				<li>커넥티드 서비스 이용불가시 마일리지특약 사진첨부방식으로 변경이 가능하오니 차량대체 확정 후 대표콜센터 (1588-5656)로 문의해주세요.</li>
+			</ul>
+		</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="다음"}}
+		</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
+</div>
+<!-- e: 25-09-18 수정 -->
 
 <!-- s: ECO마일리지 증빙자료(커넥티드) Full 팝업 -->
 <!-- s: 25-08-21 UXW -->
-{{#> popup/popup_full popup-id="pop_type01" popup-title="ECO마일리지 주행거리정보 안내" popup-active=true }}
+{{#> popup/popup_full popup-id="pop_type01" popup-title="ECO마일리지 주행거리정보 안내" }}
 <!-- e: 25-08-21 UXW -->
 <div class="popup_cont">
   <div class="popup_content">
