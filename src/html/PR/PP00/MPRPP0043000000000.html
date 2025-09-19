@@ -1,0 +1,111 @@
+{{#> layout/default no-sp=true page-title="고객리뷰작성"}}
+	
+
+	<!-- s: popup area -->
+
+	<!-- s: Full 팝업 -->
+	{{#> popup/popup_full popup-id="pop_type01" popup-title="다이렉트 보험 가입 이벤트" popup-active=true}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="event_img_box">
+				<img src="../../../images/event/img_direct_event.png" alt="이달의 가입 이벤트 이미지">
+				<div class="sr-only">
+					경품 받으실 휴대폰 번호를 입력하면 참여 완료
+					다다음달 15일 전후 문자 발송되며, 발송시점까지 계약이 정상 유지되어야 합니다.
+					월 납입 보험료에 따라 경품(모바일 교환권)이 지급됩니다.
+					월 납입 보험료 8,000원 이상 시 스타벅스 카페라떼 1잔,
+					월 납입 보험료 12,000원 이상 시 네이버페이 포인트 1만원,
+					월 납입 보험료 20,000원 이상 시 네이버페이 포인트 2만원,
+					월 납입 보험료 25,000원 이상 시 네이버페이 포인트 3만원
+					단, 보험상품별 최초 1회만 지급됩니다.
+				</div>
+			</div>
+
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit">휴대폰번호</div>
+					{{> cp/text class="phone" type="tel" placeholder="-없이 입력하세요" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+				</div>
+				<ul class="list_ty2">
+					<li>수집된 개인정보는 해당 이벤트에서만 사용/제공되며, 다른 용도로는 사용되지 않습니다.</li>
+					<li>다다음달 위 휴대폰번호로 모바일 상품권이 발송됩니다.<br>(보험 정상 유지 시)</li>
+				</ul>
+			</div>
+
+			<div class="ag_groups">
+				<div class="ag_group_wrap">
+					<div class="ag_group_top">
+						{{> cp/checkbox id="chk_group01" chk_class="agw_all" label_class="chk_label_ty2" labelname="<span class='point'>[선택]</span> 경품 발송을 위한 개인(신용)정보처리 상세 동의"}}
+					</div>
+					<div class="ag_group_cont">
+						<div class="info_gray agc_tig">
+							<p class="info_text">
+								본 동의는 보험계약 체결에 필수적이지 않으며 동의를 거부하실 수 있습니다. 또한, 동의하시더라도 당사 홈페이지 및 고객콜센터(1588-5656)을 통해 철회할 수 있으며, 동의하시는 경우 경품 발송 목적으로 개인정보를 이용하여 연락을 드릴 수 있습니다.
+							</p>
+						</div>
+						<div class="agc_item">
+							<div class="agc_item_top">
+								<div class="text">
+									<span class="num">1.</span>
+									<span class="txt">수집&middot;이용에 관한 사항</span>
+								</div>
+								<button type="button" class="btn_link short_cut" aria-label="수집·이용에 관한 사항 자세히 보기">자세히</button>
+							</div>
+							<div class="agc_item_cont">
+								<ul class="aic_list">
+									<li>
+										<div class="agrdo_group">
+											<div class="aic_list_l">일반개인정보</div>
+											<div class="aic_list_r">
+												<div class="radio_group_wrap">
+													{{> cp/radio rd-class="sm" rd-id="rm11-1" name="rm11" rdip-class="agr_dept1 agr_r_group noag" labelname="미동의" }}
+													{{> cp/radio rd-class="sm" rd-id="rm11-2" name="rm11" rdip-class="agr_dept1 agr_r_group ag" labelname="동의" }}
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="agc_item">
+							<div class="agc_item_top">
+								<div class="text">
+									<span class="num">2.</span>
+									<span class="txt">제공에 관한 사항</span>
+								</div>
+								<button type="button" class="btn_link short_cut" aria-label="제공에 관한 사항 Ⅰ 자세히 보기">자세히</button>
+							</div>
+							<div class="agc_item_cont">
+								<ul class="aic_list">
+									<li>
+										<div class="agrdo_group">
+											<div class="aic_list_l">일반개인정보</div>
+											<div class="aic_list_r">
+												<div class="radio_group_wrap">
+													{{> cp/radio rd-class="sm" rd-id="rm12-1" name="rm12" rdip-class="agr_dept1 agr_r_group noag" labelname="미동의" }}
+													{{> cp/radio rd-class="sm" rd-id="rm12-2" name="rm12" rdip-class="agr_dept1 agr_r_group ag" labelname="동의" }}
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="3" size="1" b-text="취소" }}
+			{{> cp/button type="1" size="1" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_full}}
+	<!-- e: Full 팝업 -->
+	 
+	<!-- e: popup area -->
+
+{{/ layout/default }}
