@@ -148,19 +148,6 @@
 		}
 	});
 
-	/* Anchor */
-	// $DOM.on('click', '.dom_anchor_btn', function(e){
-	// 	e.preventDefault();
-  //   const targetId = $(this).attr("href");
-  //   const target = $(targetId);
-  //   if (target.length) {
-  //     const targetOffset = target.offset().top - 100;
-  //     $(".container").stop().animate({
-	// 				scrollTop: targetOffset
-  //     }, 300);
-  //   }		
-  // });
-
   /* Input */
   $DOM.on('focus input', '.input_text .inp > input', function(){
     const $this = $(this),
@@ -246,7 +233,6 @@
 
 	// onlyEng
 	$DOM.on('keyup', '.inp_only_eng', function() {
-		// console.log('영문만');
 		const $this = $(this);
 		let val = $this.val().replace(/[^a-zA-Z ]/g, ''); // 영문만 허용
 		val = val.toUpperCase();
@@ -552,6 +538,15 @@
 			});
 		}
 	});
+
+
+	// 휴대전화번호 입력 기능
+	/*
+	$DOM.on('focus', '.inp_picker', function () {
+
+	});
+	*/
+	
 
 	
 
