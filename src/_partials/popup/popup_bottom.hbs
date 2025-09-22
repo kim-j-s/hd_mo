@@ -1,9 +1,9 @@
 {{!-- 
 	popup-id : id 배정
 --}}
-<div class="popup_wrap bottom{{#if popup-class}} {{popup-class}}{{/if}}{{#if popup-active}} active{{/if}}"{{#if popup-id}} id="{{popup-id}}"{{/if}}{{#if close-btn}}{{/if}} role="dialog" aria-modal="true" {{#if popup-active}}aria-hidden="false"{{else}}aria-hidden="true"{{/if}}>
+<div class="popup_wrap bottom{{#if popup-class}} {{popup-class}}{{/if}}{{#if close_exp}} close_exp{{/if}}{{#if popup-active}} active{{/if}}"{{#if popup-id}} id="{{popup-id}}"{{/if}}{{#if close-btn}}{{/if}} role="dialog" aria-modal="true" {{#if popup-active}}aria-hidden="false"{{else}}aria-hidden="true"{{/if}}>
 	<div class="popup_container">
-		<div class="popup_dim" aria-hidden="true"{{#if popup-id}} onclick="closeHDPopup('{{popup-id}}');"{{/if}}></div>
+		{{#unless close_exp}}<div class="popup_dim" aria-hidden="true"{{#if popup-id}} onclick="closeHDPopup('{{popup-id}}');"{{/if}}></div>{{/unless}}
 		<div class="popup_inner{{#if in-class}} {{in-class}}{{/if}}">
 			{{!-- <div class="draggable" aria-grabbed="false" aria-dropeffect="close" tabindex="0" aria-label="드래그 하여 닫기"> --}}
 			<div class="draggable" aria-hidden="true">

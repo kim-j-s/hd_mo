@@ -847,6 +847,16 @@ function inpPhoneFormat() {
 			newVal = ' - ' + val.replace(/([0-9*]{4})(?=[0-9*])/g, '$1 - ');
 			$inp.val(newVal).addClass('isVal');
 		}
+		// 적용 준비 중 스크립트
+		if( $(this).hasClass('ex_phone') && $(this).hasClass('readonly') || $(this).hasClass('ex_phone') && $(this).hasClass('disabled') ){
+			console.log('this ex_phone');
+			const $inp = $(this).children('.inp').find('input');
+			let val = $inp.val();
+			val = val.replace(/[^0-9*]/g, '');
+			newVal = val.replace(/^([0-9*]{3})([0-9*]{4})([0-9*]{4})$/, '$1-$2-$3');
+			$inp.val(newVal).addClass('isVal');
+		}
+		// 적용 준비 중 스크립트
 	});
 }
 
