@@ -2582,6 +2582,20 @@ strong {
 .acd_item.acd_item_ty2 .cont_text_sub + .price_btn {
 	margin-top: var(--gap-2);
 }
+.acd_item.acd_item_ty2:has(.file_attach_box) {
+	position: relative;
+	border: 0;
+}
+.acd_item.acd_item_ty2:has(.file_attach_box)::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: var(--border-width-static-regular) solid var(--color-border-gray-light);
+	border-radius: var(--radius-large2);
+}
 .acd_item.acd_item_ty2 .acd_head {
 	position: relative;
 	padding: var(--padding-8) var(--padding-7);
@@ -11395,6 +11409,15 @@ ol li .table_wrap + .list_ty2 li + li {
 }
 .progress_bar.progress_bar_ty1.expired .per_bar.active {
 	background-color: var(--color-element-danger);
+}
+.progress_bar.progress_bar_ty1.expired .per_bar .per_bar_dp {
+	background-color: var(--color-element-point);
+	-webkit-box-shadow: 0 0.4rem 0.8rem 0 var(--color-alpha-shadow5, rgba(248, 99, 60, 0.2));
+	box-shadow: 0 0.4rem 0.8rem 0 var(--color-alpha-shadow5, rgba(248, 99, 60, 0.2));
+}
+.progress_bar.progress_bar_ty1.expired .per_bar .per_bar_dp .text {
+	font-weight: 700;
+	color: var(--color-text-bolder-inverse);
 }
 .progress_bar_ty2 .progress_bar_per {
 	position: relative;
