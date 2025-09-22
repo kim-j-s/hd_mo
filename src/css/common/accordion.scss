@@ -248,6 +248,23 @@
 			}
 		}
 
+		&:has(.file_attach_box){
+			position: relative;
+			border: 0;
+
+			&::before {
+				content:'';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				// z-index: -1;
+				border: var(--border-width-static-regular) solid var(--color-border-gray-light);
+				border-radius: var(--radius-large2);
+			}
+		}
+
 		.acd_head {
 			position: relative;
 			padding: var(--padding-8) var(--padding-7);
@@ -723,6 +740,7 @@
 			position: relative;
 			transition: all 0.3s;
 			padding: 0 20px;
+
 			&::before {
 				content: "";
 				position: absolute;
