@@ -72,11 +72,123 @@
 
 	<div class="bottom_fix_wrap">
 		<div class="btn_area">
-			{{> cp/button type="1" size="1" b-text="홈으로" }}
+			<!-- s: 25-09-23 수정 -->
+			{{> cp/button type="1" size="1" b-text="홈으로" popup="pop_type01" }}
+			<!-- e: 25-09-23 수정 -->
 		</div>
 	</div>
 </div>
 
+<!-- s: 25-09-23 수정 -->
 <!-- s: popup area -->
+<!-- 실손의료보험 중지 및 환급 안내 -->
+{{#> popup/popup_full popup-id="pop_type01" popup-title="실손의료보험 중지 및 환급 안내"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- s: popup_content_top -->
+		<div class="popup_content_top">
+			<div class="process_info_area">
+				<div class="complete_info" aria-hidden="true">
+					<lottie-player src="../../../json/lottie_info.jso" background="transparent" speed="1" autoplay></lottie-player>
+				</div>
+				<h2 class="process_title">
+					고객님은<br>
+					현대해상 <strong>실손의료보험 가입 중</strong>입니다
+				</h2>
+			</div>
+		</div>
+		<!-- e: popup_content_top -->
+		 
+		<div class="info_cont">	
+			<div class="info_gray">
+				<p class="info_text">
+					현대해상에 국내 실손의료보험에 가입한 고객께서 해외장기체류보험에 가입하는 경우, 기존에 가입한 실손의료보험에 대한 <strong>보험료 납입중지 또는 사후환급</strong>을 선택할 수 있습니다.
+				</p>
+			</div>
+
+			<div class="btn_area">
+				{{> cp/button type="3" size="3" b-text="보험료 환급 안내" popup="pop_type01_1" }}
+				{{> cp/button type="3" size="3" b-text="납입중지 안내" popup="pop_type01_2"}}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_full}}
+
+
+<!-- 실손의료보험 보험료 환급 안내 -->
+{{#> popup/popup_bottom popup-id="pop_type01_1" popup-title="실손의료보험 보험료 환급 안내"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<p class="bpop_sub_title">
+			가입하신 해외장기체류보험의 만기 또는 귀국 후, 실손의료보험의 보험료 환급을 요청할 수 있습니다.
+		</p>
+		
+		<div class="call_box call_box_icoadd">
+			<p class="info_text">환급 신청은 담당 플래너 또는 다이렉트 고객센터로 문의해주시기 바랍니다.</p>
+			<div class="info_gray ty2">
+				<a href="tel:1899-6782" class="call_link">
+					<div class="center_info">
+						<h4 class="title_h4">다이렉트 고객센터</h4>
+						<div class="line1">
+							<div class="line1_item">
+								<strong class="tel">1899-6782</strong>
+							</div>
+							<div class="line1_item">
+								<span class="cit">평일 09:00 ~ 18:00</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area right">{{> cp/button type="1" size="2" b-text="확인" }}</div>
+</div>
+{{/ popup/popup_bottom}}
+
+
+<!-- 실손의료보험 납입중지 안내 -->
+{{#> popup/popup_bottom popup-id="pop_type01_2" popup-title="실손의료보험 보험료 환급 안내"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<p class="bpop_sub_title">
+			실손의료보험 보험료 납입중지는 다이렉트 고객센터 또는 담당 플래너를 통해 신청할 수 있습니다.
+		</p>
+		
+		<div class="call_box call_box_icoadd">
+			<p class="info_text">납입중지 신청은 담당 플래너 또는 다이렉트 고객센터로 문의해주시기 바랍니다.</p>
+			<div class="info_gray ty2">
+				<a href="tel:1899-6782" class="call_link">
+					<div class="center_info">
+						<h4 class="title_h4">다이렉트 고객센터</h4>
+						<div class="line1">
+							<div class="line1_item">
+								<strong class="tel">1899-6782</strong>
+							</div>
+							<div class="line1_item">
+								<span class="cit">평일 09:00 ~ 18:00</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area right">{{> cp/button type="1" size="2" b-text="확인" }}</div>
+</div>
+{{/ popup/popup_bottom}}
+
 <!-- e: popup area -->
+<!-- e: 25-09-23 수정 -->
 {{/ layout/default }}
