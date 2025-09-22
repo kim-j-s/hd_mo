@@ -121,8 +121,18 @@
 
 		//만기 D-30
 		&.expired {
-			.per_bar.active {
-				background-color: var(--color-element-danger);
+			.per_bar {
+				&.active {
+					background-color: var(--color-element-danger);
+				}
+				.per_bar_dp {
+					background-color: var(--color-element-point);
+					box-shadow: 0 4px 8px 0 var(--color-alpha-shadow5, rgba(248, 99, 60, 0.20));
+					.text {
+						font-weight: 700;
+						color: var(--color-text-bolder-inverse);
+					}
+				}
 			}
 		}
 	}
