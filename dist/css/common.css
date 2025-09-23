@@ -13321,7 +13321,7 @@ ol li .table_wrap + .list_ty2 li + li {
 	-webkit-box-flex: 1;
 	-ms-flex: 1 1 0px;
 	flex: 1 1 0;
-	padding: var(--padding-5) var(--padding-6);
+	padding: calc(var(--padding-5) - 1px) calc(var(--padding-6) - 1px);
 	font-size: var(--font-size-body-medium);
 	text-align: center;
 	border-radius: var(--radius-medium1);
@@ -13330,11 +13330,30 @@ ol li .table_wrap + .list_ty2 li + li {
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
 }
+.tab_wrap_list_ty2 .tab_btn.icon_add .text {
+	display: inline-block;
+	padding-left: 3.6rem;
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 3.2rem auto;
+}
+.tab_wrap_list_ty2 .tab_btn.icon_add.icon_add_ty1 .text {
+	background-image: url(../images/icon/icon_tab_ty1_off.svg);
+}
+.tab_wrap_list_ty2 .tab_btn.icon_add.icon_add_ty2 .text {
+	background-image: url(../images/icon/icon_tab_ty2_off.svg);
+}
 .tab_wrap_list_ty2 .tab_btn.active {
 	border: var(--border-width-static-regular) solid var(--color-border-gray-dark);
 	background-color: var(--color-action-white);
 	-webkit-box-shadow: 0px 1px 0.2rem 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)), 0px 0px 0.2rem 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
 	box-shadow: 0px 1px 0.2rem 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)), 0px 0px 0.2rem 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
+}
+.tab_wrap_list_ty2 .tab_btn.active.icon_add.icon_add_ty1 .text {
+	background-image: url(../images/icon/icon_tab_ty1.svg);
+}
+.tab_wrap_list_ty2 .tab_btn.active.icon_add.icon_add_ty2 .text {
+	background-image: url(../images/icon/icon_tab_ty2.svg);
 }
 .tab_wrap_list_ty2.tag {
 	gap: var(--gap-3);
@@ -13968,6 +13987,7 @@ ol li .table_wrap + .list_ty2 li + li {
 .text_sub + .btn_area.basic.space1 {
 	margin-top: var(--gap-3);
 }
+.text_sub + .call_box,
 .text_sub + .text_sub_ty3,
 .text_sub + .list_depth {
 	margin-top: var(--gap-4);
@@ -14329,6 +14349,7 @@ ol li .table_wrap + .list_ty2 li + li {
 .info_gray + [class^="list_depth_ty"] {
 	margin-top: var(--gap-5);
 }
+.info_gray + .btn_area.ty2,
 .info_gray + .table_wrap {
 	margin-top: var(--gap-8);
 }

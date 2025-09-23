@@ -821,3 +821,34 @@
 	}
 
 }
+
+
+/* bi stepper tab */
+.stepper_togglearea {
+	height: 48px;
+	transition: all var(--t-time);
+	.tab_wrap_list_ty2 {
+		position: relative;
+		top: 0;
+		transition: all var(--t-time);
+	}
+
+	&.ty1 {
+		&.active {
+			height: 0;
+			.tab_wrap_list_ty2 {
+				top: -48px;
+				visibility: hidden;
+				// top: 48px;
+			}
+		}
+	}
+
+	&.ty2 {
+		&.active {
+			height: 0;
+			visibility: hidden;
+		}
+	}
+}
+/* bi stepper tab */

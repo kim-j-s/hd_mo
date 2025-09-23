@@ -461,8 +461,8 @@
 .bi_top .bit_inner_text {
 	padding-top: 1.6rem;
 	font-size: 2.4rem;
-	line-height: 1.4;
 	color: var(--color-text-bolder);
+	line-height: 1.4;
 }
 .bi_top .bit_inner_text .sub_txt {
 	display: block;
@@ -491,31 +491,6 @@
 	margin: 1.6rem -2.4rem;
 	padding: 0 2.4rem;
 	overflow-x: scroll;
-	/*
-  &::before {
-  	content: '';
-  	position: absolute;
-  	top: 0;
-  	left: -20px;
-  	z-index: 1;
-  	width: 20px;
-  	height: 100%;
-  	pointer-events: none;
-  	background: rgb(255,255,255);
-  	background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(254,254,254,0) 100%);
-  }
-  &::after {
-  	content: '';
-  	position: absolute;
-  	top: 0;
-  	right: -20px;
-  	width: 20px;
-  	height: 100%;
-  	pointer-events: none;
-  	background: rgb(255,255,255);
-  	background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(254,254,254,0) 100%);
-  }
-  */
 }
 .bi_top .bit_history .bit_history_inner {
 	position: relative;
@@ -1086,6 +1061,30 @@
 .msg_display .tip_item.top {
 	bottom: calc(100% + 1rem);
 }
+/* bi stepper tab */
+.stepper_togglearea {
+	height: 4.8rem;
+	-webkit-transition: all var(--t-time);
+	transition: all var(--t-time);
+}
+.stepper_togglearea .tab_wrap_list_ty2 {
+	position: relative;
+	top: 0;
+	-webkit-transition: all var(--t-time);
+	transition: all var(--t-time);
+}
+.stepper_togglearea.ty1.active {
+	height: 0;
+}
+.stepper_togglearea.ty1.active .tab_wrap_list_ty2 {
+	top: -4.8rem;
+	visibility: hidden;
+}
+.stepper_togglearea.ty2.active {
+	height: 0;
+	visibility: hidden;
+}
+/* bi stepper tab */
 /* 자동완성 */
 .autocomplete_wrap {
 	position: relative;
@@ -3298,6 +3297,11 @@
 	top: 0.3rem;
 	right: 0;
 }
+.summary_ii > li .modify_sub {
+	font-size: var(--font-size-button-small);
+	color: var(--color-text-subtle);
+	text-decoration: underline;
+}
 .summary_ii .summary_ii_top {
 	padding: 1px 0 1px 4rem;
 	background-repeat: no-repeat;
@@ -3380,10 +3384,14 @@
 	word-break: keep-all;
 }
 .summary_ii .sic_list .sic_list_r {
+	position: relative;
 	-webkit-box-flex: 1;
 	-ms-flex: 1 1 0px;
 	flex: 1 1 0;
 	text-align: right;
+}
+.summary_ii .sic_list .sic_list_r .modify_sub {
+	white-space: nowrap;
 }
 /* 운전자보험 - 보험료확인 */
 /* 운전자보험 | 보험료확인 */
