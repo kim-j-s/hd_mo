@@ -18,6 +18,11 @@ const $stepper = {
 			$stepper.allStep = value;
 		}
 		if('nowIdx' == key) {
+			// if(value == 1) {
+			// 	$('.stepperToggleArea').show();
+			// } else {
+			// 	$('.stepperToggleArea').hide();
+			// }
 			$stepper.selectedIdx = (value + 1);
 			$stepper.data.nowStep = (value + 1);
 			$('.bi_wrap').attr('data-now', value);
@@ -142,6 +147,7 @@ const $stepper = {
 	},
 	// 다음단계
 	stepNext: function () {
+		$('.stepper_togglearea').addClass('active');
 		const _nowIdx = $stepper.get('nowIdx');
 
 		// 다음 스텝 계산 (최대값 totalStep으로 제한)
