@@ -173,10 +173,20 @@
 		if( $this.closest('.input_text').hasClass('phone') && !$this.prop('readonly') && !$this.prop('disabled') ){
 			if(val){
 				const newVal = val.replace(/ - /g, '');
+				$this.attr('maxlength', 8);
+				$this.val(newVal).removeClass('isVal');
+			}
+		}
+
+		// 전화번호 입력 적용 준비 중 스크립트
+		if( $this.closest('.input_text').hasClass('phone phone_full') && !$this.prop('readonly') && !$this.prop('disabled') ){
+			if(val){
+				const newVal = val.replace(/ - /g, '');
 				$this.attr('maxlength', 11);
 				$this.val(newVal).removeClass('isVal');
 			}
 		}
+		// 전화번호 입력 적용 준비 중 스크립트
     
   }).on('blur', '.inp > input', function(){
     const $this = $(this),
