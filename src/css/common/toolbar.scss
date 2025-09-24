@@ -1,65 +1,90 @@
 
 
 .toolbar {
-    padding: var(--padding-6) var(--padding-5);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: var(--color-surface-white-subtler);
-    > a {
-        padding: var(--padding-2) var(--padding-3) var(--padding-2) 30px;
-        font-size: var(--font-size-body-small);
-        color: var(--color-text-disabled);
-        background-repeat: no-repeat;
-        background-position: 8px center;
-        background-size: 20px auto;
-        &.home {
-            background-image: url(../images/content/ho/icon_home.svg);
-        }
-        &.join {
-            background-image: url(../images/content/ho/icon_join.svg);
-        }
-        &.benefit {
-            background-image: url(../images/content/ho/icon_benefit.svg);
-        }
-        &.register {
-            background-image: url(../images/content/ho/icon_register.svg);
-        }
-    }
-    &.ty1 {
-        .home {
-            color: var(--color-text-bolder);
-            font-weight: 700;
-            background-color: var(--color-button-tertiary-fill-pressed);
-            border-radius: var(--radius-max);
-            background-image: url(../images/content/ho/icon_home_fill.svg);
-        }
-    }
-    &.ty2 {
-        .join {
-            color: var(--color-text-bolder);
-            font-weight: 700;
-            background-color: var(--color-button-tertiary-fill-pressed);
-            border-radius: var(--radius-max);
-            background-image: url(../images/content/ho/icon_join_fill.svg);
-        }
-    }
-    &.ty3 {
-        .benefit {
-            color: var(--color-text-bolder);
-            font-weight: 700;
-            background-color: var(--color-button-tertiary-fill-pressed);
-            border-radius: var(--radius-max);
-            background-image: url(../images/content/ho/icon_benefit_fill.svg);
-        }
-    }
-    &.ty4 {
-        .register {
-            color: var(--color-text-bolder);
-            font-weight: 700;
-            background-color: var(--color-button-tertiary-fill-pressed);
-            border-radius: var(--radius-max);
-            background-image: url(../images/content/ho/icon_register_fill.svg);
-        }
-    }
+	position: relative;
+	padding: var(--padding-6) var(--padding-5);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: var(--color-surface-white-subtler);
+	box-shadow: 0 var(--shadow-y-minus2, -6px) var(--shadow-blur-2, 8px) 0 var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
+
+	> a {
+			padding: var(--padding-2) var(--padding-3) var(--padding-2) 30px;
+			font-size: var(--font-size-body-small);
+			color: var(--color-text-disabled);
+			background-repeat: no-repeat;
+			background-position: 8px center;
+			background-size: 20px auto;
+			&.home {
+					background-image: url(../images/content/ho/icon_home.svg);
+			}
+			&.join {
+					background-image: url(../images/content/ho/icon_join.svg);
+			}
+			&.benefit {
+					background-image: url(../images/content/ho/icon_benefit.svg);
+			}
+			&.register {
+					background-image: url(../images/content/ho/icon_register.svg);
+			}
+	}
+	&.ty1 {
+			.home {
+					color: var(--color-text-bolder);
+					font-weight: 700;
+					background-color: var(--color-button-tertiary-fill-pressed);
+					border-radius: var(--radius-max);
+					background-image: url(../images/content/ho/icon_home_fill.svg);
+			}
+	}
+	&.ty2 {
+			.join {
+					color: var(--color-text-bolder);
+					font-weight: 700;
+					background-color: var(--color-button-tertiary-fill-pressed);
+					border-radius: var(--radius-max);
+					background-image: url(../images/content/ho/icon_join_fill.svg);
+			}
+	}
+	&.ty3 {
+			.benefit {
+					color: var(--color-text-bolder);
+					font-weight: 700;
+					background-color: var(--color-button-tertiary-fill-pressed);
+					border-radius: var(--radius-max);
+					background-image: url(../images/content/ho/icon_benefit_fill.svg);
+			}
+	}
+	&.ty4 {
+			.register {
+					color: var(--color-text-bolder);
+					font-weight: 700;
+					background-color: var(--color-button-tertiary-fill-pressed);
+					border-radius: var(--radius-max);
+					background-image: url(../images/content/ho/icon_register_fill.svg);
+			}
+	}
+
+	.tb_chatbot {
+		position: absolute;
+		top: -68px;
+		right: 4px;
+		width: 56px;
+		height: 56px;
+		background: var(--color-button-brand-fill-inverse, #FFF);
+		border-radius: var(--radius-max);
+		border: var(--border-width-static-regular) solid var(--color-button-brand-border, #FF7F32);
+		box-shadow: 0 4px 8px 0 var(--color-alpha-shadow5, rgba(248, 99, 60, 0.20));
+		text-align: center;
+
+		.text {
+			display: block;
+			padding-top: 24px;
+			background: url(../images/content/ho/icon_chatbot.svg) no-repeat center top 1px / 24px;
+			font-size: var(--font-size-body-xsmall, 12px);
+			font-weight: 700;
+			color: var(--color-text-bolder, #131416);
+		}
+	}
 }
