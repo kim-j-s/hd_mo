@@ -186,6 +186,7 @@
 					// padding-top: 2px;
 				}
 				.data_r {
+					flex:none;
 					text-align: right;
 					.price {
 						display: block;
@@ -216,7 +217,26 @@
 		}
 		a.option {
 			padding: 16px 32px 16px 0;
-			background: url(../images/icon/arrowRight_ty4.svg) no-repeat right 16px;
+			background: url(../images/icon/arrowRight_ty4.svg) no-repeat right 17px;
+		
+			&.disabled {
+				pointer-events: none;
+				background-color: var(--color-surface-gray-subtler);
+				
+				.item {
+					.data_l {
+						.name,
+						.date {
+							color: var(--color-text-disabled-on);
+						}
+					}
+					.data_r {
+						.price {
+							color: var(--color-text-disabled-on);
+						}
+					}
+				}
+			}
 		}
 
 		+ .info_gray {
