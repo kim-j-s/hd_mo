@@ -465,6 +465,26 @@
 		}
 
 		// 플로팅
+		&:not(.sticky_fix) {
+			.head_text {
+				.price {
+					.left_txt {
+						font-weight: 700;
+					}
+					&.ty2 {
+						color: var(--color-text-subtle);
+						
+						.price_num {
+							font-size: var(--font-size-heading-medium);
+						}
+						.won {
+							padding-bottom: var(--padding-2);
+							font-size: var(--font-size-body-small);
+						}
+					}
+				}
+			}
+		}
 		&.sticky_fix {
 			// margin-top: -16px;
 			top: -16px;
@@ -478,9 +498,15 @@
 			.splide_wrap {
 				.splide__list {
 					height: 64px;
+					&:has(.price.ty2){
+						height: 88px;
+					}
 				}
 				.splide__slide {
 					height: 64px;
+					&:has(.price.ty2){
+						height: 88px;
+					}
 
 					.gd_item {
 						opacity: 0;
@@ -515,13 +541,17 @@
 				.gdi_content_list {
 					display: none;
 				}
+				.only_fix {
+					display: block;
+				}
 				.badge_wrap {
 					width: auto;
 					.desc {
 						display: none;
 					}
+					& + .fix_box,
 					& + .head_text {
-						padding-top: 0;
+						padding-top: 0 !important;
 					}
 				}
 				.head_text {
@@ -537,13 +567,11 @@
 						align-items: center;
 						justify-content: flex-end;
 						padding-top: 0;
-
-						.left_txt {
-							display: none;
-						}
-
 						.price_info {
 							display: block;
+						}
+						.left_txt {
+							color: var(--color-text-subtle);
 						}
 						.price_num,
 						.won {
@@ -561,14 +589,13 @@
 
 					& + .comb_info {
 						display: none;
-
-						& + .head_text {
-							display: none;
-						}
 					}
 				}
 				.head_desc_text {
 					display: none;
+				}
+				.fix_box {
+					flex-direction: column;
 				}
 			}
 			.gdi_info_list {
@@ -676,7 +703,11 @@
 				}
 			}
 
-			.badge_wrap {
+			.only_fix {
+				display: none;
+			}
+			.badge_wrap:not(.only_fix) {
+				& + .fix_box,
 				& + .head_text {
 					padding-top: var(--gap-3);
 				}
@@ -732,22 +763,10 @@
 					.left_txt {
 						display: inline-block;
 						vertical-align: middle;
-						padding-right: var(--gap-4);;
-						font-weight: 700;
+						padding-right: var(--gap-4);
 						font-size: var(--font-size-body-small);
 					}
 
-					&.ty2 {
-						color: var(--color-text-subtle);
-						
-						.price_num {
-							font-size: var(--font-size-heading-medium);
-						}
-						.won {
-							padding-bottom: var(--padding-2);
-							font-size: var(--font-size-body-small);
-						}
-					}
 				}
 
 				+ .comb_info {
@@ -923,7 +942,8 @@
 					
 				}
 			}
-		}	}
+		}	
+	}
 
 	.guarantee_detail_mini {
 		display: flex;
