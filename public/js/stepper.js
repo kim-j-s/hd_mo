@@ -18,11 +18,6 @@ const $stepper = {
 			$stepper.allStep = value;
 		}
 		if('nowIdx' == key) {
-			// if(value == 1) {
-			// 	$('.stepperToggleArea').show();
-			// } else {
-			// 	$('.stepperToggleArea').hide();
-			// }
 			$stepper.selectedIdx = (value + 1);
 			$stepper.data.nowStep = (value + 1);
 			$('.bi_wrap').attr('data-now', value);
@@ -234,7 +229,7 @@ const $stepper = {
 			_selectedText = _target.next("label").find(".label_cont").text().trim();
 		} else if(_target.attr("type") == "button") {
 			const _birthDate = _target.closest(".opts_area").find(".birth_date_field").text();
-			_selectedText = sUtil.formatDateFromNumber(_birthDate);
+			_selectedText = sUtil.formatDateFromNumber(_birthDate.replaceAll('.', ''));
 		}
 		
 		// UI 업데이트
@@ -257,6 +252,7 @@ const $stepper = {
 
 
 			let _inputText = _input.text() ?? '';
+			_inputText = _inputText.replaceAll('.', '');
 
 			if (_target.hasClass('keypad_btn_del')) {
 				// 하나 지우기
@@ -267,7 +263,23 @@ const $stepper = {
 			} else {
 				_inputText += _keypadText;
 			}
-			_input.text(_inputText);
+			
+			const yyyy = _inputText.substr(0,4);
+			const mm = _inputText.substr(4,2);
+			const dd = _inputText.substr(6,2);
+			
+			let printText = '';
+			if(yyyy) {
+				printText += yyyy;
+			}
+			if(mm) {
+				printText += '.' + mm;
+			}
+			if(dd) {
+				printText += '.' + dd;
+			}
+			
+			_input.text(printText);
 
 			let getLng = _input.text().length;
 			if (getLng > 0) {
