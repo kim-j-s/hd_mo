@@ -5,7 +5,7 @@
 	<div class="popup_container">
 		<div class="popup_dim" aria-hidden="true"{{#if popup-id}} onclick="closeHDPopup('{{popup-id}}');"{{/if}}></div>
 		<div class="popup_inner{{#if in-class}} {{in-class}}{{/if}}">
-			<div class="popup_head">
+			<div class="popup_head{{#if popup-headclass}} {{popup-headclass}}{{/if}}">
 				{{#unless no-header}}
 				<div class="popup_head_title">{{{popup-title}}}</div>
 				{{/unless}}
