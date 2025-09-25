@@ -3809,6 +3809,19 @@
 .guarantee_detail .guarantee_detail_top .list_ty4 li .txt strong {
 	padding-left: var(--gap-3);
 }
+.guarantee_detail .guarantee_detail_top:not(.sticky_fix) .head_text .price .left_txt {
+	font-weight: 700;
+}
+.guarantee_detail .guarantee_detail_top:not(.sticky_fix) .head_text .price.ty2 {
+	color: var(--color-text-subtle);
+}
+.guarantee_detail .guarantee_detail_top:not(.sticky_fix) .head_text .price.ty2 .price_num {
+	font-size: var(--font-size-heading-medium);
+}
+.guarantee_detail .guarantee_detail_top:not(.sticky_fix) .head_text .price.ty2 .won {
+	padding-bottom: var(--padding-2);
+	font-size: var(--font-size-body-small);
+}
 .guarantee_detail .guarantee_detail_top.sticky_fix {
 	top: -1.6rem;
 	padding: var(--padding-7) var(--padding-8);
@@ -3822,8 +3835,14 @@
 .guarantee_detail .guarantee_detail_top.sticky_fix .splide_wrap .splide__list {
 	height: 6.4rem;
 }
+.guarantee_detail .guarantee_detail_top.sticky_fix .splide_wrap .splide__list:has(.price.ty2) {
+	height: 8.8rem;
+}
 .guarantee_detail .guarantee_detail_top.sticky_fix .splide_wrap .splide__slide {
 	height: 6.4rem;
+}
+.guarantee_detail .guarantee_detail_top.sticky_fix .splide_wrap .splide__slide:has(.price.ty2) {
+	height: 8.8rem;
 }
 .guarantee_detail .guarantee_detail_top.sticky_fix .splide_wrap .splide__slide .gd_item {
 	opacity: 0;
@@ -3858,14 +3877,18 @@
 .guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .gdi_content_list {
 	display: none;
 }
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .only_fix {
+	display: block;
+}
 .guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .badge_wrap {
 	width: auto;
 }
 .guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .badge_wrap .desc {
 	display: none;
 }
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .badge_wrap + .fix_box,
 .guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .badge_wrap + .head_text {
-	padding-top: 0;
+	padding-top: 0 !important;
 }
 .guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .head_text {
 	-webkit-box-flex: 1;
@@ -3888,11 +3911,11 @@
 	justify-content: flex-end;
 	padding-top: 0;
 }
-.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .head_text .price .left_txt {
-	display: none;
-}
 .guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .head_text .price .price_info {
 	display: block;
+}
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .head_text .price .left_txt {
+	color: var(--color-text-subtle);
 }
 .guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .head_text .price .price_num,
 .guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .head_text .price .won {
@@ -3910,11 +3933,14 @@
 .guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .head_text + .comb_info {
 	display: none;
 }
-.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .head_text + .comb_info + .head_text {
-	display: none;
-}
 .guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .head_desc_text {
 	display: none;
+}
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .fix_box {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
 }
 .guarantee_detail .guarantee_detail_top.sticky_fix .gdi_info_list {
 	display: none;
@@ -4007,7 +4033,11 @@
 	color: var(--color-text-subtle);
 	font-size: var(--font-size-body-small);
 }
-.guarantee_detail .gd_item .gdi_content .badge_wrap + .head_text {
+.guarantee_detail .gd_item .gdi_content .only_fix {
+	display: none;
+}
+.guarantee_detail .gd_item .gdi_content .badge_wrap:not(.only_fix) + .fix_box,
+.guarantee_detail .gd_item .gdi_content .badge_wrap:not(.only_fix) + .head_text {
 	padding-top: var(--gap-3);
 }
 .guarantee_detail .gd_item .gdi_content .head_text {
@@ -4061,17 +4091,6 @@
 	display: inline-block;
 	vertical-align: middle;
 	padding-right: var(--gap-4);
-	font-weight: 700;
-	font-size: var(--font-size-body-small);
-}
-.guarantee_detail .gd_item .gdi_content .head_text .price.ty2 {
-	color: var(--color-text-subtle);
-}
-.guarantee_detail .gd_item .gdi_content .head_text .price.ty2 .price_num {
-	font-size: var(--font-size-heading-medium);
-}
-.guarantee_detail .gd_item .gdi_content .head_text .price.ty2 .won {
-	padding-bottom: var(--padding-2);
 	font-size: var(--font-size-body-small);
 }
 .guarantee_detail .gd_item .gdi_content .head_text + .comb_info {
