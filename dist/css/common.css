@@ -253,6 +253,11 @@ strong {
 .bottom_fix_wrap .banner_box + .btn_area {
 	margin-top: var(--gap-7);
 }
+.bottom_fix_wrap:has(.total_price_display_ty1) {
+	border-radius: var(--radius-medium3) var(--radius-medium3) 0 0;
+	-webkit-box-shadow: 0 var(--shadow-y-minus2, -6px) var(--shadow-blur-2, 8px) 0 var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
+	box-shadow: 0 var(--shadow-y-minus2, -6px) var(--shadow-blur-2, 8px) 0 var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
+}
 .bottom_fix_wrap .btn_area {
 	gap: var(--gap-3);
 	-webkit-box-orient: horizontal;
@@ -1663,6 +1668,10 @@ strong {
 	padding: 1.6rem 0;
 	font-size: var(--font-size-body-medium);
 	border-bottom: var(--border-width-static-regular) solid var(--color-divider-gray-light);
+}
+.nav_menu_wrap .nmc_menus .tab_wrap_content .nmc_menus_list > li > a.nmc_link {
+	padding-right: 3.6rem;
+	background: url(../images/icon/arrowLink.svg) no-repeat right 0.2rem center/2rem auto;
 }
 /* 화면 너비가 375px 이하일 때 - 모바일 전체메뉴 문구 변경 */
 @media screen and (max-width: 375px) {
@@ -3701,6 +3710,7 @@ strong {
 .btn_area + .card_iutem_wrap {
 	margin-top: var(--gap-5);
 }
+.btn_area + .coverage_item_wrap,
 .btn_area + .tab_wrap,
 .btn_area + .list_top_wrap,
 .btn_area + .title_h3 {
