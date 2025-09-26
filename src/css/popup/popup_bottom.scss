@@ -63,9 +63,16 @@
 						}
 					}
 				}
+
+				&.swiper-initialized {
+					& + .swiper_control {
+						display: block;
+					}	
+				}
 			}
 		
 			.swiper_control {
+				display: none;
 				display: flex;
 				align-items: center;
 				position: absolute;
@@ -74,6 +81,11 @@
 				bottom: 16px;
 				z-index: 10;
 				padding: 0 24px;
+
+				.c_inner {
+					display: flex;
+					align-items: center;
+				}
 		
 				.pop_pager {
 					position: relative;
