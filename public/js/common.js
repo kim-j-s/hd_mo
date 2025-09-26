@@ -187,6 +187,15 @@
 			}
 		}
 		// 전화번호 입력 적용 준비 중 스크립트
+
+		//카드유호기간
+		if( $this.closest('.input_text').hasClass('expiry_date') && !$this.prop('readonly') && !$this.prop('disabled') ){
+			if(val){
+				const newVal = val.replace(/\s*\/\s*/g, '');
+				$this.attr('maxlength', 4);
+				$this.val(newVal).removeClass('isVal');
+			}
+		}
     
   }).on('blur', '.inp > input', function(){
     const $this = $(this),
@@ -210,6 +219,17 @@
 			if(val){
 				val = val.replace(/[^0-9*]/g, '');
 				newVal = ' - ' + val.replace(/([0-9*]{4})(?=[0-9*])/g, '$1 - ');
+				$this.val(newVal).addClass('isVal');
+			}else {
+				$this.removeClass('isVal');
+			}
+		}
+		// 카드유호기간
+		if( $this.closest('.input_text').hasClass('expiry_date') && !$this.prop('readonly') && !$this.prop('disabled') ){
+			$this.attr('maxlength', 4);
+			if(val){
+				val = val.replace(/[^0-9*]/g, '');
+				newVal = val.replace(/([0-9*]{2})(?=[0-9*])/g, '$1 / ');
 				$this.val(newVal).addClass('isVal');
 			}else {
 				$this.removeClass('isVal');
