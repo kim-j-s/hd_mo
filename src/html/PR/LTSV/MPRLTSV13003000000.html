@@ -101,13 +101,14 @@
 				<!-- e: 간편정보 -->
 				<!-- e: 25-09-01 수정 -->
 
-				<div class="btn_area">
+				<!-- s: 25-09-26 수정 -->
+				<div class="gd_middle_ba btn_area center">
 					{{> cp/button type="3" size="3" b-text="예상해약환급금 보기" btn-title="예상해약환급금 팝업열기"}} 
 					<!-- s: 25-08-22 UXW -->				
 					<!-- 삭제 {{> cp/button type="3" size="3" b-text="계산 결과 문자로 받기" btn-title="계산내역발송 팝업열기"}} -->
 					<!-- e: 25-08-22 UXW -->
 				</div>
-				<div class="info_cont">
+				<!-- 삭제 <div class="info_cont">
 					<div class="acd_item acd_item_ty2">
 						{{#> cp/accordion ac-title="꼭 가입해야 할 보장" ac-active=true }}
 							<div class="coverage_item_list_ty2">
@@ -117,8 +118,19 @@
 								</div>							
 							</div>          
 						{{/ cp/accordion }}
-						</div>
 					</div>
+				</div> -->
+				<div class="coverage_item_wrap">
+					<ul class="coverage_item_list">
+						<li class="list">
+							<div class="item_title">상해사망담보</div>
+							<div class="sub_txt_area">
+								{{> cp/linkButton bl_class="price_btn" bl_text="100만원" role_b=true question_tit="가입조건변경 팝업열기" }}
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- e: 25-09-26 수정 -->
 
 					<!-- s: 꼭 알아두세요 -->
 					{{#> cp/notice dp-active="active" }}
