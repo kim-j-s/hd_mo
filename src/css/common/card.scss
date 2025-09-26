@@ -81,64 +81,6 @@
 	}
 
 
-	&.ty2 {
-		.card_item {
-			.card_link {
-				&::after {
-					content: '';
-					position: absolute;
-					top: 0;
-					left: 0;
-					z-index: 1;
-					width: 100%;
-					height: 100%;
-				}
-			}
-			&.disabled {
-				.card_link {
-					.item_top {
-						background-image: none;
-					}
-				}
-			}
-			&.disabled2 {
-				background-color: var(--color-surface-gray-subtler);
-				.card_link {
-					// background-image: url(../images/icon/arrowRight_disabled_ty2.svg);
-					* {
-						color: var(--color-text-disabled-on) !important;
-						background-color: var(--color-surface-gray-subtler);
-					}
-
-					&::after {
-						content: '';
-						position: absolute;
-						top: 0;
-						left: 0;
-						z-index: 1;
-						width: 100%;
-						height: 100%;
-					}
-				}
-				.card_list_ty1 {
-					// li > *:last-child {
-					// 	color:#6D7882;
-					// }
-					li > * {
-						color: var(--color-text-disabled-on) !important;
-					}
-				}
-				// .card_link { cursor: default; }
-			}
-
-			// 보험진단 서비스 > 내 보험 여백 추가(MHOMYPG13005020000)
-			.title_info {
-				.main_title + .sub_title {
-					margin-top: var(--gap-2);
-				}
-			}
-		}
-	}
 	&:not(.info_type) {
 		.card_item {
 			.item_inner {
@@ -337,6 +279,9 @@
 					color: var(--color-text-information);
 				}
 				& + .badge_wrap {
+					margin-top: var(--gap-2);
+				}
+				& + .sub_title {
 					margin-top: var(--gap-2);
 				}
 				> .flex_start {
@@ -784,11 +729,11 @@
 				cursor: default;
 
 				.item_top {
+					padding-right: 30px;
+					background: url(../images/icon/arrowRight_disabled_ty2.svg) no-repeat right top / 24px auto;
 					.title_info {
 						// padding-right: 24px;
 						.main_title {
-							padding-right: 30px;
-							background: url(../images/icon/arrowRight_disabled_ty2.svg) no-repeat right bottom / 24px auto;
 							
 						}
 					}
@@ -802,7 +747,27 @@
 				}
 			}
 		}
+		&.disabled2 {
+			background-color: var(--color-surface-gray-subtler);
+			.card_link {
+				// background-image: url(../images/icon/arrowRight_disabled_ty2.svg);
 
+				* {
+					color: var(--color-text-disabled-on) !important;
+					background-color: var(--color-surface-gray-subtler);
+				}
+
+				&::after {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 1;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
 		//비활성화 + 선택 예외 케이스
 		&.selected {
 			&:not(.disabled) {
@@ -817,10 +782,10 @@
 			}
 			.card_link {
 				.item_top {
+					padding-right: 30px;
 					.title_info {
 						// padding-right: 24px;
 						.main_title {
-							padding-right: 30px;
 							// background: url(../images/icon/arrowRight_disabled_ty2.svg) no-repeat right bottom / 20px auto;
 						}
 					}
