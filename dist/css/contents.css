@@ -3954,28 +3954,11 @@
 .guarantee_detail .guarantee_detail_top.sticky_fix .guarantee_detail_mini:has(.i_data.dn):not(:has(.i_data)):not(.dn) {
 	margin-top: 0;
 }
-.guarantee_detail .guarantee_detail_top.sticky_fix .guarantee_detail_mini:not(.column) .item_wrap {
-	-webkit-box-pack: justify;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
-}
-.guarantee_detail .guarantee_detail_top.sticky_fix .guarantee_detail_mini:not(.column) .item_wrap .i_data {
-	-webkit-box-flex: 0;
-	-ms-flex: 0 0 calc(50% - 0.8rem);
-	flex: 0 0 calc(50% - 0.8rem);
-	min-width: calc(50% - 0.8rem);
-}
 .guarantee_detail .guarantee_detail_top.sticky_fix .guarantee_detail_mini .item_wrap {
 	gap: var(--gap-5);
 }
-.guarantee_detail .guarantee_detail_top.sticky_fix .guarantee_detail_mini .item_wrap .i_data {
-	padding-left: 0;
-}
 .guarantee_detail .guarantee_detail_top.sticky_fix .guarantee_detail_mini .item_wrap .i_data.dn {
 	display: none;
-}
-.guarantee_detail .guarantee_detail_top.sticky_fix .guarantee_detail_mini .item_wrap .i_data:before {
-	content: none;
 }
 .guarantee_detail .guarantee_detail_top.sticky_fix .guarantee_detail_mini .item_wrap .i_data .data {
 	color: var(--color-text-basic);
@@ -4295,15 +4278,6 @@
 	-webkit-box-flex: 0;
 	-ms-flex: none;
 	flex: none;
-}
-.guarantee_detail .guarantee_detail_mini:not(.and_list) .item_wrap .i_data:first-child {
-	min-width: calc(50% - 0.6rem);
-}
-.guarantee_detail .guarantee_detail_mini.and_list .item_wrap .i_data {
-	width: calc(44% - 0.6rem);
-}
-.guarantee_detail .guarantee_detail_mini.and_list .item_wrap .i_data:nth-child(even) {
-	width: calc(56% - 0.6rem);
 }
 .guarantee_detail .guarantee_detail_mini.column {
 	-webkit-box-orient: vertical;
@@ -5847,7 +5821,8 @@ ul + .form_group_wrap {
 	padding-left: 2rem;
 	font-size: var(--font-size-label-medium);
 	color: var(--color-text-danger);
-	background: url(../images/icon/icon_error_red.svg) no-repeat left center/1.6rem auto;
+	text-align: left;
+	background: url(../images/icon/icon_error_red.svg) no-repeat left top 0.2rem/1.6rem auto;
 }
 /* PIN 인증 */
 /* 회원탈퇴 */
