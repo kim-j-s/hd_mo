@@ -557,8 +557,7 @@
 		let val = $this.val().replace(/-/g, ""); // 하이픈 제거
 		if (!val) {
 			val = "010"; // 값이 없으면 010 넣기
-		}
-	
+		}	
 		$this.val(val);
 	});
 
@@ -577,6 +576,26 @@
 		$this.val(val);
 	});
 	// 전화번호 입력 적용 준비 중 스크립트
+
+
+	// 유효기간 처리
+	$DOM.on('focus', '.input_text .ex_period', function () {
+		let val = $(this).val();
+		// '/' 제거
+		$(this).val(val.replace(/\//g, ''));
+	});
+	$DOM.on("blur", ".input_text .ex_period", function () {
+		// console.log('유효기간 진입');
+		let $this = $(this);
+		let val = $this.val().replace(/[^0-9]/g, ""); // 숫자만 남김
+	
+		if (val.length === 4) {
+			val = val.replace(/(\d{2})(\d{2})/, "$1/$2");
+		}
+	
+		$this.val(val);
+	});
+	// 유효기간 처리
 	
 
 	
