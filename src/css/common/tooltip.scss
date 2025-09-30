@@ -57,7 +57,7 @@
 				content: "";
 				position: absolute;
 				left: calc(50% - 7px);
-				top: calc(100% - 4px);
+				top: calc(100% - 9px);
 				width: 8px;
 				height: 8px;
 				pointer-events: none;
@@ -97,7 +97,7 @@
 		// top: calc(100% + 9.5px);
 		// 상황별 top 수정 필요
 		top: calc(100% + 9px);
-		border-radius: var(--radius-medium1, 12px);
+		border-radius: var(--radius-medium1);
 		background: var(--color-element-information);
 		box-shadow: 0px var(--shadow-y-2) var(--shadow-blur-2) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
 		
@@ -225,6 +225,67 @@
 .title_h3 {
 	.tooltip_wrap {
 		top: 6px;
+		.tooltip_head.active {
+			&::after {
+				top: calc(100% - 7px);
+			}
+		}
+		.tooltip_panel {
+			top: calc(100% + 4px);
+		}
+	}
+}
+.info_text {
+	.tooltip_wrap {
+		top: 2px;
+	}
+}
+.table {
+	.tooltip_wrap {
+		top: 0;
+		.tooltip_panel {
+			width: calc(100vw - 62px);
+		}
+	}
+}
+.form_group_wrap {
+	.label_tit {
+		.tooltip_wrap {
+			top: 0;
+			z-index: 11;
+		}
+	}
+}
+.card_item {
+	.tooltip_wrap {
+		top: 4px;
+		.tooltip_head {
+			.hd_icon {
+				width: 20px;
+				height: 20px;
+			}
+			&.active {
+				&::after {
+					top: calc(100% - 8px);
+				}
+			}
+		}
+		.tooltip_panel {
+			top: calc(100% + 5px);
+			width: calc(100vw - 70px);
+		}
+	}
+}
+.info_gray {
+	.tooltip_wrap {
+		top: 1px;
+	}
+}
+.bi_top {
+	.bit_inner_sub_text {
+		.tooltip_wrap {
+			top: 0;
+		}
 	}
 }
 /* 툴팁 조건별 위치 조정 */
