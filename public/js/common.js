@@ -1010,7 +1010,45 @@ $(function(){
 		}
 	});
 
-	$(".inp_picker").datepicker();
+	// 월 선택용
+	$.monthpicker.setDefaults({
+		dateFormat: 'yy.mm',
+		prevText: '이전달',
+		nextText: '다음달',
+		monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		showMonthAfterYear: true,
+		showButtonPanel: false,
+		showOtherMonths: true,
+		showAnim: "slideDown",
+		duration: 300,
+		beforeShow: function () {
+			$("body").append('<div class="modal_backdrop"></div>');
+			// $("body").append('<div class="modal_backdrop"></div>');
+			// $("body").addClass('modal_open');
+			setTimeout(function(){
+				$("body").addClass('modal_open');
+				// const $dp = $("#ui-datepicker-div");
+				// $dp.find('.ui-datepicker-prev, .ui-datepicker-next').attr('tabindex', '0');
+			}, 50);
+    },
+    onClose: function() { 
+			// setTimeout(function(){
+			// 	$('.modal_backdrop').remove();
+			// },200);
+			// $("body").removeClass('modal_open')
+			setTimeout(function(){
+				$('.modal_backdrop').remove();
+				$('.wrap').attr('aria-hidden', 'false');
+			}, 200);
+		}
+	});
+	// 월 선택용
+
+
+	// $(".inp_picker").datepicker();
+	$('.inp_picker:not([readonly])').datepicker();
+	$('.inp_picker_month:not([readonly])').monthpicker();
 
 	$(".calendar_call").on("click", function (e) {
 		e.preventDefault();
@@ -1033,7 +1071,7 @@ $(function(){
 			$input.attr("readonly", false);
 		}, 500);
 	
-		// ✅ 달력 내부 포커스로 이동 (접근성 강화)
+		// 달력 내부 포커스로 이동 (접근성 강화)
 		setTimeout(function () {
 			const $dp = $("#ui-datepicker-div");
 			// 날짜가 선택되어 있으면 해당 날짜에 포커스, 없으면 현재일
