@@ -105,7 +105,18 @@
 		border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 		// border-collapse: separate;
 		border-collapse: collapse;
-
+		&.pd_mini {
+			> tbody {
+				th {
+					vertical-align: unset;
+					padding: var(--padding-5) var(--padding-3);
+					word-break: break-all;
+				}
+				td {
+					padding: var(--padding-5) var(--padding-2);
+				}
+			}
+		}
 		&.bd_l {
 			th, td {
 				border-width: 0 0 1px 1px;
