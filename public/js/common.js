@@ -456,6 +456,13 @@
 		$this.val(val);
 	});
 
+	// input[type="tel"]
+	$DOM.on('keyup', 'input[type="tel"]', function() {
+		const $this = $(this),
+					val = $this.val().replace(/[^0-9]/g, ''); // 숫자만 허용
+		$this.val(val);
+	});
+
 	// 달력 날짜 입력 항목 focus 시 attr 추가 및 blur 시 자리수 정리 기능 추가
 	$DOM.on('focus', '.inp_picker', function() {
 		const $this = $(this);
