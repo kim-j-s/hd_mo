@@ -92,13 +92,11 @@
 		display: block;
 		box-sizing: border-box;
 		position: absolute;
-		// width: calc(100vw - 40px);
 		width: calc(100vw - 48px);
 		z-index: 11;
 		// top: calc(100% + 9.5px);
 		// 상황별 top 수정 필요
 		top: calc(100% + 9px);
-
 		border-radius: var(--radius-medium1, 12px);
 		background: var(--color-element-information);
 		box-shadow: 0px var(--shadow-y-2) var(--shadow-blur-2) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
@@ -132,7 +130,7 @@
 				}
 
 				[class^=list_ty] > li {
-					color: #ffffff;			
+					color: #ffffff;
 				}
 
 				.list_ty1 > li::before {
@@ -201,24 +199,15 @@
 	line-height: 24px;	
 
 	& > .tooltip_wrap {
-		// vertical-align: middle;
 		.tooltip_head {
-			// transform: translateY(4px);
-
 			&.active {
-				//tooltip arrow
 				&::after {
 					// left: calc(50% - 7px);
 					// top: calc(100% - 3px);
 				}
 			}
 		}			
-	}		
-
-	// .tooltip_wrap .tooltip_panel {
-	// 	top: calc(100% + 10px);
-	// }
-
+	}
 
 	.tooltip_wrap .tooltip_head.top{
 		&.top {
@@ -229,13 +218,16 @@
 			}
 		}
 	}
-
-
-	.tooltip_wrap .tooltip_head.top + .tooltip_panel {
-		// bottom: 28px;
-	}
-	
 }
+
+
+/* 툴팁 조건별 위치 조정 */
+.title_h3 {
+	.tooltip_wrap {
+		top: 6px;
+	}
+}
+/* 툴팁 조건별 위치 조정 */
 
 
 
