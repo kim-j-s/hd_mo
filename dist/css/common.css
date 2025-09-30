@@ -6065,16 +6065,6 @@ strong {
 	justify-content: space-between;
 	gap: var(--gap-3);
 }
-.card_item_wrap .card_item .item_inner .title_info .main_title.tooltip_add .tooltip_wrap {
-	margin-top: var(--gap-2);
-}
-.card_item_wrap .card_item .item_inner .title_info .main_title.tooltip_add .tooltip_wrap .hd_icon {
-	width: 2rem;
-	height: 2rem;
-}
-.card_item_wrap .card_item .item_inner .title_info .main_title.tooltip_add .tooltip_wrap .tooltip_panel {
-	width: calc(100vw - 7rem);
-}
 .card_item_wrap .card_item .item_inner .title_info + .desc {
 	margin-top: var(--gap-3);
 	font-size: var(--font-size-body-small);
@@ -8833,8 +8823,8 @@ strong {
 	flex: 1;
 }
 .comp_wrap.business .input_text input {
-	padding: 0;
-	text-align: center;
+	padding: 0 !important;
+	text-align: center !important;
 }
 .comp_wrap .dash {
 	font-size: var(--font-size-body-medium);
@@ -9247,13 +9237,6 @@ strong {
 }
 .form_group_wrap [class^="form_line"] .label_tit + .checkbox_group_wrap {
 	margin-top: 0;
-}
-.form_group_wrap [class^="form_line"] .label_tit .tooltip_wrap {
-	vertical-align: top;
-	z-index: 11;
-}
-.form_group_wrap [class^="form_line"] .label_tit .tooltip_wrap .tooltip_panel {
-	top: calc(100% + 3.2rem);
 }
 .form_group_wrap [class^="form_line"] .input_text + .btn_link.short_cut,
 .form_group_wrap [class^="form_line"] .form_line,
@@ -13597,6 +13580,7 @@ ol li .table_wrap + .list_ty2 li + li {
 }
 .table_wrap .table {
 	width: 100%;
+	table-layout: fixed;
 	border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 	border-collapse: collapse;
 }
@@ -13636,6 +13620,13 @@ ol li .table_wrap + .list_ty2 li + li {
 .table_wrap .table.table_v_mid td {
 	vertical-align: middle;
 }
+.table_wrap .table.pd_mini thead th {
+	padding: var(--padding-5) var(--padding-2);
+}
+.table_wrap .table.pd_mini th,
+.table_wrap .table.pd_mini td {
+	padding: var(--padding-5) var(--padding-2) var(--padding-5) var(--padding-3);
+}
 .table_wrap .table th,
 .table_wrap .table td {
 	border: var(--border-width-static-regular) solid var(--color-divider-gray-light);
@@ -13669,11 +13660,10 @@ ol li .table_wrap + .list_ty2 li + li {
 .table_wrap .table th {
 	vertical-align: middle;
 	padding: var(--padding-5) var(--padding-5);
+	font-weight: 700;
 	font-size: var(--font-size-heading-xxsmall);
 	color: var(--color-text-bolder);
 	text-align: left;
-	font-weight: 700;
-	word-break: keep-all;
 	background-color: var(--color-surface-gray-subtler);
 }
 .table_wrap .table td {
@@ -14247,7 +14237,7 @@ ol li .table_wrap + .list_ty2 li + li {
 	content: "";
 	position: absolute;
 	left: calc(50% - 0.7rem);
-	top: calc(100% - 0.4rem);
+	top: calc(100% - 0.9rem);
 	width: 0.8rem;
 	height: 0.8rem;
 	pointer-events: none;
@@ -14274,7 +14264,7 @@ ol li .table_wrap + .list_ty2 li + li {
 	width: calc(100vw - 4.8rem);
 	z-index: 11;
 	top: calc(100% + 0.9rem);
-	border-radius: var(--radius-medium1, 12px);
+	border-radius: var(--radius-medium1);
 	background: var(--color-element-information);
 	-webkit-box-shadow: 0px var(--shadow-y-2) var(--shadow-blur-2) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
 	box-shadow: 0px var(--shadow-y-2) var(--shadow-blur-2) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
@@ -14366,6 +14356,56 @@ ol li .table_wrap + .list_ty2 li + li {
 	-webkit-transform: scaleY(-1);
 	transform: scaleY(-1);
 }
+/* 툴팁 조건별 위치 조정 */
+.title_h3 .tooltip_wrap {
+	top: 0.6rem;
+}
+.title_h3 .tooltip_wrap .tooltip_head.active::after {
+	top: calc(100% - 0.7rem);
+}
+.title_h3 .tooltip_wrap .tooltip_panel {
+	top: calc(100% + 0.4rem);
+}
+.info_text .tooltip_wrap {
+	top: 0.2rem;
+}
+.table .tooltip_wrap {
+	top: 0;
+}
+.table .tooltip_wrap .tooltip_panel {
+	width: calc(100vw - 6.2rem);
+}
+.form_group_wrap .label_tit .tooltip_wrap {
+	top: 0;
+	z-index: 11;
+}
+.card_item .tooltip_wrap {
+	top: 0.4rem;
+}
+.card_item .tooltip_wrap .tooltip_head .hd_icon {
+	width: 2rem;
+	height: 2rem;
+}
+.card_item .tooltip_wrap .tooltip_head.active::after {
+	top: calc(100% - 0.8rem);
+}
+.card_item .tooltip_wrap .tooltip_panel {
+	top: calc(100% + 0.5rem);
+	width: calc(100vw - 7rem);
+}
+.info_gray .tooltip_wrap {
+	top: 1px;
+}
+.info_gray .tooltip_panel {
+	width: calc(100vw - 8.4rem);
+}
+.bi_top .bit_inner_sub_text .tooltip_wrap {
+	top: 0;
+}
+.gdi_content_list .tooltip_panel {
+	width: calc(100vw - 9.4rem);
+}
+/* 툴팁 조건별 위치 조정 */
 .tip_item {
 	--tl: 3.4rem;
 	position: absolute;

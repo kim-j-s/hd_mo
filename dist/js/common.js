@@ -456,6 +456,13 @@
 		$this.val(val);
 	});
 
+	// input[type="tel"]
+	$DOM.on('keyup', 'input[type="tel"]', function() {
+		const $this = $(this),
+					val = $this.val().replace(/[^0-9]/g, ''); // 숫자만 허용
+		$this.val(val);
+	});
+
 	// 달력 날짜 입력 항목 focus 시 attr 추가 및 blur 시 자리수 정리 기능 추가
 	$DOM.on('focus', '.inp_picker', function() {
 		const $this = $(this);
@@ -1003,7 +1010,45 @@ $(function(){
 		}
 	});
 
-	$(".inp_picker").datepicker();
+	// 월 선택용
+	$.monthpicker.setDefaults({
+		dateFormat: 'yy.mm',
+		prevText: '이전달',
+		nextText: '다음달',
+		monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		showMonthAfterYear: true,
+		showButtonPanel: false,
+		showOtherMonths: true,
+		showAnim: "slideDown",
+		duration: 300,
+		beforeShow: function () {
+			$("body").append('<div class="modal_backdrop"></div>');
+			// $("body").append('<div class="modal_backdrop"></div>');
+			// $("body").addClass('modal_open');
+			setTimeout(function(){
+				$("body").addClass('modal_open');
+				// const $dp = $("#ui-datepicker-div");
+				// $dp.find('.ui-datepicker-prev, .ui-datepicker-next').attr('tabindex', '0');
+			}, 50);
+    },
+    onClose: function() { 
+			// setTimeout(function(){
+			// 	$('.modal_backdrop').remove();
+			// },200);
+			// $("body").removeClass('modal_open')
+			setTimeout(function(){
+				$('.modal_backdrop').remove();
+				$('.wrap').attr('aria-hidden', 'false');
+			}, 200);
+		}
+	});
+	// 월 선택용
+
+
+	// $(".inp_picker").datepicker();
+	$('.inp_picker:not([readonly])').datepicker();
+	$('.inp_picker_month:not([readonly])').monthpicker();
 
 	$(".calendar_call").on("click", function (e) {
 		e.preventDefault();
@@ -1026,7 +1071,7 @@ $(function(){
 			$input.attr("readonly", false);
 		}, 500);
 	
-		// ✅ 달력 내부 포커스로 이동 (접근성 강화)
+		// 달력 내부 포커스로 이동 (접근성 강화)
 		setTimeout(function () {
 			const $dp = $("#ui-datepicker-div");
 			// 날짜가 선택되어 있으면 해당 날짜에 포커스, 없으면 현재일
@@ -1046,7 +1091,12 @@ $(function(){
 		// 전체 그룹 체크 제어
 		$totalCheck.on('change', function () {
 			const isChecked = $(this).is(':checked');
-			$groups.find('.agw_all').prop('checked', isChecked).trigger('change'); // 각 그룹에 위임
+			if(isChecked) {
+				$groups.find('.agw_all').prop('checked', isChecked).trigger('change'); // 각 그룹에 위임
+			} else {
+				$groups.find('.ag_group_wrap').find('input').prop('checked', false);
+			}
+			// $groups.find('.agw_all').prop('checked', isChecked).trigger('change'); // 각 그룹에 위임
 		});
 	
 		// 그룹 단위로 동작 유지
@@ -1057,10 +1107,33 @@ $(function(){
 			// 그룹 전체 라디오 제어
 			$allCheck.on('change', function () {
 				const isChecked = $(this).is(':checked');
-				$groupWrap.find('.agr_dept1.ag').prop('checked', isChecked);
-				$groupWrap.find('.agr_dept1.noag').prop('checked', !isChecked);
-				$groupWrap.find('.ags_sub_all, .ags_sub_chk').prop('checked', isChecked).prop('disabled', !isChecked);
-				$groupWrap.find('.agr_dept2').prop('checked', isChecked);
+				console.log(isChecked);
+				// $groupWrap.find('.agr_dept1.ag').prop('checked', isChecked);
+				// $groupWrap.find('.agr_dept1.noag').prop('checked', !isChecked);
+				// $groupWrap.find('.ags_sub_all, .ags_sub_chk').prop('checked', isChecked).prop('disabled', !isChecked);
+				// $groupWrap.find('.agr_dept2').prop('checked', isChecked);
+
+				if($(this).closest('.ag_groups').find('.ag_total').length) {
+					// 상위에 ag_total가 있으면 기존방식
+					// console.log('c1');
+					$groupWrap.find('.agr_dept1.ag').prop('checked', isChecked);
+					$groupWrap.find('.agr_dept1.noag').prop('checked', !isChecked);
+					$groupWrap.find('.ags_sub_all, .ags_sub_chk').prop('checked', isChecked).prop('disabled', !isChecked);
+					$groupWrap.find('.agr_dept2').prop('checked', isChecked);
+				} else {
+					// console.log('c2');
+					if(isChecked) {
+						$groupWrap.find('.agr_dept1.ag').prop('checked', isChecked);
+						$groupWrap.find('.agr_dept1.noag').prop('checked', !isChecked);
+						$groupWrap.find('.ags_sub_all, .ags_sub_chk').prop('checked', isChecked).prop('disabled', !isChecked);
+						$groupWrap.find('.agr_dept2').prop('checked', isChecked);
+					} else {
+						$groupWrap.find('.agr_dept1.ag').prop('checked', false);
+						$groupWrap.find('.agr_dept1.noag').prop('checked', false);
+						$groupWrap.find('.ags_sub_all, .ags_sub_chk').prop('checked', false).prop('disabled', true);
+						$groupWrap.find('.agr_dept2').prop('checked', false);
+					}
+				}
 	
 				updateTotalCheckState(); // 상위 전체동의 상태도 반영
 			});
