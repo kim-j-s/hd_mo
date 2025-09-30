@@ -1053,7 +1053,12 @@ $(function(){
 		// 전체 그룹 체크 제어
 		$totalCheck.on('change', function () {
 			const isChecked = $(this).is(':checked');
-			$groups.find('.agw_all').prop('checked', isChecked).trigger('change'); // 각 그룹에 위임
+			if(isChecked) {
+				$groups.find('.agw_all').prop('checked', isChecked).trigger('change'); // 각 그룹에 위임
+			} else {
+				$groups.find('.ag_group_wrap').find('input').prop('checked', false);
+			}
+			// $groups.find('.agw_all').prop('checked', isChecked).trigger('change'); // 각 그룹에 위임
 		});
 	
 		// 그룹 단위로 동작 유지
@@ -1064,10 +1069,33 @@ $(function(){
 			// 그룹 전체 라디오 제어
 			$allCheck.on('change', function () {
 				const isChecked = $(this).is(':checked');
-				$groupWrap.find('.agr_dept1.ag').prop('checked', isChecked);
-				$groupWrap.find('.agr_dept1.noag').prop('checked', !isChecked);
-				$groupWrap.find('.ags_sub_all, .ags_sub_chk').prop('checked', isChecked).prop('disabled', !isChecked);
-				$groupWrap.find('.agr_dept2').prop('checked', isChecked);
+				console.log(isChecked);
+				// $groupWrap.find('.agr_dept1.ag').prop('checked', isChecked);
+				// $groupWrap.find('.agr_dept1.noag').prop('checked', !isChecked);
+				// $groupWrap.find('.ags_sub_all, .ags_sub_chk').prop('checked', isChecked).prop('disabled', !isChecked);
+				// $groupWrap.find('.agr_dept2').prop('checked', isChecked);
+
+				if($(this).closest('.ag_groups').find('.ag_total').length) {
+					// 상위에 ag_total가 있으면 기존방식
+					// console.log('c1');
+					$groupWrap.find('.agr_dept1.ag').prop('checked', isChecked);
+					$groupWrap.find('.agr_dept1.noag').prop('checked', !isChecked);
+					$groupWrap.find('.ags_sub_all, .ags_sub_chk').prop('checked', isChecked).prop('disabled', !isChecked);
+					$groupWrap.find('.agr_dept2').prop('checked', isChecked);
+				} else {
+					// console.log('c2');
+					if(isChecked) {
+						$groupWrap.find('.agr_dept1.ag').prop('checked', isChecked);
+						$groupWrap.find('.agr_dept1.noag').prop('checked', !isChecked);
+						$groupWrap.find('.ags_sub_all, .ags_sub_chk').prop('checked', isChecked).prop('disabled', !isChecked);
+						$groupWrap.find('.agr_dept2').prop('checked', isChecked);
+					} else {
+						$groupWrap.find('.agr_dept1.ag').prop('checked', false);
+						$groupWrap.find('.agr_dept1.noag').prop('checked', false);
+						$groupWrap.find('.ags_sub_all, .ags_sub_chk').prop('checked', false).prop('disabled', true);
+						$groupWrap.find('.agr_dept2').prop('checked', false);
+					}
+				}
 	
 				updateTotalCheckState(); // 상위 전체동의 상태도 반영
 			});
