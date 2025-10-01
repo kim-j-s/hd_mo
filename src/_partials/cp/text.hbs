@@ -1,4 +1,4 @@
-<div class="input_text{{#if class}} {{class}}{{/if}}{{#if inp-search}} search{{/if}}{{#if cal}} calendar{{/if}}">
+<div class="input_text{{#if class}} {{class}}{{/if}}{{#if inp-search}} search{{/if}}{{#if cal}} calendar{{/if}}{{#if month}} calendar{{/if}}">
   {{#if l-text}}<div class="int_txt left">{{l-text}}</div>{{/if}}
   <div class="inp">
     <input 
@@ -22,6 +22,7 @@
 			{{else}}
 				{{#if inpclass}}class="{{inpclass}}"{{/if}}
 			{{/if}} --}}
+			{{#if month}}class="inp_picker_month"{{/if}}
 			{{#if cal}}
 				class="{{#if cal}}inp_picker {{/if}}{{#if auto}}autocomplete_input {{/if}}{{inpclass}}"
 			{{else}}
@@ -42,7 +43,7 @@
       {{#if cal}}title="날짜를 입력해주세요"{{/if}}
     >
     {{!-- 버튼 (초기화 삭제, 달력 호출) --}}
-    {{#unless no_del}}<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>{{/unless}}{{#if cal}}<button type="button" class="btn calendar_call" title="날짜 선택"></button>{{/if}}{{#if inp-search}}<button type="button" class="btn btn_search" title="검색"></button>{{/if}}
+    {{#unless no_del}}<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>{{/unless}}{{#if cal}}<button type="button" class="btn calendar_call" title="날짜 선택"></button>{{/if}}{{#if month}}<button type="button" class="btn calendar_call_month" title="월 선택"></button>{{/if}}{{#if inp-search}}<button type="button" class="btn btn_search" title="검색"></button>{{/if}}
   </div>
   {{#if r-text}}<div class="int_txt right">{{r-text}}</div>{{/if}}
 	{{#if inp-text}}<div class="int_txt">{{inp-text}}</div>{{/if}}
