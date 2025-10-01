@@ -1825,6 +1825,14 @@ strong {
 	background: url(../images/icon/close_ty1.svg) no-repeat center/2.4rem auto;
 }
 /* 전체 검색 팝업 */
+.popup_setting {
+	position: absolute;
+	top: 1.2rem;
+	right: 5.6rem;
+	width: 3.2rem;
+	height: 3.2rem;
+	background: url(../images/icon/icon_setting.svg) no-repeat center/3.2rem auto;
+}
 /* toolbar */
 .toolbar {
 	position: relative;
@@ -4416,7 +4424,8 @@ strong {
 .btn {
 	position: relative;
 }
-.btn.calendar_call {
+.btn.calendar_call,
+.btn.calendar_call_month {
 	width: 4.4rem;
 	height: 5rem;
 	padding: 0;
@@ -4425,7 +4434,8 @@ strong {
 	line-height: 0;
 	border: none;
 }
-.btn.calendar_call::before {
+.btn.calendar_call::before,
+.btn.calendar_call_month::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -5455,6 +5465,21 @@ strong {
 	color: var(--color-text-disabled);
 }
 /* 달력 바디 */
+/* 월 선택 */
+.ui-monthpicker.ui-datepicker .ui-datepicker-calendar tbody td {
+	width: 33.3%;
+}
+.ui-monthpicker.ui-datepicker .ui-datepicker-calendar tbody tr td:nth-child(2) {
+	width: 33.4%;
+}
+.ui-monthpicker.ui-datepicker .ui-datepicker-calendar tbody td:nth-child(1):not(.ui-state-disabled) a,
+.ui-monthpicker.ui-datepicker .ui-datepicker-calendar tbody td:nth-child(1):not(.ui-state-disabled) span {
+	color: var(--color-text-basic);
+}
+.ui-monthpicker.ui-datepicker .ui-state-default:before {
+	bottom: 0.4rem;
+}
+/* 월 선택 */
 .modal_backdrop {
 	position: fixed;
 	z-index: 8000;
@@ -8614,6 +8639,14 @@ strong {
 .input_text input:focus {
 	outline: none;
 }
+.input_text input.inp_picker:-moz-read-only,
+.input_text input.inp_picker_month:-moz-read-only {
+	background-color: var(--color-input-surface);
+}
+.input_text input.inp_picker:read-only,
+.input_text input.inp_picker_month:read-only {
+	background-color: var(--color-input-surface);
+}
 .input_text.readonly,
 .input_text.disabled {
 	background-color: var(--color-input-surface-disabled);
@@ -8637,6 +8670,7 @@ strong {
 }
 .input_text .del,
 .input_text .calendar_call,
+.input_text .calendar_call_month,
 .input_text .btn_search {
 	position: absolute;
 	top: 50%;
@@ -13903,7 +13937,8 @@ ol li .table_wrap + .list_ty2 li + li {
 .title_h3 + * {
 	margin-top: var(--gap-6);
 }
-.title_h3 + .radio_group_wrap {
+.title_h3 + .radio_group_wrap,
+.title_h3 + .info_gray {
 	margin-top: var(--gap-6);
 }
 .title_h3 + .info_cont {
@@ -13920,8 +13955,7 @@ ol li .table_wrap + .list_ty2 li + li {
 .title_h3 + .invalid_msg {
 	margin-top: var(--gap-2);
 }
-.title_h3 + .call_box,
-.title_h3 + .info_gray {
+.title_h3 + .call_box {
 	margin-top: var(--gap-8);
 }
 .title_h3 + .table_wrap {
