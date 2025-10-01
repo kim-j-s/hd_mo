@@ -147,15 +147,20 @@
 										<div class="form_line">
 												<div class="label_tit">자녀 생년월일</div>
 												<div class="row balance">
-														{{> cp/text class="birth_day" type="tel" placeholder="8자리 숫자 입력" maxlength="8" inp-title="생년월일 입력" }}
-														<!-- s: 25-06-04 수정 -->
-														<!-- s: 25-08-21 UXW -->
-														{{> cp/text class="price fix_w_case01 fit" type="tel" l-text="만" r-text="세" inp-title="자녀 만나이" no_del="true" value="" readonly="true"}}
-														<!-- e: 25-08-21 UXW -->
-														<!-- e: 25-06-04 수정 -->
-													</div>
+													{{> cp/text class="birth_day" type="tel" placeholder="8자리 숫자 입력" maxlength="8" inp-title="생년월일 입력" }}
+													<!-- s: 25-06-04 수정 -->
+													<!-- s: 25-08-21 UXW -->
+													{{> cp/text class="price fix_w_case01 fit" type="tel" l-text="만" r-text="세" inp-title="자녀 만나이" no_del="true" value="" readonly="true"}}
+													<!-- e: 25-08-21 UXW -->
+													<!-- e: 25-06-04 수정 -->
+												</div>
 										</div>
 								</div>
+								<!-- s: 25-10-01 수정 -->
+								<ul class="list_ty2">
+									<li><span class="point">할인특약 가입을 위해 가족관계 입증서류(가족관계증명서, 주민등록등본 등) 중 1매를 등록해주세요.</span></li>
+								</ul>
+								<!-- e: 25-10-01 수정 -->
 						</div>
 						<!-- e: 가족관계 입증서류 제출 선택시 표출 -->
 				<!-- s: 가족관계증명서 간편조회 선택시 표출 -->
@@ -215,6 +220,16 @@
 										</dl>
 								</div>
 								<ul class="list_ty2">
+									<!-- 자동차 외 상품인 경우, 서류제출 불필요 -->
+									<!-- s: 25-10-01 수정 -->
+									<li>
+										자녀정보 전산조회가 완료되었습니다.<br>
+										자녀가 여러 명인 경우 가장 어린 자녀의 정보가 노출됩니다.
+									</li>
+									<!-- e: 25-10-01 수정 -->
+									<!-- 자동차 외 상품인 경우, 서류제출 불필요 -->
+
+									<!-- 자동차 상품인 경우, 서류제출 필요 -->
 									<!-- s: 25-05-27 수정 -->
 									<!-- s: 25-06-04 수정 -->
 									<!-- s: 25-08-21 UXW -->
@@ -229,6 +244,7 @@
 									<!-- e: 25-08-21 UXW -->
 									<!-- e: 25-06-04 수정 -->
 									<!-- e: 25-05-27 수정 -->
+									 <!-- 자동차 상품인 경우, 서류제출 필요 -->
 								</ul>
 						</div>
 						<!-- e: 현대해상 가입 정보 확인, 가족관계증명서 간편조회(조회 후) -->
