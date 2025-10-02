@@ -832,31 +832,43 @@
 <!-- s: 25-08-08 수정 -->
 <script>
     $(document).ready(function () {
-        var bannerSwiper = new Swiper('#main_banner_wrap', {
-            slidesPerView: 1,
-            updateOnWindowResize: true,
-            navigation: {
-                nextEl: ".main_r",
-                prevEl: ".main_l",
-            },
-            a11y: {
-                enabled: true,
-                prevSlideMessage: '이전 항목으로 이동',
-                nextSlideMessage: '다음 항목으로 이동',
-            },
-            pagination: {
-								// s: 25-09-15 수정
-                el: '.main_pager',
-								// e: 25-09-15 수정
-                clickable: true,
-                type: 'bullets',
-								// 25-08-20 수정
-                renderBullet: function (index, className) {
-                  return `<span class="${className}" aria-label="배너${index + 1}번으로 이동"></span>`;
-                },
-								// 25-08-20 수정
-            }
-        });
+        
+				/* s: 25-10-02 수정 */
+				const $swiperContainer2 = $('#main_banner_wrap .swiper-wrapper');
+				const slideCount2 = $swiperContainer2.find('.swiper-slide').length;
+
+				if (slideCount2 > 1) {
+					$('.pagination_item').show();
+
+					var bannerSwiper = new Swiper('#main_banner_wrap', {
+							slidesPerView: 1,
+							updateOnWindowResize: true,
+							navigation: {
+									nextEl: ".main_r",
+									prevEl: ".main_l",
+							},
+							a11y: {
+									enabled: true,
+									prevSlideMessage: '이전 항목으로 이동',
+									nextSlideMessage: '다음 항목으로 이동',
+							},
+							pagination: {
+									// s: 25-09-15 수정
+									el: '.main_pager',
+									// e: 25-09-15 수정
+									clickable: true,
+									type: 'bullets',
+									// 25-08-20 수정
+									renderBullet: function (index, className) {
+										return `<span class="${className}" aria-label="배너${index + 1}번으로 이동"></span>`;
+									},
+									// 25-08-20 수정
+							}
+					});
+				}else {
+					$('.pagination_item').hide();
+				}
+				/* e: 25-10-02 수정 */
 				
         $('#easySwitch').on('change', function () {
             const $switch = $(this);
