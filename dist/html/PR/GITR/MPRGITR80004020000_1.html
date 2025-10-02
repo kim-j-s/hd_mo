@@ -49,84 +49,67 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body>
-		<!-- s: Full 팝업 -->
-		<!-- s: 25-08-20 UXW -->
-		<div class="popup_wrap full active" id="pop_full" role="dialog" aria-hidden="false">
+		<!-- s: Bottom 팝업 -->
+		<div class="popup_wrap bottom active" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="false">
 			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_full');"></div>
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
 				<div class="popup_inner">
-					<div class="popup_head">
-						<div class="popup_head_title">가입 전 보장 점검</div>
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
 					</div>
-					<!-- e: 25-08-20 UXW -->
+					<div class="popup_head">
+						<div class="popup_head_title">보장 안내</div>
+					</div>
+
 					<div class="popup_cont">
 						<div class="popup_content">
-							<!-- s: popup_content_top -->
-							<div class="popup_content_top">
-								<h2 class="title_h2">
-									김*대 고객님,<br />
-									<strong>이런 보장</strong>이 필요할 것 같아요
-								</h2>
-							</div>
-							<!-- e: popup_content_top -->
-
-							<div class="card_item_wrap">
-								<div class="card_item">
-									<div class="item_inner">
-										<div class="tit_item">
-											<div class="inp_checkbox">
-												<input type="checkbox" id="card_chk1_1" name="name1" aria-labelledby="card_chk1_1_cont" />
-												<label for="card_chk1_1" class="chk_label">
-													<span class="title_info">
-														<!-- s: 25-10-02 수정 -->
-														<span class="main_title">대인배상Ⅱ 미가입 → <span class="point">무한</span></span>
-													</span>
-													<!-- s: 25-07-23 수정 -->
-													<span class="desc">
-														<strong class="point">피해자 사망시</strong> 대인배상Ⅰ 가입금액(1억5천)을 초과하는 손해를 대비해 <strong class="point">대인배상Ⅱ(무한)을 가입하여 보호</strong> 받아보세요.<br />(인수심사 대상시 가입이 제한될 수 있습니다.)
-														<!-- e: 25-10-02 수정 -->
-													</span>
-													<!-- e: 25-07-23 수정 -->
-												</label>
-												<i></i>
+							<div class="form_group_wrap">
+								<p class="bpop_sub_title">$상세보장명 보장명은 전체명칭이 다 노출됩니다.$</p>
+								<div class="form_line">
+									<div class="opt_select_wrap">
+										<span class="opt_select_wrap_live" aria-live="polite"></span>
+										<div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
+											<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
+											<div class="opt_select opt_select_w1">
+												<input type="radio" name="r2" id="r2_s1" />
+												<label for="r2_s1">1천만원</label>
 											</div>
+											<div class="opt_select opt_select_w1">
+												<input type="radio" name="r2" id="r2_s2" />
+												<label for="r2_s2">3천만원</label>
+											</div>
+											<div class="opt_select opt_select_w1">
+												<input type="radio" name="r2" id="r2_s3" checked />
+												<label for="r2_s3">5천만원</label>
+											</div>
+											<div class="opt_select opt_select_w1">
+												<input type="radio" name="r2" id="r2_s4" />
+												<label for="r2_s4">미가입</label>
+											</div>
+											<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
 										</div>
-										<div class="inner_cont">
-											<ul class="card_list_ty1">
-												<li class="result">
-													<div class="title">추가보험료</div>
-													<div class="cont">
-														<strong class="text_body_large">21,980원</strong>
-													</div>
-												</li>
-											</ul>
-										</div>
+										<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_left" aria-label="이전 옵션"></button>
+										<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
+									</div>
+
+									<div class="info_gray ty2">
+										<dl>
+											<dt>보험료</dt>
+											<dd>5원</dd>
+										</dl>
 									</div>
 								</div>
-								<div class="card_item">
-									<div class="item_inner">
-										<div class="tit_item">
-											<div class="inp_checkbox">
-												<input type="checkbox" id="card_chk1_2" name="name1" aria-labelledby="card_chk1_2_cont" />
-												<label for="card_chk1_2" class="chk_label">
-													<span class="title_info">
-														<span class="main_title">대물배상 2천 → <span class="point">1억</span></span>
-													</span>
-													<span class="desc"> 자동차가 고급화되고 외제차가 늘어나는 최근 추세에 대비해 대물배상 가입금액을 확대해보세요 </span>
-												</label>
-												<i></i>
-											</div>
-										</div>
-										<div class="inner_cont">
-											<div class="item_top" id="card_chk1_2_cont"></div>
+							</div>
 
-											<ul class="card_list_ty1">
-												<li class="result">
-													<div class="title">추가보험료</div>
-													<div class="cont">
-														<strong class="text_body_large">21,980원</strong>
-													</div>
-												</li>
+							<div class="bottom_fix_notice">
+								<div class="acd_item">
+									<div class="acd_head active">
+										<button type="button" class="acd_btn" aria-expanded="true"><span>보장내용을 확인해보세요</span></button>
+									</div>
+									<div class="acd_cont">
+										<div class="inner" style="display: block">
+											<ul class="list_depth">
+												<li>$보장 상세 설명이 출력됩니다. 처리계 전문 호출$</li>
 											</ul>
 										</div>
 									</div>
@@ -134,36 +117,17 @@
 							</div>
 						</div>
 					</div>
-
-					<!-- s: 하단 고정 버튼 영역 -->
 					<div class="popup_bottom">
-						<div class="total_price_display_ty1">
-							<p class="price_label">선택한 담보 <span>1</span>개</p>
-							<p class="price_val">
-								<!-- s: 25-09-03 수정 -->
-								<!-- s: 25-09-04 수정 -->
-								<strong class="point"><span>540,540</span>원</strong>
-								<!-- e: 25-09-04 수정 -->
-								<!-- e: 25-09-03 수정 -->
-							</p>
-						</div>
 						<div class="btn_area">
-							<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_1">
-								<span class="text">기존 담보 유지</span>
-							</button>
-							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
-								<span class="text">추천담보로 변경</span>
+							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+								<span class="text">가입 보장 변경하기</span>
 							</button>
 						</div>
 					</div>
-					<!-- e: 하단 고정 버튼 영역 -->
-
-					<!-- s: 25-08-07 수정 -->
-					<!-- e: 25-08-07 수정 -->
-					<button type="button" class="popup_close" onclick="closeHDPopup('pop_full');"><span class="blind">팝업 닫기</span></button>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type01');"><span class="blind">팝업 닫기</span></button>
 				</div>
 			</div>
 		</div>
-		<!-- e: Full 팝업 -->
+		<!-- e: Bottom 팝업 -->
 	</body>
 </html>
