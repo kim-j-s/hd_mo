@@ -679,7 +679,6 @@ function simpleInfo(){
 				new_headHeight = $headHeight;
 			}
 			// console.log('기준 위치 : ', targetOffsetTop, '스크롤 위치' + scrollTop, pop_scrollTop);
-
 			// console.log('target 위치 : ' + targetOffsetTop);
 			// console.log('컨텐츠 스크롤 위치 : ' + scrollTop);
 			// console.log('팝업 컨텐츠 스크롤 위치 : ' + pop_scrollTop);
@@ -897,7 +896,8 @@ function inputState() {
 
 function inpPhoneFormat() {
 	$('.input_text').each(function() {
-		if( $(this).hasClass('phone') && $(this).hasClass('readonly') || $(this).hasClass('phone') && $(this).hasClass('disabled') ){
+		// if( $(this).hasClass('phone') && $(this).hasClass('readonly') || $(this).hasClass('phone') && $(this).hasClass('disabled') ){
+		if( $(this).hasClass('phone') ){
 			const $inp = $(this).children('.inp').find('input');
 			let val = $inp.val();
 			val = val.replace(/[^0-9*]/g, '');
@@ -905,13 +905,16 @@ function inpPhoneFormat() {
 			$inp.val(newVal).addClass('isVal');
 		}
 		// 전화번호 입력 적용 준비 중 스크립트
-		if( $(this).hasClass('phone_full') && $(this).hasClass('readonly') || $(this).hasClass('phone_full') && $(this).hasClass('disabled') ){
-			console.log('this phone_full');
+		// if( $(this).hasClass('phone_full') && $(this).hasClass('readonly') || $(this).hasClass('phone_full') && $(this).hasClass('disabled') ){
+		if( $(this).hasClass('phone_full') ) {
 			const $inp = $(this).children('.inp').find('input');
-			let val = $inp.val();
-			val = val.replace(/[^0-9*]/g, '');
-			newVal = val.replace(/^([0-9*]{3})([0-9*]{4})([0-9*]{4})$/, '$1-$2-$3');
-			$inp.val(newVal).addClass('isVal');
+			let val = $inp.val().replace(/[^0-9]/g, "");
+			if (val.length === 10) {
+				val = val.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
+			} else if (val.length === 11) {
+				val = val.replace(/(\d{3})(\d{4})(\d{4})/, "$1-$2-$3");
+			}
+			$inp.val(val);
 		}
 		// 전화번호 입력 적용 준비 중 스크립트
 	});
@@ -1149,13 +1152,11 @@ $(function(){
 
 				if($(this).closest('.ag_groups').find('.ag_total').length) {
 					// 상위에 ag_total가 있으면 기존방식
-					// console.log('c1');
 					$groupWrap.find('.agr_dept1.ag').prop('checked', isChecked);
 					$groupWrap.find('.agr_dept1.noag').prop('checked', !isChecked);
 					$groupWrap.find('.ags_sub_all, .ags_sub_chk').prop('checked', isChecked).prop('disabled', !isChecked);
 					$groupWrap.find('.agr_dept2').prop('checked', isChecked);
 				} else {
-					// console.log('c2');
 					if(isChecked) {
 						$groupWrap.find('.agr_dept1.ag').prop('checked', isChecked);
 						$groupWrap.find('.agr_dept1.noag').prop('checked', !isChecked);
@@ -1224,15 +1225,10 @@ $(function(){
 			});
 
 			$groupWrap.on('change', '.agr_r_group', function () {
-				// console.log('1');
 				const $this = $(this);
 				if (!$this.is(':checked')) return;
-
 				const index = $this.closest('.inp_radio').index();
-				// console.log(index);
-			
 				const $agGroupCont = $this.closest('.ag_group_cont');
-
 				$agGroupCont.find('.agc_item').each(function () {
 					$(this).find('.radio_group_wrap .inp_radio').eq(index).find('.agr_r_group').prop('checked', true);;
 				});
@@ -1642,7 +1638,6 @@ function resetProDesc() {
 	$('.popup_wrap').find('.scroll_down').show();
 }
 // 상품설명서 주요 내용 reset
-
 	
 function headAria() {
 	//headBtn
@@ -1661,7 +1656,6 @@ function headAria() {
 		bookmark.attr('aria-label', tit + ' ' + mark);
 	});
 } 
-
 	
 //알릴고지 숫자 표기
 function nbList() {

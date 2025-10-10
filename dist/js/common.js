@@ -220,11 +220,11 @@
     const $this = $(this);
     e.preventDefault();
 	
-		setTimeout(() => {
-			const $input = $this.siblings("input");
-			$input.val("").focus();
-			$input[0].dispatchEvent(new Event("input", { bubbles: true }));
-		}, 100);
+		const $input = $this.siblings("input");
+		$input.val("").focus();
+		$input[0].dispatchEvent(new Event("input", { bubbles: true }));
+		// setTimeout(() => {
+		// }, 100);
 
 		if($this.closest('.comp_wrap').hasClass('phone')){
 			$this.siblings('input').removeClass('isVal');
