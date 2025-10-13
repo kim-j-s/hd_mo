@@ -340,6 +340,7 @@
 			visibility: visible;
 			transition: var(--t-time);
 			background-color: #fff;
+
 			&.column {
 				flex-direction: column;
 				flex-flow: column;
@@ -875,6 +876,22 @@
 			}
 			.hd_btn_s_b1 > .text {
 				text-align: center;
+			}
+
+			.opts_area_item {
+				&.opts_align_etc1 {
+					.inp_radio {
+						input[type=radio] {
+							& + label {
+								justify-content: flex-start;
+
+								> span {
+									text-align: left;
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}
