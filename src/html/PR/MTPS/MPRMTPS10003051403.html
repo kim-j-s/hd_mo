@@ -140,13 +140,21 @@
 				</div> -->
 				<!-- e: 인증번호 발송 후 인증번호 입력 영역 노출 -->
 				<div class="form_line">
-					<div class="radio_group_wrap" role="radiogroup">
+					<!-- s: 25-10-13 수정 -->
+					<div class="radio_group_wrap_ty2" role="radiogroup">
 						{{> cp/radio rd-class="rd_btn" rd-id="card01_1" name="card01" labelname="실물카드" checked=true }}
 						{{> cp/radio rd-class="rd_btn" rd-id="card01_2" name="card01" labelname="모바일카드" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="card01_3" name="card01" labelname="통근버스" }}
 					</div>
 					<ul class="list_ty2">
+						<!-- 실물카드 Case -->
 						<li><strong class="point">후불교통 결제 기능이 포함되어 대중교통 이용이 가능한 카드</strong></li>
+						<!-- 모바일카드 Case -->
+						<li><strong class="point">스마트폰을 태그하거나 선불형 및 충전형 교통카드인 경우</strong></li>
+						<!-- 통근버스 Case -->
+						<li><strong class="point">대중교통 대신 통근버스(현대자동차(주) 통근버스)를 이용하는 경우(이용확인서 제출 필요)</strong></li>
 					</ul>
+					<!-- e: 25-10-13 수정 -->
 				</div>
 				<div class="form_line">
 					<div class="label_tit">카드번호</div>
@@ -167,6 +175,24 @@
 					<!-- e: 25-09-26 수정 -->
 				</div>
 				<!-- e: 25-09-18 수정 -->
+
+				<!-- s: 25-10-13 수정 -->
+				<!-- 통근버스 Case -->
+				<div class="form_line">
+					<div class="label_tit">법인 사업자번호</div>
+					<div class="comp_wrap business">
+						{{> cp/text type="tel" minlength="3" maxlength="3" placeholder="3자리" inp-title="법인 사업자번호 첫번째 3자리 입력" no_del="flase" }}
+						<span class="dash">-</span>
+						{{> cp/text type="tel" minlength="2" maxlength="2" placeholder="2자리" inp-title="법인 사업자번호 두번째 2자리 입력" no_del="flase" }}
+						<span class="dash">-</span>
+						{{> cp/text type="tel" minlength="5" maxlength="5" placeholder="5자리" inp-title="법인 사업자번호 3번째 5자리 입력" no_del="flase" }}
+					</div>
+				</div>
+				<div class="form_line">
+					<div class="label_tit">직전 3개월간 통근버스 이용 횟수</div>
+					{{> cp/text type='tel' inpclass="inp_only_num" placeholder="숫자만 입력" inp-title="직전 3개월간 통근버스 이용 횟수 입력" }}
+				</div>
+				<!-- e: 25-10-13 수정 -->
 			</div>
 		</div> 
 		
