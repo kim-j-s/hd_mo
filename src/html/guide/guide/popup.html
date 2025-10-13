@@ -39,6 +39,7 @@
 				<div class="p_guide_wrap_b">
 					{{> cp/button type="2" size="5" b-text="Full 팝업열기" popup="pop_type01" }}
 					{{> cp/button type="2" size="5" b-text="Layer 팝업열기" popup="pop_type02" }}
+					{{> cp/button type="2" size="5" b-text="Layer header 없음 팝업열기" popup="pop_type02xx" }}
 					{{> cp/button type="2" size="5" b-text="Bottom 팝업열기1" popup="pop_type03" }}
 					{{> cp/button type="2" size="5" b-text="Bottom 팝업열기2" popup="pop_type03" }}
 					{{> cp/button type="2" size="5" b-text="이벤트 테스트" popup="evt" }}
@@ -503,6 +504,26 @@
 				</h4>
 			</div>
 			<!-- e: popup_content_top -->
+			<p class="pl_txt1">
+				팝업내용입니다
+				<br />
+				내용
+			</p>
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="3" size="2" b-text="취소" }}
+			{{> cp/button type="1" size="2" b-text="확인" }}
+		</div>
+	</div>
+	{{/ popup/popup_layer}}
+	<!-- e: Layer 팝업 -->
+
+	<!-- s: Layer 팝업 -->
+	{{#> popup/popup_layer popup-id="pop_type02xx" popup-title="팝업 타이틀" }}
+	<div class="popup_cont">
+		<div class="popup_content">
 			<p class="pl_txt1">
 				팝업내용입니다
 				<br />
