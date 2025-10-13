@@ -2423,6 +2423,10 @@ strong {
 	gap: 1.2rem 2rem;
 	margin-top: var(--gap-5);
 }
+.second,
+.elaborate {
+	color: var(--color-text-primary-bold);
+}
 /* Accordion */
 .acd_item .acd_cont .inner {
 	display: none;
@@ -8640,14 +8644,6 @@ strong {
 .input_text input:focus {
 	outline: none;
 }
-.input_text input.inp_picker:-moz-read-only,
-.input_text input.inp_picker_month:-moz-read-only {
-	background-color: var(--color-input-surface);
-}
-.input_text input.inp_picker:read-only,
-.input_text input.inp_picker_month:read-only {
-	background-color: var(--color-input-surface);
-}
 .input_text.readonly,
 .input_text.disabled {
 	background-color: var(--color-input-surface-disabled);
@@ -12135,6 +12131,9 @@ ol li .table_wrap + .list_ty2 li + li {
 	background-position: center center;
 	background-size: 2.4rem auto;
 	background-color: var(--color-surface-gray-subtler);
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
 }
 .inp_radio.logo_add.la_1 label::before {
 	background-image: url(../images/content/bi/icon_brand_hyundai.svg);
@@ -12495,7 +12494,7 @@ ol li .table_wrap + .list_ty2 li + li {
 }
 .select_item.select_item_case01 .si_item {
 	position: relative;
-	min-height: 2.4rem;
+	min-height: 5.6rem;
 	padding: 1.6rem 4.4rem 1.6rem 1.6rem;
 	font-size: var(--font-size-label-large);
 	color: var(--color-text-basic);
@@ -12517,6 +12516,8 @@ ol li .table_wrap + .list_ty2 li + li {
 	display: block;
 	min-height: 2.4rem;
 	color: var(--color-text-disabled);
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .select_item.select_item_case01 .si_item:empty + .si_stat {
 	display: none;
@@ -12537,14 +12538,12 @@ ol li .table_wrap + .list_ty2 li + li {
 .select_item.select_item_case01:focus .si_item {
 	color: var(--color-text-basic);
 }
-.select_item.select_item_case01.select_item_case01_mi {
-	min-height: 2.1rem;
-}
 .select_item.select_item_case01.select_item_case01_mi + .select_item_case01_mi,
 .select_item.select_item_case01.select_item_case01_mi + .search_result_count {
 	margin-top: var(--gap-5);
 }
 .select_item.select_item_case01.select_item_case01_mi .si_item {
+	min-height: 4.8rem;
 	padding: 1.3rem 4rem 1.4rem 1.6rem;
 	font-size: var(--font-size-label-medium);
 	border-radius: var(--radius-medium2);
@@ -12563,6 +12562,7 @@ ol li .table_wrap + .list_ty2 li + li {
 	margin-top: var(--gap-5);
 }
 .select_item.select_item_case01.select_item_case01_sm .si_item {
+	min-height: 4rem;
 	padding: 1.1rem 4rem 1.1rem 1.6rem;
 	font-size: var(--font-size-label-small);
 	border-radius: var(--radius-medium1);
@@ -13573,6 +13573,15 @@ ol li .table_wrap + .list_ty2 li + li {
 .table_wrap .list_depth_ty2 + .form_line .radio_group_wrap {
 	margin-top: var(--gap-3);
 }
+.table_wrap .list_depth_ty2.list_depth_ty2_icadd > li {
+	padding-left: 0;
+}
+.table_wrap .list_depth_ty2.list_depth_ty2_icadd > li::before {
+	content: none;
+}
+.table_wrap .list_depth_ty2.list_depth_ty2_icadd > li .list_ty5 {
+	padding-left: 0.8rem;
+}
 .table_wrap .title_h3 {
 	margin-bottom: 2rem;
 }
@@ -13728,6 +13737,12 @@ ol li .table_wrap + .list_ty2 li + li {
 	font-weight: 700;
 	color: var(--color-text-bolder);
 }
+.table_wrap .table td .list_depth_ty2.bold > li {
+	font-size: var(--font-size-body-medium);
+	font-weight: 700;
+	color: var(--color-text-bolder);
+}
+.table_wrap .table td strong.bold,
 .table_wrap .table td.bold {
 	font-size: var(--font-size-body-medium);
 	font-weight: 700;
@@ -13798,6 +13813,41 @@ ol li .table_wrap + .list_ty2 li + li {
 }
 .table_wrap .table .txt_small {
 	font-size: var(--font-size-body-xsmall);
+}
+.table_wrap .table.table_ag_type > tbody > tr th {
+	font-size: var(--font-size-heading-xsmall);
+}
+.table_wrap .table .icon_agt {
+	display: inline-block;
+	padding-top: 2.8rem;
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-size: 2.4rem auto;
+}
+.table_wrap .table .icon_agt.icon_agt_type1 {
+	background-image: url(../images/common/agree/icon_ag_tbl_th_ty1.svg);
+}
+.table_wrap .table .icon_agt.icon_agt_type2 {
+	background-image: url(../images/common/agree/icon_ag_tbl_th_ty2.svg);
+}
+.table_wrap .table .icon_agt.icon_agt_type3 {
+	background-image: url(../images/common/agree/icon_ag_tbl_th_ty3.svg);
+}
+.table_wrap .table .icon_agc {
+	display: inline-block;
+	padding-left: 2.4rem;
+	background-position: left 0.2rem;
+	background-repeat: no-repeat;
+	background-size: 2rem auto;
+}
+.table_wrap .table .icon_agc.icon_agc_type1 {
+	background-image: url(../images/common/agree/icon_ag_tbl_td_ty1.svg);
+}
+.table_wrap .table .icon_agc.icon_agc_type2 {
+	background-image: url(../images/common/agree/icon_ag_tbl_td_ty2.svg);
+}
+.table_wrap .table .icon_agc.icon_agc_type3 {
+	background-image: url(../images/common/agree/icon_ag_tbl_td_ty3.svg);
 }
 .table_wrap .table_wrap.type_mini .table_ty_mini th {
 	position: relative;
@@ -14620,6 +14670,7 @@ ol li .table_wrap + .list_ty2 li + li {
 .info_gray + .select_driver_range,
 .info_gray + .banner_box.ty2,
 .info_gray + .all_checking,
+.info_gray + .ag_groups.ag_groups_sp_small,
 .info_gray + .text_sub_ty2,
 .info_gray + .checkbox_group_wrap {
 	margin-top: var(--gap-8);
