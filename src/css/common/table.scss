@@ -53,6 +53,20 @@
 				margin-top: var(--gap-3);
 			}
 		}
+
+		&.list_depth_ty2_icadd {
+			> li {
+				padding-left: 0;
+				&::before {
+					content: none;
+				}
+
+				.list_ty5 {
+					padding-left: 8px;
+				}
+			}
+
+		}
 	
 	}
 	
@@ -104,7 +118,6 @@
 		width: 100%;
 		table-layout: fixed;
 		border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
-		// border-collapse: separate;
 		border-collapse: collapse;
 
 		&.bd_l {
@@ -199,16 +212,12 @@
 		}
 		th {
 			vertical-align: middle;
-			// vertical-align: top;
-			//padding: var(--padding-5) var(--padding-3);
 			padding: var(--padding-5) var(--padding-5);
 			font-weight: 700;
 			font-size: var(--font-size-heading-xxsmall);
 			color: var(--color-text-bolder);
 			text-align: left; 
 			background-color: var(--color-surface-gray-subtler);
-			// word-break: keep-all;
-			
 		}
 		td {
 			vertical-align: top;
@@ -351,6 +360,59 @@
 		.txt_small {
 			font-size: var(--font-size-body-xsmall);
 		}
+
+
+		// 약관용 별도 처리
+		&.table_ag_type {
+			> tbody {
+				> tr {
+					th {
+						font-size: var(--font-size-heading-xsmall);
+					}
+				}
+			}
+		}
+		// 약관용 별도 처리
+
+
+		// table icon 타입
+		.icon_agt {
+			display: inline-block;
+			padding-top: 28px;			
+			background-position: left top;
+			background-repeat: no-repeat;
+			background-size: 24px auto;
+			&.icon_agt_type1 {
+				background-image: url(../images/common/agree/icon_ag_tbl_th_ty1.svg);
+			}
+			&.icon_agt_type2 {
+				background-image: url(../images/common/agree/icon_ag_tbl_th_ty2.svg);
+			}
+			&.icon_agt_type3 {
+				background-image: url(../images/common/agree/icon_ag_tbl_th_ty3.svg);
+			}
+		}
+		.icon_agc {
+			display: inline-block;
+			padding-left: 24px;
+			background-position: left 2px;
+			background-repeat: no-repeat;
+			background-size: 20px auto;
+			&.icon_agc_type1 {
+				background-image: url(../images/common/agree/icon_ag_tbl_td_ty1.svg);
+			}
+			&.icon_agc_type2 {
+				background-image: url(../images/common/agree/icon_ag_tbl_td_ty2.svg);
+			}
+			&.icon_agc_type3 {
+				background-image: url(../images/common/agree/icon_ag_tbl_td_ty3.svg);
+			}
+		}
+		// table icon 타입
+
+
+
+
 	
 	}
 
