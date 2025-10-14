@@ -358,9 +358,16 @@ strong {
 	background: #fff;
 }
 .total_price_display_ty1 .price_label {
-	color: var(--color-text-subtle);
-	font-size: var(--font-size-body-small);
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	color: var(--color-text-bolder);
+	font-size: var(--font-size-body-medium);
+	font-weight: 700;
 	line-height: 150%;
+}
+.total_price_display_ty1 .price_label .sub {
+	font-size: var(--font-size-body-small);
 }
 .total_price_display_ty1 .price_val {
 	font-size: var(--font-size-body-large);
@@ -6064,6 +6071,11 @@ strong {
 .card_item_wrap .card_item .item_inner .title_info .sub_title + .cont {
 	margin-top: var(--gap-2);
 }
+.card_item_wrap .card_item .item_inner .title_info .sub_title.space_between button {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+}
 .card_item_wrap .card_item .item_inner .title_info .main_title {
 	font-weight: 700;
 	font-size: var(--font-size-heading-small);
@@ -6809,6 +6821,9 @@ strong {
 	color: var(--color-text-subtle);
 }
 .card_list_wrap > li .card_wrap > dd.card_cont_list dl dd {
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
 	text-align: right;
 }
 .card_list_wrap > li .card_wrap > dd.card_cont_list dl + dl {
@@ -13685,6 +13700,11 @@ ol li .table_wrap + .list_ty2 li + li {
 	font-weight: 700;
 	color: var(--color-text-primary-bold);
 }
+.table_wrap .table th .g_bold,
+.table_wrap .table td .g_bold {
+	font-weight: 700;
+	color: var(--color-text-subtle);
+}
 .table_wrap .table th.v_mid,
 .table_wrap .table td.v_mid {
 	vertical-align: middle;
@@ -13736,6 +13756,10 @@ ol li .table_wrap + .list_ty2 li + li {
 	font-size: var(--font-size-body-medium);
 	font-weight: 700;
 	color: var(--color-text-bolder);
+}
+.table_wrap .table td .list_depth_ty2.g_bold > li {
+	font-weight: 700;
+	color: var(--color-text-subtle);
 }
 .table_wrap .table td .list_depth_ty2.bold > li {
 	font-size: var(--font-size-body-medium);
@@ -13815,6 +13839,7 @@ ol li .table_wrap + .list_ty2 li + li {
 	font-size: var(--font-size-body-xsmall);
 }
 .table_wrap .table.table_ag_type > tbody > tr th {
+	padding: var(--padding-5);
 	font-size: var(--font-size-heading-xsmall);
 }
 .table_wrap .table .icon_agt {
@@ -13848,6 +13873,9 @@ ol li .table_wrap + .list_ty2 li + li {
 }
 .table_wrap .table .icon_agc.icon_agc_type3 {
 	background-image: url(../images/common/agree/icon_ag_tbl_td_ty3.svg);
+}
+.table_wrap .table .icon_agc.icon_agc_type4 {
+	background-image: url(../images/common/agree/icon_ag_tbl_td_ty4.svg);
 }
 .table_wrap .table_wrap.type_mini .table_ty_mini th {
 	position: relative;

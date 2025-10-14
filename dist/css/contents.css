@@ -3951,6 +3951,7 @@
 .guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .head_text .price .won {
 	padding: 0;
 	font-size: var(--font-size-body-medium);
+	font-variant-numeric: tabular-nums;
 }
 .guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .head_text.discount_item {
 	-webkit-box-pack: end;
@@ -6457,6 +6458,8 @@ ul + .form_group_wrap {
 	width: 100%;
 	background-color: var(--color-surface-white-subtle);
 	border-radius: var(--radius-medium3) var(--radius-medium3) 0 0;
+	-webkit-box-shadow: 0 var(--shadow-y-minus2, -6px) var(--shadow-blur-2, 8px) 0 var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
+	box-shadow: 0 var(--shadow-y-minus2, -6px) var(--shadow-blur-2, 8px) 0 var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
 }
 .bottom_panel .item_hidden {
 	display: none;
@@ -6497,6 +6500,13 @@ ul + .form_group_wrap {
 .bottom_panel .bottom_panel_cont .info_gray dt {
 	max-width: none;
 }
+.bottom_panel .bottom_panel_cont .total_price_display_ty1 + .item_hidden,
+.bottom_panel .bottom_panel_cont .total_price_display_ty1 + .info_gray {
+	margin-top: var(--gap-5);
+}
+.bottom_panel .bottom_panel_cont .item_hidden > *:first-child {
+	margin-top: 0;
+}
 .bottom_panel .bottom_panel_cont + .btn_area {
 	margin-top: var(--padding-5);
 	padding-top: var(--padding-5);
@@ -6505,6 +6515,7 @@ ul + .form_group_wrap {
 	position: fixed;
 	bottom: 0;
 	left: 0;
+	z-index: 20;
 }
 .bottom_panel.active .item_hidden {
 	border-color: var(--color-divider-gray-light);
