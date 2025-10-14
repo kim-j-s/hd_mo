@@ -1,7 +1,9 @@
 .bottom_panel{
 	width:100%;
 	background-color: var(--color-surface-white-subtle);	
-	border-radius: var(--radius-medium3) var(--radius-medium3) 0 0;	
+	border-radius: var(--radius-medium3) var(--radius-medium3) 0 0;
+	box-shadow: 0 var(--shadow-y-minus2, -6px) var(--shadow-blur-2, 8px) 0 var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
+
 	.item_hidden {
 		display: none;
 		overflow: hidden;
@@ -34,9 +36,24 @@
 			}
 			&:not(.bg_etc01) {
 				margin-top: var(--gap-8);
-			}	 
+			}
 			dt {
 				max-width: none;
+			}
+		}
+
+		.total_price_display_ty1 {
+			& + .item_hidden,
+			& + .info_gray {
+				margin-top: var(--gap-5);
+			}
+		}
+		
+		.item_hidden {
+			> * {
+				&:first-child {
+					margin-top: 0;
+				}
 			}
 		}
 
@@ -50,6 +67,8 @@
 		position: fixed;
 		bottom:0;
 		left:0;
+		z-index: 20;
+
 		.item_hidden {
 			border-color: var(--color-divider-gray-light);
 		}
