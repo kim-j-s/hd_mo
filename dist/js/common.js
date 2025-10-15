@@ -674,8 +674,9 @@ function simpleInfo(){
 		const scrollTop = $('#container').scrollTop();
 		const pop_scrollTop = $('.popup_cont').scrollTop();
 		const pop_height = $('.popup_cont').height();
+		const $findTarget = $bigTarget.find('.simple_info_wrap');
 
-		if ($('.simple_info_wrap').length) {
+		if ($findTarget.length) {
 			const $target = $(this).find('.simple_info_wrap');
 			let targetOffsetTop = null;
 			const $targetChild = $(this).find('.simple_info_wrap').children('.simple_info_item');
