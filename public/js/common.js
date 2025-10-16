@@ -170,7 +170,7 @@
 		}
 
 		//전화번호
-		if( $this.closest('.input_text').hasClass('phone') && !$this.prop('readonly') && !$this.prop('disabled') ){
+		if( $this.closest('.input_text').hasClass('phone') && !$this.closest('.input_text').hasClass('phone_full') && !$this.prop('readonly') && !$this.prop('disabled') ){
 			if(val){
 				const newVal = val.replace(/ - /g, '');
 				$this.attr('maxlength', 8);
@@ -238,9 +238,10 @@
   });
 	
 	// comma
-	$DOM.on('keyup', '.price .inp input, .comma .inp input', function()	{
+	$DOM.on('keyup', '.price .inp input, .comma .inp input', function()	{		
 		const $this = $(this),
 					$val = $this.val();
+					console.log($val);
 		$this.val($val.replace(/[^0-9]/gi, '').replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'));
 	});
 
@@ -461,9 +462,14 @@
 
 	// input[type="tel"]
 	$DOM.on('keyup', 'input[type="tel"]', function() {
-		const $this = $(this),
-					val = $this.val().replace(/[^0-9]/g, ''); // 숫자만 허용
-		$this.val(val);
+		const $this = $(this);
+		// comma 클래스가 상위에 있으면 실행하지 않음
+		if ($this.closest('.comma, .price').length) {
+			return;
+		}
+		// 숫자만 허용
+		const val = $this.val().replace(/[^0-9]/g, '');
+		$this.val(val);		
 	});
 
 	// 달력 날짜 입력 항목 focus 시 attr 추가 및 blur 시 자리수 정리 기능 추가
@@ -562,7 +568,7 @@
 
 	// 전화번호 입력 적용 준비 중 스크립트
 	$DOM.on('focus', '.input_text.phone_full input', function () {
-		console.log('진입');
+		// console.log('진입 2');
 	
 		const $this = $(this);
 	
