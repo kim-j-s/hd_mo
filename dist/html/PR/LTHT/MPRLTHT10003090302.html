@@ -62,7 +62,9 @@
 							<!-- s: popup_content_top -->
 							<div class="popup_content_top">
 								<h2 class="title_h2">
-									<strong><span class="second">[선택]</span> '메디컬보장분석'을 위한 개인(신용)정보 처리 <span class="elaborate">상세</span> 동의</strong>
+									<!-- s: 25-08-20 수정 -->
+									<strong><span class="second">[선택]</span> 간편서류제출을 위한 개인(신용)정보 처리 <span class="elaborate">상세</span> 동의</strong>
+									<!-- e: 25-08-20 수정 -->
 								</h2>
 							</div>
 							<!-- e: popup_content_top -->
@@ -78,57 +80,38 @@
 									</div>
 								</div>
 								<div class="zoom_content">
-									<h4 class="title_h4">1. 수집 이용에 관한 사항</h4>
-									<div class="agree_graph">
-										<ul class="agree_graph_list">
-											<li class="graph_item active"><span class="sr-only">선택된 평가 등급</span><span class="txt">안심</span></li>
-											<li class="graph_item"><span class="txt">다소안심</span></li>
-											<li class="graph_item"><span class="txt">보통</span></li>
-											<li class="graph_item"><span class="txt">신중</span></li>
-											<li class="graph_item"><span class="txt">주의</span></li>
-										</ul>
-									</div>
-									<div class="agree_qr_box">
-										<div>
-											<ul class="list_ty2">
-												<li>위 등급은 사생활 침해 위험, 혜택, 명확성 등을 종합적으로 고려하여 동의 내용의 평가 등급을 제공하는 제도입니다. (자세한 사항 QR코드 참조)</li>
-											</ul>
-										</div>
-										<div class="qr_box">
-											<img src="../../../images/common/agree/agree_qr01.png" alt="상세 내용 이동 qr이미지" />
-										</div>
-									</div>
+									<h4 class="title_h4">2. 제공에 관한 사항</h4>
 									<div class="table_wrap">
 										<table class="table table_ag_type">
 											<caption>
-												수집/이용 목적, 보유 및 이용기간, 거부 권리 및 불이익 제공
+												제공받는 자, 제공받는 자의 이용목적, 보유 및 이용기간 제공
 											</caption>
 											<colgroup>
 												<col style="width: 40%" />
-												<col style="width: auto" />
+												<col style="width: 65%" />
 											</colgroup>
 											<tbody>
 												<tr>
-													<th scope="row">수집&middot;이용 목적</th>
-													<td>건강검진정보 분석을 통한 질병예측결과 제공 및 이를 활용한 보험계약 상담</td>
+													<th scope="row">제공받는 자</th>
+													<td class="bold">스크래핑 공급업체:CooCon</td>
+												</tr>
+												<tr>
+													<th scope="row">제공받는 자의 이용목적</th>
+													<td class="bold">스크래핑 서비스를 이용한 건강검진정보 제공</td>
 												</tr>
 												<tr>
 													<th scope="row">보유 및 이용기간</th>
 													<td class="bold">동의일로부터 6개월</td>
 												</tr>
-												<tr>
-													<th scope="row">거부 권리 및 불이익</th>
-													<td>귀하는 아래 개인(신용)정보 수집·이용에 관한 동의를 거부하실 수 있습니다. 다만, 동의하지 않으실 경우 '메디컬보장분석' 서비스는 이용하실 수 없습니다.</td>
-												</tr>
 											</tbody>
 										</table>
 									</div>
 
-									<h5 class="title_h5">수집&middot;이용 항목</h5>
+									<h5 class="title_h5">제공 항목</h5>
 									<div class="table_wrap">
 										<table class="table table_ag_type">
 											<caption>
-												민감정보, 개인(신용)정보 제공
+												고유식별정보, 개인(신용)정보 제공
 											</caption>
 											<colgroup>
 												<col style="width: 40%" />
@@ -137,14 +120,9 @@
 											<tbody>
 												<tr>
 													<th scope="row">
-														<span class="icon_agt icon_agt_type2">민감정보</span>
+														<span class="icon_agt icon_agt_type1">고유식별정보</span>
 													</th>
-													<td>
-														<ul class="list_depth_ty2 bold">
-															<li>검진일자, 검진기관명, 신장, 체중, 허리둘레, BMI, 수축기 혈압, 이완기 혈압, 혈당, 공복혈당, 요단백, 혈색소, 총 콜레스테롤, 중성지방, HDL콜레스테롤, LDL콜레스테롤, 혈청크레아티닌, 혈청지오티(AST), 혈청지피티(ALT), 감마지피티(y-GPT), 질환별 과거력 (뇌졸중, 심장병, 고혈압, 당뇨병, 이상지질혈증, 폐결핵, 기타 암포함)</li>
-															<li>건강나이, 질환별 발생 위험도, 질환별 주요인자</li>
-														</ul>
-													</td>
+													<td class="bold">주민등록번호, 외국인등록번호</td>
 												</tr>
 												<tr>
 													<th scope="row">
@@ -155,7 +133,13 @@
 															<li>
 																<strong class="icon_agc icon_agc_type1">일반개인정보</strong>
 																<ul>
-																	<li>성명, 성별, 생년월일</li>
+																	<li>성명, 성별, 생년월일, 휴대폰번호</li>
+																</ul>
+															</li>
+															<li>
+																<strong class="icon_agc icon_agc_type3">신용능력정보</strong>
+																<ul>
+																	<li>인증서 정보 및 추가 입력 정보</li>
 																</ul>
 															</li>
 														</ul>
@@ -164,14 +148,8 @@
 											</tbody>
 										</table>
 									</div>
-									<ul class="list_depth_ty2">
-										<li>
-											민감정보 수집
-											<ul>
-												<li>건강검진정보: 국민건강보험공단으로부터 수집</li>
-												<li>예측분석 결과: 질병예측 서비스 제공 업체로부터 수집</li>
-											</ul>
-										</li>
+									<ul class="list_ty2">
+										<li>업무위탁을 목적으로 개인(신용)정보를 처리하는 경우 별도의 동의없이 업무 수탁자에게 귀하의 정보를 제공할 수 있습니다. (홈페이지[www.hi.co.kr]에서 확인 가능)</li>
 									</ul>
 								</div>
 							</div>
