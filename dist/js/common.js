@@ -1577,15 +1577,7 @@ $(function(){
 	// s: 상품설명서 주요 내용 스크롤 이동 버튼
 	const $popupCont = $('.popup_cont');
   const $fixedButton = $('.scroll_down');
-  const $moveTarget = $popupCont.find('.move');
-
-	let moveTargetPosition = 0;
-	if ($moveTarget.length) {
-		moveTargetPosition = $moveTarget.position().top;
-	}
-
 	let scrollingChk = false; // 스크롤 중복 실행 방지 플래그	
-
   // 스크롤 이벤트
   $popupCont.on('scroll', function() {
 		if (scrollingChk) return;
@@ -1612,9 +1604,19 @@ $(function(){
   $fixedButton.on('click', function() {
 		if (scrollingChk) return; // 이미 스크롤 중이면 중복 실행 방지
 		scrollingChk = true; // 스크롤 시작 시 플래그 설정
+
 		// 스크롤 애니메이션
 		const $popupContThis = $(this).closest('.popup_wrap').find('.popup_cont');
     const currentScrollTopInPopup = $popupContThis.scrollTop();
+
+		const $moveTarget = $popupContThis.find('.move');
+		let moveTargetPosition = 0;
+		if ($moveTarget.length) {
+			// console.log( '확인한 갯수 : ' + $moveTarget.length);
+			moveTargetPosition = $moveTarget.position().top;
+		}
+
+
     if (currentScrollTopInPopup < moveTargetPosition - 88) {
       $popupContThis.animate({
         scrollTop: moveTargetPosition - 88
@@ -1622,7 +1624,7 @@ $(function(){
 				moveTargetPosition = $popupContThis.scrollTop();
 				scrollingChk = false; // 스크롤 완료 후 플래그 해제
 			});
-			// console.log('event 1');
+			console.log('event 1');
     } else {
       $popupContThis.animate({
         scrollTop: $popupContThis[0].scrollHeight - $popupContThis.outerHeight()
@@ -1631,7 +1633,7 @@ $(function(){
 				$(this).closest('.popup_wrap').find('.scroll_down').hide();
 				$(this).closest('.popup_wrap').find('.done').show();
 			});
-			// console.log('event 2');
+			console.log('event 2');
     }
   });
 	// e: 상품설명서 주요 내용 스크롤 버튼	
