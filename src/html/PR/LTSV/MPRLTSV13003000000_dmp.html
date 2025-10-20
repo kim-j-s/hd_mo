@@ -2,284 +2,160 @@
 
 <div id="wrap" class="wrap">
 	{{> layout/header h-title="보험료확인" }}
-	<!-- s: 25-09-01 수정 -->
 	<div id="container" class="container pro_sticky">
-	<!-- e: 25-09-01 수정 -->
 		<div class="content">
 			<div class="guarantee_container detail_only">
 				<!-- s: guarantee_detail -->
 				<div class="guarantee_detail">
-					<div class="guarantee_detail_top">
-						<div class="gd_item">
-							<div class="gdi_content" aria-labelledby="d_rdo_01">
-								<!-- s: 25-09-25 수정 -->
-								<div class="badge_wrap only_fix">
-									<span class="hd_badge outline solid_pastel c_warning size_m">1년 후</span>
-								</div>
-								<!-- e: 25-09-25 수정 -->
-								<p class="head_text no_text">
-									<em>1년 후</em>
-									<span class="price">
-										<!-- s: 25-09-01 수정 -->
-										<span class="price_info">만기환급금</span>
-										<span class="price_num">51,615,300</span>
-										<span class="won">원</span>
-										<!-- e: 25-09-01 수정 -->
-									</span>
-								</p>
-								<ul class="gdi_content_list">
-									<li>
-										<div class="item icon_savingSvg">
-											<div class="txt">
-												환급률
-												<strong class="point">103.23%</strong>
-												<!-- s: 25-09-30 수정 -->
-												{{#> cp/tooltip trigger-icon="popover_help" title="환급 이자소득 안내"}}
-													<p>이자소득에 대한 이자 소득세(15.4%) 차감 전 금액입니다.</p>
-												{{/ cp/tooltip}}
-												<!-- e: 25-09-30 수정 -->
+
+					<div class="acc_group">
+						<div class="space_list_ty2">
+							<div class="acd_item acd_item_ty1">
+								{{#> cp/accordion ac-title="상세보기" aci="aci01" aclc="chk_label_ty2" acl="유형 1" }}
+									<ul class="coverage_item_list">
+										<li class="list">
+											<div class="item_title">
+												교통상해후유장해(운전자)
+												<span class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_info size_m">필수</span>
+													<span class="hd_badge outline solid_pastel c_primary size_m">NEW</span>
+													<span class="hd_badge outline solid_pastel c_point size_m">UPGRADE</span>
+													<span class="hd_badge outline solid_pastel c_warning size_m">BEST</span>
+												</span>
 											</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" role_b=true question_tit="가입조건변경" }}
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">
+												운전자
+												<span class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_info size_m">필수</span>
+													<span class="hd_badge outline solid_pastel c_primary size_m">NEW</span>
+													<span class="hd_badge outline solid_pastel c_warning size_m">BEST</span>
+												</span>
+											</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" role_b=true question_tit="가입조건변경" }}
+												<div class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_secondary size_m">공탁금 선지급 가능</span>
+												</div>
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">
+												어린이
+												<span class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_info size_m">필수</span>
+												</span>
+											</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" role_b=true question_tit="가입조건변경" }}
+												<div class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_warning size_m">3세부터 보장 시작</span>
+													<span class="hd_badge outline solid_pastel c_warning size_m">5세부터 보장 시작</span>
+													<span class="hd_badge outline solid_pastel c_warning size_m">6세부터 보장 시작</span>
+													<span class="hd_badge outline solid_pastel c_warning size_m">8세부터 보장 시작</span>
+												</div>
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">
+												주택화재
+												<span class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_info size_m">필수</span>
+													<span class="hd_badge outline solid_pastel c_primary size_m">NEW</span>
+													<span class="hd_badge outline solid_pastel c_point size_m">UPGRADE</span>
+												</span>
+											</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" role_b=true question_tit="가입조건변경" }}
+												<div class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_secondary size_m">아래 집에 발생한 누수 피해 보장</span>
+													<span class="hd_badge outline solid_pastel c_secondary size_m">우리 집에 발생한 누수 피해 보장</span>
+												</div>
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">
+												해외여행
+												<span class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_info size_m">필수</span>
+												</span>
+											</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" role_b=true question_tit="가입조건변경" }}
+												<div class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_warning size_m">통원 10만원 한도</span>
+													<span class="hd_badge outline solid_pastel c_warning size_m">통원 15만원 한도</span>
+													<span class="hd_badge outline solid_pastel c_warning size_m">통원 20만원 한도</span>
+													<span class="hd_badge outline solid_pastel c_warning size_m">가입금액 한도 실손보상</span>
+													<span class="hd_badge outline solid_pastel c_warning size_m">누적지연시간별 정액보상</span>
+													<span class="hd_badge outline solid_pastel c_warning size_m">물품당 20만원 한도</span>
+												</div>
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">
+												장기체류
+												<span class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_info size_m">필수</span>
+												</span>
+											</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" role_b=true question_tit="가입조건변경" }}
+												<div class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_warning size_m">통원 15만원 한도</span>
+													<span class="hd_badge outline solid_pastel c_warning size_m">통원 20만원 한도</span>
+												</div>
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">
+												국내여행
+												<span class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_info size_m">필수</span>
+												</span>
+											</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" role_b=true question_tit="가입조건변경" }}
+												<div class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_warning size_m">통원 15만원 한도</span>
+													<span class="hd_badge outline solid_pastel c_warning size_m">통원 20만원 한도</span>
+												</div>
+											</div>
+										</li>
+										<li class="list">
+											<div class="item_title">골프보험</div>
+											<div class="sub_txt_area">
+												{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" role_b=true question_tit="가입조건변경" }}
+												<div class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_warning size_m">자기부담금 2만원</span>
+												</div>
+											</div>
+										</li>
+									</ul>
+								{{/ cp/accordion }}
+							</div>
+							<div class="acd_item acd_item_ty2">
+								{{#> cp/accordion ac-title="유형 2" cont-class="" ac-active=true }}
+									<div class="coverage_item_list_ty2">
+										<div class="list">
+											{{> cp/checkbox labelname="치아치료(강화형) <span class='badge_wrap'><span class='hd_badge outline solid_pastel c_info size_m'>필수</span><span class='hd_badge outline solid_pastel c_primary size_m'>NEW</span><span class='hd_badge outline solid_pastel c_point size_m'>UPGRADE</span><span class='hd_badge outline solid_pastel c_warning size_m'>BEST</span><span class='hd_badge outline solid_pastel c_warning size_m'>8세부터 보장 시작</span><span class='hd_badge outline solid_pastel c_secondary size_m'>8세부터 보장 시작</span>" id="chk_g01_1" }}
+											{{> cp/linkButton bl_class="price_btn" bl_text="5만원" role_b=true question_tit="가입조건변경"}}
 										</div>
-									</li>
-								</ul>
+									</div>
+									<!-- e: 25-05-14 수정 -->
+								</div>
+								{{/ cp/accordion }}
 							</div>
-						</div>
-
-						<div class="guarantee_detail_mini">
-							<div class="item_wrap">
-								<span class="i_data">
-									<!-- s: 25-05-27 수정 -->
-									<!-- s: 25-08-22 UXW -->		
-									<!-- s: 25-09-01 수정 -->					
-									<span class="text">보험/납입 기간</span>
-									<!-- e: 25-08-22 UXW -->
-									<!-- e: 25-05-27 수정 -->
-									<strong class="data">1년</strong>
-								</span>
-								<span class="i_data">
-									<span class="text">납입 방법</span>
-									<strong class="data">일시납</strong>
-								</span>
-								<!-- s: 25-09-25 수정 -->
-								<!-- s: 25-09-30 수정 -->
-								<span class="i_data sn">
-								<!-- e: 25-09-30 수정 -->
-									<span class="text">환급률</span>
-									<strong class="data">102.7%</strong>
-								</span>
-								<span class="i_data">
-								<!-- e: 25-09-25 수정 -->
-									<span class="text">보험료</span>
-									<strong class="data">5,000만원</strong>
-								</span>
-								<!-- e: 25-09-01 수정 -->
-							</div>
-
-							<div class="modify_ba">{{> cp/button type="3" size="5" b-text="변경" btn-title="가입조건 변경 팝업열기"}}</div>
 						</div>
 					</div>
-
-				<!-- s: 25-09-26 수정 -->
-				<div class="gd_middle_ba btn_area center">
-					{{> cp/button type="3" size="3" b-text="예상해약환급금 보기" btn-title="예상해약환급금 팝업열기"}}
-				</div>
-
-				<div class="acc_group">
-					<div class="space_list_ty2">
-						<div class="acd_item acd_item_ty1">
-							{{#> cp/accordion ac-title="상세보기" aci="aci01" aclc="chk_label_ty2" acl="교통사고 났을 때 든든하게!"}}
-								<ul class="coverage_item_list">
-									<li class="list">
-										<div class="item_title">교통상해후유장해(운전자)</div>
-										<div class="sub_txt_area">
-											{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" role_b=true question_tit="가입조건변경" }}
-										</div>
-									</li>
-									<li class="list">
-										<div class="item_title">교통상해후유장해(운전자, 80%이상, 월지급형)</div>
-										<div class="sub_txt_area">
-											{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" role_b=true question_tit="가입조건변경" }}
-											<div class="badge_wrap">
-												<span class="hd_badge outline solid_pastel c_secondary size_m">새로 나왔어요</span>
-											</div>
-										</div>
-									</li>
-									<li class="list">
-										<div class="item_title">교통상해사망(운전자)</div>
-										<div class="sub_txt_area">
-											{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" role_b=true question_tit="가입조건변경" }}
-										</div>
-									</li>
-									<li class="list">
-										<div class="item_title">교통상해사망후유장해(대중교통이용중)</div>
-										<div class="sub_txt_area">
-											{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" role_b=true question_tit="가입조건변경" }}
-											<div class="badge_wrap">
-												<span class="hd_badge outline solid_pastel c_warning size_m">보장을 확대 했어요</span>
-											</div>
-										</div>
-									</li>
-								</ul>
-							{{/ cp/accordion }}
-						</div>
-						<div class="acd_item acd_item_ty1">
-							{{#> cp/accordion ac-title="상세보기" aci="aci02" aclc="chk_label_ty2" acl="자동차사고로 다쳤을 때"}}
-							<ul class="coverage_item_list">
-								<li class="list">
-									<div class="item_title">자동차사고부상Ⅱ(운전자)(1-2급)</div>
-									<div class="sub_txt_area">
-										{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" role_b=true question_tit="가입조건변경" }}
-									</div>
-								</li>
-								<li class="list">
-									<div class="item_title">자동차사고면허취소</div>
-									<div class="sub_txt_area">
-										{{> cp/linkButton bl_class="price_btn" bl_text="1백만원" role_b=true question_tit="가입조건변경" }}
-										<div class="badge_wrap">
-											<span class="hd_badge outline solid_pastel c_secondary size_m">새로 나왔어요</span>
-										</div>
-									</div>
-								</li>
-								<li class="list">
-									<div class="item_title">자동차사고상해진단(최초진단,4주이상)(운전자)</div>
-									<div class="sub_txt_area">
-										{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" role_b=true question_tit="가입조건변경" }}
-									</div>
-								</li>
-							</ul>
-							{{/ cp/accordion }}
-						</div>
-						<div class="acd_item acd_item_ty1">
-							{{#> cp/accordion ac-title="상세보기" aci="aci03" aclc="chk_label_ty2" acl="빠른 일상 생활 복귀!"}}
-							<ul class="coverage_item_list">
-								<li class="list">
-									<div class="item_title">상해재활치료(연간 15회한, 급여 및 자동차보험적용)(급여적용)</div>
-									<div class="sub_txt_area">
-										{{> cp/linkButton bl_class="price_btn" bl_text="1만원" role_b=true question_tit="가입조건변경" }}
-									</div>
-								</li>
-								<li class="list">
-									<div class="item_title">상해재활치료(연간 15회한, 급여 및 자동차보험적용)(자동차보험적용)</div>
-									<div class="sub_txt_area">
-										{{> cp/linkButton bl_class="price_btn" bl_text="1백만원" role_b=true question_tit="가입조건변경" }}
-									</div>
-								</li>
-							</ul>
-							{{/ cp/accordion }}
-						</div>
-						<div class="acd_item acd_item_ty1">
-							{{#> cp/accordion ac-title="상세보기" aci="aci04" aclc="chk_label_ty2" acl="운전자 3대 비용은 기본! <span class='sub_g_txt'>사고처리지원금 공탁금 50% 선지급 가능</span>"}}
-							<ul class="coverage_item_list">
-								<li class="list">
-									<div class="item_title">자동차사고벌금Ⅱ(대인)</div>
-									<div class="sub_txt_area">
-										{{> cp/linkButton bl_class="price_btn"  bl_text="3천만원" role_b=true question_tit="가입조건변경" }}
-									</div>
-								</li>
-								<li class="list">
-									<div class="item_title">자동차사고벌금(대물)</div>
-									<div class="sub_txt_area">
-										{{> cp/linkButton bl_class="price_btn" bl_text="5백만원" role_b=true question_tit="가입조건변경" }}
-									</div>
-								</li>
-								<li class="list">
-									<div class="item_title">자동차사고변호사선임비용Ⅲ(특정사고경찰조사포함Ⅱ)</div>
-									<div class="sub_txt_area">
-										{{> cp/linkButton bl_class="price_btn" bl_text="5억원" role_b=true question_tit="가입조건변경" }}
-									</div>
-								</li>
-								<li class="list">
-									<div class="item_title">자동차사고처리지원금X(사망)</div>
-									<div class="sub_txt_area">
-										{{> cp/linkButton bl_class="price_btn" bl_text="미가입" role_b=true question_tit="가입조건변경" }}
-									</div>
-								</li>
-								<li class="list">
-									<div class="item_title">자동차사고처리지원금X(중과실)</div>
-									<div class="sub_txt_area">
-										{{> cp/linkButton bl_class="price_btn" bl_text="1억 5천억원" role_b=true question_tit="가입조건변경" }}
-									</div>
-								</li>
-
-								<!-- 유형별 케이스 -->
-								<div class="list">
-									{{> cp/checkbox labelname="법률비용손해(의료과오)" id="chk_g04_2" }}
-									{{> cp/linkButton bl_class="price_btn" bl_text="5만원" role_b=true question_tit="가입조건변경"}}
-								</div>
-								<li class="list">
-									{{#> cp/checkbox labelname="암진단II(유사암제외)(건강등급)(갱신형)" id="checkbox02-1" }}
-									<div class="chk_lby2">
-										{{> cp/linkButton bl_class="price_btn" bl_text="4천만원" role_b=true question_tit="가입조건변경"}}
-									</div>
-									{{/ cp/checkbox }}
-								</li>
-								<li class="list">
-									{{#> cp/checkbox labelname="암진단II(유사암제외)(건강등급)(갱신형)" id="checkbox02-1" }}
-									<div class="chk_lby2">
-										<div class="badge_wrap">
-											<span class="hd_badge outline solid_pastel c_secondary size_m">새로 나왔어요</span>
-										</div>
-									</div>
-									{{/ cp/checkbox }}
-								</li>
-								<li class="list">
-									<div class="item_title">급배수설비누출로인한손해</div>
-									<div class="sub_txt_area">
-										{{> cp/linkButton bl_class="price_btn_non" bl_text="미가입" role_b=true question_tit="가입조건변경" }}
-									</div>
-								</li>
-								<li class="list">
-									<div class="item_title">가재도구복구비용지원(주택)</div>
-									<div class="sub_txt_area">
-										{{> cp/linkButton bl_class="price_btn" bl_text="3백만원" role_b=true question_tit="가입조건변경" }}
-										<div class="badge_wrap">
-											<span class="hd_badge outline solid_pastel c_secondary size_m">새로 나왔어요</span>
-										</div>
-									</div>
-								</li>
-								<!-- 유형별 케이스 -->
-							</ul>
-
-							<!-- 유형별 케이스 -->
-							<div class="coverage_item_list_ty2">
-								<div class="list">
-									<span class="item_title">주요치주질환(잇몸질환)치료</span>
-									{{> cp/linkButton bl_class="price_btn" bl_text="2만원" role_b=true question_tit="가입조건변경"}}
-								</div>
-								<div class="list">
-									{{#> cp/checkbox labelname="치석제거(스케일링)" id="chk_g02_1" }}
-									<div class="chk_lby2">
-										<div class="badge_wrap">
-											<span class="hd_badge outline solid_pastel c_secondary size_m">새로 나왔어요</span>
-										</div>
-									</div>
-									{{/ cp/checkbox }}
-									{{> cp/linkButton bl_class="price_btn" bl_text="1만원" role_b=true question_tit="가입조건변경"}}
-								</div>	
-							</div>
-							<!-- 유형별 케이스 -->
-							{{/ cp/accordion }}
-						</div>
-					</div>
-				</div>
-
-					<!-- s: 꼭 알아두세요 -->
-					{{#> cp/notice dp-active="active" }}
-					<ul class="list_ty1">
-						<!-- s: 25-08-22 UXW -->				
-						<li>중도인출은 계약일로부터 3개월 이상 지난 이후 1년에 12번만  가능합니다.</li>
-						<!-- e: 25-08-22 UXW -->
-						<li>일시납의 경우 추가납입보험료를 납입할 수 없습니다.</li>
-						<li>저축성보험은 보험료에서 사업비 등을 제외한 금액만 적립해 적용이율로 이자를 더하는 상품으로 은행의 예금, 적금 등과는 다른 상품입니다.</li>
-					</ul>
-					{{/ cp/notice }}
-					<!-- e: 꼭 알아두세요 -->
 					
 				</div>
-		<!-- s: 25-09-01 수정 -->
 			</div>
 		</div>
-		<!-- e: 25-09-01 수정 -->
 		
 		<!--content-->
 	</div>

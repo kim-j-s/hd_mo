@@ -3868,11 +3868,17 @@
 .guarantee_detail .guarantee_detail_top.sticky_fix .splide_wrap .splide__list:has(.price.ty2) {
 	height: 8.8rem;
 }
+.guarantee_detail .guarantee_detail_top.sticky_fix .splide_wrap .splide__list:has(.gdi_content.child) {
+	height: 12rem;
+}
 .guarantee_detail .guarantee_detail_top.sticky_fix .splide_wrap .splide__slide {
 	height: 6.4rem;
 }
 .guarantee_detail .guarantee_detail_top.sticky_fix .splide_wrap .splide__slide:has(.price.ty2) {
 	height: 8.8rem;
+}
+.guarantee_detail .guarantee_detail_top.sticky_fix .splide_wrap .splide__slide:has(.gdi_content.child) {
+	height: 12rem;
 }
 .guarantee_detail .guarantee_detail_top.sticky_fix .splide_wrap .splide__slide .gd_item {
 	opacity: 0;
@@ -3920,16 +3926,16 @@
 .guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .badge_wrap + .head_text {
 	padding-top: 0 !important;
 }
-.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .head_text {
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content:not(.child) .head_text {
 	-webkit-box-flex: 1;
 	-ms-flex: 1;
 	flex: 1;
 	text-align: right;
 }
-.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .head_text > em {
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content:not(.child) .head_text > em {
 	display: none;
 }
-.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .head_text .price {
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content:not(.child) .head_text .price {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -3941,37 +3947,82 @@
 	justify-content: flex-end;
 	padding-top: 0;
 }
-.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .head_text .price .price_info {
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content:not(.child) .head_text .price .price_info {
 	display: block;
 }
-.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .head_text .price .left_txt {
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content:not(.child) .head_text .price .left_txt {
 	color: var(--color-text-subtle);
 }
-.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .head_text .price .price_num,
-.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .head_text .price .won {
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content:not(.child) .head_text .price .price_num,
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content:not(.child) .head_text .price .won {
 	padding: 0;
 	font-size: var(--font-size-body-medium);
 	font-variant-numeric: tabular-nums;
 }
-.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .head_text.discount_item {
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content:not(.child) .head_text.discount_item {
 	-webkit-box-pack: end;
 	-ms-flex-pack: end;
 	justify-content: flex-end;
 }
-.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .head_text.discount_item .price_discount {
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content:not(.child) .head_text.discount_item .price_discount {
 	display: none;
 }
-.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .head_text + .comb_info {
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content:not(.child) .head_text + .comb_info {
 	display: none;
 }
-.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .head_desc_text {
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content:not(.child) .head_desc_text {
 	display: none;
 }
-.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content .fix_box {
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content:not(.child) .fix_box {
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-ms-flex-direction: column;
 	flex-direction: column;
+}
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content.child {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: normal;
+	-ms-flex-align: normal;
+	align-items: normal;
+}
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content.child .head_text {
+	display: none;
+}
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content.child .head_text + .comb_info {
+	gap: 0;
+	margin: 0;
+	padding: 0;
+	font-size: var(--font-size-body-medium);
+	color: var(--color-text-basic);
+	font-weight: 700;
+	background: none !important;
+	border: none !important;
+}
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content.child .head_text + .comb_info .dn {
+	font-weight: 400;
+	font-size: var(--font-size-body-small);
+	margin-right: var(--gap-3);
+}
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content.child .head_text + .comb_info > strong {
+	margin-left: var(--gap-2);
+}
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content.child .head_text + .comb_info i.plus {
+	margin: 0;
+	padding: 0;
+	display: inline;
+	height: auto;
+	width: auto;
+	color: var(--color-text-disabled-on);
+	background: none;
+}
+.guarantee_detail .guarantee_detail_top.sticky_fix .gdi_content.child .head_text + .comb_info i.plus::after {
+	display: inline-block;
+	content: "+";
+	font-style: normal;
+	font-weight: 400;
 }
 .guarantee_detail .guarantee_detail_top.sticky_fix .gdi_info_list {
 	display: none;
@@ -4577,6 +4628,9 @@
 }
 .coverage_item_list > .list .item_title {
 	font-size: var(--font-size-label-medium);
+}
+.coverage_item_list > .list .item_title .badge_wrap {
+	width: auto;
 }
 .coverage_item_list > .list .item_title_ty2 {
 	display: -webkit-box;

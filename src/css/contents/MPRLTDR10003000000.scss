@@ -501,11 +501,17 @@
 					&:has(.price.ty2){
 						height: 88px;
 					}
+					&:has(.gdi_content.child){
+						height: 120px;
+					}
 				}
 				.splide__slide {
 					height: 64px;
 					&:has(.price.ty2){
 						height: 88px;
+					}
+					&:has(.gdi_content.child){
+						height: 120px;
 					}
 
 					.gd_item {
@@ -554,49 +560,92 @@
 						padding-top: 0 !important;
 					}
 				}
-				.head_text {
-					flex: 1;
-					text-align: right;
+				&:not(.child){
+					.head_text {
+						flex: 1;
+						text-align: right;
 
-					> em {
-						display: none;
-					}
-
-					.price {
-						display: flex;
-						align-items: center;
-						justify-content: flex-end;
-						padding-top: 0;
-						.price_info {
-							display: block;
-						}
-						.left_txt {
-							color: var(--color-text-subtle);
-						}
-						.price_num,
-						.won {
-							padding: 0;
-							font-size: var(--font-size-body-medium);
-							font-variant-numeric: tabular-nums;
-						}
-					}
-
-					&.discount_item {
-						justify-content: flex-end;
-						.price_discount {
+						> em {
 							display: none;
 						}
-					}
 
-					& + .comb_info {
+						.price {
+							display: flex;
+							align-items: center;
+							justify-content: flex-end;
+							padding-top: 0;
+							.price_info {
+								display: block;
+							}
+							.left_txt {
+								color: var(--color-text-subtle);
+							}
+							.price_num,
+							.won {
+								padding: 0;
+								font-size: var(--font-size-body-medium);
+								font-variant-numeric: tabular-nums;
+							}
+						}
+
+						&.discount_item {
+							justify-content: flex-end;
+							.price_discount {
+								display: none;
+							}
+						}
+
+						+ .comb_info {
+							display: none;
+						}
+						
+					}
+					.head_desc_text {
 						display: none;
 					}
+					.fix_box {
+						flex-direction: column;
+					}
 				}
-				.head_desc_text {
-					display: none;
-				}
-				.fix_box {
+				&.child {
 					flex-direction: column;
+					align-items: normal;
+					.head_text {
+						display: none;
+						+ .comb_info {
+							gap: 0;
+							margin: 0;
+							padding: 0;
+							font-size: var(--font-size-body-medium);
+							color: var(--color-text-basic);
+							font-weight: 700;
+							background: none !important;
+							border: none !important;
+							.dn {
+								font-weight: 400;
+								font-size: var(--font-size-body-small);
+								margin-right: var(--gap-3);
+							}
+							> strong {
+								margin-left: var(--gap-2);
+							}
+							i.plus {
+								margin: 0;
+								padding: 0;
+								display: inline;
+								height: auto;
+								width: auto;
+								color: var(--color-text-disabled-on);
+								background: none;
+								&::after {
+									display: inline-block;
+									content: '+';
+									font-style: normal;
+									font-weight: 400;
+								}
+							}
+						}
+					}
 				}
 			}
 			.gdi_info_list {
@@ -1349,6 +1398,9 @@
 
 		.item_title {
 			font-size: var(--font-size-label-medium);
+			.badge_wrap {
+				width: auto;
+			}
 		}
 
 		.item_title_ty2 {
