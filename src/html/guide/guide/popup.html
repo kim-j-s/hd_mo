@@ -44,6 +44,7 @@
 					{{> cp/button type="2" size="5" b-text="Bottom 팝업열기2" popup="pop_type03" }}
 					{{> cp/button type="2" size="5" b-text="이벤트 테스트" popup="evt" }}
 					{{> cp/button type="2" size="5" b-text="dimmed 0.7 -&gt; 0.5" popup="dimlv2" }}
+					{{> cp/button type="2" size="5" b-text="기본 최대 높이" popup="pop_type11" }}
 				</div>
 			</div>			
 
@@ -695,6 +696,37 @@
 	</div>
 	{{/ popup/popup_bottom}}
 	<!-- e: pop_type10 -->
+
+	<!-- s: pop_type11 -->
+	{{#> popup/popup_bottom popup-class="bottom_full" popup-id="pop_type11" popup-title="팝업 타이틀" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<!-- s: popup_content_top -->
+			<div class="popup_content_top">
+				<h4 class="title_h4">
+					타이틀영역
+				</h4>
+			</div>
+			<!-- e: popup_content_top -->
+			 
+			<h3 class="title_h3 normal txt_center">
+				입력하신 정보로
+				<br />
+				<strong>2건의 계약이 조회</strong>
+				됐어요
+			</h3>
+
+			<p class="text_sub">보조 문구 입니다.</p>
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="2" size="2" b-text="확인" }}
+			{{> cp/button type="1" size="2" b-text="Bottom 팝업열기" popup="pop_type04" btn-title="Bottom 팝업열기" }}
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: pop_type11 -->
 
 	<!-- s: 은행/증권사 선택 팝업 -->
 	{{> popup/bank_select popup-id="bank_select" popup-title="은행 선택" }}
