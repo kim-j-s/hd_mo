@@ -83,12 +83,16 @@ function openHDPopup($triggerEl, target) {
 
 	$target.attr("aria-hidden", "false");
 	$target.find(".popup_inner").attr({
-		tabindex: 0,
+		// 접근성 관련 수정
+		// tabindex: 0,
+		// 접근성 관련 수정
 		"aria-hidden": "false",
 	});
 
-	if ($header) $header.attr("tabindex", 0);
-	if ($content) $content.attr("tabindex", 0);
+	// 접근성 관련 수정
+	// if ($header) $header.attr("tabindex", 0);
+	// if ($content) $content.attr("tabindex", 0);
+	// 접근성 관련 수정
 
 	const focusTarget = $header || $content;
 
@@ -154,7 +158,9 @@ function closeHDPopup(target, returnTarget = null) {
 
 		$prevInner = $($prevPopup).find(".popup_inner");
 		$prevInner.attr({
-			tabindex: 0,
+			// 접근성 관련 수정
+			// tabindex: 0,
+			// 접근성 관련 수정
 			"aria-hidden": "false",
 		});
 
@@ -185,7 +191,10 @@ function closeHDPopup(target, returnTarget = null) {
 
 		const focusTarget = $triggerEl || $("body");
 		setTimeout(() => {
-			focusTarget.attr("tabindex", 0).focus();
+			// 접근성 관련 수정
+			// focusTarget.attr("tabindex", 0).focus();
+			focusTarget.focus();
+			// 접근성 관련 수정
 		}, 350);
 	}
 	getOpener.removeAttr("triggerId");
