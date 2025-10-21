@@ -309,8 +309,9 @@
 	
 	//toggle-swich
 	$DOM.on('change', '.inp_checkbox input[role="switch"]', function(){
-		$isChecked = $(this).is(":checked");
-		$(this).attr('aria-checked', $isChecked ? 'true' : 'false');
+		const $el = $(this);
+		const isChecked = $el.is(":checked");
+		$el.attr('aria-checked', isChecked ? 'true' : 'false');
 	});
 	
   /* Textarea */
