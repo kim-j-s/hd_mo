@@ -2941,8 +2941,10 @@ strong {
 	font-size: var(--font-size-body-medium);
 	text-align: right;
 }
-.acd_item.acd_item_ty6 .acd_head .acd_btn .sii_list_r del {
+.acd_item.acd_item_ty6 .acd_head .acd_btn .sii_list_r .dn {
 	display: none;
+}
+.acd_item.acd_item_ty6 .acd_head .acd_btn .sii_list_r del {
 	color: var(--color-text-subtle);
 	font-size: var(--font-size-body-small);
 	font-weight: 400;
@@ -2976,7 +2978,7 @@ strong {
 .acd_item.acd_item_ty6 .acd_head.active .acd_btn .sii_list_r {
 	color: var(--color-text-primary-bold);
 }
-.acd_item.acd_item_ty6 .acd_head.active .acd_btn del {
+.acd_item.acd_item_ty6 .acd_head.active .acd_btn .dn {
 	margin-top: -2.1rem;
 	display: block;
 }
@@ -4798,6 +4800,14 @@ strong {
 	display: none;
 }
 /* 상품설명서에 사용되는 스타일용 */
+/* 관리자 등록용 css */
+.dp_btn {
+	display: none;
+}
+.dp_btn.dp_btn_mo {
+	display: inline-block;
+}
+/* 관리자 등록용 css */
 /* button_tag */
 .tag_item {
 	display: inline-block;
@@ -7282,10 +7292,10 @@ strong {
 }
 .inp_checkbox input[type="checkbox"] {
 	position: absolute;
+	z-index: 1;
 	width: 2rem;
 	height: 2rem;
 	opacity: 0;
-	z-index: 1;
 }
 .inp_checkbox input[type="checkbox"] ~ .label_area {
 	padding-left: 3.2rem;
@@ -7577,7 +7587,7 @@ strong {
 	color: var(--color-text-basic);
 }
 .inp_checkbox input[type="checkbox"]:disabled + .chk_label.chk_label_ty4::before {
-	background: url(../images/icon/check_ty2.svg) no-repeat center;
+	background: url(../images/icon/check_ty7.svg) no-repeat center;
 	border: none;
 }
 .inp_checkbox input[type="checkbox"]:disabled + .chk_label.chk_label_ty5 {
@@ -10269,6 +10279,9 @@ strong {
 }
 .list_depth > li > ul > li > ul > li ~ li {
 	margin-top: var(--gap-3);
+}
+.list_depth > li .point {
+	background-color: blue;
 }
 .list_depth .table_wrap {
 	margin-top: var(--gap-4);
@@ -13143,6 +13156,9 @@ ol li .table_wrap + .list_ty2 li + li {
 }
 .main_slide_wrap {
 	margin: 0 -3.2rem;
+}
+.main_slide_wrap .swiper-slide .inner {
+	font-size: 0;
 }
 .main_slide_wrap .pagination_item {
 	margin: auto;
