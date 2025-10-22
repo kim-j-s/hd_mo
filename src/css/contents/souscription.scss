@@ -658,7 +658,7 @@ ul + .form_group_wrap {
 	}
 }
 
-/* 보험가입 진행 정보 */
+/* 보험가입 진행 정보*/
 
 .text_info_lg {
 	font-size: var(--font-size-heading-medium);
@@ -1105,6 +1105,295 @@ ul + .form_group_wrap {
 			height: 20px;
 			margin-left: 2px;
 			vertical-align: middle;
+		}
+	}
+}
+
+
+/* 보험가입 진행 정보 */
+.side_panel {
+	.step_list {
+		> li {
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			padding: var(--padding-3) 0 var(--padding-3) var(--padding-6);
+
+			
+			&::before {
+				content: '';
+				position: absolute;
+				top: 20px;
+				left: 1px;
+				width: 1px;
+				height: 100%;
+				background-color: var(--color-border-gray-light);
+			}
+			&:last-child {
+				&::before {
+					height: 0;
+				}
+			}
+
+			&:has(.modify_top){
+				> dl {
+					dt.title {
+						padding-right: 112px;
+					}
+				}
+			}
+
+			> dl {
+				flex: 1;
+				display: block;
+
+				> dt.title {
+					padding-right: 36px;
+					font-size: var(--font-size-body-large);
+					font-weight: 700;
+					color: var(--color-text-disabled-on);
+
+					&::after {
+						content: '';
+						position: absolute;
+						top: calc(var(--padding-3) + var(--gap-4));
+						left: 0;
+						width: 3px;
+						height: 3px;
+						background-color: var(--color-icon-gray);
+						border-radius: 50%;
+					}
+				}
+				> dd {
+					margin-top: var(--gap-3);
+					font-size: var(--font-size-body-small);
+					color: var(--color-text-disabled-on);
+					text-align: left;
+
+					> ul {
+						> li {
+							padding: var(--padding-2);
+							font-size: var(--font-size-body-medium);
+							color: var(--color-text-disabled-on);
+
+							span {
+								color: var(--color-text-basic);
+							}
+						}
+					}
+					.info {
+						display: none;
+						padding: var(--padding-2);
+						font-size: var(--font-size-body-medium);
+					}
+				}
+			}
+
+			// 현재 단계
+			&.active {
+				dt {
+					&:before {
+						content: '현재 단계';
+						position: absolute;
+						width: 1px;
+						height: 1px;
+						margin: -1px;
+						padding: 0;
+						border-width: 0;
+						white-space: nowrap;
+						clip: rect(0, 0, 0, 0);
+						overflow: hidden;
+					}
+				}
+
+				&:after {
+					content:'';
+					position: absolute;
+					top: 14px;
+					left: -7px;
+					width: 16px;
+					height: 16px;
+					background: var(--color-icon-primary) url(../images/icon/check_ty1.svg) no-repeat center / 10px auto;
+					border-radius: 70px;
+				}
+				.info {
+					display: block;
+					color: var(--color-text-basic);
+				}
+
+				& ~ li {
+					dl dd,
+					.modify_sub {
+						display: none;
+					}
+				}
+
+				> dl {
+					dt.title {
+						color: var(--color-text-bolder);
+					}
+				}
+			}
+		}
+
+		// 정보 리스트
+		.dep_list {
+			position: relative;
+	
+			dt {
+				margin-top: var(--gap-2);
+				padding: var(--padding-3) var(--padding-2) var(--padding-2);
+				font-size: var(--font-size-body-medium);
+				font-weight: 700;
+				color: var(--color-text-disabled-on);
+			}
+			dd {
+				.modify_sub {
+					top: -32px;
+				}
+
+				.dep_opt_list {
+					margin-top: var(--gap-2);
+				}
+			}
+		} 
+
+		// 정보 리스트 (아이콘 버전)
+		.dep_opt_list {
+			> li {
+				padding: var(--padding-2) var(--padding-2) var(--padding-2) 28px;
+				background-repeat: no-repeat;
+				background-position: left 4px top 8px;
+				background-size: 16px auto;
+				background-image: url(../images/content/bi/icon_basic.svg);
+				font-size: var(--font-size-body-medium);
+
+				> span {
+					color: var(--color-text-basic);
+				}
+	
+				// 생년월일
+				&.birth {
+					background-image: url(../images/content/bi/icon_stepper_birth.svg);
+				}
+				// 성별
+				&.gender {
+					background-image: url(../images/content/bi/icon_stepper_gender.svg);
+				}
+				//소유/거주 여부, 
+				&.person {
+					background-image: url(../images/content/bi/icon_stepper_person.svg);
+				}
+				// 기간
+				&.date {
+					background-image: url(../images/content/bi/icon_stepper_date.svg);
+				}
+				// 직업
+				&.job {
+					background-image: url(../images/content/bi/icon_stepper_job.svg);
+				}
+				// 회사명
+				&.company {
+					background-image: url(../images/content/bi/icon_stepper_job.svg);
+				}
+				// 사업자번호
+				&.busi_num {
+					background-image: url(../images/content/bi/icon_stepper_insurance.svg);
+				}
+	
+				/* 운전자 Case */
+				&.car {
+					background-image: url(../images/content/bi/icon_stepper_car.svg);
+				}
+	
+				/* 주택 Case */
+				// 주택 종류
+				&.home {
+					background-image: url(../images/content/bi/icon_stepper_home.svg);
+				}
+				// 업종
+				&.store {
+					background-image: url(../images/content/bi/icon_stepper_store.svg);
+				}
+				// 가입할 보험, 사업자 형태
+				&.insurance {
+					background-image: url(../images/content/bi/icon_stepper_insurance.svg);
+				}
+				// 건물 형태
+				&.structure {
+					background-image: url(../images/content/bi/icon_stepper_structure.svg);
+				}
+	
+				/* 펫 Case */
+				// 펫_종류
+				&.pet {
+					background-image: url(../images/content/bi/icon_stepper_cat.svg);
+				}
+				// 펫_성별
+				&.pet_gender {
+					background-image: url(../images/content/bi/icon_stepper_sex.svg);
+				}
+	
+	
+				/* 여행 Case */
+				// 체류목적
+				&.work {
+					background-image: url(../images/content/bi/icon_stepper_work.svg);
+				}
+				// 국가
+				&.country {
+					background-image: url(../images/content/bi/icon_stepper_fuel.svg);
+				}
+
+				/* 어린이 Case */
+				// 출산예정일
+				&.pregnant {
+					background-image: url(../images/content/bi/icon_stepper_pregnant.svg);
+				}
+
+				/* 레저/연금/저축 Case */
+				&.money {
+					background-image: url(../images/content/bi/icon_stepper_won.svg);
+				}
+			}
+		}
+
+
+		// 버튼
+		.modify {
+			width: 32px;
+			height: 32px;
+			padding: 7px;
+			border: 1px solid var(--color-button-icon-fill-border);
+			border-radius: 50%;
+			.hd_icon {
+				width: 16px;
+				height: 16px;
+			}
+		}
+
+		.modify_top {
+			position: absolute;
+			top: 10px;
+			right: 0;
+			padding: 2px 10px;
+			border-radius: var(--radius-small3);
+		}
+	
+		.modify_sub {
+			position: absolute;
+			// top: 8px;
+			top: 12px;
+			right : 2px;
+			padding: 0;
+			width: auto;
+			height: auto;
+			border: none;
+			font-size: var(--font-size-button-small);
+			color: var(--color-text-subtle);
+			text-decoration: underline;
+			text-underline-position: from-font;
 		}
 	}
 }

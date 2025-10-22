@@ -1551,111 +1551,112 @@
 		margin-bottom: var(--gap-7);
 	}
 }
-.step_list {
-	> li {
-		position: relative;
-		padding: 0 0 var(--padding-5) 14px;
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
-		&::before {
-			content: '';
-			position: absolute;
-			top: 8px;
-			left: 0;
-			width: 1px;
-			height: 100%;
-			//border-radius: 50%;
-			background-color: var(--color-border-gray-light);
-		}
-		dl {
-			display: block;
-			.title {
-				font-size: var(--font-size-body-medium);
-				color: var(--color-text-disabled-on);
-				max-width: none;
-				&::after {
-					content: '';
-					position: absolute;
-					top: calc(var(--padding-5) + var(--gap-3));
-					left: -1px;
-					width: 3px;
-					height: 3px;
-					background-color: var(--color-icon-gray);
-					border-radius: 50%;
-				}
-			}
-			dd {
-				margin-top: var(--gap-3);
-				font-size: var(--font-size-body-small);
-				color: var(--color-text-disabled-on);
-				text-align: left;
-				ul {
-					li {
-						color: var(--color-text-disabled-on);
-						span {
-							color: var(--color-text-basic);
-						}
-						+ li {
-							margin-top: var(--gap-3);
-						}
-					}
-				}
-				.info {
-					margin-top: var(--gap-3);
-					display: none;
-				}
-			}
-		}
-		.modify {
-			width: 32px;
-			height: 32px;
-			padding: 7px;
-			border: 1px solid var(--color-button-icon-fill-border);
-			border-radius: 50%;
-			.hd_icon {
-				width: 16px;
-				height: 16px;
-			}
-		}
-		& + li {
-			padding-top: var(--padding-5);
-		}
-		&:first-child {
-			margin-top: var(--padding-5);
-			dl {
-				dt {
-					&::after {
-						top: 8px;
-					}
-				}
-			}
-		}
-		&:last-child {
-			&::before {
-				height: 15px;
-			}
-		}
-		&.active {
-			> dl {
-				> dt {
-					color: var(--color-text-basic);
-					font-weight: 700;
-				}
-			}
-			.info {
-				display: block;
-			}
-		}
-	}
-	li.active ~ li {
-		dl dd,
-		.modify {
-		  display: none;
-		}
 
-	}
-}
+// .step_list {
+// 	> li {
+// 		position: relative;
+// 		padding: 0 0 var(--padding-5) 14px;
+// 		display: flex;
+// 		justify-content: space-between;
+// 		align-items: flex-start;
+// 		&::before {
+// 			content: '';
+// 			position: absolute;
+// 			top: 8px;
+// 			left: 0;
+// 			width: 1px;
+// 			height: 100%;
+// 			//border-radius: 50%;
+// 			background-color: var(--color-border-gray-light);
+// 		}
+// 		dl {
+// 			display: block;
+// 			.title {
+// 				font-size: var(--font-size-body-medium);
+// 				color: var(--color-text-disabled-on);
+// 				max-width: none;
+// 				&::after {
+// 					content: '';
+// 					position: absolute;
+// 					top: calc(var(--padding-5) + var(--gap-3));
+// 					left: -1px;
+// 					width: 3px;
+// 					height: 3px;
+// 					background-color: var(--color-icon-gray);
+// 					border-radius: 50%;
+// 				}
+// 			}
+// 			dd {
+// 				margin-top: var(--gap-3);
+// 				font-size: var(--font-size-body-small);
+// 				color: var(--color-text-disabled-on);
+// 				text-align: left;
+// 				ul {
+// 					li {
+// 						color: var(--color-text-disabled-on);
+// 						span {
+// 							color: var(--color-text-basic);
+// 						}
+// 						+ li {
+// 							margin-top: var(--gap-3);
+// 						}
+// 					}
+// 				}
+// 				.info {
+// 					margin-top: var(--gap-3);
+// 					display: none;
+// 				}
+// 			}
+// 		}
+// 		.modify {
+// 			width: 32px;
+// 			height: 32px;
+// 			padding: 7px;
+// 			border: 1px solid var(--color-button-icon-fill-border);
+// 			border-radius: 50%;
+// 			.hd_icon {
+// 				width: 16px;
+// 				height: 16px;
+// 			}
+// 		}
+// 		& + li {
+// 			padding-top: var(--padding-5);
+// 		}
+// 		&:first-child {
+// 			margin-top: var(--padding-5);
+// 			dl {
+// 				dt {
+// 					&::after {
+// 						top: 8px;
+// 					}
+// 				}
+// 			}
+// 		}
+// 		&:last-child {
+// 			&::before {
+// 				height: 15px;
+// 			}
+// 		}
+// 		&.active {
+// 			> dl {
+// 				> dt {
+// 					color: var(--color-text-basic);
+// 					font-weight: 700;
+// 				}
+// 			}
+// 			.info {
+// 				display: block;
+// 			}
+// 		}
+// 	}
+// 	li.active ~ li {
+// 		dl dd,
+// 		.modify {
+// 		  display: none;
+// 		}
+
+// 	}
+// }
 
 .repair_list {
 	border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
