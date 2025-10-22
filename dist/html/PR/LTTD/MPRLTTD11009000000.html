@@ -50,6 +50,7 @@
 	</head>
 	<body>
 		<!-- s: Full 팝업 -->
+		<!-- s: 25-10-22 수정 -->
 		<div class="popup_wrap full active" id="pop_type01" role="dialog" aria-hidden="false">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
@@ -59,125 +60,94 @@
 					</div>
 					<div class="popup_cont">
 						<div class="popup_content">
-							<!-- s: 25-06-30 수정 -->
-							<div class="info_cont pro_info_wrap">
-								<div class="pro_info_item">
-									<div class="tit_box">
-										<h3 class="pop_title_h3">가입자 정보</h3>
-										<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5" title="정보입력 페이지로 이동">
-											<span class="text">수정</span>
-											<i class="hd_icon resetSvg"></i>
-										</button>
-									</div>
-									<div class="data_list">
-										<ul>
-											<li>
-												<dl>
-													<dt class="car">운전용도</dt>
-													<dd>자가용</dd>
-												</dl>
-											</li>
-											<li>
-												<dl>
-													<dt class="birth">생년월일</dt>
-													<dd>1979.01.02</dd>
-												</dl>
-											</li>
-											<li>
-												<dl>
-													<dt class="gender">성별</dt>
-													<dd>여성</dd>
-												</dl>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<!-- s: 25-08-06 수정 -->
-							<div class="info_gray ty2">
-								<!-- e: 25-08-06 수정 -->
+							<div class="side_panel">
 								<ol class="step_list">
-									<li class="active">
-										<dl>
-											<dt class="title">1.보험료 계산 결과</dt>
-											<dd>
-												<ul>
-													<li>선택: <span>고급형, 월15,100원</span></li>
-													<li>납입주기: <span>월납</span></li>
-													<li>보험기간: <span>10년</span></li>
-													<li>납입기간: <span>10년</span></li>
-												</ul>
-												<div class="info">보험료를 확인 중이에요</div>
-											</dd>
-										</dl>
-										<!-- s: 25-07-25 수정 -->
-										<button type="button" class="modify" title="보험료 계산 결과 페이지로 이동">
-											<!-- e: 25-07-25 수정 -->
-											<span class="sr-only">수정</span>
-											<i class="hd_icon resetSvg"></i>
-										</button>
-									</li>
+									<!-- 해당되는 단계일 시, li에 active 클래스 추가 -->
 									<li>
 										<dl>
-											<dt class="title">2.피보험자/계약자 정보</dt>
+											<dt class="title">1. 기본정보</dt>
 											<dd>
-												<ul>
-													<li>입력: <span>김*전(790102-*******, 여성)</span></li>
+												<ul class="dep_opt_list">
+													<li class="person">가입대상: <span>본인</span></li>
+													<li class="car">운전용도: <span>자가용</span></li>
+													<li class="birth">생년월일: <span>1979.01.01</span></li>
+													<li class="gender">성별: <span>여성</span></li>
 												</ul>
 												<div class="info">정보를 입력 중이에요</div>
 											</dd>
 										</dl>
-										<!-- s: 25-07-25 수정 -->
-										<button type="button" class="modify" title="피보험자/계약자 정보 페이지로 이동">
-											<!-- e: 25-07-25 수정 -->
-											<span class="sr-only">수정</span>
+										<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_5 modify_top" title="기본정보 페이지로 이동">
+											<span class="text">재입력</span>
 											<i class="hd_icon resetSvg"></i>
 										</button>
 									</li>
 									<li>
 										<dl>
-											<!-- s: 25-07-25 수정 -->
-											<dt class="title">3.가입 내용 확인</dt>
-											<!-- e: 25-07-25 수정 -->
+											<dt class="title">2. 보험료 확인</dt>
 											<dd>
 												<ul>
-													<li>확인: <span>가입내용 및 계약서류</span></li>
+													<li>선택: <span>고급형, 15,100원</span></li>
+													<li>보험/납입 기간: <span>10년</span></li>
+													<li>납입 방법: <span>월납</span></li>
+												</ul>
+												<div class="info">보험료를 확인 중이에요</div>
+											</dd>
+										</dl>
+										<button type="button" class="modify_sub" title="보험료 확인 페이지로 이동">
+											<span>수정</span>
+										</button>
+									</li>
+									<li>
+										<dl>
+											<dt class="title">3. 피보험자/계약자 정보</dt>
+											<dd>
+												<ul>
+													<li>입력: <span>김*대(790101-1******, 여성)</span></li>
+													<!-- 계피상이 Case -->
+													<li>계약자: <span>김*대(790101-1******, 여성)</span></li>
+													<li>피보험자: <span>김*대(200101-1******, 남성)</span></li>
+												</ul>
+												<div class="info">정보를 입력 중이에요</div>
+											</dd>
+										</dl>
+										<button type="button" class="modify_sub" title="피보험자/계약자 정보 페이지로 이동">
+											<span>수정</span>
+										</button>
+									</li>
+									<li>
+										<dl>
+											<dt class="title">4. 가입 내용 확인</dt>
+											<dd>
+												<ul>
+													<li>확인: <span>가입 내용 및 계약서류</span></li>
 												</ul>
 												<div class="info">내용을 확인 중이에요</div>
 											</dd>
 										</dl>
-										<!-- s: 25-07-25 수정 -->
-										<button type="button" class="modify" title="가입내용 확인 페이지로 이동">
-											<span class="sr-only">재확인</span>
-											<i class="hd_icon resetSvg"></i>
+										<button type="button" class="modify_sub" title="가입 내용 확인 페이지로 이동">
+											<span>재확인</span>
 										</button>
-										<!-- e: 25-07-25 수정 -->
 									</li>
-									<li>
+									<li class="active">
 										<dl>
-											<dt class="title">4.보험료 결제</dt>
+											<dt class="title">5. 보험료 결제</dt>
 											<dd>
-												<!-- s: 25-08-11 UXW -->
 												<div class="info">결제를 진행 중이에요</div>
-												<!-- e: 25-08-11 UXW -->
 											</dd>
 										</dl>
 									</li>
 								</ol>
-							</div>
-							<!-- e: 25-06-30 수정 -->
-							<div class="btn_area center">
-								<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_4" title="홈으로 이동">
-									<span class="text">홈으로</span>
-								</button>
 							</div>
 						</div>
 					</div>
 
 					<div class="popup_bottom">
 						<div class="btn_area">
+							<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_1">
+								<span class="text">홈으로</span>
+							</button>
 							<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
-								<span class="text">계속 진행</span>
+								<span class="text">계속 진행하기</span>
 							</button>
 						</div>
 					</div>
@@ -187,6 +157,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- e: 25-10-22 수정 -->
 		<!-- e: Full 팝업 -->
 	</body>
 </html>

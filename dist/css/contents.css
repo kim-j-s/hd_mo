@@ -5259,7 +5259,7 @@ ul + .form_group_wrap {
 	padding-top: var(--padding-6);
 	padding-bottom: var(--padding-6);
 }
-/* 보험가입 진행 정보 */
+/* 보험가입 진행 정보*/
 .text_info_lg {
 	font-size: var(--font-size-heading-medium);
 	text-align: center;
@@ -5690,6 +5690,227 @@ ul + .form_group_wrap {
 	height: 2rem;
 	margin-left: 0.2rem;
 	vertical-align: middle;
+}
+/* 보험가입 진행 정보 */
+.side_panel .step_list > li {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	padding: var(--padding-3) 0 var(--padding-3) var(--padding-6);
+}
+.side_panel .step_list > li::before {
+	content: "";
+	position: absolute;
+	top: 2rem;
+	left: 1px;
+	width: 1px;
+	height: 100%;
+	background-color: var(--color-border-gray-light);
+}
+.side_panel .step_list > li:last-child::before {
+	height: 0;
+}
+.side_panel .step_list > li:has(.modify_top) > dl dt.title {
+	padding-right: 11.2rem;
+}
+.side_panel .step_list > li > dl {
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	display: block;
+}
+.side_panel .step_list > li > dl > dt.title {
+	padding-right: 3.6rem;
+	font-size: var(--font-size-body-large);
+	font-weight: 700;
+	color: var(--color-text-disabled-on);
+}
+.side_panel .step_list > li > dl > dt.title::after {
+	content: "";
+	position: absolute;
+	top: calc(var(--padding-3) + var(--gap-4));
+	left: 0;
+	width: 0.3rem;
+	height: 0.3rem;
+	background-color: var(--color-icon-gray);
+	border-radius: 50%;
+}
+.side_panel .step_list > li > dl > dd {
+	margin-top: var(--gap-3);
+	font-size: var(--font-size-body-small);
+	color: var(--color-text-disabled-on);
+	text-align: left;
+}
+.side_panel .step_list > li > dl > dd > ul > li {
+	padding: var(--padding-2);
+	font-size: var(--font-size-body-medium);
+	color: var(--color-text-disabled-on);
+}
+.side_panel .step_list > li > dl > dd > ul > li span {
+	color: var(--color-text-basic);
+}
+.side_panel .step_list > li > dl > dd .info {
+	display: none;
+	padding: var(--padding-2);
+	font-size: var(--font-size-body-medium);
+}
+.side_panel .step_list > li.active dt:before {
+	content: "현재 단계";
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border-width: 0;
+	white-space: nowrap;
+	clip: rect(0, 0, 0, 0);
+	overflow: hidden;
+}
+.side_panel .step_list > li.active:after {
+	content: "";
+	position: absolute;
+	top: 1.4rem;
+	left: -0.7rem;
+	width: 1.6rem;
+	height: 1.6rem;
+	background: var(--color-icon-primary) url(../images/icon/check_ty1.svg) no-repeat center/1rem auto;
+	border-radius: 7rem;
+}
+.side_panel .step_list > li.active .info {
+	display: block;
+	color: var(--color-text-basic);
+}
+.side_panel .step_list > li.active ~ li dl dd,
+.side_panel .step_list > li.active ~ li .modify_sub {
+	display: none;
+}
+.side_panel .step_list > li.active > dl dt.title {
+	color: var(--color-text-bolder);
+}
+.side_panel .step_list .dep_list {
+	position: relative;
+}
+.side_panel .step_list .dep_list dt {
+	margin-top: var(--gap-2);
+	padding: var(--padding-3) var(--padding-2) var(--padding-2);
+	font-size: var(--font-size-body-medium);
+	font-weight: 700;
+	color: var(--color-text-disabled-on);
+}
+.side_panel .step_list .dep_list dd .modify_sub {
+	top: -3.2rem;
+}
+.side_panel .step_list .dep_list dd .dep_opt_list {
+	margin-top: var(--gap-2);
+}
+.side_panel .step_list .dep_opt_list > li {
+	padding: var(--padding-2) var(--padding-2) var(--padding-2) 2.8rem;
+	background-repeat: no-repeat;
+	background-position: left 0.4rem top 0.8rem;
+	background-size: 1.6rem auto;
+	background-image: url(../images/content/bi/icon_basic.svg);
+	font-size: var(--font-size-body-medium);
+	/* 운전자 Case */
+	/* 주택 Case */
+	/* 펫 Case */
+	/* 여행 Case */
+	/* 어린이 Case */
+	/* 레저/연금/저축 Case */
+}
+.side_panel .step_list .dep_opt_list > li > span {
+	color: var(--color-text-basic);
+}
+.side_panel .step_list .dep_opt_list > li.birth {
+	background-image: url(../images/content/bi/icon_stepper_birth.svg);
+}
+.side_panel .step_list .dep_opt_list > li.gender {
+	background-image: url(../images/content/bi/icon_stepper_gender.svg);
+}
+.side_panel .step_list .dep_opt_list > li.person {
+	background-image: url(../images/content/bi/icon_stepper_person.svg);
+}
+.side_panel .step_list .dep_opt_list > li.date {
+	background-image: url(../images/content/bi/icon_stepper_date.svg);
+}
+.side_panel .step_list .dep_opt_list > li.job {
+	background-image: url(../images/content/bi/icon_stepper_job.svg);
+}
+.side_panel .step_list .dep_opt_list > li.company {
+	background-image: url(../images/content/bi/icon_stepper_job.svg);
+}
+.side_panel .step_list .dep_opt_list > li.busi_num {
+	background-image: url(../images/content/bi/icon_stepper_insurance.svg);
+}
+.side_panel .step_list .dep_opt_list > li.car {
+	background-image: url(../images/content/bi/icon_stepper_car.svg);
+}
+.side_panel .step_list .dep_opt_list > li.home {
+	background-image: url(../images/content/bi/icon_stepper_home.svg);
+}
+.side_panel .step_list .dep_opt_list > li.store {
+	background-image: url(../images/content/bi/icon_stepper_store.svg);
+}
+.side_panel .step_list .dep_opt_list > li.insurance {
+	background-image: url(../images/content/bi/icon_stepper_insurance.svg);
+}
+.side_panel .step_list .dep_opt_list > li.structure {
+	background-image: url(../images/content/bi/icon_stepper_structure.svg);
+}
+.side_panel .step_list .dep_opt_list > li.pet {
+	background-image: url(../images/content/bi/icon_stepper_cat.svg);
+}
+.side_panel .step_list .dep_opt_list > li.pet_gender {
+	background-image: url(../images/content/bi/icon_stepper_sex.svg);
+}
+.side_panel .step_list .dep_opt_list > li.work {
+	background-image: url(../images/content/bi/icon_stepper_work.svg);
+}
+.side_panel .step_list .dep_opt_list > li.country {
+	background-image: url(../images/content/bi/icon_stepper_fuel.svg);
+}
+.side_panel .step_list .dep_opt_list > li.pregnant {
+	background-image: url(../images/content/bi/icon_stepper_pregnant.svg);
+}
+.side_panel .step_list .dep_opt_list > li.money {
+	background-image: url(../images/content/bi/icon_stepper_won.svg);
+}
+.side_panel .step_list .modify {
+	width: 3.2rem;
+	height: 3.2rem;
+	padding: 0.7rem;
+	border: 1px solid var(--color-button-icon-fill-border);
+	border-radius: 50%;
+}
+.side_panel .step_list .modify .hd_icon {
+	width: 1.6rem;
+	height: 1.6rem;
+}
+.side_panel .step_list .modify_top {
+	position: absolute;
+	top: 1rem;
+	right: 0;
+	padding: 0.2rem 1rem;
+	border-radius: var(--radius-small3);
+}
+.side_panel .step_list .modify_sub {
+	position: absolute;
+	top: 1.2rem;
+	right: 0.2rem;
+	padding: 0;
+	width: auto;
+	height: auto;
+	border: none;
+	font-size: var(--font-size-button-small);
+	color: var(--color-text-subtle);
+	text-decoration: underline;
+	text-underline-position: from-font;
 }
 /* 운전자보험 - 보험료 결제 */
 .insurance_payment_area {
