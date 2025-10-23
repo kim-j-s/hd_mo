@@ -271,12 +271,6 @@
 		.item_inner {
 			display: flex;
 			align-items: flex-start;
-			
-
-			// > .inp_checkbox,
-			// > .inp_radio {
-				// margin-top: 3px;
-			// }
 			.title_info {
 				display: flex;
 				flex-direction: column;
@@ -328,6 +322,7 @@
 					}
 				}
 				& + .desc {
+					display: block;
 					margin-top: var(--gap-3);
 					font-size: var(--font-size-body-small);
 					color: var(--color-text-information);
@@ -354,12 +349,6 @@
 				}
 			}
 
-			// &:not(:has(.item_top)){
-			// 	.inp_radio {
-			// 		// background-color: red;
-			// 	}
-			// }
-
 			.inner_cont {
 				flex: 1;
 				position: relative;
@@ -371,7 +360,6 @@
 						}
 					}
 				}
-
 
 				.progress_bar_ty3 {
 					margin-top: var(--gap-5);
@@ -392,12 +380,16 @@
 						}
 					}
 				}
+
+				& + .info_gray {
+					width: 100%;
+					margin: var(--gap-4);
+				}
 			}
 
 			.inp_radio,
 			.inp_checkbox {
 				position: static;
-				//width: 28px;
 				height: 100%;
 				
 				.chk_label {

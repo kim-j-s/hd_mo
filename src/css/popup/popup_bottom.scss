@@ -5,7 +5,6 @@
 			// padding-top: 40px;
 			.popup_container {
 				transform: translateY(0);
-
 			}
 		}
 
@@ -48,8 +47,7 @@
 		
 			.swiper {
 				width: 100%;
-				border-radius: var(--radius-large2) var(--radius-large2) 0 0;
-		
+				border-radius: var(--radius-large2) var(--radius-large2) 0 0;		
 				.swiper-wrapper {
 					.swiper-slide {
 						img {
@@ -73,8 +71,6 @@
 		
 			.swiper_control {
 				display: none;
-				// display: flex;
-				// align-items: center;
 				position: absolute;
 				left: 50%;
 				transform: translateX(-50%);
@@ -288,5 +284,39 @@
 			}
 		}
 
+	}
+
+	&.acd_t_bottom {
+		top: calc(100% - 32px);
+		// bottom: 0;
+		bottom: auto;
+		height: auto;
+		visibility: visible;
+		opacity: 1;
+		background-color: transparent;
+		&.dim_lv2 {
+			top: 0;
+			bottom: 0;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+		.popup_container {
+			transform: translateY(0);
+			.popup_inner {
+				.popup_cont {
+					padding: 0 0 var(--gap-7) 0;
+					.popup_content {
+						border-radius: var(--radius-large2) var(--radius-large2) 0 0;
+						background: var(--color-surface-white-subtle);
+						overflow: hidden;
+					}
+				}
+			}
+		}
+		&.active {
+			
+			// bottom: calc(-100% - 90%);
+			// rgba(0, 0, 0, 0.5)
+		}
 	}
 }
