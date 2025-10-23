@@ -32,21 +32,12 @@
 				.popup_cont {
 					padding: var(--gap-4) var(--number-10) var(--padding-6) var(--number-10);
 
-
-					// &:has(.msg_icon.mi_info) {
-					// 	padding-top: 0;
-					// }
-
 					.pl_msg_top {
 						font-size: var(--font-size-heading-small);
 					}
 
 					.pl_txt1 {
-						// display: flex;
-						// flex-direction: column;
-						// gap: var(--gap-4);
 						text-align: center;
-
 						&.txt_left {
 							text-align: left;
 						}
@@ -54,8 +45,18 @@
 
 					.info_text {
 						text-align: center;
-						&+.list_ty2 {
+						& + .list_ty2 {
 							margin-top: var(--gap-5);
+						}
+						[class^="list_"] {
+							li {
+								text-align: left;
+							}
+						}
+						.list_ty3 {
+							+ .pl_txt1 {
+								margin-top: var(--gap-5);
+							}
 						}
 					}
 
