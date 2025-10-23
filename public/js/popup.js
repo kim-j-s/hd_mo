@@ -99,7 +99,7 @@ function openHDPopup($triggerEl, target) {
 		focusTarget.css("display", "block");
 	}
 
-	setTimeout(() => 
+	setTimeout(() => {
 		if (focusTarget) {
 			focusTarget.focus();
 			focusTarget.attr("aria-live", "assertive"); //포커스 이동을 스크린 리더에 알림
