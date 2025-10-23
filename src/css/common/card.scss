@@ -578,6 +578,10 @@
 				line-height: 150%;
 			}
 		}
+			
+		.msg_error {
+			margin-top: var(--gap-4);
+		}
 
 		.card_list_ty1 {
 			@include car-list-style($ul-border-radius: 0, $li-padding: 0 0 12px, $li-font-size: var(--font-size-body-small)) {
@@ -1209,6 +1213,19 @@
 						dd {
 							flex: none;
 							text-align: right;
+
+							.tooltip_wrap {
+								.tooltip_panel {
+									width: calc(100vw - 48px - 42px);
+								}
+
+								&.rp {
+									.tooltip_panel {
+										right: -20px;
+										width: calc(100vw - 50px);
+									}
+								}
+							}
 						}
 						& + dl {
 							margin-top: var(--gap-4);
@@ -1318,7 +1335,6 @@
 					word-break: break-all;
 				}
 			}
-			
 		}
 	}
 
