@@ -1,12 +1,18 @@
-{{#> layout/default no-sp=true page-title="피보험자 불일치 안내 | 상품"}}
+{{#> layout/default no-sp=true page-title="갱신 설계 안내 | 상품"}}
 
 <!-- s: Bottom 팝업 -->
-{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="피보험자 불일치 안내"}}
+<!-- s: 25-10-23 수정 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="갱신 설계 안내"}}
+<!-- e: 25-10-23 수정 -->
 <div class="popup_cont">
 	<div class="popup_content">
 		<div class="info_cont">
-			<p><strong>김*대님</strong>은 선택하신 계약의 <strong>계약자</strong>입니다</p>
-			<p>갱신보험료 계산은 <strong>피보험자(차량소유자) 김*상님</strong>의 본인인증 후 진행하실 수 있습니다</p>
+			<!-- s: 25-10-23 수정 -->
+			<ul class="list_depth">
+				<li><strong>김*대님</strong>은 선택하신 계약의 <strong>계약자</strong>입니다. 자동차보험 가입 설계는 피보험자(차량소유자)기준으로만 진행 가능합니다.</li>
+				<li><strong class="point">김*최님 본인인증</strong> 후 설계를 진행해 주세요.</li>
+			</ul>
+			<!-- e: 25-10-23 수정 -->
 		</div>
 	</div>
 </div>
@@ -14,7 +20,9 @@
 <div class="popup_bottom">
 	<div class="btn_area">
 		{{> cp/button type="3" size="2" b-text="닫기"}}
-		{{> cp/button type="1" size="2" b-text="피보험자 인증"}}
+		<!-- s: 25-10-23 수정 -->
+		{{> cp/button type="1" size="2" b-text="피보험자 인증하기"}}
+		<!-- e: 25-10-23 수정 -->
 	</div>
 </div>
 {{/ popup/popup_bottom}}

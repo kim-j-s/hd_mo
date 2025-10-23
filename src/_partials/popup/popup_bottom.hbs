@@ -6,14 +6,18 @@
 		{{#unless close_exp}}<div class="popup_dim" aria-hidden="true"{{#if popup-id}} onclick="closeHDPopup('{{popup-id}}');"{{/if}}></div>{{/unless}}
 		<div class="popup_inner{{#if in-class}} {{in-class}}{{/if}}">
 			{{!-- <div class="draggable" aria-grabbed="false" aria-dropeffect="close" tabindex="0" aria-label="드래그 하여 닫기"> --}}
+			{{#unless no-drag}}	
 			<div class="draggable" aria-hidden="true">
 				<div class="move"></div>
 			</div>
+			{{/unless}}
+			{{#unless no-header-clear}}
 			<div class="popup_head">
 				{{#unless no-header}}
 				<div class="popup_head_title">{{{popup-title}}}</div>
 				{{/unless}}
-				</div>
+			</div>
+			{{/unless}}
 			
 			{{> @partial-block}}
 			{{#unless close-btn}}
