@@ -429,6 +429,12 @@
 .popup_wrap.layer .popup_container .popup_inner .popup_cont .info_text + .list_ty2 {
 	margin-top: var(--gap-5);
 }
+.popup_wrap.layer .popup_container .popup_inner .popup_cont .info_text [class^="list_"] li {
+	text-align: left;
+}
+.popup_wrap.layer .popup_container .popup_inner .popup_cont .info_text .list_ty3 + .pl_txt1 {
+	margin-top: var(--gap-5);
+}
 .popup_wrap.layer .popup_container .popup_inner .popup_cont .info_confirm {
 	padding-top: 4.8rem;
 	background: url(../images/icon/icon_exclamation.svg) no-repeat top center/3.2rem auto;
@@ -673,6 +679,59 @@
 }
 .popup_wrap.bottom .popup_inner:not(:has(.popup_bottom)) .popup_cont {
 	padding-bottom: calc(2.4rem + var(--padding-5));
+}
+.popup_wrap.acd_t_bottom {
+	top: auto;
+	bottom: 0;
+	max-height: 13.2rem;
+	padding-top: 3.2rem;
+	visibility: visible;
+	opacity: 1;
+	pointer-events: auto;
+	background-color: transparent;
+	-webkit-transition: max-height 0.3s ease, background-color 0.3s ease;
+	transition: max-height 0.3s ease, background-color 0.3s ease;
+}
+.popup_wrap.acd_t_bottom.close_exp .popup_close {
+	display: block;
+}
+.popup_wrap.acd_t_bottom .popup_container {
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+}
+.popup_wrap.acd_t_bottom .popup_container .popup_inner {
+	max-height: 100%;
+}
+.popup_wrap.acd_t_bottom .popup_container .popup_inner .popup_cont {
+	padding: 0 0 var(--gap-7) 0;
+}
+.popup_wrap.acd_t_bottom .popup_container .popup_inner .popup_cont .popup_content {
+	border-radius: var(--radius-large2) var(--radius-large2) 0 0;
+	background: var(--color-surface-white-subtle);
+	overflow: auto;
+}
+.popup_wrap.acd_t_bottom.active {
+	max-height: calc(100% - 2rem);
+	overflow: auto;
+}
+.popup_wrap.acd_t_bottom.dim_lv2::before {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	opacity: 0;
+	background-color: transparent;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.popup_wrap.acd_t_bottom.dim_lv2.active::before {
+	visibility: visible;
+	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.5);
 }
 /* popup_confirm(alert) */
 .popup_wrap.confirm.active .popup_container {

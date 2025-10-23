@@ -123,6 +123,9 @@ strong {
 .txt_right {
 	text-align: right;
 }
+sup {
+	vertical-align: top;
+}
 .flex_start {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -822,13 +825,6 @@ strong {
 .pl_ico_ty_case2 {
 	background-image: url(../images/icon/icon_complete_error.svg);
 }
-.msg_error {
-	padding-left: 2rem;
-	background: url(../images/icon/icon_error.svg) no-repeat left center/1.6rem auto;
-	font-size: var(--font-size-label-medium);
-	line-height: 2.1rem;
-	color: var(--color-text-danger);
-}
 .link_area.right {
 	text-align: right;
 }
@@ -1386,7 +1382,6 @@ strong {
 	width: 2.4rem;
 	height: 2.4rem;
 	margin: 0 auto 1rem;
-	background: skyblue;
 }
 /* navigation */
 /* Header Navigation */
@@ -2636,6 +2631,13 @@ strong {
 }
 .acd_item.acd_item_ty2 .cont_text {
 	font-size: var(--font-size-label-medium);
+}
+.acd_item.acd_item_ty2 .cont_text .badge_wrap {
+	width: auto;
+	gap: var(--gap-2);
+}
+.acd_item.acd_item_ty2 .cont_text + .chk_lby2 {
+	margin-top: var(--gap-2);
 }
 .acd_item.acd_item_ty2 .cont_text_sub {
 	color: #6c7882;
@@ -6124,6 +6126,7 @@ strong {
 	gap: var(--gap-3);
 }
 .card_item_wrap .card_item .item_inner .title_info + .desc {
+	display: block;
 	margin-top: var(--gap-3);
 	font-size: var(--font-size-body-small);
 	color: var(--color-text-information);
@@ -6158,6 +6161,10 @@ strong {
 }
 .card_item_wrap .card_item .item_inner .inner_cont .checkbox_group_wrap.column .inp_checkbox input:checked + .label:before {
 	background-size: 2rem auto;
+}
+.card_item_wrap .card_item .item_inner .inner_cont + .info_gray {
+	width: 100%;
+	margin: var(--gap-4);
 }
 .card_item_wrap .card_item .item_inner .inp_radio,
 .card_item_wrap .card_item .item_inner .inp_checkbox {
@@ -6301,6 +6308,9 @@ strong {
 .card_item_wrap .card_item ul > li > div.cont .text_body_large {
 	font-size: var(--font-size-body-large);
 	line-height: 150%;
+}
+.card_item_wrap .card_item .msg_error {
+	margin-top: var(--gap-4);
 }
 .card_item_wrap .card_item .card_list_ty1 {
 	border-radius: 0;
@@ -6841,6 +6851,13 @@ strong {
 	-ms-flex: none;
 	flex: none;
 	text-align: right;
+}
+.card_list_wrap > li .card_wrap > dd.card_cont_list dl dd .tooltip_wrap .tooltip_panel {
+	width: calc(100vw - 4.8rem - 4.2rem);
+}
+.card_list_wrap > li .card_wrap > dd.card_cont_list dl dd .tooltip_wrap.rp .tooltip_panel {
+	right: -2rem;
+	width: calc(100vw - 5rem);
 }
 .card_list_wrap > li .card_wrap > dd.card_cont_list dl + dl {
 	margin-top: var(--gap-4);
@@ -8824,7 +8841,7 @@ strong {
 .msg_info {
 	margin-top: var(--gap-3);
 	padding-left: 2rem;
-	background: url(../images/icon/icon_error.svg) no-repeat left center/1.6rem auto;
+	background: url(../images/icon/icon_error.svg) no-repeat left top 0.2rem/1.6rem auto;
 	font-size: var(--font-size-label-medium);
 	line-height: 2.1rem;
 	color: var(--color-text-information);
@@ -8832,7 +8849,7 @@ strong {
 .msg_success {
 	margin-top: var(--gap-3);
 	padding-left: 2rem;
-	background: url(../images/icon/icon_success.svg) no-repeat left center/1.6rem auto;
+	background: url(../images/icon/icon_success.svg) no-repeat left top 0.2rem/1.6rem auto;
 	font-size: var(--font-size-label-medium);
 	line-height: 2.1rem;
 	color: var(--color-text-success);
@@ -8840,7 +8857,7 @@ strong {
 .msg_error {
 	margin-top: var(--gap-3);
 	padding-left: 2rem;
-	background: url(../images/icon/icon_fail.svg) no-repeat left center/1.6rem auto;
+	background: url(../images/icon/icon_fail.svg) no-repeat left top 0.2rem/1.6rem auto;
 	font-size: var(--font-size-label-medium);
 	line-height: 2.1rem;
 	color: var(--color-text-danger);
@@ -8912,9 +8929,6 @@ strong {
 .comp_wrap .comp_wrap_keypad_call .keypad_call {
 	display: block;
 	width: 100%;
-}
-.comp_wrap .comp_wrap_keypad_call .keypad_call.active {
-	background-color: blue;
 }
 .comp_wrap .form_key .pin_area {
 	height: 4.8rem;
@@ -9777,6 +9791,9 @@ strong {
 	height: 0.2rem;
 	border-radius: 50%;
 	background-color: #6d7882;
+}
+.list_ty4.list_ty4_left > li {
+	text-align: left;
 }
 .list_ty4 > li ~ li {
 	margin-top: var(--gap-4);
@@ -13041,7 +13058,6 @@ ol li .table_wrap + .list_ty2 li + li {
 	-ms-flex-pack: center;
 	justify-content: center;
 	height: 10rem;
-	background-color: skyblue;
 }
 #swiper1 .swiper-slide:nth-child(even) {
 	background-color: #ddd;
@@ -14335,7 +14351,7 @@ ol li .table_wrap + .list_ty2 li + li {
 	display: none;
 	padding: 1.2rem 4.4rem 1.2rem 1.6rem;
 	background-color: var(--color-element-information);
-	border-radius: 1rem;
+	border-radius: var(--radius-medium1);
 	color: #ffffff;
 	text-align: left;
 	font-weight: 400;
