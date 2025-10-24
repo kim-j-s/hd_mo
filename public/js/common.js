@@ -1055,10 +1055,13 @@ $(function(){
 			}, 0);
 		},
 
-		onClose: function() {
+		onClose: function(dateText, inst) {
 			setTimeout(function(){
 				$('.modal_backdrop').remove();
 				$('.wrap').attr('aria-hidden', 'false');
+				if (inst && inst.input) {
+					inst.input.attr("readonly", false);
+				}
 			}, 200);
 			$("body").removeClass('modal_open')
 			setTimeout(function(){
@@ -1093,7 +1096,7 @@ $(function(){
 				// $dp.find('.ui-datepicker-prev, .ui-datepicker-next').attr('tabindex', '0');
 			}, 50);
     },
-    onClose: function() { 
+    onClose: function(dateText, inst) { 
 			// setTimeout(function(){
 			// 	$('.modal_backdrop').remove();
 			// },200);
@@ -1101,6 +1104,12 @@ $(function(){
 			setTimeout(function(){
 				$('.modal_backdrop').remove();
 				$('.wrap').attr('aria-hidden', 'false');
+
+				// readonly 해제
+				if (inst && inst.input) {
+					inst.input.attr("readonly", false);
+				}
+
 			}, 200);
 		}
 	});
@@ -1131,9 +1140,11 @@ $(function(){
 		$('.ui-datepicker-today a').attr('title', '오늘 날짜');
 		$('.ui-state-active').attr('title', '선택됨');
 		// 0.5초 후 readonly 제거
+		/*
 		setTimeout(function () {
 			$input.attr("readonly", false);
 		}, 500);
+		*/
 	
 		// 달력 내부 포커스로 이동 (접근성 강화)
 		setTimeout(function () {

@@ -94,6 +94,9 @@
 							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openHDPopup(this,'pop_type04');">
 								<span class="text">Layer 팝업 닫기 지정 포커스</span>
 							</button>
+							<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_5" onclick="openHDPopup(this,'pop_type06');">
+								<span class="text">Bottom banner 팝업열기</span>
+							</button>
 						</div>
 					</div>
 					<div class="g_dom">
@@ -247,11 +250,30 @@
 				</div>
 			</div>
 			<!-- e: pop_type05(layer팝업) -->
+
+			<!-- s: pop_type06(bottom banner팝업)-->
+			<div class="popup_wrap bottom bn_ty" id="pop_type06" role="dialog" aria-modal="true" aria-hidden="true">
+				<div class="popup_container">
+					<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type06');"></div>
+					<div class="popup_inner">
+						<div class="popup_cont">
+							<div class="popup_content">
+								<a href="javascript:void(0)" title="비교추천 설계내역 페이지로 이동">
+									<img src="../../../images/event/banner_pet1.png" alt="현대해상 다이렉트 지금 가입하시면 네이버페이 포인트 최대 3만원 드려요! (월납 25,000원 이상 가입 시) 비교추천 설계내영 확인하기" />
+								</a>
+							</div>
+						</div>
+						<button type="button" class="popup_close" onclick="closeHDPopup('pop_type06');"><span class="blind">팝업 닫기</span></button>
+					</div>
+				</div>
+			</div>
+			<!-- e: pop_type06(bottom banner팝업)-->
 		</div>
 		<!-- e: popup area -->
 		<script>
 			$(window).on("load", function () {
 				openHDPopup("", "pop_type05");
+				openHDPopup("", "pop_type06");
 			});
 		</script>
 		<!-- 전체메뉴 -->

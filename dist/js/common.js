@@ -635,6 +635,30 @@
 		$this.val(val);
 	});
 	// 유효기간 처리
+
+
+	// 하단 고정형 팝업 아코디언형
+	$DOM.on("click", ".baad_c_wrap .baad_c_btn", function () {
+		const $this = $(this),
+			$head = $this.parent(".baad_c_top"),
+			$inner = $head.next(".baad_c_cont").children(".inner");
+		if ($inner.css("display") == "none") {
+			// 펼치기
+			$(".wrap").attr("aria-hidden", "true");
+			$this.closest(".baad_c").addClass("active");
+			$head.addClass("active");
+			$this.attr("aria-expanded", "true");
+			$inner.slideDown();
+		} else {
+			// 접기
+			$this.closest(".baad_c").removeClass("active");
+			$(".wrap").attr("aria-hidden", "false");
+			$this.attr("aria-expanded", "false");
+			$inner.slideUp();
+			$head.removeClass("active");
+		}
+	});
+	// 하단 고정형 팝업 아코디언형
 	
 
 	
@@ -1001,7 +1025,6 @@ $(function(){
 	
 	// 달력 호출
 	let $lastCalendarCallBtn = null;
-	let _dpDir = null; // ← 추가: prev/next 방향 기억용
 	$.datepicker.setDefaults({
 		dateFormat: 'yy.mm.dd',
 		prevText: '이전 달',
@@ -1016,64 +1039,39 @@ $(function(){
 		dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'],
 		showAnim: 'slideDown',
 		duration: 300,
-		beforeShow: function (input, inst) { 
-			// ▼ 추가: 모바일 키보드 방지
-			setTimeout(() => input.blur(), 0);
+		beforeShow: function () { 
 			$("body").append('<div class="modal_backdrop"></div>');
 			setTimeout(function(){
 				$("body").addClass('modal_open');
 				const $dp = $("#ui-datepicker-div");
-				
-				// ▼ 추가: 모달 역할 선언 + 라이브 읽기
-				$dp.attr({ role: 'dialog', 'aria-modal': 'true', 'aria-live': 'polite' });
-
-				// ▼ 추가: prev/next도 탭 이동 가능하게
 				$dp.find('.ui-datepicker-prev, .ui-datepicker-next').attr('tabindex', '0');
-
-				// ▼ 추가: 최초 포커스(제목이나 그리드)
-				$dp.find('.ui-datepicker-title').attr('tabindex','-1').focus();
 			}, 50);
 		},
 		onChangeMonthYear: function(year, month, inst) {
 			// 월 변경 후에도 tabindex 재설정 필요
 			setTimeout(function() {
 				const $dp = $("#ui-datepicker-div");
-				$dp.find('.ui-datepicker-prev, .ui-datepicker-next').attr('tabindex', '0'); 
-				// ▼ 직전에 누른 방향 버튼으로 복귀, 없으면 캘린더로
-				if (_dpDir) {
-					$dp.find('.ui-datepicker-' + _dpDir).focus();
-					_dpDir = null;
-				} else {
-					$dp.find('.ui-datepicker-calendar').attr('tabindex','-1').focus();
-				}
+				$dp.find('.ui-datepicker-prev, .ui-datepicker-next').attr('tabindex', '0');
 			}, 0);
 		},
 
-		onClose: function() {
+		onClose: function(dateText, inst) {
 			setTimeout(function(){
 				$('.modal_backdrop').remove();
 				$('.wrap').attr('aria-hidden', 'false');
-				$("body").removeClass('modal_open');
-      			$('.wrap').removeAttr('inert');          // ← inert 썼다면 원복
+				if (inst && inst.input) {
+					inst.input.attr("readonly", false);
+				}
 			}, 200);
+			$("body").removeClass('modal_open')
 			setTimeout(function(){
 				// 호출했던 버튼으로 포커스 복귀
 				if ($lastCalendarCallBtn) {
 					$lastCalendarCallBtn.focus();
 				}
 			}, 400);
-			// ▼ 추가: 닫힘을 외부로 알림(핸들러에서 후처리 연결)
-			$(document).trigger('datepickerclose');
 		}
 	});
-	$(document)
-		.on('mousedown', '.ui-datepicker-prev, .ui-datepicker-next', function(e){
-			e.preventDefault();
-			_dpDir = $(this).hasClass('ui-datepicker-prev') ? 'prev' : 'next';
-		})
-		.on('click', '.ui-datepicker-prev, .ui-datepicker-next', function(e){
-			e.preventDefault();
-		});
 
 	// 월 선택용
 	$.monthpicker.setDefaults({
@@ -1098,7 +1096,7 @@ $(function(){
 				// $dp.find('.ui-datepicker-prev, .ui-datepicker-next').attr('tabindex', '0');
 			}, 50);
     },
-    onClose: function() { 
+    onClose: function(dateText, inst) { 
 			// setTimeout(function(){
 			// 	$('.modal_backdrop').remove();
 			// },200);
@@ -1106,6 +1104,12 @@ $(function(){
 			setTimeout(function(){
 				$('.modal_backdrop').remove();
 				$('.wrap').attr('aria-hidden', 'false');
+
+				// readonly 해제
+				if (inst && inst.input) {
+					inst.input.attr("readonly", false);
+				}
+
 			}, 200);
 		}
 	});
@@ -1136,9 +1140,11 @@ $(function(){
 		$('.ui-datepicker-today a').attr('title', '오늘 날짜');
 		$('.ui-state-active').attr('title', '선택됨');
 		// 0.5초 후 readonly 제거
+		/*
 		setTimeout(function () {
 			$input.attr("readonly", false);
 		}, 500);
+		*/
 	
 		// 달력 내부 포커스로 이동 (접근성 강화)
 		setTimeout(function () {
@@ -1687,7 +1693,8 @@ $(function(){
 			console.log('event 2');
     }
   });
-	// e: 상품설명서 주요 내용 스크롤 버튼	
+	// e: 상품설명서 주요 내용 스크롤 버튼
+	
 
 	// ready
 
