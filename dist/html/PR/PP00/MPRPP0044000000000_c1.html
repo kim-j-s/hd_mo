@@ -574,7 +574,7 @@
 
 				if ($inner.css("display") == "none") {
 					// 펼치기
-					$(".wrap").attr("aria-hidden", "false");
+					$(".wrap").attr("aria-hidden", "true");
 					$this.closest(".baad_c").addClass("active");
 					$head.addClass("active");
 					$this.attr("aria-expanded", "true");
@@ -582,7 +582,7 @@
 				} else {
 					// 접기
 					$this.closest(".baad_c").removeClass("active");
-					$(".wrap").attr("aria-hidden", "true");
+					$(".wrap").attr("aria-hidden", "false");
 					$this.attr("aria-expanded", "false");
 					$inner.slideUp();
 					$head.removeClass("active");
