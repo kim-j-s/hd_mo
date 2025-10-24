@@ -1551,6 +1551,16 @@ $(function(){
 
 		function togglePanel($panel, $button, $items) {
 			const isExpanded = $panel.hasClass('active');
+
+			if(isExpanded) {
+				console.log('x');
+				$('#header').attr('aria-hidden', false);
+				$('#container').attr('aria-hidden', false);
+			} else {
+				console.log('fr');
+				$('#header').attr('aria-hidden', true);
+				$('#container').attr('aria-hidden', true);
+			}
 		
 			// 상태 토글
 			$panel.toggleClass('active', !isExpanded);
