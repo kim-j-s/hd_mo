@@ -1015,11 +1015,12 @@ $(function(){
 		dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'],
 		showAnim: 'slideDown',
 		duration: 300,
-		beforeShow: function () { 
+		beforeShow: function (input, inst) { 
 			$("body").append('<div class="modal_backdrop"></div>');
 			setTimeout(function(){
 				$("body").addClass('modal_open');
 				const $dp = $("#ui-datepicker-div");
+				input.blur(), 0
 				//$dp.find('.ui-datepicker-prev, .ui-datepicker-next').attr('tabindex', '0');
 			}, 50);
 		},
@@ -1027,6 +1028,7 @@ $(function(){
 			// 월 변경 후에도 tabindex 재설정 필요
 			setTimeout(function() {
 				const $dp = $("#ui-datepicker-div");
+				input.blur(), 0
 				//$dp.find('.ui-datepicker-prev, .ui-datepicker-next').attr('tabindex', '0');
 			}, 0);
 		},
