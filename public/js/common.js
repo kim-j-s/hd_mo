@@ -628,6 +628,30 @@
 		$this.val(val);
 	});
 	// 유효기간 처리
+
+
+	// 하단 고정형 팝업 아코디언형
+	$DOM.on("click", ".baad_c_wrap .baad_c_btn", function () {
+		const $this = $(this),
+			$head = $this.parent(".baad_c_top"),
+			$inner = $head.next(".baad_c_cont").children(".inner");
+		if ($inner.css("display") == "none") {
+			// 펼치기
+			$(".wrap").attr("aria-hidden", "true");
+			$this.closest(".baad_c").addClass("active");
+			$head.addClass("active");
+			$this.attr("aria-expanded", "true");
+			$inner.slideDown();
+		} else {
+			// 접기
+			$this.closest(".baad_c").removeClass("active");
+			$(".wrap").attr("aria-hidden", "false");
+			$this.attr("aria-expanded", "false");
+			$inner.slideUp();
+			$head.removeClass("active");
+		}
+	});
+	// 하단 고정형 팝업 아코디언형
 	
 
 	
@@ -1544,6 +1568,16 @@ $(function(){
 
 		function togglePanel($panel, $button, $items) {
 			const isExpanded = $panel.hasClass('active');
+
+			if(isExpanded) {
+				console.log('x');
+				$('#header').attr('aria-hidden', false);
+				$('#container').attr('aria-hidden', false);
+			} else {
+				console.log('fr');
+				$('#header').attr('aria-hidden', true);
+				$('#container').attr('aria-hidden', true);
+			}
 		
 			// 상태 토글
 			$panel.toggleClass('active', !isExpanded);
@@ -1641,7 +1675,8 @@ $(function(){
 			console.log('event 2');
     }
   });
-	// e: 상품설명서 주요 내용 스크롤 버튼	
+	// e: 상품설명서 주요 내용 스크롤 버튼
+	
 
 	// ready
 
