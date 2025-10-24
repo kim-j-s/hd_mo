@@ -1020,14 +1020,14 @@ $(function(){
 			setTimeout(function(){
 				$("body").addClass('modal_open');
 				const $dp = $("#ui-datepicker-div");
-				$dp.find('.ui-datepicker-prev, .ui-datepicker-next').attr('tabindex', '0');
+				//$dp.find('.ui-datepicker-prev, .ui-datepicker-next').attr('tabindex', '0');
 			}, 50);
 		},
 		onChangeMonthYear: function(year, month, inst) {
 			// 월 변경 후에도 tabindex 재설정 필요
 			setTimeout(function() {
 				const $dp = $("#ui-datepicker-div");
-				$dp.find('.ui-datepicker-prev, .ui-datepicker-next').attr('tabindex', '0');
+				//$dp.find('.ui-datepicker-prev, .ui-datepicker-next').attr('tabindex', '0');
 			}, 0);
 		},
 
