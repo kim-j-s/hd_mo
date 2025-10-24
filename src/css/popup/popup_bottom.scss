@@ -286,24 +286,28 @@
 
 	}
 
-	&.acd_t_bottom {
+
+
+
+
+	&.acd_t_popup {
 		top: auto;
-		bottom: 0;
-		max-height: 132px;
-		padding-top: 32px;
+		bottom: 0;		
+		// padding-top: 32px;
 		visibility: visible;
 		opacity: 1;
 		pointer-events: auto;
 		background-color: transparent;
 		transition: max-height 0.3s ease, background-color 0.3s ease;
-		
-		// 추후 핸들 개선 필요
-		&.close_exp {
-			.popup_close {
-				display: block;
-			}
+
+		.acd_t_popup_top {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
 		}
-		// 추후 핸들 개선 필요
+		
+		
 		.popup_container {
 			transform: translateY(0);
 			.popup_inner {
@@ -318,12 +322,22 @@
 				}
 			}
 		}
+
 		&.active {
 			max-height: calc(100% - 20px);
 			overflow: auto;
 		}
 
 
+		&.acd_t_popup_type1 {
+			max-height: 132px;
+			padding-top: 32px;
+			
+
+		}
+
+
+		
 		&.dim_lv2 {
 			&::before {
 				content: '';
@@ -348,3 +362,74 @@
 		}
 	}
 }
+
+
+
+
+
+
+/* 바닥에 짱박히는 스타일 아코디언 */
+.baad_c {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	max-height: calc(100% - 20px);
+	overflow: auto;
+	&.baad_c_type1 {
+		&::before {
+			content: '';
+			position: fixed;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			visibility: hidden;
+			opacity: 0;
+			background-color: transparent;
+			transition: all 0.3s;
+		}
+		&.active {
+			&::before {
+				visibility: visible;
+				opacity: 1;
+				background-color: rgba(0, 0, 0, 0.5);
+			}
+		}
+	}
+}
+
+.baad_c_top {
+	.baad_c_btn {
+		position: relative;
+		&.baad_c_btn_type1 {
+			display: block;
+			width: 100%;
+			height: 32px;
+			.text {
+				font-size: 0;
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				right: 4px;
+				width: 24px;
+				height: 24px;
+				border-radius: var(--radius-max);
+				border: var(--border-width-static-regular) solid var(--color-button-icon-fill-border);
+				background: var(--color-button-tertiary-fill-active) url(../images/icon/icon_dynamic_close.svg) no-repeat center / 12px auto;				transform: translateY(-50%);
+			}
+		}
+	}
+}
+
+.baad_c_cont {
+	border-radius: var(--radius-large2) var(--radius-large2) 0 0;
+	background: var(--color-surface-white-subtle);
+	overflow: auto;
+}
+
+
+/* 바닥에 짱박히는 스타일 아코디언 */
