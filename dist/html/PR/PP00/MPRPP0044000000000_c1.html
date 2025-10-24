@@ -564,32 +564,6 @@
 			</div>
 		</div>
 
-		<script>
-			const $DOM = $(document);
-			$DOM.on("click", ".baad_c_wrap .baad_c_btn", function () {
-				const $this = $(this),
-					$head = $this.parent(".baad_c_top"),
-					$inner = $head.next(".baad_c_cont").children(".inner"),
-					$click_item = $head.parent(".baad_c_wrap");
-
-				if ($inner.css("display") == "none") {
-					// 펼치기
-					$(".wrap").attr("aria-hidden", "true");
-					$this.closest(".baad_c").addClass("active");
-					$head.addClass("active");
-					$this.attr("aria-expanded", "true");
-					$inner.slideDown();
-				} else {
-					// 접기
-					$this.closest(".baad_c").removeClass("active");
-					$(".wrap").attr("aria-hidden", "false");
-					$this.attr("aria-expanded", "false");
-					$inner.slideUp();
-					$head.removeClass("active");
-				}
-			});
-		</script>
-
 		<!-- e: popup area -->
 	</body>
 </html>
