@@ -1176,9 +1176,9 @@ $(function(){
 		$('.ui-datepicker tbody tr td a').removeAttr('title');
 		$('.ui-datepicker-today a').attr('title', '선택됨');
 		// 0.5초 후 readonly 제거
-		setTimeout(function () {
-			$input.attr("readonly", false);
-		}, 500);
+		// setTimeout(function () {
+		// 	$input.attr("readonly", false);
+		// }, 500);
 	
 		// 달력 내부 포커스로 이동 (접근성 강화)
 		setTimeout(function () {
