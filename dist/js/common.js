@@ -389,6 +389,13 @@
 		}else {
 			$relGroup.removeAttr('class').addClass('relationship_box ' + newClass);
 		}
+		
+		const labelText = $(this).next().text();
+		$relGroup.attr({
+			role: 'img',
+			'aria-live': 'polite',
+			'aria-label': '운전자와의 관계: ' + labelText.replace(/\s{2,}/g, ' ').trim()
+		});
 	});
 
 	// 수령지 일괄 선택
@@ -1096,7 +1103,9 @@ $(function(){
 		// readonly 잠시 설정 → 키보드 입력 방지
 		$input.attr("readonly", true);
 		$input.datepicker("show");
-	
+		$('.ui-datepicker-calendar tbody tr td a').removeAttr('title');
+		$('.ui-datepicker-today a').attr('title', '오늘 날짜');
+		$('.ui-state-active').attr('title', '선택됨');
 		// 0.5초 후 readonly 제거
 		setTimeout(function () {
 			$input.attr("readonly", false);
@@ -1129,6 +1138,8 @@ $(function(){
 		$input.attr("readonly", true);
 		$input.monthpicker("show");
 	
+		$('.ui-datepicker tbody tr td a').removeAttr('title');
+		$('.ui-datepicker-today a').attr('title', '선택됨');
 		// 0.5초 후 readonly 제거
 		setTimeout(function () {
 			$input.attr("readonly", false);
