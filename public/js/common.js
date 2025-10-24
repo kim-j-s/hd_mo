@@ -389,6 +389,13 @@
 		}else {
 			$relGroup.removeAttr('class').addClass('relationship_box ' + newClass);
 		}
+		
+		const labelText = $(this).next().text();
+		$relGroup.attr({
+			role: 'img',
+			'aria-live': 'polite',
+			'aria-label': '운전자와의 관계: ' + labelText.replace(/\s{2,}/g, ' ').trim()
+		});
 	});
 
 	// 수령지 일괄 선택
