@@ -480,6 +480,10 @@
 		// 2. 최대 step카운트로 초기화
 		$stepper.init();
 	});
+	
+	$(window).on('load', function () {
+		openHDPopup('','pop_type05');
+	});
 </script>
 	
 
@@ -505,22 +509,25 @@
 {{/ popup/popup_layer}}
 <!-- e: 유효성 체크 -->	 
 
-<!-- s: 네이버페이 제휴 -->
-{{#> popup/popup_bottom popup-id="pop_npay" popup-title="네이버페이 제휴" popup-active=true }}
-<div class="popup_cont">
-	<div class="popup_content">
-		<div class="banner_box">
-			<img src="../../../images/content/gipc/MPRGIPC50002000000_1.png" alt="현대해상 다이렉트 해외장기체류보험 지금 가입시 네이버페이포인트 최대 3만원!">
+<!-- s: 25-10-24 수정 -->
+<!-- s: bottom banner팝업1 -->
+<div class="popup_wrap bottom bn_ty" id="pop_type05" role="dialog" aria-modal="true" aria-hidden="true">
+	<div class="popup_container">
+		<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type05');"></div>
+		<div class="popup_inner">
+			<div class="popup_cont">
+				<div class="popup_content">
+					<a href="javascript:void(0)" title="네이버 제휴 안내 확인" onclick="closeHDPopup('pop_type05');">
+						<img src="../../../images/event/banner_travel1.png" alt="현대해상 다이렉트 해외장기체류보험 지금 가입 시 네이버페이 포인트 최대 3만원! 확인">
+					</a>
+				</div>
+			</div>
+			<button type="button" class="popup_close" onclick="closeHDPopup('pop_type05');"><span class="blind">팝업 닫기</span></button>
 		</div>
 	</div>
 </div>
-<div class="popup_bottom">
-	<div class="btn_area">
-		{{> cp/button type="1" size="2" b-text="확인" }}
-	</div>
-</div>
-{{/ popup/popup_bottom}}
-<!-- e: 네이버페이 제휴 -->
+<!-- e: bottom banner팝업1-->
+<!-- e: 25-10-24 수정 -->
 <!-- e: popup area -->
 
 
