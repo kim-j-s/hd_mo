@@ -376,10 +376,13 @@
 	/* Tab */
 	$DOM.on('click', '.tab_btn:not(.tab_btn_block)', function(){
 		const idx = $(this).index();
-		$(this).closest('[class^=tab_wrap_list]').children('.tab_btn').removeClass('active').attr('aria-selected', 'false');
+		const $tab = $(this).closest('[class^=tab_wrap_list]').children('.tab_btn');
+		const $tabCont = $(this).closest('.tab_wrap').children('.tab_wrap_content');
+
+		$tab.removeClass('active').attr('aria-selected', 'false');
 		$(this).addClass('active').attr('aria-selected', 'true');
-		$(this).closest('.tab_wrap').children('.tab_wrap_content').removeClass('active');
-		$(this).closest('.tab_wrap').children('.tab_wrap_content').eq(idx).addClass('active');
+		$tabCont.removeClass('active').removeAttr('tabindex');
+		$tabCont.eq(idx).addClass('active');
 	});
 
 	// select_driver
@@ -398,11 +401,26 @@
 			$relGroup.removeAttr('class').addClass('relationship_box ' + newClass);
 		}
 		
-		const labelText = $(this).next().text();
+		const selectedTexts = [];
+
+		$relGroup.find('[class^=rel_case]').each(function(i) {
+			const el = this;
+			const before = window.getComputedStyle(el, '::before');
+			const content = before.getPropertyValue('content');
+			const labelText = $(el).text().replace(/\s{2,}/g, ' ').trim();
+
+			// ::before가 존재하는 경우(content가 "none"이 아님)
+			if (content && content !== 'none' && labelText) {
+				selectedTexts.push(labelText);
+			} else {
+				//console.log('skip', i, 'content:', content, 'text:', `"${labelText}"`);
+			}
+		});
+		
 		$relGroup.attr({
 			role: 'img',
 			'aria-live': 'polite',
-			'aria-label': '운전자와의 관계: ' + labelText.replace(/\s{2,}/g, ' ').trim()
+			'aria-label': '운전자기준 운전할 분: ' + selectedTexts
 		});
 	});
 
@@ -1026,6 +1044,11 @@ $(function(){
 	// 펼치기/접히기 - 담보한번에변경하기(MPRMTPS10004001000)
 	moreLngChk();
 	
+
+	setTimeout(function(){
+		$('.tab_wrap_content').removeAttr('tabindex');
+	},100)
+
 	// 스크롤 이벤트 초기화 및 동적 생성시 재 호출
 	$('.position_event_wrap').each(function () {
 		initPositionEventWrap($(this));

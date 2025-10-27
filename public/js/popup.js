@@ -88,7 +88,7 @@ function openHDPopup($triggerEl, target) {
 	});
 
 	if ($header) $header.attr("tabindex", 0);
-	// if ($content) $content.attr("tabindex", 0);
+	if ($content) $content.attr("tabindex", 0);
 
 	const focusTarget = $header || $content;
 
