@@ -81,6 +81,11 @@ function openHDPopup($triggerEl, target) {
 		}, 0);
 	}
 
+	if($content.find('.tab_wrap_content').length > 0){
+		$content.find('.tab_wrap_content').removeAttr('tabindex');
+	}
+
+
 	$target.attr("aria-hidden", "false");
 	$target.find(".popup_inner").attr({
 		tabindex: 0,
