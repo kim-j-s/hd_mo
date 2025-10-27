@@ -141,15 +141,15 @@
 							scrollTop = $('.container').scrollTop(),
 							newVal = positionVal  + scrollTop - headerH - fixH;
 
-				if(moveIdx == btnIdx){
-					$('.container').animate({
-						scrollTop : newVal
-					}, 300, function(){
-						$('.anchor_move').eq(moveIdx).attr('tabindex', '0');
-						$('.anchor_move').eq(moveIdx).focus();
-						$('.anchor_move').eq(moveIdx).removeAttr('tabindex');
-					});
-				}
+							if(moveIdx == btnIdx){
+								$('.container').animate({
+									scrollTop : newVal
+								}, 300, function(){
+									$('.anchor_move').eq(moveIdx).attr('tabindex', '0');
+									$('.anchor_move').eq(moveIdx).focus();
+									$('.anchor_move').eq(moveIdx).removeAttr('tabindex');
+								});
+							}
 			})
 		}
 	});
@@ -374,10 +374,13 @@
 	/* Tab */
 	$DOM.on('click', '.tab_btn:not(.tab_btn_block)', function(){
 		const idx = $(this).index();
-		$(this).closest('[class^=tab_wrap_list]').children('.tab_btn').removeClass('active').attr('aria-selected', 'false');
+		const $tab = $(this).closest('[class^=tab_wrap_list]').children('.tab_btn');
+		const $tabCont = $(this).closest('.tab_wrap').children('.tab_wrap_content');
+
+		$tab.removeClass('active').attr('aria-selected', 'false');
 		$(this).addClass('active').attr('aria-selected', 'true');
-		$(this).closest('.tab_wrap').children('.tab_wrap_content').removeClass('active');
-		$(this).closest('.tab_wrap').children('.tab_wrap_content').eq(idx).addClass('active');
+		$tabCont.removeClass('active').removeAttr('tabindex');
+		$tabCont.eq(idx).addClass('active');
 	});
 
 	// select_driver
@@ -1024,6 +1027,11 @@ $(function(){
 	// 펼치기/접히기 - 담보한번에변경하기(MPRMTPS10004001000)
 	moreLngChk();
 	
+
+	setTimeout(function(){
+		$('.tab_wrap_content').removeAttr('tabindex');
+	},100)
+
 	// 스크롤 이벤트 초기화 및 동적 생성시 재 호출
 	$('.position_event_wrap').each(function () {
 		initPositionEventWrap($(this));
