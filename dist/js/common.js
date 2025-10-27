@@ -141,15 +141,18 @@
 							scrollTop = $('.container').scrollTop(),
 							newVal = positionVal  + scrollTop - headerH - fixH;
 
-							if(moveIdx == btnIdx){
-								$('.container').animate({
-									scrollTop : newVal
-								}, 300, function(){
-									$('.anchor_move').eq(moveIdx).attr('tabindex', '0');
-									$('.anchor_move').eq(moveIdx).focus();
-									$('.anchor_move').eq(moveIdx).removeAttr('tabindex');
-								});
-							}
+				if(moveIdx == btnIdx){
+					$('.container').animate({
+						scrollTop : newVal
+					}, 300, function(){
+						setTimeout(function() {
+							$('.anchor_move').eq(moveIdx).children().first().attr('tabindex', '0');
+							$('.anchor_move').eq(moveIdx).children().first().css('background', '#ddd');
+							$('.anchor_move').eq(moveIdx).focus();
+							$('.anchor_move').eq(moveIdx).children().first().removeAttr('tabindex');
+						}, 50);
+					});
+				}
 			})
 		}
 	});
