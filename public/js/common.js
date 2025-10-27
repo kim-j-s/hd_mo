@@ -142,12 +142,15 @@
 							newVal = positionVal  + scrollTop - headerH - fixH;
 
 				if(moveIdx == btnIdx){
+					console.log('?');
 					$('.container').animate({
 						scrollTop : newVal
 					}, 500)
 
 					// console.log($('.anchor_move').eq(idx).children('.is_coverage_graph').attr('class'));
+					$('.anchor_move').eq(moveIdx).attr('tabindex', '0');
 					$('.anchor_move').eq(moveIdx).focus();
+					$('.anchor_move').eq(moveIdx).removeAttr('tabindex');
 				}
 			})
 		}
