@@ -121,7 +121,7 @@
 			}
   });
 
-	/* Anchor */
+	/* Anchor - 보장 진단 결과 */
 	$DOM.on('click', '.anchor_wrap .anchor_btn', function(){
 		$('.anchor_move').children().first().removeAttr('tabindex');
     const $this = $(this),
@@ -148,9 +148,15 @@
 								}, 300, function(){
 									setTimeout(function() {
 										$('.anchor_move').eq(moveIdx).children().first().attr('tabindex', '0');
+<<<<<<< HEAD
 										// $('.anchor_move').eq(moveIdx).children().first().css('background', '#ddd');
 										$('.anchor_move').eq(moveIdx).children().first().focus();
 										// $('.anchor_move').eq(moveIdx).children().first().removeAttr('tabindex');
+=======
+										$('.anchor_move').eq(moveIdx).children().first().css('background', '#ddd');
+										$('.anchor_move').eq(moveIdx).focus();
+										$('.anchor_move').eq(moveIdx).children().first().removeAttr('tabindex');
+>>>>>>> a8c8c0142046b065f8ea9b0fa65114ec795fb724
 									}, 50);
 								});
 							}
@@ -403,11 +409,26 @@
 			$relGroup.removeAttr('class').addClass('relationship_box ' + newClass);
 		}
 		
-		const labelText = $(this).next().text();
+		const selectedTexts = [];
+
+		$relGroup.find('[class^=rel_case]').each(function(i) {
+			const el = this;
+			const before = window.getComputedStyle(el, '::before');
+			const content = before.getPropertyValue('content');
+			const labelText = $(el).text().replace(/\s{2,}/g, ' ').trim();
+
+			// ::before가 존재하는 경우(content가 "none"이 아님)
+			if (content && content !== 'none' && labelText) {
+				selectedTexts.push(labelText);
+			} else {
+				//console.log('skip', i, 'content:', content, 'text:', `"${labelText}"`);
+			}
+		});
+		
 		$relGroup.attr({
 			role: 'img',
 			'aria-live': 'polite',
-			'aria-label': '운전자와의 관계: ' + labelText.replace(/\s{2,}/g, ' ').trim()
+			'aria-label': '운전자기준 운전할 분: ' + selectedTexts
 		});
 	});
 

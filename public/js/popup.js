@@ -81,6 +81,10 @@ function openHDPopup($triggerEl, target) {
 		}, 0);
 	}
 
+	if($content.find('.tab_wrap_content').length > 0){
+		$content.find('.tab_wrap_content').removeAttr('tabindex');
+	}
+
 	$target.attr("aria-hidden", "false");
 	$target.find(".popup_inner").attr({
 		tabindex: 0,
@@ -88,7 +92,7 @@ function openHDPopup($triggerEl, target) {
 	});
 
 	if ($header) $header.attr("tabindex", 0);
-	if ($content) $content.attr("tabindex", 0);
+	// if ($content) $content.attr("tabindex", 0);
 
 	const focusTarget = $header || $content;
 
@@ -190,6 +194,9 @@ function closeHDPopup(target, returnTarget = null) {
 	}
 	getOpener.removeAttr("triggerId");
 	$target.removeAttr("opner");
+	setTimeout(function(){
+		$('body').removeAttr('tabindex');
+	}, 360);
 }
 
 

@@ -81,14 +81,18 @@ function openHDPopup($triggerEl, target) {
 		}, 0);
 	}
 
+	if($content.find('.tab_wrap_content').length > 0){
+		$content.find('.tab_wrap_content').removeAttr('tabindex');
+	}
+
 	$target.attr("aria-hidden", "false");
 	$target.find(".popup_inner").attr({
-		tabindex: 0,
+		// tabindex: 0,
 		"aria-hidden": "false",
 	});
 
 	if ($header) $header.attr("tabindex", 0);
-	if ($content) $content.attr("tabindex", 0);
+	// if ($content) $content.attr("tabindex", 0);
 
 	const focusTarget = $header || $content;
 
@@ -154,7 +158,7 @@ function closeHDPopup(target, returnTarget = null) {
 
 		$prevInner = $($prevPopup).find(".popup_inner");
 		$prevInner.attr({
-			tabindex: 0,
+			// tabindex: 0,
 			"aria-hidden": "false",
 		});
 
@@ -166,7 +170,8 @@ function closeHDPopup(target, returnTarget = null) {
 		// focusTarget.css("display", "block");
 		setTimeout(() => {
 			$target.attr("aria-hidden", "true");
-			$target.find(".popup_inner").attr("aria-hidden", "true").removeAttr("tabindex", 0);
+			// $target.find(".popup_inner").attr("aria-hidden", "true").removeAttr("tabindex", 0);
+			$target.find(".popup_inner").attr("aria-hidden", "true");
 			if(focusTarget) {
 				focusTarget.focus();
 				focusTarget.attr("aria-live", "assertive"); //포커스 이동을 스크린 리더에 알림
@@ -181,11 +186,13 @@ function closeHDPopup(target, returnTarget = null) {
 		$("body").css("overscroll-behavior", "auto");
 		$("body").removeClass("scroll_lock");
 		$target.attr("aria-hidden", "true");
-		$target.find(".popup_inner").attr("aria-hidden", "true").removeAttr("tabindex", 0);
+		// $target.find(".popup_inner").attr("aria-hidden", "true").removeAttr("tabindex", 0);
+		$target.find(".popup_inner").attr("aria-hidden", "true");
 
 		const focusTarget = $triggerEl || $("body");
 		setTimeout(() => {
-			focusTarget.attr("tabindex", 0).focus();
+			// focusTarget.attr("tabindex", 0).focus();
+			focusTarget.focus();
 		}, 350);
 	}
 	getOpener.removeAttr("triggerId");
