@@ -17,6 +17,7 @@
 
 			setTimeout(function(){
 				$nav.find('.nav_menu_inner').attr('tabindex', '0').focus();
+				$nav.find('.nav_menu_inner').removeAttr('tabindex');
 				$('.header_right .allmenu').attr('aria-hidden', 'true');
 				$nav.attr('aria-hidden', 'false');
 				$('.header_inner').find('*').not('.nav_menu_wrap, .header_right, .header_right *').attr('aria-hidden', 'true');
