@@ -198,6 +198,9 @@ function closeHDPopup(target, returnTarget = null) {
 	}
 	getOpener.removeAttr("triggerId");
 	$target.removeAttr("opner");
+	setTimeout(function(){
+		$('body').removeAttr('tabindex');
+	}, 360);
 }
 
 
