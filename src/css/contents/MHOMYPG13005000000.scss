@@ -245,7 +245,7 @@
 .anchor_wrap{
 	margin: 0 -24px;
 
-	& + * {
+	& + *:not(.anchor_move) {
 			margin-top: var(--gap-8);
 	}
 
@@ -290,7 +290,9 @@
 	}
 }
 .anchor_move {
-	margin-top: 32px;
+	// margin-top: 32px;
+	padding-top: 32px;
+	margin-top: 0;
 	& + .list_ty2 {
 		margin-top: var(--gap-11);
 	}

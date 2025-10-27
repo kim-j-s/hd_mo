@@ -123,6 +123,7 @@
 
 	/* Anchor - 보장 진단 결과 */
 	$DOM.on('click', '.anchor_wrap .anchor_btn', function(){
+		$('.anchor_move').children().first().removeAttr('tabindex');
     const $this = $(this),
 					btnIdx = $this.index(),
 					text = $this.find('.hd_badge').text(),
@@ -147,9 +148,9 @@
 								}, 300, function(){
 									setTimeout(function() {
 										$('.anchor_move').eq(moveIdx).children().first().attr('tabindex', '0');
-										$('.anchor_move').eq(moveIdx).children().first().css('background', '#ddd');
-										$('.anchor_move').eq(moveIdx).focus();
-										$('.anchor_move').eq(moveIdx).children().first().removeAttr('tabindex');
+										// $('.anchor_move').eq(moveIdx).children().first().css('background', '#ddd');
+										$('.anchor_move').eq(moveIdx).children().first().focus();
+										// $('.anchor_move').eq(moveIdx).children().first().removeAttr('tabindex');
 									}, 50);
 								});
 							}
@@ -186,16 +187,6 @@
 				$this.val(newVal).removeClass('isVal');
 			}
 		}
-
-		// 전화번호 입력 적용 준비 중 스크립트
-		// if( $this.closest('.input_text').hasClass('phone phone_full') && !$this.prop('readonly') && !$this.prop('disabled') ){
-		// 	if(val){
-		// 		const newVal = val.replace(/ - /g, '');
-		// 		$this.attr('maxlength', 11);
-		// 		$this.val(newVal).removeClass('isVal');
-		// 	}
-		// }
-		// 전화번호 입력 적용 준비 중 스크립트
     
   }).on('blur', '.inp > input', function(){
     const $this = $(this),
@@ -488,12 +479,13 @@
 		$(this).addClass('active').attr('title', '선택됨');
 	});
 
-	// inp_only_num
-	$DOM.on('keyup', '.inp_only_num', function() {
-		const $this = $(this),
-					val = $this.val().replace(/[^0-9]/g, ''); // 숫자만 허용
-		$this.val(val);
-	});
+	// inp_only_num -  input[type="tel"]로 대체
+	// $DOM.on('keyup', '.inp_only_num', function() {
+	// 	const $this = $(this),
+	// 				val = $this.val().replace(/[^0-9]/g, ''); // 숫자만 허용
+	// 	$this.val(val);
+	// });
+	// inp_only_num -  input[type="tel"]로 대체
 
 	// input[type="tel"]
 	$DOM.on('keyup', 'input[type="tel"]', function() {
@@ -603,7 +595,7 @@
 
 	// 전화번호 입력 적용 준비 중 스크립트
 	$DOM.on('focus', '.input_text.phone_full input', function () {
-		// console.log('진입 2');
+		console.log('진입 2');
 	
 		const $this = $(this);
 	
@@ -613,7 +605,7 @@
 		}
 	
 		// 값 가져오기 및 하이픈/공백 제거
-		let val = $this.val() ? $this.val().replace(/[-\s]/g, '') : '';
+		let val = $this.val() ? $this.val().replace(/[^0-9*]/g, '') : '';
 	
 		// 값이 없으면 기본값 010 세팅
 		if (!val) {
@@ -629,7 +621,7 @@
 
 	$DOM.on("blur", ".input_text.phone_full input", function () {
 		let $this = $(this);
-		let val = $this.val().replace(/[^0-9]/g, ""); // 숫자만 남김
+		let val = $this.val().replace(/[^0-9*]/g, ""); // 숫자만 남김
 	
 		if (val.length === 10) {
 			// 10자리 → 010-000-0000
@@ -980,7 +972,6 @@ function inputState() {
 
 function inpPhoneFormat() {
 	$('.input_text').each(function() {
-		// if( $(this).hasClass('phone') && $(this).hasClass('readonly') || $(this).hasClass('phone') && $(this).hasClass('disabled') ){
 		if( $(this).hasClass('phone') ){
 			const $inp = $(this).children('.inp').find('input');
 			let val = $inp.val();
@@ -989,14 +980,13 @@ function inpPhoneFormat() {
 			$inp.val(newVal).addClass('isVal');
 		}
 		// 전화번호 입력 적용 준비 중 스크립트
-		// if( $(this).hasClass('phone_full') && $(this).hasClass('readonly') || $(this).hasClass('phone_full') && $(this).hasClass('disabled') ){
 		if( $(this).hasClass('phone_full') ) {
 			const $inp = $(this).children('.inp').find('input');
-			let val = $inp.val().replace(/[^0-9]/g, "");
+			let val = $inp.val().replace(/[^0-9*]/g, "");
 			if (val.length === 10) {
-				val = val.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
+				val = val.replace(/^(\d{3})([\d*]{3})([\d*]{4})$/, "$1-$2-$3");
 			} else if (val.length === 11) {
-				val = val.replace(/(\d{3})(\d{4})(\d{4})/, "$1-$2-$3");
+				val = val.replace(/^(\d{3})([\d*]{4})([\d*]{4})$/, "$1-$2-$3");
 			}
 			$inp.val(val);
 		}
@@ -1006,26 +996,6 @@ function inpPhoneFormat() {
 
 $(window).on('load', function() {
 	inputState();
-	
-	// 폼요소 라디오, 체크박스 타이틀 연결 필요시 살릴 소스
-	// $('.form_line').each(function(index) {
-	// 	const $formBox = $(this);
-	// 	const $formLabel = $formBox.find('.label_tit');
-	// 	const $formRadio = $formBox.find('.radio_group_wrap');
-	// 	const $formCheck = $formBox.find('.checkbox_group_wrap');
-
-	// 	if ($formRadio.length) {
-	// 		const labelId = 'label_radio_' + (index + 1);
-	// 		$formLabel.attr('id', labelId);
-	// 		$formRadio.attr('aria-labelledby', labelId);
-	// 	}
-
-	// 	if ($formCheck.length) {
-	// 		const labelId = 'label_check_' + (index + 1);
-	// 		$formLabel.attr('id', labelId);
-	// 		$formCheck.attr('aria-labelledby', labelId);
-	// 	}
-	// });
 });
 
 

@@ -123,6 +123,7 @@
 
 	/* Anchor */
 	$DOM.on('click', '.anchor_wrap .anchor_btn', function(){
+		$('.anchor_move').children().first().removeAttr('tabindex');
     const $this = $(this),
 					btnIdx = $this.index(),
 					text = $this.find('.hd_badge').text(),
@@ -141,18 +142,18 @@
 							scrollTop = $('.container').scrollTop(),
 							newVal = positionVal  + scrollTop - headerH - fixH;
 
-				if(moveIdx == btnIdx){
-					$('.container').animate({
-						scrollTop : newVal
-					}, 300, function(){
-						setTimeout(function() {
-							$('.anchor_move').eq(moveIdx).children().first().attr('tabindex', '0');
-							$('.anchor_move').eq(moveIdx).children().first().css('background', '#ddd');
-							$('.anchor_move').eq(moveIdx).focus();
-							$('.anchor_move').eq(moveIdx).children().first().removeAttr('tabindex');
-						}, 50);
-					});
-				}
+							if(moveIdx == btnIdx){
+								$('.container').animate({
+									scrollTop : newVal
+								}, 300, function(){
+									setTimeout(function() {
+										$('.anchor_move').eq(moveIdx).children().first().attr('tabindex', '0');
+										// $('.anchor_move').eq(moveIdx).children().first().css('background', '#ddd');
+										$('.anchor_move').eq(moveIdx).children().first().focus();
+										// $('.anchor_move').eq(moveIdx).children().first().removeAttr('tabindex');
+									}, 50);
+								});
+							}
 			})
 		}
 	});
