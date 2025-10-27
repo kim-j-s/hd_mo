@@ -85,7 +85,6 @@ function openHDPopup($triggerEl, target) {
 		$content.find('.tab_wrap_content').removeAttr('tabindex');
 	}
 
-
 	$target.attr("aria-hidden", "false");
 	$target.find(".popup_inner").attr({
 		tabindex: 0,
