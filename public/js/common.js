@@ -402,7 +402,7 @@
 			if (content && content !== 'none' && labelText) {
 				selectedTexts.push(labelText);
 			} else {
-				console.log('skip', i, 'content:', content, 'text:', `"${labelText}"`);
+				//console.log('skip', i, 'content:', content, 'text:', `"${labelText}"`);
 			}
 		});
 		
