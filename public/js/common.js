@@ -390,11 +390,26 @@
 			$relGroup.removeAttr('class').addClass('relationship_box ' + newClass);
 		}
 		
-		const labelText = $(this).next().text();
+		const selectedTexts = [];
+
+		$relGroup.find('[class^=rel_case]').each(function(i) {
+			const el = this;
+			const before = window.getComputedStyle(el, '::before');
+			const content = before.getPropertyValue('content');
+			const labelText = $(el).text().replace(/\s{2,}/g, ' ').trim();
+
+			// ::before가 존재하는 경우(content가 "none"이 아님)
+			if (content && content !== 'none' && labelText) {
+				selectedTexts.push(labelText);
+			} else {
+				console.log('skip', i, 'content:', content, 'text:', `"${labelText}"`);
+			}
+		});
+		
 		$relGroup.attr({
 			role: 'img',
 			'aria-live': 'polite',
-			'aria-label': '운전자와의 관계: ' + labelText.replace(/\s{2,}/g, ' ').trim()
+			'aria-label': '운전자기준 운전할 분: ' + selectedTexts
 		});
 	});
 
