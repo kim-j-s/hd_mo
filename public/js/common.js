@@ -121,7 +121,7 @@
 			}
   });
 
-	/* Anchor */
+	/* Anchor - 보장 진단 결과 */
 	$DOM.on('click', '.anchor_wrap .anchor_btn', function(){
     const $this = $(this),
 					btnIdx = $this.index(),
@@ -145,9 +145,11 @@
 								$('.container').animate({
 									scrollTop : newVal
 								}, 300, function(){
-									$('.anchor_move').eq(moveIdx).attr('tabindex', '0');
-									$('.anchor_move').eq(moveIdx).focus();
-									$('.anchor_move').eq(moveIdx).removeAttr('tabindex');
+									setTimeout(function() {
+										$('.anchor_move').eq(moveIdx).children().first().attr('tabindex', '0');
+										$('.anchor_move').eq(moveIdx).focus();
+										$('.anchor_move').eq(moveIdx).children().first().removeAttr('tabindex');
+									}, 50);
 								});
 							}
 			})

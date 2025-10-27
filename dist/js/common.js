@@ -145,9 +145,11 @@
 					$('.container').animate({
 						scrollTop : newVal
 					}, 300, function(){
-						$('.anchor_move').eq(moveIdx).attr('tabindex', '0');
-						$('.anchor_move').eq(moveIdx).focus();
-						$('.anchor_move').eq(moveIdx).removeAttr('tabindex');
+						setTimeout(function() {
+							$('.anchor_move').eq(moveIdx).children().first().attr('tabindex', '0');
+							$('.anchor_move').eq(moveIdx).focus();
+							$('.anchor_move').eq(moveIdx).children().first().removeAttr('tabindex');
+						}, 50);
 					});
 				}
 			})
