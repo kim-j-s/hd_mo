@@ -491,7 +491,7 @@
 	$DOM.on('keyup', 'input[type="tel"]', function() {
 		const $this = $(this);
 		// comma 클래스가 상위에 있으면 실행하지 않음
-		if ($this.closest('.comma, .price').length) {
+		if ($this.closest('.comma, .price, .ex_period').length) {
 			return;
 		}
 		// 숫자만 허용
@@ -637,6 +637,12 @@
 
 
 	// 유효기간 처리
+	$DOM.on('keyup', '.input_text .ex_period', function() {
+		const $this = $(this);
+		// 숫자만 허용
+		const val = $this.val().replace(/[^0-9/]/g, '');
+		$this.val(val);		
+	});
 	$DOM.on('focus', '.input_text .ex_period', function () {
 		let val = $(this).val();
 		// '/' 제거
@@ -646,11 +652,8 @@
 		// console.log('유효기간 진입');
 		let $this = $(this);
 		let val = $this.val().replace(/[^0-9]/g, ""); // 숫자만 남김
-	
-		if (val.length === 4) {
-			val = val.replace(/(\d{2})(\d{2})/, "$1/$2");
-		}
-	
+		val = val.substring(0, 4);
+		val = val.replace(/(\d{2})(\d{2})/, "$1/$2");
 		$this.val(val);
 	});
 	// 유효기간 처리
