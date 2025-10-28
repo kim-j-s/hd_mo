@@ -114,7 +114,8 @@ function openHDPopup($triggerEl, target) {
 		}
 		if (activePopups.length > 0) {
 			activePopups.attr("aria-hidden", "true");
-			activePopups.find(".popup_inner").attr("aria-hidden", "true");
+			// activePopups.find(".popup_inner").attr("aria-hidden", "true");
+			activePopups.find(".popup_inner");
 		}
 	}, 350);
 }
@@ -197,6 +198,9 @@ function closeHDPopup(target, returnTarget = null) {
 	}
 	getOpener.removeAttr("triggerId");
 	$target.removeAttr("opner");
+	setTimeout(function(){
+		$('body').removeAttr('tabindex');
+	}, 360);
 }
 
 
