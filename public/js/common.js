@@ -973,6 +973,37 @@ function inputState() {
 	inpPhoneFormat();
 }
 
+function directTv() {
+	$('.direct_tv_acd').each(function(){
+		const $wH = $(window).height();
+		const $this = $(this);
+		// 계산 element
+		const $hi = $('.header').outerHeight();
+		const $vt = $('.view_title').outerHeight();		
+		const $va = $('.vod_area').outerHeight();
+		const $thisTitle = $this.find('.acd_head').outerHeight();		
+		const $bfw = $('.bottom_fix_wrap').outerHeight();
+		const $sp1 = '16';
+		const $sp2 = '64';
+		const $sp3 = '16';
+		const $sp4 = '28';
+		const $sp5 = '16';
+		// acd_cont 하단 여백
+		const $sp6 = '16';
+		// acd_cont 상단 여백
+		const $sp7 = '12';
+
+		$this.find('.acd_cont .inner').css('height', $wH - ($hi + $vt + $va + $thisTitle + $bfw + parseInt($sp1) + parseInt($sp2) + parseInt($sp3) + parseInt($sp4) + parseInt($sp5) + parseInt($sp6) - parseInt($sp7)) + 'px' );
+
+
+		console.log($wH);
+
+	});
+
+}
+
+
+
 function inpPhoneFormat() {
 	$('.input_text').each(function() {
 		if( $(this).hasClass('phone') ){
@@ -999,6 +1030,7 @@ function inpPhoneFormat() {
 
 $(window).on('load', function() {
 	inputState();
+	directTv();
 });
 
 
@@ -1821,4 +1853,5 @@ function prograssCar(){
 
 $(window).resize(function(){
 	// prograssBar();
+	directTv();
 })
