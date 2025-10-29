@@ -133,8 +133,21 @@
 }
 .form_list {
 	> li {
+		.form_sub_top {
+			font-size: var(--font-size-body-medium);
+			font-weight: 700;
+			color: var(--color-text-primary-bold);
+		}
+
 		> .form_group_wrap {
 			> .form_line {
+
+				.form_sub_top {
+					& + .label_tit {
+						margin-top: var(--gap-3);
+					}
+				}
+
 				> .label_tit {
 					margin-bottom: var(--gap-5);
 					font-size: var(--font-size-heading-small);
@@ -146,11 +159,14 @@
 
 					.num {
 						font-size: var(--font-size-heading-xsmall);
-						padding-right: var(--gap-3);
+						padding-right: var(--gap-2);
+						// padding-right: var(--gap-3);
+						vertical-align: top;
 					}
 
 					& + .info_gray { 
 						margin-top: var(--gap-5);
+						word-break: keep-all;
 					}
 					& + .btn_area {
 						margin-top: -8px;
