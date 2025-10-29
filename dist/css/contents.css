@@ -2072,11 +2072,13 @@
 	font-weight: 700;
 }
 .footer .footer_top > div .select_item.select_item_case01 .si_item {
+	min-width: 7.2rem;
 	padding: var(--padding-5) 3.6rem var(--padding-5) var(--padding-5);
 	color: inherit;
 	background: transparent url(../images/icon/arrowDown_ty2.svg) no-repeat right 1.2rem center/1.6rem auto;
 	font-size: var(--font-size-body-xsmall);
 	border-radius: var(--radius-medium3);
+	line-height: 2.4rem;
 }
 .footer .footer_top > div .select_item.select_item_case01 .si_item::after {
 	border: 0;
@@ -2174,10 +2176,10 @@
 	color: var(--color-text-basic);
 }
 .input_form_box .input_item_wrap {
-	overflow: hidden;
 	border-radius: 1.6rem;
 	-webkit-box-shadow: 0 0 0.2rem 0 var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)), 0 0.4rem 0.8rem 0 var(--color-alpha-shadow2, rgba(0, 0, 0, 0.08));
 	box-shadow: 0 0 0.2rem 0 var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)), 0 0.4rem 0.8rem 0 var(--color-alpha-shadow2, rgba(0, 0, 0, 0.08));
+	overflow: hidden;
 }
 .input_form_box .input_item_wrap .acd_item {
 	position: relative;
@@ -2198,38 +2200,36 @@
 	border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 }
 .input_form_box .input_item_wrap .acd_item .acd_head {
-	overflow: hidden;
 	background-color: #fff;
+	overflow: hidden;
 }
 .input_form_box .input_item_wrap .acd_item .acd_head .acd_btn {
 	position: relative;
 	width: 100%;
 	padding: var(--padding-7) 4.8rem var(--padding-7) var(--padding-8);
-	background-color: #fff;
 	font-size: var(--font-size-label-medium);
+	background-color: #fff;
+	-webkit-transition: all 0.4s;
+	transition: all 0.4s;
 }
 .input_form_box .input_item_wrap .acd_item .acd_head .acd_btn > span {
 	line-height: 2.4rem;
 }
 .input_form_box .input_item_wrap .acd_item .acd_head .acd_btn:after {
+	content: "";
 	position: absolute;
 	right: 2.4rem;
 	top: calc(50% - 1.2rem);
-	content: "";
 	width: 2.4rem;
 	height: 2.4rem;
 	background: url(../images/icon/arrowDown_ty1.svg) no-repeat right center/2.4rem auto;
-}
-.input_form_box .input_item_wrap .acd_item .acd_head .acd_btn[aria-expanded="true"] {
-	-webkit-transition: border-radius 0.4s ease-in;
-	transition: border-radius 0.4s ease-in;
 }
 .input_form_box .input_item_wrap .acd_item .acd_head .acd_btn[aria-expanded="true"]:after {
 	-webkit-transform: rotate(180deg);
 	transform: rotate(180deg);
 }
-.input_form_box .input_item_wrap .acd_item .acd_head.active + .acd_cont {
-	margin-top: -1.2rem;
+.input_form_box .input_item_wrap .acd_item .acd_head.active .acd_btn {
+	padding-bottom: var(--padding-5);
 }
 .input_form_box .input_item_wrap .acd_item .acd_cont {
 	background-color: #fff;
@@ -4850,6 +4850,14 @@
 .input_text + .inp_checkbox {
 	margin-top: var(--gap-5);
 }
+.form_list > li .form_sub_top {
+	font-size: var(--font-size-body-medium);
+	font-weight: 700;
+	color: var(--color-text-primary-bold);
+}
+.form_list > li > .form_group_wrap > .form_line .form_sub_top + .label_tit {
+	margin-top: var(--gap-3);
+}
 .form_list > li > .form_group_wrap > .form_line > .label_tit {
 	margin-bottom: var(--gap-5);
 	font-size: var(--font-size-heading-small);
@@ -4861,10 +4869,12 @@
 }
 .form_list > li > .form_group_wrap > .form_line > .label_tit .num {
 	font-size: var(--font-size-heading-xsmall);
-	padding-right: var(--gap-3);
+	padding-right: var(--gap-2);
+	vertical-align: top;
 }
 .form_list > li > .form_group_wrap > .form_line > .label_tit + .info_gray {
 	margin-top: var(--gap-5);
+	word-break: keep-all;
 }
 .form_list > li > .form_group_wrap > .form_line > .label_tit + .btn_area {
 	margin-top: -0.8rem;
