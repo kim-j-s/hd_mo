@@ -257,16 +257,22 @@
 			const move = $content.scrollTop() + (targetTop - containerTop);
 
 			// 부드럽게 스크롤 이동
-			$content.animate({ scrollTop: move }, 300);
+			$content.animate({ 
+				scrollTop: move 
+			}, 300, function(){
+				$this.find('.big input').focus();
+			});
+
+			
 
 			// 디버깅용 로그
-			console.log({
-				containerScrollTop: $content.scrollTop(),
-				containerTop,
-				targetTop,
-				move
-			});
-		}, 200);
+			// console.log({
+			// 	containerScrollTop: $content.scrollTop(),
+			// 	containerTop,
+			// 	targetTop,
+			// 	move
+			// });
+		}, 100);
 	}
 
 
