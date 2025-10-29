@@ -79,15 +79,13 @@
 
 	// 자동차 소유 정보 입력영역
 	.input_item_wrap {
-		overflow: hidden;
 		border-radius: 16px;
 		box-shadow: 0 0 2px 0 var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)), 0 4px 8px 0 var(--color-alpha-shadow2, rgba(0, 0, 0, 0.08));
+		overflow: hidden;
 
 		.acd_item {
 			position: relative;
 			overflow: hidden;
-			// box-shadow: 0 0 2px 0 var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05)), 0 4px 8px 0 var(--color-alpha-shadow2, rgba(0, 0, 0, 0.08));
-			// transition: margin .4s ease-in-out;
 
 			&:before {
 				content: '';
@@ -104,92 +102,54 @@
 				border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 			}
 
-			// &:first-child {
-			// 	margin-top: 0;
-
-			// 	& + .open {
-			// 		margin-top: 0;
-			// 	}
-			// 	&.open {
-			// 		margin-top: 0;
-			// 	}
-			// }
-
-			// &.open {
-			// 	margin-top: -30px;
-
-			// 	& + .acd_item {
-			// 		margin-top: -30px;
-
-			// 		&.open {
-			// 			margin-top: -30px;
-			// 		}
-			// 	}
-			// }
-
 			.acd_head {
-				overflow: hidden;
-				// padding-bottom: 8px;
 				background-color: #fff;
-				// border-radius: 16px 16px 0 0;
+				overflow: hidden;
 				
 				.acd_btn {
 					position: relative;
 					width: 100%;
-					// padding: 20px 48px 12px 24px;
 					padding: var(--padding-7) 48px var(--padding-7) var(--padding-8);
-					background-color: #fff;
 					font-size: var(--font-size-label-medium);
-
+					background-color: #fff;
+					transition: all .4s;
 					& > span {
 						line-height: 24px;
 					}
 
 					&:after {
+						content:'';
 						position: absolute;
 						right: 24px;
 						top: calc(50% - 12px);
-						content:'';
 						width: 24px;
 						height: 24px;
 						background: url(../images/icon/arrowDown_ty1.svg) no-repeat right center / 24px auto;
 					}
 					
 					&[aria-expanded='true']{
-						transition: border-radius .4s ease-in;
-						// border-radius: 16px 16px 0 0 ;
-
 						&:after {
 							transform: rotate(180deg);
 						}
 					}
 				}
 				&.active {
-					& + .acd_cont {
-						margin-top: -12px;
+					.acd_btn {
+						padding-bottom: var(--padding-5);
 					}
 				}
 			}
 
 			.acd_cont {
 				background-color: #fff;
-				// border-radius: 0 0 16px 16px;
 				.inner {
-					// padding: 0 24px 50px;
 					padding: 0 24px 20px;
-
-					.input_text {
-						//border-color: var(--color-border-gray-light);
-					}
 				}
 			}
 		}
 
 		.birth {
 			gap: var(--gap-3);
-			// padding: 0;
-			// border-color: var(--color-border-gray-light);
-
 			&.active {
 				.input_text {
 					&.big {
@@ -202,17 +162,6 @@
 
 			.input_text {
 				&.big {
-					// input {
-					// 	height: calc(var(--size-height-10) - 8px); 
-					// 	padding-left: var(--padding-5);
-					// 	caret-color: var(--color-element-primary);
-					// 	text-align: left;
-					// 	&::placeholder {
-					// 		font-size: var(--font-size-heading-medium);
-					// 	}
-					// }
-					
-	
 					& + .dash {
 						font-size: var(--font-size-heading-medium);
 						font-weight: 700;
@@ -220,8 +169,6 @@
 					}
 				}
 			}
-
-
 		}
 	}
 
@@ -270,11 +217,6 @@
 				background-image: url(../images/content/mtps/icon_MPRMTPS10002010000_ty#{$i}.svg);
 			}
 		}
-		// > a {
-		// 	display: block;
-		// 	padding: 24px 36px 24px 44px;
-		// 	background: url(../images/icon/arrowRight_ty4.svg) no-repeat right center;
-		// }
 
 		.cont {
 			font-size: var(--font-size-body-medium);
