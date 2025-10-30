@@ -373,9 +373,8 @@
 
 		$tab.removeClass('active').attr('aria-selected', 'false');
 		$(this).addClass('active').attr('aria-selected', 'true');
-		//$tabCont.removeClass('active').removeAttr('tabindex');
-		$tabCont.removeClass('active').attr('tabindex', -1);
-		$tabCont.eq(idx).addClass('active').attr('tabindex', 0);
+		$tabCont.removeClass('active').removeAttr('tabindex');
+		$tabCont.eq(idx).addClass('active');
 	});
 
 	// select_driver
