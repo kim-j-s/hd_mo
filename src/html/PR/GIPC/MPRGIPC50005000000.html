@@ -76,8 +76,15 @@
 							<!-- e: 25-08-11 UXW -->
 							{{> cp/linkButton bl_class="short_cut sm" bl_text="구분 안내" pop_id="" question_tit="링크" }}
 						</div>
-						<p class="info_text3">고객님은 전문금융소비자 입니다. 단체(회사)명을 입력해주세요.</p>
-						{{> cp/text placeholder="단체(회사)명 입력" inp-title="단체(회사)명 입력" }}
+						<!-- s: 25-10-29 수정 -->
+						<div class="radio_group_wrap" role="radiogroup">
+							{{> cp/radio rd-class="rd_btn" rd-id="consumer_ty01" name="consumer_ty" labelname="일반금융소비자" checked=true }}
+							{{> cp/radio rd-class="rd_btn" rd-id="consumer_ty02" name="consumer_ty" labelname="전문금융소비자" }}
+						</div>
+						<ul class="list_ty2">
+							<li>「금융소비자 보호에 관한 법률」제17조제1항에 따라 보험계약자의 일반&middot;전문금융소비자 여부를 확인하기 위한 절차입니다.</li>
+						</ul>
+						<!-- e: 25-10-29 수정 -->
 					</div>
 					<!-- e: 25-07-15 수정 -->
         </div>
