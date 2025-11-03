@@ -65,7 +65,7 @@
 						<div class="nav_menu_wrap" aria-hidden="true">
 							<div class="nav_menu_inner">
 								<div class="nav_menu_top">
-									<a href="#" class="nmt_btn go_home"><span class="text">홈으로 이동</span></a>
+									<a href="#" class="nmt_btn go_home" role="button"><span class="text">홈으로 이동</span></a>
 									<!-- s: 25-10-01 추가 -->
 									<button type="button" class="popup_setting"><span class="blind">앱 설정으로 이동</span></button>
 									<!-- e: 25-10-01 추가 -->
@@ -861,27 +861,37 @@
 				const headerHeight = $(".home_card.sticky").outerHeight() || 0;
 				let isClickScrolling = false;
 
+				//s: 25-11-03
 				// 버튼 클릭 시
 				$buttons.each(function () {
 					const $btn = $(this);
 					const targetNum = $btn.data("target");
 					const $target = $(`.bg_ty0${targetNum}`);
+					const product = $(".product");
 
 					$btn.on("click", function () {
 						// 클릭으로 인한 스크롤임을 표시
 						isClickScrolling = true;
+						product.removeAttr("tabindex");
+						const scrollTop = $target.offset().top - $container.offset().top + $container.scrollTop() - headerHeight + 150;
 						// s: 25-08-27
 						if (targetNum === 1) {
-							$container.animate({ scrollTop: 0 }, 600, function () {
-								$(".home_card.sticky").removeClass("active");
-								isClickScrolling = false;
-							});
-							return; // 아래 로직 실행 안 함
+							if ($container.scrollTop() == 0) {
+								$container.animate({ scrollTop: 0 }, 600, function () {
+									$(".home_card.sticky").addClass("active");
+									isClickScrolling = false;
+								});
+							} else {
+								$container.animate({ scrollTop: 0 }, 600, function () {
+									$(".home_card.sticky").removeClass("active");
+									isClickScrolling = false;
+								});
+								return; // 아래 로직 실행 안 함
+							}
 						} else {
 							$(".home_card.sticky").addClass("active");
 						}
 						// e: 25-08-27
-						const scrollTop = $target.offset().top - $container.offset().top + $container.scrollTop() - headerHeight + 150;
 
 						// 버튼 active
 						$buttons.removeClass("active");
@@ -891,27 +901,33 @@
 						setTimeout(scrollActiveButtonIntoView, 10);
 
 						// 콘텐츠로 이동
-						$container.animate(
-							{
-								scrollTop: scrollTop,
-							},
-							600,
-							function () {
-								// 애니메이션 완료 후 다시 감지 허용
-								// const $focusable = $target.find('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])').filter(':visible').first();
+						if ($container.scrollTop() !== 0) {
+							$container.animate(
+								{
+									scrollTop: scrollTop,
+								},
+								600,
+								function () {
+									// 애니메이션 완료 후 다시 감지 허용
+									// const $focusable = $target.find('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])').filter(':visible').first();
 
-								// if ($focusable.length) {
-								// 	$focusable.focus();
-								// } else {
-								// 	// 없다면 컨테이너 자체에 tabindex 부여 후 포커스 (예외 대응)
-								// 	$target.attr('tabindex', '-1').focus();
-								// }
-								$target.attr("tabindex", "-1").focus();
-								isClickScrolling = false;
-							},
-						);
+									// if ($focusable.length) {
+									// 	$focusable.focus();
+									// } else {
+									// 	// 없다면 컨테이너 자체에 tabindex 부여 후 포커스 (예외 대응)
+									// 	$target.attr('tabindex', '-1').focus();
+									// }
+									$target.attr("tabindex", "-1").focus();
+									isClickScrolling = false;
+								},
+							);
+						} else {
+							$target.attr("tabindex", "-1").focus();
+							isClickScrolling = false;
+						}
 					});
 				});
+				//e: 25-11-03
 
 				$container.on("scroll", function () {
 					if (isClickScrolling) return;

@@ -1203,7 +1203,9 @@
 .container.home,
 .container.cyber {
 	padding: 0 0 var(--padding-13) 0;
-	background: var(--color-background-blue-darker, #313d4c);
+	background: var(--color-background-blue-darker);
+	-ms-scroll-chaining: none;
+	overscroll-behavior: none;
 }
 .container.home .content,
 .container.cyber .content {
@@ -5290,6 +5292,9 @@ ul + .form_group_wrap {
 }
 .info_cont + .title_h3 {
 	margin-top: var(--gap-11);
+}
+.info_cont + .info_cont {
+	margin-top: var(--gap-8);
 }
 /* 보험가입 진행 정보 */
 .pro_info_wrap .pop_title_h3 {
