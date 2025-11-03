@@ -4,47 +4,82 @@
 {{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="TMAP 안전운전 점수 조회"}}
     <div class="popup_cont">
         <div class="popup_content">
-            <!-- s: popup_content_top -->
-            <!-- s: 25-08-20 UXW -->
-            <div class="popup_content_top">
-                <p class="text_sub">TMAP 안전운전 점수 조회를 위한 OTP 번호를 입력해주세요</p>
-            </div>
-            <!-- e: 25-08-20 UXW -->
-            <!-- e: popup_content_top -->
-            <div class="info_gray">
-                <dl>
-                    <dt>안전운전 점수</dt>
-                    <!-- s: 25-08-18 UXW -->
-                    <dd>TMAP 가입정보 확인 불가</dd>
-                    <!-- e: 25-08-18 UXW -->
-                </dl>
-                <dl>
-                    <dt>특약가능여부</dt>
-                    <dd>불가</dd>
-                </dl>
-                <dl>
-                    <dt>조회결과</dt>
-                    <dd>-</dd>
-                </dl>
-            </div>
-            <ul class="list_ty2">
-                <li>휴대폰번호 이외의 방식으로 TMAP을 이용 중이신 경우, OTP인증번호를 통해 점수를 재조회하실 수 있습니다.</li>
-                <li>TMAP 앱 > 마이 > 회원정보 > 일회용 인증번호(OTP)</li>
-            </ul>
-            
-			<div class="form_group_wrap">
-				<div class="form_line">
-					<div class="label_tit">OTP번호</div>
-                    <!-- s: 25-09-02 수정 -->
-                    {{> cp/text type="tel" placeholder="6자리 숫자 입력" maxlength="6" inp-title="OTP번호 입력" }}
-                    <!-- e: 25-09-02 수정 -->
-				</div>
-            </div>
+					<!-- s: 25-11-03 수정 -->
+					<!-- s: popup_content_top -->
+					<!-- s: 25-08-20 UXW -->
+					<!-- 삭제 <div class="popup_content_top">
+						<p class="text_sub">TMAP 안전운전 점수 조회를 위한 OTP 번호를 입력해주세요</p>
+					</div> -->
+					<!-- e: 25-08-20 UXW -->
+					<!-- e: popup_content_top -->
+
+					<div class="info_gray">
+							<dl>
+									<dt>안전운전 점수</dt>
+									<!-- s: 25-08-18 UXW -->
+									<dd>TMAP 가입정보 확인 불가</dd>
+									<!-- e: 25-08-18 UXW -->
+							</dl>
+							<dl>
+									<dt>특약가능여부</dt>
+									<dd>불가</dd>
+							</dl>
+							<dl>
+									<dt>조회결과</dt>
+									<dd>-</dd>
+							</dl>
+					</div>
+					
+					<ul class="list_depth_ty2">
+						<li>휴대폰번호 이외의 방식으로 TMAP을 이용 중인 경우, OTP인증번호를 통해 점수를 다시 조회할 수 있습니다.</li>
+						<li>TMAP 앱 > 마이 > 회원정보 > 일회용 인증번호(OTP)</li>
+					</ul>
+
+					<div class="title_h3">
+						TMAP 안전운전 점수 재조회
+						{{#> cp/tooltip trigger-icon="popover_help"}}
+						<p>휴대폰번호 이외의 방식으로 TMAP을 이용 중이신 경우, 다른 방법으로도 안전운전점수 재조회가 가능합니다.</p>
+						{{/ cp/tooltip}}
+					</div>
+
+					<div class="radio_group_wrap" role="radiogroup">
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_g1" name="radio_g1" labelname="휴대폰인증 재조회" checked=true }}
+						{{> cp/radio rd-class="rd_btn" rd-id="radio_btn_g2" name="radio_g1" labelname="OTP인증번호 재조회" }}
+					</div>
+
+					<!-- 휴대폰인증 Case -->
+					<ul class="list_depth_ty2">
+						<li>휴대폰 본인인증을 통해 고객님의 연계정보(CI)로 안전운전 점수를 조회합니다.</li>
+					</ul>
+
+					<!-- OTP인증번호 Case -->
+					<ul class="list_depth_ty2">
+						<li>
+							티맵(TMAP)에서 발급하는 일회용 OTP인증번호로 안전운전점수를 조회합니다.
+							<ul>
+								<li>OTP인증번호 발급 방법: 티맵(TMAP) &gt; 마이 &gt; 회원정보 &gt; 일회용 인증번호(OTP)발급</li>
+							</ul>
+						</li>
+					</ul>
+
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">OTP번호</div>
+							<!-- s: 25-09-02 수정 -->
+							{{> cp/text type="tel" placeholder="6자리 숫자 입력" maxlength="6" inp-title="OTP번호 입력" }}
+							<!-- e: 25-09-02 수정 -->
+						</div>
+					</div>
+					<!-- e: 25-11-03 수정 -->
         </div>
     </div>
     <div class="popup_bottom">
         <div class="btn_area">
-            {{> cp/button type="1" size="2" b-text="점수 조회하기"}}
+					<!-- s: 25-11-03 수정 -->
+					{{> cp/button type="1" size="2" b-text="점수 조회하기"}}
+					<!-- {{> cp/button type="1" size="2" b-text="휴대폰 본인인증 하기"}} -->
+					<!-- {{> cp/button type="1" size="2" b-text="OTP번호로 재조회하기"}} -->
+					<!-- e: 25-11-03 수정 -->
         </div>
     </div>
     {{/ popup/popup_bottom}}
