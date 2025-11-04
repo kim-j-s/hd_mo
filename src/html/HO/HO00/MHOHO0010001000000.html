@@ -897,7 +897,9 @@
             const $switch = $(this);
             const isChecked = $switch.is(':checked');
             $('body').toggleClass('easy_mode', isChecked);
-            $switch.attr('aria-checked', isChecked).attr('aria-label', isChecked ? '일반모드 전환' : '간편모드 전환');
+            /* s: 25-11-04 수정 */
+            $switch.attr('aria-checked', isChecked).attr('aria-label', isChecked ? '간편모드 끄기' : '간편모드 전환');
+            /* e: 25-11-04 수정 */
             if (isChecked) {
                 $('.toolbar').hide();
                 $('.easy_top').show();
