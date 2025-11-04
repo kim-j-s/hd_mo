@@ -382,6 +382,8 @@
 
 						<div class="acc_group">
 							<div class="space_list_ty2">
+								<!-- s: 25-11-04 수정 -->
+								<!-- 삭제
 								<div class="acd_item acd_item_ty2">
 									{{#> cp/accordion ac-title="꼭 가입해야 할 보장" cont-class="" ac-active=true }}
                   <ul class="coverage_item_list">
@@ -401,14 +403,46 @@
                   </ul>
 									{{/ cp/accordion }}
 								</div>
+								 -->
+								<!-- e: 25-11-04 수정 -->
 
 								<div class="acd_item acd_item_ty2">
 									{{#> cp/accordion ac-title="해외에서 아프거나 다쳤을 때" cont-class="" ac-active=true }}
 										<ul class="coverage_item_list">
+											<!-- s: 25-11-04 수정 -->
 											<li class="list">
-												{{#> cp/checkbox labelname="질병사망·후유장해(해외장기체류)" id="checkbox02-1" }}
+												{{#> cp/checkbox labelname="상해후유장해(해외장기체류)" id="checkbox02-0" }}
+												<div class="chk_lby2">
+													{{> cp/linkButton bl_class="price_btn" bl_text="10만달러" role_b=true question_tit="가입조건변경"}}
+												</div>
+												{{/ cp/checkbox }}
+											</li>
+											<li class="list">
+												{{#> cp/checkbox labelname="상해사망•후유장해(해외장기체류)" id="checkbox02-01" }}
+												<div class="chk_lby2">
+													<div class="cont_text_sub">계약자 본인 외 가족피보험자는 상해사망 담보 미가입(상해후유장애만 해당)</div>
+													{{> cp/linkButton bl_class="price_btn" bl_text="10만달러" role_b=true question_tit="가입조건변경"}}
+												</div>
+												{{/ cp/checkbox }}
+											</li>
+											<li class="list">
+												{{#> cp/checkbox labelname="질병사망및80%고도후유장해" id="checkbox02-02" }}
 												<div class="chk_lby2">
 													<div class="cont_text_sub">계약자 본인 외 가족/동반인은 사망보장 미가입</div>
+													{{> cp/linkButton bl_class="price_btn" bl_text="2만달러" role_b=true question_tit="가입조건변경"}}
+												</div>
+												{{/ cp/checkbox }}
+											</li>											
+											<li class="list">
+												{{#> cp/checkbox labelname="상해사망·후유장해(해외장기체류)" id="checkbox02-11" }}
+												<div class="chk_lby2">
+													{{> cp/linkButton bl_class="price_btn" bl_text="2만달러" role_b=true question_tit="가입조건변경"}}
+												</div>
+												{{/ cp/checkbox }}
+											</li>
+											<li class="list">
+												{{#> cp/checkbox labelname="질병사망및80%고도후유장해" id="checkbox02-1" }}
+												<div class="chk_lby2">
 													{{> cp/linkButton bl_class="price_btn" bl_text="2만달러" role_b=true question_tit="가입조건변경"}}
 												</div>
 												{{/ cp/checkbox }}
@@ -416,8 +450,7 @@
 											<li class="list">
 												{{#> cp/checkbox labelname="해외장기체류 상해_해외의료실비보장" id="checkbox02-2" }}
 												<div class="chk_lby2">
-													{{> cp/linkButton bl_class="price_btn" bl_text="10만달러" role_b=true question_tit="가입조건변경"}}
-                        
+													{{> cp/linkButton bl_class="price_btn" bl_text="10만달러" role_b=true question_tit="가입조건변경"}}                        
 												</div>
 												{{/ cp/checkbox }}
 											</li>
@@ -429,89 +462,91 @@
 												{{/ cp/checkbox }}
 											</li>
 											<li class="list">
-												{{#> cp/checkbox labelname="해외장기체류 상해급여_국내의료실비보장" id="checkbox02-4" }}
+												{{#> cp/checkbox labelname="중대사고 구조송환비용 등(7일 이상)" id="checkbox02-6" }}
 												<div class="chk_lby2">
 													<!-- s: 25-06-10 수정 -->
-													{{> cp/linkButton bl_class="price_btn" bl_text="5,000만원" role_b=true question_tit="가입조건변경"}}
+													{{> cp/linkButton bl_class="price_btn" bl_text="7만5천달라" role_b=true question_tit="가입조건변경"}}
 													<!-- e: 25-06-10 수정 -->
 												</div>
 												{{/ cp/checkbox }}
 											</li>
-											<li class="list">
-												{{#> cp/checkbox labelname="해외장기체류 상해비급여_국내의료실비보장" id="checkbox02-6" }}
-												<div class="chk_lby2">
-													<!-- s: 25-06-10 수정 -->
-													{{> cp/linkButton bl_class="price_btn" bl_text="5,000만원" role_b=true question_tit="가입조건변경"}}
-													<!-- e: 25-06-10 수정 -->
-												</div>
-												{{/ cp/checkbox }}
-											</li>
-											<li class="list">
-												{{#> cp/checkbox labelname="해외장기체류 질병급여_국내의료실비보장" id="checkbox02-5" }}
-												<div class="chk_lby2">
-													<!-- s: 25-06-10 수정 -->
-													{{> cp/linkButton bl_class="price_btn" bl_text="5,000만원" role_b=true question_tit="가입조건변경"}}
-													<!-- e: 25-06-10 수정 -->
-												</div>
-												{{/ cp/checkbox }}
-											</li>
-											<li class="list">
-												{{#> cp/checkbox labelname="해외장기체류 질병비급여_국내의료실비보장" id="checkbox02-7" }}
-												<div class="chk_lby2">
-													<!-- s: 25-06-10 수정 -->
-													{{> cp/linkButton bl_class="price_btn" bl_text="5,000만원" role_b=true question_tit="가입조건변경"}}		
-													<!-- e: 25-06-10 수정 -->											
-												</div>
-												{{/ cp/checkbox }}
-											</li>											
-											<li class="list">
-												{{#> cp/checkbox labelname="해외장기체류 3대비급여_국내의료실비보장" id="checkbox02-7" }}
-												<div class="chk_lby2">
-													{{> cp/linkButton bl_class="price_btn" bl_text="350만원" role_b=true question_tit="가입조건변경"}}													
-												</div>
-												{{/ cp/checkbox }}
-											</li>											
+											<!-- e: 25-11-04 수정 -->
 										</ul>
 									{{/ cp/accordion }}
 								</div>
 
+								<!-- s: 25-11-04 수정 -->
+							
 								<div class="acd_item acd_item_ty2">
-									{{#> cp/accordion ac-title="머무는 동안 문제가 생겼을 때" cont-class="" ac-active=true }}
+									{{#> cp/accordion ac-title="남에게 피해를 입혔을 때" cont-class="" ac-active=true }}
 										<ul class="coverage_item_list">
 											<li class="list">
-												{{#> cp/checkbox labelname="중대사고 구조송환비용 등(7일 이상)" id="checkbox03-1" }}
+												{{#> cp/checkbox labelname="일괄배상(해외장기체류)" id="checkbox03-1" }}
 												<div class="chk_lby2">
-													<!-- s: 25-06-10 수정 -->
 													{{> cp/linkButton bl_class="price_btn" bl_text="5,000만원" role_b=true question_tit="가입조건변경"}}
-													<!-- e: 25-06-10 수정 -->
-
-													<!-- s: 25-06-04 수정 -->
-													 <span class="badge_wrap">
-														<span class="hd_badge outline solid_pastel c_secondary size_m">새로 나왔어요</span>
-													 </span>
-													<!-- e: 25-06-04 수정 -->
-												</div>
-												{{/ cp/checkbox }}
-											</li>
-										</ul>
-									{{/ cp/accordion }}
-								</div>							
-
-								<div class="acd_item acd_item_ty2">
-									{{#> cp/accordion ac-title="다른 사람에게 피해를 입혔을 때" cont-class="" ac-active=true }}
-										<ul class="coverage_item_list">
-											<li class="list">
-												{{#> cp/checkbox labelname="일괄배상(해외장기체류)" id="checkbox04-1" }}
-												<div class="chk_lby2">
-													<!-- s: 25-06-10 수정 -->
-													{{> cp/linkButton bl_class="price_btn" bl_text="5,000만원" role_b=true question_tit="가입조건변경"}}
-													<!-- e: 25-06-10 수정 -->
 												</div>
 												{{/ cp/checkbox }}
 											</li>
 										</ul>
 									{{/ cp/accordion }}
 								</div>
+								<!-- e: 25-11-04 수정 -->
+
+								<!-- s: 25-11-04 수정 -->
+								<div class="acd_item acd_item_ty2">
+									{{#> cp/accordion ac-title="해외에서 아프거나 다쳐서 국내에서 치료받을 때" cont-class="" ac-active=true }}
+										<ul class="coverage_item_list">
+											<li class="list">
+												{{#> cp/checkbox labelname="해외장기체류 상해급여_국내의료실비보장" id="checkbox04-1" }}
+												<div class="chk_lby2">
+													{{> cp/linkButton bl_class="price_btn" bl_text="5,000만원" role_b=true question_tit="가입조건변경"}}
+													<div class="badge_wrap">
+														<span class="hd_badge outline solid_pastel c_warning size_m">통원 15만원 한도</span>
+													</div>
+												</div>
+												{{/ cp/checkbox }}
+											</li>
+											<li class="list">
+												{{#> cp/checkbox labelname="해외장기체류 질병급여_국내의료실비보장" id="checkbox04-2" }}
+												<div class="chk_lby2">
+													{{> cp/linkButton bl_class="price_btn" bl_text="5,000만원" role_b=true question_tit="가입조건변경"}}
+													<div class="badge_wrap">
+														<span class="hd_badge outline solid_pastel c_warning size_m">통원 15만원 한도</span>
+													</div>
+												</div>
+												{{/ cp/checkbox }}
+											</li>
+											<li class="list">
+												{{#> cp/checkbox labelname="해외장기체류 상해비급여_국내의료실비보장" id="checkbox04-3" }}
+												<div class="chk_lby2">
+													{{> cp/linkButton bl_class="price_btn" bl_text="5,000만원" role_b=true question_tit="가입조건변경"}}
+													<div class="badge_wrap">
+														<span class="hd_badge outline solid_pastel c_warning size_m">통원 15만원 한도</span>
+													</div>
+												</div>
+												{{/ cp/checkbox }}
+											</li>
+											<li class="list">
+												{{#> cp/checkbox labelname="해외장기체류 질병비급여_국내의료실비보장" id="checkbox04-4" }}
+												<div class="chk_lby2">
+													{{> cp/linkButton bl_class="price_btn" bl_text="5,000만원" role_b=true question_tit="가입조건변경"}}
+													<div class="badge_wrap">
+														<span class="hd_badge outline solid_pastel c_warning size_m">통원 15만원 한도</span>
+													</div>
+												</div>
+												{{/ cp/checkbox }}
+											</li>
+											<li class="list">
+												{{#> cp/checkbox labelname="해외장기체류 3대비급여_국내의료실비보장" id="checkbox04-5" }}
+												<div class="chk_lby2">
+													{{> cp/linkButton bl_class="price_btn" bl_text="350만원" role_b=true question_tit="가입조건변경"}}
+												</div>
+												{{/ cp/checkbox }}
+											</li>
+										</ul>
+									{{/ cp/accordion }}
+								</div>
+								<!-- e: 25-11-04 수정 -->
 							
 							</div>
 						</div>
