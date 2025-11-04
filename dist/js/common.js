@@ -23,6 +23,7 @@
 				$('.header_inner').find('*').not('.nav_menu_wrap, .header_right, .header_right *').attr('aria-hidden', 'true');
 				$('.header_right > .inp_checkbox').attr('aria-hidden', 'true');
 				$('.header_right .ins_alarm').attr('aria-hidden', 'true');
+				$('.header_right .btn_cart').attr('aria-hidden', 'true');
 				$('.header_right .allmenu_open').attr('aria-hidden', 'true');
 				$('.wrap').children().not('.header').attr('aria-hidden', 'true');
 			}, 400);
@@ -41,6 +42,7 @@
 		$('.header_inner').find('*').not('.nav_menu_wrap, .header_right, .header_right *').attr('aria-hidden', 'false');
 		$('.header_right > .inp_checkbox').attr('aria-hidden', 'false');
 		$('.header_right .ins_alarm').attr('aria-hidden', 'false');
+		$('.header_right .btn_cart').attr('aria-hidden', 'false');
 		$('.header_right .allmenu_open').attr('aria-hidden', 'false');
 		$('.wrap').children().not('.header').attr('aria-hidden', 'false');
 		$nav.removeClass('active').attr('aria-hidden', 'true');
@@ -1159,6 +1161,9 @@ $(function(){
 		}
 	});
 	// 월 선택용
+
+
+	
 
 
 	$(".inp_picker").datepicker();
