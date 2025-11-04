@@ -973,9 +973,11 @@
 									<div class="box_round">
 										<h4 class="h2_title"><strong>자동차보험(개인)</strong></h4>
 										<div class="btn_area">
-											<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
+											<!-- s: 25-11-04 수정 -->
+											<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
 												<span class="text">계산/갱신</span>
 											</button>
+											<!-- e: 25-11-04 수정 -->
 										</div>
 									</div>
 									<div class="btn_area ty2">
@@ -992,6 +994,13 @@
 											<span class="text">타임쉐어<br />자동차보험</span>
 										</button>
 									</div>
+									<!-- s: 25-11-04 추가 -->
+									<div class="btn_area">
+										<button type="button" class="hd_btn hd_btn_ty_2 hd_btn_s_3">
+											<span class="text">단기운전자 특약 신청</span>
+										</button>
+									</div>
+									<!-- e: 25-11-04 추가 -->
 								</div>
 								<div class="home_card product pro_ty02 pec_point">
 									<div class="pro_tit">
@@ -1019,9 +1028,11 @@
 										<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_1">
 											<span class="text">어린이<br />(태아)보험</span>
 										</button>
+										<!-- s: 25-11-04 수정 -->
 										<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_1">
-											<span class="text">어린이<br />(0~15세)<br />보험</span>
+											<span class="text">어린이<br />(0~15세)보험</span>
 										</button>
+										<!-- e: 25-11-04 수정 -->
 										<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_1 half">
 											<span class="text">어린이<br />치아보험</span>
 										</button>
@@ -1518,7 +1529,9 @@
 					const $switch = $(this);
 					const isChecked = $switch.is(":checked");
 					$("body").toggleClass("easy_mode", isChecked);
-					$switch.attr("aria-checked", isChecked).attr("aria-label", isChecked ? "일반모드 전환" : "간편모드 전환");
+					/* s: 25-11-04 수정 */
+					$switch.attr("aria-checked", isChecked).attr("aria-label", isChecked ? "간편모드 끄기" : "간편모드 전환");
+					/* e: 25-11-04 수정 */
 					if (isChecked) {
 						$(".toolbar").hide();
 						$(".easy_top").show();
