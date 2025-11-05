@@ -475,7 +475,9 @@
 											</div>
 											<div class="main_title">다훈이가 밝은 미래를 향해 나아갈 수 있도록 따뜻하게 지켜주세요.</div>
 										</div>
-										<div class="progress">
+										<!-- s: 25-11-05 수정 -->
+										<div class="progress" role="img">
+											<!-- e: 25-11-05 수정 -->
 											<div class="bar">
 												<div class="guage"></div>
 											</div>
@@ -577,8 +579,18 @@
 				</div>
 			</div>
 		</div>
-
 		<!-- s: popup area -->
 		<!-- e: popup area -->
+		<!-- s: 25-11-05 추가 -->
+		<script>
+			$(document).ready(function () {
+				const $progress = $(".donation .progress");
+				const target = $progress.find(".progress_info span").text().trim();
+				const per = $progress.find(".progress_info strong").text().trim();
+
+				$progress.attr("aria-label", `${target} 중 ${per}`);
+			});
+		</script>
+		<!-- e: 25-11-05 추가 -->
 	</body>
 </html>
