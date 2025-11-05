@@ -170,7 +170,7 @@
 		let val = $this.val();
       
     if($del.length) {
-      $del.attr('tabindex', '0');
+      $del.attr('tabindex', '0').attr('aria-disabled', false);
     }
 
 		if (!isDisabled && !isReadonly) {
@@ -200,6 +200,7 @@
 		setTimeout(() => {
 			if (!$wrap.find('.del').is(':focus') ) {
 				$wrap.removeClass('active');
+  				$del.attr('aria-disabled', true);
 			}	
 		}, 100);
 		$wrap.find('.del').on('blur', function(){
@@ -917,6 +918,7 @@ function initPositionEventWrap($wrap) {
 function inputState() {
 	//input disabled&readonly	
 	$('.input_text input').each(function() {
+		$('.inp').find('.del').attr('aria-disabled', true);
 		if( $(this).closest('.comp_wrap').find('.input_text').length > 1 ) {
 			if( $(this).closest('.comp_wrap').find('.comp_wrap_keypad_call').length ) {
 				const $parent =  $(this).closest('.comp_wrap');				

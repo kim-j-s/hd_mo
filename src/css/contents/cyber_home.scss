@@ -532,14 +532,18 @@
 }
 .bn_scroll_wrap {
     margin: 0 -32px;
-    overflow-x: auto;
 
 		
 
 		.bn_item_wrap {
+            overflow-x: auto;
 			padding: 0 32px;
-			width: max-content; 
-			scroll-snap-type: x mandatory;
+            scroll-snap-type: x mandatory;
+            scroll-padding: 0 32px;
+            a,
+            div {
+                scroll-snap-align: start;
+            }
 			&:not(.ty3) {
 				a {
 						width: 41.5vw;
@@ -615,6 +619,7 @@
 		}
 		&.ty3 {
 				a {
+            scroll-snap-align: start;
 						img {
 								margin: auto;
 								display: block;
