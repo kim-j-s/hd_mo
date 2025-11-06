@@ -536,7 +536,7 @@
 								</div>
 								<div class="progress_bar_bottom">
 									<span class="pbb_start" data-pbcsdate="2024.01.13">2024.01.13</span>
-									<span class="pbb_end" data-pbcedate="2028.01.12">2028.01.12</span>
+									<span class="pbb_end" data-pbcedate="2027.01.12">2027.01.12</span>
 								</div>
 							</div>
 							<!-- e: 일반/단체 사용 개시전 -->
@@ -561,6 +561,23 @@
 							</div>
 							<!-- e: 개시전 -->
 							<!-- e: 25-08-19 추가 -->
+							<!-- s: 만기 -->
+							<div class="progress_bar progress_bar_ty1 progress_bar_ty1_date expired" role="img" tabindex="0">
+								<div class="progress_bar_per_cover">
+									<div class="progress_bar_per">
+										<div class="per_bar active">
+											<span class="per_bar_dp dp_ic4">
+												<span class="text">개시 전</span>
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="progress_bar_bottom">
+									<span class="pbb_start" data-pbcsdate="2024.01.13">2024.01.13</span>
+									<span class="pbb_end" data-pbcedate="2025.11.04">2025.11.04</span>
+								</div>
+							</div>
+							<!-- e: 만기 -->
 						</div>
 					</div>
 					<!-- 상세납입정보 데이터 無 -->
@@ -1144,7 +1161,9 @@
 					var $perBar = $progressBar.find(".per_bar");
 					var $perBarDp = $perBar.find(".per_bar_dp");
 					var perBarDpWidth = $perBarDp.outerWidth();
-
+					/* s: 25-11-06 */
+					$perBar.css("width", perBarDpWidth / 2);
+					/* e: 25-11-06 */
 					// console.log('움직이는 컨텐츠 넓이 : ', perBarDpWidth);
 
 					// 초기 클래스 제거
@@ -1219,19 +1238,21 @@
 						//25-08-19
 						const isExpired = $progressBar.hasClass("expired");
 						const isBefore = $progressBar.hasClass("before");
-						let labelText = `만기일 ${remainingDays}일 전`;
+						/* s: 25-11-06 */
+						let labelText = `만기 ${remainingDays}일 전`;
 						let ariaLabel = `${labelText} - 시작일:${startDate}, 종료일:${endDate}`;
 
 						if (isExpired || isBefore) {
 							if (isExpired) {
-								labelText = "만기 D-30";
-								ariaLabel = `만기 30일전 - 시작일:${startDate}, 종료일:${endDate}`;
+								labelText = `만기 D-${remainingDays}`;
+								ariaLabel = `만기 ${remainingDays}일 전 - 시작일:${startDate}, 종료일:${endDate}`;
 							} else {
-								labelText = "개시전";
-								ariaLabel = `개시전 - 시작일:${startDate}, 종료일:${endDate}`;
+								labelText = `개시D-${remainingDays}`;
+								ariaLabel = `개시 ${remainingDays}일 전 - 시작일:${startDate}, 종료일:${endDate}`;
 							}
 							$progressBar.find(".per_bar_dp .text").text(labelText);
 						}
+						/* e: 25-11-06 */
 						$progressBar.attr("aria-label", ariaLabel);
 						//25-08-19
 
@@ -1245,6 +1266,9 @@
 						var $perBar = $progressBar.find(".per_bar");
 						var $perBarDp = $perBar.find(".per_bar_dp");
 						var perBarDpWidth = $perBarDp.outerWidth();
+						/* s: 25-11-06 */
+						$perBar.css("width", perBarDpWidth / 2);
+						/* e: 25-11-06 */
 
 						// 초기 클래스 제거
 						$perBar.removeClass("pos");
