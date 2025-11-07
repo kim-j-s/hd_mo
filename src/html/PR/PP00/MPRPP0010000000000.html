@@ -2,29 +2,31 @@
 <!-- s: popup area -->
 
 <!-- s: 계산 내역 문자로 받기 Bottom 팝업 -->
-{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="휴대폰번호 입력 안내" }}
+<!-- s: 25-11-07 수정 -->
+{{#> popup/popup_bottom popup-id="pop_type01" popup-active=true popup-title="계산 결과 받기" }}
 <div class="popup_cont">
 	<div class="popup_content">
 		<div class="info_cont">
-			<p>입력하신 휴대폰번호로 계산 결과를 보내드려요.</p>
+			<p>입력하신 휴대폰번호로 보험료 계산 결과 발송 목적으로만 수집·이용됩니다.</p>
 			<!-- s: 25-09-23 수정 -->
 			<!-- 삭제 <p>입력하신 휴대폰번호는 이번 발송 용도로만 사용하고 폐기되오니 안심하세요.</p> -->
 			<!-- e: 25-09-23 수정 -->
 		</div>
 		<div class="form_group_wrap">
 			<div class="form_line">
-				<div class="label_tit">휴대폰번호</div>
-				{{> cp/text class="phone" type="tel" placeholder="- 없이 입력" maxlength="8" l-text="010" inp-title="휴대폰번호 입력" }}
+				<div class="label_tit">계산 결과 받을 휴대폰번호</div>
+				{{> cp/text class="phone phone_full" type="tel" placeholder="- 없이 입력" inp-title="계산 결과 받을 휴대폰번호 입력" }}
 			</div>
 		</div>
 	</div>
 </div>
 <div class="popup_bottom">
 	<div class="btn_area">
-		{{> cp/button type="1" size="2" b-text="확인했습니다"}}
+		{{> cp/button type="1" size="2" b-text="확인하고 계산 결과 받기"}}
 	</div>
 </div>
 {{/ popup/popup_bottom}}
+<!-- e: 25-11-07 수정 -->
 <!-- e: 계산 내역 문자로 받기 Bottom 팝업 -->
 
 
