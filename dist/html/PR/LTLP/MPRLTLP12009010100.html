@@ -69,7 +69,9 @@
 									<div class="tab_wrap_list_ty1 scroll" role="tablist">
 										<button type="button" class="tab_btn active" role="tab" aria-selected="true" aria-controls="tabPanel01" id="tab01">계약 내용</button> <button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanel02" id="tab02">계약자 및 반려동물 정보</button>
 										<!-- s: 25-08-22 UXW -->
-										<button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanel03" id="tab03">보장내용</button>
+										<!-- s: 25-11-10 수정 -->
+										<button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanel03" id="tab03">보장 내용</button>
+										<!-- e: 25-11-10 수정 -->
 										<!-- e: 25-08-22 UXW -->
 									</div>
 								</div>
@@ -296,48 +298,55 @@
 									</div>
 									<!-- s: 25-10-30 수정 -->
 									<div class="info_cont">
-										<h2 class="pop_title_h1">꼭 가입해야 할 보장</h2>
-										<div class="table_wrap">
-											<table class="table">
-												<!-- s: 25-08-22 UXW -->
-												<caption>
-													보장 담보 별 보장 금액
-												</caption>
-												<!-- e: 25-08-22 UXW -->
-												<colgroup>
-													<col style="width: 75%" />
-													<col style="width: 25%" />
-												</colgroup>
-												<thead>
-													<tr>
-														<!-- s: 25-08-22 UXW -->
-														<th scope="col">보장 담보명</th>
-														<th scope="col">보장 금액</th>
-														<!-- e: 25-08-22 UXW -->
-													</tr>
-												</thead>
-												<tbody>
-													<!-- 강아지 -->
-													<tr>
-														<td>반려견입원의료비II담보</td>
-														<td class="txt_right">1,000만원</td>
-													</tr>
-													<tr>
-														<td>반려견통원의료비II담보</td>
-														<td class="txt_right">1,000만원</td>
-													</tr>
-													<!-- 고양이 -->
-													<tr>
-														<td>반려묘입원의료비II담보</td>
-														<td class="txt_right">1,000만원</td>
-													</tr>
-													<tr>
-														<td>반려묘통원의료비II담보</td>
-														<td class="txt_right">1,000만원</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
+										<!-- s: 25-11-10 수정 -->
+										<!-- <h2 class="pop_title_h1">꼭 가입해야 할 보장</h2>
+											<div class="table_wrap">
+												<table class="table">
+													!-- s: 25-08-22 UXW --							
+													<caption>보장 담보 별 보장 금액</caption>
+													!-- e: 25-08-22 UXW --
+													<colgroup>
+														<col style="width: 75%" />
+														<col style="width: 25%" />
+													</colgroup>
+													<thead>
+														<tr>
+															!-- s: 25-08-22 UXW --									
+															<th scope="col">보장 담보명</th>
+															<th scope="col">보장 금액</th>
+															!-- e: 25-08-22 UXW --
+														</tr>
+													</thead>
+													<tbody>
+														!-- 강아지 --
+														<tr>
+															<td>
+																반려견입원의료비II담보
+															</td>
+															<td class="txt_right">1,000만원</td>
+														</tr>
+														<tr>
+															<td>
+																반려견통원의료비II담보
+															</td>
+															<td class="txt_right">1,000만원</td>
+														</tr>
+														!-- 고양이 --
+														<tr>
+															<td>
+																반려묘입원의료비II담보
+															</td>
+															<td class="txt_right">1,000만원</td>
+														</tr>
+														<tr>
+															<td>
+																반려묘통원의료비II담보
+															</td>
+															<td class="txt_right">1,000만원</td>
+														</tr>
+													</tbody>
+												</table>
+											</div> -->
 										<h2 class="pop_title_h1">반려동물이 아프거나 다쳤을 때</h2>
 										<div class="table_wrap">
 											<table class="table">
@@ -347,8 +356,8 @@
 												</caption>
 												<!-- e: 25-08-22 UXW -->
 												<colgroup>
-													<col style="width: 75%" />
-													<col style="width: 25%" />
+													<col style="width: 65%" />
+													<col style="width: auto" />
 												</colgroup>
 												<thead>
 													<tr>
@@ -361,33 +370,78 @@
 												<tbody>
 													<!-- 강아지 case -->
 													<tr>
+														<td>반려견입원의료비II담보</td>
+														<td rowspan="6">
+															<dl class="coverage_type">
+																<dt>[수술 이외]</dt>
+																<dd>
+																	<div class="tit">1일</div>
+																	<div class="cont">30만원</div>
+																</dd>
+																<dt>[수술]</dt>
+																<dd>
+																	<div class="tit">1일</div>
+																	<div class="cont">250만원</div>
+																</dd>
+																<dt>[연] 입원 및 통원</dt>
+																<dd>각각 2,000만원 한도</dd>
+																<!-- 표준형 선택시 -->
+																<dt>[연] 입원 및 통원</dt>
+																<dd>각각 1,500만원 한도</dd>
+															</dl>
+														</td>
+													</tr>
+													<tr>
+														<td>반려견통원의료비II담보</td>
+													</tr>
+													<tr>
 														<td>반려견입원의료비확장보장(치과및구강질환)담보</td>
-														<td class="txt_right">1,000만원</td>
 													</tr>
 													<tr>
 														<td>반려견통원의료비확장보장(치과및구강질환) 담보</td>
-														<td class="txt_right">1,000만원</td>
 													</tr>
 													<tr>
 														<td>반려견입원의료비확장보장(슬관절,고관절 탈구) 담보</td>
-														<td class="txt_right">1,000만원</td>
 													</tr>
 													<tr>
 														<td>반려견통원의료비확장보장(슬관절,고관절 탈구) 담보</td>
-														<td class="txt_right">1,000만원</td>
 													</tr>
 													<!-- 고양이 case -->
 													<tr>
+														<td>반려묘입원의료비II담보</td>
+														<td rowspan="4">
+															<dl class="coverage_type">
+																<dt>[수술 이외]</dt>
+																<dd>
+																	<div class="tit">1일</div>
+																	<div class="cont">30만원</div>
+																</dd>
+																<dt>[수술]</dt>
+																<dd>
+																	<div class="tit">1일</div>
+																	<div class="cont">250만원</div>
+																</dd>
+																<dt>[연] 입원 및 통원</dt>
+																<dd>각각 2,000만원 한도</dd>
+																<!-- 표준형 선택시 -->
+																<dt>[연] 입원 및 통원</dt>
+																<dd>각각 1,500만원 한도</dd>
+															</dl>
+														</td>
+													</tr>
+													<tr>
+														<td>반려묘통원의료비II담보</td>
+													</tr>
+													<tr>
 														<td>반려묘입원의료비확장보장(치과및구강질환) 담보</td>
-														<td class="txt_right">1,000만원</td>
 													</tr>
 													<tr>
 														<td>반려묘통원의료비확장보장(치과및구강질환)담보</td>
-														<td class="txt_right">1,000만원</td>
 													</tr>
 												</tbody>
 											</table>
 										</div>
+										<!-- e: 25-11-10 수정 -->
 										<!-- 강아지 case -->
 										<h2 class="pop_title_h1">검사부터 처치까지 빈틈 없이</h2>
 										<div class="table_wrap">

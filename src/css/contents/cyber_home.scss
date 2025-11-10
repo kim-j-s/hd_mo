@@ -531,131 +531,134 @@
     }
 }
 .bn_scroll_wrap {
-    margin: 0 -32px;
-
-		
-
-		.bn_item_wrap {
-            overflow-x: auto;
-			padding: 0 32px;
-            scroll-snap-type: x mandatory;
-            scroll-padding: 0 32px;
-            a,
-            div {
-                scroll-snap-align: start;
-            }
-			&:not(.ty1, .ty3) {
-				a {
-						width: 51vw;
-				}
-			}
+	margin: 0 -32px;
+	.bn_item_wrap {
+		overflow-x: auto;
+		padding: 0 32px;
+		scroll-snap-type: x mandatory;
+		scroll-padding: 0 32px;
+		a,
+		div {
+			scroll-snap-align: center;
+		}
+		&:not(.ty1, .ty3) {
 			a {
-				scroll-snap-align: center;
+					width: 51vw;
 			}
 		}
+	}
 }
 .bn_item_wrap {
-		display: flex;
-		gap: var(--gap-3);
-		margin-top: 20px;
-		> div,
-		a {
-				padding: var(--padding-8) var(--padding-7);
-				font-size: var(--font-size-body-medium);
-				border-radius: var(--radius-large2);
-				background-color: var(--color-surface-gray-subtler);
-				flex-shrink: 0;
-				word-break: keep-all;
-		}
-		&.ty1 {
-				a {
-						padding: var(--padding-8);
-						padding-top: 60px;
-                        width: 41.5vw;
-						background-repeat: no-repeat;
-						background-size: 32px auto;
-						background-position: 24px 24px;
-						@for $i from 1 through 2 {
-								&.opt#{$i}{
-										background-image: url(../images/content/ho/icon_benefit01_#{$i}.svg);
-								}
-						}
+	display: flex;
+	gap: var(--gap-3);
+	margin-top: 20px;
+	> div,
+	> li,
+	a {
+		padding: var(--padding-8) var(--padding-7);
+		font-size: var(--font-size-body-medium);
+		border-radius: var(--radius-large2);
+		background-color: var(--color-surface-gray-subtler);
+		flex-shrink: 0;
+		word-break: keep-all;
+	}
+	&.ty1 {
+			a {
+					padding: var(--padding-8);
+					padding-top: 60px;
+											width: 41.5vw;
+					background-repeat: no-repeat;
+					background-size: 32px auto;
+					background-position: 24px 24px;
+					@for $i from 1 through 2 {
+							&.opt#{$i}{
+									background-image: url(../images/content/ho/icon_benefit01_#{$i}.svg);
+							}
+					}
+			}
+	}
+	&.ty2 {
+			a {
+					flex: 1;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					// padding-top: 96px;
+					min-height: 104px;
+					padding-left: 96px;
+					background-repeat: no-repeat;
+					background-size: 56px auto;
+					background-position: 24px 24px;
+					background-color: #fff;
+					
+					@for $i from 1 through 2 {
+							&.opt#{$i}{
+									background-image: url(../images/content/ho/icon_benefit02_#{$i}.png);
+							}
+					}
+			}
+			> div:not(.auto) {
+					width: 40vw;
+			}
+			.tit {
+					font-size: var(--font-size-body-small);
+					color: var(--color-text-subtle);
+					+ .cont {
+							margin-top: var(--gap-2);
+					}
+			}
+			.badge_wrap {
+					+ .cont {
+							color: var(--color-text-basic);
+					}
+			}
+	}
+	&.ty3 {
+			a {
+					scroll-snap-align: start;
+					padding: var(--padding-9) var(--padding-8);
+					img {
+							margin: auto;
+							display: block;
+							width: 92px;
+					}
+			}
+	}
+	&.ty4 {
+			a {
+					padding: var(--padding-9) var(--padding-8);
+					width: 50vw;
+					min-height: 164px;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					.badge_wrap {
+							+ .cont {
+									margin-top: var(--gap-2);
+							}
+					}
+			}
+	} &.ty5 {
+			> div:not(.auto) {
+					width: 40vw;
+			}
+			> li:not(.auto) {
+					width: 40vw;
+			}
+			> p:not(.auto) {
+					width: 40vw;
+			}
+			.tit {
+				display: block;
+				font-size: var(--font-size-label-small);
+				color: var(--color-text-subtle);
+				+ .cont {
+					display: block;
+					margin-top: var(--gap-2);
+					font-size: var(--font-size-body-small);
 				}
-		}
-		&.ty2 {
-				a {
-						flex: 1;
-						display: flex;
-						flex-direction: column;
-						justify-content: center;
-						// padding-top: 96px;
-						min-height: 104px;
-						padding-left: 96px;
-						background-repeat: no-repeat;
-						background-size: 56px auto;
-						background-position: 24px 24px;
-						background-color: #fff;
-						
-						@for $i from 1 through 2 {
-								&.opt#{$i}{
-										background-image: url(../images/content/ho/icon_benefit02_#{$i}.png);
-								}
-						}
-				}
-				> div:not(.auto) {
-						width: 40vw;
-				}
-				.tit {
-						font-size: var(--font-size-body-small);
-						color: var(--color-text-subtle);
-						+ .cont {
-								margin-top: var(--gap-2);
-						}
-				}
-				.badge_wrap {
-						+ .cont {
-								color: var(--color-text-basic);
-						}
-				}
-		}
-		&.ty3 {
-				a {
-            scroll-snap-align: start;
-						padding: var(--padding-9) var(--padding-8);
-						img {
-								margin: auto;
-								display: block;
-								width: 92px;
-						}
-				}
-		}
-		&.ty4 {
-				a {
-						padding: var(--padding-9) var(--padding-8);
-						width: 50vw;
-						min-height: 164px;
-						display: flex;
-						flex-direction: column;
-						justify-content: center;
-						.badge_wrap {
-								+ .cont {
-										margin-top: var(--gap-2);
-								}
-						}
-				}
-		} &.ty5 {
-				> div:not(.auto) {
-						width: 40vw;
-				}
-				.tit {
-						font-size: var(--font-size-label-small);
-						color: var(--color-text-subtle);
-						+ .cont {
-								margin-top: var(--gap-2);
-								font-size: var(--font-size-body-small);
-						}
-				}
-		}
+			}
+	}
 }
 .link_btn_big {
     min-height: 56px;
@@ -777,34 +780,10 @@
 
 
 
-
+/* 웹접근성 포커스 sticky 방어용 */
 .container.home {
 	&.scrolled {
 		scroll-padding-top: 88px;
 	}
 }
-
-/* test */
-.active {
-	+ .tboxt {
-		&::before {
-			content: '';
-			display: block;
-			height: 88px;
-			margin-top: -88px;
-			background-color: blue;
-
-		}
-	}
-
-}
-
-.tboxt {
-	margin-bottom: var(--gap-1);
-}
-
-
-// .home_card.top.sticky {
-// 	position: fixed;
-// }
-/* test */
+/* 웹접근성 포커스 sticky 방어용 */
