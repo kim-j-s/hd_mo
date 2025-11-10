@@ -1,0 +1,61 @@
+{{#> layout/default no-sp=true page-title="차량 정보 | 상품"}}
+
+{{#> popup/popup_full popup-id="pop_type01" popup-active=true popup-title="이륜차 등록 정보 확인"}}
+<div class="popup_cont">
+	<div class="popup_content">
+		<!-- s: popup_content_top -->
+		<div class="popup_content_top">
+			<h2 class="title_h2">
+				<strong>이륜차 등록 정보 전산조회</strong>를 통해<br>
+				확인된 차량사항을 안내해드려요
+			</h2>
+		</div>
+		<!-- e: popup_content_top -->
+		
+		<div class="table_wrap">
+			<h3 class="title_h3">전산조회 결과</h3>
+			<table class="table table_c">
+				<caption>이륜차 등록 정보 전산 조회 결과로 현재계약의 차명, 차종 등 등록정보 제공</caption>
+				<colgroup>
+					<col style="width:24%;">
+					<col style="width:38%;">
+					<col style="width:38%;">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">구분</th>
+						<th scope="col">현재계약</th>
+						<th scope="col">등록정보</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row" class="ta_c">차명</th>
+						<td>PCX125</td>
+						<!-- 전산조회 결과 시, 등록정보 바뀐 영역에 primary_bold 클래스 추가 -->
+						<td class="primary_bold">WW125A</td>
+					</tr>
+					<tr>
+						<th scope="row" rowspan="2" class="ta_c">차종</th>
+						<!-- 전산조회 결과 시, 등록정보 바뀐 영역에 primary_bold 클래스 추가 -->
+						<td>중형</td>
+						<td class="primary_bold">소형B</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<ul class="list_depth_ty2">
+			<li>전산조회 결과에 따른 차량사항이 자동적용 됩니다.</li>
+			<li>자동차관리법 개정에 따라 일부 차종에 대해 구분기준이 변경되었습니다.</li>
+		</ul>
+	</div>
+</div>
+
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="1" b-text="확인"}}
+	</div>
+</div>
+{{/ popup/popup_full}}
+ 
+{{/ layout/default }}
