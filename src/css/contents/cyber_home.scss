@@ -536,14 +536,14 @@
 		
 
 		.bn_item_wrap {
-            overflow-x: auto;
-						padding: 0 32px;
-            // scroll-snap-type: x mandatory;
-            // scroll-padding: 0 32px;
-            a,
-            div {
-                scroll-snap-align: start;
-            }
+			overflow-x: auto;
+			padding: 0 32px;
+			// scroll-snap-type: x mandatory;
+			// scroll-padding: 0 32px;
+			a,
+			div {
+					// scroll-snap-align: start;
+			}
 			&:not(.ty1, .ty3) {
 				a {
 						width: 51vw;
@@ -560,6 +560,7 @@
 		margin-top: 20px;
 		> div,
 		> li,
+		> p,
 		a {
 				padding: var(--padding-8) var(--padding-7);
 				font-size: var(--font-size-body-medium);
@@ -651,13 +652,18 @@
 				> li:not(.auto) {
 						width: 40vw;
 				}
+				> p:not(.auto) {
+						width: 40vw;
+				}
 				.tit {
-						font-size: var(--font-size-label-small);
-						color: var(--color-text-subtle);
-						+ .cont {
-								margin-top: var(--gap-2);
-								font-size: var(--font-size-body-small);
-						}
+					display: block;
+					font-size: var(--font-size-label-small);
+					color: var(--color-text-subtle);
+					+ .cont {
+						display: block;
+						margin-top: var(--gap-2);
+						font-size: var(--font-size-body-small);
+					}
 				}
 		}
 }
