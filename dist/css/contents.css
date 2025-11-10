@@ -1848,9 +1848,6 @@
 .bn_scroll_wrap .bn_item_wrap {
 	overflow-x: auto;
 	padding: 0 3.2rem;
-	-ms-scroll-snap-type: x mandatory;
-	scroll-snap-type: x mandatory;
-	scroll-padding: 0 3.2rem;
 }
 .bn_scroll_wrap .bn_item_wrap a,
 .bn_scroll_wrap .bn_item_wrap div {
@@ -1870,6 +1867,7 @@
 	margin-top: 2rem;
 }
 .bn_item_wrap > div,
+.bn_item_wrap > li,
 .bn_item_wrap a {
 	padding: var(--padding-8) var(--padding-7);
 	font-size: var(--font-size-body-medium);
@@ -1961,6 +1959,9 @@
 	margin-top: var(--gap-2);
 }
 .bn_item_wrap.ty5 > div:not(.auto) {
+	width: 40vw;
+}
+.bn_item_wrap.ty5 > li:not(.auto) {
 	width: 40vw;
 }
 .bn_item_wrap.ty5 .tit {
@@ -2133,9 +2134,11 @@
 .easy_top {
 	display: none;
 }
+/* 웹접근성 포커스 sticky 방어용 */
 .container.home.scrolled {
 	scroll-padding-top: 8.8rem;
 }
+/* 웹접근성 포커스 sticky 방어용 */
 /* 자동차보험 - 고객정보 */
 .main_title {
 	font-size: var(--font-size-heading-medium);
