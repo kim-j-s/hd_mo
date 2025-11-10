@@ -4471,8 +4471,11 @@
 .guarantee_detail .btn_area.gd_middle_ba + .coverage_item_wrap {
 	margin-top: var(--gap-8);
 }
-.guarantee_detail .btn_area + .acc_group {
+.guarantee_detail .btn_area:not(.short) + .acc_group {
 	margin-top: var(--gap-8);
+}
+.guarantee_detail .btn_area.short + .acc_group {
+	margin-top: var(--gap-6);
 }
 .guarantee_detail .acc_group + .btn_area {
 	margin-top: var(--gap-11);
@@ -5845,6 +5848,15 @@ ul + .form_group_wrap {
 	padding-left: 2.8rem;
 	background: url(../images/content/bi/icon_basic.svg) no-repeat left 0.4rem center;
 }
+.side_panel .step_list > li > dl > dd .info_ty2 {
+	padding: var(--padding-2);
+	font-size: var(--font-size-body-medium);
+	color: var(--color-text-basic);
+}
+.side_panel .step_list > li > dl > dd .info_ty2.ic {
+	padding-left: 2.8rem;
+	background: url(../images/content/bi/icon_basic.svg) no-repeat left 0.4rem center;
+}
 .side_panel .step_list > li.active dt:before {
 	content: "현재 단계";
 	position: absolute;
@@ -5878,6 +5890,9 @@ ul + .form_group_wrap {
 .side_panel .step_list > li.active > dl dt.title {
 	color: var(--color-text-bolder);
 }
+.side_panel .step_list > li.active .dep_list > dt {
+	color: var(--color-text-subtle);
+}
 .side_panel .step_list .dep_list {
 	position: relative;
 }
@@ -5893,6 +5908,10 @@ ul + .form_group_wrap {
 }
 .side_panel .step_list .dep_list dd .dep_opt_list {
 	margin-top: var(--gap-2);
+}
+.side_panel .step_list .dep_opt_list.none > li {
+	padding-left: var(--padding-2);
+	background: none;
 }
 .side_panel .step_list .dep_opt_list > li {
 	padding: var(--padding-2) var(--padding-2) var(--padding-2) 2.8rem;
