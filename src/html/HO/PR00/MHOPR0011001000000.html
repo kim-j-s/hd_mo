@@ -7,24 +7,25 @@
     <div id="container" class="container home">
         <div class="content">
             <div class="home_card top sticky">
-                <div class="top_item_box">
-                    <h3 class="h2_title">
-                        <strong>어떤 상품</strong>을 찾으시나요?
-                    </h3>
-                    <div class="product_top">
-                        <button type="button" class="product_top1" data-target="1">자동차</button>
-                        <button type="button" class="product_top2" data-target="2">운전자</button>
-												<!-- s: 25-09-15 수정 -->
-                        <button type="button" class="product_top3" data-target="3">어린이/태아</button>
-                        <button type="button" class="product_top4" data-target="4">펫</button>
-                        <button type="button" class="product_top5" data-target="5">재산/화재</button>
-                        <button type="button" class="product_top6" data-target="6">건강/암</button>
-												<!-- e: 25-09-15 수정 -->
-                        <button type="button" class="product_top7" data-target="7">여행/레저</button>
-                        <button type="button" class="product_top8" data-target="8">연금/저축</button>
-                    </div>
-                </div>
+							<div class="top_item_box">
+								<h3 class="h2_title">
+									<strong>어떤 상품</strong>을 찾으시나요?
+								</h3>
+								<div class="product_top">
+									<button type="button" class="product_top1" data-target="1">자동차</button>
+									<button type="button" class="product_top2" data-target="2">운전자</button>
+									<button type="button" class="product_top3" data-target="3">어린이/태아</button>
+									<button type="button" class="product_top4" data-target="4">펫</button>
+									<button type="button" class="product_top5" data-target="5">재산/화재</button>
+									<button type="button" class="product_top6" data-target="6">건강/암</button>
+									<button type="button" class="product_top7" data-target="7">여행/레저</button>
+									<button type="button" class="product_top8" data-target="8">연금/저축</button>
+								</div>
+							</div>
             </div>
+
+
+						
             <div class="home_card product bg_ty01">
                 <h2 class="title_h6 secondary">자동차</h2>
                 <div class="pro_tit">
@@ -66,6 +67,36 @@
                         </div>
                     </div>
                 </div>
+
+								<div class="bn_scroll_wrap">
+									<ul class="bn_item_wrap ty5">
+											<li>
+													<div class="tit">할인특약</div>
+													<div class="cont">ECO마일리지</div>
+											</li>
+											<li>
+													<div class="tit">할인특약</div>
+													<div class="cont">커넥티드카</div>
+											</li>
+											<li class="auto">
+													<div class="tit">할인특약</div>
+													<div class="cont">스마트 안전운전(UBI)</div>
+											</li>
+											<li>
+													<div class="tit">할인특약</div>
+													<div class="cont">첨단안전장치</div>
+											</li>
+											<li>
+													<div class="tit">할인특약</div>
+													<div class="cont">효도하는 자녀</div>
+											</li>
+											<li>
+													<div class="tit">할인특약</div>
+													<div class="cont">블랙박스</div>
+											</li>
+									</ul>
+							</div>
+
                 <div class="icon_link list">
                     <!-- s: 25-10-22 수정 배너 뺴고 a링크 role="button" 추가 -->
                     <a href="javascript:void(0);" class="item opt14" title="페이지 이동" role="button">
@@ -400,6 +431,13 @@ $(window).on('load', function () {
             // 상단 고정 영역을 활성화
             $('.home_card.sticky').addClass('active');
 
+
+						// 25-11-10 수정
+						$('.container.home').addClass('scrolled');
+						// 25-11-10 수정
+
+						
+
             // 모든 버튼의 active 해제 → 클릭한 버튼만 active 부여
             $buttons.removeClass('active');
             $btn.addClass('active');
@@ -477,6 +515,9 @@ $(window).on('load', function () {
         if (scrollTop > 0) {
             // 스크롤이 발생하면 상단 영역 고정 활성화
             $('.home_card.sticky').addClass('active');
+						// 25-11-10 수정
+						$('.container.home').addClass('scrolled');
+						// 25-11-10 수정
 
             // 각 섹션을 순회하며 화면 중앙 기준선에 가장 가까운 섹션 찾기
             $('[class*="bg_ty0"]').each(function () {
@@ -512,6 +553,9 @@ $(window).on('load', function () {
         } else {
             // 맨 위(top=0)일 때는 고정 해제
             $('.home_card.sticky').removeClass('active');
+						// 25-11-10 수정
+						$('.container.home').removeClass('scrolled');
+						// 25-11-10 수정
         }
     });
 
