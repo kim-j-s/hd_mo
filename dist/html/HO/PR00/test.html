@@ -883,41 +883,7 @@
 						// 모든 버튼의 active 해제 → 클릭한 버튼만 active 부여
 						$buttons.removeClass("active");
 						$btn.addClass("active");
-
-						// ───────────────────────────────────────────────
-						// (1) 첫 번째 버튼(자동차) 클릭 시 처리
-						// ───────────────────────────────────────────────
-						if (targetNum === 1) {
-							// scrollTop을 1px로 살짝 이동 → 스크롤 이벤트 트리거용
-							$container.animate({ scrollTop: 1 }, 600, function () {
-								isClickScrolling = false;
-
-								// 접근성용 포커스 제어
-								if (!$target.attr("tabindex")) $target.attr("tabindex", "-1");
-
-								const prev = $container.scrollTop(); // 현재 스크롤 위치 저장
-								let usedPrevent = false;
-
-								// 스크롤 이동 없이 포커스 주기 (preventScroll 지원 브라우저)
-								if ($target[0] && $target[0].focus) {
-									try {
-										$target[0].focus({ preventScroll: true });
-										usedPrevent = true;
-									} catch (e) {
-										/* 일부 브라우저 미지원 */
-									}
-								}
-
-								// preventScroll 미지원 시: 포커스 후 스크롤 원위치 복구
-								if (!usedPrevent) {
-									$target[0].focus();
-									requestAnimationFrame(() => $container.scrollTop(prev));
-									setTimeout(() => $container.scrollTop(prev), 0);
-								}
-							});
-
-							return; // 1번 처리 후 아래 일반 로직은 실행 안 함
-						}
+						$(".container.home").addClass("scrolled");
 
 						// ───────────────────────────────────────────────
 						// (2) 나머지 버튼(2번 이상) 클릭 시 처리
@@ -931,61 +897,71 @@
 							$target.attr("tabindex", "-1").focus();
 							isClickScrolling = false;
 						});
+
+						// 마지막 적용
 						// 버튼 가로 스크롤(탭) 중앙 정렬
-						setTimeout(scrollActiveButtonIntoView, 10);
+						// setTimeout(scrollActiveButtonIntoView, 10);
 					});
 				});
 
 				// ───────────────────────────────────────────────
 				// 스크롤 이벤트: 자동 버튼 active 갱신
 				// ───────────────────────────────────────────────
-				$container.on("scroll", function () {
-					// 클릭 중에는 스크롤 이벤트 무시
-					if (isClickScrolling) return;
 
-					const scrollTop = $container.scrollTop();
-					const containerHeight = $container.innerHeight();
-					const viewTriggerLine = scrollTop + containerHeight * 0.5; // 화면 중간 기준선
-
-					let closestId = null;
-					let minDistance = Infinity;
-
-					if (scrollTop > 0) {
-						// 스크롤이 발생하면 상단 영역 고정 활성화
-						$(".home_card.sticky").addClass("active");
-
-						// 각 섹션을 순회하며 화면 중앙 기준선에 가장 가까운 섹션 찾기
-						$('[class*="bg_ty0"]').each(function () {
-							const $section = $(this);
-							const className = $section.attr("class") || "";
-							const idMatch = className.match(/bg_ty0(\d+)/);
-							if (!idMatch) return;
-
-							const id = idMatch[1];
-							const sectionTop = $section.offset().top - $container.offset().top + scrollTop + 150;
-
-							// 화면 중앙보다 아래면 패스
-							if (sectionTop > viewTriggerLine) return;
-
-							// 중앙선과의 거리 계산 → 가장 가까운 섹션 ID 저장
-							const distance = Math.abs(sectionTop - viewTriggerLine);
-							if (distance < minDistance) {
-								minDistance = distance;
-								closestId = id;
-							}
-						});
-
-						// 가장 가까운 섹션에 해당하는 버튼 활성화
-						if (closestId) {
-							$buttons.removeClass("active");
-							$buttons.filter(`[data-target="${closestId}"]`).addClass("active");
-							scrollActiveButtonIntoView();
-						}
-					} else {
-						// 맨 위(top=0)일 때는 고정 해제
-						$(".home_card.sticky").removeClass("active");
-					}
-				});
+				/*
+			    $container.on('scroll', function () {
+			        // 클릭 중에는 스크롤 이벤트 무시
+			        if (isClickScrolling) return;
+			
+			        const scrollTop = $container.scrollTop();
+			        const containerHeight = $container.innerHeight();
+			        const viewTriggerLine = scrollTop + containerHeight * 0.5; // 화면 중간 기준선
+			
+			        let closestId = null;
+			        let minDistance = Infinity;
+			
+			        if (scrollTop > 0) {
+			            // 스크롤이 발생하면 상단 영역 고정 활성화
+			            $('.home_card.sticky').addClass('active');
+			
+			            // 각 섹션을 순회하며 화면 중앙 기준선에 가장 가까운 섹션 찾기
+			            $('[class*="bg_ty0"]').each(function () {
+			                const $section = $(this);
+			                const className = $section.attr('class') || '';
+			                const idMatch = className.match(/bg_ty0(\d+)/);
+			                if (!idMatch) return;
+			
+			                const id = idMatch[1];
+			                const sectionTop =
+			                    $section.offset().top -
+			                    $container.offset().top +
+			                    scrollTop +
+			                    150;
+			
+			                // 화면 중앙보다 아래면 패스
+			                if (sectionTop > viewTriggerLine) return;
+			
+			                // 중앙선과의 거리 계산 → 가장 가까운 섹션 ID 저장
+			                const distance = Math.abs(sectionTop - viewTriggerLine);
+			                if (distance < minDistance) {
+			                    minDistance = distance;
+			                    closestId = id;
+			                }
+			            });
+			
+			            // 가장 가까운 섹션에 해당하는 버튼 활성화
+			            if (closestId) {
+			                $buttons.removeClass('active');
+			                $buttons.filter(`[data-target="${closestId}"]`).addClass('active');
+			                scrollActiveButtonIntoView();
+			            }
+			        } else {
+			            // 맨 위(top=0)일 때는 고정 해제
+			            $('.home_card.sticky').removeClass('active');
+			        }
+			    });
+			
+					*/
 
 				// ───────────────────────────────────────────────
 				// 상단 버튼 영역 가로 스크롤 중앙 정렬 함수
