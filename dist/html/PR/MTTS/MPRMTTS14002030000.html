@@ -558,20 +558,27 @@
 					<div class="fake_form_group_wrap">
 						<h3 class="title_h3">차량 대여 정보</h3>
 						<div class="form_group_wrap">
+							<!-- s: 25-11-11 수정 -->
 							<div class="form_line">
 								<div class="label_tit">대여시작일</div>
-								<div class="row row balance">
-									<!-- s: 25-09-02 수정 -->
-									<div class="input_text calendar">
-										<div class="inp">
-											<input type="tel" class="inp_picker" placeholder="날짜 입력" title="대여시작일" />
-											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button><button type="button" class="btn calendar_call" title="날짜 선택"></button>
+								<!-- s: 25-09-02 수정 -->
+								<div class="input_text calendar">
+									<div class="inp">
+										<input type="tel" class="inp_picker" placeholder="날짜 입력" title="대여시작일" />
+										<button type="button" class="del"><span class="blind">텍스트 삭제</span></button><button type="button" class="btn calendar_call" title="날짜 선택"></button>
+									</div>
+								</div>
+								<!-- e: 25-09-02 수정 -->
+								<div class="row balance">
+									<div class="select_item select_item_case01" role="button" tabindex="0" title="대여시작 시 선택 팝업 호출" onclick="openHDPopup(this,'pop_type02_1');">
+										<div class="select_item_inner">
+											<div class="si_item" data-placeholder="00시"></div>
+											<span class="si_stat">선택됨</span>
 										</div>
 									</div>
-									<!-- e: 25-09-02 수정 -->
-									<div class="select_item select_item_case01" role="button" tabindex="0" title="대여시작 시간 선택 팝업 호출" onclick="openHDPopup(this,'pop_type02');">
+									<div class="select_item select_item_case01" role="button" tabindex="0" title="대여시작 분 선택 팝업 호출" onclick="openHDPopup(this,'pop_type02_2');">
 										<div class="select_item_inner">
-											<div class="si_item" data-placeholder="00시 00분"></div>
+											<div class="si_item" data-placeholder="00분"></div>
 											<span class="si_stat">선택됨</span>
 										</div>
 									</div>
@@ -579,23 +586,30 @@
 							</div>
 							<div class="form_line">
 								<div class="label_tit">대여종료일</div>
-								<div class="row row balance">
-									<!-- s: 25-09-02 수정 -->
-									<div class="input_text calendar">
-										<div class="inp">
-											<input type="tel" class="inp_picker" placeholder="날짜 입력" title="대여종료일" />
-											<button type="button" class="del"><span class="blind">텍스트 삭제</span></button><button type="button" class="btn calendar_call" title="날짜 선택"></button>
+								<!-- s: 25-09-02 수정 -->
+								<div class="input_text calendar">
+									<div class="inp">
+										<input type="tel" class="inp_picker" placeholder="날짜 입력" title="대여종료일" />
+										<button type="button" class="del"><span class="blind">텍스트 삭제</span></button><button type="button" class="btn calendar_call" title="날짜 선택"></button>
+									</div>
+								</div>
+								<!-- e: 25-09-02 수정 -->
+								<div class="row balance">
+									<div class="select_item select_item_case01" role="button" tabindex="0" title="대여종료 시 선택 팝업 호출" onclick="openHDPopup(this,'pop_type02_1');">
+										<div class="select_item_inner">
+											<div class="si_item" data-placeholder="00시"></div>
+											<span class="si_stat">선택됨</span>
 										</div>
 									</div>
-									<!-- e: 25-09-02 수정 -->
-									<div class="select_item select_item_case01" role="button" tabindex="0" title="대여종료 시간 선택 팝업 호출" onclick="openHDPopup(this,'pop_type02');">
+									<div class="select_item select_item_case01" role="button" tabindex="0" title="대여종료 분 선택 팝업 호출" onclick="openHDPopup(this,'pop_type02_2');">
 										<div class="select_item_inner">
-											<div class="si_item" data-placeholder="00시 00분"></div>
+											<div class="si_item" data-placeholder="00분"></div>
 											<span class="si_stat">선택됨</span>
 										</div>
 									</div>
 								</div>
 							</div>
+							<!-- e: 25-11-11 수정 -->
 							<ul class="list_ty2">
 								<li>렌터카 임대차 계약서에 기재된 <strong class="point">계약기간의 개시시점부터 1시간 이내에만 가입이 가능</strong>합니다.</li>
 							</ul>
@@ -717,7 +731,7 @@
 		<!-- e: 시간 선택 -->
 
 		<!-- s: 대여 시간 선택 -->
-		<div class="popup_wrap bottom active" id="pop_type02" role="dialog" aria-modal="true" aria-hidden="false">
+		<div class="popup_wrap bottom" id="pop_type02" role="dialog" aria-modal="true" aria-hidden="true">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type02');"></div>
 				<div class="popup_inner">
@@ -833,6 +847,95 @@
 				</div>
 			</div>
 		</div>
+		<!-- s: 대여 시간 선택 -->
+
+		<!-- s: 25-11-11 수정 -->
+		<!-- s: 대여시간 - 시 선택 -->
+		<div class="popup_wrap bottom" id="pop_type02_1" role="dialog" aria-modal="true" aria-hidden="true">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type02_1');"></div>
+				<div class="popup_inner">
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head">
+						<div class="popup_head_title">시 선택</div>
+					</div>
+
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="opt_select_list opt_case3">
+								<div role="button" tabindex="0" class="option"><span class="text">00시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">01시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">02시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">03시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">04시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">05시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">06시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">07시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">08시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">09시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">10시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">11시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">12시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">13시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">14시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">15시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">16시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">17시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">18시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">19시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">20시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">21시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">22시</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">23시</span></div>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type02_1');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: 대여시간 - 시 선택 -->
+
+		<!-- s: 대여시간 - 분 선택 -->
+		<div class="popup_wrap bottom" id="pop_type02_2" role="dialog" aria-modal="true" aria-hidden="true">
+			<div class="popup_container">
+				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type02_2');"></div>
+				<div class="popup_inner">
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head">
+						<div class="popup_head_title">분 선택</div>
+					</div>
+
+					<div class="popup_cont">
+						<div class="popup_content">
+							<div class="opt_select_list opt_case3">
+								<div role="button" tabindex="0" class="option"><span class="text">00분</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">01분</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">02분</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">03분</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">04분</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">05분</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">06분</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">07분</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">08분</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">09분</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">10분</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">11분</span></div>
+								<div role="button" tabindex="0" class="option"><span class="text">12분</span></div>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="popup_close" onclick="closeHDPopup('pop_type02_2');"><span class="blind">팝업 닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- e: 대여시간 - 분 선택 -->
+		<!-- e: 25-11-11 수정 -->
+
 		<!-- e: popup area -->
 		<!-- 전체메뉴 -->
 		<!-- s: Full 팝업 -->
