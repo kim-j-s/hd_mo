@@ -61,46 +61,50 @@
 				<div class="fake_form_group_wrap">
 					<h3 class="title_h3">차량 대여 정보</h3>
 					<div class="form_group_wrap">
+						<!-- s: 25-11-11 수정 -->
 						<div class="form_line">
 							<div class="label_tit">대여시작일</div>
-						<div class="row row balance">
 							<!-- s: 25-09-02 수정 -->
 							{{> cp/text placeholder="날짜 입력" cal=true inp-title="대여시작일" }}
 							<!-- e: 25-09-02 수정 -->
-							{{> cp/selectitem si_ph="00시 00분" si_title="대여시작 시간 선택 팝업 호출" si_popup="pop_type02"}}
+							<div class="row balance">
+								{{> cp/selectitem si_ph="00시" si_title="대여시작 시 선택 팝업 호출" si_popup="pop_type02_1"}}
+								{{> cp/selectitem si_ph="00분" si_title="대여시작 분 선택 팝업 호출" si_popup="pop_type02_2"}}
+							</div>
 						</div>
-					</div>
-					<div class="form_line">
-						<div class="label_tit">대여종료일</div>
-						<div class="row row balance">
+						<div class="form_line">
+							<div class="label_tit">대여종료일</div>
 							<!-- s: 25-09-02 수정 -->
 							{{> cp/text placeholder="날짜 입력" cal=true inp-title="대여종료일" }}
 							<!-- e: 25-09-02 수정 -->
-							{{> cp/selectitem si_ph="00시 00분" si_title="대여종료 시간 선택 팝업 호출" si_popup="pop_type02"}}
+							<div class="row balance">
+								{{> cp/selectitem si_ph="00시" si_title="대여종료 시 선택 팝업 호출" si_popup="pop_type02_1"}}
+								{{> cp/selectitem si_ph="00분" si_title="대여종료 분 선택 팝업 호출" si_popup="pop_type02_2"}}
+							</div>
 						</div>
-					</div>
-					<ul class="list_ty2">
-						<li>렌터카 임대차 계약서에 기재된 <strong class="point">계약기간의 개시시점부터 1시간 이내에만 가입이 가능</strong>합니다.</li>
-					</ul>
+						<!-- e: 25-11-11 수정 -->
+						<ul class="list_ty2">
+							<li>렌터카 임대차 계약서에 기재된 <strong class="point">계약기간의 개시시점부터 1시간 이내에만 가입이 가능</strong>합니다.</li>
+						</ul>
 
-					<div class="form_line">
-						<div class="label_tit">대여지역</div>
-						<!-- s: 25-08-14 UXW -->
-						{{> cp/text placeholder="지역 입력" }}
-						<!-- e: 25-08-14 UXW -->
-					</div>
-					<div class="form_line">
-						<div class="label_tit">대여업체명</div>
-						<!-- s: 25-08-14 UXW -->
-						{{> cp/text placeholder="업체명 입력" }}
-						<!-- e: 25-08-14 UXW -->
-					</div>
-					<div class="form_line">
-						<div class="label_tit">대여업체 전화번호</div>
-						<!-- s: 25-08-14 UXW -->
-						{{> cp/text type="tel" placeholder="- 없이 입력" }}
-						<!-- e: 25-08-14 UXW -->
-					</div>
+						<div class="form_line">
+							<div class="label_tit">대여지역</div>
+							<!-- s: 25-08-14 UXW -->
+							{{> cp/text placeholder="지역 입력" }}
+							<!-- e: 25-08-14 UXW -->
+						</div>
+						<div class="form_line">
+							<div class="label_tit">대여업체명</div>
+							<!-- s: 25-08-14 UXW -->
+							{{> cp/text placeholder="업체명 입력" }}
+							<!-- e: 25-08-14 UXW -->
+						</div>
+						<div class="form_line">
+							<div class="label_tit">대여업체 전화번호</div>
+							<!-- s: 25-08-14 UXW -->
+							{{> cp/text type="tel" placeholder="- 없이 입력" }}
+							<!-- e: 25-08-14 UXW -->
+						</div>
 					</div>
 				</div>
 				<!-- e: 25-08-21 수정 -->
@@ -155,7 +159,7 @@
 	<!-- e: 시간 선택 -->
 
 	<!-- s: 대여 시간 선택 -->
-	{{#> popup/popup_bottom popup-id="pop_type02" popup-title="대여시간 선택" popup-active=true }}
+	{{#> popup/popup_bottom popup-id="pop_type02" popup-title="대여시간 선택"}}
 	<div class="popup_cont">
 		<div class="popup_content">
 			<div class="opt_select_wrap">
@@ -256,5 +260,68 @@
 		</div>
 	</div>
 	{{/ popup/popup_bottom}}
+	<!-- s: 대여 시간 선택 -->
+	
+	<!-- s: 25-11-11 수정 -->
+	<!-- s: 대여시간 - 시 선택 -->
+	{{#> popup/popup_bottom popup-id="pop_type02_1" popup-title="시 선택"}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="opt_select_list opt_case3">
+				<div role="button" tabindex="0" class="option"><span class="text">00시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">01시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">02시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">03시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">04시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">05시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">06시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">07시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">08시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">09시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">10시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">11시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">12시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">13시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">14시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">15시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">16시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">17시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">18시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">19시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">20시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">21시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">22시</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">23시</span></div>
+			</div>
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: 대여시간 - 시 선택 -->
+	
+	<!-- s: 대여시간 - 분 선택 -->
+	{{#> popup/popup_bottom popup-id="pop_type02_2" popup-title="분 선택"}}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<div class="opt_select_list opt_case3">
+				<div role="button" tabindex="0" class="option"><span class="text">00분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">01분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">02분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">03분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">04분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">05분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">06분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">07분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">08분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">09분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">10분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">11분</span></div>
+				<div role="button" tabindex="0" class="option"><span class="text">12분</span></div>
+			</div>
+		</div>
+	</div>
+	{{/ popup/popup_bottom}}
+	<!-- e: 대여시간 - 분 선택 -->
+	<!-- e: 25-11-11 수정 -->
+
 	<!-- e: popup area -->
 {{/ layout/default }}
