@@ -1,0 +1,68 @@
+{{#> layout/default page-title="자동차 기본정보 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header main=true h-back=true no-nav=true }}
+
+	<div id="container" class="container">
+		<div class="content">
+			<!-- 이륜차보험 시, moto 클래스 추가 -->
+			<div class="product_main_top moto">
+				<h2 class="title_h2">
+					<strong>
+						운전자 심사를 위해, <br />
+						고객님의 정보를 <br />
+						입력해주세요
+					</strong>
+				</h2>
+			</div>
+			
+			<div class="input_form_box"> 
+				<div class="input_title">이륜차 소유(예정)자 정보</div>
+				<div class="input_item_wrap">
+					<div class="acd_item">
+						{{#> cp/accordion ac-title="이름" ac-active=true }}
+						{{> cp/text class="big" placeholder="이륜차 소유(예정)자" inp-title="이륜차 소유(예정)자 입력" }}
+						{{/ cp/accordion }}
+					</div>
+					<div class="acd_item">
+						{{#> cp/accordion ac-title="주민등록번호" }}
+						<!-- 키패드 입력까지 된 후, active 클래스 추가 -->
+						<div class="comp_wrap birth active">
+							{{> cp/text class="big" type="tel" minlength="6" maxlength="6" placeholder="앞 6자리" inp-title="주민등록번호 앞 6자리 입력" }}
+							<span class="dash">-</span>
+							{{> cp/keypad7 kp-class="big" case1=true kt="주민등록번호 뒤 7자리 입력"}}
+						</div>
+						{{/ cp/accordion }}
+					</div>
+					<div class="acd_item">
+						{{#> cp/accordion ac-title="휴대폰번호" }}
+						{{> cp/text class="phone phone_full big" type="tel" placeholder="- 없이 입력" inp-title="휴대폰번호 입력" }}
+						{{/ cp/accordion }}
+					</div>
+				</div>
+			</div>
+
+			<!-- s: 꼭 알아두세요 -->
+			{{#> cp/notice dp-active=true }}
+			<ul class="list_ty1">
+				<li>본 화면은 이륜차 운전자 심사를 위해 개인정보처리 동의를 받는 화면입니다.</li>
+				<li>관련 법률 및 규정에 따라, 운전자 심사 동의를 위해 본인인증이 필요합니다.</li>
+				<li>가입 가능한 나이는 만 19세 이상입니다.</li>
+			</ul>
+			{{/ cp/notice }}
+			<!-- e: 꼭 알아두세요 -->
+		</div>
+	</div>
+
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="개인정보처리 동의하기" }}
+		</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
+</div>
+
+<!-- s: popup area -->
+<!-- e: popup area -->
+
+{{/ layout/default }}
