@@ -41,7 +41,7 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>서비스 점검 안내 - 현대해상 다이렉트</title>
+		<title>자동차 기본정보 | 상품 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -50,49 +50,125 @@
 	</head>
 	<body>
 		<div id="wrap" class="wrap">
+			<div id="header" class="header">
+				<div class="header_inner">
+					<div class="header_left">
+						<h1 class="header_logo">
+							<a href="#"><img src="../../../images/header/img_logo.svg" alt="현대해상 다이렉트 홈으로" /></a>
+						</h1>
+					</div>
+
+					<div class="header_right"></div>
+				</div>
+			</div>
+
 			<div id="container" class="container">
 				<div class="content">
-					<div class="process_info_area">
-						<div class="complete_info" aria-hidden="true">
-							<lottie-player src="../../../json/lottie_info.jso" background="transparent" speed="1" autoplay></lottie-player>
-						</div>
-						<h2 class="process_title"><strong>현재 서비스를 이용할 수 없습니다</strong><br /></h2>
-						<div class="process_desc">시스템 점검 작업을 위해 다이렉트 홈페이지 서비스가 일시 중단됩니다. 서비스 이용에 불편을 드린 점 이해 부탁드립니다.</div>
+					<!-- 이륜차보험 시, moto 클래스 추가 -->
+					<div class="product_main_top moto">
+						<h2 class="title_h2">
+							<strong>
+								운전자 심사를 위해, <br />
+								고객님의 정보를 <br />
+								입력해주세요
+							</strong>
+						</h2>
 					</div>
 
-					<div class="info_gray ty2">
-						<p class="info_text">휴대폰번호를 남겨주시면 서비스 정상화 후 문자 안내드리겠습니다.</p>
-					</div>
-
-					<div class="form_group_wrap">
-						<div class="form_line">
-							<div class="label_tit">휴대폰번호</div>
-							<div class="input_text phone phone_full">
-								<div class="inp">
-									<input type="tel" placeholder="- 없이 입력" maxlength="8" title="휴대폰번호 입력" />
-									<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+					<div class="input_form_box">
+						<div class="input_title">이륜차 소유(예정)자 정보</div>
+						<div class="input_item_wrap">
+							<div class="acd_item">
+								<div class="acd_head active">
+									<button type="button" class="acd_btn" aria-expanded="true"><span>이름</span></button>
+								</div>
+								<div class="acd_cont">
+									<div class="inner" style="display: block">
+										<div class="input_text big">
+											<div class="inp">
+												<input type="text" placeholder="이륜차 소유(예정)자" title="이륜차 소유(예정)자 입력" />
+												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="acd_item">
+								<div class="acd_head">
+									<button type="button" class="acd_btn" aria-expanded="false"><span>주민등록번호</span></button>
+								</div>
+								<div class="acd_cont">
+									<div class="inner">
+										<!-- 키패드 입력까지 된 후, active 클래스 추가 -->
+										<div class="comp_wrap birth active">
+											<div class="input_text big">
+												<div class="inp">
+													<input type="tel" placeholder="앞 6자리" minlength="6" maxlength="6" title="주민등록번호 앞 6자리 입력" />
+													<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+												</div>
+											</div>
+											<span class="dash">-</span>
+											<div class="comp_wrap_keypad_call form_key big" role="button" tabindex="0" title="주민등록번호 뒤 7자리 입력">
+												<div class="pin_area default">
+													뒤 7자리
+													<input type="password" name="" id="" readonly="true" autocomplete="new-password" title="숫자 입력" />
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="acd_item">
+								<div class="acd_head">
+									<button type="button" class="acd_btn" aria-expanded="false"><span>휴대폰번호</span></button>
+								</div>
+								<div class="acd_cont">
+									<div class="inner">
+										<div class="input_text phone phone_full big">
+											<div class="inp">
+												<input type="tel" placeholder="- 없이 입력" title="휴대폰번호 입력" />
+												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 
-					<ul class="list_ty2">
-						<li>정상화 문자알림 수신을 위한 연락처 수집·이용에 동의합니다.</li>
-						<li>수집 정보는 상담 목적 외 용도로 이용되지 않습니다.</li>
-					</ul>
-
-					<div class="btn_area ty2">
-						<button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_2">
-							<span class="text">문자알림 신청</span>
-						</button>
+					<!-- s: 꼭 알아두세요 -->
+					<div class="bottom_fix_notice">
+						<div class="acd_item">
+							<div class="acd_head active">
+								<button type="button" class="acd_btn" aria-expanded="true"><span>꼭 알아두세요</span></button>
+							</div>
+							<div class="acd_cont">
+								<div class="inner" style="display: block">
+									<ul class="list_ty1">
+										<li>본 화면은 이륜차 운전자 심사를 위해 개인정보처리 동의를 받는 화면입니다.</li>
+										<li>관련 법률 및 규정에 따라, 운전자 심사 동의를 위해 본인인증이 필요합니다.</li>
+										<li>가입 가능한 나이는 만 19세 이상입니다.</li>
+									</ul>
+								</div>
+							</div>
+						</div>
 					</div>
+					<!-- e: 꼭 알아두세요 -->
 				</div>
-				<!-- // container -->
 			</div>
+
+			<!-- s: 하단 고정 버튼 영역 -->
+			<div class="bottom_fix_wrap">
+				<div class="btn_area">
+					<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_1">
+						<span class="text">개인정보처리 동의하기</span>
+					</button>
+				</div>
+			</div>
+			<!-- s: 하단 고정 버튼 영역 -->
 		</div>
 
 		<!-- s: popup area -->
-
 		<!-- e: popup area -->
 
 		<!-- 전체메뉴 -->
