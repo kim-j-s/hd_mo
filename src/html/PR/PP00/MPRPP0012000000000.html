@@ -59,15 +59,19 @@
 									<div class="label_tit">영문이름</div>
 									<div class="row">
 										<!-- s: 25-09-17 수정 -->
-										{{> cp/text class="grow" inpclass="inp_only_eng" placeholder="이름" inp-title="이름 입력" }}
-										{{> cp/text class="grow" inpclass="inp_only_eng" placeholder="성" inp-title="성 입력" }}
+										<!-- s: 25-11-12 수정 -->
+										{{> cp/text class="grow" inpclass="inp_only_eng" placeholder="이름" inp-title="영문이름 입력" }}
+										{{> cp/text class="grow" inpclass="inp_only_eng" placeholder="성" inp-title="영문성 입력" }}
+										<!-- e: 25-11-12 수정 -->
 										<!-- e: 25-09-17 수정 -->
 									</div>
 								</div>
 								<div class="form_line">
 									<!-- s: 25-08-07 -->
 									<div class="label_tit">해외 거주지 영문 주소</div>
-									{{> cp/textarea name="textarea1" rows="5" placeholder="영문 주소 입력" inp-title="영문 주소 입력" }}
+									<!-- s: 25-11-12 수정 -->
+									{{> cp/textarea name="textarea1" rows="5" placeholder="영문 주소 입력" inp-title="해외 거주지 영문 주소 입력" }}
+									<!-- e: 25-11-12 수정 -->
 									<!-- e: 25-08-07 -->
 								</div>
 							</div>
@@ -87,16 +91,16 @@
 									<div class="form_group_wrap">
 										<div class="form_line">
 											<div class="label_tit">국가</div>
-											{{> cp/text inp-search=true placeholder="국가검색" inp-title="국가검색 팝업열기" auto=true value="미국" readonly=true }}
+											{{> cp/text inp-search=true placeholder="국가검색" inp-title="국가1 검색 팝업열기" auto=true value="미국" readonly=true }}
 										</div>
 										<div class="form_line">
 											<div class="label_tit">납세자 번호</div>
-											{{> cp/text placeholder="숫자만 입력" minlength="15" maxlength="15" inp-title="납세자 번호 입력" }}
+											{{> cp/text placeholder="숫자만 입력" minlength="15" maxlength="15" inp-title="납세자 번호1 입력" }}
 										</div>
 										<div class="form_line">
 											<div class="label_tit">납세자 번호 미입력 사유</div>
 											<!-- s: 25-08-07 -->
-											{{> cp/selectitem si_ph="선택" si_title="납세자 번호 미입력 사유 선택" si_popup="pop_type02"}}
+											{{> cp/selectitem si_ph="선택" si_title="납세자 번호 미입력 사유1 선택" si_popup="pop_type02"}}
 											<!-- e: 25-08-07 -->
 										</div>
 										<!-- s: 25-06-13 추가 -->
@@ -104,11 +108,11 @@
 										<div class="form_line">
 											<!-- s: 25-08-07 -->
 											<div class="label_tit">미취득 사유</div>
-											{{> cp/text placeholder="미취득 사유 입력" inp-title="미취득 사유 입력" }}
+											{{> cp/text placeholder="미취득 사유 입력" inp-title="미취득 사유1 입력" }}
 											<!-- e: 25-08-07 -->
 										</div>
 										<!-- e: 미입력 사유 미취득 선택시 노출 -->
-										<!-- s: 25-06-13 추가 -->
+										<!-- e: 25-11-12 수정 -->
 									</div>
 									<button type="button" class="btn_rd_close"><span class="blind">국가 정보 입력 닫기</span></button>
 								</div>
@@ -119,18 +123,18 @@
 											<div class="label_tit">국가</div>
 											{{> cp/text inp-search=true placeholder="국가검색" inp-title="국가검색 팝업열기" auto=true }}
 										</div> -->
-
+										<!-- s: 25-11-12 수정 -->
 										<!-- s: 25-08-27 수정 -->
 										<!-- 입력 전 -->
 										<div class="form_line">
 											<div class="label_tit">국가</div>
-											{{> cp/address ad_ph="국가검색" case1=true ad_title="국가검색 팝업열기"}}
+											{{> cp/address ad_ph="국가검색" case1=true ad_title="국가2 검색 팝업열기"}}
 										</div>
 										<!-- 입력 전 -->
 										<!-- 입력 후 -->
 										<div class="form_line">
 											<div class="label_tit">국가</div>
-											{{> cp/address ad_ph="국가검색" case5=true ad_title="국가검색 팝업열기"}}
+											{{> cp/address ad_ph="국가검색" case5=true ad_title="국가2 검색 팝업열기"}}
 										</div>
 										<!-- 입력 후 -->
 										<!-- e: 25-08-27 수정 -->
@@ -138,12 +142,12 @@
 
 										<div class="form_line">
 											<div class="label_tit">납세자 번호</div>
-											{{> cp/text placeholder="숫자만 입력" minlength="15" maxlength="15" inp-title="납세자 번호 입력" }}
+											{{> cp/text placeholder="숫자만 입력" minlength="15" maxlength="15" inp-title="납세자 번호2 입력" }}
 										</div>
 										<div class="form_line">
 											<div class="label_tit">납세자 번호 미입력 사유</div>
 											<!-- s: 25-08-07 -->
-											{{> cp/selectitem si_ph="선택" si_title="납세자 번호 미입력 사유 선택" si_popup="pop_type02"}}
+											{{> cp/selectitem si_ph="선택" si_title="납세자 번호 미입력 사유2 선택" si_popup="pop_type02"}}
 											<!-- e: 25-08-07 -->
 										</div>
 										<!-- s: 25-06-13 추가 -->
@@ -151,11 +155,12 @@
 										<div class="form_line">
 											<!-- s: 25-08-07 -->
 											<div class="label_tit">미취득 사유</div>
-											{{> cp/text placeholder="미취득 사유 입력" inp-title="미취득 사유 입력" }}
+											{{> cp/text placeholder="미취득 사유 입력" inp-title="미취득 사유2 입력" }}
 											<!-- e: 25-08-07 -->
 										</div>
 										<!-- e: 미입력 사유 미취득 선택시 노출 -->
 										<!-- s: 25-06-13 추가 -->
+										<!-- e: 25-11-12 수정 -->
 									</div>
 									<button type="button" class="btn_rd_close"><span class="blind">국가 정보 입력 닫기</span></button>
 								</div>
