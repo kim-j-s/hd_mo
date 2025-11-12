@@ -1877,23 +1877,25 @@ function prograssCar(){
 }
 	
 function review() {
-	$('.review_acd_item').each(function () {
-		const $item = $(this);
-		const $cont = $item.find('.review_cont');
-		const $btn = $item.find('.acd_btn');
+  $('.review_acd_item').each(function () {
+    const $item = $(this);
+    const $cont = $item.find('.review_cont');
+    const $btn = $item.find('.acd_btn');
 
-		// 실제 표시된 높이와 스크롤 가능한 높이 비교
-		const visibleHeight = $cont.outerHeight();
-		const scrollHeight = $cont[0].scrollHeight;
+    // 요소가 실제 존재하지 않으면 return
+    if (!$cont.length || !$btn.length) return;
 
-		if (scrollHeight > visibleHeight + 1) {
-			// 내용이 잘린 상태 (즉, line-clamp 적용됨)
-			$btn.show();
-		} else {
-			// 두 줄 이하 → 버튼 숨김
-			$btn.hide();
-		}
-	});
+    // 높이 계산
+    const visibleHeight = $cont.outerHeight();
+    const scrollHeight = $cont[0].scrollHeight;
+
+    // 줄임 여부에 따라 버튼 표시 제어
+    if (scrollHeight > visibleHeight + 1) {
+      $btn.show();
+    } else {
+      $btn.hide();
+    }
+  });
 }
 $(window).resize(function(){
 	// prograssBar();
