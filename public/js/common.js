@@ -78,9 +78,18 @@
   });
 
 	//리뷰 아코디언
-	$DOM.on('click', '.review_acd_item .acd_btn', function(){
+	$DOM.on('click', '.review_acd_item .acd_btn', function () {
 		const $this = $(this);
-		$this.parent('.review_acd_item').toggleClass('active');
+		const $item = $this.closest('.review_acd_item');
+
+		$item.toggleClass('active');
+
+		setTimeout(() => {
+			const isActive = $item.hasClass('active');
+			$this
+			.attr('aria-expanded', isActive ? 'true' : 'false')
+			.attr('aria-label', isActive ? '리뷰 2줄까지만 보기' : '리뷰 자세히 보기');
+		}, 200);
 	});
 
 	/* 펼치기/접히기 */
@@ -1050,7 +1059,8 @@ $(function(){
 
 	// 펼치기/접히기 - 담보한번에변경하기(MPRMTPS10004001000)
 	moreLngChk();
-	
+
+	review();
 
 	setTimeout(function(){
 		$('.tab_wrap_content').removeAttr('tabindex');
@@ -1854,8 +1864,28 @@ function prograssCar(){
 		}
 	})
 }
+	
+function review() {
+	$('.review_acd_item').each(function () {
+		const $item = $(this);
+		const $cont = $item.find('.review_cont');
+		const $btn = $item.find('.acd_btn');
 
+		// 실제 표시된 높이와 스크롤 가능한 높이 비교
+		const visibleHeight = $cont.outerHeight();
+		const scrollHeight = $cont[0].scrollHeight;
+
+		if (scrollHeight > visibleHeight + 1) {
+			// 내용이 잘린 상태 (즉, line-clamp 적용됨)
+			$btn.show();
+		} else {
+			// 두 줄 이하 → 버튼 숨김
+			$btn.hide();
+		}
+	});
+}
 $(window).resize(function(){
 	// prograssBar();
 	directTv();
+	review();
 })

@@ -44,32 +44,40 @@
 	}
 	.intro_info {
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: space-between;
 		position: relative;
 		width: 100%;
-		&::after {
+		flex-direction: column;
+
+
+		&::before {
 			content: '';
 			display: none;
 			width: 240px;
 			height: 160px;
+			margin: 0 auto;
 			background-repeat: no-repeat;
 			background-position: center center;
 			background-size: contain;
 		}
 		@for $i from 1 through 5 {
-			&.bg_intro#{$i}::after {
+			&.bg_intro#{$i}::before {
 				display: block;
 				background-image: url('../images/content/prdcar/bg_car_prd#{$i}.png');
 			}
 		}
 
 		.info_list {
+			width: 100%;
 			.item {
 				@for $i from 1 through 5 {
 					&.ico_intro#{$i} {
 						background-image: url('../images/content/prdcar/ico_car_intro#{$i}.svg');
 					}
+				}
+				.tit {
+					font-weight: 700;
 				}
 			}
 		}
@@ -155,18 +163,18 @@
 		.info_list {
 			.item {
 				position: relative;
-				&:before {
-					content: '';
-					display: block;
-					position: absolute;
-					top: 50%;
-					left: 0;
-					width: 32px;
-					height: 32px;
-					border-radius: var(--radius-small3);
-					background-color: var(--color-surface-gray-subtler);
-					transform: translateY(-50%);
-				}
+				// &:before {
+				// 	content: '';
+				// 	display: block;
+				// 	position: absolute;
+				// 	top: 50%;
+				// 	left: 0;
+				// 	width: 32px;
+				// 	height: 32px;
+				// 	border-radius: var(--radius-small3);
+				// 	background-color: var(--color-surface-gray-subtler);
+				// 	transform: translateY(-50%);
+				// }
 				&:after {
 					content: '';
 					display: block;
@@ -176,11 +184,11 @@
 					width: 32px;
 					height: 32px;
 					background-repeat: no-repeat;
-					background-size: 24px auto;
-					background-position: left 4px center;
+					background-size: 32px auto;
+					background-position: left center;
 					transform: translateY(-50%);
 				}
-				@for $i from 1 through 14 {
+				@for $i from 1 through 20 {
 					&.ico_benefit#{$i}::after {
 						background-image: url('../images/content/prdcar/ico_car_benefit#{$i}.svg');
 					}
