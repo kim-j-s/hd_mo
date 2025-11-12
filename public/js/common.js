@@ -6,7 +6,6 @@
 
   /* 전체메뉴 열기 */
   $DOM.on('click', '.header .header_right .allmenu_open', function() {
-		// console.log('열기');
     const $this = $(this),
           $nav = $this.closest('.header_inner').find('.nav_menu_wrap');
 
@@ -33,7 +32,6 @@
 
 	/* 전체메뉴 닫기 */
 	$DOM.on('click', '.header .header_right .allmenu_close', function() {
-		// console.log('닫기');
     const $this = $(this),
           $nav = $this.closest('.header_inner').find('.nav_menu_wrap');
 
@@ -55,8 +53,6 @@
 	$(document).on('keydown', function(e) {
 		if (e.key === 'Enter') {
 			const focusedElement = document.activeElement; // 현재 포커스된 요소
-			// console.log('현재 포커스된 요소:', focusedElement);
-			// console.log('jQuery this로는:', $(focusedElement));
 		}
 	});
 
@@ -150,9 +146,7 @@
 								}, 300, function(){
 									setTimeout(function() {
 										$('.anchor_move').eq(moveIdx).children().first().attr('tabindex', '0');
-										// $('.anchor_move').eq(moveIdx).children().first().css('background', '#ddd');
 										$('.anchor_move').eq(moveIdx).children().first().focus();
-										// $('.anchor_move').eq(moveIdx).children().first().removeAttr('tabindex');
 									}, 50);
 								});
 							}
@@ -226,11 +220,6 @@
 		const $input = $this.siblings("input");
 		$input.val("").focus();
 		$input[0].dispatchEvent(new Event("input", { bubbles: true }));
-		// setTimeout(() => {
-		// 	const $input = $this.siblings("input");
-		// 	$input.val("").focus();
-		// 	$input[0].dispatchEvent(new Event("input", { bubbles: true }));
-		// }, 100);
 
 		if($this.closest('.comp_wrap').hasClass('phone')){
 			$this.siblings('input').removeClass('isVal');
