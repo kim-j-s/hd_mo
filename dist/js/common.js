@@ -6,7 +6,6 @@
 
   /* 전체메뉴 열기 */
   $DOM.on('click', '.header .header_right .allmenu_open', function() {
-		// console.log('열기');
     const $this = $(this),
           $nav = $this.closest('.header_inner').find('.nav_menu_wrap');
 
@@ -33,7 +32,6 @@
 
 	/* 전체메뉴 닫기 */
 	$DOM.on('click', '.header .header_right .allmenu_close', function() {
-		// console.log('닫기');
     const $this = $(this),
           $nav = $this.closest('.header_inner').find('.nav_menu_wrap');
 
@@ -55,8 +53,6 @@
 	$(document).on('keydown', function(e) {
 		if (e.key === 'Enter') {
 			const focusedElement = document.activeElement; // 현재 포커스된 요소
-			// console.log('현재 포커스된 요소:', focusedElement);
-			// console.log('jQuery this로는:', $(focusedElement));
 		}
 	});
 
@@ -82,9 +78,18 @@
   });
 
 	//리뷰 아코디언
-	$DOM.on('click', '.review_acd_item .acd_btn', function(){
+	$DOM.on('click', '.review_acd_item .acd_btn', function () {
 		const $this = $(this);
-		$this.parent('.review_acd_item').toggleClass('active');
+		const $item = $this.closest('.review_acd_item');
+
+		$item.toggleClass('active');
+
+		setTimeout(() => {
+			const isActive = $item.hasClass('active');
+			$this
+			.attr('aria-expanded', isActive ? 'true' : 'false')
+			.attr('aria-label', isActive ? '리뷰 2줄까지만 보기' : '리뷰 자세히 보기');
+		}, 200);
 	});
 
 	/* 펼치기/접히기 */
@@ -150,9 +155,7 @@
 								}, 300, function(){
 									setTimeout(function() {
 										$('.anchor_move').eq(moveIdx).children().first().attr('tabindex', '0');
-										// $('.anchor_move').eq(moveIdx).children().first().css('background', '#ddd');
 										$('.anchor_move').eq(moveIdx).children().first().focus();
-										// $('.anchor_move').eq(moveIdx).children().first().removeAttr('tabindex');
 									}, 50);
 								});
 							}
@@ -226,11 +229,6 @@
 		const $input = $this.siblings("input");
 		$input.val("").focus();
 		$input[0].dispatchEvent(new Event("input", { bubbles: true }));
-		// setTimeout(() => {
-		// 	const $input = $this.siblings("input");
-		// 	$input.val("").focus();
-		// 	$input[0].dispatchEvent(new Event("input", { bubbles: true }));
-		// }, 100);
 
 		if($this.closest('.comp_wrap').hasClass('phone')){
 			$this.siblings('input').removeClass('isVal');
@@ -1061,7 +1059,8 @@ $(function(){
 
 	// 펼치기/접히기 - 담보한번에변경하기(MPRMTPS10004001000)
 	moreLngChk();
-	
+
+	review();
 
 	setTimeout(function(){
 		$('.tab_wrap_content').removeAttr('tabindex');
@@ -1865,8 +1864,28 @@ function prograssCar(){
 		}
 	})
 }
+	
+function review() {
+	$('.review_acd_item').each(function () {
+		const $item = $(this);
+		const $cont = $item.find('.review_cont');
+		const $btn = $item.find('.acd_btn');
 
+		// 실제 표시된 높이와 스크롤 가능한 높이 비교
+		const visibleHeight = $cont.outerHeight();
+		const scrollHeight = $cont[0].scrollHeight;
+
+		if (scrollHeight > visibleHeight + 1) {
+			// 내용이 잘린 상태 (즉, line-clamp 적용됨)
+			$btn.show();
+		} else {
+			// 두 줄 이하 → 버튼 숨김
+			$btn.hide();
+		}
+	});
+}
 $(window).resize(function(){
 	// prograssBar();
 	directTv();
+	review();
 })
