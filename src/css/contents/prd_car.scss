@@ -157,6 +157,108 @@
 		}
 	}
 
+	// 할인특약 visual
+	.benefit_top_wrap {
+		.item_benefit_top {
+			padding: 156px var(--padding-7) var(--number-9);
+			background-color: var(--color-surface-primary-subtler);
+			border-radius: var(--radius-large2);
+			background-repeat: no-repeat;
+			background-position: top 20px center;
+			background-size: auto 136px;
+				
+			@for $i from 1 through 13 {
+				&.ico_bn_visual#{$i} {
+					background-image: url('../images/content/prdcar/ico_bn_visual#{$i}.png');
+				}
+			}
+	
+			.inner {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: var(--gap-5);
+				padding: var(--gap-6);
+				background-color: var(--color-surface-white);
+				border-radius: var(--radius-medium3);
+	
+				.i_top {
+					.title {
+						font-size: var(--font-size-heading-large);
+						font-weight: 700;
+						color: var(--color-text-bolder);
+						text-align: center;
+					}
+				}
+	
+				.i_bottom {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					gap: var(--gap-4);
+	
+					.cont {
+						font-size: var(--font-size-body-medium);
+						color: var(--color-text-bolder);
+						text-align: center;
+		
+						.detail {
+							i {
+								font-size: var(--font-size-heading-medium);
+								font-weight: 700;
+								font-style: normal;
+								color: var(--color-text-primary-bold);
+							}
+						}
+					}
+	
+					.desc {
+						font-size: var(--font-size-body-small);
+						color: var(--color-text-subtle);
+					}
+				}
+			}
+	
+			.bn_list {
+				margin-top: var(--gap-5);
+	
+				> li {
+					position: relative;
+					padding-left: 8px;
+					font-size: var(--font-size-body-small);
+					color: var(--color-text-information);
+	
+					&:before {
+						content: '';
+						position: absolute;
+						left: 0;
+						top: 9px;
+						width: 2px;
+						height: 2px;
+						border-radius: 50%;
+						background-color: var(--color-icon-information);
+					}
+	
+					& ~ li {
+						margin-top: var(--gap-4);
+					}
+				}
+	
+				&.icon {
+					> li {
+						padding-left: 24px;
+						background: url('../images/icon/icon_tag.svg') no-repeat left top / 20px auto;
+						color: var(--color-text-subtle);
+					}
+				}
+			}
+	
+			& + * {
+				margin-top: var(--gap-5);
+			}
+		}
+	}
+
 	// 할인특약 
 	.benefit_area {
 		.cont_head {
@@ -293,6 +395,11 @@
 			}
 		}
 		.sec_body {
+
+			& + .sec_head {
+				margin-top: var(--gap-9);
+			}
+
 			&:has(.title_h4) {
 				margin-top: -8px;
 			}
@@ -319,6 +426,15 @@
 		&:has(.table_wrap) {
 			+ .group_item {
 				margin-top: var(--gap-7);
+			}
+		}
+
+		.file_attach_box {
+			.file_thumbnail {
+				img {
+					width: 552px;
+					max-width: none;
+				}
 			}
 		}
 	}
@@ -480,7 +596,8 @@
 		grid-template-columns: repeat(2, 1fr);
 		gap: var(--gap-5);
 		.item {
-			padding: var(--padding-7) var(--padding-8);
+			padding: var(--padding-7);
+			// padding: var(--padding-7) var(--padding-8);
 			background-color: var(--color-background-gray-subtler);
 			border-radius: 16px;
 			font-size: var(--font-size-label-medium);
@@ -506,6 +623,10 @@
 					}
 				}
 			}
+		}
+
+		& + .list_depth {
+			margin-top: var(--gap-8);
 		}
 	}
 
