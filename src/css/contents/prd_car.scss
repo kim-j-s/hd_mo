@@ -43,17 +43,27 @@
 		}
 	}
 	.intro_info {
-		display: flex;
-		align-items: flex-start;
-		justify-content: space-between;
-		position: relative;
-		width: 100%;
-		flex-direction: column;
+		// display: flex;
+		// align-items: flex-start;
+		// justify-content: space-between;
+		// position: relative;
+		// width: 100%;
+		// flex-direction: column;
+		padding-top: 160px;
+		background-repeat: no-repeat;
+		background-position: top center;
+		background-size: auto 160px;
 
+		
+		@for $i from 1 through 5 {
+			&.bg_intro#{$i} {
+				background-image: url('../images/content/prdcar/bg_car_prd#{$i}.png');
+			}
+		}
 
 		&::before {
-			content: '';
-			display: none;
+			// content: '';
+			// display: none;
 			width: 240px;
 			height: 160px;
 			margin: 0 auto;
@@ -61,12 +71,12 @@
 			background-position: center center;
 			background-size: contain;
 		}
-		@for $i from 1 through 5 {
-			&.bg_intro#{$i}::before {
-				display: block;
-				background-image: url('../images/content/prdcar/bg_car_prd#{$i}.png');
-			}
-		}
+		// @for $i from 1 through 5 {
+		// 	&.bg_intro#{$i}::before {
+		// 		display: block;
+		// 		background-image: url('../images/content/prdcar/bg_car_prd#{$i}.png');
+		// 	}
+		// }
 
 		.info_list {
 			width: 100%;
