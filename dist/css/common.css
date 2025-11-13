@@ -1318,6 +1318,18 @@ sup {
 	align-items: center;
 	gap: var(--gap-3);
 }
+.header .header_inner .header_right > button.new {
+	position: relative;
+}
+.header .header_inner .header_right > button.new::after {
+	content: "신규";
+	position: absolute;
+	top: 0.4rem;
+	width: 0.8rem;
+	height: 0.8rem;
+	background: var(--color-icon-primary);
+	border-radius: 100%;
+}
 .header .header_inner .header_right .allmenu_open {
 	width: 3.2rem;
 	height: 3.2rem;
@@ -1336,11 +1348,17 @@ sup {
 	font-size: 0;
 	background: url(../images/header/icon_alarm.svg) no-repeat center/3.2rem auto;
 }
+.header .header_inner .header_right .ins_alarm.new::after {
+	right: 0.6rem;
+}
 .header .header_inner .header_right .btn_cart {
 	width: 3.2rem;
 	height: 3.2rem;
 	font-size: 0;
 	background: url(../images/header/icon_cart.svg) no-repeat center/3.2rem auto;
+}
+.header .header_inner .header_right .btn_cart.new::after {
+	right: 0.3rem;
 }
 .header .header_inner .header_right .btn_chatbot {
 	width: 3.2rem;
@@ -13899,6 +13917,7 @@ ol li .table_wrap + .list_ty2 li + li {
 	text-align: left !important;
 }
 .table_wrap .table .ta_c {
+	padding: var(--padding-5) var(--padding-3);
 	text-align: center !important;
 }
 .table_wrap .table .ta_r {
