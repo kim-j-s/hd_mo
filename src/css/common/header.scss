@@ -70,6 +70,20 @@
 			display: flex;
 			align-items: center;
 			gap: var(--gap-3);
+			> button {
+				&.new {
+					position: relative;
+					&::after {
+						content:'신규';
+						position: absolute;
+						top: 4px;
+						width: 8px;
+						height: 8px;
+						background: var(--color-icon-primary);
+						border-radius: 100%;
+					}
+				}
+			}
 			.allmenu_open {
 				width: 32px;
 				height: 32px;
@@ -87,12 +101,18 @@
 				height: 32px;
 				font-size: 0;
 				background: url(../images/header/icon_alarm.svg) no-repeat center / 32px auto;
+				&.new::after {
+					right: 6px;
+				}
 			}			
 			.btn_cart {
 				width: 32px;
 				height: 32px;
 				font-size: 0;
 				background: url(../images/header/icon_cart.svg) no-repeat center / 32px auto;
+				&.new::after {
+					right: 3px;
+				}
 			}
 			.btn_chatbot {
 				width: 32px;

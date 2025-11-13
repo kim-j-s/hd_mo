@@ -56,12 +56,15 @@
 			{{#if h-ins}}
 				<button type="button" class="insChk" onclick="openHDPopup(this,'{{h-ins}}');"><span class="text">계약변경 팝업 열기</span></button>
 			{{/if}}
+			{{!-- 신규 표시 class new 추가 --}}
+			<!-- s: 25-11-13 수정 신규 표시 class new 추가 -->
 			{{#if h-alarm}}
-				<button type="button" class="ins_alarm" aria-label="알팜 팝업 열기"><span class="text">알림 팝업 열기</span></button>
+				<button type="button" class="ins_alarm new" aria-label="알팜 팝업 열기"><span class="text">알림 팝업 열기</span></button>
 			{{/if}}
 			{{#if h-cart}}
-				<button type="button" class="btn_cart" aria-label="최근계산내역 팝업 열기"><span class="text">최근계산내역 팝업 열기</span></button>
+				<button type="button" class="btn_cart new" aria-label="최근계산내역 팝업 열기"><span class="text">최근계산내역 팝업 열기</span></button>
 			{{/if}}
+			<!-- e: 25-11-13 수정 신규 표시 class new 추가 -->
 			{{!-- 계약변경 팝업 호출 버튼 --}}
 			{{#unless no-nav}}
 			<button type="button" class="allmenu_open"><span class="text">전체메뉴 열기</span></button>
