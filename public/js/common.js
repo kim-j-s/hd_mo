@@ -1795,20 +1795,25 @@ function headAria() {
 	
 //알릴고지 숫자 표기
 function nbList() {
-	$('ol.form_list > li').each(function (index) {
-		const $labels = $(this).find('> .form_group_wrap > .form_line > .label_tit'); // 여러 개일 수 있음
-		const num = (index + 1).toString().padStart(2, '0');
+  	$('ol.form_list').each(function () {
+		const $list = $(this);
 
-		$labels.find('.num').remove(); // 기존 번호 삭제
+		$list.find('> li').each(function (index) {
+			const $labels = $(this).find('> .form_group_wrap > .form_line > .label_tit'); // 여러 개일 수 있음
+			const num = (index + 1).toString().padStart(2, '0');
 
-		$labels.each(function (i) {
-			let numStr = num;
-			if ($labels.length > 1 && i > 0) {
-				numStr += `-${i}`;
-			}
-			$(this).prepend(`<span class="num">${numStr}</span>`);
+			$labels.find('.num').remove(); // 기존 번호 삭제
+
+			$labels.each(function (i) {
+				let numStr = num;
+				if ($labels.length > 1 && i > 0) {
+					numStr += `-${i}`;
+				}
+				$(this).prepend(`<span class="num">${numStr}</span>`);
+			});
 		});
 	});
+	
 }
 
 // 변경기준일 prograss bar
