@@ -39,11 +39,21 @@
 		}
 	}
 	.intro_info {
+		margin-top: 32px;
+		padding-top: 160px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		position: relative;
 		width: 100%;
+		background-repeat: no-repeat;
+		background-size: auto 160px;
+		background-position: center top;
+		@for $i from 1 through 22 {
+			&.bg_intro#{$i} {
+				background-image: url('../images/content/prd/bg_intro#{$i}.png');
+			}
+		}
 
 		.info_list {
 			.item {
@@ -330,19 +340,19 @@
 	
 	// 목록
 	.info_list {
+		width: 100%;
 		display: flex;
 		flex-direction: column;
 		gap: var(--gap-8);
 		.tit {
 			font-size: var(--font-size-body-medium);
 			color: var(--color-text-basic);
-			line-height: 24px;
+			font-weight: 700;
 		}
 		.desc {
 			padding-top: var(--gap-2);
 			font-size: var(--font-size-body-small);
 			color: var(--color-text-subtle);
-			line-height: 21px;
 			+ button,
 			+ .btn_area {
 				margin-top: var(--gap-2);
