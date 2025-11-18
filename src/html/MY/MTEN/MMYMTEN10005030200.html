@@ -91,10 +91,102 @@
 		</div>
 	</div>
 </div>
-	<!-- s: popup area -->
 <!-- e: 25-11-18 수정 -->
+
+	<!-- s: popup area -->
+	{{#> popup/popup_full popup-id="popup_ty01" popup-title="운전자 범위/연령특약 변경 계산" }}
+	<div class="popup_cont">
+		<div class="popup_content">
+			<!-- s: popup_content_top -->
+			<div class="popup_content_top">
+				<h2 class="title_h2">
+					<strong>운전자 범위/연령</strong>을 변경하여<br>
+					<strong>보험료</strong>를 계산해보세요
+				</h2>
+			</div>
+			<!-- e: popup_content_top -->
+
+			<div class="info_gray">
+				<dl>
+					<dt><strong>차량번호</strong></dt>
+					<dd><strong>18루**22</strong></dd>
+				</dl>
+				<dl>
+					<dt><strong>보험기간</strong></dt>
+					<dd><strong>2024.05.02~2025.05.02</strong></dd>
+				</dl>
+				<dl>
+					<dt><strong>계약자</strong></dt>
+					<dd><strong>하*현</strong></dd>
+				</dl>
+				<dl>
+					<dt><strong>피보험자</strong></dt>
+					<dd><strong>하*현</strong></dd>
+				</dl>
+				<dl>
+					<dt><strong>운전자 범위</strong></dt>
+					<dd><strong>기명피보험자 1인 한정</strong></dd>
+				</dl>
+				<dl>
+					<dt><strong>운전자 연령</strong></dt>
+					<dd><strong>만 48세 이상</strong></dd>
+				</dl>
+			</div>
+
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<!-- s: 25-08-21 UXW -->
+					<div class="label_tit">변경기준일(00시)</div>
+					{{> cp/text cal=true placeholder="날짜 입력" value="2024.08.21" inp-title="변경기준일(00시)" }}
+				</div>
+				<ul class="list_ty2">
+					<li>변경기준일의 00시부터 보험종료일 24시까지 변경내용의 효력이 발생합니다.</li>
+					<li>신청기간은 시작일로부터 <strong class="point">-일</strong>입니다.</li>
+				</ul>
+			</div>
+
+			<h3 class="title_h3">운전자 범위/연령</h3>
+			<div class="radio_group_wrap_ty2" role="radiogroup">
+				{{> cp/radio rd-class="rd_btn" rd-id="radio_driver_opt1" name="radio_driver_opt1" labelname="본인만" checked=true }}
+				{{> cp/radio rd-class="rd_btn" rd-id="radio_driver_opt2" name="radio_driver_opt1" labelname="부부" }}
+				{{> cp/radio rd-class="rd_btn" rd-id="radio_driver_opt3" name="radio_driver_opt1" labelname="가족" }}
+				{{> cp/radio rd-class="rd_btn" rd-id="radio_driver_opt5" name="radio_driver_opt1" labelname="누구나" }}
+				{{> cp/radio rd-class="rd_btn" rd-id="radio_driver_opt6" name="radio_driver_opt1" labelname="임직원" }}
+				{{> cp/radio rd-class="rd_btn" rd-id="radio_driver_opt7" name="radio_driver_opt1" labelname="본인+1인" }}
+				{{> cp/radio rd-class="rd_btn" rd-id="radio_driver_opt8" name="radio_driver_opt1" labelname="부부+1인" }}
+				{{> cp/radio rd-class="rd_btn" rd-id="radio_driver_opt9" name="radio_driver_opt1" labelname="부부+자녀" }}
+				{{> cp/radio rd-class="rd_btn" rd-id="radio_driver_opt10" name="radio_driver_opt1" labelname="본인+자녀" }}
+				{{> cp/radio rd-class="rd_btn" rd-id="radio_driver_opt11" name="radio_driver_opt1" labelname="자녀" }}
+			</div>
+
+			<div class="divider_ty1"></div>
+			<h3 class="title_h3">운전자 범위/연령 한정 특약 변경 보험료</h3>
+			<div class="table_wrap">
+				<table class="table">
+					<caption>운전자 범위/연령 한정 특약 변경 결제보험료 제공</caption>
+					<colgroup>
+						<col style="width:40%;">
+						<col style="width:auto;">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">결제보험료</th>
+							<td><span class="point">10,000</span>원</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>	
+	<div class="popup_bottom">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="특약 비교 결과 확인" disabled=true }}
+		</div>
+	</div>
+	{{/ popup/popup_full}}
+
 	<!-- 운전자 범위 : 자녀한정 선택 시, 변경불가 alert -->
-	{{#> popup/popup_layer popup-id="popup_ty02" popup-title="변경불가 안내" popup-active=true }}
+	{{#> popup/popup_layer popup-id="popup_ty02" popup-title="변경불가 안내" }}
 	<div class="popup_cont">
 		<div class="popup_content">
 			<div class="msg_icon mi_error"></div>
