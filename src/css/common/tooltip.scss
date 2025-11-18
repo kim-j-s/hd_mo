@@ -3,13 +3,11 @@
 	position: relative;
 	z-index: 1;
 	display: inline;
-	// vertical-align: sub;
 	width: 20px;
 	height: 20px;
-	text-align: left;
 	font-size: 0;
 	line-height: 0;
-	// background-color: #ddd;
+	text-align: left;
 
 	&.active {
 		z-index: 2;
@@ -20,9 +18,7 @@
 		display: inline-block;
 		width: 20px;
 		height: 20px;
-		// line-height: 0;
 		vertical-align: top;
-		// transform: translateY(4px);
 		button {
 			position: relative;
 			width: 20px;
@@ -80,7 +76,6 @@
 			&.active {
 				& + .tooltip_panel {
 					margin-top: 0;
-					// bottom: 28.5px;
 					bottom: 28px;
 					top: auto;
 				}
@@ -119,7 +114,7 @@
 				font-weight : 700;
 				& + .inner_contents {
 					margin-top: var(--gap-2);
-					padding-right: 28px;
+					// padding-right: 28px;
 				}
 			}
 
@@ -198,16 +193,16 @@
 	word-wrap: break-word;
 	line-height: 24px;	
 
-	& > .tooltip_wrap {
-		.tooltip_head {
-			&.active {
-				&::after {
-					// left: calc(50% - 7px);
-					// top: calc(100% - 3px);
-				}
-			}
-		}			
-	}
+	// & > .tooltip_wrap {
+	// 	.tooltip_head {
+	// 		&.active {
+	// 			&::after {
+	// 				// left: calc(50% - 7px);
+	// 				// top: calc(100% - 3px);
+	// 			}
+	// 		}
+	// 	}			
+	// }
 
 	.tooltip_wrap .tooltip_head.top{
 		&.top {
@@ -324,22 +319,11 @@
 			left: calc(var(--tl) + 26px);
 			width: 12px;
 			height: 6px;
-			// border-left: 6px solid transparent;
-			// border-right: 6px solid transparent;
 			background-image: url(../images/icon/tooltip_arrow_ty2.svg);
 			background-size: contain;
 			background-repeat: no-repeat;
 			background-position: center;
 		}
-		// &::after {
-		// 	content: '';
-		// 	position: absolute;
-		// 	left: calc(var(--tl) + 26px);
-		// 	width: 12px;
-		// 	height: 6px;
-		// 	border-left: 6px solid transparent;
-		// 	border-right: 6px solid transparent;
-		// }
 	}
 	&.bottom {
 		top: calc(100% + 6px);
@@ -347,12 +331,7 @@
 			&::before {
 				top: -5px;
 				transform: rotate(180deg);
-				// border-bottom: 8px solid var(--color-element-primary-lighter);
 			}
-			// &::after {
-			// 	top: -6px;
-			// 	border-bottom: 8px solid var(--color-border-primary);
-			// }
 		}
 	}
 	&.top {
