@@ -279,11 +279,13 @@
 <!-- s: 25-11-18 수정 -->
 <script>
 	//그래프 로드 후 호출 필요
-	$('.progress').each(function() {
-		var $progressBar = $(this);
-		const target = $progressBar.find('.progress_info span').text().trim();
-		const per = $progressBar.find('.progress_info strong').text().trim();
-		$progressBar.attr('aria-label', `${target} 중 ${per}`);		
+	$(document).ready(function () {
+		$('.progress').each(function() {
+			var $progressBar = $(this);
+			const target = $progressBar.find('.progress_info span').text().trim();
+			const per = $progressBar.find('.progress_info strong').text().trim();
+			$progressBar.attr('aria-label', `목표금액 ${target} 중 ${per}`);		
+		});
 	});
 </script>
 <!-- e: 25-11-18 수정 -->

@@ -125,13 +125,18 @@
 <!-- s: popup area -->
 <!-- e: popup area -->
 <!-- s: 25-11-05 추가 -->
+<!-- s: 25-11-18 수정 -->
 <script>
+	//그래프 로드 후 호출 필요
 	$(document).ready(function () {
-		const $progress = $('.donation .progress');
-		const target = $progress.find('.progress_info span').text().trim();
-		const per = $progress.find('.progress_info strong').text().trim();		
-		$progress.attr('aria-label', `${target} 중 ${per}`);
+		$('.progress').each(function() {
+			var $progressBar = $(this);
+			const target = $progressBar.find('.progress_info span').text().trim();
+			const per = $progressBar.find('.progress_info strong').text().trim();
+			$progressBar.attr('aria-label', `목표금액 ${target} 중 ${per}`);		
+		});
 	});
 </script>
+<!-- e: 25-11-18 수정 -->
 <!-- e: 25-11-05 추가 -->
 {{/ layout/default }}
