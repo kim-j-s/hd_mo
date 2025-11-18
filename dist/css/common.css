@@ -45,7 +45,7 @@
 }
 /* 52px */
 .mt_gap_11 {
-	margin-top: var(--gap-11);
+	margin-top: var(--gap-11) !important;
 }
 /* unit class */
 /* scroll margin top */
@@ -1951,7 +1951,7 @@ sup {
 	height: 5.6rem;
 	background: var(--color-button-brand-fill-inverse, #fff);
 	border-radius: var(--radius-max);
-	border: var(--border-width-static-regular) solid var(--color-button-brand-border, #ff7f32);
+	border: var(--border-width-static-regular) solid var(--color-button-brand-border);
 	-webkit-box-shadow: 0 0.4rem 0.8rem 0 var(--color-alpha-shadow5, rgba(248, 99, 60, 0.2));
 	box-shadow: 0 0.4rem 0.8rem 0 var(--color-alpha-shadow5, rgba(248, 99, 60, 0.2));
 	text-align: center;
@@ -1960,9 +1960,9 @@ sup {
 	display: block;
 	padding-top: 2.4rem;
 	background: url(../images/content/ho/icon_chatbot.svg) no-repeat center top 1px/2.4rem;
-	font-size: var(--font-size-body-xsmall, 12px);
+	font-size: var(--font-size-body-xsmall);
 	font-weight: 700;
-	color: var(--color-text-bolder, #131416);
+	color: var(--color-text-bolder);
 }
 /* address button */
 .address_item {
@@ -7345,6 +7345,15 @@ sup {
 .insu_plan p {
 	font-size: var(--font-size-body-small);
 	color: var(--color-text-subtle);
+}
+.card_item_wrap.exp_case .tit_item input[type="checkbox"] {
+	display: none;
+}
+.card_item_wrap.exp_case .tit_item input[type="checkbox"] + label {
+	padding-left: 0 !important;
+}
+.card_item_wrap.exp_case .tit_item input[type="checkbox"] + label::before {
+	content: none;
 }
 /* checkbox */
 /* Checkbox */
@@ -13699,7 +13708,7 @@ ol li .table_wrap + .list_ty2 li + li {
 .tab_wrap.tab_wrap_ty2 .tab_wrap_content {
 	padding-top: 2.4rem;
 }
-.tab_wrap.tab_wrap_ty2 .tab_wrap_content + .list_ty2 {
+.tab_wrap.tab_wrap_ty2 + .list_ty2 {
 	margin-top: var(--gap-11);
 }
 .tab_wrap.tab_wrap_ty2:has(.tab_wrap_list_ty2.tag) .tab_wrap_content {
@@ -14513,9 +14522,9 @@ ol li .table_wrap + .list_ty2 li + li {
 	display: inline;
 	width: 2rem;
 	height: 2rem;
-	text-align: left;
 	font-size: 0;
 	line-height: 0;
+	text-align: left;
 }
 .tooltip_wrap.active {
 	z-index: 2;
@@ -14610,7 +14619,6 @@ ol li .table_wrap + .list_ty2 li + li {
 }
 .tooltip_wrap .tooltip_panel .inner .inner_title + .inner_contents {
 	margin-top: var(--gap-2);
-	padding-right: 2.8rem;
 }
 .tooltip_wrap .tooltip_panel .inner .inner_contents + .inner_footer {
 	margin-top: var(--gap-3);
