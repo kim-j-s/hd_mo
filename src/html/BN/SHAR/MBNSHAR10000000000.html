@@ -51,7 +51,9 @@
 											</div>
 											<div class="main_title">다훈이가 밝은 미래를 향해 나아갈 수 있도록 따뜻하게 지켜주세요.</div>
 										</div>
-										<div class="progress">
+										<!-- s: 25-11-18 수정 -->
+										<div class="progress" role="img" tabindex="0">
+										<!-- e: 25-11-18 수정 -->
 											<div class="bar">
 												<div class="guage"></div>
 											</div>
@@ -84,7 +86,9 @@
 											</div>
 											<div class="main_title">다훈이가 밝은 미래를 향해 나아갈 수 있도록 따뜻하게 지켜주세요.</div>
 										</div>
-										<div class="progress">
+										<!-- s: 25-11-18 수정 -->
+										<div class="progress" role="img" tabindex="0">
+										<!-- e: 25-11-18 수정 -->
 											<div class="bar">
 												<div class="guage"></div>
 											</div>
@@ -272,4 +276,15 @@
 
 <!-- s: popup area -->
 <!-- e: popup area -->
+<!-- s: 25-11-18 수정 -->
+<script>
+	//그래프 로드 후 호출 필요
+	$('.progress').each(function() {
+		var $progressBar = $(this);
+		const target = $progressBar.find('.progress_info span').text().trim();
+		const per = $progressBar.find('.progress_info strong').text().trim();
+		$progressBar.attr('aria-label', `${target} 중 ${per}`);		
+	});
+</script>
+<!-- e: 25-11-18 수정 -->
 {{/ layout/default }}
