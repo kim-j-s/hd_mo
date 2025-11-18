@@ -1,7 +1,7 @@
 {{#> layout/default no-sp=true page-title="단기운전자 확대특약 신청 | 마이페이지"}}
 <!-- s: 25-11-18 수정 -->
 <div id="wrap" class="wrap">
-	{{> layout/header h-title="보험료확인" }}
+	{{> layout/header h-title="보험료확인" h-ins="pop_insChk" }}
 	<div id="container" class="container">
 		<div class="content">
 			<!-- s: content_top -->
@@ -22,14 +22,14 @@
 					<dt><strong>보험기간</strong></dt>
 					<dd><strong>2024.05.02~2025.05.02</strong></dd>
 				</dl>
-				<dl>
+				<!-- <dl>
 					<dt><strong>계약자</strong></dt>
 					<dd><strong>하*현</strong></dd>
 				</dl>
 				<dl>
 					<dt><strong>피보험자</strong></dt>
 					<dd><strong>하*현</strong></dd>
-				</dl>
+				</dl> -->
 				<dl>
 					<dt><strong>운전자 범위</strong></dt>
 					<dd><strong>기명피보험자 1인 한정</strong></dd>
@@ -186,7 +186,7 @@
 	{{/ popup/popup_full}}
 
 	<!-- 운전자 범위 : 자녀한정 선택 시, 변경불가 alert -->
-	{{#> popup/popup_layer popup-id="popup_ty02" popup-title="변경불가 안내" }}
+	{{#> popup/popup_layer popup-id="popup_ty02" popup-title="변경불가 안내" popup-active=true }}
 	<div class="popup_cont">
 		<div class="popup_content">
 			<div class="msg_icon mi_error"></div>
