@@ -62,6 +62,7 @@
 					</div>
 
 					<div class="header_right">
+						<button type="button" class="insChk" onclick="openHDPopup(this,'pop_insChk');"><span class="text">계약변경 팝업 열기</span></button>
 						<!-- s: 25-11-13 수정 신규 표시 class new 추가 -->
 						<!-- e: 25-11-13 수정 신규 표시 class new 추가 -->
 						<button type="button" class="allmenu_open"><span class="text">전체메뉴 열기</span></button>
@@ -482,14 +483,14 @@
 							<dt><strong>보험기간</strong></dt>
 							<dd><strong>2024.05.02~2025.05.02</strong></dd>
 						</dl>
-						<dl>
-							<dt><strong>계약자</strong></dt>
-							<dd><strong>하*현</strong></dd>
-						</dl>
-						<dl>
-							<dt><strong>피보험자</strong></dt>
-							<dd><strong>하*현</strong></dd>
-						</dl>
+						<!-- <dl>
+								<dt><strong>계약자</strong></dt>
+								<dd><strong>하*현</strong></dd>
+							</dl>
+							<dl>
+								<dt><strong>피보험자</strong></dt>
+								<dd><strong>하*현</strong></dd>
+							</dl> -->
 						<dl>
 							<dt><strong>운전자 범위</strong></dt>
 							<dd><strong>기명피보험자 1인 한정</strong></dd>
@@ -774,7 +775,7 @@
 			</div>
 		</div>
 		<!-- 운전자 범위 : 자녀한정 선택 시, 변경불가 alert -->
-		<div class="popup_wrap layer" id="popup_ty02" role="dialog" aria-hidden="true">
+		<div class="popup_wrap layer active" id="popup_ty02" role="dialog" aria-hidden="false">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('popup_ty02');"></div>
 				<div class="popup_inner">
