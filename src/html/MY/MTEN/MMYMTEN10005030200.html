@@ -1,16 +1,17 @@
 {{#> layout/default no-sp=true page-title="단기운전자 확대특약 신청 | 마이페이지"}}
-	<!-- s: popup area -->
-	{{#> popup/popup_full popup-id="popup_ty01" popup-active=true popup-title="운전자 범위/연령특약 변경 계산" }}
-	<div class="popup_cont">
-		<div class="popup_content">
-			<!-- s: popup_content_top -->
-			<div class="popup_content_top">
+<!-- s: 25-11-18 수정 -->
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="보험료확인" }}
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
 				<h2 class="title_h2">
 					<strong>운전자 범위/연령</strong>을 변경하여<br>
 					<strong>보험료</strong>를 계산해보세요
 				</h2>
 			</div>
-			<!-- e: popup_content_top -->
+			<!-- e: content_top -->
 
 			<div class="info_gray">
 				<dl>
@@ -83,16 +84,17 @@
 				</table>
 			</div>
 		</div>
-	</div>	
-	<div class="popup_bottom">
+	</div>
+	<div class="bottom_fix_wrap">
 		<div class="btn_area">
 			{{> cp/button type="1" size="1" b-text="특약 비교 결과 확인" disabled=true }}
 		</div>
 	</div>
-	{{/ popup/popup_full}}
-
+</div>
+	<!-- s: popup area -->
+<!-- e: 25-11-18 수정 -->
 	<!-- 운전자 범위 : 자녀한정 선택 시, 변경불가 alert -->
-	{{#> popup/popup_layer popup-id="popup_ty02" popup-active=true popup-title="변경불가 안내" }}
+	{{#> popup/popup_layer popup-id="popup_ty02" popup-title="변경불가 안내" popup-active=true }}
 	<div class="popup_cont">
 		<div class="popup_content">
 			<div class="msg_icon mi_error"></div>
