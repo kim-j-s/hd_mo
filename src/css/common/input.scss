@@ -715,12 +715,6 @@
 	& + .form_group_wrap.space3 {
 		margin-top: var(--gap-11);
 	}
-	// & + *:not(.divider_ty1, .divider_ty2, .btn_rd_close) {
-	// 	margin-top: var(--gap-11);
-	// }
-	// & + *:not(.divider_ty1, .divider_ty2) {
-	// 	margin-top: var(--gap-9);
-	// }
 
 	> * {
 		~ .row {
@@ -750,15 +744,11 @@
 		margin-top: var(--gap-5);
 	}
 
-
 	[class^=form_line] {
 		.label_tit {
 			font-size: var(--font-size-label-medium);
 			line-height: 150%;
 			margin-bottom: var(--padding-3);
-			// .question_mark_btn {
-			// 	transform: translateY(5px);
-			// }
 			&.box {
 				display: flex;
 				justify-content: space-between;
@@ -833,7 +823,7 @@
 
 		.line_group {
 			display: flex;
-			gap: 12px;
+			gap: var(--gap-4);
 
 			.line {
 				flex: 1;
@@ -863,6 +853,14 @@
 				margin-top: var(--gap-5);
 			}
 		}
+
+		.address_item {
+			margin-top: 0;
+		}
+		* + .address_item {
+			margin-top: var(--gap-5);
+		}
+
 	}
 
 	> .form_line_ty2 {
@@ -898,7 +896,7 @@
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		gap: 12px;
+		gap: var(--gap-4);
 
 		.form_line {
 			flex: 1 1 0;
@@ -922,7 +920,7 @@
 
 		.fit {
 			&.input_text input { 
-				padding-right:0;
+				padding-right: 0;
 			}
 		}
 
@@ -1049,7 +1047,7 @@
 .range_calrendar {
 	display: flex;
 	align-items: center;
-	gap: 12px;
+	gap: var(--gap-4);
 	> div {
 		flex: 1;
 		input {
