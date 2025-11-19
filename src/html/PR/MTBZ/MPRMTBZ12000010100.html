@@ -1,7 +1,8 @@
 {{#> layout/default no-sp=true page-title="자동차 할인특약 | 상품"}}
 <!-- s: popup area -->
+<!-- s: 25-11-19 수정 -->
 <!-- s: Full 팝업 -->	
-{{#> popup/popup_full popup-id="pop_full" popup-title="자동차 할인특약" popup-active=true }}
+{{#> popup/popup_full popup-id="pop_full" popup-title="자동차보험(법인) 할인특약" popup-active=true }}
 	<div class="popup_cont prd_car">
 		<div class="popup_content">
 			<!-- s: tab -->
@@ -9,14 +10,14 @@
 				<div class="tab_scroll_box_ty1"> 
 					<div class="tab_wrap_list_ty1 scroll" role="tablist">
 						<!-- s: 25-08-28 UXW -->
-						{{> cp/tab_btn tb-text="ECO마일리지" tb-id="11" tb-active=true}}
+						{{> cp/tab_btn tb-text="마일리지" tb-id="11" tb-active=true}}
 						<!-- e: 25-08-28 UXW -->
 						{{> cp/tab_btn tb-text="블랙박스" tb-id="12"}}
 						{{> cp/tab_btn tb-text="커넥티드카" tb-id="13"}}
 						{{> cp/tab_btn tb-text="첨단안전장치" tb-id="14"}}
 					</div>
 				</div>
-				<!-- tab1: ECO마일리지 -->
+				<!-- tab1: 마일리지 -->
 				<div class="tab_wrap_content active" role="tabpanel" aria-labelledby="tab11" id="tabPanel11">
 					<!-- s: tab in tab -->
 					<div class="tab_wrap tab_wrap_ty2">
@@ -29,23 +30,27 @@
 						<div class="tab_wrap_content active" role="tabpanel" aria-labelledby="tabs0101" id="tabPanels0101">
 							<!-- s: popup_content_body -->
 							<div class="popup_content_body">
-								<!-- s: intro_info -->
-								<div class="intro_area">
-									<div class="info_gray">
-										<div class="intro_info column ico_special1">
-												<h3 class="title_h3">
-													연간 3,000~15,000km 이하로<br>
-													주행 시 <strong class="point">7~17% 특약할인</strong><br>
-													혜택을 드립니다.
-												</h3>
-												<!-- <span class="note">(보험시작일 '25.7.1부터)</span> -->
+								<!-- s: benefit_top_wrap -->
+								<div class="benefit_top_wrap">
+									<div class="item_benefit_top ico_bn_visual1">
+										<div class="inner">
+											<div class="i_top">
+												<h3 class="title">마일리지 할인특약</h3>
+											</div>
+											<div class="i_bottom">
+												<div class="cont">
+													연간 3,000~15,000km 이하로 <br>주행 시 
+													<span class="detail"><i>7~17% 특약할인</i></span>
+												</div>
+											</div>
 										</div>
 									</div>
 									<ul class="list_depth">
-										<li>개인용 및 업무용 개인소유 초소형·경·4종 화물/경·3종 승합 자동차이며 1년 정상 계약인 경우에 가입할 수 있습니다. 단, 1년 정상 계약에 동일증권을 추가하는 3개월 이상 단기계약은 가입이 가능합니다.</li>
+										<li>승용, 초소형·경·4종 화물, 경·3종 승합 자동차이며 1년 정상 계약인 경우에 가입할 수 있습니다.</li>
+										<li>단, 1년 정상 계약에 동일증권을 추가하는 3개월 이상 단기계약은 가입이 가능합니다.</li>
 									</ul>
 								</div>
-								<!-- e: intro_info -->
+								<!-- e: benefit_top_wrap -->
 								
 								<!-- s: sec_group -->
 								<div class="sec_group">
@@ -124,12 +129,6 @@
 													<strong class="tit">보험료 계산</strong>
 												</div>
 											</li>
-											<li>
-												<span class="num">04</span>
-												<div class="cont">
-													<strong class="tit">보험료 결제</strong>
-												</div>
-											</li>
 										</ol>
 										<ul class="list_ty2">
 											<li>보험 계산/가입 시 제조사 전산 조회를 통해 특약에 가입합니다.</li>
@@ -151,9 +150,6 @@
 										</ul>
 
 										<div class="info_gray ty2">
-											<div class="badge_wrap">
-												<span class="hd_badge outline solid_pastel c_secondary size_m">NEW</span>
-											</div>
 											<h3 class="title_h3">갱신 시 환급금 대체 사용이 가능합니다.</h3>
 											<p class="info_text">마일리지 환급금 대체사용 특약 가입 후 자동차보험 갱신 시 보험료에서 환급금을 차감하여 결제할 수 있습니다. </p>
 										</div>
@@ -173,8 +169,12 @@
 												<li>
 													<span class="num">01</span>
 													<div class="cont">
-														<strong class="tit">다이렉트 콜센터 1899-6782(내선2번)로 전산 조회 요청</strong>
-														<p class="desc">보험 만료일 전 45일 ~ 만료일 후 30일</p>
+														<strong class="tit">전산 조회 요청</strong>
+														<p class="desc">
+															다이렉트 고객센터<br>
+															(1899-6782, ARS 2번)<br>
+															(보험 만료일 전 45일 ~ 만료일 후 30일)
+														</p>
 													</div>
 												</li>
 												<li>
@@ -213,7 +213,7 @@
 													<div class="inner" style="display:block;">
 														네, 보험기간이 1년이고, 잔여 보험기간이 3개월 이상인 경우 추가 가입이 가능합니다. 주행거리 산정은 주행거리를 처음 등록하는 날로부터 최종 주행거리 등록일까지 일평균 주행거리를 산출하여 마일리지 특약 가입 기간 동안의 주행거리를 산정합니다. 단, 마일리지 특약 중도 가입 시 환급금은 특약 가입일로부터 잔여 기간에 대하여 적용되며, 최초 자동차보험 가입일로부터 소급 적용되지 않습니다.
 														<ul class="list_depth">
-															<li>다이렉트 콜센터 1899-6782(내선 2번)</li>
+															<li>다이렉트 고객센터(1899-6782, ARS 2번)</li>
 														</ul>
 													</div>
 												</div>				
@@ -226,7 +226,7 @@
 												</div>
 												<div class="acd_cont">
 													<div class="inner">
-														다이렉트 콜센터 1899-6782(내선2번)로 전산 조회를 요청하시면 연간 환산 주행거리에 따라 보험료를 정산하여 환급해드립니다.
+														다이렉트 고객센터(1899-6782, ARS 2번)로 전산 조회를 요청하시면 연간 환산 주행거리에 따라 보험료를 정산하여 환급해드립니다.
 													</div>
 												</div>				
 											</div>
@@ -255,6 +255,12 @@
 						</div>
 					</div>
 					<!-- e: tab in tab -->
+						
+					<!-- s: 준법감시필 -->
+					<ul class="list_ty2">
+						<li>준법감시인 확인필 제20253690호 (2025.08.18~2026.08.18)</li>
+					</ul>
+					<!-- e: 준법감시필 -->
 				</div>
 
 				<!-- tab2: 블랙박스 -->
@@ -269,15 +275,19 @@
 						<div class="tab_wrap_content active" role="tabpanel" aria-labelledby="tabs0201" id="tabPanels0201">
 							<!-- s: popup_content_body -->
 							<div class="popup_content_body">
-								<!-- s: intro_info -->
-								<div class="intro_area">
-									<div class="info_gray">
-										<div class="intro_info column ico_special2">
-												<h3 class="title_h3">
-													차량용 영상기록장치(블랙박스)가 장착된 차량은<br>
-													<strong class="point">3%</strong><br>
-													특약할인 혜택을 드립니다.
-												</h3>
+								<!-- s: benefit_top_wrap -->
+								<div class="benefit_top_wrap">
+									<div class="item_benefit_top ico_bn_visual4">
+										<div class="inner">
+											<div class="i_top">
+												<h3 class="title">블랙박스 할인특약</h3>
+											</div>
+											<div class="i_bottom">
+												<div class="cont">
+													차량용 영상기록장치(블랙박스)가 장착된 차량은
+													<span class="detail"><i>3% 특약할인</i></span>
+												</div>
+											</div>
 										</div>
 									</div>
 									<ul class="list_depth">
@@ -286,7 +296,7 @@
 										<li> 휴대전화, 테블릿 등 어플리케이션을 탑재하여 사용되는 장치는 제외됩니다.</li>
 									</ul>
 								</div>
-								<!-- e: intro_info -->
+								<!-- e: benefit_top_wrap -->
 								
 								<!-- s: sec_group -->
 								<div class="sec_group">
@@ -326,12 +336,6 @@
 												<span class="num">03</span>
 												<div class="cont">
 													<strong class="tit">블랙박스장착 사진 등록</strong>
-												</div>
-											</li>
-											<li>
-												<span class="num">04</span>
-												<div class="cont">
-													<strong class="tit">보험료 결제</strong>
 												</div>
 											</li>
 										</ol>
@@ -408,7 +412,7 @@
 												</div>
 												<div class="acd_cont">
 													<div class="inner">
-														보험가입 이후에도 특약 가입이 가능하며 다이렉트 콜센터 1899-6782(ARS 2번)로 연락 주시면 가입이 가능합니다.<br>단, 특약 가입일로부터 잔여기간에 대하여 일할로 계산하여 환급해 드립니다.
+														보험가입 이후에도 특약 가입이 가능하며 다이렉트 고객센터(1899-6782, ARS 2번)로 연락 주시면 가입이 가능합니다.<br>단, 특약 가입일로부터 잔여기간에 대하여 일할로 계산하여 환급해 드립니다.
 													</div>
 												</div>				
 											</div>
@@ -421,6 +425,12 @@
 						</div>
 					</div>
 					<!-- e: tab in tab -->
+						
+					<!-- s: 준법감시필 -->
+					<ul class="list_ty2">
+						<li>준법감시인 확인필 제20253690호 (2025.08.18~2026.08.18)</li>
+					</ul>
+					<!-- e: 준법감시필 -->
 				</div>
 
 				<!-- tab3: 커넥티드카 -->
@@ -435,26 +445,64 @@
 						<div class="tab_wrap_content active" role="tabpanel" aria-labelledby="tabs0301" id="tabPanels0301">
 							<!-- s: popup_content_body -->
 							<div class="popup_content_body">
-								<!-- s: intro_info -->
-								<div class="intro_area">
-									<div class="info_gray">
-										<div class="intro_info column ico_special5">
-												<h3 class="title_h3">
+								<!-- s: benefit_top_wrap -->
+								<div class="benefit_top_wrap">
+									<div class="item_benefit_top ico_bn_visual9">
+										<div class="inner">
+											<div class="i_top">
+												<h3 class="title">커넥티드카 할인특약</h3>
+											</div>
+											<div class="i_bottom">
+												<div class="cont">
 													사고 통보장치 장착 시<br>
-													<strong class="point">6.1~7%</strong><br>
-													특약할인 혜택을 드립니다.
-												</h3>
+													<span class="detail"><i>6.1~7% 특약할인</i></span>
+												</div>
+												<p class="desc">(보험시작일 '25.09.11부터)</p>
+											</div>
 										</div>
 									</div>
 									<ul class="list_depth">
-										<li>업무용 자동차만 가입대상입니다. </li>
-										<li>커넥티드카 (자동차 출고시 장착된 단말기를 활용하여 실시간으로 자동차의 사고 및 운행정보를 주고 받을 수 있는 차량)</li>
-										<li>신차 출고 시 사고 통보장치가 기본 장착이거나, 출고 시 옵션으로 선택 장착된 차량은 가입이 가능합니다.</li>
-										<li>차량 출고 후 장착했거나 휴대전화, 태블릿 등 어플리케이션을 탑재하여 사용되는 장치는 제외됩니다.</li>
-										<li>자동차 제조사의 커넥티드카 서비스에 가입한 경우(가입방법 참고)</li>
+										<li>업무용 자동차만 가입대상입니다</li>
+										<li>
+											커넥티드 카(자동차 출고 시 장착된 단말기를 활용하여 실시간으로 자동차의 사고 및 운행정보를 주고받을 수 있는 차량)
+											<ul>
+												<li>신차 출고 시 사고 통보장치가 기본 장착이거나, 출고 시 옵션으로 선택 장착된 차량은 가입이 가능합니다.</li>
+												<li>차량 출고 후 장착했거나 휴대전화, 태블릿 등 어플리케이션을 탑재하여 사용되는 장치는 제외됩니다.</li>
+											</ul>
+										</li>
+										<li>
+											자동차 제조사의 커넥티드카 서비스에 가입한 경우
+											<ul class="connected_service_list">
+												<li>
+													현대차 <strong>블루링크</strong>
+													<img src="../../../images/logo/connected_hd.png" alt="블루링크 로고">
+												</li>
+												<li>
+													제네시스 <strong>커넥티드</strong>
+													<img src="../../../images/logo/connected_ge.png" alt="커넥티드 로고">
+												</li>
+												<li>
+													기아 <strong>커넥트</strong>
+													<img src="../../../images/logo/connected_kn.png" alt="커넥트 로고">
+												</li>
+												<li>
+													KG MOBILITY <strong>인포콘</strong>
+													<img src="../../../images/logo/connected_kg.png" alt="인포콘 로고">
+												</li>
+												<li>르노코리아 <strong>이지커넥트</strong></li>
+												<li>메르세데스-벤츠 <strong>Mercedes me</strong></li>
+												<li>BMW&middot;MINI <strong>ConnectedDrive</strong></li>
+												<li>LAND ROVER&middot;JAGUAR <strong>InControl</strong></li>
+												<li>Volvo <strong>Connect</strong></li>
+												<li>Porsche <strong>Connect</strong></li>
+												<li>Honda <strong>Connect</strong></li>
+												<li>Audi <strong>Connect</strong></li>
+												<li>Polestar <strong>Connect</strong></li>
+											</ul>
+										</li>
 									</ul>
 								</div>
-								<!-- e: intro_info -->
+								<!-- e: benefit_top_wrap -->
 								
 								<!-- s: sec_group -->
 								<div class="sec_group">
@@ -463,7 +511,7 @@
 									</div>
 									<div class="sec_body">
 										<div class="table_wrap">
-											<table class="table">
+											<table class="table table_c">
 												<caption>신차~5년 전, 6년 이상 제공</caption>
 												<colgroup>
 													<col style="width:50%;">
@@ -500,62 +548,72 @@
 									<div class="sec_body">
 										<div class="table_wrap">
 											<table class="table">
-												<caption>구분, 현대, 기아, KG MOBILITY, 르노코리아, BENZ, BMW, MINI, Volvo, LAND ROVER/JAGUAR 개인용, 가입방법 제공</caption>
+												<caption>커넥티드카 종류, 가입방법 제공</caption>
 												<colgroup>
-													<col style="width:auto;">
-													<col style="width:31%;">
-													<col style="width:31%;">
+													<col style="width: 60%;">
+													<col style="width: auto;">
 												</colgroup>
 												<thead>
 													<tr>
-														<th scope="col">구분</th>
-														<th scope="col">개인용</th>
+														<th scope="col">커넥티드카 종류</th>
 														<th scope="col">가입방법</th>
 													</tr>
 												</thead>
 												<tbody>
 													<tr>
-														<th scope="row">현대</th>
-														<td>BlueLink / Genesis connected Service</td>
+														<td>현대자동차 BlueLink / Genesis connected Service</td>
 														<td rowspan="4">전산 조회</td>
 													</tr>
 													<tr>
-														<th scope="row">기아</th>
-														<td>Kia Connect</td>
+														<td>기아자동차 Kia Connect</td>
 													</tr>
 													<tr>
-														<th scope="row">KG MOBILITY</th>
-														<td>Infoconn</td>
+														<td>KG MOBILITY Infoconn</td>
 													</tr>
 													<tr>
-														<th scope="row">르노코리아</th>
-														<td>이지커넥트</td>
+														<td>르노코리아 이지커넥트</td>
 													</tr>
 													<tr>
-														<th scope="row">BENZ</th>
-														<td>Mercedes me connect</td>
-														<td rowspan="4">자동 가입<br>(확인서 불필요)</td>
+														<td>LAND ROVER/JAGUAR InControl</td>
+														<td>
+															가입확인서 등록<br>
+															(신차판매사원-딜러를 통해 발급)
+														</td>
 													</tr>
 													<tr>
-														<th scope="row">BMW</th>
-														<td>ConnectedDrive</td>
+														<td>BENZ Mercedes me connect</td>
+														<td rowspan="8">
+															자동 가입<br>
+															(확인서 불필요)
+														</td>
 													</tr>
 													<tr>
-														<th scope="row">MINI</th>
-														<td>Intelligent emergency Call</td>
+														<td>BMW ConnectedDrive</td>
 													</tr>
 													<tr>
-														<th scope="row">Volvo</th>
+														<td>MINI Intelligent emergency Call</td>
+													</tr>
+													<tr>
 														<td>Volvo Connect</td>
 													</tr>
 													<tr>
-														<th scope="row">LAND ROVER/JAGUAR</th>
-														<td>InControl</td>
-														<td>가입확인서 등록<br>(신차판매사원-딜러를 통해 발급)</td>
+														<td>Porche Connect</td>
+													</tr>
+													<tr>
+														<td>Honda Connect</td>
+													</tr>
+													<tr>
+														<td>Audi Connect</td>
+													</tr>
+													<tr>
+														<td>Polestar Connect</td>
 													</tr>
 												</tbody>
 											</table>
 										</div>
+										<ul class="list_ty2">
+											<li>포르쉐/혼다/아우디/폴스타: 보험시작일 '25.9.21부터</li>
+										</ul>
 									</div>
 								</div>
 								<!-- e: sec_group -->
@@ -589,7 +647,7 @@
 												</div>
 												<div class="acd_cont">
 													<div class="inner">
-														커넥티드카 서비스 개통이 안된 경우에는 특약 가입이 제한됩니다.<br>보험가입 이후 커넥티드카 서비스 개통이 완료되면 다이렉트 콜센터 1899-6782(ARS 2번)를 통해 특약을 가입해 주세요.
+														커넥티드카 서비스 개통이 안된 경우에는 특약 가입이 제한됩니다.<br>보험가입 이후 커넥티드카 서비스 개통이 완료되면 다이렉트 고객센터(1899-6782, ARS 2번)를 통해 특약을 가입해 주세요.
 													</div>
 												</div>				
 											</div>
@@ -601,7 +659,7 @@
 												</div>
 												<div class="acd_cont">
 													<div class="inner">
-														보험가입 이후에도 특약 가입이 가능하며 다이렉트 콜센터 1899-6782(ARS 2번)로 연락주시면 가입이 가능합니다.<br>
+														보험가입 이후에도 특약 가입이 가능하며 다이렉트 고객센터(1899-6782, ARS 2번)로 연락주시면 가입이 가능합니다.<br>
 														단, 차량 출고 이후 장착된 경우는 가입 불가하며 가입확인서에 기재된 ‘가입일'부터 잔여기간에 대하여 적용됩니다.
 													</div>
 												</div>				
@@ -615,6 +673,12 @@
 						</div>
 					</div>
 					<!-- e: tab in tab -->
+						
+					<!-- s: 준법감시필 -->
+					<ul class="list_ty2">
+						<li>준법감시인 확인필 제20253690호 (2025.08.18~2026.08.18)</li>
+					</ul>
+					<!-- e: 준법감시필 -->
 				</div>
 
 				<!-- tab4: 첨단안전장치 -->
@@ -629,35 +693,43 @@
 						<div class="tab_wrap_content active" role="tabpanel" aria-labelledby="tabs0401" id="tabPanels0401">
 							<!-- s: popup_content_body -->
 							<div class="popup_content_body">
-								<!-- s: intro_info -->
-								<div class="intro_area">
-									<div class="info_gray">
-										<div class="intro_info column ico_special2">
-												<h3 class="title_h3">
-													첨단안전 장치 장착 시<br>
-													<strong class="point">4~17%</strong><br>
-													특약할인(업무용 기준) 혜택을 드립니다.
-												</h3>
-												<!-- <span class="note">(보험시작일 '25.6.1부터)</span> -->
-												<div class="desc_wrap">
-													<ul class="list_ty6">
-														<li>차선이탈 경고장치: LDWS(차선이탈 경고장치) 또는 LKAS(차선유지 보조장치)</li>
-														<li>전방충돌 경고장치: FCW(전방충돌경고장치) 또는 AEB(자동 비상 제동장치)</li>
-														<li>후측방충돌 경고장치: BSD(후측방충돌 경고장치) 또는 BCA(후측방 충돌 방지 보조장치)</li>
-														<li>HUD: Head Up Display</li>
-														<li>AVM: Around View Monitor</li>
-													</ul>
+								<!-- s: benefit_top_wrap -->
+								<div class="benefit_top_wrap">
+									<div class="item_benefit_top ico_bn_visual6">
+										<div class="inner">
+											<div class="i_top">
+												<h3 class="title">첨단안전장치 할인특약</h3>
+											</div>
+											<div class="i_bottom">
+												<div class="cont">
+													첨단안전 장치 장착 시 개수에 따라<br>
+													<span class="detail"><i>3.3%~21% 특약할인</i></span><br>
+													(업무용 기준)
 												</div>
+												<p class="desc">(보험시작일 '25.11.26부터)</p>
+											</div>
 										</div>
+										<ul class="bn_list">
+											<li>차선이탈 경고장치: LDWS(차선이탈 경고장치) 또는 LKAS(차선유지 보조장치)</li>
+											<li>전방충돌 경고장치: FCW(전방충돌경고장치) 또는 AEB(자동 비상 제동장치)</li>
+											<li>후측방충돌 경고장치: BSD(후측방충돌 경고장치) 또는 BCA(후측방 충돌 방지 보조장치)</li>
+											<li>HUD: Head Up Display (승합/화물차 가입 불가)</li>
+											<li>AVM: Around View Monitor</li>
+											<li>스마트 크루즈 컨트롤: 자동차에 장착된 전방 센서, 레이더 등으로 전방 차량을 인식하여 자동으로 차간 거리 및 설정 속도를 유지하면서 주행하는 기능</li>
+										</ul>
 									</div>
 									<ul class="list_depth">
 										<li>업무용 법인 승용, 승합, 화물 자동차</li>
-										<li>차선이탈 경고장치, 전방충돌 경고장치, 후측방충돌 경고장치, HUD, AVM이 장착된 자동차</li>
-										<li>신차 출고 시 기본장착이거나 출고 시 옵션으로 선택 장착된 차량만 가입이 가능합니다.</li>
-										<li>차량 출고 후 장착했거나, 휴대전화, 태블릿 등 어플리케이션을 탑재하여 사용되는 장치는 제외됩니다.</li>
+										<li>
+											차선이탈 경고장치, 전방충돌 경고장치, 후측방충돌 경고장치, HUD, AVM이 장착된 자동차
+											<ul>
+												<li>신차 출고 시 기본장착이거나 출고 시 옵션으로 선택 장착된 차량만 가입이 가능합니다.</li>
+												<li>차량 출고 후 장착했거나, 휴대전화, 태블릿 등 어플리케이션을 탑재하여 사용되는 장치는 제외됩니다.</li>
+											</ul>
+										</li>
 									</ul>
 								</div>
-								<!-- e: intro_info -->
+								<!-- e: benefit_top_wrap -->
 								
 								<!-- s: sec_group -->
 								<div class="sec_group">
@@ -666,45 +738,61 @@
 									</div>
 									<div class="sec_body">
 										<div class="table_wrap">
-											<table class="table">
-												<caption>구분 1개, 2개, 3개, 4개, 5개, 3년 이하, 4년 이상 제공</caption>
+											<table class="table table_c">
+												<caption>점검 항목 개수(1개~6개)와 차량 연식(3년 전 이하·4년 전 이상) 및 차종(승합/화물)에 따른 할인율 제공</caption>
 												<colgroup>
 													<col style="width:auto;">
-													<col style="width:39%;">
-													<col style="width:39%;">
+													<col style="width:26%;">
+													<col style="width:26%;">
+													<col style="width:26%;">
 												</colgroup>
 												<thead>
 													<tr>
-														<th scope="col">구분</th>
-														<th scope="col">3년 이하</th>
-														<th scope="col">4년 이상</th>
+														<th scope="col" rowspan="2">구분</th>
+														<th scope="col" colspan="2">승용</th>
+														<th scope="col" rowspan="2">승합/화물</th>
+													</tr>
+													<tr>
+														<th scope="col">3년 전 이하</th>
+														<th scope="col">4년 전 이상</th>
 													</tr>
 												</thead>
 												<tbody>
 													<tr>
 														<th scope="row">1개</th>
-														<td>5%</td>
-														<td>3%</td>
+														<td>5.5%</td>
+														<td>3.3%</td>
+														<td>5.3%</td>
 													</tr>
 													<tr>
 														<th scope="row">2개</th>
-														<td>9%</td>
-														<td>7%</td>
+														<td>8.9%</td>
+														<td>7.1%</td>
+														<td>71.0%</td>
 													</tr>
 													<tr>
 														<th scope="row">3개</th>
-														<td>11%</td>
-														<td>9%</td>
+														<td>12.8%</td>
+														<td>11.0%</td>
+														<td>16.8%</td>
 													</tr>
 													<tr>
 														<th scope="row">4개</th>
-														<td>14%</td>
-														<td>12%</td>
+														<td>14.4%</td>
+														<td>12.6%</td>
+														<td>17.5%</td>
 													</tr>
 													<tr>
 														<th scope="row">5개</th>
-														<td>16%</td>
-														<td>14%</td>
+														<td>19.1%</td>
+														<td>17.5%</td>
+														<td>21.0%</td>
+													</tr>
+													<tr>
+														<th scope="row">6개</th>
+														<td>19.9%</td>
+														<td>18.3%</td>
+														<td>가입불가</td>
 													</tr>
 												</tbody>
 											</table>										 	
@@ -751,12 +839,6 @@
 												<span class="num">04</span>
 												<div class="cont">
 													<strong class="tit">첨단안전장치확인 사진 등록</strong>
-												</div>
-											</li>
-											<li>
-												<span class="num">05</span>
-												<div class="cont">
-													<strong class="tit">보험료 결제</strong>
 												</div>
 											</li>
 										</ol>
@@ -847,6 +929,12 @@
 						</div>
 					</div>
 					<!-- e: tab in tab -->
+						
+					<!-- s: 준법감시필 -->
+					<ul class="list_ty2">
+						<li>준법감시인 확인필 제20253690호 (2025.08.18~2026.08.18)</li>
+					</ul>
+					<!-- e: 준법감시필 -->
 				</div>
 			</div>
 			<!-- e: tab -->
@@ -860,7 +948,8 @@
 	</div>
 	<!-- s: 하단 고정 버튼 영역 -->
 {{/ popup/popup_full}}
-	 <!-- e: Full 팝업 -->
+<!-- e: Full 팝업 -->
+<!-- e: 25-11-19 수정 -->
 
 
 <!-- s: Full 팝업 -->
