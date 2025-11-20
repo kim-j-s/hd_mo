@@ -4106,6 +4106,9 @@ sup {
 .hd_btn > .text {
 	display: block;
 }
+.hd_btn > .text .hd_badge {
+	font-weight: 400;
+}
 .hd_btn .hd_icon {
 	-webkit-box-flex: 0;
 	-ms-flex: none;
@@ -6234,6 +6237,10 @@ sup {
 	width: 100%;
 	height: calc(100% + 0.8rem);
 }
+.card_item_wrap .card_item .item_inner .inp_radio .chk_label.chk_label_ty4,
+.card_item_wrap .card_item .item_inner .inp_checkbox .chk_label.chk_label_ty4 {
+	padding-left: 2rem;
+}
 .card_item_wrap .card_item .item_inner .inp_radio .chk_label.chk_label_ty4:before,
 .card_item_wrap .card_item .item_inner .inp_checkbox .chk_label.chk_label_ty4:before {
 	top: 1px;
@@ -6252,6 +6259,14 @@ sup {
 .card_item_wrap .card_item .item_inner .inp_radio input:checked + .chk_label_ty4:before,
 .card_item_wrap .card_item .item_inner .inp_checkbox input:checked + .chk_label_ty4:before {
 	background-size: 2rem auto;
+}
+.card_item_wrap .card_item .item_inner .inp_radio input:checked + .chk_label_ty4 .label_cont,
+.card_item_wrap .card_item .item_inner .inp_checkbox input:checked + .chk_label_ty4 .label_cont {
+	font-weight: 700;
+}
+.card_item_wrap .card_item .item_inner .inp_radio input:checked + .chk_label_ty4 .label_cont .hd_badge,
+.card_item_wrap .card_item .item_inner .inp_checkbox input:checked + .chk_label_ty4 .label_cont .hd_badge {
+	font-weight: normal;
 }
 .card_item_wrap .card_item .card_link {
 	display: block;
@@ -7514,6 +7529,9 @@ sup {
 }
 .inp_checkbox input[type="checkbox"] + .chk_label.chk_label_ty4 > .label_cont {
 	font-size: var(--font-size-body-small);
+}
+.inp_checkbox input[type="checkbox"] + .chk_label.chk_label_ty4 > .label_cont .hd_badge {
+	margin-left: 0.4rem;
 }
 .inp_checkbox input[type="checkbox"] + .chk_label.chk_label_ty4::before {
 	border-radius: 0;
@@ -9954,6 +9972,21 @@ sup {
 .list_ty3 + .pop_title_h1,
 .list_ty3 + .acd_item {
 	margin-top: var(--gap-11);
+}
+.list_ty3.ty_row {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	gap: var(--gap-4) 0;
+}
+.list_ty3.ty_row > li {
+	margin-top: 0;
+	width: 50%;
+}
+.list_ty3.ty_row > li.full {
+	width: 100%;
 }
 .list_ty3 > li ~ li {
 	margin-top: var(--gap-4);
