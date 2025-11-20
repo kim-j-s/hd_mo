@@ -6259,8 +6259,10 @@ ul + .form_group_wrap {
 /* 회원탈퇴 */
 .miss_service_list {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
 	gap: var(--gap-3);
+}
+.miss_service_list:not(.full) {
+	grid-template-columns: repeat(2, 1fr);
 }
 .miss_service_list > li .item {
 	display: block;
@@ -6289,6 +6291,11 @@ ul + .form_group_wrap {
 }
 .miss_service_list > li .item.item_ty4 .text {
 	background-image: url(../images/login/icon_service_04.svg);
+}
+.miss_service_list.full > li .item .text {
+	padding-top: 0;
+	padding-left: calc(var(--size-height-5) + var(--gap-2));
+	line-height: 3.2rem;
 }
 /* 회원탈퇴 */
 .zoom_control {
