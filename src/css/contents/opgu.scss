@@ -181,8 +181,10 @@
 // 
 .miss_service_list {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
 	gap: var(--gap-3);
+	&:not(.full) {
+		grid-template-columns: repeat(2, 1fr);
+	}
 	> li {
 		.item {
 			display: block;
@@ -221,7 +223,17 @@
 			}
 		}
 	}
-
+	&.full {
+		> li {
+			.item {
+				.text {
+					padding-top: 0;
+					padding-left: calc(var(--size-height-5) + var(--gap-2));
+					line-height: 32px;
+				}
+			}
+		}
+	}
 }
 /* 회원탈퇴 */
 
