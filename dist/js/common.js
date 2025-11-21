@@ -690,16 +690,24 @@
 		}
 	});
 	// 하단 고정형 팝업 아코디언형
-	
-
-	
 
 
 
 
+	// 웹접근성 심사 후 활성화
+	// 건물/주택 구조 선택 모션 이벤트
+	// $DOM.on("change", ".radio_group_wrap.structure input", function () {
+	// 	console.log('ss');
+	// 	const target = this;
+	// 	const $pc = $(target).closest('.popup_cont');
+	// 	const $target = $(target).closest('.structure');
+	// 	const targetOffset = $target[0].offsetTop;
 
-
-
+	// 	$pc.stop(true, true).animate({ 
+	// 		scrollTop: targetOffset - 100
+	// 	}, 300);
+	// });
+	// 웹접근성 심사 후 활성화
 
 
 	// 즉시 실행 함수
