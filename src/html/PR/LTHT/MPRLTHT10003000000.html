@@ -153,7 +153,9 @@
 				<!-- e: guarantee_container_left -->
 
 				<!-- s: guarantee_container_right -->
-				<div class="guarantee_container_right">
+				<!-- s: 25-11-21 수정 -->
+				<div class="guarantee_container_right" aria-hidden="true">
+					<!-- e: 25-11-21 수정 -->
 					<!-- s: guarantee_detail -->
 					<div class="guarantee_detail">
 						<div class="guarantee_detail_top">
@@ -924,6 +926,9 @@
 					$('.splide__list').find('.splide__slide').eq(targetIndex).addClass('effect').find('input[type="radio"]').prop('checked', true);;
 					splide.go(targetIndex);
 					$('.container').scrollTop(0);
+					// s: 25-11-21 수정
+					$('.guarantee_container_right').attr('aria-hidden', false);
+					// e: 25-11-21 수정
 					setTimeout(function(){
 						$('.splide__list').find('.splide__slide').eq(targetIndex).attr('tabindex', '0').focus();
 						$('.guarantee_container').css('position', 'static');
