@@ -150,7 +150,7 @@
 				<!-- e: guarantee_container_left -->
 
 				<!-- s: guarantee_container_right -->
-				<div class="guarantee_container_right">
+				<div class="guarantee_container_right" aria-hidden="true">
 					<!-- s: guarantee_detail -->
 					<div class="guarantee_detail ty2">
 						<div class="guarantee_detail_top">
@@ -544,6 +544,7 @@
 					$('.splide__list').find('.splide__slide').eq(targetIndex).addClass('effect').find('input[type="radio"]').prop('checked', true);;
 					splide.go(targetIndex);
 					$('.container').scrollTop(0);
+					$('.guarantee_container_right').attr('aria-hidden', false);
 					setTimeout(function(){
 						$('.splide__list').find('.splide__slide').eq(targetIndex).attr('tabindex', '0').focus();
 						$('.guarantee_container').css('position', 'static');
