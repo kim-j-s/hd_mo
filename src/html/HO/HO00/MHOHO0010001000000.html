@@ -817,7 +817,9 @@
 			<div class="popup_bottom">
 				<div class="btn_area between">
 					{{> cp/checkbox id="checkbox1" labelname="오늘 그만보기" }}
-					{{> cp/button type="3" size="4" b-text="닫기"}}
+                    <button type="button" class="hd_btn hd_btn_ty_3 hd_btn_s_4" onclick="closeHDPopup('pop_admin_bann');">
+						<span class="text">닫기</span>
+                    </button>
 				</div>
 			</div>
 			<!-- s: 25-09-16 수정 -->
@@ -889,6 +891,7 @@
 <!-- s: 25-08-08 수정 -->
 <script>
     $(document).ready(function () {
+        openHDPopup(this, 'pop_admin_bann');                                    
         
 				/* s: 25-10-02 수정 */
 				const $swiperContainer2 = $('#main_banner_wrap .swiper-wrapper');
