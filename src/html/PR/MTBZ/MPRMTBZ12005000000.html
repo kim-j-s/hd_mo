@@ -39,13 +39,21 @@
 							<dt>사업자번호</dt>
 							<dd>1234567890</dd>
 						</dl>
-						<dl>
+						<!-- s: 25-11-25 수정 -->
+						<!-- 삭제 <dl>
 							<dt>직장 주소</dt>
 							<dd>서울시 중구 명동2길 20</dd>
-						</dl>
+						</dl> -->
+						<!-- e: 25-11-25 수정 -->
 					</div>
 
 					<div class="form_group_wrap">
+						<!-- s: 25-11-25 수정 -->
+						<div class="form_line">
+							<div class="label_tit">직장 주소</div>
+							{{> cp/address ad_ph="주소 검색" case2=true ad_title="우편물 받는 곳 주소검색 팝업 열기" }}
+						</div>
+						<!-- e: 25-11-25 수정 -->
 						<div class="form_line">
 							<div class="label_tit">휴대폰번호</div>
 							{{> cp/text class="phone phone_full" type="tel" placeholder="- 없이 입력" maxlength="8" inp-title="휴대폰번호 입력" }}
