@@ -1390,7 +1390,7 @@
 
 		<!-- s: 25-09-15 수정 -->
 		<!-- 관리자 등록 배너 -->
-		<div class="popup_wrap bottom bann" id="pop_admin_bann" role="dialog" aria-modal="true" aria-hidden="false">
+		<div class="popup_wrap bottom bann" id="pop_admin_bann" role="dialog" aria-hidden="false">
 			<div class="popup_container">
 				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_admin_bann');"></div>
 				<div class="popup_inner">
@@ -1465,10 +1465,10 @@
 		<!-- s: 25-11-05 수정 -->
 		<!-- s: 25-09-26 수정 -->
 		<script>
-			$(window).on("load", function () {
-				openHDPopup(this, "pop_admin_bann");
-				// openHDPopup('','pop_type06');
-			});
+			// $(window).on('load', function () {
+			// 	openHDPopup('body','pop_admin_bann');
+			// 	// openHDPopup('','pop_type06');
+			// });
 
 			$(function () {
 				// s: 25-09-16 수정
@@ -1528,8 +1528,6 @@
 		<!-- s: 25-08-08 수정 -->
 		<script>
 			$(document).ready(function () {
-				openHDPopup(this, "pop_admin_bann");
-
 				/* s: 25-10-02 수정 */
 				const $swiperContainer2 = $("#main_banner_wrap .swiper-wrapper");
 				const slideCount2 = $swiperContainer2.find(".swiper-slide").length;
@@ -1567,6 +1565,8 @@
 					$(".pagination_item").hide();
 				}
 				/* e: 25-10-02 수정 */
+
+				openHDPopup("", "pop_admin_bann");
 
 				$("#easySwitch").on("change", function () {
 					const $switch = $(this);
