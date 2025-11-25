@@ -87,12 +87,12 @@ function openHDPopup($triggerEl, target) {
 
 	$target.attr("aria-hidden", "false");
 	$target.find(".popup_inner").attr({
-		tabindex: 0,
+		// tabindex: 0,
 		"aria-hidden": "false",
 	});
 
 	if ($header) $header.attr("tabindex", 0);
-	if ($content) $content.attr("tabindex", 0);
+	// if ($content) $content.attr("tabindex", 0);
 
 	const focusTarget = $header || $content;
 
