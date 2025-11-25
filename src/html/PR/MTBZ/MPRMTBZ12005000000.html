@@ -48,6 +48,12 @@
 					</div>
 
 					<div class="form_group_wrap">
+						<!-- s: 25-11-25 수정 -->
+						<div class="form_line">
+							<div class="label_tit">직장 주소</div>
+							{{> cp/address ad_ph="주소 검색" case2=true ad_title="우편물 받는 곳 주소검색 팝업 열기" }}
+						</div>
+						<!-- e: 25-11-25 수정 -->
 						<div class="form_line">
 							<div class="label_tit">휴대폰번호</div>
 							{{> cp/text class="phone phone_full" type="tel" placeholder="- 없이 입력" maxlength="8" inp-title="휴대폰번호 입력" }}
@@ -56,16 +62,6 @@
 							<div class="label_tit">이메일</div>
 							{{> cp/text type="email" inpclass="email_auto" placeholder="이메일 입력" inp-title="이메일 입력" }}
 						</div>
-						<!-- s: 25-11-25 수정 -->
-						<div class="form_line">
-							<div class="label_tit">우편물 받는 곳</div>
-							<div class="radio_group_wrap" role="radiogroup">
-								{{> cp/radio rd-class="rd_btn" rd-id="addSel01_01" name="addSel01" labelname="집" checked=true }}
-								{{> cp/radio rd-class="rd_btn" rd-id="addSel01_02" name="addSel01" labelname="직장" }}
-							</div>
-							{{> cp/address ad_ph="주소 검색" case2=true ad_title="우편물 받는 곳 주소검색 팝업 열기" }}
-						</div>
-						<!-- e: 25-11-25 수정 -->
 						<div class="form_line">
 							<div class="label_tit">
 								피보험자(자동차 소유자)와 계약자(보험료 납입자) 관계
