@@ -69,6 +69,7 @@ function openHDPopup($triggerEl, target) {
 	$("body").css("overscroll-behavior", "contain");
 	$("body").addClass("scroll_lock");
 	$target.addClass("active");
+	$target.attr("aria-modal", "true");
 
 	// bottom 팝업일 경우 - drag
 	if ($target.hasClass("bottom")) {

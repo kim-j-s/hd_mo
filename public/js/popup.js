@@ -69,6 +69,7 @@ function openHDPopup($triggerEl, target) {
 	$("body").css("overscroll-behavior", "contain");
 	$("body").addClass("scroll_lock");
 	$target.addClass("active");
+	$target.attr("aria-modal", "true");
 
 	// bottom 팝업일 경우 - drag
 	if ($target.hasClass("bottom")) {
@@ -138,6 +139,7 @@ function closeHDPopup(target, returnTarget = null) {
 	const getOpener = $('[triggerId="' + $target.attr("opner") + '"]');
 	const $opener = (getOpener.length>0) && getOpener;
 	$target.removeClass("active");
+	$target.attr("aria-modal", "false");
 
 	//returnTarget 타입 유효성 체크
  	if(returnTarget) {		
