@@ -85,7 +85,10 @@ function openHDPopup($triggerEl, target) {
 		$content.find('.tab_wrap_content').removeAttr('tabindex');
 	}
 
-	$target.attr("aria-hidden", "false");
+	$target.attr({
+		"aria-hidden" : "false",
+		"aria-modal" : "true"
+	});
 	$target.find(".popup_inner").attr({
 		// tabindex: 0,
 		"aria-hidden": "false",
@@ -113,7 +116,10 @@ function openHDPopup($triggerEl, target) {
 			}, 0);
 		}
 		if (activePopups.length > 0) {
-			activePopups.attr("aria-hidden", "true");
+			activePopups.attr({
+				"aria-hidden" : "true",
+				"aria-modal" : "false",
+			});
 			// activePopups.find(".popup_inner").attr("aria-hidden", "true");
 			activePopups.find(".popup_inner");
 		}
@@ -155,7 +161,10 @@ function closeHDPopup(target, returnTarget = null) {
 	//하단에 다른 팝업이 열려있는 경우, 가장 최근 팝업으로 focus강제 이동
 	const $prevPopup = $(".popup_wrap.active:last");
 	if ($prevPopup.length > 0) {
-		$($prevPopup).attr("aria-hidden", "false");
+		$($prevPopup).attr({
+			"aria-hidden" : "false",
+			"aria-modal" : "true"
+		});
 
 		$prevInner = $($prevPopup).find(".popup_inner");
 		$prevInner.attr({
@@ -170,7 +179,10 @@ function closeHDPopup(target, returnTarget = null) {
 		// focusTarget[0].offsetHeight; //강제 reflow
 		// focusTarget.css("display", "block");
 		setTimeout(() => {
-			$target.attr("aria-hidden", "true");
+			$target.attr({
+				"aria-hidden" : "true",
+				"aria-modal" : "false",
+			});
 			// $target.find(".popup_inner").attr("aria-hidden", "true").removeAttr("tabindex", 0);
 			$target.find(".popup_inner").attr("aria-hidden", "true");
 			if(focusTarget) {
@@ -186,7 +198,10 @@ function closeHDPopup(target, returnTarget = null) {
 		$(".wrap").removeAttr("inert");
 		$("body").css("overscroll-behavior", "auto");
 		$("body").removeClass("scroll_lock");
-		$target.attr("aria-hidden", "true");
+		$target.attr({
+			"aria-hidden" : "true",
+			"aria-modal" : "false",
+		});
 		// $target.find(".popup_inner").attr("aria-hidden", "true").removeAttr("tabindex", 0);
 		$target.find(".popup_inner").attr("aria-hidden", "true");
 
