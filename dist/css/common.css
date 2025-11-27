@@ -3710,6 +3710,7 @@ sup {
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
+	word-break: break-all;
 }
 .review_acd_item .acd_btn {
 	position: absolute;
@@ -10698,7 +10699,8 @@ sup {
 	font-size: var(--font-size-body-xsmall);
 	color: var(--color-text-information);
 }
-.list_depth_ty2 > li > ol > li::before {
+.list_depth_ty2 > li > ol > li .number {
+	position: absolute;
 	top: 0.8rem;
 	width: 0.2rem;
 	height: 0.2rem;
@@ -10729,9 +10731,6 @@ sup {
 .no_bullet li::before {
 	display: none !important;
 }
-.number_list {
-	counter-reset: number 0;
-}
 .number_list li + li {
 	margin-top: var(--gap-4);
 }
@@ -10743,22 +10742,10 @@ sup {
 .number_list > li:nth-child(n + 10) {
 	padding-left: 2.4rem;
 }
-.number_list > li::before {
-	width: 20px;
+.number_list > li .number {
 	position: absolute;
 	top: 0;
 	left: 0;
-<<<<<<< HEAD
-	z-index: 1;
-	display: block;
-	width: 5rem;
-	height: 2.4rem;
-	background-color: rgba(221, 221, 221, 0.3);
-=======
-	z-index: 10;
->>>>>>> 3565ab73ca1aecd2c941d526497a0c326d191cc9
-	counter-increment: number 1;
-	content: counter(number) ". ";
 }
 .number_list > li > p {
 	margin-top: var(--gap-2);
@@ -10779,7 +10766,7 @@ sup {
 	padding-left: 0;
 	font-size: var(--font-size-heading-small);
 }
-.number_list.big > li::before {
+.number_list.big > li .number {
 	position: static;
 	font-weight: 700;
 }
@@ -10851,9 +10838,6 @@ sup {
 .number_list + .list_ty3 {
 	margin-top: var(--gap-5);
 }
-.circle_list {
-	counter-reset: circle 0;
-}
 .circle_list + .text_sub,
 .circle_list + [class^="pop_title_h"] {
 	margin-top: var(--gap-11);
@@ -10873,14 +10857,12 @@ sup {
 .circle_list > li ul + strong {
 	margin-top: var(--gap-3);
 }
-.circle_list > li::before {
+.circle_list > li .number {
 	position: absolute;
 	top: 1.1rem;
 	left: 0;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
-	counter-increment: circle 1;
-	content: counter(circle);
 	font-size: 0.65em;
 	min-width: 1.3rem;
 	text-align: center;
@@ -10924,17 +10906,8 @@ sup {
 	color: var(--color-text-information);
 	padding-left: 1.5rem;
 }
-.circle_list > li ol > li::before {
-	display: block;
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	counter-increment: number 1;
-	content: counter(number) ". ";
+.circle_list > li ol > li .number {
 	font-size: var(--font-size-body-xsmall);
-	width: 1.1rem;
-	height: 1.8rem;
 }
 .circle_list > li ol > li + li {
 	margin-top: var(--gap-3);
@@ -10977,18 +10950,11 @@ sup {
 .circle_list > li dl dd {
 	margin-top: var(--gap-2);
 }
-.clause_list {
-	counter-reset: number 0;
-}
 .clause_list > li {
 	font-size: var(--font-size-body-medium);
 }
 .clause_list > li strong {
 	font-size: var(--font-size-heading-medium);
-}
-.clause_list > li strong::before {
-	counter-increment: number 1;
-	content: "제" counter(number) "조 ";
 }
 .clause_list > li strong + * {
 	margin-top: var(--gap-4);
@@ -11360,7 +11326,7 @@ sup {
 .has_title li + li {
 	margin-top: var(--gap-9);
 }
-.has_title li::before {
+.has_title li .number {
 	top: 4.3rem;
 }
 .has_title li .pop_title_h2 {
@@ -12932,9 +12898,6 @@ ol li .table_wrap + .list_ty2 li + li {
 .select_item.select_item_case02.title_h4 .si_item {
 	font-size: var(--font-size-heading-small);
 	font-weight: 700;
-}
-.select_item.select_item_case02[aria-disabled="true"] {
-	pointer-events: none;
 }
 .select_item.select_item_case02[aria-disabled="true"] .si_item {
 	background-color: transparent;

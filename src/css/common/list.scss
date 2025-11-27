@@ -936,7 +936,8 @@
 				color: var(--color-text-information);
 				
 				//기본 : circle_list
-				&::before {
+				.number {
+					position: absolute;
 					top: 8px;
 					width: 2px;
 					height: 2px;
@@ -985,7 +986,7 @@
 }
 
 .number_list {
-	counter-reset: number 0;
+	//counter-reset: number 0;
 	li {
 
 		& + li {
@@ -999,14 +1000,24 @@
 		&:nth-child(n+10) {
 			padding-left: 24px;
 		}
-		&::before {
+		.number {
 			position: absolute;
 			top: 0;
 			left: 0;
-			z-index: 1;
-			counter-increment: number 1;
-			content: counter(number) '. ';
 		}
+		// &::before {
+		// 	position: absolute;
+		// 	top: 0;
+		// 	left: 0;
+		// 	z-index: 1;
+		// 	display: block;
+		// 	width: 50px;
+		// 	height: 24px;
+		// 	background-color: rgba($color: #ddd, $alpha: 0.3);
+		// 	// background-color: blue;
+		// 	counter-increment: number 1;
+		// 	content: counter(number) '. ';
+		// }
 		> p {
 			margin-top: var(--gap-2);
 			font-size: var(--font-size-body-small);
@@ -1033,7 +1044,7 @@
 		> li {
 			padding-left: 0;
 			font-size: var(--font-size-heading-small);
-			&::before {
+			.number {
 				position: static;
 				font-weight: 700;
 			}
@@ -1187,7 +1198,7 @@
 // }
 
 // .circle_list_ty2  {
-	counter-reset: circle 0;
+	//counter-reset: circle 0;
 
 	& + [class^=title_h]{
 		margin-top: var(--gap-11);
@@ -1207,14 +1218,14 @@
 			margin-top: var(--gap-3);
 		}
 
-		&::before {
+		.number {
 			position: absolute;
 			top: 11px;
 			// left: 0.4em;
 			left: 0;
 			transform: translateY(-50%);
-			counter-increment: circle 1;
-			content: counter(circle);
+			//counter-increment: circle 1;
+			//content: counter(circle);
 			font-size: 0.65em;
 			min-width: 13px;
 			text-align: center;
@@ -1258,17 +1269,17 @@
 				color: var(--color-text-information);
 				padding-left: 15px;
 
-				&::before {
-					display: block;
-					content:'';
-					position: absolute;
-					top: 0;
-					left: 0;
-					counter-increment: number 1;
-					content: counter(number) '. ';
+				.number {
+					//display: block;
+					//content:'';
+					//position: absolute;
+					//top: 0;
+					//left: 0;
+					//counter-increment: number 1;
+					//content: counter(number) '. ';
 					font-size: var(--font-size-body-xsmall);
-					width: 11px;
-					height: 18px;
+					//width: 11px;
+					//height: 18px;
 				}	
 				& + li {
 					margin-top: var(--gap-3);
@@ -1325,15 +1336,15 @@
 }
 
 .clause_list {
-	counter-reset: number 0;
+	//counter-reset: number 0;
 	> li {
 		font-size: var(--font-size-body-medium);
 		strong {
 			font-size: var(--font-size-heading-medium);
-			&::before {
-				counter-increment: number 1;
-				content: '제' counter(number) '조 ';
-			}
+			// &::before {
+			// 	counter-increment: number 1;
+			// 	content: '제' counter(number) '조 ';
+			// }
 			& + * {
 				margin-top: var(--gap-4);
 			}
@@ -1849,7 +1860,7 @@
 		& + li {
 			margin-top: var(--gap-9);
 		}
-		&::before {
+		.number {
 			top: 43px;
 		}
 		.pop_title_h2 {
