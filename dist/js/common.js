@@ -1085,6 +1085,16 @@ function inpPhoneFormat() {
 $(window).on('load', function() {
 	inputState();
 	directTv();
+
+	// $('.card_item_wrap_tyexp2').each(function(){
+	// 	const $this = $(this);
+	// 	$this.find('label').attr('for', '');
+	// });
+
+
+
+
+
 });
 
 
@@ -1098,7 +1108,9 @@ $(function(){
 	simpleInfo();
 	headAria();
 	nbList();//알릴고지 넘버링
-
+	listNum();
+	circleNum();
+	clauseNum();
 	prograssCar(); //변경기준일
 
 	// 펼치기/접히기 - 담보한번에변경하기(MPRMTPS10004001000)
@@ -1858,6 +1870,63 @@ function nbList() {
 		});
 	});
 	
+}
+//숫자리스트1
+function listNum() {
+	$('ol.number_list').each(function () {
+		const $list = $(this);
+		// 직계 li만 선택해야 중복 번호 방지됨
+		$list.children('li').each(function (index) {
+			const $li = $(this);
+			const numStr = (index + 1) + '. ';
+
+			// 기존 번호 제거
+			$li.children('.number').remove();
+
+			// has_title 유무에 따라 위치 변경
+			if ($list.hasClass('has_title')) {
+				$li.find('> .pop_title_h2').after(`<span class="number">${numStr}</span>`);
+			} else {
+				$li.prepend(`<span class="number">${numStr}</span>`);
+			}
+		});
+	});
+}
+//숫자리스트2(circle)
+function circleNum() {
+	$('ol.circle_list').each(function () {
+		const $list = $(this);
+		$list.find('> li').each(function (index) {
+			const $labels = $(this)
+			const num = (index + 1);
+			$labels.find('.number').remove(); // 기존 번호 삭제
+			$labels.each(function (i) {
+				let numStr = num;
+				if ($labels.length > 1 && i > 0) {
+					numStr += `-${i}`;
+				}
+				$(this).prepend(`<span class="number">${numStr}</span>`);
+			});
+		});
+	});
+}
+//숫자리스트3(제 0 조)
+function clauseNum() {
+	$('ol.clause_list').each(function () {
+		const $list = $(this);
+		$list.find('> li').each(function (index) {
+			const $labels = $(this).find('strong');
+			const num = (index + 1);
+			$labels.find('.number').remove(); // 기존 번호 삭제
+			$labels.each(function (i) {
+				let numStr = num;
+				if ($labels.length > 1 && i > 0) {
+					numStr += `-${i}`;
+				}
+				$(this).prepend(`<span class="number">제${numStr}조</span> `);
+			});
+		});
+	});
 }
 
 // 변경기준일 prograss bar
