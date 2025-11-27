@@ -10709,16 +10709,6 @@ sup {
 .list_depth_ty2 > li > ol > li ~ li {
 	margin-top: var(--gap-3);
 }
-.list_depth_ty2 > li > ol.number_list > li {
-	padding-left: 1.6rem;
-}
-.list_depth_ty2 > li > ol.number_list > li::before {
-	top: 0;
-	left: 0;
-	width: 1.2rem;
-	height: 1.8rem;
-	background-color: transparent;
-}
 .list_depth_ty2_area .list_depth_ty2 {
 	margin-top: 0px !important;
 }
@@ -10867,10 +10857,10 @@ sup {
 	min-width: 1.3rem;
 	text-align: center;
 }
-.circle_list > li::after {
+.circle_list > li .number::after {
 	content: "";
 	position: absolute;
-	top: 1.1rem;
+	top: 0.6rem;
 	left: 0;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
@@ -10898,7 +10888,6 @@ sup {
 }
 .circle_list > li ol {
 	margin-top: var(--gap-3);
-	counter-reset: number 0;
 }
 .circle_list > li ol > li {
 	position: relative;
@@ -10907,6 +10896,7 @@ sup {
 	padding-left: 1.5rem;
 }
 .circle_list > li ol > li .number {
+	top: 0.9rem;
 	font-size: var(--font-size-body-xsmall);
 }
 .circle_list > li ol > li + li {
