@@ -76,16 +76,20 @@
 <!-- e: popup area -->
 
 <script>
-	$(function () {
+	/* s: 25-11-28 수정 */
+	function serviceEffect() {
 		if($('.is_diagnosis_service').length) {
 			$('.is_diagnosis_service .service_visual .visual_msg > div').each(function(){
 				const $this = $(this);
-				setTimeout(function(){
-					$this.addClass('effect');
-				}, 1500);
+				if (!$this.hasClass('effect')) {
+					setTimeout(function () {
+						$this.addClass('effect');
+					}, 1500);
+				}
 			})
 		}
-	})
+	}
+	/* e: 25-11-28 수정 */
 </script>
 
 {{/ layout/default }}
