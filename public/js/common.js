@@ -187,7 +187,8 @@
 		//전화번호
 		if( $this.closest('.input_text').hasClass('phone') && !$this.closest('.input_text').hasClass('phone_full') && !$this.prop('readonly') && !$this.prop('disabled') ){
 			if(val){
-				const newVal = val.replace(/ - /g, '');
+				// const newVal = val.replace(/ - /g, '');
+				const newVal = val.replace(/[\p{Dash_Punctuation}]/gu, '');
 				$this.attr('maxlength', 8);
 				$this.val(newVal).removeClass('isVal');
 			}
@@ -212,10 +213,12 @@
 
 		// 전화번호
 		if( $this.closest('.input_text').hasClass('phone') && !$this.prop('readonly') && !$this.prop('disabled') ){
+			const HYPHEN = '\u2010'; // 표준 하이픈 “‐”
 			$this.attr('maxlength', 14);
 			if(val){
 				val = val.replace(/[^0-9*]/g, '');
-				newVal = ' - ' + val.replace(/([0-9*]{4})(?=[0-9*])/g, '$1 - ');
+				// newVal = ' - ' + val.replace(/([0-9*]{4})(?=[0-9*])/g, '$1 - ');
+				newVal = `${HYPHEN} ` + val.replace(/([0-9*]{4})(?=[0-9*])/g, `$1 ${HYPHEN} `);
 				$this.val(newVal).addClass('isVal');
 			}else {
 				$this.removeClass('isVal');
@@ -493,7 +496,7 @@
 		const $this = $(this);
 		// comma 클래스가 상위에 있으면 실행하지 않음
 		// if ($this.closest('.comma, .price, .ex_period, .weight').length) {
-		if ($this.closest('.comma, .price, .ex_period').length) {
+		if ($this.closest('.comma, .price, .ex_periodm, .exptest').length) {
 			return;
 		}
 		// 숫자만 허용
@@ -604,7 +607,7 @@
 
 	// 전화번호 입력 적용 준비 중 스크립트
 	$DOM.on('focus', '.input_text.phone_full input', function () {
-		console.log('진입 2');
+		// console.log('진입 2');
 	
 		const $this = $(this);
 	
@@ -630,14 +633,27 @@
 
 	$DOM.on("blur", ".input_text.phone_full input", function () {
 		let $this = $(this);
-		let val = $this.val().replace(/[^0-9*]/g, ""); // 숫자만 남김
+		// let val = $this.val().replace(/[^0-9*]/g, ""); // 숫자만 남김
+
+		let val = $this.val();
+
+    // 1) 대시계열 전체 제거 (Dash_Punctuation)
+    val = val.replace(/[\p{Dash_Punctuation}]/gu, "");
+
+    // 2) 숫자만 남기기
+    val = val.replace(/[^0-9*]/g, "");
+
+    // 3) 표준 하이픈 지정 (U+2010)
+    const HYPHEN = "\u2010";
 	
 		if (val.length === 10) {
 			// 10자리 → 010-000-0000
-			val = val.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
+			// val = val.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
+			val = val.replace(/(\d{3})(\d*{3})(\d*{4})/, `$1${HYPHEN}$2${HYPHEN}$3`);
 		} else if (val.length === 11) {
 			// 11자리 → 010-0000-0000
-			val = val.replace(/(\d{3})(\d{4})(\d{4})/, "$1-$2-$3");
+			// val = val.replace(/(\d{3})(\d{4})(\d{4})/, "$1-$2-$3");
+			val = val.replace(/(\d{3})(\d*{4})(\d*{4})/, `$1${HYPHEN}$2${HYPHEN}$3`);
 		}
 	
 		$this.val(val);
@@ -1028,17 +1044,33 @@ function inpPhoneFormat() {
 			const $inp = $(this).children('.inp').find('input');
 			let val = $inp.val();
 			val = val.replace(/[^0-9*]/g, '');
-			newVal = ' - ' + val.replace(/([0-9*]{4})(?=[0-9*])/g, '$1 - ');
+			// newVal = ' - ' + val.replace(/([0-9*]{4})(?=[0-9*])/g, '$1 - ');
+			newVal = `${HYPHEN} ` + val.replace(/([0-9*]{4})(?=[0-9*])/g, `$1 ${HYPHEN} `);
 			$inp.val(newVal).addClass('isVal');
 		}
 		// 전화번호 입력 적용 준비 중 스크립트
 		if( $(this).hasClass('phone_full') ) {
 			const $inp = $(this).children('.inp').find('input');
-			let val = $inp.val().replace(/[^0-9*]/g, "");
+			// let val = $inp.val().replace(/[^0-9*]/g, "");
+
+			let val = $this.val();
+
+			// 1) 대시계열 전체 제거 (Dash_Punctuation)
+			val = val.replace(/[\p{Dash_Punctuation}]/gu, "");
+
+			// 2) 숫자만 남기기
+			val = val.replace(/[^0-9*]/g, "");
+
+			// 3) 표준 하이픈 지정 (U+2010)
+			const HYPHEN = "\u2010";
+
+
 			if (val.length === 10) {
-				val = val.replace(/^(\d{3})([\d*]{3})([\d*]{4})$/, "$1-$2-$3");
+				// val = val.replace(/^(\d{3})([\d*]{3})([\d*]{4})$/, "$1-$2-$3");
+				val = val.replace(/(\d{3})(\d*{3})(\d*{4})/, `$1${HYPHEN}$2${HYPHEN}$3`);
 			} else if (val.length === 11) {
-				val = val.replace(/^(\d{3})([\d*]{4})([\d*]{4})$/, "$1-$2-$3");
+				// val = val.replace(/^(\d{3})([\d*]{4})([\d*]{4})$/, "$1-$2-$3");
+				val = val.replace(/(\d{3})(\d*{4})(\d*{4})/, `$1${HYPHEN}$2${HYPHEN}$3`);
 			}
 			$inp.val(val);
 		}
