@@ -187,7 +187,8 @@
 		//전화번호
 		if( $this.closest('.input_text').hasClass('phone') && !$this.closest('.input_text').hasClass('phone_full') && !$this.prop('readonly') && !$this.prop('disabled') ){
 			if(val){
-				const newVal = val.replace(/ - /g, '');
+				// const newVal = val.replace(/ - /g, '');
+				const newVal = val.replace(/[\p{Dash_Punctuation}]/gu, '');
 				$this.attr('maxlength', 8);
 				$this.val(newVal).removeClass('isVal');
 			}
@@ -212,10 +213,12 @@
 
 		// 전화번호
 		if( $this.closest('.input_text').hasClass('phone') && !$this.prop('readonly') && !$this.prop('disabled') ){
+			const HYPHEN = '\u2010'; // 표준 하이픈 “‐”
 			$this.attr('maxlength', 14);
 			if(val){
 				val = val.replace(/[^0-9*]/g, '');
-				newVal = ' - ' + val.replace(/([0-9*]{4})(?=[0-9*])/g, '$1 - ');
+				// newVal = ' - ' + val.replace(/([0-9*]{4})(?=[0-9*])/g, '$1 - ');
+				newVal = `${HYPHEN} ` + val.replace(/([0-9*]{4})(?=[0-9*])/g, `$1 ${HYPHEN} `);
 				$this.val(newVal).addClass('isVal');
 			}else {
 				$this.removeClass('isVal');
