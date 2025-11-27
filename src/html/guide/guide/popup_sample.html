@@ -30,6 +30,7 @@
 			<div class="g_dom">
 				<div class="p_guide_wrap_b">
 					{{> cp/button type="2" size="5" b-text="Layer 팝업열기" popup="pop_type01" }}
+					{{> cp/button type="2" size="5" b-text="머리없는 Layer 팝업열기" popup="pop_type12" }}
 					{{> cp/button type="2" size="5" b-text="Bottom 팝업열기" popup="pop_type02" }}
 					{{> cp/button type="2" size="5" b-text="Layer 팝업 닫기 지정 포커스" popup="pop_type04" }}
 					{{> cp/button type="2" size="5" b-text="Bottom banner 팝업열기" popup="pop_type06" }}
@@ -64,6 +65,25 @@
 	</div>
 	{{/ popup/popup_layer}}
 	<!-- e: pop_type01(layer팝업) -->
+
+	<!-- s: pop_type12(layer팝업) -->
+	{{#> popup/popup_layer popup-id="pop_type12" popup-title="팝업 타이틀" no-header=true }}
+	<div class="popup_cont">
+		<div class="popup_content">		
+			팝업내용입니다.
+			<br />
+			팝업내용입니다.
+		</div>
+	</div>
+	<div class="popup_bottom">
+		<div class="btn_area">
+			<button type="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2" onclick="closeHDPopup('pop_type12');">
+				<span class="text">확인</span>
+			</button>
+		</div>
+	</div>
+	{{/ popup/popup_layer}}
+	<!-- e: pop_type12(layer팝업) -->
 
 	<!-- s: pop_type02(bottom팝업)-->
 	{{#> popup/popup_bottom popup-id="pop_type02" popup-title="팝업 타이틀" no-header=false }}
