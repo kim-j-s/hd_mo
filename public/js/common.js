@@ -725,10 +725,33 @@
 	// });
 	// 웹접근성 심사 후 활성화
 
+	
+
 
 	// 즉시 실행 함수
 
 })();
+
+
+
+// calTitle();
+
+
+// 달력 버튼 title 추가
+function calTitle() {
+	$('.input_text.calendar').each(function(){
+		const $this = $(this);
+		const $input = $(this).find('.inp_picker');
+		const $btn = $(this).find('.calendar_call');
+		const inputTitle = $input.attr('title');  // input의 title="변경기준일"
+		console.log(inputTitle);
+		if (inputTitle) {
+			$btn.attr('title', inputTitle + ' 달력 선택');
+		}
+	});
+	console.log('sdfsd');
+}
+// 달력 버튼 title 추가
 
 
 /* Tab Scroll */
@@ -1085,6 +1108,7 @@ function inpPhoneFormat() {
 $(window).on('load', function() {
 	inputState();
 	directTv();
+	calTitle();
 });
 
 
