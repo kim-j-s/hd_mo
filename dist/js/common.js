@@ -1085,19 +1085,6 @@ function inpPhoneFormat() {
 $(window).on('load', function() {
 	inputState();
 	directTv();
-<<<<<<< HEAD
-
-	$('.card_item_wrap_tyexp2').each(function(){
-		const $this = $(this);
-		$this.find('label').attr('for', '');
-	});
-
-
-
-
-
-=======
->>>>>>> 97116e9a52a98fb4a577305e422052366dc6c65b
 });
 
 
