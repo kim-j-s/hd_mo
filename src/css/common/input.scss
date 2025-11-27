@@ -84,13 +84,16 @@
 
 		&:read-only {
 			background-color: var(--color-input-surface-disabled);
+			color: var(--color-text-basic);
 			& + .del {
 				display: none !important;
 			}
 		}
 		&:disabled {
 			color: var(--color-text-disabled-on) !important;
-			background-color: var(--color-input-surface-disabled);			
+			background-color: var(--color-input-surface-disabled);
+			-webkit-text-fill-color: var(--color-text-disabled-on) !important;
+			opacity: 1;
 		}
 		&:focus {
 			outline: none;
