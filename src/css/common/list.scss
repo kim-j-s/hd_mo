@@ -949,19 +949,19 @@
 				}
 			}
 
-			&.number_list {
-				& > li {
-					padding-left: 16px;
-					&::before {
-						top: 0;
-						left: 0;
-						width: 12px;
-						height: 18px;
-						// background-color: var(--color-text-information);
-						background-color: transparent;
-					}
-				}			
-			}
+			// &.number_list {
+			// 	& > li {
+			// 		padding-left: 16px;
+			// 		&::before {
+			// 			top: 0;
+			// 			left: 0;
+			// 			width: 12px;
+			// 			height: 18px;
+			// 			// background-color: var(--color-text-information);
+			// 			background-color: transparent;
+			// 		}
+			// 	}			
+			// }
 		}
 	}	
 }
@@ -1229,20 +1229,20 @@
 			font-size: 0.65em;
 			min-width: 13px;
 			text-align: center;
+			&::after {
+				content: '';
+				position: absolute;
+				top: 6px;
+				left: 0;
+				transform: translateY(-50%);
+				display: inline-block;
+				border: var(--border-width-static-regular) solid var(--color-icon-gray-light);
+				border-radius: 50%;
+				width: 13px;
+				height: 13px;
+			}
 		}
 
-		&::after {
-			content: '';
-			position: absolute;
-			top: 11px;
-			left: 0;
-			transform: translateY(-50%);
-			display: inline-block;
-			border: var(--border-width-static-regular) solid var(--color-icon-gray-light);
-			border-radius: 50%;
-			width: 13px;
-			height: 13px;
-		}
 		.circle_tit {
 			display: block;
 			margin-top: var(--gap-2);
@@ -1261,7 +1261,7 @@
 		}
 		ol {
 			margin-top: var(--gap-3);
-			counter-reset: number 0;
+			//counter-reset: number 0;
 			
 			& > li {
 				position: relative;
@@ -1273,7 +1273,7 @@
 					//display: block;
 					//content:'';
 					//position: absolute;
-					//top: 0;
+					top: 9px;
 					//left: 0;
 					//counter-increment: number 1;
 					//content: counter(number) '. ';
