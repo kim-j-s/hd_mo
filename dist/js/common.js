@@ -1098,10 +1098,10 @@ $(function(){
 	simpleInfo();
 	headAria();
 	nbList();//알릴고지 넘버링
-	listNum();
-	circleNum();
-	circleNum2();
-	clauseNum();
+	listNum();//number 1depth
+	circleNum(); //circle number
+	circleNum2(); //circle number list
+	clauseNum(); //제 0 조
 	prograssCar(); //변경기준일
 
 	// 펼치기/접히기 - 담보한번에변경하기(MPRMTPS10004001000)
