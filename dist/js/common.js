@@ -1085,16 +1085,6 @@ function inpPhoneFormat() {
 $(window).on('load', function() {
 	inputState();
 	directTv();
-
-	// $('.card_item_wrap_tyexp2').each(function(){
-	// 	const $this = $(this);
-	// 	$this.find('label').attr('for', '');
-	// });
-
-
-
-
-
 });
 
 
@@ -1110,6 +1100,7 @@ $(function(){
 	nbList();//알릴고지 넘버링
 	listNum();
 	circleNum();
+	circleNum2();
 	clauseNum();
 	prograssCar(); //변경기준일
 
@@ -1906,6 +1897,24 @@ function circleNum() {
 					numStr += `-${i}`;
 				}
 				$(this).prepend(`<span class="number">${numStr}</span>`);
+			});
+		});
+	});
+}
+//숫자리스트2(circle)
+function circleNum2() {
+	$('ol.circle_list ol').each(function () {
+		const $list = $(this);
+		$list.find('> li').each(function (index) {
+			const $labels = $(this)
+			const num = (index + 1);
+			$labels.find('.number').remove(); // 기존 번호 삭제
+			$labels.each(function (i) {
+				let numStr = num;
+				if ($labels.length > 1 && i > 0) {
+					numStr += `-${i}`;
+				}
+				$(this).prepend(`<span class="number">${numStr} .</span>`);
 			});
 		});
 	});
