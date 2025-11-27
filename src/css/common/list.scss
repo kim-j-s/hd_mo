@@ -1229,21 +1229,21 @@
 			font-size: 0.65em;
 			min-width: 13px;
 			text-align: center;
+			&::after {
+				content: '';
+				position: absolute;
+				top: 6px;
+				left: 0;
+				transform: translateY(-50%);
+				display: inline-block;
+				border: var(--border-width-static-regular) solid var(--color-icon-gray-light);
+				border-radius: 50%;
+				width: 13px;
+				height: 13px;
+				z-index: -1;
+			}
 		}
 
-		&::after {
-			content: '';
-			position: absolute;
-			top: 11px;
-			left: 0;
-			transform: translateY(-50%);
-			display: inline-block;
-			border: var(--border-width-static-regular) solid var(--color-icon-gray-light);
-			border-radius: 50%;
-			width: 13px;
-			height: 13px;
-			z-index: -1;
-		}
 		.circle_tit {
 			display: block;
 			margin-top: var(--gap-2);
