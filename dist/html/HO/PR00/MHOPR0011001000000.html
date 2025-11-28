@@ -974,10 +974,34 @@
 				const $itemWrap = $('.bn_item_wrap.ty5');
 				const $itemBtns = $itemWrap.find('[role="button"]');
 
+				// 포커스 시 화면 밖 요소 자동 스크롤
 				$itemBtns.on('focus', function() {
 					const $btn = $(this);
+					const containerLeft = $itemWrap.scrollLeft();
+					const containerWidth = $itemWrap.outerWidth();
+					const btnLeft = $btn.position().left + containerLeft;
+					const btnRight = btnLeft + $btn.outerWidth();
 
-					this.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
+					if (btnLeft < containerLeft) {
+						$itemWrap.animate({ scrollLeft: btnLeft }, 200);
+					} else if (btnRight > containerLeft + containerWidth) {
+						$itemWrap.animate({ scrollLeft: btnRight - containerWidth }, 200);
+					}
+				});
+
+				// 화살표 키 탐색 지원
+				$itemBtns.on('keydown', function(e) {
+					let index = $itemBtns.index(this);
+
+					if (e.key === 'ArrowRight') {
+						e.preventDefault();
+						let nextIndex = (index + 1) % $itemBtns.length;
+						$itemBtns.eq(nextIndex).focus();
+					} else if (e.key === 'ArrowLeft') {
+						e.preventDefault();
+						let prevIndex = (index - 1 + $itemBtns.length) % $itemBtns.length;
+						$itemBtns.eq(prevIndex).focus();
+					}
 				});
 			});
 			// e: 25-11-10 수정
