@@ -12052,6 +12052,19 @@ ol li .table_wrap + .list_ty2 li + li {
 	-ms-flex: 1;
 	flex: 1;
 }
+.radio_group_wrap .inp_radio[class*="rd_btn"] input[role="button"]:checked + label .label_cont {
+	position: relative;
+}
+.radio_group_wrap .inp_radio[class*="rd_btn"] input[role="button"]:checked + label .label_cont::after {
+	content: "선택됨";
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 1px;
+	height: 1px;
+	white-space: nowrap;
+	overflow: hidden;
+}
 .radio_group_wrap_ty2 {
 	width: 100%;
 	display: -webkit-box;

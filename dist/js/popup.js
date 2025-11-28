@@ -95,8 +95,14 @@ function openHDPopup($triggerEl, target) {
 		"aria-hidden": "false",
 	});
 
-	if ($header) $header.attr("tabindex", 0);
+	// if ($header) $header.attr("tabindex", 0);
 	// if ($content) $content.attr("tabindex", 0);
+	if ($header) {
+		$header.attr("tabindex", 0)
+	} else {
+		$content.attr("tabindex", 0)
+	}
+
 
 	const focusTarget = $header || $content;
 
