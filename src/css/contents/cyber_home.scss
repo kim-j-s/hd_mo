@@ -566,61 +566,66 @@
 		word-break: keep-all;
 	}
 	&.ty1 {
-			a {
-					padding: var(--padding-8);
-					padding-top: 60px;
-											width: 41.5vw;
-					background-repeat: no-repeat;
-					background-size: 32px auto;
-					background-position: 24px 24px;
-					@for $i from 1 through 2 {
-							&.opt#{$i}{
-									background-image: url(../images/content/ho/icon_benefit01_#{$i}.svg);
-							}
-					}
-			}
-			&.bn_item_wrap_exp {
-				a {
-					display: block;
-					width: 55%;
+		a {
+			width: 41.5vw;
+			padding: var(--padding-8);
+			padding-top: 60px;
+			background-repeat: no-repeat;
+			background-size: 32px auto;
+			background-position: 24px 24px;
+			@for $i from 1 through 2 {
+				&.opt#{$i}{
+					background-image: url(../images/content/ho/icon_benefit01_#{$i}.svg);
 				}
 			}
+		}
+		&.bn_item_wrap_exp {
+			> li {
+				flex: none;
+				width: 55%;
+				padding: 0;
+				scroll-snap-align: start;
+			}
+			a {
+				display: block;
+				width: 100%;
+			}
+		}
 	}
 	&.ty2 {
-			a {
-					flex: 1;
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					// padding-top: 96px;
-					min-height: 104px;
-					padding-left: 96px;
-					background-repeat: no-repeat;
-					background-size: 56px auto;
-					background-position: 24px 24px;
-					background-color: #fff;
-					
-					@for $i from 1 through 2 {
-							&.opt#{$i}{
-									background-image: url(../images/content/ho/icon_benefit02_#{$i}.png);
-							}
-					}
+		a {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			// padding-top: 96px;
+			min-height: 104px;
+			padding-left: 96px;
+			background-repeat: no-repeat;
+			background-size: 56px auto;
+			background-position: 24px 24px;
+			background-color: #fff;
+			@for $i from 1 through 2 {
+				&.opt#{$i}{
+					background-image: url(../images/content/ho/icon_benefit02_#{$i}.png);
+				}
 			}
-			> div:not(.auto) {
-					width: 40vw;
+		}
+		> div:not(.auto) {
+			width: 40vw;
+		}
+		.tit {
+			font-size: var(--font-size-body-small);
+			color: var(--color-text-subtle);
+			+ .cont {
+				margin-top: var(--gap-2);
 			}
-			.tit {
-					font-size: var(--font-size-body-small);
-					color: var(--color-text-subtle);
-					+ .cont {
-							margin-top: var(--gap-2);
-					}
+		}
+		.badge_wrap {
+			+ .cont {
+				color: var(--color-text-basic);
 			}
-			.badge_wrap {
-					+ .cont {
-							color: var(--color-text-basic);
-					}
-			}
+		}
 	}
 	&.ty3 {
 			a {
