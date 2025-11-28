@@ -187,8 +187,8 @@
 		//전화번호
 		if( $this.closest('.input_text').hasClass('phone') && !$this.closest('.input_text').hasClass('phone_full') && !$this.prop('readonly') && !$this.prop('disabled') ){
 			if(val){
-				// const newVal = val.replace(/ - /g, '');
-				const newVal = val.replace(/[\p{Dash_Punctuation}]/gu, '');
+				const newVal = val.replace(/ - /g, '');
+				// const newVal = val.replace(/[\p{Dash_Punctuation}]/gu, '');
 				$this.attr('maxlength', 8);
 				$this.val(newVal).removeClass('isVal');
 			}
@@ -217,7 +217,7 @@
 			$this.attr('maxlength', 14);
 			if(val){
 				val = val.replace(/[^0-9*]/g, '');
-				// newVal = ' - ' + val.replace(/([0-9*]{4})(?=[0-9*])/g, '$1 - ');
+				newVal = ' - ' + val.replace(/([0-9*]{4})(?=[0-9*])/g, '$1 - ');
 				// newVal = `${HYPHEN} ` + val.replace(/([0-9*]{4})(?=[0-9*])/g, `$1 ${HYPHEN} `);
 				$this.val(newVal).addClass('isVal');
 			}else {
@@ -633,15 +633,16 @@
 
 	$DOM.on("blur", ".input_text.phone_full input", function () {
 		let $this = $(this);
-		// let val = $this.val().replace(/[^0-9*]/g, ""); // 숫자만 남김
+		let val = $this.val().replace(/[^0-9*]/g, ""); // 숫자만 남김
+		console.log('sdfsd');
 
-		let val = $this.val();
+		// let val = $this.val();
 
     // 1) 대시계열 전체 제거 (Dash_Punctuation)
-    val = val.replace(/[\p{Dash_Punctuation}]/gu, "");
+    // val = val.replace(/[\p{Dash_Punctuation}]/gu, "");
 
     // 2) 숫자만 남기기
-    val = val.replace(/[^0-9*]/g, "");
+    // val = val.replace(/[^0-9*]/g, "");
 
     // 3) 표준 하이픈 지정 (U+2010)
     // const HYPHEN = "\u2010";
@@ -1054,27 +1055,11 @@ function inpPhoneFormat() {
 		// 전화번호 입력 적용 준비 중 스크립트
 		if( $(this).hasClass('phone_full') ) {
 			const $inp = $(this).children('.inp').find('input');
-			// let val = $inp.val().replace(/[^0-9*]/g, "");
-
-			let $this = $(this);
-			let val = $this.val();
-
-			// 1) 대시계열 전체 제거 (Dash_Punctuation)
-			val = val.replace(/[\p{Dash_Punctuation}]/gu, "");
-
-			// 2) 숫자만 남기기
-			val = val.replace(/[^0-9*]/g, "");
-
-			// 3) 표준 하이픈 지정 (U+2010)
-			// const HYPHEN = "\u2010";
-
-
+			let val = $inp.val().replace(/[^0-9*]/g, "");
 			if (val.length === 10) {
 				val = val.replace(/^(\d{3})([\d*]{3})([\d*]{4})$/, "$1-$2-$3");
-				// val = val.replace(/(\d{3})(\d{3})(\d{4})/, `$1${HYPHEN}$2${HYPHEN}$3`);
 			} else if (val.length === 11) {
 				val = val.replace(/^(\d{3})([\d*]{4})([\d*]{4})$/, "$1-$2-$3");
-				// val = val.replace(/(\d{3})(\d{4})(\d{4})/, `$1${HYPHEN}$2${HYPHEN}$3`);
 			}
 			$inp.val(val);
 		}
