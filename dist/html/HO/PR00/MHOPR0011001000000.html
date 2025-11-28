@@ -976,23 +976,8 @@
 
 				$itemBtns.on('focus', function() {
 					const $btn = $(this);
-					const containerLeft = $itemWrap.offset().left;
-					const containerRight = containerLeft + $itemWrap.outerWidth();
-					const btnLeft = $btn.offset().left;
-					const btnRight = btnLeft + $btn.outerWidth();
 
-					// 왼쪽이 잘렸을 때
-					if (btnLeft < containerLeft) {
-						$itemWrap.animate({
-							scrollLeft: $itemWrap.scrollLeft() - (containerLeft - btnLeft)
-						}, 200);
-					}
-					// 오른쪽이 잘렸을 때
-					else if (btnRight > containerRight) {
-						$itemWrap.animate({
-							scrollLeft: $itemWrap.scrollLeft() + (btnRight - containerRight)
-						}, 200);
-					}
+					this.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
 				});
 			});
 			// e: 25-11-10 수정
