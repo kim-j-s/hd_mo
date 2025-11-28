@@ -1764,10 +1764,16 @@
 			// MPRMTPS10003050000
 			&.selected {
 				.inp_checkbox {
-					input[type=checkbox] {
-						&:checked {
-							~ i {
-								display: none;
+					.chk_label {
+						.title_info {
+							&::after {
+								content: '선택됨';
+								position: absolute;
+								top: 0;
+								right: 0;
+								width: 1px;
+								height: 1px;
+								overflow: hidden;
 							}
 						}
 					}
