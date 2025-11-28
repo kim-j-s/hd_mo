@@ -495,34 +495,46 @@
 						</div>
 						<div class="bn_scroll_wrap">
 							<!-- s: 25-11-10 수정 -->
-							<div class="bn_item_wrap ty5">
-								<a href="javascript:void(0)" aria-label="할인특약 ECO마일리지 자동차 할인특약 팝업 열기">
-									<span aria-hidden="true" class="tit">할인특약</span>
-									<span aria-hidden="true" class="cont">ECO마일리지</span>
-								</a>
-								<a href="javascript:void(0)" aria-label="할인특약 커넥티드카 자동차 할인특약 팝업 열기">
-									<span aria-hidden="true" class="tit">할인특약</span>
-									<span aria-hidden="true" class="cont">커넥티드카</span>
-								</a>
-								<!-- s: 25-11-11 수정 -->
-								<a href="javascript:void(0)" aria-label="할인특약 스마트 안전운전(UBI) 자동차 할인특약 팝업 열기">
-									<!-- e: 25-11-11 수정 -->
-									<span aria-hidden="true" aria-hidden="true" class="tit">할인특약</span>
-									<span aria-hidden="true" aria-hidden="true" class="cont">스마트 안전운전(UBI)</span>
-								</a>
-								<a href="javascript:void(0)" aria-label="할인특약 첨단안전장치 자동차 할인특약 팝업 열기">
-									<span aria-hidden="true" aria-hidden="true" class="tit">할인특약</span>
-									<span aria-hidden="true" aria-hidden="true" class="cont">첨단안전장치</span>
-								</a>
-								<a href="javascript:void(0)" aria-label="할인특약 효도하는 자녀 자동차 할인특약 팝업 열기">
-									<span aria-hidden="true" class="tit">할인특약</span>
-									<span aria-hidden="true" class="cont">효도하는 자녀</span>
-								</a>
-								<a href="javascript:void(0)" aria-label="할인특약 블랙박스 자동차 할인특약 팝업 열기">
-									<span aria-hidden="true" class="tit">할인특약</span>
-									<span aria-hidden="true" class="cont">블랙박스</span>
-								</a>
-							</div>
+							<ul class="bn_item_wrap ty5">
+								<li>
+									<div role="button" tabindex="0" aria-label="할인특약 ECO마일리지 자동차 할인특약 팝업 열기">
+										<div class="tit">할인특약</div>
+										<div class="cont">ECO마일리지</div>
+									</div>
+								</li>
+								<li>
+									<div role="button" tabindex="0" aria-label="할인특약 커넥티드카 자동차 할인특약 팝업 열기">
+										<div class="tit">할인특약</div>
+										<div class="cont">커넥티드카</div>
+									</div>
+								</li>
+								<li>
+									<!-- s: 25-11-11 수정 -->
+									<div role="button" tabindex="0" aria-label="할인특약 스마트 안전운전(UBI) 자동차 할인특약 팝업 열기">
+										<!-- e: 25-11-11 수정 -->
+										<div class="tit">할인특약</div>
+										<div class="cont">스마트 안전운전(UBI)</div>
+									</div>
+								</li>
+								<li>
+									<div role="button" tabindex="0" aria-label="할인특약 첨단안전장치 자동차 할인특약 팝업 열기">
+										<div class="tit">할인특약</div>
+										<div class="cont">첨단안전장치</div>
+									</div>
+								</li>
+								<li>
+									<div role="button" tabindex="0" aria-label="할인특약 효도하는 자녀 자동차 할인특약 팝업 열기">
+										<div class="tit">할인특약</div>
+										<div class="cont">효도하는 자녀</div>
+									</div>
+								</li>
+								<li>
+									<div role="button" tabindex="0" aria-label="할인특약 블랙박스 자동차 할인특약 팝업 열기">
+										<div class="tit">할인특약</div>
+										<div class="cont">블랙박스</div>
+									</div>
+								</li>
+							</ul>
 							<!-- e: 25-11-10 수정 -->
 						</div>
 
@@ -970,39 +982,6 @@
 						$container.stop().animate({ scrollLeft: offsetLeft }, 300);
 					}
 				}
-
-				const $itemWrap = $('.bn_item_wrap.ty5');
-				const $itemBtns = $itemWrap.find('[role="button"]');
-
-				// 포커스 시 화면 밖 요소 자동 스크롤
-				// $itemBtns.on('focus', function() {
-				// 	const $btn = $(this);
-				// 	const containerLeft = $itemWrap.scrollLeft();
-				// 	const containerWidth = $itemWrap.outerWidth();
-				// 	const btnLeft = $btn.position().left + containerLeft;
-				// 	const btnRight = btnLeft + $btn.outerWidth();
-
-				// 	if (btnLeft < containerLeft) {
-				// 		$itemWrap.animate({ scrollLeft: btnLeft }, 200);
-				// 	} else if (btnRight > containerLeft + containerWidth) {
-				// 		$itemWrap.animate({ scrollLeft: btnRight - containerWidth }, 200);
-				// 	}
-				// });
-
-				// // 화살표 키 탐색 지원
-				// $itemBtns.on('keydown', function(e) {
-				// 	let index = $itemBtns.index(this);
-
-				// 	if (e.key === 'ArrowRight') {
-				// 		e.preventDefault();
-				// 		let nextIndex = (index + 1) % $itemBtns.length;
-				// 		$itemBtns.eq(nextIndex).focus();
-				// 	} else if (e.key === 'ArrowLeft') {
-				// 		e.preventDefault();
-				// 		let prevIndex = (index - 1 + $itemBtns.length) % $itemBtns.length;
-				// 		$itemBtns.eq(prevIndex).focus();
-				// 	}
-				// });
 			});
 			// e: 25-11-10 수정
 			//e: 25-11-04 자동차 클릭이동 추가 및 소스, 주석 정리
