@@ -192,6 +192,27 @@
 	.inp_radio {
 		&[class*=rd_btn]{
 			flex: 1;
+			input {
+				&[role="button"] {
+					&:checked {
+						+ label {
+							.label_cont {
+								position: relative;
+								&::after {
+									content: '선택됨';
+									position: absolute;
+									top: 0;
+									right: 0;
+									width: 1px;
+									height: 1px;
+									white-space: nowrap;
+									overflow: hidden;
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 
