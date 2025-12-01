@@ -1760,6 +1760,21 @@
 						content: none;
 					}
 				}
+				&:checked {
+					+ .chk_label {
+						.title_info {
+							&::after {
+								content: '선택됨';
+								position: absolute;
+								top: 0;
+								right: 0;
+								width: 1px;
+								height: 1px;
+								overflow: hidden;
+							}
+						}
+					}
+				}
 			}
 			// MPRMTPS10003050000
 			&.selected {
