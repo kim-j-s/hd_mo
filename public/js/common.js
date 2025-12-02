@@ -1849,7 +1849,7 @@ function nbList() {
 }
 //숫자리스트1
 function listNum() {
-	$('ol.number_list').each(function () {
+	$('.number_list').each(function () {
 		const $list = $(this);
 		// 직계 li만 선택해야 중복 번호 방지됨
 		$list.children('li').each(function (index) {
@@ -1870,7 +1870,7 @@ function listNum() {
 }
 //숫자리스트2(circle)
 function circleNum() {
-	$('ol.circle_list').each(function () {
+	$('.circle_list').each(function () {
 		const $list = $(this);
 		$list.find('> li').each(function (index) {
 			const $labels = $(this)
@@ -1888,7 +1888,7 @@ function circleNum() {
 }
 //숫자리스트2(circle)
 function circleNum2() {
-	$('ol.circle_list ol').each(function () {
+	$('.circle_list ol').each(function () {
 		const $list = $(this);
 		$list.find('> li').each(function (index) {
 			const $labels = $(this)
@@ -1906,7 +1906,7 @@ function circleNum2() {
 }
 //숫자리스트3(제 0 조)
 function clauseNum() {
-	$('ol.clause_list').each(function () {
+	$('.clause_list').each(function () {
 		const $list = $(this);
 		$list.find('> li').each(function (index) {
 			const $labels = $(this).find('strong');
