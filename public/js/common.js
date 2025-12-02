@@ -634,27 +634,13 @@
 	$DOM.on("blur", ".input_text.phone_full input", function () {
 		let $this = $(this);
 		let val = $this.val().replace(/[^0-9*]/g, ""); // 숫자만 남김
-		console.log('sdfsd');
-
-		// let val = $this.val();
-
-    // 1) 대시계열 전체 제거 (Dash_Punctuation)
-    // val = val.replace(/[\p{Dash_Punctuation}]/gu, "");
-
-    // 2) 숫자만 남기기
-    // val = val.replace(/[^0-9*]/g, "");
-
-    // 3) 표준 하이픈 지정 (U+2010)
-    // const HYPHEN = "\u2010";
 	
 		if (val.length === 10) {
 			// 10자리 → 010-000-0000
 			val = val.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
-			// val = val.replace(/(\d{3})(\d*{3})(\d*{4})/, `$1${HYPHEN}$2${HYPHEN}$3`);
 		} else if (val.length === 11) {
 			// 11자리 → 010-0000-0000
 			val = val.replace(/(\d{3})(\d{4})(\d{4})/, "$1-$2-$3");
-			// val = val.replace(/(\d{3})(\d*{4})(\d*{4})/, `$1${HYPHEN}$2${HYPHEN}$3`);
 		}
 	
 		$this.val(val);
@@ -675,7 +661,6 @@
 		$(this).val(val.replace(/\//g, ''));
 	});
 	$DOM.on("blur", ".input_text .ex_period", function () {
-		// console.log('유효기간 진입');
 		let $this = $(this);
 		let val = $this.val().replace(/[^0-9]/g, ""); // 숫자만 남김
 		val = val.substring(0, 4);
@@ -735,12 +720,6 @@
 /* Tab Scroll */
 // 탭 버튼 클릭 시 중앙에 위치하는 기능 - 접근성 관련 기능
 function tabScroll(){
-	// let scrollPosition = 0;
-
-	// $('[class^=tab_scroll_box]').on('scroll', function() {
-	// 	scrollPosition = $(this).scrollLeft();
-	// });
-
 	$('[class^=tab_scroll_box] .tab_btn').on('click', function(){
 		const $this = $(this),
 					$scrollBox = $this.closest('[class^=tab_scroll_box]')
@@ -749,10 +728,6 @@ function tabScroll(){
 		const btn_offset = $this.position().left,
 					scrollBox_w = $scrollList.width();
 		let scrollMove = btn_offset - ($scrollBox.width() / 2) + ($this.outerWidth() / 2);
-
-		// console.log($scrollBox.get(0).scrollLeft);
-		// console.log('move : ' + scrollMove);
-		// console.log('버튼 위치 : ' + btn_offset, '스크롤 위치 : ' + scrollPosition);
 		$scrollBox.animate({
 			scrollLeft: scrollMove
 		}, 200);
@@ -791,13 +766,8 @@ function simpleInfo(){
 			}else {
 				new_headHeight = $headHeight;
 			}
-			// console.log('기준 위치 : ', targetOffsetTop, '스크롤 위치' + scrollTop, pop_scrollTop);
-			// console.log('target 위치 : ' + targetOffsetTop);
-			// console.log('컨텐츠 스크롤 위치 : ' + scrollTop);
-			// console.log('팝업 컨텐츠 스크롤 위치 : ' + pop_scrollTop);
 
 			if (targetOffsetTop <= 0 && !$targetChild.hasClass('active')) {
-				// console.log('펴기');
 				$targetChild.addClass('active');
 
 				if(!$target.hasClass('ty2')){
@@ -820,7 +790,7 @@ function simpleInfo(){
 				if(!$target.hasClass('ty2')){
 					// $targetChild.stop().slideUp(300);
 					// console.log('slideUp');
-				}else {
+				} else {
 					$targetChild.stop().hide();
 				}
 
@@ -1288,7 +1258,6 @@ $(function(){
 			} else {
 				$groups.find('.ag_group_wrap').find('input').prop('checked', false);
 			}
-			// $groups.find('.agw_all').prop('checked', isChecked).trigger('change'); // 각 그룹에 위임
 		});
 	
 		// 그룹 단위로 동작 유지
@@ -1300,10 +1269,6 @@ $(function(){
 			$allCheck.on('change', function () {
 				const isChecked = $(this).is(':checked');
 				console.log(isChecked);
-				// $groupWrap.find('.agr_dept1.ag').prop('checked', isChecked);
-				// $groupWrap.find('.agr_dept1.noag').prop('checked', !isChecked);
-				// $groupWrap.find('.ags_sub_all, .ags_sub_chk').prop('checked', isChecked).prop('disabled', !isChecked);
-				// $groupWrap.find('.agr_dept2').prop('checked', isChecked);
 
 				if($(this).closest('.ag_groups').find('.ag_total').length) {
 					// 상위에 ag_total가 있으면 기존방식
@@ -1385,7 +1350,7 @@ $(function(){
 				const index = $this.closest('.inp_radio').index();
 				const $agGroupCont = $this.closest('.ag_group_cont');
 				$agGroupCont.find('.agc_item').each(function () {
-					$(this).find('.radio_group_wrap .inp_radio').eq(index).find('.agr_r_group').prop('checked', true);;
+					$(this).find('.radio_group_wrap .inp_radio').eq(index).find('.agr_r_group').prop('checked', true);
 				});
 
 				updateGroupCheckState();
