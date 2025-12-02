@@ -1349,8 +1349,14 @@ $(function(){
 				if (!$this.is(':checked')) return;
 				const index = $this.closest('.inp_radio').index();
 				const $agGroupCont = $this.closest('.ag_group_cont');
-				$agGroupCont.find('.agc_item').each(function () {
-					$(this).find('.radio_group_wrap .inp_radio').eq(index).find('.agr_r_group').prop('checked', true);
+				// 25-12-02 수정 - 약관 선택 목록 복수 선택 가능하도록 수정
+				// $agGroupCont.find('.agc_item').each(function () {
+				// 	$(this).find('.radio_group_wrap .inp_radio').eq(index).find('.agr_r_group').prop('checked', true);
+				// });
+				// 25-12-02 수정 - 약관 선택 목록 복수 선택 가능하도록 수정
+				$agGroupCont.find('.agc_item .radio_group_wrap').each(function () {
+					// $(this).find('.radio_group_wrap .inp_radio').eq(index).find('.agr_r_group').prop('checked', true);
+					$(this).find('.inp_radio').eq(index).find('.agr_r_group').prop('checked', true);
 				});
 
 				updateGroupCheckState();
