@@ -116,6 +116,15 @@
 					white-space: nowrap;
 				}
 				&.member_join {
+					position: relative;
+					&::after {
+						content: '';
+						position: absolute;
+						top: -4px;
+						left: 0;
+						width: 100%;
+						height: calc(100% + 8px);
+					}
 					> .text {
 						display: block;
 						background-image: url(../images/header/icon_member_join.svg);
