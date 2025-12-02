@@ -1044,7 +1044,7 @@
 		> li {
 			padding-left: 0;
 			font-size: var(--font-size-heading-small);
-			.number {
+			> .number {
 				position: static;
 				font-weight: 700;
 			}
@@ -1232,7 +1232,8 @@
 			&::after {
 				content: '';
 				position: absolute;
-				top: 6px;
+				// top: 6px;
+				top: 50%;
 				left: 0;
 				transform: translateY(-50%);
 				display: inline-block;
@@ -1280,6 +1281,10 @@
 					font-size: var(--font-size-body-xsmall);
 					//width: 11px;
 					//height: 18px;
+
+					&::after {
+						content:none;
+					}
 				}	
 				& + li {
 					margin-top: var(--gap-3);

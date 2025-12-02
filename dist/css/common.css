@@ -1568,6 +1568,17 @@ sup {
 	background-size: 1.6rem auto;
 	white-space: nowrap;
 }
+.nav_menu_wrap .nmc_top .nmc_top_r .mem_btn.member_join {
+	position: relative;
+}
+.nav_menu_wrap .nmc_top .nmc_top_r .mem_btn.member_join::after {
+	content: "";
+	position: absolute;
+	top: -0.4rem;
+	left: 0;
+	width: 100%;
+	height: calc(100% + 0.8rem);
+}
 .nav_menu_wrap .nmc_top .nmc_top_r .mem_btn.member_join > .text {
 	display: block;
 	background-image: url(../images/header/icon_member_join.svg);
@@ -2051,9 +2062,6 @@ sup {
 }
 .address_item:focus {
 	outline: none;
-}
-.address_item[aria-disabled="true"] {
-	pointer-events: none;
 }
 .address_item[aria-disabled="true"] .ad_item {
 	background-color: var(--color-input-surface-disabled);
@@ -10785,7 +10793,7 @@ sup {
 	padding-left: 0;
 	font-size: var(--font-size-heading-small);
 }
-.number_list.big > li .number {
+.number_list.big > li > .number {
 	position: static;
 	font-weight: 700;
 }
@@ -10889,7 +10897,7 @@ sup {
 .circle_list > li .number::after {
 	content: "";
 	position: absolute;
-	top: 0.6rem;
+	top: 50%;
 	left: 0;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
@@ -10927,6 +10935,9 @@ sup {
 .circle_list > li ol > li .number {
 	top: 0.9rem;
 	font-size: var(--font-size-body-xsmall);
+}
+.circle_list > li ol > li .number::after {
+	content: none;
 }
 .circle_list > li ol > li + li {
 	margin-top: var(--gap-3);
@@ -12004,6 +12015,12 @@ ol li .table_wrap + .list_ty2 li + li {
 	margin-top: var(--gap-2);
 	padding-left: 3.2rem;
 }
+.inp_radio.lg input[type="radio"] + label + .sub_g_txt .list_ty2 {
+	margin-top: var(--gap-4);
+}
+.inp_radio.lg input[type="radio"] + label + .sub_g_txt .list_ty2 li {
+	color: var(--color-text-basic);
+}
 .inp_radio.lg input[type="radio"]:checked + label::before {
 	background-size: 1.6rem auto;
 }
@@ -12957,9 +12974,6 @@ ol li .table_wrap + .list_ty2 li + li {
 }
 .select_item.error .si_item::after {
 	border: var(--border-width-static-medium) solid var(--color-input-border-error);
-}
-.select_item[aria-disabled="true"] {
-	pointer-events: none;
 }
 .select_item[aria-disabled="true"] .si_item {
 	background-color: var(--color-input-surface-disabled);
