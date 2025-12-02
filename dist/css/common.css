@@ -10785,7 +10785,7 @@ sup {
 	padding-left: 0;
 	font-size: var(--font-size-heading-small);
 }
-.number_list.big > li .number {
+.number_list.big > li > .number {
 	position: static;
 	font-weight: 700;
 }
@@ -10889,7 +10889,7 @@ sup {
 .circle_list > li .number::after {
 	content: "";
 	position: absolute;
-	top: 0.6rem;
+	top: 50%;
 	left: 0;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
@@ -10927,6 +10927,9 @@ sup {
 .circle_list > li ol > li .number {
 	top: 0.9rem;
 	font-size: var(--font-size-body-xsmall);
+}
+.circle_list > li ol > li .number::after {
+	content: none;
 }
 .circle_list > li ol > li + li {
 	margin-top: var(--gap-3);
