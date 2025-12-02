@@ -80,10 +80,10 @@ function openHDPopup($triggerEl, target) {
 		$content.animate({
 			scrollTop: 0 // 팝업 열 때 스크롤을 최상단으로 이동
 		}, 0);
-	}
 
-	if($content.find('.tab_wrap_content').length > 0){
-		$content.find('.tab_wrap_content').removeAttr('tabindex');
+		if($content.find('.tab_wrap_content').length > 0){
+			$content.find('.tab_wrap_content').removeAttr('tabindex');
+		}
 	}
 
 	$target.attr({
@@ -95,14 +95,11 @@ function openHDPopup($triggerEl, target) {
 		"aria-hidden": "false",
 	});
 
-	// if ($header) $header.attr("tabindex", 0);
-	// if ($content) $content.attr("tabindex", 0);
 	if ($header) {
 		$header.attr("tabindex", 0)
 	} else {
-		$content.attr("tabindex", 0)
+		if($content) $content.attr("tabindex", 0);
 	}
-
 
 	const focusTarget = $header || $content;
 
