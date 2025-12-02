@@ -658,7 +658,7 @@
 			}
 	} &.ty5 {
 			> div {
-				width: 50vw;
+				// width: 50vw;
 				background-color: var(--color-surface-secondary-subtler);
 			}
 			// > div:not(.auto) {
@@ -685,6 +685,27 @@
 			}
 	}
 }
+
+/* 웹접근성 대응 ios */
+/* 추후 삭제 */
+.Ios {
+	.bn_item_wrap {
+		&.ty5 {
+			flex-flow: row wrap;
+			scroll-snap-type: none;
+			scroll-padding: 0;
+			overflow: auto;
+			> div {
+				flex: 1 1 calc(50% - 4px);
+			}
+		}
+	}
+}
+/* 추후 삭제 */
+/* 웹접근성 대응 ios */
+
+
+
 .link_btn_big {
     min-height: 56px;
     display: flex;
