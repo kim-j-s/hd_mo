@@ -113,6 +113,207 @@
 	}
 }
 
+.animation-container {
+	width: 240px;
+	height: 128px;
+	position: relative;
+	overflow: hidden;
+}
+
+.cloud-layer {
+	position: absolute;
+	width: 750px;
+	height: 435px;
+	transform: scale(0.2944);
+	transform-origin: top left;
+	z-index: 1;
+	-webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+	mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.car-layer {
+	position: absolute;
+	width: 750px;
+	height: 435px;
+	transform: scale(0.2944);
+	transform-origin: top left;
+	z-index: 10;
+}
+
+@keyframes cloud-move-1 {
+	0% { transform: translateX(400px); }
+	100% { transform: translateX(-220px); }
+}
+
+@keyframes cloud-move-2 {
+	0% { transform: translateX(360px); }
+	100% { transform: translateX(-92px); }
+}
+
+@keyframes cloud-move-3 {
+	0% { transform: translateX(150px); }
+	100% { transform: translateX(-113px); }
+}
+
+.cloud-1 {
+	position: absolute;
+	width: 207px;
+	height: 117px;
+	left: 0;
+	top: 31px;
+	animation: cloud-move-1 8.5s linear infinite;
+}
+
+.cloud-2 {
+	position: absolute;
+	width: 92px;
+	height: 52px;
+	left: 249px;
+	top: 0;
+	animation: cloud-move-2 9.4s linear infinite;
+}
+
+.cloud-3 {
+	position: absolute;
+	width: 113px;
+	height: 64px;
+	top: 26px;
+	animation: cloud-move-3 6.73s linear infinite;
+}
+
+@keyframes car-bounce {
+	0% { transform: translateY(0) scaleX(-1); }
+	10% { transform: translateY(0) scaleX(-1); }
+	30% { transform: translateY(-10px) scaleX(-1); }
+	50% { transform: translateY(-10px) scaleX(-1); }
+	75% { transform: translateY(0) scaleX(-1); }
+	90% { transform: translateY(1.5px) scaleX(-1); }
+	100% { transform: translateY(0) scaleX(-1); }
+}
+
+.car-body-wrapper {
+	position: absolute;
+	left: 60.65px;
+	top: 125.73px;
+	width: 618.849px;
+	height: 225.774px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation: car-bounce 1s linear infinite;
+}
+
+.car-body {
+	width: 618.849px;
+	height: 225.774px;
+	position: relative;
+}
+
+@keyframes wheel-rotate {
+	0% { transform: rotate(0deg) scaleX(-1); }
+	100% { transform: rotate(-360deg) scaleX(-1); }
+}
+
+@keyframes wheel-bounce {
+	0% { transform: translateY(0); }
+	11.11% { transform: translateY(-2px); }
+	22.22% { transform: translateY(0); }
+	33.33% { transform: translateY(-1px); }
+	44.44% { transform: translateY(0); }
+	55.55% { transform: translateY(-2px); }
+	66.66% { transform: translateY(0); }
+	77.77% { transform: translateY(-1px); }
+	88.88% { transform: translateY(0); }
+	100% { transform: translateY(0); }
+}
+
+.wheel-wrapper {
+	position: absolute;
+	width: 105px;
+	height: 105px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.wheel-bounce-container {
+	animation: wheel-bounce 0.31s ease-in-out infinite;
+}
+
+.wheel {
+	width: 105px;
+	height: 105px;
+	position: relative;
+	animation: wheel-rotate 0.31s linear infinite;
+}
+
+.wheel-left {
+	left: 114.18px;
+	top: 283px;
+}
+
+.wheel-right {
+	left: 515.18px;
+	top: 283px;
+}
+
+.wheel-bg-left {
+	position: absolute;
+	left: 104.06px;
+	top: 273.39px;
+	width: 125px;
+	height: 78px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.wheel-bg-right {
+	position: absolute;
+	left: 505.39px;
+	top: 273.39px;
+	width: 125.239px;
+	height: 78.108px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.shadow {
+	position: absolute;
+	left: 76.18px;
+	top: 387px;
+	width: 558px;
+	height: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.flip-x {
+	transform: scaleX(-1);
+}
+
+@keyframes balloon-sway {
+	0% { transform: translate(0, 0) rotate(15deg); }
+	20% { transform: translate(8px, -3px) rotate(20deg); }
+	40% { transform: translate(-5px, 2px) rotate(12deg); }
+	60% { transform: translate(10px, -4px) rotate(22deg); }
+	80% { transform: translate(-3px, 1px) rotate(13deg); }
+	100% { transform: translate(0, 0) rotate(15deg); }
+}
+
+.balloon {
+	position: absolute;
+	width: 140px;
+	height: 180px;
+	left: -30px;
+	top: 30px;
+	transform-origin: bottom center;
+	transform: rotate(15deg);
+	animation: balloon-sway 4.2s ease-in-out infinite;
+}
+
 
 
 /* 유의사항 */
