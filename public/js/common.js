@@ -188,7 +188,6 @@
 		if( $this.closest('.input_text').hasClass('phone') && !$this.closest('.input_text').hasClass('phone_full') && !$this.prop('readonly') && !$this.prop('disabled') ){
 			if(val){
 				const newVal = val.replace(/ - /g, '');
-				// const newVal = val.replace(/[\p{Dash_Punctuation}]/gu, '');
 				$this.attr('maxlength', 8);
 				$this.val(newVal).removeClass('isVal');
 			}
@@ -245,7 +244,7 @@
 	$DOM.on('keyup', '.price .inp input, .comma .inp input', function()	{		
 		const $this = $(this),
 					$val = $this.val();
-					console.log($val);
+					// console.log($val);
 		$this.val($val.replace(/[^0-9]/gi, '').replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'));
 	});
 
@@ -408,8 +407,6 @@
 			// ::before가 존재하는 경우(content가 "none"이 아님)
 			if (content && content !== 'none' && labelText) {
 				selectedTexts.push(labelText);
-			} else {
-				//console.log('skip', i, 'content:', content, 'text:', `"${labelText}"`);
 			}
 		});
 		
@@ -483,33 +480,18 @@
 		$(this).addClass('active').attr('title', '선택됨');
 	});
 
-	// inp_only_num -  input[type="tel"]로 대체
-	// $DOM.on('keyup', '.inp_only_num', function() {
-	// 	const $this = $(this),
-	// 				val = $this.val().replace(/[^0-9]/g, ''); // 숫자만 허용
-	// 	$this.val(val);
-	// });
-	// inp_only_num -  input[type="tel"]로 대체
-
 	// input[type="tel"]
 	$DOM.on('keyup', 'input[type="tel"]', function() {
 		const $this = $(this);
 		// comma 클래스가 상위에 있으면 실행하지 않음
 		// if ($this.closest('.comma, .price, .ex_period, .weight').length) {
-		if ($this.closest('.comma, .price, .ex_periodm, .exptest').length) {
+		if ($this.closest('.comma, .price, .ex_periodm, .exptest, .phone_full').length) {
 			return;
 		}
 		// 숫자만 허용
 		const val = $this.val().replace(/[^0-9]/g, '');
 		$this.val(val);		
 	});
-
-	// 몸무게 입력 유형 / . 가능
-	// $DOM.on('keyup', '.inp_weight', function() {
-	// 	const $this = $(this),
-	// 				val = $this.val().replace(/[^0-9.]/g, ''); // 숫자만 허용
-	// 	$this.val(val);
-	// });
 
 	// 달력 날짜 입력 항목 focus 시 attr 추가 및 blur 시 자리수 정리 기능 추가
 	$DOM.on('focus', '.inp_picker', function() {
@@ -568,11 +550,8 @@
 				const mTop = parseFloat($contents.css('margin-bottom'));
 				siiHeight = parseFloat($sii.css('padding-bottom')) + mTop + (mTop / 2);
 			}
-			console.log(siiHeight)
 			sHeight = siiHeight;
 		}
-
-		// console.log(sHeight);
 
 		if ($target.length) {
 			$wrap.data('scrolling', true);
@@ -588,15 +567,6 @@
 				scrollTop: scrollY
 			}, 300, function () {
 				$wrap.data('scrolling', false);
-
-				// 포커스 가능한 첫 요소 탐색
-				// const $focusable = $target.find('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])').filter(':visible').first();
-
-				// if ($focusable.length) {
-				// 	$focusable.focus();
-				// } else {
-				// 	$target.attr('tabindex', '-1').focus();
-				// }
 				setTimeout(function(){
 					$target.children('*:first-child').attr('tabindex', '-1').focus();
 				}, 300)
@@ -605,10 +575,8 @@
 	});
 
 
-	// 전화번호 입력 적용 준비 중 스크립트
+	// 전화번호 입력
 	$DOM.on('focus', '.input_text.phone_full input', function () {
-		// console.log('진입 2');
-	
 		const $this = $(this);
 	
 		// 읽기 전용 또는 비활성화 상태일 경우 중단
@@ -645,7 +613,7 @@
 	
 		$this.val(val);
 	});
-	// 전화번호 입력 적용 준비 중 스크립트
+	// 전화번호 입력
 
 
 	// 유효기간 처리
@@ -774,7 +742,7 @@ function simpleInfo(){
 					// $targetChild.stop().slideDown(300);
 					// console.log('slideDown');
 					// console.log('ty2 no');
-				}else {
+				} else {
 					$targetChild.stop().show();
 					// console.log('ty2 checking');
 					if($('.tag_item_wrap.sticky').length){
@@ -868,26 +836,6 @@ function initPositionEventWrap($wrap) {
 				expHeight = exceptionHeight;
 			}
 		}
-
-		// const tabOffsetTop = $tab.position().top;
-
-		// 조건: scrollTop이 탭 위치에 도달한 경우
-
-		// if($wrap.find('.sii_wrap').length){
-		// 	const $sii = $wrap.find('.sii_wrap').children('.position_event_tab');
-		// 	const siiHeight = parseFloat($sii.css('padding-bottom'));
-			
-		// 	if (scrollTop >= tabOffsetTop - expHeight) {
-		// 		$sii.css({
-		// 			'margin-bottom' : '0'
-		// 		});
-		// 	} else {
-		// 		$sii.css({
-		// 			'margin-bottom' : '32px'
-		// 		});
-		// 	}
-		// }
-		// console.log(sHeight);
 
 		let activeIdx = -1;
 
@@ -997,12 +945,7 @@ function directTv() {
 		const $sp6 = '16';
 		// acd_cont 상단 여백
 		const $sp7 = '12';
-
 		$this.find('.acd_cont .inner').css('height', $wH - ($hi + $vt + $va + $thisTitle + $bfw + parseInt($sp1) + parseInt($sp2) + parseInt($sp3) + parseInt($sp4) + parseInt($sp5) + parseInt($sp6) - parseInt($sp7)) + 'px' );
-
-
-		console.log($wH);
-
 	});
 
 }
@@ -1015,14 +958,10 @@ function inpPhoneFormat() {
 			const $inp = $(this).children('.inp').find('input');
 			let val = $inp.val();
 			val = val.replace(/[^0-9*]/g, '');
-
-			// const HYPHEN = "\u2010";
-
 			newVal = ' - ' + val.replace(/([0-9*]{4})(?=[0-9*])/g, '$1 - ');
-			// newVal = `${HYPHEN} ` + val.replace(/([0-9*]{4})(?=[0-9*])/g, `$1 ${HYPHEN} `);
 			$inp.val(newVal).addClass('isVal');
 		}
-		// 전화번호 입력 적용 준비 중 스크립트
+		// 전화번호 입력
 		if( $(this).hasClass('phone_full') ) {
 			const $inp = $(this).children('.inp').find('input');
 			let val = $inp.val().replace(/[^0-9*]/g, "");
@@ -1033,7 +972,7 @@ function inpPhoneFormat() {
 			}
 			$inp.val(val);
 		}
-		// 전화번호 입력 적용 준비 중 스크립트
+		// 전화번호 입력
 	});
 }
 
@@ -1138,19 +1077,11 @@ $(function(){
 		duration: 300,
 		beforeShow: function () {
 			$("body").append('<div class="modal_backdrop"></div>');
-			// $("body").append('<div class="modal_backdrop"></div>');
-			// $("body").addClass('modal_open');
 			setTimeout(function(){
 				$("body").addClass('modal_open');
-				// const $dp = $("#ui-datepicker-div");
-				// $dp.find('.ui-datepicker-prev, .ui-datepicker-next').attr('tabindex', '0');
 			}, 50);
     },
     onClose: function(dateText, inst) { 
-			// setTimeout(function(){
-			// 	$('.modal_backdrop').remove();
-			// },200);
-			// $("body").removeClass('modal_open')
 			setTimeout(function(){
 				$('.modal_backdrop').remove();
 				$('.wrap').attr('aria-hidden', 'false');
@@ -1165,14 +1096,8 @@ $(function(){
 	});
 	// 월 선택용
 
-
-	
-
-
 	$(".inp_picker").datepicker();
 	$(".inp_picker_month").monthpicker();
-	// $('.inp_picker:not([readonly])').datepicker();
-	// $('.inp_picker_month:not([readonly])').monthpicker();
 
 	$(".calendar_call").on("click", function (e) {
 		e.preventDefault();
@@ -1192,12 +1117,6 @@ $(function(){
 		$('.ui-datepicker-calendar tbody tr td a').removeAttr('title');
 		$('.ui-datepicker-today a').attr('title', '오늘 날짜');
 		$('.ui-state-active').attr('title', '선택됨');
-		// 0.5초 후 readonly 제거
-		/*
-		setTimeout(function () {
-			$input.attr("readonly", false);
-		}, 500);
-		*/
 	
 		// 달력 내부 포커스로 이동 (접근성 강화)
 		setTimeout(function () {
@@ -1228,10 +1147,6 @@ $(function(){
 	
 		$('.ui-datepicker tbody tr td a').removeAttr('title');
 		$('.ui-datepicker-today a').attr('title', '선택됨');
-		// 0.5초 후 readonly 제거
-		// setTimeout(function () {
-		// 	$input.attr("readonly", false);
-		// }, 500);
 	
 		// 달력 내부 포커스로 이동 (접근성 강화)
 		setTimeout(function () {
@@ -1268,7 +1183,7 @@ $(function(){
 			// 그룹 전체 라디오 제어
 			$allCheck.on('change', function () {
 				const isChecked = $(this).is(':checked');
-				console.log(isChecked);
+				// console.log(isChecked);
 
 				if($(this).closest('.ag_groups').find('.ag_total').length) {
 					// 상위에 ag_total가 있으면 기존방식
@@ -1418,14 +1333,12 @@ $(function(){
 				noag.each(function () {
 					if ($(this).is(':checked')) {
 						isAgreed = false;
-						//console.log('noag : ' + isAgreed);
 						return false;
 					}
 				});
 				dpt2.each(function () {
 					if (!$(this).is(':checked')) {
 						isAgreed = false;
-						//console.log('확인중? : ' + isAgreed);
 						return false;
 					}
 				});
@@ -1433,9 +1346,7 @@ $(function(){
 			});
 	
 			const isAllAgreed = allGroups.length === agreedGroups.length;
-			// console.log('체크 : ' + allGroups.length + ' : ', + agreedGroups.length);
 			$totalCheck.prop('checked', isAllAgreed);
-			// console.log('$totalCheck : ' + $totalCheck);
 		}
 	});
 	// 라디오 약관 동의
@@ -1461,7 +1372,6 @@ $(function(){
 	// 확대 버튼 클릭 이벤트
 	$('.z_up').on('click', function() {
 		const zContent = $(this).closest('.zoom_wrap').find('.zoom_content');
-		// var currentFontSize = parseFloat($('.zoom_content').css('zoom'));
 		var currentFontSize = parseFloat(zContent.css('zoom'));
 		var newFontSize = currentFontSize + 0.1;
 		zContent.css('zoom', newFontSize);
@@ -1571,18 +1481,6 @@ $(function(){
 	}
 	autoCompleteEmail();
 
-	// 진입 시 전화번호 포맷 - readonly만 적용
-	// $('.input_text').each(function() {
-	// 	if( $(this).hasClass('phone') && $(this).hasClass('readonly') ){
-	// 		const $inp = $(this).children('.inp').find('input');
-	// 		let val = $inp.val();
-	// 		console.log(val);
-	// 		val = val.replace(/[^0-9]/g, '');
-	// 		newVal = ' - ' + val.replace(/(\d{4})(?=\d)/g, '$1 - ');
-	// 		$inp.val(newVal).addClass('isVal');
-	// 	}
-	// });
-
 	/* 페이지 내 스크롤 이벤트 */
 	$('.container').on('scroll', function(){
 		const $this = $(this),
@@ -1612,9 +1510,8 @@ $(function(){
 			const scrollTopVal = $(this).scrollTop(),
 						gtHeight = $('.guarantee_container .guarantee_detail_top').outerHeight(),
 						$fixTarget = $(this).find('.guarantee_detail_top');
-						// console.log(scrollTopVal, gtHeight);
 
-			if($('.guarantee_container.detail_only').length || !$('.guarantee_container_right').css('opacity') == '0'){
+						if($('.guarantee_container.detail_only').length || !$('.guarantee_container_right').css('opacity') == '0'){
 				if(scrollTopVal > gtHeight){
 					$fixTarget.addClass('sticky_fix');
 				}else {
@@ -1642,11 +1539,11 @@ $(function(){
 			const isExpanded = $panel.hasClass('active');
 
 			if(isExpanded) {
-				console.log('x');
+				// console.log('x');
 				$('#header').attr('aria-hidden', false);
 				$('#container').attr('aria-hidden', false);
 			} else {
-				console.log('fr');
+				// console.log('fr');
 				$('#header').attr('aria-hidden', true);
 				$('#container').attr('aria-hidden', true);
 			}
@@ -1696,13 +1593,10 @@ $(function(){
 		const $thisPopupCont = $(this); // 현재 스크롤된 .popup_cont
 		const $popupWrap = $thisPopupCont.closest('.popup_wrap');
 		const $fixedButton = $popupWrap.find('.scroll_down');
-		const $doneButton = $popupWrap.find('.done');
-	
+		const $doneButton = $popupWrap.find('.done');	
 		const currentScrollTopInPopup = $thisPopupCont.scrollTop();
 		const scrollHeight = this.scrollHeight; // DOM element 접근
 		const clientHeight = $thisPopupCont.height();
-	
-		// console.log('currentScrollTopInPopup: ' + currentScrollTopInPopup);
 	
 		// 스크롤이 최하단에 도달했는지 확인
 		if (currentScrollTopInPopup + clientHeight >= scrollHeight - 80) {
@@ -1735,7 +1629,6 @@ $(function(){
 				moveTargetPosition = $popupContThis.scrollTop();
 				scrollingChk = false; // 스크롤 완료 후 플래그 해제
 			});
-			console.log('event 1');
     } else {
       $popupContThis.animate({
         scrollTop: $popupContThis[0].scrollHeight - $popupContThis.outerHeight()
@@ -1744,7 +1637,6 @@ $(function(){
 				$(this).closest('.popup_wrap').find('.scroll_down').hide();
 				$(this).closest('.popup_wrap').find('.done').show();
 			});
-			console.log('event 2');
     }
   });
 	// e: 상품설명서 주요 내용 스크롤 버튼
@@ -1922,7 +1814,6 @@ function prograssCar(){
 		$bar.find('.newStart').removeClass('small');
 		$bar.find('.newStart').children('.spot').css({ left: '', 'margin-right': '' });
 		$bar.find('.newStart').children('em').css('left', '');
-		// console.log('실행');
 
 		// bar가 시작일과 겹칠 때
 		if((allW - barW) <= spotW + spaceW){
@@ -1936,12 +1827,12 @@ function prograssCar(){
 			}
 
 		// 기준일, 종료일 겹칠 때
-		}else if(barW <= (spotW * 2) + spaceW){
+		} else if (barW <= (spotW * 2) + spaceW){
 			$bar.find('.newStart').addClass('small');
 			$bar.find('.newStart').children('.spot').css('margin-right', spotW + spaceW + 'px');
 		
 		// 겹치지 않을 때
-		}else {
+		} else {
 			$bar.find('.newStart').children('.spot').css('left', '0');
 			$bar.find('.newStart').children('em').css('left', '0');
 		}
