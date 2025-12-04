@@ -459,7 +459,7 @@
 	transition: var(--t-time);
 }
 .bi_top .bit_inner_text {
-	padding-top: 1.6rem;
+	padding-top: var(--padding-6);
 	font-size: 2.4rem;
 	color: var(--color-text-bolder);
 	line-height: 1.4;
@@ -569,7 +569,7 @@
 	visibility: visible;
 	-webkit-transition: var(--t-time);
 	transition: var(--t-time);
-	background-color: #fff;
+	background-color: var(--color-background-white);
 }
 .bi_opts_wrap .opts_area .opts_area_item.column {
 	-webkit-box-orient: vertical;
@@ -1042,7 +1042,7 @@
 	font-size: 2.4rem;
 	color: var(--color-text-basic);
 	text-align: center;
-	background-color: #fff;
+	background-color: var(--color-background-white);
 }
 .bi_keypad_item .keypad_btn.keypad_btn_del {
 	background: #fff url(../images/content/bi/icon_del.svg) no-repeat center center;
@@ -1925,21 +1925,6 @@
 .bn_item_wrap.ty1 a.opt2 {
 	background-image: url(../images/content/ho/icon_benefit01_2.svg);
 }
-.bn_item_wrap.ty1.bn_item_wrap_exp {
-	-ms-scroll-snap-type: none;
-	scroll-snap-type: none;
-}
-.bn_item_wrap.ty1.bn_item_wrap_exp > li {
-	-webkit-box-flex: 0;
-	-ms-flex: none;
-	flex: none;
-	width: 55%;
-	padding: 0;
-}
-.bn_item_wrap.ty1.bn_item_wrap_exp a {
-	display: block;
-	width: 100%;
-}
 .bn_item_wrap.ty2 a {
 	-webkit-box-flex: 1;
 	-ms-flex: 1;
@@ -1959,7 +1944,7 @@
 	background-repeat: no-repeat;
 	background-size: 5.6rem auto;
 	background-position: 2.4rem 2.4rem;
-	background-color: #fff;
+	background-color: var(--color-background-white);
 }
 .bn_item_wrap.ty2 a.opt1 {
 	background-image: url(../images/content/ho/icon_benefit02_1.png);
@@ -1983,7 +1968,6 @@
 .bn_item_wrap.ty3 a {
 	scroll-snap-align: start;
 	padding: var(--padding-9) var(--padding-8);
-	width: 55%;
 }
 .bn_item_wrap.ty3 a img {
 	margin: auto;
@@ -2026,7 +2010,7 @@
 }
 /* 웹접근성 대응 ios */
 /* 추후 삭제 */
-.Ios .bn_item_wrap.ty5 {
+.Ios .bn_item_wrap:not(.ty2) {
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-ms-flex-flow: row wrap;
@@ -2036,7 +2020,8 @@
 	scroll-padding: 0;
 	overflow: auto;
 }
-.Ios .bn_item_wrap.ty5 > div {
+.Ios .bn_item_wrap:not(.ty2) > a,
+.Ios .bn_item_wrap:not(.ty2) > div {
 	-webkit-box-flex: 1;
 	-ms-flex: 1 1 calc(50% - 0.4rem);
 	flex: 1 1 calc(50% - 0.4rem);
@@ -2294,7 +2279,7 @@
 	border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 }
 .input_form_box .input_item_wrap .acd_item .acd_head {
-	background-color: #fff;
+	background-color: var(--color-background-white);
 	overflow: hidden;
 }
 .input_form_box .input_item_wrap .acd_item .acd_head .acd_btn {
@@ -2302,7 +2287,7 @@
 	width: 100%;
 	padding: var(--padding-7) 4.8rem var(--padding-7) var(--padding-8);
 	font-size: var(--font-size-label-medium);
-	background-color: #fff;
+	background-color: var(--color-background-white);
 	-webkit-transition: all 0.4s;
 	transition: all 0.4s;
 }
@@ -2326,7 +2311,7 @@
 	padding-bottom: var(--padding-5);
 }
 .input_form_box .input_item_wrap .acd_item .acd_cont {
-	background-color: #fff;
+	background-color: var(--color-background-white);
 }
 .input_form_box .input_item_wrap .acd_item .acd_cont .inner {
 	padding: 0 2.4rem 2rem;
@@ -2364,7 +2349,7 @@
 }
 .discount_item_box {
 	padding: var(--padding-3) var(--padding-7) var(--padding-3);
-	background-color: #fff;
+	background-color: var(--color-background-white);
 	border-radius: var(--radius-large2);
 }
 .discount_item_box .item {
@@ -2450,7 +2435,7 @@
 }
 .discount_item_box .bottom_info_wrap {
 	border-top: 1px solid var(--color-border-information-light);
-	padding-top: 1.6rem;
+	padding-top: var(--padding-6);
 	text-align: center;
 }
 .discount_item_box .bottom_info_wrap strong {
@@ -3379,7 +3364,7 @@
 }
 .border_list .list ~ .list {
 	margin-top: var(--gap-5);
-	padding-top: 1.6rem;
+	padding-top: var(--padding-6);
 	border-top: var(--border-width-static-regular) solid var(--color-border-gray-light);
 }
 .border_list .list .right {
@@ -3393,7 +3378,7 @@
 }
 .border_list + .badge_wrap {
 	margin-top: var(--gap-5);
-	padding-top: 1.6rem;
+	padding-top: var(--padding-6);
 	border-top: var(--border-width-static-regular) solid var(--color-border-gray-light);
 }
 /* 자동차보험 - 입력정보 요약 */
@@ -3401,7 +3386,7 @@
 	padding-bottom: 6rem;
 }
 .sii_wrap .tag_item_wrap {
-	background-color: #fff;
+	background-color: var(--color-background-white);
 }
 .sii_wrap .tag_item_wrap.sticky {
 	position: sticky;
@@ -3417,7 +3402,7 @@
 	left: -2.4rem;
 	width: calc(100% + 2.4rem);
 	height: 1.6rem;
-	background-color: #fff;
+	background-color: var(--color-background-white);
 }
 .sii_wrap .position_event_content {
 	margin-top: 3.2rem;
@@ -4018,7 +4003,7 @@
 }
 .guarantee_detail .guarantee_detail_top.sticky_fix .splide_wrap .splide__slide.effect .gd_item {
 	opacity: 1;
-	background-color: #fff;
+	background-color: var(--color-background-white);
 }
 .guarantee_detail .guarantee_detail_top.sticky_fix .splide_wrap .swiper_button {
 	width: 3.2rem;
@@ -4352,7 +4337,7 @@
 	margin-top: var(--gap-4);
 }
 .guarantee_detail .gd_item .gdi_content .gdi_content_list > li {
-	padding-top: 1.6rem;
+	padding-top: var(--padding-6);
 	border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 }
 .guarantee_detail .gd_item .gdi_content .gdi_content_list > li + li {
@@ -4469,7 +4454,7 @@
 	-ms-flex-flow: row wrap;
 	flex-flow: row wrap;
 	gap: var(--gap-1) var(--gap-3);
-	padding-left: 0.8rem;
+	padding-right: var(--padding-3);
 	font-size: var(--font-size-body-small);
 	color: var(--color-text-subtle);
 }
@@ -4729,7 +4714,7 @@
 	z-index: 10;
 	padding-top: var(--padding-6);
 	padding-bottom: var(--padding-7);
-	background-color: #fff;
+	background-color: var(--color-background-white);
 	-webkit-box-shadow: 0px var(--shadow-y-2) var(--shadow-blur-2) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
 	box-shadow: 0px var(--shadow-y-2) var(--shadow-blur-2) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
 	border-radius: 0px 0px var(--padding-6) var(--padding-6);
@@ -6192,7 +6177,7 @@ ul + .form_group_wrap {
 	width: -moz-fit-content;
 	width: fit-content;
 	position: relative;
-	padding-left: 0.8rem;
+	padding-right: var(--padding-3);
 	padding-top: 0.2rem;
 	font-size: var(--font-size-body-small);
 	color: var(--color-text-subtle);
@@ -6585,7 +6570,7 @@ ul + .form_group_wrap {
 	margin-top: 0;
 }
 .bg_top_cover .info_gray.bg_etc01 .total.car .chg_rate dt {
-	padding-top: 1.6rem;
+	padding-top: var(--padding-6);
 }
 .bg_top_cover .info_gray.bg_etc01 .total.car .chg_rate dd .total_bic {
 	display: block;
@@ -6683,7 +6668,7 @@ ul + .form_group_wrap {
 }
 .contact_list > li + li {
 	margin-top: var(--gap-5);
-	padding-top: 1.6rem;
+	padding-top: var(--padding-6);
 	border-top: var(--border-width-static-regular) solid var(--color-border-gray-light);
 }
 .contact_list > li .item {
@@ -6734,7 +6719,7 @@ ul + .form_group_wrap {
 	margin-top: var(--gap-6);
 }
 .fc_img_wrap .item .title_h4 {
-	padding-bottom: 1.6rem;
+	padding-bottom: var(--padding-6);
 }
 .fc_img_wrap .item .img {
 	font-size: 0;
@@ -6890,10 +6875,10 @@ ul + .form_group_wrap {
 	color: var(--color-text-basic);
 }
 .my_info_flow > li .frame_list {
-	padding-top: 1.6rem;
+	padding-top: var(--padding-6);
 }
 .my_info_flow > li .frame_list .file_attach_box .file_thumbnail {
-	background-color: #fff;
+	background-color: var(--color-background-white);
 }
 .my_info_flow.certify {
 	counter-reset: number 0;
@@ -7022,7 +7007,7 @@ ul + .form_group_wrap {
 	background-color: var(--color-surface-warning-subtler);
 }
 .wrap.service .container {
-	padding-bottom: 1.6rem;
+	padding-bottom: var(--padding-6);
 }
 .is_diagnosis_service .service_visual {
 	margin: -1.6rem -2.4rem 0;
@@ -8071,7 +8056,7 @@ ul + .form_group_wrap {
 	-ms-flex-direction: column;
 	flex-direction: column;
 	gap: var(--gap-8);
-	margin-bottom: 1.6rem;
+	margin-top: var(--gap-5);
 	padding: 1.6rem 0 1.7rem;
 	border-bottom: 1px solid #e6e8ea;
 }
@@ -8108,7 +8093,7 @@ ul + .form_group_wrap {
 }
 .text_list > li {
 	position: relative;
-	padding-left: 1.6rem;
+	padding-left: var(--padding-6);
 	font-size: var(--font-size-body-xsmall);
 	color: var(--color-text-information);
 }
@@ -8468,7 +8453,7 @@ ul + .form_group_wrap {
 }
 .prd_car .benefit_top_wrap .item_benefit_top .bn_list > li {
 	position: relative;
-	padding-left: 0.8rem;
+	padding-right: var(--padding-3);
 	font-size: var(--font-size-body-small);
 	color: var(--color-text-information);
 }
@@ -8734,7 +8719,7 @@ ul + .form_group_wrap {
 .prd_car .my_info_flow .img_wrap_ex {
 	margin-top: var(--gap-4);
 	height: 32rem;
-	background-color: #fff;
+	background-color: var(--color-background-white);
 	border-radius: 1.6rem 1.6rem 0 0;
 	border: none;
 	overflow: hidden;
