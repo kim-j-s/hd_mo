@@ -94,13 +94,21 @@
 
 		&:read-only {
 			background-color: var(--color-input-surface-disabled);
+			opacity: 1 !important;
+			-webkit-appearance: none;
+			-webkit-text-fill-color: var(--color-text-basic); /* iOS에서 글자 흐려지는 문제 해결 */
+			color: var(--color-text-basic);
+
 			& + .del {
 				display: none !important;
 			}
 		}
 		&:disabled {
+			background-color: var(--color-input-surface-disabled);
+			opacity: 1 !important;
+			-webkit-appearance: none;
+			-webkit-text-fill-color: var(--color-text-disabled-on); /* iOS에서 글자 흐려지는 문제 해결 */
 			color: var(--color-text-disabled-on) !important;
-			background-color: var(--color-input-surface-disabled);			
 		}
 		&:focus {
 			outline: none;
