@@ -361,41 +361,41 @@
         }
     }
     &.product {
-        background-repeat: no-repeat;
-        background-size: 140px auto;
-        background-position: right 77px;
-        @for $i from 1 through 8 {
-            &.bg_ty0#{$i}{
-                background-image: url(../images/content/ho/bg_product#{$i}.png);
-            }
-        }
-        .title_h6 {
-            + .pro_tit {
-                margin: var(--gap-5) 0;
-                min-height: 132px;
-                padding: 0 105px var(--gap-4) 0;
-                > * {
-                    margin-top: var(--gap-2);
-                }
-                + .bn_scroll_wrap {
-                    margin: var(--gap-5) -32px;
-                }
-								.h2_title {
-									display: flex;
-									flex-flow: row wrap;
-									gap: var(--gap-3);
-									> strong {
-										flex: none;
-									}
-									.badge_wrap {
-										flex: none;
-										width: auto;
-										align-items: flex-start;
-										padding-top: 3px;
-									}
-								}
-            }
-        }
+			background-repeat: no-repeat;
+			background-size: 140px auto;
+			background-position: right 77px;
+			@for $i from 1 through 8 {
+				&.bg_ty0#{$i}{
+					background-image: url(../images/content/ho/bg_product#{$i}.png);
+				}
+			}
+			.title_h6 {
+				+ .pro_tit {
+					margin: var(--gap-5) 0;
+					min-height: 132px;
+					padding: 0 105px var(--gap-4) 0;
+					> * {
+							margin-top: var(--gap-2);
+					}
+					+ .bn_scroll_wrap {
+							margin: var(--gap-5) -32px;
+					}
+					.h2_title {
+						display: flex;
+						flex-flow: row wrap;
+						gap: var(--gap-3);
+						> strong {
+							flex: none;
+						}
+						.badge_wrap {
+							flex: none;
+							width: auto;
+							align-items: flex-start;
+							padding-top: 3px;
+						}
+					}
+				}
+			}
     }
     
     &.bn_box {
@@ -593,19 +593,6 @@
 				}
 			}
 		}
-		&.bn_item_wrap_exp {
-			scroll-snap-type: none;
-			> li {
-				flex: none;
-				width: 55%;
-				padding: 0;
-				// scroll-snap-align: start;
-			}
-			a {
-				display: block;
-				width: 100%;
-			}
-		}
 	}
 	&.ty2 {
 		a {
@@ -613,7 +600,6 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			// padding-top: 96px;
 			min-height: 104px;
 			padding-left: 96px;
 			background-repeat: no-repeat;
@@ -646,9 +632,6 @@
 			a {
 					scroll-snap-align: start;
 					padding: var(--padding-9) var(--padding-8);
-					// 접근성용 css 추후 삭제
-					width: 55%;
-					// 접근성용 css 추후 삭제
 					img {
 							margin: auto;
 							display: block;
@@ -704,11 +687,13 @@
 /* 추후 삭제 */
 .Ios {
 	.bn_item_wrap {
-		&.ty5 {
+		// 3 4 5
+		&:not(.ty2) {
 			flex-flow: row wrap;
 			scroll-snap-type: none;
 			scroll-padding: 0;
 			overflow: auto;
+			> a,
 			> div {
 				flex: 1 1 calc(50% - 4px);
 			}
