@@ -43,7 +43,7 @@
 			.item_list {
 				position: relative;
 				display: block;
-				padding-left: 8px;
+				padding-right: var(--padding-3);
 				color: var(--color-text-basic);
 
 				&:before {
@@ -66,11 +66,6 @@
 				&::before {
 					content: none;
 				}
-				// 접근성 관련 삭제
-				// + .ad_stat {
-				// 	display: block;
-				// }
-				// 접근성 관련 삭제
 			}
 		}
 		&:focus {
@@ -83,7 +78,6 @@
 		outline: none;
 	}
 	&[aria-disabled="true"] {
-		// pointer-events: none;
 		.ad_item {
 			background-color: var(--color-input-surface-disabled);
 			&:empty {
