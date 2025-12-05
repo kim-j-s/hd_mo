@@ -41,7 +41,7 @@
 		<script type="text/javascript" src="../../../js/scroll_option.js"></script>
 		<link rel="stylesheet" href="../../../css/libs/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="../../../css/libs/splide.min.css" />
-		<title>팝업 | 가이드 - 현대해상 다이렉트</title>
+		<title>가입완료 | 상품 - 현대해상 다이렉트</title>
 
 		<link rel="stylesheet" href="../../../css/reset.css" />
 		<link rel="stylesheet" href="../../../css/common.css" />
@@ -49,32 +49,61 @@
 		<link rel="stylesheet" href="../../../css/popup.css" />
 	</head>
 	<body>
-		<!-- s: alert2 -->
-		<div class="popup_wrap layer active" id="pop_type01" role="dialog" aria-hidden="false">
+		<!-- s: popup area -->
+		<div class="popup_wrap bottom close_exp active" id="pop_type01" role="dialog" aria-modal="true" aria-hidden="false">
 			<div class="popup_container">
-				<div class="popup_dim" aria-hidden="true" onclick="closeHDPopup('pop_type01');"></div>
 				<div class="popup_inner">
-					<div class="popup_head"></div>
+					<div class="draggable" aria-hidden="true">
+						<div class="move"></div>
+					</div>
+					<div class="popup_head">
+						<div class="popup_head_title">자동차보험 가입증명서 발송</div>
+					</div>
+
 					<div class="popup_cont">
 						<div class="popup_content">
-							<!-- info Case -->
-
-							<div class="msg_icon mi_info"></div>
-							<div>
-								<!-- html -->
-								<p class="pl_msg_top txt_center">타이틀</p>
-								<div class="info_text">
-									<ul class="list_ty3">
-										<li>리스트형 문구 삽입</li>
-										<li>리스트형 문구 삽입</li>
+							<div class="info_cont">
+								<p class="info_text">가입증명서를 발송하고자 하는 이메일 또는 팩스를 선택하고, 수신 받는 정보를 입력하시기 바랍니다.</p>
+							</div>
+							<div class="form_group_wrap">
+								<div class="form_line">
+									<div class="label_tit">발급방법</div>
+									<div class="radio_group_wrap" role="radiogroup">
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="send01_01" name="send01" />
+											<label for="send01_01">
+												<span class="label_cont">이메일</span>
+											</label>
+										</div>
+										<div class="inp_radio rd_btn">
+											<input type="radio" id="send01_02" name="send01" />
+											<label for="send01_02">
+												<span class="label_cont">팩스</span>
+											</label>
+										</div>
+									</div>
+									<div class="form_group_wrap">
+										<div class="form_line">
+											<!-- 이메일 선택 -->
+											<div class="input_text">
+												<div class="inp">
+													<input type="email" class="email_auto" placeholder="이메일 입력" title="이메일 입력" />
+													<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+												</div>
+											</div>
+											<!-- 팩스 선택 -->
+											<div class="input_text">
+												<div class="inp">
+													<input type="tel" placeholder="숫자만 입력" title="팩스번호 입력" />
+													<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<ul class="list_ty2">
+										<li>자동차보험 가입증명서는 현대해상 홈페이지(www.hi.co.kr 또는 m.hi.co.kr)에서도 발급 가능합니다.</li>
 									</ul>
-
-									<p class="pl_txt1">서브 문구</p>
-									<p class="pl_txt1">
-										<strong class="point">서브 문구 강조 시</strong>
-									</p>
 								</div>
-								<!-- html -->
 							</div>
 						</div>
 					</div>
@@ -89,6 +118,6 @@
 				</div>
 			</div>
 		</div>
-		<!-- e: alert2 -->
+		<!-- e: popup area -->
 	</body>
 </html>

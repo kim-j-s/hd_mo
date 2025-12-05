@@ -473,7 +473,9 @@
 										지금 점검해보세요
 									</h2>
 									<div class="btn_area center">
-										<a href="#service_input" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+										<!-- s: 25-12-05 수정 -->
+										<a href="#service_input" role="button" class="hd_btn hd_btn_ty_1 hd_btn_s_2">
+											<!-- e: 25-12-05 수정 -->
 											<span class="text">보험 진단을 시작할게요</span>
 										</a>
 									</div>
@@ -601,6 +603,29 @@
 				}
 			}
 			/* e: 25-11-28 수정 */
+
+			/* s: 25-12-05 수정 */
+			$(function () {
+				$("#container").on("scroll", function () {
+					const $container = $(this);
+					const $wrap = $container.closest(".wrap");
+					const $inner = $container.find(".service_visual");
+
+					if (!$inner.length) return;
+
+					const innerH = $inner.outerHeight();
+					const scrollTop = $container.scrollTop();
+
+					// console.log(innerH, scrollTop);
+
+					if (scrollTop > innerH) {
+						$wrap.removeClass("service");
+					} else {
+						$wrap.addClass("service");
+					}
+				});
+			});
+			/* e: 25-12-05 수정 */
 		</script>
 
 		<!-- 전체메뉴 -->
