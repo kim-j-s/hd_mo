@@ -6751,6 +6751,7 @@ sup {
 	height: calc(100% + 0.2rem);
 	border: var(--border-width-static-medium) solid #f8633c;
 	border-radius: var(--radius-large2);
+	pointer-events: none;
 }
 .card_item_wrap .card_item .item_inner .inp_radio input:checked + .chk_label_ty4:before,
 .card_item_wrap .card_item .item_inner .inp_checkbox input:checked + .chk_label_ty4:before {
@@ -7870,10 +7871,9 @@ sup {
 .card_item_wrap.card_item_wrap_tyexp2 .card_item input:checked + .chk_label .title_info::after {
 	content: "선택됨";
 	position: absolute;
-	top: 0;
-	right: 0;
 	width: 1px;
 	height: 1px;
+	background-color: blue;
 	overflow: hidden;
 }
 .card_item_wrap.card_item_wrap_tyexp2 .card_item.selected .inp_checkbox .chk_label .title_info::after {
@@ -7888,6 +7888,18 @@ sup {
 .card_item_wrap.card_item_wrap_tyexp2 .inner_cont {
 	width: 100% !important;
 	margin-left: 0 !important;
+}
+.card_item_wrap.card_item_wrap_tyexp2 .item_inner .inp_radio .chk_label::after,
+.card_item_wrap.card_item_wrap_tyexp2 .item_inner .inp_checkbox .chk_label::after {
+	content: none;
+}
+.card_item_wrap.card_item_wrap_tyexp2 .item_inner .checkbox_group_wrap .inp_radio input:checked + .chk_label .label_cont::after,
+.card_item_wrap.card_item_wrap_tyexp2 .item_inner .checkbox_group_wrap .inp_checkbox input:checked + .chk_label .label_cont::after {
+	content: "선택됨";
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
 }
 .special_contract_list.card_item_wrap_tyexp2 .inp_radio input,
 .special_contract_list.card_item_wrap_tyexp2 .inp_checkbox input {
@@ -13205,13 +13217,13 @@ ol li .table_wrap + .list_ty2 li + li {
 	justify-content: center;
 	height: 5.6rem;
 	font-weight: 700;
-	font-size: var(--font-size-button-CTA-bold);
+	font-size: var(--font-size-button-cta-bold);
 	color: var(--color-text-disabled);
 	border-radius: var(--radius-medium3);
 	border: var(--border-width-static-regular) solid var(--color-element-inverse);
 	background-color: var(--color-element-inverse);
-	-webkit-transition: border-color 0.3s background-color 0.3s;
-	transition: border-color 0.3s background-color 0.3s;
+	-webkit-transition: border-color 0.3s, background-color 0.3s;
+	transition: border-color 0.3s, background-color 0.3s;
 }
 .opt_select_wrap .opt_select input:checked + label {
 	color: var(--color-text-basic);
