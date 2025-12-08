@@ -7858,7 +7858,7 @@ sup {
 	font-size: var(--font-size-body-small);
 	color: var(--color-text-subtle);
 }
-/* 추후 삭제 */
+/* 접근성 관련 보충 - d */
 .card_item_wrap.card_item_wrap_tyexp2 .card_item input {
 	display: none;
 }
@@ -7893,13 +7893,21 @@ sup {
 .card_item_wrap.card_item_wrap_tyexp2 .item_inner .inp_checkbox .chk_label::after {
 	content: none;
 }
-.card_item_wrap.card_item_wrap_tyexp2 .item_inner .checkbox_group_wrap .inp_radio input:checked + .chk_label .label_cont::after,
-.card_item_wrap.card_item_wrap_tyexp2 .item_inner .checkbox_group_wrap .inp_checkbox input:checked + .chk_label .label_cont::after {
-	/* content: "선택됨"; */
-	/* position: absolute; */
-	/* width: 1px; */
-	/* height: 1px; */
-	/* overflow: hidden; */
+.card_item_wrap.card_item_wrap_tyexp2 .item_inner .checkbox_group_wrap .inp_radio input:checked + .chk_label .label_cont,
+.card_item_wrap.card_item_wrap_tyexp2 .item_inner .checkbox_group_wrap .inp_checkbox input:checked + .chk_label .label_cont {
+	/*
+  &::after {
+  	content: '선택됨';
+  	position: absolute;
+  	width: 1px;
+  	height: 1px;
+  	overflow: hidden;
+  }
+  */
+}
+.card_item_wrap.card_item_wrap_tyexp2 .item_inner .checkbox_group_wrap .inp_radio .chk_label,
+.card_item_wrap.card_item_wrap_tyexp2 .item_inner .checkbox_group_wrap .inp_checkbox .chk_label {
+	cursor: auto;
 }
 .special_contract_list.card_item_wrap_tyexp2 .inp_radio input,
 .special_contract_list.card_item_wrap_tyexp2 .inp_checkbox input {
@@ -7913,7 +7921,7 @@ sup {
 .special_contract_list.card_item_wrap_tyexp2 .inp_checkbox input + label::before {
 	content: none;
 }
-/* 추후 삭제 */
+/* 접근성 관련 보충 - d */
 /* checkbox */
 /* Checkbox */
 .inp_checkbox {
