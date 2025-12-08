@@ -172,9 +172,9 @@
 		  isReadonly = $this.prop('readonly');
 		let val = $this.val();
       
-    // if($del.length) {
-    //   $del.attr('tabindex', '0').attr('aria-disabled', false);
-    // }
+    if($del.length) {
+      $del.attr('tabindex', '0').attr('aria-disabled', false);
+    }
 
 		if (!isDisabled && !isReadonly) {
 			if(val){
