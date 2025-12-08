@@ -449,6 +449,7 @@
 						height: calc(100% + 2px);
 						border: var(--border-width-static-medium) solid #F8633C;
 						border-radius: var(--radius-large2);
+						pointer-events: none;
 						// transition: border-color .2s ease;
 					}
 
@@ -1753,10 +1754,11 @@
 							&::after {
 								content: '선택됨';
 								position: absolute;
-								top: 0;
-								right: 0;
+								// top: 0;
+								// right: 0;
 								width: 1px;
 								height: 1px;
+								background-color: blue;
 								overflow: hidden;
 							}
 						}
@@ -1786,6 +1788,42 @@
 		.inner_cont {
 			width: 100% !important;
 			margin-left: 0 !important;
+		}
+		.item_inner {
+			.inp_radio,
+			.inp_checkbox {
+				.chk_label {
+					&::after {
+						content: none;
+					}
+				}
+			}
+			.checkbox_group_wrap {
+				.inp_radio,
+				.inp_checkbox {
+					input {
+						&:checked {
+							+ .chk_label {
+								// background-color: red;
+								.label_cont {
+									&::after {
+										content: '선택됨';
+										position: absolute;
+										// top: 0;
+										// right: 0;
+										width: 1px;
+										height: 1px;
+										// width: 10px;
+										// height: 10px;
+										// background-color: red;
+										overflow: hidden;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
