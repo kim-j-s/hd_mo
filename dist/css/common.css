@@ -1018,6 +1018,7 @@ sup {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
+	color: var(--color-text-basic);
 }
 .trend.up {
 	color: var(--color-text-point);
@@ -7868,23 +7869,6 @@ sup {
 .card_item_wrap.card_item_wrap_tyexp2 .card_item input + label::before {
 	content: none;
 }
-.card_item_wrap.card_item_wrap_tyexp2 .card_item input:checked + .chk_label .title_info::after {
-	content: "선택됨";
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	background-color: blue;
-	overflow: hidden;
-}
-.card_item_wrap.card_item_wrap_tyexp2 .card_item.selected .inp_checkbox .chk_label .title_info::after {
-	content: "선택됨";
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
-}
 .card_item_wrap.card_item_wrap_tyexp2 .inner_cont {
 	width: 100% !important;
 	margin-left: 0 !important;
@@ -9834,6 +9818,14 @@ sup {
 .price.input_text .inp input {
 	padding-right: 0;
 	text-align: right;
+}
+.weight.input_text .inp input:-moz-read-only,
+.price.input_text .inp input:-moz-read-only {
+	-webkit-text-fill-color: var(--color-text-primary-bold);
+}
+.weight.input_text .inp input:read-only,
+.price.input_text .inp input:read-only {
+	-webkit-text-fill-color: var(--color-text-primary-bold);
 }
 .weight.input_text .inp.active input,
 .price.input_text .inp.active input {
