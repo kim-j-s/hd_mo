@@ -974,11 +974,17 @@
 								// block: 'nearest', // 세로 스크롤 위치
 								behavior: 'auto' 
 							});
-						}, 10);
-							setTimeout(function () {
-								$wrap.css('scroll-snap-type', 'x mandatory');
-							}, 50);
-					});
+							
+							setTimeout(() => {
+									el.focus();   // ← 여기! VoiceOver 커서까지 이동됨
+							}, 80);
+
+							// snap을 다시 켜기
+							setTimeout(() => {
+									$wrap.css('scroll-snap-type', 'x mandatory');
+							}, 120);
+						});
+					}, 10);
 				});
 
 
