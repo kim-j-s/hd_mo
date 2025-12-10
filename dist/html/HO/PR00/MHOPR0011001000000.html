@@ -967,10 +967,13 @@
 						setTimeout(function () {
 							el.scrollIntoView({
 								inline: 'center',
-								block: 'nearest',
+								// block: 'nearest',
 								behavior: 'auto'
 							});
-						}, 50);
+							setTimeout(function () {
+								$wrap.css('scroll-snap-type', 'x mandatory');
+						}, 80);
+						}, 10);
 					});
 				});
 
