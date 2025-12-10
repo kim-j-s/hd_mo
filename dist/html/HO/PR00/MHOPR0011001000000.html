@@ -959,7 +959,22 @@
 							$(".container.home").removeClass("scrolled");
 						}
 					}, 80); // 스크롤 연속 이벤트 방지를 위해 약간의 debounce
+
+					
+
+					$('.bn_scroll_wrap .bn_item_wrap > div').on('focus', function () {
+						const el = this;
+						requestAnimationFrame(function () {
+							el.scrollIntoView({
+								inline: 'center',
+								block: 'nearest',
+								behavior: 'auto'
+							});
+						});
+					});
 				});
+
+
 
 				// ───────────────────────────────────────────────
 				// 상단 버튼 영역 가로 스크롤 중앙 정렬 함수
