@@ -1,0 +1,58 @@
+{{#> layout/default page-title="상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-back=true h-title="이어서 가입하기" }}
+
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
+				<h2 class="title_h2">
+					<strong>계약자</strong>(보험료 납입하실 분)를<br/>
+					확인하기 위해 <strong>본인인증</strong>이 필요해요
+				</h2>
+			</div>
+			<!-- e: content_top -->
+
+			<div class="info_cont">			
+				<div class="title_h3">계약자(보험료 납입하실 분)</div>
+
+				<div class="form_group_wrap">
+
+					<div class="form_line">
+						<div class="label_tit">이름</div>
+						{{> cp/text placeholder="이름 입력" inp-title="이름 입력" }}
+					</div>
+
+					<div class="form_line">
+						<div class="label_tit">주민등록번호</div>
+						<div class="comp_wrap birth">
+							{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞 6자리" inp-title="주민등록번호 앞자리 입력" }}
+							<span class="dash">-</span>
+							{{> cp/keypad7 case1=true kt="주민등록번호 뒤 7자리 입력" }}
+						</div>
+					</div>
+
+					<div class="form_line">
+						<div class="label_tit">휴대폰번호</div>
+						{{> cp/text class="phone phone_full" type="tel" placeholder="- 없이 입력" maxlength="8" inp-title="휴대폰번호 입력" }}
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="정보를 입력 중이에요" disabled=true }}
+			<!-- {{> cp/button type="1" size="1" b-text="인증하기" }} -->
+		</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
+</div>
+
+<!-- s: popup area -->
+<!-- e: popup area -->
+{{/ layout/default }}
