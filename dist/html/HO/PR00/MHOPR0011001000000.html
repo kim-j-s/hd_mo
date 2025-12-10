@@ -959,7 +959,35 @@
 							$(".container.home").removeClass("scrolled");
 						}
 					}, 80); // 스크롤 연속 이벤트 방지를 위해 약간의 debounce
+
+					
+
+					$('.bn_scroll_wrap .bn_item_wrap > div').on('focus', function () {
+						const el = this;
+						const $wrap = $('.bn_scroll_wrap .bn_item_wrap');
+
+						$wrap.css('scroll-snap-type', 'none');
+
+						setTimeout(function () {
+							el.scrollIntoView({
+								inline: 'center', // 가로 스크롤 위치
+								// block: 'nearest', // 세로 스크롤 위치
+								behavior: 'auto' 
+							});
+							
+							setTimeout(() => {
+									el.focus();   // ← 여기! VoiceOver 커서까지 이동됨
+							}, 80);
+
+							// snap을 다시 켜기
+							setTimeout(() => {
+									$wrap.css('scroll-snap-type', 'x mandatory');
+							}, 120);
+						});
+					}, 10);
 				});
+
+
 
 				// ───────────────────────────────────────────────
 				// 상단 버튼 영역 가로 스크롤 중앙 정렬 함수
