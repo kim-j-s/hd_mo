@@ -2912,15 +2912,16 @@ sup {
 	border-radius: 0px 4rem 4rem 0px;
 }
 .agree_qr_box {
+	position: relative;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	width: 100%;
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
 	gap: var(--gap-3);
-	width: 100%;
-	margin-top: var(--gap-5);
+	padding-top: var(--gap-5);
 }
 .agree_qr_box .qr_box {
 	display: none;
@@ -2930,6 +2931,9 @@ sup {
 	display: block;
 	width: 6rem;
 	height: auto;
+}
+.agree_qr_box + .table_wrap {
+	margin-top: var(--gap-5);
 }
 .sep_chk_box {
 	margin-top: var(--gap-5);
@@ -3188,10 +3192,10 @@ sup {
 	color: var(--color-text-bolder);
 }
 .acd_item.acd_item_ty2 .acd_head .acd_btn:after {
+	content: "";
 	position: absolute;
 	top: calc(50% - 1.6rem);
 	right: 0;
-	content: "";
 	width: 3.2rem;
 	height: 3.2rem;
 	background: url(../images/icon/arrowDown_ty3.svg) no-repeat center/2.4rem auto;
@@ -3233,9 +3237,9 @@ sup {
 }
 .acd_item.acd_item_ty2 .acd_cont {
 	position: relative;
+	padding: 0 2rem;
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
-	padding: 0 2rem;
 }
 .acd_item.acd_item_ty2 .acd_cont::before {
 	content: "";
@@ -6215,6 +6219,9 @@ sup {
 	color: var(--color-text-basic-inverse);
 	font-size: var(--font-size-label-xsmall);
 }
+.calendar_tbl > table .day_departure.golf .text:after {
+	content: "시작일";
+}
 .calendar_tbl > table .day_arrival .text:after {
 	content: "도착일";
 	padding-top: 0.4rem;
@@ -7856,53 +7863,6 @@ sup {
 	font-size: var(--font-size-body-small);
 	color: var(--color-text-subtle);
 }
-/* 접근성 관련 보충 - d */
-.card_item_wrap.card_item_wrap_tyexp2 .card_item input {
-	display: none;
-}
-.card_item_wrap.card_item_wrap_tyexp2 .card_item input + label {
-	padding-left: 0 !important;
-}
-.card_item_wrap.card_item_wrap_tyexp2 .card_item input + label::before {
-	content: none;
-}
-.card_item_wrap.card_item_wrap_tyexp2 .inner_cont {
-	width: 100% !important;
-	margin-left: 0 !important;
-}
-.card_item_wrap.card_item_wrap_tyexp2 .item_inner .inp_radio .chk_label::after,
-.card_item_wrap.card_item_wrap_tyexp2 .item_inner .inp_checkbox .chk_label::after {
-	content: none;
-}
-.card_item_wrap.card_item_wrap_tyexp2 .item_inner .checkbox_group_wrap .inp_radio input:checked + .chk_label .label_cont,
-.card_item_wrap.card_item_wrap_tyexp2 .item_inner .checkbox_group_wrap .inp_checkbox input:checked + .chk_label .label_cont {
-	/*
-  &::after {
-  	content: '선택됨';
-  	position: absolute;
-  	width: 1px;
-  	height: 1px;
-  	overflow: hidden;
-  }
-  */
-}
-.card_item_wrap.card_item_wrap_tyexp2 .item_inner .checkbox_group_wrap .inp_radio .chk_label,
-.card_item_wrap.card_item_wrap_tyexp2 .item_inner .checkbox_group_wrap .inp_checkbox .chk_label {
-	cursor: auto;
-}
-.special_contract_list.card_item_wrap_tyexp2 .inp_radio input,
-.special_contract_list.card_item_wrap_tyexp2 .inp_checkbox input {
-	display: none !important;
-}
-.special_contract_list.card_item_wrap_tyexp2 .inp_radio input + label,
-.special_contract_list.card_item_wrap_tyexp2 .inp_checkbox input + label {
-	padding-left: 0;
-}
-.special_contract_list.card_item_wrap_tyexp2 .inp_radio input + label::before,
-.special_contract_list.card_item_wrap_tyexp2 .inp_checkbox input + label::before {
-	content: none;
-}
-/* 접근성 관련 보충 - d */
 /* checkbox */
 /* Checkbox */
 .inp_checkbox {
@@ -15017,7 +14977,6 @@ ol li .table_wrap + .list_ty2 li + li {
 }
 .text_sub_ty2 {
 	font-size: var(--font-size-body-medium);
-	line-height: 2.4rem;
 	color: var(--color-text-basic);
 }
 .text_sub_ty2 + .form_group_wrap,
@@ -15028,7 +14987,6 @@ ol li .table_wrap + .list_ty2 li + li {
 }
 .text_sub_ty3 {
 	font-size: var(--font-size-body-medium);
-	line-height: 2.4rem;
 	color: var(--color-text-basic);
 }
 /* textarea */
@@ -15366,7 +15324,6 @@ ol li .table_wrap + .list_ty2 li + li {
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
-	shape-rendering: crispEdges;
 }
 .tip_item .tip_item_cont .planner_logo {
 	display: block;
