@@ -664,20 +664,17 @@
 
 
 
-	// 웹접근성 심사 후 활성화
 	// 건물/주택 구조 선택 모션 이벤트
-	// $DOM.on("change", ".radio_group_wrap.structure input", function () {
-	// 	console.log('ss');
-	// 	const target = this;
-	// 	const $pc = $(target).closest('.popup_cont');
-	// 	const $target = $(target).closest('.structure');
-	// 	const targetOffset = $target[0].offsetTop;
+	$DOM.on("change", ".radio_group_wrap.structure input", function () {
+		const target = this;
+		const $pc = $(target).closest('.popup_cont');
+		const $target = $(target).closest('.structure');
+		const targetOffset = $target[0].offsetTop;
 
-	// 	$pc.stop(true, true).animate({ 
-	// 		scrollTop: targetOffset - 100
-	// 	}, 300);
-	// });
-	// 웹접근성 심사 후 활성화
+		$pc.stop(true, true).animate({ 
+			scrollTop: targetOffset - 100
+		}, 300);
+	});
 
 
 	// 즉시 실행 함수
