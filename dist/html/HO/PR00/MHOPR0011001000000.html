@@ -964,13 +964,13 @@
 
 					$('.bn_scroll_wrap .bn_item_wrap > div').on('focus', function () {
 						const el = this;
-						requestAnimationFrame(function () {
+						setTimeout(function () {
 							el.scrollIntoView({
 								inline: 'center',
 								block: 'nearest',
 								behavior: 'auto'
 							});
-						});
+						}, 50);
 					});
 				});
 
