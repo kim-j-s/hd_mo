@@ -964,15 +964,19 @@
 
 					$('.bn_scroll_wrap .bn_item_wrap > div').on('focus', function () {
 						const el = this;
+						const $wrap = $('.bn_scroll_wrap .bn_item_wrap');
+
+						$wrap.css('scroll-snap-type', 'none');
+
 						setTimeout(function () {
 							el.scrollIntoView({
-								inline: 'center',
-								// block: 'nearest',
-								behavior: 'auto'
+								inline: 'center', // 가로 스크롤 위치
+								block: 'nearest', // 세로 스크롤 위치
+								behavior: 'auto' 
 							});
 							setTimeout(function () {
 								$wrap.css('scroll-snap-type', 'x mandatory');
-						}, 80);
+							}, 80);
 						}, 10);
 					});
 				});
