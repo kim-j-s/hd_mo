@@ -3560,11 +3560,11 @@
 	border-radius: 10rem;
 }
 .guarantee_visuval .visual_msg .msg_text:after {
+	content: "";
 	position: absolute;
 	bottom: -0.7rem;
 	left: -1.6rem;
 	z-index: 0;
-	content: "";
 	width: 1.7rem;
 	height: 1.8rem;
 	background: url(../images/icon/icon_bb_tail.svg) no-repeat center/100% auto;
@@ -3648,18 +3648,18 @@
 	top: 1rem;
 	left: 1rem;
 	z-index: 2;
-	opacity: 0;
 	width: 3rem;
 	height: 3rem;
+	opacity: 0;
 }
 .guarantee_item .gi_radio input + label::after {
 	content: "";
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 1;
 	width: 100%;
 	height: 100%;
+	z-index: 1;
 }
 .guarantee_item_top {
 	display: -webkit-box;
@@ -3760,17 +3760,17 @@
 .guarantee_item_cont .gic .tit {
 	display: block;
 	padding-top: 10.4rem;
-	text-align: center;
 	font-size: var(--font-size-heading-small);
+	text-align: center;
 	background-repeat: no-repeat;
 	background-position: top center;
 	background-size: 8.8rem;
 }
 .guarantee_item_cont .gic .desc {
 	padding-top: 0.4rem;
-	color: var(--color-text-subtle);
 	font-size: var(--font-size-body-medium);
 	line-height: 2.4rem;
+	color: var(--color-text-subtle);
 	text-align: center;
 }
 .guarantee_item_cont .gic.gic_01 .tit {
@@ -4488,6 +4488,7 @@
 	-webkit-box-flex: 0;
 	-ms-flex: 0 0 calc(100% - 6.4rem);
 	flex: 0 0 calc(100% - 6.4rem);
+	padding-left: var(--padding-3);
 }
 .guarantee_detail .guarantee_detail_mini.column .item_wrap .i_data .data {
 	-webkit-box-flex: 1;
@@ -4577,6 +4578,9 @@
 	color: var(--color-text-primary-bold);
 }
 .simple_info_wrap .simple_info_item .sii_list > li + li strong.trend {
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
 	color: var(--color-text-basic);
 }
 .simple_info_wrap .simple_info_item .sii_list > li + li strong.trend.up {
@@ -6542,6 +6546,7 @@ ul + .form_group_wrap {
 }
 .bg_top_cover .info_gray.bg_etc01 .total .big {
 	font-size: var(--font-size-heading-medium);
+	color: var(--color-text-primary-bold);
 }
 .bg_top_cover .info_gray.bg_etc01 .total.car .chg_rate {
 	-webkit-box-align: top;
