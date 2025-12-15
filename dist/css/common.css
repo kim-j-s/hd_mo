@@ -1140,8 +1140,16 @@ sup {
 .blockUI .ci_balls .ci_balls_bi,
 .c_loading .ci_balls .ci_balls_bi {
 	will-change: transform, background-color;
-	-webkit-animation: bounceColor 3.2s ease-in-out infinite;
-	animation: bounceColor 3.2s ease-in-out infinite;
+	-webkit-animation-name: bounceColor;
+	animation-name: bounceColor;
+	-webkit-animation-duration: 3.2s;
+	animation-duration: 3.2s;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	-webkit-animation-timing-function: ease-in-out;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-fill-mode: none;
+	animation-fill-mode: none;
 }
 .blockUI .ci_balls .ci_balls_bi:nth-child(2),
 .c_loading .ci_balls .ci_balls_bi:nth-child(2) {
@@ -1246,6 +1254,7 @@ sup {
 		background-color: var(--color-graphic-brand);
 	}
 }
+/* loading - 자동차 */
 .animation-container {
 	width: 24rem;
 	height: 12.8rem;
@@ -2586,7 +2595,7 @@ sup {
 }
 .agree_ditail_list > li dl dt {
 	position: relative;
-	padding-right: var(--padding-3);
+	padding-left: var(--padding-3);
 	word-wrap: break-word;
 	word-break: auto-phrase;
 }
@@ -2694,7 +2703,7 @@ sup {
 	vertical-align: bottom;
 }
 .ag_group_wrap .agc_item .agc_item_top > .text.dot_mod {
-	padding-right: var(--padding-3);
+	padding-left: var(--padding-3);
 }
 .ag_group_wrap .agc_item .agc_item_top > .text.dot_mod::before {
 	content: "";
@@ -2719,7 +2728,7 @@ sup {
 }
 .ag_group_wrap .agc_item .aic_list > li {
 	position: relative;
-	padding-right: var(--padding-3);
+	padding-left: var(--padding-3);
 	font-size: var(--font-size-body-small);
 }
 .ag_group_wrap .agc_item .aic_list > li::before {
@@ -11131,7 +11140,7 @@ sup {
 }
 .list_depth_ty2 li {
 	position: relative;
-	padding-right: var(--padding-3);
+	padding-left: var(--padding-3);
 }
 .list_depth_ty2 li::before {
 	content: "";
@@ -11284,7 +11293,7 @@ sup {
 	display: none;
 }
 .number_list .list_depth_ty2 li {
-	padding-right: var(--padding-3);
+	padding-left: var(--padding-3);
 	position: relative;
 }
 .number_list .list_depth_ty2 > li {
@@ -11335,7 +11344,7 @@ sup {
 	min-width: 1.3rem;
 	text-align: center;
 }
-.circle_list > li .number::after {
+.circle_list > li > .number::after {
 	content: "";
 	position: absolute;
 	top: 50%;
@@ -14357,7 +14366,7 @@ ol li .table_wrap + .list_ty2 li + li {
 	content: none;
 }
 .table_wrap .list_depth_ty2.list_depth_ty2_icadd > li .list_ty5 {
-	padding-right: var(--padding-3);
+	padding-left: var(--padding-3);
 }
 .table_wrap .title_h3 {
 	margin-bottom: 2rem;
