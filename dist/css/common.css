@@ -1127,6 +1127,17 @@ sup {
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
+	/*
+  &.active {
+  	.ci_balls_bi {
+  		animation-name: bounceColor;
+  		animation-duration: 3.2s;
+  		animation-timing-function: ease-in-out;
+  		animation-iteration-count: infinite;
+  		animation-fill-mode: none;
+  	}
+  }
+  */
 }
 .blockUI .ci_balls .ci_balls_bi,
 .c_loading .ci_balls .ci_balls_bi {
@@ -1136,20 +1147,19 @@ sup {
 	height: 1.6rem;
 	border-radius: 50%;
 	background-color: var(--color-graphic-brand);
-}
-.blockUI .ci_balls .ci_balls_bi,
-.c_loading .ci_balls .ci_balls_bi {
-	will-change: transform, background-color;
+	-webkit-animation: bounceColor 3.2s ease-in-out infinite;
+	animation: bounceColor 3.2s ease-in-out infinite;
 	-webkit-animation-name: bounceColor;
 	animation-name: bounceColor;
 	-webkit-animation-duration: 3.2s;
 	animation-duration: 3.2s;
-	-webkit-animation-iteration-count: infinite;
-	animation-iteration-count: infinite;
 	-webkit-animation-timing-function: ease-in-out;
 	animation-timing-function: ease-in-out;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
 	-webkit-animation-fill-mode: none;
 	animation-fill-mode: none;
+	will-change: transform, background-color;
 }
 .blockUI .ci_balls .ci_balls_bi:nth-child(2),
 .c_loading .ci_balls .ci_balls_bi:nth-child(2) {
