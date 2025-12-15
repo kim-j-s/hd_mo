@@ -109,8 +109,6 @@ export default defineConfig({
       //partials 경로 설정
       partialDirectory: [
         // resolve(__dirname, 'src/_partials/common'),
-        // resolve(__dirname, 'src/_partials/input'),
-        // resolve(__dirname, 'src/_partials/contents'),
         resolve(__dirname, 'src/_partials'),
       ],
       context(pagePath) {
