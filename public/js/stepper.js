@@ -138,15 +138,24 @@ const $stepper = {
 
 		// 이전 스텝 계산 (최소값 0으로 제한)
 		const _targetIdx = Math.max(_nowIdx - 1, 0);
+		if(_targetIdx < 1) {
+			$('.stepper_togglearea').removeClass('active');
+		} else {
+			$('.stepper_togglearea').addClass('active');
+		}
 		$stepper.openTab(_targetIdx);
 	},
 	// 다음단계
 	stepNext: function () {
-		$('.stepper_togglearea').addClass('active');
 		const _nowIdx = $stepper.get('nowIdx');
 
 		// 다음 스텝 계산 (최대값 totalStep으로 제한)
 		const _targetIdx = Math.min(_nowIdx + 1, $stepper.get('totalStep') - 1);
+		if(_targetIdx < 1) {
+			$('.stepper_togglearea').removeClass('active');
+		} else {
+			$('.stepper_togglearea').addClass('active');
+		}
 		$stepper.openTab(_targetIdx);
 	},
 	// 이동
