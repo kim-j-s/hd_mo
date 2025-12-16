@@ -5,14 +5,13 @@
 	<div id="container" class="container">
 		<div class="content">
 			<!-- s: content_top -->
-			<div class="content_top">
-                
+			<div class="content_top">                
 				<h2 class="title_h2">
 					보험료를 <strong>결제하면<br>가입이 완료</strong>돼요
 				</h2>
 			</div>
 			<!-- e: content_top -->
-            <!-- s: 해외여행, 해외장기체류, 국내여행, 골프, 하이펫-->
+      <!-- s: 해외여행, 해외장기체류, 국내여행, 골프, 하이펫-->
 			<div class="bg_top_cover ty2">
 				<div class="info_gray bg_etc01">
 					<div class="total">
@@ -45,8 +44,8 @@
 					<!-- e: 25-10-20 삭제 -->
 				</div>
 			</div>
-            <!-- e: 해외여행, 해외장기체류, 국내여행, 골프, 하이펫 -->
-            <!-- s: 풍수해·지진재해(사업장)(주택용) -->
+			<!-- e: 해외여행, 해외장기체류, 국내여행, 골프, 하이펫 -->
+			<!-- s: 풍수해·지진재해(사업장)(주택용) -->
 			<div class="bg_top_cover ty2">
 				<div class="info_gray bg_etc01">
 					<div class="total">
@@ -57,23 +56,23 @@
 							</dd>
 						</dl>
 					</div>
-                    <div class="info_top_cont">
-                        <dl>
+					<div class="info_top_cont">
+						<dl>
 							<dt>정부 부담분</dt>
-                            <dd><strong>23,900 원</strong></dd>
-                        </dl>
-                        <dl>
-                            <dt>지자체 부담분</dt>
-                            <dd><strong>23,900 원</strong></dd>
-                        </dl>
-                        <dl>
-                            <dt>총 보험료</dt>
-                            <dd>-1,200 원</dd>
-                        </dl>
-                    </div>
+							<dd><strong>23,900 원</strong></dd>
+						</dl>
+						<dl>
+							<dt>지자체 부담분</dt>
+							<dd><strong>23,900 원</strong></dd>
+						</dl>
+						<dl>
+							<dt>총 보험료</dt>
+							<dd>-1,200 원</dd>
+						</dl>
+					</div>
 				</div>
 			</div>
-            <!-- e: 풍수해·지진재해(사업장)(주택용) -->
+			<!-- e: 풍수해·지진재해(사업장)(주택용) -->
 
 			<!-- s: 간편정보 -->
 			<div class="simple_info_wrap">
@@ -89,7 +88,10 @@
 				</div>
 			</div>
 			<!-- e: 간편정보 -->
+			<!-- s: 25-12-16 수정 -->
 			{{> pay/banner shot_bn=true }}
+			<!-- e: 25-12-16 수정 -->
+
 			<div class="tab_wrap">
 				<div class="tab_wrap_list_ty1" role="tablist">
 					{{> cp/tab_btn tb-text="신용카드" tb-id="01" tb-active=true}}
@@ -101,12 +103,13 @@
 				<div class="tab_wrap_content active" role="tabpanel" aria-labelledby="tab01" id="tabPanel01">
 					{{> pay/card corporate_list=true }}
 					{{> pay/shot_benefit }}
-                </div>
+        </div>
 
 				<!-- 간편결제 -->
 				<div class="tab_wrap_content" role="tabpanel" aria-labelledby="tab02" id="tabPanel02">
 					{{> pay/pay_info }}
 				</div>
+
 				<!-- 즉시이체 -->
 				<div class="tab_wrap_content" role="tabpanel" aria-labelledby="tab03" id="tabPanel03">
 					{{> pay/bank1 }}
@@ -139,27 +142,33 @@
 <script>
 	$(document).ready(function(){
 		var bannerSwiper = new Swiper('#card_reward_banner_wrap', {
-					slidesPerView: 1,
-					updateOnWindowResize:true,
-					navigation: {
-						prevEl: ".swiper_button_left", //25-05-12
-						nextEl: ".swiper_button_right", //25-05-12
-					},
-					a11y: {
-						enabled: true,
-						prevSlideMessage: '이전 항목으로 이동',
-						nextSlideMessage: '다음 항목으로 이동',
-					},
-					pagination: {
-						el: '.swiper-pagination',
-						clickable: true,
-						type: 'bullets',
-						renderBullet: function (index, className) {
-							return `<span class="${className}" aria-label="배너${index + 1}번으로 이동"></span>`;
-							// return `<span class="\${className}" aria-label="배너\${index + 1}번으로 이동"></span>`;
-						// jsp 사용시
-						},
-					}				
-				});
+			/* s: 25-12-16 수정 */
+			autoplay: {
+				delay: 3000,
+			},
+			loop: true,
+			/* e: 25-12-16 수정 */
+			slidesPerView: 1,
+			updateOnWindowResize:true,
+			navigation: {
+				prevEl: ".swiper_button_left", //25-05-12
+				nextEl: ".swiper_button_right", //25-05-12
+			},
+			a11y: {
+				enabled: true,
+				prevSlideMessage: '이전 항목으로 이동',
+				nextSlideMessage: '다음 항목으로 이동',
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+				type: 'bullets',
+				renderBullet: function (index, className) {
+					return `<span class="${className}" aria-label="배너${index + 1}번으로 이동"></span>`;
+					// return `<span class="\${className}" aria-label="배너\${index + 1}번으로 이동"></span>`;
+				// jsp 사용시
+				},
+			}				
 		});
+	});
 </script>
