@@ -118,29 +118,49 @@
 <!-- s: 25-05-08 수정 -->
 <script>
 	$(document).ready(function(){
-		var bannerSwiper = new Swiper('#card_reward_banner_wrap', {
-					slidesPerView: 1,
-					updateOnWindowResize:true,
-					navigation: {
-						prevEl: ".swiper_button_left", //25-05-12
-						nextEl: ".swiper_button_right", //25-05-12
+		const $swiperContainer = $('.banner_slide_wrap .swiper-wrapper');
+		const slideCount = $swiperContainer.find('.swiper-slide').length;
+		if (slideCount > 1) {
+			var bannerSwiper = new Swiper('#card_reward_banner_wrap', {
+				autoplay: {
+					delay: 3000,
+				},
+				loop: true,
+				slidesPerView: 1,
+				updateOnWindowResize:true,
+				navigation: {
+					nextEl: ".pop_r",
+					prevEl: ".pop_l",
+				},
+				a11y: {
+					enabled: true,
+					prevSlideMessage: '이전 항목으로 이동',
+					nextSlideMessage: '다음 항목으로 이동',
+				},
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true,
+					type: 'bullets',
+					renderBullet: function (index, className) {
+						return `<span class="${className}" aria-label="배너${index + 1}번으로 이동"></span>`;
+						// return `<span class="\${className}" aria-label="배너\${index + 1}번으로 이동"></span>`;
+					// jsp 사용시
 					},
-					a11y: {
-						enabled: true,
-						prevSlideMessage: '이전 항목으로 이동',
-						nextSlideMessage: '다음 항목으로 이동',
-					},
-					pagination: {
-						el: '.swiper-pagination',
-						clickable: true,
-						type: 'bullets',
-						renderBullet: function (index, className) {
-							return `<span class="${className}" aria-label="배너${index + 1}번으로 이동"></span>`;
-							// return `<span class="\${className}" aria-label="배너\${index + 1}번으로 이동"></span>`;
-						// jsp 사용시
-						},
-					}				
-				});
-		});
+				}
+			});
+
+			$('.banner_slide_wrap .swiper-button-play-pause').on('click', function() {
+				if (bannerSwiper.autoplay.running){
+					bannerSwiper.autoplay.stop();
+					$(this).text('시작').addClass('active');
+				}else {
+					bannerSwiper.autoplay.start();
+					$(this).text('정지').removeClass('active');
+				}
+			});
+		} else {
+			$('.banner_slide_wrap').find('.swiper_control').hide();
+		}
+	});
 </script>
 <!-- e: 25-05-08 수정 -->

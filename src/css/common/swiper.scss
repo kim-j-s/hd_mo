@@ -110,8 +110,7 @@
 
 	.swiper_button {
 		position: absolute;
-		// top : calc(calc(100% - 24px) / 2 ); 
-		top : calc(calc(100% - 8px) / 2 ); 
+		top : calc(calc(100% - 24px) / 2 ); 
 		z-index: 10;
 		transform: translateY(-50%);
 
@@ -125,7 +124,66 @@
 	& + .checkbox_group_wrap {
 		margin-top: var(--gap-8);
 	}
+
+
+	.swiper_control {
+		position: relative;
+		margin-top: var(--gap-3);
+		text-align: center;
+
+		.c_inner {
+			display: inline-flex;
+			align-items: center;
+			gap: var(--gap-1);
+		}
+
+		.pop_pager {
+			position: relative;
+			width: auto;
+			left: auto;
+			top: auto;
+			bottom: auto;
+			display: flex;
+			gap: var(--gap-2);
+			padding: var(--padding-3);
+			transform: none;
+
+			&.sp_ty1 {
+				.swiper-pagination-bullet {
+					margin: 0;
+				}
+			}
+		}
+
+		.swiper_button {
+			position: static;
+			top: auto;
+			width: 20px;
+			height: 20px;
+			transform: none;
+			background-color: transparent;
+			background-size: 16px;
+		}
+
+		.swiper-button-play-pause {
+			width: 20px;
+			height: 20px;
+			font-size: 0;
+			background: url(../images/icon/icon_stop.svg) no-repeat center / 16px;
+
+			&.active {
+				background-image: url(../images/icon/icon_play.svg);
+			}
+		}
+	}
+
+
+
 }
+
+
+
+
 .main_slide_wrap {
 	margin: 0 -32px;
 
