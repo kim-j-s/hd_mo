@@ -1127,6 +1127,17 @@ sup {
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
+	/*
+  &.active {
+  	.ci_balls_bi {
+  		animation-name: bounceColor;
+  		animation-duration: 3.2s;
+  		animation-timing-function: ease-in-out;
+  		animation-iteration-count: infinite;
+  		animation-fill-mode: none;
+  	}
+  }
+  */
 }
 .blockUI .ci_balls .ci_balls_bi,
 .c_loading .ci_balls .ci_balls_bi {
@@ -3536,8 +3547,12 @@ sup {
 	display: block;
 	margin-top: var(--gap-5);
 }
+.acd_item.acd_item_ty6.ty2 .acd_head + .acd_cont .line1 {
+	margin-bottom: var(--gap-5);
+}
 .acd_item.acd_item_ty6.ty2 .acd_head.active + .acd_cont .line1 {
 	display: none;
+	margin-bottom: 0;
 }
 .acd_item.acd_item_ty6.ty2 .acd_head.active + .acd_cont .line2 {
 	margin-top: var(--gap-5);
@@ -12609,17 +12624,11 @@ ol li .table_wrap + .list_ty2 li + li {
 	color: var(--color-text-disabled);
 }
 .radio_group_wrap.structure:has(input[type="radio"]:checked) input[type="radio"] + label .img img {
-	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
 	-o-object-fit: cover;
 	object-fit: cover;
 }
 .radio_group_wrap.structure:has(input[type="radio"]:checked) input[type="radio"]:checked + label .label_cont {
 	color: var(--color-text-basic);
-}
-.radio_group_wrap.structure:has(input[type="radio"]:checked) input[type="radio"]:checked + label .img img {
-	-webkit-filter: none;
-	filter: none;
 }
 .radio_group_wrap.option {
 	margin: var(--gap-3) 0;
@@ -13960,9 +13969,9 @@ ol li .table_wrap + .list_ty2 li + li {
 	transform: translateY(0.4rem);
 }
 .banner_slide_wrap .swiper_button {
-	z-index: 10;
 	position: absolute;
 	top: calc((100% - 2.4rem) / 2);
+	z-index: 10;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
@@ -13974,6 +13983,56 @@ ol li .table_wrap + .list_ty2 li + li {
 }
 .banner_slide_wrap + .checkbox_group_wrap {
 	margin-top: var(--gap-8);
+}
+.banner_slide_wrap .swiper_control {
+	position: relative;
+	margin-top: var(--gap-3);
+	text-align: center;
+}
+.banner_slide_wrap .swiper_control .c_inner {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: var(--gap-1);
+}
+.banner_slide_wrap .swiper_control .pop_pager {
+	position: relative;
+	width: auto;
+	left: auto;
+	top: auto;
+	bottom: auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	gap: var(--gap-2);
+	padding: var(--padding-3);
+	-webkit-transform: none;
+	transform: none;
+}
+.banner_slide_wrap .swiper_control .pop_pager.sp_ty1 .swiper-pagination-bullet {
+	margin: 0;
+}
+.banner_slide_wrap .swiper_control .swiper_button {
+	position: static;
+	top: auto;
+	width: 2rem;
+	height: 2rem;
+	-webkit-transform: none;
+	transform: none;
+	background-color: transparent;
+	background-size: 1.6rem;
+}
+.banner_slide_wrap .swiper_control .swiper-button-play-pause {
+	width: 2rem;
+	height: 2rem;
+	font-size: 0;
+	background: url(../images/icon/icon_stop.svg) no-repeat center/1.6rem;
+}
+.banner_slide_wrap .swiper_control .swiper-button-play-pause.active {
+	background-image: url(../images/icon/icon_play.svg);
 }
 .main_slide_wrap {
 	margin: 0 -3.2rem;

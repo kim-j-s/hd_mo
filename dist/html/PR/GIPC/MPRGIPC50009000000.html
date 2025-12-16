@@ -536,9 +536,15 @@
 									<!-- e: 25-08-11 수정 -->
 								</div>
 							</div>
-							<div class="swiper-pagination sp_ty1"></div>
-							<button class="swiper_button sbc_03 sbs_01 swiper_button_left"></button>
-							<button class="swiper_button sbc_03 sbs_01 swiper_button_right" aria-label="다음" disabled></button>
+
+							<div class="swiper_control">
+								<div class="c_inner">
+									<button class="swiper_button swiper_button_left pop_l"></button>
+									<div class="swiper-pagination sp_ty1 pop_pager"></div>
+									<button class="swiper-button-play-pause" title="슬라이드 쇼 제어">정지</button>
+									<button class="swiper_button swiper_button_right pop_r"></button>
+								</div>
+							</div>
 						</div>
 						<!-- e: 카드 혜택 안내 배너 -->
 					</div>
@@ -1437,28 +1443,48 @@
 </html>
 <script>
 	$(document).ready(function () {
-		var bannerSwiper = new Swiper("#card_reward_banner_wrap", {
-			slidesPerView: 1,
-			updateOnWindowResize: true,
-			navigation: {
-				prevEl: ".swiper_button_left",
-				nextEl: ".swiper_button_right",
-			},
-			a11y: {
-				enabled: true,
-				prevSlideMessage: "이전 항목으로 이동",
-				nextSlideMessage: "다음 항목으로 이동",
-			},
-			pagination: {
-				el: ".swiper-pagination",
-				clickable: true,
-				type: "bullets",
-				renderBullet: function (index, className) {
-					return `<span class="${className}" aria-label="배너${index + 1}번으로 이동"></span>`;
-					// return `<span class="\${className}" aria-label="배너\${index + 1}번으로 이동"></span>`;
-					// jsp 사용시
+		const $swiperContainer = $(".banner_slide_wrap .swiper-wrapper");
+		const slideCount = $swiperContainer.find(".swiper-slide").length;
+		if (slideCount > 1) {
+			var bannerSwiper = new Swiper("#card_reward_banner_wrap", {
+				autoplay: {
+					delay: 3000,
 				},
-			},
-		});
+				loop: true,
+				slidesPerView: 1,
+				updateOnWindowResize: true,
+				navigation: {
+					nextEl: ".pop_r",
+					prevEl: ".pop_l",
+				},
+				a11y: {
+					enabled: true,
+					prevSlideMessage: "이전 항목으로 이동",
+					nextSlideMessage: "다음 항목으로 이동",
+				},
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true,
+					type: "bullets",
+					renderBullet: function (index, className) {
+						return `<span class="${className}" aria-label="배너${index + 1}번으로 이동"></span>`;
+						// return `<span class="\${className}" aria-label="배너\${index + 1}번으로 이동"></span>`;
+						// jsp 사용시
+					},
+				},
+			});
+
+			$(".banner_slide_wrap .swiper-button-play-pause").on("click", function () {
+				if (bannerSwiper.autoplay.running) {
+					bannerSwiper.autoplay.stop();
+					$(this).text("시작").addClass("active");
+				} else {
+					bannerSwiper.autoplay.start();
+					$(this).text("정지").removeClass("active");
+				}
+			});
+		} else {
+			$(".banner_slide_wrap").find(".swiper_control").hide();
+		}
 	});
 </script>

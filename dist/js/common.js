@@ -185,13 +185,13 @@
 		}
 
 		//전화번호
-		if( $this.closest('.input_text').hasClass('phone') && !$this.closest('.input_text').hasClass('phone_full') && !$this.prop('readonly') && !$this.prop('disabled') ){
-			if(val){
-				const newVal = val.replace(/ - /g, '');
-				$this.attr('maxlength', 8);
-				$this.val(newVal).removeClass('isVal');
-			}
-		}
+		// if( $this.closest('.input_text').hasClass('phone') && !$this.closest('.input_text').hasClass('phone_full') && !$this.prop('readonly') && !$this.prop('disabled') ){
+		// 	if(val){
+		// 		const newVal = val.replace(/ - /g, '');
+		// 		$this.attr('maxlength', 8);
+		// 		$this.val(newVal).removeClass('isVal');
+		// 	}
+		// }
     
   }).on('blur', '.inp > input', function(){
     const $this = $(this),
@@ -578,12 +578,11 @@
 	// 전화번호 입력
 	$DOM.on('focus', '.input_text.phone_full input', function () {
 		const $this = $(this);
-	
 		// 읽기 전용 또는 비활성화 상태일 경우 중단
 		if ($this.prop('readonly') || $this.prop('disabled')) {
 			return;
 		}
-	
+
 		// 값 가져오기 및 하이픈/공백 제거
 		let val = $this.val() ? $this.val().replace(/[^0-9*]/g, '') : '';
 	
@@ -605,10 +604,10 @@
 	
 		if (val.length === 10) {
 			// 10자리 → 010-000-0000
-			val = val.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
+			val = val.replace(/^(\d{3})([\d*]{3})([\d*]{4})$/, "$1-$2-$3");
 		} else if (val.length === 11) {
 			// 11자리 → 010-0000-0000
-			val = val.replace(/(\d{3})(\d{4})(\d{4})/, "$1-$2-$3");
+			val = val.replace(/^(\d{3})([\d*]{4})([\d*]{4})$/, "$1-$2-$3");
 		}
 	
 		$this.val(val);

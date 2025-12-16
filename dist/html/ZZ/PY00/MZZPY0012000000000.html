@@ -548,6 +548,8 @@
 						</div>
 					</div>
 					<!-- e: 간편정보 -->
+
+					<!-- s: 25-12-16 수정 -->
 					<!-- s: 25-08-12 배너 이동 -->
 					<div class="banner_box ty3">
 						<!-- s: 카드 혜택 안내 배너 -->
@@ -568,9 +570,15 @@
 									<!-- e: 25-08-11 수정 -->
 								</div>
 							</div>
-							<div class="swiper-pagination sp_ty1"></div>
-							<button class="swiper_button sbc_03 sbs_01 swiper_button_left"></button>
-							<button class="swiper_button sbc_03 sbs_01 swiper_button_right" aria-label="다음" disabled></button>
+
+							<div class="swiper_control">
+								<div class="c_inner">
+									<button class="swiper_button swiper_button_left pop_l"></button>
+									<div class="swiper-pagination sp_ty1 pop_pager"></div>
+									<button class="swiper-button-play-pause" title="슬라이드 쇼 제어">정지</button>
+									<button class="swiper_button swiper_button_right pop_r"></button>
+								</div>
+							</div>
 						</div>
 						<!-- e: 카드 혜택 안내 배너 -->
 					</div>
@@ -583,6 +591,8 @@
 						</ul>
 					</div>
 					<!-- e: 25-08-21 추가 -->
+					<!-- e: 25-12-16 수정 -->
+
 					<div class="tab_wrap">
 						<div class="tab_wrap_list_ty1" role="tablist"><button type="button" class="tab_btn active" role="tab" aria-selected="true" aria-controls="tabPanel01" id="tab01">신용카드</button> <button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanel02" id="tab02">간편결제</button> <button type="button" class="tab_btn" role="tab" aria-selected="false" aria-controls="tabPanel03" id="tab03">계좌이체</button></div>
 
@@ -917,6 +927,7 @@
 							</div>
 							<!-- e: 25-06-19 수정 -->
 						</div>
+
 						<!-- 즉시이체 -->
 						<div class="tab_wrap_content" role="tabpanel" aria-labelledby="tab03" id="tabPanel03">
 							<!-- s: 25-06-30 -->
@@ -1561,28 +1572,50 @@
 
 <script>
 	$(document).ready(function () {
-		var bannerSwiper = new Swiper("#card_reward_banner_wrap", {
-			slidesPerView: 1,
-			updateOnWindowResize: true,
-			navigation: {
-				prevEl: ".swiper_button_left", //25-05-12
-				nextEl: ".swiper_button_right", //25-05-12
-			},
-			a11y: {
-				enabled: true,
-				prevSlideMessage: "이전 항목으로 이동",
-				nextSlideMessage: "다음 항목으로 이동",
-			},
-			pagination: {
-				el: ".swiper-pagination",
-				clickable: true,
-				type: "bullets",
-				renderBullet: function (index, className) {
-					return `<span class="${className}" aria-label="배너${index + 1}번으로 이동"></span>`;
-					// return `<span class="\${className}" aria-label="배너\${index + 1}번으로 이동"></span>`;
-					// jsp 사용시
+		/* s: 25-12-16 수정 */
+		const $swiperContainer = $(".banner_slide_wrap .swiper-wrapper");
+		const slideCount = $swiperContainer.find(".swiper-slide").length;
+		if (slideCount > 1) {
+			var bannerSwiper = new Swiper("#card_reward_banner_wrap", {
+				autoplay: {
+					delay: 3000,
 				},
-			},
-		});
+				loop: true,
+				slidesPerView: 1,
+				updateOnWindowResize: true,
+				navigation: {
+					nextEl: ".pop_r",
+					prevEl: ".pop_l",
+				},
+				a11y: {
+					enabled: true,
+					prevSlideMessage: "이전 항목으로 이동",
+					nextSlideMessage: "다음 항목으로 이동",
+				},
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true,
+					type: "bullets",
+					renderBullet: function (index, className) {
+						return `<span class="${className}" aria-label="배너${index + 1}번으로 이동"></span>`;
+						// return `<span class="\${className}" aria-label="배너\${index + 1}번으로 이동"></span>`;
+						// jsp 사용시
+					},
+				},
+			});
+
+			$(".banner_slide_wrap .swiper-button-play-pause").on("click", function () {
+				if (bannerSwiper.autoplay.running) {
+					bannerSwiper.autoplay.stop();
+					$(this).text("시작").addClass("active");
+				} else {
+					bannerSwiper.autoplay.start();
+					$(this).text("정지").removeClass("active");
+				}
+			});
+		} else {
+			$(".banner_slide_wrap").find(".swiper_control").hide();
+		}
+		/* e: 25-12-16 수정 */
 	});
 </script>
