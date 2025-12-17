@@ -1640,6 +1640,8 @@ $(function(){
 
 	// ready
 
+	let loadingAnimation = null;
+
 });
 
 
@@ -1856,6 +1858,8 @@ function review() {
     }
   });
 }
+
+
 $(window).resize(function(){
 	// prograssBar();
 	directTv();
