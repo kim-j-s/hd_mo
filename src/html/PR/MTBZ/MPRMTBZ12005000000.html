@@ -78,6 +78,43 @@
 							</div>
 						</div>
 					</div>
+
+					<!-- s: 25-12-17 수정 -->
+					<div class="form_group_wrap">
+						{{#> cp/checkbox checkbox_class="rd_box" id="checkbox04-12ess" label_class="chk_label_ty3" labelname="자동자보험 계약에 <strong>질권설정</strong>(리스, 대출 등)이 필요한 경우 선택해주세요.<br>통상적인 자동차보험 계약과는 무관합니다." }}
+							<span class="chk_lby2">{{> cp/linkButton bl_class='short_cut' bl_text='질권설정이란' pop_id='' question_tit='질권설정 용어설명' }}</span>
+						{{/ cp/checkbox}}
+						<ul class="list_ty2">
+							<li><strong>질권설정은 대표콜센터(1588-5656)를 통해 차량대체 후 추가할 수 있습니다.</strong></li>
+						</ul>
+					</div>
+					<div class="form_group_wrap">
+						<div class="form_line">
+							<div class="label_tit">질권자 사업자등록번호</div>
+							<div class="comp_wrap card">
+								{{> cp/text type="tel" minlength="3" maxlength="3" placeholder="3자리" inp-title="질권자 사업자등록번호 첫번째 3자리 입력" no_del="flase" }}
+								<span class="dash">-</span>
+								{{> cp/text type="tel" minlength="2" maxlength="2" placeholder="2자리" inp-title="질권자 사업자등록번호 두번째 2자리 입력" no_del="flase" }}
+								<span class="dash">-</span>
+								{{> cp/text type="tel" minlength="5" maxlength="5" placeholder="5자리" inp-title="질권자 사업자등록번호 3번째 5자리 입력" no_del="flase" }}
+							</div>
+							<div class="btn_area">
+								{{> cp/button type="2" size="2" b-text="조회"}}
+							</div>
+						</div>
+						<div class="form_line">
+							<div class="label_tit">질권자명(금융기관명 등)</div>
+							{{> cp/text placeholder="" inp-title="질권자명 입력" value="-" readonly=true }}
+						</div>
+						<div class="form_line">
+							<div class="label_tit">질권설정금액(단위: 만원)</div>
+							{{> cp/text class="price" r-text="원" inp-title="질권설정금액 입력" placeholder="0" }}
+							<p class="info_text2">(<strong>6280</strong>만원 내에서 설정할 수 있습니다.)</p>
+						</div>
+					</div>
+					<!-- e: 25-12-17 수정 -->
+
+
 					<!-- s: 피보험자 계피상이 -->
 					<div class="divider_ty1"></div>
 					<h3 class="title_h3">계약자 정보</h3>
