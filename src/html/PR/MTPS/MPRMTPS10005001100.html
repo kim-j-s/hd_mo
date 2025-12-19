@@ -1,0 +1,53 @@
+{{#> layout/default no-sp=true page-title="질권설정 | 상품"}}
+
+<!-- s: Full 팝업 -->
+{{#> popup/popup_full popup-id="pop_full" popup-active=true popup-title="질권설정"}}
+<div class="popup_cont">
+	<div class="popup_content">
+    <div class="form_box">
+			<div class="form_group_wrap">
+				<div class="form_line full_half">
+					<div class="label_tit">질권자 사업자등록번호</div>
+					<div class="comp_wrap business">
+						{{> cp/text type="tel" minlength="3" maxlength="3" placeholder="3자리" inp-title="질권자 사업자등록번호 첫번째 3자리 입력" value="2232" no_del="flase" }}
+						<span class="dash">-</span>
+						{{> cp/text type="tel" minlength="2" maxlength="2" placeholder="2자리" inp-title="질권자 사업자등록번호 두번째 2자리 입력" no_del="flase" }}
+						<span class="dash">-</span>
+						{{> cp/text type="tel" minlength="5" maxlength="5" placeholder="5자리" inp-title="질권자 사업자등록번호 3번째 5자리 입력" no_del="flase" }}
+					</div>
+					<div class="btn_area">
+						{{> cp/button type="2" size="2" b-text="조회" class="full"}}
+					</div>
+				</div>
+		
+				<div class="form_line">
+					<div class="label_tit">질권자명(금융기관명 등)</div>
+					{{> cp/text type="text" inp-title="질권자명 입력" readonly=true }}
+				</div>
+		
+				<div class="form_line">
+					<div class="label_tit">질권설정금액(단위: 만원)</div>
+					{{> cp/text type="tel" placeholder="0" class="price" r-text="만원" inp-title="질권설정금액 입력"}}
+					<p class="info_text2">(<strong>6280</strong>만원 내에서 설정할 수 있습니다.)</p>
+				</div>
+			</div>
+      <div class="if_box">
+        <ul class="list_ty2">
+          <li><strong>질권설정은 다이렉트 고객센터(1899-6782)를 통해 계약체결 후 추가할 수 있습니다.</strong></li>
+        </ul>
+      </div>
+    </div>
+	</div>
+</div>
+
+<!-- s: 하단 고정 버튼 영역 -->
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인"}}
+	</div>
+</div>
+<!-- s: 하단 고정 버튼 영역 -->
+{{/ popup/popup_full}}
+<!-- e: Full 팝업 -->
+
+{{/ layout/default }}
