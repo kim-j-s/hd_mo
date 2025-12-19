@@ -972,6 +972,7 @@ function inpPhoneFormat() {
 	});
 }
 
+
 $(window).on('load', function() {
 	inputState();
 	directTv();

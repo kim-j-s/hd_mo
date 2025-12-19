@@ -973,32 +973,9 @@ function inpPhoneFormat() {
 }
 
 
-function dmp_loading() {
-	const loadingHtml = `
-		<div class="c_loading cl_ty1 c_loading_dmp" aria-hidden=true>
-			<div class="cl_inner">
-				<div class="ci_balls">
-					<span class="ci_balls_bi ci_balls_bi1"></span>
-					<span class="ci_balls_bi ci_balls_bi2"></span>
-					<span class="ci_balls_bi ci_balls_bi3"></span>
-				</div>
-			</div>
-		</div>
-	`;
-
-	// 중복 append 방지 (선택사항이지만 강추)
-	if (!$('.c_loading_dmp').length) {
-		$('body').append(loadingHtml);
-	}
-}
-
 $(window).on('load', function() {
 	inputState();
 	directTv();
-
-	dmp_loading();
-
-
 });
 
 
