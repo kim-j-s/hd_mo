@@ -4,37 +4,35 @@
 
 	<div id="container" class="container">
 		<div class="content">
-            <!-- s: content_top -->
-            <div class="content_top">
-                <h2 class="title_h2">
-                    <strong>고객정보 관리 및 가입 설계 저장</strong>을 위해 <strong>고객님의 동의</strong>가 필요합니다.
-                </h2>
-            </div>
-            <!-- e: content_top -->
-            <!-- s: 계피동일 case -->
+			<!-- s: content_top -->
+			<div class="content_top">
+					<h2 class="title_h2">
+							<strong>고객정보 관리 및 가입 설계 저장</strong>을 위해 <strong>고객님의 동의</strong>가 필요합니다.
+					</h2>
+			</div>
+			<!-- e: content_top -->
+			<!-- s: 계피동일 case -->
 			<div class="form_box">
-                <div class="form_group_wrap">
-                    <div class="form_line">
-                        <div class="label_tit">이름</div>
-                        {{> cp/text type="text" placeholder="입력해주세요" inp-title="이름 입력" }}
-                    </div>
-             
-                    <div class="form_line">
-                        <div class="label_tit">주민등록번호</div>
-                        <div class="comp_wrap birth">
-                            {{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞 6자리" inp-title="주민등록번호 앞자리 입력" }}
-                            <span class="dash">-</span>
-                            {{> cp/keypad7 case3=true kt="주민등록번호 뒤 7자리 입력" }}
-                        </div>
-                    </div>
-                </div>
-                <!-- s: 25-07-29 수정 -->
+				<div class="form_group_wrap">
+						<div class="form_line">
+								<div class="label_tit">이름</div>
+								{{> cp/text type="text" placeholder="입력해주세요" inp-title="이름 입력" }}
+						</div>
+			
+						<div class="form_line">
+								<div class="label_tit">주민등록번호</div>
+								<div class="comp_wrap birth">
+										{{> cp/text type="tel" minlength="6" maxlength="6" placeholder="앞 6자리" inp-title="주민등록번호 앞자리 입력" }}
+										<span class="dash">-</span>
+										{{> cp/keypad7 case3=true kt="주민등록번호 뒤 7자리 입력" }}
+								</div>
+						</div>
+				</div>
 				<div class="checkbox_group_wrap column">
-                    {{> cp/checkbox checkbox_class="rd_box question" id="checkbox01" label_class="chk_label_ty3" labelname="<strong class='point'>[필수]</strong> 고객정보 관리 및 가입 설계를 위한 개인(신용)정보 처리 <strong>상세</strong>동의" }}
-                </div>
-                <!-- e: 25-07-29 수정 -->
-            </div>
-            <!-- e: 계피동일 case -->
+					{{> cp/checkbox checkbox_class="rd_box question" id="checkbox01" label_class="chk_label_ty3" labelname="<strong class='point'>[필수]</strong> 고객정보 관리 및 가입 설계를 위한 개인(신용)정보 처리 <strong>상세</strong>동의" }}
+				</div>
+			</div>
+			<!-- e: 계피동일 case -->
 		</div>
 	</div>
 
