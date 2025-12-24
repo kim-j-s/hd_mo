@@ -3,244 +3,241 @@
 		{{> layout/header h-title="보험계약대출 거래내역조회" }}
 		<div id="container" class="container">
 			<div class="content">
+				<div class="tab_wrap">
+						<div class="tab_wrap_list_ty1" role="tablist">
+								{{> cp/tab_btn tb-text="유지 중 대출계약" tb-class="" tb-id="ex01" tb-active=true}}
+								{{> cp/tab_btn tb-text="날짜별 거래내역" tb-class="" tb-id="ex02"}}
+						</div>
+						<div class="tab_wrap_content active" role="tabpanel" aria-labelledby="tab01" id="tabPanelex01">
+								<div class="search_result_count">
+										<p>총 <strong class="point">7</strong>건</p>
+								</div>
+								<!-- s: 계약 목록 -->
+								<div class="card_item_wrap">
+										<div class="card_item">
+												<div class="item_inner">
+														<div class="inner_cont">
+																<div role="button" class="card_link" tabindex="0">
+																		<div class="item_top">
+																				<div class="badge_wrap">
+																						<span class="hd_badge outline solid_pastel c_success size_m">정상</span>
+																				</div>
+																				<div class="title_info">
+																						<div class="main_title">무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(Hi2301)</div>
+																				</div>
+																		</div>
+																</div>
+																<ul class="card_list_ty1">
+																		<li>
+																				<div class="title">대출일</div>
+																				<div class="cont">2025.02.19</div>
+																		</li>
+																		<li>
+																				<div class="title">대출잔액</div>
+																				<div class="cont">10,000,000원</div>
+																		</li>
+																		<li>
+																				<div class="title">납입계좌</div>
+																				<div class="cont">국민은행 1234****1234</div>
+																		</li>
+																		<li>
+																				<div class="title">대출이율</div>
+																				<!-- s: 25-08-11 수정 -->
+																				<div class="cont"><strong class="point">4.35%</strong></div>
+																				<!-- e: 25-08-11 수정 -->
+																		</li>
+																</ul>
+																
+																<div class="btn_area">
+																		{{> cp/linkButton bl_class="short_cut long tac sm" bl_text="개인정보처리 동의 여부 : 동의(2025.02.19)" pop_id="pop_type03" bl_title="팝업 열림" }}
+																</div>
+														</div>
+												</div>
+										</div>
+										<div class="card_item">
+												<div class="item_inner">
+														<div class="inner_cont">
+																<div role="button" class="card_link" tabindex="0">
+																		<div class="item_top">
+																				<div class="badge_wrap">
+																						<span class="hd_badge outline solid_pastel c_danger size_m">연체중</span>
+																				</div>
+																				<div class="title_info">
+																						<div class="main_title">무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(Hi2301)</div>
+																				</div>
+																		</div>
+																</div>
+																<ul class="card_list_ty1">
+																		<li>
+																				<div class="title">대출일</div>
+																				<div class="cont">2025.02.19</div>
+																		</li>
+																		<li>
+																				<div class="title">대출잔액</div>
+																				<div class="cont">10,000,000원</div>
+																		</li>
+																		<li>
+																				<div class="title">납입계좌</div>
+																				<div class="cont">국민은행 1234****1234</div>
+																		</li>
+																		<li>
+																				<div class="title">대출이율</div>
+																				<!-- s: 25-08-11 수정 -->
+																				<div class="cont"><strong class="point">4.35%</strong></div>
+																				<!-- e: 25-08-11 수정 -->
+																		</li>
+																</ul>
+														</div>
+												</div>
+										</div>
+								</div>
+								<!-- e: 계약 목록 -->
 
-                <div class="tab_wrap">
-                    <div class="tab_wrap_list_ty1" role="tablist">
-                        {{> cp/tab_btn tb-text="유지 중 대출계약" tb-class="" tb-id="ex01" tb-active=true}}
-                        {{> cp/tab_btn tb-text="날짜별 거래내역" tb-class="" tb-id="ex02"}}
-                    </div>
-                    <div class="tab_wrap_content active" role="tabpanel" aria-labelledby="tab01" id="tabPanelex01">
-                        <div class="search_result_count">
-                            <p>총 <strong class="point">7</strong>건</p>
-                        </div>
-                        <!-- s: 계약 목록 -->
-                        <div class="card_item_wrap">
-                            <div class="card_item">
-                                <div class="item_inner">
-                                    <div class="inner_cont">
-                                        <div role="button" class="card_link" tabindex="0">
-                                            <div class="item_top">
-                                                <div class="badge_wrap">
-                                                    <span class="hd_badge outline solid_pastel c_success size_m">정상</span>
-                                                </div>
-                                                <div class="title_info">
-                                                    <div class="main_title">무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(Hi2301)</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <ul class="card_list_ty1">
-                                            <li>
-                                                <div class="title">대출일</div>
-                                                <div class="cont">2025.02.19</div>
-                                            </li>
-                                            <li>
-                                                <div class="title">대출잔액</div>
-                                                <div class="cont">10,000,000원</div>
-                                            </li>
-                                            <li>
-                                                <div class="title">납입계좌</div>
-                                                <div class="cont">국민은행 1234****1234</div>
-                                            </li>
-                                            <li>
-                                                <div class="title">대출이율</div>
-                                                <!-- s: 25-08-11 수정 -->
-                                                <div class="cont"><strong class="point">4.35%</strong></div>
-                                                <!-- e: 25-08-11 수정 -->
-                                            </li>
-                                        </ul>
-                                        
-                                        <div class="btn_area">
-                                            <!-- s: 25-07-09 수정 -->
-                                            {{> cp/linkButton bl_class="short_cut long tac sm" bl_text="개인정보처리 동의 여부 : 동의(2025.02.19)" pop_id="pop_type03" bl_title="팝업 열림" }}
-                                            <!-- e: 25-07-09 수정 -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item">
-                                <div class="item_inner">
-                                    <div class="inner_cont">
-                                        <div role="button" class="card_link" tabindex="0">
-                                            <div class="item_top">
-                                                <div class="badge_wrap">
-                                                    <span class="hd_badge outline solid_pastel c_danger size_m">연체중</span>
-                                                </div>
-                                                <div class="title_info">
-                                                    <div class="main_title">무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(Hi2301)</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <ul class="card_list_ty1">
-                                            <li>
-                                                <div class="title">대출일</div>
-                                                <div class="cont">2025.02.19</div>
-                                            </li>
-                                            <li>
-                                                <div class="title">대출잔액</div>
-                                                <div class="cont">10,000,000원</div>
-                                            </li>
-                                            <li>
-                                                <div class="title">납입계좌</div>
-                                                <div class="cont">국민은행 1234****1234</div>
-                                            </li>
-                                            <li>
-                                                <div class="title">대출이율</div>
-                                                <!-- s: 25-08-11 수정 -->
-                                                <div class="cont"><strong class="point">4.35%</strong></div>
-                                                <!-- e: 25-08-11 수정 -->
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- e: 계약 목록 -->
-
-                        <!-- s: 조회 내역이 없는 경우 -->
-                        <div class="no_list_area">
-                            {{> cp/icon iconClass="exclamationSvg"}}
-						    <!-- s: 25-08-11 UXW -->
-                            <p>보험계약대출 거래내역이 없어요.</p>
-						    <!-- e: 25-08-11 UXW -->
-                        </div>
-                        <div class="btn_area">
-                            <a href="javascript:void(0)" class="btn_link short_cut short_cut_icon short_cut_icon_ty5" title="보험계약대출 신청 페이지로 이동">
-                                <span class="text">
-                                    <dl>
-                                        <dt>
-                                            바로 대출가능한 금액
-                                            <span class="sub_text">(2025.02.20 기준)</span> 
-                                        </dt>
-                                        <dd>
-                                            <strong>1,500,000원</strong>
-                                        </dd>
-                                    </dl>
-                                </span>
-                            </a>
-                        </div>
-                        <!-- e: 조회 내역이 없는 경우 -->
-                        <div class="btn_area">
-                            {{> cp/linkButton bl_class="short_cut long" bl_text="보험계약대출 체결•이행을 위한 개인(신용)정보 처리 상세 동의서" bl_title="팝업 열림" }}
-                        </div>
-                    </div>
-                    <div class="tab_wrap_content" role="tabpanel" aria-labelledby="tab02" id="tabPanelex02">
-                        <div class="selectitem_wrap row_ty1">
-                            {{> cp/selectitem si_class="select_item_case01_mi" si_ph="선택해주세요." si_title="조회기간 선택" si_item="2024.03.19~2025.03.19" si_popup="pop_type01"}}
-                            {{> cp/selectitem si_class="select_item_case01_mi" si_ph="선택해주세요." si_title="대상 선택
-                            " si_item="대상 전체" si_popup="pop_type02"}}
-                        </div>
-                        <div class="btn_area">
-                            {{> cp/button type="2" size="2" b-text="조회"}}
-                        </div>
-                        <div class="divider_ty1"></div>
-                        <div class="search_result_count">
-                            <p>총 <strong class="point">7</strong>건</p>
-                        </div>
-                        <ul class="opt_select_list opt_case4 align_center">
-                            <li class="option">  
-                                <div class="item flex_st">
-                                    <div class="badge_wrap">
-                                        <span class="hd_badge outline solid_pastel c_warning size_m">정산</span>
-                                    </div>
-                                    <span class="date">2025.02.16</span>
-                                </div>
-                                <div class="item">
-                                    <div class="data_l"><span class="name">L20078****922</span></div>
-                                    <div class="data_r"><span class="price">28,756원</span></div>
-                                </div>
-                                <div class="item">
-                                    <div class="data_l"><span class="date">대출잔액</span></div>
-                                    <div class="data_r"><span class="date">1,400,000원</span></div>
-                                </div>
-                                <div class="item">
-                                    <div class="data_l"><span class="date">즉시이체</span></div>
-                                    <div class="data_r"><span class="date">2025.01.16~2025.02.16(22일)</span></div>
-                                </div>
-                            </li>
-                            <li class="option">  
-                                <div class="item flex_st">
-                                    <div class="badge_wrap">
-                                        <span class="hd_badge outline solid_pastel c_primary size_m">대출</span>
-                                    </div>
-                                    <span class="date">2025.02.16</span>
-                                </div>
-                                <div class="item">
-                                    <div class="data_l"><span class="name">L20078****922</span></div>
-                                    <div class="data_r"><span class="price">28,756원</span></div>
-                                </div>
-                                <div class="item">
-                                    <div class="data_l"><span class="date">대출잔액</span></div>
-                                    <div class="data_r"><span class="date">1,400,000원</span></div>
-                                </div>
-                                <div class="item">
-                                    <div class="data_l"><span class="date">즉시이체</span></div>
-                                    <div class="data_r"><span class="date">2025.01.16~2025.02.16(22일)</span></div>
-                                </div>
-                            </li>
-                            <li class="option">  
-                                <div class="item flex_st">
-                                    <div class="badge_wrap">
-                                        <span class="hd_badge outline solid_pastel c_secondary size_m">상환</span>
-                                    </div>
-                                    <span class="date">2025.02.16</span>
-                                </div>
-                                <div class="item">
-                                    <div class="data_l"><span class="name">L20078****922</span></div>
-                                    <div class="data_r"><span class="price">28,756원</span></div>
-                                </div>
-                                <div class="item">
-                                    <div class="data_l"><span class="date">대출잔액</span></div>
-                                    <div class="data_r"><span class="date">1,400,000원</span></div>
-                                </div>
-                                <div class="item">
-                                    <div class="data_l"><span class="date">즉시이체</span></div>
-                                    <div class="data_r"><span class="date">2025.01.16~2025.02.16(22일)</span></div>
-                                </div>
-                            </li>
-                            <li class="option">  
-                                <div class="item flex_st">
-                                    <div class="badge_wrap">
-                                        <span class="hd_badge outline solid_pastel c_success size_m">이자</span>
-                                    </div>
-                                    <span class="date">2025.02.16</span>
-                                </div>
-                                <div class="item">
-                                    <div class="data_l"><span class="name">L20078****922</span></div>
-                                    <div class="data_r"><span class="price">28,756원</span></div>
-                                </div>
-                                <div class="item">
-                                    <div class="data_l"><span class="date">대출잔액</span></div>
-                                    <div class="data_r"><span class="date">1,400,000원</span></div>
-                                </div>
-                                <div class="item">
-                                    <div class="data_l"><span class="date">즉시이체</span></div>
-                                    <div class="data_r"><span class="date">2025.01.16~2025.02.16(22일)</span></div>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="btn_area center view_more">
-                            {{> cp/button_more}}
-                        </div>
-                        <!-- s: 조회 내역이 없는 경우 -->
-                        <div class="no_list_area">
-                            {{> cp/icon iconClass="exclamationSvg"}}
-						    <!-- s: 25-08-11 UXW -->
-                            <p>보험계약대출 거래내역이 없어요.</p>
-						    <!-- e: 25-08-11 UXW -->
-                        </div>
-                        <!-- e: 조회 내역이 없는 경우 -->
-                    </div>
-                </div>
-                <!-- s: 꼭 알아두세요 -->
-                {{#> cp/notice dp-active=true }}
-                    <ul class="list_depth">
-                        <li>보험계약대출 조회 시, 최근 5년 이내 대출 유지계약과 날짜별 거래내역을 조회할 수 있어요.</li>
-                        <li>보험계약대출 유지계약 조회 시, 상품명을 선택하면 해당 계약의 상세내용을 조회할 수 있어요.</li>
-                        <li>보험계약대출 연체 여부는 은행 정산작업에 따라 실제 이체일보다 2~3일 후에 반영되므로, 정산작업 중에는 연체 여부가 ‘처리중’으로 표시될 수 있어요.</li>
-                        <li>자세한 내용은 인터넷 고객센터(02-2116-1004)로 문의해주세요.</li>
-                    </ul>
-                {{/ cp/notice }}
-                <!-- e: 꼭 알아두세요 -->
+								<!-- s: 조회 내역이 없는 경우 -->
+								<div class="no_list_area">
+										{{> cp/icon iconClass="exclamationSvg"}}
+				<!-- s: 25-08-11 UXW -->
+										<p>보험계약대출 거래내역이 없어요.</p>
+				<!-- e: 25-08-11 UXW -->
+								</div>
+								<div class="btn_area">
+										<a href="javascript:void(0)" class="btn_link short_cut short_cut_icon short_cut_icon_ty5" title="보험계약대출 신청 페이지로 이동">
+												<span class="text">
+														<dl>
+																<dt>
+																		바로 대출가능한 금액
+																		<span class="sub_text">(2025.02.20 기준)</span> 
+																</dt>
+																<dd>
+																		<strong>1,500,000원</strong>
+																</dd>
+														</dl>
+												</span>
+										</a>
+								</div>
+								<!-- e: 조회 내역이 없는 경우 -->
+								<div class="btn_area">
+										{{> cp/linkButton bl_class="short_cut long" bl_text="보험계약대출 체결•이행을 위한 개인(신용)정보 처리 상세 동의서" bl_title="팝업 열림" }}
+								</div>
+						</div>
+						<div class="tab_wrap_content" role="tabpanel" aria-labelledby="tab02" id="tabPanelex02">
+								<div class="selectitem_wrap row_ty1">
+										{{> cp/selectitem si_class="select_item_case01_mi" si_ph="선택해주세요." si_title="조회기간 선택" si_item="2024.03.19~2025.03.19" si_popup="pop_type01"}}
+										{{> cp/selectitem si_class="select_item_case01_mi" si_ph="선택해주세요." si_title="대상 선택
+										" si_item="대상 전체" si_popup="pop_type02"}}
+								</div>
+								<div class="btn_area">
+										{{> cp/button type="2" size="2" b-text="조회"}}
+								</div>
+								<div class="divider_ty1"></div>
+								<div class="search_result_count">
+										<p>총 <strong class="point">7</strong>건</p>
+								</div>
+								<ul class="opt_select_list opt_case4 align_center">
+										<li class="option">  
+												<div class="item flex_st">
+														<div class="badge_wrap">
+																<span class="hd_badge outline solid_pastel c_warning size_m">정산</span>
+														</div>
+														<span class="date">2025.02.16</span>
+												</div>
+												<div class="item">
+														<div class="data_l"><span class="name">L20078****922</span></div>
+														<div class="data_r"><span class="price">28,756원</span></div>
+												</div>
+												<div class="item">
+														<div class="data_l"><span class="date">대출잔액</span></div>
+														<div class="data_r"><span class="date">1,400,000원</span></div>
+												</div>
+												<div class="item">
+														<div class="data_l"><span class="date">즉시이체</span></div>
+														<div class="data_r"><span class="date">2025.01.16~2025.02.16(22일)</span></div>
+												</div>
+										</li>
+										<li class="option">  
+												<div class="item flex_st">
+														<div class="badge_wrap">
+																<span class="hd_badge outline solid_pastel c_primary size_m">대출</span>
+														</div>
+														<span class="date">2025.02.16</span>
+												</div>
+												<div class="item">
+														<div class="data_l"><span class="name">L20078****922</span></div>
+														<div class="data_r"><span class="price">28,756원</span></div>
+												</div>
+												<div class="item">
+														<div class="data_l"><span class="date">대출잔액</span></div>
+														<div class="data_r"><span class="date">1,400,000원</span></div>
+												</div>
+												<div class="item">
+														<div class="data_l"><span class="date">즉시이체</span></div>
+														<div class="data_r"><span class="date">2025.01.16~2025.02.16(22일)</span></div>
+												</div>
+										</li>
+										<li class="option">  
+												<div class="item flex_st">
+														<div class="badge_wrap">
+																<span class="hd_badge outline solid_pastel c_secondary size_m">상환</span>
+														</div>
+														<span class="date">2025.02.16</span>
+												</div>
+												<div class="item">
+														<div class="data_l"><span class="name">L20078****922</span></div>
+														<div class="data_r"><span class="price">28,756원</span></div>
+												</div>
+												<div class="item">
+														<div class="data_l"><span class="date">대출잔액</span></div>
+														<div class="data_r"><span class="date">1,400,000원</span></div>
+												</div>
+												<div class="item">
+														<div class="data_l"><span class="date">즉시이체</span></div>
+														<div class="data_r"><span class="date">2025.01.16~2025.02.16(22일)</span></div>
+												</div>
+										</li>
+										<li class="option">  
+												<div class="item flex_st">
+														<div class="badge_wrap">
+																<span class="hd_badge outline solid_pastel c_success size_m">이자</span>
+														</div>
+														<span class="date">2025.02.16</span>
+												</div>
+												<div class="item">
+														<div class="data_l"><span class="name">L20078****922</span></div>
+														<div class="data_r"><span class="price">28,756원</span></div>
+												</div>
+												<div class="item">
+														<div class="data_l"><span class="date">대출잔액</span></div>
+														<div class="data_r"><span class="date">1,400,000원</span></div>
+												</div>
+												<div class="item">
+														<div class="data_l"><span class="date">즉시이체</span></div>
+														<div class="data_r"><span class="date">2025.01.16~2025.02.16(22일)</span></div>
+												</div>
+										</li>
+								</ul>
+								<div class="btn_area center view_more">
+										{{> cp/button_more}}
+								</div>
+								<!-- s: 조회 내역이 없는 경우 -->
+								<div class="no_list_area">
+										{{> cp/icon iconClass="exclamationSvg"}}
+				<!-- s: 25-08-11 UXW -->
+										<p>보험계약대출 거래내역이 없어요.</p>
+				<!-- e: 25-08-11 UXW -->
+								</div>
+								<!-- e: 조회 내역이 없는 경우 -->
+						</div>
+				</div>
+				<!-- s: 꼭 알아두세요 -->
+				{{#> cp/notice dp-active=true }}
+						<ul class="list_depth">
+								<li>보험계약대출 조회 시, 최근 5년 이내 대출 유지계약과 날짜별 거래내역을 조회할 수 있어요.</li>
+								<li>보험계약대출 유지계약 조회 시, 상품명을 선택하면 해당 계약의 상세내용을 조회할 수 있어요.</li>
+								<li>보험계약대출 연체 여부는 은행 정산작업에 따라 실제 이체일보다 2~3일 후에 반영되므로, 정산작업 중에는 연체 여부가 ‘처리중’으로 표시될 수 있어요.</li>
+								<li>자세한 내용은 인터넷 고객센터(02-2116-1004)로 문의해주세요.</li>
+						</ul>
+				{{/ cp/notice }}
+				<!-- e: 꼭 알아두세요 -->
 			</div>
 		</div>
 
