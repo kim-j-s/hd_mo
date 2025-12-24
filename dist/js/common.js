@@ -1705,8 +1705,8 @@ function nbList() {
 			});
 		});
 	});
-	
 }
+
 //숫자리스트1
 function listNum() {
 	$('.number_list').each(function () {
