@@ -1,10 +1,13 @@
 {{#> layout/default no-sp=true page-title="보험료 확인 | 상품"}}
 
 <!-- s: Bottom 팝업 -->
-{{#> popup/popup_bottom popup-id="pop_type01" popup-title="자기부담금 변경" popup-active=true }}
+ <!-- s: 25-12-29 수정 -->
+ {{#> popup/popup_bottom popup-id="pop_type01" popup-title="자기부담금이란" popup-active=true }}
+ <!-- e: 25-12-29 수정 -->
 <div class="popup_cont">
 	<div class="popup_content">
-		<div class="opt_select_wrap">
+		<!-- s: 25-12-29 수정 -->
+		<!-- 삭제 <div class="opt_select_wrap">
 			<span class="opt_select_wrap_live" aria-live="polite"></span>
 			<div class="opt_select_inner" tabindex="0" aria-label="옵션 선택 영역">
 				<div class="opt_select opt_select_dmp" aria-hidden="true" tabindex="-1"></div>
@@ -28,18 +31,19 @@
 			</div>
 			<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_left" aria-label="이전 옵션"></button>
 			<button type="button" class="swiper_button sbc_01 sbs_01 swiper_button_right" aria-label="다음 옵션"></button>
-		</div>
+		</div> -->
 
-		<ul class="list_ty2">
-			<li>자기부담금이란? 보험 사고 발생 시 보상받는 보험금에서 공제되는 금액입니다.</li>
-		</ul>
+		<div class="info_cont">
+			<ul class="list_ty3">
+				<li>보험 사고 발생 시 보상받는 보험금에서 공제되는 금액입니다.</li>
+			</ul>
+		</div>
+		<!-- e: 25-12-29 수정 -->
 	</div>
 </div>
 <div class="popup_bottom">
 	<div class="btn_area">
-		<!-- s: 25-08-21 UXW -->
 		{{> cp/button type="1" size="2" b-text="확인" }}
-		<!-- e: 25-08-21 UXW -->
 	</div>
 </div>
 {{/ popup/popup_bottom}}
