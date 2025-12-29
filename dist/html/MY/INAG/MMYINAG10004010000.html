@@ -486,7 +486,6 @@
 								</div>
 							</div>
 
-							<!-- s: 25-08-19 추가 -->
 							<!-- s: 개시전 -->
 							<div class="progress_bar progress_bar_ty1 progress_bar_ty1_date before" role="img" tabindex="0">
 								<div class="progress_bar_per_cover">
@@ -504,7 +503,6 @@
 								</div>
 							</div>
 							<!-- e: 개시전 -->
-							<!-- e: 25-08-19 추가 -->
 						</div>
 					</div>
 
@@ -689,9 +687,7 @@
 									</li>
 									<li>
 										단체보험은 다수의 보험사가 담보 또는 가입금액을 분담해서 인수하는 계약이 가능합니다.<br />
-										<!-- s: 25-08-12 UXW -->
 										해당 서비스에서 조회되는 내용은 현대해상이 인수한 담보와 가입금액이 기준이므로, 조회되지 않는 담보는 재직 중인 회사 또는 카드사 등의 회원가입사에 문의해주세요.
-										<!-- e: 25-08-12 UXW -->
 										<ul>
 											<li>예) A손해보험사(상해사망 3천만원, 상해입원일당 2만원)와 현대해상(상해사망 2천만원)으로 분담된 계약을 조회한 경우 → 조회 시 '상해사망 2천만원'만 보장내용으로 표시됨</li>
 										</ul>
@@ -885,7 +881,6 @@
 						$progressBar.find(".per_bar_dp .text").text("D-" + remainingDays);
 
 						// 접근성 관련 문구 생성 후 삽입
-						//25-08-19
 						const isExpired = $progressBar.hasClass("expired");
 						const isBefore = $progressBar.hasClass("before");
 						let labelText = `만기일 ${remainingDays}일 전`;
@@ -902,7 +897,6 @@
 							$progressBar.find(".per_bar_dp .text").text(labelText);
 						}
 						$progressBar.attr("aria-label", ariaLabel);
-						//25-08-19
 
 						// 전체 넓이
 						var $progressBarPer = $progressBar.find(".progress_bar_per");
@@ -933,11 +927,9 @@
 
 						// 진행률에 따른 per_bar 너비 설정
 						setTimeout(function () {
-							//25-08-19
 							if (!$progressBar.hasClass("before")) {
 								$perBar.addClass("active").css("width", $progressBar.hasClass("expired") ? "70%" : percent + "%");
 							}
-							//25-08-19
 						}, 100);
 					});
 				}

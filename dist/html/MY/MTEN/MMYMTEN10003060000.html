@@ -466,9 +466,7 @@
 				<div class="content">
 					<!-- s: content_top -->
 					<div class="content_top">
-						<!-- s: 25-08-21 UXW -->
 						<h2 class="title_h2"><strong>차량 관련 확인사항</strong>중 <strong>해당하는 항목</strong>을 선택해주세요</h2>
-						<!-- e: 25-08-21 UXW -->
 					</div>
 					<!-- e: content_top -->
 
@@ -704,58 +702,6 @@
 		<!-- e: 자동차 배서 메뉴 -->
 		<!-- e: popup area -->
 
-		<!-- s: 25-08-22 수정 -->
-		<!-- 삭제 <script>
-					$(function(){
-						prograssCar();
-			
-						$(window).on('resize', function(){
-							prograssCar();
-						})
-					})
-			
-					function prograssCar(){
-						const $prograss = $('.progress_box_ty2');
-			
-						$prograss.each(function(idx){
-							const $allBar = $prograss.eq(idx),
-										$bar = $allBar.find('.ing'),
-										$start = $bar.find('.newStart');
-			
-							const allW = $allBar.width(),
-										barW = $bar.width();
-			
-							const newW = Math.round((barW / allW) * 100),
-										startW = Math.round((10 / allW) * 100),
-										newstartW = Math.round((37 / allW) * 100);
-			
-							$prograss.children('.ing').removeClass('full');
-			
-							let spotMargin = -((100 - newW) - newstartW - 1)+ '%';
-							let parseVal = parseFloat(spotMargin);
-							let leftVal = (parseVal / 100) * barW;
-			
-							// bar가 시작일과 겹칠 때
-							if((allW - barW) <= 40 ){
-								$bar.addClass('big');
-								$bar.find('.newStart').css('margin-left',spotMargin);
-								$bar.find('.newStart').children('em').css('left', -leftVal);
-			
-							// bar 길이 100%일 때
-							}else if(allW === barW){
-								$bar.addClass('full');
-			
-							// 기준일, 종료일 겹칠 때
-							}else if(barW <=76){
-								let spotMargin2 = barW - 27;
-								console.log(spotMargin2);
-								$bar.find('.newStart').addClass('small');
-								$bar.find('.newStart').children('.spot').css('margin-right', 40 + 'px');
-							}
-						})
-					}
-				</script> -->
-		<!-- e: 25-08-22 수정 -->
 		<!-- 전체메뉴 -->
 		<!-- s: Full 팝업 -->
 		<div class="popup_wrap full pts_wrap" id="totalSearch" role="dialog" aria-hidden="true">

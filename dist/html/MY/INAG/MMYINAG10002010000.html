@@ -524,7 +524,6 @@
 							</div>
 							<!-- e: 일반/단체 사용 -->
 
-							<!-- s: 25-08-27 수정 -->
 							<!-- s: 일반/단체 사용 개시전 -->
 							<div class="progress_bar progress_bar_ty1 progress_bar_ty1_date before" role="img" tabindex="0">
 								<div class="progress_bar_per_cover">
@@ -542,9 +541,7 @@
 								</div>
 							</div>
 							<!-- e: 일반/단체 사용 개시전 -->
-							<!-- e: 25-08-27 수정 -->
 
-							<!-- s: 25-08-19 추가 -->
 							<!-- s: 개시전 -->
 							<div class="progress_bar progress_bar_ty1 progress_bar_ty1_date before" role="img" tabindex="0">
 								<div class="progress_bar_per_cover">
@@ -562,7 +559,7 @@
 								</div>
 							</div>
 							<!-- e: 개시전 -->
-							<!-- e: 25-08-19 추가 -->
+
 							<!-- s: 만기 -->
 							<div class="progress_bar progress_bar_ty1 progress_bar_ty1_date expired" role="img" tabindex="0">
 								<div class="progress_bar_per_cover">
@@ -893,9 +890,7 @@
 							<!-- CASE. 연금보험인 경우 -->
 							<div class="no_list_area">
 								<i class="hd_icon exclamationSvg"></i>
-								<!-- s: 25-08-12 UXW -->
 								<p>보장내용이 없어요.</p>
-								<!-- e: 25-08-12 UXW -->
 							</div>
 							<!-- CASE. 연금보험인 경우 -->
 						</div>
@@ -984,9 +979,7 @@
 										<ul>
 											<li>
 												예) 보험기간이 2022.01.01에 시작되는 계약의 5년 갱신주기 담보의 경우<br />
-												<!-- s: 25-08-12 UXW -->
 												최초 보장기간이 ‘2022.01.01~2027.01.01’로 표시되며, 5년 갱신주기 이후 보장기간이 재계산되어 표시됨
-												<!-- e: 25-08-12 UXW -->
 											</li>
 										</ul>
 									</li>
@@ -994,18 +987,14 @@
 										어린이보험은 2019년 4월 이후 계약부터 총 납입횟수에 태아보험료(태아확정 이전) 납입횟수가 포함됩니다.
 										<ul>
 											<li>
-												<!-- s: 25-08-12 UXW -->
 												예) 3월에 태아보험 가입, 6월에 태아확정, 20년납으로 가입한 경우<br />
 												3, 4, 5월 태아보험료 납입횟수 3회 + 20년납 납입횟수 240회 → 총 ‘243회’로 납입횟수가 합산되어 표시됨
 											</li>
 										</ul>
 									</li>
-									<!-- s: 25-08-14 UXW -->
 									<!-- s: 25-09-18 수정 -->
 									<li>이 보험계약은 예금자보호법에 따라 해약환급금(또는 만기 시 보험금)에 기타지급금을 합한 금액이 1인당 “1억원까지”(본 보험회사의 여타 보호상품과 합산)보호됩니다. 이와 별도로 본 보험회사 보호상품의 사고보험금을 합산한 금액이 1인당 “1억원까지” 보호됩니다. 다만, 보험계약자 및 보험료납부자가 법인인 보험계약의 경우에는 보호되지 않습니다.</li>
 									<!-- e: 25-09-18 수정 -->
-									<!-- e: 25-08-14 UXW -->
-									<!-- e: 25-08-12 UXW -->
 								</ul>
 							</div>
 						</div>
@@ -1197,7 +1186,6 @@
 						$progressBar.find(".per_bar_dp .text").text("D-" + remainingDays);
 
 						// 접근성 관련 문구 생성 후 삽입
-						//25-08-19
 						const isExpired = $progressBar.hasClass("expired");
 						const isBefore = $progressBar.hasClass("before");
 						/* s: 25-11-06 */
@@ -1216,7 +1204,6 @@
 						}
 						/* e: 25-11-06 */
 						$progressBar.attr("aria-label", ariaLabel);
-						//25-08-19
 
 						// 전체 넓이
 						var $progressBarPer = $progressBar.find(".progress_bar_per");
@@ -1250,11 +1237,9 @@
 
 						// 진행률에 따른 per_bar 너비 설정
 						setTimeout(function () {
-							//25-08-19
 							if (!$progressBar.hasClass("before")) {
 								$perBar.addClass("active").css("width", $progressBar.hasClass("expired") ? "70%" : percent + "%");
 							}
-							//25-08-19
 						}, 100);
 					});
 				}

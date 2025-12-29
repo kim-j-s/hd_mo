@@ -497,14 +497,12 @@
 					<div class="form_group_wrap">
 						<div class="form_line">
 							<div class="label_tit">확정/변경 차량번호</div>
-							<!-- s: 25-08-11 UXW -->
 							<div class="input_text">
 								<div class="inp">
 									<input type="text" placeholder="123가4567(띄어쓰기 없이)" maxlength="9" title="확정/변경 차량번호 입력" />
 									<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 								</div>
 							</div>
-							<!-- e: 25-08-11 UXW -->
 						</div>
 						<div class="form_line">
 							<div class="label_tit">변경기준일</div>
@@ -547,9 +545,7 @@
 											</i>
 											<span id="plnIng" class="ing" style="width: 100%">
 												<span class="date" id="planCarTerm">
-													<!-- s: 25-08-20 수정 -->
 													<span id="plnInagDay">변경기간 220일</span>
-													<!-- e: 25-08-20 수정 -->
 												</span>
 												<i class="newStart">
 													<span class="spot">기준일</span>
@@ -586,9 +582,7 @@
 											</i>
 											<span id="plnIng" class="ing" style="width: 20%">
 												<span class="date" id="planCarTerm">
-													<!-- s: 25-08-20 수정 -->
 													<span id="plnInagDay">변경기간 365일</span>
-													<!-- e: 25-08-20 수정 -->
 												</span>
 												<i class="newStart">
 													<span class="spot">기준일</span>
@@ -788,61 +782,6 @@
 		<!-- e: 자동차 배서 메뉴 -->
 		<!-- e: popup area -->
 
-		<!-- s: 25-08-22 수정 -->
-		<!-- <script>
-					$(function(){
-						prograssCar();
-			
-						$(window).on('resize', function(){
-							prograssCar();
-						})
-					})
-			
-					function prograssCar(){
-						const $prograss = $('.progress_box_ty2');
-			
-						$prograss.each(function(idx){
-							const $allBar = $prograss.eq(idx),
-										$bar = $allBar.find('.ing'),
-										$start = $bar.find('.newStart'),
-										$spot = $bar.find('.spot');
-			
-							let spotLeft = null;
-			
-							const allW = $allBar.outerWidth(), //progressbar 전체 너비
-										barW = $bar.width(), 		//진행된 bar의 너비
-										spotW = $spot.outerWidth(),		//spot 너비
-										spaceW = 2;										//spot끼리 여백 너비
-			
-							const newW = Math.round((barW / allW) * 100),	//진행된 너비 % 변환
-										startW = Math.round((8 / allW) * 100),	//기준일 spot % 변환
-										newstartW = Math.round((spotW / allW) * 100), //기준일 badge 너비 % 변환
-										spacePer = (2 / allW) * 100;
-			
-							$prograss.children('.ing').removeClass('full');
-			
-							console.log(allW, barW)
-			
-							// bar가 시작일과 겹칠 때
-							if((allW - barW) <= spotW + spaceW){
-								$bar.addClass('big');
-								spotLeft = spotW + spaceW - (allW - barW);
-								$bar.find('.newStart').children('.spot').css('left', spotLeft);
-			
-								// bar 길이 100%일 때
-								if(allW == barW){
-									$bar.find('.newStart').children('em').css('left', '1px');
-								}
-			
-							// 기준일, 종료일 겹칠 때
-							}else if(barW <= (spotW * 2) + spaceW){
-								$bar.find('.newStart').addClass('small');
-								$bar.find('.newStart').children('.spot').css('margin-right', spotW + spaceW + 'px');
-							}
-						})
-					}
-				</script> -->
-		<!-- e: 25-08-22 수정 -->
 		<!-- 전체메뉴 -->
 		<!-- s: Full 팝업 -->
 		<div class="popup_wrap full pts_wrap" id="totalSearch" role="dialog" aria-hidden="true">
