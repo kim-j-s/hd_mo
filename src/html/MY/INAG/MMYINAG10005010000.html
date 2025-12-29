@@ -33,7 +33,6 @@
 							</div>
 						</div>
 
-						<!-- s: 25-08-19 추가 -->
 						<!-- s: 개시전 -->
 						<div class="progress_bar progress_bar_ty1 progress_bar_ty1_date before" role="img" tabindex="0">
 							<div class="progress_bar_per_cover">
@@ -69,7 +68,6 @@
 							</div>
 						</div>
 						<!-- e: 만기 D-30 -->
-						<!-- e: 25-08-19 추가 -->
 					</div>
 				</div>
 
@@ -249,13 +247,11 @@
 							{{#> cp/accordion ac-title="이용안내" ac-active=true}}
 							<ul class="list_depth">
 								<li>
-									<!-- s: 25-08-14 UXW -->
 									<!-- s: 25-09-18 수정 -->
 									<!-- s: 25-09-19 수정 -->
 									이 보험계약은 예금자보호법에 따라 해약환급금(또는 만기 시 보험금)에 기타지급금을 합한 금액이 1인당 "1억원까지"(본 보험회사의 여타 보호상품과 합산) 보호됩니다. 이와 별도로 본 보험회사 보호상품의 사고보험금을 합산한 금액이 1인당 "1억원까지" 보호됩니다. 다만, 보험계약자 및 보험료납부자가 법인인 보험계약의 경우에는 보호되지 않습니다.
 									<!-- e: 25-09-19 수정 -->
 									<!-- e: 25-09-18 수정 -->
-									<!-- e: 25-08-14 UXW -->
 								</li>
 							</ul>
 							{{/ cp/accordion }}
@@ -368,9 +364,7 @@
 							{{#> cp/accordion ac-title="이용안내" ac-active=true}}
 							<ul class="list_depth">
 								<li>
-									<!-- s: 25-08-14 UXW -->
 									이 보험계약은 예금자보호법에 따라 해약환급금(또는 만기 시 보험금)에 기타지급금을 합한 금액이 1인당 "1억원까지"(본 보험회사의 여타 보호상품과 합산)보호됩니다. 이와 별도로 본 보험회사 보호상품의 사고보험금을 합산한 금액이 1인당 "1억원까지" 보호됩니다. 다만, 보험계약자 및 보험료 납부자가 법인이면 보호되지 않습니다.
-									<!-- e: 25-08-14 UXW -->
 								</li>
 							</ul>
 							{{/ cp/accordion }}
@@ -420,9 +414,7 @@
 							{{#> cp/accordion ac-title="이용안내" ac-active=true}}
 							<ul class="list_depth">
 								<li>
-									<!-- s: 25-08-14 UXW -->
 									이 보험계약은 예금자보호법에 따라 해약환급금(또는 만기 시 보험금)에 기타지급금을 합한 금액이 1인당 "1억원까지"(본 보험회사의 여타 보호상품과 합산)보호됩니다. 이와 별도로 본 보험회사 보호상품의 사고보험금을 합산한 금액이 1인당 "1억원까지" 보호됩니다. 다만, 보험계약자 및 보험료 납부자가 법인이면 보호되지 않습니다.
-									<!-- e: 25-08-14 UXW -->
 								</li>
 							</ul>
 							{{/ cp/accordion }}
@@ -598,7 +590,6 @@
 				$progressBar.find('.per_bar_dp .text').text('D-' + remainingDays);
 	
 				// 접근성 관련 문구 생성 후 삽입
-				//25-08-19
 				const isExpired = $progressBar.hasClass('expired');
 				const isBefore = $progressBar.hasClass('before');
 				let labelText = `만기일 ${remainingDays}일 전`;
@@ -615,7 +606,6 @@
 					$progressBar.find('.per_bar_dp .text').text(labelText);
 				}
 				$progressBar.attr('aria-label', ariaLabel);	
-				//25-08-19
 	
 				// 전체 넓이
 				var $progressBarPer = $progressBar.find('.progress_bar_per');
@@ -646,11 +636,9 @@
 	
 				// 진행률에 따른 per_bar 너비 설정
 				setTimeout(function(){
-					//25-08-19
 					if (!$progressBar.hasClass('before')) {
 						$perBar.addClass('active').css('width', $progressBar.hasClass('expired') ? '70%' : percent + '%');
 					}
-					//25-08-19
 				}, 100);
 			});
 			}

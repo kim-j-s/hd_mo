@@ -1,202 +1,191 @@
 {{#> layout/default page-title="안전운전 할인특약 | 마이페이지"}}
 	<div id="wrap" class="wrap">
-        <!-- s: 25-08-21 UXW -->
 		{{> layout/header h-title="안전운전 할인특약 가입" h-ins="pop_insChk" }}
-        <!-- e: 25-08-21 UXW -->
 		<div id="container" class="container">
 			<div class="content">
 
 				<!-- s: content_top -->
 				<div class="content_top">
-                <!-- s: 25-08-21 UXW -->
-                <!-- s: 25-08-29 수정 -->
-                <h2 class="title_h2">
-                    <strong>안전운전 종류</strong>를 선택해주세요
-                </h2>
-                <!-- e: 25-08-29 수정 -->
-                <!-- e: 25-08-21 UXW -->
-                <div class="btn_area basic">
-                    {{> cp/button type="3" size="5" b-text="자세히 보기" rightIcon="arrowRightSvg" popup="ex_popup_bottom"}}
-                </div>
-                <!-- s: 25-08-21 UXW -->
-                <!-- s: 25-08-29 수정 -->
-                <!-- 삭제 <p class="text_sub">안전운전 종류를 선택해주세요.</p> -->
-                <!-- e: 25-08-29 수정 -->
-                <!-- e: 25-08-21 UXW -->
-                </div>
-                <!-- e: content_top -->
-                <div class="card_item_wrap">
-                    <div class="card_item">
-                        <div class="item_inner">
-                            <div class="tit_item">
-                                <div class="inp_radio">
-                                    <input type="radio" id="card_radio1" name="name1" aria-labelledby="card_radio1_cont" checked>
-                                    <label for="card_radio1" class="chk_label">
-                                        <span class="title_info">
-                                            <span class="main_title">
-                                                커넥티드 안전운전
-                                            </span>
-                                        </span>
-                                    </label>
-                                    <i></i>
-                                </div>
-                                {{> cp/button_question question-icon="arrow" question_tit=" " }}
-                            </div>
-                            <div class="inner_cont">
-                                <ul class="card_list_ty1">
-                                    <li>
-                                        <div class="title">안전운전 점수</div>
-                                        <div class="cont">86점</div>
-                                    </li>
-                                    <li>
-                                        <div class="title">특약가능여부</div>
-                                        <div class="cont point_b">가능</div>
-                                    </li>
-                                    <li>
-                                        <div class="title">할인율</div>
-                                        <div class="cont point_b">18.9%</div>
-                                    </li>
-                                    <li>
-                                        <div class="title">월별 안전운전점수 할인 추가 특약</div>
-                                        <div class="cont">
-                                            {{> cp/linkButton bl_class="price_btn" bl_text="후환급" role_b=true question_tit="자세히보기" }}
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="title">70점 미만 월 횟수</div>
-                                        <div class="cont point_b">3건</div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card_item">
-                        <div class="item_inner">
-                            <div class="tit_item">
-                                <div class="inp_radio">
-                                    <input type="radio" id="card_radio2" name="name1" aria-labelledby="card_radio2_cont">
-                                    <label for="card_radio2" class="chk_label">
-                                        <span class="title_info">
-                                            <span class="main_title">
-                                                TMAP 안전운전
-                                            </span>
-                                        </span>
-                                </label>
-                                    <i></i>
-                                </div>
-                                {{> cp/button_question question-icon="arrow" question_tit=" " }}
-                            </div>
-                            <div class="inner_cont">
-                                <ul class="card_list_ty1">
-                                    <li>
-                                        <div class="title">안전운전 점수</div>
-                                        <div class="cont">75점</div>
-                                    </li>
-                                    <li>
-                                        <div class="title">특약가능여부</div>
-                                        <div class="cont point_b">가능</div>
-                                    </li>
-                                    <li>
-                                        <div class="title">할인율</div>
-                                        <div class="cont point_b">12.5%</div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card_item ">
-                        <div class="item_inner">
-                            <div class="tit_item">
-                                <div class="inp_radio">
-                                    <input type="radio" id="card_radio3" name="name1" aria-labelledby="card_radio3_cont" disabled>
-                                    <label for="card_radio3" class="chk_label">
-                                        <span class="title_info">
-                                            <span class="main_title">
-                                                네이버 안전운전
-                                            </span>
-                                        </span>
-                                    </label>
-                                    <i></i>
-                                </div>
-                                {{> cp/button_question question-icon="arrow" question_tit=" " }}
-                            </div>
-                            <div class="inner_cont">
-                                <!-- s: 25-09-02 수정 -->
-                                <ul class="card_list_ty1">
-                                    <li>
-                                        <div class="title">안전운전 점수</div>
-                                        <div class="cont">조회 미동의</div>
-                                    </li>
-                                    <li>
-                                        <div class="title">특약가능여부</div>
-                                        <div class="cont bold">불가능</div>
-                                    </li>
-                                    <li>
-                                        <div class="title">할인율</div>
-                                        <div class="cont">-</div>
-                                    </li>
-                                </ul>
-                                <!-- e: 25-09-02 수정 -->
-																<!-- s: 25-10-24 수정 -->
-																<p class="msg_error">
-																	최근 6개월 주행거리 500Km 미만 또는 안전운전점수 70점 미만입니다. (보험가입 후에도 조건충족시 고객콜센터를 통해 할인적용이 가능합니다.)
-																</p>
-																<!-- e: 25-10-24 수정 -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- disabled 상태일 시, 클래스 추가 -->
-                    <div class="card_item disabled">
-                        <div class="item_inner">
-                            <div class="tit_item">
-                                <div class="inp_radio">
-                                    <input type="radio" id="card_radio4" name="name1" aria-labelledby="card_radio4_cont" disabled>
-                                    <label for="card_radio4" class="chk_label">
-                                        <span class="title_info">
-                                            <span class="main_title">
-                                                커넥티드 블랙박스 안전운전
-                                            </span>
-                                        </span>
-                                    </label>
-                                    <i></i>
-                                </div>
-                                <!-- s: 25-09-15 -->
-                                {{> cp/button_question question-icon="arrow" question_tit=" " disabled=true }}
-                                <!-- e: 25-09-15 -->
-                            </div>
-                            <div class="inner_cont">
-                                <ul class="card_list_ty1">
-                                    <li>
-                                        <div class="title">안전운전 점수</div>
-                                        <div class="cont">조회 미동의</div>
-                                    </li>
-                                    <li>
-                                        <div class="title">특약가능여부</div>
-                                        <div class="cont bold">불가능</div>
-                                    </li>
-                                    <li>
-                                        <div class="title">할인율</div>
-                                        <div class="cont">-</div>
-                                    </li>
-                                </ul>
-																<p class="msg_error">
-																	네이버 아이디에 등록된 전화번호가 불일치 합니다.
-																</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <ul class="list_ty2">
-                    <li>조회된 안전운전 점수 중 더 높은 할인율이 적용되는 1개의 특약만 가입 가능해요.</li>
-                </ul>
-            </div>
-        </div>
-        <!-- s: 25-09-08 수정 -->
-        <div class="bottom_fix_wrap">
-            <div class="btn_area">
-                {{> cp/button type="1" size="1" b-text="확인"}}
-            </div>
-        </div>
-        <!-- e: 25-09-08 수정 -->
-    </div>
+					<h2 class="title_h2">
+							<strong>안전운전 종류</strong>를 선택해주세요
+					</h2>
+					<div class="btn_area basic">
+							{{> cp/button type="3" size="5" b-text="자세히 보기" rightIcon="arrowRightSvg" popup="ex_popup_bottom"}}
+					</div>
+				</div>
+				<!-- e: content_top -->
+				<div class="card_item_wrap">
+							<div class="card_item">
+									<div class="item_inner">
+											<div class="tit_item">
+													<div class="inp_radio">
+															<input type="radio" id="card_radio1" name="name1" aria-labelledby="card_radio1_cont" checked>
+															<label for="card_radio1" class="chk_label">
+																	<span class="title_info">
+																			<span class="main_title">
+																					커넥티드 안전운전
+																			</span>
+																	</span>
+															</label>
+															<i></i>
+													</div>
+													{{> cp/button_question question-icon="arrow" question_tit=" " }}
+											</div>
+											<div class="inner_cont">
+													<ul class="card_list_ty1">
+															<li>
+																	<div class="title">안전운전 점수</div>
+																	<div class="cont">86점</div>
+															</li>
+															<li>
+																	<div class="title">특약가능여부</div>
+																	<div class="cont point_b">가능</div>
+															</li>
+															<li>
+																	<div class="title">할인율</div>
+																	<div class="cont point_b">18.9%</div>
+															</li>
+															<li>
+																	<div class="title">월별 안전운전점수 할인 추가 특약</div>
+																	<div class="cont">
+																			{{> cp/linkButton bl_class="price_btn" bl_text="후환급" role_b=true question_tit="자세히보기" }}
+																	</div>
+															</li>
+															<li>
+																	<div class="title">70점 미만 월 횟수</div>
+																	<div class="cont point_b">3건</div>
+															</li>
+													</ul>
+											</div>
+									</div>
+							</div>
+							<div class="card_item">
+									<div class="item_inner">
+											<div class="tit_item">
+													<div class="inp_radio">
+															<input type="radio" id="card_radio2" name="name1" aria-labelledby="card_radio2_cont">
+															<label for="card_radio2" class="chk_label">
+																	<span class="title_info">
+																			<span class="main_title">
+																					TMAP 안전운전
+																			</span>
+																	</span>
+													</label>
+															<i></i>
+													</div>
+													{{> cp/button_question question-icon="arrow" question_tit=" " }}
+											</div>
+											<div class="inner_cont">
+													<ul class="card_list_ty1">
+															<li>
+																	<div class="title">안전운전 점수</div>
+																	<div class="cont">75점</div>
+															</li>
+															<li>
+																	<div class="title">특약가능여부</div>
+																	<div class="cont point_b">가능</div>
+															</li>
+															<li>
+																	<div class="title">할인율</div>
+																	<div class="cont point_b">12.5%</div>
+															</li>
+													</ul>
+											</div>
+									</div>
+							</div>
+							<div class="card_item ">
+									<div class="item_inner">
+											<div class="tit_item">
+													<div class="inp_radio">
+															<input type="radio" id="card_radio3" name="name1" aria-labelledby="card_radio3_cont" disabled>
+															<label for="card_radio3" class="chk_label">
+																	<span class="title_info">
+																			<span class="main_title">
+																					네이버 안전운전
+																			</span>
+																	</span>
+															</label>
+															<i></i>
+													</div>
+													{{> cp/button_question question-icon="arrow" question_tit=" " }}
+											</div>
+											<div class="inner_cont">
+													<!-- s: 25-09-02 수정 -->
+													<ul class="card_list_ty1">
+															<li>
+																	<div class="title">안전운전 점수</div>
+																	<div class="cont">조회 미동의</div>
+															</li>
+															<li>
+																	<div class="title">특약가능여부</div>
+																	<div class="cont bold">불가능</div>
+															</li>
+															<li>
+																	<div class="title">할인율</div>
+																	<div class="cont">-</div>
+															</li>
+													</ul>
+													<!-- e: 25-09-02 수정 -->
+													<!-- s: 25-10-24 수정 -->
+													<p class="msg_error">
+														최근 6개월 주행거리 500Km 미만 또는 안전운전점수 70점 미만입니다. (보험가입 후에도 조건충족시 고객콜센터를 통해 할인적용이 가능합니다.)
+													</p>
+													<!-- e: 25-10-24 수정 -->
+											</div>
+									</div>
+							</div>
+							<!-- disabled 상태일 시, 클래스 추가 -->
+							<div class="card_item disabled">
+									<div class="item_inner">
+											<div class="tit_item">
+													<div class="inp_radio">
+															<input type="radio" id="card_radio4" name="name1" aria-labelledby="card_radio4_cont" disabled>
+															<label for="card_radio4" class="chk_label">
+																	<span class="title_info">
+																			<span class="main_title">
+																					커넥티드 블랙박스 안전운전
+																			</span>
+																	</span>
+															</label>
+															<i></i>
+													</div>
+													<!-- s: 25-09-15 -->
+													{{> cp/button_question question-icon="arrow" question_tit=" " disabled=true }}
+													<!-- e: 25-09-15 -->
+											</div>
+											<div class="inner_cont">
+													<ul class="card_list_ty1">
+															<li>
+																	<div class="title">안전운전 점수</div>
+																	<div class="cont">조회 미동의</div>
+															</li>
+															<li>
+																	<div class="title">특약가능여부</div>
+																	<div class="cont bold">불가능</div>
+															</li>
+															<li>
+																	<div class="title">할인율</div>
+																	<div class="cont">-</div>
+															</li>
+													</ul>
+													<p class="msg_error">
+														네이버 아이디에 등록된 전화번호가 불일치 합니다.
+													</p>
+											</div>
+									</div>
+							</div>
+					</div>
+					<ul class="list_ty2">
+							<li>조회된 안전운전 점수 중 더 높은 할인율이 적용되는 1개의 특약만 가입 가능해요.</li>
+					</ul>
+			</div>
+		</div>
+		<!-- s: 25-09-08 수정 -->
+		<div class="bottom_fix_wrap">
+				<div class="btn_area">
+						{{> cp/button type="1" size="1" b-text="확인"}}
+				</div>
+		</div>
+	<!-- e: 25-09-08 수정 -->
+	</div>
 {{/ layout/default }}

@@ -3,20 +3,17 @@
 		{{> layout/header h-title="원리금영수증" }}
 		<div id="container" class="container">
 			<div class="content">
-                <p class="text_sub">
-					<!-- s: 25-08-12 UXW -->
+				<p class="text_sub">
 					발급할 내역을 선택해주세요.
-					<!-- e: 25-08-12 UXW -->
 				</p>
-				<!-- s: 25-08-12 -->
-                {{> cp/selectitem si_class="select_item_case01_mi si_ellipsis" si_ph="선택해주세요." si_title="조회계약 선택" si_item="L2008****123 무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(Hi2301)" }}
-				<!-- e: 25-08-12 -->
-                {{> cp/selectitem si_class="select_item_case01_mi" si_ph="선택해주세요." si_title="조회기간 선택" si_item="2024.03.19~2025.03.19" si_popup="pop_type02"}}
-                {{> cp/selectitem si_class="select_item_case01_mi" si_ph="선택해주세요." si_title="조회대상 선택" si_item="대상 전체" si_popup="pop_type03"}}
-                <div class="btn_area">
-                    {{> cp/button type="2" size="2" b-text="조회"}}
-                </div>
-                <div class="divider_ty1"></div>
+				{{> cp/selectitem si_class="select_item_case01_mi si_ellipsis" si_ph="선택해주세요." si_title="조회계약 선택" si_item="L2008****123 무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(Hi2301)" }}
+				{{> cp/selectitem si_class="select_item_case01_mi" si_ph="선택해주세요." si_title="조회기간 선택" si_item="2024.03.19~2025.03.19" si_popup="pop_type02"}}
+				{{> cp/selectitem si_class="select_item_case01_mi" si_ph="선택해주세요." si_title="조회대상 선택" si_item="대상 전체" si_popup="pop_type03"}}
+				<div class="btn_area">
+						{{> cp/button type="2" size="2" b-text="조회"}}
+				</div>
+				<div class="divider_ty1"></div>
+
 				<!-- s: 계약 목록 -->
 				<div class="card_item_wrap">
 					<div class="card_item">
@@ -45,24 +42,22 @@
 									<!-- e: 25-09-09 수정 -->
 							<!-- e: 25-09-17 수정 -->
 								<ul class="card_list_ty1">
-                                    <li>
-                                        <div class="title">영수일</div>
-                                        <div class="cont">2025.02.19</div>
-                                    </li>
-                                    <li>
-                                        <div class="title">계약번호</div>
-                                        <div class="cont">L2019****123</div>
-                                    </li>
-                                    <li>
-                                        <div class="title">대출잔액</div>
-					                    <!-- s: 25-08-12 UXW -->
-                                        <div class="cont">10,000,000원</div>
-					                    <!-- e: 25-08-12 UXW -->
-                                    </li>
-                                    <li>
-                                        <div class="title">경로</div>
-                                        <div class="cont">인터넷</div>
-                                    </li>
+									<li>
+											<div class="title">영수일</div>
+											<div class="cont">2025.02.19</div>
+									</li>
+									<li>
+											<div class="title">계약번호</div>
+											<div class="cont">L2019****123</div>
+									</li>
+									<li>
+											<div class="title">대출잔액</div>
+											<div class="cont">10,000,000원</div>
+									</li>
+									<li>
+											<div class="title">경로</div>
+											<div class="cont">인터넷</div>
+									</li>
 								</ul>
 							</div>
 						</div>
@@ -74,13 +69,13 @@
 								<div class="inp_checkbox">
 									<input type="checkbox" id="card_chk2" name="name1" >
 									<label for="card_chk2" class="chk_label">
-                                        <span class="badge_wrap">
-                                            <span class="hd_badge outline solid_pastel c_success size_m">상환</span>
-                                        </span>
-                                        <span class="title_info">
-                                            <div class="main_title">2,000,000원</div>
-                                        </span>
-                                    </label>
+											<span class="badge_wrap">
+													<span class="hd_badge outline solid_pastel c_success size_m">상환</span>
+											</span>
+											<span class="title_info">
+													<div class="main_title">2,000,000원</div>
+											</span>
+									</label>
 									<i></i>
 								</div>
 								<!-- s: 25-09-10 check 삭제 -->
@@ -103,9 +98,7 @@
                                     </li>
                                     <li>
                                         <div class="title">대출잔액</div>
-					                    <!-- s: 25-08-12 UXW -->
                                         <div class="cont">10,000,000원</div>
-					                    <!-- e: 25-08-12 UXW -->
                                     </li>
                                     <li>
                                         <div class="title">경로</div>
@@ -121,11 +114,9 @@
 				<!-- s: 조회 내역이 없는 경우 -->
 				<div class="no_list_area">
 					{{> cp/icon iconClass="exclamationSvg"}}
-					<!-- s: 25-08-12 UXW -->
 					<!-- s: 25-09-29 수정 -->
 					<p>발급 가능한 증명서가 없어요.</p>
 					<!-- e: 25-09-29 수정 -->
-					<!-- e: 25-08-12 UXW -->
                 </div>
                 <!-- e: 조회 내역이 없는 경우 -->
                 <!-- s: 꼭 알아두세요 -->
@@ -196,18 +187,5 @@
 	</div>
 	{{/ popup/popup_bottom}}
 	<!-- e: 조회조건 - 대상 선택 -->
-<!-- s: selpop -->
-<!-- s: 25-08-12 삭제 -->
-<!-- {{#> popup/popup_bottom popup-id="pop_type01" popup-title="자동차보험 재발행 사유"}}
-<div class="popup_cont">
-	<div class="popup_content">
-		<div class="opt_select_list opt_case3">
-			<div role="button" tabindex="0" class="option"><span class="text">계약 전체</span></div>
-			<div role="button" tabindex="0" class="option"><span class="text">L2008****123 무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(Hi2301)</span></div>
-		</div>
-	</div>
-</div>
-{{/ popup/popup_bottom}} -->
-<!-- e: 25-08-12 삭제 -->
-<!-- e: selpop -->
+
 {{/ layout/default }}
