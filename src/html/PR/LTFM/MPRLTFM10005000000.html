@@ -21,15 +21,11 @@
 					</div>
 					<div class="form_line">
 						<div class="label_tit">이메일</div>
-						<!-- s: 25-08-18 UXW -->
 						{{> cp/text type="email" inpclass="email_auto" placeholder="이메일 입력" inp-title="이메일 입력" }}
-						<!-- e: 25-08-18 UXW -->
 					</div>
 					<div class="form_line">
 						<div class="label_tit">우편물 받는 곳</div>
-						<!-- s: 25-08-18 UXW -->
 						{{> cp/checkbox id="checkbox22" labelname="주택 소재지와 동일합니다." checked=true }}
-						<!-- e: 25-08-18 UXW -->
 						<div class="radio_group_wrap" role="radiogroup">
 							{{> cp/radio rd-class="rd_btn" rd-id="addSel01_01" name="addSel01" labelname="집" checked=true }}
 							{{> cp/radio rd-class="rd_btn" rd-id="addSel01_02" name="addSel01" labelname="직장" }}
@@ -40,9 +36,7 @@
 					</div>
 					<div class="form_line">
 						<div class="label_tit box">
-							<!-- s: 25-08-18 UXW -->
 							<div>일상생활배상책임 보장 소재지도 동일한가요?</div>
-							<!-- e: 25-08-18 UXW -->
 							{{> cp/linkButton bl_class="short_cut sm" bl_text="안내" pop_id="pop_type01" question_tit="일상생활배상책임 담보 안내 팝업열기" }}
 						</div>
 						<div class="radio_group_wrap" role="radiogroup">
@@ -72,9 +66,7 @@
 
 			<div class="divider_ty1"></div>
 			<div class="form_box">
-				<!-- s: 25-08-18 UXW -->
 				<h3 class="title_h3">필수 확인사항</h3>
-				<!-- e: 25-08-18 UXW -->
 				<div class="form_group_wrap">
 					<div class="form_line">
 						<!-- s: 25-09-18 수정 -->
@@ -163,7 +155,6 @@
 					</div>
 					<div class="form_line">
 						<div class="file_upload_wrap">
-							<!-- s: 25-08-18 UXW -->
 							<h3 class="title_h3">장애인증명서/복지카드 사진 등록</h3>				
 							<div class="info_text">
 								<p class="text_sub">
@@ -175,7 +166,6 @@
 									‘장애인증명서/복지카드' 또는 '국가유공자증' 등 그 밖의 소득세법에 따른 인적공제 대상 장애인임을 확인할 수 있는 서류 등록이 필요합니다.
 								</p>
 							</div>
-							<!-- e: 25-08-18 UXW -->
 
 							<!-- s: 이미지 파일 붙는 영역 -->
 							<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
@@ -196,9 +186,7 @@
 							</div> -->
 							<!-- e: 이미지 파일 붙는 영역 -->
 							<ul class="list_ty2">
-								<!-- s: 25-08-18 UXW -->
 								<li>10MB 이하의 jpg, jpeg, gif, png 파일만 등록할 수 있습니다.</li>
-								<!-- e: 25-08-18 UXW -->
 							</ul>
 							<!-- s: 이미지 파일 버튼 -->
 							<div class="btn_area center">
@@ -232,9 +220,7 @@
 				<div class="checkbox_group_wrap column">
 					{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-1" label_class="chk_label_ty3 check_hide" labelname="이 금융 거래의 실제 소유자입니다." labelcont="「특정금융정보법」에 따라 금융기관과의 거래를 위해 고객의 신원이 실제 소유자임을 확인하고 있습니다." }}
 					{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-2" label_class="chk_label_ty3 check_hide" labelname="보험수익자 지정/변경 약정에 동의합니다." labelcont="계약자 사망시 상속인 등 승계인이 보험(만기, 사망, 기타)수익자 지정, 변경권을 행사합니다." }}
-					<!-- s: 25-08-18 UXW -->
 					{{> cp/checkbox checkbox_class="rd_box" id="checkbox01-3" label_class="chk_label_ty3 check_hide" labelname="통신수단을 이용한 계약해지에 동의합니다." labelcont="보험계약자가 체결한 계약을 해지하고자 하는 경우, 통신수단(전화)을 이용할 수 있습니다. 단, 금융사고 예방 등을 위해 현대해상이 정한 규정에 의해 일부 제한될 수 있음을 꼭 알아두세요." }}
-					<!-- e: 25-08-18 UXW -->
 				</div>
 				<div class="info_gray">
 					<dl>
@@ -249,11 +235,9 @@
 						<dt>
 							보험금 대리청구인 지정
 						</dt>
-						<!-- s: 25-08-18 UXW -->
 						<dd>
 							지정 안함
 						</dd>
-						<!-- e: 25-08-18 UXW -->
 					</dl>
 				</div>
 			</div>
@@ -261,14 +245,12 @@
 			<!-- s: 꼭 알아두세요 -->
 			{{#> cp/notice dp-active="active" }}
 			<ul class="list_ty1">
-				<!-- s: 25-08-18 UXW -->
 				<!-- s: 25-09-25 수정 -->
 				<li>보내드리는 보험계약서류는 입력하신 정보를 기준으로 작성되므로 정확하게 입력해주세요.</li>
 				<li>입력한 정보로 개인정보가 변경됩니다.</li>
 				<!-- e: 25-09-25 수정 -->
 				<li>수익자 지정/변경 약정을 하지 않은 경우 「상법」 제733조 제2항에 따라 보험계약자가 보험수익자를 지정하지 않고 사망한 때에는 피보험자를 보험수익자로 하며, 보험계약자가 수익자를 변경하지 않고 사망한 때에는 청약 시 설정한 보험수익자의 권리가 확정됩니다.</li>				
 				<li>사망보험금 수익자 및 보험금 대리청구인 지정을 원하는 경우 다이렉트 고객센터(1899-6782)로 문의해주세요.</li>
-				<!-- e: 25-08-18 UXW -->
 			</ul>
 			{{/ cp/notice }}
 			<!-- e: 꼭 알아두세요 -->
@@ -288,12 +270,9 @@
 <!-- s: popup area -->
 
 <!-- s: 일상생활배상책임 담보 Bottom 팝업 -->
-<!-- s: 25-08-18 UXW -->
 {{#> popup/popup_bottom popup-id="pop_type01" popup-title="일상생활배상책임 보장 안내"}}
-<!-- e: 25-08-18 UXW -->
 <div class="popup_cont">
 	<div class="popup_content">
-		<!-- s: 25-08-18 UXW -->
 		<ul class="list_ty3">
 			<li>일상생활배상책임 담보는 아래 ①, ② 중 하나의 주택으로 선택하여 가입하실 수 있습니다.
 				<ol class="circle_list">
@@ -305,14 +284,11 @@
 				피보험자가 임차인으로 임차주택을 가입하는 경우, 법률상의 배상책임이 발생하는 사고에 대해서만 보장합니다.
 			</li>
 		</ul>
-		<!-- e: 25-08-18 UXW -->
 	</div>
 </div>
 <div class="popup_bottom">
 	<div class="btn_area">
-		<!-- s: 25-08-18 UXW -->
 		{{> cp/button type="1" size="2" b-text="확인"}}
-		<!-- e: 25-08-18 UXW -->
 	</div>
 </div>
 {{/ popup/popup_bottom}} 
