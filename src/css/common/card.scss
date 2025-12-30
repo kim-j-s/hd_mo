@@ -345,6 +345,21 @@
 				font-size: var(--font-size-body-small);
 				color: var(--color-text-information);				
 			}
+				
+			.notice_item {
+				// width: calc(100% - 19px);
+				margin-right: 19px;
+				padding: var(--padding-3) var(--padding-5) var(--padding-3) 40px;
+				background: var(--color-element-danger) url(../images/icon/inverse_circle.svg) no-repeat 12px 8px;
+				border-radius: var(--radius-medium1);
+				font-size: var(--font-size-body-small);
+				font-weight: 700;
+				color: var(--color-text-bolder-inverse);
+
+				& + .tit_item {
+					margin-top: var(--gap-4);
+				}
+			}
 
 			.inp_checkbox {
 				input {
@@ -1231,6 +1246,18 @@
 						.point {
 							color: var(--color-text-primary-bold);
 							font-weight: 700;
+						}
+					}
+
+					.notice_info {
+						dt,
+						dd {
+							font-size: var(--font-size-body-xsmall);
+						}
+
+						dt {
+							padding-left: 20px;
+							background: url(../../images/icon/danger_circle.svg) no-repeat left center;
 						}
 					}
 				}
