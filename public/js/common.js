@@ -179,19 +179,10 @@
 		if (!isDisabled && !isReadonly) {
 			if(val){
 				$wrap.addClass('active');
-			}else {
+			} else {
 				$wrap.removeClass('active');
 			}
 		}
-
-		//전화번호
-		// if( $this.closest('.input_text').hasClass('phone') && !$this.closest('.input_text').hasClass('phone_full') && !$this.prop('readonly') && !$this.prop('disabled') ){
-		// 	if(val){
-		// 		const newVal = val.replace(/ - /g, '');
-		// 		$this.attr('maxlength', 8);
-		// 		$this.val(newVal).removeClass('isVal');
-		// 	}
-		// }
     
   }).on('blur', '.inp > input', function(){
     const $this = $(this),

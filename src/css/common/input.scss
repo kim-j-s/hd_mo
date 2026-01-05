@@ -273,9 +273,9 @@
 		border-color: var(--color-input-border-active);
 	}
 	&.error {
-		border: 3px solid var(--color-input-border-error);
+		border: var(--border-width-variable-medium) solid var(--color-input-border-error);
 		input {
-			height: calc(var(--size-height-8) - 6px);
+			height: calc(var(--size-height-8) - 4px);
 		}
 		&:focus-within {
 			border-color: var(--color-input-border-error);
@@ -326,10 +326,10 @@
 	}
 	
 	&.error {
-		border: 3px solid var(--color-input-border-error);
+		border: var(--border-width-variable-medium) solid var(--color-input-border-error);
 		.input_text {
 			input {
-				height: calc(var(--size-height-8) - 6px);
+				height: calc(var(--size-height-8) - 8px);
 			}
 			&:focus-within {
 				border-color: var(--color-input-border-error);
@@ -497,6 +497,7 @@
 
 	//금액
 	&.key_number {
+		height: 56px;
 		& + .btn_area.basic {
 			margin-top: var(--gap-4);
 		}
@@ -515,6 +516,14 @@
 			}
 			.hd_btn {
 				position: relative;
+			}
+		}
+
+		.inp {
+			input {
+				&:focus {
+					outline: none;
+				}
 			}
 		}
 	}
