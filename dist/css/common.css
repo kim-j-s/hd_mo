@@ -9576,10 +9576,10 @@ sup {
 	border-color: var(--color-input-border-active);
 }
 .input_text.error {
-	border: 0.3rem solid var(--color-input-border-error);
+	border: var(--border-width-variable-medium) solid var(--color-input-border-error);
 }
 .input_text.error input {
-	height: calc(var(--size-height-8) - 0.6rem);
+	height: calc(var(--size-height-8) - 0.4rem);
 }
 .input_text.error:focus-within {
 	border-color: var(--color-input-border-error);
@@ -9627,10 +9627,10 @@ sup {
 	border-color: var(--color-text-basic);
 }
 .comp_wrap.error {
-	border: 0.3rem solid var(--color-input-border-error);
+	border: var(--border-width-variable-medium) solid var(--color-input-border-error);
 }
 .comp_wrap.error .input_text input {
-	height: calc(var(--size-height-8) - 0.6rem);
+	height: calc(var(--size-height-8) - 0.8rem);
 }
 .comp_wrap.error .input_text:focus-within {
 	border-color: var(--color-input-border-error);
@@ -9793,6 +9793,9 @@ sup {
 	border-bottom: 0;
 	background-color: transparent;
 }
+.comp_wrap.key_number {
+	height: 5.6rem;
+}
 .comp_wrap.key_number + .btn_area.basic {
 	margin-top: var(--gap-4);
 }
@@ -9813,6 +9816,9 @@ sup {
 .comp_wrap.key_number:has(.phone.readonly) .hd_btn,
 .comp_wrap.key_number:has(.phone.disabled) .hd_btn {
 	position: relative;
+}
+.comp_wrap.key_number .inp input:focus {
+	outline: none;
 }
 .comp_wrap .hd_btn {
 	--color-button-tertiary-fill: rgba(255, 255, 255, 1);
