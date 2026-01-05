@@ -438,6 +438,7 @@ ul + .form_group_wrap {
 		font-weight: 700;
 		color: var(--color-text-bolder);
 		
+		& + .form_group_wrap,
 		& + .table_wrap,
 		& + .info_gray,
 		& + h3,
@@ -694,6 +695,7 @@ ul + .form_group_wrap {
 		}
 	}
 
+	& + .info_gray,
 	& + .title_h3 {
 		margin-top: var(--gap-11);
 	}
@@ -1492,5 +1494,21 @@ ul + .form_group_wrap {
 			text-decoration: underline;
 			text-underline-position: from-font;
 		}
+	}
+}
+
+.text_box {
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	min-height: 56px;
+	padding: 4px var(--padding-6);
+	background: var(--color-input-surface-disabled);
+	border: var(--border-width-static-regular) solid var(--color-input-border-disabled);
+	border-radius: var(--radius-medium3);
+
+	.inner {
+		font-size: var(--font-size-body-medium);
+		color: var(--color-text-bolder);
 	}
 }
