@@ -63,11 +63,46 @@
 			<div class="btn_area">
 				{{> cp/button type="3" size="3" b-text="가입 내용 자세히 보기"}}
 			</div>
-			<div class="banner_box">
+			<!-- s: 26-01-07 수정 -->
+			<div class="banner_box basic">
 				<a href="#">
 					<img src="../../../images/event/banner1.png" alt="가입 리뷰 작성 이벤트 안내 배너 마케팅 관련 요건 및 정책 확인 후 상세 정의 필요합니다.">
 				</a>
 			</div>
+			<div class="banner_box basic">
+				<div class="swiper_wrap bullet_add" id="t1">
+					<div class="inner">
+						<div class="swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a href="#">
+										<img src="../../../images/temp/rewardBanner_naver_temp.png" alt="지금 가입하시면 네이버페이 포인트 최대 3만원을 드려요!">
+									</a>
+								</div>
+								<div class="swiper-slide">
+									<a href="#">
+										<img src="../../../images/temp/rewardBanner_naver_temp.png" alt="지금 가입하시면 네이버페이 포인트 최대 3만원을 드려요!">
+									</a>
+								</div>
+								<div class="swiper-slide">
+									<a href="#">
+										<img src="../../../images/temp/rewardBanner_naver_temp.png" alt="지금 가입하시면 네이버페이 포인트 최대 3만원을 드려요!">
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="bullet_add_pager">
+							<div class="bap_inner">
+								<button class="swiper_button swiper_button_left"></button>
+								<div class="swiper-pagination sp_ty2"></div>
+								<button class="swiper-button-play-pause" title="슬라이드 쇼 제어">정지</button>
+								<button class="swiper_button swiper_button_right"></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- e: 26-01-07 수정 -->
 		</div>
 	</div>
 
@@ -80,5 +115,73 @@
 
 <!-- s: popup area -->
 <!-- e: popup area -->
+
+<script>
+	// s: 26-01-07 수정
+	function initSwiperById(id) {
+		const wrap = document.getElementById(id);
+		if (!wrap) return;
+
+		const swiperEl = wrap.querySelector('.swiper');
+		const slides = swiperEl.querySelectorAll('.swiper-slide');
+		const slideCount = slides.length;
+
+		const controlEl = wrap.querySelector('.bullet_add_pager');
+		const paginationEl = wrap.querySelector('.swiper-pagination');
+
+		// 슬라이드 1개 이하
+		if (slideCount <= 1) {
+			if (paginationEl) paginationEl.style.display = 'none';
+			if (controlEl) controlEl.style.display = 'none';
+			return;
+		}
+
+		// 슬라이드 2개 이상일 때만 Swiper 생성
+		const swiper = new Swiper(swiperEl, {
+			slidesPerView: 1,
+			updateOnWindowResize: true,
+
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+
+			a11y: {
+				enabled: true,
+				prevSlideMessage: '이전 항목으로 이동',
+				nextSlideMessage: '다음 항목으로 이동',
+			},
+
+			pagination: {
+				el: paginationEl,
+				clickable: true,
+				type: 'bullets',
+				renderBullet(index, className) {
+					return `<button class="${className}" aria-label="배너 ${index + 1}번으로 이동"></button>`;
+				}
+			}
+		});
+
+		// autoplay 제어
+		const playPauseBtn = wrap.querySelector('.swiper-button-play-pause');
+		if (playPauseBtn) {
+			playPauseBtn.addEventListener('click', () => {
+				if (swiper.autoplay.running) {
+					swiper.autoplay.stop();
+					playPauseBtn.textContent = '시작';
+					playPauseBtn.classList.add('active');
+				} else {
+					swiper.autoplay.start();
+					playPauseBtn.textContent = '정지';
+					playPauseBtn.classList.remove('active');
+				}
+			});
+		}
+	}
+
+	// 구동
+	initSwiperById('t1');
+	// e: 26-01-07 수정
+</script>
 
 {{/ layout/default }}
