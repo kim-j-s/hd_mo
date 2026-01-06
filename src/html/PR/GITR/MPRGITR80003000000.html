@@ -488,13 +488,32 @@
 												{{/ cp/checkbox }}
 											</li>
 											<!-- s: 25-09-01 추가 -->
+											<!-- s: 26-01-05 수정 -->
 											<li class="list">
 												{{#> cp/checkbox labelname="지수형 항공기 지연(누적지연시간별 정액보상)" id="checkbox04-3" }}
 												<div class="chk_lby2">
 													{{> cp/linkButton bl_class="price_btn" bl_text="10만원" role_b=true question_tit="가입조건변경"}}
 												</div>
 												{{/ cp/checkbox }}
+												<div class="info_gray btn_item">
+													<div>
+														<ul class="coverage_item_list">
+															<li class="list">
+																{{> cp/checkbox id="checkbox05-1" label_class="chk_label_ty4" labelname="항공기 및 수하물 지연비용보장(출국항공기 지연, 결항 제외)" }}
+																					
+																<div class="sub_txt_area">
+																	{{> cp/linkButton bl_class="price_btn" bl_text="1천만원" role_b=true question_tit="가입조건변경" }}
+																</div>
+																<div class="badge_wrap">
+																	<span class="hd_badge outline solid_pastel c_primary size_m">NEW</span>
+																	<span class="hd_badge outline solid_pastel c_warning size_m">실손보상. 지수형 출국항공기 지연SET 지수형 출국항공기 지연SET</span>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</div>
 											</li>
+											<!-- e: 26-01-05 수정 -->
 											<!-- e: 25-09-01 추가 -->
 										</ul>
 									{{/ cp/accordion }}
@@ -605,6 +624,29 @@
 </div>
 {{/ popup/popup_full}}
 <!-- e: Full 팝업(예시) -->
+
+{{#> popup/popup_bottom popup-id="pop_type01" popup-title="" popup-active=true }}
+<div class="popup_cont">
+	<div class="popup_content">
+		<h3 class="title_h3 txt_center">
+			항공기 및 수하물지연비용 <br>보장에 가입하시면<br>
+			지수형 출국 항공기 지연 보장과<br>
+			중복가입이 어렵습니다.
+		</h3>
+		<div class="info_cont">
+			<div class="info_gray">
+				<div class="title_h3">지연비용보장Tip!</div>
+				<p>'지수형 출국항공기 지연보장특약' 은 SET로 가입되어, 출국항공기 지연/결항 뿐 아니라 귀국까지 항공기 및 수하물 지연이 함께 보장됩니다.</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="popup_bottom">
+	<div class="btn_area">
+		{{> cp/button type="1" size="2" b-text="확인" }}
+	</div>
+</div>
+{{/ popup/popup_bottom}}
 
 <!-- e: popup area -->
 
