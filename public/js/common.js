@@ -574,6 +574,8 @@
 			return;
 		}
 
+		$this.attr('autocomplete', 'off');
+
 		// 값 가져오기 및 하이픈/공백 제거
 		let val = $this.val() ? $this.val().replace(/[^0-9*]/g, '') : '';
 	
