@@ -6555,7 +6555,7 @@ sup {
 }
 .card_item_wrap:not(.info_type) .card_item .item_inner:has(.inp_checkbox, .inp_radio) .inp_radio .chk_label .badge_wrap,
 .card_item_wrap:not(.info_type) .card_item .item_inner:has(.inp_checkbox, .inp_radio) .inp_checkbox .chk_label .badge_wrap {
-	display: inline;
+	display: inline-block;
 }
 .card_item_wrap:not(.info_type) .card_item .item_inner:has(.inp_checkbox, .inp_radio) .inner_cont {
 	margin-left: 2.8rem;
@@ -13922,6 +13922,48 @@ ol li .table_wrap + .list_ty2 li + li {
 #swiper1 .swiper-slide:nth-child(even) {
 	background-color: #ddd;
 }
+/* bullet 케이스 */
+.swiper_wrap .swiper-slide a {
+	display: block;
+}
+.swiper_wrap .swiper-slide a img {
+	display: block;
+	width: 100%;
+}
+.swiper_wrap.bullet_add .bullet_add_pager {
+	margin-top: var(--gap-3);
+	font-size: 0;
+	text-align: center;
+}
+.swiper_wrap.bullet_add .bullet_add_pager .bap_inner {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 0 var(--gap-1);
+}
+.swiper_wrap.bullet_add .bullet_add_pager .bap_inner .swiper_button {
+	width: 2.4rem;
+	height: 2.4rem;
+	top: 50%;
+	background-color: transparent;
+	background-size: 1.6rem;
+}
+.swiper_wrap.bullet_add .bullet_add_pager .bap_inner .swiper-button-play-pause {
+	width: 2.4rem;
+	height: 2.4rem;
+	font-size: 0;
+	background: url(../images/icon/icon_stop.svg) no-repeat center/1.6rem;
+}
+.swiper_wrap.bullet_add .bullet_add_pager .bap_inner .swiper-button-play-pause.active {
+	background-image: url(../images/icon/icon_play.svg);
+}
+.swiper_wrap.bullet_add .bullet_add_pager .bap_inner .swiper-pagination {
+	position: static;
+}
+/* bullet 케이스 */
 /* 보장플랜 케이스 */
 .sw_case01 {
 	margin: 0 -2.4rem;
@@ -13966,6 +14008,26 @@ ol li .table_wrap + .list_ty2 li + li {
 	width: 2rem;
 	border-radius: 0.8rem;
 	background-color: var(--color-text-information);
+}
+.swiper-pagination.sp_ty2 {
+	width: auto;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	gap: 0 var(--gap-2);
+	padding: var(--padding-3);
+}
+.swiper-pagination.sp_ty2 .swiper-pagination-bullet {
+	margin: 0;
+	opacity: 1;
+	background-color: var(--color-element-disabled-light);
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.swiper-pagination.sp_ty2 .swiper-pagination-bullet.swiper-pagination-bullet-active {
+	width: 2rem;
+	border-radius: 0.8rem;
+	background-color: #58616a;
 }
 /* swiper-pagination */
 .banner_slide_wrap {
