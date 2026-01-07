@@ -1,0 +1,125 @@
+.ch_kv {
+	margin: 0 -24px;
+	padding: var(--padding-9);
+	background-color: var(--color-surface-warning-subtler);
+	.ch_kv_inner {
+		.n_tit {
+			display: block;
+			font-size: var(--font-size-heading-xsmall);
+		}
+		.ch_kv_w1 {
+			padding-top: var(--padding-2);
+			padding-bottom: 192px;
+			font-size: var(--font-size-heading-large);
+			background: url(../images/content/gitr/img_PRGITR80002070000_01.png) no-repeat center bottom / 240px auto;
+		}
+
+		.ch_kv_i_box {
+			position: relative;
+			margin-top: var(--gap-7);
+			text-align: center;
+			&::before {
+				content: '';
+				position: absolute;
+				top: 16px;
+				left: 0;
+				width: 100%;
+				height: calc(100% - 16px);
+				border-radius: var(--radius-large2);
+				border: var(--border-width-static-regular) solid var(--color-border-primary);
+				background: var(--color-surface-white-subtle);
+				box-shadow: 0 4px 8px 0 var(--color-alpha-shadow5, rgba(248, 99, 60, 0.20));
+			}
+
+			> .tit {
+				position: relative;
+				z-index: 1;
+				display: inline-flex;
+				align-items: center;
+				height: 32px;
+				padding: var(--padding-2) var(--padding-6);
+				font-size: var(--font-size-body-xsmall);
+				color: var(--color-text-inverse-static);
+				border-radius: var(--radius-max);
+				background: var(--color-element-primary);
+			}
+
+			.cont {
+				position: relative;
+				z-index: 1;
+				padding: var(--padding-8) var(--padding-7) var(--padding-8) var(--padding-7);
+				text-align: left;
+				.desc {
+					font-weight: 700;
+					font-size: var(--font-size-body-medium, 16px);
+				}
+				.list_ty2 {
+					margin-top: var(--gap-4);
+				}
+			}
+		}
+	}
+}
+
+.ch_content {
+	padding-top: 52px;
+	& + .ch_content {
+		padding-top: 53px;
+	}
+}
+
+.ch_s_info {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap-5) 0;
+	> li {
+		display: flex;
+		align-items: center;
+		gap: 0 var(--gap-4);
+		padding: var(--padding-8, 24px) var(--padding-7, 20px);
+		border-radius: var(--radius-large2);
+		background-color: var(--color-surface-secondary-subtler);
+
+
+		&::before {
+			content: '';
+			flex: none;
+			display: block;
+			width: 32px;
+			height: 32px;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 32px auto;
+		}
+
+		.inner {
+			flex: 1 1 0;
+		}
+
+		&.ch_s_info_ty1 {
+			&::before {
+				background-image: url(../images/content/gitr/img_PRGITR80002070000_02.svg);
+			}
+		}
+		&.ch_s_info_ty2 {
+			&::before {
+				background-image: url(../images/content/gitr/img_PRGITR80002070000_03.svg);
+			}
+		}
+		&.ch_s_info_ty3 {
+			&::before {
+				background-image: url(../images/content/gitr/img_PRGITR80002070000_04.svg);
+			}
+		}
+
+		.tit {
+			display: block;
+			font-size: var(--font-size-body-small);
+		}
+		.text {
+			display: block;
+			padding-top: var(--padding-2);
+			font-size: var(--font-size-body-small);
+		}
+	}	
+}
