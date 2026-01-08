@@ -3,58 +3,59 @@
 경로 : 6.보험료 확인
 -->
 {{#> layout/default page-title="자동차 보험료 확인 | 상품"}}
-	<div id="wrap" class="wrap">
-		{{> layout/header h-title="보험료 확인" }}
-		<div id="container" class="container">
-			<div class="content">
-                <!-- s: 보험료 확인 금액 -->
-                <div class="bg_top_cover">
-                    <div class="info_gray bg_etc01">
-                        <div class="total car ty2">
-													<!-- s: 마일리지 환급금이 없을때 .ty2 제거 --> 
-                            <dl class="total_car">
-                                <dt>다이렉트 보험료</dt>
-                                <dd>
-                                    <!-- s: 25-10-22 수정 -->
-                                    <span title="할인 전 보험료">
-                                        <del>1,563,393원</del>
-                                    </span>
-                                    <span title="할인 후 보험료">
-                                        <strong class="total_bic">768,693원</strong>
-                                    </span>
-                                    <!-- e: 25-10-22 수정 -->
-                                </dd>
-                            </dl>
-                            <dl>
-                                <dt>할인 받은 보험료</dt>
-                                <dd>
-                                    <!-- s: 25-10-22 수정 -->
-                                    {{> cp/linkButton bl_class="short_cut lg" bl_text="<span>-686,850</span>원 (<span>6개</span>)" bl_title="팝업 오픈" }}       
-                                    <!-- e: 25-10-22 수정 -->
-                                </dd>
-                            </dl>
-                        </div>
-                        <div class="info_top_cont">
-                            <dl>
-                                <dt>전계약 마일리지 환급금</dt>
-                                <dd><strong>-107,850원</strong></dd>
-                            </dl>
-                            <dl>
-                                <dt>환급금 차감 사용 시 <br>납입 보험료</dt>
-                                <dd class="point">
-                                    <strong class="big">768,693원</strong>
-                                </dd>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-                <!-- e: 보험료 확인 금액 -->
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="보험료 확인" }}
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: 보험료 확인 금액 -->
+			<div class="bg_top_cover">
+				<div class="info_gray bg_etc01">
+					<div class="total car ty2">
+						<!-- s: 마일리지 환급금이 없을때 .ty2 제거 -->
+						<dl class="total_car">
+							<dt>다이렉트 보험료</dt>
+							<dd>
+								<!-- s: 25-10-22 수정 -->
+								<span title="할인 전 보험료">
+									<del>1,563,393원</del>
+								</span>
+								<span title="할인 후 보험료">
+									<strong class="total_bic">768,693원</strong>
+								</span>
+								<!-- e: 25-10-22 수정 -->
+							</dd>
+						</dl>
+						<dl>
+							<dt>할인 받은 보험료</dt>
+							<dd>
+								<!-- s: 25-10-22 수정 -->
+								{{> cp/linkButton bl_class="short_cut lg" bl_text="<span>-686,850</span>원 (<span>6개</span>)"
+								bl_title="팝업 오픈" }}
+								<!-- e: 25-10-22 수정 -->
+							</dd>
+						</dl>
+					</div>
+					<div class="info_top_cont">
+						<dl>
+							<dt>전계약 마일리지 환급금</dt>
+							<dd><strong>-107,850원</strong></dd>
+						</dl>
+						<dl>
+							<dt>환급금 차감 사용 시 <br>납입 보험료</dt>
+							<dd class="point">
+								<strong class="big">768,693원</strong>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+			<!-- e: 보험료 확인 금액 -->
 
-                <!-- s: 간편정보 -->
-                <div class="simple_info_wrap">
-                    <div class="simple_info_item">
-                        <!-- s: 마일리지 환급금이 없을때 --> 
-                        <!-- <div class="acd_item acd_item_ty6">
+			<!-- s: 간편정보 -->
+			<div class="simple_info_wrap">
+				<div class="simple_info_item">
+					<!-- s: 마일리지 환급금이 없을때 -->
+					<!-- <div class="acd_item acd_item_ty6">
                             <div class="acd_head">
                                 <button type="button" class="acd_btn" aria-expanded="true">
                                     <div class="sii_list_l">다이렉트 보험료</div>
@@ -86,627 +87,628 @@
                                 </div>
                             </div>
                         </div> -->
-                        <!-- e: 마일리지 환급금이 없을때 --> 
-                        
-                        <!-- s: 마일리지 환급금이 있을때 --> 
-                        <div class="acd_item acd_item_ty6 ty2">
-                            <div class="acd_head">
-                                <button type="button" class="acd_btn" aria-expanded="true">
-                                    <div class="sii_list_l">다이렉트 보험료</div>
-                                    <strong class="sii_list_r">
-                                        <!-- s: 25-10-22 수정 -->
-                                        <span class="dn" title="할인 전 보험료">
-                                            <del>1,563,393원</del>
-                                        </span>
-                                        <span title="할인 후 보험료">
-                                            768,693원
-                                        </span>
-                                        <!-- e: 25-10-22 수정 -->
-                                    </strong>
-                                </button>
-                            </div>
-                            <div class="acd_cont">
-                                <div class="inner">
-                                    <div class="info_gray bg_etc01">
-                                        <dl>
-                                            <dt>할인 받은 보험료</dt>
-                                            <dd>
-                                                <!-- s: 25-10-22 수정 -->
-                                                {{> cp/linkButton bl_class="short_cut lg" bl_text="<span>-686,850</span>원 (<span>6개</span>)" bl_title="팝업 오픈" }} 
-                                                <!-- e: 25-10-22 수정 -->
-                                            </dd>
-                                        </dl>
-                                        <div class="line2"></div>
-                                        <dl>
-                                            <dt>전계약 마일리지 환급금</dt>
-                                            <dd><strong>-107,850원</strong></dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                                <div class="info_gray bg_etc01">
-                                    <div class="line1"></div>
-                                    <dl>
-                                        <dt>환급금 차감 사용시 납입 보험료</dt>
-                                        <dd class="point">
-                                            <strong>768,693원</strong>
-                                        </dd>
-                                    </dl>
-                                </div>
-                            </div>
-                        </div> 
-                        <!-- e: 마일리지 환급금이 있을때 --> 
-                    </div>
-                </div>
-                <!-- e: 간편정보 -->
-                <div class="form_box">
-                    <div class="btn_area">
-                        {{> cp/button type="2" size="2" b-text="담보 한번에 변경하기" }}
-                    </div>
-                    <h3 class="title_h3">
-                        주요담보
-                    </h3>
-                    <div class="card_item_wrap">
-                        <div class="card_item">
-                            <div class="item_inner">
-                                <div class="inner_cont">
-                                    <!-- s: 25-10-22 수정 -->
-                                    <a href="javajscript:void(0)" class="card_link" title="상세 팝업" role="button">
-                                    <!-- e: 25-10-22 수정 -->
-                                        <div class="item_top">
-                                            <div class="title_info">
-                                                <div class="main_title">대인배상Ⅰ <span class="point">의무</span></div>
-                                            </div>
-                                        </div>
-                                        <div class="item_cont">
-                                            <ul>
-                                                <li class="txt_l">자동차손해배상 보장법 한도</li>
-                                                <li class="txt_r">81,990원</li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card_item">
-                            <div class="item_inner">
-                                <div class="inner_cont">
-                                    <!-- s: 25-10-22 수정 -->
-                                    <a href="javajscript:void(0)" class="card_link" title="상세 팝업" role="button">
-                                    <!-- e: 25-10-22 수정 -->
-                                        <div class="item_top">
-                                            <div class="title_info">
-                                                <div class="main_title">대인배상Ⅱ</div>
-                                            </div>
-                                        </div>
-                                        <div class="item_cont">
-                                            <ul>
-                                                <li class="txt_l">무한</li>
-                                                <li class="txt_r">190,300원</li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card_item">
-                            <div class="item_inner">
-                                <div class="inner_cont">
-                                    <!-- s: 25-10-22 수정 -->
-                                    <a href="javajscript:void(0)" class="card_link" title="상세 팝업" role="button">
-                                    <!-- e: 25-10-22 수정 -->
-                                        <div class="item_top">
-                                            <div class="title_info">
-                                                <div class="main_title">대물배상 <span class="point">의무</span></div>
-                                            </div>
-                                        </div>
-                                        <div class="item_cont">
-                                            <ul>
-                                                <li class="txt_l">5억원</li>
-                                                <li class="txt_r">253,820원</li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                    <div class="btn_area">
-																			<!-- s: 25-09-02 수정 -->
-																			{{> cp/button type="2" size="4"  rightIcon="arrowRightSvg_ty2" b-text="보다 든든한 보험을 위해 대물 10억으로 변경하기" }}
-																			<!-- e: 25-09-02 수정 -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card_item">
-                            <div class="item_inner">
-                                <div class="inner_cont">
-                                    <!-- s: 25-10-22 수정 -->
-                                    <a href="javajscript:void(0)" class="card_link" title="상세 팝업" role="button">
-                                    <!-- e: 25-10-22 수정 -->
-                                        <div class="item_top">
-                                            <div class="title_info">
-                                                <div class="main_title">자기신체사고 / 자동차상해</div>
-                                            </div>
-                                        </div>
-                                        <div class="item_cont">
-                                            <ul>
-                                                <li class="txt_l">자기신체사고 3천만원/1천5백</li>
-                                                <li class="txt_r">4,220원</li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                    <div class="btn_area">
-																			<!-- s: 25-09-02 수정 -->
-																			{{> cp/button type="2" size="4"  rightIcon="arrowRightSvg_ty2" b-text="81% 고객의 선택 자동차상해 3억으로 변경하기" }}
-																			<!-- e: 25-09-02 수정 -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card_item">
-                            <div class="item_inner">
-                                <div class="inner_cont">
-                                    <!-- s: 25-10-22 수정 -->
-                                    <a href="javajscript:void(0)" class="card_link" title="상세 팝업" role="button">
-                                    <!-- e: 25-10-22 수정 -->
-                                        <div class="item_top">
-                                            <div class="title_info">
-                                                <div class="main_title">무보험차차상해</div>
-                                            </div>
-                                        </div>
-                                        <div class="item_cont">
-                                            <ul>
-                                                <li class="txt_l">2억원</li>
-                                                <li class="txt_r">4,060원</li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card_item">
-                            <div class="item_inner">
-                                <div class="inner_cont">
-                                    <!-- s: 25-10-22 수정 -->
-                                    <a href="javajscript:void(0)" class="card_link" title="상세 팝업" role="button">
-                                    <!-- e: 25-10-22 수정 -->
-                                        <div class="item_top">
-                                            <div class="title_info">
-                                                <div class="main_title">자기차량손해</div>
-                                            </div>
-                                        </div>
-                                        <div class="item_cont">
-                                            <ul class="align_top">
-																								<li class="txt_l">손해액의 20%/20만원~50만원<br>차량단독사고 보상 포함<strong class="point">차량단독사고는 보상하지 않음</strong></li>
-                                                <li class="txt_r">294,830원</li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                    <div class="btn_area">
-																				<!-- s: 25-09-02 수정 -->
-                                        {{> cp/button type="2" size="4"  rightIcon="arrowRightSvg_ty2" b-text="자기차량손해만 가입하면 보험료는 얼마나 절감될까?" }}
-																				<!-- e: 25-09-02 수정 -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card_item">
-                            <div class="item_inner">
-                                <div class="inner_cont">
-                                    <!-- s: 25-10-22 수정 -->
-                                    <a href="javajscript:void(0)" class="card_link" title="상세 팝업" role="button">
-                                    <!-- e: 25-10-22 수정 -->
-                                        <div class="item_top">
-                                            <div class="title_info">
-                                                <div class="main_title">긴급출동특약</div>
-                                            </div>
-                                        </div>
-                                        <div class="item_cont">
-                                            <ul>
-                                                <li class="txt_l">하이카서비스 10KM</li>
-                                                <li class="txt_r">9,600원</li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card_item">
-                            <div class="item_inner">
-                                <div class="inner_cont">
-                                    <!-- s: 25-10-22 수정 -->
-                                    <a href="javajscript:void(0)" class="card_link" title="상세 팝업" role="button">
-                                    <!-- e: 25-10-22 수정 -->
-                                        <div class="item_top">
-                                            <div class="title_info">
-                                                <div class="main_title">물적사고할증기준금액</div>
-                                            </div>
-                                        </div>
-                                        <div class="item_cont">
-                                            <ul>
-                                                <li class="txt_l">200만원</li>
-                                                <li class="txt_r">0원</li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card_item">
-                            <div class="item_inner">
-                                <div class="inner_cont">
-                                    <!-- s: 25-10-22 수정 -->
-                                    <a href="javajscript:void(0)" class="card_link" title="상세 팝업" role="button">
-                                    <!-- e: 25-10-22 수정 -->
-                                        <div class="item_top">
-                                            <div class="title_info">
-                                                <div class="main_title">부가담보</div>
-                                            </div>
-                                        </div>
-                                        <div class="item_cont">
-                                            <ul>
-                                                <li class="txt_l">자기차량손해 보장 확대 외 3개</li>
-                                                <li class="txt_r">0원</li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                    <div class="btn_area">
-																			<!-- s: 25-09-02 수정 -->
-																			{{> cp/button type="2" size="4"  rightIcon="arrowRightSvg_ty2" b-text="신차 전용 부가담보 를 추천드려요. 확인해보세요." }}
-																			<!-- e: 25-09-02 수정 -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+					<!-- e: 마일리지 환급금이 없을때 -->
 
-                <!-- s: 할인특약 -->
-                <!-- s: 25-09-02 수정 -->
-                <div class="acd_item acd_item_ty3">
-					{{#> cp/accordion ac-title="할인특약 선택" cont-class="" }}
-                    <div class="card_item_wrap">
-                        <div class="card_item">
-                            <div class="item_inner">
-                                <div class="tit_item">
-                                    <div class="inp_checkbox">
-                                        <input type="checkbox" id="card_chk110" name="name1" aria-labelledby="card_chk110_cont" />
-                                        <label for="card_chk110" class="chk_label">
-                                            <span class="title_info">
-                                                <span class="main_title">
-                                                    커넥티드카 할인특약 <span class="point">7%</span>
-                                                </span>
-                                            </span>
-                                        </label>
-                                        <i></i>
-                                    </div>
-                                    {{> cp/button_question question-icon="arrow" question_tit=" " }}
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="card_item">
-                            <div class="item_inner">
-                                <div class="tit_item">
-                                    <div class="inp_checkbox">
-                                        <input type="checkbox" id="card_chk112" name="name1" aria-labelledby="card_chk112_cont" />
-                                        <label for="card_chk112" class="chk_label">
-                                            <span class="title_info">
-                                                <span class="main_title">
-                                                    안전운전 할인특약(택1) <span class="point">18.9%</span>
-                                                </span>
-                                            </span>
-                                        </label>
-                                        <i></i>
-                                    </div>
-                                    {{> cp/button_question question-icon="arrow" question_tit=" " }}
-                                </div>
-                                <div class="inner_cont">
-                                    <div class="checkbox_group_wrap column">
-                                        {{> cp/checkbox id="checkbox01-1" label_class="chk_label_ty4" labelname="커넥티드 안전운전 할인" checked=true disabled=true }}
-                                        {{> cp/checkbox id="checkbox01-2" label_class="chk_label_ty4" labelname="TMAP 안전운전 할인" disabled=true }}
-                                        {{> cp/checkbox id="checkbox01-3" label_class="chk_label_ty4" labelname="네이버 안전운전 할인" disabled=true }}
-                                        {{> cp/checkbox id="checkbox01-4" label_class="chk_label_ty4" labelname="커넥티드 블랙박스 안전운전 할인" disabled=true }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card_item">
-                            <div class="item_inner">
-                                <div class="tit_item">
-                                    <div class="inp_checkbox">
-                                        <input type="checkbox" id="card_chk113" name="name1" aria-labelledby="card_chk113_cont" />
-                                        <label for="card_chk113" class="chk_label">
-                                            <span class="title_info">
-                                                <span class="main_title">
-                                                    첨단안전장치 할인특약 <span class="point">10.8%</span>
-                                                </span>
-                                            </span>
-                                            <span class="badge_wrap">
-                                                    <span class="hd_badge outline solid_pastel c_secondary size_m">새로운 특약이에요!</span>
-                                            </span>                                         
-                                        </label>
-                                        <i></i>
-                                    </div>
-                                    {{> cp/button_question question-icon="arrow" question_tit=" " }}
-                                </div>
-                                <div class="inner_cont">
-                                    <div class="checkbox_group_wrap column">
-                                        {{> cp/checkbox id="checkbox02-1" label_class="chk_label_ty4" labelname="차선이탈 경고장치 <span class='hd_badge outline solid_pastel c_success size_m'>기본장착</span>" checked=true disabled=true }}
-                                        {{> cp/checkbox id="checkbox02-2" label_class="chk_label_ty4" labelname="전방충돌 경고장치 <span class='hd_badge outline solid_pastel c_success size_m'>기본장착</span>" disabled=true }}
-                                        {{> cp/checkbox id="checkbox02-3" label_class="chk_label_ty4" labelname="후측방충돌 경고장치 <span class='hd_badge outline solid_pastel c_warning size_m'>옵션장착</span>" disabled=true }}
-                                        {{> cp/checkbox id="checkbox02-4" label_class="chk_label_ty4" labelname="HUD(Head Up Display)" disabled=true }}
-                                        {{> cp/checkbox id="checkbox02-5" label_class="chk_label_ty4" labelname="AVM(Around View Monitor)" disabled=true }}
-                                        {{> cp/checkbox id="checkbox02-6" label_class="chk_label_ty4" labelname="SCC(Smart Cruise Control)" disabled=true }}
-                                        {{> cp/checkbox id="checkbox02-7" label_class="chk_label_ty4" labelname="주차충돌방지 보조장치" disabled=true }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card_item">
-                            <div class="item_inner">
-                                <div class="tit_item">
-                                    <div class="inp_checkbox">
-                                        <input type="checkbox" id="card_chk114" name="name1" aria-labelledby="card_chk114_cont" />
-                                        <label for="card_chk114" class="chk_label">
-                                            <span class="title_info">
-                                                <span class="main_title">
-                                                    블랙박스 할인특약(택1) <span class="point">2.2%</span>
-                                                </span>
-                                            </span>
-                                            <span class="badge_wrap">
-                                                <span class="hd_badge outline solid_pastel c_primary size_m">할인율이 올랐어요!</span>
-                                            </span>
-                                        </label>
-                                        <i></i>
-                                    </div>
-                                    {{> cp/button_question question-icon="arrow" question_tit=" " }}
-                                </div>
-                                <div class="inner_cont">
-                                    <div class="checkbox_group_wrap column">
-                                        {{> cp/checkbox id="checkbox03-1" label_class="chk_label_ty4" labelname="블랙박스 할인" checked=true disabled=true }}
-                                        {{> cp/checkbox id="checkbox03-2" label_class="chk_label_ty4" labelname="빌트인캠(내장형 블랙박스) 할인" disabled=true }}
-                                        {{> cp/checkbox id="checkbox03-3" label_class="chk_label_ty4" labelname="커넥티드 블랙박스 할인" disabled=true }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card_item">
-                            <div class="item_inner">
-                                <div class="tit_item">
-                                    <div class="inp_checkbox">
-                                        <input type="checkbox" id="card_chk115" name="name1" aria-labelledby="card_chk115_cont" />
-                                        <label for="card_chk115" class="chk_label">
-                                            <span class="title_info">
-                                                <span class="main_title">
-                                                    효도하는 자녀 할인특약
-                                                </span>
-                                            </span>
-                                        </label>
-                                        <i></i>
-                                    </div>
-                                    {{> cp/button_question question-icon="arrow" question_tit=" " }}
-                                </div>
-                            </div>
-                        </div>
-                        <!-- s: 25-09-09 수정 -->
-                        <div class="card_item">
-                            <div class="item_inner">
-                                <div class="tit_item">
-                                    <div class="inp_checkbox">
-                                        <input type="checkbox" id="card_chk122" name="name1" aria-labelledby="card_chk122_cont" />
-                                        <label for="card_chk122" class="chk_label">
-                                            <span class="title_info">
-                                                <span class="main_title">
-                                                    대중교통이용 할인특약 <span class="point">9%</span>
-                                                </span>
-                                            </span>
-                                            <span class="badge_wrap">
-                                                <span class="hd_badge outline solid_pastel c_secondary size_m">새로운 특약이에요!</span>
-                                            </span>
-                                        </label>
-                                        <i></i>
-                                    </div>
-                                    {{> cp/button_question question-icon="arrow" question_tit=" " }}
-                                </div>
-                            </div>
-                        </div>
-                        <!-- e: 25-09-09 수정 -->
-                        <div class="card_item">
-                            <div class="item_inner">
-                                <div class="tit_item">
-                                    <div class="inp_checkbox">
-                                        <input type="checkbox" id="card_chk116" name="name1" aria-labelledby="card_chk116_cont" />
-                                        <label for="card_chk116" class="chk_label">
-                                            <span class="title_info">
-                                                <span class="main_title">
-                                                    걸음 수 할인특약 <span class="point">5%</span>
-                                                </span>
-                                            </span>
-                                            <span class="badge_wrap">
-                                                <span class="hd_badge outline solid_pastel c_secondary size_m">새로운 특약이에요!</span>
-                                            </span>
-                                        </label>
-                                        <i></i>
-                                    </div>
-                                    {{> cp/button_question question-icon="arrow" question_tit=" " }}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card_item">
-                            <div class="item_inner">
-                                <div class="tit_item">
-                                    <div class="inp_checkbox">
-                                        <input type="checkbox" id="card_chk117" name="name1" aria-labelledby="card_chk117_cont" />
-                                        <label for="card_chk117" class="chk_label">
-                                            <span class="title_info">
-                                                <span class="main_title">
-                                                    ECO마일리지 특약
-                                                </span>
-                                            </span>
-                                        </label>
-                                        <i></i>
-                                    </div>
-                                    {{> cp/button_question question-icon="arrow" question_tit=" " }}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card_item">
-                            <div class="item_inner">
-                                <div class="tit_item">
-                                    <div class="inp_checkbox">
-                                        <input type="checkbox" id="card_chk123" name="name1" aria-labelledby="card_chk123_cont" />
-                                        <label for="card_chk123" class="chk_label">
-                                                <span class="title_info">
-                                                    <span class="main_title">
-                                                        보험료 환급금 대체사용 특약
-                                                    </span>
-                                                </span>
-                                            </label>
-                                        <i></i>
-                                    </div>
-                                    {{> cp/button_question question-icon="arrow" question_tit=" " }}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card_item">
-                            <div class="item_inner">
-                                <div class="tit_item">
-                                    <div class="inp_checkbox">
-                                        <input type="checkbox" id="card_chk118" name="name1" aria-labelledby="card_chk118_cont" />
-                                        <label for="card_chk118" class="chk_label">
-                                                <span class="title_info">
-                                                    <!-- s: 25-09-02 수정 -->
-																										<!-- s: 25-10-17 수정 -->
-                                                    <span class="main_title">
-																											하이카 그린 서비스 특약
-                                                    </span>
-																										<!-- e: 25-10-17 수정 -->
-                                                    <!-- e: 25-09-02 수정 -->
-                                                </span>
-                                            </label>
-                                        <i></i>
-                                    </div>
-                                    {{> cp/button_question question-icon="arrow" question_tit=" " }}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card_item">
-                            <div class="item_inner">
-                                <div class="tit_item">
-                                    <div class="inp_checkbox">
-                                        <input type="checkbox" id="card_chk119" name="name1" aria-labelledby="card_chk119_cont" />
-                                        <label for="card_chk119" class="chk_label">
-                                            <span class="title_info">
-                                                <span class="main_title">
-                                                    고령자 교통안전교육이수 할인특약
-                                                </span>
-                                            </span>
-                                        </label>
-                                        <i></i>
-                                    </div>
-                                    {{> cp/button_question question-icon="arrow" question_tit=" " }}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card_item">
-                            <div class="item_inner">
-                                <div class="tit_item">
-                                    <div class="inp_checkbox">
-                                        <input type="checkbox" id="card_chk121" name="name1" aria-labelledby="card_chk121_cont" />
-                                        <label for="card_chk121" class="chk_label">
-                                            <span class="title_info">
-                                                <span class="main_title">
-                                                    어린이 통학버스 할인특약
-                                                </span>
-                                            </span>
-                                        </label>
-                                        <i></i>
-                                    </div>
-                                    {{> cp/button_question question-icon="arrow" question_tit=" " }}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card_item">
-                            <div class="item_inner">
-                                <div class="inner_cont">
-                                    <div role="button" class="card_link" tabindex="0">
-                                        <div class="item_top">
-                                            <div class="title_info">
-                                                <div class="main_title">
-                                                    나눔특약
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {{/ cp/accordion }}
+					<!-- s: 마일리지 환급금이 있을때 -->
+					<div class="acd_item acd_item_ty6 ty2">
+						<div class="acd_head">
+							<button type="button" class="acd_btn" aria-expanded="true">
+								<div class="sii_list_l">다이렉트 보험료</div>
+								<strong class="sii_list_r">
+									<!-- s: 25-10-22 수정 -->
+									<span class="dn" title="할인 전 보험료">
+										<del>1,563,393원</del>
+									</span>
+									<span title="할인 후 보험료">
+										768,693원
+									</span>
+									<!-- e: 25-10-22 수정 -->
+								</strong>
+							</button>
+						</div>
+						<div class="acd_cont">
+							<div class="inner">
+								<div class="info_gray bg_etc01">
+									<dl>
+										<dt>할인 받은 보험료</dt>
+										<dd>
+											<!-- s: 25-10-22 수정 -->
+											{{> cp/linkButton bl_class="short_cut lg" bl_text="<span>-686,850</span>원 (<span>6개</span>)"
+											bl_title="팝업 오픈" }}
+											<!-- e: 25-10-22 수정 -->
+										</dd>
+									</dl>
+									<div class="line2"></div>
+									<dl>
+										<dt>전계약 마일리지 환급금</dt>
+										<dd><strong>-107,850원</strong></dd>
+									</dl>
+								</div>
+							</div>
+							<div class="info_gray bg_etc01">
+								<div class="line1"></div>
+								<dl>
+									<dt>환급금 차감 사용시 납입 보험료</dt>
+									<dd class="point">
+										<strong>768,693원</strong>
+									</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<!-- e: 마일리지 환급금이 있을때 -->
 				</div>
-                <!-- e: 25-09-02 수정 -->
-				<!-- e: 할인특약 -->
-
-                <div class="form_box">
-                    <a href="javascrip:void(0);" role="button" class="bann_wrap bann_ty1 co_ty3" title="팝업열기">			
-                        <div class="inner">
-                            <span class="logo">{{> cp/icon iconClass="carDiscountSvg"}}</span>		
-                            <div class="bann_cont">
-                                <div class="title">연간 주행거리에 따른 </div>
-                                <div class="desc">
-                                    내 보험료는 얼마일까요?
-                                </div>
-                            </div>		
-                        </div>
-                    </a>
-                </div>
-                <div class="form_box">
-                    <a href="javascrip:void(0);" role="button" class="bann_wrap bann_ty1" title="팝업열기">			
-                        <div class="inner">
-                            <span class="logo">{{> cp/icon iconClass="logo_ins_hyundai2"}}</span>		
-                            <div class="bann_cont">
-                                <div class="title">자동차보험 보장분석/가입통계</div>
-																<!-- s: 25-09-08 수정 -->
-                                <div class="desc">
-																	보험이 안전하게 설계되었는지 확인해 보세요
-                                </div>
-																<!-- e: 25-09-08 수정 -->
-                            </div>		
-                        </div>
-                    </a>
-                </div>
-                <div class="form_box">
-                    <a href="javascrip:void(0);" role="button" title="팝업열기">
-                        <img src="../../../images/event/img_car_bann01.png" alt="자동차보험 결제혜택 최대 3만원 받으세요. 30만원 이상 결제시 카드사, 간편결제사 제공 (이륜차포함)">
-                    </a>
-                    <div class="btn_area">
-                        {{> cp/button type="3" size="3" b-text="내 보험료 저장" }}
-                        <!-- s: 25-09-02 수정 -->
-                        {{> cp/button type="3" size="3" b-text="보험료 문자로 받기" }}
-                        <!-- e: 25-09-02 수정 -->
-                    </div>
-                </div>
-                <div class="form_box">
-                    <a href="javascrip:void(0);" role="button" class="bann_wrap bann_ty1 co_ty4" title="팝업열기">			
-                        <div class="inner">
-                            <span class="logo">{{> cp/icon iconClass="comparisonSvg"}}</span>		
-                            <div class="bann_cont">
-                                <div class="desc">비교추천에서 확인한 </div>
-                                <div class="title">보험료와 차이가 나는 이유는?</div>
-                            </div>		
-                        </div>
-                    </a>
-                </div>
 			</div>
-		</div>
+			<!-- e: 간편정보 -->
+			<div class="form_box">
+				<div class="btn_area">
+					{{> cp/button type="2" size="2" b-text="담보 한번에 변경하기" }}
+				</div>
+				<h3 class="title_h3">
+					주요담보
+				</h3>
+				<div class="card_item_wrap">
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inner_cont">
+								<!-- s: 25-10-22 수정 -->
+								<a href="javajscript:void(0)" class="card_link" title="상세 팝업" role="button">
+									<!-- e: 25-10-22 수정 -->
+									<div class="item_top">
+										<div class="title_info">
+											<div class="main_title">대인배상Ⅰ <span class="point">의무</span></div>
+										</div>
+									</div>
+									<div class="item_cont">
+										<ul>
+											<li class="txt_l">자동차손해배상 보장법 한도</li>
+											<li class="txt_r">81,990원</li>
+										</ul>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inner_cont">
+								<!-- s: 25-10-22 수정 -->
+								<a href="javajscript:void(0)" class="card_link" title="상세 팝업" role="button">
+									<!-- e: 25-10-22 수정 -->
+									<div class="item_top">
+										<div class="title_info">
+											<div class="main_title">대인배상Ⅱ</div>
+										</div>
+									</div>
+									<div class="item_cont">
+										<ul>
+											<li class="txt_l">무한</li>
+											<li class="txt_r">190,300원</li>
+										</ul>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inner_cont">
+								<!-- s: 25-10-22 수정 -->
+								<a href="javajscript:void(0)" class="card_link" title="상세 팝업" role="button">
+									<!-- e: 25-10-22 수정 -->
+									<div class="item_top">
+										<div class="title_info">
+											<div class="main_title">대물배상 <span class="point">의무</span></div>
+										</div>
+									</div>
+									<div class="item_cont">
+										<ul>
+											<li class="txt_l">5억원</li>
+											<li class="txt_r">253,820원</li>
+										</ul>
+									</div>
+								</a>
+								<div class="btn_area">
+									<!-- s: 25-09-02 수정 -->
+									{{> cp/button type="2" size="4" rightIcon="arrowRightSvg_ty2" b-text="보다 든든한 보험을 위해 대물 10억으로 변경하기" }}
+									<!-- e: 25-09-02 수정 -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inner_cont">
+								<!-- s: 25-10-22 수정 -->
+								<a href="javajscript:void(0)" class="card_link" title="상세 팝업" role="button">
+									<!-- e: 25-10-22 수정 -->
+									<div class="item_top">
+										<div class="title_info">
+											<div class="main_title">자기신체사고 / 자동차상해</div>
+										</div>
+									</div>
+									<div class="item_cont">
+										<ul>
+											<li class="txt_l">자기신체사고 3천만원/1천5백</li>
+											<li class="txt_r">4,220원</li>
+										</ul>
+									</div>
+								</a>
+								<div class="btn_area">
+									<!-- s: 25-09-02 수정 -->
+									{{> cp/button type="2" size="4" rightIcon="arrowRightSvg_ty2" b-text="81% 고객의 선택 자동차상해 3억으로 변경하기" }}
+									<!-- e: 25-09-02 수정 -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inner_cont">
+								<!-- s: 25-10-22 수정 -->
+								<a href="javajscript:void(0)" class="card_link" title="상세 팝업" role="button">
+									<!-- e: 25-10-22 수정 -->
+									<div class="item_top">
+										<div class="title_info">
+											<div class="main_title">무보험차차상해</div>
+										</div>
+									</div>
+									<div class="item_cont">
+										<ul>
+											<li class="txt_l">2억원</li>
+											<li class="txt_r">4,060원</li>
+										</ul>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inner_cont">
+								<!-- s: 25-10-22 수정 -->
+								<a href="javajscript:void(0)" class="card_link" title="상세 팝업" role="button">
+									<!-- e: 25-10-22 수정 -->
+									<div class="item_top">
+										<div class="title_info">
+											<div class="main_title">자기차량손해</div>
+										</div>
+									</div>
+									<div class="item_cont">
+										<ul class="align_top">
+											<li class="txt_l">손해액의 20%/20만원~50만원<br>차량단독사고 보상 포함<strong class="point">차량단독사고는 보상하지 않음</strong>
+											</li>
+											<li class="txt_r">294,830원</li>
+										</ul>
+									</div>
+								</a>
+								<div class="btn_area">
+									<!-- s: 25-09-02 수정 -->
+									{{> cp/button type="2" size="4" rightIcon="arrowRightSvg_ty2" b-text="자기차량손해만 가입하면 보험료는 얼마나 절감될까?" }}
+									<!-- e: 25-09-02 수정 -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inner_cont">
+								<!-- s: 25-10-22 수정 -->
+								<a href="javajscript:void(0)" class="card_link" title="상세 팝업" role="button">
+									<!-- e: 25-10-22 수정 -->
+									<div class="item_top">
+										<div class="title_info">
+											<div class="main_title">긴급출동특약</div>
+										</div>
+									</div>
+									<div class="item_cont">
+										<ul>
+											<li class="txt_l">하이카서비스 10KM</li>
+											<li class="txt_r">9,600원</li>
+										</ul>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inner_cont">
+								<!-- s: 25-10-22 수정 -->
+								<a href="javajscript:void(0)" class="card_link" title="상세 팝업" role="button">
+									<!-- e: 25-10-22 수정 -->
+									<div class="item_top">
+										<div class="title_info">
+											<div class="main_title">물적사고할증기준금액</div>
+										</div>
+									</div>
+									<div class="item_cont">
+										<ul>
+											<li class="txt_l">200만원</li>
+											<li class="txt_r">0원</li>
+										</ul>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inner_cont">
+								<!-- s: 25-10-22 수정 -->
+								<a href="javajscript:void(0)" class="card_link" title="상세 팝업" role="button">
+									<!-- e: 25-10-22 수정 -->
+									<div class="item_top">
+										<div class="title_info">
+											<div class="main_title">부가담보</div>
+										</div>
+									</div>
+									<div class="item_cont">
+										<ul>
+											<li class="txt_l">자기차량손해 보장 확대 외 3개</li>
+											<li class="txt_r">0원</li>
+										</ul>
+									</div>
+								</a>
+								<div class="btn_area">
+									<!-- s: 25-09-02 수정 -->
+									{{> cp/button type="2" size="4" rightIcon="arrowRightSvg_ty2" b-text="신차 전용 부가담보 를 추천드려요. 확인해보세요." }}
+									<!-- e: 25-09-02 수정 -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-		<!-- s: 하단 고정 버튼 영역 -->
-		<div class="bottom_fix_wrap">
+			<!-- s: 할인특약 -->
+			<!-- s: 25-09-02 수정 -->
+			<div class="acd_item acd_item_ty3">
+				{{#> cp/accordion ac-title="할인특약 선택" cont-class="" }}
+				<div class="card_item_wrap">
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="tit_item">
+								<div class="inp_checkbox">
+									<input type="checkbox" id="card_chk110" name="name1" aria-labelledby="card_chk110_cont" />
+									<label for="card_chk110" class="chk_label">
+										<span class="title_info">
+											<span class="main_title">
+												커넥티드카 할인특약 <span class="point">7%</span>
+											</span>
+										</span>
+									</label>
+									<i></i>
+								</div>
+								{{> cp/button_question question-icon="arrow" question_tit=" " }}
+							</div>
+						</div>
+					</div>
+
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="tit_item">
+								<div class="inp_checkbox">
+									<input type="checkbox" id="card_chk112" name="name1" aria-labelledby="card_chk112_cont" />
+									<label for="card_chk112" class="chk_label">
+										<span class="title_info">
+											<span class="main_title">
+												안전운전 할인특약(택1) <span class="point">18.9%</span>
+											</span>
+										</span>
+									</label>
+									<i></i>
+								</div>
+								{{> cp/button_question question-icon="arrow" question_tit=" " }}
+							</div>
+							<div class="inner_cont">
+								<div class="checkbox_group_wrap column">
+									{{> cp/checkbox id="checkbox01-1" label_class="chk_label_ty4" labelname="커넥티드 안전운전 할인" checked=true
+									disabled=true }}
+									{{> cp/checkbox id="checkbox01-2" label_class="chk_label_ty4" labelname="TMAP 안전운전 할인" disabled=true
+									}}
+									{{> cp/checkbox id="checkbox01-3" label_class="chk_label_ty4" labelname="네이버 안전운전 할인" disabled=true }}
+									{{> cp/checkbox id="checkbox01-4" label_class="chk_label_ty4" labelname="커넥티드 블랙박스 안전운전 할인"
+									disabled=true }}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="tit_item">
+								<div class="inp_checkbox">
+									<input type="checkbox" id="card_chk113" name="name1" aria-labelledby="card_chk113_cont" />
+									<label for="card_chk113" class="chk_label">
+										<span class="title_info">
+											<span class="main_title">
+												첨단안전장치 할인특약 <span class="point">10.8%</span>
+											</span>
+										</span>
+										<span class="badge_wrap">
+											<span class="hd_badge outline solid_pastel c_secondary size_m">새로운 특약이에요!</span>
+										</span>
+									</label>
+									<i></i>
+								</div>
+								{{> cp/button_question question-icon="arrow" question_tit=" " }}
+							</div>
+							<div class="inner_cont">
+								<div class="checkbox_group_wrap column">
+									{{> cp/checkbox id="checkbox02-1" label_class="chk_label_ty4" labelname="차선이탈 경고장치 <span
+										class='hd_badge outline solid_pastel c_success size_m'>기본장착</span>" checked=true disabled=true }}
+									{{> cp/checkbox id="checkbox02-2" label_class="chk_label_ty4" labelname="전방충돌 경고장치 <span
+										class='hd_badge outline solid_pastel c_success size_m'>기본장착</span>" disabled=true }}
+									{{> cp/checkbox id="checkbox02-3" label_class="chk_label_ty4" labelname="후측방충돌 경고장치 <span
+										class='hd_badge outline solid_pastel c_warning size_m'>옵션장착</span>" disabled=true }}
+									{{> cp/checkbox id="checkbox02-4" label_class="chk_label_ty4" labelname="HUD(Head Up Display)"
+									disabled=true }}
+									{{> cp/checkbox id="checkbox02-5" label_class="chk_label_ty4" labelname="AVM(Around View Monitor)"
+									disabled=true }}
+									{{> cp/checkbox id="checkbox02-6" label_class="chk_label_ty4" labelname="SCC(Smart Cruise Control)"
+									disabled=true }}
+									{{> cp/checkbox id="checkbox02-7" label_class="chk_label_ty4" labelname="주차충돌방지 보조장치" disabled=true }}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="tit_item">
+								<div class="inp_checkbox">
+									<input type="checkbox" id="card_chk114" name="name1" aria-labelledby="card_chk114_cont" />
+									<label for="card_chk114" class="chk_label">
+										<span class="title_info">
+											<span class="main_title">
+												블랙박스 할인특약(택1) <span class="point">2.2%</span>
+											</span>
+										</span>
+										<span class="badge_wrap">
+											<span class="hd_badge outline solid_pastel c_primary size_m">할인율이 올랐어요!</span>
+										</span>
+									</label>
+									<i></i>
+								</div>
+								{{> cp/button_question question-icon="arrow" question_tit=" " }}
+							</div>
+							<div class="inner_cont">
+								<div class="checkbox_group_wrap column">
+									{{> cp/checkbox id="checkbox03-1" label_class="chk_label_ty4" labelname="블랙박스 할인" checked=true
+									disabled=true }}
+									{{> cp/checkbox id="checkbox03-2" label_class="chk_label_ty4" labelname="빌트인캠(내장형 블랙박스) 할인"
+									disabled=true }}
+									{{> cp/checkbox id="checkbox03-3" label_class="chk_label_ty4" labelname="커넥티드 블랙박스 할인" disabled=true
+									}}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="tit_item">
+								<div class="inp_checkbox">
+									<input type="checkbox" id="card_chk115" name="name1" aria-labelledby="card_chk115_cont" />
+									<label for="card_chk115" class="chk_label">
+										<span class="title_info">
+											<span class="main_title">
+												효도하는 자녀 할인특약
+											</span>
+										</span>
+									</label>
+									<i></i>
+								</div>
+								{{> cp/button_question question-icon="arrow" question_tit=" " }}
+							</div>
+						</div>
+					</div>
+					<!-- s: 25-09-09 수정 -->
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="tit_item">
+								<div class="inp_checkbox">
+									<input type="checkbox" id="card_chk122" name="name1" aria-labelledby="card_chk122_cont" />
+									<label for="card_chk122" class="chk_label">
+										<span class="title_info">
+											<span class="main_title">
+												대중교통이용 할인특약 <span class="point">9%</span>
+											</span>
+										</span>
+										<span class="badge_wrap">
+											<span class="hd_badge outline solid_pastel c_secondary size_m">새로운 특약이에요!</span>
+										</span>
+									</label>
+									<i></i>
+								</div>
+								{{> cp/button_question question-icon="arrow" question_tit=" " }}
+							</div>
+						</div>
+					</div>
+					<!-- e: 25-09-09 수정 -->
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="tit_item">
+								<div class="inp_checkbox">
+									<input type="checkbox" id="card_chk116" name="name1" aria-labelledby="card_chk116_cont" />
+									<label for="card_chk116" class="chk_label">
+										<span class="title_info">
+											<span class="main_title">
+												걸음 수 할인특약 <span class="point">5%</span>
+											</span>
+										</span>
+										<span class="badge_wrap">
+											<span class="hd_badge outline solid_pastel c_secondary size_m">새로운 특약이에요!</span>
+										</span>
+									</label>
+									<i></i>
+								</div>
+								{{> cp/button_question question-icon="arrow" question_tit=" " }}
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="tit_item">
+								<div class="inp_checkbox">
+									<input type="checkbox" id="card_chk117" name="name1" aria-labelledby="card_chk117_cont" />
+									<label for="card_chk117" class="chk_label">
+										<span class="title_info">
+											<span class="main_title">
+												ECO마일리지 특약
+											</span>
+										</span>
+									</label>
+									<i></i>
+								</div>
+								{{> cp/button_question question-icon="arrow" question_tit=" " }}
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="tit_item">
+								<div class="inp_checkbox">
+									<input type="checkbox" id="card_chk123" name="name1" aria-labelledby="card_chk123_cont" />
+									<label for="card_chk123" class="chk_label">
+										<span class="title_info">
+											<span class="main_title">
+												보험료 환급금 대체사용 특약
+											</span>
+										</span>
+									</label>
+									<i></i>
+								</div>
+								{{> cp/button_question question-icon="arrow" question_tit=" " }}
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="tit_item">
+								<div class="inp_checkbox">
+									<input type="checkbox" id="card_chk118" name="name1" aria-labelledby="card_chk118_cont" />
+									<label for="card_chk118" class="chk_label">
+										<span class="title_info">
+											<!-- s: 25-09-02 수정 -->
+											<!-- s: 25-10-17 수정 -->
+											<span class="main_title">
+												하이카 그린 서비스 특약
+											</span>
+											<!-- e: 25-10-17 수정 -->
+											<!-- e: 25-09-02 수정 -->
+										</span>
+									</label>
+									<i></i>
+								</div>
+								{{> cp/button_question question-icon="arrow" question_tit=" " }}
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="tit_item">
+								<div class="inp_checkbox">
+									<input type="checkbox" id="card_chk119" name="name1" aria-labelledby="card_chk119_cont" />
+									<label for="card_chk119" class="chk_label">
+										<span class="title_info">
+											<span class="main_title">
+												고령자 교통안전교육이수 할인특약
+											</span>
+										</span>
+									</label>
+									<i></i>
+								</div>
+								{{> cp/button_question question-icon="arrow" question_tit=" " }}
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="tit_item">
+								<div class="inp_checkbox">
+									<input type="checkbox" id="card_chk121" name="name1" aria-labelledby="card_chk121_cont" />
+									<label for="card_chk121" class="chk_label">
+										<span class="title_info">
+											<span class="main_title">
+												어린이 통학버스 할인특약
+											</span>
+										</span>
+									</label>
+									<i></i>
+								</div>
+								{{> cp/button_question question-icon="arrow" question_tit=" " }}
+							</div>
+						</div>
+					</div>
+					<div class="card_item">
+						<div class="item_inner">
+							<div class="inner_cont">
+								<div role="button" class="card_link" tabindex="0">
+									<div class="item_top">
+										<div class="title_info">
+											<div class="main_title">
+												나눔특약
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{{/ cp/accordion }}
+			</div>
+			<!-- e: 25-09-02 수정 -->
+			<!-- e: 할인특약 -->
+
+			<!-- s: 26-01-08 수정 -->
+			<div class="cont_banner_wrap">
+				<div class="brn_item">
+					<a href="javascript:void(0);" role="button" class="brn_item_btn" title="팝업열기"></a>
+						<img src="../../../images/content/mtps/img_MPRMTPS10004000000_01.png" alt="연간 주행거리에 따른 보험료 내 보험료는 얼마일까요?">
+					</a>
+				</div>
+				<div class="brn_item">
+					<a href="javascript:void(0);" role="button" class="brn_item_btn" title="팝업열기"></a>
+						<img src="../../../images/content/mtps/img_MPRMTPS10004000000_02.png" alt="자동차보험 보장분석/가입통계 보험이 안전하게 설계되었는지 확인해보세요!">						
+					</a>
+				</div>
+				<div class="brn_item">
+					<a href="javascript:void(0);" role="button" class="brn_item_btn" title="팝업열기"></a>
+						<img src="../../../images/content/mtps/img_MPRMTPS10004000000_03.png" alt="자동차보험 결제혜택 최대 3만원! 30만원 이상 결제시 카드사, 간편결제사 제공(이륜차포함)">
+					</a>
+				</div>
+			</div>
+			<!-- e: 26-01-08 수정 -->
+
 			<div class="btn_area">
-				{{> cp/button type="1" size="1" b-text="보험 가입하기" disabled=true }}
+				{{> cp/button type="3" size="3" b-text="내 보험료 저장" }}
+				<!-- s: 25-09-02 수정 -->
+				{{> cp/button type="3" size="3" b-text="보험료 문자로 받기" }}
+				<!-- e: 25-09-02 수정 -->
 			</div>
+
+			<!-- s: 26-01-08 수정 -->
+			<div class="cont_banner_wrap">
+				<div class="brn_item">
+					<a href="javascript:void(0);" role="button" class="brn_item_btn" title="팝업열기"></a>
+						<img src="../../../images/content/mtps/img_MPRMTPS10004000000_04.png" alt="비교추천에서 확인한 보험료와 차이가 나는 이유?">
+					</a>
+				</div>
+			</div>
+			<!-- e: 26-01-08 수정 -->
+
 		</div>
-		<!-- s: 하단 고정 버튼 영역 -->
 	</div>
 
-	<!-- s: popup area -->
-	<!-- e: popup area -->
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="보험 가입하기" disabled=true }}
+		</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
+</div>
+
+<!-- s: popup area -->
+<!-- e: popup area -->
 {{/ layout/default }}

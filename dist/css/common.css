@@ -5901,6 +5901,29 @@ sup {
 .bann_wrap.bann_ty1.co_ty4 {
 	background: var(--color-element-point-lighter);
 }
+.cont_banner_wrap {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	gap: var(--gap-5);
+	margin-top: var(--gap-11);
+}
+.cont_banner_wrap .brn_item .brn_item_btn {
+	display: block;
+	width: 100%;
+	font-size: 0;
+}
+.cont_banner_wrap .brn_item .brn_item_btn img {
+	display: block;
+	width: 100%;
+}
+.cont_banner_wrap + .btn_area {
+	margin-top: var(--gap-8);
+}
 /* 달력 */
 /* datepicker */
 .ui-datepicker {
@@ -8134,6 +8157,13 @@ sup {
 	height: 2rem;
 	background: url(../images/icon/check_ty2.svg) no-repeat center;
 }
+.inp_checkbox input[type="checkbox"] + .chk_label.chk_label_ty6::before {
+	width: 2rem;
+	height: 2rem;
+	border: none;
+	border-radius: 0;
+	background: transparent url(../images/icon/check_ty8.svg) no-repeat center;
+}
 .inp_checkbox input[type="checkbox"] + .chk_label.switch_check {
 	cursor: pointer;
 	position: relative;
@@ -8240,8 +8270,8 @@ sup {
 	color: var(--color-text-basic);
 }
 .inp_checkbox input[type="checkbox"]:disabled + .chk_label.chk_label_ty4::before {
-	background: url(../images/icon/check_ty2.svg) no-repeat center;
 	border: none;
+	background: url(../images/icon/check_ty2.svg) no-repeat center;
 }
 .inp_checkbox input[type="checkbox"]:disabled + .chk_label.chk_label_ty5 {
 	background-color: var(--color-action-disabled);
@@ -8255,6 +8285,13 @@ sup {
 }
 .inp_checkbox input[type="checkbox"]:disabled + .chk_label.chk_label_ty5 span::before {
 	background: url(../images/icon/check_ty2.svg) no-repeat center;
+}
+.inp_checkbox input[type="checkbox"]:disabled + .chk_label.chk_label_ty6 > .label_cont {
+	color: var(--color-text-basic);
+}
+.inp_checkbox input[type="checkbox"]:disabled + .chk_label.chk_label_ty6::before {
+	border: none;
+	background-color: transparent;
 }
 .inp_checkbox input[type="checkbox"]:disabled + .chk_label.switch_check {
 	height: 2.4rem;
@@ -8292,6 +8329,9 @@ sup {
 }
 .inp_checkbox input[type="checkbox"]:checked + .chk_label.chk_label_ty5 span::before {
 	background: url(../images/icon/check_ty4.svg) no-repeat center;
+}
+.inp_checkbox input[type="checkbox"]:checked + .chk_label.chk_label_ty6::before {
+	background: transparent url(../images/icon/check_ty9.svg) no-repeat center;
 }
 .inp_checkbox input[type="checkbox"]:checked + .chk_label.switch_check::before {
 	background: var(--color-element-primary);
@@ -8350,6 +8390,12 @@ sup {
 }
 .inp_checkbox input[type="checkbox"]:checked:disabled + .chk_label.chk_label_ty5 span::before {
 	background: url(../images/icon/check_ty6.svg) no-repeat center;
+}
+.inp_checkbox input[type="checkbox"]:checked:disabled + .chk_label.chk_label_ty6::before {
+	border: none;
+	background-size: 2rem auto;
+	background-image: url(../images/icon/check_ty9.svg);
+	background-color: transparent;
 }
 .inp_checkbox input[type="checkbox"]:checked:disabled + .chk_label.switch_check::before {
 	background: var(--color-element-inverse);
@@ -8467,6 +8513,17 @@ sup {
 }
 .inp_checkbox .chk_lby3 {
 	padding-top: var(--padding-6);
+}
+.inp_checkbox .chk_lby4 {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	gap: var(--gap-3);
+	padding: 0.4rem 0 0 2.8rem;
 }
 .inp_checkbox .ag_more_btn {
 	position: absolute;
