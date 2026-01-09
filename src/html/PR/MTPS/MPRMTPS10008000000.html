@@ -132,6 +132,11 @@
 	
 			const controlEl = wrap.querySelector('.bullet_add_pager');
 			const paginationEl = wrap.querySelector('.swiper-pagination');
+			// s: 26-01-09 수정
+			const paginationLeft = wrap.querySelector('.swiper_button_left');
+			const paginationRight = wrap.querySelector('.swiper_button_right');
+			// e: 26-01-09 수정
+			
 	
 			// 슬라이드 1개 이하
 			if (slideCount <= 1) {
@@ -149,6 +154,13 @@
 					delay: 3000,
 					disableOnInteraction: false,
 				},
+
+				// s: 26-01-09 수정
+				navigation: {
+					nextEl: paginationRight,
+					prevEl: paginationLeft,
+				},
+				// e: 26-01-09 수정
 	
 				a11y: {
 					enabled: true,

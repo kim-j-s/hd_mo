@@ -156,17 +156,15 @@
 								display: block;
 							}
 							.badge_wrap {
-								// display: inline;
-								display: inline-block;
+								display: inline-flex;
+								width: auto;
+								vertical-align: bottom;
 							}
 						}
 					}
 					.inner_cont {
-						margin-left: 28px;
-						// margin-top: var(--gap-5);
-						// padding-top: var(--padding-6);
-						// border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 						width: calc(100% - 28px);
+						margin-left: 28px;
 					}
 					&:has(.tit_item) {
 						.tit_item {
@@ -359,12 +357,15 @@
 				padding: var(--padding-3) var(--padding-5) var(--padding-3) 40px;
 				background: var(--color-element-danger) url(../images/icon/inverse_circle.svg) no-repeat 12px 8px;
 				border-radius: var(--radius-medium1);
-				font-size: var(--font-size-body-small);
 				font-weight: 700;
+				font-size: var(--font-size-body-small);
 				color: var(--color-text-bolder-inverse);
 
 				& + .tit_item {
 					margin-top: var(--gap-4);
+				}
+				&[style*="display: none"] + .tit_item {
+					margin-top: 0;
 				}
 			}
 

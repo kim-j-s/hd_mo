@@ -118,6 +118,38 @@
 	</div>
 </div>
 
+<div class="swiper_wrap bullet_add" id="t2">
+	<div class="inner">
+		<div class="swiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<a href="#">
+						<img src="../../../images/temp/rewardBanner_naver_temp.png" alt="지금 가입하시면 네이버페이 포인트 최대 3만원을 드려요!">
+					</a>
+				</div>
+				<div class="swiper-slide">
+					<a href="#">
+						<img src="../../../images/temp/rewardBanner_naver_temp.png" alt="지금 가입하시면 네이버페이 포인트 최대 3만원을 드려요!">
+					</a>
+				</div>
+				<div class="swiper-slide">
+					<a href="#">
+						<img src="../../../images/temp/rewardBanner_naver_temp.png" alt="지금 가입하시면 네이버페이 포인트 최대 3만원을 드려요!">
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="bullet_add_pager">
+			<div class="bap_inner">
+				<button class="swiper_button swiper_button_left"></button>
+				<div class="swiper-pagination sp_ty2"></div>
+				<button class="swiper-button-play-pause" title="슬라이드 쇼 제어">정지</button>
+				<button class="swiper_button swiper_button_right"></button>
+			</div>
+		</div>
+	</div>
+</div>
+
 {{/ layout/guide }}
 
 
@@ -134,6 +166,8 @@
 
 			const controlEl = wrap.querySelector('.bullet_add_pager');
 			const paginationEl = wrap.querySelector('.swiper-pagination');
+			const paginationLeft = wrap.querySelector('.swiper_button_left');
+			const paginationRight = wrap.querySelector('.swiper_button_right');
 
 			// 슬라이드 1개 이하
 			if (slideCount <= 1) {
@@ -150,6 +184,11 @@
 				autoplay: {
 					delay: 3000,
 					disableOnInteraction: false,
+				},
+
+				navigation: {
+					nextEl: paginationRight,
+					prevEl: paginationLeft,
 				},
 
 				a11y: {
@@ -187,13 +226,14 @@
 
 		// 구동
 		initSwiperById('t1');
+		initSwiperById('t2');
 
 		var bannerSwiper = new Swiper('#card_reward_banner_wrap', {
 			slidesPerView: 1,
 			updateOnWindowResize:true,
 			navigation: {
-				nextEl: ".swiper_button_right",
-				prevEl: ".swiper_button_left",
+				nextEl: ".banner_slide_wrap .swiper_button_right",
+				prevEl: ".banner_slide_wrap .swiper_button_left",
 			},
 			a11y: {
 				enabled: true,
@@ -207,7 +247,7 @@
 				renderBullet: function (index, className) {
 					return `<span class="${className}" aria-label="배너${index + 1}번으로 이동"></span>`;
 					// return `<span class="\${className}" aria-label="배너\${index + 1}번으로 이동"></span>`;
-			// jsp 사용시
+					// jsp 사용시
 				},
 			}
 		});

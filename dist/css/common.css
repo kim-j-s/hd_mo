@@ -6581,11 +6581,15 @@ sup {
 }
 .card_item_wrap:not(.info_type) .card_item .item_inner:has(.inp_checkbox, .inp_radio) .inp_radio .chk_label .badge_wrap,
 .card_item_wrap:not(.info_type) .card_item .item_inner:has(.inp_checkbox, .inp_radio) .inp_checkbox .chk_label .badge_wrap {
-	display: inline-block;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	width: auto;
+	vertical-align: bottom;
 }
 .card_item_wrap:not(.info_type) .card_item .item_inner:has(.inp_checkbox, .inp_radio) .inner_cont {
-	margin-left: 2.8rem;
 	width: calc(100% - 2.8rem);
+	margin-left: 2.8rem;
 }
 .card_item_wrap:not(.info_type) .card_item .item_inner:has(.inp_checkbox, .inp_radio):has(.tit_item) .tit_item {
 	display: -webkit-box;
@@ -6761,12 +6765,15 @@ sup {
 	padding: var(--padding-3) var(--padding-5) var(--padding-3) 4rem;
 	background: var(--color-element-danger) url(../images/icon/inverse_circle.svg) no-repeat 1.2rem 0.8rem;
 	border-radius: var(--radius-medium1);
-	font-size: var(--font-size-body-small);
 	font-weight: 700;
+	font-size: var(--font-size-body-small);
 	color: var(--color-text-bolder-inverse);
 }
 .card_item_wrap .card_item .item_inner .notice_item + .tit_item {
 	margin-top: var(--gap-4);
+}
+.card_item_wrap .card_item .item_inner .notice_item[style*="display: none"] + .tit_item {
+	margin-top: 0;
 }
 .card_item_wrap .card_item .item_inner .inp_checkbox input {
 	z-index: 2;
