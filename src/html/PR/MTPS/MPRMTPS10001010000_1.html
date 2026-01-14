@@ -1,0 +1,234 @@
+{{#> layout/default page-title="자동차 기본정보 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="자동차보험" }}
+
+	<div id="container" class="container">
+		<div class="content">
+			<div class="product_main_top fi">
+				<div class="logo">
+					<img src="../../../images/logo/logo_hd_direct.svg" alt="현대해상 다이렉트">
+				</div>
+				<div class="secondary">친구 소개 이벤트</div>
+				<h2 class="title_h2">
+					<strong>소개 받으신 분</strong>에게<br>
+					<strong>스타벅스 커피</strong><br>
+					<strong>2잔</strong>을 드려요!
+				</h2>
+
+				<div class="btn_area basic">
+					{{> cp/button type="3" size="5" b-text="자세한 보장 내용이 궁금하다면" rightIcon="arrowRightSvg" }}
+				</div>
+			</div>
+
+			<div class="input_form_box">
+				<div class="input_title">자동차 소유(예정)자 정보</div>
+				<div class="input_item_wrap">
+					<div class="acd_item">
+						{{#> cp/accordion ac-title="이름" ac-active=true }}
+						{{> cp/text class="big" placeholder="자동차 소유(예정)자" inp-title="이름 입력" }}
+						{{/ cp/accordion }}
+					</div>
+					<div class="acd_item">
+						{{#> cp/accordion ac-title="주민등록번호" }}
+						
+						<div class="comp_wrap birth active">
+						 	{{> cp/text class="big" type="tel" minlength="6" maxlength="6" placeholder="앞 6자리" inp-title="주민등록번호 앞 6자리 입력" }}
+							<span class="dash">-</span>
+							{{> cp/keypad7 kp-class="big" case1=true kt="주민등록번호 뒤 7자리 입력"}}
+						</div>
+						{{/ cp/accordion }}
+					</div>
+
+					<div class="acd_item">
+						{{#> cp/accordion ac-title="휴대폰번호" }}
+						{{> cp/text class="phone phone_full big" type="tel" placeholder="- 없이 입력" inp-title="휴대폰번호 입력" }}
+						{{/ cp/accordion }}
+					</div>
+				</div>
+			</div>
+
+			<div class="bg_area">
+				<h3 class="title_h3">
+					내 차 보험료 할인 받는 방법은?
+				</h3>
+				<div class="top_wrap">
+					<p class="msg_info">해당 특약 가입 시</p>
+				</div>
+				<div class="discount_item_box">
+					<ul>
+						<li class="item opt1">
+							<div class="cont">ECO 마일리지 특약 <strong class="point">46%</strong></div>
+							<div class="desc">1천km이하, 커넥티드방식</div>
+						</li>
+						<li class="item opt4">
+							<div class="cont">인터넷 가입 <strong class="point">18.3%</strong></div>
+							<div class="desc">자사오프라인 대비 평균</div>
+						</li>
+						<li class="item opt2">
+							<div class="cont">무사고 할인 <strong class="point">15.3~12.4%</strong></div>
+							<div class="desc">3년 이상 평균</div>
+						</li>
+						<li class="item opt3">
+							<div class="cont">첨단안전장치 할인 특약 <strong class="point">24.6~0.1%</strong></div>
+							<div class="desc">첨단안전장치 장착 개수에 따라<br>(보험시작일 26.2.6부터)</div>
+						</li>
+						<li class="item opt5">
+							<div class="cont">커넥티드카 할인 특약 <strong class="point">7~5%</strong></div>
+							<div class="desc">사고 통보장치 장착 시<br>(보험시작일 26.2.6부터)</div>
+						</li>
+						<li class="item opt7">
+							<div class="cont">커넥티드 안전운전 할인 특약 <br><strong class="point">30.8~13.6%</strong></div>
+							<div class="desc">안전운전점수 70점 이상</div>
+						</li>
+						<li class="item opt6">
+							<div class="cont">티맵 안전운전 할인 특약 <strong class="point">27.5~1.9%</strong></div>
+							<div class="desc">안전운전점수 70점 이상</div>
+						</li>
+						<li class="item opt12">
+							<div class="cont">네이버지도 안전운전 할인 특약 <strong class="point">26.8~1%</strong></div>
+							<div class="desc">안전운전점수 70점 이상</div>
+						</li>
+						<li class="item opt8">
+							<div class="cont">자녀 할인 특약 <strong class="point">16%</strong></div>
+							<div class="desc">부부/1인한정, 막내가 태아인 2자녀 이상</div>
+						</li>
+						<li class="item opt13">
+							<div class="cont">대중교통 할인 특약 <strong class="point">9%</strong></div>
+							<div class="desc">직전 3개월 대중교통 이용횟수 50회 이상</div>
+						</li>
+						<li class="item opt9">
+							<div class="cont">블랙박스 할인 특약 <strong class="point">6.7~2.2%</strong></div>
+							<div class="desc">블랙박스 장착 시</div>
+						</li>
+						<li class="item opt14">
+							<div class="cont">하이워크(걸음수) 할인 특약 <strong class="point">5%</strong></div>
+							<div class="desc">직전31일 평균 5천 걸음 이상</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- 이벤트 배너 영역 -->
+			<div class="img_area">
+				<a href="#">
+					<img src="../../../images/event/img_car_bann01.png" alt="자동차보험 결제혜택 최대 3만원 받으세요. 30만원 이상 결제시 카드사, 간편결제사 제공 (이륜차포함)">
+				</a>
+			</div>
+
+			<!-- s: 꼭 알아두세요 -->
+			{{#> cp/notice dp-active=true }}
+			<ul class="list_ty1">
+				<li>고객님의 자동차보험료를 계산하기 위해 개인(신용)정보 동의 및 본인인증이 필요합니다.</li>
+				<li>가입 가능한 나이는 만 19세 이상입니다.</li>
+				<!-- <li>가입 가능한 나이는 만 19세 이상입니다.</li> -->
+			</ul>
+			{{/ cp/notice }}
+			<!-- e: 꼭 알아두세요 -->
+		</div>
+	</div>
+
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			{{> cp/button type="1" size="1" b-text="설계 정보를 입력 중이에요" disabled=true }}
+			<!-- {{> cp/button type="1" size="1" b-text="내 보험료를 알아볼게요" }} -->
+		</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
+</div>
+
+<div class="fb" onclick="moT();">모션</div>
+
+
+
+
+
+<!-- s: popup area -->
+<!-- e: popup area -->
+
+<style>
+	.fb {
+		position: fixed;
+		right: 10px;
+		bottom: 10px;
+		z-index: 5000;
+		width: 50px;
+		height: 50px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 20px;
+		border: 1px solid #000;
+		border-radius: 50%;
+		background-color: var(--color-background-white);
+	}
+</style>
+
+
+
+<script>
+	
+
+	function moT() {
+		const $content = $('.container'); // scrollTop 대상
+		const $this = $('.acd_item').eq(1);
+		const $header = $('.header');
+
+		// 아코디언 열기
+		$this.find('.acd_btn').click();
+
+		// 높이 변경 반영 후 실행
+		setTimeout(() => {
+			// 스크롤 컨테이너 기준 위치 계산
+			const containerTop = $content.offset().top;
+			const targetTop = $this.offset().top;
+
+			// 이동해야 할 거리 계산
+			const move = $content.scrollTop() + (targetTop - containerTop);
+
+			// 부드럽게 스크롤 이동
+			$content.animate({ 
+				scrollTop: move 
+			}, 300, function(){
+				$this.find('.big input').focus();
+			});
+
+			
+
+			// 디버깅용 로그
+			// console.log({
+			// 	containerScrollTop: $content.scrollTop(),
+			// 	containerTop,
+			// 	targetTop,
+			// 	move
+			// });
+		}, 100);
+	}
+
+
+	// let lastTime = 0;
+	// const interval = 1000; // ms 단위
+
+	// function loopConsoleWithDelay(timestamp) {
+	// 	if (timestamp - lastTime >= interval) {
+	// 		lastTime = timestamp;
+
+	// 		const $content = $('.container').scrollTop();
+	// 		const $this = $('.acd_item').eq(1).offset().top;
+
+	// 		console.log('이동할 돔 : ', $content);
+	// 		console.log('대상 돔 : ', $this);
+	// 	}
+
+	// 	requestAnimationFrame(loopConsoleWithDelay);
+	// }
+
+	// // 시작
+	// requestAnimationFrame(loopConsoleWithDelay);
+
+
+</script>
+
+
+
+{{/ layout/default }}
