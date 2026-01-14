@@ -26,6 +26,12 @@
 		font-size: var(--font-size-heading-xsmall);
 		font-weight: 700;
 		line-height: 24px;
+		.sd {
+			display: block;
+			font-weight: 400;
+			font-size: var(--font-size-body-xsmall);
+			line-height: normal;
+		}
 	}
 
 	& + .bg_area {
@@ -218,7 +224,7 @@
 		background-position: left center;
 		background-size: 32px auto;
 
-		@for $i from 1 through 17 {
+		@for $i from 1 through 18 {
 			&.opt#{$i}{
 				background-image: url(../images/content/mtps/icon_MPRMTPS10002010000_ty#{$i}.svg);
 			}
@@ -247,8 +253,9 @@
 		padding-bottom: var(--padding-8);
 	}
 	.bottom_info_wrap {
-		border-top: var(--border-width-static-regular) var(--color-border-information-light);
-		padding-top: var(--padding-6);
+		margin-top: var(--gap-5);
+		padding-top: 17px;
+		border-top: var(--border-width-static-regular) solid var(--color-border-information-light);
 		text-align: center;
 		
 		strong {
