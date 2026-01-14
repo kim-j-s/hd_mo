@@ -14,7 +14,6 @@
 				<!-- e: content_top -->
 
 				<div class="info_gray">
-					<!-- s: 25-09-24 수정 -->
 					<dl>
 						<dt><strong>차량번호</strong></dt>
 						<dd><strong>18루**22</strong></dd>
@@ -29,7 +28,6 @@
 						<dt><strong>보험기간</strong></dt>
 						<dd><strong>2025.04.30~2025.05.02</strong></dd>
 					</dl>
-					<!-- e: 25-09-24 수정 -->
 				</div>
 
 				<div class="info_cont">
@@ -104,60 +102,4 @@
 	{{> pages/pop1 }}
 	<!-- e: 자동차 배서 메뉴 -->
 	<!-- e: popup area -->
-
-	<!-- s: 25-09-17 수정 -->
-	<!-- 삭제(공통 common.js로 이동) <script>
-		$(function(){
-			prograssCar();
-
-			$(window).on('resize', function(){
-				prograssCar();
-			})
-		})
-
-		function prograssCar(){
-			const $prograss = $('.progress_box_ty2');
-
-			$prograss.each(function(idx){
-				const $allBar = $prograss.eq(idx),
-							$bar = $allBar.find('.ing'),
-							$start = $bar.find('.newStart'),
-							$spot = $bar.find('.spot');
-
-				let spotLeft = null;
-
-				const allW = $allBar.outerWidth(), //progressbar 전체 너비
-							barW = $bar.width(), 		//진행된 bar의 너비
-							spotW = $spot.outerWidth(),		//spot 너비
-							spaceW = 2;										//spot끼리 여백 너비
-
-				const newW = Math.round((barW / allW) * 100),	//진행된 너비 % 변환
-							startW = Math.round((8 / allW) * 100),	//기준일 spot % 변환
-							newstartW = Math.round((spotW / allW) * 100), //기준일 badge 너비 % 변환
-							spacePer = (2 / allW) * 100;
-
-				$prograss.children('.ing').removeClass('full');
-
-				console.log(allW, barW)
-
-				// bar가 시작일과 겹칠 때
-				if((allW - barW) <= spotW + spaceW){
-					$bar.addClass('big');
-					spotLeft = spotW + spaceW - (allW - barW);
-					$bar.find('.newStart').children('.spot').css('left', spotLeft);
-
-					// bar 길이 100%일 때
-					if(allW == barW){
-						$bar.find('.newStart').children('em').css('left', '1px');
-					}
-
-				// 기준일, 종료일 겹칠 때
-				}else if(barW <= (spotW * 2) + spaceW){
-					$bar.find('.newStart').addClass('small');
-					$bar.find('.newStart').children('.spot').css('margin-right', spotW + spaceW + 'px');
-				}
-			})
-		}
-	</script> -->
-	<!-- e: 25-09-17 수정 -->
 {{/ layout/default }}
