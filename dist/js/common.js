@@ -670,7 +670,7 @@
 
 
 	// 선택 약관 스크롤 이벤트
-	$DOM.on('click', '.ag_group_top .chk_label', function() {
+	$DOM.on('click', '.ag_groups_move .ag_group_top .chk_label', function() {
 		const $this = $(this);
 		const agmDom = $this.closest('.ag_groups_move');
 		const agmDomChilds = $this.closest('.ag_groups_move').find('.ag_group_wrap').length;
@@ -685,9 +685,6 @@
 				const targetOffset = agmDom.find('.ag_group_wrap').eq(idx + 1).offset().top;
 				const domHeaderHeight = agmDom.closest('.popup_wrap').find('.popup_head').outerHeight();
 				const pinPoint = Math.abs(Math.abs(agmDom.offset().top - domHeaderHeight) - scT);
-
-				// console.log('agmDom.offset().top : ', agmDom.offset().top);
-
 				$(this).closest('.popup_cont').animate({ 
 					scrollTop: (targetOffset - agmDom.offset().top) + pinPoint
 				}, 300);
