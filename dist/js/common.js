@@ -362,6 +362,7 @@
 	/* Tab */
 	$DOM.on('click', '.tab_btn:not(.tab_btn_block)', function(){
 		const idx = $(this).index();
+		const $wrap = $(this).closest('.tab_wrap');
 		const $tab = $(this).closest('[class^=tab_wrap_list]').children('.tab_btn');
 		const $tabCont = $(this).closest('.tab_wrap').children('.tab_wrap_content');
 
@@ -369,6 +370,9 @@
 		$(this).addClass('active').attr('aria-selected', 'true');
 		$tabCont.removeClass('active').removeAttr('tabindex');
 		$tabCont.eq(idx).addClass('active');
+
+		const $activeCont = $tabCont.eq(idx).addClass('active');
+		$wrap.trigger('tab:changed', [$activeCont]);
 	});
 
 	// select_driver

@@ -201,6 +201,12 @@ sup {
 	-ms-flex: 1;
 	flex: 1;
 }
+.wrap .container .content > *:first-child.tab_wrap [class^="tab_wrap_list"] {
+	margin-top: -1.6rem;
+}
+.wrap .container .content > *:first-child.tab_wrap [class^="tab_wrap_list"].sticky_fix {
+	top: -1.6rem;
+}
 .wrap .container .content > *:first-child.content_ty1 {
 	margin-top: -1.6rem;
 }
@@ -6784,6 +6790,9 @@ sup {
 .card_item_wrap .card_item .item_inner .notice_item[style*="display: none"] + .tit_item {
 	margin-top: 0;
 }
+.card_item_wrap .card_item .item_inner .notice_item[style*="display:none"] + .tit_item {
+	margin-top: 0;
+}
 .card_item_wrap .card_item .item_inner .inp_checkbox input {
 	z-index: 2;
 	margin-top: 0.3rem;
@@ -10191,7 +10200,7 @@ sup {
 .form_group_wrap [class^="form_line"] .label_tit + .checkbox_group_wrap {
 	margin-top: 0;
 }
-.form_group_wrap [class^="form_line"] .radio_group_wrap .rd_btn {
+.form_group_wrap [class^="form_line"] .radio_group_wrap:not(.column) .rd_btn {
 	max-width: calc(50% - 0.6rem);
 }
 .form_group_wrap [class^="form_line"] .input_text + .btn_link.short_cut,
@@ -11253,12 +11262,14 @@ sup {
 .list_depth + .info_gray {
 	margin-top: var(--gap-5);
 }
+.list_depth + .title_h3,
 .list_depth + .radio_group_wrap_ty2 {
 	margin-top: var(--gap-11);
 }
 .list_depth + .inp_checkbox {
 	margin-top: var(--gap-8);
 }
+.list_depth + .list_ty2,
 .list_depth + .list_depth {
 	margin-top: var(--gap-4);
 }
@@ -12726,7 +12737,7 @@ ol li .table_wrap + .list_ty2 li + li {
 	height: 5.6rem;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: auto 2.2rem;
+	background-size: auto 2.4rem;
 }
 .radio_group_wrap [class*="icon_pay"] .label_cont {
 	overflow: hidden;
@@ -12736,13 +12747,13 @@ ol li .table_wrap + .list_ty2 li + li {
 	clip: rect(0, 0, 0, 0);
 }
 .radio_group_wrap .icon_pay_ty1 {
-	background-image: url(../images/logo/pay_kakao.svg);
+	background-image: url(../images/logo/pay_kakao.png);
 }
 .radio_group_wrap .icon_pay_ty2 {
-	background-image: url(../images/logo/pay_naver.svg);
+	background-image: url(../images/logo/pay_naver.png);
 }
 .radio_group_wrap .icon_pay_ty3 {
-	background-image: url(../images/logo/pay_toss.svg);
+	background-image: url(../images/logo/pay_toss.png);
 }
 .radio_group_wrap.structure:has(input[type="radio"]:checked) input[type="radio"] + label .label_cont {
 	color: var(--color-text-disabled);
@@ -14515,6 +14526,12 @@ ol li .table_wrap + .list_ty2 li + li {
 .tab_wrap_content.has_scroll {
 	overflow-y: auto;
 }
+.tab_wrap_content:has(.cd_top_wrap) {
+	padding-top: 0;
+}
+.tab_wrap_content:has(.cd_top_wrap) .cd_top_wrap {
+	margin-top: 0;
+}
 .tab_wrap.tab_wrap_ty2 .tab_wrap_content {
 	padding-top: var(--padding-8);
 }
@@ -15080,6 +15097,7 @@ ol li .table_wrap + .list_ty2 li + li {
 .title_h3 [class^="msg_"] {
 	margin-left: 0.8rem;
 	font-weight: 400;
+	background-position: left 0.2rem center;
 }
 .title_h3.ico_ty {
 	padding-left: 4rem;
