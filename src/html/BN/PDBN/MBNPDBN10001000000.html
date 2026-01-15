@@ -374,12 +374,11 @@
 			// 전체 넓이
 			var $progressBarPer = $progressBar.find('.progress_bar_per');
 			var progressBarPerWidth = $progressBarPer.outerWidth(); // 기준 넓이(px)
-			// var progressBarPerWidth = width;
 			if (!progressBarPerWidth) return;
 	
 			// 퍼센트 계산 (소수점 없이)
 			var percent = Math.floor((current / total) * 100);       // 현재 진행률(%)
-			percent = Math.min(percent, 100);
+			percent = Math.min(Math.max(percent, 0), 100);
 			var pixelWidth = Math.floor((percent / 100) * progressBarPerWidth);  // 진행률 px 환산
 	
 			var $perBar = $progressBar.find('.per_bar');
@@ -394,7 +393,6 @@
 			setTimeout(function () {
 				// 초기 클래스 제거
 				$perBar.removeClass('pos poe active').css('width', '0%');
-				// $perBar.removeClass('active pos').css('width', 0);
 				$perBarDp.removeClass('poe');
 
 				if (!$progressBar.closest('.tab_wrap_content').hasClass('active')) {
