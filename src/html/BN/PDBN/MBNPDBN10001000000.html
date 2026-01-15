@@ -3,162 +3,289 @@
 		{{> layout/header h-title="걷기할인" }}
 		<div id="container" class="container">
 			<div class="content">
-				<div class="cd_top_wrap">
-					<!-- s: content_top -->
-					<div class="content_top">
-						<!-- s: 가입안내 -->
-						<div class="icon_text_area hihealth"></div>
-						<strong class="desc_area">하이워크 걸음 수에 따라</strong>
-						<h2 class="title_h2">
-								현대해상 <strong>자동차보험 5% 할인 </strong>            
-						</h2>
-						<!-- e: 가입안내 -->
-						<!-- s: 부족, 초과 -->
-						<!-- s: 부족 -->
-						<div class="icon_text_area face1"></div>
-						<h2 class="title_h2">
-								<strong><span class="danger">1,200걸음 부족하여</span><br>보험료 할인</strong>을 받으실 수 없어요              
-						</h2>
-						<!-- e: 부족 -->
-						<!-- s: 초과 -->
-						<div class="icon_text_area face2"></div>
-						<h2 class="title_h2">
-								<strong><span class="secondary">3,700걸음 초과하여</span><br>보험료 할인</strong>을 받으실 수 있어요
-						</h2>
-						<!-- e: 초과 -->
-						<p class="title_sub">2025.04.01(화)~2025.04.30(수)</p>
-						<div class="btn_area basic space1">
-							{{> cp/button type="3" size="5" b-text="일별 걸음수 보기" rightIcon="arrowRightSvg" popup="pop_type05"}}
-						</div>
-						<!-- e: 부족, 초과 -->
+				<!-- s: 26-01-15 수정 -->
+				<div class="tab_wrap">
+					<div class="tab_wrap_list_ty1" role="tablist">
+						{{> cp/tab_btn tb-text="하이헬스챌린지" tb-id="01" tb-active=true}}
+						{{> cp/tab_btn tb-text="토스 만보기" tb-id="02"}}
 					</div>
-					<!-- e: content_top -->
-					 
-					<div class="cd_top">
-						<!-- s: 가입안내 -->
-						<h3 class="title_h4">가입 조건도 간단해요!</h3>
-						<ol class="number_list">
-							<li>직전 31일 평균 걸음수 5천보 이상!
-								<p>하이헬스챌린지 앱을 통해 간편하게 확인</p>
-							</li>
-							<li>추가 제출 서류 없음
-								<p>하이헬스챌린지 걸음수로 간편하게 가입 가능</p>
-							</li>
-						</ol>
-						<!-- e: 가입안내 -->
-						<!-- s: 부족, 초과 -->
-						<div class="cd_top_name">
-							평균 걸음 수
-						</div>
-						<div class="work_number">
-							<strong>8,700</strong><span>걸음</span>
-						</div>
-						<!-- s: 25-10-22 수정 접근성 때문에 감싸기 -->
-						<div>
-						<!-- e: 25-10-22 수정 접근성 때문에 감싸기 -->
-							<!-- s: 부족 -->
-							<div class="progress_bar progress_bar_ty1 progress_bar_ty1_count" role="img" tabindex="0">
-								<div class="progress_bar_per_cover">
-									<div class="progress_bar_per">
-										<div class="per_bar">
-											<span class="per_bar_dp dp_ic3" data-pbc="3800">
-												<span class="text">3,800</span>
-											</span>
+					
+					<!-- 하이헬스챌린지 -->
+					<div class="tab_wrap_content active" role="tabpanel" aria-labelledby="tab01" id="tabPanel01">
+						<div class="cd_top_wrap">
+							<!-- s: content_top -->
+							<div class="content_top">
+								<!-- s: 가입안내 -->
+								<div class="icon_text_area hihealth"></div>
+								<strong class="desc_area">걸음수에 따라</strong>
+								<h2 class="title_h2">
+										현대해상 <strong>자동차보험 5% 할인 </strong>            
+								</h2>
+								<!-- e: 가입안내 -->
+								<!-- s: 부족, 초과 -->
+								<!-- s: 부족 -->
+								<div class="icon_text_area face1"></div>
+								<h2 class="title_h2">
+										<strong><span class="danger">1,200걸음 부족하여</span><br>보험료 할인</strong>을 받으실 수 없어요              
+								</h2>
+								<!-- e: 부족 -->
+								<!-- s: 초과 -->
+								<div class="icon_text_area face2"></div>
+								<h2 class="title_h2">
+									<strong><span class="secondary">걸음수 조건을 달성</strong></span>해서<br><strong>보험료 할인</strong>이 적용돼요
+								</h2>
+								<!-- e: 초과 -->
+								<!-- 삭제 <p class="title_sub">2025.04.01(화)~2025.04.30(수)</p> -->
+								<div class="btn_area basic space1">
+									{{> cp/button type="3" size="5" b-text="일별 걸음수 보기" rightIcon="arrowRightSvg" popup="pop_type05"}}
+								</div>
+								<!-- e: 부족, 초과 -->
+							</div>
+							<!-- e: content_top -->
+							
+							<div class="cd_top">
+								<!-- s: 가입안내 -->
+								<h3 class="title_h4">가입 조건도 간단해요!</h3>
+								<ol class="number_list">
+									<li>직전 31일 평균 걸음수 5천보 이상!
+										<p>하이헬스챌린지 앱을 통해 간편하게 확인</p>
+									</li>
+									<li>추가 제출 서류 없음
+										<p>하이헬스챌린지 걸음수로 간편하게 가입 가능</p>
+									</li>
+								</ol>
+								<!-- e: 가입안내 -->
+								<!-- s: 부족, 초과 -->
+								<div class="cd_top_name">
+									평균걸음수
+								</div>
+								<div class="work_number">
+									<strong>8,700</strong><span>걸음</span>
+								</div>
+								<!-- s: 25-10-22 수정 접근성 때문에 감싸기 -->
+								<div>
+								<!-- e: 25-10-22 수정 접근성 때문에 감싸기 -->
+									<!-- s: 부족 -->
+									<div class="progress_bar progress_bar_ty1 progress_bar_ty1_count" role="img" tabindex="0">
+										<div class="progress_bar_per_cover">
+											<div class="progress_bar_per">
+												<div class="per_bar">
+													<span class="per_bar_dp dp_ic3" data-pbc="3800">
+														<span class="text">3,800</span>
+													</span>
+												</div>
+											</div>
+										</div>
+										<div class="progress_bar_bottom">
+											<span class="pbb_start" data-pbcs="0">0걸음</span>
+											<span class="pbb_end" data-pbce="5000">5,000걸음</span>
 										</div>
 									</div>
-								</div>
-								<div class="progress_bar_bottom">
-									<span class="pbb_start" data-pbcs="0">0회</span>
-									<span class="pbb_end" data-pbce="5000">5,000걸음</span>
-								</div>
-							</div>
-							<!-- e: 부족 -->
-							<!-- s: 초과 -->
-							<div class="progress_bar progress_bar_ty1 progress_bar_ty1_count" role="img" tabindex="0">
-								<div class="progress_bar_per_cover">
-									<div class="progress_bar_per">
-										<div class="per_bar">
-											<span class="per_bar_dp dp_ic3" data-pbc="8700">
-												<span class="text">8,700</span>
-											</span>
+									<!-- e: 부족 -->
+									<!-- s: 초과 -->
+									<div class="progress_bar progress_bar_ty1 progress_bar_ty1_count" role="img" tabindex="0">
+										<div class="progress_bar_per_cover">
+											<div class="progress_bar_per">
+												<div class="per_bar">
+													<span class="per_bar_dp dp_ic3" data-pbc="8700">
+														<span class="text">8,700</span>
+													</span>
+												</div>
+											</div>
+										</div>
+										<div class="progress_bar_bottom">
+											<span class="pbb_start" data-pbcs="0">0걸음</span>
+											<span class="pbb_end" data-pbce="5000">5,000걸음</span>
 										</div>
 									</div>
+									<!-- e: 초과 -->
+								<!-- s: 25-10-22 수정 접근성 때문에 감싸기 -->
 								</div>
-								<div class="progress_bar_bottom">
-									<span class="pbb_start" data-pbcs="0">0회</span>
-									<span class="pbb_end" data-pbce="5000">5,000걸음</span>
+								<!-- e: 25-10-22 수정 접근성 때문에 감싸기 -->
+								<!-- e: 부족, 초과 -->
+								<div class="divider_ty2"></div>
+								<!-- s: 가입안내, 부족 -->
+								<div class="icon_right ty1">
+									{{> cp/linkButton bl_class="short_cut two_line" bl_text="지금 이대로 <br><strong class='point'>자동차보험 계산</strong>해 보기" }}
 								</div>
+								<!-- e: 가입안내, 부족 -->
+								<!-- s: 초과 -->
+								<div class="icon_right ty2">
+									<!-- s: 25-11-05 수정 -->
+									{{> cp/linkButton bl_class="short_cut two_line" bl_text="하이헬스챌린지<br><strong class='point'>걸음수 할인특약으로 5% 할인</strong> 받기" bl_title="새창 열림" }}
+									<!-- e: 25-11-05 수정 -->
+								</div>
+								<!-- e: 초과 -->
 							</div>
-							<!-- e: 초과 -->
-						<!-- s: 25-10-22 수정 접근성 때문에 감싸기 -->
+							<div class="btn_area">
+								{{> cp/button type="2" size="2" b-text="하이헬스챌린지 걸음수 조회하기" }}
+							</div>
 						</div>
-						<!-- e: 25-10-22 수정 접근성 때문에 감싸기 -->
-						<!-- e: 부족, 초과 -->
-						<div class="divider_ty2"></div>
-						<!-- s: 가입안내, 부족 -->
-						<div class="icon_right ty1">
-							{{> cp/linkButton bl_class="short_cut two_line" bl_text="지금 이대로 <br><strong class='point'>자동차보험 계산</strong>해 보기" }}
+
+						<h3 class="title_h3">오늘의 걸음<span class="msg_info">9,593</span></h3>
+						<div class="card_item_wrap wrap_row2 high_work">
+							<div class="card_item ty1">
+								<div class="title">예상거리</div>
+								<div class="cont"><strong class="point">6.9</strong> km</div>
+							</div>
+							<div class="card_item ty2">
+								<div class="title">소모열량</div>
+								<div class="cont"><strong class="point">520</strong> kcal</div>
+							</div>
 						</div>
-						<!-- e: 가입안내, 부족 -->
-						<!-- s: 초과 -->
-						<div class="icon_right ty2">
-							<!-- s: 25-11-05 수정 -->
-							{{> cp/linkButton bl_class="short_cut two_line" bl_text="하이헬스챌린지<br><strong class='point'>걸음 수 할인특약으로 5% 할인</strong> 받기" bl_title="새창 열림" }}
-							<!-- e: 25-11-05 수정 -->
-						</div>
-						<!-- e: 초과 -->
+
+						<!-- s: 26-01-15 수정 -->
+						<h3 class="title_h3">특약상세정보</h3>
+						<ul class="list_depth">
+							<li>걸음수 조회 결과는 조회 시점에 따라 변경될 수 있습니다.</li>
+							<li>특약 가입일로부터 잔여기간에 한하여 일할로 계산하여 환급해 드립니다.</li>
+							<li>추가 문의 사항이 있으시면 다이렉트 고객센터(1899-6782)로 연락주시기 바랍니다.</li>
+						</ul>
+
+						<h3 class="title_h3">가입조건</h3>
+						<ul class="list_depth">
+							<li>
+								하이헬스챌린지 APP, 토스 만보기 APP 사용자 중 하루 평균 5천 걸음 이상<br>
+								(확인일 직전 31일 기준, 확인일 제외)
+							</li>
+						</ul>
+						<!-- e: 26-01-15 수정 -->
 					</div>
-					<!-- s: 가입안내 -->
-					<div class="btn_area">
-						{{> cp/button type="2" size="2" b-text="하이헬스챌린지 앱 설치" rightIcon="windowPrimary"}}
+
+					<!-- 토스 만보기 -->
+					<div class="tab_wrap_content" role="tabpanel" aria-labelledby="tab02" id="tabPanel02">
+						<div class="cd_top_wrap">
+							<!-- s: content_top -->
+							<div class="content_top">
+								<!-- s: 가입안내 -->
+								<div class="icon_text_area toss"></div>
+								<strong class="desc_area">걸음수에 따라</strong>
+								<h2 class="title_h2">
+										현대해상 <strong>자동차보험 5% 할인 </strong>
+								</h2>
+								<!-- e: 가입안내 -->
+								<!-- s: 부족, 초과 -->
+								<!-- s: 부족 -->
+								<div class="icon_text_area face1"></div>
+								<h2 class="title_h2">
+										<strong><span class="danger">1,200걸음 부족하여</span><br>보험료 할인</strong>을 받으실 수 없어요              
+								</h2>
+								<!-- e: 부족 -->
+								<!-- s: 초과 -->
+								<div class="icon_text_area face2"></div>
+								<h2 class="title_h2">
+									<strong><span class="secondary">걸음수 조건을 달성</strong></span>해서<br><strong>보험료 할인</strong>이 적용돼요
+								</h2>
+								<!-- e: 초과 -->
+								<!-- e: 부족, 초과 -->
+							</div>
+							<!-- e: content_top -->
+							
+							<div class="cd_top">
+								<!-- s: 가입안내 -->
+								<h3 class="title_h4">가입 조건도 간단해요!</h3>
+								<ol class="number_list">
+									<li>직전 31일 평균 걸음수 5천보 이상!
+										<p>토스 앱을 통해 간편하게 확인</p>
+									</li>
+									<li>추가 제출 서류 없음
+										<p>토스 만보기 걸음수로 간편하게 가입 가능</p>
+									</li>
+								</ol>
+								<!-- e: 가입안내 -->
+								<!-- s: 부족, 초과 -->
+								<div class="cd_top_name">
+									평균걸음수
+								</div>
+								<div class="work_number">
+									<strong>8,700</strong><span>걸음</span>
+								</div>
+								<div>
+									<!-- s: 부족 -->
+									<div class="progress_bar progress_bar_ty1 progress_bar_ty1_count" role="img" tabindex="0">
+										<div class="progress_bar_per_cover">
+											<div class="progress_bar_per">
+												<div class="per_bar">
+													<span class="per_bar_dp dp_ic3" data-pbc="3800">
+														<span class="text">3,800</span>
+													</span>
+												</div>
+											</div>
+										</div>
+										<div class="progress_bar_bottom">
+											<span class="pbb_start" data-pbcs="0">0걸음</span>
+											<span class="pbb_end" data-pbce="5000">5,000걸음</span>
+										</div>
+									</div>
+									<!-- e: 부족 -->
+									<!-- s: 초과 -->
+									<div class="progress_bar progress_bar_ty1 progress_bar_ty1_count" role="img" tabindex="0">
+										<div class="progress_bar_per_cover">
+											<div class="progress_bar_per">
+												<div class="per_bar">
+													<span class="per_bar_dp dp_ic3" data-pbc="8700">
+														<span class="text">8,700</span>
+													</span>
+												</div>
+											</div>
+										</div>
+										<div class="progress_bar_bottom">
+											<span class="pbb_start" data-pbcs="0">0걸음</span>
+											<span class="pbb_end" data-pbce="5000">5,000걸음</span>
+										</div>
+									</div>
+									<!-- e: 초과 -->
+								</div>
+								<!-- e: 부족, 초과 -->
+								<div class="divider_ty2"></div>
+								<!-- s: 가입안내, 부족 -->
+								<div class="icon_right ty1">
+									{{> cp/linkButton bl_class="short_cut two_line" bl_text="지금 이대로 <br><strong class='point'>자동차보험 계산</strong>해 보기" }}
+								</div>
+								<!-- e: 가입안내, 부족 -->
+								<!-- s: 초과 -->
+								<div class="icon_right ty2">
+									{{> cp/linkButton bl_class="short_cut two_line" bl_text="토스 만보기<br><strong class='point'>걸음수 할인특약으로 5% 할인</strong> 받기" bl_title="새창 열림" }}
+								</div>
+								<!-- e: 초과 -->
+							</div>
+							<!-- s: 가입안내 -->
+							<div class="btn_area">
+								{{> cp/button type="2" size="2" b-text="토스 만보기 걸음수 조회하기" }}
+							</div>
+							<!-- e: 가입안내 -->
+						</div>
+
+						<h3 class="title_h3">특약상세정보</h3>
+						<ul class="list_depth">
+							<li>걸음수 조회 결과는 조회 시점에 따라 변경될 수 있습니다.</li>
+							<li>특약 가입일로부터 잔여기간에 한하여 일할로 계산하여 환급해 드립니다.</li>
+							<li>추가 문의 사항이 있으시면 다이렉트 고객센터(1899-6782)로 연락주시기 바랍니다.</li>
+						</ul>
+
+						<h3 class="title_h3">가입조건</h3>
+						<ul class="list_depth">
+							<li>
+								하이헬스챌린지 APP, 토스 만보기 APP 사용자 중 하루 평균 5천 걸음 이상<br>
+								(확인일 직전 31일 기준, 확인일 제외)
+							</li>
+						</ul>
 					</div>
-					<!-- e: 가입안내 -->
 				</div>
-				<h3 class="title_h3">오늘의 걸음 수<span class="msg_info">9,593 걸음</span></h3>
-				<div class="card_item_wrap wrap_row2 high_work">
-					<div class="card_item ty1">
-						<div class="title">예상거리</div>
-						<div class="cont"><strong class="point">6.9</strong> km</div>
-					</div>
-					<div class="card_item ty2">
-						<div class="title">소모열량</div>
-						<div class="cont"><strong class="point">520</strong> kcal</div>
-					</div>
-				</div>
-				<h3 class="title_h3">걸음 수 할인특약이란?</h3>
-				<ul class="list_depth">
-					<li>가입대상
-						<ul>
-							<li>개인 소유 자동차보험 가입 & 하이헬스챌린지 앱 사용자</li>
-						</ul>
-					</li>
-					<li>가입조건
-						<ul>
-							<li>회사가 인정하는 걸음수 측정 프로그램에서 확인일 직전 31일 동안 하루 평균 5천보 이상을 달성한 고객님</li>
-						</ul>
-					</li>
-					<li>할인율
-						<ul>
-							<li>5%(자녀운전자 한정운전 특약과 중복가입 불가)</li>
-						</ul>
-					</li>
-					<li>적용계약
-						<ul>
-							<li>2025년 5월 16일 책임개시한 보험계약부터</li>
-						</ul>
-					</li>
-				</ul>
+				<!-- e: 26-01-15 수정 -->
 
 
 			</div>
 		</div>
+		<!-- s: 26-01-15 수정 -->
 		<!-- s: 하단 고정 버튼 영역 -->
-		<div class="bottom_fix_wrap">
+		<!-- 삭제 <div class="bottom_fix_wrap">
 			<div class="btn_area">
 				{{> cp/button type="1" size="1" b-text="목록으로"}}
 			</div>
-		</div>
+		</div> -->
 		<!-- s: 하단 고정 버튼 영역 -->
+		<!-- e: 26-01-15 수정 -->
 	</div>
 
 	<!-- s: popup area -->
@@ -226,23 +353,32 @@
 	<!-- e: popup area -->
 
 	<script>
-		$(function(){		
-	
-		function updateProgressBarPosition($progressBar) {
-				
+	/* s: 26-01-15 수정 */
+	$(function(){
+
+		function resetProgressBar($progressBar) {
+			const $perBar = $progressBar.find('.per_bar');
+			$perBar.removeClass('active pos poe').css('width', '0%');
+		}
+
+		function updateProgressBarPosition($progressBar, width) {
+			if (!$progressBar.closest('.tab_wrap_content').hasClass('active')) return;
+			
 			// 접근성 관련 문구 생성 후 삽입
 			var current = $progressBar.find('[data-pbc]').data('pbc');
 			var total = $progressBar.find('[data-pbce]').data('pbce');
 	
 			$progressBar.attr('aria-label', '전체 ' + total + '걸음 중 ' + current + '회 납입');
 			
+		
 			// 전체 넓이
 			var $progressBarPer = $progressBar.find('.progress_bar_per');
 			var progressBarPerWidth = $progressBarPer.outerWidth(); // 기준 넓이(px)
+			if (!progressBarPerWidth) return;
 	
 			// 퍼센트 계산 (소수점 없이)
 			var percent = Math.floor((current / total) * 100);       // 현재 진행률(%)
-	
+			percent = Math.min(Math.max(percent, 0), 100);
 			var pixelWidth = Math.floor((percent / 100) * progressBarPerWidth);  // 진행률 px 환산
 	
 			var $perBar = $progressBar.find('.per_bar');
@@ -254,30 +390,36 @@
 	
 			// console.log('움직이는 컨텐츠 넓이 : ', perBarDpWidth);
 	
-			// 초기 클래스 제거
-			$perBar.removeClass('pos');
-			$perBarDp.removeClass('poe');
-	
-			// 앞에 고정하기
-			if (pixelWidth < perBarDpWidth / 2) {
-				$perBar.addClass('pos');
-			} else {
-				$perBar.removeClass('pos');
-			}
-	
-			// 끝으로 보내기
-			if (progressBarPerWidth - pixelWidth < perBarDpWidth / 2) {
-				$perBar.addClass('poe');
-			} else {
-				$perBar.removeClass('poe');
-			}
-	
+			setTimeout(function () {
+				// 초기 클래스 제거
+				$perBar.removeClass('pos poe active').css('width', '0%');
+				$perBarDp.removeClass('poe');
+
+				if (!$progressBar.closest('.tab_wrap_content').hasClass('active')) {
+					$perBar.find('.per_bar_dp').css('right', '100%');
+				}
+		
+				// 앞에 고정하기
+				if (pixelWidth < perBarDpWidth / 2) {
+					$perBar.addClass('pos');
+				} else {
+					$perBar.removeClass('pos');
+				}
+		
+				// 끝으로 보내기
+				if (progressBarPerWidth - pixelWidth < perBarDpWidth / 2) {
+					$perBar.addClass('poe');
+				} else {
+					$perBar.removeClass('poe');
+				}
+			}, 50);
+			
 			// per_bar 너비 설정
 			setTimeout(function(){
 				$perBar.addClass('active').css('width', percent + '%');
 			}, 100);
 		}
-	
+
 		// 여러 개의 .progress_bar_ty1_count 대해 반복 처리
 		$('.progress_bar_ty1_count').each(function() {
 			var $this = $(this); // 각 progress_bar_ty1을 $this로 참조
@@ -294,9 +436,19 @@
 			});
 		});
 	
-	
-	
+		$('.tab_wrap').on('tab:changed', function (e, $activeCont) {
+			// console.log(e, $activeCont)
+			$activeCont.find('.progress_bar_ty1_count').each(function () {
+				updateProgressBarPosition($(this));
+				resetProgressBar($(this));
+			});
+		});
+
+		$('.tab_wrap_content.active').find('.progress_bar_ty1_count').each(function () {
+			updateProgressBarPosition($(this));
+		});
 	});
+	/* e: 26-01-15 수정 */
 	
 	</script>
 

@@ -3,7 +3,7 @@
 	width: 1px;
 	height: 1px;
 	clip: rect(0, 0, 0, 0);
-	overflow: hidden;
+	overflow: hidden; 
 }
 
 .blind {
@@ -209,6 +209,15 @@ sup {
 			
 			& > * {
 				&:first-child {
+					&.tab_wrap {
+						[class^=tab_wrap_list] {
+							margin-top: -16px;
+
+							&.sticky_fix {
+								top: -16px;
+							}
+						}
+					}
 					&.content_ty1 {
 						margin-top: -16px;
 					}
