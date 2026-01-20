@@ -41,9 +41,7 @@
 					<!-- e: live 처리 위치 -->
 
 					<div class="guarantee_visuval">
-						<!-- s: 25-11-17 수정 -->
 						<img src="../../../images/content/prd/bg_intro18.png" alt="배경이미지" aria-hidden="true">
-						<!-- e: 25-11-17 수정 -->
 						<div class="visual_msg ty2">
               <!-- (참고) 최종할인율 추후 확정 예정-->
 							<div class="msg_text">오프대비<br>00% 할인</div>
@@ -171,9 +169,7 @@
 				<!-- e: guarantee_container_left -->
 
 				<!-- s: guarantee_container_right -->
-				<!-- s: 25-11-21 수정 -->
 				<div class="guarantee_container_right" aria-hidden="true">
-					<!-- e: 25-11-21 수정 -->
 					<!-- s: guarantee_detail -->
 					<div class="guarantee_detail ty2">
 						<div class="guarantee_detail_top">
@@ -333,11 +329,9 @@
 						</div>
 
             <h3 class="title_h3">실손보험 함께 가입하기</h3>
-			<!-- s: 25-11-10 추가 -->
 			<div class="btn_area basic short">
 				{{> cp/linkButton bl_class="btn_link short_cut" bl_text="어린이보험 vs 실손보험 비교" role_b=true question_tit="어린이보험 vs 실손보험 비교" pop_id="pop_type05" }}
 			</div>
-			<!-- e: 25-11-10 추가 -->
             <div class="acc_group">
               <div class="acd_item acd_item_ty1">
                 {{#> cp/accordion ac-title="상세보기" aci="aci01" aclc="chk_label_ty2" acl="실손의료비보장보험" }}
@@ -700,7 +694,6 @@
 {{/ popup/popup_bottom}}
 <!-- e: 동시가입안내 팝업(2) -->
 
-<!-- s: 25-11-03 수정 -->
 <!-- s: 실손보험 중복 가입 안내 -->
 {{#> popup/popup_bottom popup-id="pop_type04" popup-title="실손보험 중복 가입 안내"}}
 <div class="popup_cont">
@@ -728,8 +721,6 @@
 </div>
 {{/ popup/popup_bottom}}
 <!-- e: 실손보험 중복 가입 안내 -->
-<!-- e: 25-11-03 수정 -->
-<!-- s: 25-11-10 추가 -->
 <!-- s: 어린이보험 vs 실손보험 비교 -->
 {{#> popup/popup_bottom popup-id="pop_type05" popup-title="어린이보험 vs 실손보험 비교"}}
 <div class="popup_cont">
@@ -746,7 +737,6 @@
 				</colgroup>
 				<tbody>
 					<tr>
-						<!-- s: 25-11-13 수정 -->
 						<th scope="row" class="v_mid ta_c">어린이<br>보험</th>
 						<td>
 							<ul class="list_depth_ty2">
@@ -760,7 +750,6 @@
 						</td>
 					</tr>
 					<tr>
-						<!-- s: 25-11-13 수정 -->
 						<th scope="row" class="v_mid ta_c">실손<br>보험</th>
 						<td>
 							<ul class="list_depth_ty2">
@@ -780,7 +769,6 @@
 </div>
 {{/ popup/popup_bottom}}
 <!-- e: 어린이보험 vs 실손보험 비교 -->
-<!-- e: 25-11-10 추가 -->
 
 <!-- e: popup area -->
 
@@ -797,25 +785,23 @@
 
 			// 모든 항목 초기화: 컨텐츠 닫고 타이틀 열기
 			$('.guarantee_choice_wrap .guarantee_item').each(function() {
-				// 25-11-28 수정
 				const $getAl = $(this).find('input[type="radio"]').attr('aria-labelledby');
 				const $changeTop = $(this).find('.guarantee_item_top');
 				const $changeCont = $(this).find('.guarantee_item_cont');
 				$changeCont.removeAttr('id');
 				$changeTop.attr('id', $getAl);
-				// 25-11-28 수정
+				
 				$(this).find('.guarantee_item_cont').stop(true, true).slideUp(300);
 				$(this).find('.guarantee_item_top').stop(true, true).slideDown(300);
 			});
 
 			// 선택된 항목만: 컨텐츠 열고 타이틀 닫기
-			// 25-11-28 수정
 			const $thisgetAl = $selectedItem.find('input[type="radio"]').attr('aria-labelledby');
 			const $thischangeTop = $selectedItem.find('.guarantee_item_top');
 			const $thischangeCont = $selectedItem.find('.guarantee_item_cont');
 			$thischangeTop.removeAttr('id');
 			$thischangeCont.attr('id', $thisgetAl);
-			// 25-11-28 수정
+			
 			$selectedItem.find('.guarantee_item_cont').stop(true, true).slideDown(300);
 			$selectedItem.find('.guarantee_item_top').stop(true, true).slideUp(300);
 
@@ -916,9 +902,8 @@
 					$('.splide__list').find('.splide__slide').eq(targetIndex).addClass('effect').find('input[type="radio"]').prop('checked', true);
 					splide.go(targetIndex);
 					$('.container').scrollTop(0);
-					// s: 25-11-21 수정
 					$('.guarantee_container_right').attr('aria-hidden', false);
-					// e: 25-11-21 수정
+					
 					setTimeout(function(){
 						$('.splide__list').find('.splide__slide').eq(targetIndex).attr('tabindex', '0').focus();
 						$('.guarantee_container').css('position', 'static');
