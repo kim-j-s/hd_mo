@@ -576,7 +576,6 @@
 
 						<!-- s: guarantee_container_right -->
 						<div class="guarantee_container_right" aria-hidden="true">
-							<!-- e: 25-11-21 수정 -->
 							<!-- s: guarantee_detail -->
 							<div class="guarantee_detail ty2">
 								<div class="guarantee_detail_top">
@@ -694,7 +693,6 @@
 
 								<div class="acc_group">
 									<div class="space_list_ty2">
-										<!-- s: 25-11-04 수정 -->
 										<!-- 삭제
 											<div class="acd_item acd_item_ty2">
 			<div class="acd_head active">
@@ -716,7 +714,6 @@
 			  </div>
 			</div>								</div>
 											 -->
-										<!-- e: 25-11-04 수정 -->
 
 										<div class="acd_item acd_item_ty2">
 											<div class="acd_head active">
@@ -725,7 +722,6 @@
 											<div class="acd_cont">
 												<div class="inner" style="display: block">
 													<ul class="coverage_item_list">
-														<!-- s: 25-11-04 수정 -->
 														<li class="list">
 															<div class="inp_checkbox">
 																<input type="checkbox" id="checkbox02-0" />
@@ -739,7 +735,6 @@
 																</div>
 															</div>
 														</li>
-														<!-- e: 25-11-04 수정 -->
 														<li class="list">
 															<div class="inp_checkbox">
 																<input type="checkbox" id="checkbox02-1" />
@@ -893,25 +888,21 @@
 
 					// 모든 항목 초기화: 컨텐츠 닫고 타이틀 열기
 					$(".guarantee_choice_wrap .guarantee_item").each(function () {
-						// 25-11-28 수정
 						const $getAl = $(this).find('input[type="radio"]').attr("aria-labelledby");
 						const $changeTop = $(this).find(".guarantee_item_top");
 						const $changeCont = $(this).find(".guarantee_item_cont");
 						$changeCont.removeAttr("id");
 						$changeTop.attr("id", $getAl);
-						// 25-11-28 수정
 						$(this).find(".guarantee_item_cont").stop(true, true).slideUp(300);
 						$(this).find(".guarantee_item_top").stop(true, true).slideDown(300);
 					});
 
 					// 선택된 항목만: 컨텐츠 열고 타이틀 닫기
-					// 25-11-28 수정
 					const $thisgetAl = $selectedItem.find('input[type="radio"]').attr("aria-labelledby");
 					const $thischangeTop = $selectedItem.find(".guarantee_item_top");
 					const $thischangeCont = $selectedItem.find(".guarantee_item_cont");
 					$thischangeTop.removeAttr("id");
 					$thischangeCont.attr("id", $thisgetAl);
-					// 25-11-28 수정
 					$selectedItem.find(".guarantee_item_cont").stop(true, true).slideDown(300);
 					$selectedItem.find(".guarantee_item_top").stop(true, true).slideUp(300);
 
@@ -1015,9 +1006,8 @@
 							$(".splide__list").find(".splide__slide").eq(targetIndex).addClass("effect").find('input[type="radio"]').prop("checked", true);
 							splide.go(targetIndex);
 							$(".container").scrollTop(0);
-							// s: 25-11-21 수정
 							$(".guarantee_container_right").attr("aria-hidden", false);
-							// e: 25-11-21 수정
+
 							setTimeout(function () {
 								$(".splide__list").find(".splide__slide").eq(targetIndex).attr("tabindex", "0").focus();
 								$(".guarantee_container").css("position", "static");
