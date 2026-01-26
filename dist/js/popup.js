@@ -68,6 +68,10 @@ function openHDPopup($triggerEl, target) {
 	// popup active
 	$("body").css("overscroll-behavior", "contain");
 	$("body").addClass("scroll_lock");
+	$("body").addClass("click_cover");
+	setTimeout(function(){
+		$("body").removeClass("click_cover");
+	}, 300);
 	$target.addClass("active");
 	$target.attr("aria-modal", "true");
 
@@ -203,6 +207,10 @@ function closeHDPopup(target, returnTarget = null) {
 		$(".wrap").removeAttr("inert");
 		$("body").css("overscroll-behavior", "auto");
 		$("body").removeClass("scroll_lock");
+		$("body").addClass("click_cover");
+		setTimeout(function(){
+			$("body").removeClass("click_cover");
+		}, 300);
 		$target.attr({
 			"aria-hidden" : "true",
 			"aria-modal" : "false",
