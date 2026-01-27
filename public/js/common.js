@@ -3,6 +3,10 @@
         $WIN = $(window),
         wHeight = $WIN.height();
 
+	// 입력 요소 자동완성 제거 기능 추가
+	$DOM.on('focus', 'input, textarea', function () {
+		$(this).attr('autocomplete', 'off');
+	});
 
   /* 전체메뉴 열기 */
   $DOM.on('click', '.header .header_right .allmenu_open', function() {
@@ -578,7 +582,7 @@
 			return;
 		}
 
-		$this.attr('autocomplete', 'off');
+		// $this.attr('autocomplete', 'off');
 
 		// 값 가져오기 및 하이픈/공백 제거
 		let val = $this.val() ? $this.val().replace(/[^0-9*]/g, '') : '';
