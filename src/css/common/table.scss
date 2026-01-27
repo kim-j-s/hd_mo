@@ -1,6 +1,17 @@
 .table_wrap {
+	position: relative;
 	& + & {
 		margin-top: var(--gap-8);
+	}
+
+	&:before {
+		content:'';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-color: var(--color-divider-gray-light);
 	}
 
 	& + .coverage_item_list,
@@ -121,7 +132,7 @@
 	.table {
 		width: 100%;
 		table-layout: fixed;
-		border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
+		// border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 		border-collapse: collapse;
 
 		&.bd_l {
