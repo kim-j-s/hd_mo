@@ -1663,6 +1663,10 @@ $(function(){
     }
   });
 	// e: 상품설명서 주요 내용 스크롤 버튼
+
+
+	// 초기 reset
+	$('input, textarea').attr('autocomplete', 'new-password');
 	
 
 	// ready
