@@ -501,7 +501,7 @@
 									<div class="inner" style="display: block">
 										<div class="input_text big wlc">
 											<div class="inp">
-												<input type="text" placeholder="test11" title="이름 입력" />
+												<input type="text" placeholder="test22" title="이름 입력" />
 												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 											</div>
 										</div>
@@ -754,9 +754,10 @@
 				const $e = $(e);
 				const $content = $('.container');
 				const $item = $e.closest('.acd_item');
+				const $item2 = $e.closest('.acd_item').next().css('background','blue');
 
-				$e.blur();
-				$item.find('.acd_btn').click();
+				// $e.blur();
+				$item2.find('.acd_btn').click();
 
 				// 레이아웃 안정화까지 2프레임 기다림
 				requestAnimationFrame(() => {
