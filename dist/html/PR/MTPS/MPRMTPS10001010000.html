@@ -501,7 +501,7 @@
 									<div class="inner" style="display: block">
 										<div class="input_text big wlc">
 											<div class="inp">
-												<input type="text" placeholder="test3" title="이름 입력" />
+												<input type="text" placeholder="test1" title="이름 입력" />
 												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 											</div>
 										</div>
@@ -682,6 +682,8 @@
 		</div>
 
 		<div class="fb" onclick="moT();">모션</div>
+		<div class="iff1"></div>
+		<div class="iff2"></div>
 
 		<!-- s: popup area -->
 		<!-- e: popup area -->
@@ -708,6 +710,29 @@
 				border-radius: 50%;
 				background-color: var(--color-background-white);
 			}
+			.iff1,
+			.iff2 {
+				position: fixed;
+				z-index: 10;
+				left: 10px;
+				bottom: 60px;
+				min-width: 160px;
+				padding: 0 8px;
+				height: 40px;
+				line-height: 38px;
+				font-size: 18px;
+				background-color: #fff;
+				border: 1px solid #000;
+			}
+			.iff1 {
+				bottom: 120px;
+			}
+			.iff1::before {
+				content: '초기값 : ';
+			}
+			.iff2::before {
+				content: '이동값 : ';
+			}
 		</style>
 
 		<script>
@@ -720,6 +745,7 @@
 					openAccordionAndScroll(this);
 					// 이벤트 핸들러 제거 (한 번만 실행되도록)
 					// $wlcInput.off('input');
+					$('.iff1').html($(this).closest('.acd_item').offset().top);
 				}
 			});
 
@@ -746,6 +772,8 @@
 
 					// 이동해야 할 거리 계산
 					const move = $content.scrollTop() + (targetTop - containerTop);
+
+					$('.iff2').html($e.closest('.acd_item').offset().top);
 
 					// 부드럽게 스크롤 이동
 					// $content.animate({ 
