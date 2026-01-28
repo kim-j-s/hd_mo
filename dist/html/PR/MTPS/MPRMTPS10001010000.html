@@ -501,7 +501,7 @@
 									<div class="inner" style="display: block">
 										<div class="input_text big wlc">
 											<div class="inp">
-												<input type="text" placeholder="test33" title="이름 입력" />
+												<input type="text" placeholder="testxx" title="이름 입력" />
 												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 											</div>
 										</div>
@@ -741,18 +741,15 @@ let triggered = false;
 
 $wlcInput.on('input', function () {
 	if (triggered) return;
-
-	const val = this.value;
-	if (val.length < 2) return;
+	if (this.value.length < 2) return;
 
 	triggered = true;
 
-	const $input = $(this);
-	const $currentItem = $input.closest('.acd_item');
+	const $currentItem = $(this).closest('.acd_item');
 	const $nextItem = $currentItem.next('.acd_item');
 	const $container = $('.container');
 
-	// 다음 아코디언은 '안내용'으로만 활성화
+	// 다음 아코디언은 상태만 변경
 	if ($nextItem.length) {
 		const $btn = $nextItem.find('.acd_btn');
 		if ($btn.attr('aria-expanded') !== 'true') {
@@ -760,19 +757,39 @@ $wlcInput.on('input', function () {
 		}
 	}
 
-	// 레이아웃 확정 이후, "현재 acd_item 기준"으로 스크롤
-	requestAnimationFrame(() => {
-		requestAnimationFrame(() => {
-			const containerTop = $container.offset().top;
-			const targetTop = $currentItem.offset().top;
+	scrollWhenOffsetStable($currentItem, $container);
+});
 
+function scrollWhenOffsetStable($item, $container) {
+	let lastTop = null;
+	let stableCount = 0;
+
+	function check() {
+		const top = $item.offset().top;
+
+		if (top === lastTop) {
+			stableCount++;
+		} else {
+			stableCount = 0;
+			lastTop = top;
+		}
+
+		// 2프레임 연속 동일하면 "안정"으로 판단
+		if (stableCount >= 2) {
+			const containerTop = $container.offset().top;
 			const move =
-				$container.scrollTop() + (targetTop - containerTop);
+				$container.scrollTop() + (top - containerTop);
 
 			$container.scrollTop(move);
-		});
-	});
-});
+			return;
+		}
+
+		requestAnimationFrame(check);
+	}
+
+	requestAnimationFrame(check);
+}
+
 
 
 		</script>
