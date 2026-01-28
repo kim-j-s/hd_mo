@@ -501,7 +501,7 @@
 									<div class="inner" style="display: block">
 										<div class="input_text big wlc">
 											<div class="inp">
-												<input type="text" placeholder="test1" title="이름 입력" />
+												<input type="text" placeholder="test11" title="이름 입력" />
 												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 											</div>
 										</div>
@@ -752,39 +752,22 @@
 			// 2글자 입력 시 아코디언 열기 + 스크롤 이동 함수
 			function openAccordionAndScroll(e) {
 				const $e = $(e);
-				// $e.css('background', 'blue');
-				$e.blur(); // 포커스 해제
-				const $content = $('.container'); // scrollTop 대상
-				const $this = $('.acd_item').eq(1);
-				const $header = $('.header');
+				const $content = $('.container');
+				const $item = $e.closest('.acd_item');
 
-				// 아코디언 열기
-				$this.find('.acd_btn').click();
+				$e.blur();
+				$item.find('.acd_btn').click();
 
-				$e.focus();
+				// 레이아웃 안정화까지 2프레임 기다림
+				requestAnimationFrame(() => {
+					requestAnimationFrame(() => {
+						const containerTop = $content.offset().top;
+						const targetTop = $item.offset().top;
+						const move = $content.scrollTop() + (targetTop - containerTop);
 
-				// 높이 변경 반영 후 실행
-				setTimeout(() => {
-					// 스크롤 컨테이너 기준 위치 계산
-					const containerTop = $content.offset().top;
-					// const targetTop = $this.offset().top;
-					const targetTop = $e.closest('.acd_item').offset().top;
-
-					// 이동해야 할 거리 계산
-					const move = $content.scrollTop() + (targetTop - containerTop);
-
-					$('.iff2').html($e.closest('.acd_item').offset().top);
-
-					// 부드럽게 스크롤 이동
-					// $content.animate({ 
-					// 	scrollTop: move 
-					// }, 300, function(){
-					// 	$this.find('.big input').focus();
-					// });
-					$content.animate({ 
-						scrollTop: move 
-					}, 3300);
-				}, 3300);
+						$content.animate({ scrollTop: move }, 300);
+					});
+				});
 			}
 		</script>
 
