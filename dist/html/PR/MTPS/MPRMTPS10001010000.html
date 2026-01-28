@@ -501,7 +501,7 @@
 									<div class="inner" style="display: block">
 										<div class="input_text big wlc">
 											<div class="inp">
-												<input type="text" placeholder="test" title="이름 입력" />
+												<input type="text" placeholder="test2" title="이름 입력" />
 												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 											</div>
 										</div>
@@ -727,7 +727,7 @@
 			function openAccordionAndScroll(e) {
 				const $e = $(e);
 				// $e.css('background', 'blue');
-				$e.blur(); // 포커스 해제
+				// $e.blur(); // 포커스 해제
 				const $content = $('.container'); // scrollTop 대상
 				const $this = $('.acd_item').eq(1);
 				const $header = $('.header');
@@ -739,19 +739,22 @@
 				setTimeout(() => {
 					// 스크롤 컨테이너 기준 위치 계산
 					const containerTop = $content.offset().top;
-					const targetTop = $this.offset().top;
+					// const targetTop = $this.offset().top;
+					const targetTop = $e.closest('.acd_item').offset().top;
 
 					// 이동해야 할 거리 계산
 					const move = $content.scrollTop() + (targetTop - containerTop);
 
 					// 부드럽게 스크롤 이동
+					// $content.animate({ 
+					// 	scrollTop: move 
+					// }, 300, function(){
+					// 	$this.find('.big input').focus();
+					// });
 					$content.animate({ 
 						scrollTop: move 
-					}, 300, function(){
-						$this.find('.big input').focus();
-					});
+					}, 300);
 				}, 300);
-
 			}
 		</script>
 
