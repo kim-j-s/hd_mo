@@ -501,7 +501,7 @@
 									<div class="inner" style="display: block">
 										<div class="input_text big wlc">
 											<div class="inp">
-												<input type="text" placeholder="test2" title="이름 입력" />
+												<input type="text" placeholder="test3" title="이름 입력" />
 												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 											</div>
 										</div>
@@ -719,7 +719,7 @@
 					// 2글자 이상 입력되면 아코디언 열기 + 스크롤 이동
 					openAccordionAndScroll(this);
 					// 이벤트 핸들러 제거 (한 번만 실행되도록)
-					$wlcInput.off('input');
+					// $wlcInput.off('input');
 				}
 			});
 
@@ -727,13 +727,15 @@
 			function openAccordionAndScroll(e) {
 				const $e = $(e);
 				// $e.css('background', 'blue');
-				// $e.blur(); // 포커스 해제
+				$e.blur(); // 포커스 해제
 				const $content = $('.container'); // scrollTop 대상
 				const $this = $('.acd_item').eq(1);
 				const $header = $('.header');
 
 				// 아코디언 열기
 				$this.find('.acd_btn').click();
+
+				$e.focus();
 
 				// 높이 변경 반영 후 실행
 				setTimeout(() => {
@@ -753,8 +755,8 @@
 					// });
 					$content.animate({ 
 						scrollTop: move 
-					}, 300);
-				}, 300);
+					}, 3300);
+				}, 3300);
 			}
 		</script>
 

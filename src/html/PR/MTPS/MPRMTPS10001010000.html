@@ -257,7 +257,7 @@
 			// 2글자 이상 입력되면 아코디언 열기 + 스크롤 이동
 			openAccordionAndScroll(this);
 			// 이벤트 핸들러 제거 (한 번만 실행되도록)
-			$wlcInput.off('input');
+			// $wlcInput.off('input');
 		}
 	});
 
@@ -265,7 +265,7 @@
 	function openAccordionAndScroll(e) {
 		const $e = $(e);
 		// $e.css('background', 'blue');
-		// $e.blur(); // 포커스 해제
+		$e.blur(); // 포커스 해제
 		const $content = $('.container'); // scrollTop 대상
 		const $this = $('.acd_item').eq(1);
 		const $header = $('.header');
