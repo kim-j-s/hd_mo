@@ -285,6 +285,7 @@
 	&.top {
 		padding: var(--padding-6) var(--padding-9) var(--padding-10) var(--padding-9);
 		border-radius: 0px 0px var(--radius-xlarge2) var(--radius-xlarge2);
+
 		&.main {
 			padding: 0 var(--padding-9) var(--padding-6);
 			overflow: hidden;
@@ -296,11 +297,19 @@
 			&.active:not(.pop_pro) {
 				margin: 0;
 				box-shadow: 0px var(--shadow-y-2) var(--shadow-blur-2) 0px var(--color-alpha-shadow1, rgba(0, 0, 0, 0.05));
+				
 				.top_item_box {
 					overflow-x: auto;
 					white-space: nowrap;
 					-webkit-overflow-scrolling: touch;
+					-ms-overflow-style: none;
+					scrollbar-width: none;
 					margin: 0 -32px;
+
+					&::-webkit-scrollbar {
+						display: none;
+					}
+
 					.h2_title {
 						display: none;
 					}

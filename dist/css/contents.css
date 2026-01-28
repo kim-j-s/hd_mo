@@ -1550,7 +1550,12 @@
 	overflow-x: auto;
 	white-space: nowrap;
 	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 	margin: 0 -3.2rem;
+}
+.home_card.top.sticky.active:not(.pop_pro) .top_item_box::-webkit-scrollbar {
+	display: none;
 }
 .home_card.top.sticky.active:not(.pop_pro) .top_item_box .h2_title {
 	display: none;
@@ -2451,6 +2456,14 @@
 	margin-top: var(--gap-2);
 	font-size: var(--font-size-body-small);
 	color: var(--color-text-subtle);
+}
+.discount_item_box + .compliance_area {
+	margin-top: var(--gap-9);
+	text-align: center;
+}
+.compliance_area {
+	font-size: var(--font-size-body-small);
+	color: #878787;
 }
 /* 자동차보험 - 기본정보 */
 /* 자동차보험 | 기본 정보 */

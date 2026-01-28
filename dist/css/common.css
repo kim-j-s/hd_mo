@@ -14587,8 +14587,20 @@ ol li .table_wrap + .list_ty2 li + li {
 }
 /* 조회 탭 결과 컨텐츠 간격용 */
 /* table */
+.table_wrap {
+	position: relative;
+}
 .table_wrap + .table_wrap {
 	margin-top: var(--gap-8);
+}
+.table_wrap:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background-color: var(--color-divider-gray-light);
 }
 .table_wrap + .coverage_item_list,
 .table_wrap + [class^="list_ty"],
@@ -14686,7 +14698,6 @@ ol li .table_wrap + .list_ty2 li + li {
 .table_wrap .table {
 	width: 100%;
 	table-layout: fixed;
-	border-top: var(--border-width-static-regular) solid var(--color-divider-gray-light);
 	border-collapse: collapse;
 }
 .table_wrap .table.bd_l th,
