@@ -315,6 +315,32 @@
 
 /* _조합 input */
 .comp_wrap {
+	&.card,
+	&.business {
+		padding: 3px;
+	}
+	&.error {
+		padding: 2px 3px;
+	}
+	// &.key_number {
+	// 	padding-left: 3px;
+	// }
+
+	.inp {
+		input {
+			height: calc(var(--size-height-8) - 8px);
+			border-radius: var(--radius-medium1);
+			border: var(--border-width-static-regular) solid transparent;
+			transition: border-color 0.3s;
+
+			&:focus {
+				border: var(--border-width-static-regular) solid var(--color-input-border);
+			}
+		}
+	}
+}
+
+.comp_wrap {
 	position: relative;	
 	display: flex;
 	align-items: center;
