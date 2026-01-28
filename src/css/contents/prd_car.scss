@@ -281,18 +281,6 @@
 		.info_list {
 			.item {
 				position: relative;
-				// &:before {
-				// 	content: '';
-				// 	display: block;
-				// 	position: absolute;
-				// 	top: 50%;
-				// 	left: 0;
-				// 	width: 32px;
-				// 	height: 32px;
-				// 	border-radius: var(--radius-small3);
-				// 	background-color: var(--color-surface-gray-subtler);
-				// 	transform: translateY(-50%);
-				// }
 				&:after {
 					content: '';
 					display: block;
@@ -306,7 +294,7 @@
 					background-position: left center;
 					transform: translateY(-50%);
 				}
-				@for $i from 1 through 21 {
+				@for $i from 1 through 22 {
 					&.ico_benefit#{$i}::after {
 						background-image: url('../images/content/prdcar/ico_car_benefit#{$i}.svg');
 					}
@@ -588,7 +576,6 @@
 		gap: var(--gap-5);
 		.item {
 			padding: var(--padding-7);
-			// padding: var(--padding-7) var(--padding-8);
 			background-color: var(--color-background-gray-subtler);
 			border-radius: var(--radius-medium3);
 			font-size: var(--font-size-label-medium);
@@ -609,7 +596,7 @@
 
 			@for $i from 1 through 7 {
 				&.ico#{$i} {
-					&>div::before {
+					& > div::before {
 						background-image: url('../images/content/prdcar/ico_contract_logo#{$i}.svg');
 					}
 				}

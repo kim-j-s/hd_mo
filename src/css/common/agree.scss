@@ -352,7 +352,8 @@
 				justify-content: center;
 				align-items: center;
 				min-width: 48px;
-				width: calc(100% - 10px);
+				width: calc(100% - 4px);
+				// width: 100%;
 				padding: 2px 0;
 				font-weight: 700;
 				color: var(--color-text-bolder-inverse);
@@ -440,11 +441,21 @@
 	padding-top: var(--gap-5);
 	.qr_box {
 		display: none;
-		width: 60px;
+    width: 80px;
+    height: 80px;
+    padding: 9px;
+    background: var(--color-surface-white-subtle);
+    border-radius: var(--radius-medium3);
+    border: var(--border-width-static-regular) solid var(--color-border-gray-light);
+
 		img {
 			display: block;
 			width: 60px;
 			height: auto;
+		}
+		&.qb_show {
+			flex: none;
+			display: initial;
 		}
 	}
 
