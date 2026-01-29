@@ -499,9 +499,9 @@
 								</div>
 								<div class="acd_cont">
 									<div class="inner" style="display: block">
-										<div class="input_text big">
+										<div class="input_text big wlc">
 											<div class="inp">
-												<input type="text" placeholder="자동차 소유(예정)자" title="이름 입력" />
+												<input type="text" placeholder="testxx" title="이름 입력" />
 												<button type="button" class="del"><span class="blind">텍스트 삭제</span></button>
 											</div>
 										</div>
@@ -682,6 +682,8 @@
 		</div>
 
 		<div class="fb" onclick="moT();">모션</div>
+		<div class="iff1"></div>
+		<div class="iff2"></div>
 
 		<!-- s: popup area -->
 		<!-- e: popup area -->
@@ -708,66 +710,88 @@
 				border-radius: 50%;
 				background-color: var(--color-background-white);
 			}
+			.iff1,
+			.iff2 {
+				position: fixed;
+				z-index: 10;
+				left: 10px;
+				bottom: 60px;
+				min-width: 160px;
+				padding: 0 8px;
+				height: 40px;
+				line-height: 38px;
+				font-size: 18px;
+				background-color: #fff;
+				border: 1px solid #000;
+			}
+			.iff1 {
+				bottom: 120px;
+			}
+			.iff1::before {
+				content: '초기값 : ';
+			}
+			.iff2::before {
+				content: '이동값 : ';
+			}
 		</style>
 
 		<script>
-			function moT() {
-				const $content = $(".container"); // scrollTop 대상
-				const $this = $(".acd_item").eq(1);
-				const $header = $(".header");
+			const $wlcInput = $('.wlc input');
+let triggered = false;
 
-				// 아코디언 열기
-				$this.find(".acd_btn").click();
+$wlcInput.on('input', function () {
+	if (triggered) return;
+	if (this.value.length < 2) return;
 
-				// 높이 변경 반영 후 실행
-				setTimeout(() => {
-					// 스크롤 컨테이너 기준 위치 계산
-					const containerTop = $content.offset().top;
-					const targetTop = $this.offset().top;
+	triggered = true;
 
-					// 이동해야 할 거리 계산
-					const move = $content.scrollTop() + (targetTop - containerTop);
+	const $currentItem = $(this).closest('.acd_item');
+	const $nextItem = $currentItem.next('.acd_item');
+	const $container = $('.container');
 
-					// 부드럽게 스크롤 이동
-					$content.animate(
-						{
-							scrollTop: move,
-						},
-						300,
-						function () {
-							$this.find(".big input").focus();
-						},
-					);
+	// 다음 아코디언은 상태만 변경
+	if ($nextItem.length) {
+		const $btn = $nextItem.find('.acd_btn');
+		if ($btn.attr('aria-expanded') !== 'true') {
+			$btn.trigger('click');
+		}
+	}
 
-					// 디버깅용 로그
-					// console.log({
-					// 	containerScrollTop: $content.scrollTop(),
-					// 	containerTop,
-					// 	targetTop,
-					// 	move
-					// });
-				}, 100);
-			}
+	scrollWhenOffsetStable($currentItem, $container);
+});
 
-			// let lastTime = 0;
-			// const interval = 1000; // ms 단위
+function scrollWhenOffsetStable($item, $container) {
+	let lastTop = null;
+	let stableCount = 0;
 
-			// function loopConsoleWithDelay(timestamp) {
-			// 	if (timestamp - lastTime >= interval) {
-			// 		lastTime = timestamp;
+	function check() {
+		const top = $item.offset().top;
 
-			// 		const $content = $('.container').scrollTop();
-			// 		const $this = $('.acd_item').eq(1).offset().top;
+		if (top === lastTop) {
+			stableCount++;
+		} else {
+			stableCount = 0;
+			lastTop = top;
+		}
 
-			// 		console.log('이동할 돔 : ', $content);
-			// 		console.log('대상 돔 : ', $this);
-			// 	}
+		// 2프레임 연속 동일하면 "안정"으로 판단
+		if (stableCount >= 2) {
+			const containerTop = $container.offset().top;
+			const move =
+				$container.scrollTop() + (top - containerTop);
 
-			// 	requestAnimationFrame(loopConsoleWithDelay);
-			// }
+			$container.scrollTop(move);
+			return;
+		}
 
-			// // 시작
-			// requestAnimationFrame(loopConsoleWithDelay);
+		requestAnimationFrame(check);
+	}
+
+	requestAnimationFrame(check);
+}
+
+
+
 		</script>
 
 		<!-- 전체메뉴 -->
