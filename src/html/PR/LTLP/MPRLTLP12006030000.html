@@ -1,5 +1,167 @@
 
 {{#> layout/default no-sp=true page-title="동물등록정보입력 | 상품"}}
+<div id="wrap" class="wrap">
+	{{> layout/header h-title="반려동물정보" }}
+	<div id="container" class="container">
+		<div class="content">
+			<!-- s: content_top -->
+			<div class="content_top">
+				<h2 class="title_h2">
+					반려동물<br>
+					<strong>정보를 입력</strong>해주세요
+				</h2>
+			</div>
+			<!-- e: content_top -->
+
+			<h3 class="title_h3">기본정보</h3>
+			<div class="form_group_wrap">
+				<div class="row">
+					<div class="form_line grow">
+						<div class="label_tit">이름</div>
+						{{> cp/text placeholder="이름 입력"  inp-title="이름 입력" }}
+					</div>
+				</div>
+				<div class="row">
+					<div class="form_line grow">
+						<div class="label_tit">생년월일</div>
+						{{> cp/text type="tel" inp-title="생년월일 입력" value="20220123" readonly=true }}
+					</div>
+					<div class="form_line grow">
+						<div class="label_tit">성별</div>
+						{{> cp/text value="여아" inp-title="성별 입력" readonly=true }}
+					</div>
+				</div>
+				<div class="form_line">
+					<div class="label_tit">품종</div>
+					{{> cp/text value="말티푸" inp-title="품종 입력" readonly=true }}
+				</div>
+				<div class="form_line">
+					<div class="label_tit">중성화 수술을 했나요?</div>
+					<div class="radio_group_wrap" role="radiogroup">
+						{{> cp/radio rd-class="rd_btn" rd-id="notification02_01" name="notification02" labelname="예" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="notification02_02" name="notification02" labelname="아니요" }}
+					</div>
+				</div>
+			</div>
+
+			<!-- Case1. 동물등록 N인 경우 -->
+			<div class="divider_ty1"></div>
+			<h3 class="title_h3">반려동물 사진</h3>
+			<div class="file_upload_wrap">
+				<h3 class="title_h3">앞모습 전체 사진 등록</h3>
+
+				
+				<!-- s: 이미지 파일 붙는 영역 -->
+				<!-- 등록 전 이미지 (등록 전/후 따라 alt값 변경 필요) -->
+				<div class="file_attach_box">
+					<!-- s: 강아지일 경우 -->
+					<div class="file_thumbnail">
+						<img src="../../../images/content/gipt/img_animal_certificate_before.png" alt="예시 이미지"> 
+					</div>
+					<!-- e: 강아지일 경우 -->
+
+					<!-- s: 고양이일 경우 -->
+					<!-- <div class="file_thumbnail">
+						<img src="../../../images/content/gipt/img_animal_certificate_before_cat.png" alt="예시 이미지"> 
+					</div> -->
+					<!-- e: 고양이일 경우 -->
+				</div>
+
+				<!-- 
+					등록 후 이미지 (등록 전/후 따라 alt값 변경 필요)
+					등록 후 이미지일 시, active 클래스 추가
+					등록된 이미지 삭제 시, .file_attach_box에 active 클래스 제거
+				-->
+				<!--<div class="file_attach_box active">
+					<div class="file_thumbnail">
+						<img src="../../../images/temp/img_carmera_temp.png" alt="등록된 반려동물 이미지">
+					</div>
+				</div>-->
+				<!-- e: 이미지 파일 붙는 영역 -->
+
+				<ul class="list_ty2">
+					<li>최근 3개월 이내의 사진을 등록해주세요.</li>
+					<li>10MB 이하의 jpg, jpeg, gif, png 파일만 등록할 수 있습니다.</li>
+				</ul>
+
+				<!-- s: 이미지 파일 버튼 -->
+				<div class="btn_area center">
+					<!-- 등록 전 노출 -->
+					<div class="file_btn">
+						<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png">
+						<label for="file">							
+							<span class="hd_btn hd_btn_ty_2 hd_btn_s_3">
+								<i class="hd_icon carmeraSvg"></i>
+								사진 등록하기
+							</span>
+						</label>
+					</div>
+					<!-- 등록 후 노출 -->
+					 <div class="file_btn">
+						<input type="file" name="file" id="file" accept=".jpg, .jpeg, .gif, .png">
+						<label for="file">							
+							<span class="hd_btn hd_btn_ty_3 hd_btn_s_3">
+								<i class="hd_icon carmeraSvg2"></i>
+								사진 변경하기
+							</span>
+						</label>
+					</div> 
+				</div>
+				<!-- e: 이미지 파일 버튼 -->
+			</div>
+			
+			<!-- Case2. 동물등록 Y인 경우 -->
+			<div class="divider_ty1"></div>
+			<h3 class="title_h3">할인 정보</h3>
+
+			<div class="form_group_wrap">
+				<div class="form_line">
+					<div class="label_tit box_column">
+						<p>동물보호관리시스템에 동물등록을 했어요.(<strong class="point">5%</strong> 할인)</p>
+						{{> cp/linkButton bl_class="short_cut" bl_text="동물등록 우대 할인" role_b=true question_tit="동물등록 우대 할인" }} 
+					</div>
+					<div class="radio_group_wrap" role="radiogroup">
+						{{> cp/radio rd-class="rd_btn" rd-id="notification03_01" name="notification03" labelname="예" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="notification03_02" name="notification03" labelname="아니요" }}
+					</div>
+				</div>
+				<div class="form_line">
+					<div class="label_tit box_column">
+						<p>계약일 이전 최근 3년 이내에 입양된 경우에만 할인받을 수 있어요.(<strong class="point">3%</strong> 할인)</p>
+						{{> cp/linkButton bl_class="short_cut" bl_text="유기동물 우대 할인" role_b=true question_tit="유기동물 우대 할인" }} 
+					</div>
+					<div class="radio_group_wrap" role="radiogroup">
+						{{> cp/radio rd-class="rd_btn" rd-id="notification04_01" name="notification04" labelname="예" }}
+						{{> cp/radio rd-class="rd_btn" rd-id="notification04_02" name="notification04" labelname="아니요" }}
+					</div>
+				</div>
+				<div class="form_line">
+					<div class="checkbox_group_wrap column">
+						{{#> cp/checkbox checkbox_class="rd_box" id="checkbox01" label_class="chk_label_ty3" labelname="반려동물 정보를 정확히 입력했어요" }}
+						<div class="chk_lby">
+							<ul class="list_ty2">
+								<li>
+									<strong>입력된 반려동물의 정보(품종/생년월일/성별/이름)가 정확한지 확인해주세요.<br>(동물등록증이 있다면 동물등록증에 등록된 정보와 일치하는지 확인해주세요.)</strong>
+								</li>
+								<li>제출한 사진 및 서류가 정확하지 않을 경우 추후 보상에 <strong class="point">불이익</strong>이 있거나, <strong class="point">보험료 추징</strong>이 발생할 수도 있습니다.</li>
+							</ul>
+						</div>
+						{{/ cp/checkbox}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- s: 하단 고정 버튼 영역 -->
+	<div class="bottom_fix_wrap">
+		<div class="btn_area">
+			<!-- {{> cp/button type="1" size="1" b-text="정보를 입력 중이에요" disabled=true }} -->
+			{{> cp/button type="1" size="1" b-text="모두 입력했어요"}}
+		</div>
+	</div>
+	<!-- s: 하단 고정 버튼 영역 -->
+</div>
 <!-- s: Bottom 팝업 -->
 {{#> popup/popup_bottom popup-active=true popup-id="pop_type03" popup-title="동물 정보 등록" }}
 <div class="popup_cont">
